@@ -6,14 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class MTMaterialView, NSString, UIImageView, _SBFloatingDockPlatterMetrics;
+@class NSString, UIImageView, _SBFloatingDockPlatterMetrics;
 
 @interface SBFloatingDockPlatterView : UIView
 {
     _Bool _hasShadow;
     double _referenceHeight;
     double _maximumContinuousCornerRadius;
-    MTMaterialView *_backgroundView;
+    UIView *_backgroundView;
     UIImageView *_shadowView;
     _SBFloatingDockPlatterMetrics *_metrics;
 }
@@ -21,7 +21,7 @@
 + (id)borderColorForUserInterfaceStyle:(long long)arg1;
 @property(retain, nonatomic) _SBFloatingDockPlatterMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
-@property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool hasShadow; // @synthesize hasShadow=_hasShadow;
 @property(nonatomic) double maximumContinuousCornerRadius; // @synthesize maximumContinuousCornerRadius=_maximumContinuousCornerRadius;
 @property(nonatomic) double referenceHeight; // @synthesize referenceHeight=_referenceHeight;

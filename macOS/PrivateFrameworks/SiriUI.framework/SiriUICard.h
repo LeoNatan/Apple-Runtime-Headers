@@ -30,6 +30,7 @@
     NCCardViewController *_cardViewController;
 }
 
++ (id)mostRecentSummaryTitle;
 + (double)headerHeight;
 @property(retain) NCCardViewController *cardViewController; // @synthesize cardViewController=_cardViewController;
 @property __weak NSView *supplementaryHeaderView; // @synthesize supplementaryHeaderView=_supplementaryHeaderView;

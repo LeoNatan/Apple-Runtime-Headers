@@ -34,7 +34,7 @@
 @property(retain, nonatomic) NSString *lifetimeType; // @synthesize lifetimeType=_lifetimeType;
 - (void).cxx_destruct;
 - (id)object;
-- (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1;
+- (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -26,6 +26,7 @@
     _Bool _customContentHomeAffordanceVisible;
     _Bool _notificationContentViewHidden;
     _Bool _hasShadow;
+    _Bool _contentReplacedWithSnapshot;
     _Bool _interactionEnabled;
     _Bool _shouldRestorePresentingShortLookOnDismiss;
     id <NCNotificationViewControllerDelegate> _delegate;
@@ -52,6 +53,7 @@
 @property(retain, nonatomic) id <NCAuxiliaryOptionsProviding> auxiliaryOptionsContentProvider; // @synthesize auxiliaryOptionsContentProvider=_auxiliaryOptionsContentProvider;
 @property(retain, nonatomic) id <NCNotificationCustomContentProviding> customContentProvider; // @synthesize customContentProvider=_customContentProvider;
 @property(retain, nonatomic) id <NCNotificationStaticContentProviding> staticContentProvider; // @synthesize staticContentProvider=_staticContentProvider;
+@property(nonatomic, getter=isContentReplacedWithSnapshot) _Bool contentReplacedWithSnapshot; // @synthesize contentReplacedWithSnapshot=_contentReplacedWithSnapshot;
 @property(nonatomic) _Bool hasShadow; // @synthesize hasShadow=_hasShadow;
 @property(nonatomic, getter=isNotificationContentViewHidden) _Bool notificationContentViewHidden; // @synthesize notificationContentViewHidden=_notificationContentViewHidden;
 @property(nonatomic) __weak UIPanGestureRecognizer *customContentHomeAffordanceGestureRecognizer; // @synthesize customContentHomeAffordanceGestureRecognizer=_customContentHomeAffordanceGestureRecognizer;

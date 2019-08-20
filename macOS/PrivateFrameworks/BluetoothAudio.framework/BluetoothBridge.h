@@ -24,12 +24,15 @@
 @property BOOL targetUserSession; // @synthesize targetUserSession=_targetUserSession;
 @property(retain) SFDeviceDiscovery *deviceDiscovery; // @synthesize deviceDiscovery=_deviceDiscovery;
 @property(nonatomic) struct OpaqueFigEndpointManager *manager; // @synthesize manager=_manager;
+- (id)listeningModeToString:(unsigned int)arg1;
+- (void)deviceListeningModeChanged:(id)arg1;
 - (void)deviceNameChange:(id)arg1;
 - (void)deviceDestroyed:(id)arg1;
 - (void)audioDeviceCreated:(id)arg1;
 - (void)hostControllerPoweredOff:(id)arg1;
 - (void)deviceDisconnected:(id)arg1;
 - (void)deviceConnected:(id)arg1;
+- (void)setListeningModeForDevice:(id)arg1 listeningMode:(unsigned char)arg2;
 - (void)disconnectFromAddress:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connectToAddress:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)deviceFromAddressString:(id)arg1;
@@ -45,7 +48,7 @@
 - (void)stopLEScanning;
 - (void)startLEScanning;
 - (void)addListeners;
-- (struct __CFDictionary *)descriptionWithAddress:(id)arg1 name:(id)arg2 supportedFormats:(unsigned char)arg3 deviceClassMinor:(unsigned int)arg4 vendorID:(unsigned short)arg5 productID:(unsigned short)arg6 connected:(BOOL)arg7;
+- (struct __CFDictionary *)descriptionWithAddress:(id)arg1 name:(id)arg2 supportedFormats:(unsigned char)arg3 deviceClassMinor:(unsigned int)arg4 vendorID:(unsigned short)arg5 productID:(unsigned short)arg6 connected:(BOOL)arg7 listeningMode:(unsigned char)arg8 supportedListeningModes:(unsigned char)arg9;
 - (void)descriptionAddNearby:(struct __CFDictionary *)arg1 nearby:(BOOL)arg2 batterySingle:(double)arg3 batteryLeft:(double)arg4 batteryRight:(double)arg5 batteryCase:(double)arg6;
 - (struct __CFDictionary *)descriptionWithDevice:(id)arg1;
 - (void)dealloc;

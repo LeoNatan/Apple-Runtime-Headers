@@ -28,6 +28,7 @@
     _Bool _shouldShowCharacterCount;
     _Bool _shouldKnockoutCoverView;
     _Bool _keyboardVisible;
+    _Bool _useWindowBottomSafeAreaInsetOverride;
     _Bool _entryFieldCollapsed;
     _Bool _extendAppStripBlurToKeyplaneTop;
     _Bool _disablePluginButtons;
@@ -146,6 +147,7 @@
 @property(nonatomic) _Bool extendAppStripBlurToKeyplaneTop; // @synthesize extendAppStripBlurToKeyplaneTop=_extendAppStripBlurToKeyplaneTop;
 @property(nonatomic) _Bool entryFieldCollapsed; // @synthesize entryFieldCollapsed=_entryFieldCollapsed;
 @property(retain, nonatomic) UITraitCollection *entryViewTraitCollection; // @synthesize entryViewTraitCollection=_entryViewTraitCollection;
+@property(nonatomic) _Bool useWindowBottomSafeAreaInsetOverride; // @synthesize useWindowBottomSafeAreaInsetOverride=_useWindowBottomSafeAreaInsetOverride;
 @property(nonatomic, getter=isKeyboardVisible) _Bool keyboardVisible; // @synthesize keyboardVisible=_keyboardVisible;
 @property(nonatomic) _Bool shouldKnockoutCoverView; // @synthesize shouldKnockoutCoverView=_shouldKnockoutCoverView;
 @property(retain, nonatomic) CKEntryViewButton *sendButton; // @synthesize sendButton=_sendButton;
@@ -166,6 +168,7 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSArray *keyCommands; // @synthesize keyCommands=_keyCommands;
 - (void).cxx_destruct;
+- (void)_setBehaviorsForCurrentTransparencySetting;
 - (void)sendCurrentLocationMessage;
 - (void)_swipeDownGestureRecognized:(id)arg1;
 - (void)loadRecordedAudioViewsIfNeeded;

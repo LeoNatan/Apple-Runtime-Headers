@@ -9,7 +9,7 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 
 @class CNAccountsAndGroupsDataSource, CNContactListStyleApplier, NSString;
-@protocol CNAccountsAndGroupsViewControllerDelegate, NSObject;
+@protocol CNAccountsAndGroupsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface CNAccountsAndGroupsViewController : UITableViewController <UITableViewDelegate>
@@ -19,10 +19,8 @@ __attribute__((visibility("hidden")))
     CNContactListStyleApplier *_contactListStyleApplier;
     CNAccountsAndGroupsDataSource *_dataSource;
     id <CNAccountsAndGroupsViewControllerDelegate> _delegate;
-    id <NSObject> _contactStoreDidChangeNotificationToken;
 }
 
-@property(retain, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
 @property(nonatomic) _Bool tableViewNeedsReloadAfterResume; // @synthesize tableViewNeedsReloadAfterResume=_tableViewNeedsReloadAfterResume;
 @property(nonatomic) _Bool needsReload; // @synthesize needsReload=_needsReload;
 @property(nonatomic) __weak id <CNAccountsAndGroupsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;

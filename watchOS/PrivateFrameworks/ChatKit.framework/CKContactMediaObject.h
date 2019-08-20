@@ -30,6 +30,7 @@
 - (id)icon;
 - (id)title;
 - (Class)coloredBalloonViewClass;
+- (Class)previewBalloonViewClass;
 - (int)mediaType;
 - (_Bool)generatePreviewOutOfProcess;
 

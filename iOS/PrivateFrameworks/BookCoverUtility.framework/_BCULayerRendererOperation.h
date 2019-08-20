@@ -16,6 +16,7 @@
     // Error parsing type: Aq, name: _operationId
     unsigned int _cancelled:1;
     unsigned int _configuring:1;
+    _Bool _waitForCPUSynchronization;
     float _priority;
     BCULayerRenderer *_renderer;
     CDUnknownBlockType _layerBlock;
@@ -24,6 +25,7 @@
     id <BCUPurgeableImage> _result;
 }
 
+@property(readonly, nonatomic) _Bool waitForCPUSynchronization; // @synthesize waitForCPUSynchronization=_waitForCPUSynchronization;
 @property(retain, nonatomic) id <BCUPurgeableImage> result; // @synthesize result=_result;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -37,7 +39,7 @@
 - (id)configureLayer;
 - (void)start;
 @property(nonatomic) float priority; // @synthesize priority=_priority;
-- (id)initWithRenderer:(id)arg1 priority:(float)arg2 layerBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)initWithRenderer:(id)arg1 priority:(float)arg2 waitForCPUSynchronization:(_Bool)arg3 layerBlock:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

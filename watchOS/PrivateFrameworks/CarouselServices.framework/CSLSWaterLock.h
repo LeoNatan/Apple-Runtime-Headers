@@ -16,14 +16,16 @@
     CSLSWaterLockXPCClient *_xpcClient;
     id <CSLSWaterLockDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_callbackQueue;
+    struct os_unfair_lock_s _lock;
     _Bool _locked;
     NSString *_identifier;
 }
 
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 - (void).cxx_destruct;
 - (void)_notifyDelegate;
+- (void)_setLocked:(_Bool)arg1;
+@property(readonly, nonatomic, getter=isLocked) _Bool locked;
 - (void)didUnlock;
 - (void)didLock;
 - (void)unlock;

@@ -10,6 +10,8 @@
 {
     // Error parsing type: , name: productId
     // Error parsing type: , name: appAdamId
+    // Error parsing type: , name: postSubscribeAction
+    // Error parsing type: , name: subscriptionToken
 }
 
 @end

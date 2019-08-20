@@ -32,6 +32,7 @@
     NSArray *_airPlayRouteIds;
     NSString *_recordRoute;
     NSUUID *_recordDeviceUID;
+    NSString *_recordDeviceIdentifier;
     long long __preferredInteractionDirection;
 }
 
@@ -44,6 +45,7 @@
 + (void)_setSharedExtensionContextUUID:(id)arg1 forIntentClassName:(id)arg2;
 + (id)_sharedExtensionContextUUIDForIntentClassName:(id)arg1;
 @property(readonly, nonatomic) long long _preferredInteractionDirection; // @synthesize _preferredInteractionDirection=__preferredInteractionDirection;
+@property(retain, nonatomic, setter=_setRecordDeviceIdentifier:) NSString *recordDeviceIdentifier; // @synthesize recordDeviceIdentifier=_recordDeviceIdentifier;
 @property(retain, nonatomic, setter=_setRecordDeviceUID:) NSUUID *recordDeviceUID; // @synthesize recordDeviceUID=_recordDeviceUID;
 @property(copy, nonatomic, setter=_setRecordRoute:) NSString *recordRoute; // @synthesize recordRoute=_recordRoute;
 @property(retain, nonatomic, setter=_setAirPlayRouteIds:) NSArray *airPlayRouteIds; // @synthesize airPlayRouteIds=_airPlayRouteIds;
@@ -72,6 +74,7 @@
 @property(readonly, nonatomic) NSDictionary *_JSONDictionaryRepresentation;
 - (BOOL)isGenericIntent;
 @property(copy) NSDictionary *parametersByName;
+@property(copy, nonatomic, setter=_setParametersForcedToNeedsValue:) NSArray *_parametersForcedToNeedsValue;
 @property(copy) NSString *verb;
 @property(copy) NSString *domain;
 - (id)initWithDomain:(id)arg1 verb:(id)arg2 parametersByName:(id)arg3;
@@ -131,7 +134,7 @@
 @property(readonly, nonatomic) NSString *_categoryVerb;
 - (void)_setIntentCategory:(long long)arg1;
 @property(readonly, nonatomic) long long _intentCategory;
-- (id)_defaultImageNameWithSchema:(id)arg1;
+- (id)_defaultImageName;
 @property(readonly, nonatomic) NSString *intentId;
 @property(readonly, nonatomic) NSString *utteranceString;
 @property(retain, nonatomic, setter=_setMetadata:) _INPBIntentMetadata *_metadata;

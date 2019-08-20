@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double actionBorderWidth; // @synthesize actionBorderWidth=_actionBorderWidth;
 @property(nonatomic) double actionLabelOffset; // @synthesize actionLabelOffset=_actionLabelOffset;
 @property(nonatomic) double actionPlatterSize; // @synthesize actionPlatterSize=_actionPlatterSize;
-@property(readonly, nonatomic) id <CNStarkActionViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <CNStarkActionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;

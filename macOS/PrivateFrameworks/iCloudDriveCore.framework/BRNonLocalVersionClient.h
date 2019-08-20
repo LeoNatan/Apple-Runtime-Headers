@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)serviceName;
 - (void).cxx_destruct;
 - (void)resolveConflictWithName:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)listNonLocalVersionsWithReply:(CDUnknownBlockType)arg1;
+- (void)listNonLocalVersionsIncludingCached:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)initWithConnection:(id)arg1 itemIdentifier:(id)arg2;
 
 // Remaining properties

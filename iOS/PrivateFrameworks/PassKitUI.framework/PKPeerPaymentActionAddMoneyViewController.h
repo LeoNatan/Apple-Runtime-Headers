@@ -19,6 +19,8 @@
     PKNumberPadSuggestionsView *_suggestionView;
     UIScrollView *_scrollView;
     PKEnterCurrencyAmountPassView *_amountPassView;
+    _Bool _keyboardVisible;
+    struct CGRect _keyboardFrame;
 }
 
 - (void).cxx_destruct;
@@ -40,6 +42,10 @@
 - (_Bool)enterCurrencyAmountView:(id)arg1 shouldChangeAmountFrom:(id)arg2 to:(id)arg3;
 - (void)numberPadSuggestionsView:(id)arg1 didSelectSuggestion:(id)arg2;
 - (void)enterCurrencyAmountPassViewDidLoadPassSnapshot:(id)arg1;
+- (void)_updateLayoutForKeyboardAction:(CDUnknownBlockType)arg1;
+- (void)keyboardWillHide:(id)arg1;
+- (void)keyboardWillChange:(id)arg1;
+- (void)keyboardWillShow:(id)arg1;
 - (void)updateAccountValues;
 - (void)updateFirstResponder;
 - (void)willDismissViewController;

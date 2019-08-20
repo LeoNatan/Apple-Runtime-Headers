@@ -24,6 +24,7 @@
 - (void)assetResourceRequestDidFinish:(id)arg1;
 - (void)assetResourceRequest:(id)arg1 didFindFileURL:(id)arg2;
 - (int)_nextRequestID;
+- (void)_autoResolveReferencedResources:(id)arg1 folderURL:(id)arg2 resourceClient:(id)arg3;
 - (id)reconnectAssets:(id)arg1 urlResolvingHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)consolidateAssets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)infoForRequest:(int)arg1;

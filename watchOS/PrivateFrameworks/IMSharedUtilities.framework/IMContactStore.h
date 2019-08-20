@@ -26,6 +26,7 @@
 + (id)validateAndFilterIDsForContactsBatchFetch:(id)arg1;
 + (id)descriptionForCNContact:(id)arg1;
 + (_Bool)isCNContactAKnownContact:(id)arg1;
++ (id)dialingForCurrentLocale;
 + (id)dialingCodeForID:(id)arg1;
 + (_Bool)isContactsCachingEnabled;
 + (_Bool)isContactsBatchingEnabled;
@@ -43,6 +44,7 @@
 + (id)abbreviatedNameForCNContact:(id)arg1;
 + (id)nickNameForCNContact:(id)arg1;
 + (id)companyNameForCNContact:(id)arg1;
++ (id)_stringFromContact:(id)arg1 withStyle:(int)arg2;
 + (id)fullNameForCNContact:(id)arg1;
 + (id)lastNameForCNContact:(id)arg1;
 + (id)firstNameForCNContact:(id)arg1;

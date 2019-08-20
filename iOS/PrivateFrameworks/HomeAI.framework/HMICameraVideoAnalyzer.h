@@ -36,6 +36,7 @@
 
 + (id)logCategory;
 + (id)queryVersionInformation;
++ (long long)confidenceThatEventOccurred:(long long)arg1 events:(long long)arg2 annotationScores:(id)arg3;
 @property(getter=shouldSaveVideoFramesToDisk) _Bool saveVideoFramesToDisk; // @synthesize saveVideoFramesToDisk=_saveVideoFramesToDisk;
 @property(readonly, getter=shouldUploadVideoAnalysisEvent) _Bool uploadVideoAnalysisEvent; // @synthesize uploadVideoAnalysisEvent=_uploadVideoAnalysisEvent;
 @property _Bool sessionEnded; // @synthesize sessionEnded=_sessionEnded;
@@ -61,7 +62,7 @@
 - (id)logIdentifier;
 - (long long)_resetFrameEvents:(long long)arg1;
 - (_Bool)_saveVideoFrame:(id)arg1 videoFragment:(id)arg2 error:(id *)arg3;
-- (_Bool)_analyzeVideoFrame:(id)arg1 request:(id)arg2 error:(id *)arg3 events:(long long *)arg4;
+- (_Bool)_analyzeVideoFrame:(id)arg1 request:(id)arg2 result:(id *)arg3 error:(id *)arg4;
 - (id)_analyzeFrame:(id)arg1 error:(id *)arg2;
 - (_Bool)_analyzeRequestFrames:(id)arg1;
 - (void)_analyzeRequestFramesLocally:(id)arg1;
@@ -69,7 +70,7 @@
 - (void)_skipPendingRequests;
 - (void)_failPendingRequests;
 - (void)_enterErrorState;
-- (void)_requestDidEnd:(id)arg1;
+- (void)_requestDidEnd:(id)arg1 outcome:(long long)arg2;
 - (void)_handleError:(long long)arg1 request:(id)arg2 description:(id)arg3 underlyingError:(id)arg4;
 - (void)_handleError:(long long)arg1 request:(id)arg2 underlyingError:(id)arg3;
 - (void)_handleError:(long long)arg1 request:(id)arg2 description:(id)arg3;

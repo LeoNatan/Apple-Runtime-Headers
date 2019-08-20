@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     BOOL _supportsShadowAndGrabber;
     UIView *_contentView;
     UIView *_overlayView;
+    double _rimTreatmentAlpha;
     long long _independentCorners;
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long independentCorners; // @synthesize independentCorners=_independentCorners;
 @property(readonly, nonatomic) BOOL supportsShadowAndGrabber; // @synthesize supportsShadowAndGrabber=_supportsShadowAndGrabber;
 @property(nonatomic) BOOL masksTopCornersOnly; // @synthesize masksTopCornersOnly=_masksTopCornersOnly;
+@property(nonatomic) double rimTreatmentAlpha; // @synthesize rimTreatmentAlpha=_rimTreatmentAlpha;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct UIRectCornerRadii environmentMatchingCornerRadii; // @synthesize environmentMatchingCornerRadii=_environmentMatchingCornerRadii;
@@ -53,11 +55,12 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setGrabberAlpha:(double)arg1;
 @property(readonly, nonatomic) UIView *deepestClippingView;
+- (void)_updateRimTreatmentAlpha;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)_updateRimTreatment;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(BOOL)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(BOOL)arg3 stylesSheetsAsCards:(BOOL)arg4;
 
 @end
 

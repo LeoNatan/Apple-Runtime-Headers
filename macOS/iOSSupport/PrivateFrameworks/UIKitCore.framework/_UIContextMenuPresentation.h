@@ -6,7 +6,7 @@
 
 #import <UIKitCore/_UIClickPresentation.h>
 
-@class UIView, _UIPlatterView;
+@class UIView, UIWindow, _UIPlatterView;
 
 __attribute__((visibility("hidden")))
 @interface _UIContextMenuPresentation : _UIClickPresentation
@@ -15,8 +15,14 @@ __attribute__((visibility("hidden")))
     UIView *_dragContainer;
     _UIPlatterView *_destinationPlatterView;
     CDUnknownBlockType _postDismissItemUpdate;
+    CDUnknownBlockType _postDismissCleanUp;
+    UIView *_dragAnimationPortalView;
+    UIWindow *_dragAnimationWindow;
 }
 
+@property(retain, nonatomic) UIWindow *dragAnimationWindow; // @synthesize dragAnimationWindow=_dragAnimationWindow;
+@property(retain, nonatomic) UIView *dragAnimationPortalView; // @synthesize dragAnimationPortalView=_dragAnimationPortalView;
+@property(copy, nonatomic) CDUnknownBlockType postDismissCleanUp; // @synthesize postDismissCleanUp=_postDismissCleanUp;
 @property(copy, nonatomic) CDUnknownBlockType postDismissItemUpdate; // @synthesize postDismissItemUpdate=_postDismissItemUpdate;
 @property(retain, nonatomic) _UIPlatterView *destinationPlatterView; // @synthesize destinationPlatterView=_destinationPlatterView;
 @property(retain, nonatomic) UIView *dragContainer; // @synthesize dragContainer=_dragContainer;

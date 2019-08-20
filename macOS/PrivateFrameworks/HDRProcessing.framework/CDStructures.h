@@ -325,6 +325,7 @@ struct SourceToRGB_t {
 struct ToneCurve_Control {
     double targetMaxLinear;
     double targetMinLinear;
+    float diffuseInNits;
     float maxEDRValue;
     float EDRFactor;
     float AmbientLight;
@@ -360,6 +361,7 @@ struct _HDR10AuxData {
     unsigned int tm_preset;
     int tm_mode;
     int tm_curve_type;
+    int edr_adaptation_mode;
     float EDRFactor;
     float maxEDRValue;
     int amb_adaptation_mode;
@@ -838,7 +840,7 @@ typedef struct {
     struct ToneCurve_Control tcControl;
     CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_f41792b7;
+} CDStruct_c9a15302;
 
 typedef struct {
     int version;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     CDStruct_83abfce7 _bluetoothAddress48;
     NSData *_bluetoothAddressData;
     CUBluetoothClient *_bluetoothClient;
+    int _familyBuddyToken;
     _Bool _familyFailed;
     NSArray *_familyMembers;
     _Bool _familyObserving;

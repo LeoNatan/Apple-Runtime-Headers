@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MPModelForYouRecommendationsResponse *forYouResponse; // @synthesize forYouResponse=_forYouResponse;
 - (void).cxx_destruct;
 - (void)_processResponsesIfNeeded;
-@property(readonly, nonatomic) NMSMutableMediaSyncInfo *containerItemMappings;
+@property(readonly, nonatomic) NMSMutableMediaSyncInfo *importedStoreContainerItemMappings;
 @property(readonly, nonatomic) NSOrderedSet *recommendations;
 @property(readonly, nonatomic) NSSet *modelObjects;
 @property(readonly, nonatomic) unsigned int minimumNumberOfHeavyRotationModelObjects;

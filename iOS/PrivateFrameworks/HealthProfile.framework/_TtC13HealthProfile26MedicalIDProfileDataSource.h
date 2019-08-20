@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: medicalIDViewController
     // Error parsing type: , name: parentViewController
     // Error parsing type: , name: tableViewCell
+    // Error parsing type: , name: title
 }
 
 - (void).cxx_destruct;

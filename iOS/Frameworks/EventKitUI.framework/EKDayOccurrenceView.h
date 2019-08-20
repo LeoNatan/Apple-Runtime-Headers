@@ -59,6 +59,7 @@
     EKDayOccurrenceView *_selectedCopy;
     EKEvent *_occurrence;
     double _travelTimeSubviewHeightInPoints;
+    long long _birthdayCount;
     double _cappedColorBarHeight;
     double _travelTime;
     long long _occurrenceBackgroundStyle;
@@ -102,6 +103,7 @@
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isDeclined) _Bool declined; // @synthesize declined=_declined;
 @property(nonatomic, getter=isTentative) _Bool tentative; // @synthesize tentative=_tentative;
+@property(nonatomic) long long birthdayCount; // @synthesize birthdayCount=_birthdayCount;
 @property(nonatomic) _Bool isProposedTime; // @synthesize isProposedTime=_isProposedTime;
 @property(nonatomic) double travelTimeSubviewHeightInPoints; // @synthesize travelTimeSubviewHeightInPoints=_travelTimeSubviewHeightInPoints;
 @property(nonatomic) _Bool isSelectedCopyView; // @synthesize isSelectedCopyView=_isSelectedCopyView;

@@ -29,6 +29,7 @@
     double _scale;
     NSNumber *_tilesPerFrame;
     long long _transport;
+    NSNumber *_dataLink;
     NSNumber *_txMinBitrate;
     NSNumber *_txMaxBitrate;
     struct CGSize _size;
@@ -37,6 +38,7 @@
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSNumber *txMaxBitrate; // @synthesize txMaxBitrate=_txMaxBitrate;
 @property(retain, nonatomic) NSNumber *txMinBitrate; // @synthesize txMinBitrate=_txMinBitrate;
+@property(retain, nonatomic) NSNumber *dataLink; // @synthesize dataLink=_dataLink;
 @property(nonatomic) long long transport; // @synthesize transport=_transport;
 @property(retain, nonatomic) NSNumber *tilesPerFrame; // @synthesize tilesPerFrame=_tilesPerFrame;
 @property(nonatomic) double scale; // @synthesize scale=_scale;

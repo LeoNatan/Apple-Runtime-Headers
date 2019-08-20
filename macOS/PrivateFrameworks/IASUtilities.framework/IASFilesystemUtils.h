@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)firmlinksOnTargetGivenPath:(id)arg1 redirectDataToSystem:(BOOL)arg2 isAppleInternal:(BOOL)arg3;
++ (id)firmlinksOnTargetGivenPath:(id)arg1 isAppleInternal:(BOOL)arg2 requireTargetInSystemVolumeGroup:(BOOL)arg3 withOutSyntheticSymlinks:(id *)arg4;
 + (BOOL)isAPFSDataVolumeRoleGivenDiskIdentifier:(id)arg1;
 + (BOOL)isAPFSSystemVolumeRoleGivenDiskIdentifier:(id)arg1;
 + (id)volumePathGivenPath:(id)arg1;

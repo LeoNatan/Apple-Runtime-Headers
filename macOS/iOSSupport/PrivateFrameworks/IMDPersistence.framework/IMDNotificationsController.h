@@ -63,6 +63,8 @@
 - (void)_setUpSuggestionService;
 - (id)_displayNameForHandle:(struct _IMDHandleRecordStruct *)arg1 andContact:(id)arg2;
 - (BOOL)_handleIsWhitelisted:(struct _IMDHandleRecordStruct *)arg1;
+- (void)_setMessagesSpokenWhitelistLevelInPreferences:(unsigned long long)arg1;
+- (unsigned long long)_getMessagesSpokenWhitelistLevelFromPreferences;
 - (unsigned long long)_getMessagesSpokenWhitelistLevel;
 - (BOOL)_messageIsFromFavorite:(id)arg1;
 - (id)_lastMessageTimeForChat:(struct _IMDChatRecordStruct **)arg1;
@@ -71,7 +73,6 @@
 - (BOOL)_shouldUseOriginalURLForUTIType:(id)arg1;
 - (id)_previewFileURLForTransferURL:(id)arg1;
 - (void)_isMostActiveDeviceWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_populateIgnoreDownTime:(id)arg1 messageDictionary:(id)arg2 downtimeEnabled:(BOOL)arg3;
 - (BOOL)_messageShouldBeSpoken:(id)arg1 chatDictionary:(id)arg2 isMostActive:(BOOL)arg3;
 -     // Error parsing type: v40@0:8@16@24^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}32, name: _populateAttachmentsForNotificationContent:messageDictionary:messageRecord:
 - (void)_populateNotificationCategoryContent:(id)arg1 messageDictionary:(id)arg2;

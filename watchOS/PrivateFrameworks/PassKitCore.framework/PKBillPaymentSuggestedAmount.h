@@ -14,10 +14,12 @@
     NSString *_message;
     unsigned int _category;
     NSDecimalNumber *_amount;
+    int _priority;
     int _merchantCategory;
 }
 
 @property(nonatomic) int merchantCategory; // @synthesize merchantCategory=_merchantCategory;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(nonatomic) unsigned int category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;

@@ -34,9 +34,9 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2 toClients:(id)arg3;
-- (void)_handleMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
-- (void)_clientDidDisconnect:(id)arg1;
-- (void)_clientDidConnect:(id)arg1 withMessage:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)queue_handleMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
+- (void)queue_clientDidDisconnect:(id)arg1;
+- (_Bool)queue_clientDidConnect:(id)arg1 withMessage:(id)arg2;
 @property(readonly, nonatomic) NSSet *_prerequisiteMilestones;
 @property(readonly, nonatomic) NSSet *clients;
 - (void)invalidate;

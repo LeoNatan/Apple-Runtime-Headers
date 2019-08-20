@@ -21,9 +21,10 @@
 @property(retain, nonatomic) WFRemoteServerPermissionState *stateForRequestedURLs; // @synthesize stateForRequestedURLs=_stateForRequestedURLs;
 @property(copy, nonatomic) NSArray *requestedURLs; // @synthesize requestedURLs=_requestedURLs;
 - (void).cxx_destruct;
-- (id)localizedInsufficientPermissionsMessage;
-- (id)localizedAccessPermissionPromptMessage;
-- (id)localizedAccessPermissionPromptTitle;
+- (id)localizedWorkflowLevelDeniedStatusMessage;
+- (id)localizedWorkflowLevelNotDeterminedStatusMessage;
+- (id)localizedWorkflowLevelMessageTemplate;
+- (id)localizedWorkflowLevelPromptTemplate;
 - (id)updatedPermissionStateForPermissionGranted:(_Bool)arg1 overridingPreviouslyDeterminedAuthorizations:(_Bool)arg2;
 - (unsigned long long)workflowLevelStatus;
 - (void)setCurrentPermissionState:(id)arg1;

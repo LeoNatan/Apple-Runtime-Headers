@@ -17,6 +17,7 @@
     unsigned long long _maxSubAttachmentsPerAttachment;
     unsigned long long _resultsLimitPerSyncOperation;
     NSNumber *_maximumAttachmentSizeMB;
+    NSNumber *_backgroundFetchTimeInterval;
     NSString *_minimumClientVersion;
     NSTimer *_downloadTimer;
 }
@@ -29,6 +30,7 @@
 + (id)sharedConfiguration;
 @property(retain, nonatomic) NSTimer *downloadTimer; // @synthesize downloadTimer=_downloadTimer;
 @property(copy, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
+@property(retain, nonatomic) NSNumber *backgroundFetchTimeInterval; // @synthesize backgroundFetchTimeInterval=_backgroundFetchTimeInterval;
 @property(retain, nonatomic) NSNumber *maximumAttachmentSizeMB; // @synthesize maximumAttachmentSizeMB=_maximumAttachmentSizeMB;
 @property(nonatomic) unsigned long long resultsLimitPerSyncOperation; // @synthesize resultsLimitPerSyncOperation=_resultsLimitPerSyncOperation;
 @property(nonatomic) unsigned long long maxSubAttachmentsPerAttachment; // @synthesize maxSubAttachmentsPerAttachment=_maxSubAttachmentsPerAttachment;

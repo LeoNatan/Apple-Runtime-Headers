@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDictionary *contextData; // @synthesize contextData=_contextData;
 @property(retain, nonatomic) NSString *commerceActionRef; // @synthesize commerceActionRef=_commerceActionRef;
 - (void).cxx_destruct;
+- (void)_recordLog:(id)arg1 withBuyParams:(id)arg2;
 - (void)_displayConfirmationForChannelName:(id)arg1;
 - (void)_postSubscriptionNotificationWithChannelName:(id)arg1 buyParams:(id)arg2 error:(id)arg3;
 - (void)_postPurchaseNotification:(id)arg1 error:(id)arg2;

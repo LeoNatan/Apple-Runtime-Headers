@@ -37,6 +37,7 @@
     _Bool _selectionContainsLink;
     _Bool _isFinishing;
     _Bool _originalAttachmentsWereRestored;
+    _Bool _attachmentDataMissingAlertDisplayed;
     id <MFComposeWebViewDelegate> _composeWebViewDelegate;
     id <_WKFormInputSession> _inputSession;
 }
@@ -118,7 +119,7 @@
 - (void)insertPhotoOrVideoWithAssetIdentifier:(id)arg1 infoDictionary:(id)arg2;
 - (id)_addInlineAttachmentWithData:(id)arg1 fileName:(id)arg2 type:(id)arg3;
 - (void)insertDocumentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
-- (void)_replacePlaceholderWithAttachment:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
+- (void)_replaceFilenamePlaceholderWithAttachment:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 - (void)showOriginalAttachments;
 - (void)setOriginalAttachmentInfo:(id)arg1;
 - (void)insertDocumentWithURL:(id)arg1 isDrawingFile:(_Bool)arg2;

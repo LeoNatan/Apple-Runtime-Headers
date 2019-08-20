@@ -12,7 +12,7 @@
 #import <UIKitCore/_UIViewInternalDraggingSourceDelegate-Protocol.h>
 
 @class NSArray, NSString, UIDragInteractionContextImpl, UIView, _UIDragAddItemsGesture, _UIDragSessionImpl, _UIDragSharingGestureRecognizer;
-@protocol UIDragInteractionDelegate, UIDragInteractionEffect, _UIDragInteractionCancellationPreviewDelegate, _UIDragInteractionDriving;
+@protocol UIDragInteractionDelegate, UIDragInteractionEffect, _UIDragInteractionDriving, _UIDragInteractionPresentationDelegate;
 
 @interface UIDragInteraction : NSObject <UIGestureRecognizerDelegate, _UIViewInternalDraggingSourceDelegate, _UIDragInteractionDriverDelegate, UIInteraction>
 {
@@ -34,7 +34,7 @@
     id <UIDragInteractionDelegate> _delegate;
     UIView *_view;
     id <_UIDragInteractionDriving> _initiationDriver;
-    id <_UIDragInteractionCancellationPreviewDelegate> _cancellationPreviewDelegate;
+    id <_UIDragInteractionPresentationDelegate> _presentationDelegate;
     id <UIDragInteractionEffect> _interactionEffect;
     double _liftDelay;
     double _cancellationDelay;
@@ -59,7 +59,7 @@
 @property(nonatomic, getter=_isCancellationTimerEnabled, setter=_setCancellationTimerEnabled:) BOOL cancellationTimerEnabled; // @synthesize cancellationTimerEnabled=_cancellationTimerEnabled;
 @property(nonatomic, getter=_liftDelay, setter=_setLiftDelay:) double liftDelay; // @synthesize liftDelay=_liftDelay;
 @property(retain, nonatomic) id <UIDragInteractionEffect> interactionEffect; // @synthesize interactionEffect=_interactionEffect;
-@property(nonatomic, getter=_cancellationPreviewDelegate, setter=_setCancellationPreviewDelegate:) __weak id <_UIDragInteractionCancellationPreviewDelegate> cancellationPreviewDelegate; // @synthesize cancellationPreviewDelegate=_cancellationPreviewDelegate;
+@property(nonatomic, getter=_presentationDelegate, setter=_setPresentationDelegate:) __weak id <_UIDragInteractionPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(retain, nonatomic, getter=_initiationDriver, setter=_setInitiationDriver:) id <_UIDragInteractionDriving> initiationDriver; // @synthesize initiationDriver=_initiationDriver;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) BOOL allowsSimultaneousRecognitionDuringLift; // @synthesize allowsSimultaneousRecognitionDuringLift=_allowsSimultaneousRecognitionDuringLift;

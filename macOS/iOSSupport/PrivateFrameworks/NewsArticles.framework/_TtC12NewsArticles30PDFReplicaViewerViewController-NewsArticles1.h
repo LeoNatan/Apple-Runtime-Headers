@@ -9,6 +9,7 @@
 @class NSArray;
 
 @interface _TtC12NewsArticles30PDFReplicaViewerViewController (NewsArticles1)
+- (void)showTableOfContentsKeyCommand;
 - (void)closeIssueKeyCommand;
 - (void)nextPageKeyCommand;
 - (void)previousPageKeyCommand;

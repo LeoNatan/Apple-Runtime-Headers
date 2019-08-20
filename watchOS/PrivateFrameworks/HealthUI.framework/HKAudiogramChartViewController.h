@@ -64,6 +64,7 @@
 - (id)_primaryLineColor;
 - (id)_averageLineColor;
 - (id)_accessibleColorFromColor:(id)arg1;
+- (id)_audiogramDisplayType;
 - (id)_indexPathForCurrentSelections;
 - (id)_rightEarSensitivityForAudiogram:(id)arg1;
 - (id)_leftEarSensitivityForAudiogram:(id)arg1;
@@ -97,6 +98,9 @@
 - (void)_resetCurrentGraph;
 - (void)contextView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)contextView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (id)_numberFromSensitivity:(id)arg1;
+- (id)_currentValueTitleStringFromSample:(id)arg1;
+- (id)_currentValueValueStringFromSample:(id)arg1;
 - (void)_updateHeaderState;
 - (void)_updateOverlayPillsAndHeaderWithSample:(id)arg1;
 - (id)_buildAnnotationViewDataSourceWithUnitController:(id)arg1;

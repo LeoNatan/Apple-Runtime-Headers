@@ -55,6 +55,7 @@
 - (_Bool)_isTransitionVisibleTo:(id)arg1;
 - (_Bool)_isEquivalentTo:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)isSizeEqualForPreferredFittingAttributes:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) struct CGAffineTransform transform;
 @property(nonatomic) struct CGRect frame;

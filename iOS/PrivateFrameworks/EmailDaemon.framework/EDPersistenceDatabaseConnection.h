@@ -38,6 +38,7 @@
 - (_Bool)detachProtectedDatabase;
 - (_Bool)attachProtectedDatabaseWithName:(id)arg1;
 - (_Bool)attachProtectedDatabaseWithName:(id)arg1 error:(id *)arg2;
+- (_Bool)attachProtectedDatabaseWithName:(id)arg1 url:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) _Bool journalDatabaseAttached;
 @property(readonly, nonatomic) _Bool protectedDatabaseAttached;
 - (_Bool)columnExists:(id)arg1 inTable:(id)arg2 database:(id)arg3 type:(unsigned long long *)arg4;
@@ -47,12 +48,16 @@
 - (_Bool)databaseIsAttached:(id)arg1;
 - (long long)_adjustedDatabaseTypeForType:(long long)arg1;
 - (id)_databasePathForFileName:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *protectedDatabasePath;
 @property(readonly, nonatomic) NSString *fullPath;
 - (void)_fixFilePermissionForPath:(const char *)arg1;
 - (void)handleSQLResult:(int)arg1 message:(id)arg2;
 - (void)handleError:(id)arg1 message:(id)arg2;
 - (_Bool)checkForConnectionErrorWithMessage:(id)arg1;
 - (long long)transactionTypeForWriting;
+@property(readonly, nonatomic) long long transactionGeneration;
+- (_Bool)_storeTransactionWriteGenerationWithSQLConnection:(id)arg1 newGeneration:(long long)arg2;
+- (_Bool)_fetchTransactionWriteGenerationWithSQLConnection:(id)arg1 newGeneration:(long long *)arg2;
 - (_Bool)_finishTransactionWithSQLConnection:(id)arg1 afterSuccess:(_Bool)arg2 transactionError:(id *)arg3;
 - (_Bool)_startTransactionWithSQLConnection:(id)arg1 forWriting:(_Bool)arg2;
 - (_Bool)performUsingTransaction:(_Bool)arg1 isWriter:(_Bool)arg2 transactionError:(id *)arg3 block:(CDUnknownBlockType)arg4;

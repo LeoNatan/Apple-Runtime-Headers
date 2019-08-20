@@ -21,8 +21,10 @@
 - (void)removeAllFences;
 - (id)fences;
 - (void)enumerateLayoutsForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateDescendantsLayoutsUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)numberOfSprites;
 - (struct CGSize)contentSize;
+- (struct CGSize)referenceSize;
 - (struct CGRect)visibleRect;
 - (id)initWithAnimator:(id)arg1;
 - (id)init;

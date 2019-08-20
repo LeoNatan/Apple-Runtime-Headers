@@ -13,8 +13,11 @@
 - (void).cxx_destruct;
 - (id)initForStoreWithDescription:(id)arg1 model:(id)arg2;
 - (id)attributeSetForObject:(id)arg1;
+- (id)protectionClass;
 - (id)indexName;
 - (id)domainIdentifier;
+- (id)bundleIdentifier;
+- (_Bool)usePrivateIndex;
 
 @end
 

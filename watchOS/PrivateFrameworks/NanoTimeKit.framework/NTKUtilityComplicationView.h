@@ -21,6 +21,8 @@
     NSDate *_timeTravelDate;
     UIColor *_computedForegroundColor;
     UIColor *_computedPlatterColor;
+    float _computedForegroundAlpha;
+    float _computedForegroundImageAlpha;
     _Bool _canUseCurvedText;
     _Bool _shouldUseBackgroundPlatter;
     _Bool _alwaysEnforcePlatterInset;
@@ -122,6 +124,10 @@
 - (void)_applyColorScheme:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
 - (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
+- (void)_updateForegroundImageAlpha;
+- (void)_computeForegroundImageAlpha;
+- (void)_computeForegroundAlpha;
+- (void)_updateForegroundAlpha;
 @property(nonatomic) float foregroundAlpha; // @synthesize foregroundAlpha=_foregroundAlpha;
 - (id)_computedPlatterColor;
 - (void)_computePlatterColor;

@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMBModel, NSData, NSUUID;
+@class HMBModel, NSData, NSDictionary, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface HMBLocalZoneProcessTuple : HMFObject
@@ -15,22 +15,22 @@ __attribute__((visibility("hidden")))
     HMBModel *_update;
     unsigned long long _recordRow;
     unsigned long long _itemRow;
-    NSUUID *_modelID;
     NSData *_externalID;
     NSData *_externalData;
     NSUUID *_modelSchema;
+    NSDictionary *_encodedQueryableProperties;
 }
 
+@property(readonly, nonatomic) NSDictionary *encodedQueryableProperties; // @synthesize encodedQueryableProperties=_encodedQueryableProperties;
 @property(readonly, nonatomic) NSUUID *modelSchema; // @synthesize modelSchema=_modelSchema;
 @property(readonly, nonatomic) NSData *externalData; // @synthesize externalData=_externalData;
 @property(readonly, nonatomic) NSData *externalID; // @synthesize externalID=_externalID;
-@property(readonly, nonatomic) NSUUID *modelID; // @synthesize modelID=_modelID;
 @property(nonatomic) unsigned long long itemRow; // @synthesize itemRow=_itemRow;
 @property(nonatomic) unsigned long long recordRow; // @synthesize recordRow=_recordRow;
 @property(readonly, nonatomic) HMBModel *update; // @synthesize update=_update;
 @property(readonly, nonatomic) HMBModel *previous; // @synthesize previous=_previous;
 - (void).cxx_destruct;
-- (id)initWithPrevious:(id)arg1 update:(id)arg2 recordRow:(unsigned long long)arg3 itemRow:(unsigned long long)arg4 modelID:(id)arg5 modelSchema:(id)arg6 externalID:(id)arg7 externalData:(id)arg8;
+- (id)initWithPrevious:(id)arg1 update:(id)arg2 recordRow:(unsigned long long)arg3 itemRow:(unsigned long long)arg4 modelSchema:(id)arg5 externalID:(id)arg6 externalData:(id)arg7;
 
 @end
 

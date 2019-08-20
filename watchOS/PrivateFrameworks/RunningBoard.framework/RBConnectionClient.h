@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     RBSProcessHandle *_processHandle;
     RBSProcessIdentity *_processIdentity;
     RBSProcessIdentifier *_processIdentifier;
+    unsigned int _euid;
     RBClientInheritanceManager *_inheritanceManager;
     id <RBEntitlementPossessing> _entitlements;
     NSMutableSet *_assertionIdentifiers;

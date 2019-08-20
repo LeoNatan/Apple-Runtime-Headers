@@ -63,6 +63,7 @@
 - (id)abConstraintPlistPath;
 - (_Bool)abCloseDBAndSave:(_Bool)arg1;
 - (_Bool)abSaveDB;
+- (void)abValidateDefaultSource;
 - (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
 - (void)abOpenDBAsGenericClient;

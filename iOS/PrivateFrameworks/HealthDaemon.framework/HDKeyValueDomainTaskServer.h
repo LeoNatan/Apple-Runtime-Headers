@@ -15,9 +15,8 @@
     HDKeyValueDomain *_keyValueDomain;
 }
 
-+ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 client:(id)arg2 error:(id *)arg3;
 + (Class)configurationClass;
-+ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4 error:(id *)arg5;
 + (id)_entitlementForCategory:(long long)arg1;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;

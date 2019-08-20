@@ -68,7 +68,7 @@
 - (void)_setServiceState:(unsigned int)arg1;
 - (unsigned int)_getServiceStateAlreadyLocked;
 - (unsigned int)_getServiceState;
-- (void)invalidateLibrary:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)invalidateLibraryBundle:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_shutdown;
 - (void)_simulateXPCShouldDefer;
 - (id)_getBundlePathsToProcess;

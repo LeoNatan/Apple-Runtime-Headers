@@ -17,10 +17,12 @@
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     long long _context;
     _Bool _isForWatch;
+    _Bool _upgradeRequiredToAddNewPass;
     CDUnknownBlockType _continuationHandler;
     CDUnknownBlockType _dismissalHandler;
 }
 
+@property(nonatomic) _Bool upgradeRequiredToAddNewPass; // @synthesize upgradeRequiredToAddNewPass=_upgradeRequiredToAddNewPass;
 @property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
 @property(copy, nonatomic) CDUnknownBlockType continuationHandler; // @synthesize continuationHandler=_continuationHandler;
 - (void).cxx_destruct;

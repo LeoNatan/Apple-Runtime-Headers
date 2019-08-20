@@ -8,6 +8,7 @@
 
 @interface UIButton (_HKElectrocardiogramInfoView)
 + (id)_hkecg_detailButton;
++ (id)imageWithFillColor:(id)arg1;
 + (id)hk_multiLineLowContrastRoundRectButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (id)hk_multiLineRoundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)hk_roundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;

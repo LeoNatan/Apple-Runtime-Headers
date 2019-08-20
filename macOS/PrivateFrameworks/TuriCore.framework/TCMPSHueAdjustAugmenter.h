@@ -14,14 +14,11 @@ __attribute__((visibility("hidden")))
 @interface TCMPSHueAdjustAugmenter : NSObject <TCMPSImageAugmenting>
 {
     double _maxHueAdjust;
-    CDUnknownBlockType _random;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType random; // @synthesize random=_random;
 @property(nonatomic) double maxHueAdjust; // @synthesize maxHueAdjust=_maxHueAdjust;
-- (void).cxx_destruct;
-- (id)imageAugmentedFromImage:(id)arg1;
-- (id)initWithRNG:(CDUnknownBlockType)arg1;
+- (id)imageAugmentedFromImage:(id)arg1 generator:(CDUnknownBlockType)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

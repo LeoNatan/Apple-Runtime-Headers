@@ -50,7 +50,7 @@
 - (oneway void)requestStateUpdateWithReply:(void (^)(_Bool, unsigned int))arg1;
 - (oneway void)stopSpeechWithOptions:(AFSpeechRequestOptions *)arg1;
 - (oneway void)rollbackRequest;
-- (oneway void)cancelRequest;
+- (oneway void)cancelRequestForReason:(int)arg1;
 - (oneway void)updateSpeechOptions:(AFSpeechRequestOptions *)arg1;
 - (oneway void)continuePendingSpeechRequestWithId:(unsigned int)arg1 fromTimestamp:(double)arg2;
 - (oneway void)startAcousticIDRequestWithOptions:(AFSpeechRequestOptions *)arg1 context:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
@@ -65,7 +65,7 @@
 - (oneway void)setLockState:(_Bool)arg1 showingLockScreen:(_Bool)arg2;
 - (oneway void)resumeInterruptedAudioPlaybackIfNeeded;
 - (oneway void)forceAudioSessionInactiveWithOptions:(unsigned int)arg1 completion:(void (^)(void))arg2;
-- (oneway void)forceAudioSessionActiveWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(void (^)(unsigned int, NSError *))arg3;
+- (oneway void)forceAudioSessionActiveWithOptions:(unsigned int)arg1 reason:(int)arg2 speechRequestOptions:(AFSpeechRequestOptions *)arg3 completion:(void (^)(unsigned int, NSError *))arg4;
 - (oneway void)boostedPreheatWithStyle:(int)arg1 completion:(void (^)(void))arg2;
 - (oneway void)preheatWithStyle:(int)arg1 forOptions:(AFSpeechRequestOptions *)arg2;
 @end

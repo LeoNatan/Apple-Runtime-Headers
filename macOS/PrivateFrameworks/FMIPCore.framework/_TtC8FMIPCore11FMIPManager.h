@@ -15,7 +15,9 @@
     // Error parsing type: , name: garbageCollector
     // Error parsing type: , name: serverInteractionController
     // Error parsing type: , name: actionsController
+    // Error parsing type: , name: trackingAvoidance
     // Error parsing type: , name: ownerSession
+    // Error parsing type: , name: ownerInterface
     // Error parsing type: , name: beaconManager
     // Error parsing type: , name: urlHandler
     // Error parsing type: , name: isUpdatingSingleDevices

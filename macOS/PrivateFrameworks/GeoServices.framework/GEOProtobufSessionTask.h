@@ -39,6 +39,7 @@
 @property(readonly, nonatomic) Class responseClass; // @synthesize responseClass=_responseClass;
 @property(readonly, nonatomic) unsigned long long taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL receivedRNFNotification;
 @property(readonly, nonatomic) BOOL mptcpNegotiated;
 @property(readonly, nonatomic) unsigned long long requestedMultipathServiceType;
 @property(readonly, nonatomic) GEOClientMetrics *clientMetrics;

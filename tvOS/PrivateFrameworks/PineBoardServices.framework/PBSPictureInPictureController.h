@@ -35,6 +35,7 @@
 - (void)pictureInPictureService:(id)arg1 didSendPlaybackCommand:(unsigned long long)arg2;
 - (void)pictureInPictureService:(id)arg1 didRequestMute:(_Bool)arg2;
 - (void)pictureInPictureServiceDidUpdateState:(id)arg1;
+- (void)setPictureInPictureAvoidanceInsets:(id)arg1 usingIdentifier:(id)arg2;
 - (void)applyPictureInPictureInsetsValue:(id)arg1 fromSource:(id)arg2 withAnimationSettings:(id)arg3 usingAnimationFence:(id)arg4;
 - (void)mutePictureInPicture:(_Bool)arg1;
 - (void)removeObserver:(id)arg1;

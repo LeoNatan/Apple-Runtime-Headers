@@ -24,6 +24,7 @@
     BOOL _hasAuto;
     PADescriptionEditController *_observedDescriptionEditController;
     PACropModelEditor *_modelEditor;
+    BOOL _didBeginEditing;
     BOOL _isActive;
     BOOL _isCurrent;
     PAImageItemViewController *_viewController;
@@ -107,6 +108,7 @@
 - (void)willExit;
 - (void)imageViewFrameDidChange;
 - (void)_imageViewFrameDidChange:(id)arg1;
+- (void)_handleBeginEditing;
 - (void)_enter;
 - (void)didEnter;
 - (id)cropConfigurationToLoad;

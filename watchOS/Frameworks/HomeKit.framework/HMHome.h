@@ -23,7 +23,6 @@
     HMFUnfairLock *_lock;
     _Bool _primary;
     _Bool _notificationsEnabled;
-    _Bool _supportsNetworkProtection;
     _Bool _multiUserEnabled;
     _Bool _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     _Bool _ownerUser;
@@ -39,6 +38,8 @@
     HMCameraClipCollectionManager *_cameraClipCollectionManager;
     int _protectionMode;
     int _homeLocationStatus;
+    unsigned int _networkRouterSupport;
+    unsigned int _networkRouterSupportDisableReason;
     unsigned int _homeHubState;
     HMSetupViewController *_setupViewController;
     id <HMSetupRemoteService> _setupRemoteViewController;
@@ -88,8 +89,9 @@
 @property(nonatomic) __weak id <HMSetupRemoteService> setupRemoteViewController; // @synthesize setupRemoteViewController=_setupRemoteViewController;
 @property(nonatomic) __weak HMSetupViewController *setupViewController; // @synthesize setupViewController=_setupViewController;
 @property(readonly, nonatomic) unsigned int homeHubState; // @synthesize homeHubState=_homeHubState;
+@property unsigned int networkRouterSupportDisableReason; // @synthesize networkRouterSupportDisableReason=_networkRouterSupportDisableReason;
+@property unsigned int networkRouterSupport; // @synthesize networkRouterSupport=_networkRouterSupport;
 @property(nonatomic) _Bool multiUserEnabled; // @synthesize multiUserEnabled=_multiUserEnabled;
-@property _Bool supportsNetworkProtection; // @synthesize supportsNetworkProtection=_supportsNetworkProtection;
 @property int protectionMode; // @synthesize protectionMode=_protectionMode;
 - (void).cxx_destruct;
 - (void)_updateApplicationData:(id)arg1 forAppDataContainer:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -263,7 +265,6 @@
 - (id)initWithName:(id)arg1 uuid:(id)arg2 homeAsRoomUUID:(id)arg3 homeAsRoomName:(id)arg4 actionSets:(id)arg5;
 - (id)initWithName:(id)arg1 uuid:(id)arg2;
 - (id)init;
-- (id)cameraProfileWithUUID:(id)arg1;
 - (id)cameraProfileWithUniqueIdentifier:(id)arg1;
 - (void)_performBatchCharacteristicRequest:(id)arg1;
 - (void)performBatchCharacteristicRequest:(id)arg1;
@@ -369,8 +370,9 @@
 @property(getter=isMediaPeerToPeerEnabled) _Bool mediaPeerToPeerEnabled; // @dynamic mediaPeerToPeerEnabled;
 - (void)updateMinimumMediaUserPrivilege:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property int minimumMediaUserPrivilege; // @dynamic minimumMediaUserPrivilege;
-- (void)_didUpdateSupportsNetworkProtection;
-- (void)_handleHomeSupportsNetworkProtectionUpdated:(id)arg1;
+- (void)setNetworkRouterSupportMinimumHomeKitVersion:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_didUpdateNetworkRouterSupport;
+- (void)_handleHomeNetworkRouterSupportUpdated:(id)arg1;
 - (void)_handleHomeNetworkProtectionModeUpdatedNotification:(id)arg1;
 - (void)updateNetworkProtection:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)executeActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

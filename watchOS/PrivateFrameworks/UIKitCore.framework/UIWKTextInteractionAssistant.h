@@ -20,10 +20,12 @@
     UITextChecker *_textChecker;
     unsigned int _options;
     _Bool _shouldDelayActivatingSelectionView;
+    _Bool _hadCaretSelectionBeforeTap;
     NSString *_wordBeforeTap;
     struct CGRect _caretBeforeTap;
 }
 
+@property(nonatomic) _Bool hadCaretSelectionBeforeTap; // @synthesize hadCaretSelectionBeforeTap=_hadCaretSelectionBeforeTap;
 @property(nonatomic) _Bool shouldDelayActivatingSelectionView; // @synthesize shouldDelayActivatingSelectionView=_shouldDelayActivatingSelectionView;
 @property(nonatomic) struct CGRect caretBeforeTap; // @synthesize caretBeforeTap=_caretBeforeTap;
 @property(retain, nonatomic) NSString *wordBeforeTap; // @synthesize wordBeforeTap=_wordBeforeTap;
@@ -58,6 +60,7 @@
 - (void)scheduleReplacementsWithOptions:(unsigned int)arg1;
 - (void)scheduleChineseTransliterationForText:(id)arg1;
 - (void)scrollSelectionToVisible;
+- (_Bool)wantsLinkInteraction;
 - (_Bool)containerIsBrowserView;
 - (_Bool)containerAllowsSelectionTintOnly;
 - (_Bool)containerAllowsSelection;

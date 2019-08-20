@@ -14,11 +14,9 @@
     NSMutableDictionary *_intentsSupported;
     NSObject<OS_dispatch_queue> *_intentsSupportedQueue;
     NSDictionary *_pluginsPlistDictionary;
-    _Bool _shouldLoadNativeMessagesExtensionAsBundle;
 }
 
 + (id)sharedManager;
-@property(nonatomic) _Bool shouldLoadNativeMessagesExtensionAsBundle; // @synthesize shouldLoadNativeMessagesExtensionAsBundle=_shouldLoadNativeMessagesExtensionAsBundle;
 - (void).cxx_destruct;
 - (_Bool)_registerBundle:(id)arg1 bundleIdentifier:(id)arg2;
 - (_Bool)loadBundleForBundleIdentifier:(id)arg1 wasPrewarmed:(_Bool *)arg2;

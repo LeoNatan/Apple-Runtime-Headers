@@ -32,8 +32,6 @@
 - (void)registerForScreenTimeNotifications;
 - (_Bool)allowedToShowConversationWithHandles:(id)arg1;
 - (_Bool)allowedToShowConversationWithHandleIDs:(id)arg1;
-- (void)reloadEmergencyNumbersSet;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

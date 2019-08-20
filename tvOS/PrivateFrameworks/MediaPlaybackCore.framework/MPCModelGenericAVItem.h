@@ -191,7 +191,9 @@
 - (unsigned long long)albumPersistentID;
 - (id)cloudAlbumID;
 - (id)cloudUniversalLibraryID;
+- (id)personID;
 - (unsigned long long)cloudID;
+- (id)databaseID;
 - (unsigned long long)persistentID;
 - (unsigned long long)mediaType;
 - (id)modelGenericObject;

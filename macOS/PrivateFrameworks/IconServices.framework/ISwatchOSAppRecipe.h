@@ -8,6 +8,7 @@
 
 #import <IconServices/ISCompositorRecipe-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface ISwatchOSAppRecipe : NSObject <ISCompositorRecipe>
 {
     unsigned long long _options;

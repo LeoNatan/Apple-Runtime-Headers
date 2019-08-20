@@ -6,19 +6,20 @@
 
 #import <SpringBoard/SBGestureRootSwitcherModifier.h>
 
-@class SBSwitcherModifier;
+@protocol SBFluidSwitcherModifierProviding;
 
 @interface SBHomeGestureRootSwitcherModifier : SBGestureRootSwitcherModifier
 {
     double _centerYOffsetWhenPresentedInMultitasking;
-    SBSwitcherModifier *_multitaskingModifier;
+    id <SBFluidSwitcherModifierProviding> _modifierProvider;
 }
 
 - (void).cxx_destruct;
+- (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
 - (id)transitionChildModifierForMainTransitionEvent:(id)arg1 activeGestureModifier:(id)arg2;
 - (id)gestureChildModifierForGestureEvent:(id)arg1 activeTransitionModifier:(id)arg2;
 - (long long)gestureType;
-- (id)initWithStartingEnvironmentMode:(long long)arg1 centerYOffsetWhenPresentedInMultitasking:(double)arg2 multitaskingModifier:(id)arg3;
+- (id)initWithStartingEnvironmentMode:(long long)arg1 centerYOffsetWhenPresentedInMultitasking:(double)arg2 modifierProvider:(id)arg3;
 
 @end
 

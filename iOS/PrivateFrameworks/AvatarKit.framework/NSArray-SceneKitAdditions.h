@@ -7,11 +7,17 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (SceneKitAdditions)
-+ (id)arrayWithSCNVector4:(struct SCNVector4)arg1;
-+ (id)arrayWithSCNVector3:(struct SCNVector3)arg1;
-+ (id)arrayWithSCNMatrix4:(struct SCNMatrix4)arg1;
-- (struct SCNVector4)SCNVector4;
-- (struct SCNVector3)SCNVector3;
-- (struct SCNMatrix4)SCNMatrix4;
++ (id)avt_arrayWithSCNVector4:(struct SCNVector4)arg1;
++ (id)avt_arrayWithFloat4: /* Error: Ran out of types for this method. */;
++ (id)avt_arrayWithSCNVector3:(struct SCNVector3)arg1;
++ (id)avt_arrayWithFloat3: /* Error: Ran out of types for this method. */;
++ (id)avt_arrayWithSCNMatrix4:(struct SCNMatrix4)arg1;
++     // Error parsing type: @80@0:8{?=[4]}16, name: avt_arrayWithFloat4x4:
+- (struct SCNVector4)avt_SCNVector4;
+-     // Error parsing type: 16@0:8, name: avt_float4
+- (struct SCNVector3)avt_SCNVector3;
+-     // Error parsing type: 16@0:8, name: avt_float3
+- (struct SCNMatrix4)avt_SCNMatrix4;
+-     // Error parsing type: {?=[4]}16@0:8, name: avt_float4x4
 @end
 

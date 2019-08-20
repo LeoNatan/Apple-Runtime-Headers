@@ -6,11 +6,12 @@
 
 #import <HMFoundation/HMFOperation.h>
 
-@class HMCameraClip, NSURL;
+@class HMCameraClip, HMCameraClipManager, NSURL;
 @protocol HMCameraClipFetchAssetContextOperationDataSource;
 
 @interface HMCameraClipFetchVideoAssetContextOperation : HMFOperation
 {
+    HMCameraClipManager *_clipManager;
     HMCameraClip *_clip;
     NSURL *_clipDestinationFileURL;
     NSURL *_hlsPlaylistDestinationFileURL;
@@ -26,6 +27,7 @@
 @property(copy) NSURL *hlsPlaylistDestinationFileURL; // @synthesize hlsPlaylistDestinationFileURL=_hlsPlaylistDestinationFileURL;
 @property(copy) NSURL *clipDestinationFileURL; // @synthesize clipDestinationFileURL=_clipDestinationFileURL;
 @property(readonly) HMCameraClip *clip; // @synthesize clip=_clip;
+@property(readonly) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)writeHLSPlaylistForVideoAssetContext:(id)arg1;
@@ -33,11 +35,13 @@
 - (id)downloadVideoSegment:(id)arg1 forDataTask:(id)arg2 andAppendToOutputStream:(id)arg3;
 - (id)downloadVideoAsset:(id)arg1;
 - (void)updateDownloadProgressToPercentageComplete:(unsigned int)arg1;
+- (id)fetchVideoAssetContext;
 - (void)main;
 - (void)finishWithVideoAssetContext:(id)arg1;
 - (void)cancelWithError:(id)arg1;
 - (id)description;
-- (id)initWithClip:(id)arg1 dataSource:(id)arg2;
+- (id)initWithClipManager:(id)arg1 clip:(id)arg2 dataSource:(id)arg3;
+- (id)initWithClipManager:(id)arg1 clip:(id)arg2;
 - (id)initWithClip:(id)arg1;
 
 @end

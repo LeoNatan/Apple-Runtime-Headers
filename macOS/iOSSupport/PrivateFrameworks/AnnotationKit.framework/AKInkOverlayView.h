@@ -6,12 +6,10 @@
 
 #import <UIKit/UIView.h>
 
-#import <AnnotationKit/PKCanvasViewDelegate-Protocol.h>
-
-@class AKPageController, NSHashTable, NSString, PKCanvasView, PKInk, UIGestureRecognizer;
+@class AKPageController, NSHashTable, PKCanvasView, PKInk, UIGestureRecognizer;
 @protocol AKInkOverlayViewDelegate, PKRulerHostingDelegate;
 
-@interface AKInkOverlayView : UIView <PKCanvasViewDelegate>
+@interface AKInkOverlayView : UIView
 {
     PKInk *_ink;
     NSHashTable *_reportedStrokes;
@@ -60,12 +58,6 @@
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithPageController:(id)arg1 drawingUndoTarget:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

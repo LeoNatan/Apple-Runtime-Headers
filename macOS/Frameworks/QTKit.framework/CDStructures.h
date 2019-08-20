@@ -29,8 +29,8 @@ struct CGRect {
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
+    double width;
+    double height;
 };
 
 struct ComponentDescription {
@@ -41,12 +41,71 @@ struct ComponentDescription {
     unsigned int _field5;
 };
 
+struct QTHUDBackgroundViewInternal {
+    unsigned long long _field1;
+    double _field2;
+};
+
+struct QTHUDRemoteIndicatorViewInternal {
+    id _field1;
+    id _field2;
+    id _field3;
+    id _field4;
+    id _field5;
+    id _field6;
+    id _field7;
+    id _field8;
+    id _field9;
+    double _field10;
+    double _field11;
+    double _field12;
+    double _field13;
+    unsigned long long _field14;
+    double _field15[3];
+};
+
+struct QTHUDTimeFormatterAuxStorage {
+    struct __QTTimeFormatter *_field1;
+    id _field2;
+    id _field3;
+    id _field4;
+    id _field5;
+    id _field6;
+    id _field7;
+    id _field8;
+    id _field9;
+    id _field10;
+    id _field11;
+    id _field12;
+    long long _field13;
+    long long _field14;
+    long long _field15;
+    long long _field16;
+    unsigned int :2;
+    unsigned int :2;
+    unsigned int :2;
+    unsigned int :4;
+    unsigned int :4;
+};
+
+struct QTHUDTimelineCellInternal {
+    id _field1;
+    id _field2;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
 
 typedef struct {
     long long _field1;

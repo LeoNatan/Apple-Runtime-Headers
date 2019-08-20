@@ -85,6 +85,7 @@
 - (void)applyDataMode:(long long)arg1 comingFromDataMode:(long long)arg2;
 - (void)faceLibraryWasDismissed;
 - (void)transitionToEditing;
+- (void)handleStyleDidChange;
 - (void)videoPlayerViewWasTapped;
 - (void)applyOrbing:(_Bool)arg1;
 - (void)applySlow:(_Bool)arg1;

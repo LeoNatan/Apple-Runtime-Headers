@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <MusicCarDisplayUI/CARSessionObserving-Protocol.h>
 #import <MusicCarDisplayUI/MCDNowPlayingContentManagerProtocol-Protocol.h>
 #import <MusicCarDisplayUI/MCDNowPlayingViewControllerDataSource-Protocol.h>
 #import <MusicCarDisplayUI/MCDNowPlayingViewControllerDelegate-Protocol.h>
@@ -13,10 +14,10 @@
 #import <MusicCarDisplayUI/UITableViewDataSource-Protocol.h>
 #import <MusicCarDisplayUI/UITableViewDelegate-Protocol.h>
 
-@class CARSessionStatus, MPArtworkCatalog, MPCPlayerResponse, MPCPlayerResponseItem, MPModelPlaylist, MPModelPlaylistEntry, MPModelRadioStation, MPModelSong, MPRequestResponseController, NSString, UIAlertController, UIImage, UITableView;
+@class CARSessionStatus, MPArtworkCatalog, MPCPlayerResponse, MPCPlayerResponseItem, MPModelPlaylist, MPModelPlaylistEntry, MPModelRadioStation, MPModelSong, MPRequestResponseController, MSVTimer, NSString, UIAlertController, UIImage, UITableView;
 @protocol MCDNowPlayingContentManagerDelegate, MCDNowPlayingDataSource;
 
-@interface _MCDNowPlayingContentManager : NSObject <MPRequestResponseControllerDelegate, UITableViewDelegate, UITableViewDataSource, MCDNowPlayingContentManagerProtocol, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate>
+@interface _MCDNowPlayingContentManager : NSObject <MPRequestResponseControllerDelegate, UITableViewDelegate, UITableViewDataSource, CARSessionObserving, MCDNowPlayingContentManagerProtocol, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate>
 {
     _Bool limitedUI;
     Class tableCellClass;
@@ -31,6 +32,7 @@
     NSString *_bundleID;
     CARSessionStatus *_carSessionStatus;
     UIAlertController *_alertController;
+    MSVTimer *_artworkTimer;
     id <MCDNowPlayingContentManagerDelegate> _delegate;
     MPCPlayerResponse *_lastReceivedResponse;
     UITableView *_tableView;
@@ -41,6 +43,7 @@
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) MPCPlayerResponse *lastReceivedResponse; // @synthesize lastReceivedResponse=_lastReceivedResponse;
 @property(nonatomic) __weak id <MCDNowPlayingContentManagerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) MSVTimer *artworkTimer; // @synthesize artworkTimer=_artworkTimer;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) CARSessionStatus *carSessionStatus; // @synthesize carSessionStatus=_carSessionStatus;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -79,6 +82,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (_Bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (void)_showPlaceholderArtwork;
 - (void)processArtworkForCurrentlyPlayingSong;
 - (void)_processResponse:(id)arg1 error:(id)arg2;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
@@ -87,6 +91,7 @@
 - (id)_setupRequest;
 - (void)_performRequest;
 - (void)_limitedUIChanged:(id)arg1;
+- (void)sessionDidConnect:(id)arg1;
 - (void)viewWillDisappear;
 - (void)endRequestObservation;
 - (void)beginRequestObservation;

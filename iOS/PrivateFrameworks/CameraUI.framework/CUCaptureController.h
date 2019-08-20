@@ -25,11 +25,11 @@
     _Bool _configurationAvailable;
     _Bool _flashAvailable;
     _Bool _torchAvailable;
+    _Bool _rampingVideoZoom;
     _Bool __capturingPairedVideoPaused;
     _Bool __needsInitialPairedVideoUpdate;
     _Bool _failedConfigurationPreventingCapture;
     _Bool __isVideoCaptureAvailable;
-    _Bool __shouldResetFocusAndExposureAfterStillImageVideoCapture;
     id <CAMStillImageCapturingVideoDelegate> _stillImageCapturingVideoDelegate;
     id <CAMPanoramaChangeDelegate> _panoramaChangeDelegate;
     id <CAMBurstDelegate> _burstDelegate;
@@ -75,7 +75,6 @@
 @property(readonly, nonatomic) CAMBurstController *_burstController; // @synthesize _burstController=__burstController;
 @property(readonly, nonatomic) CAMMotionController *_motionController; // @synthesize _motionController=__motionController;
 @property(readonly, nonatomic) CAMLocationController *_locationController; // @synthesize _locationController=__locationController;
-@property(nonatomic, setter=_setShouldResetFocusAndExposureAfterStillImageVideoCapture:) _Bool _shouldResetFocusAndExposureAfterStillImageVideoCapture; // @synthesize _shouldResetFocusAndExposureAfterStillImageVideoCapture=__shouldResetFocusAndExposureAfterStillImageVideoCapture;
 @property(readonly, nonatomic) NSMutableSet *_identifiersForActiveLivePhotoVideoCaptures; // @synthesize _identifiersForActiveLivePhotoVideoCaptures=__identifiersForActiveLivePhotoVideoCaptures;
 @property(nonatomic, getter=_isVideoCaptureAvailable, setter=_setVideoCaptureAvailable:) _Bool _isVideoCaptureAvailable; // @synthesize _isVideoCaptureAvailable=__isVideoCaptureAvailable;
 @property(nonatomic, getter=_isFailedConfigurationPreventingCapture, setter=_setFailedConfigurationPreventingCapture:) _Bool failedConfigurationPreventingCapture; // @synthesize failedConfigurationPreventingCapture=_failedConfigurationPreventingCapture;
@@ -95,6 +94,7 @@
 @property(nonatomic) __weak id <CAMCaptureInterruptionDelegate> interruptionDelegate; // @synthesize interruptionDelegate=_interruptionDelegate;
 @property(nonatomic) __weak id <CAMCaptureRunningDelegate> runningDelegate; // @synthesize runningDelegate=_runningDelegate;
 @property(nonatomic) __weak id <CAMCaptureRecoveryDelegate> recoveryDelegate; // @synthesize recoveryDelegate=_recoveryDelegate;
+@property(nonatomic, getter=isRampingVideoZoom) _Bool rampingVideoZoom; // @synthesize rampingVideoZoom=_rampingVideoZoom;
 @property(nonatomic) __weak id <CAMZoomDelegate> zoomDelegate; // @synthesize zoomDelegate=_zoomDelegate;
 @property(nonatomic) __weak id <CAMCaptureResultDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
 @property(nonatomic) __weak id <CAMMachineReadableCodeDelegate> machineReadableCodeDelegate; // @synthesize machineReadableCodeDelegate=_machineReadableCodeDelegate;
@@ -190,7 +190,6 @@
 - (id)_focusKVOKeyPaths;
 - (void)changeExposureTargetBias:(float)arg1;
 - (void)cancelDelayedFocusAndExposureReset;
-- (void)_cancelDelayedFocusAndExposureResetIncludingResetAfterLivePhotoVideoCapture:(_Bool)arg1;
 - (void)_resetFocusAndExposureAfterCapture;
 - (void)_scheduleFocusAndExposureResetAfterCaptureIfNecessary;
 @property(readonly, nonatomic) _Bool _shouldResetFocusAndExposureAfterCapture;
@@ -252,12 +251,12 @@
 - (_Bool)startCapturingVideoWithRequest:(id)arg1 error:(id *)arg2;
 - (void)_processPendingVideoCaptureRequest:(id)arg1;
 - (id)_sanitizeVideoRequest:(id)arg1;
+@property(readonly, nonatomic, getter=isCapturingStandardVideo) _Bool capturingStandardVideo;
 @property(readonly, nonatomic, getter=isCapturingVideo) _Bool capturingVideo;
 @property(readonly, nonatomic, getter=isCapturingLivePhotoVideo) _Bool capturingLivePhotoVideo;
 - (void)_endTrackingLivePhotoVideoRecordingForIdentifier:(id)arg1;
 - (void)_beginTrackingLivePhotoVideoRecordingForIdentifier:(id)arg1;
 - (id)_identifierForPendingVideoForStillImageRequest:(id)arg1;
-- (void)_resetFocusAndExposureAfterCaptureIfNecessary;
 - (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteVideoCaptureWithResult:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didStopCapturingLivePhotoVideoForCoordinationInfo:(id)arg2;

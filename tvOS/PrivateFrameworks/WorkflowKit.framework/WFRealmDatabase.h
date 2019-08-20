@@ -61,7 +61,7 @@
 - (id)duplicateReference:(id)arg1 newName:(id)arg2 error:(id *)arg3;
 - (void)performTransactionWithBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)createTriggerWithRecord:(id)arg1 workflow:(id)arg2 error:(id *)arg3;
-- (id)createWorkflowWithRecord:(id)arg1 identifier:(id)arg2 error:(id *)arg3;
+- (id)createWorkflowWithOptions:(id)arg1 error:(id *)arg2;
 - (id)workflowReferenceWithName:(id)arg1;
 - (void)accessStorageForDescriptor:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 withError:(id *)arg3;
 - (id)objectForDescriptor:(id)arg1 inRealm:(id)arg2;

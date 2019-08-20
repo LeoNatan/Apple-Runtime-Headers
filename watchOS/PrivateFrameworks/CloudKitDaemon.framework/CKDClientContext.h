@@ -48,11 +48,14 @@
     NSString *_applicationContainerPath;
     NSString *_applicationContainerCloudKitDirectory;
     NSString *_applicationCachesDirectory;
+    NSString *_applicationTemporaryDirectory;
     NSString *_applicationMMCSDirectory;
     NSString *_applicationAssetDbDirectory;
     NSString *_applicationFileStagingDirectory;
     NSString *_applicationFileDownloadDirectory;
     NSString *_applicationRecordCacheDirectory;
+    NSString *_applicationFrameworkCachesDirectory;
+    NSString *_applicationPackageStagingDirectory;
     CKDAppContainerTuple *_appContainerTuple;
     NSString *_hardwareID;
     int _contextType;
@@ -83,6 +86,7 @@
 }
 
 + (id)contextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
++ (id)applicationCachesPathForBundleID:(id)arg1 usingHomeCachesDirectory:(_Bool)arg2;
 + (id)applicationCachesPathForBundleID:(id)arg1;
 + (id)sharedContextForInternalUseWithAppContainerTuple:(id)arg1 unitTestingAccountInfoProvider:(id)arg2;
 + (id)sharedContextForInternalUseWithAppContainerAccountTuple:(id)arg1;
@@ -129,11 +133,14 @@
 @property(nonatomic) int contextType; // @synthesize contextType=_contextType;
 @property(readonly, nonatomic) NSString *hardwareID; // @synthesize hardwareID=_hardwareID;
 @property(readonly, nonatomic) CKDAppContainerTuple *appContainerTuple; // @synthesize appContainerTuple=_appContainerTuple;
+@property(retain, nonatomic) NSString *applicationPackageStagingDirectory; // @synthesize applicationPackageStagingDirectory=_applicationPackageStagingDirectory;
+@property(retain, nonatomic) NSString *applicationFrameworkCachesDirectory; // @synthesize applicationFrameworkCachesDirectory=_applicationFrameworkCachesDirectory;
 @property(retain, nonatomic) NSString *applicationRecordCacheDirectory; // @synthesize applicationRecordCacheDirectory=_applicationRecordCacheDirectory;
 @property(retain, nonatomic) NSString *applicationFileDownloadDirectory; // @synthesize applicationFileDownloadDirectory=_applicationFileDownloadDirectory;
 @property(retain, nonatomic) NSString *applicationFileStagingDirectory; // @synthesize applicationFileStagingDirectory=_applicationFileStagingDirectory;
 @property(retain, nonatomic) NSString *applicationAssetDbDirectory; // @synthesize applicationAssetDbDirectory=_applicationAssetDbDirectory;
 @property(retain, nonatomic) NSString *applicationMMCSDirectory; // @synthesize applicationMMCSDirectory=_applicationMMCSDirectory;
+@property(readonly, nonatomic) NSString *applicationTemporaryDirectory; // @synthesize applicationTemporaryDirectory=_applicationTemporaryDirectory;
 @property(retain, nonatomic) NSString *applicationCachesDirectory; // @synthesize applicationCachesDirectory=_applicationCachesDirectory;
 @property(retain, nonatomic) NSString *applicationContainerCloudKitDirectory; // @synthesize applicationContainerCloudKitDirectory=_applicationContainerCloudKitDirectory;
 @property(retain, nonatomic) NSString *applicationContainerPath; // @synthesize applicationContainerPath=_applicationContainerPath;
@@ -200,7 +207,7 @@
 @property(readonly, nonatomic) NSString *languageCode;
 @property(readonly, nonatomic) NSString *deviceName;
 - (void)fetchPrivateURLForServerType:(int)arg1 operation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)fetchDeviceIDForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)deviceIDForOperation:(id)arg1;
 - (void)fetchServerEnvironmentForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchImportantUserIDsForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchPublicURLForServerType:(int)arg1 operation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

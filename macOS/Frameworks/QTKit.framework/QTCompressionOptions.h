@@ -19,7 +19,6 @@
 + (BOOL)_canUseCompressionOptionsWithDescription:(id)arg1 forVisibility:(unsigned long long)arg2;
 + (id)_compressionOptionsPropertyList;
 + (id)compressionOptionsWithDescription:(id)arg1;
-- (void).cxx_destruct;
 - (id)localizedCompressionOptionsSummary;
 - (id)localizedDisplayName;
 - (id)mediaType;

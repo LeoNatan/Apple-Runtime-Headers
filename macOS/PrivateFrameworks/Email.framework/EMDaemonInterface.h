@@ -32,6 +32,9 @@
     id <NSXPCProxyCreating> _proxyCreator;
 }
 
++ (void)setCachedMailAppIsInstalled:(BOOL)arg1;
++ (BOOL)cachedMailAppIsInstalled;
++ (id)_mailUninstalledFile;
 + (id)_remoteConnection;
 + (id)remoteObjectInterface;
 + (id)log;

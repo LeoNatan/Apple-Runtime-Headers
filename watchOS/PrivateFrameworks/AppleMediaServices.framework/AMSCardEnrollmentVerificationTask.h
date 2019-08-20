@@ -6,14 +6,29 @@
 
 #import <AppleMediaServices/AMSTask.h>
 
-@interface AMSCardEnrollmentVerificationTask : AMSTask
+#import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+
+@class NSString;
+
+@interface AMSCardEnrollmentVerificationTask : AMSTask <AMSBagConsumer>
 {
 }
 
++ (id)_bagKeySet;
++ (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (id)bagSubProfileVersion;
++ (id)bagSubProfile;
++ (id)bagKeySet;
 + (id)performPaymentVerificationForPayment:(id)arg1 isDefault:(_Bool)arg2 bag:(id)arg3;
 + (id)performPaymentVerificationForPayment:(id)arg1 isDefault:(_Bool)arg2;
 + (void)verifyPayment:(id)arg1 isDefault:(_Bool)arg2 bag:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)verifyPayment:(id)arg1 isDefault:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

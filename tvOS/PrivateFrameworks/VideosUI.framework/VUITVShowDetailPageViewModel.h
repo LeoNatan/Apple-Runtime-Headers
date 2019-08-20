@@ -6,15 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface VUITVShowDetailPageViewModel : NSObject
 {
+    NSArray *_seasonIdentifiers;
     NSDictionary *_episodeShelfViewControllerBySeasonIdentifier;
+    NSDictionary *_episodesBySeasonIdentifer;
 }
 
+@property(retain, nonatomic) NSDictionary *episodesBySeasonIdentifer; // @synthesize episodesBySeasonIdentifer=_episodesBySeasonIdentifer;
 @property(retain, nonatomic) NSDictionary *episodeShelfViewControllerBySeasonIdentifier; // @synthesize episodeShelfViewControllerBySeasonIdentifier=_episodeShelfViewControllerBySeasonIdentifier;
+@property(retain, nonatomic) NSArray *seasonIdentifiers; // @synthesize seasonIdentifiers=_seasonIdentifiers;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasContent;
 

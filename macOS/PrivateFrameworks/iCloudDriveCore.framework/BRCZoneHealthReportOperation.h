@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)main;
 - (void)_reportRecords:(id)arg1 requestID:(unsigned long long)arg2;
+- (id)createActivity;
 - (BOOL)shouldPerformAnotherBatch;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithSession:(id)arg1;

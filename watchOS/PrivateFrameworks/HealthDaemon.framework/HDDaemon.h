@@ -69,6 +69,7 @@
 - (void)unitTest_queryServerDidInit:(id)arg1;
 - (void)unitTest_didCreateProfile:(id)arg1;
 - (id)createXPCListenerWithMachServiceName:(id)arg1;
+- (id)_newReferenceOntologyAsset;
 - (id)_newProfileManager;
 - (id)_newPluginManager;
 - (id)_newBackgroundTaskScheduler;

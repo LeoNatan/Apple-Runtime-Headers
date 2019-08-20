@@ -34,7 +34,7 @@
 - (id)fileAttributesForMessage:(id)arg1;
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
 - (id)dataPathForMessage:(id)arg1;
-- (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11;
+- (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11 generationWindow:(id)arg12;
 - (_Bool)areMessageContentsLocallyAvailable:(id)arg1 fullContentsAvailble:(_Bool *)arg2;
 - (id)urlForMailboxID:(long long)arg1;
 - (void)updateFlagsForMessagesInPlace:(id)arg1 success:(_Bool *)arg2;
@@ -51,7 +51,6 @@
 - (void)lockDBForWriting;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
 - (id)allUIDsInMailbox:(id)arg1;
-- (id)deletedUIDsInMailbox:(id)arg1;
 - (id)UIDsToDeleteInMailbox:(id)arg1;
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
 - (void)closeDatabaseConnections;
@@ -82,6 +81,7 @@
 - (void)compactMessages:(id)arg1;
 - (void)compactMessages:(id)arg1 permanently:(_Bool)arg2;
 - (_Bool)shouldCancel;
+- (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3 temporarilyUnavailable:(_Bool *)arg4;
 - (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
 - (id)messagesWithMessageIDHeader:(id)arg1;
 - (id)messageWithMessageID:(id)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
@@ -125,9 +125,9 @@
 - (id)messagesWithSummariesForMailbox:(id)arg1 range:(struct _NSRange)arg2;
 - (id)dateOfOldestNonIndexedNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
-- (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;
 - (id)serverSearchResultMessagesForMailbox:(id)arg1;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(int)arg2;
+- (id)messagesForMailbox:(id)arg1 limit:(unsigned long long)arg2;
 - (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (id)duplicateMessages:(id)arg1 newRemoteIDs:(id)arg2 forMailbox:(id)arg3 setFlags:(unsigned long long)arg4 clearFlags:(unsigned long long)arg5 messageFlagsForMessages:(id)arg6 createNewCacheFiles:(_Bool)arg7;

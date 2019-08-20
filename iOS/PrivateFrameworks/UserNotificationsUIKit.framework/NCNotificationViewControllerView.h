@@ -8,27 +8,22 @@
 
 #import <UserNotificationsUIKit/PLContentSizeManaging-Protocol.h>
 
-@class NSArray, NSString, PLPlatterView;
+@class NSString, PLPlatterView;
 
 @interface NCNotificationViewControllerView : UIView <PLContentSizeManaging>
 {
-    NSArray *_stackedPlatters;
+    UIView *_stackDimmingView;
     PLPlatterView *_contentView;
-    unsigned long long _coalescedNotificationCount;
 }
 
-@property(nonatomic) unsigned long long coalescedNotificationCount; // @synthesize coalescedNotificationCount=_coalescedNotificationCount;
 @property(nonatomic) __weak PLPlatterView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (_Bool)_isCoalescedNotificationBundle;
-- (void)_layoutStackedPlatters;
-- (void)_configureStackedPlatters;
-- (unsigned long long)_stackedPlatterCount;
-- (unsigned long long)_stackedPlatterCountCoalescedNotificationCount:(unsigned long long)arg1;
+- (void)_updateStackDimmingVisualStyling;
 - (struct CGSize)contentSizeForSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
 - (void)invalidateStackedPlattersRecipe;
-- (void)layoutSubviews;
+- (void)configureStackDimmingForTransform:(struct CGAffineTransform)arg1;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

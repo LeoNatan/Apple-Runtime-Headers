@@ -10,7 +10,6 @@
 {
 }
 
-- (id)_locale;
 - (_Bool)isBuiltIn;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 

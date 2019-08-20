@@ -74,6 +74,7 @@
 @property int resolverStatus; // @synthesize resolverStatus;
 @property unsigned short port; // @synthesize port;
 - (id)canonicalURLWithStrippedUser:(BOOL)arg1 passwordBullets:(BOOL)arg2;
+- (BOOL)isLinkLocalIPv6;
 - (BOOL)foundPhoneNumber:(id)arg1;
 - (BOOL)foundBonjourInString:(id)arg1;
 - (BOOL)foundIPv4InString:(id)arg1;

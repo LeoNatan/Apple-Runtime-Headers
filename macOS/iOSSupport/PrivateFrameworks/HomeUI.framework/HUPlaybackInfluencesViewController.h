@@ -8,11 +8,12 @@
 
 #import <HomeUI/HFItemManagerDelegate-Protocol.h>
 #import <HomeUI/HUAccessorySettingsDetailsViewControllerProtocol-Protocol.h>
+#import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 #import <HomeUI/UITextViewDelegate-Protocol.h>
 
 @class HUPlaybackInfluencesItemManager, NSString;
 
-@interface HUPlaybackInfluencesViewController : HUItemTableViewController <HFItemManagerDelegate, UITextViewDelegate, HUAccessorySettingsDetailsViewControllerProtocol>
+@interface HUPlaybackInfluencesViewController : HUItemTableViewController <HFItemManagerDelegate, UITextViewDelegate, HUSwitchCellDelegate, HUAccessorySettingsDetailsViewControllerProtocol>
 {
     HUPlaybackInfluencesItemManager *_playbackInfluencesItemManager;
 }
@@ -21,11 +22,8 @@
 - (void).cxx_destruct;
 - (void)dismissPrivacyController;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
-- (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
-- (void)applyAccessory:(long long)arg1 toItem:(id)arg2 onTableView:(id)arg3;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
-- (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
+- (void)switchCell:(id)arg1 didTurnOn:(BOOL)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)initWithAccessorySettingItem:(id)arg1;

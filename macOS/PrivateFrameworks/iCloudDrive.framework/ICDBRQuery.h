@@ -8,7 +8,7 @@
 
 #import <iCloudDrive/ICDBRNotificationReceiverDelegate-Protocol.h>
 
-@class ICDBRNotificationReceiver, NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSPredicate, NSString;
+@class ICDBRNotificationReceiver, ICDFileTree, NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSPredicate, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_toBeRemovedByFileObjectID;
     NSMutableDictionary *_toBeReplacedByFileObjectID;
     NSMutableDictionary *_toBeInsertedByFileObjectID;
+    ICDFileTree *_tree;
     int _queryState;
     BOOL _ubiquitousGatherComplete;
     BOOL _needsCrashMarking;

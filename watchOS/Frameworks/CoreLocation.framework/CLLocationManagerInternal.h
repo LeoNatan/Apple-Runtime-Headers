@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocationManager, CLLocationManagerStateTracker, CLTimer, NSMutableSet, NSString;
+@class CLLocationManager, CLLocationManagerStateTracker, CLSilo, CLTimer, NSMutableSet, NSString;
 @protocol CLLocationManagerDelegate;
 
 @interface CLLocationManagerInternal : NSObject
@@ -27,6 +27,7 @@
     NSMutableSet *fRangedConstraints;
     CDUnknownBlockType fPlaceInferenceHandler;
     unsigned int fFidelityPolicy;
+    CLSilo *fSilo;
 }
 
 @property(nonatomic) __weak CLLocationManager *manager; // @synthesize manager=fManager;

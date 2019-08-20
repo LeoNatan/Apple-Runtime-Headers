@@ -38,11 +38,10 @@
 - (void)_handleMessageButtonTapped:(id)arg1;
 - (void)_handleInfoButtonTapped:(id)arg1;
 - (id)_barButtonItems;
-- (id)pkui_navigationBarItemTintColor;
+- (CDStruct_8f3a66c8)pkui_navigationStatusBarStyleDescriptor;
 - (void)_updateNavigationBarIconWithLogoURL:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)contentIsLoaded;
-- (long long)preferredStatusBarStyle;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;

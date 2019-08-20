@@ -71,10 +71,12 @@
 - (id)hf_appleTVs;
 - (id)hf_mediaAccessories;
 - (id)hf_updateAutomaticSoftwareUpdateEnabled:(_Bool)arg1;
+- (id)hf_accessoriesRequiringManualWiFiReconfiguration;
 - (id)hf_resetAllNetworkConfigurationProfiles;
 - (id)hf_allHomePodProfiles;
 - (id)hf_allMediaProfiles;
 - (_Bool)hf_hasSecureRecordingCameras;
+- (_Bool)_seedGated_hasSecureRecordingCameras;
 - (id)hf_unitaryCameraProfile;
 - (id)hf_allCameraProfiles;
 - (id)hf_cameraProfileWithIdentifier:(id)arg1;
@@ -103,7 +105,11 @@
 - (id)hf_accessoryWithIdentifier:(id)arg1;
 - (id)hf_allNonEmptyActionSets;
 - (id)hf_updateNetworkProtection:(int)arg1;
+- (_Bool)hf_isNetworkRouterSupported;
 - (_Bool)hf_isNetworkProtectionEnabled;
+- (id)hf_localizedDescriptionForNetworkProtectionSupport;
+- (_Bool)hf_isNetworkProtectionSupportedForHome;
+- (_Bool)hf_isNetworkProtectionSupportedForAccessories;
 - (id)hf_zoneWithIdentifier:(id)arg1;
 - (void)hf_setSelectedRoom:(id)arg1;
 - (id)hf_selectedRoom;

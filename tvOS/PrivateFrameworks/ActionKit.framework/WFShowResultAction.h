@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)populatesInputFromInputParameter;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end

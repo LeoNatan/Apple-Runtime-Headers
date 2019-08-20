@@ -9,7 +9,7 @@
 #import <TVServices/NSXPCListenerDelegate-Protocol.h>
 #import <TVServices/TVProfileServiceFromFirstParty-Protocol.h>
 
-@class NSMutableDictionary, NSObservation, NSString, NSXPCListener;
+@class NSMutableDictionary, NSMutableSet, NSObservation, NSString, NSXPCListener;
 @protocol OS_dispatch_queue, TVProfileServiceDelegate;
 
 @interface TVProfileService : NSObject <NSXPCListenerDelegate, TVProfileServiceFromFirstParty>
@@ -19,6 +19,7 @@
     NSXPCListener *_serviceListener;
     NSObservation *_enabledObserver;
     NSObservation *_disabledAppsObserver;
+    NSMutableSet *_dailyRequestors;
     id <TVProfileServiceDelegate> _delegate;
     _Bool _enabledOnDevice;
 }
@@ -30,6 +31,8 @@
 + (id)_allHomeIDs;
 + (id)_allITunesAccounts;
 + (id)_fromFirstPartyInterface;
++ (id)_makeInstanceSynchronous:(_Bool)arg1;
++ (id)sharedSynchronousInstance;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
@@ -49,12 +52,13 @@
 - (void)setSystemFocusedUser:(id)arg1;
 - (void)fetchSystemFocusedUser:(CDUnknownBlockType)arg1;
 - (void)fetchAllUsers:(CDUnknownBlockType)arg1;
+- (void)_fetchCoreAnalyticsDailyEvent:(CDUnknownBlockType)arg1;
 - (_Bool)isApplicationAllowedAccess:(id)arg1;
 - (void)setEnabledOnDevice:(_Bool)arg1;
 - (_Bool)isEnabledOnDevice;
 @property __weak id <TVProfileServiceDelegate> delegate;
 - (id)init;
-- (id)__initFirstPartyInstance;
+- (id)__initFirstPartyInstanceSynchronous:(_Bool)arg1;
 - (id)__initServerInstance;
 
 // Remaining properties

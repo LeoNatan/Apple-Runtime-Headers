@@ -17,6 +17,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic) NSWindow *hostWindow; // @dynamic hostWindow;
 @property(nonatomic) __weak id <CDPStateUIProvider> cdpUiProvider; // @dynamic cdpUiProvider;
+@property(nonatomic) long long operationUIPermissions; // @dynamic operationUIPermissions;
 @property(nonatomic) BOOL shouldForceOperation; // @dynamic shouldForceOperation;
 @property(copy, nonatomic) NSDictionary *authenticationResults; // @dynamic authenticationResults;
 

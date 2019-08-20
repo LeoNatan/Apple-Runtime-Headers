@@ -42,7 +42,7 @@
 - (void).cxx_destruct;
 - (_Bool)shouldAllowUnentitledExtension:(id)arg1;
 @property(readonly) int requiredEntitlement;
-- (void)sendExtensionFailedWithError:(id)arg1;
+- (void)sendExtensionFailed;
 - (void)handleExtensionStartedWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)cleanupExtensionWithRequestIdentifier:(id)arg1;
 - (void)extensionDidStop:(id)arg1;

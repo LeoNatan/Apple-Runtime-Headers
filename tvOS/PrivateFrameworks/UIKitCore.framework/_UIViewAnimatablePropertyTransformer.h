@@ -7,11 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSMutableSet, _UICompoundObjectMap;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface _UIViewAnimatablePropertyTransformer : NSObject
 {
     _Bool _presentationValueCallbackRan;
+    NSObject<OS_dispatch_queue> *_lockingQueue;
     CDUnknownBlockType _modelValueChangedCallback;
     CDUnknownBlockType _presentationValueChangedCallback;
     CDUnknownBlockType _stabilizedCallback;
@@ -25,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType presentationValueChangedCallback; // @synthesize presentationValueChangedCallback=_presentationValueChangedCallback;
 @property(copy, nonatomic) CDUnknownBlockType modelValueChangedCallback; // @synthesize modelValueChangedCallback=_modelValueChangedCallback;
 - (void).cxx_destruct;
+- (void)performWithLock:(CDUnknownBlockType)arg1;
 - (void)progressInvalidated:(id)arg1;
 - (void)modelValueUpdatedForProgress:(id)arg1;
 - (void)presentationValueStabilizedForProgress:(id)arg1;

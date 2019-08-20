@@ -22,11 +22,14 @@
     CDUnknownBlockType _loaderBlock;
     NSString *_UTType;
     NSDate *_expiryDate;
+    int _exchangeEventUID;
     long long _dataTransferByteCount;
     long long _storageByteCount;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void)setExchangeEventUID:(int)arg1;
+@property(readonly, nonatomic) int exchangeEventUID;
 - (void)setExpiryDate:(id)arg1;
 @property(readonly, nonatomic) NSDate *expiryDate;
 @property(nonatomic) _Bool isSinglePagePDF; // @synthesize isSinglePagePDF=_isSinglePagePDF;

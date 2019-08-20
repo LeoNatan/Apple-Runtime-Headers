@@ -51,6 +51,7 @@
 - (void)addRecStartDateIfNeeded:(id)arg1 withTimeRange:(id)arg2 withRecurrenceStart:(id)arg3;
 - (id)filterOccurrences:(id)arg1 inTimeRange:(id)arg2 excludingEndDate:(BOOL)arg3;
 - (id)generateTimeRulePartOnArray:(id)arg1 withRecurrenceStart:(id)arg2;
+- (id)applyRulePart:(SEL)arg1 onArray:(id)arg2 withRecurrenceStart:(id)arg3;
 - (int)lastSpecifiedRulePartOrder;
 - (id)filterBySetpos:(id)arg1;
 - (id)generateSimpleTimeRuleOnTimeRange:(id)arg1 withRecurrenceStart:(id)arg2;
@@ -125,15 +126,6 @@
 - (id)setCachedDates:(id)arg1;
 - (id)addCachedDates:(id)arg1;
 - (id)invalidateCache;
-- (CDUnknownBlockType)blockForGenerateSimpleTimeRule;
-- (CDUnknownBlockType)blockForGenerateByYearDay;
-- (CDUnknownBlockType)blockForGenerateByMonthDay;
-- (CDUnknownBlockType)blockForGenerateByWeekNumber;
-- (CDUnknownBlockType)blockForGenerateBySecond;
-- (CDUnknownBlockType)blockForGenerateByMinute;
-- (CDUnknownBlockType)blockForGenerateByHour;
-- (CDUnknownBlockType)blockForGenerateByDay;
-- (id)applyRulePartOnArray:(id)arg1 withRecurrenceStart:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 
 @end
 

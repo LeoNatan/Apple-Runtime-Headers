@@ -39,7 +39,7 @@
 - (void)addSpriteIndexRange:(struct _NSRange)arg1;
 - (void)_addSpriteIndex:(unsigned int)arg1;
 - (void)removeSpriteIndex:(unsigned int)arg1;
-- (void)addSpriteWithTextureRequestID:(int)arg1;
+- (void)addSpriteWithTextureRequestID:(int)arg1 deliveryOrder:(unsigned int)arg2;
 @property(readonly, nonatomic) unsigned int spriteCount;
 @property(readonly, nonatomic) NSIndexSet *spriteIndexes;
 @property(readonly, copy) NSString *description;

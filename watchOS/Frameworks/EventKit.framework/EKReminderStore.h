@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
 - (id)backingCalendarWithIdentifier:(id)arg1;
 - (id)calendarWithIdentifier:(id)arg1;
 @property(readonly) NSArray *calendars;
+- (id)_allLists;
 - (void)_loadLists;
 - (void)_loadListsIfNeeded;
 - (id)_fetchAndCacheConstraintsForFrozenSource:(id)arg1;

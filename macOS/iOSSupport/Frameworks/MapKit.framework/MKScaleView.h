@@ -41,10 +41,12 @@
     MKMapView *_mapView;
     long long _scaleVisibility;
     long long _legendAlignment;
+    unsigned long long _mapType;
 }
 
 + (id)scaleViewWithMapView:(id)arg1;
 @property(nonatomic) BOOL drawsOutline; // @synthesize drawsOutline=_drawsOutline;
+@property(nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
 @property(nonatomic) BOOL usedInternallyByMapView; // @synthesize usedInternallyByMapView=_usedInternallyByMapView;
 @property(nonatomic) long long legendAlignment; // @synthesize legendAlignment=_legendAlignment;
 @property(nonatomic) long long scaleVisibility; // @synthesize scaleVisibility=_scaleVisibility;

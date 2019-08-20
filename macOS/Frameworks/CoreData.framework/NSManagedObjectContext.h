@@ -251,6 +251,7 @@
 - (id)_unsafeName;
 @property(copy, setter=_setPersistentStoresScope:) NSArray *_persistentStoresScope;
 - (void)_setPersistentStoreCoordinator:(id)arg1;
+- (void)_forceMoveInsertToUpdatedList:(id)arg1;
 - (void)_addObjectIDsUpdatedByTriggers:(id)arg1;
 - (void)_addObjectIDsUpdatedByDATriggers:(id)arg1;
 - (void)_addObjectIDsInsertUpdatedByDATriggers:(id)arg1;
@@ -333,6 +334,7 @@
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id *)arg3;
 - (BOOL)_updateLocationsOfObjectsToLocationByOrderKey:(id)arg1 inRelationshipWithName:(id)arg2 onObjectWithID:(id)arg3 error:(id *)arg4;
 - (id)_orderKeysForRelationshipWithName__:(id)arg1 onObjectWithID:(id)arg2;
+- (BOOL)evictFuture:(id)arg1 withError:(id *)arg2;
 
 @end
 

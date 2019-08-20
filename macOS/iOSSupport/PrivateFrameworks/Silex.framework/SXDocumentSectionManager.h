@@ -31,6 +31,7 @@
 - (id)viewController;
 - (double)heightForBlueprint:(id)arg1 canvasSize:(struct CGSize)arg2 traitCollection:(id)arg3;
 - (void)endImpressions;
+- (void)performDisappearanceTransitionForVisibleViewControllers;
 - (void)updateViewControllerVisibility;
 - (void)viewport:(id)arg1 documentSizeDidChangeFromSize:(struct CGSize)arg2;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;

@@ -10,7 +10,6 @@
 
 @interface SASSystemState : NSObject
 {
-    _Bool _pocketStateShouldPreventVoiceTrigger;
     _Bool _accessibilityShortcutEnabled;
     _Bool _enabled;
     int _carPlayConnectionState;
@@ -25,7 +24,6 @@
 @property(retain, nonatomic) SUICApplicationStateHelper *applicationStateHelper; // @synthesize applicationStateHelper=_applicationStateHelper;
 @property(nonatomic) _Bool accessibilityShortcutEnabled; // @synthesize accessibilityShortcutEnabled=_accessibilityShortcutEnabled;
 @property(nonatomic) int carPlayConnectionState; // @synthesize carPlayConnectionState=_carPlayConnectionState;
-@property(nonatomic) _Bool pocketStateShouldPreventVoiceTrigger; // @synthesize pocketStateShouldPreventVoiceTrigger=_pocketStateShouldPreventVoiceTrigger;
 @property(retain, nonatomic) SASLockStateMonitor *lockStateMonitor; // @synthesize lockStateMonitor=_lockStateMonitor;
 - (void).cxx_destruct;
 - (_Bool)siriIsSupported;

@@ -9,7 +9,7 @@
 #import <SpringBoard/BSDescriptionProviding-Protocol.h>
 #import <SpringBoard/SBIconDragPreview-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSArray, NSString, SBApplicationBlurContentView, SBAsymmetricalCornerRadiusWrapperView, SBFView, SBIcon, SBIconView, SBPortalView;
+@class BSCornerRadiusConfiguration, NSArray, NSString, SBApplicationBlurContentView, SBFView, SBIcon, SBIconView, SBPortalView;
 @protocol SBAppPlatterDragSourceViewProviding;
 
 @interface SBAppPlatterDragPreview : UIView <SBIconDragPreview, BSDescriptionProviding>
@@ -38,7 +38,7 @@
     SBIconView *_iconView;
     UIView *_anchorPointAdjustmentContainerView;
     UIView *_iconContainerView;
-    SBAsymmetricalCornerRadiusWrapperView *_cornerMaskingView;
+    UIView *_cornerMaskingView;
     SBPortalView *_sourcePortalView;
     SBFView *_diffuseShadowView;
     SBFView *_rimShadowView;
@@ -51,7 +51,7 @@
 @property(retain, nonatomic) SBFView *rimShadowView; // @synthesize rimShadowView=_rimShadowView;
 @property(retain, nonatomic) SBFView *diffuseShadowView; // @synthesize diffuseShadowView=_diffuseShadowView;
 @property(retain, nonatomic) SBPortalView *sourcePortalView; // @synthesize sourcePortalView=_sourcePortalView;
-@property(retain, nonatomic) SBAsymmetricalCornerRadiusWrapperView *cornerMaskingView; // @synthesize cornerMaskingView=_cornerMaskingView;
+@property(retain, nonatomic) UIView *cornerMaskingView; // @synthesize cornerMaskingView=_cornerMaskingView;
 @property(retain, nonatomic) UIView *iconContainerView; // @synthesize iconContainerView=_iconContainerView;
 @property(retain, nonatomic) UIView *anchorPointAdjustmentContainerView; // @synthesize anchorPointAdjustmentContainerView=_anchorPointAdjustmentContainerView;
 @property(nonatomic) _Bool iconIsHighlighted; // @synthesize iconIsHighlighted=_iconIsHighlighted;
@@ -88,11 +88,13 @@
 - (_Bool)_effectiveIconAllowsLabelArea;
 - (double)_effectiveIconAccessoryAlpha;
 - (void)_updateIconViewComponentVisibility;
+- (double)_effectiveCornerRadius;
 - (id)_effectiveCornerRadiusConfiguration;
 - (struct CGRect)_effectivePlatterFrame;
 - (struct CGPoint)_effectiveIconContainerCenter;
 - (double)_blurContentViewIconViewCenterYOffset;
 - (double)_effectiveIconContentScale;
+- (void)_setSourcePortalViewHidden:(_Bool)arg1;
 - (void)_updateSubviewVisibility;
 - (void)_updateShadowView;
 - (unsigned long long)_effectiveMode;

@@ -16,6 +16,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)triggerHapticsForDuration:(float)arg1;
+- (void)setEnableTimeForHaptics:(BOOL)arg1;
+- (void)setHapticMotor:(int)arg1 frequency:(float)arg2;
 - (id)productCategory;
 - (id)menuButton;
 - (void)toggleSuspendResume;

@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) unsigned long long burstSelectionTypes;
-@property(readonly, nonatomic) double hdrGain;
+@property(readonly, nonatomic) float hdrGain;
 @property(readonly, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) unsigned long long thumbnailVersion;
 @property(readonly, nonatomic) double aspectRatio;

@@ -172,6 +172,9 @@
     float _minFov;
     float _minFovSpring;
     float _maxFovSpring;
+    _Bool _forceBumpNextTap;
+    _Bool _forceBumpAll;
+    _Bool _slowMotionBump;
     CDStruct_83984b6f _overrideAmbient;
     CDStruct_83984b6f _overrideLight1;
     CDStruct_83984b6f _overrideLight2;
@@ -253,6 +256,9 @@
 @property(nonatomic) CDStruct_83984b6f overrideLight2; // @synthesize overrideLight2=_overrideLight2;
 @property(nonatomic) CDStruct_83984b6f overrideLight1; // @synthesize overrideLight1=_overrideLight1;
 @property(nonatomic) CDStruct_83984b6f overrideAmbient; // @synthesize overrideAmbient=_overrideAmbient;
+@property(nonatomic) _Bool slowMotionBump; // @synthesize slowMotionBump=_slowMotionBump;
+@property(nonatomic) _Bool forceBumpAll; // @synthesize forceBumpAll=_forceBumpAll;
+@property(nonatomic) _Bool forceBumpNextTap; // @synthesize forceBumpNextTap=_forceBumpNextTap;
 @property(nonatomic) float maxFovSpring; // @synthesize maxFovSpring=_maxFovSpring;
 @property(nonatomic) float minFovSpring; // @synthesize minFovSpring=_minFovSpring;
 @property(nonatomic) float minFov; // @synthesize minFov=_minFov;

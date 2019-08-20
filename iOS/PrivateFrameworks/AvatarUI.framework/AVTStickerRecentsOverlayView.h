@@ -6,7 +6,7 @@
 
 #import <UIKit/UIVisualEffectView.h>
 
-@class AVTCircularButton, AVTStickerRecentsOverlayViewLayout, NSString, UIButton, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class AVTCircularButton, AVTStickerRecentsOverlayViewLayout, NSArray, NSLayoutConstraint, NSString, UIButton, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 @protocol AVTStickerRecentsOverlayDelegate;
 
 @interface AVTStickerRecentsOverlayView : UIVisualEffectView
@@ -15,6 +15,7 @@
     NSString *_subtitle;
     UIImage *_image;
     id <AVTStickerRecentsOverlayDelegate> _delegate;
+    UIView *_centeredContainerView;
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
@@ -23,12 +24,30 @@
     AVTCircularButton *_closeButton;
     AVTStickerRecentsOverlayViewLayout *_portraitLayout;
     AVTStickerRecentsOverlayViewLayout *_landscapeLayout;
+    AVTStickerRecentsOverlayViewLayout *_currentLayout;
+    NSArray *_layoutConstraints;
+    NSLayoutConstraint *_containerTopConstraint;
+    NSLayoutConstraint *_containerLeadingConstraint;
+    NSLayoutConstraint *_containerTrailingConstraint;
+    NSLayoutConstraint *_imageHeightConstraint;
+    NSLayoutConstraint *_imageToTitleConstraint;
+    NSLayoutConstraint *_titleToSubtitleConstraint;
+    NSLayoutConstraint *_hideSubtitleConstraint;
 }
 
 + (id)disclosureOverlayView;
 + (id)standardOverlayView;
 + (id)overlayViewForMemojiCreation;
 + (id)stickerButtonImage;
+@property(retain, nonatomic) NSLayoutConstraint *hideSubtitleConstraint; // @synthesize hideSubtitleConstraint=_hideSubtitleConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *titleToSubtitleConstraint; // @synthesize titleToSubtitleConstraint=_titleToSubtitleConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *imageToTitleConstraint; // @synthesize imageToTitleConstraint=_imageToTitleConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *imageHeightConstraint; // @synthesize imageHeightConstraint=_imageHeightConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *containerTrailingConstraint; // @synthesize containerTrailingConstraint=_containerTrailingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *containerLeadingConstraint; // @synthesize containerLeadingConstraint=_containerLeadingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *containerTopConstraint; // @synthesize containerTopConstraint=_containerTopConstraint;
+@property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
+@property(retain, nonatomic) AVTStickerRecentsOverlayViewLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(retain, nonatomic) AVTStickerRecentsOverlayViewLayout *landscapeLayout; // @synthesize landscapeLayout=_landscapeLayout;
 @property(retain, nonatomic) AVTStickerRecentsOverlayViewLayout *portraitLayout; // @synthesize portraitLayout=_portraitLayout;
 @property(retain, nonatomic) AVTCircularButton *closeButton; // @synthesize closeButton=_closeButton;
@@ -37,6 +56,7 @@
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(retain, nonatomic) UIView *centeredContainerView; // @synthesize centeredContainerView=_centeredContainerView;
 @property(nonatomic) __weak id <AVTStickerRecentsOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -44,6 +64,8 @@
 - (void).cxx_destruct;
 - (void)dismissAnimatedWithDuration:(double)arg1;
 - (void)layoutSubviews;
+- (void)updateConstraints;
+- (void)setupConstraints;
 - (id)appropriateLayout;
 @property(readonly, nonatomic) UIView *animatableView;
 - (void)didTapCloseButton:(id)arg1;

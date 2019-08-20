@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: styler
     // Error parsing type: , name: maxTopOffset
+    // Error parsing type: , name: minContentViewHeight
     // Error parsing type: , name: maxContentViewWidth
     // Error parsing type: , name: smallMarginWidth
     // Error parsing type: , name: largeMarginWidth
@@ -28,6 +29,7 @@
     // Error parsing type: , name: mediumGradientHeight
     // Error parsing type: , name: smallGradientHeight
     // Error parsing type: , name: footerImageExtraHeight
+    // Error parsing type: , name: minimumBaseFooterImageHeight
 }
 
 @end

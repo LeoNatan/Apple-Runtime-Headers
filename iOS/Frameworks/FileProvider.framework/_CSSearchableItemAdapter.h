@@ -83,6 +83,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, getter=isDownloadRequested) NSNumber *downloadRequested;
 @property(readonly, nonatomic, getter=isExcludedFromSync) _Bool excludedFromSync;
 @property(readonly, nonatomic) NSDictionary *extendedAttributes;
+@property(readonly, copy) NSString *fileSystemFilename;
 @property(readonly, nonatomic) id <NSFileProviderItemFlags> flags;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
 @property(readonly, copy) NSNumber *hasUnresolvedConflicts;

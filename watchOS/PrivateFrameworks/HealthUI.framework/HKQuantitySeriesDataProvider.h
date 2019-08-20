@@ -24,20 +24,19 @@
     HKQuantitySeriesSampleEditor *_editor;
 }
 
-@property _Bool hasSubsamplesToRemove; // @synthesize hasSubsamplesToRemove=_hasSubsamplesToRemove;
-@property(retain) HKQuantitySeriesSampleEditor *editor; // @synthesize editor=_editor;
-@property(retain) NSMutableArray *quantities; // @synthesize quantities=_quantities;
-@property(retain) HKQuantitySample *parentSample; // @synthesize parentSample=_parentSample;
+@property(nonatomic) _Bool hasSubsamplesToRemove; // @synthesize hasSubsamplesToRemove=_hasSubsamplesToRemove;
+@property(retain, nonatomic) HKQuantitySeriesSampleEditor *editor; // @synthesize editor=_editor;
+@property(retain, nonatomic) NSMutableArray *quantities; // @synthesize quantities=_quantities;
+@property(retain, nonatomic) HKQuantitySample *parentSample; // @synthesize parentSample=_parentSample;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-@property(retain) id <HKQuantitySeriesDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
-@property(retain) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
+@property(retain, nonatomic) id <HKQuantitySeriesDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) HKUnitPreferenceController *unitController; // @synthesize unitController=_unitController;
+@property(retain, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 - (void).cxx_destruct;
 - (void)commitDeletionsIfNeeded;
 - (void)deleteQuantity:(id)arg1;
 - (void)queryForSubsamples:(CDUnknownBlockType)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;

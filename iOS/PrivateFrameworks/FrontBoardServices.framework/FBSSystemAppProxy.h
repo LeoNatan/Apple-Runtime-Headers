@@ -26,7 +26,7 @@
 - (void)setKeyboardFocusApplication:(int)arg1 deferringToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shutdownWithOptions:(id)arg1;
 - (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)sendActions:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (id)processHandleForBundleID:(id)arg1;
 - (_Bool)isPasscodeLockedOrBlocked;

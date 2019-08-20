@@ -124,6 +124,7 @@
 - (id)attributedSubstringFromRange:(struct _NSRange)arg1;
 - (id)filteredAttributedSubstringFromRange:(struct _NSRange)arg1;
 - (id)dataFromRange:(struct _NSRange)arg1 documentAttributes:(id)arg2 error:(id *)arg3;
+- (id)standardizedAttributedStringFixingTextAttachmentsForRange:(struct _NSRange)arg1 styler:(id)arg2;
 - (id)standardizedAttributedStringFixingTextAttachmentsForRange:(struct _NSRange)arg1;
 - (id)standardizedAttributedStringFixingTextAttachments;
 - (void)styleTextInRange:(struct _NSRange)arg1;

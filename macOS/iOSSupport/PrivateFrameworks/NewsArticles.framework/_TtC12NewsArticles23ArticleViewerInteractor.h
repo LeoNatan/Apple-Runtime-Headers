@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <swiftCore/_TtCs12_SwiftObject.h>
+#import <objc/NSObject.h>
 
-@interface _TtC12NewsArticles23ArticleViewerInteractor : _TtCs12_SwiftObject
+__attribute__((visibility("hidden")))
+@interface _TtC12NewsArticles23ArticleViewerInteractor : NSObject
 {
     // Error parsing type: , name: delegate
     // Error parsing type: , name: coordinator
@@ -15,7 +16,11 @@
     // Error parsing type: , name: pageBlueprintProvider
     // Error parsing type: , name: pageBlueprintFactory
     // Error parsing type: , name: sharingIntentFactory
+    // Error parsing type: , name: followingManager
 }
+
+- (void).cxx_destruct;
+- (id)init;
 
 @end
 

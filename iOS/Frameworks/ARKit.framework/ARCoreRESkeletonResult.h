@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
 @class AR3DSkeletonDetectionResult, NSUUID;
 
-@interface ARCoreRESkeletonResult : NSObject <NSSecureCoding>
+@interface ARCoreRESkeletonResult : NSObject <NSSecureCoding, NSCopying>
 {
     struct vector<simd_float4x4, std::__1::allocator<simd_float4x4>> _modelTransforms;
     struct vector<ARSRT, std::__1::allocator<ARSRT>> _localTransformsSRT;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

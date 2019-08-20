@@ -10,14 +10,11 @@
 
 @interface AMSBiometricsDisableTask : AMSTask
 {
-    _Bool _deleteKeys;
     ACAccount *_account;
 }
 
-@property(nonatomic) _Bool deleteKeys; // @synthesize deleteKeys=_deleteKeys;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (void)_deleteKeysWithOptions:(id)arg1;
 - (id)perform;
 - (id)initWithAccount:(id)arg1;
 

@@ -9,22 +9,22 @@
 #import <HomeAI/HMFLogging-Protocol.h>
 #import <HomeAI/HMFTimerDelegate-Protocol.h>
 
-@class HMFTimer, HMFUnfairLock, HMIAnalysisService, NSString;
+@class HMFTimer, HMFUnfairLock, NSString;
 @protocol HMICameraVideoFrameAnalyzer;
 
 @interface HMICameraVideoFrameAnalyzerFactory : HMFObject <HMFTimerDelegate, HMFLogging>
 {
     HMFUnfairLock *_lock;
-    HMIAnalysisService *_remoteAnalysisService;
-    id <HMICameraVideoFrameAnalyzer> _videoFrameAnalyzer;
+    id <HMICameraVideoFrameAnalyzer> _frameAnalyzer;
     HMFTimer *_watchdogTimer;
 }
 
 + (id)logCategory;
++ (id)eventConfidenceThresholdsHigh;
++ (id)eventConfidenceThresholdsMedium;
 + (id)sharedInstance;
 @property(readonly) HMFTimer *watchdogTimer; // @synthesize watchdogTimer=_watchdogTimer;
-@property(retain, nonatomic) id <HMICameraVideoFrameAnalyzer> videoFrameAnalyzer; // @synthesize videoFrameAnalyzer=_videoFrameAnalyzer;
-@property(retain, nonatomic) HMIAnalysisService *remoteAnalysisService; // @synthesize remoteAnalysisService=_remoteAnalysisService;
+@property(retain, nonatomic) id <HMICameraVideoFrameAnalyzer> frameAnalyzer; // @synthesize frameAnalyzer=_frameAnalyzer;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
 - (double)modelTimeoutPreference;

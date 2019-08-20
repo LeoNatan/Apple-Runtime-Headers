@@ -13,6 +13,7 @@
 
 @interface CSAudioStream : NSObject <CSAudioStreamProvidingDelegate>
 {
+    BOOL _scheduledFutureSample;
     BOOL _streaming;
     id <CSAudioStreamProvidingDelegate> _delegate;
     unsigned long long _lastForwardedSampleCount;
@@ -27,6 +28,7 @@
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) CSAudioStreamRequest *streamRequest; // @synthesize streamRequest=_streamRequest;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) BOOL scheduledFutureSample; // @synthesize scheduledFutureSample=_scheduledFutureSample;
 @property(nonatomic) unsigned long long lastForwardedSampleCount; // @synthesize lastForwardedSampleCount=_lastForwardedSampleCount;
 @property(nonatomic) __weak id <CSAudioStreamProvidingDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

@@ -35,9 +35,12 @@
     NSNumber *_privateListeningEnabled;
     _Bool _activeLocker;
     _Bool _active;
+    NSDictionary *_privateListeningEnabledForHomeUsers;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSDictionary *privateListeningEnabledForHomeUsers; // @synthesize privateListeningEnabledForHomeUsers=_privateListeningEnabledForHomeUsers;
+@property(copy, nonatomic) NSArray *homeUserIdentifiers; // @synthesize homeUserIdentifiers=_homeUserIdentifiers;
 @property(copy, nonatomic, setter=setICloudPersonID:) NSString *iCloudPersonID; // @synthesize iCloudPersonID=_iCloudPersonID;
 @property(readonly, nonatomic, getter=isDelegated) _Bool delegated; // @synthesize delegated=_delegated;
 @property(nonatomic, getter=isCloudBackupEnabled) _Bool cloudBackupEnabled; // @synthesize cloudBackupEnabled=_cloudBackupEnabled;
@@ -54,7 +57,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, copy, nonatomic) NSArray *homeUserIdentifiers;
 @property(readonly, copy, nonatomic) NSDictionary *cloudLibraryStateReason;
 @property(readonly, copy, nonatomic) NSNumber *mergeToCloudLibraryPreference;
 @property(readonly, copy, nonatomic) NSDate *ageVerificationExpirationDate;

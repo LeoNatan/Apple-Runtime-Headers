@@ -56,6 +56,7 @@
 - (void).cxx_destruct;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
 - (id)nextRecordingDefaultLabelWithCustomLabelBase:(id)arg1;
+- (_Bool)fetchExportProgress:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)fetchObjectsFromCloud:(id)arg1 entityToAttributesToFetch:(struct NSDictionary *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)importFromCloud:(CDUnknownBlockType)arg1;
 - (_Bool)exportToCloud:(CDUnknownBlockType)arg1;
@@ -96,6 +97,7 @@
 - (id)context;
 @property(readonly, nonatomic) NSData *currentChangeToken;
 - (id)currentPersistentHistoryToken;
+- (id)transactionForToken:(id)arg1;
 - (id)enumerateChangeHistorySinceToken:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_transactionHistorySinceToken:(id)arg1;
 - (void)_enumerateFetchedRecordingTitles:(CDUnknownBlockType)arg1;

@@ -7,6 +7,7 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (HKAdditions)
++ (id)hk_chrValueCellPrimaryFont;
 + (id)hk_chartOverlaySectionHeaderFont;
 + (id)hk_chartCurrentValueDateFont;
 + (id)hk_chartCurrentValueUnitFont;

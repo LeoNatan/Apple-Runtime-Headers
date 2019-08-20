@@ -10,6 +10,7 @@
 {
 }
 
++ (id)parameterErrorWithUnderlyingError:(id)arg1 string:(id)arg2;
 + (id)customLayerErrorWithUnderlyingError:(id)arg1 withString:(id)arg2;
 + (id)IOErrorWithString:(id)arg1;
 + (id)featureTypeErrorWithString:(id)arg1;

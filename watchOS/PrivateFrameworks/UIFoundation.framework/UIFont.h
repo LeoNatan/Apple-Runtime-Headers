@@ -41,10 +41,12 @@
 + (id)ib_preferredFontForTextStyle:(id)arg1;
 + (id)defaultFontForTextStyle:(id)arg1;
 + (float)_readableWidth;
++ (float)_pointSize:(float)arg1 scaledLikeTextStyle:(id)arg2 maximumPointSize:(float)arg3 compatibleWithTraitCollection:(id)arg4 roundSize:(_Bool)arg5;
 + (float)_pointSize:(float)arg1 scaledLikeTextStyle:(id)arg2 maximumPointSize:(float)arg3 compatibleWithTraitCollection:(id)arg4;
 + (id)_preferredFontForTextStyle:(id)arg1 maximumPointSize:(float)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)_supportedDynamicFontStyles;
 + (_Bool)_isSupportedDynamicFontTextStyle:(id)arg1;
++ (id)_preferredFontForTextStyle:(id)arg1 design:(id)arg2 variant:(int)arg3 maximumContentSizeCategory:(id)arg4 compatibleWithTraitCollection:(id)arg5 pointSize:(float)arg6 pointSizeForScaling:(float)arg7;
 + (id)_preferredFontForTextStyle:(id)arg1 design:(id)arg2 variant:(int)arg3 maximumContentSizeCategory:(id)arg4 compatibleWithTraitCollection:(id)arg5;
 + (id)_preferredFontForTextStyle:(id)arg1 design:(id)arg2 variant:(int)arg3 compatibleWithTraitCollection:(id)arg4;
 + (id)_preferredFontForTextStyle:(id)arg1 design:(id)arg2 variant:(int)arg3;

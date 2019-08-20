@@ -20,13 +20,16 @@
 + (unsigned long long)recencyRankedTargetResultCount;
 + (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
 + (id)timeRankedQueries;
-+ (id)rankingQueriesWithText:(id)arg1;
 @property(retain, nonatomic) IMTimingCollection *timingCollection; // @synthesize timingCollection=_timingCollection;
 @property(retain, nonatomic) NSArray *resultsToCheck; // @synthesize resultsToCheck=_resultsToCheck;
 @property(nonatomic) _Bool gotResults; // @synthesize gotResults=_gotResults;
 @property(retain, nonatomic) NSSet *intermediaryResults; // @synthesize intermediaryResults=_intermediaryResults;
 @property(nonatomic) _Bool searchTerminated; // @synthesize searchTerminated=_searchTerminated;
 - (void).cxx_destruct;
+- (void)_IMSPIQueryMessageItemsWithGUIDs:(id)arg1 results:(CDUnknownBlockType)arg2;
+- (void)_deleteResult:(id)arg1;
+- (id)menuActionsForResult:(id)arg1 atRect:(struct CGRect)arg2;
+- (_Bool)wantsDeleteAction;
 - (struct NSDirectionalEdgeInsets)additionalGroupInsets;
 - (Class)footerClass;
 - (_Bool)wantsFooterSection;
@@ -39,6 +42,7 @@
 - (void)searchWithText:(id)arg1 mode:(unsigned long long)arg2;
 - (void)fractionalWidth:(double *)arg1 count:(unsigned long long *)arg2 forLayoutWidth:(unsigned long long)arg3;
 - (unsigned long long)maxResultsForMode:(unsigned long long)arg1;
+- (id)rankingQueriesWithText:(id)arg1;
 - (id)zkwFilterQueries;
 
 @end

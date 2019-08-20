@@ -14,8 +14,6 @@
 - (NSString *)secondaryStringForCurrentValueView:(HKInteractiveChartCurrentValueView *)arg1;
 - (NSAttributedString *)attributedValueStringForCurrentValueView:(HKInteractiveChartCurrentValueView *)arg1;
 - (NSAttributedString *)attributedTitleStringForCurrentValueView:(HKInteractiveChartCurrentValueView *)arg1;
-- (void)loadLastRecordedDateStringForMenstrualCycleStartWithCompletion:(void (^)(NSString *, NSError *))arg1;
 - (_Bool)pendingData;
-- (_Bool)shouldUseLastRecordedDate;
 @end
 

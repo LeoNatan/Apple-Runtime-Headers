@@ -10,6 +10,7 @@
 
 @interface SBGestureRootSwitcherModifier : SBSwitcherModifier
 {
+    _Bool _shouldVerifyModifierStackCoherencyCheckAfterHandlingEvent;
     NSString *_activeTransitionKey;
     SBAppLayout *_selectedAppLayout;
     long long _currentEnvironmentMode;
@@ -20,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)_transitionModifier;
 - (id)_gestureModifier;
-- (void)_performModifierStackCoherencyCheckAfterHandlingEvent:(id)arg1;
+- (void)_performModifierStackCoherencyCheckIfNeededAfterHandlingEvent:(id)arg1;
 - (id)_forwardEventAndUpdateInternalState:(id)arg1;
 - (id)transitionChildModifierForMainTransitionEvent:(id)arg1 activeGestureModifier:(id)arg2;
 - (id)gestureChildModifierForGestureEvent:(id)arg1 activeTransitionModifier:(id)arg2;

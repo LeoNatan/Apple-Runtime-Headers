@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
     unsigned int _scheduledCullOfViews:1;
     unsigned int _keyViewLoopIsDirty:1;
     unsigned int _rowViewPurgatoryEnabled:1;
+    unsigned int _rowViewsBeingAnimatedOffPurgeInProgress:1;
 }
 
 @property(readonly, nonatomic) NSMutableIndexSet *mutableHiddenRowIndexes; // @synthesize mutableHiddenRowIndexes=_hiddenRowIndexes;
@@ -259,8 +260,6 @@ __attribute__((visibility("hidden")))
 - (long long)_computeCurrentFloatingGroupRow;
 - (long long)_computeFloatingGroupRowFromIndex:(long long)arg1 inVisibleRange:(struct _NSRange)arg2;
 @property(retain, nonatomic) NSTableRowView *floatingGroupRowView; // @dynamic floatingGroupRowView;
-- (void)_updateClipPathIfNeeded;
-- (BOOL)needsClipPath;
 @property(nonatomic) long long floatingGroupRow; // @dynamic floatingGroupRow;
 @property(retain, nonatomic) NSMutableIndexSet *groupRowIndexes; // @dynamic groupRowIndexes;
 - (void)ensureGroupRowIndexes;

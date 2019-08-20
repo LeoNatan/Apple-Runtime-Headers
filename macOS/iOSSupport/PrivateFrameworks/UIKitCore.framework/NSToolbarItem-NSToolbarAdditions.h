@@ -6,10 +6,13 @@
 
 #import <AppKit/NSToolbarItem.h>
 
-@protocol _UICopyConfigurationReading;
+@class UIMenuElement;
+@protocol UIActivityItemsConfigurationReading, UICopyConfigurationReading;
 
 @interface NSToolbarItem (NSToolbarAdditions)
 + (id)itemWithItemIdentifier:(id)arg1 barButtonItem:(id)arg2;
-@property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration;
+@property(copy, nonatomic) UIMenuElement *itemMenuFormRepresentation;
+@property(retain, nonatomic, setter=_setActivityItemsConfiguration:) id <UIActivityItemsConfigurationReading> _activityItemsConfiguration;
+@property(retain, nonatomic, setter=_setCopyConfiguration:) id <UICopyConfigurationReading> _copyConfiguration;
 @end
 

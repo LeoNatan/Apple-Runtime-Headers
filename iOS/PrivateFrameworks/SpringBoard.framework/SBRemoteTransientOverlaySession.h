@@ -23,6 +23,7 @@
     _Bool _activated;
     _Bool _prepared;
     _Bool _valid;
+    _Bool _pendingInvalidation;
     SBSRemoteAlertDefinition *_definition;
     NSError *_error;
     NSString *_sessionID;
@@ -30,6 +31,7 @@
 }
 
 @property(nonatomic) __weak id <SBRemoteTransientOverlaySessionHostDelegate> hostDelegate; // @synthesize hostDelegate=_hostDelegate;
+@property(readonly, nonatomic, getter=isPendingInvalidation) _Bool pendingInvalidation; // @synthesize pendingInvalidation=_pendingInvalidation;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic, getter=isPrepared) _Bool prepared; // @synthesize prepared=_prepared;
 @property(readonly, nonatomic, getter=isActivated) _Bool activated; // @synthesize activated=_activated;

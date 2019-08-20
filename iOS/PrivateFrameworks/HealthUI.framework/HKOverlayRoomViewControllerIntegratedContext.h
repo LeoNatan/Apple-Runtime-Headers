@@ -32,6 +32,7 @@
 - (id)_minMaxValueFromChartPoints:(id)arg1 displayType:(id)arg2 unitPreferenceController:(id)arg3;
 - (id)_buildMonitoringSampleType;
 - (id)contextItemForLastUpdate;
+- (_Bool)_obsoleteDateRange:(id)arg1;
 - (void)updateContextItemForDateInterval:(id)arg1 timeScope:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)overlayDisplayTypeForTimeScope:(long long)arg1;
 - (id)sampleTypeForDateRangeUpdates;

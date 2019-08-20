@@ -31,6 +31,7 @@
 @property(nonatomic) unsigned long long visibleMiniAlertCount;
 @property(nonatomic) long long userInterfaceStyle;
 @property(nonatomic) BOOL wantsExclusiveForeground;
+@property(nonatomic) BOOL homeIndicatorAutoHidden;
 @property(nonatomic) unsigned long long screenEdgesDeferringSystemGestures;
 @property(nonatomic, getter=isReachabilitySupported) BOOL reachabilitySupported;
 @property(copy, nonatomic) FBSDisplayConfigurationRequest *displayConfigurationRequest;

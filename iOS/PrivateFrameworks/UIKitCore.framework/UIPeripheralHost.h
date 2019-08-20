@@ -89,6 +89,9 @@
 + (id)endPlacementForInputViewSet:(id)arg1;
 + (id)passthroughViews;
 + (double)gridViewRubberBandValueForValue:(double)arg1 target:(double)arg2 timeInterval:(double)arg3 velocity:(double *)arg4;
++ (void)prepareToShowFloatingIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
++ (void)prepareToHideFloatingIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
++ (void)deactivateFloatingWithCompletion:(CDUnknownBlockType)arg1;
 + (void)setFloating:(_Bool)arg1 onCompletion:(CDUnknownBlockType)arg2;
 + (struct CGPoint)defaultUndockedOffset;
 + (void)adjustFloatingPersistentOffsetForKeyboardSize:(struct CGSize)arg1;

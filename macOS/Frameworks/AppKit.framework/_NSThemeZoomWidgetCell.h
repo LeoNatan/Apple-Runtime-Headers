@@ -8,7 +8,7 @@
 
 #import <AppKit/NSMenuDelegate-Protocol.h>
 
-@class NSMenu, NSString, NSWindow;
+@class NSMenu, NSString, NSTrackingArea, NSWindow;
 
 __attribute__((visibility("hidden")))
 @interface _NSThemeZoomWidgetCell : _NSThemeWidgetCell <NSMenuDelegate>
@@ -19,14 +19,19 @@ __attribute__((visibility("hidden")))
     struct CGPoint _mouseLocation;
     BOOL _trackingMouse;
     BOOL _trackingPopupMenu;
+    BOOL _isMouseInside;
     NSWindow *_trackedWindow;
     NSMenu *_contextMenu;
+    NSTrackingArea *_exitTrackingArea;
 }
 
+@property(retain) NSTrackingArea *exitTrackingArea; // @synthesize exitTrackingArea=_exitTrackingArea;
 @property(retain) NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 @property __weak NSWindow *trackedWindow; // @synthesize trackedWindow=_trackedWindow;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)accessibilityActionNames;
+- (BOOL)accessibilityPerformShowMenu;
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (BOOL)_sendActionFrom:(id)arg1;
@@ -47,7 +52,11 @@ __attribute__((visibility("hidden")))
 - (void)startTrackingHover;
 - (void)removeHoverObservers;
 - (void)addHoverObservers;
+- (void)flagsChanged;
+- (BOOL)wantsMenu;
+- (BOOL)wantsHoverTracking;
 - (void)_setMouseTrackingInRect:(struct CGRect)arg1 ofView:(id)arg2;
+- (int)menuOption;
 - (BOOL)_hasRolloverContentArt;
 - (BOOL)isZoomButton;
 - (void)setHighlighted:(BOOL)arg1;

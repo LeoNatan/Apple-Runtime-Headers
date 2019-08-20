@@ -35,6 +35,7 @@
 - (void *)pointerAtIndex:(unsigned int)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 @property(readonly, copy) NSPointerFunctions *pointerFunctions;
+- (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPointerFunctions:(id)arg1;
 - (id)initWithOptions:(unsigned int)arg1;

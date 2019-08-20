@@ -23,6 +23,7 @@
 @interface CSAudioProvider : NSObject <CSAudioRecorderDelegate, CSAudioServerCrashMonitorDelegate, CSAudioPreprocessorDelegate, CSAudioStreamProviding, CSAudioSessionProviding, CSAudioMetricProviding, CSAudioAlertProviding, CSAudioMeterProviding, CSTriggerInfoProviding, CSVoiceTriggerDelegate>
 {
     BOOL _audioSystemRecovering;
+    BOOL _waitingForAlertFinish;
     NSString *_UUID;
     NSObject<OS_dispatch_queue> *_recordQueue;
     CSAudioRecorder *_audioRecorder;
@@ -48,12 +49,17 @@
     NSUUID *_alertPlaybackFinishTimeoutToken;
     NSUUID *_startRecordingWatchDogToken;
     NSUUID *_stopRecordingWatchDogToken;
+    unsigned long long _circularBufferStartHostTime;
+    unsigned long long _circularBufferStartSampleCount;
 }
 
+@property(nonatomic) unsigned long long circularBufferStartSampleCount; // @synthesize circularBufferStartSampleCount=_circularBufferStartSampleCount;
+@property(nonatomic) unsigned long long circularBufferStartHostTime; // @synthesize circularBufferStartHostTime=_circularBufferStartHostTime;
 @property(retain, nonatomic) NSUUID *stopRecordingWatchDogToken; // @synthesize stopRecordingWatchDogToken=_stopRecordingWatchDogToken;
 @property(retain, nonatomic) NSUUID *startRecordingWatchDogToken; // @synthesize startRecordingWatchDogToken=_startRecordingWatchDogToken;
 @property(retain, nonatomic) NSUUID *alertPlaybackFinishTimeoutToken; // @synthesize alertPlaybackFinishTimeoutToken=_alertPlaybackFinishTimeoutToken;
 @property(nonatomic) unsigned long long audioStreamHandleId; // @synthesize audioStreamHandleId=_audioStreamHandleId;
+@property(nonatomic) BOOL waitingForAlertFinish; // @synthesize waitingForAlertFinish=_waitingForAlertFinish;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *recordingWillStartGroup; // @synthesize recordingWillStartGroup=_recordingWillStartGroup;
 @property(retain, nonatomic) CSOSTransaction *recordingTransaction; // @synthesize recordingTransaction=_recordingTransaction;
 @property(retain, nonatomic) CSAudioPreprocessor *audioPreprocessor; // @synthesize audioPreprocessor=_audioPreprocessor;
@@ -100,6 +106,7 @@
 - (BOOL)isRecording;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3;
 - (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
+- (void)_forwardAudioChunk:(id)arg1 remoteVAD:(id)arg2 atTime:(unsigned long long)arg3 toStream:(id)arg4;
 - (void)_processAudioBuffer:(id)arg1 remoteVAD:(id)arg2 atTime:(unsigned long long)arg3;
 - (void)audioRecorderWillBeDestroyed:(id)arg1;
 - (void)audioRecorderStreamHandleIdInvalidated:(unsigned long long)arg1;
@@ -147,6 +154,7 @@
 - (void)stopAudioStream:(id)arg1 option:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleDidStopAudioStreamWithReason:(long long)arg1;
 - (void)_handleDidStartAudioStreamWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_resetCircularBufferStartTime;
 - (void)_startAudioStream:(id)arg1 option:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)prepareAudioStream:(id)arg1 request:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)prepareAudioStreamSync:(id)arg1 request:(id)arg2 error:(id *)arg3;

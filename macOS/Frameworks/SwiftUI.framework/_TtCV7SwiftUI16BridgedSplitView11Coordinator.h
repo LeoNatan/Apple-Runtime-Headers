@@ -9,8 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface _TtCV7SwiftUI16BridgedSplitView11Coordinator : _TtC7SwiftUI23PlatformViewCoordinator
 {
-    // Error parsing type: , name: rootHost
-    // Error parsing type: , name: placeholderHost
+    // Error parsing type: , name: master
+    // Error parsing type: , name: placeholder
 }
 
 - (void).cxx_destruct;

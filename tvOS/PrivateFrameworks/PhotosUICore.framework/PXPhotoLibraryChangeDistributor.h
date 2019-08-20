@@ -22,12 +22,14 @@
 }
 
 - (void).cxx_destruct;
+- (void)_notifyPausedStateChange;
 - (void)endPausingChanges:(id)arg1;
 - (id)beginPausingChangesWithTimeout:(double)arg1;
 - (void)distributeChangeOnMainQueue:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;
+@property(readonly, nonatomic, getter=areChangesPaused) _Bool changesPaused;
 - (void)dealloc;
 - (id)initWithPhotoLibrary:(id)arg1;
 

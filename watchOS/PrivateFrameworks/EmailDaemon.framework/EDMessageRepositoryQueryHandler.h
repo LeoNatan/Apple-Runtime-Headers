@@ -14,12 +14,12 @@
 @interface EDMessageRepositoryQueryHandler : NSObject <EFCancelable>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _didStart
+    NSSet *_mailboxes;
     EFQuery *_query;
     EDMessagePersistence *_messagePersistence;
     EDPersistenceHookRegistry *_hookRegistry;
     id <EMMessageListItemQueryResultsObserver> _resultsObserver;
     EMObjectID *_observationIdentifier;
-    NSSet *_mailboxes;
     int _dateSortOrder;
     NSMapTable *_summaryLoadersMapTable;
     struct os_unfair_lock_s _summaryLock;
@@ -28,7 +28,6 @@
 @property(readonly, nonatomic) struct os_unfair_lock_s summaryLock; // @synthesize summaryLock=_summaryLock;
 @property(retain, nonatomic) NSMapTable *summaryLoadersMapTable; // @synthesize summaryLoadersMapTable=_summaryLoadersMapTable;
 @property(readonly, nonatomic) int dateSortOrder; // @synthesize dateSortOrder=_dateSortOrder;
-@property(readonly, copy, nonatomic) NSSet *mailboxes; // @synthesize mailboxes=_mailboxes;
 @property(readonly, nonatomic) EMObjectID *observationIdentifier; // @synthesize observationIdentifier=_observationIdentifier;
 @property(readonly, nonatomic) id <EMMessageListItemQueryResultsObserver> resultsObserver; // @synthesize resultsObserver=_resultsObserver;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
@@ -36,6 +35,7 @@
 @property(readonly, copy, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)requestSummaryForMessageObjectID:(id)arg1;
+@property(readonly, copy, nonatomic) NSSet *mailboxes; // @synthesize mailboxes=_mailboxes;
 - (void)cancel;
 - (void)start;
 - (void)dealloc;

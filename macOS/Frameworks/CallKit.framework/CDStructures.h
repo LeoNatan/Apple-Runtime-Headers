@@ -53,6 +53,7 @@ struct CXCallUpdateHasSet {
     unsigned int remoteUplinkMuted:1;
     unsigned int shouldSuppressInCallUI:1;
     unsigned int requiresAuthentication:1;
+    unsigned int mutuallyExclusiveCall:1;
 };
 
 struct CXVoicemailUpdateHasSet {

@@ -10,7 +10,6 @@ __attribute__((visibility("hidden")))
 @interface _TtC16NewsSubscription15SoftPaywallView : UIView
 {
     // Error parsing type: , name: contentView
-    // Error parsing type: , name: headerImageView
     // Error parsing type: , name: badgeImageView
     // Error parsing type: , name: titleTextView
     // Error parsing type: , name: descriptionTextView

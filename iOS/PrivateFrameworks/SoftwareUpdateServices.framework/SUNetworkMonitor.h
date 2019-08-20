@@ -34,6 +34,7 @@
 - (_Bool)_isCurrentlyRoaming;
 - (_Bool)isCellularDataRoamingEnabled;
 - (void)setCellularRoaming:(_Bool)arg1;
+- (int)_networkTypeFromCurrentCellularDataWithError:(id *)arg1;
 - (int)_networkTypeFromCurrentCellularData;
 - (int)_networkTypeFromFlags:(unsigned int)arg1;
 - (void)_resetCtClient;

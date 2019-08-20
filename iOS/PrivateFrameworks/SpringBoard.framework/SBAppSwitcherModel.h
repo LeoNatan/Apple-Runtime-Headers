@@ -6,29 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class SBIconController, SBRecentAppLayouts;
+#import <SpringBoard/SBRecentAppLayoutsDelegate-Protocol.h>
 
-@interface SBAppSwitcherModel : NSObject
+@class NSString, SBIconController, SBRecentAppLayouts;
+@protocol SBAppSwitcherModelDelegate;
+
+@interface SBAppSwitcherModel : NSObject <SBRecentAppLayoutsDelegate>
 {
     SBIconController *_iconController;
     SBRecentAppLayouts *_recents;
     id _recentsChangedNotificationObserver;
+    id <SBAppSwitcherModelDelegate> _delegate;
 }
 
 + (id)appSwitcherHeaderIconImageDescriptorName;
+@property(nonatomic) __weak id <SBAppSwitcherModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_recentAppLayoutsController;
-- (id)recentDisplayItemsForBundleIdentifier:(id)arg1;
-- (id)appLayoutsForBundleIdentifier:(id)arg1;
-- (id)appLayouts;
+- (void)recentAppLayouts:(id)arg1 didRemoveAppLayoutForFallingOffList:(id)arg2;
+- (id)recentDisplayItemsForBundleIdentifier:(id)arg1 includingHiddenAppLayouts:(_Bool)arg2;
+- (id)appLayoutsForBundleIdentifier:(id)arg1 includingHiddenAppLayouts:(_Bool)arg2;
+- (id)appLayoutsIncludingHiddenAppLayouts:(_Bool)arg1;
 - (void)_warmUpIconsForAppLayout:(id)arg1;
 - (void)_warmUpIconsForRecentAppLayouts:(id)arg1;
 - (void)replaceAppLayout:(id)arg1 withAppLayout:(id)arg2;
+- (void)hide:(id)arg1;
+- (void)removeAppLayouts:(id)arg1;
 - (void)remove:(id)arg1;
 - (void)addToFront:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithIconController:(id)arg1 applicationController:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

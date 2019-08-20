@@ -13,14 +13,10 @@
     NSSet *_mediaProfiles;
     NSNumber *_playbackStateNumber;
     NSNumber *_playbackVolumeNumber;
-    NSNumber *_shuffleSetting;
-    NSNumber *_repeatSetting;
     MPPlaybackArchive *_playbackArchive;
 }
 
-@property(readonly, copy, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
-@property(readonly, nonatomic) NSNumber *repeatSetting; // @synthesize repeatSetting=_repeatSetting;
-@property(readonly, nonatomic) NSNumber *shuffleSetting; // @synthesize shuffleSetting=_shuffleSetting;
+@property(readonly, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(readonly, nonatomic) NSNumber *playbackVolumeNumber; // @synthesize playbackVolumeNumber=_playbackVolumeNumber;
 @property(readonly, nonatomic) NSNumber *playbackStateNumber; // @synthesize playbackStateNumber=_playbackStateNumber;
 @property(readonly, copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
@@ -28,7 +24,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)initWithMediaAction:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 profileSource:(id)arg2;
-- (id)initWithMediaProfiles:(id)arg1 playbackState:(id)arg2 playbackVolume:(id)arg3 repeatSetting:(id)arg4 shuffleSetting:(id)arg5 playbackArchive:(id)arg6;
+- (id)initWithMediaProfiles:(id)arg1 playbackState:(id)arg2 playbackVolume:(id)arg3 playbackArchive:(id)arg4;
 
 @end
 

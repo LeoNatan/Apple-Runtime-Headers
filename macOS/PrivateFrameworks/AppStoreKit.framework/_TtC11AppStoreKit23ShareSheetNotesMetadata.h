@@ -9,6 +9,7 @@
 @interface _TtC11AppStoreKit23ShareSheetNotesMetadata : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: itemName
+    // Error parsing type: , name: url
     // Error parsing type: , name: developer
     // Error parsing type: , name: category
     // Error parsing type: , name: fileSize

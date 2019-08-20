@@ -20,6 +20,7 @@
 - (void)decayHandler:(id)arg1 didUpdateLearningRate:(float)arg2;
 - (id)computeInference:(id)arg1;
 - (unsigned long long)runInference:(id)arg1 databatch:(id)arg2 inferredResult:(id)arg3 semaphore:(id)arg4;
+- (float)computeLoss:(id)arg1;
 - (void)runTraining:(id)arg1 databatch:(id)arg2 iteration:(unsigned long long)arg3 lossCallback:(CDUnknownBlockType)arg4 semaphore:(id)arg5;
 - (void)createLayerKernels;
 - (void)setOptimizerParams:(id)arg1;

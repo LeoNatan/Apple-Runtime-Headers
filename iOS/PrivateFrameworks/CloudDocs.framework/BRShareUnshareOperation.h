@@ -14,7 +14,6 @@
     CDUnknownBlockType _unshareCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType unshareCompletionBlock; // @synthesize unshareCompletionBlock=_unshareCompletionBlock;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 - (void).cxx_destruct;

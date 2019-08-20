@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNPhotoPickerProviderItem, NSArray, NSIndexPath;
+@class CNPhotoPickerProviderItem, NSArray, NSIndexPath, NSString;
 @protocol CNPhotoPickerActionsDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,12 +17,15 @@ __attribute__((visibility("hidden")))
     CNPhotoPickerProviderItem *_providerItem;
     NSArray *_currentInlineActionButtons;
     NSIndexPath *_indexPath;
+    NSString *_assignActionTitleOverride;
 }
 
 + (_Bool)actionIsDestructive:(long long)arg1;
++ (id)buttonForActionType:(long long)arg1 titleOverride:(id)arg2 withActionBlock:(CDUnknownBlockType)arg3;
 + (id)buttonForActionType:(long long)arg1 withActionBlock:(CDUnknownBlockType)arg2;
 + (unsigned long long)maximumNumberOfButtons;
 + (id)localizedTitleForActionType:(long long)arg1;
+@property(retain, nonatomic) NSString *assignActionTitleOverride; // @synthesize assignActionTitleOverride=_assignActionTitleOverride;
 @property(nonatomic) _Bool canDelete; // @synthesize canDelete=_canDelete;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) NSArray *currentInlineActionButtons; // @synthesize currentInlineActionButtons=_currentInlineActionButtons;
@@ -37,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (id)generateInlineActionButtons;
 @property(readonly, nonatomic) NSArray *inlineActionButtons;
 - (_Bool)canPerformActionType:(long long)arg1;
-- (id)initWithProviderItem:(id)arg1 canDelete:(_Bool)arg2 atIndexPath:(id)arg3;
+- (id)initWithProviderItem:(id)arg1 assignActionTitleOverride:(id)arg2 canDelete:(_Bool)arg3 atIndexPath:(id)arg4;
 
 @end
 

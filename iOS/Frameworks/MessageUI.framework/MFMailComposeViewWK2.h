@@ -8,11 +8,12 @@
 
 #import <MessageUI/MFComposeWebViewDelegate-Protocol.h>
 
-@class MFComposeWebView, NSString;
+@class MFComposeWebView, MFMessageContentLoadingView, NSString;
 
 @interface MFMailComposeViewWK2 : MFMailComposeView <MFComposeWebViewDelegate>
 {
     MFComposeWebView *_webView;
+    MFMessageContentLoadingView *_loadingView;
 }
 
 - (void).cxx_destruct;
@@ -30,6 +31,7 @@
 - (void)_adjustScrollerForBottomView;
 - (void)_adjustScrollerContentSize;
 - (void)setLoading:(_Bool)arg1;
+- (void)_layoutLoadingView;
 - (void)_revealSelection;
 - (id)_bodyField;
 - (id)_textView;

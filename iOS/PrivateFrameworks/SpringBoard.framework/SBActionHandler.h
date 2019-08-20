@@ -12,6 +12,7 @@
 
 @interface SBActionHandler : NSObject <SBFActionProviding>
 {
+    _Bool _capturingDisplayDump;
     NSHashTable *_externalHandlers;
 }
 

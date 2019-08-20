@@ -38,6 +38,7 @@
 + (id)orderingTermForSortDescriptor:(id)arg1;
 + (_Bool)requiresSampleTypePredicate;
 + (id)predicateMatchingPreferredEntityTypeIfRequiredWithPredicate:(id)arg1;
++ (Class)_entityClassForDeletion;
 + (Class)_deletedEntityClass;
 + (Class)baseDataEntityClass;
 + (id)defaultForeignKey;

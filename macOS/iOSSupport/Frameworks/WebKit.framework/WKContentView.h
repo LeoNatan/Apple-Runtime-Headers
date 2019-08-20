@@ -19,12 +19,13 @@
 #import <WebKit/WKFileUploadPanelDelegate-Protocol.h>
 #import <WebKit/WKKeyboardScrollViewAnimatorDelegate-Protocol.h>
 #import <WebKit/WKShareSheetDelegate-Protocol.h>
+#import <WebKit/WKTouchActionGestureRecognizerDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSIndexSet, NSString, RTIInputSystemSourceSession, UIColor, UIImage, UIInputContextHistory, UITextInputAssistantItem, UITextInputPasswordRules, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIWebFormAccessory, WKBrowsingContextController, WKFormInputControl, WKWebView;
 @protocol UITextInputDelegate, UITextInputSuggestionDelegate, UITextInputTokenizer, WKFormControl;
 
 __attribute__((visibility("hidden")))
-@interface WKContentView : WKApplicationStateTrackingView <UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate, WKShareSheetDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate>
+@interface WKContentView : WKApplicationStateTrackingView <UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate, WKShareSheetDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, WKTouchActionGestureRecognizerDelegate>
 {
     RefPtr_a805eeb8 _page;
     WKWebView *_webView;
@@ -37,10 +38,12 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UILongPressGestureRecognizer> _longPressGestureRecognizer;
     struct RetainPtr<WKSyntheticTapGestureRecognizer> _doubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _nonBlockingDoubleTapGestureRecognizer;
+    struct RetainPtr<UITapGestureRecognizer> _doubleTapGestureRecognizerForDoubleClick;
     struct RetainPtr<UITapGestureRecognizer> _twoFingerDoubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _twoFingerSingleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _stylusSingleTapGestureRecognizer;
     struct RetainPtr<WKInspectorNodeSearchGestureRecognizer> _inspectorNodeSearchGestureRecognizer;
+    struct RetainPtr<WKTouchActionGestureRecognizer> _touchActionGestureRecognizer;
     struct RetainPtr<UIHoverGestureRecognizer> _hoverGestureRecognizer;
     struct RetainPtr<_UILookupGestureRecognizer> _lookupGestureRecognizer;
     struct CGPoint _lastHoverLocation;
@@ -66,7 +69,6 @@ __attribute__((visibility("hidden")))
     struct InteractionInformationAtPosition _positionInformation;
     struct FocusedElementInformation _focusedElementInformation;
     struct RetainPtr<NSObject<WKFormPeripheral>> _inputPeripheral;
-    struct RetainPtr<UIEvent> _uiEventBeingResent;
     struct BlockPtr<void (WebEvent *, signed char)> _keyWebEventHandler;
     struct CGPoint _lastInteractionLocation;
     unsigned long long _layerTreeTransactionIdAtLastTouchStart;
@@ -96,10 +98,13 @@ __attribute__((visibility("hidden")))
     BOOL _showDebugTapHighlightsForFastClicking;
     int m_commitPotentialTapPointerId;
     BOOL _keyboardDidRequestDismissal;
+    BOOL _candidateViewNeedsUpdate;
+    BOOL _seenHardwareKeyDownInNonEditableElement;
     BOOL _becomingFirstResponder;
     BOOL _resigningFirstResponder;
     BOOL _needsDeferredEndScrollingSelectionUpdate;
     BOOL _isChangingFocus;
+    BOOL _isFocusingElementWithKeyboard;
     BOOL _isBlurringFocusedElement;
     BOOL _focusRequiresStrongPasswordAssistance;
     BOOL _waitingForEditDragSnapshot;
@@ -149,7 +154,6 @@ __attribute__((visibility("hidden")))
 - (void)_setAcceleratedCompositingRootView:(id)arg1;
 - (void)_layerTreeCommitComplete;
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction *)arg1;
-- (void)_didCommitLoadForMainFrame;
 - (void)_processDidCreateContextForVisibilityPropagation;
 - (void)_didRelaunchProcess;
 - (void)_processWillSwap;
@@ -238,6 +242,7 @@ __attribute__((visibility("hidden")))
 - (double)dragLiftDelay;
 - (void)_didChangeDragInteractionPolicy;
 - (id)containerViewForTargetedPreviews;
+@property(readonly, nonatomic) BOOL _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) BOOL _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) BOOL _shouldUseContextMenus;
 - (void)actionSheetAssistant:(id)arg1 getAlternateURLForImage:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -289,6 +294,7 @@ __attribute__((visibility("hidden")))
 - (void)showGlobalMenuControllerInRect:(struct CGRect)arg1;
 - (void)_didUpdateInputMode:(unsigned char)arg1;
 - (void)_hardwareKeyboardAvailabilityChanged;
+@property(readonly, nonatomic) BOOL shouldIgnoreKeyboardWillHideNotification;
 - (void)_elementDidBlur;
 - (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(BOOL)arg2 blurPreviousNode:(BOOL)arg3 activityStateChanges:(OptionSet_05ce0fa5)arg4 userObject:(id)arg5;
 - (Vector_116a0919 *)focusedSelectElementOptions;
@@ -345,10 +351,11 @@ __attribute__((visibility("hidden")))
 - (void)_didHandleKeyEvent:(id)arg1 eventWasHandled:(BOOL)arg2;
 - (void)handleKeyWebEvent:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)handleKeyWebEvent:(id)arg1;
-- (void)handleKeyEvent:(id)arg1;
 - (void)generateSyntheticEditingCommand:(unsigned char)arg1;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)requiresKeyEvents;
+- (BOOL)shouldSuppressUpdateCandidateView;
+- (void)modifierFlagsDidChangeFrom:(long long)arg1 to:(long long)arg2;
 - (struct CGRect)rectContainingCaretSelection;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)setSelectedDOMRange:(id)arg1 affinityDownstream:(BOOL)arg2;
@@ -402,17 +409,16 @@ __attribute__((visibility("hidden")))
 - (void)accessoryTab:(BOOL)arg1;
 - (void)accessoryDone;
 - (void)accessoryClear;
-- (float)_doubleTapForDoubleClickRadius;
-- (double)_doubleTapForDoubleClickDelay;
 - (void)_setDoubleTapGesturesEnabled:(BOOL)arg1;
 - (struct Color)_tapHighlightColorForFastClick:(BOOL)arg1;
 - (void)_becomeFirstResponderWithSelectionMovingForward:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_previousAccessoryTabForWebView:(id)arg1;
 - (void)_nextAccessoryTabForWebView:(id)arg1;
-- (id)keyCommands;
+- (void)_didCommitLoadForMainFrame;
 - (void)_didStartProvisionalLoadForMainFrame;
 - (void)_handleAutocorrectionContext:(const struct WebAutocorrectionContext *)arg1;
 - (void)requestAutocorrectionContextWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_cancelPendingAutocorrectionContextHandler;
 - (void)_invokePendingAutocorrectionContextHandler:(id)arg1;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDictationContext:(CDUnknownBlockType)arg1;
@@ -587,6 +593,7 @@ __attribute__((visibility("hidden")))
 - (void)_longPressRecognized:(id)arg1;
 - (void)_stylusSingleTapRecognized:(id)arg1;
 - (void)_twoFingerSingleTapGestureRecognized:(id)arg1;
+- (void)_doubleTapRecognizedForDoubleClick:(id)arg1;
 - (void)_highlightLongPressRecognized:(id)arg1;
 - (id)webSelectionRects;
 - (id)webSelectionRectsForSelectionRects:(const Vector_029b09a9 *)arg1;
@@ -622,6 +629,7 @@ __attribute__((visibility("hidden")))
 - (void)_zoomToRevealFocusedElement;
 - (BOOL)_requiresKeyboardResetOnReload;
 - (BOOL)_requiresKeyboardWhenFirstResponder;
+- (BOOL)_disableAutomaticKeyboardUI;
 - (BOOL)_shouldShowAutomaticKeyboardUIIgnoringInputMode;
 - (BOOL)shouldShowAutomaticKeyboardUI;
 - (void)_scrollingNodeScrollingDidEnd;
@@ -638,6 +646,10 @@ __attribute__((visibility("hidden")))
 - (void)_webTouchEvent:(const struct NativeWebTouchEvent *)arg1 preventsNativeGestures:(BOOL)arg2;
 - (void)_inspectorNodeSearchRecognized:(id)arg1;
 - (void)_resetPanningPreventionFlags;
+- (id)touchActionActiveTouches;
+- (BOOL)gestureRecognizerMayDoubleTapToZoomWebView:(id)arg1;
+- (BOOL)gestureRecognizerMayPinchToZoomWebView:(id)arg1;
+- (BOOL)gestureRecognizerMayPanWebView:(id)arg1;
 - (void)_handleTouchActionsForTouchEvent:(const struct NativeWebTouchEvent *)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
 - (Optional_6686b3f7)activeTouchIdentifierForGestureRecognizer:(id)arg1;
@@ -674,7 +686,6 @@ __attribute__((visibility("hidden")))
 - (void)_removeDefaultGestureRecognizers;
 - (void)cleanupInteraction;
 - (void)setupInteraction;
-- (void)_ensureNonBlockingDoubleTapGestureRecognizer;
 - (void)_createAndConfigureLongPressGestureRecognizer;
 - (void)_createAndConfigureDoubleTapGestureRecognizer;
 - (id)_formInputSession;

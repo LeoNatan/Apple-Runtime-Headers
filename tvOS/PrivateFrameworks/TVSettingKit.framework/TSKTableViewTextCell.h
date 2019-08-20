@@ -8,7 +8,7 @@
 
 #import <TVSettingKit/TSKCellUpdating-Protocol.h>
 
-@class NSArray, NSString, TSKSettingItem, TSKTableViewTextCellActivityIndicatorView, UITapGestureRecognizer;
+@class NSArray, NSString, TSKBadgeView, TSKSettingItem, TSKTableViewTextCellActivityIndicatorView, UITapGestureRecognizer;
 
 @interface TSKTableViewTextCell : TSKBaseTableViewCell <TSKCellUpdating>
 {
@@ -18,7 +18,9 @@
     UITapGestureRecognizer *_selectButtonRecognizer;
     UITapGestureRecognizer *_playPauseButtonRecognizer;
     TSKTableViewTextCellActivityIndicatorView *_spinnerView;
+    TSKBadgeView *_badgeView;
     NSString *_rightText;
+    long long _badgeValue;
     unsigned long long _accessories;
     TSKSettingItem *_item;
 }
@@ -26,6 +28,7 @@
 + (long long)preferredCellStyle;
 @property(nonatomic) __weak TSKSettingItem *item; // @synthesize item=_item;
 @property(nonatomic) unsigned long long accessories; // @synthesize accessories=_accessories;
+@property(nonatomic) long long badgeValue; // @synthesize badgeValue=_badgeValue;
 @property(copy, nonatomic) NSString *rightText; // @synthesize rightText=_rightText;
 - (void).cxx_destruct;
 - (void)_accessibilitySetCurrentGesture:(id)arg1;

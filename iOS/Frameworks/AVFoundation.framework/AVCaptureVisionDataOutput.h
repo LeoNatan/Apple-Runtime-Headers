@@ -21,15 +21,15 @@
 - (void)_processSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)_initializeClientVisiblePropertiesForSourceDevice:(id)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateOverrideCallbackQueue;
 @property(readonly, nonatomic) id delegateOverride;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (_Bool)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (_Bool)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (void)removeConnection:(id)arg1;
-- (id)addConnection:(id)arg1 error:(id *)arg2;
 - (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (void)triggerBurst;

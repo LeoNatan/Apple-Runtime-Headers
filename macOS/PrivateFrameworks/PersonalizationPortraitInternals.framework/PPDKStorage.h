@@ -21,6 +21,7 @@
 - (id)topicRecordFromEvent:(id)arg1;
 - (id)eventForNamedEntityRecord:(id)arg1 sourceDeviceID:(id)arg2;
 - (id)namedEntityRecordFromEvent:(id)arg1;
+- (BOOL)_isFutureCompatibilityVersionAttachedToEvent:(id)arg1;
 - (BOOL)deleteAllEventsInEventStream:(id)arg1 matchingPredicate:(id)arg2 error:(id *)arg3;
 - (BOOL)deleteAllEventsInEventStream:(id)arg1 error:(id *)arg2;
 - (BOOL)deleteEvents:(id)arg1 error:(id *)arg2;

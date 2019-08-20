@@ -18,6 +18,7 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)serverInterface;
 + (id)clientInterface;
++ (id)taskServerIdentifier;
 - (id)remoteInterface;
 - (id)exportedInterface;
 - (void)_resourceQueue_finishRouteWithWorkout:(id)arg1 metadata:(id)arg2 completion:(CDUnknownBlockType)arg3;

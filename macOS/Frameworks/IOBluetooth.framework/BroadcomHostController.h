@@ -16,6 +16,7 @@
 - (int)BluetoothHCIBroadcomResetBasicRateACLConnectionStats;
 - (int)BluetoothHCIBroadcomGetBasicRateACLConnectionStats;
 - (void)processRawEventData:(const void *)arg1 dataSize:(unsigned long long)arg2;
+- (int)BroadcomHCILEAddDeviceToWhiteListWithOptions:(unsigned char)arg1 peerAddress:(struct BluetoothDeviceAddress *)arg2 connectionIntervalMin:(unsigned short)arg3 connectionIntervalMax:(unsigned short)arg4 connectionLatency:(unsigned short)arg5 supervisionTimeout:(unsigned short)arg6 minimumCELength:(unsigned short)arg7 maximumCELength:(unsigned short)arg8 connectionIndAddressType:(unsigned char)arg9 connectionIndAddress:(struct BluetoothDeviceAddress *)arg10 outLEextOpcode:(char *)arg11 outAvailableSpace:(char *)arg12 outIndex:(char *)arg13;
 - (int)BroadcomHCILESetScanEnableEnhanced:(unsigned char)arg1 scanType:(unsigned char)arg2 filterDuplicates:(unsigned char)arg3 bypassFilterDuplicateControl:(unsigned char)arg4 targetCore:(unsigned char)arg5 scanPeriod:(unsigned short)arg6 scanDuration:(unsigned short)arg7;
 - (int)BluetoothHCIBroadcomLoadPwrRegulatoryFile:(char *)arg1 inPtbDataLength:(unsigned char)arg2;
 - (int)BroadcomHCILERemoveAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 allowDuplicates:(unsigned char)arg7 matchingCapacity:(char *)arg8 matchingRemaining:(char *)arg9;
@@ -64,6 +65,7 @@
 - (int)BluetoothHCILEBroadcomRemoveIRKFromList:(unsigned char)arg1 address:(struct BluetoothDeviceAddress *)arg2 outLEextOpcode:(char *)arg3 outIRKListAvailableSpace:(char *)arg4;
 - (int)BluetoothHCILEBroadcomAddIRKToList:(char *)arg1 addressType:(unsigned char)arg2 address:(struct BluetoothDeviceAddress *)arg3 outLEextOpcode:(char *)arg4 outIRKListAvailableSpace:(char *)arg5;
 - (int)BluetoothHCILEBroadcomEnableCustomerSpecificFeatures:(unsigned int)arg1 outLEextOpcode:(char *)arg2;
+- (int)BluetoothHCIBroadcomEnhancedLinkQualityStats:(unsigned short)arg1 inBtStatEnable:(_Bool)arg2 inCoexStatEnable:(_Bool)arg3 inDiversityStatEnable:(_Bool)arg4 inLoggingIntervalInSeconds:(BOOL)arg5;
 - (int)BluetoothHCIBroadcomHighPowerLinksEnhancedTaurus2:(unsigned short)arg1 inMode:(unsigned char)arg2 inEnable:(unsigned char)arg3 inPower:(unsigned char)arg4 inRSSIThreshold:(BOOL)arg5;
 - (int)BluetoothHCIBroadcomHPBTClassic:(unsigned short)arg1 inEnable:(unsigned char)arg2 inPowerHigh:(unsigned char)arg3 inPowerLow:(unsigned char)arg4 inRSSIThreshold:(BOOL)arg5;
 - (int)BluetoothHCIBroadcomHPBTControl:(char *)arg1;

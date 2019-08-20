@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSButton, NSString;
 
 @interface AKBarButtonItem : NSObject
 {
+    NSButton *_barButton;
     NSString *_title;
     long long _style;
     SEL _action;
@@ -22,6 +23,7 @@
 @property(copy) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)_createButton;
+@property(getter=isEnabled) BOOL enabled;
 - (id)initWithTitle:(id)arg1 style:(long long)arg2 target:(id)arg3 action:(SEL)arg4;
 
 @end

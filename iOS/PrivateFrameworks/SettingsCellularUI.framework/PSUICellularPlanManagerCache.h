@@ -51,6 +51,7 @@
 - (void)didSelectDanglingPlan:(id)arg1;
 - (void)setSelectedPlanItemForData:(id)arg1;
 @property(retain, nonatomic) CTCellularPlanItem *selectedPlanItem;
+- (id)planFromReferenceSafe:(id)arg1;
 - (id)danglingPlanFromReference:(id)arg1;
 - (id)planFromReference:(id)arg1;
 @property(readonly, nonatomic) NSArray *cellularPlansPendingTransfer;

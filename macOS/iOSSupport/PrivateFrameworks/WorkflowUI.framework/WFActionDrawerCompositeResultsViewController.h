@@ -34,7 +34,6 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)reloadViews;
 - (void)setResults:(id)arg1 animated:(BOOL)arg2;
-- (id)initWithTitle:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

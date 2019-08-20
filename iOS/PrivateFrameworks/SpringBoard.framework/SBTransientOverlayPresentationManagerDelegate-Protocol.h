@@ -6,7 +6,7 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class BSAnimationSettings, NSString, SBAppStatusBarSettings, SBPresentationObservationToken, SBTransientOverlayPresentationManager, SBTransientOverlayViewController, UIApplicationSceneDeactivationAssertion;
+@class BSAnimationSettings, NSString, SBAppStatusBarSettings, SBPresentationObservationToken, SBTransientOverlayPresentationManager, SBTransientOverlayViewController, UIApplicationSceneDeactivationAssertion, UIWindow;
 @protocol BSInvalidatable, CSExternalBehaviorProviding;
 
 @protocol SBTransientOverlayPresentationManagerDelegate <NSObject>
@@ -33,6 +33,8 @@
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireProximitySensorEnabledAssertionWithReason:(NSString *)arg2;
 - (id <BSInvalidatable>)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 acquireDisableAutoUnlockAssertionWithReason:(NSString *)arg2;
 - (void)transientOverlayPresentationManagerRequestsAppIconForceTouchDismissal:(SBTransientOverlayPresentationManager *)arg1 animated:(_Bool)arg2;
+- (_Bool)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 shouldRestoreFirstResponderForKeyWindow:(UIWindow *)arg2;
+- (_Bool)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 shouldResignFirstResponderForKeyWindow:(UIWindow *)arg2;
 - (void)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 preferredWhitePointAdaptivityStyleDidChangeWithAnimationSettings:(BSAnimationSettings *)arg2;
 - (void)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 willPresentViewController:(SBTransientOverlayViewController *)arg2;
 - (void)transientOverlayPresentationManager:(SBTransientOverlayPresentationManager *)arg1 didDismissViewController:(SBTransientOverlayViewController *)arg2 wasTopmostPresentation:(_Bool)arg3;

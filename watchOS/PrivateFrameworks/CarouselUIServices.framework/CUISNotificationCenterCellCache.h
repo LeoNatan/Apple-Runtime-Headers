@@ -16,6 +16,7 @@
 
 + (id)sharedLabelCache;
 - (void).cxx_destruct;
+- (void)checkMainThread;
 - (void)reset;
 - (void)cacheLabelImage:(id)arg1;
 - (id)labelImageOfType:(unsigned int)arg1 withColor:(id)arg2 text:(id)arg3;

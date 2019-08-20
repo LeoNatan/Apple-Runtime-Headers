@@ -69,6 +69,7 @@
 - (void)performScheduleAutomaticPayments:(CDUnknownBlockType)arg1;
 - (_Bool)canPerformScheduleAutomaticPaymentsWithPreset:(long long)arg1 frequency:(long long)arg2 amount:(id)arg3 paymentDate:(id)arg4;
 - (long long)minimumPaymentDayForPreset:(long long)arg1;
+- (id)alertControllerForScheduledDate:(id)arg1;
 - (id)_paymentSummaryItems;
 - (id)_bankAccountsForFundingSources:(id)arg1;
 - (id)_paymentRequest;

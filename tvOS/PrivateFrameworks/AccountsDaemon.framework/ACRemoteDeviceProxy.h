@@ -15,6 +15,7 @@
 {
     IDSService *_messageSendingService;
     NSObject<OS_dispatch_queue> *_messageSendingQueue;
+    NSObject<OS_dispatch_queue> *_commandProcessingQueue;
     ACRemoteCommandHandler *_remoteCommandHandler;
     NSMutableDictionary *_completionHandlersByInternalMessageID;
     NSMutableDictionary *_internalMessageIDsByTransportID;

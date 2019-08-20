@@ -8,11 +8,11 @@
 
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSArray, NSNumber, NSString;
+@class CKRecordID, NSArray, NSNumber, NSString;
 
 @interface WFGalleryPage : NSObject <WFCloudKitItem>
 {
-    NSString *_identifier;
+    CKRecordID *_identifier;
     NSString *_name;
     NSNumber *_minVersion;
     NSNumber *_isRoot;
@@ -22,14 +22,12 @@
     NSArray *_donations;
     NSArray *_donationsGroupedByApp;
     NSString *_language;
-    WFGalleryPage *_base;
+    CKRecordID *_base;
 }
 
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (id)properties;
 + (id)recordType;
-@property(readonly, nonatomic) WFGalleryPage *base; // @synthesize base=_base;
+@property(readonly, nonatomic) CKRecordID *base; // @synthesize base=_base;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, nonatomic) NSArray *donationsGroupedByApp; // @synthesize donationsGroupedByApp=_donationsGroupedByApp;
 @property(readonly, nonatomic) NSArray *donations; // @synthesize donations=_donations;
@@ -39,7 +37,7 @@
 @property(readonly, nonatomic) NSNumber *isRoot; // @synthesize isRoot=_isRoot;
 @property(readonly, nonatomic) NSNumber *minVersion; // @synthesize minVersion=_minVersion;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

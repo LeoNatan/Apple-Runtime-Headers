@@ -7,6 +7,7 @@
 #import <PhotosUICore/NSObject-Protocol.h>
 
 @protocol PXCuratedLibraryAllPhotosBodyLayout <NSObject>
+@property(nonatomic) BOOL loadItemsOutsideAnchorViewport;
 @property(nonatomic) struct CGPoint anchorViewportCenter;
 @property(retain, nonatomic) id anchorObjectReference;
 @property(readonly, nonatomic) BOOL supportsContentMode;
@@ -21,6 +22,7 @@
 @property(nonatomic) double interItemSpacing;
 @property(nonatomic) struct NSEdgeInsets padding;
 @property(nonatomic) long long numberOfColumns;
+- (struct CGRect)frameForItem:(long long)arg1 usingInterItemSpacing:(double)arg2;
 - (long long)columnForItem:(long long)arg1;
 - (struct CGRect)frameForItem:(long long)arg1;
 - (long long)itemClosestTo:(struct CGPoint)arg1;

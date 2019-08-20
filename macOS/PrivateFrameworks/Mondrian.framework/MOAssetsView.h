@@ -315,13 +315,13 @@
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isOpaque;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2 style:(unsigned long long)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

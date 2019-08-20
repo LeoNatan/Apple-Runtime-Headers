@@ -6,14 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray;
+#import <CoreSpeech/_EARSpeechRecognitionResultStream-Protocol.h>
+
+@class NSArray, NSMutableArray, NSString, _EARSpeechRecognitionAudioBuffer, _EARSpeechRecognizer;
 @protocol CSKeywordAnalyzerQuasarScoreDelegate, OS_dispatch_queue;
 
-@interface CSKeywordAnalyzerQuasar : NSObject
+@interface CSKeywordAnalyzerQuasar : NSObject <_EARSpeechRecognitionResultStream>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_previousUtteranceTokens;
     NSArray *_triggerTokenList;
+    _EARSpeechRecognizer *_recognizer;
+    _EARSpeechRecognitionAudioBuffer *_recognizerBuffer;
     _Bool _useKeywordSpotting;
     double _triggerConfidence;
     unsigned long long _activeChannel;
@@ -24,12 +28,22 @@
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
 @property(readonly, nonatomic) double triggerConfidence; // @synthesize triggerConfidence=_triggerConfidence;
 - (void).cxx_destruct;
+- (double)_getConfidence:(id)arg1;
+- (void)speechRecognizer:(id)arg1 didFinishRecognitionWithError:(id)arg2;
+- (void)speechRecognizer:(id)arg1 didRecognizeFinalResults:(id)arg2;
+- (void)speechRecognizer:(id)arg1 didRecognizePartialResult:(id)arg2;
 - (void)_recognizeWavData:(const short *)arg1 length:(int)arg2;
 - (void)processAudioChunk:(id)arg1;
 - (void)endAudio;
 - (void)runRecognition;
 - (void)reset;
 - (id)initWithConfigPath:(id)arg1 triggerTokens:(id)arg2 useKeywordSpotting:(_Bool)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -11,8 +11,10 @@
 
 @protocol SBTetheredSwitcherContentViewControlling <NSObject>
 - (double)distanceToLeadingEdgeOfLeadingCardFromTrailingEdgeOfScreen;
+- (struct CGPoint)contentOffsetForTetheredIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfAppLayouts;
 - (struct CGSize)contentSize;
+- (_Bool)isScrolling;
 - (void)returnScrollViewPanGestureRecognizer:(UIPanGestureRecognizer *)arg1;
 - (UIPanGestureRecognizer *)borrowScrollViewPanGestureRecognizer;
 - (_Bool)hasItemContainerAtLocationInContentView:(struct CGPoint)arg1;

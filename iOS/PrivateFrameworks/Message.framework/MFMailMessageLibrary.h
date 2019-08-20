@@ -11,7 +11,7 @@
 #import <Message/EFContentProtectionObserver-Protocol.h>
 
 @class EDMessageQueryParser, EDPersistence, EDPersistenceHookRegistry, EDSearchableIndexScheduler, MFFileCompressionQueue, MFLibrarySearchableIndex, MFMessageChangeManager_iOS, MFPersistenceDatabase_iOS, MFWeakObjectCache, NSCache, NSMutableDictionary, NSMutableSet, NSObject, NSString, _MFMailMessageLibraryStatistics;
-@protocol EFScheduler, OS_dispatch_queue, OS_dispatch_source;
+@protocol EFScheduler, OS_dispatch_queue;
 
 @interface MFMailMessageLibrary : MFMessageLibrary <EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EFContentProtectionObserver>
 {
@@ -25,7 +25,6 @@
     NSObject<OS_dispatch_queue> *_keyBagQueue;
     NSObject<OS_dispatch_queue> *_conversationCalculationQueue;
     NSMutableSet *_messagesToThreadAtUnlock;
-    NSObject<OS_dispatch_source> *_suspendTimer;
     _MFMailMessageLibraryStatistics *_lastStats;
     MFFileCompressionQueue *_compressionQueue;
     MFLibrarySearchableIndex *_searchableIndex;
@@ -91,8 +90,6 @@
 - (_Bool)migrate;
 - (void)_addMessageToThreadAtUnlock:(long long)arg1;
 - (void)journalWasReconciled;
-- (void)_reconcileJournalOnResume;
-- (void)reconcileJournalOnStartup;
 - (_Bool)_canAccessProtectedData;
 - (void)_cancelPendingJournalReconciliation;
 - (void)_scheduleJournalReconciliation;
@@ -109,7 +106,6 @@
 - (void)_setProtectedDataAvailabilityState:(unsigned long long)arg1;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
 - (id)allUIDsInMailbox:(id)arg1;
-- (id)deletedUIDsInMailbox:(id)arg1;
 - (id)UIDsToDeleteInMailbox:(id)arg1;
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
 - (id)_nonLocalAccountsClause;
@@ -157,6 +153,7 @@
 - (_Bool)_setSummary:(id)arg1 forMessageWithRowID:(long long)arg2 connection:(id)arg3;
 - (void)setSummary:(id)arg1 forMessage:(id)arg2;
 - (_Bool)_setMessageData:(id)arg1 libraryID:(long long)arg2 part:(id)arg3 partial:(_Bool)arg4 complete:(_Bool)arg5 connection:(id)arg6;
+- (void)setData:(id)arg1 forMessageToAppend:(id)arg2;
 - (void)setData:(id)arg1 forMessage:(id)arg2 isPartial:(_Bool)arg3;
 - (id)dataConsumerForMessage:(id)arg1;
 - (id)dataConsumerForMessage:(id)arg1 isPartial:(_Bool)arg2;
@@ -190,6 +187,7 @@
 - (void)setFlags:(unsigned long long)arg1 forConversationId:(long long)arg2;
 - (unsigned long long)flagsForConversationId:(long long)arg1;
 - (id)syncedConversations;
+- (void)scheduleRecurringActivity;
 - (void)clearServerSearchFlagsForMessagesWithLibraryIDs:(id)arg1;
 - (_Bool)_canSelectMessagesWithOptions:(unsigned int)arg1 connection:(id)arg2;
 - (_Bool)shouldCancel;
@@ -210,7 +208,7 @@
 - (id)missingReferencesForConversationContainingMessage:(id)arg1;
 - (id)_copyReferenceHashesWithoutMessagesForMessageWithConversation:(id)arg1;
 - (id)conversationIDsOfMessagesInSameThreadAsMessageWithLibraryID:(long long)arg1 messageIDHash:(long long)arg2;
-- (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
+- (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3 temporarilyUnavailable:(_Bool *)arg4;
 - (id)_keyForOptions:(unsigned int)arg1 protectedDataAvailable:(_Bool)arg2 mailboxAvailable:(_Bool)arg3 mailboxCached:(_Bool)arg4;
 - (id)messagesWithMessageIDHeader:(id)arg1;
 - (id)messageWithMessageID:(id)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
@@ -230,6 +228,7 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (void)setMostRecentStatusCount:(unsigned long long)arg1 forMailbox:(id)arg2;
 - (unsigned long long)mostRecentStatusCountForMailbox:(id)arg1;
+- (void)increaseProtectionOnFileForMessage:(id)arg1;
 - (void)setLastSyncAndMostRecentStatusCount:(long long)arg1 forMailbox:(id)arg2;
 - (long long)statusCountDeltaForMailbox:(id)arg1;
 - (void)setServerUnreadOnlyOnServerCount:(unsigned long long)arg1 forMailbox:(id)arg2;
@@ -279,9 +278,10 @@
 - (id)dateOfOldestNonIndexedNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
 - (id)_firstDateForQuery:(id)arg1 inMailbox:(id)arg2;
-- (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;
 - (id)serverSearchResultMessagesForMailbox:(id)arg1;
+- (id)_messagesForMailbox:(id)arg1 olderThanNumberOfDays:(int)arg2 limit:(unsigned long long)arg3;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(int)arg2;
+- (id)messagesForMailbox:(id)arg1 limit:(unsigned long long)arg2;
 - (void)_sendMessagesForStatement:(id)arg1 connection:(id)arg2 to:(id)arg3 options:(unsigned int)arg4 timestamp:(unsigned long long)arg5;
 - (void)iterateStatement:(struct sqlite3_stmt *)arg1 connection:(id)arg2 withProgressMonitor:(id)arg3 andRowHandler:(CDUnknownFunctionPointerType)arg4 context:(void *)arg5;
 - (void)_iterateStatement:(id)arg1 connection:(id)arg2 withProgressMonitor:(id)arg3 andRowHandler:(CDUnknownFunctionPointerType)arg4 context:(const CDStruct_6c71af79 *)arg5;
@@ -294,11 +294,10 @@
 - (long long)_findOrCreateDatabaseIDForSubject:(id)arg1 cache:(id)arg2 connection:(id)arg3;
 - (long long)_findOrCreateDatabaseIDForAddress:(id)arg1 comment:(id)arg2 cache:(id)arg3 connection:(id)arg4;
 - (_Bool)_addRecipients:(id)arg1 toMessageWithDatabaseID:(long long)arg2 cache:(id)arg3 connection:(id)arg4;
-- (void)persistenceDidAddMessages:(id)arg1;
-- (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11;
+- (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
+- (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11 generationWindow:(id)arg12;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry;
-- (void)addMiddleware:(id)arg1;
-- (long long)addReferenceForContext:(id)arg1 usingDatabaseConnection:(id)arg2 mergeHandler:(CDUnknownBlockType)arg3;
+- (long long)addReferenceForContext:(id)arg1 usingDatabaseConnection:(id)arg2 generationWindow:(id)arg3 mergeHandler:(CDUnknownBlockType)arg4;
 - (_Bool)_insertThreadReferences:(id)arg1 toMessageWithLibraryID:(long long)arg2 usingDatabaseConnection:(id)arg3;
 - (id)_addThreadingInfoWithContext:(id)arg1 usingDatabaseConnection:(id)arg2;
 - (id)referencesFromHeaders:(id)arg1;
@@ -314,11 +313,8 @@
 - (void)setFlags:(unsigned long long)arg1 forMessage:(id)arg2;
 - (id)searchableIndex;
 @property(readonly, nonatomic) unsigned long long pendingIndexItemsCount;
-- (void)applicationWillResume;
-- (void)applicationWillSuspendIsLocked:(_Bool)arg1;
+- (void)start;
 - (void)_setSuspendedUnderLock:(_Bool)arg1;
-- (void)startSuspendTimer;
-- (void)cancelSuspendTimer;
 - (void)invalidateAndWait;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;

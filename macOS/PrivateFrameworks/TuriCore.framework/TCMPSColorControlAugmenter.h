@@ -16,16 +16,13 @@ __attribute__((visibility("hidden")))
     double _maxBrightnessDelta;
     double _maxContrastProportion;
     double _maxSaturationProportion;
-    CDUnknownBlockType _random;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType random; // @synthesize random=_random;
 @property(nonatomic) double maxSaturationProportion; // @synthesize maxSaturationProportion=_maxSaturationProportion;
 @property(nonatomic) double maxContrastProportion; // @synthesize maxContrastProportion=_maxContrastProportion;
 @property(nonatomic) double maxBrightnessDelta; // @synthesize maxBrightnessDelta=_maxBrightnessDelta;
-- (void).cxx_destruct;
-- (id)imageAugmentedFromImage:(id)arg1;
-- (id)initWithRNG:(CDUnknownBlockType)arg1;
+- (id)imageAugmentedFromImage:(id)arg1 generator:(CDUnknownBlockType)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,17 +6,23 @@
 
 #import <ReminderKit/REMUserDefaults.h>
 
-@class NSData, NSDate, NSNumber, NSString, REMObjectID, REMStore;
+@class NSData, NSDate, NSDateComponents, NSNumber, NSString, REMObjectID;
 
 @interface REMDaemonUserDefaults : REMUserDefaults
 {
-    REMStore *_store;
 }
 
-@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
++ (id)storageNumberForTodayNotificationTime:(id)arg1;
++ (id)todayNotificationFireTimeFromStorageNumber:(id)arg1;
+- (id)streamTodayNotificationFireTime:(CDUnknownBlockType)arg1;
+@property(retain, nonatomic) NSDateComponents *todayNotificationFireTime;
+@property(nonatomic) BOOL forceShowWelcomeScreen;
+@property(nonatomic) BOOL enableWelcomeScreen;
+- (id)observeShowRemindersAsOverdueWithBlock:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL showRemindersAsOverdue;
 @property(nonatomic) BOOL simulateMAIDAccount;
 @property(copy, nonatomic) NSData *userInteractionsData;
+@property(copy, nonatomic) NSDate *lastSyncPoll;
 @property(copy, nonatomic) NSDate *lastPresentAlarmDate;
 @property(copy, nonatomic) NSDate *nextScheduledAlarmDate;
 @property(copy, nonatomic) NSNumber *spotlightIndexVersion;
@@ -31,8 +37,6 @@
 @property(nonatomic) BOOL databaseMigrationTimedOut;
 @property(nonatomic) BOOL isDatabaseMigrated;
 @property(nonatomic) BOOL databaseMigrationTestModeEnabled;
-- (void)p_setValue:(id)arg1 inDefaultsForKey:(id)arg2;
-- (id)p_valueInDefaultsForKey:(id)arg1;
 @property(readonly, nonatomic) BOOL siriShouldRouteIntentsToNewRemindersApp;
 @property(readonly, nonatomic) BOOL dataaccessDaemonStopSyncingReminders;
 @property(readonly, nonatomic) BOOL newAppShouldTakeoverEKReminderNotifications;

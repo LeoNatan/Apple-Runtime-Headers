@@ -32,7 +32,6 @@
 - (void)completeEnablingCloudServicesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setBackupEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setDeviceLocatorEnabled:(_Bool)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)_presentMergeConfirmationForDataclasses:(id)arg1 account:(id)arg2;
 - (void)setCloudServicesEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_account;

@@ -24,6 +24,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+- (CDStruct_79c71658)_nativeDimensionsWithoutCrop;
 - (CDStruct_79c71658)_highQualitySensorDimensions;
 - (_Bool)isCompatibleWithInfraredFormat:(id)arg1;
 - (_Bool)isValidDerivedBravoFormatForUnderlyingFormat:(id)arg1;
@@ -32,6 +33,8 @@
 - (CDStruct_79c71658)_maxUseableSensorDimensions;
 - (CDStruct_79c71658)_outputDimensions;
 @property(readonly) int ispPowerConsumption;
+@property(readonly) int variableSensorPowerConsumption;
+@property(readonly) int baseSensorPowerConsumption;
 @property(readonly) int sensorPowerConsumption;
 @property(readonly) float hardwareCost;
 @property(readonly, getter=isMultiCamSupported) _Bool multiCamSupported;

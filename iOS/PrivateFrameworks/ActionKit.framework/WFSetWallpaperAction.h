@@ -10,8 +10,5 @@
 {
 }
 
-- (id)setWallpaper:(id)arg1 darkAppearanceWallpaper:(id)arg2 withLocations:(long long)arg3;
-- (void)runAsynchronouslyWithInput:(id)arg1;
-
 @end
 

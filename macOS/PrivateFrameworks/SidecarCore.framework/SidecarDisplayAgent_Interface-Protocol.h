@@ -9,7 +9,7 @@
 @protocol SidecarDisplayAgent_Interface
 - (void)preferencesChanged:(NSArray *)arg1;
 - (void)displayCurrentConfig:(void (^)(SidecarDisplayConfig *, NSError *))arg1;
-- (void)displayAgentDevices:(void (^)(NSArray *, NSArray *, NSError *))arg1;
+- (void)displayAgentDevices:(void (^)(SidecarDevice *, NSArray *, NSError *))arg1;
 - (void)displayAgentDisconnectFromDevice:(SidecarDevice *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)displayAgentConnectToDevice:(SidecarDevice *)arg1 withConfig:(SidecarDisplayConfig *)arg2 completion:(void (^)(NSError *))arg3;
 @end

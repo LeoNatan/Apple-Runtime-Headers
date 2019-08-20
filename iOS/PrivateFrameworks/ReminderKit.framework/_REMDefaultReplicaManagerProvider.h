@@ -8,15 +8,19 @@
 
 #import <ReminderKit/REMReplicaManagerProviding-Protocol.h>
 
-@class NSString;
+@class NSString, REMStore;
 
 @interface _REMDefaultReplicaManagerProvider : NSObject <REMReplicaManagerProviding>
 {
+    REMStore *_store;
 }
 
-+ (id)sharedInstance;
+@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
+- (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 - (id)unsavedReplicaManagersForAccountIDs:(id)arg1;
 - (id)replicaManagerForAccountID:(id)arg1;
+- (id)initWithStore:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

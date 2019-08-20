@@ -18,7 +18,6 @@
     AVOutputDeviceDiscoverySession *_parentSession;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) struct OpaqueFigRouteDiscoverer *routeDiscoverer; // @synthesize routeDiscoverer=_discoverer;
 @property __weak AVOutputDeviceDiscoverySession *parentOutputDeviceDiscoverySession; // @synthesize parentOutputDeviceDiscoverySession=_parentSession;
 - (void).cxx_destruct;

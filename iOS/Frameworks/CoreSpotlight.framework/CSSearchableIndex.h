@@ -73,6 +73,7 @@
 - (void)changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(long long)arg2;
 - (void)fetchLastClientStateWithProtectionClass:(id)arg1 forBundleID:(id)arg2 clientStateName:(id)arg3 options:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchLastClientStateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_issueNonLaunchingCommand:(id)arg1;
 - (void)_issueCommand:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)provideFileURLForBundle:(id)arg1 identifier:(id)arg2 type:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)provideDataForBundle:(id)arg1 identifier:(id)arg2 type:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

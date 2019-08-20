@@ -17,6 +17,7 @@
 - (double)floatingDockWindowLevel;
 - (double)switcherWindowLevel;
 - (struct CGRect)floatingApplicationFrameInInterfaceOrientation:(long long)arg1 floatingConfiguration:(long long)arg2;
+- (_Bool)isAppLayoutHigherPriorityInTetheredSwitcher:(SBAppLayout *)arg1;
 - (_Bool)itemContainerForAppLayoutOverlapsFloatingDock:(SBAppLayout *)arg1;
 - (NSString *)homeScreenIconLocationForAppLayout:(SBAppLayout *)arg1;
 - (double)homeScreenIconCornerRadiusForAppLayout:(SBAppLayout *)arg1;
@@ -27,6 +28,7 @@
 - (_Bool)isReduceMotionEnabled;
 - (_Bool)hasHomeButton;
 - (_Bool)isDevicePad;
+- (long long)numberOfHiddenAppLayoutsForBundleIdentifier:(NSString *)arg1;
 - (long long)numberOfVisibleCards;
 - (SBEntityRemovalAnimationSettings *)entityRemovalSettings;
 - (SBMedusaSettings *)medusaSettings;

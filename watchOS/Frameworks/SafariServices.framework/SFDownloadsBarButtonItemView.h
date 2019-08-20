@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)stateController:(id)arg1 transitionDidStop:(id)arg2 completed:(_Bool)arg3;
 - (void)updateContents;
 - (CDStruct_4e0a34f2 *)deferrableUpdateViewState;
+- (void)layoutSubviews;
 - (void)_buttonPressed;
 - (void)pulse;
 - (void)setProgress:(double)arg1;

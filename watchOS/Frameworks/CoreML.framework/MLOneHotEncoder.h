@@ -38,7 +38,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly) MLModelInterface *interface;
 @property(readonly) MLModelMetadata *metadata;
-@property(readonly, nonatomic) MLModelDescription *modelDescription;
+@property(retain, nonatomic) MLModelDescription *modelDescription;
 @property(readonly) Class superclass;
 
 @end

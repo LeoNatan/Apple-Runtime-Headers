@@ -15,6 +15,7 @@
 }
 
 + (Class)_applicationSceneHandleClass;
+- (void)_noteDidChangeToVisibility:(unsigned long long)arg1 previouslyExisted:(_Bool)arg2 forScene:(id)arg3;
 - (id)_sceneIdentifierForBundleIdentifier:(id)arg1;
 - (struct CGRect)sceneEntityFrameForWorkspaceEntity:(id)arg1 inLayoutState:(id)arg2;
 - (id)sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3;
@@ -25,6 +26,7 @@
 - (void)_setupLayoutStateTransitionCoordinator:(id)arg1;
 - (id)window;
 - (id)sceneLayoutViewController;
+- (_Bool)_shouldTrackScenesForDeactivation;
 - (_Bool)_shouldAutoHostScene:(id)arg1;
 - (id)_createRootWindowScenePresentationBinder;
 

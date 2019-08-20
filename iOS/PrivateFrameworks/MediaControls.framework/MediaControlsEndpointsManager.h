@@ -17,10 +17,11 @@ __attribute__((visibility("hidden")))
 @interface MediaControlsEndpointsManager : NSObject <MPAVRoutingControllerDelegate, MediaControlsHomeObserverDelegate, MPAVOutputDevicePlaybackDataSource>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
-    NSArray *_lastDiffedRoutes;
     NSMutableDictionary *_endpointControllersMap;
     _Bool _didLoadHomeUIDsOnce;
     _Bool _isRequestingActiveRoute;
+    _Bool _isUpdatingRoutes;
+    NSArray *_pendingRoutesToUpdate;
     MPAVEndpointRoute *_resolvedActiveSystemRoute;
     MPMediaControlsConfiguration *_configuration;
     long long _discoveryMode;

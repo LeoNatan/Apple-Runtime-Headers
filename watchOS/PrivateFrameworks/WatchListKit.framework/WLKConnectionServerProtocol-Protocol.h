@@ -9,6 +9,9 @@
 @class NSDictionary, NSNumber, NSString, WLKPlaybackSummary;
 
 @protocol WLKConnectionServerProtocol <NSObject>
+- (void)clearOffers:(void (^)(NSError *))arg1;
+- (void)fetchOffers:(_Bool)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (void)saveOffer:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)prewarm;
 - (void)ping;
 - (void)writeLocation:(NSDictionary *)arg1 replyHandler:(void (^)(_Bool))arg2;

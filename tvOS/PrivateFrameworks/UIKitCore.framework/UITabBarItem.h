@@ -6,9 +6,11 @@
 
 #import <UIKitCore/UIBarItem.h>
 
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
+
 @class NSString, UIColor, UIImage, UITabBarAppearance, UITabBarButton, _UITabBarItemAppearanceStorage;
 
-@interface UITabBarItem : UIBarItem
+@interface UITabBarItem : UIBarItem <_UIBarAppearanceChangeObserver>
 {
     NSString *_title;
     SEL _action;
@@ -35,7 +37,6 @@
     } _tabBarItemFlags;
     _Bool _springLoaded;
     struct UIOffset _badgeOffset;
-    struct UIOffset _landscapePhoneBadgeOffset;
     UITabBarAppearance *_standardAppearance;
     long long __barMetrics;
     long long __imageStyle;
@@ -49,6 +50,7 @@
 @property(copy, nonatomic) UITabBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
 - (void).cxx_destruct;
+- (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
 - (void)_updateView;
 - (void)_updateViewAndPositionItems:(_Bool)arg1;
 - (id)_createViewForTabBar:(id)arg1 asProxyView:(_Bool)arg2;
@@ -118,7 +120,12 @@
 - (void)_updateViewBadge;
 - (void)_showSelectedIndicator:(_Bool)arg1 changeSelection:(_Bool)arg2;
 @property(nonatomic, getter=_isSelected, setter=_setSelected:) _Bool _selected;
-- (id)description;
+@property(readonly, copy) NSString *description;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

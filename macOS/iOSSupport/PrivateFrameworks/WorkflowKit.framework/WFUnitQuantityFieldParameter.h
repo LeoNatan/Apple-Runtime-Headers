@@ -10,6 +10,7 @@
 
 @interface WFUnitQuantityFieldParameter : WFQuantityFieldParameter
 {
+    BOOL _fallbackToAllSupportedUnits;
     NSArray *_possibleUnits;
     NSString *_unitType;
     NSUnit *_defaultUnit;
@@ -17,6 +18,7 @@
 }
 
 @property(retain, nonatomic) NSDictionary *unitSymbolMap; // @synthesize unitSymbolMap=_unitSymbolMap;
+@property(nonatomic) BOOL fallbackToAllSupportedUnits; // @synthesize fallbackToAllSupportedUnits=_fallbackToAllSupportedUnits;
 @property(retain, nonatomic) NSUnit *defaultUnit; // @synthesize defaultUnit=_defaultUnit;
 @property(copy, nonatomic) NSString *unitType; // @synthesize unitType=_unitType;
 - (void)setPossibleUnits:(id)arg1;

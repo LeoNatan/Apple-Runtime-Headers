@@ -60,6 +60,7 @@
 - (void)_queueStateReasonExplanationFlowWithPage:(id)arg1;
 - (void)_queueApplicationTermsFlow;
 - (void)_queueOfferFlowWithPage:(id)arg1;
+- (id)_fieldsViewControllerForPage:(id)arg1;
 - (void)_queueFieldsFlowWithNextStepInfo:(id)arg1;
 - (void)_queueInfoFlowWithNextWithPage:(id)arg1;
 - (void)_invalidateIDVSession;

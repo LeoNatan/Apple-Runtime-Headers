@@ -82,7 +82,7 @@
 - (void)updateBackgroundToBackdropStyle:(long long)arg1;
 - (_Bool)isInBarButNotHosted;
 - (void)setBackgroundLayoutNeedsUpdate;
-- (_Bool)showsDictationButton;
+- (_Bool)wantsDictationButton;
 - (void)setDisableDictationButton:(_Bool)arg1;
 - (void)setSearchDisplayControllerShowsCancelButton:(_Bool)arg1;
 - (void)setUpCancelButtonWithAppearance:(_UIBarButtonItemAppearanceStorage *)arg1;
@@ -102,6 +102,7 @@
 - (void)updateSearchFieldArt;
 - (void)updateSearchBarOpacity;
 - (void)updateScopeBarForSelectedScope;
+- (void)updateDictationButton;
 - (void)updateMagnifyingGlassView;
 - (void)updateForDrawsBackgroundInPalette;
 - (void)_setShowsScopeBar:(_Bool)arg1;

@@ -8,6 +8,7 @@
 
 @protocol OTControlProtocol
 - (void)postCDPFollowupResult:(_Bool)arg1 type:(NSString *)arg2 error:(NSError *)arg3 containerName:(NSString *)arg4 contextName:(NSString *)arg5 reply:(void (^)(NSError *))arg6;
+- (void)waitForOctagonUpgrade:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)attemptSosUpgrade:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)healthCheck:(NSString *)arg1 context:(NSString *)arg2 skipRateLimitingCheck:(_Bool)arg3 reply:(void (^)(NSError *))arg4;
 - (void)joinWithRecoveryKey:(NSString *)arg1 contextID:(NSString *)arg2 recoveryKey:(NSString *)arg3 reply:(void (^)(NSError *))arg4;

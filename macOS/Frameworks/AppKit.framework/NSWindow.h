@@ -113,7 +113,9 @@
     int _winEventMask;
     unsigned long long _currentZoomState;
     unsigned long long _previousZoomState;
-    struct CGRect _previousFrameForZoomToScreen;
+    long long _previousScreenNumber;
+    struct CGRect _previousFrameForScreenChange;
+    struct CGRect _frameAtStartMove;
 }
 
 + (BOOL)_hiddenInWindowList;
@@ -187,6 +189,8 @@
 - (void).cxx_destruct;
 - (BOOL)_allowsRootLayerBacking;
 @property BOOL hasColorSensitiveUI;
+- (void)setStandardWindowButtonGroupOffset:(struct CGSize)arg1;
+- (struct CGSize)standardWindowButtonGroupOffset;
 - (void)setTitlebarHeight:(double)arg1;
 - (double)titlebarHeight;
 - (void)setTitlebarAlphaValue:(double)arg1;
@@ -642,15 +646,17 @@
 - (BOOL)_hasGradientBackground;
 - (id)validRequestorForSendType:(id)arg1 returnType:(id)arg2;
 - (BOOL)tryToPerform:(SEL)arg1 with:(id)arg2;
-- (void)_zoomToFrame:(struct CGRect)arg1 willChangeScreens:(BOOL)arg2 zoomState:(unsigned long long)arg3;
+- (void)_zoomToFrame:(struct CGRect)arg1 willChangeScreens:(BOOL)arg2 toIPad:(BOOL)arg3 zoomState:(unsigned long long)arg4;
 - (void)_zoomToScreen:(id)arg1 isMoveToiPad:(BOOL)arg2;
 - (void)_zoomToScreenEdge:(unsigned long long)arg1;
 - (BOOL)_prepareToZoom;
 - (void)_zoomToScreen:(id)arg1;
 - (void)zoom:(id)arg1;
+- (void)_crossfadeMoveToFrame:(struct CGRect)arg1;
 - (void)_moveToScreen:(id)arg1;
 - (void)_revertZoomToEdge;
 - (void)_revertZoomToScreen;
+- (id)_screenForMoveBack;
 - (void)_saveCurrentZoomState;
 - (void)_tileRight:(id)arg1;
 - (void)_tileLeft:(id)arg1;
@@ -979,6 +985,7 @@
 - (double)animationResizeTime:(struct CGRect)arg1;
 - (void)_setFrameCommon:(struct CGRect)arg1 display:(BOOL)arg2 fromServer:(BOOL)arg3;
 - (void)_setFrameCommon:(struct CGRect)arg1 display:(BOOL)arg2 stashSize:(BOOL)arg3;
+- (void)_updateStateForMoveBackToScreen:(long long)arg1;
 - (void)_updateSettingsSendingScreenChangeNotificationToScreen:(id)arg1;
 - (void)_updateSettingsSendingScreenChangeNotification;
 - (void)_cornerMaskChanged;
@@ -1538,6 +1545,8 @@
 - (void)_suspendWindowServerLayerHosting;
 - (BOOL)_hostsLayersInWindowServer;
 - (BOOL)hostsLayersInWindowServer;
+- (void)_accessibilitySetSwiftUIDelegate:(id)arg1;
+- (id)_accessibilitySwiftUIDelegate;
 - (id)accessibilitySizeOfChild:(id)arg1;
 - (id)accessibilityPositionOfChild:(id)arg1;
 - (BOOL)accessibilityIsChildFocusable:(id)arg1;

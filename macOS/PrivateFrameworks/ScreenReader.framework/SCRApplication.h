@@ -396,6 +396,7 @@ __attribute__((visibility("hidden")))
 - (void)_removeElement:(id)arg1;
 - (void)_elementWasDestroyed:(id)arg1;
 - (id)_addUIElement:(id)arg1;
+- (void)_announceContentForPopover:(id)arg1;
 - (void)_popoverAdded:(id)arg1;
 - (void)_elementWasCreated:(id)arg1;
 - (void)_speakAutocorrection:(id)arg1 type:(long long)arg2;

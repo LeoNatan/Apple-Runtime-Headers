@@ -20,11 +20,13 @@
     // Error parsing type: , name: keyCommandManager
     // Error parsing type: , name: documentSectionBlueprintProvider
     // Error parsing type: , name: hardPaywallViewController
+    // Error parsing type: , name: deferredHardPaywallViewController
     // Error parsing type: , name: footerProvider
     // Error parsing type: , name: urlHandler
     // Error parsing type: , name: paywallPreparationEventManager
     // Error parsing type: , name: deferredHardPaywallIsVisible
     // Error parsing type: , name: deferredHardPaywallHeightProvider
+    // Error parsing type: , name: destinationViewSize
 }
 
 - (void).cxx_destruct;

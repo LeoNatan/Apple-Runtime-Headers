@@ -12,21 +12,18 @@
 {
     UIImageView *_glyphView;
     UILabel *_label;
-    UITapGestureRecognizer *_tapGesture;
     MTVisualStylingProvider *_visualStylingProvider;
+    UITapGestureRecognizer *_tapGesture;
 }
 
-@property(retain, nonatomic, getter=_visualStylingProvider) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 - (void).cxx_destruct;
+- (void)_invalidateVisualStyling;
+- (void)_updateVisualStylingIfNecessary;
 - (void)_configureExplanationLabelWithExplanation:(id)arg1;
 - (void)_configureGlyphViewWithGlyph:(id)arg1;
-- (void)_updateStyleForLabel;
-- (void)_updateStyleForGlyphView;
-- (id)_visualStyling;
-- (void)_backgroundContrastDidChange:(id)arg1;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
+- (void)willMoveToSuperview:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithGlyph:(id)arg1 andExplanation:(id)arg2;
 
 @end

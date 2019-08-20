@@ -23,6 +23,7 @@
 @property(nonatomic) _Bool viewVisible; // @synthesize viewVisible=_viewVisible;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive;
+- (void)recordInteractionStart;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (id)initWithControlView:(id)arg1 delegate:(id)arg2;
 

@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) id keyType; // @synthesize keyType=_keyType;
 @property(readonly) struct __SecAccessControl *accessControl; // @synthesize accessControl=_accessControl;
 - (void).cxx_destruct;
-- (id)initWithAttributes:(id)arg1 error:(id *)arg2;
+- (id)initWithAttributes:(id)arg1 ACMContext:(id)arg2 error:(id *)arg3;
 @property(readonly) NSDictionary *attributes;
 - (void)dealloc;
 - (BOOL)lifetimeControlWithType:(long long)arg1 ACMContext:(id)arg2 error:(id *)arg3;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (id)publicKeyWithError:(id *)arg1;
 - (BOOL)deleteWithACMContext:(id)arg1 error:(id *)arg2;
 @property(readonly) id objectID;
-- (id)initWithKeyType:(id)arg1 accessControl:(struct __SecAccessControl *)arg2 applePayEnabled:(BOOL)arg3 error:(id *)arg4;
+- (id)initWithKeyType:(id)arg1 accessControl:(struct __SecAccessControl *)arg2 applePayEnabled:(BOOL)arg3 ACMContext:(id)arg4 error:(id *)arg5;
 - (id)initWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)init;
 - (id)error:(id *)arg1 withAKSReturn:(int)arg2 ACMContext:(id)arg3 AKSOperation:(id)arg4 message:(id)arg5;

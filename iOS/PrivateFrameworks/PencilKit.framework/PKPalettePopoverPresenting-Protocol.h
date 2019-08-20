@@ -6,9 +6,12 @@
 
 #import <PencilKit/NSObject-Protocol.h>
 
-@class NSArray, UIViewController;
+@class NSArray, UIView, UIViewController;
 
 @protocol PKPalettePopoverPresenting <NSObject>
+- (UIView *)palettePopoverSourceView;
+- (struct CGRect)palettePopoverSourceRect;
+- (_Bool)wantsCustomPalettePopoverPresentationSource;
 - (struct UIEdgeInsets)palettePopoverLayoutMargins;
 - (unsigned long long)palettePopoverPermittedArrowDirections;
 - (NSArray *)palettePopoverPassthroughViews;

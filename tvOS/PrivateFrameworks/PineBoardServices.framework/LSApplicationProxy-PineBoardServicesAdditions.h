@@ -8,8 +8,5 @@
 
 @interface LSApplicationProxy (PineBoardServicesAdditions)
 - (id)pbsAppTags;
-- (_Bool)_pbs_appPreferencesAllowVisibility;
-- (_Bool)_pbs_disabledViaInfoPlist;
-@property(readonly, nonatomic) _Bool pbs_enabled;
 @end
 

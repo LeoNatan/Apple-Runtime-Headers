@@ -27,6 +27,7 @@
 - (id)_remoteObjectProxy;
 - (void)sendMessage:(id)arg1 toGroup:(id)arg2;
 - (void)sendMessage:(id)arg1 toParticipant:(id)arg2;
+- (void)invalidateActiveHandles;
 - (void)sharedTripInvalidatedWithError:(id)arg1;
 - (void)_insertOrUpdateTrip:(id)arg1;
 - (void)sharedTripDidClose:(id)arg1;
@@ -45,6 +46,9 @@
 - (void)_fetchSharedTripsOnQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_fetchActiveHandlesOnQueue:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_fetchActiveHandlesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchActiveHandlesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_stopSharingTrip;
 - (void)stopSharingTrip;
 - (void)_stopSharingTripWithMessagesGroup:(id)arg1;
@@ -59,6 +63,8 @@
 - (void)stopSharingTripWithContacts:(id)arg1;
 - (void)_startSharingTripWithContacts:(id)arg1;
 - (void)startSharingTripWithContacts:(id)arg1;
+- (void)_fetchSendingIdentityWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchSendingIdentityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_checkin;
 - (void)checkin;
 - (void)removeSendingObserver:(id)arg1;

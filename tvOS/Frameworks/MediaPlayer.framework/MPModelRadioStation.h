@@ -14,6 +14,7 @@
 
 + (id)__providerName_KEY;
 + (id)__attributionLabel_KEY;
++ (id)__subtype_KEY;
 + (id)__type_KEY;
 + (id)__allowsItemLiking_KEY;
 + (id)__artworkCatalogBlock_KEY;
@@ -37,6 +38,7 @@
 @property(copy, nonatomic) NSString *name; // @dynamic name;
 @property(copy, nonatomic) NSString *providerName; // @dynamic providerName;
 @property(copy, nonatomic) NSString *shortEditorNotes; // @dynamic shortEditorNotes;
+@property(nonatomic) long long subtype; // @dynamic subtype;
 @property(nonatomic) long long type; // @dynamic type;
 
 @end

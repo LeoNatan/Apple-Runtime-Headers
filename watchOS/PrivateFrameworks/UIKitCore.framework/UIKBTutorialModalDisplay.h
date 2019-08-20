@@ -18,8 +18,12 @@ __attribute__((visibility("hidden")))
     UIKBTutorialModalDisplayStyling *_styling;
     UIVisualEffectView *_backgroundBlurView;
     NSLayoutConstraint *_containerViewTopConstraits;
+    NSArray *_adjustableConstraints;
+    NSLayoutConstraint *_widthAdjustmentConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *widthAdjustmentConstraint; // @synthesize widthAdjustmentConstraint=_widthAdjustmentConstraint;
+@property(retain, nonatomic) NSArray *adjustableConstraints; // @synthesize adjustableConstraints=_adjustableConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *containerViewTopConstraits; // @synthesize containerViewTopConstraits=_containerViewTopConstraits;
 @property(retain, nonatomic) UIVisualEffectView *backgroundBlurView; // @synthesize backgroundBlurView=_backgroundBlurView;
 @property(retain, nonatomic) UIKBTutorialModalDisplayStyling *styling; // @synthesize styling=_styling;
@@ -43,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)extraButtonTapAction;
 - (void)tapInsideButton:(id)arg1;
 - (id)constructMediaView;
+- (void)updateMediaViewTextAndPlacement;
 - (struct CGSize)sizeForTutorialPageView;
 - (void)containerForAlertPresentation;
 - (void)containerForFullScreenView;

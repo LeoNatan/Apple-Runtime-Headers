@@ -33,6 +33,8 @@
 - (void)fetchQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)handleQueryResponseData:(id)arg1 fetchError:(id)arg2 application:(id)arg3 error:(id *)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchPublicKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)createGETRequestForURL:(id)arg1 timeout:(double)arg2 error:(id *)arg3;
+- (id)createPOSTRequestForURL:(id)arg1 timeout:(double)arg2 contents:(id)arg3 error:(id *)arg4;
 - (void)configure:(CDUnknownBlockType)arg1;
 - (BOOL)configurationExpired;
 - (BOOL)configureFromBag:(id)arg1 error:(id *)arg2;

@@ -100,7 +100,7 @@
 - (void)setStrokes:(id)arg1 transform:(struct CGAffineTransform)arg2 concat:(BOOL)arg3;
 - (void)setStrokes:(id)arg1 hidden:(BOOL)arg2;
 - (void)_updateStrokes:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
-- (id)_copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2 ink:(id)arg3;
+- (id)_copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2 ink:(id)arg3 isSequentialCopy:(BOOL)arg4;
 - (id)_copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (id)copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (void)_removeStroke:(id)arg1;

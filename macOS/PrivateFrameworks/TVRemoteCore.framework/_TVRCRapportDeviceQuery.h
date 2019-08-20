@@ -13,12 +13,17 @@
 {
     RPCompanionLinkClient *_companionLinkClient;
     NSMutableDictionary *_wrapperToIdentifierMapping;
+    NSMutableDictionary *_deviceRecords;
     BOOL _unpairedBLEDevicesReported;
     id <_TVRCRapportDeviceQueryDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <_TVRCRapportDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)_recordExistsForIDS:(id)arg1;
+- (unsigned long long)_transportForStatusFlag:(unsigned long long)arg1;
+- (void)_updateRecordForIDS:(id)arg1 removeTransportForFlag:(unsigned long long)arg2;
+- (void)_updateRecordForIDS:(id)arg1 addTransportForFlag:(unsigned long long)arg2;
 - (BOOL)_shouldReportDevice:(id)arg1;
 - (void)_disconnectAllDevices;
 - (void)_deviceLost:(id)arg1;

@@ -16,6 +16,7 @@
 + (id)_revertedBundleComplicationFromJSONDictionary:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)bundledComplicationWithComplication:(id)arg1;
++ (id)bundledComplicationWithBundleIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
 @property(readonly, nonatomic) CLKCBundleComplication *complication; // @synthesize complication=_complication;
 - (void).cxx_destruct;
 - (void)_addKeysToJSONDictionary:(id)arg1;
@@ -30,6 +31,7 @@
 - (id)localizedRichKeylineLabelText;
 - (id)localizedKeylineLabelText;
 - (id)description;
+- (id)customDailySnapshotKey;
 
 @end
 

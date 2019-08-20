@@ -6,25 +6,24 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString, UIToolbar, _UIBackdropView;
+@class NSArray, NSString, UIToolbar, UIVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface PUImportFloatingToolbarView : UIView
 {
     _Bool _shouldBlurBackground;
     NSString *_backdropViewGroupName;
-    _UIBackdropView *_backdropView;
+    UIVisualEffectView *_visualEffectView;
     UIToolbar *_toolbar;
     UIView *_shadowView;
 }
 
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
-@property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
+@property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
 @property(nonatomic) _Bool shouldBlurBackground; // @synthesize shouldBlurBackground=_shouldBlurBackground;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateBackdropViewGroupName;
 - (void)_updateBackground;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;

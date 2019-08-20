@@ -27,6 +27,7 @@
 - (void)_startObservingNotifications;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)_sendInitialObserverState:(id)arg1;
 @property(readonly, nonatomic) BOOL screenLocked;
 @property(readonly, nonatomic) BOOL onConsole;
 - (id)init;

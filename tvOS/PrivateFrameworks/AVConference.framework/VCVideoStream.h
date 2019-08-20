@@ -48,10 +48,12 @@ __attribute__((visibility("hidden")))
     unsigned int _customWidth;
     unsigned int _customHeight;
     unsigned int _tilesPerFrame;
+    struct OpaqueFigCFWeakReference *_weakStream;
     AVCRateController *_vcrcRateController;
     VCRedundancyControllerVideo *_redundancyController;
     int _lastDisplayedFromImageQueueCount;
     int _lastDroppedFromImageQueueCount;
+    int _networkInterfaceType;
 }
 
 + (id)capabilities;
@@ -96,6 +98,7 @@ __attribute__((visibility("hidden")))
 - (struct __CFDictionary *)getClientSpecificUserInfo;
 - (struct __CFString *)getReportingClientName;
 - (int)getReportingClientType;
+- (void)handleVTPSendFailedWithData:(void *)arg1;
 @property(nonatomic) unsigned int targetMediaBitrate;
 @property unsigned int lastSentAudioSampleTime;
 @property double lastSentAudioHostTime;
@@ -108,10 +111,16 @@ __attribute__((visibility("hidden")))
 - (void)onPauseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)onStartWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)reportTransportInfo;
+- (void)initializeInterfaceType;
+- (void)initializeInterfaceTypeForSocket;
+- (void)initializeInterfaceTypeForNWConnection;
 - (void)setupReportingAgent;
+- (void)collectChannelSequenceMetrics:(id)arg1;
 - (void)collectImageQueuePerformanceMetrics:(struct __CFDictionary *)arg1;
 - (void)registerForVideoCapture;
 - (void)deregisterForVideoCapture;
+- (int)operatingModeForVideoStreamType:(long long)arg1;
 - (_Bool)onConfigureStreamWithConfiguration:(id)arg1 error:(id *)arg2;
 - (void)onCallIDChanged;
 - (id)supportedPayloads;
@@ -132,7 +141,7 @@ __attribute__((visibility("hidden")))
 - (double)lastReceivedRTCPPacketTime;
 - (double)lastReceivedRTPPacketTime;
 - (_Bool)setRTPPayloads:(int *)arg1 numPayloads:(int)arg2 withError:(id *)arg3;
-- (void)handleNWConnectionPacketEvent:(struct packet_id *)arg1;
+- (void)handleNWConnectionPacketEvent:(struct packet_id *)arg1 eventType:(int)arg2;
 - (void)handleNWConnectionNotification:(struct ifnet_interface_advisory *)arg1;
 - (void)stopVCRC;
 - (void)startVCRCWithStreamConfig:(id)arg1;

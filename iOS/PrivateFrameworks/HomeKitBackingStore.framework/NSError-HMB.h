@@ -14,6 +14,7 @@
 + (id)hmbErrorWithSQLContext:(id)arg1 statement:(const char *)arg2;
 + (id)hmbErrorWithSQLContext:(id)arg1;
 - (id)hmbConciseCKError;
+@property(readonly) _Bool hmbIsCKLimitExceededError;
 @property(readonly) _Bool hmbIsCKNetworkFailureError;
 @property(readonly) _Bool hmbIsCKPartialFailureError;
 @property(readonly) _Bool hmbIsCKChangeTokenExpiredError;

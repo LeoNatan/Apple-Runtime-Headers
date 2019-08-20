@@ -6,9 +6,9 @@
 
 #import <ContactsUICore/NSObject-Protocol.h>
 
-@class CNDelegateInfo;
+@class CNCoreDelegateInfo;
 
 @protocol CNUICoreContactManagementConsentCheck <NSObject>
-- (unsigned long long)contactManagementConsentStateOfDelegateWithInfo:(CNDelegateInfo *)arg1;
+- (unsigned long long)contactManagementConsentStateOfDelegateWithInfo:(CNCoreDelegateInfo *)arg1;
 @end
 

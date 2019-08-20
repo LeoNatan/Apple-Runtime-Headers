@@ -123,6 +123,8 @@
 - (void)_installTimeoutSource;
 - (void)_uninstallTimeoutSource;
 - (void)cancel;
+- (void)_cancelDaemonOperation;
+- (void)_handleDiscretionarySuspensionCallback;
 - (void)cancelWithError:(id)arg1;
 - (void)cancelWithUnderlyingError:(id)arg1;
 @property(readonly, nonatomic) CKOperationInfo *operationInfo;

@@ -14,7 +14,6 @@
 @optional
 - (SBFParallaxSettings *)parallaxSettingsForShortcutsPresentationWithIconView:(SBIconView *)arg1;
 - (UIView *)customPresentingContainerViewForShortcutsPresentationWithIconView:(SBIconView *)arg1;
-- (_Bool)shouldUseSecureWindowForShortcutsPresentationWithIconView:(SBIconView *)arg1;
 - (_Bool)iconView:(SBIconView *)arg1 shouldActivateApplicationShortcutItem:(SBSApplicationShortcutItem *)arg2 atIndex:(unsigned long long)arg3;
 - (NSString *)applicationShortcutWidgetBundleIdentifierForShortcutsWithIconView:(SBIconView *)arg1;
 - (NSURL *)applicationBundleURLForShortcutsWithIconView:(SBIconView *)arg1;
@@ -23,6 +22,7 @@
 - (void)iconViewShortcutsPresentationDidFinish:(SBIconView *)arg1;
 - (_Bool)iconViewShouldBeginShortcutsPresentation:(SBIconView *)arg1;
 - (UIColor *)accessibilityTintColorForIconView:(SBIconView *)arg1;
+- (_Bool)iconView:(SBIconView *)arg1 shouldContinueToUseBackgroundViewForComponents:(UIView *)arg2;
 - (UIView *)backgroundViewForComponentsOfIconView:(SBIconView *)arg1;
 - (long long)closeBoxTypeForIconView:(SBIconView *)arg1;
 - (double)additionalDragLiftScaleForIconView:(SBIconView *)arg1;
@@ -35,6 +35,7 @@
 - (void)iconView:(SBIconView *)arg1 willRemoveIconImageView:(SBIconImageView *)arg2;
 - (SBIconImageView *)imageViewForIconView:(SBIconView *)arg1;
 - (UITargetedDragPreview *)iconView:(SBIconView *)arg1 dragPreviewForItem:(UIDragItem *)arg2 session:(id <UIDragSession>)arg3 previewParameters:(UIDragPreviewParameters *)arg4;
+- (UIView *)containerViewForPresentingContextMenuForIconView:(SBIconView *)arg1;
 - (NSURL *)launchURLForIconView:(SBIconView *)arg1;
 - (NSSet *)launchActionsForIconView:(SBIconView *)arg1;
 - (void)iconView:(SBIconView *)arg1 item:(UIDragItem *)arg2 willAnimateDragCancelWithAnimator:(id <UIDragAnimating>)arg3;
@@ -44,7 +45,6 @@
 - (void)iconView:(SBIconView *)arg1 session:(id <UIDragSession>)arg2 willEndWithOperation:(unsigned long long)arg3;
 - (void)iconView:(SBIconView *)arg1 willAddDragItems:(NSArray *)arg2 toSession:(id <UIDragSession>)arg3;
 - (_Bool)iconView:(SBIconView *)arg1 canAddDragItemsToSession:(id <UIDragSession>)arg2;
-- (NSArray *)requiredContextIDsForDragSessionInIconView:(SBIconView *)arg1;
 - (void)iconViewWillBeginDrag:(SBIconView *)arg1 session:(id <UIDragSession>)arg2;
 - (void)iconView:(SBIconView *)arg1 dragLiftAnimationDidChangeDirection:(long long)arg2;
 - (void)iconView:(SBIconView *)arg1 willAnimateDragLiftWithAnimator:(id <UIDragAnimating>)arg2 session:(id <UIDragSession>)arg3;

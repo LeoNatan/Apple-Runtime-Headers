@@ -9,6 +9,7 @@
 @class NSArray, NSDate, NSDictionary, NSNumber, NSSet, NSString;
 
 @interface ACAccount (ICAccountAdditions)
+@property(readonly, copy, nonatomic) NSDictionary *ic_privateListeningEnabledForHomeUsers;
 @property(copy, nonatomic, setter=ic_setPrivateListeningEnabled:) NSNumber *ic_privateListeningEnabled;
 @property(copy, nonatomic, setter=ic_setAutomaticDownloadKinds:) NSSet *ic_automaticDownloadKinds;
 @property(readonly, nonatomic, getter=ic_isLocalAccount) _Bool ic_localAccount;

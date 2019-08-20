@@ -9,7 +9,6 @@
 @interface IDSService (MSPExtras)
 + (id)_msp_IDSIdentifierFor:(id)arg1;
 + (id)_msp_IDSIdentifiersFor:(id)arg1;
-- (id)_msp_IDSdestinationsFor:(id)arg1 skipSelf:(BOOL)arg2;
 - (id)_msp_removeSelfFrom:(id)arg1;
 - (id)_msp_accountFromIdentifier:(id)arg1;
 - (id)_msp_currentAccount;

@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
+@class NSDate;
+
 @interface TMThinningAlgorithm : NSObject
 {
     BOOL _shouldKeepWeeklySnapshots;
+    NSDate *_now;
     unsigned long long _numberOfHourlySnapshotsToKeep;
     unsigned long long _numberOfDailySnapshotsToKeep;
 }
@@ -18,7 +21,9 @@
 @property BOOL shouldKeepWeeklySnapshots; // @synthesize shouldKeepWeeklySnapshots=_shouldKeepWeeklySnapshots;
 @property unsigned long long numberOfDailySnapshotsToKeep; // @synthesize numberOfDailySnapshotsToKeep=_numberOfDailySnapshotsToKeep;
 @property unsigned long long numberOfHourlySnapshotsToKeep; // @synthesize numberOfHourlySnapshotsToKeep=_numberOfHourlySnapshotsToKeep;
+@property(retain) NSDate *now; // @synthesize now=_now;
 - (id)datesToRemoveFromSet:(id)arg1;
+- (void)dealloc;
 
 @end
 

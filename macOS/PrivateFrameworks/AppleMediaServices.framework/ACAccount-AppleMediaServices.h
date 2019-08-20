@@ -18,11 +18,17 @@
 + (id)_defaultValueForAccountFlag:(id)arg1;
 - (BOOL)ams_valueForAccountFlag:(id)arg1;
 - (void)ams_setValue:(BOOL)arg1 forAccountFlag:(id)arg2;
+- (void)ams_removeHomeUserIdentifier:(id)arg1;
 - (BOOL)ams_postAccountFlagsWithBagContract:(id)arg1;
 - (id)ams_secureToken;
+- (void)ams_addHomeUserIdentifier:(id)arg1;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 dataProtectionClass:(unsigned long long)arg3 expectedClass:(Class)arg4;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 expectedClass:(Class)arg3;
 - (BOOL)_setCookies:(id)arg1;
+- (id)_hashedStorefront;
+- (id)_hashedIdentifiers;
+- (id)_hashedMultiUserIdentifiers;
+- (id)_hashedActiveState;
 - (id)_createCookieStorage;
 - (id)_cookiesMatchingProperties:(id)arg1;
 - (id)_accountPropertyForKey:(id)arg1 dataProtectionClass:(unsigned long long)arg2 expectedClasses:(id)arg3 error:(id *)arg4;

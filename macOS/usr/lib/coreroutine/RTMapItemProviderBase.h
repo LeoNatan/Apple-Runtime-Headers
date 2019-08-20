@@ -6,20 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class RTDistanceCalculator;
+@class RTDistanceCalculator, RTMapItemProviderBaseParameters;
 
 @interface RTMapItemProviderBase : NSObject
 {
     RTDistanceCalculator *_distanceCalculator;
+    RTMapItemProviderBaseParameters *_baseParameters;
 }
 
+@property(readonly, nonatomic) RTMapItemProviderBaseParameters *baseParameters; // @synthesize baseParameters=_baseParameters;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 - (void).cxx_destruct;
 - (id)filterInferredMapItems:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 error:(id *)arg4;
 - (id)filterInferredMapItems:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 andAppendSource:(unsigned long long)arg4 error:(id *)arg5;
 - (id)filter:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 error:(id *)arg4;
 - (id)filter:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 andAppendSource:(unsigned long long)arg4 error:(id *)arg5;
-- (id)initWithDistanceCalculator:(id)arg1;
+- (BOOL)mapItemCloseEnough:(id)arg1 referenceLocation:(id)arg2 distanceThreshold:(double)arg3 error:(id *)arg4;
+- (id)initWithDistanceCalculator:(id)arg1 parameters:(id)arg2;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2;
 - (id)init;
 
 @end

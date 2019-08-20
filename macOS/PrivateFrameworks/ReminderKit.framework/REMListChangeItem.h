@@ -26,6 +26,8 @@
 @property(readonly, copy, nonatomic) REMListStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) REMSaveRequest *saveRequest; // @synthesize saveRequest=_saveRequest;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL canBeIncludedInGroup;
+@property(readonly, nonatomic) BOOL isSharedToMe;
 - (id)resolutionTokenKeyForChangedKey:(id)arg1;
 - (void)_testingOnly_setReminderIDsMergeableOrder:(id)arg1;
 - (void)_editReminderIDsOrderingUsingBlock:(CDUnknownBlockType)arg1;

@@ -101,6 +101,7 @@ __attribute__((visibility("hidden")))
 - (void)editItem:(id)arg1 wantsRowInsertions:(id)arg2 rowDeletions:(id)arg3;
 - (long long)rowNumberForEditItem:(id)arg1;
 - (void)editItem:(id)arg1 wantsRowReload:(id)arg2;
+- (void)editItemWantsFooterTitlesToReload:(id)arg1;
 - (void)editItem:(id)arg1 performActionsOnCellAtSubitem:(unsigned long long)arg2 actions:(CDUnknownBlockType)arg3;
 - (void)_reallyHandleCellHeightChange;
 - (void)_tableViewDidUpdateHeights;

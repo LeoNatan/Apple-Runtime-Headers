@@ -31,8 +31,6 @@
     GKEventEmitter<GKLocalPlayerListenerPrivate> *_eventEmitter;
     double _authStartTimeStamp;
     unsigned long long _authenticationType;
-    NSString *_lastPersonalizationVersionDisplayed;
-    unsigned long long _lastPrivacyNoticeVersionDisplayed;
 }
 
 + (void)authenticateWithUsername:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -50,8 +48,6 @@
 + (void)performSync:(CDUnknownBlockType)arg1;
 + (id)localPlayerAccessQueue;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
-@property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(nonatomic) unsigned long long authenticationType; // @synthesize authenticationType=_authenticationType;
 @property(nonatomic) double authStartTimeStamp; // @synthesize authStartTimeStamp=_authStartTimeStamp;
 @property(retain, nonatomic) GKEventEmitter<GKLocalPlayerListenerPrivate> *eventEmitter; // @synthesize eventEmitter=_eventEmitter;

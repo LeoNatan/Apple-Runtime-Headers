@@ -209,7 +209,7 @@
 - (void)_healthServicesServerProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_subserverProxyForSelector:(SEL)arg1 completion:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)_serverProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (void)_discardServerProxies;
+- (void)_discardServerProxiesForServer:(id)arg1;
 - (void)resume;
 @property(readonly, nonatomic) HKHealthServicesManager *healthServicesManager;
 @property(copy) NSString *debugIdentifier;
@@ -247,6 +247,7 @@
 - (void)setBadge:(id)arg1 forDomain:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)badgeForDomain:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)oldestSampleStartDateInHealthDatabaseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)accountConfigurationDidChangeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enableCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disableCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disableCloudSyncAndDeleteAllCloudDataWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

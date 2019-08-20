@@ -12,12 +12,18 @@
 {
     double _marginInset;
     NSTextField *_infoLabel;
+    unsigned long long _internalInfoLabelType;
 }
 
-+ (id)infoLabelWithString:(id)arg1;
+@property unsigned long long internalInfoLabelType; // @synthesize internalInfoLabelType=_internalInfoLabelType;
 @property(readonly) NSTextField *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property double marginInset; // @synthesize marginInset=_marginInset;
 - (void).cxx_destruct;
+@property unsigned long long infoLabelType;
+- (id)titleFont;
+- (id)messageFont;
+- (void)setLabel:(id)arg1 toInfoLabelType:(unsigned long long)arg2;
+- (id)infoLabelWithString:(id)arg1;
 - (void)addToConstraints:(id)arg1 context:(id)arg2;
 - (void)addToStackView:(id)arg1 context:(id)arg2;
 @property(copy) NSString *string;

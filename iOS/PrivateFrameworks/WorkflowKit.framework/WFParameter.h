@@ -19,6 +19,7 @@
     NSSet *_supportedVariableTypes;
     NSString *_key;
     NSString *_localizedLabel;
+    NSString *_localizedPlaceholder;
     NSString *_localizedDescription;
     id _defaultSerializedRepresentation;
     WFResourceManager *_resourceManager;
@@ -45,6 +46,7 @@
 @property(readonly, copy, nonatomic) id defaultSerializedRepresentation; // @synthesize defaultSerializedRepresentation=_defaultSerializedRepresentation;
 @property(readonly, nonatomic) _Bool doNotLocalizeValues; // @synthesize doNotLocalizeValues=_doNotLocalizeValues;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
+@property(copy, nonatomic) NSString *localizedPlaceholder; // @synthesize localizedPlaceholder=_localizedPlaceholder;
 @property(readonly, copy, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_localizedLabel;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;

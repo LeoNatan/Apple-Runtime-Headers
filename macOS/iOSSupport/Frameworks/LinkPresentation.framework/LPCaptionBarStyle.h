@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)leftAccessory;
 - (id)rightIcon;
 - (id)leftIcon;
-- (id)initWithPlatform:(long long)arg1;
+- (id)initWithPlatform:(long long)arg1 sizeClass:(unsigned long long)arg2;
 
 @end
 

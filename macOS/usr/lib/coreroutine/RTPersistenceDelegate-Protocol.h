@@ -21,6 +21,7 @@
 - (BOOL)store:(RTPersistenceStore *)arg1 validateAppleIDs:(NSSet *)arg2;
 
 @optional
+- (BOOL)purgeExpiredRecordsFromPersistenceStore:(RTPersistenceStore *)arg1 withContext:(NSManagedObjectContext *)arg2 error:(id *)arg3;
 - (void)persistenceStore:(RTPersistenceStore *)arg1 willBeginMirroringWithOptions:(NSCloudKitMirroringDelegateOptions *)arg2;
 - (void)persistenceMigrator:(RTPersistenceMigrator *)arg1 didFinishMigratingStore:(RTPersistenceStore *)arg2 withModelProvider:(id <RTPersistenceModelProvider>)arg3;
 - (void)persistenceMigrator:(RTPersistenceMigrator *)arg1 didStartMigratingStore:(RTPersistenceStore *)arg2 withModelProvider:(id <RTPersistenceModelProvider>)arg3;

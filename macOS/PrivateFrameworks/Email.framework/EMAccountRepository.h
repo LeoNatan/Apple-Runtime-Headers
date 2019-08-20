@@ -25,6 +25,7 @@
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSMutableDictionary *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
+- (void)_postAccountChangedNotification;
 - (void)accountsChanged:(id)arg1;
 - (void)accountsRemoved:(id)arg1;
 - (void)accountsAdded:(id)arg1;

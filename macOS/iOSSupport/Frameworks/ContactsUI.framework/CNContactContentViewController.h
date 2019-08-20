@@ -26,8 +26,8 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 #import <ContactsUI/UIViewControllerRestoration-Protocol.h>
 
-@class CNAccessAuthorization, CNCardFaceTimeGroup, CNCardGroup, CNCardLinkedCardsGroup, CNContact, CNContactAction, CNContactActionProvider, CNContactAddFavoriteAction, CNContactAddLinkedCardAction, CNContactAddNewFieldAction, CNContactAddToExistingContactAction, CNContactClearRecentsDataAction, CNContactCreateNewContactAction, CNContactFormatter, CNContactHeaderDisplayView, CNContactHeaderEditView, CNContactHeaderView, CNContactInlineActionsViewController, CNContactRecentsReference, CNContactStore, CNContactSuggestionAction, CNContactToggleBlockCallerAction, CNContactUpdateExistingContactAction, CNContactView, CNContactViewCache, CNContainer, CNGroup, CNManagedConfiguration, CNMutableContact, CNPolicy, CNPropertyAction, CNPropertyFaceTimeAction, CNPropertyLinkedCardsAction, CNPropertyNoteCell, CNShareLocationController, CNSiriContactContextProvider, CNUIContactsEnvironment, CNUIEditAuthorizationController, CNUIUserActionListDataSource, CNUIUserActivityManager, NSArray, NSDictionary, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIKeyCommand, UITableView, UIView;
-@protocol CNCancelable, CNContactContentViewControllerDelegate, CNContactViewControllerPPTDelegate, CNContactViewHostProtocol, CNPresenterDelegate, CNUIContactSaveExecutor, NSObject;
+@class CNAccessAuthorization, CNCardFaceTimeGroup, CNCardGroup, CNCardLinkedCardsGroup, CNContact, CNContactAction, CNContactActionProvider, CNContactAddFavoriteAction, CNContactAddLinkedCardAction, CNContactAddNewFieldAction, CNContactAddToExistingContactAction, CNContactClearRecentsDataAction, CNContactCreateNewContactAction, CNContactFormatter, CNContactHeaderDisplayView, CNContactHeaderEditView, CNContactHeaderView, CNContactInlineActionsViewController, CNContactRecentsReference, CNContactStore, CNContactSuggestionAction, CNContactToggleBlockCallerAction, CNContactUpdateExistingContactAction, CNContactView, CNContactViewCache, CNContainer, CNGroup, CNManagedConfiguration, CNMutableContact, CNPolicy, CNPropertyAction, CNPropertyFaceTimeAction, CNPropertyLinkedCardsAction, CNPropertyNoteCell, CNShareLocationController, CNSiriContactContextProvider, CNUIContactsEnvironment, CNUIEditAuthorizationController, CNUIUserActionListDataSource, CNUIUserActivityManager, NSArray, NSAttributedString, NSDictionary, NSLayoutConstraint, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, UIKeyCommand, UITableView, UIView;
+@protocol CNCancelable, CNContactContentViewControllerDelegate, CNContactViewControllerPPTDelegate, CNContactViewHostProtocol, CNPresenterDelegate, CNUIContactSaveExecutor;
 
 @interface CNContactContentViewController : UIViewController <CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNContactGroupPickerDelegate, UIPopoverControllerDelegate, CNContactHeaderViewDelegate, CNContactContentViewControllerDelegate, UIAdaptivePresentationControllerDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, CNContactInlineActionsViewControllerDelegate_Internal, NSUserActivityDelegate, CNUIEditAuthorizationControllerDelegate, CNContactActionDelegate, CNPresenterDelegate, CNContactContentViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerRestoration>
 {
@@ -81,6 +81,7 @@
     NSString *_message;
     NSString *_warningMessage;
     NSString *_importantMessage;
+    NSAttributedString *_verifiedInfoMessage;
     NSString *_primaryProperty;
     UIViewController *_personHeaderViewController;
     CNCardGroup *_cardTopGroup;
@@ -153,7 +154,6 @@
     CNUIContactsEnvironment *_environment;
     CNContactViewCache *_contactViewCache;
     CNUIUserActivityManager *_activityManager;
-    id <NSObject> _contactStoreDidChangeNotificationToken;
     CNPolicy *_policy;
     NSDictionary *_linkedPoliciesByContactIdentifier;
     long long _mode;
@@ -203,7 +203,6 @@
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSDictionary *linkedPoliciesByContactIdentifier; // @synthesize linkedPoliciesByContactIdentifier=_linkedPoliciesByContactIdentifier;
 @property(retain, nonatomic) CNPolicy *policy; // @synthesize policy=_policy;
-@property(retain, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
 @property(readonly, nonatomic) struct UIEdgeInsets peripheryInsets; // @synthesize peripheryInsets=_peripheryInsets;
 @property(nonatomic) BOOL runningPPT; // @synthesize runningPPT=_runningPPT;
 @property(readonly, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
@@ -283,6 +282,7 @@
 @property(retain, nonatomic) CNCardGroup *cardTopGroup; // @synthesize cardTopGroup=_cardTopGroup;
 @property(retain, nonatomic) UIViewController *personHeaderViewController; // @synthesize personHeaderViewController=_personHeaderViewController;
 @property(retain, nonatomic) NSString *primaryProperty; // @synthesize primaryProperty=_primaryProperty;
+@property(retain, nonatomic) NSAttributedString *verifiedInfoMessage; // @synthesize verifiedInfoMessage=_verifiedInfoMessage;
 @property(retain, nonatomic) NSString *importantMessage; // @synthesize importantMessage=_importantMessage;
 @property(retain, nonatomic) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
@@ -397,6 +397,7 @@
 - (void)updateContactsViewWithBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGSize)requiredSizeForVisibleTableView;
 - (double)desiredHeightForWidth:(double)arg1;
+- (void)cleanupRecentImageMetadata;
 - (void)reloadUnifiedContact;
 - (void)removeLinkedContact:(id)arg1;
 - (void)addLinkedContact:(id)arg1;
@@ -488,6 +489,8 @@
 - (BOOL)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (BOOL)shouldShowVerifiedFooterInSection:(long long)arg1 inTableView:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
@@ -507,7 +510,7 @@
 - (void)setupWithOptions:(id)arg1 readyBlock:(CDUnknownBlockType)arg2;
 - (BOOL)canBecomeFirstResponder;
 - (void)updateEditPhotoButtonIfNeeded;
-- (void)setupTableHeaderView;
+- (struct CGSize)setupTableHeaderView;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(BOOL)arg1;

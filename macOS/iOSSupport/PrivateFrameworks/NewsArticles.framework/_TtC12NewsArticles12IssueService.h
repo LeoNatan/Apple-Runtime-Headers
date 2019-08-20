@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles12IssueService : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: issuesFetchOperationFactory
+    // Error parsing type: , name: issueReadingHistory
 }
 
 @end

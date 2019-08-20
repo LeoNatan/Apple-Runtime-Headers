@@ -43,6 +43,7 @@
 @property(retain, nonatomic) IDSKVStore *kvStore; // @synthesize kvStore=_kvStore;
 @property(retain, nonatomic) IMNickname *personalNickname; // @synthesize personalNickname=_personalNickname;
 - (void)systemDidLeaveFirstDataProtectionLock;
+- (id)transferServicesController;
 - (id)substringRecordIDForNickname:(id)arg1;
 - (id)nicknameForHandle:(id)arg1;
 - (id)nicknameForHandleURI:(id)arg1;
@@ -60,6 +61,8 @@
 - (void)loadHandledNicknamesAndPendingUpdates;
 - (void)loadPersonalNicknameIfNeeded;
 - (void)_loadAllInfoFromDiskIfAble;
+- (void)_setUnderScrutiny:(_Bool)arg1;
+- (_Bool)_isUnderScrutiny;
 - (_Bool)_deviceUnderFirstUnlock;
 - (void)cleanUpNicknameForID:(id)arg1;
 - (void)_deleteHandleIDFromHandledMap:(id)arg1;
@@ -72,6 +75,7 @@
 - (_Bool)replacedNicknameForHandleIDInHandledMapIfNeeded:(id)arg1 nickname:(id)arg2;
 - (void)addNicknameToPendingUpdates:(id)arg1;
 - (void)_broadcastPendingMapChanged;
+- (void)ignorePendingNicknameForHandleID:(id)arg1;
 - (void)clearPendingNicknameForHandleID:(id)arg1;
 - (void)saveNicknameForRecordID:(id)arg1 handleID:(id)arg2 userNickname:(id)arg3;
 - (void)_updatePendingNicknameVersion;
@@ -101,8 +105,8 @@
 - (void)_updateMessageDictionaryWithPendingNicknameUpdates:(id)arg1;
 - (void)_updateSharingPreferencesIfNeededFromMadridMessage:(id)arg1;
 - (void)deleteAllPersonalNicknames:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_getNicknameRecordFromPublicDBWithRecordName:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)NicknameWithRecordID:(id)arg1 URI:(id)arg2 decryptionKey:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
+- (void)getNicknameWithRecordID:(id)arg1 decryptionKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)currentPersonalNicknameWithRecordID:(id)arg1 decryptionKey:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)currentPersonalNicknamewithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)fetchAllNicknamesForCurrentUser:(CDUnknownBlockType)arg1;

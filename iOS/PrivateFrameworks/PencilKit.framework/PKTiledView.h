@@ -16,7 +16,7 @@
 #import <PencilKit/_UIScrollViewLayoutObserver-Protocol.h>
 #import <PencilKit/_UIScrollViewScrollObserver-Protocol.h>
 
-@class NSArray, NSObject, NSString, NSUUID, PKAttachmentView, PKController, PKDrawing, PKInk, PKLinedPaper, PKRulerController, PKSelectionController, PKTiledCanvasView, PKVectorTimestamp, UIDropInteraction, UIImage, UIScrollView, UITapGestureRecognizer, UITouch;
+@class NSArray, NSMutableArray, NSObject, NSString, NSUUID, PKAttachmentView, PKController, PKDrawing, PKInk, PKLinedPaper, PKRulerController, PKSelectionController, PKTiledCanvasView, PKVectorTimestamp, UIDropInteraction, UIImage, UIScrollView, UITapGestureRecognizer, UITouch;
 @protocol PKRulerHostingDelegate, PKTiledViewDelegate;
 
 @interface PKTiledView : UIView <UIScrollViewDelegate, _UIScrollViewScrollObserver, _UIScrollViewLayoutObserver, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate, PKRulerDelegate, PKRulerHostingDelegate, PKDrawableView, PKTiledCanvasViewDelegate>
@@ -56,6 +56,7 @@
     PKVectorTimestamp *_cachedDrawingVersionForAdditionalStrokes;
     CDUnknownBlockType _didScrollBlock;
     long long _aggd_cachedVisibleStrokeCount;
+    NSMutableArray *_undoManagersRegisteredWith;
     long long __maxFileFormatVersion;
     struct CGPoint _lastContentOffset;
     struct CGPoint _liveStrokeContentOffset;
@@ -65,6 +66,7 @@
 + (_Bool)showDebugOutlines;
 @property(nonatomic) long long _maxFileFormatVersion; // @synthesize _maxFileFormatVersion=__maxFileFormatVersion;
 @property(nonatomic) _Bool aggd_didMergeWithCollaborator; // @synthesize aggd_didMergeWithCollaborator=_aggd_didMergeWithCollaborator;
+@property(retain, nonatomic) NSMutableArray *undoManagersRegisteredWith; // @synthesize undoManagersRegisteredWith=_undoManagersRegisteredWith;
 @property(nonatomic) long long aggd_cachedVisibleStrokeCount; // @synthesize aggd_cachedVisibleStrokeCount=_aggd_cachedVisibleStrokeCount;
 @property(copy, nonatomic) CDUnknownBlockType didScrollBlock; // @synthesize didScrollBlock=_didScrollBlock;
 @property(copy, nonatomic) PKVectorTimestamp *cachedDrawingVersionForAdditionalStrokes; // @synthesize cachedDrawingVersionForAdditionalStrokes=_cachedDrawingVersionForAdditionalStrokes;
@@ -163,6 +165,8 @@
 - (void)performUndo:(id)arg1;
 - (void)cancelSelection;
 - (void)canvasView:(id)arg1 registerUndoCommand:(id)arg2;
+- (void)registerUndoCommand:(id)arg1;
+- (void)_canvasView:(id)arg1 showEditMenuFromLocation:(struct CGPoint)arg2;
 - (_Bool)canvasView:(id)arg1 shouldBeginDrawingWithTouch:(id)arg2;
 - (void)canvasView:(id)arg1 drawingDidChange:(id)arg2;
 - (void)_canvasView:(id)arg1 didFinishRenderingStrokeOnRenderQueue:(id)arg2 inDrawing:(id)arg3;
@@ -196,8 +200,10 @@
 - (long long)_totalVisibleStrokes;
 @property(retain, nonatomic) UIImage *paperTexture; // @dynamic paperTexture;
 @property(copy, nonatomic) PKInk *ink;
+- (void)setSelectedStrokesColor:(id)arg1;
 - (void)insertCanvasView:(id)arg1 intoScrollView:(id)arg2;
 - (void)newCanvasView;
+- (void)_resetDrawingState;
 - (void)_flushCaches;
 - (void)dealloc;
 - (id)initInScrollView:(id)arg1;

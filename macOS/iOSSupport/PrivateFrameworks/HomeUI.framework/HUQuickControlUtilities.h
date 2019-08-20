@@ -15,6 +15,7 @@
 + (id)backgroundColorForUserInterfaceStyle:(long long)arg1;
 + (unsigned long long)iconSizeForQuickControlSize:(unsigned long long)arg1;
 + (unsigned long long)sliderQuickControlSizeForViewSizeSubclass:(long long)arg1;
++ (unsigned long long)quickControlStepperViewSizeForViewSizeSubclass:(long long)arg1;
 
 @end
 

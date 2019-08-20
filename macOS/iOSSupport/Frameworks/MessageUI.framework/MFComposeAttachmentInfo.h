@@ -6,18 +6,23 @@
 
 #import <MailSupport/MSAttachmentInfo.h>
 
+@class NSString;
+
 @interface MFComposeAttachmentInfo : MSAttachmentInfo
 {
     BOOL _isBasicImage;
     BOOL _isDisplayableImage;
+    NSString *_className;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, nonatomic) BOOL isDisplayableImage; // @synthesize isDisplayableImage=_isDisplayableImage;
 @property(readonly, nonatomic) BOOL isBasicImage; // @synthesize isBasicImage=_isBasicImage;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 filename:(id)arg2 isBasicImage:(BOOL)arg3 isDisplayableImage:(BOOL)arg4;
+- (id)initWithURL:(id)arg1 filename:(id)arg2 isBasicImage:(BOOL)arg3 isDisplayableImage:(BOOL)arg4 className:(id)arg5;
 
 @end
 

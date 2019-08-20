@@ -23,7 +23,7 @@
 @property(nonatomic) __weak id <DNDSBackingStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)backingStore:(id)arg1 migrateDictionaryRepresentation:(id)arg2 fromVersionNumber:(unsigned long long)arg3 toVersionNumber:(unsigned long long)arg4;
-- (_Bool)writeRecord:(id)arg1 error:(id *)arg2;
+- (unsigned long long)writeRecord:(id)arg1 error:(id *)arg2;
 - (id)readRecordWithError:(id *)arg1;
 - (id)initWithUnderlyingBackingStore:(id)arg1;
 

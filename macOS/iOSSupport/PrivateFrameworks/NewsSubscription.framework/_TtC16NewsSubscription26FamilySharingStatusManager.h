@@ -12,6 +12,7 @@
     // Error parsing type: , name: cachedFamilyStatus
     // Error parsing type: , name: lazyStore
     // Error parsing type: , name: familyStatusStoreKey
+    // Error parsing type: , name: familyEigibilityProvider
 }
 
 @end

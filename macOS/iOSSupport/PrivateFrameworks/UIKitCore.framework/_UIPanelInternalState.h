@@ -14,7 +14,6 @@
 __attribute__((visibility("hidden")))
 @interface _UIPanelInternalState : NSObject <NSCopying>
 {
-    BOOL _jumpToStandardPosition;
     UIViewController *_mainViewController;
     UIViewController *_leadingViewController;
     UIViewController *_trailingViewController;
@@ -33,7 +32,6 @@ __attribute__((visibility("hidden")))
     struct CGPoint _splitterDragStartPointInContentView;
 }
 
-@property(nonatomic) BOOL jumpToStandardPosition; // @synthesize jumpToStandardPosition=_jumpToStandardPosition;
 @property(copy, nonatomic) UISlidingBarStateRequest *specificSplitterPositionStateRequest; // @synthesize specificSplitterPositionStateRequest=_specificSplitterPositionStateRequest;
 @property(nonatomic) double splitterDragXOffsetInBorderView; // @synthesize splitterDragXOffsetInBorderView=_splitterDragXOffsetInBorderView;
 @property(nonatomic) struct CGPoint splitterDragStartPointInContentView; // @synthesize splitterDragStartPointInContentView=_splitterDragStartPointInContentView;

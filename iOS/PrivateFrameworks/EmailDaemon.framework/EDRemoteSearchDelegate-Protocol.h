@@ -6,7 +6,10 @@
 
 #import <EmailDaemon/NSObject-Protocol.h>
 
+@class NSArray;
+
 @protocol EDRemoteSearchDelegate <NSObject>
 - (void)remoteSearchDidFinish;
+- (void)remoteSearchDidFindMessages:(NSArray *)arg1;
 @end
 

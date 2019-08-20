@@ -6,17 +6,17 @@
 
 #import <ChatKit/CKAcknowledgmentGlyphView.h>
 
-@class UIImageView;
+@class CKAcknowledgmentGlyphImageView;
 
 __attribute__((visibility("hidden")))
 @interface CKExclamationAcknowledgmentGlyphView : CKAcknowledgmentGlyphView
 {
-    UIImageView *_leftExclamationGlyph;
-    UIImageView *_rightExclamationGlyph;
+    CKAcknowledgmentGlyphImageView *_leftExclamationGlyph;
+    CKAcknowledgmentGlyphImageView *_rightExclamationGlyph;
 }
 
-@property(retain, nonatomic) UIImageView *rightExclamationGlyph; // @synthesize rightExclamationGlyph=_rightExclamationGlyph;
-@property(retain, nonatomic) UIImageView *leftExclamationGlyph; // @synthesize leftExclamationGlyph=_leftExclamationGlyph;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *rightExclamationGlyph; // @synthesize rightExclamationGlyph=_rightExclamationGlyph;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *leftExclamationGlyph; // @synthesize leftExclamationGlyph=_leftExclamationGlyph;
 - (void).cxx_destruct;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;

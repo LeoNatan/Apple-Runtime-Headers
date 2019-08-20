@@ -9,6 +9,7 @@
 @class NSArray, NSString, SATTSSpeechSynthesisStreaming, VSPresynthesizedAudioRequest, VSSpeechRequest, VSVoiceAsset;
 
 @protocol VSSpeechXPCServiceProtocol <NSObject>
+- (oneway void)killDaemon;
 - (oneway void)forwardStreamObject:(SATTSSpeechSynthesisStreaming *)arg1;
 - (oneway void)getTTSServerVoicesWithFilter:(VSVoiceAsset *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)getLogToFile:(void (^)(_Bool))arg1;

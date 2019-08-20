@@ -22,6 +22,7 @@
     _Bool _allowsTextOnlyLocation;
     _Bool _allowsPickingCurrentLocation;
     _Bool _resolvesCurrentLocationToPlacemark;
+    int _currentAppLocationAuthorizationStatus;
     id <WFLocationPickerViewControllerDelegate> _delegate;
     unsigned long long _pickerType;
     WFLocationValue *_value;
@@ -42,6 +43,7 @@
 }
 
 @property(retain, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
+@property(nonatomic) int currentAppLocationAuthorizationStatus; // @synthesize currentAppLocationAuthorizationStatus=_currentAppLocationAuthorizationStatus;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(copy, nonatomic) NSArray *localSearchResults; // @synthesize localSearchResults=_localSearchResults;
 @property(retain, nonatomic) MKLocalSearch *localSearch; // @synthesize localSearch=_localSearch;
@@ -84,6 +86,9 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (_Bool)hasSufficientLocationAuthorization;
+- (void)checkLocationAuthorization;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
 - (id)circularRegion;
@@ -102,6 +107,7 @@
 - (long long)lastRecentRowIndex;
 - (long long)firstRecentRowIndex;
 - (long long)currentLocationRowIndex;
+- (_Bool)shouldShowCurrentLocationItem;
 - (void)updateRecentsWithSearchText:(id)arg1;
 - (void)updateUIWithValue:(id)arg1;
 - (void)updateUI;
@@ -111,6 +117,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (id)initWithPickerType:(unsigned long long)arg1 value:(id)arg2;
 

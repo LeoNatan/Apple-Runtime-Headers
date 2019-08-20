@@ -53,7 +53,7 @@
 - (void)addBankAccountInformationViewController:(id)arg1 didAddFundingSource:(id)arg2;
 - (void)bankAccountInformationViewControllerChangedBankAccountInformation:(id)arg1;
 - (id)_addBankAccountInformationViewController;
-- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)_footerText;
 - (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (int)_paymentRowTypeForIndexPath:(id)arg1;
@@ -66,6 +66,7 @@
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)_performNextButtonTapped;
 - (void)handleNextButtonTapped:(id)arg1;
 - (void)_updateNextButtonEnabledIfNecessary;
 - (int)_frequency;
@@ -87,6 +88,7 @@
 - (id)_datesForFrequency:(int)arg1;
 - (void)setSelectedFrequency:(id)arg1;
 - (id)tableHeaderView;
+- (void)viewWillLayoutSubviews;
 - (id)tableView;
 - (void)viewDidLoad;
 - (void)dealloc;

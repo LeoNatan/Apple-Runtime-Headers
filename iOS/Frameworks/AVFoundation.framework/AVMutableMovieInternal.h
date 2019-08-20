@@ -18,7 +18,8 @@ __attribute__((visibility("hidden")))
     NSURL *URL;
     NSData *data;
     NSDictionary *initializationOptions;
-    NSObject<OS_dispatch_semaphore> *waitingSemaphore;
+    NSObject<OS_dispatch_semaphore> *trackWaitingSemaphore;
+    NSObject<OS_dispatch_semaphore> *metadataWaitingSemaphore;
     NSMutableArray *tracks;
     AVDispatchOnce *makeTracksArrayOnce;
 }

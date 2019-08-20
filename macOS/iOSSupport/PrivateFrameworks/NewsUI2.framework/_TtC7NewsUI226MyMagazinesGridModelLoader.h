@@ -8,6 +8,7 @@
 
 @interface _TtC7NewsUI226MyMagazinesGridModelLoader : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: delegate
     // Error parsing type: , name: identifier
     // Error parsing type: , name: store
     // Error parsing type: , name: issueService

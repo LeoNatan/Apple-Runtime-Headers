@@ -6,10 +6,9 @@
 
 #import <DeviceManagement/NSObject-Protocol.h>
 
-@class DMFPolicyRegistration, NSArray, NSString;
+@class DMFPolicyRegistration, NSArray;
 
 @protocol DMFPolicyRemoteInterface <NSObject>
-- (void)requestOneMoreMinuteDeclarationIdentifiersForIdentifier:(NSString *)arg1 replyHandler:(void (^)(NSSet *, NSError *))arg2;
 - (void)requestPoliciesForTypes:(NSArray *)arg1 replyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)addRegistration:(DMFPolicyRegistration *)arg1 replyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 @end

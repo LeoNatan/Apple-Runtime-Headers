@@ -14,6 +14,7 @@
     AVPortraitEffectsMatte *_portraitEffectsMatte;
 }
 
++ (id)AVFileTypeFromFigCaptureStillImageSettingsFileType:(int)arg1 codec:(unsigned long)arg2 unresolvedSettings:(id)arg3;
 @property(readonly) AVPortraitEffectsMatte *portraitEffectsMatte; // @synthesize portraitEffectsMatte=_portraitEffectsMatte;
 - (id)_fileDataRepresentationWithReplacementMetadata:(id)arg1 replacementEmbeddedThumbnailPhotoFormat:(id)arg2 replacementEmbeddedThumbnailPixelBuffer:(struct __CVBuffer *)arg3 replacementDepthData:(id)arg4 exceptionReason:(id *)arg5;
 - (unsigned int)_orientation;
@@ -45,7 +46,7 @@
 - (id)description;
 - (id)debugDescription;
 - (void)dealloc;
-- (id)initWithTimestamp:(CDStruct_1b6d18a9)arg1 photoSurface:(struct __IOSurface *)arg2 photoSurfaceSize:(unsigned long)arg3 previewPhotoSurface:(struct __IOSurface *)arg4 embeddedThumbnailSourceSurface:(struct __IOSurface *)arg5 metadata:(id)arg6 depthDataSurface:(struct __IOSurface *)arg7 depthMetadataDictionary:(id)arg8 captureRequest:(id)arg9 bracketSettings:(id)arg10 sequenceCount:(unsigned int)arg11 photoCount:(unsigned int)arg12 expectedPhotoProcessingFlags:(unsigned int)arg13 sourceDeviceType:(id)arg14;
+- (id)initWithTimestamp:(CDStruct_1b6d18a9)arg1 photoSurface:(struct __IOSurface *)arg2 photoSurfaceSize:(unsigned long)arg3 processedFileType:(id)arg4 previewPhotoSurface:(struct __IOSurface *)arg5 embeddedThumbnailSourceSurface:(struct __IOSurface *)arg6 metadata:(id)arg7 depthDataSurface:(struct __IOSurface *)arg8 depthMetadataDictionary:(id)arg9 captureRequest:(id)arg10 bracketSettings:(id)arg11 sequenceCount:(unsigned int)arg12 photoCount:(unsigned int)arg13 expectedPhotoProcessingFlags:(unsigned int)arg14 sourceDeviceType:(id)arg15;
 
 @end
 

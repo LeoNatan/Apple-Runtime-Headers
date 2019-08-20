@@ -18,6 +18,8 @@
 + (id)currentTaskDictionary;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (id)init;
+- (BOOL)isSpawnedProcessDisclaimed;
+- (void)setSpawnedProcessDisclaimed:(BOOL)arg1;
 @property long long qualityOfService;
 @property(retain) id standardError;
 @property(retain) id standardOutput;

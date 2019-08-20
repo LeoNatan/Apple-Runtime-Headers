@@ -58,12 +58,12 @@
 - (void)adjustmentDataRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
 - (void)videoChoosingAndAvailabilityRequest:(id)arg1 didFinishWithVideoURL:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)videoChoosingAndAvailabilityRequest:(id)arg1 didReportProgress:(double)arg2 completed:(BOOL)arg3 error:(id)arg4;
-- (void)videoRequest:(id)arg1 isRequestingVideoChoosingForSize:(struct CGSize)arg2;
+- (BOOL)videoRequest:(id)arg1 didStartVideoChoosingRequestForSize:(struct CGSize)arg2;
 - (void)imageRequest:(id)arg1 isRequestingScheduledWorkBlock:(CDUnknownBlockType)arg2;
 - (void)imageRequest:(id)arg1 isQueryingCacheAndDidWait:(char *)arg2 didFindImage:(char *)arg3 resultHandler:(CDUnknownBlockType)arg4;
 - (BOOL)imageRequest:(id)arg1 isRequestingRepairAndRetryForDataStoreKey:(id)arg2 inStore:(id)arg3 assetObjectID:(id)arg4 forValidationErrors:(id)arg5;
 - (void)mediaRequest:(id)arg1 didFinishWithResult:(id)arg2;
-- (void)mediaRequest:(id)arg1 isRequestingLocalAvailabilityChangeForResource:(id)arg2;
+- (BOOL)mediaRequest:(id)arg1 didStartLocalAvailabilityChangeRequestForResource:(id)arg2;
 - (void)mediaRequest:(id)arg1 didFindLocallyAvailableResult:(BOOL)arg2 isDegraded:(BOOL)arg3;
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didLoadData:(id)arg2;
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didFinishWithSuccess:(BOOL)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
@@ -88,7 +88,7 @@
 - (BOOL)isNetworkAccessAllowed;
 - (BOOL)isSynchronous;
 - (unsigned long long)nextRequestIndex;
-- (void)_makeAvailabilityRequest:(id)arg1 forResource:(id)arg2;
+- (BOOL)_makeAvailabilityRequest:(id)arg1 forResource:(id)arg2;
 - (void)_setupProgressIfNeeded;
 - (void)_registerAndStartRequests:(id)arg1;
 - (id)_requestWithIdentifier:(id)arg1;

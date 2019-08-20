@@ -30,6 +30,7 @@
 - (void)_scheduleSaveState;
 - (void)_setReplicasDirtyToken;
 - (void)_loadState;
+- (BOOL)isValidBundleIDForSaving:(id)arg1;
 - (void)returnReplicaForDrawing:(id)arg1;
 - (void)persistIfNeeded;
 - (void)updateVersionForDrawing:(id)arg1;

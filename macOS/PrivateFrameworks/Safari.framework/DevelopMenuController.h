@@ -63,6 +63,8 @@ __attribute__((visibility("hidden")))
 - (void)removeMenu;
 - (void)_actuallyInstallMenu;
 - (void)installMenuWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_invalidateAllDeveloperModeExtensions;
+- (void)_requestAllDeveloperModeExtensions:(CDUnknownBlockType)arg1;
 - (void)pairWithDevice:(id)arg1;
 - (void)_toggleWirelessDebugging:(id)arg1;
 - (void)_toggleAutoPause:(id)arg1;

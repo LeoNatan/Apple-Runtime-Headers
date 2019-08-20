@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long pendingCount;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
+- (id)init;
 
 @end
 

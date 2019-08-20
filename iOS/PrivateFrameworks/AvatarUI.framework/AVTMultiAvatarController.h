@@ -7,14 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <AvatarUI/AVTAvatarDisplayingController-Protocol.h>
+#import <AvatarUI/AVTAvatarRecordDataSourceObserver-Protocol.h>
 #import <AvatarUI/AVTNotifyingContainerViewDelegate-Protocol.h>
 #import <AvatarUI/UICollectionViewDataSource-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegate-Protocol.h>
 
-@class AVTAvatarListCell, AVTAvatarRecordDataSource, AVTCarouselPlusButtonView, AVTCenteringCollectionViewDelegate, AVTRenderingScope, AVTTransitionCoordinator, AVTUIEnvironment, AVTViewSession, AVTZIndexEngagementListCollectionViewLayout, NSArray, NSString, UICollectionView, UIView, _AVTAvatarRecordImageProvider;
+@class AVTAvatarListCell, AVTAvatarRecordDataSource, AVTCarouselPlusButtonView, AVTCenteringCollectionViewDelegate, AVTRenderingScope, AVTTransitionCoordinator, AVTUIEnvironment, AVTViewSession, AVTZIndexEngagementListCollectionViewLayout, NSArray, NSNumber, NSString, UICollectionView, UIView, _AVTAvatarRecordImageProvider;
 @protocol AVTAvatarDisplayingControllerDelegate, AVTAvatarListItem, AVTAvatarRecord, AVTPresenterDelegate, AVTUILogger, AVTViewCarouselLayout;
 
-@interface AVTMultiAvatarController : NSObject <UICollectionViewDelegate, UICollectionViewDataSource, AVTNotifyingContainerViewDelegate, AVTAvatarDisplayingController>
+@interface AVTMultiAvatarController : NSObject <UICollectionViewDelegate, UICollectionViewDataSource, AVTAvatarRecordDataSourceObserver, AVTNotifyingContainerViewDelegate, AVTAvatarDisplayingController>
 {
     _Bool _allowsCreate;
     _Bool _hideImageForDisplayedRecord;
@@ -32,6 +33,7 @@
     id <AVTAvatarListItem> _addListItem;
     id <AVTAvatarRecord> _displayedRecord;
     AVTAvatarListCell *_liveCell;
+    NSNumber *_cachedCanCreateValue;
     AVTTransitionCoordinator *_transitionCoordinator;
     AVTAvatarRecordDataSource *_dataSource;
     AVTUIEnvironment *_environment;
@@ -52,6 +54,7 @@
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) AVTAvatarRecordDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) AVTTransitionCoordinator *transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
+@property(nonatomic) NSNumber *cachedCanCreateValue; // @synthesize cachedCanCreateValue=_cachedCanCreateValue;
 @property(retain, nonatomic) AVTAvatarListCell *liveCell; // @synthesize liveCell=_liveCell;
 @property(retain, nonatomic) id <AVTAvatarRecord> displayedRecord; // @synthesize displayedRecord=_displayedRecord;
 @property(retain, nonatomic) id <AVTAvatarListItem> addListItem; // @synthesize addListItem=_addListItem;
@@ -68,6 +71,10 @@
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
 @property(nonatomic) __weak id <AVTAvatarDisplayingControllerDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+- (void)significantRecordChangeInDataSource:(id)arg1;
+- (void)dataSource:(id)arg1 didRemoveRecord:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)dataSource:(id)arg1 didEditRecord:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)dataSource:(id)arg1 didAddRecord:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)transitionCell:(id)arg1 toStopFocusingAnimated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)transitionCell:(id)arg1 indexPath:(id)arg2 toStartFocusingAnimated:(_Bool)arg3 session:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)transitionCenterCellToStartFocusing:(id)arg1 indexPath:(id)arg2;
@@ -113,8 +120,10 @@
 - (void)setAllowsCreate:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)createAddItemViewIfNeeded;
 - (id)getFirstItem;
+- (void)updateCachedCanCreateValueIfNeeded;
 - (_Bool)isViewLoaded;
 - (id)listItemsForDisplay;
+- (void)dealloc;
 - (id)initWithDataSource:(id)arg1 environment:(id)arg2 initialAVTViewLayout:(id)arg3;
 - (id)initWithDataSource:(id)arg1 environment:(id)arg2;
 - (id)viewForSnapshot;

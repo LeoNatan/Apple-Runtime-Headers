@@ -27,6 +27,7 @@
     BOOL panelCompleted;
     BOOL retained;
     BOOL panelIsNowUseless;
+    BOOL _enteredThroughSavePanelAPI;
     NSCFRunLoopSemaphore *advanceToRunPhaseIfNeededSemaphore;
     CDUnknownBlockType completionHandler;
     id <NSOpenSavePanelDelegate> openSaveDelegate;
@@ -55,6 +56,7 @@
 + (BOOL)_defaultSettingForUbiquitousBehaviors;
 + (void)_storeRootDirectoryURL:(id)arg1 forSaveMode:(BOOL)arg2;
 + (id)_lastSavedRootDirectoryForSaveMode:(BOOL)arg1;
+@property BOOL _enteredThroughSavePanelAPI; // @synthesize _enteredThroughSavePanelAPI;
 @property(copy) NSArray *customActions; // @synthesize customActions;
 @property BOOL panelIsNowUseless; // @synthesize panelIsNowUseless;
 @property BOOL retained; // @synthesize retained;
@@ -93,6 +95,7 @@
 - (id)_URLsWithSecurityScoped:(BOOL)arg1;
 - (void)beginSheetForDirectory:(id)arg1 file:(id)arg2 modalForWindow:(id)arg3 modalDelegate:(id)arg4 didEndSelector:(SEL)arg5 contextInfo:(void *)arg6;
 - (void)beginSheetForDirectory:(id)arg1 file:(id)arg2 types:(id)arg3 modalForWindow:(id)arg4 modalDelegate:(id)arg5 didEndSelector:(SEL)arg6 contextInfo:(void *)arg7;
+- (void)_beginSheetModalForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
 - (long long)runModalForDirectory:(id)arg1 file:(id)arg2;
 - (long long)runModalForTypes:(id)arg1;
 - (long long)runModalForDirectory:(id)arg1 file:(id)arg2 types:(id)arg3;

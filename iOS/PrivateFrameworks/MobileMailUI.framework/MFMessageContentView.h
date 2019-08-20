@@ -8,7 +8,7 @@
 
 #import <MobileMailUI/EFSignpostable-Protocol.h>
 #import <MobileMailUI/MFBlockedSenderBannerViewDelegate-Protocol.h>
-#import <MobileMailUI/MFLoadBestAlternativeBannerViewDelegate-Protocol.h>
+#import <MobileMailUI/MFHasMoreContentBannerViewDelegate-Protocol.h>
 #import <MobileMailUI/MFLoadBlockedContentBannerViewDelegate-Protocol.h>
 #import <MobileMailUI/MFMailDropBannerDelegate-Protocol.h>
 #import <MobileMailUI/MFMailWebProcessDelegate-Protocol.h>
@@ -21,21 +21,18 @@
 #import <MobileMailUI/WKNavigationDelegatePrivate-Protocol.h>
 #import <MobileMailUI/WKUIDelegatePrivate-Protocol.h>
 
-@class EFCancelationToken, EMContentRepresentation, EMDaemonInterface, MFAddressAtomStatusManager, MFAttachmentManager, MFBlockedSenderBannerView, MFConversationItemFooterView, MFLoadBestAlternativeBannerView, MFLoadBlockedContentBannerView, MFMailDropBannerView, MFMailboxProvider, MFMessageContentAttachments, MFMessageContentLoadingView, MFMessageDisplayMetrics, MFMessageHeaderView, MFMessageLoadingContext, MFWebViewDictionary, MFWebViewLoadingController, MessageContentItemsHelper, MessageContentRepresentationRequest, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PartialMessageIndicator, UIBarButtonItem, UIScrollView, WKWebView, _MFMessageContentResizeWrapperView;
+@class EFCancelationToken, EMContentRepresentation, EMDaemonInterface, MFAddressAtomStatusManager, MFBlockedSenderBannerView, MFConversationItemFooterView, MFHasMoreContentBannerView, MFLoadBlockedContentBannerView, MFMailDropBannerView, MFMailboxProvider, MFMessageContentLoadingView, MFMessageDisplayMetrics, MFMessageHeaderView, MFMessageLoadingContext, MFWebViewDictionary, MFWebViewLoadingController, MessageContentItemsHelper, MessageContentRepresentationRequest, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableSet, NSString, UIBarButtonItem, UIScrollView, WKWebView, _MFMessageContentResizeWrapperView;
 @protocol EFCancelable, EFScheduler, MFMessageContentViewDataSource, MFMessageContentViewDelegate;
 
-@interface MFMessageContentView : UIView <UIPopoverPresentationControllerDelegate, WKNavigationDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, MFLoadBestAlternativeBannerViewDelegate, MFLoadBlockedContentBannerViewDelegate, MFBlockedSenderBannerViewDelegate, MFMessageHeaderViewDelegate, MFMessageFooterViewDelegate, MFMailDropBannerDelegate, UIScrollViewDelegate, EFSignpostable, MFMailWebProcessDelegate, MFReusable>
+@interface MFMessageContentView : UIView <UIPopoverPresentationControllerDelegate, WKNavigationDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, MFHasMoreContentBannerViewDelegate, MFLoadBlockedContentBannerViewDelegate, MFBlockedSenderBannerViewDelegate, MFMessageHeaderViewDelegate, MFMessageFooterViewDelegate, MFMailDropBannerDelegate, UIScrollViewDelegate, EFSignpostable, MFMailWebProcessDelegate, MFReusable>
 {
     EFCancelationToken *_loadingCancelable;
     MessageContentItemsHelper *_relatedItemsHelper;
-    MFMessageContentAttachments *_attachmentsInfo;
-    NSMutableDictionary *_attachmentCancelablesByContentID;
     MFMessageHeaderView *_headerView;
     MFMailDropBannerView *_mailDropBanner;
-    MFLoadBestAlternativeBannerView *_loadBestAlternativePartBanner;
+    MFHasMoreContentBannerView *_loadHasMoreContentBanner;
     MFLoadBlockedContentBannerView *_loadImagesHeaderBlock;
     MFBlockedSenderBannerView *_blockedSenderBanner;
-    PartialMessageIndicator *_partialMessageIndicator;
     UIView *_previousContentSnapshotWrapperView;
     id <EFScheduler> _attachmentsScheduler;
     NSMutableArray *_scriptHandlers;
@@ -86,18 +83,23 @@
     MFMailboxProvider *_mailboxProvider;
     EMDaemonInterface *_daemonInterface;
     MFAddressAtomStatusManager *_atomManager;
+    NSArray *_attachments;
     id <EFCancelable> _loadingIndicatorCancelable;
     MFMessageContentLoadingView *_loadingView;
     double _initialScale;
     MFWebViewLoadingController *_webViewLoadingController;
     _MFMessageContentResizeWrapperView *_resizingWrapperView;
     NSDictionary *_attachmentDragPreviews;
+    NSError *_contentRepresentationError;
+    id <EFCancelable> _loadingSpinnerTailspinToken;
     struct CGPoint _initialContentOffset;
 }
 
 + (id)signpostLog;
 + (id)log;
+@property(retain, nonatomic) id <EFCancelable> loadingSpinnerTailspinToken; // @synthesize loadingSpinnerTailspinToken=_loadingSpinnerTailspinToken;
 @property(nonatomic) _Bool showingError; // @synthesize showingError=_showingError;
+@property(retain, nonatomic) NSError *contentRepresentationError; // @synthesize contentRepresentationError=_contentRepresentationError;
 @property(nonatomic) _Bool allowLoadOfBlockedMessageContent; // @synthesize allowLoadOfBlockedMessageContent=_allowLoadOfBlockedMessageContent;
 @property(retain, nonatomic) NSDictionary *attachmentDragPreviews; // @synthesize attachmentDragPreviews=_attachmentDragPreviews;
 @property(retain, nonatomic) _MFMessageContentResizeWrapperView *resizingWrapperView; // @synthesize resizingWrapperView=_resizingWrapperView;
@@ -105,6 +107,7 @@
 @property(nonatomic) double initialScale; // @synthesize initialScale=_initialScale;
 @property(retain, nonatomic) MFMessageContentLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) id <EFCancelable> loadingIndicatorCancelable; // @synthesize loadingIndicatorCancelable=_loadingIndicatorCancelable;
+@property(copy) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain, nonatomic) MFAddressAtomStatusManager *atomManager; // @synthesize atomManager=_atomManager;
 @property(retain, nonatomic) EMDaemonInterface *daemonInterface; // @synthesize daemonInterface=_daemonInterface;
 @property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
@@ -152,42 +155,25 @@
 - (void)loadBlockedContent;
 - (void)loadBlockedContentBannerDidTriggerLoad:(id)arg1;
 - (void)_clearLoadRemoteImagesBannerAnimated:(_Bool)arg1;
-- (void)_clearLoadRemainingMessageContentFooterAnimated:(_Bool)arg1;
-- (void)didTapLoadRemainingMessageContentFooterView:(id)arg1;
-- (void)_addLoadRemainingMessageContentFooterWithRemainingBytes:(unsigned long long)arg1;
-- (void)loadRemainingMessageContentIfNecessary;
-- (void)_clearLoadBestAlternativeBannerAnimated:(_Bool)arg1;
-- (void)didTapLoadBestAlternativeBannerView:(id)arg1;
-- (void)_addLoadBestAlternativePartBanner;
-- (void)loadBestAlternativePartIfNecessary;
+- (void)_clearHasMoreContentBannerAnimated:(_Bool)arg1;
+- (void)didTapHasMoreContentBannerView:(id)arg1;
+- (void)_addHasMoreContentBannerWithRemainingBytes:(unsigned long long)arg1;
+- (void)loadHasMoreContentBannerIfNecessary;
 - (id)viewPrintFormatter;
 - (void)_downloadAllMailDropAttachments;
 - (void)mailDropBannerDidTriggerDownload:(id)arg1;
 - (void)_stopObservingContentHeight;
 - (void)_notifyDelegateScrollViewSizeChanged:(struct CGSize)arg1;
 - (void)_beginObservingContentHeight;
-- (id)_attachmentForMailDropMetaData:(id)arg1;
-- (id)_maildropMetadataFromMessageHeaders;
-- (void)_injectAttachmentViewForElementWithSourceAttributeValue:(id)arg1 forAttachment:(id)arg2;
-- (void)_injectAttachmentViewForMailDropAttachment:(id)arg1;
-- (id)attachmentElementAttributesForAttachment:(id)arg1;
-- (void)_didInjectAttachment:(id)arg1;
 - (void)_resetHeaderOffsetForZoom;
 - (void)_adjustHeaderOffsetForZoom;
 - (double)_adjustWebViewInsetsToAccomodateHeaderAndFooter;
 - (void)footerViewDidChangeHeight:(id)arg1;
 - (void)headerViewDidChangeHeight:(id)arg1;
-- (id)_attachmentForElement:(id)arg1;
 - (id)_contentItemForElement:(id)arg1;
-- (unsigned long long)_webView:(id)arg1 indexIntoAttachmentListForElement:(id)arg2;
-- (id)_attachmentListForWebView:(id)arg1 sourceIsManaged:(_Bool *)arg2;
-- (unsigned long long)indexOfPreviewableAttachment:(id)arg1;
-@property(readonly) NSArray *previewableAttachments;
-- (id)_previewableAttachmentsExcludingBanner;
 - (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_contextMenuConfigurationForAttachment:(id)arg1;
 - (_Bool)_isAllowedToSaveAttachmentsToPhotos;
-- (_Bool)_webView:(id)arg1 showCustomSheetForElement:(id)arg2;
 - (void)_updateFileWrapperForAttachment:(id)arg1 contentID:(id)arg2;
 - (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
@@ -197,6 +183,7 @@
 - (id)_webView:(id)arg1 previewItem:(id)arg2;
 - (id)_attachmentPreviewsFromData:(id)arg1;
 - (_Bool)_objectContainsNonEmptyString:(id)arg1;
+- (id)_webView:(id)arg1 willUpdateDropProposalToProposal:(id)arg2 forSession:(id)arg3;
 - (id)_webView:(id)arg1 adjustedDataInteractionItemProvidersForItemProvider:(id)arg2 representingObjects:(id)arg3 additionalData:(id)arg4;
 - (void)_webView:(id)arg1 dataInteraction:(id)arg2 session:(id)arg3 didEndWithOperation:(unsigned long long)arg4;
 - (void)_webView:(id)arg1 dataInteraction:(id)arg2 sessionWillBegin:(id)arg3;
@@ -221,23 +208,8 @@
 - (void)_seeMoreButtonTapped;
 - (void)_expandQuoteWithCollapsedBlockquoteOffset:(double)arg1 expandedOffset:(double)arg2;
 - (void)_handleAttachmentTapMessage:(id)arg1;
-- (void)_longPressedContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
-- (void)_setAttachmentProgress:(double)arg1 forAttachment:(id)arg2;
-- (void)_setAttachmentState:(long long)arg1 forAttachment:(id)arg2;
-- (void)_stopObservingProgressForAttachment:(id)arg1;
-- (void)_beginObservingProgressForAttachment:(id)arg1;
 - (void)_alertMailDropDownloadIsTooLargeForCell:(_Bool)arg1;
 - (void)_displayDismissibleAttachmentErrorWithTitle:(id)arg1 message:(id)arg2;
-- (void)_attachment:(id)arg1 sendDisplayAction:(SEL)arg2 fromRect:(struct CGRect)arg3 iconRect:(struct CGRect)arg4 inView:(id)arg5;
-- (_Bool)_startDownloadForAttachment:(id)arg1 userInitiated:(_Bool)arg2 shouldLoadRemainingMessageContent:(_Bool)arg3;
-- (void)_attachment:(id)arg1 finishedLoadingWithData:(id)arg2;
-- (id)_existingAttachmentForContentID:(id)arg1;
-- (long long)_displayStateForAttachment:(id)arg1;
-- (id)mailDropAttachments;
-- (id)imageAttachments;
-@property(copy) NSArray *attachments;
-- (void)addAttachments:(id)arg1;
-@property(readonly, nonatomic) MFAttachmentManager *attachmentManager;
 @property(readonly) NSArray *contentItems;
 - (void)_foundImageCIDAttachments:(id)arg1;
 - (void)setCachedMetadataBool:(_Bool)arg1 forKey:(id)arg2;
@@ -254,7 +226,6 @@
 - (void)_triggerWebViewLoad;
 - (void)_requestWebViewLoadWithLoadingContext:(id)arg1;
 - (void)_requestWebViewLoadWithRepresentation:(id)arg1;
-- (void)loadingContext:(id)arg1 didLoadEvent:(id)arg2 error:(id)arg3;
 - (void)contentRequestDidReceiveContentRepresentation:(id)arg1 error:(id)arg2;
 @property(readonly, nonatomic) UIScrollView *scrollView;
 - (void)clearSelectedHTML;

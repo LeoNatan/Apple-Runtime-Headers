@@ -46,7 +46,8 @@
 - (void)adjustCriteriaForCTS;
 - (void)_performProcessPendingGeocodesActivity:(id)arg1;
 - (void)_registerProcessPendingGeocodesActivity;
-- (void)_performContactDetailCacheRebuildActivity:(id)arg1;
+- (void)performContactDetailCacheRebuildActivity:(id)arg1 usingContacts:(id)arg2;
+- (void)performContactDetailCacheRebuildActivity:(id)arg1;
 - (void)_registerForContactDetailCacheRebuildActivity;
 - (void)_performSendRTCActivity;
 - (void)_registerForCTSSendRTCActivity;

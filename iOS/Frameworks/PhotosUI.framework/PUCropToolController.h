@@ -191,6 +191,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)wantsSecondaryToolbarVisible;
 - (void)didResignActiveTool;
 - (void)handleResigningCropTool;
+- (void)leavingEditWithCancel;
 - (void)prepareForSave:(_Bool)arg1;
 - (void)willResignActiveTool;
 - (void)didBecomeActiveTool;
@@ -259,6 +260,7 @@ __attribute__((visibility("hidden")))
 - (void)_loadCropSuggestionIfNeeded;
 - (void)basePhotoInvalidated;
 - (void)baseLivePhotoInvalidated;
+- (void)_resetAllValuesAnimated:(_Bool)arg1 skipLayerTransformUpdate:(_Bool)arg2;
 - (void)_resetAllValuesAnimated:(_Bool)arg1;
 - (struct CGRect)_defaultViewCropRect;
 - (struct CGRect)_defaultImageCropRect;
@@ -284,6 +286,7 @@ __attribute__((visibility("hidden")))
 - (void)_performGeometryChange:(CDUnknownBlockType)arg1 animated:(_Bool)arg2;
 - (void)_handleRenderedVideoWithURL:(id)arg1 originalLivePhoto:(id)arg2 success:(_Bool)arg3 error:(id)arg4;
 - (void)_handleDidCreateEditedImage:(id)arg1 inputExtent:(struct CGRect)arg2;
+- (void)_setupCropModelFromCompositionController:(id)arg1;
 - (void)_loadLivePhotoIfNeeded;
 - (void)_loadImageIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_createRendererIfNeeded;

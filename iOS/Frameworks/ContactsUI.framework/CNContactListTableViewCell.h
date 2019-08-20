@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)prepareForReuse;
+- (void)cancelAsyncOperations;
 - (void)setContactMatchInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

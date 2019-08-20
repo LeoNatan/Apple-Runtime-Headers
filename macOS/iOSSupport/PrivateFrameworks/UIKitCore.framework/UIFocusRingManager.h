@@ -35,7 +35,8 @@
 - (void)addSelectedFocusRingForItem:(id)arg1 forClient:(id)arg2;
 - (void)addParentFocusRingForItem:(id)arg1 forClient:(id)arg2;
 - (void)addFocusRingForItem:(id)arg1 forClient:(id)arg2;
-- (id)activeFocusLayersForItemsForClient:(id)arg1;
+- (id)activeFocusLayersForClient:(id)arg1;
+- (id)activeFocusLayersToItemsForClient:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -19,9 +19,11 @@
 
 + (id)sharedBackgroundAudioController;
 - (void).cxx_destruct;
+- (void)_backgroundPlaybackShouldStop:(id)arg1;
 - (void)_cancelDelayedPlay;
 - (void)_applicationDidRemoveDeactivationReason:(id)arg1;
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
+- (_Bool)_shouldStopPlaybackDueToDeactivationReasons:(unsigned long long)arg1;
 - (void)_stop;
 - (void)stop;
 - (void)pause;

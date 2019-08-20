@@ -37,6 +37,7 @@
 @property(retain, nonatomic) NSMutableArray *orderedAlarms; // @synthesize orderedAlarms=_orderedAlarms;
 @property(nonatomic) __weak MTAlarmScheduler *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
+- (void)_removeAlarmDataIfNecessary:(id)arg1;
 - (void)observedApplicationDidUninstallForBundleIdentifier:(id)arg1;
 - (id)_diagnosticAlarmDictionary;
 - (id)gatherDiagnostics;
@@ -44,6 +45,7 @@
 - (void)handleNotification:(id)arg1 ofType:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)handlesNotification:(id)arg1 ofType:(int)arg2;
 - (void)timeListener:(id)arg1 didDetectSignificantTimeChangeWithCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)handleMigrationFinish;
 - (void)handleF5Reset;
 - (void)_queue_persistAlarms;
 - (_Bool)_queue_hasMatchingAlarm:(id)arg1;

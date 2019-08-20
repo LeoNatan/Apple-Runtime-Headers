@@ -20,7 +20,7 @@
     // Error parsing type: , name: offlineManager
     // Error parsing type: , name: deferredPromise
     // Error parsing type: , name: startDate
-    // Error parsing type: , name: fetchResults
+    // Error parsing type: , name: prewarmerResult
 }
 
 @end

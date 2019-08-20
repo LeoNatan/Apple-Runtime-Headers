@@ -54,6 +54,7 @@
 - (void)_processActionSetModelUpdated:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)_executeGenericActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_executeMediaPlaybackActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_issueReadRequests:(id)arg1;
 - (void)_issueWriteRequests:(id)arg1 readResponse:(id)arg2 message:(id)arg3;
@@ -94,6 +95,7 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) _Bool containsShortcutActions;
 @property(readonly, nonatomic) _Bool containsMediaPlaybackActions;
 - (_Bool)containsUnsecuringAction;
 - (_Bool)containsSecureCharacteristic;

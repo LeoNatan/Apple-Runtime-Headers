@@ -6,32 +6,40 @@
 
 #import <objc/NSObject.h>
 
-#import <AXTapToSpeakTime/AXTapticTimeObserver-Protocol.h>
+#import <AXTapToSpeakTime/AVAudioPlayerDelegate-Protocol.h>
 
-@class NSDate, NSString, PCSimpleTimer;
+@class AVAudioPlayer, AXTapticChimeAsset, NSDate, NSString, PCSimpleTimer;
 
-@interface AXTapticChimesScheduler : NSObject <AXTapticTimeObserver>
+@interface AXTapticChimesScheduler : NSObject <AVAudioPlayerDelegate>
 {
     PCSimpleTimer *_chimeTimer;
-    _Bool _schedulePreviewNext;
+    AVAudioPlayer *_audioPlayer;
+    NSString *_previousAudioSessionCategory;
+    AXTapticChimeAsset *_currentChimeAsset;
+    unsigned int _audioPlaybackPowerAssertionID;
     NSDate *_lastExpectedWakeTime;
     NSDate *_lastActualWakeTime;
     NSDate *_lastExpectedChimeTime;
     NSDate *_lastActualChimeTime;
+    float _lastMediaVolume;
 }
 
-+ (double)timeIntervalUntilNextFireDateForStartDate:(id)arg1 frequency:(long long)arg2;
 + (id)sharedInstance;
 + (void)initializeIfNeeded;
 - (void).cxx_destruct;
-- (void)tapticTimeManagerDidComplete:(id)arg1;
-- (void)tapticTimeManagerDidBegin:(id)arg1;
-- (void)_outputTapticChime;
-- (id)_powerAssertionProperties;
+- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
+- (void)_denormalizeVolumeIfNecessary;
+- (void)_normalizeVolumeIfNecessary;
+- (id)nextChimeAssetForStartDate:(id)arg1 frequency:(long long)arg2 soundType:(long long)arg3 timeIntervalUntilChime:(double *)arg4;
+- (_Bool)_outputTapticChime:(id)arg1 atDate:(id)arg2;
+- (void)_releasePowerAssertionIfPossible:(unsigned int)arg1;
+- (unsigned int)_createPowerAssertionWithName:(id)arg1 timeout:(double)arg2;
 - (void)_chimeWakeTimerFired:(id)arg1;
 - (void)_scheduleChimeTimer;
 - (void)_clearChimeTimer;
+- (void)_previewChimesForStartDate:(id)arg1 chimeDate:(id)arg2 frequency:(long long)arg3 soundType:(long long)arg4;
 - (void)_previewChimes;
+- (id)_currentDate;
 - (double)_prePlayAudioTimeInterval;
 - (double)_preWakeTimeInterval;
 - (_Bool)canActivateTapticChimes;

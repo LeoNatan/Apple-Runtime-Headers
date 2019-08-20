@@ -18,9 +18,11 @@
 @interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteViewStateObserving>
 {
     BOOL _isRulerActive;
+    BOOL _usingShortestToolSpacing;
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> _delegate;
+    long long _colorUserInterfaceStyle;
     id <PKPaletteViewStateObservable> _paletteViewState;
     UIScrollView *_scrollView;
     UIStackView *_stackView;
@@ -46,12 +48,15 @@
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <PKPaletteViewStateObservable> paletteViewState; // @synthesize paletteViewState=_paletteViewState;
+@property(nonatomic, getter=isUsingShortestToolSpacing) BOOL usingShortestToolSpacing; // @synthesize usingShortestToolSpacing=_usingShortestToolSpacing;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(nonatomic) BOOL isRulerActive; // @synthesize isRulerActive=_isRulerActive;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
 - (void)didChangeAnnotationSupport:(id)arg1;
+- (id)_firstInkingTool;
 - (void)toggleBetweenLastSelectedToolAndCurrentlySelectedTool;
 - (void)toggleBetweenLastSelectedToolAndEraser;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
@@ -66,7 +71,7 @@
 - (void)_showToolAttributesPopover;
 @property(readonly, nonatomic) BOOL selectedToolSupportsChangingColor;
 @property(readonly, nonatomic) BOOL selectedToolSupportsDisplayingSelectedColor;
-- (id)eraserTool;
+- (id)_eraserTool;
 - (id)_selectedTool;
 - (id)selectedToolIdentifier;
 - (void)setSelectedToolInkColor:(id)arg1;
@@ -74,7 +79,6 @@
 - (void)setSelectedToolIdentifier:(id)arg1;
 - (id)_selectedToolView;
 - (void)_toolTapGestureRecognizer:(id)arg1;
-- (void)layoutSubviews;
 - (void)updateConstraints;
 - (void)_installOverlayView;
 - (void)_installTools;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/UIFont.h>
+#import <UIKit/UIFont.h>
 
 @interface UIFont (Bridge)
 + (id)ts_preferredFontForTextStyle:(unsigned long long)arg1;

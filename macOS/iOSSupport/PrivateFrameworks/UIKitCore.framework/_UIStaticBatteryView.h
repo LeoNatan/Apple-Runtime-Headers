@@ -6,7 +6,6 @@
 
 #import <UIKitCore/_UIBatteryView.h>
 
-__attribute__((visibility("hidden")))
 @interface _UIStaticBatteryView : _UIBatteryView
 {
     long long _inflightBoltAnimationCount;

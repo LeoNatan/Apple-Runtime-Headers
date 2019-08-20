@@ -13,20 +13,20 @@
 
 @interface MPCPrivateListeningStateSource : NSObject <NSCopying, NSSecureCoding>
 {
-    NSNumber *_currentValue;
     NSNumber *_overrideValue;
+    NSNumber *_currentValue;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sourceWithUserIdentity:(id)arg1;
 + (id)staticSourceWithValue:(id)arg1;
 + (id)localDeviceSource;
-@property(readonly, copy, nonatomic) NSNumber *overrideValue; // @synthesize overrideValue=_overrideValue;
 @property(readonly, copy, nonatomic) NSNumber *currentValue; // @synthesize currentValue=_currentValue;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly, copy, nonatomic) NSNumber *overrideValue; // @synthesize overrideValue=_overrideValue;
 - (void)setOverrideValue:(id)arg1;
 - (id)_init;
 

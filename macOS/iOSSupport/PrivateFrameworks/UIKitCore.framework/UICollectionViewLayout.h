@@ -51,6 +51,7 @@
 + (Class)layoutAttributesClass;
 @property(nonatomic, getter=_sublayoutType, setter=_setSublayoutType:) long long sublayoutType; // @synthesize sublayoutType=_sublayoutType;
 - (void).cxx_destruct;
+- (id)_orthogonalScrollingTrace;
 - (BOOL)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
 - (struct CGRect)_orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(id)arg1 frame:(struct CGRect)arg2;
 - (BOOL)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
@@ -81,6 +82,7 @@
 - (BOOL)flipsHorizontallyInOppositeLayoutDirection;
 - (long long)developmentLayoutDirection;
 - (id)_layoutAttributesForElementsInProjectedRect:(struct CGRect)arg1 withProjectionVector:(struct CGVector)arg2 projectionDistance:(double)arg3;
+- (id)_layoutAttributesForNextItemInDirection:(struct CGPoint)arg1 fromIndexPath:(id)arg2 constrainedToRect:(struct CGRect)arg3;
 - (struct CGPoint)_contentOffsetForScrollingToSection:(long long)arg1;
 @property(readonly, nonatomic, getter=_focusFastScrollingIndexBarInsets) struct UIEdgeInsets focusFastScrollingIndexBarInsets;
 - (void)_setWantsRightToLeftHorizontalMirroringIfNeeded:(BOOL)arg1;

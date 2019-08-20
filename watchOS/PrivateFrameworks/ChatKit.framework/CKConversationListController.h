@@ -178,7 +178,7 @@
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
 - (void)endHoldingAllConversationListUpdatesForKey:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
-- (void)scrollToTop;
+- (void)compositionSent;
 - (void)significantTimeChange;
 - (void)noteUnreadCountsChanged;
 - (void)conversationWillBeMarkedRead:(id)arg1;

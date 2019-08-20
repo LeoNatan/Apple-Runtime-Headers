@@ -8,7 +8,7 @@
 
 #import <boringssl/OS_boringssl_ctx-Protocol.h>
 
-@class NSString, boringssl_concrete_boringssl_identity, boringssl_concrete_nw_protocol_boringssl;
+@class NSString, boringssl_concrete_boringssl_identity, boringssl_concrete_boringssl_psk_cache, boringssl_concrete_nw_protocol_boringssl;
 @protocol OS_dispatch_data, OS_dispatch_queue, OS_nw_array, OS_nw_association, OS_nw_context, OS_nw_protocol_metadata, OS_nw_protocol_options, OS_xpc_object;
 
 __attribute__((visibility("hidden")))
@@ -19,8 +19,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_context> *async_context;
     NSObject<OS_nw_association> *association;
     CDStruct_061587d8 selected_alpn_data;
-    NSObject<OS_dispatch_data> *psk_identity;
-    NSObject<OS_dispatch_data> *psk_secret;
+    boringssl_concrete_boringssl_psk_cache *psk_cache;
     CDStruct_061587d8 ssl_ocsp_response;
     int max_allowed_tls_version;
     int max_allowed_dtls_version;
@@ -47,6 +46,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *private_key_queue;
     CDUnknownBlockType private_key_sign_block;
     CDUnknownBlockType private_key_decrypt_block;
+    union sockaddr_in_4_6 remote_address;
     CDUnknownBlockType alert_callback;
     CDUnknownBlockType connected_callback;
     int ssl_state;
@@ -113,6 +113,7 @@ __attribute__((visibility("hidden")))
     unsigned int trust_evaluation_complete:1;
     unsigned int certificate_compression_enabled:1;
     unsigned int certificate_compression_used:1;
+    unsigned int psk_negotiated:1;
 }
 
 - (void).cxx_destruct;

@@ -25,6 +25,7 @@
 @property(retain) id <AKAuthorizationUIProvider> uiProvider; // @synthesize uiProvider=_uiProvider;
 - (void).cxx_destruct;
 - (void)presentAuthorizationUIForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)continueFetchingIconForRequestContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAppleIDAuthorizeHTMLResponseTemplateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_appleOwnedDomains;
 - (id)_appleIDAuthorizationURLs;

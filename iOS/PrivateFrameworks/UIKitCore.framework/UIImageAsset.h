@@ -8,12 +8,12 @@
 
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class CUINamedLayerStack, NSString, UITraitCollection, _UIAssetBundle, _UIAssetManager;
+@class CUINamedLayerStack, NSBundle, NSString, UITraitCollection, _UIAssetManager;
 
 @interface UIImageAsset : NSObject <NSSecureCoding>
 {
     _UIAssetManager *_assetManager;
-    _UIAssetBundle *_containingBundle;
+    NSBundle *_containingBundle;
     _Bool _cacheContents;
     UITraitCollection *_defaultTraitCollection;
     struct {
@@ -33,8 +33,8 @@
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(readonly, nonatomic) __weak _UIAssetManager *_assetManager; // @synthesize _assetManager;
 - (void).cxx_destruct;
-- (id)_cachedRenditionWithSize:(struct CGSize)arg1 tintColor:(id)arg2 traitCollection:(id)arg3 bold:(_Bool)arg4 letterpress:(_Bool)arg5;
-- (void)_cacheRendition:(id)arg1 forSize:(struct CGSize)arg2 tintColor:(id)arg3 traitCollection:(id)arg4 bold:(_Bool)arg5 letterpress:(_Bool)arg6;
+- (id)_cachedRenditionWithSize:(struct CGSize)arg1 tintColor:(id)arg2 traitCollection:(id)arg3 bold:(_Bool)arg4 letterpress:(_Bool)arg5 drawMode:(unsigned int)arg6;
+- (void)_cacheRendition:(id)arg1 forSize:(struct CGSize)arg2 tintColor:(id)arg3 traitCollection:(id)arg4 bold:(_Bool)arg5 letterpress:(_Bool)arg6 drawMode:(unsigned int)arg7;
 - (id)_renditionCache:(_Bool)arg1;
 - (id)_registeredAppearanceNames;
 - (id)_lookUpRegisteredObjectForTraitCollection:(id)arg1 withAccessorWithAppearanceName:(CDUnknownBlockType)arg2;

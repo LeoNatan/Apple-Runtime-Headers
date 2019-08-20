@@ -40,6 +40,7 @@
 - (id)diagnosticDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)_enumerateAllAlarmEventsWithError:(id *)arg1 enumerationHandler:(CDUnknownBlockType)arg2;
+- (void)checkForDueEventsImmediatelyWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_performWriteTransactionAndFireEventsWithError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (id)scheduledEventsForClientIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)replaceAllScheduledEventsWithClientIdentifier:(id)arg1 newEvents:(id)arg2 error:(id *)arg3;
@@ -49,8 +50,8 @@
 - (void)removeAlarm:(id)arg1;
 - (void)addAlarm:(id)arg1;
 - (void)_queue_registerForWristStateUpdates:(_Bool)arg1;
-- (void)_queue_notifyClientsOfDueEventsAndScheduleNextFireDate;
-- (void)_queue_processDueEvents;
+- (_Bool)_queue_notifyClientsOfDueEventsAndScheduleNextFireDateWithError:(id *)arg1;
+- (void)_queue_processDueEventsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_queue_fetchCurrentWristStateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_currentDate;
 - (void)_queue_beginReceivingSystemEventsIfNecessary;

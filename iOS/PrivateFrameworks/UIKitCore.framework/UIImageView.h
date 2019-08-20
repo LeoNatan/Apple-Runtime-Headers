@@ -7,12 +7,13 @@
 #import <UIKitCore/UIView.h>
 
 #import <UIKitCore/UIAccessibilityContentSizeCategoryImageAdjusting-Protocol.h>
+#import <UIKitCore/UIAccessibilityContentSizeCategoryImageAdjustingInternal-Protocol.h>
 #import <UIKitCore/_UIImageContentEffect-Protocol.h>
 #import <UIKitCore/_UIImageContentLayoutTarget-Protocol.h>
 
 @class NSArray, NSString, UIColor, UIImage, UIImageSymbolConfiguration, UILayoutGuide, UITraitCollection, _UIStackedImageContainerView;
 
-@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting, _UIImageContentLayoutTarget, _UIImageContentEffect>
+@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting, UIAccessibilityContentSizeCategoryImageAdjustingInternal, _UIImageContentLayoutTarget, _UIImageContentEffect>
 {
     id _storage;
     struct UIEdgeInsets _cachedEdgeInsetsForEffects;
@@ -28,11 +29,13 @@
     _Bool _edgeInsetsForEffectsAreValid;
     _Bool _adjustsImageWhenAncestorFocused;
     _Bool _masksFocusEffectToContents;
+    _Bool __symbolImagesIgnoreAccessibilitySizes;
     _Bool __animatesContents;
     UILayoutGuide *_focusedFrameGuide;
 }
 
 @property(nonatomic, setter=_setAnimatesContents:) _Bool _animatesContents; // @synthesize _animatesContents=__animatesContents;
+@property(nonatomic, setter=_setSymbolImagesIgnoreAccessibilitySizes:) _Bool _symbolImagesIgnoreAccessibilitySizes; // @synthesize _symbolImagesIgnoreAccessibilitySizes=__symbolImagesIgnoreAccessibilitySizes;
 @property(nonatomic) _Bool masksFocusEffectToContents; // @synthesize masksFocusEffectToContents=_masksFocusEffectToContents;
 @property(readonly) UILayoutGuide *focusedFrameGuide; // @synthesize focusedFrameGuide=_focusedFrameGuide;
 @property(nonatomic) _Bool adjustsImageWhenAncestorFocused; // @synthesize adjustsImageWhenAncestorFocused=_adjustsImageWhenAncestorFocused;
@@ -110,7 +113,6 @@
 - (id)_imageContentGuideAllowingCreation:(_Bool)arg1;
 @property(readonly) UILayoutGuide *imageContentGuide;
 - (void)_imageContentParametersDidChange;
-- (struct UIEdgeInsets)_contentInsetsForImage:(id)arg1;
 - (void)_baselineOffsetParametersDidChangeHasBaselinePropertyChanged:(_Bool)arg1;
 - (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
@@ -138,6 +140,8 @@
 - (void)_updateState;
 - (id)_renditionForSource:(id)arg1 size:(struct CGSize)arg2 withCGImageProvider:(CDUnknownBlockType)arg3 lazy:(_Bool)arg4;
 - (id)_effectForRenderingSource:(id)arg1;
+- (_Bool)_setImageViewContentsForAnimatedImage:(id)arg1;
+- (void)_updateContentsMultiplyColorAndSwizzleFromLayout:(id)arg1;
 - (_Bool)_setImageViewContents:(id)arg1;
 - (void)_invalidateImageLayouts;
 - (id)_layoutForImage:(id)arg1;
@@ -152,6 +156,7 @@
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 @property(nonatomic) _Bool adjustsImageSizeForAccessibilityContentSizeCategory;
+- (double)_scaleFactorForImage;
 - (id)_cachedPretiledImageForImage:(id)arg1;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)descriptionForReindexReason:(unsigned long long)arg1;
 + (_Bool)bypassIndexVersionCheck;
 + (unsigned long long)messageIndexBatchSize:(_Bool)arg1;
 + (unsigned long long)expectedIndexVersion;

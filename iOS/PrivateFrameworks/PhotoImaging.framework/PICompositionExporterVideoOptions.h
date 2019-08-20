@@ -8,9 +8,11 @@
 
 @interface PICompositionExporterVideoOptions : PICompositionExporterOptions
 {
+    _Bool _increaseBitRateIfNecessary;
     CDUnknownBlockType _metadataProcessor;
 }
 
+@property(nonatomic) _Bool increaseBitRateIfNecessary; // @synthesize increaseBitRateIfNecessary=_increaseBitRateIfNecessary;
 @property(copy) CDUnknownBlockType metadataProcessor; // @synthesize metadataProcessor=_metadataProcessor;
 - (void).cxx_destruct;
 

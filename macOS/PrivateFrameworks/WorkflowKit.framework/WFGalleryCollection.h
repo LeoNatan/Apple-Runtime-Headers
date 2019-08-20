@@ -9,28 +9,26 @@
 #import <WorkflowKit/NSMutableCopying-Protocol.h>
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSArray, NSString;
+@class CKRecordID, NSArray, NSString;
 
 @interface WFGalleryCollection : NSObject <WFCloudKitItem, NSMutableCopying>
 {
-    NSString *_identifier;
+    CKRecordID *_identifier;
     NSString *_name;
     NSString *_collectionDescription;
     NSArray *_workflows;
     NSString *_language;
-    WFGalleryCollection *_base;
+    CKRecordID *_base;
 }
 
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (id)properties;
 + (id)recordType;
-@property(readonly, nonatomic) WFGalleryCollection *base; // @synthesize base=_base;
+@property(readonly, nonatomic) CKRecordID *base; // @synthesize base=_base;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, nonatomic) NSArray *workflows; // @synthesize workflows=_workflows;
 @property(readonly, nonatomic) NSString *collectionDescription; // @synthesize collectionDescription=_collectionDescription;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

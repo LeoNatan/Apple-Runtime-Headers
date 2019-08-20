@@ -226,6 +226,10 @@ typedef struct {
     struct CGAffineTransform _field3;
 } CDStruct_d54ccef3;
 
+typedef struct {
+    struct CGRect startCropRect;
+} CDStruct_0de14bd3;
+
 // Ambiguous groups
 typedef struct {
     _Bool _field1;

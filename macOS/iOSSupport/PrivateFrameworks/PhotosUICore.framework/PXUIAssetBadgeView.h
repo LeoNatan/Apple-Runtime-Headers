@@ -39,6 +39,7 @@
     struct PXAssetBadgeInfo _badgeInfo;
 }
 
++ (id)measuringLabel;
 + (double)preferredHeightForStyle:(long long)arg1;
 + (void)preloadResourcesForStyle:(long long)arg1;
 @property(nonatomic) struct CGSize bottomElementsPadding; // @synthesize bottomElementsPadding=_bottomElementsPadding;

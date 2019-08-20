@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)framebufferOnly;
 - (void)setCompressionMode:(unsigned int)arg1;
 - (unsigned int)compressionMode;
+- (_Bool)writeSwizzleEnabled;
+- (void)setWriteSwizzleEnabled:(_Bool)arg1;
 - (unsigned int)swizzleKey;
 - (void)setSwizzleKey:(unsigned int)arg1;
 - (CDStruct_a06f635e)swizzle;

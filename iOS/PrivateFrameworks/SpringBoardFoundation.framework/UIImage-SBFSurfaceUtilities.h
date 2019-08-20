@@ -13,7 +13,6 @@
 + (id)sbf_imageFromContextWithSize:(struct CGSize)arg1 scale:(double)arg2 type:(long long)arg3 pool:(id)arg4 drawing:(CDUnknownBlockType)arg5;
 + (unsigned long long)sbf_bytesNeededForSize:(struct CGSize)arg1 scale:(double)arg2 withContextType:(long long)arg3;
 - (id)sbf_imageMaskedByColor:(id)arg1;
-- (id)sbf_renderWithDownsampleFactor:(double)arg1 layerCustomizer:(CDUnknownBlockType)arg2;
 - (id)sbf_resizeImageToSize:(struct CGSize)arg1;
 - (id)sbf_resizeImageToSize:(struct CGSize)arg1 preservingAspectRatio:(_Bool)arg2;
 - (id)sbf_scaleImage:(double)arg1 canUseIOSurface:(_Bool)arg2;

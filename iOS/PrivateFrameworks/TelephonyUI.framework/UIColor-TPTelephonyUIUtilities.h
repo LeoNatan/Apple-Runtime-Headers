@@ -10,6 +10,7 @@
 + (id)dynamicCarFocusedSecondaryLabelColor;
 + (id)dynamicCarFocusedPrimaryLabelColor;
 + (id)dynamicCarFocusedLabelColor;
++ (id)dynamicCarFocusedColor;
 + (id)dynamicCarQuaternaryColor;
 + (id)dynamicCarTertiaryColor;
 + (id)dynamicCarSecondaryColor;

@@ -13,6 +13,7 @@
 - (void)enterTestModeWithParameters:(NSDictionary *)arg1;
 - (NSArray *)blockingPoliciesWithParameters:(NSDictionary *)arg1;
 - (NSArray *)policies;
+- (void)setCapacity:(double)arg1 forBudgetWithName:(NSString *)arg2;
 - (void)setBalance:(double)arg1 forBudgetWithName:(NSString *)arg2;
 - (double)remainingBalanceForBudgetWithName:(NSString *)arg1;
 - (NSDictionary *)currentPredictions;

@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (void)loadAssetAndPlayerItem;
 - (_Bool)isValidPlayerSubstituteForItem:(id)arg1;
+- (id)description;
 
 @end
 

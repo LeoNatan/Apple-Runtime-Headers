@@ -6,13 +6,16 @@
 
 #import <UIKitMacHelper/NSObject-Protocol.h>
 
+@class CIImage;
 @protocol NSUIImage, NSUIImageAsset;
 
 @protocol NSUIImage <NSObject>
 + (id <NSUIImage>)imageWithCGImage:(struct CGImage *)arg1;
-@property(readonly, nonatomic) long long renderingMode;
+@property(readonly, nonatomic) CIImage *CIImage;
+@property(readonly, nonatomic) struct CGImage *CGImage;
 @property(readonly, nonatomic) id <NSUIImageAsset> imageAsset;
 @property(readonly, nonatomic) struct CGSize size;
+- (long long)_effectiveRenderingMode;
 - (id <NSUIImage>)imageWithRenderingMode:(long long)arg1;
 @end
 

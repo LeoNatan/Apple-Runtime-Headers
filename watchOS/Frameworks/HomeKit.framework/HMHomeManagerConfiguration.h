@@ -16,6 +16,7 @@
     unsigned int _cachePolicy;
     _Bool _shouldConnect;
     unsigned int _options;
+    _Bool _discretionary;
     NSOperationQueue *_delegateQueue;
     HMFLocationAuthorization *_locationAuthorization;
     NSURL *_cacheURL;
@@ -26,6 +27,7 @@
 @property(readonly) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 @property(readonly) HMFLocationAuthorization *locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(readonly) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
+@property(readonly, getter=isDiscretionary) _Bool discretionary; // @synthesize discretionary=_discretionary;
 @property(readonly) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) _Bool shouldConnect; // @synthesize shouldConnect=_shouldConnect;
 @property(nonatomic) unsigned int cachePolicy; // @synthesize cachePolicy=_cachePolicy;

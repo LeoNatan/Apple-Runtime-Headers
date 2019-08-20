@@ -19,6 +19,7 @@
     // Error parsing type: , name: time
     // Error parsing type: , name: rootTransform
     // Error parsing type: , name: zeroPoint
+    // Error parsing type: , name: emptyViewResponders
     // Error parsing type: , name: proposedSize
     // Error parsing type: , name: rootGeometry
     // Error parsing type: , name: position
@@ -50,6 +51,7 @@
     // Error parsing type: , name: cachedSizeThatFits
     // Error parsing type: , name: sizeThatFitsObserver
     // Error parsing type: , name: outputs
+    // Error parsing type: , name: disabledOutputs
     // Error parsing type: , name: needsFocusUpdate
     // Error parsing type: , name: nextUpdate
     // Error parsing type: , name: pendingTransactions

@@ -27,6 +27,7 @@
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSURL *resourceDirectoryURL; // @synthesize resourceDirectoryURL=_resourceDirectoryURL;
 - (void).cxx_destruct;
+@property(readonly) BOOL allowLocalizedIcon; // @dynamic allowLocalizedIcon;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

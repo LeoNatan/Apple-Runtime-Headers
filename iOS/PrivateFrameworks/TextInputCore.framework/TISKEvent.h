@@ -23,6 +23,8 @@
 @property(retain, nonatomic) TISKTap *tap; // @synthesize tap=_tap;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (_Bool)isValidCandidate:(id)arg1;
+- (_Bool)isMissingATouch;
 - (void)reportInterKeyTiming:(id)arg1 previousEvent:(id)arg2;
 - (void)reportToSession:(id)arg1;
 - (id)description;

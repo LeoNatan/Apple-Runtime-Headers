@@ -12,7 +12,7 @@
 
 @interface MLModelDescription : NSObject <NSSecureCoding>
 {
-    NSURL *_modelURL;
+    _Bool _isUpdatable;
     NSDictionary *_inputDescriptionsByName;
     NSDictionary *_outputDescriptionsByName;
     NSString *_predictedFeatureName;
@@ -20,11 +20,18 @@
     NSDictionary *_metadata;
     NSOrderedSet *_inputFeatureNames;
     NSOrderedSet *_outputFeatureNames;
+    NSURL *_modelURL;
+    NSDictionary *_trainingInputDescriptionsByName;
+    NSDictionary *_parameterDescriptionsByKey;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)metadataWithFormat:(struct _MLModelMetadataSpecification *)arg1;
 + (id)metadataWithSpecification:(struct _MLModelSpecification *)arg1;
+@property(retain, nonatomic) NSDictionary *parameterDescriptionsByKey; // @synthesize parameterDescriptionsByKey=_parameterDescriptionsByKey;
+@property(retain, nonatomic) NSDictionary *trainingInputDescriptionsByName; // @synthesize trainingInputDescriptionsByName=_trainingInputDescriptionsByName;
+@property(nonatomic) _Bool isUpdatable; // @synthesize isUpdatable=_isUpdatable;
+@property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 @property(retain) NSOrderedSet *outputFeatureNames; // @synthesize outputFeatureNames=_outputFeatureNames;
 @property(retain) NSOrderedSet *inputFeatureNames; // @synthesize inputFeatureNames=_inputFeatureNames;
 @property(readonly, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
@@ -32,8 +39,9 @@
 @property(readonly, copy, nonatomic) NSString *predictedFeatureName; // @synthesize predictedFeatureName=_predictedFeatureName;
 @property(readonly, nonatomic) NSDictionary *outputDescriptionsByName; // @synthesize outputDescriptionsByName=_outputDescriptionsByName;
 @property(readonly, nonatomic) NSDictionary *inputDescriptionsByName; // @synthesize inputDescriptionsByName=_inputDescriptionsByName;
-@property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 - (void).cxx_destruct;
+- (unsigned int)hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)verifyInput:(id)arg1 error:(id *)arg2;
@@ -42,6 +50,7 @@
 - (id)description;
 - (id)initWithModelDescriptionSpecification:(struct _MLModelDescriptionSpecification *)arg1 error:(id *)arg2;
 - (id)initWithInputDescriptions:(id)arg1 outputDescriptions:(id)arg2 predictedFeatureName:(id)arg3 predictedProbabilitiesName:(id)arg4 metadata:(id)arg5;
+- (id)initWithInputDescriptions:(id)arg1 outputDescriptions:(id)arg2 predictedFeatureName:(id)arg3 predictedProbabilitiesName:(id)arg4 trainingInputDescriptions:(id)arg5 metadata:(id)arg6;
 - (id)debugQuickLookObject;
 
 @end

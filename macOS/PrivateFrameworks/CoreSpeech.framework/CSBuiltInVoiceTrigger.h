@@ -49,10 +49,14 @@
     NSMutableArray *_audioStreamHoldings;
     CSOSTransaction *_secondPassTransaction;
     NSObject<OS_dispatch_group> *_recordingWillStartGroup;
+    unsigned long long _secondChanceHotTillMachTime;
     unsigned long long _currentSplitterState;
+    NSString *_name;
 }
 
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long currentSplitterState; // @synthesize currentSplitterState=_currentSplitterState;
+@property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *recordingWillStartGroup; // @synthesize recordingWillStartGroup=_recordingWillStartGroup;
 @property(nonatomic) BOOL isPhraseSpotterBypassed; // @synthesize isPhraseSpotterBypassed=_isPhraseSpotterBypassed;
 @property(retain, nonatomic) CSOSTransaction *secondPassTransaction; // @synthesize secondPassTransaction=_secondPassTransaction;
@@ -97,7 +101,7 @@
 - (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStartStreamWithContext:(id)arg2 successfully:(BOOL)arg3 option:(id)arg4;
-- (void)_handleSecondPassResult:(unsigned long long)arg1 voiceTriggerInfo:(id)arg2 deviceId:(id)arg3 error:(id)arg4;
+- (void)_handleSecondPassResult:(unsigned long long)arg1 voiceTriggerInfo:(id)arg2 deviceId:(id)arg3 secondChanceCandidate:(BOOL)arg4 error:(id)arg5;
 - (void)_handleVoiceTriggerSecondPassWithSource:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4;
 - (void)_reportVoiceTriggerFirstPassFireFromAP;
 - (void)_keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;

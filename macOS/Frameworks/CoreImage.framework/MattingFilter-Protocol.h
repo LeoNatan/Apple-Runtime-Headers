@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class MattingBoxTensorFilter;
+@class XMattingBoxTensorFilter;
 @protocol MTLCommandBuffer, MTLDevice, MTLLibrary, MTLTexture;
 
 @protocol MattingFilter
 @property(readonly) BOOL coefficientsComputed;
 @property(readonly) BOOL stateComputed;
-@property(retain) MattingBoxTensorFilter *boxTensorFilter;
+@property(retain) XMattingBoxTensorFilter *boxTensorFilter;
 @property CDStruct_220e14ca config;
 - (int)encodeUpsampleOn:(id <MTLCommandBuffer>)arg1 segmentation:(id <MTLTexture>)arg2 colorGuide:(id <MTLTexture>)arg3 disparityGuide:(id <MTLTexture>)arg4 outputMatte:(id <MTLTexture>)arg5;
 - (int)encodeApplyCoefficientsOn:(id <MTLCommandBuffer>)arg1 colorGuide:(id <MTLTexture>)arg2 disparityGuide:(id <MTLTexture>)arg3 constraints:(id <MTLTexture>)arg4 destinationAlphaTexture:(id <MTLTexture>)arg5;

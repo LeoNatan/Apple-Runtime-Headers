@@ -22,6 +22,7 @@
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (void)loadCompletePlayersForPlayers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)_loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
++ (void)loadPlayersForIdentifiersPrivate:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (void)loadPlayersForLegacyIdentifiers:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 + (id)cacheKeyForPlayerID:(id)arg1;

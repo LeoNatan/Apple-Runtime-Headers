@@ -6,17 +6,12 @@
 
 #import <DoNotDisturb/DNDModeAssertionSource.h>
 
-#import <DoNotDisturbServer/DNDSBackingStoreRecord-Protocol.h>
+#import <DoNotDisturbServer/DNDSModernAssertionSourceResolution-Protocol.h>
 
 @class NSString;
 
-@interface DNDModeAssertionSource (Resolution) <DNDSBackingStoreRecord>
-+ (id)resolveInvalidation:(id)arg1 expectedRemoteDeviceIdentifier:(id)arg2 localDeviceIdentifier:(id)arg3 remoteDeviceIdentifier:(id)arg4;
-+ (id)resolveAssertion:(id)arg1 expectedRemoteDeviceIdentifier:(id)arg2 localDeviceIdentifier:(id)arg3 remoteDeviceIdentifier:(id)arg4;
-+ (id)newWithDictionaryRepresentation:(id)arg1;
-+ (id)_clientIdentifierForV6Dictionary:(id)arg1;
+@interface DNDModeAssertionSource (Resolution) <DNDSModernAssertionSourceResolution>
 - (id)resolveWithExpectedRemoteDeviceIdentifier:(id)arg1 localDeviceIdentifier:(id)arg2 remoteDeviceIdentifier:(id)arg3;
-- (id)dictionaryRepresentation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

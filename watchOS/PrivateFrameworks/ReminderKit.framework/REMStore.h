@@ -131,8 +131,6 @@
 - (void)updateAccountsAndSync:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)triggerSyncForDataAccessAccountsWithAccountIDs:(id)arg1;
 - (void)triggerThrottledSyncWithCompletion:(CDUnknownBlockType)arg1;
-- (void)setObjectInDaemonDefaults:(id)arg1 forKey:(id)arg2;
-- (id)objectInDaemonDefaultsForKey:(id)arg1;
 - (id)replicaManagerProviderForCalDAVSync;
 
 @end

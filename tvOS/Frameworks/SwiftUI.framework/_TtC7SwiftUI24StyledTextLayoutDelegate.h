@@ -12,6 +12,7 @@
     // Error parsing type: , name: sizeCache
     // Error parsing type: , name: firstBaselineCache
     // Error parsing type: , name: lastBaselineCache
+    // Error parsing type: , name: firstLineCenterCache
     // Error parsing type: , name: traitsCache
 }
 

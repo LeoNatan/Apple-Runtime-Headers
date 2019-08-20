@@ -12,6 +12,7 @@
 
 @interface SGDataDetectorMatch : NSObject <NSSecureCoding>
 {
+    _Bool _allDay;
     unsigned int _matchType;
     int _parsecDomain;
     NSString *_valueString;
@@ -25,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) _Bool allDay; // @synthesize allDay=_allDay;
 @property(readonly, nonatomic) NSTimeZone *detectedTimeZone; // @synthesize detectedTimeZone=_detectedTimeZone;
 @property(readonly, nonatomic) NSDate *detectedDate; // @synthesize detectedDate=_detectedDate;
 @property(readonly, nonatomic) NSString *parsecWikidataQid; // @synthesize parsecWikidataQid=_parsecWikidataQid;
@@ -42,7 +44,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithDetectedDate:(id)arg1 detectedTimeZone:(id)arg2 matchType:(unsigned int)arg3 range:(struct _NSRange)arg4 labelRange:(struct _NSRange)arg5 labelString:(id)arg6 valueRange:(struct _NSRange)arg7 valueString:(id)arg8;
+- (id)initWithDetectedDate:(id)arg1 detectedTimeZone:(id)arg2 matchType:(unsigned int)arg3 range:(struct _NSRange)arg4 labelRange:(struct _NSRange)arg5 labelString:(id)arg6 valueRange:(struct _NSRange)arg7 valueString:(id)arg8 allDay:(_Bool)arg9;
 - (id)initWithLookupHintInDomain:(int)arg1 range:(struct _NSRange)arg2 labelRange:(struct _NSRange)arg3 labelString:(id)arg4 valueRange:(struct _NSRange)arg5 valueString:(id)arg6 qid:(id)arg7;
 - (id)initWithMatchType:(unsigned int)arg1 range:(struct _NSRange)arg2 labelRange:(struct _NSRange)arg3 labelString:(id)arg4 valueRange:(struct _NSRange)arg5 valueString:(id)arg6;
 

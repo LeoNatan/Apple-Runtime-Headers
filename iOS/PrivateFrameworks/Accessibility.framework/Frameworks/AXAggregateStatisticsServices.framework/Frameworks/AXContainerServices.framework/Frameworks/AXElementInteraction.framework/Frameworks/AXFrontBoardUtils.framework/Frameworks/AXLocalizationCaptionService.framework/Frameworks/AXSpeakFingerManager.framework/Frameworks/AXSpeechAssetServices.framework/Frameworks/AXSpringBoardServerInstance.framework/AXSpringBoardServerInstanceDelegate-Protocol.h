@@ -32,6 +32,8 @@
 - (void)rebootDeviceWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)activateSOSModeWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)setDashBoardSystemGesturesEnabled:(_Bool)arg1 withServerInstance:(_AXSpringBoardServerInstance *)arg2;
+- (_Bool)isDarkModeActiveWithServiceInstance:(_AXSpringBoardServerInstance *)arg1;
+- (_Bool)toggleDarkModeWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isGuidedAccessActiveWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isSpotlightVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)revealSpotlightWithServerInstance:(_AXSpringBoardServerInstance *)arg1;

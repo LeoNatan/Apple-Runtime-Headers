@@ -9,13 +9,14 @@
 #import <ContactsUI/UICollectionViewDataSource-Protocol.h>
 #import <ContactsUI/UICollectionViewDelegate-Protocol.h>
 
-@class CNContact, CNMeCardSharingLogger, CNMeCardSharingOnboardingAvatarCarouselItem, CNMeCardSharingOnboardingAvatarCarouselLayout, NSArray, NSString, UICollectionView;
+@class CNContact, CNMeCardSharingLogger, CNMeCardSharingOnboardingAvatarCarouselItem, CNMeCardSharingOnboardingAvatarCarouselLayout, NSArray, NSString, PRMonogramColor, UICollectionView;
 @protocol AVTAvatarRecord, CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface CNMeCardSharingOnboardingAvatarCarouselViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 {
     id <CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate> _delegate;
+    PRMonogramColor *_monogramColor;
     NSArray *_items;
     UICollectionView *_collectionView;
     CNMeCardSharingOnboardingAvatarCarouselLayout *_layout;
@@ -38,11 +39,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNMeCardSharingOnboardingAvatarCarouselLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(retain, nonatomic) PRMonogramColor *monogramColor; // @synthesize monogramColor=_monogramColor;
 @property(nonatomic) __weak id <CNMeCardSharingOnboardingAvatarCarouselViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)scrollToItemAtIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 @property(readonly, nonatomic) CNMeCardSharingOnboardingAvatarCarouselItem *selectedItem;
 - (id)monogramImageItemWithContact:(id)arg1;

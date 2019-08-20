@@ -7,12 +7,13 @@
 #import <Mail/NSCopying-Protocol.h>
 #import <Mail/NSObject-Protocol.h>
 
-@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, NSArray, NSDate, NSDictionary, NSSet, NSString, NSUUID;
 @protocol ECMailAccount, ECMailbox, ECMessageHeaders, ECMimePart;
 
 @protocol ECMessage <NSCopying, NSObject>
 @property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
 @property(readonly) unsigned long long numberOfAttachments;
+@property(readonly, copy) NSUUID *documentID;
 @property(readonly, copy, nonatomic) NSArray *references;
 @property(readonly, nonatomic) id <ECMessageHeaders> headers;
 @property(readonly, nonatomic) id <ECMailAccount> account;

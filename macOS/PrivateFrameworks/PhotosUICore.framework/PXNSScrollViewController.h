@@ -43,6 +43,7 @@
 - (void)setContentInset:(struct NSEdgeInsets)arg1;
 - (struct CGSize)scrollViewContentSize;
 - (struct CGRect)scrollViewContentBounds;
+- (struct CGRect)scrollViewConstrainedVisibleRect;
 - (struct CGRect)scrollViewVisibleRect;
 - (struct CGRect)scrollViewActiveRect;
 - (struct CGSize)scrollViewReferenceSize;

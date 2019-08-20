@@ -7,6 +7,7 @@
 #import <UIKit/UIApplication.h>
 
 @interface UIApplication (AVAdditions)
+- (id)avkit_windowSceneWithSessionIdentifier:(id)arg1;
 - (id)avkit_possibleWindowForControllingOverallAppearance;
 - (id)avkit_possiblePrimaryWindowScene;
 @end

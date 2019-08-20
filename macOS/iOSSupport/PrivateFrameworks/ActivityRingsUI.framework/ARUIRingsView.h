@@ -14,10 +14,12 @@
 @interface ARUIRingsView : UIView <ARUIRingGroupControllerDelegate, CALayerDelegate>
 {
     NSArray *_ringGroupControllers;
+    BOOL _ringGroupControllersNeedRender;
     CAMetalLayer *_metalLayer;
     // Error parsing type: , name: _drawableSize
     CADisplayLink *_displayLink;
     double _lastTickTime;
+    BOOL _renderOnLayout;
     BOOL _shouldBypassApplicationStateChecking;
     BOOL _discardBackBuffers;
     BOOL _viewIsVisible;
@@ -56,6 +58,7 @@
 @property(nonatomic) BOOL shouldBypassApplicationStateChecking; // @synthesize shouldBypassApplicationStateChecking=_shouldBypassApplicationStateChecking;
 @property(readonly, nonatomic) ARUIRingsViewRenderer *renderer; // @synthesize renderer=_renderer;
 - (void).cxx_destruct;
+- (void)setShouldRenderOnLayout:(BOOL)arg1;
 - (BOOL)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(long long)arg1;
@@ -75,7 +78,7 @@
 - (void)_pauseByNotification:(id)arg1;
 - (id)metalLayer;
 - (void)_updateMetalLayerProperties;
-- (void)_updateMetalLayerVisibility:(BOOL)arg1;
+- (void)updateMetalLayerVisibility:(BOOL)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)willMoveToWindow:(id)arg1;
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setSkewAdjustmentMatrix:

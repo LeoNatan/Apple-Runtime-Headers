@@ -22,6 +22,7 @@
 @property _Bool synchronous; // @synthesize synchronous=_synchronous;
 - (void).cxx_destruct;
 - (void)postCDPFollowupResult:(_Bool)arg1 type:(id)arg2 error:(id)arg3 containerName:(id)arg4 contextName:(id)arg5 reply:(CDUnknownBlockType)arg6;
+- (void)waitForOctagonUpgrade:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)attemptSosUpgrade:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)healthCheck:(id)arg1 context:(id)arg2 skipRateLimitingCheck:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)joinWithRecoveryKey:(id)arg1 contextID:(id)arg2 recoveryKey:(id)arg3 reply:(CDUnknownBlockType)arg4;

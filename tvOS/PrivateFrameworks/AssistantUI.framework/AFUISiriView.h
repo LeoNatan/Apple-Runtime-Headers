@@ -16,6 +16,7 @@
 {
     _UIBackdropView *_backdropView;
     _Bool _backdropViewVisible;
+    UIView *_carPlayContainerView;
     UIView *_carPlayBackgroundView;
     UIImageView *_carPlayAuraView;
     AFUIStarkGradientView *_carPlayGradientView;

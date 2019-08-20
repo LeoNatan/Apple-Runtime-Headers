@@ -23,6 +23,7 @@
 - (NSDictionary *)locationCoordinatesForAssetIDs:(NSArray *)arg1;
 - (void)logRoutineInformation;
 - (NSArray *)locationsOfInterest;
+- (_Bool)cameraIsActive;
 - (_Bool)routineIsAvailable;
 - (NSDictionary *)homeAddressDictionary;
 - (_Bool)isNetworkReachable;

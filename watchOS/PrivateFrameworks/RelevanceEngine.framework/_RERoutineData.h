@@ -19,6 +19,8 @@
 @property(retain, nonatomic) NSArray *locationsOfInterest; // @synthesize locationsOfInterest=_locationsOfInterest;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
+- (_Bool)isEqualToRoutineData:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 
 @end

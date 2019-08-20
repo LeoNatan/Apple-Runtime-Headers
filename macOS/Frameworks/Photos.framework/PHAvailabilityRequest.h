@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (BOOL)isCancelled;
 - (void)cancel;
+- (void)abortClientSide;
 - (void)runDaemonSide;
 - (id)description;
 - (id)plistDictionary;

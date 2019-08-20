@@ -6,15 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class UILabel;
+@class HBUITopShelfImageView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface HBUITopShelfParadeStandardTitleView : UIView
 {
     UILabel *_titleLabel;
     UILabel *_contextTitleLabel;
+    HBUITopShelfImageView *_contextImageView;
 }
 
+@property(readonly, nonatomic) HBUITopShelfImageView *contextImageView; // @synthesize contextImageView=_contextImageView;
 @property(readonly, nonatomic) UILabel *contextTitleLabel; // @synthesize contextTitleLabel=_contextTitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;

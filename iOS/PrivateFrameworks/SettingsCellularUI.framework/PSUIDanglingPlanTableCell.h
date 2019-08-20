@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)_setCenteredText:(id)arg1;
 - (void)_setLabel:(id)arg1 andPhoneNumber:(id)arg2;
+- (void)setAccessoryType:(long long)arg1;
 - (void)_setView;
 - (_Bool)canBeChecked;
 - (_Bool)canReload;

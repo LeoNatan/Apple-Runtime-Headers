@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_semaphore> *_observersSemaphore;
     _Bool _useFixedIntrinsics;
     long long _vioHandleState;
-    unsigned long long _techniqueIndex;
     NSObject<OS_dispatch_semaphore> *_vioHandleStateSemaphore;
     NSObject<OS_dispatch_semaphore> *_vioObjectDetectionSemaphore;
     ARWorldTrackingErrorData *_errorData;
@@ -60,7 +59,6 @@
 - (id)trackedRaycast:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
 - (id)raycast:(id)arg1;
 - (void)pushCollaborationData:(id)arg1;
-- (_Bool)requestInitialCollaborationData;
 - (id)getObservers;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

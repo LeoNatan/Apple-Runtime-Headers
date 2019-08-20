@@ -10,7 +10,6 @@
 
 @class AKTapToSignInViewController, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CKRegistrationViewController : UIViewController <AKTapToSignInViewControllerDelegate>
 {
     CDUnknownBlockType _completionBlock;

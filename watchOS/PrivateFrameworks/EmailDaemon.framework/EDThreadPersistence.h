@@ -44,7 +44,7 @@
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 - (void).cxx_destruct;
-- (_Bool)threadScopeManager:(id)arg1 evictThreadScopesWithDatabaseIDs:(id)arg2;
+- (_Bool)threadScopeManager:(id)arg1 evictThreadScopesWithDatabaseIDs:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)threadScopeManager:(id)arg1 gatherStatisticsForThreadScopes:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)threadScopeManager:(id)arg1 populateThreadScopesWithBlock:(CDUnknownBlockType)arg2;
 - (_Bool)threadScopeManager:(id)arg1 isValidMailboxObjectID:(id)arg2;
@@ -83,6 +83,7 @@
 - (void)_iterateWrappedMessagesByConversationForPersistedMessages:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)persistenceDidReconcileProtectedData;
 - (void)persistenceWillReplaceDatabaseID:(long long)arg1 with:(long long)arg2 forTable:(id)arg3 column:(id)arg4;
+- (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
 - (_Bool)_messagesAreJournaledForThreadWithObjectID:(id)arg1;
 - (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
 - (void)persistenceIsChangingConversationID:(long long)arg1 messages:(id)arg2;

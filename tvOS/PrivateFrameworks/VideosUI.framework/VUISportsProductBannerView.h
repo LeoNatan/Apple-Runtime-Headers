@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, VUILabel, VUISportsProductBannerLayout, _TVImageView;
+@class NSArray, UIFocusContainerGuide, VUILabel, VUISportsProductBannerLayout, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUISportsProductBannerView : UIView
@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     NSArray *_buttonViews;
     VUILabel *_availabilityTextView;
     _TVImageView *_availabilityImageView;
+    UIFocusContainerGuide *_containerGuide;
 }
 
+@property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(retain, nonatomic) _TVImageView *availabilityImageView; // @synthesize availabilityImageView=_availabilityImageView;
 @property(retain, nonatomic) VUILabel *availabilityTextView; // @synthesize availabilityTextView=_availabilityTextView;
 @property(retain, nonatomic) NSArray *buttonViews; // @synthesize buttonViews=_buttonViews;

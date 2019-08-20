@@ -20,6 +20,7 @@
 
 + (id)environmentWithEnvironment:(id)arg1;
 + (id)defaultEnvironment;
++ (void)prewarmDefaultEnvionment;
 @property(readonly, nonatomic) CNUIEditingPolicy *editingPolicy; // @synthesize editingPolicy=_editingPolicy;
 @property(readonly, nonatomic) CNContactStore *contactStoreWithLocalAndDonatedContacts; // @synthesize contactStoreWithLocalAndDonatedContacts=_contactStoreWithLocalAndDonatedContacts;
 @property(readonly, nonatomic) CNContactStore *contactStoreWithAllContacts; // @synthesize contactStoreWithAllContacts=_contactStoreWithAllContacts;

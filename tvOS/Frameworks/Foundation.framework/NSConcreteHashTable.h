@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (id)pointerFunctions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (Class)classForCoder;
 - (id)initWithPointerFunctions:(id)arg1 capacity:(unsigned long long)arg2;
 - (id)initWithOptions:(unsigned long long)arg1 capacity:(unsigned long long)arg2;
 - (id)copy;

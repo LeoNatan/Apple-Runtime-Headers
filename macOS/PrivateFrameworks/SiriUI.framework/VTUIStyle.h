@@ -73,7 +73,6 @@
 - (id)subtitleFont;
 - (id)titleFont;
 - (void)orientationChanged:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

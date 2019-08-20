@@ -91,6 +91,11 @@
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
 - (id)_voices;
 - (void)_setVoices:(id)arg1;
+- (void)fetchMultiUserVoiceIdentificationSetting:(CDUnknownBlockType)arg1;
+- (void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
+- (void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setSpokenNotificationShouldAlwaysSpeakNotifications:(BOOL)arg1;
+- (void)getSpokenNotificationShouldAlwaysSpeakNotificationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setSpokenNotificationTemporarilyDisabledForApp:(id)arg1 until:(id)arg2;
 - (void)getSpokenNotificationTemporarilyDisabledEndDateForApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearSpokenNotificationTemporarilyDisabledStatus;

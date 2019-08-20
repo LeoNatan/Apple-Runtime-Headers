@@ -42,9 +42,11 @@
 - (_Bool)isSubtask;
 - (void)removeAllAlarms;
 - (void)removeAlarm:(id)arg1;
+- (void)setAlarms:(id)arg1;
 - (void)addAlarm:(id)arg1;
 - (id)addAlarmWithTrigger:(id)arg1;
 - (id)nextRecurrentDueDateComponentsAfter:(id)arg1;
+- (double)nextRecurrentAdvanceAmountAfter:(id)arg1;
 - (void)removeAllRecurrenceRules;
 - (void)removeRecurrenceRule:(id)arg1;
 - (void)insertRecurrenceRule:(id)arg1 afterRecurrenceRule:(id)arg2;
@@ -79,9 +81,11 @@
 - (id)confirmForSiriFoundInAppsAppendingToList:(id)arg1;
 - (id)_cleanupOriginalAlarmsForSnoozing;
 - (void)_createSnoozeAlarmWithDateComponents:(id)arg1;
+- (double)_timeIntervalToAddSinceStartDate:(id)arg1 withNow:(id)arg2 step:(double)arg3;
 - (void)snoozeFromDueDateForFutureIntegralMultipleOfTimeInterval:(double)arg1;
 - (void)snoozeForever;
 - (void)snoozeToNextThirds;
+- (void)snoozeToDate:(id)arg1;
 - (void)snoozeFromNowForTimeInterval:(double)arg1;
 - (void)removeAllSnoozeAlarms;
 

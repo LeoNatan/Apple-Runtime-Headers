@@ -21,7 +21,6 @@
     PPTopicStorage *_storage;
 }
 
-+ (id)getScoredTopicsFeaturesWithTopicId:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(BOOL)arg5 scoreInterpreter:(id)arg6;
 + (BOOL)_yesWithProbability:(double)arg1;
 + (id)ppFeedbackItemToPPPBFeedbackItem:(id)arg1;
 + (float)resolvedPerRecordDecayRateForRecord:(id)arg1 perRecordDecayRate:(float)arg2;
@@ -35,6 +34,7 @@
 + (id)defaultStore;
 @property(readonly, nonatomic) PPTopicStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+- (id)getScoredTopicsFeaturesWithTopicId:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(BOOL)arg5 scoreInterpreter:(id)arg6;
 - (BOOL)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
 - (void)processFeedback:(id)arg1;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -52,6 +52,7 @@
 - (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 algorithm:(unsigned long long)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
 - (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)deleteAllTopicsWithTopicId:(id)arg1 algorithm:(unsigned long long)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (BOOL)deleteAllTopicsWithTopicId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)flushDonationsWithError:(id *)arg1;
 - (BOOL)donateTopics:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 sentimentScore:(double)arg5 error:(id *)arg6;
@@ -61,6 +62,7 @@
 - (id)topicRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (BOOL)iterTopicRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)unmapMappedTopicIdentifier:(id)arg1 mappingIdentifier:(id)arg2 error:(id *)arg3;
+- (void)_petLoggingForMappedTopicQuery:(id)arg1 mappingId:(id)arg2 count:(unsigned long long)arg3 clientProcessName:(id)arg4 hasError:(BOOL)arg5;
 - (id)scoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3 clientProcessName:(id)arg4;
 - (id)scoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3;
 - (BOOL)iterScoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;

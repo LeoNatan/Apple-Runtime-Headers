@@ -33,6 +33,11 @@
 + (double)indentForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct NSTextView *)arg4 todoZoomFactor:(double)arg5;
 + (id)removeBeginningListStyleIfNecessaryForAttributedString:(id)arg1 fromTextStorage:(id)arg2 andRange:(struct _NSRange)arg3;
 + (BOOL)shouldRetainFirstListStyleForFilteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange)arg2;
++ (BOOL)needsToShowFirstTimeAutoSortChecklistAlert;
++ (void)setChecklistAutoSortEnabled:(BOOL)arg1;
++ (BOOL)checklistAutoSortEnabled;
++ (void)setChecklistAutoAlertShown:(BOOL)arg1;
++ (BOOL)checklistAutoAlertShown;
 @property(nonatomic) BOOL fullTextStylingRefreshScheduled; // @synthesize fullTextStylingRefreshScheduled=_fullTextStylingRefreshScheduled;
 @property(nonatomic) BOOL isAutoListInsertionDisabled; // @synthesize isAutoListInsertionDisabled=_isAutoListInsertionDisabled;
 @property(nonatomic) BOOL shouldMergeNoteAfterScrolling; // @synthesize shouldMergeNoteAfterScrolling=_shouldMergeNoteAfterScrolling;
@@ -109,6 +114,7 @@
 - (BOOL)canChangeStyleForSelectedRanges:(id)arg1 inTextStorage:(id)arg2;
 - (struct _NSRange)firstParagraphForSetListStyleRange:(struct _NSRange)arg1 inTextStorage:(id)arg2;
 - (id)todoForRange:(struct _NSRange)arg1 inTextStorage:(id)arg2;
+- (void)indentRange:(struct _NSRange)arg1 byAmount:(long long)arg2 inTextStorage:(id)arg3 textView:(struct NSTextView *)arg4 forceUpdateAttributes:(BOOL)arg5;
 - (void)indentRange:(struct _NSRange)arg1 byAmount:(long long)arg2 inTextStorage:(id)arg3 textView:(struct NSTextView *)arg4;
 - (id)indentParagraphStyle:(id)arg1 byAmount:(long long)arg2;
 - (BOOL)canIndentTextView:(struct NSTextView *)arg1 byDelta:(long long)arg2 forRanges:(id)arg3;
@@ -119,12 +125,42 @@
 - (unsigned int)paragraphStyleForRange:(struct _NSRange)arg1 inTextView:(struct NSTextView *)arg2 inTextStorage:(id)arg3 ignoreTypingAttributes:(BOOL)arg4;
 - (void)dealloc;
 - (id)init;
+- (id)analyticsInfoForChecklistAtIndex:(unsigned long long)arg1 textView:(struct NSTextView *)arg2;
+- (void)showFirstTimeAutoSortEnabledAlertWithTextView:(struct ICMacBaseTextView *)arg1 completionHandler:(CDUnknownBlockType)arg2 analyticsHandler:(CDUnknownBlockType)arg3;
+- (void)showFirstTimeAutoSortEnabledAlertIfNecessaryWithTextView:(struct ICMacBaseTextView *)arg1 completionHandler:(CDUnknownBlockType)arg2 analyticsHandler:(CDUnknownBlockType)arg3;
+- (void)autoSortChecklistIfNecessaryForTrackedParagraph:(id)arg1 textView:(struct ICMacBaseTextView *)arg2 analyticsHandler:(CDUnknownBlockType)arg3;
+- (id)paragraphInfoForCharacterAtIndex:(unsigned long long)arg1 includeChildren:(BOOL)arg2 textStorage:(id)arg3;
+- (BOOL)containsAnyTodoItemMarkedCompleted:(BOOL)arg1 inRange:(struct _NSRange)arg2 textStorage:(id)arg3;
+- (id)rangeForChecklistItemInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
+- (id)trackedParagraphsForTodosInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
+- (id)rangesForTodosInRange:(struct _NSRange)arg1 markedCompleted:(BOOL)arg2 textStorage:(id)arg3;
+- (struct _NSRange)expandedRangeForContiguousTodosForRange:(struct _NSRange)arg1 textView:(struct NSTextView *)arg2;
+- (id)sortTrackedParagraphsMovingCheckedItemsToBottom:(id)arg1;
+- (id)createTreeFromTrackedParagraphs:(id)arg1 textView:(struct ICMacBaseTextView *)arg2;
+- (void)applySortFromOriginalParagraphs:(id)arg1 sortedTrackedParagraphs:(id)arg2 forTextView:(struct ICMacTextView *)arg3 checklistRange:(struct _NSRange)arg4;
+- (BOOL)moveCheckedChecklistsToBottomInTextView:(struct ICMacTextView *)arg1 forRange:(struct _NSRange)arg2 animated:(BOOL)arg3;
+- (BOOL)moveCheckedChecklistsToBottomInTextView:(struct NSTextView *)arg1 forRange:(struct _NSRange)arg2;
+- (BOOL)canMoveCheckedChecklistsToBottomInTextView:(struct NSTextView *)arg1 forRange:(struct _NSRange)arg2;
+- (id)validAdjacentParagraphInfoFromParagraphInfo:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct NSTextView *)arg3;
+- (id)adjacentTrackedParagraphFromTrackedParagraph:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct NSTextView *)arg3;
+- (id)expandedChecklistTrackedParagraphsInTextView:(struct NSTextView *)arg1 forIndex:(long long)arg2;
+- (BOOL)canMoveListItemInDirection:(unsigned long long)arg1 inTextView:(struct NSTextView *)arg2 forRange:(struct _NSRange)arg3;
+- (BOOL)moveListItemInDirection:(unsigned long long)arg1 inTextView:(struct NSTextView *)arg2 forRange:(struct _NSRange)arg3;
+- (void)removeChecklistItemsMarkedCompleted:(BOOL)arg1 inTextView:(struct NSTextView *)arg2 forRanges:(id)arg3;
+- (BOOL)checklistItemExistsMarkedCompleted:(BOOL)arg1 inTextView:(struct NSTextView *)arg2 forRanges:(id)arg3;
+- (void)markAllChecklistItemsCompleted:(BOOL)arg1 inTextview:(struct NSTextView *)arg2 forSelectedRanges:(id)arg3;
+- (void)sendTextDidChangeNotificationForTextView:(struct NSTextView *)arg1;
 - (void)updateCellInTable:(id)arg1 atColumnIndex:(unsigned long long)arg2 rowIndex:(unsigned long long)arg3 fromAttributedString:(id)arg4 andTextTableBlock:(id)arg5 filterPastedAttributes:(BOOL)arg6 isReadingSelectionFromPasteboard:(BOOL)arg7;
 - (CDStruct_4bcfbbae)p_setCellsInTable:(id)arg1 fromAttributedString:(id)arg2 textTable:(id)arg3 atCellOffset:(CDStruct_4bcfbbae)arg4 filterPastedAttributes:(BOOL)arg5 isReadingSelectionFromPasteboard:(BOOL)arg6;
 - (void)p_populateTable:(id)arg1 withNSTextTable:(id)arg2 attributedString:(id)arg3 filterPastedAttributes:(BOOL)arg4 isReadingSelectionFromPasteboard:(BOOL)arg5;
 - (id)addTableAttachmentWithNSTextTable:(id)arg1 attributedString:(id)arg2 filterPastedAttributes:(BOOL)arg3 isReadingSelectionFromPasteboard:(BOOL)arg4;
 - (void)workAroundSageTables:(id)arg1;
 - (void)convertNSTablesToICTables:(id)arg1 pasteboardTypes:(id)arg2 filterPastedAttributes:(BOOL)arg3 isReadingSelectionFromPasteboard:(BOOL)arg4;
+- (id)imageInfoForTrackedParagraph:(id)arg1 textView:(struct ICMacBaseTextView *)arg2 characterRangeToRender:(struct _NSRange)arg3 visibleRectToRender:(struct CGRect)arg4;
+- (void)setFinalFramesForSortedInfos:(id)arg1 textView:(struct ICMacBaseTextView *)arg2 textContainerOrigin:(struct CGPoint)arg3 todoUUIDsToImageViews:(id)arg4;
+- (void)addImageViewsAfterSortIfNecessaryForTrackedInfos:(id)arg1 existingInfos:(id)arg2 textView:(struct ICMacBaseTextView *)arg3 textContainerOrigin:(struct CGPoint)arg4 todoUUIDsToImageViews:(id)arg5;
+- (void)addImageViewsBeforeSortIfNecessaryForTrackedInfos:(id)arg1 textView:(struct ICMacBaseTextView *)arg2 textContainerOrigin:(struct CGPoint)arg3 todoUUIDsToImageViews:(id)arg4;
+- (void)performAnimatedSortForTrackedParagraphs:(id)arg1 expandedRange:(struct _NSRange)arg2 textView:(struct ICMacTextView *)arg3 sortChecklistsBlock:(CDUnknownBlockType)arg4;
 
 @end
 

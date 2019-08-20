@@ -52,6 +52,8 @@
 - (void)navigationService:(id)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
 - (void)navigationService:(id)arg1 didUpdateDistanceUntilManeuver:(double)arg2 timeUntilManeuver:(double)arg3 forStepIndex:(unsigned long long)arg4;
 - (void)navigationService:(id)arg1 didReroute:(id)arg2 traffic:(id)arg3;
+- (void)navigationServiceDidCancelReroute:(id)arg1;
+- (void)navigationServiceWillReroute:(id)arg1;
 - (void)navigationService:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationService:(id)arg1 didUpdateMatchedLocation:(id)arg2;
 - (void)navigationService:(id)arg1 didChangeNavigationState:(int)arg2;
@@ -62,6 +64,8 @@
 - (void)navigationSession:(id)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
 - (void)navigationSession:(id)arg1 currentStepIndex:(unsigned long long)arg2 didUpdateDistanceUntilManeuver:(double)arg3 timeUntilManeuver:(double)arg4;
 - (void)navigationSession:(id)arg1 didUpdateDestination:(id)arg2;
+- (void)navigationSessionDidCancelReroute:(id)arg1;
+- (void)navigationSessionWillReroute:(id)arg1;
 - (void)navigationSession:(id)arg1 didReroute:(id)arg2 withLocation:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationSession:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationSession:(id)arg1 matchedToStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;
@@ -95,6 +99,7 @@
 - (void)setIsNavigatingInLowGuidance:(BOOL)arg1;
 - (void)_reset;
 - (void)invalidate;
+- (BOOL)_isInvalidated;
 - (void)dealloc;
 - (id)initWithNavigationSession:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

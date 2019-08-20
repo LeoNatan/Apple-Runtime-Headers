@@ -27,6 +27,8 @@
 - (void)registerToReceiveCoreDataChanges:(id)arg1;
 - (void)disconnectManagedObjectContext:(id)arg1;
 - (void)connectManagedObjectContext:(id)arg1;
+- (void)unpauseLaunchEventNotifications;
+- (void)pauseLaunchEventNotifications;
 - (void)stop;
 - (void)start;
 - (id)initWithLibraryURL:(id)arg1 changePublisher:(id)arg2 libraryServicesManager:(id)arg3 persistentStoreCoordinator:(id)arg4;

@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int mouseState; // @synthesize mouseState=_mouseState;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)accessibilityAttributeValue:(id)arg1;
+- (id)accessibilityAttributeNames;
 - (void)setHidden:(BOOL)arg1;
 - (void)windowDidResignKey;
 - (void)windowDidBecomeKey;

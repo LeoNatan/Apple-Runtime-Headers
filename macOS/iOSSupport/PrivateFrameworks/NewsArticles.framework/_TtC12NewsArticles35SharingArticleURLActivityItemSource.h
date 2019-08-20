@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles35SharingArticleURLActivityItemSource : NSObject
 {
     // Error parsing type: , name: headline

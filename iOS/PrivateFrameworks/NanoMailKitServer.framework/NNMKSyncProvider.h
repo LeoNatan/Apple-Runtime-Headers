@@ -137,6 +137,7 @@
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestMoreMessages:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestMoreMessagesInBatch:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestFetch:(id)arg2;
+- (void)_handleMailboxesDesync;
 - (id)_handleFetchRequest:(id)arg1 shouldResumeSync:(_Bool *)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didRequestFetchInBatch:(id)arg2;
 - (void)fetchesSyncServiceServer:(id)arg1 didSendProtobufSuccessfullyWithIDSIdentifier:(id)arg2;

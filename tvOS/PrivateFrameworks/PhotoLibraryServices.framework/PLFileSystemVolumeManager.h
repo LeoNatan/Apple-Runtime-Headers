@@ -20,6 +20,7 @@
 
 + (id)sharedFileSystemVolumeManager;
 - (void).cxx_destruct;
+- (void)_updateMountedVolumeURLs;
 - (void)_updateOfflineStates;
 - (void)unregisterPLFileSystemVolume:(id)arg1;
 - (void)registerPLFileSystemVolume:(id)arg1;

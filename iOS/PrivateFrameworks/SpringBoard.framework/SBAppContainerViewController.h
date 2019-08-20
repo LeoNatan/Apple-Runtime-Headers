@@ -6,49 +6,39 @@
 
 #import <SpringBoard/SBLayoutElementViewController.h>
 
-#import <SpringBoard/SBApplicationSceneStatusBarDescribing-Protocol.h>
 #import <SpringBoard/SBApplicationSceneViewControlling-Protocol.h>
 #import <SpringBoard/SBApplicationSceneViewControllingStatusBarDelegate-Protocol.h>
+#import <SpringBoard/SBDeviceApplicationSceneStatusBarStateObserver-Protocol.h>
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 
-@class NSString, SBApplicationSceneHandle, SBDeviceApplicationSceneHandle, SBSceneHandle, UIApplicationSceneClientSettingsDiffInspector, UIApplicationSceneSettingsDiffInspector, UIView, UIViewController;
-@protocol SBApplicationSceneStatusBarDescribingDelegate, SBApplicationSceneViewControlling, SBApplicationSceneViewControllingStatusBarDelegate, SBScenePlaceholderContentContext;
+@class NSString, SBApplicationSceneHandle, SBSceneHandle, UIApplicationSceneSettingsDiffInspector, UIView, UIViewController, _SBAppContainerStatusBarStateProxy;
+@protocol SBApplicationSceneStatusBarDescribing, SBApplicationSceneViewControlling, SBApplicationSceneViewControllingStatusBarDelegate, SBDeviceApplicationSceneStatusBarStateObserver, SBScenePlaceholderContentContext;
 
-@interface SBAppContainerViewController : SBLayoutElementViewController <SBApplicationSceneViewControllingStatusBarDelegate, SBSceneHandleObserver, SBApplicationSceneViewControlling, SBApplicationSceneStatusBarDescribing>
+@interface SBAppContainerViewController : SBLayoutElementViewController <SBDeviceApplicationSceneStatusBarStateObserver, SBApplicationSceneViewControllingStatusBarDelegate, SBSceneHandleObserver, SBApplicationSceneViewControlling>
 {
     SBApplicationSceneHandle *_applicationSceneHandle;
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsDiffInspector;
-    UIApplicationSceneClientSettingsDiffInspector *_clientSettingsInspector;
     UIViewController<SBApplicationSceneViewControlling> *_applicationSceneViewController;
     long long _requestedDisplayMode;
-    CDStruct_418fc906 _statusBarDelegateFlags;
-    id <SBApplicationSceneStatusBarDescribingDelegate> _statusBarDelegate;
+    _SBAppContainerStatusBarStateProxy *_statusBarObserverProxy;
+    id <SBDeviceApplicationSceneStatusBarStateObserver> _statusBarDelegate;
 }
 
-@property(nonatomic) __weak id <SBApplicationSceneStatusBarDescribingDelegate> statusBarDelegate; // @synthesize statusBarDelegate=_statusBarDelegate;
+@property(nonatomic) __weak id <SBDeviceApplicationSceneStatusBarStateObserver> statusBarDelegate; // @synthesize statusBarDelegate=_statusBarDelegate;
+@property(readonly, nonatomic) id <SBApplicationSceneStatusBarDescribing> statusBarDescriber; // @synthesize statusBarDescriber=_statusBarObserverProxy;
 @property(readonly, nonatomic) UIViewController<SBApplicationSceneViewControlling> *_applicationSceneViewController; // @synthesize _applicationSceneViewController;
 - (void).cxx_destruct;
 - (void)_updateDisplayLayoutElementForSceneExistence:(id)arg1;
 - (void)_clearState;
 - (void)applicationSceneViewController:(id)arg1 didUpdateStatusBarSettings:(id)arg2;
-@property(readonly, nonatomic) NSString *statusBarSceneIdentifier;
-@property(readonly, nonatomic) SBDeviceApplicationSceneHandle *statusBarControllingSceneHandle;
-- (_Bool)_statusBarAppearsOutsideOfAJailedApp;
-@property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
-@property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
-@property(readonly, nonatomic) long long statusBarOrientation;
-@property(readonly, nonatomic) _Bool statusBarHidden;
-@property(readonly, nonatomic) double statusBarAlpha;
-- (long long)statusBarStyleForPartWithIdentifier:(id)arg1;
-- (id)statusBarPartStyles;
-@property(readonly, nonatomic) long long statusBarStyle;
+- (void)sceneWithIdentifier:(id)arg1 didChangeSceneInterfaceOrientationTo:(long long)arg2;
+- (long long)_overrideStatusBarOrientation;
 - (id)_deviceApplicationSceneHandle;
-- (void)_performUpdateWith:(id)arg1 actions:(CDUnknownBlockType)arg2;
 - (void)sceneHandle:(id)arg1 didUpdateContentState:(long long)arg2;
 - (void)sceneHandle:(id)arg1 didUpdatePairingStatusForExternalSceneIdentifiers:(id)arg2;
-- (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
 - (void)sceneHandle:(id)arg1 didUpdateSettingsWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
+@property(readonly, nonatomic) double statusBarAlpha;
 @property(nonatomic) __weak id <SBApplicationSceneViewControllingStatusBarDelegate> applicationSceneStatusBarDelegate;
 @property(readonly, nonatomic) long long overrideStatusBarStyle;
 - (void)containerContentWrapperInterfaceOrientationChangedTo:(long long)arg1;

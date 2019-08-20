@@ -6,11 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableSet;
+
 @interface FrameworksAnalyticsPackager : NSObject
 {
+    NSMutableSet *_classNameRecord;
 }
 
 + (id)sharedPackager;
+@property(retain) NSMutableSet *classNameRecord; // @synthesize classNameRecord=_classNameRecord;
 - (void)sendFirmwareUpdateSuccessResult;
 - (void)packageAndSendToBTD:(id)arg1;
 - (id)init;

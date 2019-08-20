@@ -23,6 +23,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)label;
+- (id)countryCode;
 - (id)phoneNumber;
 - (id)carrierName;
 - (id)iccid;

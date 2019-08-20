@@ -6,12 +6,14 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class NSArray, NSString, SBAVSystemControllerCache;
+@class NSArray, NSDictionary, NSString, SBAVSystemControllerCache;
 
 @protocol SBAVSystemControllerCacheObserver <NSObject>
 
 @optional
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateAirplayDisplayActive:(_Bool)arg2;
+- (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateActiveAudioRoutingWithRoute:(NSString *)arg2 routeAttributes:(NSDictionary *)arg3 activeOutputDevices:(NSArray *)arg4;
+- (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateActiveOutputDevices:(NSArray *)arg2;
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdatePickableRoutes:(NSArray *)arg2;
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateActiveAudioRoute:(NSString *)arg2;
 - (void)cache:(SBAVSystemControllerCache *)arg1 didUpdateRecordingPID:(int)arg2;

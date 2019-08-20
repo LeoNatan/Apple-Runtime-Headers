@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_concurrentQueue;
 - (void)_handleThumbnailGenerationFinishedWithThumbnail:(id)arg1 size:(struct CGSize)arg2 clientCompletionBlock:(CDUnknownBlockType)arg3;
 - (id)genericIconWithSize:(struct CGSize)arg1;
 - (void)_provideThumbnailForUbiquitousURLWithSize:(struct CGSize)arg1 completionBlock:(CDUnknownBlockType)arg2;

@@ -34,8 +34,10 @@
 @property(retain, nonatomic) OBTrayButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)_turnOffPersonalRequests;
+- (void)userTappedCancelFromWarning;
 - (void)userTappedContinueFromWarning;
 - (void)_setupPersonalRequestsItemInfrastructure;
 - (void)_changeLanguage;

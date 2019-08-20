@@ -25,6 +25,7 @@
 - (BOOL)analyze:(id)arg1 alignedSession:(id)arg2;
 - (BOOL)handlePath:(id)arg1;
 - (BOOL)handleDeleteWord:(id)arg1 nextAction:(id)arg2 withConfidence:(unsigned long long)arg3;
+- (id)deleteLengthMetrics:(id)arg1 nextWordEntryCandText:(id)arg2;
 - (BOOL)handleWordEntry:(id)arg1 withConfidence:(unsigned long long)arg2;
 - (void)logPathedCandidate:(id)arg1 forKey:(id)arg2 withConfidence:(unsigned long long)arg3 isCompletion:(BOOL)arg4;
 - (void)updateDurationCounterForWord:(id)arg1 forTypingContext:(id)arg2;

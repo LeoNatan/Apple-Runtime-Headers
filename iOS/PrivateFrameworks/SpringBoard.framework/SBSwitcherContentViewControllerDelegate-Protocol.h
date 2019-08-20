@@ -15,6 +15,7 @@
 - (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 performTransitionWithRequest:(SBSwitcherTransitionRequest *)arg2 gestureInitiated:(_Bool)arg3;
 
 @optional
+- (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 reopenHiddenAppLayoutsWithBundleIdentifier:(NSString *)arg2;
 - (void)cancelActiveGestureForSwitcherContentController:(id <SBSwitcherContentViewControlling>)arg1;
 - (void)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 setCacheAsynchronousRenderingSurfaces:(_Bool)arg2;
 - (_Bool)switcherContentController:(id <SBSwitcherContentViewControlling>)arg1 shouldResignActiveForStartOfTransition:(SBLayoutStateTransitionContext *)arg2;

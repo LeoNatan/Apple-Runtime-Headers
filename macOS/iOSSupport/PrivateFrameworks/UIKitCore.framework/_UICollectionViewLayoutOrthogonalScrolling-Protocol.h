@@ -9,6 +9,7 @@
 @class NSArray, NSIndexPath, NSIndexSet, NSString, UICollectionViewLayoutAttributes;
 
 @protocol _UICollectionViewLayoutOrthogonalScrolling <NSObject>
+- (NSString *)_orthogonalScrollingTrace;
 - (BOOL)_orthogonalScrollingElementShouldAppearAboveForAttributes:(UICollectionViewLayoutAttributes *)arg1;
 - (struct CGRect)_orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(UICollectionViewLayoutAttributes *)arg1 frame:(struct CGRect)arg2;
 - (NSArray *)_extendedAttributesQueryIncludingOrthogonalScrollingRegions:(struct CGRect)arg1;

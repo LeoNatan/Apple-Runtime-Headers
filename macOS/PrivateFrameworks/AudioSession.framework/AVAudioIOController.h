@@ -17,8 +17,8 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) AVAudioRouteTopology *routeTopology;
 - (BOOL)configureIOControllerWithRouteTopology:(id)arg1 error:(id *)arg2;
-- (BOOL)setMasterDevice:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) AVAudioHardwareClock *masterDevice;
+- (BOOL)setMasterClock:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) AVAudioHardwareClock *masterClock;
 @property(readonly, nonatomic) NSArray *outputStreams;
 @property(readonly, nonatomic) NSArray *inputStreams;
 - (BOOL)setIOPeriod:(id)arg1 error:(id *)arg2;

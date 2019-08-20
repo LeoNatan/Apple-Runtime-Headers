@@ -60,6 +60,7 @@
 - (void)_configureHostView;
 - (void)_configureLiveSnapshotView;
 - (void)_configurePlaceholderContentView;
+- (void)_placeholderVisibilityChanged;
 - (void)_configureViewForEffectiveDisplayMode:(long long)arg1;
 - (id)_transitionViewForHostView;
 - (_Bool)_addContentLikeViewToHierarchyForTransitionIfPossible:(id)arg1;
@@ -71,6 +72,7 @@
 - (void)_invalidateHostPresenter;
 - (void)_enableHostingIfPossible;
 - (_Bool)_shouldObserveSceneHostContentState;
+- (void)_setOrientation:(long long)arg1;
 - (void)placeholderContentViewProviderContentDidUpdate:(id)arg1;
 - (void)sceneHandle:(id)arg1 didUpdateContentState:(long long)arg2;
 - (void)sceneHandle:(id)arg1 didDestroyScene:(id)arg2;
@@ -86,6 +88,7 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)invalidate;
+@property(readonly, nonatomic) long long preferredStatusBarStyle;
 - (id)acquireLiveContentDisableAssertionForReason:(id)arg1;
 - (id)newSnapshot;
 - (void)setDisplayMode:(long long)arg1 animationFactory:(id)arg2 completion:(CDUnknownBlockType)arg3;

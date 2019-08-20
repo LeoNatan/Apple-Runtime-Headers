@@ -19,6 +19,7 @@
 - (void)newDocument:(id)arg1;
 - (void)_dismissModalForTerminate;
 - (BOOL)preventsApplicationTerminationWhenModal;
+- (BOOL)finderViewSelectedURLsCanIncludeItemsNeedingDownload:(id)arg1;
 - (void)setCanDownloadUbiquitousContents:(BOOL)arg1;
 - (BOOL)canDownloadUbiquitousContents;
 - (void)setCanResolveUbiquitousConflicts:(BOOL)arg1;

@@ -24,9 +24,12 @@
 - (void)devicesDiscovered:(id)arg1;
 - (void)deviceDiscovered:(id)arg1;
 - (void)stateDidChange:(long long)arg1;
+- (void)updateScanningRequest:(id)arg1 withUpdate:(CDUnknownBlockType)arg2;
 - (void)stopScanning;
+- (void)startScanningWithMode:(long long)arg1 Timeout:(double)arg2;
 - (void)startScanningWithMode:(long long)arg1;
 - (void)startScanning;
+- (id)scanRequestFromScanMode:(long long)arg1 UpdateTime:(double)arg2;
 - (void)invalidate;
 - (id)clientAsString;
 - (id)init;

@@ -8,22 +8,32 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class UIWindow;
+@class NSArray, UITraitCollection, UIView, UIWindow;
 
 @interface _UIContextMenuStyle : NSObject <NSCopying>
 {
     _Bool _hasInteractivePreview;
     _Bool _preventPreviewRasterization;
+    _Bool _reversesActionOrderWhenAttachedToTop;
     UIWindow *_containerWindow;
+    UIView *_containerView;
     unsigned long long _preferredLayout;
+    UITraitCollection *_preferredTraitCollection;
+    NSArray *_preferredBackgroundEffects;
     struct UIEdgeInsets _preferredEdgeInsets;
+    struct UIEdgeInsets _preferredBackgroundInsets;
 }
 
 + (id)defaultStyle;
+@property(nonatomic) struct UIEdgeInsets preferredBackgroundInsets; // @synthesize preferredBackgroundInsets=_preferredBackgroundInsets;
+@property(retain, nonatomic) NSArray *preferredBackgroundEffects; // @synthesize preferredBackgroundEffects=_preferredBackgroundEffects;
+@property(retain, nonatomic) UITraitCollection *preferredTraitCollection; // @synthesize preferredTraitCollection=_preferredTraitCollection;
+@property(nonatomic) _Bool reversesActionOrderWhenAttachedToTop; // @synthesize reversesActionOrderWhenAttachedToTop=_reversesActionOrderWhenAttachedToTop;
 @property(nonatomic) _Bool preventPreviewRasterization; // @synthesize preventPreviewRasterization=_preventPreviewRasterization;
 @property(nonatomic) _Bool hasInteractivePreview; // @synthesize hasInteractivePreview=_hasInteractivePreview;
 @property(nonatomic) struct UIEdgeInsets preferredEdgeInsets; // @synthesize preferredEdgeInsets=_preferredEdgeInsets;
 @property(nonatomic) unsigned long long preferredLayout; // @synthesize preferredLayout=_preferredLayout;
+@property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIWindow *containerWindow; // @synthesize containerWindow=_containerWindow;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

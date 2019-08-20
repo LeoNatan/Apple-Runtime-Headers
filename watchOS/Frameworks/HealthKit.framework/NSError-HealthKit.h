@@ -13,6 +13,7 @@
 + (id)hk_invalidProfileError;
 + (id)hk_featureUnavailableForProfileError;
 + (id)hk_protectedDataInaccessibilityError;
++ (id)hk_databaseInaccessibleBeforeFirstUnlockError;
 + (id)hk_healthDataUnavailableError;
 + (id)hk_error:(int)arg1 format:(id)arg2;
 + (id)hk_error:(int)arg1 description:(id)arg2 underlyingError:(id)arg3;
@@ -30,6 +31,7 @@
 - (id)hk_errorByAddingEntriesToUserInfo:(id)arg1;
 - (id)hk_sanitizedError;
 - (id)hk_underlyingErrorWithDomain:(id)arg1;
+- (_Bool)hk_isXPCConnectionInterruptedError;
 - (_Bool)hk_isXPCConnectionError;
 - (_Bool)hk_isCocoaNoSuchFileError;
 - (_Bool)hk_isUserCanceledError;

@@ -21,6 +21,9 @@
     NSArray *_momentumVectors;
     NSArray *_velocityVectors;
     id _exportableState;
+    id _movingState;
+    NSArray *_movingVectors;
+    id _bnMovingUpdater;
     NSMutableArray *_rnnTrainableWeights;
     NSMutableArray *_rnnTrainableWeightGradients;
     NSMutableArray *_rnnTrainableStates;
@@ -39,6 +42,9 @@
 @property(retain, nonatomic) NSMutableArray *rnnTrainableStates; // @synthesize rnnTrainableStates=_rnnTrainableStates;
 @property(retain, nonatomic) NSMutableArray *rnnTrainableWeightGradients; // @synthesize rnnTrainableWeightGradients=_rnnTrainableWeightGradients;
 @property(retain, nonatomic) NSMutableArray *rnnTrainableWeights; // @synthesize rnnTrainableWeights=_rnnTrainableWeights;
+@property(retain, nonatomic) id bnMovingUpdater; // @synthesize bnMovingUpdater=_bnMovingUpdater;
+@property(retain, nonatomic) NSArray *movingVectors; // @synthesize movingVectors=_movingVectors;
+@property(retain, nonatomic) id movingState; // @synthesize movingState=_movingState;
 @property(retain, nonatomic) id exportableState; // @synthesize exportableState=_exportableState;
 @property(retain, nonatomic) NSArray *velocityVectors; // @synthesize velocityVectors=_velocityVectors;
 @property(retain, nonatomic) NSArray *momentumVectors; // @synthesize momentumVectors=_momentumVectors;

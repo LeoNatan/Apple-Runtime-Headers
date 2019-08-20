@@ -16,12 +16,10 @@
     long long _generation;
     HKQueryAnchor *_anchor;
     NSDictionary *_deletionAnchors;
-    long long _highestAnchorSeen;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)stateWithGeneration:(long long)arg1 highestAnchorSeen:(long long)arg2;
-@property(nonatomic) long long highestAnchorSeen; // @synthesize highestAnchorSeen=_highestAnchorSeen;
++ (id)stateWithGeneration:(long long)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *deletionAnchors; // @synthesize deletionAnchors=_deletionAnchors;
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, nonatomic) long long generation; // @synthesize generation=_generation;
@@ -31,10 +29,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)updateHighestAnchorSeen;
-- (_Bool)doCurrentAnchorsExceedHighestSeenAnchor;
-- (long long)_highestActualAnchor;
-- (long long)_highestDeleteAnchorRowid;
 - (id)copyWithDeletionAnchor:(id)arg1 forSampleType:(id)arg2;
 - (id)copyWithAnchor:(id)arg1;
 - (id)initWithGeneration:(long long)arg1 anchor:(id)arg2 deletionAnchors:(id)arg3;

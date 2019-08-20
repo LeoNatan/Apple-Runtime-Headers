@@ -36,6 +36,7 @@
 - (void)_handlePreviousButton:(id)arg1;
 - (void)enablePageControlsIfNecessary;
 - (void)_update;
+- (void)_updateImages;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

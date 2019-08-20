@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (id)_resizedImage:(id)arg1 toSize:(struct CGSize)arg2;
 - (void)_cacheImage:(id)arg1 forKey:(id)arg2;
 - (id)_cachedImageForKey:(id)arg1;
-- (id)imageForArtwork:(id)arg1 size:(long long)arg2 featureType:(unsigned long long)arg3 scale:(double)arg4 widthPaddingMultiple:(double)arg5;
+- (id)imageForArtwork:(id)arg1 size:(long long)arg2 featureType:(unsigned long long)arg3 scale:(double)arg4 nightMode:(BOOL)arg5 widthPaddingMultiple:(double)arg6;
 - (void)purge;
 @property(readonly, copy, nonatomic) NSCache *resizedImageCache; // @synthesize resizedImageCache=_resizedImageCache;
 - (id)initWithArtworkManager:(id)arg1 imageResizingBlock:(CDUnknownBlockType)arg2;

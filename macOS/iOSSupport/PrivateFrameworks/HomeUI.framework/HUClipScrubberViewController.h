@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <HomeUI/HFCameraClipFeedbackObserving-Protocol.h>
 #import <HomeUI/HFCameraPlaybackEngineObserver-Protocol.h>
 #import <HomeUI/HUCameraPlayerScrubbing-Protocol.h>
 #import <HomeUI/HUFeedbackConsentViewControllerDelegate-Protocol.h>
@@ -14,12 +13,13 @@
 
 @class CADisplayLink, HFCameraPlaybackEngine, HUClipScrubberDataSource, HUClipScrubberScrollDelegate, HUClipScrubberView, HULegibilityLabel, NSLayoutConstraint, NSString, NSTimer, UIButton, UIView;
 
-@interface HUClipScrubberViewController : UIViewController <NSURLSessionDelegate, HUFeedbackConsentViewControllerDelegate, HUCameraPlayerScrubbing, HFCameraClipFeedbackObserving, HFCameraPlaybackEngineObserver>
+@interface HUClipScrubberViewController : UIViewController <NSURLSessionDelegate, HUFeedbackConsentViewControllerDelegate, HUCameraPlayerScrubbing, HFCameraPlaybackEngineObserver>
 {
     BOOL _isVisible;
     CDUnknownBlockType _accessoryButtonHandler;
     CDUnknownBlockType _beginEditingHandler;
     CDUnknownBlockType _endEditingHandler;
+    CDUnknownBlockType _deletionHandler;
     HFCameraPlaybackEngine *_playbackEngine;
     HULegibilityLabel *_dayLabel;
     HULegibilityLabel *_timeLabel;
@@ -62,21 +62,11 @@
 @property(retain, nonatomic) HULegibilityLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) HULegibilityLabel *dayLabel; // @synthesize dayLabel=_dayLabel;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
+@property(copy, nonatomic) CDUnknownBlockType deletionHandler; // @synthesize deletionHandler=_deletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType endEditingHandler; // @synthesize endEditingHandler=_endEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType beginEditingHandler; // @synthesize beginEditingHandler=_beginEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonHandler; // @synthesize accessoryButtonHandler=_accessoryButtonHandler;
 - (void).cxx_destruct;
-- (void)manager:(id)arg1 failedToSubmitClipWithIdentifier:(id)arg2 error:(id)arg3;
-- (void)manager:(id)arg1 didSubmitClipCollection:(id)arg2;
-- (void)manager:(id)arg1 didSubmitCameraClip:(id)arg2;
-- (id)hf_clipCollection;
-- (void)submitAllUnsubmittedClips;
-- (void)verifySubmitAllClips;
-- (void)submitCurrentClip;
-- (id)_feedbackClip;
-- (void)presentPreviouslySubmittedClipAlert;
-- (void)presentFeedbackOptions;
-- (void)didSelectFeedbackButton;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)showEditInterface;
 - (void)dismissEditInterface;
@@ -89,8 +79,6 @@
 - (id)uploadURLCameraClip:(id)arg1;
 - (void)exportLocalClipAtURL:(id)arg1;
 - (void)exportCurrentClipWithCompletion:(CDUnknownBlockType)arg1;
-- (void)consentController:(id)arg1 didFinishConsentWithAnswer:(BOOL)arg2;
-- (void)presentFeedbackConsent;
 - (unsigned long long)displayMode;
 - (BOOL)_cellBoundsContainsPlayhead:(id)arg1;
 - (id)platterWithView:(id)arg1;
@@ -106,7 +94,7 @@
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
-- (void)playbackEngine:(id)arg1 didUpdateClipCollection:(id)arg2;
+- (void)playbackEngine:(id)arg1 didUpdateClipManager:(id)arg2;
 - (void)showAssociatedAccessories;
 - (void)cancelLiveTimer;
 - (void)startLiveTimer;
@@ -120,7 +108,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)updateScrubberViewAndAssociatedConstraints;
 - (void)loadView;
-- (void)reloadClipCollection:(id)arg1;
+- (void)reloadClipManager:(id)arg1;
 - (void)dealloc;
 - (id)initWithPlaybackEngine:(id)arg1;
 

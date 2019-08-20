@@ -139,8 +139,6 @@
 - (unsigned long long)_edgesPropagatingSafeAreaInsetsToDescendants;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (void)layoutMarginsDidChange;
-- (struct UIEdgeInsets)_effectiveContentInset;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) long long _style;
 - (void)_setPresentationProperties:(id)arg1;

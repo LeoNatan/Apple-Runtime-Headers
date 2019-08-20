@@ -31,7 +31,7 @@
 - (void)downloadCloudSharedAsset:(id)arg1 wantedPlaceholderkind:(short)arg2 shouldPrioritize:(BOOL)arg3 shouldExtendTimer:(BOOL)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)estimatedFileLengthOfVideo:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)asynchronousAdjustmentDataForAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 withDataBlob:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)asynchronousVideoURLForAsset:(id)arg1 format:(unsigned short)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 trackCPLDownload:(BOOL)arg5 restrictToPlayable:(BOOL)arg6 reply:(CDUnknownBlockType)arg7;
+- (void)asynchronousVideoURLForAsset:(id)arg1 format:(unsigned short)arg2 intent:(unsigned long long)arg3 networkAccessAllowed:(BOOL)arg4 streamingAllowed:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 restrictToPlayable:(BOOL)arg7 reply:(CDUnknownBlockType)arg8;
 - (void)getSandboxExtensionForFileSystemBookmark:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getSandboxExtensionForAssetResourcePath:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)imageDataForAssetWithObjectURI:(id)arg1 formatID:(unsigned short)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 networkAccessAllowed:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 reply:(CDUnknownBlockType)arg7;

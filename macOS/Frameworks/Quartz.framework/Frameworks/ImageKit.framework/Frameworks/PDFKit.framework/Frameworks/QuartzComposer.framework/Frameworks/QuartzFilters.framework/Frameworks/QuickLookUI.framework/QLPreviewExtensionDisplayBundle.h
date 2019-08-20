@@ -39,7 +39,7 @@
 - (id)sizingConstraints;
 - (void)updateExtensionPreviewForExternalResourceAccess:(id)arg1 withExtension:(id)arg2;
 - (void)_insertRemoteView;
-- (void)presentScreenTimeLockout:(BOOL)arg1 withScreentimeID:(id)arg2;
+- (void)presentScreenTimeLockout:(BOOL)arg1;
 - (int)loadWithHints:(id)arg1;
 @property(readonly) id <QLPreviewExtensionContextProtocol> remoteExtensionContext;
 - (id)quickLookView;

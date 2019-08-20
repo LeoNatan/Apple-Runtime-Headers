@@ -16,7 +16,6 @@
     unsigned long long _processType;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) unsigned long long maxSharedSubitemsBeforeFailure; // @synthesize maxSharedSubitemsBeforeFailure=_maxSharedSubitemsBeforeFailure;
 @property(copy) CDUnknownBlockType processSubitemsCompletionBlock; // @synthesize processSubitemsCompletionBlock=_processSubitemsCompletionBlock;
 - (void).cxx_destruct;

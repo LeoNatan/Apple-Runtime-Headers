@@ -6,7 +6,7 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, UIWindowScene;
 
 @protocol MPVolumeDisplaying <NSObject>
 
@@ -14,5 +14,6 @@
 @property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;
 @property(readonly, nonatomic) NSString *volumeAudioCategory;
 @property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
+@property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 @end
 

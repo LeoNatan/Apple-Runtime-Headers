@@ -9,10 +9,12 @@
 #import <DistributedEvaluation/DESService-Protocol.h>
 
 @class DESBundleRegistry, DESDeviceIdentifierStore, NSString, NSXPCConnection;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_xpc_object;
 
 @interface DESServiceConnection : NSObject <DESService>
 {
+    double _connectionStartTime;
+    NSObject<OS_xpc_object> *_activity;
     NSXPCConnection *_connection;
     DESDeviceIdentifierStore *_identifierStore;
     DESBundleRegistry *_bundleRegistry;
@@ -27,6 +29,7 @@
 - (void)fetchTelemetryForBundleId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runLiveEvaluationForAllBundlesWithBaseURL:(id)arg1 localeIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_runLiveEvaluationForBundleId:(id)arg1 baseURL:(id)arg2 localeIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)taskIsDeferred;
 - (void)_prepareEvaluationSessionForBundleId:(id)arg1 baseURL:(id)arg2 localeIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)runLiveEvaluationForBundleId:(id)arg1 baseURL:(id)arg2 localeIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_runEvaluationForBundleId:(id)arg1 recipeEvaluation:(id)arg2 attachments:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -42,7 +45,7 @@
 - (void)fetchInstalledBundlesIdsWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_hasRecordAccessToBundleId:(id)arg1 error:(id *)arg2;
 @property(readonly) DESDeviceIdentifierStore *_identifierStore;
-- (id)initWithXPCConnection:(id)arg1;
+- (id)initWithXPCConnection:(id)arg1 activity:(id)arg2;
 - (id)init;
 
 // Remaining properties

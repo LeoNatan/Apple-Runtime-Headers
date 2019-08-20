@@ -11,7 +11,7 @@
 @protocol PXGMutableSpriteTexture <PXGSpriteTexture>
 - (void)removeSpriteIndex:(unsigned int)arg1;
 - (void)processPendingTextureRequestIDsWithHandler:(unsigned int (^)(int, unsigned int))arg1;
-- (void)addSpriteWithTextureRequestID:(int)arg1;
+- (void)addSpriteWithTextureRequestID:(int)arg1 deliveryOrder:(unsigned int)arg2;
 - (void)applyChangeDetails:(PXGChangeDetails *)arg1;
 @end
 

@@ -19,7 +19,7 @@
 @property(readonly, copy, nonatomic) NSArray *sharees; // @synthesize sharees=_sharees;
 - (void).cxx_destruct;
 - (void)setSearchAccountID:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 calendar:(id)arg2;
 
 @end
 

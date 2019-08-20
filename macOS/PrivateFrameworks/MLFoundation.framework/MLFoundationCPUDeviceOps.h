@@ -31,12 +31,28 @@
     MLFoundationTensor *_movingVariance;
     void *_BNNSFilter;
     id _result;
+    NSData *_weightsDeltaDataBytes;
+    NSData *_biasDeltaDataBytes;
+    NSData *_weightsMomentumDataBytes;
+    NSData *_biasMomentumDataBytes;
+    NSData *_betaDeltaDataBytes;
+    NSData *_gammaDeltaDataBytes;
+    NSData *_betaMomentumDataBytes;
+    NSData *_gammaMomentumDataBytes;
 }
 
 + (id)deviceOpsWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4 betaDeltaData:(id)arg5 gammaDeltaData:(id)arg6 betaMomentumData:(id)arg7 gammaMomentumData:(id)arg8;
 + (id)deviceOpsWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4 weightsDeltaData:(id)arg5 biasDeltaData:(id)arg6 weightsMomentumData:(id)arg7 biasMomentumData:(id)arg8;
 + (id)deviceOpsWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4;
 + (id)new;
+@property(retain, nonatomic) NSData *gammaMomentumDataBytes; // @synthesize gammaMomentumDataBytes=_gammaMomentumDataBytes;
+@property(retain, nonatomic) NSData *betaMomentumDataBytes; // @synthesize betaMomentumDataBytes=_betaMomentumDataBytes;
+@property(retain, nonatomic) NSData *gammaDeltaDataBytes; // @synthesize gammaDeltaDataBytes=_gammaDeltaDataBytes;
+@property(retain, nonatomic) NSData *betaDeltaDataBytes; // @synthesize betaDeltaDataBytes=_betaDeltaDataBytes;
+@property(retain, nonatomic) NSData *biasMomentumDataBytes; // @synthesize biasMomentumDataBytes=_biasMomentumDataBytes;
+@property(retain, nonatomic) NSData *weightsMomentumDataBytes; // @synthesize weightsMomentumDataBytes=_weightsMomentumDataBytes;
+@property(retain, nonatomic) NSData *biasDeltaDataBytes; // @synthesize biasDeltaDataBytes=_biasDeltaDataBytes;
+@property(retain, nonatomic) NSData *weightsDeltaDataBytes; // @synthesize weightsDeltaDataBytes=_weightsDeltaDataBytes;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(nonatomic) BOOL isFusedBNNSFilter; // @synthesize isFusedBNNSFilter=_isFusedBNNSFilter;
 @property(nonatomic) void *BNNSFilter; // @synthesize BNNSFilter=_BNNSFilter;

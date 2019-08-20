@@ -124,6 +124,7 @@
 - (void)displayConnectOtherShowMessage:(id)arg1;
 - (void)pressedConnectOther:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)establishNetworkSourceConnectionStateForSystem:(id)arg1;
 - (void)systemScannerSystemChanged:(id)arg1 onSystem:(id)arg2;
 - (void)systemScannerRemovedSystem:(id)arg1;
 - (void)systemScannerFoundHandoffResponse:(id)arg1;

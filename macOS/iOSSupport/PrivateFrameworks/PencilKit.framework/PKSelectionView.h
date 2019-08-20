@@ -9,7 +9,7 @@
 #import <PencilKit/UIDragInteractionDelegate_Private-Protocol.h>
 #import <PencilKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CAShapeLayer, NSMutableArray, NSString, PKSelectionController, PKStrokeSelection, UIBezierPath, UIDragInteraction, UIDragPreview, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class CAShapeLayer, NSMutableArray, NSString, PKSelectionController, PKStrokeSelection, UIBezierPath, UIDragInteraction, UIDragPreview, UIImage, UIImageView, UILongPressGestureRecognizer, UIResponder, UITapGestureRecognizer;
 
 @interface PKSelectionView : UIView <UIDragInteractionDelegate_Private, UIGestureRecognizerDelegate>
 {
@@ -31,6 +31,7 @@
     double _startRotation;
     double _startScale;
     struct CGPoint _editMenuLocation;
+    UIResponder *_previousResponder;
     BOOL _isDragging;
     BOOL _wantsDragPlatter;
     PKStrokeSelection *_strokeSelection;
@@ -92,6 +93,8 @@
 - (void)setupAnimatedLassoForStrokes:(id)arg1 lassoLayer:(id)arg2 whiteLassoLayer:(id)arg3 isSelection:(BOOL)arg4 lassoStroke:(id)arg5;
 - (void)setupAnimatedLasso;
 - (void)generateStrokeImageForPasteAndDND;
+- (void)_clearSelection:(id)arg1;
+- (void)_setupWindowNotificationsForScene:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (struct CGColor *)selectionColor;
 - (void)dealloc;

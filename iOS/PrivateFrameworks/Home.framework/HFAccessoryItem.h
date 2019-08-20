@@ -33,7 +33,7 @@
 - (id)_multiSensorIconDescriptor;
 - (_Bool)isMultiSensorDevice;
 - (id)_buildControlDescription;
-- (id)_buildTileDescription;
+- (id)_buildTileDescription:(_Bool)arg1;
 @property(readonly, nonatomic) NSArray *allHomeKitObjects;
 @property(readonly, nonatomic) id <HFHomeKitObject> primaryHomeKitObject;
 @property(readonly, nonatomic) unsigned long long numberOfCompoundItems;
@@ -51,7 +51,6 @@
 - (id)_buildServiceItems;
 - (id)_collectAllChildItems;
 - (id)_buildControlItems;
-- (id)_aggregatedValueSourceForService:(id)arg1;
 - (id)serviceItemForService:(id)arg1;
 - (id)controlItemsForService:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;

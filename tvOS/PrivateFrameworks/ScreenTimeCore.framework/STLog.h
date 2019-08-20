@@ -28,6 +28,7 @@
 + (id)payloadQueue;
 + (id)payloadManager;
 + (id)payload;
++ (id)oneMoreMinuteManager;
 + (id)mirroring;
 + (id)idsTransport;
 + (id)familySettingsManager;

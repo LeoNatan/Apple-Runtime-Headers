@@ -74,8 +74,8 @@
 }
 
 - (void)attachInfoFrameTo:(struct __IOSurface *)arg1 withDMData:(CDStruct_f4857302 *)arg2 withInfoFrame:(CDStruct_52986d3b *)arg3;
-- (void)attachDoViMetadataPacketTo:(struct __IOSurface *)arg1 withDMData:(CDStruct_f4857302 *)arg2;
-- (void)attachHDRMetaDataToOutputSurface:(struct __IOSurface *)arg1 withDMData:(CDStruct_f4857302 *)arg2 withInfoFrame:(CDStruct_52986d3b *)arg3;
+- (void)attachDoViMetadataPacketTo:(struct __IOSurface *)arg1 withDMData:(CDStruct_f4857302 *)arg2 withDMConfig:(CDStruct_5b04813a *)arg3 withHdrControl:(CDStruct_d76a58a8 *)arg4 withMSRHDRContext:(struct MSRHDRContext *)arg5;
+- (void)attachHDRMetaDataToOutputSurface:(struct __IOSurface *)arg1 withDMData:(CDStruct_f4857302 *)arg2 withDMConfig:(CDStruct_5b04813a *)arg3 withHdrControl:(CDStruct_d76a58a8 *)arg4 withMSRHDRContext:(struct MSRHDRContext *)arg5 withInfoFrame:(CDStruct_52986d3b *)arg6;
 - (void)populateMSRColorConfig:(CDStruct_481e6fe2 *)arg1 DMConfig:(CDStruct_5b04813a *)arg2 DMData:(CDStruct_f4857302 *)arg3 tcControl:(struct ToneCurve_Control *)arg4 hdrControl:(CDStruct_d76a58a8 *)arg5 MSRHDRContext:(struct MSRHDRContext *)arg6;
 - (void)runPostFrameDumpActions:(CDStruct_481e6fe2 *)arg1;
 - (void)runPreFrameDumpActions;

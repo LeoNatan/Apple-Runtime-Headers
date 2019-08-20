@@ -251,6 +251,12 @@ struct DeferrableOneShotTimer {
     _Bool _field8;
 };
 
+struct Deque<WTF::Function<void ()>, 0> {
+    unsigned long long m_start;
+    unsigned long long m_end;
+    struct VectorBuffer<WTF::Function<void ()>, 0> m_buffer;
+};
+
 struct Deque<WTF::Ref<WebCore::MediaSample, WTF::DumbPtrTraits<WebCore::MediaSample>>, 0> {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -303,6 +309,13 @@ struct GPUSwapChain {
     struct RetainPtr<WebGPULayer> _field2;
     struct RetainPtr<CAMetalDrawable> _field3;
     struct OptionSet<WebCore::GPUTextureUsage::Flags> _field4;
+};
+
+struct GenericTaskQueue<WebCore::Timer> {
+    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> m_weakPtrFactory;
+    struct TaskDispatcher<WebCore::Timer> m_dispatcher;
+    unsigned int m_pendingTasks;
+    _Bool m_isClosed;
 };
 
 struct GenericTypedArrayView<JSC::Uint8Adaptor>;
@@ -1437,6 +1450,11 @@ struct Strong<JSC::JSGlobalObject> {
     struct JSValue *_field1;
 };
 
+struct TaskDispatcher<WebCore::Timer> {
+    struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> m_weakPtrFactory;
+    struct Deque<WTF::Function<void ()>, 0> m_pendingTasks;
+};
+
 struct TextIndicator {
     unsigned int _field1;
     struct TextIndicatorData _field2;
@@ -1621,6 +1639,12 @@ struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
     unsigned int _field3;
 };
 
+struct VectorBuffer<WTF::Function<void ()>, 0> {
+    Function_15535652 *m_buffer;
+    unsigned int m_capacity;
+    unsigned int m_size;
+};
+
 struct VectorBuffer<WTF::Ref<WebCore::MediaSample, WTF::DumbPtrTraits<WebCore::MediaSample>>, 0> {
     struct Ref<WebCore::MediaSample, WTF::DumbPtrTraits<WebCore::MediaSample>> *_field1;
     unsigned int _field2;
@@ -1723,12 +1747,20 @@ struct WeakPtrFactory<WebCore::ContainerNode> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
+struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
+};
+
 struct WeakPtrFactory<WebCore::MediaPlayerPrivateMediaStreamAVFObjC> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::ScrollableArea> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+};
+
+struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtrFactory<WebCore::Widget> {

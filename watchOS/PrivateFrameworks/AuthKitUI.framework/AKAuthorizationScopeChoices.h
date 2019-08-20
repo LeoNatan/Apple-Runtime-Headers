@@ -33,8 +33,10 @@
 @property(copy, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
 - (void).cxx_destruct;
 - (id)description;
+- (id)_personNameComponents;
 @property(readonly, nonatomic) NSString *localizedChosenEmail;
 @property(readonly, nonatomic) NSString *localizedName;
+@property(readonly, nonatomic) unsigned int personNameComponentsOrder;
 - (id)emailAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) AKAuthorizationUserResponse *userResponse;
 @property(readonly, nonatomic) NSString *forwardingEmail;

@@ -9,7 +9,7 @@
 #import <MediaPlayer/MPVolumeControllerDelegate-Protocol.h>
 #import <MediaPlayer/MPVolumeDisplaying-Protocol.h>
 
-@class MPAVController, MPAVEndpointRoute, MPAVOutputDeviceRoute, MPAVRoute, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UILayoutGuide, UIView;
+@class MPAVController, MPAVEndpointRoute, MPAVOutputDeviceRoute, MPAVRoute, MPVolumeController, NSString, NSTimer, UIImage, UIImageView, UILabel, UILayoutGuide, UIView, UIWindowScene;
 
 @interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate, MPVolumeDisplaying>
 {
@@ -78,6 +78,7 @@
 - (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(_Bool)arg2;
 @property(readonly, nonatomic) NSString *volumeAudioCategory;
 @property(readonly, nonatomic, getter=isOnScreenForVolumeDisplay) _Bool onScreenForVolumeDisplay;
+@property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 - (void)setVolumeDataSource:(id)arg1;
 @property(retain, nonatomic) MPAVRoute *route;
 @property(readonly, copy, nonatomic) NSString *volumeControlLabel;

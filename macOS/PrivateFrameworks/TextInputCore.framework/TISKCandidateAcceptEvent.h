@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TextInputCore/TISKTimestampEvent.h>
+#import <TextInputCore/TISKEvent.h>
 
 @class TIKeyboardCandidate;
 
-@interface TISKCandidateAcceptEvent : TISKTimestampEvent
+@interface TISKCandidateAcceptEvent : TISKEvent
 {
     TIKeyboardCandidate *_candidate;
 }
@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)reportToSession:(id)arg1;
 - (id)description;
-- (id)init:(id)arg1 timestamp:(double)arg2 order:(long long)arg3;
+- (id)init:(id)arg1 order:(long long)arg2;
 
 @end
 

@@ -15,11 +15,17 @@
     CKDatabase *_database;
     NSCache *_workflowSearchCache;
     NSCache *_collectionSearchCache;
+    NSCache *_pageCache;
+    NSCache *_workflowCache;
+    NSCache *_bannerImageCache;
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSCache *collectionSearchCache; // @synthesize collectionSearchCache=_collectionSearchCache;
-@property(retain, nonatomic) NSCache *workflowSearchCache; // @synthesize workflowSearchCache=_workflowSearchCache;
+@property(readonly, nonatomic) NSCache *bannerImageCache; // @synthesize bannerImageCache=_bannerImageCache;
+@property(readonly, nonatomic) NSCache *workflowCache; // @synthesize workflowCache=_workflowCache;
+@property(readonly, nonatomic) NSCache *pageCache; // @synthesize pageCache=_pageCache;
+@property(readonly, nonatomic) NSCache *collectionSearchCache; // @synthesize collectionSearchCache=_collectionSearchCache;
+@property(readonly, nonatomic) NSCache *workflowSearchCache; // @synthesize workflowSearchCache=_workflowSearchCache;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) _Bool performExpensiveFetchOperations; // @synthesize performExpensiveFetchOperations=_performExpensiveFetchOperations;
@@ -37,15 +43,15 @@
 - (id)updateItems:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getCurrentUserIdentifierWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getWorkflowForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)cacheCollectionSearchResult:(id)arg1 result:(id)arg2;
 - (id)searchCollections:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)cacheWorkflowSearchResult:(id)arg1 result:(id)arg2;
 - (id)queryFilterForTokenizedKey:(id)arg1 words:(id)arg2 endsWithSpace:(_Bool)arg3;
 - (id)searchUsingWebServicesForItem:(Class)arg1 query:(id)arg2 queryFilter:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)searchWorkflows:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)searchWorkflowsAndCollections:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadWorkflowInGalleryWorkflow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)preferredPageInPages:(id)arg1 preferredLanguages:(id)arg2;
+- (id)getImageForBanner:(id)arg1 size:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getPageWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getHomeWithPreferredLanguages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getHomeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)createItemRequest;

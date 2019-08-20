@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
         unsigned int isHostedByNavigationBar:1;
         unsigned int showsScopeBar:1;
         unsigned int showDictationButton:1;
+        unsigned int allowedToShowDictationButton:1;
     } _searchBarVisualProviderFlags;
     UIView<_UISearchBarVisualProvidingDelegate><_UINavigationBarAugmentedTitleView><UITextInputTraits_Private> *_delegate;
     UISearchBarTextField *_searchField;
@@ -181,9 +182,9 @@ __attribute__((visibility("hidden")))
 - (void)setUpCancelButtonWithAppearance:(id)arg1;
 - (void)setUpCancelButton;
 - (void)setShowDictationButton:(BOOL)arg1 shouldUpdateView:(BOOL)arg2;
-- (BOOL)showsDictationButton;
+- (BOOL)wantsDictationButton;
 - (void)setDisableDictationButton:(BOOL)arg1;
-- (void)setUpDictationMic;
+- (void)setUpDictationMicWithSearchField:(id)arg1;
 - (void)dictationButtonPressed:(id)arg1 withEvent:(id)arg2;
 - (void)dictationControllerDidFinish:(id)arg1;
 - (void)updateSearchFieldArt;
@@ -196,6 +197,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)usesBackdrop;
 - (void)removeBackdropVisualEffectView;
 - (void)removeLegacyBackdropView;
+- (void)updateDictationButton;
 - (void)updateMagnifyingGlassView;
 - (void)updateIfNecessaryForOldSize:(struct CGSize)arg1;
 - (void)updateForDrawsBackgroundInPalette;

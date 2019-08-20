@@ -13,8 +13,13 @@
 @interface PKProtobufPromptDetailsForVirtualCard : PBCodable <NSCopying>
 {
     NSString *_identifier;
+    BOOL _showNotification;
+    struct {
+        unsigned int showNotification:1;
+    } _has;
 }
 
+@property(nonatomic) BOOL showNotification; // @synthesize showNotification=_showNotification;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -26,6 +31,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasShowNotification;
 @property(readonly, nonatomic) BOOL hasIdentifier;
 
 @end

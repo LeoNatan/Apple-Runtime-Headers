@@ -52,6 +52,7 @@
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)userHandle;
 - (void)doneButtonTapped:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithItem:(id)arg1 home:(id)arg2;
 

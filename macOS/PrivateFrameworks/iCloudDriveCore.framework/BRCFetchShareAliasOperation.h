@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (void)_performAfterFetchingAlias:(CDUnknownBlockType)arg1;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithTarget:(id)arg1 aliasZone:(id)arg2 isUserWaiting:(BOOL)arg3;
 

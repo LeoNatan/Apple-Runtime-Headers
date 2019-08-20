@@ -12,7 +12,7 @@
 #import <AuthKitUI/UITableViewDataSource-Protocol.h>
 #import <AuthKitUI/UITableViewDelegate-Protocol.h>
 
-@class AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKTiburonPasswordUIReport, NSString;
+@class AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKAuthorizationViewController, AKTiburonPasswordUIReport, NSString;
 
 @interface AKAuthorizationPasswordRequestViewController : AKAuthorizationPaneViewController <AKAuthorizationSubPaneConfirmButtonDelegate, AKAuthorizationPasswordAuthenticationDelegate, UITableViewDataSource, UITableViewDelegate, AKAuthorizationEditableDataSources>
 {
@@ -20,10 +20,12 @@
     BOOL _editableScopeChoicesChanged;
     AKAuthorizationScopeChoices *_editableScopeChoices;
     AKAuthorizationPresentationContext *_presentationContext;
+    AKAuthorizationViewController *_authorizationViewController;
     AKAuthorizationSubPaneConfirmButton *_confirmButton;
 }
 
 @property(retain, nonatomic) AKAuthorizationSubPaneConfirmButton *confirmButton; // @synthesize confirmButton=_confirmButton;
+@property(nonatomic) __weak AKAuthorizationViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) BOOL editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
@@ -33,7 +35,13 @@
 - (BOOL)validateReadyForAuthorization;
 - (void)performPasswordAuthentication;
 - (void)performAuthorization;
-- (void)subPaneConfirmButton:(id)arg1 confirmationResult:(id)arg2;
+- (void)subpaneConfirmButtonDidFailBiometry:(id)arg1;
+- (void)subPaneConfirmButtonDidEnterProcessingState:(id)arg1;
+- (void)_paneDelegate_authorizationPaneViewControllerDidRequestAuthorizationWithUserProvidedInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_paneDelegate_authorizationPaneViewControllerDismissWithAuthorization:(id)arg1 error:(id)arg2;
+- (void)_setCancelButtonEnabled:(BOOL)arg1;
+- (void)_handleAuthorizationError:(id)arg1;
+- (void)_performAuthorizationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_performAuthorization;
 - (BOOL)_canPerformAuthorization;
 - (void)_addAuthorizationButtonToPaneContext:(id)arg1;

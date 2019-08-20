@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (id)selectedTextMarker;
 - (id)selectionRangeString;
 - (id)elementsForRange:(struct _NSRange)arg1;
+- (_Bool)accessibilityInsertText:(id)arg1;
 - (_Bool)accessibilityReplaceRange:(struct _NSRange)arg1 withText:(id)arg2;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;

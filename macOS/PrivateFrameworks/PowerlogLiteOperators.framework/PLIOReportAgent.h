@@ -12,6 +12,7 @@
 {
     PLEntryNotificationOperatorComposition *_batteryLevelChangedNotifications;
     PLEntryNotificationOperatorComposition *_screenstateChangedNotifications;
+    PLEntryNotificationOperatorComposition *_displayOffNotification;
     NSMutableDictionary *_sampleChannelsSignificantBattery;
     NSMutableDictionary *_sampleChannelsHalfHour;
     NSMutableDictionary *_sampleChannelsDaily;
@@ -26,6 +27,7 @@
 + (BOOL)hasAOPSupport;
 + (BOOL)hasLisaCapability;
 + (BOOL)hasPlatinumCapability;
++ (BOOL)shouldLogAtAppSwitchTrigger;
 + (id)entryEventBackwardDefinitionAOPpressurepower;
 + (id)entryEventBackwardDefinitionAOPaccelpower;
 + (id)entryEventBackwardDefinitionAOPcompasspower;
@@ -54,6 +56,7 @@
 + (id)entryEventBackwardDefinitionCPUStatsCPUComplexThermalUPOLimiting;
 + (BOOL)shouldLogLostPerformanceReasons;
 + (BOOL)shouldLogThermalUPOLimiting;
++ (BOOL)isOldLostPerfLoggingModel;
 + (id)entryEventBackwardDefinitionCPUStatsEvents;
 + (id)entryEventBackwardDefinitionPRLUsageRStandby;
 + (id)entryEventBackwardDefinitionPRLUsageJOn;
@@ -97,8 +100,6 @@
 + (id)entryEventBackwardDefinitionWifiChipHSICActivity;
 + (id)entryEventBackwardDefinitionAppleEmbeddedPCIELinkStates;
 + (id)entryEventBackwardDefinitionAMCStatsPerfCounters;
-+ (id)entryEventBackwardDefinitionSoCStatsH7PMGRCountersDebug;
-+ (id)entryEventBackwardDefinitionSoCStatsH7PMGRCounters;
 + (id)entryEventBackwardDefinitionSocStatsDvdStats;
 + (id)entryEventBackwardDefinitionCpuStatsCpuFeatures;
 + (id)entryEventBackwardDefinitionPMPPerfDrivers;
@@ -180,6 +181,7 @@
 @property(retain, nonatomic) NSMutableDictionary *sampleChannelsDaily; // @synthesize sampleChannelsDaily=_sampleChannelsDaily;
 @property(retain, nonatomic) NSMutableDictionary *sampleChannelsHalfHour; // @synthesize sampleChannelsHalfHour=_sampleChannelsHalfHour;
 @property(retain, nonatomic) NSMutableDictionary *sampleChannelsSignificantBattery; // @synthesize sampleChannelsSignificantBattery=_sampleChannelsSignificantBattery;
+@property(retain) PLEntryNotificationOperatorComposition *displayOffNotification; // @synthesize displayOffNotification=_displayOffNotification;
 @property(retain) PLEntryNotificationOperatorComposition *screenstateChangedNotifications; // @synthesize screenstateChangedNotifications=_screenstateChangedNotifications;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications; // @synthesize batteryLevelChangedNotifications=_batteryLevelChangedNotifications;
 - (void).cxx_destruct;
@@ -191,7 +193,6 @@
 - (void)logEventBackwardMTRAging;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
 - (void)logEventBackwardAOPPowerState:(id)arg1 withChannels:(id)arg2;
-- (void)logEventBackwardSoCStatsH7PMGRCountersDebug:(id)arg1 withChannels:(id)arg2;
 - (void)logEventBackwardAOPPerformance:(id)arg1 withChannels:(id)arg2;
 - (void)logEventBackwardComplexThermalUPOLimiting:(id)arg1 withChannels:(id)arg2;
 - (id)getBucketName:(int)arg1;
@@ -210,6 +211,7 @@
 - (int)addReportSample:(struct __CFDictionary *)arg1 toEntry:(id)arg2;
 - (void)addReportingGroup:(id)arg1 toEntry:(id)arg2;
 - (id)sampleDeltaForChannelGroup:(id)arg1;
+- (void)initTaskOperatorDependancies;
 - (void)initOperatorDependancies;
 - (BOOL)processNotificationForChannelGroup:(id)arg1;
 - (id)buildScreenStateSet;

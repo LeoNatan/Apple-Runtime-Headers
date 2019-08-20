@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface UISegment : UIImageView <CAAnimationDelegate>
 {
     UIView *_info;
+    UIImageView *_backgroundView;
     UIImageView *_selectionImageView;
     _UISegmentedControlAppearanceStorage *_appearanceStorage;
     _UIFloatingContentView *_floatingContentView;
@@ -36,7 +37,7 @@ __attribute__((visibility("hidden")))
         unsigned int wasSelected:1;
         unsigned int needsBackgroundAndContentViewUpdate:1;
         unsigned int usesAXTextSize:1;
-        unsigned int controlHighlighted:1;
+        unsigned int selectionIndicatorDragged:1;
     } _segmentFlags;
     NSArray *_infoConstraints;
     double _requestedScaleFactor;
@@ -65,7 +66,7 @@ __attribute__((visibility("hidden")))
 - (void)setContentOffset:(struct CGSize)arg1;
 - (id)_segmentLabel;
 - (id)label;
-- (void)setPosition:(unsigned int)arg1;
+@property(nonatomic) unsigned int position;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)_positionInfoWithoutAnimation;
@@ -77,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (double)_barHeight;
 - (struct CGRect)contentRect;
 - (struct CGRect)_contentRectForBounds:(struct CGRect)arg1;
+- (void)removeFromSuperview;
 - (void)animateRemoveForWidth:(double)arg1;
 - (void)animateAdd:(_Bool)arg1;
 - (void)setShowDivider:(_Bool)arg1;
@@ -87,9 +89,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIView *badgeView;
 @property(copy, nonatomic) NSString *badgeValue;
 - (void)tintColorDidChange;
-- (void)_setControlHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setControlHighlighted:(_Bool)arg1;
-- (_Bool)isControlHighlighted;
+- (void)_setSelectionIndicatorDragged:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSelectionIndicatorDragged:(_Bool)arg1;
+- (_Bool)isSelectionIndicatorDragged;
 - (void)_setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (_Bool)isHighlighted;
@@ -113,12 +115,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateHighlight;
 - (void)_updateSelectionToTransform:(struct CATransform3D)arg1 hideSelection:(_Bool)arg2 shouldAnimate:(_Bool)arg3;
 - (void)_insertSelectionView;
-- (id)_selectionOpacityAnimationFromValue:(float)arg1 toValue:(float)arg2;
-- (id)_selectionPopAnimationForKey:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
-- (struct CATransform3D)_highlightTranform;
-- (struct CATransform3D)_hiddenTranform;
-- (struct CGRect)_selectionFrame;
 - (void)_updateBackgroundAndContentViewsIfNeeded;
 - (void)updateDividerViewForChangedSegment:(id)arg1;
 - (void)insertDividerView;
@@ -133,6 +130,8 @@ __attribute__((visibility("hidden")))
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_encodableSubviews;
 - (id)_tintColorArchivingKey;
+- (id)_effectiveBackgroundView;
+- (_Bool)_effectiveDisableShadow;
 - (id)_effectiveBackgroundTintColor;
 - (id)_effectiveSelectedSegmentTintColor;
 - (Class)_segmentedControlClass;

@@ -9,7 +9,7 @@
 #import <HealthDaemon/NSCopying-Protocol.h>
 #import <HealthDaemon/NSSecureCoding-Protocol.h>
 
-@class HDSQLitePredicate, NSString;
+@class NSString;
 
 @interface HDDataDeletionConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
@@ -19,13 +19,11 @@
     _Bool _secureDelete;
     CDUnknownBlockType _recursiveDeleteAuthorizationBlock;
     NSString *_restrictedSourceBundleIdentifier;
-    HDSQLitePredicate *_predicate;
     Class _entityClass;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
-@property(copy, nonatomic) HDSQLitePredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSString *restrictedSourceBundleIdentifier; // @synthesize restrictedSourceBundleIdentifier=_restrictedSourceBundleIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType recursiveDeleteAuthorizationBlock; // @synthesize recursiveDeleteAuthorizationBlock=_recursiveDeleteAuthorizationBlock;
 @property(nonatomic) _Bool secureDelete; // @synthesize secureDelete=_secureDelete;

@@ -32,7 +32,8 @@
 - (void).cxx_destruct;
 - (id)lastModulationDate;
 - (void)saveModulationDate:(id)arg1;
-- (id)loadBudgets;
+- (id)loadBudgetsWithExpectedNames:(id)arg1;
+- (id)validatedStringFromStoredValue:(char *)arg1 withAllowedNames:(id)arg2;
 - (void)saveBudgets:(id)arg1;
 - (void)updateBudget:(id)arg1;
 - (id)init;

@@ -47,8 +47,8 @@ __attribute__((visibility("hidden")))
 - (void)getCachedCertificateDataWithEndpoint:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_prefixIdentifierWithOsprey:(id)arg1;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 endpoint:(id)arg2 keychainStorage:(id)arg3;
-- (id)initWithQueue:(id)arg1 endpoint:(id)arg2;
+- (id)initWithURL:(id)arg1 channel:(id)arg2 keychainStorage:(id)arg3;
+- (id)initWithURL:(id)arg1 channel:(id)arg2;
 
 @end
 

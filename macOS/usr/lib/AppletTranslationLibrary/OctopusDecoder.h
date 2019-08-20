@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (unsigned int)filterHistoryEntry:(id)arg1;
 + (unsigned int)getEnRouteStatus:(id)arg1;
 + (unsigned int)isBlackListed:(id)arg1;
 + (id)getTransitTransactionTypeNameFromCode:(unsigned char)arg1 andServiceProvider:(unsigned short)arg2;

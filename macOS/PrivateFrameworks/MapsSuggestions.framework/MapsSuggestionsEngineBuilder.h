@@ -77,6 +77,7 @@
 - (id)withoutTracker;
 - (id)withLocationUpdater:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

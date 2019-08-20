@@ -16,15 +16,15 @@ __attribute__((visibility("hidden")))
 {
     NSTrackingArea *_mouseTrackingArea;
     UINSMouseEventTranslator *_mouseEventTranslator;
+    BOOL _trackingDragLocally;
 }
 
 - (void).cxx_destruct;
-- (void)forwardDraggingEnded:(id)arg1;
-- (void)forwardPrepareForDragOperation:(id)arg1;
-- (void)forwardDraggingExited:(id)arg1;
-- (void)forwardDraggingUpdated:(id)arg1;
-- (void)forwardDraggingEntered:(id)arg1;
 - (void)_searchWithGoogleFromMenu:(id)arg1;
+- (BOOL)_isSpeaking;
+- (void)stopSpeaking:(id)arg1;
+- (void)startSpeaking:(id)arg1;
+- (void)changeColor:(id)arg1;
 - (void)changeAttributes:(id)arg1;
 - (void)changeFont:(id)arg1;
 - (void)convertToHalfWidth:(id)arg1;
@@ -45,29 +45,19 @@ __attribute__((visibility("hidden")))
 - (void)orderFrontSubstitutionsPanel:(id)arg1;
 - (void)toggleAutomaticSpellingCorrection:(id)arg1;
 - (void)toggleGrammarChecking:(id)arg1;
+- (void)toggleContinuousSpellChecking:(id)arg1;
 - (void)checkSpelling:(id)arg1;
 - (void)showGuessPanel:(id)arg1;
-- (void)toggleSmartInsertDelete:(id)arg1;
-- (void)toggleContinuousSpellChecking:(id)arg1;
-- (void)selectAll:(id)arg1;
-- (void)delete:(id)arg1;
-- (void)pasteAsPlainText:(id)arg1;
-- (void)paste:(id)arg1;
-- (void)copy:(id)arg1;
-- (void)cut:(id)arg1;
-- (void)redo:(id)arg1;
-- (void)undo:(id)arg1;
-- (void)clientSideMenuItemSelected:(id)arg1;
-- (void)_performClientSideActionForSender:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)readSelectionFromPasteboard:(id)arg1;
 - (BOOL)writeSelectionToPasteboard:(id)arg1 types:(id)arg2;
 - (id)validRequestorForSendType:(id)arg1 returnType:(id)arg2;
-- (id)copyConfigurationForSharing;
+- (id)activityItemsConfigurationForSharing;
 - (struct CGRect)accessibilityFocusRingMaskBounds;
 - (unsigned long long)focusRingType;
 - (BOOL)resignFirstResponder;
 - (BOOL)acceptKeyViewHandoff:(BOOL)arg1;
+- (void)_callFirstResponderHandler;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)performClick:(id)arg1;
@@ -86,6 +76,13 @@ __attribute__((visibility("hidden")))
 - (void)_forwardKeyboardAction:(id)arg1 propagateUpHostResponderChain:(BOOL)arg2;
 - (BOOL)_isValidKeyView:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
+- (void)cancelOutstandingMouseButtons;
+- (void)forwardDraggingEnded:(id)arg1;
+- (BOOL)forwardPerformDragOperation:(id)arg1;
+- (void)forwardPrepareForDragOperation:(id)arg1;
+- (void)forwardDraggingExited:(id)arg1;
+- (unsigned long long)forwardDraggingUpdated:(id)arg1;
+- (unsigned long long)forwardDraggingEntered:(id)arg1;
 - (void)quickLookWithEvent:(id)arg1;
 - (void)translateWithEvent:(id)arg1;
 - (void)rotateWithEvent:(id)arg1;
@@ -131,6 +128,9 @@ __attribute__((visibility("hidden")))
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (double)_scaleFactor;
 - (BOOL)_isNSTextInputContextiOSMacClient;
+- (id)_prioritySupplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (id)_responderProxyForAction:(SEL)arg1 sender:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

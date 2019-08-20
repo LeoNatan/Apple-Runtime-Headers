@@ -13,22 +13,25 @@
 @interface SBRingerControl : NSObject <SBRingerHUDViewControllerDelegate>
 {
     _Bool _ringerMuted;
-    float _rawVolume;
+    float _volume;
     SBHUDController *_HUDController;
     SBSoundController *_soundController;
 }
 
+@property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) SBSoundController *soundController; // @synthesize soundController=_soundController;
 @property(readonly, nonatomic) SBHUDController *HUDController; // @synthesize HUDController=_HUDController;
-@property(nonatomic) float rawVolume; // @synthesize rawVolume=_rawVolume;
 - (void).cxx_destruct;
 - (void)ringerHUDViewControllerWantsToBeDismissed:(id)arg1;
-- (void)normalizeVolumeValueIfNeeded;
+- (void)setVolume:(float)arg1 forKeyPress:(_Bool)arg2;
 - (void)_softMuteChanged:(id)arg1;
 - (void)toggleRingerMute;
 - (void)hideRingerHUDIfVisible;
-- (void)activateRingerHUD:(int)arg1;
-- (void)activateRingerHUD;
+- (void)buttonReleased;
+- (void)nudgeUp:(_Bool)arg1;
+- (void)activateRingerHUD:(int)arg1 withInitialVolume:(float)arg2 fromSource:(unsigned long long)arg3;
+- (void)activateRingerHUDFromMuteSwitch:(int)arg1;
+- (void)activateRingerHUDForVolumeChangeWithInitialVolume:(float)arg1;
 - (_Bool)lastSavedRingerMutedState;
 @property(nonatomic, getter=isRingerMuted) _Bool ringerMuted;
 - (id)initWithHUDController:(id)arg1 soundController:(id)arg2;

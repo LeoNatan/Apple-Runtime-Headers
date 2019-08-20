@@ -37,6 +37,7 @@
 - (id)accessibilityLabel;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (void)sizeToFit;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;
 - (void)layout;

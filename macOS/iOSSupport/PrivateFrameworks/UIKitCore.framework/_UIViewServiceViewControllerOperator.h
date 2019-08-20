@@ -87,6 +87,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canShowTextServices;
 - (id)_inputViewsKey;
 - (void)_setNeedsUserInterfaceAppearanceUpdate;
+- (void)setNeedsUpdateOfHomeIndicatorAutoHidden;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (void)setNeedsUpdateOfScreenEdgesDeferringSystemGestures;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
 - (void)setNeedsWhitePointAdaptivityStyleUpdate;
@@ -138,9 +140,9 @@ __attribute__((visibility("hidden")))
 - (id)invalidate;
 - (void)dummyPopoverController:(id)arg1 popoverViewDidSetUseToolbarShine:(BOOL)arg2;
 - (void)dummyPopoverController:(id)arg1 didChangeContentSize:(struct CGSize)arg2 animated:(BOOL)arg3;
-- (void)_completeInteractiveSheetTransitionInHost:(BOOL)arg1 immediately:(BOOL)arg2 duration:(double)arg3 timingCurve:(id)arg4;
-- (void)_updateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
-- (void)_startInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)_completeInteractiveSheetTransitionInHost:(BOOL)arg1 immediately:(BOOL)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)_updateInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
+- (void)_startInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)presentationControllerDidAttemptToDismiss:(id)arg1;
 - (BOOL)isModalInPresentation;
 - (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;

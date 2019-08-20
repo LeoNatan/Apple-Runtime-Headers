@@ -83,9 +83,6 @@
 + (void)removeGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (_Bool)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
-+ (void)_removeGUID:(id)arg1 fromList:(id)arg2;
-+ (void)_storeGUID:(id)arg1 forKey:(id)arg2;
-+ (id)_GUIDsForKey:(id)arg1;
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;

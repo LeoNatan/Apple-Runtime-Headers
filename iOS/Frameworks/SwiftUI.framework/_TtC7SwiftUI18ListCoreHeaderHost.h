@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (void)_setHiddenForReuse:(_Bool)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end

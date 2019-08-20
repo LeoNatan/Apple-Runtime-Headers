@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 - (void).cxx_destruct;
 - (void)endChangingVolume;
-- (void)beginChangingVolume;
-- (void)setClientWithIdentifier:(id)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2;
+- (void)beginChangingVolumeForWindowSceneSessionID:(id)arg1;
+- (void)setClientWithIdentifier:(id)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2 forWindowSceneSessionWithIdentifier:(id)arg3;
 @property(readonly, nonatomic) _Bool currentRouteHasVolumeControl;
 @property(readonly, nonatomic) float effectiveVolumeLimit;
 - (void)setTargetVolume:(float)arg1;

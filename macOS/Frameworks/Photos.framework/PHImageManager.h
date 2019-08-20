@@ -22,7 +22,6 @@
 + (BOOL)_allowVideoAccessForAsset:(id)arg1 options:(id)arg2;
 + (unsigned long long)_nextManagerID;
 + (id)defaultManager;
-+ (struct CGSize)maximumImageSizeFromProperties:(id)arg1;
 @property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;

@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     UIRemoteControlEvent *_remoteControlEvent;
     NSMutableDictionary *_dragEventsByContextAndSessionIDPair;
     _Bool _isSystemApplication;
-    NSMutableSet *_exclusiveTouchWindows;
     double _commitTimeForTouchEvents;
     NSMutableSet *_windowsWithActiveTouchMaps;
     _Bool _hasSeenAnyPencilEvents;

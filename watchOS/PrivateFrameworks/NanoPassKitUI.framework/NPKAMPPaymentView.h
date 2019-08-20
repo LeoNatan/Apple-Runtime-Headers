@@ -18,6 +18,7 @@
     UIStackView *_stackView;
 }
 
++ (id)_stringFromNPKAMPPaymentViewDisplayStyle:(unsigned int)arg1;
 + (float)_appIconImageViewHeightForDisplayStyle:(unsigned int)arg1;
 + (_Bool)_isRightToLeft;
 + (id)_stackViewWithArrangedSubviews:(id)arg1;
@@ -32,9 +33,9 @@
 - (void).cxx_destruct;
 - (float)_heightForAttributedText:(id)arg1 inDisplayStyle:(unsigned int)arg2;
 - (unsigned int)displayStyleFittingHeight:(float)arg1 withAttributedText:(id)arg2;
-- (id)_applyStylingToValueString:(id)arg1 displayStyle:(unsigned int)arg2;
-- (id)_detailParagraphStyleForDisplayStyle:(unsigned int)arg1;
-- (id)_headlineParagraphStyle;
+- (id)_applyStylingToValueString:(id)arg1 displayStyle:(unsigned int)arg2 lineBreakMode:(int)arg3;
+- (id)_detailParagraphStyleForDisplayStyle:(unsigned int)arg1 withLineBreakMode:(int)arg2;
+- (id)_headlineParagraphStyleWithLineBreakMode:(int)arg1;
 - (id)_detailFontForDisplayStyle:(unsigned int)arg1;
 - (id)_headlineFontForDisplayStyle:(unsigned int)arg1;
 - (id)_secondaryTextColor;

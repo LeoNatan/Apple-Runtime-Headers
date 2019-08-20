@@ -16,6 +16,7 @@
 // Remaining properties
 @property(retain, nonatomic) WFAction *action; // @dynamic action;
 @property(nonatomic) long long activePane; // @dynamic activePane;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @dynamic bundleIdentifier;
 @property(copy, nonatomic) NSString *categoryName; // @dynamic categoryName;
 @property(nonatomic, getter=isFocusedOnSearchBar) _Bool focusedOnSearchBar; // @dynamic focusedOnSearchBar;
 @property(retain, nonatomic) NSIndexPath *listPosition; // @dynamic listPosition;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CTCellularPlanProvisioningRequest, CTDeviceIdentifier, CTPlan, CTRemotePlanIdentifier, CTRemotePlanIdentifierList, CTXPCServiceSubscriptionContext, CUMessageSession, NSArray, NSString;
+@class CTCellularPlanProvisioningRequest, CTDeviceIdentifier, CTPlan, CTRemotePlanIdentifier, CTRemotePlanIdentifierList, CTXPCServiceSubscriptionContext, CUMessageSession, NSArray, NSError, NSString;
 
 @protocol CTXPCServiceCellularPlanManagerInterface
 - (void)transferRemotePlan:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
@@ -19,6 +19,7 @@
 - (void)getCurrentIMessageIccidsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)deleteZone:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)deleteTransferPlansForEid:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
+- (NSError *)cancelPlanTransfer:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2;
 - (void)transferPlans:(CTRemotePlanIdentifierList *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completionHandler:(void (^)(_Bool, NSString *, NSDictionary *, NSError *))arg3;
 - (void)transferPlan:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completionHandler:(void (^)(_Bool, NSString *, NSDictionary *, NSError *))arg3;
 - (void)getTransferPlansWithCompletion:(void (^)(CTRemoteDeviceList *, _Bool, NSError *))arg1;

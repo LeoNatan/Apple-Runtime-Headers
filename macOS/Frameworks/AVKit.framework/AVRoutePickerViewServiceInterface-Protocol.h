@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol AVRoutePickerViewServiceInterface
+@property(nonatomic) BOOL prioritizesVideoDevices;
 @property(nonatomic) BOOL useSystemAudioOutputContext;
 @property(copy, nonatomic) NSString *outputContextID;
 - (void)stopDiscoveringAudioRoutes;

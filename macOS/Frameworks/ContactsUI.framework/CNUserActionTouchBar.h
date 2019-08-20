@@ -32,7 +32,6 @@
 }
 
 + (id)displayNameFromContact:(id)arg1 style:(long long)arg2;
-+ (id)contactFromPerson:(id)arg1;
 @property(retain) NSButton *actionTypeTextButton; // @synthesize actionTypeTextButton=_actionTypeTextButton;
 @property(retain) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(retain) NSMutableDictionary *modelsByActionType; // @synthesize modelsByActionType=_modelsByActionType;

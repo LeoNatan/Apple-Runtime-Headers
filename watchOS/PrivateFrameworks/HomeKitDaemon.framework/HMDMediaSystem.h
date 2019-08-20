@@ -72,7 +72,7 @@
 @property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
 - (id)serialize;
 - (void)handleRemovedAccessory:(id)arg1;
-- (void)handleHomeDataFetchedNotification:(id)arg1;
+- (void)handleHomeCloudZoneReadyNotification:(id)arg1;
 - (void)_updateAppData:(id)arg1;
 - (void)_handleAppData:(id)arg1;
 - (void)_updateMediaSystem:(id)arg1;

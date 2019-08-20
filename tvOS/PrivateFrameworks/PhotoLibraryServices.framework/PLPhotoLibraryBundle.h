@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
+@class NSArray, NSError, NSNumber, NSURL, PLAssetsdClient, PLAtomicObject, PLChangeHandlingContainer, PLConstraintsDirector, PLEmailAddressManager, PLIndicatorFileCoordinator, PLLazyObject, PLLibraryServicesManager, PLManagedObjectLookupItemCache, PLPersistentContainer, PLPersonInfoManager, PLPhotoAnalysisServiceClient, PLPhotoKitVariationCache, PLPhotoLibraryBundleController, PLPhotoLibraryPathManager;
 
 @interface PLPhotoLibraryBundle : NSObject
 {
@@ -15,6 +15,7 @@
     NSError *_shutdownReason;
     PLAtomicObject *_atomicPhotoLibraries;
     PLLazyObject *_lazyPersistentContainer;
+    PLLazyObject *_lazyIndicatorFileCoordinator;
     PLLazyObject *_lazyChangeHandlingContainer;
     PLLazyObject *_lazyAssetsdClient;
     PLLazyObject *_lazyLibraryServicesManager;
@@ -54,6 +55,7 @@
 - (void)initializeChangeHandling;
 - (id)newChangeHandlingContainer;
 @property(readonly) PLChangeHandlingContainer *changeHandlingContainer;
+@property(readonly) PLIndicatorFileCoordinator *indicatorFileCoordinator;
 @property(readonly) PLEmailAddressManager *emailAddressManager;
 @property(readonly) PLPersonInfoManager *personInfoManager;
 @property(readonly) PLAssetsdClient *assetsdClient;
@@ -61,6 +63,7 @@
 @property(readonly) PLManagedObjectLookupItemCache *uniformTypeIdentiferCache;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
 @property(readonly) PLPersistentContainer *persistentContainer;
+@property(readonly, copy) NSError *shutdownReason;
 - (id)description;
 - (id)initWithLibraryURL:(id)arg1 bundleController:(id)arg2;
 - (_Bool)registerPLPhotoLibrary:(id)arg1;

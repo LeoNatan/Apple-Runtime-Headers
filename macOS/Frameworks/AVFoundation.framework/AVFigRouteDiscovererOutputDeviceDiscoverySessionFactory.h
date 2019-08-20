@@ -16,7 +16,6 @@
     id <AVFigRouteDiscovererFactory> _routeDiscovererFactory;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) id <AVFigRouteDiscovererFactory> routeDiscovererFactory; // @synthesize routeDiscovererFactory=_routeDiscovererFactory;
 - (id)outputDeviceDiscoverySessionOfClass:(Class)arg1 withDeviceFeatures:(unsigned long long)arg2;
 - (void)dealloc;

@@ -10,7 +10,7 @@
 #import <EmailFoundation/EFPromisePrivate-Protocol.h>
 
 @class NSConditionLock, NSError, NSMutableArray, NSString;
-@protocol EFFutureDelegate;
+@protocol EFFutureDelegate, EFObserver;
 
 @interface EFFuture : NSObject <EFPromisePrivate, EFFuture>
 {
@@ -53,6 +53,8 @@
 - (void)onScheduler:(id)arg1 addSuccessBlock:(CDUnknownBlockType)arg2;
 - (void)addSuccessBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_nts_isFinished;
+@property(readonly) id <EFObserver> resultsObserverAdapter;
+@property(readonly) id <EFObserver> firstResultObserverAdapter;
 @property(readonly) CDUnknownBlockType errorOnlyCompletionHandlerAdapter;
 @property(readonly) CDUnknownBlockType boolErrorCompletionHandlerAdapter;
 @property(readonly) CDUnknownBlockType completionHandlerAdapter;

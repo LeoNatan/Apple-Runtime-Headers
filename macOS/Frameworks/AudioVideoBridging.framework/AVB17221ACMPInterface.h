@@ -12,6 +12,7 @@
 @interface AVB17221ACMPInterface : AVB1722ControlInterface
 {
     NSMutableDictionary *_commandHandlers;
+    struct os_unfair_lock_s _commandHandlersLock;
     unsigned short _nextSequenceID;
     BOOL _monitorMode;
     id <AVB17221ACMPClient> _monitorModeDelegate;

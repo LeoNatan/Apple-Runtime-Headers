@@ -17,6 +17,7 @@
     unsigned char _pathIndex;
     unsigned char _pathIdentity;
     unsigned char _pathProximity;
+    _Bool _shouldSetTouchFlag;
     unsigned int _pathWindowContextID;
     float _pathPressure;
     float _pathMajorRadius;
@@ -40,6 +41,7 @@
 + (id)representationWithPathInfo:(CDStruct_723b0d29 *)arg1;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) void *pathWindow; // @synthesize pathWindow=_pathWindow;
+@property(nonatomic) _Bool shouldSetTouchFlag; // @synthesize shouldSetTouchFlag=_shouldSetTouchFlag;
 @property(nonatomic) unsigned int didUpdateMask; // @synthesize didUpdateMask=_didUpdateMask;
 @property(nonatomic) unsigned int willUpdateMask; // @synthesize willUpdateMask=_willUpdateMask;
 @property(nonatomic) float barrelPressure; // @synthesize barrelPressure=_barrelPressure;

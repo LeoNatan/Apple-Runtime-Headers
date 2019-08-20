@@ -7,16 +7,18 @@
 #import <HomeKitBackingStore/HMBCloudID.h>
 
 #import <HomeKitBackingStore/HMBLocalZoneID-Protocol.h>
+#import <HomeKitBackingStore/HMBModelObjectStorage-Protocol.h>
 
 @class CKRecordZoneID, NSArray, NSData, NSString;
 
-@interface HMBCloudZoneID : HMBCloudID <HMBLocalZoneID>
+@interface HMBCloudZoneID : HMBCloudID <HMBModelObjectStorage, HMBLocalZoneID>
 {
     NSData *_token;
     CKRecordZoneID *_zoneID;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned long long)arg2 error:(id *)arg3;
 @property(readonly, copy) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
 - (void).cxx_destruct;
@@ -28,6 +30,7 @@
 @property(readonly, nonatomic) NSArray *labels;
 - (id)initWithContainerID:(id)arg1 scope:(long long)arg2 zoneID:(id)arg3;
 - (id)initWithContainerID:(id)arg1 scope:(long long)arg2 zoneID:(id)arg3 name:(id)arg4 modelID:(id)arg5;
+- (id)hmbEncodeForStorageLocation:(unsigned long long)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

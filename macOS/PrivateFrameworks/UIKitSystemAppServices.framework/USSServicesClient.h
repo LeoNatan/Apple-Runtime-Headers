@@ -8,16 +8,14 @@
 
 #import <UIKitSystemAppServices/USSServerToClientProtocol-Protocol.h>
 
-@class NSXPCConnection, USSDaemonServicesClient;
+@class NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 @interface USSServicesClient : NSObject <USSServerToClientProtocol>
 {
     NSXPCConnection *_conn;
     CDUnknownBlockType _sceneUpdateNotificationHandler;
-    USSDaemonServicesClient *_daemonServicesClient;
     NSObject<OS_dispatch_queue> *_disconnectionQueue;
-    CDUnknownBlockType _disconnectionHandler;
     NSXPCConnection *_connection;
     struct CGSize _defaultSceneSize;
 }
@@ -42,6 +40,7 @@
 - (void)submitEnableApplicationAccessibilityRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)submitSceneActiveRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)submitSceneResizeRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)forgetPersistentScenesWithIdentifiers:(id)arg1;
 - (void)createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)connectWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connect;

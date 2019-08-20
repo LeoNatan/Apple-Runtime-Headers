@@ -17,14 +17,12 @@
     NSString *_altDSID;
     NSNumber *_DSID;
     NSUUID *_homeIdentifier;
-    NSUUID *_homeUserIdentifier;
     NSString *_username;
     ACAccount *_authenticatedAccount;
 }
 
 @property(retain) ACAccount *authenticatedAccount; // @synthesize authenticatedAccount=_authenticatedAccount;
 @property(retain) NSString *username; // @synthesize username=_username;
-@property(retain) NSUUID *homeUserIdentifier; // @synthesize homeUserIdentifier=_homeUserIdentifier;
 @property(retain) NSUUID *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
 @property(retain) NSNumber *DSID; // @synthesize DSID=_DSID;
 @property(retain) NSString *altDSID; // @synthesize altDSID=_altDSID;

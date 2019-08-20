@@ -16,6 +16,7 @@
     unsigned int _sharedRegionAlignmentSize;
     unsigned long long _phys_footprint;
     unsigned long long _phys_footprint_peak;
+    unsigned long long _ledgers[1];
     NSMutableArray *_images;
     NSMutableDictionary *_ownedVmObjects;
     unsigned long long _cachedDispositionAddress;
@@ -27,11 +28,13 @@
 - (struct NSDictionary *)auxData;
 - (BOOL)_isAlive;
 - (void)_gatherImageData;
+- (void)_gatherLedgers;
 - (void)_gatherPhysFootprint;
 - (void)_gatherIdleExitStatus;
 - (void)_setIdleExitStatusFromDirtyFlags:(unsigned int)arg1;
 - (BOOL)_setSharedRegionFromPlatform:(long long)arg1;
 - (BOOL)_populateTask;
+- (void)_addErrnoWarningWithDescription:(id)arg1;
 - (void)_processMachVMError:(int)arg1 expectingErrorOnExit:(int)arg2;
 - (void)_gatherMemoryData;
 - (void)_addSubrangesForRegion:(id)arg1 purgeState:(int)arg2;

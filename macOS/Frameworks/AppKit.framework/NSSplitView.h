@@ -72,7 +72,6 @@
 - (BOOL)_nsib_splitViewAlwaysLaysOutAccordingToAlignmentRects;
 - (void)_nsib_setSplitViewAlwaysLaysOutAccordingToAlignmentRects:(BOOL)arg1;
 - (void)_windowChangedKeyState;
-- (void)willRemoveSubview:(id)arg1;
 - (void)_removeSubview:(id)arg1;
 - (BOOL)_inDividerLiveResize;
 - (BOOL)_inWindowLiveResize;
@@ -117,8 +116,6 @@
 - (void)mouseDown:(id)arg1;
 - (struct CGRect)_opaqueRectForWindowMoveWhenInTitlebar;
 - (id)_cursorOfDividerAtIndex:(unsigned long long)arg1 position:(double)arg2 dragLimits:(CDStruct_0a28aba5)arg3;
-- (BOOL)isOpaque;
-- (BOOL)_allSubviewsAreOpaque;
 - (BOOL)isFlipped;
 - (id)_hitTestToBlockWindowResizing:(struct CGPoint)arg1 forResizeDirection:(long long)arg2;
 - (id)hitTest:(struct CGPoint)arg1;
@@ -143,7 +140,6 @@
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)sortSubviewsUsingFunction:(CDUnknownFunctionPointerType)arg1 context:(void *)arg2;
 - (void)setSubviews:(id)arg1;
-- (void)didAddSubview:(id)arg1;
 - (void)_addSubview:(id)arg1;
 - (void)addSubview:(id)arg1;
 - (void)_sortSubviews;

@@ -195,6 +195,7 @@
 - (void)lastScrollDirectionDidChange;
 - (void)screenScaleDidChange;
 - (void)safeAreaInsetsDidChange;
+- (void)containingScrollViewDidScroll:(struct CGPoint)arg1;
 - (void)visibleRectDidChange;
 - (void)referenceOptionsDidChange;
 - (void)referenceSizeDidChange;
@@ -266,6 +267,7 @@
 - (id)createCuratedLibraryLayoutZoomLevelChangeAnimationFromZoomLevel:(long long)arg1 toZoomLevel:(long long)arg2 withContext:(long long)arg3;
 - (id)createCuratedLibraryLayoutAnimationIfNeededWithContext:(long long)arg1 userData:(id)arg2;
 - (id)createTransitionWithAnimations:(id)arg1;
+@property(readonly, nonatomic) _Bool shouldUpdateDecorationMediaTargetSizes;
 @property(readonly, nonatomic) _Bool shouldInvalidateDecorationForModifiedSprites;
 - (_Bool)isSpriteIndex:(unsigned int)arg1 decoratingSpriteWithIndex:(out unsigned int *)arg2;
 - (void)_invalidateDecorationForSpriteRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;

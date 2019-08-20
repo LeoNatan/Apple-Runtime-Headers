@@ -141,6 +141,7 @@
 @property(readonly, nonatomic) _Bool supportsNonPrivateMSAATextures;
 @property(readonly, nonatomic) _Bool supportsNonPrivateDepthStencilTextures;
 @property(readonly, nonatomic) _Bool supportsLimitedYUVFormats;
+@property(readonly, nonatomic) _Bool supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) _Bool supportsPlacementHeaps;
 @property(readonly, nonatomic) _Bool supports32bpcMSAATextures;
 @property(readonly, nonatomic) _Bool supportsSamplerAddressModeClampToHalfBorder;
@@ -247,7 +248,6 @@
 - (unsigned int)minLinearTextureAlignmentForPixelFormat:(unsigned int)arg1;
 - (_Bool)supportsSampleCount:(unsigned int)arg1;
 - (_Bool)supportsTextureSampleCount:(unsigned int)arg1;
-- (_Bool)supportsVersion:(int)arg1;
 - (_Bool)supportsFamily:(int)arg1;
 - (_Bool)supportsFeatureSet:(unsigned int)arg1;
 - (_Bool)deviceOrFeatureProfileSupportsFeatureSet:(unsigned int)arg1;

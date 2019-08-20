@@ -11,6 +11,7 @@
 @protocol FIFinderViewDelegate <NSObject>
 
 @optional
+- (BOOL)finderViewSelectedURLsCanIncludeItemsNeedingDownload:(FIFinderView *)arg1;
 - (void)finderView:(FIFinderView *)arg1 hideExtension:(BOOL)arg2;
 - (void)finderViewCollapseSavePanel:(FIFinderView *)arg1;
 - (NSSet *)finderViewQuerySearchUTIs:(FIFinderView *)arg1;

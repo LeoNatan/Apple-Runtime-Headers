@@ -16,7 +16,6 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)logMsgEventForTelemetricWithEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;
 - (id)bookedTableWithBookedUsingMaps:(BOOL)arg1 cancelled:(BOOL)arg2 viewedInProactiveTray:(BOOL)arg3 tappedProactiveTrayItem:(BOOL)arg4 viewedInPlacecard:(BOOL)arg5 viewedDetailsInPlacecard:(BOOL)arg6 isAsync:(BOOL)arg7 bookedAppId:(id)arg8 muid:(unsigned long long)arg9 called:(BOOL)arg10 routed:(BOOL)arg11 tappedChangeReservation:(BOOL)arg12 tappedCancelReservation:(BOOL)arg13;
 - (id)logMsgEventForTablebookedSessionWithSessionID:(id)arg1 bookedTables:(id)arg2;
 - (id)logMsgEventForTablebookingWithSessionID:(id)arg1 endState:(int)arg2 endView:(int)arg3 bookTableAppId:(id)arg4 muid:(unsigned long long)arg5 blurredReservationTimestamp:(long long)arg6 blurredBookingTimestamp:(long long)arg7 durationOfSessionInSeconds:(double)arg8 installNeeded:(BOOL)arg9 installNeededTappedAppId:(id)arg10 installCompleted:(BOOL)arg11 tableSize:(unsigned int)arg12 addedSpecialRequest:(BOOL)arg13 swipedAvailableTimes:(BOOL)arg14 tappedDatePicker:(BOOL)arg15 errorMessages:(id)arg16;

@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingUnread;
 + (id)keyPathsForValuesAffectingHasDefaultSiteIcon;
 + (id)keyPathsForValuesAffectingIcon;
-@property(retain, nonatomic) NSImage *lastRetrievedFallbackIcon; // @synthesize lastRetrievedFallbackIcon=_lastRetrievedFallbackIcon;
+@property(retain) NSImage *lastRetrievedFallbackIcon; // @synthesize lastRetrievedFallbackIcon=_lastRetrievedFallbackIcon;
 @property(nonatomic) BOOL hasDefaultSiteIcon; // @synthesize hasDefaultSiteIcon=_hasDefaultSiteIcon;
 @property(readonly, nonatomic) WebBookmarkLeaf *bookmark; // @synthesize bookmark=_bookmark;
 @property(nonatomic) BOOL isReaderAvailable; // @synthesize isReaderAvailable=_isReaderAvailable;

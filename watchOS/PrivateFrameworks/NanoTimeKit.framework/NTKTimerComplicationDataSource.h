@@ -12,6 +12,7 @@
 {
     struct NSNumber *_timerToken;
     NTKTimerTimelineEntry *_currentTimerEntry;
+    _Bool _listeningForNotifications;
     MTTimerManager *_timerManager;
 }
 

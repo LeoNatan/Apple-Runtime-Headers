@@ -14,6 +14,7 @@
 @property(readonly, nonatomic) _Bool itemSourcesSupportMomentShareLinkCreation;
 @property(readonly, nonatomic) _Bool momentSharePublishAttempted;
 @property(readonly, copy, nonatomic) NSOrderedSet *assets;
+@property(nonatomic) _Bool shouldUseMomentShareLinkInMessagesIfThresholdMet;
 @property(nonatomic) unsigned long long preferredPreparationType;
 @property(readonly, copy, nonatomic) NSOrderedSet *assetItemSources;
 @property(nonatomic) __weak UIActivityViewController<PXActivityViewController> *activityViewController;

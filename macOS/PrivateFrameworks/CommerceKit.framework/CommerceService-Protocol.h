@@ -20,7 +20,7 @@
 - (void)setTouchIDState:(long long)arg1 forAccount:(CKStoreAccount *)arg2 reply:(void (^)(BOOL, NSError *))arg3;
 - (void)touchIDStateForAccount:(CKStoreAccount *)arg1 reply:(void (^)(long long))arg2;
 - (void)setGlobalTouchIDState:(long long)arg1 reply:(void (^)(BOOL, NSError *))arg2;
-- (void)globalTouchIDStateWithReply:(void (^)(long long, NSDate *))arg1;
+- (void)globalTouchIDStateWithReply:(void (^)(long long))arg1;
 - (void)finishDownloadsWithIdentifiers:(NSArray *)arg1 onQueueWithIdentifier:(NSString *)arg2;
 - (void)cancelDownloadsWithIdentifiers:(NSArray *)arg1 onQueueWithIdentifier:(NSString *)arg2;
 - (void)resumeDownloadsWithIdentifiers:(NSArray *)arg1 onQueueWithIdentifier:(NSString *)arg2;

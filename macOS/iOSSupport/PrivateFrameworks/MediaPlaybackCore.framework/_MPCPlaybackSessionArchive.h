@@ -26,6 +26,7 @@
 - (unsigned long long)hash;
 - (BOOL)writeWithError:(id *)arg1;
 - (BOOL)saveWithError:(id *)arg1;
+- (id)description;
 - (id)initWithURL:(id)arg1 identifier:(id)arg2;
 - (id)initWithURL:(id)arg1;
 

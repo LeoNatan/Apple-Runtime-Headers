@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)_createContainerView;
 - (void)_createFloatingContentView;
 - (void)setLockupViewState:(unsigned long long)arg1 withAnimationCoordinator:(id)arg2;
-- (struct NSDirectionalEdgeInsets)focusSizeIncrease;
+@property(nonatomic) struct NSDirectionalEdgeInsets focusSizeIncrease;
 - (id)effectiveContentView;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

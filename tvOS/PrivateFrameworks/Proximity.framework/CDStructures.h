@@ -36,8 +36,6 @@ struct NeighborMeasurements {
     _Bool _field10;
 };
 
-struct SharingImportanceManager;
-
 struct SharingImportanceMeasurements {
     struct vector<NeighborMeasurements, std::__1::allocator<NeighborMeasurements>> userSharingInput;
 };
@@ -79,12 +77,6 @@ struct deque<BtProxData, std::__1::allocator<BtProxData>> {
     struct __compressed_pair<unsigned long, std::__1::allocator<BtProxData>> {
         unsigned long long __value_;
     } __size_;
-};
-
-struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> {
-    struct __compressed_pair<SharingImportanceManager *, std::__1::default_delete<SharingImportanceManager>> {
-        struct SharingImportanceManager *__value_;
-    } __ptr_;
 };
 
 struct unique_ptr<SingleThresholdProx::Estimator, std::__1::default_delete<SingleThresholdProx::Estimator>> {

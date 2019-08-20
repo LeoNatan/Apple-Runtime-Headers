@@ -17,7 +17,7 @@
 @property(retain, nonatomic) NewMSPQuery *itemQuery; // @synthesize itemQuery=_itemQuery;
 @property(retain, nonatomic) MSPFavoritesContainer *itemContainer; // @synthesize itemContainer=_itemContainer;
 - (void).cxx_destruct;
-- (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
+- (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)removeObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeObject:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addOrUpdateObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;

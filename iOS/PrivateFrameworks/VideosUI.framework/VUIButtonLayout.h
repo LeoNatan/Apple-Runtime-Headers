@@ -30,9 +30,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)_configureRoundButton;
-- (void)_configureTextualButton;
+- (void)_configureBarButtonItem;
 - (void)_configureImageButton;
 - (void)_configureProductSecondaryButton;
+- (void)_configureTextualButton;
 - (void)_configurePrimaryButton;
 - (id)initWithType:(unsigned long long)arg1 titleStyle:(unsigned long long)arg2;
 - (id)initWithType:(unsigned long long)arg1;

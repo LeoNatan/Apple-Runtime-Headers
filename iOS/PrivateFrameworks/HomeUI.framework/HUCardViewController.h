@@ -19,6 +19,7 @@
     _Bool _hideControls;
     _Bool _hideSettings;
     _Bool _disablePullToUnlockSettings;
+    _Bool _settingsUnlocked;
     _Bool _reachable;
     HUQuickControlContainerViewController *_quickControlViewController;
     UIViewController *_settingsViewController;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) UILayoutGuide *quickControlLayoutGuide; // @synthesize quickControlLayoutGuide=_quickControlLayoutGuide;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
+@property(nonatomic) _Bool settingsUnlocked; // @synthesize settingsUnlocked=_settingsUnlocked;
 @property(retain, nonatomic) HUQuickControlViewControllerCoordinator *viewControllerCoordinator; // @synthesize viewControllerCoordinator=_viewControllerCoordinator;
 @property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

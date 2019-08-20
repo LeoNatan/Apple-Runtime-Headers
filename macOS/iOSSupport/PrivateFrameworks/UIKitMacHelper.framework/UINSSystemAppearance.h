@@ -31,8 +31,6 @@ __attribute__((visibility("hidden")))
     id _encodedDarkSelectionMaterialTintColor;
     id _encodedKeyboardFocusIndicatorColor;
     id _encodedDarkKeyboardFocusIndicatorColor;
-    id _encodedControlAccentColor;
-    id _encodedDarkControlAccentColor;
 }
 
 @property(readonly, nonatomic) BOOL accessibilityIsZoomEnabled; // @synthesize accessibilityIsZoomEnabled=_accessibilityIsZoomEnabled;
@@ -45,8 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL accessibilityDisplayShouldReduceMotion; // @synthesize accessibilityDisplayShouldReduceMotion=_accessibilityDisplayShouldReduceMotion;
 @property(readonly, nonatomic) BOOL accessibilityDisplayShouldIncreaseContrast; // @synthesize accessibilityDisplayShouldIncreaseContrast=_accessibilityDisplayShouldIncreaseContrast;
 @property(readonly, nonatomic) BOOL hasDarkWindowChrome; // @synthesize hasDarkWindowChrome=_hasDarkWindowChrome;
-@property(readonly, nonatomic) id encodedDarkControlAccentColor; // @synthesize encodedDarkControlAccentColor=_encodedDarkControlAccentColor;
-@property(readonly, nonatomic) id encodedControlAccentColor; // @synthesize encodedControlAccentColor=_encodedControlAccentColor;
 @property(readonly, nonatomic) id encodedDarkKeyboardFocusIndicatorColor; // @synthesize encodedDarkKeyboardFocusIndicatorColor=_encodedDarkKeyboardFocusIndicatorColor;
 @property(readonly, nonatomic) id encodedKeyboardFocusIndicatorColor; // @synthesize encodedKeyboardFocusIndicatorColor=_encodedKeyboardFocusIndicatorColor;
 @property(readonly, nonatomic) id encodedDarkSelectionMaterialTintColor; // @synthesize encodedDarkSelectionMaterialTintColor=_encodedDarkSelectionMaterialTintColor;

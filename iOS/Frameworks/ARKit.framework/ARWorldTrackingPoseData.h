@@ -9,13 +9,14 @@
 #import <ARKit/ARResultData-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARWorldTrackingState, NSDictionary, NSString;
+@class ARVideoFormat, ARWorldTrackingState, NSDictionary, NSString;
 
 @interface ARWorldTrackingPoseData : NSObject <ARResultData, NSSecureCoding>
 {
     double _timestamp;
     ARWorldTrackingState *_worldTrackingState;
     NSDictionary *_vioStateDetails;
+    ARVideoFormat *_currentlyActiveVideoFormat;
     long long _worldMappingStatus;
     // Error parsing type: {?="columns"[4]}, name: _visionCameraTransform
     // Error parsing type: {?="columns"[4]}, name: _cameraTransform
@@ -26,6 +27,7 @@
 // Property attributes: T{?=[4]},N,V_cameraTransform
 
 @property(nonatomic) long long worldMappingStatus; // @synthesize worldMappingStatus=_worldMappingStatus;
+@property(retain, nonatomic) ARVideoFormat *currentlyActiveVideoFormat; // @synthesize currentlyActiveVideoFormat=_currentlyActiveVideoFormat;
 @property(copy, nonatomic) NSDictionary *vioStateDetails; // @synthesize vioStateDetails=_vioStateDetails;
 @property(copy, nonatomic) ARWorldTrackingState *worldTrackingState; // @synthesize worldTrackingState=_worldTrackingState;
 // Error parsing type for property visionCameraTransform:

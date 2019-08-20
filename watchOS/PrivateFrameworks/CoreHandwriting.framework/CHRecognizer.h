@@ -112,6 +112,8 @@
 - (void)_adjustCandidatesForRomanPunctuation:(vector_06f11b7b *)arg1 segmentDrawing:(id)arg2;
 - (void)_penalizeCandidatesForRomanPunctuation:(vector_06f11b7b *)arg1 punctuationStrokeCount:(int)arg2;
 - (void)_adjustCandidatesForChinesePunctuation:(vector_06f11b7b *)arg1 segmentDrawing:(id)arg2 completeDrawing:(id)arg3;
+- (void)_refineChineseCharacterCandidates:(vector_06f11b7b *)arg1 drawing:(id)arg2;
+- (void)_refineCandidates:(vector_06f11b7b *)arg1 withAllowedCandidateCodes:(const vector_f672cb0f *)arg2;
 - (id)recognitionResultsForDrawing:(id)arg1 options:(id)arg2;
 - (id)_legacyTextRecognitionResultsForDrawing:(id)arg1 options:(id)arg2 shouldCancel:(CDUnknownBlockType)arg3;
 - (id)recognitionResultsForDrawing:(id)arg1 options:(id)arg2 shouldCancel:(CDUnknownBlockType)arg3;
@@ -146,9 +148,9 @@
 - (id)tokenizedTextResultForRomanSingleWordLatticePaths:(const vector_7a3f6ffc *)arg1 history:(id)arg2 activeHistoryRange:(struct _NSRange)arg3 startNode:(int)arg4 segmentGroup:(id)arg5;
 - (id)_addAlternativeCandidatesForTokenizedResult:(id)arg1;
 - (id)_spellCheckerCorrectionsForToken:(id)arg1;
-- (id)_lexiconCorrectionsForToken:(id)arg1 withLexicon:(struct _LXLexicon *)arg2 textReplacements:(id)arg3 consumableStrokesSet:(id)arg4 minimumTokenScore:(double)arg5 activeHistoryRange:(struct _NSRange)arg6 outBestTokenScore:(double *)arg7;
+- (id)_lexiconCorrectionsForToken:(id)arg1 withLexicon:(struct _LXLexicon *)arg2 textReplacements:(id)arg3 consumableStrokesSet:(id)arg4 minimumTokenScore:(double)arg5 activeHistoryRange:(struct _NSRange)arg6 outBestTokenScore:(double *)arg7 shouldCapitalizeWord:(_Bool)arg8;
 - (id)tokenizedTextResultForChineseLatticePaths:(const vector_7a3f6ffc *)arg1 maximumPathCount:(unsigned int)arg2 network:(struct Network *)arg3 mecabraIDs:(vector_12bd641b *)arg4 startNode:(int)arg5 endNode:(int)arg6 segmentGroup:(id)arg7;
-- (id)tokenizedTextResultForRomanMultiWordsLatticePaths:(const vector_7a3f6ffc *)arg1 maximumResultCount:(unsigned int)arg2 activeHistoryRange:(struct _NSRange)arg3 startNode:(int)arg4 segmentGroup:(id)arg5 precedingSpaceBehavior:(int)arg6;
+- (id)tokenizedTextResultForRomanMultiWordsLatticePaths:(const vector_7a3f6ffc *)arg1 maximumResultCount:(unsigned int)arg2 history:(id)arg3 activeHistoryRange:(struct _NSRange)arg4 startNode:(int)arg5 segmentGroup:(id)arg6 precedingSpaceBehavior:(int)arg7;
 - (id)tokenizedTextResultForRomanNoSpaceLatticePaths:(const vector_7a3f6ffc *)arg1 maximumResultCount:(unsigned int)arg2 activeHistoryRange:(struct _NSRange)arg3 precedingSpaceBehavior:(int)arg4 totalStrokeCount:(int)arg5 totalSubstrokeCount:(int)arg6;
 - (id)tokenizedTextResultForRomanLatticePaths:(const vector_7a3f6ffc *)arg1 history:(id)arg2 activeHistoryRange:(struct _NSRange)arg3 isMultiWordsPath:(_Bool)arg4 isNoSpacePath:(_Bool)arg5 maximumPathCount:(unsigned int)arg6 startNode:(int)arg7 segmentGroup:(id)arg8 precedingSpaceBehavior:(int)arg9 totalStrokeCount:(int)arg10 totalSubstrokeCount:(int)arg11;
 - (_Bool)_shouldCapitalizeGivenHistory:(id)arg1;

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class MFFileCompressionQueue, NSLock, NSMutableDictionary;
+#import <Message/EFLoggable-Protocol.h>
+
+@class MFFileCompressionQueue, NSLock, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MFAttachmentManager : NSObject
+@interface MFAttachmentManager : NSObject <EFLoggable>
 {
     NSObject<OS_dispatch_queue> *_arrayAccessQueue;
     NSMutableDictionary *_providers;
@@ -23,6 +25,7 @@
 + (id)supportedDocumentUTIs;
 + (id)defaultManager;
 + (id)allManagers;
++ (id)log;
 - (void).cxx_destruct;
 - (void)clearMetadataForAttachment:(id)arg1;
 - (id)metadataForAttachment:(id)arg1 forKey:(id)arg2;
@@ -35,11 +38,11 @@
 - (_Bool)updateAttachment:(id)arg1 withNewData:(id)arg2;
 - (void)loadAttachmentURL:(id)arg1 forContextID:(id)arg2;
 - (id)attachmentForData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4 context:(id)arg5;
-- (void)cancelFetchForAttachment:(id)arg1;
+- (void)_cancelFetchForAttachment:(id)arg1;
 - (void)_fetchCompletedForAttachment:(id)arg1 error:(id)arg2;
 - (void)fetchDataSynchronouslyForAttachment:(id)arg1;
 - (id)fetchDataForAttachment:(id)arg1;
-- (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 request:(id)arg3 progress:(id)arg4 syncLock:(id *)arg5;
+- (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 request:(id)arg3 syncLock:(id *)arg4;
 - (id)attachmentsForContext:(id)arg1;
 - (id)attachmentForContentID:(id)arg1 preferredSchemes:(id)arg2;
 - (id)attachmentForContentID:(id)arg1;
@@ -57,6 +60,12 @@
 - (void)removeProviderForBaseURL:(id)arg1;
 - (void)addProvider:(id)arg1 forBaseURL:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -10,7 +10,7 @@
 #import <PhotosUICore/PXGMutableAccessibilityContentInfo-Protocol.h>
 #import <PhotosUICore/PXReusableObject-Protocol.h>
 
-@class NSArray, NSObject, NSString, PXScrollViewController;
+@class NSArray, NSMutableArray, NSObject, NSString, PXScrollViewController;
 @protocol PXAccessibilityView, PXDisplayAsset, PXGAccessibilityContentInfoDelegate;
 
 @interface PXGReusableAccessibilityContentInfo : NSAccessibilityElement <PXGMutableAccessibilityContentInfo, PXGAccessibilityContentInfo, PXReusableObject>
@@ -27,22 +27,21 @@
     id <PXDisplayAsset> _asset;
     NSObject<PXAccessibilityView> *_view;
     NSArray *_selectedContent;
-    NSArray *_px_accessibilityChildren;
     PXScrollViewController *_scrollViewController;
     id <PXGAccessibilityContentInfoDelegate> _accessibilityDelegate;
+    NSMutableArray *_mutableChildren;
     struct CGRect _frame;
 }
 
-+ (BOOL)_selectedInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
-+ (id)_assetInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
++ (void)_assetSelectedInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2 outAsset:(out id *)arg3 outSelected:(out char *)arg4;
 + (id)_imageNameInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
 + (id)_titleSubtitleInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
 + (id)_textInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
+@property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(nonatomic) BOOL alternateUIVisible; // @synthesize alternateUIVisible=_alternateUIVisible;
 @property(nonatomic) BOOL isPerformingChanges; // @synthesize isPerformingChanges=_isPerformingChanges;
 @property(nonatomic) __weak id <PXGAccessibilityContentInfoDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
-@property(retain, nonatomic) NSArray *px_accessibilityChildren; // @synthesize px_accessibilityChildren=_px_accessibilityChildren;
 @property(copy, nonatomic) NSArray *selectedContent; // @synthesize selectedContent=_selectedContent;
 @property(nonatomic) BOOL visible; // @synthesize visible=_visible;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
@@ -86,6 +85,7 @@
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (BOOL)_fillForKind:(long long)arg1 withLayout:(id)arg2 spriteIndex:(unsigned int)arg3;
 - (void)_performClassSwizzlingForContentKind:(long long)arg1;
+@property(readonly, nonatomic) NSArray *px_accessibilityChildren;
 - (id)init;
 
 // Remaining properties

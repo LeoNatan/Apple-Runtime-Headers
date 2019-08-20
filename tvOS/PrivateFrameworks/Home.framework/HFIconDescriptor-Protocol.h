@@ -12,7 +12,6 @@
 
 @protocol HFIconDescriptor <NSObject, NAEquatable>
 @property(readonly, nonatomic) _Bool shouldForceLTR;
-@property(readonly, nonatomic) NSString *imageIdentifier;
 @property(readonly, nonatomic) NSString *identifier;
 
 @optional

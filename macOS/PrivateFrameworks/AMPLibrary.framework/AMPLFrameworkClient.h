@@ -13,10 +13,13 @@
 @interface AMPLFrameworkClient : AMPLClient <AMPLClientProtocol>
 {
     NSString *_deviceID;
+    NSString *_libraryFilePath;
 }
 
+@property(retain, nonatomic) NSString *libraryFilePath; // @synthesize libraryFilePath=_libraryFilePath;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 - (void).cxx_destruct;
+- (void)synchronousMigratedMediaFolderBookmarkWithReply:(CDUnknownBlockType)arg1;
 - (void)synchronousAppHasMigrated:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousMigratedPodcastSettingsWithReply:(CDUnknownBlockType)arg1;
 - (void)synchronousMigratedPodcastStationsWithReply:(CDUnknownBlockType)arg1;
@@ -41,7 +44,9 @@
 - (BOOL)synchronousOpenMediaDomains:(id *)arg1 withResponseDict:(id *)arg2;
 - (BOOL)synchronousOpenMediaDomains:(id *)arg1;
 - (id)initWithClientInfo:(id)arg1 withDeviceId:(id)arg2;
+- (id)initWithClientInfo:(id)arg1 withFilePath:(id)arg2 withMediaDomains:(unsigned long long)arg3;
 - (id)initWithClientInfo:(id)arg1 withMediaDomains:(unsigned long long)arg2 error:(id *)arg3;
+- (id)registrationNameForClientName:(id)arg1;
 - (BOOL)handleReconnectionToLibrary:(id)arg1;
 - (BOOL)handleSynchronousOpenMediaDomains:(id)arg1 error:(id *)arg2 withResponseDict:(id *)arg3;
 - (BOOL)handleRegisterClientName:(id)arg1 withConnection:(id)arg2 error:(id *)arg3;

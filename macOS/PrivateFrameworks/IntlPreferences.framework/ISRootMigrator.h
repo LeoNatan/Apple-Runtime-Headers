@@ -8,8 +8,10 @@
 
 @interface ISRootMigrator : ISMigrator
 {
+    BOOL _isErase;
 }
 
+@property(nonatomic) BOOL isErase; // @synthesize isErase=_isErase;
 - (void)copyLanguagesAndLocaleToSystem;
 - (void)fixSystemLanguagesMismatchForSingleUserSystem;
 - (BOOL)systemLanguagesMismatch;
@@ -18,6 +20,7 @@
 - (id)appendRegionalVariantsToLanguageIdentifiers:(id)arg1 regionCode:(id)arg2;
 - (id)performMigrationForPreferences:(id)arg1;
 - (id)performMigrationForUserPreferences:(id)arg1 systemPreferences:(id)arg2;
+- (void)updateAppleLanguagesSchemaVersionToCurrent;
 - (BOOL)performMigration;
 
 @end

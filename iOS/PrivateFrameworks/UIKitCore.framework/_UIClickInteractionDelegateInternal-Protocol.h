@@ -13,6 +13,7 @@
 - (void)clickInteraction:(_UIClickInteraction *)arg1 didObserveForce:(double)arg2;
 
 @optional
+- (void)_clickInteractionDidUpdateDriver:(_UIClickInteraction *)arg1;
 - (void)_clickInteraction:(_UIClickInteraction *)arg1 shouldBegin:(void (^)(_Bool))arg2;
 @end
 

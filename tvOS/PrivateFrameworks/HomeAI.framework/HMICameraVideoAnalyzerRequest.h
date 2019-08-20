@@ -10,11 +10,10 @@
 
 @interface HMICameraVideoAnalyzerRequest : HMFObject
 {
-    _Bool _skipAnalysis;
-    _Bool _failAnalysis;
     NSDate *_analysisSubmissionTime;
     NSDate *_analysisStartTime;
     double _maxAnalysisFPS;
+    double _analysisFPS;
     HMICameraVideoFragment *_fragment;
     HMICameraVideoResourceAttributes *_attributes;
     HMICameraVideoEncoderSession *_encoderSession;
@@ -27,14 +26,14 @@
     NSMutableArray *_videoFrameResults;
     HMICameraVideoAnalyzerRequestLog *_log;
     long long _phase;
+    long long _flags;
 }
 
 + (id)logCategory;
 + (id)videoAnnotationScoresForFrameResult:(id)arg1;
+@property long long flags; // @synthesize flags=_flags;
 @property long long phase; // @synthesize phase=_phase;
 @property(readonly) HMICameraVideoAnalyzerRequestLog *log; // @synthesize log=_log;
-@property(getter=shouldFailAnalysis) _Bool failAnalysis; // @synthesize failAnalysis=_failAnalysis;
-@property(getter=shouldSkipAnalysis) _Bool skipAnalysis; // @synthesize skipAnalysis=_skipAnalysis;
 @property(retain) NSMutableArray *videoFrameResults; // @synthesize videoFrameResults=_videoFrameResults;
 @property(readonly) long long eventTypes; // @synthesize eventTypes=_eventTypes;
 @property long long events; // @synthesize events=_events;
@@ -45,6 +44,7 @@
 @property(readonly) HMICameraVideoEncoderSession *encoderSession; // @synthesize encoderSession=_encoderSession;
 @property(readonly) HMICameraVideoResourceAttributes *attributes; // @synthesize attributes=_attributes;
 @property(readonly) HMICameraVideoFragment *fragment; // @synthesize fragment=_fragment;
+@property(readonly) double analysisFPS; // @synthesize analysisFPS=_analysisFPS;
 @property(readonly) double maxAnalysisFPS; // @synthesize maxAnalysisFPS=_maxAnalysisFPS;
 @property(readonly) NSDate *analysisStartTime; // @synthesize analysisStartTime=_analysisStartTime;
 @property(readonly) NSDate *analysisSubmissionTime; // @synthesize analysisSubmissionTime=_analysisSubmissionTime;
@@ -62,6 +62,8 @@
 - (void)startAnalysis;
 - (void)loadAttributes;
 - (id)loadAttributesFromVideoFragment:(id)arg1;
+@property(readonly) _Bool shouldFailAnalysis;
+@property(readonly) _Bool shouldSkipAnalysis;
 - (id)initWithVideoFragment:(id)arg1 analyzer:(id)arg2 maxAnalysisFPS:(double)arg3;
 
 @end

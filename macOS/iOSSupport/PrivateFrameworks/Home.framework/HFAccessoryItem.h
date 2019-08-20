@@ -30,7 +30,6 @@
 - (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(CDUnknownBlockType)arg2;
 - (id)_mostCommonValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
-- (id)_multiSensorIconDescriptor;
 - (BOOL)isMultiSensorDevice;
 - (id)_buildControlDescription;
 - (id)_buildTileDescription;
@@ -51,7 +50,6 @@
 - (id)_buildServiceItems;
 - (id)_collectAllChildItems;
 - (id)_buildControlItems;
-- (id)_aggregatedValueSourceForService:(id)arg1;
 - (id)serviceItemForService:(id)arg1;
 - (id)controlItemsForService:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;

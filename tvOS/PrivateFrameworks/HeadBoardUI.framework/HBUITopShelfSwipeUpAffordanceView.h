@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_textLabel) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic, getter=isTextLabelHidden) _Bool textLabelHidden; // @synthesize textLabelHidden=_textLabelHidden;
 - (void).cxx_destruct;
+- (void)_updateTextLabelText:(_Bool)arg1;
+- (void)_applicationDidBecomeActive;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

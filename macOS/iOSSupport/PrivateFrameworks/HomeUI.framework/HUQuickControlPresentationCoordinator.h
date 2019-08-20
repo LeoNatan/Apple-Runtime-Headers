@@ -46,8 +46,10 @@
     UIVisualEffectView *_transitionTitleAndDescriptionVibrantEffectView;
     UILabel *_transitionSecondaryLabel;
     UIVisualEffectView *_transitionSecondaryLabelVibrantEffectView;
+    UIVisualEffectView *_transitionBlurView;
 }
 
+@property(retain, nonatomic) UIVisualEffectView *transitionBlurView; // @synthesize transitionBlurView=_transitionBlurView;
 @property(retain, nonatomic) UIVisualEffectView *transitionSecondaryLabelVibrantEffectView; // @synthesize transitionSecondaryLabelVibrantEffectView=_transitionSecondaryLabelVibrantEffectView;
 @property(retain, nonatomic) UILabel *transitionSecondaryLabel; // @synthesize transitionSecondaryLabel=_transitionSecondaryLabel;
 @property(retain, nonatomic) UIVisualEffectView *transitionTitleAndDescriptionVibrantEffectView; // @synthesize transitionTitleAndDescriptionVibrantEffectView=_transitionTitleAndDescriptionVibrantEffectView;

@@ -24,6 +24,7 @@
     _Bool _fillSafeAreaTopInset;
     _Bool _hideIncompleteLastRow;
     _Bool _mediaTargetSizeIgnoresSpacing;
+    _Bool _loadItemsOutsideAnchorViewport;
     int _mediaKind;
     int _presentationType;
     long long _style;
@@ -42,6 +43,7 @@
 }
 
 @property(nonatomic) struct CGPoint contentOrigin; // @synthesize contentOrigin=_contentOrigin;
+@property(nonatomic) _Bool loadItemsOutsideAnchorViewport; // @synthesize loadItemsOutsideAnchorViewport=_loadItemsOutsideAnchorViewport;
 @property(nonatomic) struct CGPoint anchorViewportCenter; // @synthesize anchorViewportCenter=_anchorViewportCenter;
 @property(retain, nonatomic) id anchorObjectReference; // @synthesize anchorObjectReference=_anchorObjectReference;
 @property(nonatomic) CDStruct_2bd92d94 edgeCornerRadius; // @synthesize edgeCornerRadius=_edgeCornerRadius;
@@ -72,8 +74,10 @@
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceSizeDidChange;
+- (_Bool)shouldUpdateDecorationMediaTargetSizes;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (struct _NSRange)itemsToLoad;
+- (struct CGRect)_pageAlignedRectForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)_itemsToLoadForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)itemRangeForSpriteIndexRange:(struct _PXGSpriteIndexRange)arg1;
 - (struct _NSRange)itemRangeInRect:(struct CGRect)arg1;
@@ -81,6 +85,9 @@
 - (long long)itemClosestTo:(struct CGPoint)arg1;
 - (long long)columnForItem:(long long)arg1;
 - (long long)_rowForItem:(long long)arg1;
+- (void)_getItemSize:(struct CGSize *)arg1 finalInteritemSpacing:(double *)arg2 finalInsets:(struct UIEdgeInsets *)arg3 forDesiredInterItemSpacing:(double)arg4 padding:(struct UIEdgeInsets)arg5;
+- (struct CGRect)_frameForItem:(long long)arg1 usingInterItemSpacing:(double)arg2 itemSize:(struct CGSize)arg3 insets:(struct UIEdgeInsets)arg4;
+- (struct CGRect)frameForItem:(long long)arg1 usingInterItemSpacing:(double)arg2;
 - (struct CGRect)frameForItem:(long long)arg1;
 - (struct _PXGSpriteIndexRange)spriteIndexRangeCoveringRect:(struct CGRect)arg1;
 - (struct CGRect)_contentRectInLayout:(struct CGRect)arg1;

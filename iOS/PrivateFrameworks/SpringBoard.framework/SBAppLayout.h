@@ -14,6 +14,7 @@
 @interface SBAppLayout : NSObject <NSCopying, BSDescriptionProviding>
 {
     long long _cachedAppLayoutType;
+    _Bool _hidden;
     long long _configuration;
     long long _environment;
     NSDictionary *_rolesToLayoutItemsMap;
@@ -22,6 +23,7 @@
 + (id)homeScreenAppLayout;
 + (id)appLayoutWithProtobufRepresentation:(id)arg1;
 @property(copy, nonatomic) NSDictionary *rolesToLayoutItemsMap; // @synthesize rolesToLayoutItemsMap=_rolesToLayoutItemsMap;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
 @property(nonatomic) long long configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
@@ -30,12 +32,13 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) _Bool isInsetForHomeAffordance;
+@property(readonly, nonatomic, getter=isInsetForHomeAffordance) _Bool insetForHomeAffordance;
 - (id)appLayoutWithItemsPassingTest:(CDUnknownBlockType)arg1;
 - (long long)compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)appLayoutByModifyingHiddenState:(_Bool)arg1;
 @property(readonly, nonatomic) long long type;
 - (id)allItems;
 - (long long)layoutRoleForItem:(id)arg1;
@@ -48,6 +51,7 @@
 - (id)protobufRepresentation;
 - (id)plistRepresentation;
 - (id)initWithPlistRepresentation:(id)arg1;
+- (id)initWithItemsForLayoutRoles:(id)arg1 configuration:(long long)arg2 environment:(long long)arg3 hidden:(_Bool)arg4;
 - (id)initWithItemsForLayoutRoles:(id)arg1 configuration:(long long)arg2 environment:(long long)arg3;
 - (id)init;
 - (unsigned long long)frameOptions;

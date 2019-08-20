@@ -24,7 +24,7 @@
 // Remaining properties
 @property(readonly) MLModelInterface *interface;
 @property(readonly) MLModelMetadata *metadata;
-@property(readonly, nonatomic) MLModelDescription *modelDescription;
+@property(retain, nonatomic) MLModelDescription *modelDescription;
 
 @end
 

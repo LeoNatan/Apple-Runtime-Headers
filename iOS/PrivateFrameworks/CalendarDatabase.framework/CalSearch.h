@@ -30,8 +30,10 @@
     _Bool _searchParticipants;
     _Bool _searchLocations;
     _Bool _searchAttendees;
+    _Bool _shouldMatchLocationsOnlyForEventSearch;
 }
 
+@property _Bool shouldMatchLocationsOnlyForEventSearch; // @synthesize shouldMatchLocationsOnlyForEventSearch=_shouldMatchLocationsOnlyForEventSearch;
 @property _Bool searchAttendees; // @synthesize searchAttendees=_searchAttendees;
 @property _Bool searchLocations; // @synthesize searchLocations=_searchLocations;
 @property _Bool searchParticipants; // @synthesize searchParticipants=_searchParticipants;

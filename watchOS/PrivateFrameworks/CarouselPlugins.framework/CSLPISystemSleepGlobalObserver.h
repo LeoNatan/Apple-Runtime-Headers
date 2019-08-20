@@ -15,11 +15,13 @@
 {
     CSLPISystemSleepObserver *_systemSleepObserver;
     CSLSConcurrentObserverStore<CSLPISystemSleepGlobalObserverObserver> *_observerStore;
+    _Bool _attemptingToSleep;
     _Bool _sleepImminent;
 }
 
 + (id)sharedInstance;
 @property(getter=isSleepImminent) _Bool sleepImminent; // @synthesize sleepImminent=_sleepImminent;
+@property(getter=isAttemptingToSleep) _Bool attemptingToSleep; // @synthesize attemptingToSleep=_attemptingToSleep;
 - (void).cxx_destruct;
 - (void)systemSleepObserverWillNotSleep:(id)arg1;
 - (void)systemSleepObserver:(id)arg1 willSleepWithCompletion:(CDUnknownBlockType)arg2;

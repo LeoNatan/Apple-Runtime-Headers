@@ -6,10 +6,10 @@
 
 #import <WatchKit/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSNumber, NSString, NSUUID, SPViewController;
+@class NSArray, NSDictionary, NSNumber, NSString, NSUUID, SPViewController, WKInterfaceController;
 
 @protocol SPViewControllerDelegate <NSObject>
-- (id)interfaceControllerForViewController:(SPViewController *)arg1;
+- (WKInterfaceController *)interfaceControllerForViewController:(SPViewController *)arg1;
 - (void)viewControllerDidAppearAfterModalDismissal:(SPViewController *)arg1;
 - (void)viewControllerDidDisappearAfterModalPresentation:(SPViewController *)arg1;
 - (void)viewController:(SPViewController *)arg1 crownData:(NSDictionary *)arg2;

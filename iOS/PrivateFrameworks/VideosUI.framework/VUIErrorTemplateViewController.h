@@ -6,18 +6,11 @@
 
 #import <UIKit/UIViewController.h>
 
-@class IKViewElement, NSArray, NSMutableArray, NSString, TVImageProxy, UIAlertController, VUIErrorView;
+@class IKViewElement, VUIErrorView;
 
 __attribute__((visibility("hidden")))
 @interface VUIErrorTemplateViewController : UIViewController
 {
-    NSMutableArray *_additionalLabels;
-    UIAlertController *_alertController;
-    NSArray *_buttonElements;
-    TVImageProxy *_imageProxy;
-    struct CGSize _imageSize;
-    NSString *_message;
-    NSString *_title;
     IKViewElement *_viewElement;
 }
 

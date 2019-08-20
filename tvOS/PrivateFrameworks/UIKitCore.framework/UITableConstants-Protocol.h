@@ -46,6 +46,7 @@
 - (UIColor *)defaultDetailTextColorForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (double)defaultTextLabelFontSizeForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (UIFont *)defaultTextLabelFontForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
+- (UIColor *)defaultHighlightTextColorForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (UIColor *)defaultTextColorForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (NSArray *)defaultSelectionEffectsForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (UIColor *)defaultMultiSelectBackgroundColorForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
@@ -54,7 +55,7 @@
 - (double)defaultPaddingBetweenHeaderAndRowsForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)defaultPaddingBetweenRowsForTableView:(id <UITableConstantsTableProviding>)arg1;
 - (double)interspaceBetweenInnerAccessoryIdentifier:(NSString *)arg1 outerAccessoryIdentifier:(NSString *)arg2 forCell:(UIView<UITableConstantsCellProviding> *)arg3 inTableView:(id <UITableConstantsTableProviding>)arg4 trailingAccessoryGroup:(_Bool)arg5;
-- (double)minimumImageViewAndAccessoryLayoutWidth;
+- (double)minimumImageViewAndAccessoryLayoutWidthForTraitCollection:(UITraitCollection *)arg1;
 - (double)defaultTrailingContentAccessoryPaddingForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (double)defaultLeadingContentAccessoryPaddingForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
 - (double)defaultContentAccessoryPaddingForCell:(UIView<UITableConstantsCellProviding> *)arg1 inTableView:(id <UITableConstantsTableProviding>)arg2;
@@ -79,7 +80,7 @@
 - (NSArray *)defaultBackgroundEffectsForTableViewStyle:(long long)arg1;
 - (UIColor *)defaultBackgroundColorForTableViewStyle:(long long)arg1;
 - (_Bool)supportsUserInterfaceStyles;
-- (id <UITableConstants>)variantForActive:(_Bool)arg1 dark:(_Bool)arg2;
+- (id <UITableConstants>)variantForActive:(_Bool)arg1 dark:(_Bool)arg2 focused:(_Bool)arg3;
 - (id <UITableConstants>)sidebarVariant;
 
 @optional

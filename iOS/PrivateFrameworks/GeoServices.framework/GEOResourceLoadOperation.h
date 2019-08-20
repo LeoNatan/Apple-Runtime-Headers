@@ -27,10 +27,12 @@
     NSURL *_authProxyURL;
     struct os_unfair_lock_s _lock;
     _Bool _requiresWiFi;
+    _Bool _preferDirectNetworking;
     GEOReportedProgress *_progress;
     NSObject<OS_os_log> *_log;
 }
 
+@property(nonatomic) _Bool preferDirectNetworking; // @synthesize preferDirectNetworking=_preferDirectNetworking;
 @property(nonatomic) _Bool requiresWiFi; // @synthesize requiresWiFi=_requiresWiFi;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;

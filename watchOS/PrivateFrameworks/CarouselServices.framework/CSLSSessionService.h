@@ -30,6 +30,7 @@
 - (void)fetchStickyCapableApps:(CDUnknownBlockType)arg1;
 - (void)defaultSession:(CDUnknownBlockType)arg1;
 - (void)removeSessionServiceObserver:(id)arg1 bundleID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_addSessionServiceObserver:(id)arg1 bundleID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addSessionServiceObserver:(id)arg1 bundleID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)existingScheduledSessionsForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)existingScheduledSessions:(CDUnknownBlockType)arg1;
@@ -44,7 +45,6 @@
 - (void)_performServerQuery:(CDUnknownBlockType)arg1;
 - (void)_handleInterruption;
 - (void)_handleInvalidation;
-- (void)_endAllSessions:(id)arg1;
 - (void)_startConnection;
 - (void)_connectIfNecessary;
 - (void)_withLock:(CDUnknownBlockType)arg1;

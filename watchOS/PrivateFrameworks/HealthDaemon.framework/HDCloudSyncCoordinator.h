@@ -17,7 +17,6 @@
 @interface HDCloudSyncCoordinator : NSObject <HDDiagnosticObject, HDPeriodicActivityDelegate, HDHealthDaemonReadyObserver, HDDatabaseJournalMergeObserver>
 {
     HDDaemon *_daemon;
-    HDPeriodicActivity *_periodicActivity;
     _Bool _queue_syncInProgress;
     _Bool _queue_hasUpdatedCachedLastSuccessfulSyncDates;
     NSDate *_queue_lastSuccessfulPullDate;
@@ -25,7 +24,6 @@
     HDAsynchronousTaskTree *_activeTaskGroup;
     NSMutableArray *_pendingTaskGroups;
     ACAccountStore *_accountStore;
-    _Bool _hasiCloudAccount;
     NSString *_latestSyncStartLog;
     NSString *_latestSyncEndLog;
     NSProgress *_activeTaskProgress;
@@ -38,9 +36,11 @@
     APSConnection *_apsConnection;
     HDProfile *_unitTest_primaryProfileOverride;
     NSObject<OS_dispatch_queue> *_queue;
+    HDPeriodicActivity *_periodicActivity;
 }
 
-@property(readonly, copy, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) HDPeriodicActivity *periodicActivity; // @synthesize periodicActivity=_periodicActivity;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)unitTest_performPeriodicSyncWithCompletion:(CDUnknownBlockType)arg1;
@@ -50,7 +50,7 @@
 - (void)databaseJournalMergeDidCompleteForProfile:(id)arg1;
 - (void)_updateAggdKeysForPeriodicSyncError:(id)arg1;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_prepareAllProfilesForSyncWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_prepareAllProfilesForSync;
 - (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
 - (id)readRestoreCompletionDateWithError:(id *)arg1;
 - (_Bool)persistRestoreCompletionDate:(id)arg1 withError:(id *)arg2;
@@ -72,7 +72,7 @@
 - (void)_queue_checkLastSyncDate;
 - (void)_updateCachedLastSyncDatesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_setupPeriodicActivity;
-- (void)_queue_triggerSyncForiCloudLogin;
+- (void)_queue_triggerSyncForAccountChange;
 - (id)_fetchDescriptionForProfile:(id)arg1 options:(unsigned int)arg2 reason:(int)arg3 taskTree:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (id)_resetProfile:(id)arg1 options:(unsigned int)arg2 reason:(int)arg3 taskTree:(id)arg4;
 - (id)_syncProfile:(id)arg1 options:(unsigned int)arg2 reason:(int)arg3 taskTree:(id)arg4;
@@ -85,10 +85,8 @@
 - (_Bool)_unitTest_shouldSyncProfile:(id)arg1;
 - (id)_primaryProfile;
 - (_Bool)canPerformCloudSyncWithError:(id *)arg1;
-- (void)_queue_considerMigratingHealthAccountDataclassState;
 - (void)_setHealthAccountDataclassEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_checkiCloudAccountStatus;
-- (void)_handleACAccountStoreDidChangeNotification;
+- (void)accountConfigurationDidChangeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 queue:(id)arg2;
 - (id)fetchCloudSyncProgressWithCompletion:(CDUnknownBlockType)arg1;

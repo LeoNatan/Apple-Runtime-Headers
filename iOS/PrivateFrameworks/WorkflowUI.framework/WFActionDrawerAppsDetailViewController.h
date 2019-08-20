@@ -19,8 +19,10 @@
 @interface WFActionDrawerAppsDetailViewController : WFActionDrawerCompositeResultsViewController <UITableViewDataSource, UITableViewDelegate, WFActionDrawerSiriSuggestionsTableViewCellDelegate, WFActionDrawerActionTableViewCellDelegate, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable>
 {
     id <WFActionDrawerAppsDetailViewControllerDelegate> _delegate;
+    NSString *_bundleIdentifier;
 }
 
+@property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <WFActionDrawerAppsDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
@@ -33,9 +35,12 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)detailSectionIndexForIndexPath:(long long)arg1;
+- (unsigned long long)detailSectionForSection:(long long)arg1;
 - (void)reloadViews;
 - (void)viewDidLoad;
 - (void)loadView;
+- (id)initWithBundleIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

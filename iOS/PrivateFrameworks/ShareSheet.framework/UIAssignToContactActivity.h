@@ -42,7 +42,6 @@
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)activityTitle;
 - (id)_systemImageName;
-- (id)_actionImage;
 - (id)activityType;
 
 // Remaining properties

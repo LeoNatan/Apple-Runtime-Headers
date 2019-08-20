@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (id)imageAugmentedFromImage:(id)arg1;
+- (id)imageAugmentedFromImage:(id)arg1 generator:(CDUnknownBlockType)arg2;
 - (id)initWithSize:(struct CGSize)arg1;
 
 // Remaining properties

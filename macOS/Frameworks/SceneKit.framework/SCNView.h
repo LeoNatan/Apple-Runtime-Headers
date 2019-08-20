@@ -131,6 +131,8 @@
 - (BOOL)_showsAuthoringEnvironment;
 @property(nonatomic) unsigned long long debugOptions;
 - (void)_updateProbes:(id)arg1 withProgress:(id)arg2;
+- (void)set_shouldDelegateARCompositing:(BOOL)arg1;
+- (BOOL)_shouldDelegateARCompositing;
 - (void)set_enableARMode:(BOOL)arg1;
 - (BOOL)_enableARMode;
 - (void)set_disableLinearRendering:(BOOL)arg1;

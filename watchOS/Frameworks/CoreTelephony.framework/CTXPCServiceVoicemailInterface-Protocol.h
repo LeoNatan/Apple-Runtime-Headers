@@ -7,6 +7,7 @@
 @class CTXPCServiceSubscriptionContext;
 
 @protocol CTXPCServiceVoicemailInterface
+- (void)setVisualVoicemailState:(CTXPCServiceSubscriptionContext *)arg1 subscribed:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
 - (void)getVoicemailInfo:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(_Bool, NSNumber *, NSString *, NSError *))arg2;
 @end
 

@@ -30,6 +30,7 @@
 - (unsigned long long)accessibilityArrayAttributeCount:(id)arg1;
 - (unsigned long long)accessibilityIndexOfChild:(id)arg1;
 - (BOOL)accessibilityPerformShowMenuOfChild:(id)arg1;
+- (id)_accessibilityActionDelegate;
 - (id)_accessibilityArrayAttributeValues:(id)arg1 index:(unsigned long long)arg2 maxCount:(unsigned long long)arg3 clientError:(int *)arg4;
 - (unsigned long long)_accessibilityArrayAttributeCount:(id)arg1 clientError:(int *)arg2;
 - (unsigned long long)_accessibilityIndexOfChild:(id)arg1 clientError:(int *)arg2;

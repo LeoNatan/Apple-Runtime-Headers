@@ -18,6 +18,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)UUID;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

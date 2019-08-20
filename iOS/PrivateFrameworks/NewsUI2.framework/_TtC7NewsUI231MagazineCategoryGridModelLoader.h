@@ -17,6 +17,7 @@
     // Error parsing type: , name: issueModelFactory
     // Error parsing type: , name: tagService
     // Error parsing type: , name: assetHandleFactory
+    // Error parsing type: , name: delegate
 }
 
 @end

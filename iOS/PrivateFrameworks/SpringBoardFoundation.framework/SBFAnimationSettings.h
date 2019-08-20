@@ -15,6 +15,7 @@
     BSAnimationSettings *_exportedSettings;
     long long _animationType;
     double _delay;
+    unsigned long long _frameRate;
     unsigned long long _curve;
     PTPointSettings *_controlPoint1Settings;
     PTPointSettings *_controlPoint2Settings;
@@ -26,7 +27,7 @@
     double _speed;
 }
 
-+ (id)_moduleWithSectionTitle:(id)arg1 delay:(_Bool)arg2;
++ (id)_moduleWithSectionTitle:(id)arg1 delay:(_Bool)arg2 frameRate:(_Bool)arg3;
 + (id)_moduleWithSectionTitle:(id)arg1;
 + (id)settingsControllerModule;
 + (_Bool)ignoresKey:(id)arg1;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) PTPointSettings *controlPoint2Settings; // @synthesize controlPoint2Settings=_controlPoint2Settings;
 @property(retain, nonatomic) PTPointSettings *controlPoint1Settings; // @synthesize controlPoint1Settings=_controlPoint1Settings;
 @property(nonatomic) unsigned long long curve; // @synthesize curve=_curve;
+@property(nonatomic) unsigned long long frameRate; // @synthesize frameRate=_frameRate;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
 - (void).cxx_destruct;

@@ -8,6 +8,7 @@
 
 #import <IconServices/ISCompositorRecipe-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface ISiosmacDocumentRecipe : NSObject <ISCompositorRecipe>
 {
 }

@@ -10,8 +10,6 @@
 {
     // Error parsing type: , name: metrics
     // Error parsing type: , name: defaultTopic
-    // Error parsing type: , name: account
-    // Error parsing type: , name: observer
 }
 
 @end

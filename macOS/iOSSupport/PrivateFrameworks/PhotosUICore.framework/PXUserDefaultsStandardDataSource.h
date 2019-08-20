@@ -9,14 +9,18 @@
 #import <PhotosUICore/PXUserDefaultsDataSource-Protocol.h>
 
 @class NSDate;
+@protocol OS_dispatch_queue;
 
 @interface PXUserDefaultsStandardDataSource : NSObject <PXUserDefaultsDataSource>
 {
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 - (void)setPersistedValue:(id)arg1 forKey:(id)arg2;
 - (id)persistedValueForKey:(id)arg1;
 @property(readonly, nonatomic) NSDate *currentDate;
+- (id)init;
 
 @end
 

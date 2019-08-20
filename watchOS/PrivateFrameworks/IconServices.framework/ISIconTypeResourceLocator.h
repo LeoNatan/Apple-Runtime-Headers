@@ -18,6 +18,7 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (_Bool)allowLocalizedIcon;
 - (id)preferedResourceName;
 - (id)bundleIdentifier;
 - (id)resourceDirectoryURL;

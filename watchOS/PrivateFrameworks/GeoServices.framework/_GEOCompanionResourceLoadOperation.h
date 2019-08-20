@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     GEOResourceInfo *_resource;
     NSXPCConnection *_connection;
     _Bool _requiresWiFi;
+    _Bool _preferDirectNetworking;
     GEOApplicationAuditToken *_auditToken;
     NSURL *_baseURL;
     NSURL *_url;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_isForRegionalResource;
+@property(nonatomic) _Bool preferDirectNetworking; // @synthesize preferDirectNetworking=_preferDirectNetworking;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool requiresWiFi; // @synthesize requiresWiFi=_requiresWiFi;
 - (void).cxx_destruct;

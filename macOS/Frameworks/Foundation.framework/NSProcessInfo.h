@@ -69,6 +69,7 @@
 @property(readonly, copy) NSString *fullUserName;
 - (BOOL)isLowPowerModeEnabled;
 - (long long)thermalState;
+@property(readonly, getter=isMacCatalystApp) BOOL macCatalystApp;
 
 @end
 

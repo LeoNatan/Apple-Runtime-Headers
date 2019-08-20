@@ -11,7 +11,6 @@
 }
 
 + (_Bool)storeState:(id)arg1 profile:(id)arg2 error:(id *)arg3;
-+ (id)highestIndexedAnchorForProfile:(id)arg1 error:(id *)arg2;
 + (id)stateWithProfile:(id)arg1 error:(id *)arg2;
 + (id)_keyValueDomainWithProfile:(id)arg1;
 + (id)sampleUUIDsForConceptIdentifier:(long long)arg1 keyPaths:(id)arg2 profile:(id)arg3 error:(id *)arg4;

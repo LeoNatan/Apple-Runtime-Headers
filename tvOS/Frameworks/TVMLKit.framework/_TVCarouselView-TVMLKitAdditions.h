@@ -11,7 +11,6 @@
 @class NSString;
 
 @interface _TVCarouselView (TVMLKitAdditions) <TVRowHosting>
-- (void)layoutSubviews;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;
 
 // Remaining properties

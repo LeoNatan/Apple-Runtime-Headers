@@ -56,6 +56,8 @@
 - (struct CGSize)initialFittingSize;
 - (id)sceneSpecification;
 - (void)createSceneWithPriority:(long long)arg1;
+- (void)updateSafeAreasOnSettings:(id)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)updateTraitCollection;
 - (id)initWithSceneIdentifier:(id)arg1;
 

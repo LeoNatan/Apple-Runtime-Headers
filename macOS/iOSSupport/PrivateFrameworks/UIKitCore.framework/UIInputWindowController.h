@@ -223,6 +223,7 @@ __attribute__((visibility("hidden")))
 - (id)inputSetContainerView;
 - (void)didReceiveMemoryWarning;
 - (void)_updatePlacementWithPlacement:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

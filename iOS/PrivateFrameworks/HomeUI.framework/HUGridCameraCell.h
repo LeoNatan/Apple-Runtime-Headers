@@ -46,6 +46,7 @@
 - (void)_animateTransitionWithView:(id)arg1 animations:(CDUnknownBlockType)arg2;
 - (void)updateConstraints;
 - (void)layoutOptionsDidChange;
+- (_Bool)shouldDisplayAccessModeErrorContent;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (_Bool)shouldDisplayErrorContent;
 - (struct CGRect)cameraViewFrame;

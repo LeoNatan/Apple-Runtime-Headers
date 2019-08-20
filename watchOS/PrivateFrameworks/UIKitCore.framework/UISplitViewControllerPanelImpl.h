@@ -68,7 +68,6 @@
     UIFocusContainerGuide *_detailFocusContainerGuide;
 }
 
-+ (id)_withDisabledAppearanceTransitions:(_Bool)arg1 forVisibleDescendantsOf:(id)arg2 perform:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic, getter=_detailFocusContainerGuide) UIFocusContainerGuide *detailFocusContainerGuide; // @synthesize detailFocusContainerGuide=_detailFocusContainerGuide;
 @property(readonly, nonatomic, getter=_masterFocusContainerGuide) UIFocusContainerGuide *masterFocusContainerGuide; // @synthesize masterFocusContainerGuide=_masterFocusContainerGuide;
 @property(readonly, nonatomic, getter=_menuGestureRecognizer) UITapGestureRecognizer *menuGestureRecognizer; // @synthesize menuGestureRecognizer=_menuGestureRecognizer;
@@ -90,7 +89,6 @@
 - (void)_updateFocusContainerGuideFrames;
 - (void)_setUpFocusContainerGuides;
 - (void)_stopTransitionsInViewController:(id)arg1;
-- (void)_withDisabledAppearanceTransitionsPerform:(CDUnknownBlockType)arg1;
 - (_Bool)_setPanelConfigurationWithIsPrimaryShown:(_Bool)arg1 shouldUseOverlay:(_Bool)arg2;
 - (int)_fullScreenStateForOrientation:(int)arg1 viewWidth:(float)arg2;
 - (int)_currentInterfaceIdiom;

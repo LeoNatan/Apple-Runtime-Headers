@@ -72,6 +72,7 @@
 - (void)setCircularMaskForCircularDialFraction:(float)arg1 circleDiameter:(float)arg2;
 - (void)updateCircularMask;
 - (void)_updateDialBezelComplicationColor:(id)arg1;
+- (_Bool)shouldFlipColorsForSubDialRichComplicationView:(id)arg1;
 - (void)_updateRichCornerComplicationsInnerColor:(id)arg1 outerColor:(id)arg2;
 - (void)_updateSubDialRichComplicationsColor:(id)arg1 alternateColor:(id)arg2;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
@@ -80,6 +81,7 @@
 - (void)applyColorOnAnalogHands;
 - (void)_setupDialViewIfNeeded;
 - (void)_removeViews;
+- (void)layoutSubviews;
 - (void)_setupViews;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;

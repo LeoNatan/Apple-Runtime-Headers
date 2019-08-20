@@ -6,7 +6,7 @@
 
 #import <AudioDSPManager/DSPConfigurationMO.h>
 
-@class DSPFlavorMO, DSPModuleControlMO, NSSet;
+@class DSPFlavorMO, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface ContentDSPMO : DSPConfigurationMO
@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(nonatomic) int bufferFrameSize; // @dynamic bufferFrameSize;
-@property(retain, nonatomic) DSPModuleControlMO *dspModuleControl; // @dynamic dspModuleControl;
+@property(retain, nonatomic) NSSet *dspModuleControl; // @dynamic dspModuleControl;
 @property(retain, nonatomic) DSPFlavorMO *flavor; // @dynamic flavor;
 @property(nonatomic) int hwFacingChannelCount; // @dynamic hwFacingChannelCount;
 @property(nonatomic) BOOL isHWAgnostic; // @dynamic isHWAgnostic;

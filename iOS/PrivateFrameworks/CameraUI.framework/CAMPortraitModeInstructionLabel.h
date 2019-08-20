@@ -22,8 +22,6 @@
 @property(nonatomic) unsigned long long numberOfPeopleFound; // @synthesize numberOfPeopleFound=_numberOfPeopleFound;
 @property(nonatomic) long long flashMode; // @synthesize flashMode=_flashMode;
 @property(nonatomic) long long shallowDepthOfFieldStatus; // @synthesize shallowDepthOfFieldStatus=_shallowDepthOfFieldStatus;
-- (struct UIEdgeInsets)_textInsets;
-- (double)_backgroundAlpha;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateTextWithPriorStatus:(long long)arg1;
 

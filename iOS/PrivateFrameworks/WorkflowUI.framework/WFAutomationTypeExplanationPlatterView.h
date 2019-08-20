@@ -6,17 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UILabel, UIStackView, WFBackgroundFadingButton;
+@class UIImageView, UILabel, UIStackView, WFMultilineBackgroundFadingButton;
 
 @interface WFAutomationTypeExplanationPlatterView : UIView
 {
     UIStackView *_stackView;
     UIImageView *_iconView;
     UILabel *_explanationTextLabel;
-    WFBackgroundFadingButton *_button;
+    WFMultilineBackgroundFadingButton *_button;
 }
 
-@property(readonly, nonatomic) WFBackgroundFadingButton *button; // @synthesize button=_button;
+@property(readonly, nonatomic) WFMultilineBackgroundFadingButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic) UILabel *explanationTextLabel; // @synthesize explanationTextLabel=_explanationTextLabel;
 @property(readonly, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;

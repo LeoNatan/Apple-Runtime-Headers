@@ -12,10 +12,12 @@
 
 + (int)state;
 + (id)_stateHeaderValueForAccount:(id)arg1;
++ (_Bool)_deleteKeysWithOptions:(id)arg1 error:(id *)arg2;
 + (int)stateForAccount:(id)arg1;
 + (void)setState:(int)arg1 forAccount:(id)arg2;
 + (id)headersWithAccount:(id)arg1 options:(id)arg2 signatureResult:(id)arg3;
 + (id)handleResponse:(id)arg1 session:(id)arg2 taskInfo:(id)arg3 shouldFallbackToPassword:(_Bool *)arg4;
++ (_Bool)deleteKeysWithError:(id *)arg1;
 + (void)setDeviceState:(int)arg1;
 + (int)type;
 + (int)deviceState;

@@ -9,17 +9,21 @@
 #import <AVKit/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <AVKit/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSString;
+@class NSString, UISpringTimingParameters;
 
 __attribute__((visibility("hidden")))
 @interface AVSlidewaysTransition : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 {
+    UISpringTimingParameters *_springTimingParameters;
     _Bool _shouldMovePresentingViewInParallel;
     long long _transitionDirection;
 }
 
++ (id)viewPropertyAnimatorWithParameters:(id)arg1;
++ (id)springTimingParameters;
 @property(nonatomic) _Bool shouldMovePresentingViewInParallel; // @synthesize shouldMovePresentingViewInParallel=_shouldMovePresentingViewInParallel;
 @property(nonatomic) long long transitionDirection; // @synthesize transitionDirection=_transitionDirection;
+- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (struct CGRect)finalFrameForViewController:(id)arg1;

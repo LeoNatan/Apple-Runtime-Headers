@@ -39,7 +39,7 @@
 @property(readonly) unsigned int hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_validatedLeafWithAlternate:(id)arg1 validation:(id)arg2;
+- (id)_validatedLeafWithAlternate:(id)arg1 target:(id)arg2 validation:(id)arg3;
 - (id)_resolvedTargetFromFirstTarget:(id)arg1;
 - (void)_performWithTarget:(id)arg1;
 - (int)_leafKeyModifierFlags;

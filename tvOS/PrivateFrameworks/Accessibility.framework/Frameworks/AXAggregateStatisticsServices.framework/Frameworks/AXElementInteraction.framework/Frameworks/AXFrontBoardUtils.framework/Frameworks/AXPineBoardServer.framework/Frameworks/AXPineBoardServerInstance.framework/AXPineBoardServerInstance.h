@@ -36,6 +36,7 @@
 - (id)_isReceivingAirPlay:(id)arg1;
 - (id)_isSiriTalkingOrListening:(id)arg1;
 - (id)_isSoftwareUpdateUIVisible:(id)arg1;
+- (id)_isControlCenterVisible:(id)arg1;
 - (id)_isMediaPlaying:(id)arg1;
 - (id)_isNowPlayingUIVisible:(id)arg1;
 - (id)_isScreenSaverVisible:(id)arg1;

@@ -6,20 +6,16 @@
 
 #import <SiriActivation/SiriLongPressButtonSource.h>
 
-@class BSServiceConnection, SiriBluetoothContext;
+@class SiriBluetoothContext;
 
 @interface SiriBluetoothDeviceSource : SiriLongPressButtonSource
 {
-    struct os_unfair_lock_s _lock;
     long long _buttonIdentifier;
     double _longPressInterval;
     SiriBluetoothContext *_context;
-    BSServiceConnection *_connection;
 }
 
 + (id)bluetoothDeviceForIdentifier:(long long)arg1 bluetoothDevice:(id)arg2;
-@property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
-@property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) SiriBluetoothContext *context; // @synthesize context=_context;
 @property(nonatomic) double longPressInterval; // @synthesize longPressInterval=_longPressInterval;
 @property(nonatomic) long long buttonIdentifier; // @synthesize buttonIdentifier=_buttonIdentifier;

@@ -22,7 +22,7 @@
 #import <ContactsUI/UITableViewDragSourceDelegate-Protocol.h>
 
 @class CNAvatarCardController, CNAvatarViewController, CNContact, CNContactFormatter, CNContactListBannerView, CNContactListStyleApplier, CNUIContactsEnvironment, CNVCardImportController, NSArray, NSObject, NSString, UISearchBar, UISearchController, UIView, _UIContentUnavailableView;
-@protocol CNContactDataSource, CNContactListViewControllerDelegate, NSObject;
+@protocol CNContactDataSource, CNContactListViewControllerDelegate;
 
 @interface CNContactListViewController : UITableViewController <CNAvatarCardControllerDelegate, CNContactDataSourceDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate, CNContactListBannerViewDelegate, CNContactViewControllerDelegate, UIGestureRecognizerDelegate, CNUIObjectViewControllerDelegate, UITableViewDragSourceDelegate, UITableViewDragDestinationDelegate, CNVCardImportControllerPresentationDelegate, CNVCardImportControllerDelegate, CNAvatarViewControllerDelegate>
 {
@@ -59,7 +59,6 @@
     NSString *_pendingSearchQuery;
     CNVCardImportController *_vCardImportController;
     CNContactListStyleApplier *_defaultContactListStyleApplier;
-    id <NSObject> _contactStoreDidChangeNotificationToken;
     CNContactListViewController *_searchResultsController;
     CNContactListStyleApplier *_contactListStyleApplier;
 }
@@ -73,7 +72,6 @@
 @property(nonatomic) BOOL shouldDisplayCount; // @synthesize shouldDisplayCount=_shouldDisplayCount;
 @property(nonatomic) BOOL shouldDisplayGroupsGrid; // @synthesize shouldDisplayGroupsGrid=_shouldDisplayGroupsGrid;
 @property(retain, nonatomic) CNContactListViewController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
-@property(retain, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
 @property(retain, nonatomic) CNContactListStyleApplier *defaultContactListStyleApplier; // @synthesize defaultContactListStyleApplier=_defaultContactListStyleApplier;
 @property(readonly, nonatomic) BOOL shouldUseLargeTitle; // @synthesize shouldUseLargeTitle=_shouldUseLargeTitle;
 @property(retain, nonatomic) CNVCardImportController *vCardImportController; // @synthesize vCardImportController=_vCardImportController;
@@ -127,6 +125,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;

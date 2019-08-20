@@ -41,6 +41,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)captureDeviceOutputConsumerWithOptions:(id)arg1;
 + (id)captureDeviceOutputConsumer;
 + (id)copyImageFromC3DImage:(struct __C3DImage *)arg1;
 + (id)_copyImageFromC3DImage:(struct __C3DImage *)arg1;

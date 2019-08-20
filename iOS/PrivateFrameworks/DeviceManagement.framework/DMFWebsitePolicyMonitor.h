@@ -18,7 +18,6 @@
 @property(copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 - (void).cxx_destruct;
 - (void)_fetchCategoriesIfNeededForWebsiteURLs:(id)arg1 response:(CDUnknownBlockType)arg2;
-- (_Bool)oneMoreMinutePolicyExistsForWebsite:(id)arg1;
 - (void)requestPoliciesForWebsites:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, getter=isEnabled) _Bool enabled;
 - (void)dealloc;

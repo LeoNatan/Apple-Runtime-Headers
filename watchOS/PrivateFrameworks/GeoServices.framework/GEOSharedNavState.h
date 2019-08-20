@@ -21,13 +21,17 @@
     GEOSharedNavRouteInfo *_routeInfo;
     GEOSharedNavSenderInfo *_senderInfo;
     double _updatedTimestamp;
+    unsigned int _protocolVersion;
     int _referenceFrame;
+    unsigned int _transportType;
     _Bool _arrived;
     _Bool _closed;
     _Bool _muted;
     struct {
         unsigned int has_updatedTimestamp:1;
+        unsigned int has_protocolVersion:1;
         unsigned int has_referenceFrame:1;
+        unsigned int has_transportType:1;
         unsigned int has_arrived:1;
         unsigned int has_closed:1;
         unsigned int has_muted:1;
@@ -44,7 +48,9 @@
         unsigned int wrote_routeInfo:1;
         unsigned int wrote_senderInfo:1;
         unsigned int wrote_updatedTimestamp:1;
+        unsigned int wrote_protocolVersion:1;
         unsigned int wrote_referenceFrame:1;
+        unsigned int wrote_transportType:1;
         unsigned int wrote_arrived:1;
         unsigned int wrote_closed:1;
         unsigned int wrote_muted:1;
@@ -66,6 +72,10 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasProtocolVersion;
+@property(nonatomic) unsigned int protocolVersion;
+@property(nonatomic) _Bool hasTransportType;
+@property(nonatomic) unsigned int transportType;
 @property(nonatomic) _Bool hasUpdatedTimestamp;
 @property(nonatomic) double updatedTimestamp;
 @property(nonatomic) _Bool hasMuted;

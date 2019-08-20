@@ -120,7 +120,7 @@
 // Remaining properties
 @property(readonly, nonatomic) unsigned long long burstSelectionTypes;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, nonatomic) double hdrGain;
+@property(readonly, nonatomic) float hdrGain;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) unsigned long long thumbnailVersion;

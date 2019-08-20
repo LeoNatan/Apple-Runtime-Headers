@@ -100,6 +100,7 @@ __attribute__((visibility("hidden")))
 - (void)performFetchShareParticipantsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performDiscoverAllIdentitiesOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performDiscoverUserIdentitiesOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)frameworkCachesDirectoryWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

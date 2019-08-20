@@ -57,6 +57,7 @@
     PKDiscoveryDataSource *_discoveryDataSource;
     _Bool _inField;
     _Bool _handleFieldDetection;
+    _Bool _showingFieldDetectEducation;
     _Bool _welcomeStateEnabled;
     _Bool _externalModalPresentationAllowed;
     long long _style;
@@ -73,6 +74,7 @@
 @property(readonly, nonatomic) __weak PKDiscoveryGalleryView *discoveryGalleryView; // @synthesize discoveryGalleryView=_discoveryGalleryView;
 @property(nonatomic, getter=isExternalModalPresentationAllowed) _Bool externalModalPresentationAllowed; // @synthesize externalModalPresentationAllowed=_externalModalPresentationAllowed;
 @property(nonatomic, getter=isWelcomeStateEnabled) _Bool welcomeStateEnabled; // @synthesize welcomeStateEnabled=_welcomeStateEnabled;
+@property(getter=isShowingFieldDetectEducation) _Bool showingFieldDetectEducation; // @synthesize showingFieldDetectEducation=_showingFieldDetectEducation;
 @property _Bool handleFieldDetection; // @synthesize handleFieldDetection=_handleFieldDetection;
 @property _Bool passesAreOutdated; // @synthesize passesAreOutdated=_passesAreOutdated;
 @property(nonatomic) unsigned long long suppressedContent; // @synthesize suppressedContent=_suppressedContent;
@@ -131,6 +133,7 @@
 - (void)presentPeerPaymentPassAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentDiscoveryArticleForItemWithIdentifier:(id)arg1 referrerIdentifier:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentDailyCashForPassUniqueIdentifier:(id)arg1 dateComponents:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)showStatementForIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentBalanceDetailsForPassUniqueIdentifier:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentSpendingSummaryForPassUniqueIdentifier:(id)arg1 type:(unsigned long long)arg2 unit:(unsigned long long)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)presentAccountServicePaymentWithReferenceIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -140,6 +143,7 @@
 - (void)presentAccountServiceSchedulePayment:(id)arg1;
 - (void)presentPeerPaymentSetupWithCurrencyAmount:(id)arg1 flowState:(unsigned long long)arg2 senderAddress:(id)arg3;
 - (void)presentPeerPaymentTopUp;
+- (void)presentPeerPaymentVerifyIdentity;
 - (void)presentPeerPaymentTermsAcceptance;
 - (void)_presentTransactionDetailsForTransaction:(id)arg1 paymentPass:(id)arg2;
 - (void)presentTransactionDetailsForTransactionWithServiceIdentifier:(id)arg1;

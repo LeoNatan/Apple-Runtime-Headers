@@ -44,6 +44,7 @@
         unsigned int textOrSelectionChangeOriginatesWithMarkedText:1;
         unsigned int nextSelectionChangeMustUpdate:1;
         unsigned int hasTextAlternatives:1;
+        unsigned int hasDictationResultMetadata:1;
         unsigned int suppressDelegateChangeNotifications:1;
     } _tiFlags;
     NSArray *_extraItemsBeforeTextStyleOptions;
@@ -133,7 +134,6 @@
 - (id)_selectedText;
 - (_Bool)_shouldHandleResponderAction:(SEL)arg1;
 - (_Bool)_canHandleResponderAction:(SEL)arg1;
-- (void)delegateWillChangeAttributedText:(id)arg1;
 - (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id *)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(_Bool)arg2;
@@ -278,8 +278,6 @@
 - (id)_initWithLayoutManager:(id)arg1;
 - (id)_selectableText;
 - (_Bool)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(_Bool)arg3;
-- (void)_phraseBoundaryGesture:(id)arg1;
-- (id)_newPhraseBoundaryGestureRecognizer;
 - (void)_unmarkText;
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;

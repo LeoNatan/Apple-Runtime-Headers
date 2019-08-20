@@ -7,6 +7,8 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (MRAVAdditions)
+- (id)mr_map:(CDUnknownBlockType)arg1;
+- (_Bool)mr_containsAnyOf:(id)arg1;
 - (_Bool)mr_isEqualToOutputDevicesArray:(id)arg1;
 @end
 

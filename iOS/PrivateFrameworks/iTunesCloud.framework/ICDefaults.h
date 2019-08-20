@@ -36,7 +36,7 @@
 @property(readonly, copy, nonatomic) NSString *deviceModelOverride;
 @property(readonly, copy, nonatomic) NSNumber *deviceClassOverride;
 @property(nonatomic) _Bool ignoreExtendedCertificateValidation;
-@property(retain, nonatomic) NSDictionary *lastKnownUserAgeVerificationState;
+@property(copy, nonatomic) NSDictionary *lastKnownUserAgeVerificationState;
 @property(nonatomic) double lastAuthenticationDialogResponseTime;
 @property(copy, nonatomic) NSDictionary *authServiceClientTokenCache;
 @property(readonly, copy, nonatomic) NSNumber *authServiceClientTokenTimeToLive;

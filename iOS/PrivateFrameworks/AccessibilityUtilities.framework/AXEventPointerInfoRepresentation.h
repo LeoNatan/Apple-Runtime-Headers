@@ -17,6 +17,9 @@
     double _pointerX;
     double _pointerY;
     double _pointerZ;
+    double _pointerAccelX;
+    double _pointerAccelY;
+    double _pointerAccelZ;
     double _pointerButtonMask;
     double _pointerButtonNumber;
     double _pointerButtonClickCount;
@@ -28,6 +31,9 @@
 @property(nonatomic) double pointerButtonClickCount; // @synthesize pointerButtonClickCount=_pointerButtonClickCount;
 @property(nonatomic) double pointerButtonNumber; // @synthesize pointerButtonNumber=_pointerButtonNumber;
 @property(nonatomic) double pointerButtonMask; // @synthesize pointerButtonMask=_pointerButtonMask;
+@property(nonatomic) double pointerAccelZ; // @synthesize pointerAccelZ=_pointerAccelZ;
+@property(nonatomic) double pointerAccelY; // @synthesize pointerAccelY=_pointerAccelY;
+@property(nonatomic) double pointerAccelX; // @synthesize pointerAccelX=_pointerAccelX;
 @property(nonatomic) double pointerZ; // @synthesize pointerZ=_pointerZ;
 @property(nonatomic) double pointerY; // @synthesize pointerY=_pointerY;
 @property(nonatomic) double pointerX; // @synthesize pointerX=_pointerX;

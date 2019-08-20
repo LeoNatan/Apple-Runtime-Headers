@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_startPlaybackWithMediaItem:(id)arg1;
 - (void)_updateShelfViewFrameAnimated:(_Bool)arg1;
-- (void)_configureSizingCell;
+- (void)_configureSizingCellForEpisodes:(id)arg1;
 - (void)_setupViews;
 - (void)didTapOnInformationViewWithTitle:(id)arg1 description:(id)arg2;
 - (void)didTapOnImageViewWithMediaItem:(id)arg1;
@@ -51,6 +51,8 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)_updateWithEpisodes:(id)arg1 changeSet:(id)arg2;
+- (void)updateWithEpisodes:(id)arg1 changeSet:(id)arg2;
 - (void)configureWithCollectionView:(id)arg1;
 - (id)initWithEpisodes:(id)arg1 season:(id)arg2;
 

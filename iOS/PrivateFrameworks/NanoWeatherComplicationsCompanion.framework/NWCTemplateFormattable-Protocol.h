@@ -6,12 +6,12 @@
 
 #import <NanoWeatherComplicationsCompanion/NSObject-Protocol.h>
 
-@class CLKComplicationTemplate;
+@class CLKComplicationTemplate, CLKDevice;
 @protocol NWCTemplateFormattable;
 
 @protocol NWCTemplateFormattable <NSObject>
 + (id <NWCTemplateFormattable>)sharedFormatter;
 - (CLKComplicationTemplate *)switcherTemplateWithFamily:(long long)arg1;
-- (_Bool)acceptsComplicationFamily:(long long)arg1;
+- (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(CLKDevice *)arg2;
 @end
 

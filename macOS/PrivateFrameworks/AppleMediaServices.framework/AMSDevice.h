@@ -37,6 +37,7 @@
 + (id)macAddressData;
 + (id)macAddress;
 + (id)localIPAddress;
++ (BOOL)isSecureElementAvailable;
 + (BOOL)isRunningInStoreDemoMode;
 + (id)hardwarePlatform;
 + (id)deviceName;

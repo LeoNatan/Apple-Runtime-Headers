@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (void)_applyPrototypeSettings;
 - (unsigned long long)_numberOfItems;
-- (struct CGRect)_scaleTransformedFrameWithUntransformedFrame:(struct CGRect)arg1 scale:(double)arg2;
 - (struct CGRect)_frameWithScaleAppliedForIndex:(unsigned long long)arg1 withCardSize:(struct CGSize)arg2 contentOffset:(struct CGPoint)arg3 contentSize:(struct CGSize)arg4 contentInsets:(struct UIEdgeInsets)arg5 switcherViewBounds:(struct CGRect)arg6;
 - (double)_distanceFromPreviousCardForCardAtIndex:(unsigned long long)arg1;
 - (double)_scaleForScaleAdjustedIndex:(double)arg1;
@@ -93,6 +92,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)containerStatusBarAnimationDuration;
 - (_Bool)isContainerStatusBarVisible;
+- (unsigned long long)insertionStyle;
 - (double)baseHysteresisForStartingKillGesture;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;
@@ -121,8 +121,9 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
+- (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
-- (id)appExposeAccessoryButtonBundleID;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 - (id)handleSwitcherSettingsChangedEvent:(id)arg1;
 - (id)handleTapOutsideToDismissEvent:(id)arg1;

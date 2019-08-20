@@ -22,6 +22,7 @@
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)layoutSubviews;
+- (double)_timeAnimationFramesPerSecondForDevice:(id)arg1;
 - (id)initForDevice:(id)arg1;
 
 // Remaining properties

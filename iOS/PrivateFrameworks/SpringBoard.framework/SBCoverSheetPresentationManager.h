@@ -228,6 +228,7 @@
 - (void)loadViewsIfNeeded;
 - (void)authenticationStateMayHaveChangedFromSource:(int)arg1;
 - (void)willUIUnlockWithPendingUnlockRequest:(_Bool)arg1;
+- (_Bool)isAnyGestureActivelyRecognized;
 - (_Bool)isDismissGestureActive;
 - (_Bool)isPresented;
 - (_Bool)isTransitioning;

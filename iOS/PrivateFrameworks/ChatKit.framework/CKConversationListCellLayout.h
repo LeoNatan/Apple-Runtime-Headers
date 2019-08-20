@@ -11,6 +11,7 @@
     _Bool _invalid;
     _Bool _shouldShowChevron;
     double _summaryLabelCapFrameYOrigin;
+    double _trailingLayoutMarginSize;
     struct CGRect _tableBounds;
     struct CGRect _summaryFrame;
     struct CGRect _dateFrame;
@@ -20,6 +21,7 @@
 }
 
 + (id)sharedInstance;
+@property(nonatomic) double trailingLayoutMarginSize; // @synthesize trailingLayoutMarginSize=_trailingLayoutMarginSize;
 @property(nonatomic) double summaryLabelCapFrameYOrigin; // @synthesize summaryLabelCapFrameYOrigin=_summaryLabelCapFrameYOrigin;
 @property(nonatomic) struct CGRect unreadFrame; // @synthesize unreadFrame=_unreadFrame;
 @property(nonatomic) struct CGRect chevronFrame; // @synthesize chevronFrame=_chevronFrame;

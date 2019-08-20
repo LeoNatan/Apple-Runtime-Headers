@@ -15,7 +15,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)keyUIWindowAcrossAllScenes;
+- (id)keyUIWindowForSceneWithIdentifier:(id)arg1;
+- (id)sizeRestrictionsForSceneWithIdentifier:(id)arg1;
 - (id)uiWindowsForSceneWithIdentifier:(id)arg1;
+- (id)_windowSceneForIdentifier:(id)arg1;
 - (BOOL)shouldCloseHostWindowForSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;
 - (BOOL)shouldHideHostWindowForSceneIdentifier:(id)arg1;
 

@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (BOOL)_isValidRow:(long long)arg1;
 - (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2 fromDetail:(BOOL)arg3;
+- (id)actionsForRow:(id)arg1;
 - (void)cancelOutstandingOperations;
 - (double)estimatedHeightForRow:(id)arg1;
 - (void)commitEditingStyle:(long long)arg1 forRow:(id)arg2;

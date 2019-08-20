@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     BOOL _hideCollapsedShadow;
     BOOL _alwaysCompact;
     BOOL _preventPreviewRasterization;
+    BOOL _frozen;
     UITargetedPreview *_collapsedPreview;
     UITargetedPreview *_expandedPreview;
     UIView *_contentView;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _collapsedCornerMask;
 }
 
+@property(nonatomic, getter=isFrozen) BOOL frozen; // @synthesize frozen=_frozen;
 @property(nonatomic) unsigned long long collapsedCornerMask; // @synthesize collapsedCornerMask=_collapsedCornerMask;
 @property(nonatomic) double collapsedCornerRadius; // @synthesize collapsedCornerRadius=_collapsedCornerRadius;
 @property(retain, nonatomic) _UIPlatterContentWrapperView *expandedContentWrapperView; // @synthesize expandedContentWrapperView=_expandedContentWrapperView;

@@ -23,7 +23,7 @@
 - (NSArray *)lossLayerWithDescriptor:(MLFoundationLossDescriptor *)arg1;
 - (NSArray *)softmaxLayerWithOperation:(int)arg1;
 - (NSArray *)arithmeticLayerWithOperation:(int)arg1;
-- (NSArray *)batchNormalizationLayeWithChannelCount:(unsigned long long)arg1 mean:(MLFoundationTensor *)arg2 variance:(MLFoundationTensor *)arg3 beta:(MLFoundationTensor *)arg4 gamma:(MLFoundationTensor *)arg5 variance_epsilon:(float)arg6;
+- (NSArray *)batchNormalizationLayerWithChannelCount:(unsigned long long)arg1 mean:(MLFoundationTensor *)arg2 variance:(MLFoundationTensor *)arg3 beta:(MLFoundationTensor *)arg4 gamma:(MLFoundationTensor *)arg5 variance_epsilon:(float)arg6 momentum:(float)arg7;
 - (NSArray *)neuronLayerWithDescriptor:(MLFoundationNeuronDescriptor *)arg1;
 - (NSArray *)poolingLayerWithDescriptor:(MLFoundationPoolingDescriptor *)arg1;
 - (NSArray *)convolutionTransposeLayerWithDescriptor:(MLFoundationConvolutionDescriptor *)arg1 weights:(MLFoundationTensor *)arg2;
@@ -33,9 +33,9 @@
 @optional
 - (BOOL)compileOptimizerDeviceOps:(NSArray *)arg1;
 - (BOOL)compileLayerDeviceOps:(NSArray *)arg1 sourceTensors:(NSArray *)arg2 resultTensor:(MLFoundationTensor *)arg3;
-- (NSArray *)fusedFullyConnectedBatchNormalizationAndNeuronLayerWithDescriptor:(MLFoundationConvolutionDescriptor *)arg1 mean:(MLFoundationTensor *)arg2 variance:(MLFoundationTensor *)arg3 beta:(MLFoundationTensor *)arg4 gamma:(MLFoundationTensor *)arg5 varianceEpsilon:(float)arg6 neuronDescriptor:(MLFoundationNeuronDescriptor *)arg7 weights:(MLFoundationTensor *)arg8 biasTerms:(MLFoundationTensor *)arg9;
-- (NSArray *)fusedConvolutionBatchNormalizationAndNeuronLayerWithDescriptor:(MLFoundationConvolutionDescriptor *)arg1 mean:(MLFoundationTensor *)arg2 variance:(MLFoundationTensor *)arg3 beta:(MLFoundationTensor *)arg4 gamma:(MLFoundationTensor *)arg5 varianceEpsilon:(float)arg6 neuronDescriptor:(MLFoundationNeuronDescriptor *)arg7 weights:(MLFoundationTensor *)arg8 biasTerms:(MLFoundationTensor *)arg9;
-- (NSArray *)fusedBatchNormalizationAndNeuronLayerWithDescriptor:(MLFoundationNeuronDescriptor *)arg1 numOfFeatureChannels:(unsigned long long)arg2 mean:(MLFoundationTensor *)arg3 variance:(MLFoundationTensor *)arg4 beta:(MLFoundationTensor *)arg5 gamma:(MLFoundationTensor *)arg6 variance_epsilon:(float)arg7;
+- (NSArray *)fusedFullyConnectedBatchNormalizationAndNeuronLayerWithDescriptor:(MLFoundationConvolutionDescriptor *)arg1 mean:(MLFoundationTensor *)arg2 variance:(MLFoundationTensor *)arg3 beta:(MLFoundationTensor *)arg4 gamma:(MLFoundationTensor *)arg5 varianceEpsilon:(float)arg6 momentum:(float)arg7 neuronDescriptor:(MLFoundationNeuronDescriptor *)arg8 weights:(MLFoundationTensor *)arg9 biasTerms:(MLFoundationTensor *)arg10;
+- (NSArray *)fusedConvolutionBatchNormalizationAndNeuronLayerWithDescriptor:(MLFoundationConvolutionDescriptor *)arg1 mean:(MLFoundationTensor *)arg2 variance:(MLFoundationTensor *)arg3 beta:(MLFoundationTensor *)arg4 gamma:(MLFoundationTensor *)arg5 varianceEpsilon:(float)arg6 momentum:(float)arg7 neuronDescriptor:(MLFoundationNeuronDescriptor *)arg8 weights:(MLFoundationTensor *)arg9 biasTerms:(MLFoundationTensor *)arg10;
+- (NSArray *)fusedBatchNormalizationAndNeuronLayerWithDescriptor:(MLFoundationNeuronDescriptor *)arg1 numOfFeatureChannels:(unsigned long long)arg2 mean:(MLFoundationTensor *)arg3 variance:(MLFoundationTensor *)arg4 beta:(MLFoundationTensor *)arg5 gamma:(MLFoundationTensor *)arg6 variance_epsilon:(float)arg7 momentum:(float)arg8;
 - (NSArray *)fusedFullyConnectedAndNeuronLayerWithDescriptor:(MLFoundationNeuronDescriptor *)arg1 convolutionDescriptor:(MLFoundationConvolutionDescriptor *)arg2 weights:(MLFoundationTensor *)arg3 biasTerms:(MLFoundationTensor *)arg4;
 - (NSArray *)fusedConvolutionAndNeuronLayerWithDescriptor:(MLFoundationNeuronDescriptor *)arg1 convolutionDescriptor:(MLFoundationConvolutionDescriptor *)arg2 weights:(MLFoundationTensor *)arg3 biasTerms:(MLFoundationTensor *)arg4;
 @end

@@ -34,6 +34,7 @@
 + (id)__ck_valueForItemClass:(Class)arg1 forItemProvider:(id)arg2;
 + (id)pasteboardTypesForItemProvider:(id)arg1;
 + (id)pluginDisplayContainerForItemProvider:(id)arg1;
++ (id)_transcoderUserInfoFor:(id)arg1 filename:(id)arg2 type:(id)arg3;
 + (id)mediaObjectForItemProvider:(id)arg1;
 + (_Bool)_shouldCreateMediaObjectForUTIType:(id)arg1;
 + (id)compositionWithPluginDisplayContainer:(id)arg1 subject:(id)arg2;

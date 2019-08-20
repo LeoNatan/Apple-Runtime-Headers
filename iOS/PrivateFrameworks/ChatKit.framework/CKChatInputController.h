@@ -25,6 +25,7 @@
 
 @interface CKChatInputController : NSObject <UITextInputPayloadDelegate, CKMessageEntryViewInputDelegate, CKBrowserViewControllerSendDelegate, CKPhotoBrowserViewControllerSendDelegate, CKHandwritingViewControllerSendDelegate, CKBrowserViewControllerStoreSendDelegate, CKPluginEntryViewControllerDelegate, CKFullScreenAppViewControllerDelegate, CKDeviceOrientationManagerDelegate, CKBrowserSwitcherViewControllerDelegate, CKBrowserTransitionCoordinatorDelegate, CKHandwritingPresentationControllerDelegate, CKBrowserAppManagerViewControllerDelegate>
 {
+    _Bool _isDismissingAppModal;
     _Bool _shouldSuppressStatusBarForHandwriting;
     _Bool __isRunningPPT;
     _Bool _inputViewVisible;
@@ -78,6 +79,7 @@
 @property(nonatomic) _Bool _isRunningPPT; // @synthesize _isRunningPPT=__isRunningPPT;
 @property(nonatomic) _Bool shouldSuppressStatusBarForHandwriting; // @synthesize shouldSuppressStatusBarForHandwriting=_shouldSuppressStatusBarForHandwriting;
 @property(retain, nonatomic) UIViewController *statusBarStyleViewController; // @synthesize statusBarStyleViewController=_statusBarStyleViewController;
+@property(readonly, nonatomic) _Bool isDismissingAppModal; // @synthesize isDismissingAppModal=_isDismissingAppModal;
 @property(retain, nonatomic) IMBalloonPluginDataSource *browserPluginDataSource; // @synthesize browserPluginDataSource=_browserPluginDataSource;
 @property(retain, nonatomic) IMBalloonPlugin *browserPlugin; // @synthesize browserPlugin=_browserPlugin;
 @property(nonatomic) __weak id <CKChatInputControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -157,7 +159,7 @@
 @property(readonly, nonatomic) unsigned long long browserSupportedInterfaceOrientations;
 @property(readonly, nonatomic) _Bool browserShouldAutorotate;
 - (id)_browserViewControllerForInterfaceOrientationMethods;
-@property(readonly, nonatomic) _Bool presentsHandwritingOnRotation;
+@property(readonly, nonatomic) _Bool appModalIsDisplayed;
 @property(readonly, nonatomic) _Bool appManagerIsDisplayed;
 @property(readonly, nonatomic) _Bool appStoreIsDisplayed;
 - (_Bool)handwritingIsDisplayed;
@@ -172,6 +174,7 @@
 - (void)_dismissBrowserViewControllerAndReloadInputViews:(_Bool)arg1;
 - (void)dismissBrowserViewController;
 - (void)showBrowserForPlugin:(id)arg1 dataSource:(id)arg2 style:(unsigned long long)arg3;
+- (void)launchAndShowBrowserForPlugin:(id)arg1 dataSource:(id)arg2 style:(unsigned long long)arg3;
 - (void)_setupObserverForLaunchAppExtensionForDebugging;
 - (void)_launchAppExtensionForDebugging;
 - (void)switcherViewController:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;

@@ -17,6 +17,8 @@
 {
     PXUpdater *_updater;
     NSMutableSet *_pauseReasons;
+    CDStruct_1b6d18a9 _pendingSeekTime;
+    CDUnknownBlockType _pendingSeekCompletionHandler;
     _Bool _isPlayingAllowed;
     _Bool _alwaysRespectsMuteSwitch;
     _Bool _isMuted;
@@ -60,6 +62,7 @@
 @property(readonly, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+- (void)_performPendingSeekIfNeeded;
 - (void)_updatePlayerVolume;
 - (void)_updateVideoSessionDesiredPlayState;
 - (void)_updateVideoSession;

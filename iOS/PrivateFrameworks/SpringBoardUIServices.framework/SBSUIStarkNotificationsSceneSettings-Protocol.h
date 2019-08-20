@@ -11,6 +11,7 @@
 @protocol SBSUIStarkNotificationsSceneSettings <NSObject>
 @property(readonly, nonatomic) BSServiceConnectionEndpoint *openServiceEndpoint;
 @property(readonly, nonatomic) unsigned long long suspensionReasons;
+@property(readonly, nonatomic, getter=isGeoSupported) _Bool geoSupported;
 @property(readonly, nonatomic, getter=isConnectedWirelessly) _Bool connectedWirelessly;
 @end
 

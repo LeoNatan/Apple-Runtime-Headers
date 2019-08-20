@@ -89,7 +89,8 @@
 - (void)_lock_suspend;
 - (void)_lock_applyCurrentStateIfPossible;
 - (BOOL)_sendSignal:(int)arg1;
-- (BOOL)_terminateWithContext:(id)arg1;
+- (BOOL)_lock_terminateWithContext:(id)arg1;
+- (BOOL)terminateWithContext:(id)arg1;
 - (void)_applyState:(id)arg1;
 - (void)invalidate;
 @property(readonly, nonatomic) int currentJetsamPriority;

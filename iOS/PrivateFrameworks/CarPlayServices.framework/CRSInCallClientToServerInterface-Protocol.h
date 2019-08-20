@@ -6,7 +6,10 @@
 
 #import <CarPlayServices/NSObject-Protocol.h>
 
+@class NSNumber;
+
 @protocol CRSInCallClientToServerInterface <NSObject>
+- (oneway void)setAllowsBanners:(NSNumber *)arg1;
 - (oneway void)presentInCallService;
 @end
 

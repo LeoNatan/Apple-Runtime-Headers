@@ -15,9 +15,10 @@
 }
 
 - (void).cxx_destruct;
+- (void)queryKeychainForVirtualCard:(CDUnknownBlockType)arg1;
+- (void)dismissDetailsForVirtualCard:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)promptDetailsForVirtualCard:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)urlToPassDetailsForVirtualCard:(id)arg1;
-- (void)queryKeychainForVirtualCard:(CDUnknownBlockType)arg1;
 - (void)credentialsForVirtualCard:(id)arg1 authorization:(id)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)activeVirtualCardsWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;

@@ -13,8 +13,8 @@
     // Error parsing type: , name: resource
     // Error parsing type: , name: playbackToken
     // Error parsing type: , name: stateChangeSubscriptionHandle
-    // Error parsing type: , name: playbackCompletionCancellable
-    // Error parsing type: , name: playbackCompletionHandler
+    // Error parsing type: , name: playbackCompletedSink
+    // Error parsing type: , name: completionHandler
 }
 
 @end

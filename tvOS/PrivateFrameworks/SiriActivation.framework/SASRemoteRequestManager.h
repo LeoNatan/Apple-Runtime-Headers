@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <SiriActivation/CMPocketStateDelegate-Protocol.h>
+@class AFRemoteRequestWatcher, CMPocketStateManager;
 
-@class AFRemoteRequestWatcher, CMPocketStateManager, NSString;
-
-@interface SASRemoteRequestManager : NSObject <CMPocketStateDelegate>
+@interface SASRemoteRequestManager : NSObject
 {
     _Bool _hasPendingVoiceTriggerActivation;
     AFRemoteRequestWatcher *_remoteRequestWatcher;
@@ -29,12 +27,7 @@
 @property(nonatomic) unsigned long long currentVoiceTriggerRestriction; // @synthesize currentVoiceTriggerRestriction=_currentVoiceTriggerRestriction;
 @property(retain, nonatomic) AFRemoteRequestWatcher *remoteRequestWatcher; // @synthesize remoteRequestWatcher=_remoteRequestWatcher;
 - (void).cxx_destruct;
-- (id)_stringForPocketState:(long long)arg1;
 - (_Bool)_requestWatcherVoiceActivationEnabled;
-- (void)_setPocketStateShouldPreventVoiceTrigger:(_Bool)arg1;
-- (void)_updateForPocketState:(long long)arg1;
-- (void)pocketStateManager:(id)arg1 didUpdateState:(long long)arg2;
-- (void)_startFetchingPocketStateUpdatesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_startFetchingPocketStateUpdates;
 - (void)_handlePendingVoiceTriggerActivationsWithInfo:(id)arg1;
 - (void)_handleRemoteRequestDismissalWithReason:(long long)arg1 options:(unsigned long long)arg2 analyticsContext:(id)arg3;
@@ -44,12 +37,6 @@
 - (void)_handleRemotePrewarmWithInfo:(id)arg1;
 - (id)init;
 - (id)_init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

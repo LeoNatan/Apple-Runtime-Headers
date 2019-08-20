@@ -60,6 +60,7 @@
 - (id)init;
 - (id)initWithKeyPointerFunctions:(id)arg1 valuePointerFunctions:(id)arg2 capacity:(unsigned long long)arg3;
 - (id)initWithKeyOptions:(unsigned long long)arg1 valueOptions:(unsigned long long)arg2 capacity:(unsigned long long)arg3;
+- (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 
 @end

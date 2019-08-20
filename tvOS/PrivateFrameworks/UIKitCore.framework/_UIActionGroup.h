@@ -17,10 +17,12 @@
     NSString *_title;
     UIImage *_image;
     long long _style;
+    long long _type;
 }
 
 + (id)groupWithTitle:(id)arg1 image:(id)arg2 style:(long long)arg3 children:(id)arg4;
 @property(nonatomic) _Bool inlineGroup; // @synthesize inlineGroup=_inlineGroup;
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

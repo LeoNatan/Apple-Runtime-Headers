@@ -17,6 +17,7 @@
     unsigned int _systemPowerConnection;
     struct IONotificationPort *_systemPowerPort;
     unsigned int _systemPowerNotifier;
+    _Bool _isStopped;
 }
 
 - (void).cxx_destruct;

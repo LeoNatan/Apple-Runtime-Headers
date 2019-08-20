@@ -10,6 +10,7 @@
 
 @interface IKViewElementStyle (TVMLKitAdditions)
 - (long long)tv_indexDisplayMode;
+- (id)tv_layerFlipMode;
 - (struct UIEdgeInsets)tv_scrollableBoundsInset;
 - (id)tv_scrollMode;
 - (id)tv_highlightStyle;

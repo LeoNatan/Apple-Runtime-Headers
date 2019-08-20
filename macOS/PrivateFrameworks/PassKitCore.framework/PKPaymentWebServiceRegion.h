@@ -34,12 +34,14 @@
     NSURL *_applyServiceURL;
     NSString *_applyServicePushTopic;
     NSString *_productsPushTopic;
+    NSString *_transactionZonePushTopic;
     NSURL *_peerPaymentServiceURL;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL hasPeerPaymentAccount; // @synthesize hasPeerPaymentAccount=_hasPeerPaymentAccount;
 @property(retain, nonatomic) NSURL *peerPaymentServiceURL; // @synthesize peerPaymentServiceURL=_peerPaymentServiceURL;
+@property(copy, nonatomic) NSString *transactionZonePushTopic; // @synthesize transactionZonePushTopic=_transactionZonePushTopic;
 @property(copy, nonatomic) NSString *productsPushTopic; // @synthesize productsPushTopic=_productsPushTopic;
 @property(nonatomic) BOOL hasApplications; // @synthesize hasApplications=_hasApplications;
 @property(retain, nonatomic) NSString *applyServicePushTopic; // @synthesize applyServicePushTopic=_applyServicePushTopic;

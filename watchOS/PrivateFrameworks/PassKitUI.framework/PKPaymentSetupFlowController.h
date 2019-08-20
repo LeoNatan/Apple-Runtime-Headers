@@ -8,11 +8,12 @@
 
 #import <PassKitUI/PKSetupFlowControllerProtocol-Protocol.h>
 
-@class NSString, PKPaymentProvisioningController;
+@class NSString, PKPasscodeUpgradeFlowController, PKPaymentProvisioningController;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentSetupFlowController : NSObject <PKSetupFlowControllerProtocol>
 {
+    PKPasscodeUpgradeFlowController *_passcodeUpgradeFlowController;
     PKPaymentProvisioningController *_provisioningController;
     int _setupContext;
     id <PKPaymentSetupViewControllerDelegate> _delegate;
@@ -24,6 +25,7 @@
 - (void).cxx_destruct;
 - (id)nextQueuedCredentialViewControllerWithSetupProduct:(id)arg1 allowsManualEntry:(_Bool)arg2;
 - (void)nextViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)presentPasscodeUpgradeOnViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)manualEntryPaymentSetupViewControllerForProduct:(id)arg1 allowsSelectingBank:(_Bool)arg2;
 - (id)_paymentSetupViewControllerForAssociatedCredential:(id)arg1 product:(id)arg2 allowsManualEntry:(_Bool)arg3;
 - (id)paymentSetupViewControllerForAssociatedCredentials:(id)arg1 product:(id)arg2 allowsManualEntry:(_Bool)arg3;

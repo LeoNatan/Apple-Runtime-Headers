@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
     long long _timeControlStatus;
     long long _videoGravityButtonType;
     NSString *_uniqueIdentifer;
+    NSString *_windowSceneSessionIdentifier;
     struct CGRect _playbackViewFrame;
 }
 
@@ -109,6 +110,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingShowsProminentPlayButton;
 + (id)keyPathsForValuesAffectingShowsRoutePickerView;
 + (id)keyPathsForValuesAffectingFullScreen;
+@property(retain, nonatomic) NSString *windowSceneSessionIdentifier; // @synthesize windowSceneSessionIdentifier=_windowSceneSessionIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifer; // @synthesize uniqueIdentifer=_uniqueIdentifer;
 @property(nonatomic, getter=isVideoScaled) _Bool videoScaled; // @synthesize videoScaled=_videoScaled;
 @property(nonatomic) struct CGRect playbackViewFrame; // @synthesize playbackViewFrame=_playbackViewFrame;

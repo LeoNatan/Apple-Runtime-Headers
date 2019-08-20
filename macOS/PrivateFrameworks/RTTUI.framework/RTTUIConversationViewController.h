@@ -24,6 +24,7 @@
     AXDispatchTimer *_voAnnouncementTimer;
     AXDispatchTimer *_realTimeTimeout;
     NSMutableString *_voAnnouncementBuffer;
+    BOOL _serviceMessageVisible;
     RTTConversation *_conversation;
     NSString *_currentServiceMessage;
     NSScrollView *_scrollView;
@@ -73,9 +74,12 @@
 - (void)_updateServiceCellWithString:(id)arg1;
 - (void)updateServiceCellWithString:(id)arg1;
 - (id)currentCall;
+- (id)contactDisplayString;
 - (void)toggleMute:(id)arg1;
 - (void)updateMuteButton;
+- (id)onHoldMessage;
 - (void)callDidConnect:(id)arg1;
+- (void)updateCallActiveStatus:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)inputTextView;

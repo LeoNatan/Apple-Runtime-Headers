@@ -6,18 +6,22 @@
 
 #import <UIKitCore/UIPanGestureRecognizer.h>
 
-@class NSMutableSet, _UIGestureRecognizerTransformAnalyzer;
+@class NSMutableDictionary, NSMutableSet, _UIGestureRecognizerTransformAnalyzer;
 
 __attribute__((visibility("hidden")))
 @interface UIUndoGestureRecognizer : UIPanGestureRecognizer
 {
+    _Bool _tooMuchSingleMovement;
     double _beginPanTimestamp;
     NSMutableSet *_activeTouches;
     NSMutableSet *_shiftTouches;
     _UIGestureRecognizerTransformAnalyzer *_transformAnalyzer;
+    NSMutableDictionary *_beginTouchLocations;
     struct CGPoint _beginPanCentroid;
 }
 
+@property(nonatomic) _Bool tooMuchSingleMovement; // @synthesize tooMuchSingleMovement=_tooMuchSingleMovement;
+@property(retain, nonatomic) NSMutableDictionary *beginTouchLocations; // @synthesize beginTouchLocations=_beginTouchLocations;
 @property(retain, nonatomic) _UIGestureRecognizerTransformAnalyzer *transformAnalyzer; // @synthesize transformAnalyzer=_transformAnalyzer;
 @property(retain, nonatomic) NSMutableSet *shiftTouches; // @synthesize shiftTouches=_shiftTouches;
 @property(retain, nonatomic) NSMutableSet *activeTouches; // @synthesize activeTouches=_activeTouches;

@@ -48,6 +48,7 @@
 - (_Bool)isResourceTypeAGeneratedDerivative:(unsigned long long)arg1;
 - (unsigned long long)dataClassType;
 - (_Bool)supportsDeletion;
+- (_Bool)supportsResourceType:(unsigned long long)arg1;
 - (_Bool)supportsResources;
 - (id)name;
 - (void)setName:(id)arg1;

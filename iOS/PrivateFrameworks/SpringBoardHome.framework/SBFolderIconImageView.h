@@ -25,11 +25,13 @@
     _Bool _animating;
     unsigned long long _imageUpdatesDisableCount;
     unsigned long long _transitionToken;
+    _Bool _hasCustomBackgroundView;
     unsigned long long _backgroundStyle;
     unsigned long long _currentBackgroundStyle;
 }
 
 @property(nonatomic) unsigned long long currentBackgroundStyle; // @synthesize currentBackgroundStyle=_currentBackgroundStyle;
+@property(readonly, nonatomic) _Bool hasCustomBackgroundView; // @synthesize hasCustomBackgroundView=_hasCustomBackgroundView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(readonly, nonatomic) unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
@@ -49,7 +51,7 @@
 - (Class)_iconGridImageClass;
 - (void)_updateAccessibilityBackgroundContrast;
 - (void)setIcon:(id)arg1 location:(id)arg2 animated:(_Bool)arg3;
-- (void)_performScrollingMovingToLeft:(_Bool)arg1 movingToRight:(_Bool)arg2 targetPageIndex:(unsigned long long)arg3 targetPageScrollRow:(unsigned long long)arg4 newLeftElement:(id)arg5 newRightElement:(id)arg6 animated:(_Bool)arg7;
+- (void)_performScrollingDirection:(long long)arg1 targetPageIndex:(unsigned long long)arg2 targetPageScrollRow:(unsigned long long)arg3 newLeftElement:(id)arg4 newRightElement:(id)arg5 animated:(_Bool)arg6;
 - (void)_updateRasterization;
 - (void)_setAnimating:(_Bool)arg1;
 - (void)_updateCurrentBackgroundStyle;

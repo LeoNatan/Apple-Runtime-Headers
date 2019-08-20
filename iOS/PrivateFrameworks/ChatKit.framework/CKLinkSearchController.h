@@ -17,6 +17,7 @@
 - (_Bool)handleSelectionForResult:(id)arg1;
 - (id)previewViewControllerForResult:(id)arg1;
 - (_Bool)shouldStartMenuInteractionForResult:(id)arg1;
+- (void)_deleteResult:(id)arg1;
 - (id)_activityItemProviderForResult:(id)arg1;
 - (id)_pasteboardItemsForResult:(id)arg1;
 - (id)_additionalMenuActionsForResult:(id)arg1;

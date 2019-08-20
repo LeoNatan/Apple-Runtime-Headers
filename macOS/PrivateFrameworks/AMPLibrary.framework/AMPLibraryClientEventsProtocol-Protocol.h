@@ -21,6 +21,7 @@
 - (void)notifyAuthenticateCloudServer:(unsigned int)arg1;
 - (void)notifyShowCloudServerErrorForClientID:(unsigned int)arg1 error:(int)arg2;
 - (void)notifyShowHideCloudUIForClientID:(unsigned int)arg1;
+- (void)notifyStartEditNewPlaylistAction:(unsigned long long)arg1;
 - (void)notifyCloudDAAPPlaylistIsSharedComplete:(unsigned long long)arg1 withStatus:(int)arg2;
 - (void)notifyCloudDAAPServerMessage:(unsigned int)arg1 withKind:(unsigned int)arg2 withFlag:(_Bool)arg3 withStatus:(int)arg4;
 - (void)notifyCloudClientFlagsChangeEventForClientID:(unsigned int)arg1 forFlag:(unsigned int)arg2 withValue:(_Bool)arg3;

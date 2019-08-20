@@ -23,6 +23,7 @@
 @property(nonatomic) _Bool deliversPreviewSizedOutputBuffers; // @synthesize deliversPreviewSizedOutputBuffers=_deliversPreviewSizedOutputBuffers;
 @property(nonatomic) _Bool automaticallyConfiguresOutputBufferDimensions; // @synthesize automaticallyConfiguresOutputBufferDimensions=_automaticallyConfiguresOutputBufferDimensions;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateOverrideCallbackQueue;
 @property(readonly, nonatomic) id delegateOverride;
 - (_Bool)updateVideoSettingsForConnection:(id)arg1;
 - (void)_updateAvailableVideoCVPixelFormatTypesForConnection:(id)arg1;

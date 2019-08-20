@@ -130,6 +130,7 @@
 - (void)impactOccured;
 - (void)prepareForImpact;
 - (struct CGRect)backingAlignedRectForRect:(struct CGRect)arg1;
+- (void)_releaseAVObjects;
 - (struct CGRect)_disabledOverlayFrame;
 - (void)_trimHandleDidReachBounds;
 - (void)_presentControlsIfNeeded;

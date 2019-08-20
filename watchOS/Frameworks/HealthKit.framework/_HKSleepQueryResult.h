@@ -32,6 +32,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)_calculatePreferredDuration:(double *)arg1 categoryValue:(int *)arg2;
+@property(readonly, copy) NSString *description;
 - (id)preferredDateIntervals;
 - (id)dateIntervalsForCategoryValue:(int)arg1;
 - (id)initWithResultInterval:(id)arg1 dateIntervalsByCategoryValue:(id)arg2 samplesBySource:(id)arg3;
@@ -39,7 +40,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

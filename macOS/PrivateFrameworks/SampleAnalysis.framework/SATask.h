@@ -71,6 +71,7 @@
 @property(readonly) NSDictionary *threads; // @synthesize threads=_threads;
 @property(readonly) NSArray *taskStates; // @synthesize taskStates=_taskStates;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)fixupFrameInstructions;
 - (void)enumerateFrames:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long hash;
@@ -113,7 +114,7 @@
 - (void)addDispatchQueue:(id)arg1;
 - (void)addThread:(id)arg1;
 - (void)addTaskState:(id)arg1;
-- (void)removeStacksOutsideThisProcess;
+- (id)removeStacksOutsideThisProcess;
 - (void)populateReferencesUsingPAStyleSerializedTask:(const CDStruct_d00202c1 *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (void)populateReferencesUsingBuffer:(const CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
 - (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;

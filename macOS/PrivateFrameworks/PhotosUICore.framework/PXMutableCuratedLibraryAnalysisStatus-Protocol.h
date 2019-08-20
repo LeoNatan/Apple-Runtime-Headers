@@ -9,7 +9,9 @@
 @class NSString;
 
 @protocol PXMutableCuratedLibraryAnalysisStatus <NSObject>
+@property(nonatomic) BOOL isDevicePlugged;
 @property(nonatomic) BOOL isDaysMonthsYearsStructureEnabled;
+@property(nonatomic) float displayProgress;
 @property(nonatomic) float progress;
 @property(copy, nonatomic) NSString *localizedDescription;
 @property(copy, nonatomic) NSString *localizedTitle;

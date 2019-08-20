@@ -40,6 +40,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)didInvalidateSceneWhenForeground;
+- (void)startMatchMoveIfNeeded;
 - (void)scene:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 oldClientSettings:(id)arg3 transitionContext:(id)arg4;
 - (id)sceneSpecification;
 - (id)init;

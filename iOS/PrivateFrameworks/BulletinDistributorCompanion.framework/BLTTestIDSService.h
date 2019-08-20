@@ -38,7 +38,6 @@
 - (void)_sendLightsAndSirensRequestForProtobuf:(id)arg1 identifier:(id)arg2 sendDelay:(unsigned long long)arg3;
 - (void)_sendBlockToAllDelegatesAfterTime:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (id)_lightsAndSirensRequestForProtobuf:(id)arg1;
-- (unsigned long long)_nextSequenceNumber;
 - (void)_handleProtobuf:(id)arg1 identifier:(id)arg2 sendDelay:(unsigned long long)arg3;
 - (_Bool)sendResourceAtURL:(id)arg1 metadata:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id *)arg6 error:(id *)arg7;
 - (_Bool)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id *)arg5 error:(id *)arg6;

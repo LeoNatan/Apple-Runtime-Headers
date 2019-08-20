@@ -19,9 +19,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)_dismissOverlaysOptions;
 - (void)_dismissOverlaysIfNeeded;
-- (void)_coverSheetDidDismiss:(id)arg1;
 - (void)_begin;
-- (void)dealloc;
 - (id)initWithTransitionRequest:(id)arg1;
 
 @end

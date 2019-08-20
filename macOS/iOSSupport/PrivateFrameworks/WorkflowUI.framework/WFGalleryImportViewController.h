@@ -69,7 +69,6 @@
 - (void)didTapShare;
 - (void)didTapCancel;
 - (void)loadWorkflowIfNeeded;
-- (void)loadWorkflowRecordForGalleryWorkflow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)updateBarButtonItems;

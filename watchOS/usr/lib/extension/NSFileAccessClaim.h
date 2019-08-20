@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSFileAccessProcessManager *_processManager;
     NSObject<OS_dispatch_semaphore> *_claimerWaiter;
     _Bool _hasInvokedClaimer;
+    _Bool _shouldEnableMaterializationDuringAccessorBlock;
     id _claimerOrNil;
     CDUnknownBlockType _serverClaimerOrNil;
     NSMutableArray *_sandboxTokens;
@@ -42,8 +43,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-+ (_Bool)canWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
-+ (_Bool)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
++ (_Bool)canNewWriteOfItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapExistingWriteOfItemAtLocation:(id)arg3 options:(unsigned int)arg4;
++ (_Bool)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapNewWriting:(_Bool)arg3 ofItemAtLocation:(id)arg4 options:(unsigned int)arg5;
+@property _Bool shouldEnableMaterializationDuringAccessorBlock; // @synthesize shouldEnableMaterializationDuringAccessorBlock=_shouldEnableMaterializationDuringAccessorBlock;
 @property(readonly) NSObject<OS_dispatch_semaphore> *claimerWaiter; // @synthesize claimerWaiter=_claimerWaiter;
 - (_Bool)shouldCancelInsteadOfWaiting;
 @property(readonly, copy) NSArray *allURLs;

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)defaultValueForKey:(id)arg1;
 - (void)display;
 - (id)actionForKey:(id)arg1;
 - (void)_NS_invalidateSuggestedContentsScale;

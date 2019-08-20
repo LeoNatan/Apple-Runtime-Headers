@@ -18,6 +18,7 @@
         _Bool respondsToWillUpdateBarAppearanceOnViewWillAppear;
         _Bool respondsToIsStatusBarVisible;
     } _implementationDelegateFlags;
+    long long _transitionsCounter;
     _Bool _prefersStatusBarVisible;
     _Bool _prefersNavigationBarVisible;
     _Bool _prefersToolbarVisible;
@@ -44,6 +45,7 @@
 @property(nonatomic, setter=_setImplementationDelegate:) __weak id <PXBarAppearanceImplementationDelegate> _implementationDelegate; // @synthesize _implementationDelegate=__implementationDelegate;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)_performBarsTransition:(CDUnknownBlockType)arg1;
 - (void)_setTabBarVisible:(_Bool)arg1 withAnimationOptions:(id)arg2;
 - (void)_setToolbarVisible:(_Bool)arg1 withAnimationOptions:(id)arg2;
 - (void)_setNavigationBarVisible:(_Bool)arg1 withAnimationOptions:(id)arg2;

@@ -84,6 +84,7 @@ __attribute__((visibility("hidden")))
 - (void)setPlaceholderImage:(id)arg1;
 - (void)photoEditLivePhotoModelUpdated;
 - (void)setUseGradientBackground:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)leavingEditWithCancel;
 - (void)prepareForSave:(_Bool)arg1;
 - (void)basePhotoInvalidated;
 - (void)baseLivePhotoInvalidated;

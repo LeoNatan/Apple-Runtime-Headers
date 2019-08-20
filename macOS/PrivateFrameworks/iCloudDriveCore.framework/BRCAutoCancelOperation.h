@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)main;
 - (BOOL)hasObservers;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (void)_initializeCancelTimer;
 - (void)endObservingChanges;

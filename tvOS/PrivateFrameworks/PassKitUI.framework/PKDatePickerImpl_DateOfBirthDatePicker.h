@@ -14,7 +14,7 @@
 {
 }
 
-- (id)initShowingDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 useDarkAppearance:(_Bool)arg4;
+- (id)initShowingDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 useDarkAppearance:(_Bool)arg4 locale:(id)arg5 calendar:(id)arg6;
 
 // Remaining properties
 @property(retain, nonatomic) NSDate *date;

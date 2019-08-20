@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIDataTransferMonitorDelegate-Protocol.h>
 #import <UIKitCore/_UIDraggingInfo-Protocol.h>
 
-@class NSArray, NSMutableSet, NSProgress, NSString, PBItemCollection, UIDragEvent, UIView, UIWindow, UIWindowScene, _DUIPotentialDrop, _UIApplicationModalProgressController, _UIDataTransferMonitor, _UIDragSetDownAnimation, _UIDropSessionImpl, _UIInternalDraggingSessionSource;
+@class NSArray, NSMutableSet, NSPointerArray, NSProgress, NSString, PBItemCollection, UIDragEvent, UIView, UIWindow, UIWindowScene, _DUIPotentialDrop, _UIApplicationModalProgressController, _UIDataTransferMonitor, _UIDragSetDownAnimation, _UIDropSessionImpl, _UIInternalDraggingSessionSource;
 @protocol _UIDruidDestinationConnection;
 
 __attribute__((visibility("hidden")))
@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
     _UIApplicationModalProgressController *_modalProgressAlertController;
     _Bool _dropWasPerformed;
     _DUIPotentialDrop *_lastPotentialDrop;
+    NSPointerArray *_dragEvents;
     _Bool _isAccessibilitySession;
-    UIDragEvent *_dragEvent;
     _UIDropSessionImpl *_dropSession;
     UIWindow *_centroidWindow;
     NSArray *_dropItemProviders;
@@ -59,12 +59,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIWindow *centroidWindow; // @synthesize centroidWindow=_centroidWindow;
 @property(readonly, nonatomic) struct CGPoint centroid; // @synthesize centroid=_centroid;
 @property(readonly, nonatomic) _UIDropSessionImpl *dropSession; // @synthesize dropSession=_dropSession;
-@property(nonatomic) __weak UIDragEvent *dragEvent; // @synthesize dragEvent=_dragEvent;
 @property(readonly, nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long draggingSourceOperationMask;
 - (struct CGPoint)draggingLocationInCoordinateSpace:(id)arg1;
 - (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)requestVisibleItems:(CDUnknownBlockType)arg1;
 - (unsigned long long)actualDragOperationForProposedDragOperation:(unsigned long long)arg1 destinationDataOwner:(long long)arg2 forbidden:(_Bool *)arg3;
 - (void)handOffDroppedItems:(id)arg1;
 - (void)setUpDropAnimation:(id)arg1;
@@ -87,6 +87,9 @@ __attribute__((visibility("hidden")))
 - (void)_removeFromDragManager;
 - (void)_sessionDidEndNormally:(_Bool)arg1;
 - (void)connect;
+@property(readonly, nonatomic) UIDragEvent *activeDragEvent;
+@property(readonly, nonatomic) NSArray *dragEvents;
+- (void)addDragEvent:(id)arg1;
 - (_Bool)canBeDrivenByDragEvent:(id)arg1;
 @property(readonly, nonatomic) _UIInternalDraggingSessionSource *inAppSessionSource;
 - (id)initWithDragManager:(id)arg1 dragEvent:(id)arg2;

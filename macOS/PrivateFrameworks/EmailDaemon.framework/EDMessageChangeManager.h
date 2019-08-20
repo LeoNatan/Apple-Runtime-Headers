@@ -20,6 +20,7 @@
     id <EDMessageChangeHookResponder> _hookResponder;
 }
 
++ (id)signpostLog;
 + (id)log;
 @property(readonly, nonatomic) __weak id <EDMessageChangeHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *markAllWorkQueue; // @synthesize markAllWorkQueue=_markAllWorkQueue;
@@ -33,6 +34,7 @@
 - (BOOL)_mailboxURL:(id)arg1 isInSameAccountAsMailboxURL:(id)arg2;
 - (BOOL)_needToStoreServerMessagesForMailboxURL:(id)arg1;
 - (BOOL)_mailboxURLIsInRemoteAccount:(id)arg1;
+- (id)_handleDuplicateServerMessage:(id)arg1 serverMessagePersistence:(id)arg2;
 - (void)_storeServerMessages:(id)arg1 mailboxURL:(id)arg2;
 - (void)_handleFailedCopyItems:(id)arg1 transferAction:(id)arg2;
 - (void)_handleFailedDownload:(id)arg1;
@@ -66,6 +68,7 @@
 - (id)moveMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(BOOL)arg3;
 - (id)init;
 - (id)initWithDatabase:(id)arg1 localActionPersistence:(id)arg2 serverMessagePersistenceFactory:(id)arg3 hookResponder:(id)arg4;
+- (unsigned long long)signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

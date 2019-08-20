@@ -23,6 +23,7 @@
 - (double)latency;
 @property(readonly, nonatomic) unsigned long long clockDomain;
 @property(readonly, nonatomic) unsigned int transportType;
+- (id)description;
 
 @end
 

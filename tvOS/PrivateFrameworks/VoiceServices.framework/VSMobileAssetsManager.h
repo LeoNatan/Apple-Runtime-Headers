@@ -62,6 +62,7 @@
 - (id)activeVoiceAssets;
 - (void)amendVoiceWithDefaultSettings:(id)arg1;
 - (id)selectVoiceResourceAssetForLanguage:(id)arg1;
+- (id)_installedVoiceResourceAssetForLanguage:(id)arg1;
 - (id)selectPreinstalledVoiceForLanguage:(id)arg1 gender:(long long)arg2;
 - (id)preinstalledVoicesForLanguage:(id)arg1 gender:(long long)arg2;
 - (id)voiceAssetFromPreinstallMetadata:(id)arg1;

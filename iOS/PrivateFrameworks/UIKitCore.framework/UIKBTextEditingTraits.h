@@ -29,7 +29,7 @@
 @property(readonly, nonatomic) _Bool isUnderlined; // @synthesize isUnderlined=_isUnderlined;
 @property(readonly, nonatomic) _Bool isItalicized; // @synthesize isItalicized=_isItalicized;
 @property(readonly, nonatomic) _Bool isBold; // @synthesize isBold=_isBold;
-@property(readonly, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
+@property(readonly, nonatomic) __weak UIResponder *responder; // @synthesize responder=_responder;
 @property(readonly, nonatomic) _Bool canMoveCursorRight; // @synthesize canMoveCursorRight=_canMoveCursorRight;
 @property(readonly, nonatomic) _Bool canMoveCursorLeft; // @synthesize canMoveCursorLeft=_canMoveCursorLeft;
 @property(readonly, nonatomic) _Bool canPaste; // @synthesize canPaste=_canPaste;

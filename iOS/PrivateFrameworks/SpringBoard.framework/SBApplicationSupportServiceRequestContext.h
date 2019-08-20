@@ -6,33 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class FBProcess, NSSet, SBApplication, UISApplicationInitializationContext, UISDeviceContext, UISDisplayContext;
+@class SBApplication, UISApplicationInitializationContext;
 
 @interface SBApplicationSupportServiceRequestContext : NSObject
 {
     _Bool _hostIsSpringBoard;
-    _Bool _processIsEntitled;
-    FBProcess *_hostProcess;
     SBApplication *_app;
-    UISDeviceContext *_deviceContext;
-    UISDisplayContext *_displayContext;
-    NSSet *_persistenceIdentifiers;
+    SBApplication *_hostApp;
+    SBApplication *_extensionContainingApp;
     UISApplicationInitializationContext *_applicationInitializationContext;
 }
 
 + (id)initializationContextForClient:(id)arg1;
-+ (id)_identifiersForWhitelistedProcesses;
++ (id)_hostProcessForProcess:(id)arg1;
++ (id)hostingApplicationBundleIDForPid:(int)arg1;
 - (void).cxx_destruct;
-- (id)_preparedApplicationInitializationContextForEntitledProcesses;
 - (id)_main_applicationInitializationContext;
 - (id)_main_persistenceIDs;
 - (id)_main_displayContext;
 - (id)_main_deviceContext;
 - (long long)_main_effectiveClassicMode;
 @property(readonly, nonatomic) UISApplicationInitializationContext *applicationInitializationContext;
-- (_Bool)_canGenerateAnythingUseful;
-- (id)initWithEntitledProcess:(id)arg1;
-- (id)initWithBundleID:(id)arg1;
+- (id)initWithClient:(id)arg1 host:(id)arg2;
 - (id)initWithApplication:(id)arg1;
 
 @end

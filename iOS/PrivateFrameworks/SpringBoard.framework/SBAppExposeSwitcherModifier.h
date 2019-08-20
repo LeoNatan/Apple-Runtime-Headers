@@ -24,8 +24,9 @@
 - (_Bool)_shouldFilteringIncludeAppLayout:(id)arg1;
 - (id)appLayoutToScrollToBeforeTransitioning;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
+- (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
-- (id)appExposeAccessoryButtonBundleID;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
 - (_Bool)isTetheredScrollingEnabled;
 - (id)handleAppExposeEvent:(id)arg1;
 - (id)handleMainTransitionEvent:(id)arg1;

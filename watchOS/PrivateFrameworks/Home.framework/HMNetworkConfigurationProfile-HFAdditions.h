@@ -15,6 +15,7 @@
 + (id)hf_localizedTitleForTargetProtectionMode:(int)arg1;
 + (id)hf_updateProtectionMode:(int)arg1 forProfiles:(id)arg2;
 - (id)hf_updateProtectionMode:(int)arg1;
+@property(readonly, nonatomic) _Bool hf_requiresManualWiFiReconfiguration;
 @property(readonly, nonatomic) _Bool hf_hasCurrentNetworkAccessViolation;
 @property(readonly, copy, nonatomic) NSString *hf_targetProtectionModeDetailedLocalizedDescription;
 @property(readonly, copy, nonatomic) NSString *hf_targetProtectionModeDetailedLocalizedTitle;

@@ -24,6 +24,7 @@
 @property(readonly) vector_7984f87c updatableModelIndicies; // @synthesize updatableModelIndicies=_updatableModelIndicies;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (void)cancelUpdate;
 - (void)resumeUpdateWithParameters:(id)arg1;

@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)resetVerticalConstraint;
 - (void)didFinishTranslationFromPlacement:(id)arg1 to:(id)arg2;
 - (void)willBeginTranslationFromPlacement:(id)arg1 to:(id)arg2;
+- (void)prepareTranslationFromPlacement:(id)arg1 to:(id)arg2;
 - (void)transitionDidFinish:(BOOL)arg1;
 - (void)setPlacement:(id)arg1 quietly:(BOOL)arg2 animated:(BOOL)arg3 generateSplitNotification:(BOOL)arg4;
 - (void)completeTransition:(id)arg1 withInfo:(id)arg2;

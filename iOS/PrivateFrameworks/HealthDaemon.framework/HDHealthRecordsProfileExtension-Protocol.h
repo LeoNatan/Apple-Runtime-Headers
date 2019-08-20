@@ -4,7 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@protocol HDHealthRecordsAccountEventObserver;
+
 @protocol HDHealthRecordsProfileExtension
+- (void)removeAccountEventObserver:(id <HDHealthRecordsAccountEventObserver>)arg1;
+- (void)addAccountEventObserver:(id <HDHealthRecordsAccountEventObserver>)arg1;
 - (_Bool)hasAccounts:(_Bool *)arg1 error:(id *)arg2;
 - (_Bool)deviceConfigurationSupportsHealthRecords:(_Bool *)arg1 error:(id *)arg2;
 @end

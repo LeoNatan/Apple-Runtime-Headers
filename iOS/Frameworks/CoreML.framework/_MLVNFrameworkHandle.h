@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     Class _VNImageBufferClass;
 }
 
++ (id)addOrientation:(unsigned int)arg1 toOptions:(id)arg2;
 + (id)sharedHandle;
 @property(readonly, nonatomic) Class VNImageBufferClass; // @synthesize VNImageBufferClass=_VNImageBufferClass;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintLengthImpl; // @synthesize scenePrintLengthImpl=_scenePrintLengthImpl;

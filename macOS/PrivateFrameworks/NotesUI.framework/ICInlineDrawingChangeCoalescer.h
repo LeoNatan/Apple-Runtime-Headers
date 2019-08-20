@@ -29,7 +29,7 @@
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
 - (void)updateVersionIfNeededForAttachment:(id)arg1 withDrawing:(id)arg2;
-- (void)processIndexableContent;
+- (void)processIndexableContentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)mergeDrawingWithDrawing:(id)arg1;
 - (id)retrieveAndClearLatestDrawingToMerge;
 - (void)mergeDrawingChanges;

@@ -48,7 +48,6 @@
 - (void)loadConversationWithMessageGUID:(id)arg1;
 - (void)openSMSURL:(id)arg1;
 - (void)openSURFURL:(id)arg1;
-- (void)openMessagesStoreURL:(id)arg1 sourceApplication:(id)arg2;
 - (void)openURL:(id)arg1 sourceApplication:(id)arg2;
 - (void)scene:(id)arg1 openURLContexts:(id)arg2;
 - (void)_prepareForSuspend;

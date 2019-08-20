@@ -8,7 +8,7 @@
 
 #import <MediaPlayer/MPMediaRemoteEntityArtworkGenerator-Protocol.h>
 
-@class MPArtworkResizeUtility, MPNowPlayingContentItem, MPNowPlayingInfoCenterArtworkContext, MSVLRUDictionary, MSVTimer, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
+@class MPArtworkResizeUtility, MPMRNowPlayingPlayerPathWrapper, MPNowPlayingContentItem, MPNowPlayingInfoCenterArtworkContext, MSVLRUDictionary, MSVTimer, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MPNowPlayingInfoLyricsDelegate, MPNowPlayingPlaybackQueueDataSource, MPNowPlayingPlaybackQueueDelegate, OS_dispatch_queue;
 
 @interface MPNowPlayingInfoCenter : NSObject <MPMediaRemoteEntityArtworkGenerator>
@@ -43,7 +43,7 @@
         void *lyrics;
     } _callbacks;
     void *_fallbackActivity;
-    void *_playerPath;
+    MPMRNowPlayingPlayerPathWrapper *_playerPath;
     id <MPNowPlayingPlaybackQueueDelegate> _playbackQueueDelegate;
     NSString *_playerID;
     NSString *_representedApplicationBundleIdentifier;
@@ -57,7 +57,7 @@
 @property(copy, nonatomic) NSString *representedApplicationBundleIdentifier; // @synthesize representedApplicationBundleIdentifier=_representedApplicationBundleIdentifier;
 @property(readonly, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(nonatomic) __weak id <MPNowPlayingPlaybackQueueDelegate> playbackQueueDelegate; // @synthesize playbackQueueDelegate=_playbackQueueDelegate;
-@property(readonly, nonatomic) void *playerPath; // @synthesize playerPath=_playerPath;
+@property(readonly, nonatomic) MPMRNowPlayingPlayerPathWrapper *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
 - (void)_onQueue_pushContentItemsUpdate;
 - (void)_contentItemChangedNotification:(id)arg1;

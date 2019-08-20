@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)loadView;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)setNeedsFocusUpdateToList;
 - (void)updateWithViewElement:(id)arg1;
 

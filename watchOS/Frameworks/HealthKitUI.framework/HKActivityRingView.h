@@ -19,7 +19,6 @@
     float _emptyRingAlpha;
 }
 
-+ (id)_iconSpriteImage;
 @property(nonatomic, getter=_shouldBypassApplicationStateChecking, setter=_setShouldBypassApplicationStateChecking:) _Bool shouldBypassApplicationStateChecking; // @synthesize shouldBypassApplicationStateChecking=_shouldBypassApplicationStateChecking;
 @property(nonatomic, getter=_emptyRingAlpha, setter=_setEmptyRingAlpha:) float emptyRingAlpha; // @synthesize emptyRingAlpha=_emptyRingAlpha;
 @property(nonatomic, getter=_ringInsetPercentage, setter=_setRingInsetPercentage:) float ringInsetPercentage; // @synthesize ringInsetPercentage=_ringInsetPercentage;

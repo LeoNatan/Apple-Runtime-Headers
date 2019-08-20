@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
     unsigned int _stateType;
 }
 
++ (id)cursorByAddingNodeIndex:(unsigned long)arg1 toCursor:(id)arg2;
 @property(nonatomic) unsigned int stateType; // @synthesize stateType=_stateType;
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -11,12 +11,13 @@
 #import <MediaPlaybackCore/MPCResponseMediaRemoteControllerChaining-Protocol.h>
 #import <MediaPlaybackCore/MPMiddleware-Protocol.h>
 
-@class MPCMediaRemoteController, MPSectionedCollection, NSArray, NSIndexPath, NSString;
+@class MPCFuture, MPCMediaRemoteController, MPSectionedCollection, NSArray, NSIndexPath, NSString;
 @protocol MPCSupportedCommands;
 
 @interface MPCMediaRemoteMiddleware : NSObject <MPCResponseMediaRemoteControllerChaining, MPCPlayerResponseBuilder, MPCPlayerSessionResponseBuilder, MPMiddleware>
 {
     NSArray *_invalidationObservers;
+    MPCFuture *_controllerFuture;
     MPCMediaRemoteController *_controller;
     MPSectionedCollection *_queueContentItems;
     MPSectionedCollection *_queueModelObjects;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) MPSectionedCollection *queueModelObjects; // @synthesize queueModelObjects=_queueModelObjects;
 @property(retain, nonatomic) MPSectionedCollection *queueContentItems; // @synthesize queueContentItems=_queueContentItems;
 @property(retain, nonatomic) MPCMediaRemoteController *controller; // @synthesize controller=_controller;
+@property(retain, nonatomic) MPCFuture *controllerFuture; // @synthesize controllerFuture=_controllerFuture;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 - (void).cxx_destruct;
 - (id)operationsForSessionRequest:(id)arg1;

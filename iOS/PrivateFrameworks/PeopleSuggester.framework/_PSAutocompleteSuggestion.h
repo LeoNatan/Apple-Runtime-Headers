@@ -6,7 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@interface _PSAutocompleteSuggestion : NSObject
+#import <PeopleSuggester/NSSecureCoding-Protocol.h>
+
+@interface _PSAutocompleteSuggestion : NSObject <NSSecureCoding>
 {
 }
 

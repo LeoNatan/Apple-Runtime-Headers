@@ -201,8 +201,6 @@
 - (void).cxx_destruct;
 - (id)summaryForConversation:(long long)arg1;
 - (BOOL)automatedConversationTypeIsConsistentForConversation:(long long)arg1;
-- (int)conversationPositionOfClosestDescendantForRowID:(long long)arg1 inConversation:(long long)arg2;
-- (int)conversationPositionOfClosestAncestorForRowID:(long long)arg1 inConversation:(long long)arg2;
 - (int)automatedConversationTypeForRowID:(long long)arg1;
 - (id)clonesForRowID:(long long)arg1;
 @property(retain, nonatomic) NSHashTable *participants;

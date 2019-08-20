@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     BOOL _allowsCellularAccess;
     BOOL _preferAnonymousRequests;
     NSUUID *_metricUUID;
+    NSString *_sourceApplicationBundleIdentifier;
+    NSString *_sourceApplicationSecondaryIdentifier;
     NSString *_eventName;
     NSDate *_startTime;
     NSDate *_endTime;
@@ -33,6 +35,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
+@property(readonly, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
+@property(readonly, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(readonly, nonatomic) BOOL preferAnonymousRequests; // @synthesize preferAnonymousRequests=_preferAnonymousRequests;
 @property(readonly, nonatomic) BOOL allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;
 @property(readonly, nonatomic) BOOL isPushTriggerFired; // @synthesize isPushTriggerFired=_isPushTriggerFired;

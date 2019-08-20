@@ -8,7 +8,7 @@
 
 #import <TVServices/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSNumber, NSString, NSURL, TVTopShelfRottenTomatoesRating;
+@class NSArray, NSDate, NSNumber, NSString, NSURL, TVTopShelfImageRequestStorage, TVTopShelfRottenTomatoesRating;
 
 @interface TVTopShelfCarouselItem : TVTopShelfItem <NSSecureCoding>
 {
@@ -17,6 +17,8 @@
     NSNumber *_commonSenseRecommendedAge;
     NSString *_contextImageName;
     NSString *_photosAssetIdentifier;
+    NSString *_termsAndConditionsText;
+    TVTopShelfImageRequestStorage *_titleImageStorage;
     NSString *_contextTitle;
     NSString *_summary;
     NSString *_genre;
@@ -38,6 +40,8 @@
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *contextTitle; // @synthesize contextTitle=_contextTitle;
+@property(retain, nonatomic, setter=_setTitleImageStorage:) TVTopShelfImageRequestStorage *_titleImageStorage; // @synthesize _titleImageStorage;
+@property(copy, nonatomic, setter=_setTermsAndConditionsText:) NSString *_termsAndConditionsText; // @synthesize _termsAndConditionsText;
 @property(copy, nonatomic, setter=_setPhotosAssetIdentifier:) NSString *_photosAssetIdentifier; // @synthesize _photosAssetIdentifier;
 @property(copy, nonatomic) NSString *_contextImageName; // @synthesize _contextImageName;
 @property(copy, nonatomic, setter=_setCommonSenseRecommendedAge:) NSNumber *_commonSenseRecommendedAge; // @synthesize _commonSenseRecommendedAge;

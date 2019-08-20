@@ -16,7 +16,7 @@
     ACAccount *_imapACAccount;
 }
 
-+ (id)keyPathsForValuesAffectingIsAOSAccount;
++ (id)keyPathsForValuesAffectingIsICloudAccount;
 + (id)createAccountWithEmailAddress:(id)arg1 context:(id)arg2;
 + (id)accountWithEmailAddress:(id)arg1 context:(id)arg2;
 + (id)accountWithUsername:(id)arg1 hostname:(id)arg2 context:(id)arg3;

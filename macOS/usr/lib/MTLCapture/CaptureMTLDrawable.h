@@ -26,6 +26,7 @@
 - (id)layer;
 - (void)dealloc;
 @property(readonly, copy) NSString *description;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly) unsigned long long streamReference;

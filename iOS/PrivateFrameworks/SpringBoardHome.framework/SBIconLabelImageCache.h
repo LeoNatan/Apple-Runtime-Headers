@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class CPMemoryPool, NSMutableDictionary;
+#import <SpringBoardHome/BSDescriptionProviding-Protocol.h>
 
-@interface SBIconLabelImageCache : NSObject
+@class CPMemoryPool, NSMutableDictionary, NSString;
+
+@interface SBIconLabelImageCache : NSObject <BSDescriptionProviding>
 {
     NSMutableDictionary *_labelImages;
     double _scale;
@@ -24,6 +26,11 @@
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGSize maxLabelSize; // @synthesize maxLabelSize=_maxLabelSize;
 - (void).cxx_destruct;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) unsigned long long numberOfCacheMisses;
 @property(readonly, nonatomic) unsigned long long numberOfCacheHits;
 @property(readonly, nonatomic) unsigned long long numberOfCachedImages;
@@ -35,6 +42,11 @@
 - (id)labelImageForParameters:(id)arg1;
 - (id)cachedLabelImageForParameters:(id)arg1;
 - (id)initWithMaxLabelSize:(struct CGSize)arg1 scale:(double)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -121,6 +121,9 @@
 @property(nonatomic) unsigned long long browserUserInterfaceStyle; // @dynamic browserUserInterfaceStyle;
 - (void)setshouldShowFileExtensions:(BOOL)arg1;
 @property(retain, nonatomic) UIColor *backgroundTintColor;
+- (void)updateBackgroundColor;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 @property(copy, nonatomic) NSString *createButtonTitle;
 @property(copy, nonatomic) NSString *localizedCreateDocumentActionTitle;
 @property(nonatomic) double createButtonAspectRatio;
@@ -143,6 +146,7 @@
 - (void)revealDocumentAtURL:(id)arg1 shouldImport:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)effectiveAppearanceDidChange:(id)arg1;
+- (long long)preferredStatusBarStyle;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)_displayRemoteControllerIfNeeded;
 - (void)_embedViewController:(id)arg1;

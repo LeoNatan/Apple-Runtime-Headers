@@ -8,7 +8,7 @@
 
 #import <ContactsUI/UIDragInteractionDelegate-Protocol.h>
 
-@class CNContact, CNContactFormatter, CNContactListStyleApplier, NSArray, NSLayoutConstraint, NSString, UIDragInteraction, UIGestureRecognizer, UILabel;
+@class CNContact, CNContactFormatter, CNContactListStyleApplier, CNContactStore, NSArray, NSLayoutConstraint, NSString, UIDragInteraction, UIGestureRecognizer, UILabel;
 @protocol CNContactListBannerViewDelegate;
 
 @interface CNContactListBannerView : UIView <UIDragInteractionDelegate>
@@ -16,6 +16,7 @@
     id <CNContactListBannerViewDelegate> _delegate;
     CNContactListStyleApplier *_contactListStyleApplier;
     UIView *_bottomSeparator;
+    CNContactStore *_contactStore;
     CNContactFormatter *_formatter;
     CNContact *_meContact;
     UIGestureRecognizer *_longPress;
@@ -45,6 +46,7 @@
 @property(readonly, nonatomic) UIGestureRecognizer *longPress; // @synthesize longPress=_longPress;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(readonly, nonatomic) CNContactFormatter *formatter; // @synthesize formatter=_formatter;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
 @property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
 @property(nonatomic) __weak id <CNContactListBannerViewDelegate> delegate; // @synthesize delegate=_delegate;

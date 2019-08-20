@@ -20,8 +20,10 @@
 - (_Bool)_bubbleIsOnLeftSide;
 - (_Bool)_shouldShowBubbleView;
 - (id)_defaultCurrencyAmount;
+- (void)_updateImageViewDynamicColors;
 - (void)startAnimationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startAnimation;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithPeerPaymentPassSnapShot:(id)arg1 peerPaymentCredential:(id)arg2;

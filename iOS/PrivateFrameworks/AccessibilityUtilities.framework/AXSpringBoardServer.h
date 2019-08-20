@@ -71,6 +71,8 @@
 - (_Bool)dismissSiri;
 - (_Bool)isSpotlightVisible;
 @property(readonly, nonatomic) _Bool isGuidedAccessActive;
+- (_Bool)toggleDarkMode;
+- (_Bool)isDarkModeActive;
 - (void)revealSpotlight;
 - (void)toggleSpotlight;
 - (void)simulateEdgePressHaptics;

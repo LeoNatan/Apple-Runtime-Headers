@@ -10,6 +10,9 @@
 {
 }
 
++ (id)removeIssueFromMyMagazinesActivity;
++ (id)downloadIssueActivity;
++ (id)removeIssueActivity;
 + (id)openChannelActivity;
 + (id)unfollowChannelActivity;
 + (id)followChannelActivity;

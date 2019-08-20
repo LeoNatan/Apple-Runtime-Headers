@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 - (double)widthForHeight:(double)arg1;
 - (_Bool)isEquivalentToCropAspect:(id)arg1;
 - (_Bool)isEqualToCropAspect:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 @property(readonly, nonatomic) double ratio;
 - (_Bool)isFreeformCrop;
 - (id)_initWithWidth:(double)arg1 height:(double)arg2 localizedName:(id)arg3;

@@ -6,12 +6,12 @@
 
 #import <ShareSheet/NSObject-Protocol.h>
 
-@class _UIActivityUserDefaultsViewController;
+@class NSArray, NSUUID, _UIActivityUserDefaultsViewController;
 
 @protocol _UIActivityUserDefaultsViewControllerDelegate <NSObject>
-- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didSelectActivityAtIndex:(long long)arg2 activityCategory:(long long)arg3;
-- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didMoveActivityAtIndex:(long long)arg2 toIndex:(long long)arg3 activityCategory:(long long)arg4;
-- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didFavoriteActivity:(_Bool)arg2 atIndex:(long long)arg3;
-- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didToggleActivityAtIndex:(long long)arg2 activityCategory:(long long)arg3;
+- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didSelectActivityWithIdentifier:(NSUUID *)arg2 activityCategory:(long long)arg3;
+- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didUpdateFavoritesProxies:(NSArray *)arg2 activityCategory:(long long)arg3;
+- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didFavoriteActivity:(_Bool)arg2 withIdentifier:(NSUUID *)arg3 activityCategory:(long long)arg4;
+- (void)userDefaultsViewController:(_UIActivityUserDefaultsViewController *)arg1 didToggleActivityWithIdentifier:(NSUUID *)arg2 activityCategory:(long long)arg3;
 @end
 

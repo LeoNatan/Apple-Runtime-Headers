@@ -44,6 +44,7 @@
 @property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 @property(copy, nonatomic) NSCollectionLayoutSpacing *interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 - (void).cxx_destruct;
+- (_Bool)_isListSolverCompatibleForLayoutAxis:(int)arg1;
 - (id)_effectiveSizeForSize:(id)arg1 count:(long long)arg2 layoutDirection:(long long)arg3;
 - (id)_effectiveCopiedSubitemsForSubitems:(id)arg1 count:(long long)arg2 layoutDirection:(long long)arg3;
 - (_Bool)isEqual:(id)arg1;

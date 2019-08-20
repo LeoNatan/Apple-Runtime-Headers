@@ -16,7 +16,7 @@
 - (id)initWithUUID:(NSUUID *)arg1 configuration:(HKTaskConfiguration *)arg2 client:(HDHealthStoreClient *)arg3 delegate:(id <HDTaskServerDelegate>)arg4;
 
 @optional
-+ (_Bool)validateConfiguration:(HKTaskConfiguration *)arg1 error:(id *)arg2;
++ (_Bool)validateConfiguration:(HKTaskConfiguration *)arg1 client:(HDHealthStoreClient *)arg2 error:(id *)arg3;
 + (id)createTaskServerWithUUID:(NSUUID *)arg1 configuration:(HKTaskConfiguration *)arg2 client:(HDHealthStoreClient *)arg3 delegate:(id <HDTaskServerDelegate>)arg4 error:(id *)arg5;
 + (Class)configurationClass;
 @end

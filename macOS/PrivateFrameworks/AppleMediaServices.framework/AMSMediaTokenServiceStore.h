@@ -11,26 +11,30 @@
 __attribute__((visibility("hidden")))
 @interface AMSMediaTokenServiceStore : NSObject
 {
-    NSString *_keychainAccessGroup;
     NSString *_clientIdentifier;
+    NSString *_keychainAccessGroup;
     AMSMediaToken *_memoryMediaToken;
 }
 
 @property(retain) AMSMediaToken *memoryMediaToken; // @synthesize memoryMediaToken=_memoryMediaToken;
+@property(retain) NSString *keychainAccessGroup; // @synthesize keychainAccessGroup=_keychainAccessGroup;
 @property(readonly) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (void)_teardownKeychainNotifications;
 - (void)_setupKeychainNotifications;
 - (void)_postMediaTokenChangedNotification;
+- (void)_mediaTokenChanged;
+- (id)_mediaTokenChangedNotificationName;
 - (void)_storeTokenInKeychain:(id)arg1;
 - (id)_retrieveTokenFromKeychain;
 - (void)_removeTokenFromKeychain;
 - (struct __CFDictionary *)_keychainQuery;
+- (id)_keychainAccessGroup;
+- (BOOL)_hasAppleGroupEnabled;
 - (void)dealloc;
 - (void)storeToken:(id)arg1;
 - (id)retrieveToken;
-@property(retain) NSString *keychainAccessGroup; // @synthesize keychainAccessGroup=_keychainAccessGroup;
-- (id)initWithClientIdentifier:(id)arg1;
+- (id)initWithClientIdentifier:(id)arg1 keychainAccessGroup:(id)arg2;
 
 @end
 

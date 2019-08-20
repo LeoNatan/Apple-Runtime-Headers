@@ -9,7 +9,7 @@
 #import <UIKitCore/_UIDrawsTextInRect-Protocol.h>
 #import <UIKitCore/_UITextTiledLayerDelegate-Protocol.h>
 
-@class NSArray, NSMutableSet, NSString, _UITextTiledLayer;
+@class NSArray, NSMutableSet, NSString, _UISceneDisplayLink, _UITextTiledLayer;
 @protocol _UITextCanvasViewContext;
 
 __attribute__((visibility("hidden")))
@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_ghostedRanges;
     NSMutableSet *_invisibleRanges;
     NSArray *_maskedRects;
+    _UISceneDisplayLink *_sceneDisplayLink;
     id <_UITextCanvasViewContext> _context;
 }
 
-+ (void)_updateAllTilingViewports;
 + (Class)layerClass;
 @property(nonatomic) __weak id <_UITextCanvasViewContext> context; // @synthesize context=_context;
 - (void).cxx_destruct;
@@ -42,7 +42,10 @@ __attribute__((visibility("hidden")))
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_updateTilingViewportLayer;
 - (void)_updateTilingViewportBookkeeping;
+- (void)_windowDidMoveToScreen;
 - (void)didMoveToWindow;
+- (void)willMoveToWindow:(id)arg1;
+- (_Bool)_enableAutoConstraining;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

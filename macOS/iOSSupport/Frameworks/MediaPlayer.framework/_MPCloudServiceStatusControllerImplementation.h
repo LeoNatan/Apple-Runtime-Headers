@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, NSOperationQueue, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
+@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, ICUserIdentity, NSOperationQueue, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
 @protocol OS_dispatch_queue;
 
 @interface _MPCloudServiceStatusControllerImplementation : NSObject
@@ -23,7 +23,6 @@
     BOOL _hasLoadedMatchStatus;
     BOOL _hasLoadedSubscriptionAvailability;
     BOOL _hasLoadedURLBag;
-    SSVSubscriptionStatus *_lastKnownSubscriptionStatus;
     ICMusicSubscriptionStatus *_lastKnownMusicSubscriptionStatus;
     unsigned long long _matchStatusObservationCount;
     unsigned long long _matchStatus;
@@ -35,17 +34,20 @@
     unsigned long long _subscriptionAvailabilityObservationCount;
     unsigned long long _subscriptionLeaseUsageCount;
     NSOperationQueue *_subscriptionOperationQueue;
-    unsigned long long _subscriptionStatusObservationCount;
     unsigned long long _URLBagObservationCount;
+    ICUserIdentity *_userIdentity;
     ICMusicSubscriptionFairPlayKeyStatus *_lastKnownSubscriptionFairPlayKeyStatus;
+    SSVSubscriptionStatus *_subscriptionStatus;
 }
 
 + (id)implementationWithUserIdentity:(id)arg1;
 + (id)implementations;
 + (id)globalSerialQueue;
+@property(readonly, copy, nonatomic) SSVSubscriptionStatus *subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
 @property(readonly, nonatomic) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus; // @synthesize lastKnownSubscriptionFairPlayKeyStatus=_lastKnownSubscriptionFairPlayKeyStatus;
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
-- (void)_updateSubscriptionStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateSubscriptionStatusWithIgnoreCachePolicy:(BOOL)arg1;
 - (void)_updateSubscriptionAvailability;
 - (void)_updateMatchStatus;
 - (void)_updateForNetworkReachabilityObserversCountChange;
@@ -55,16 +57,13 @@
 - (void)_enableICMLErrorReasonChange:(id)arg1;
 - (void)_subscriptionStatusDidChange:(id)arg1;
 - (void)_userIdentityStoreDidChange:(id)arg1;
-- (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_cloudClientAuthenticationDidChange;
-- (void)getSubscriptionStatusWithOptions:(id)arg1 statusBlock:(CDUnknownBlockType)arg2;
-- (void)endObservingSubscriptionStatus;
+- (void)refreshMusicSubscriptionStatus;
 - (void)endObservingSubscriptionAvailability;
 - (void)endObservingPurchaseHistoryEnabled;
 - (void)endObservingFairPlaySubscriptionStatus;
 - (void)endObservingMatchStatus;
 - (void)endObservingCloudLibraryEnabled;
-- (void)beginObservingSubscriptionStatus;
 - (void)beginObservingSubscriptionAvailability;
 - (void)beginObservingPurchaseHistoryEnabled;
 - (void)beginObservingFairPlaySubscriptionStatus;
@@ -72,7 +71,6 @@
 - (void)beginObservingCloudLibraryEnabled;
 - (id)_subscriptionOperationQueue;
 @property(readonly, copy, nonatomic) ICMusicSubscriptionStatus *musicSubscriptionStatus;
-@property(readonly, copy, nonatomic) SSVSubscriptionStatus *subscriptionStatus;
 @property(readonly, nonatomic) BOOL shouldPlaybackRequireSubscriptionLease;
 @property(readonly, nonatomic) unsigned long long matchStatus;
 @property(readonly, nonatomic) SSVFairPlaySubscriptionStatus *lastKnownFairPlaySubscriptionStatus;

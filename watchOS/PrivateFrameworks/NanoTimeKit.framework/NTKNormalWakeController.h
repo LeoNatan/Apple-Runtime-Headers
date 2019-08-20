@@ -18,7 +18,7 @@
 @property(nonatomic) __weak id <NTKClockWakeControllerProvider> provider; // @synthesize provider=_provider;
 - (void).cxx_destruct;
 - (double)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-- (double)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (double)handleScreenOnAnimated:(_Bool)arg1 screenWasOn:(_Bool)arg2 flags:(unsigned int)arg3 brightnessRamp:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5 playTouchAnimation:(CDUnknownBlockType)arg6;
 
 @end
 

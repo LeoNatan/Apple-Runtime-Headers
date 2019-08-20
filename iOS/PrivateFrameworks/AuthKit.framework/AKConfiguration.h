@@ -19,6 +19,7 @@
 + (id)sharedConfiguration;
 - (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastKnownIDMSEnvironment;
+@property(nonatomic) long long shouldAutocycleAppsInWebTakeover;
 @property(nonatomic) long long shouldAutocycleAppsInTiburon;
 @property(nonatomic) long long shouldSuppressModalSheetsInMacBuddy;
 @property(nonatomic) long long shouldEnableTestAccountMode;

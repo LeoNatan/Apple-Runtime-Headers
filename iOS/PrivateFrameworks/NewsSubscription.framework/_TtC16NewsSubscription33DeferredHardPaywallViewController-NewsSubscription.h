@@ -9,6 +9,8 @@
 @interface _TtC16NewsSubscription33DeferredHardPaywallViewController (NewsSubscription)
 - (void)viewWillLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 @end
 

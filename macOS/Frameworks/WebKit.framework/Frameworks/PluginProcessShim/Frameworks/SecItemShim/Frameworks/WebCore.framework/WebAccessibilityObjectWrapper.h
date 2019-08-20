@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)_accessibilitySetTestValue:(id)arg1 forAttribute:(id)arg2;
 - (void)_accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
+- (BOOL)accessibilityInsertText:(id)arg1;
 - (BOOL)accessibilityReplaceRange:(struct _NSRange)arg1 withText:(id)arg2;
 - (void)accessibilityPerformAction:(id)arg1;
 - (void)_accessibilityScrollToGlobalPoint:(struct CGPoint)arg1;

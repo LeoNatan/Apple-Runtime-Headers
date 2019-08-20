@@ -317,7 +317,8 @@ __attribute__((visibility("hidden")))
 - (void)setSuspendAudio;
 - (_Bool)isCallOngoing;
 - (void)processRemoteIPChange:(id)arg1 callID:(unsigned long)arg2;
-@property _Bool isGKVoiceChat;
+- (_Bool)isGKVoiceChat;
+- (void)setIsGKVoiceChat:(_Bool)arg1;
 @property(readonly) unsigned int lastSentAudioSampleTime;
 @property unsigned char inputMeter;
 @property(readonly) int bundledPackets;
@@ -391,7 +392,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool useCompressedConnectionData;
 @property(nonatomic) _Bool requiresWifi;
 @property(readonly) _Bool isCurrentPayloadTypeValid;
-- (id)initWithDeviceRole:(int)arg1 transportType:(unsigned int)arg2;
+- (id)initWithDeviceRole:(int)arg1 transportType:(unsigned int)arg2 isGKVoiceChat:(_Bool)arg3;
 - (id)init;
 @property(readonly, copy) NSString *description;
 - (void)vcSecureDataChannel:(id)arg1 messageType:(unsigned int)arg2 receivedData:(id)arg3;

@@ -12,13 +12,13 @@
 
 @interface UISApplicationStateClient : NSObject <BSInvalidatable>
 {
-    BSServiceConnection *_lazy_connection;
+    struct os_unfair_lock_s _lock;
+    BSServiceConnection *_lock_connection;
     NSString *_bundleIdentifier;
-    BOOL _invalidated;
+    BOOL _lock_invalidated;
 }
 
 - (void).cxx_destruct;
-- (id)_lazy_connection;
 - (id)_remoteTarget;
 @property(nonatomic) double nextWakeIntervalSinceReferenceDate;
 - (void)setMinimumBackgroundFetchInterval:(double)arg1;

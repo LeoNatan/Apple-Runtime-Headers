@@ -18,6 +18,7 @@
     double _timeoutInterval;
 }
 
++ (_Bool)requiresNetwork;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned int authenticationOptions; // @synthesize authenticationOptions=_authenticationOptions;
 @property(copy, nonatomic) NSString *clientPlatformIdentifier; // @synthesize clientPlatformIdentifier=_clientPlatformIdentifier;

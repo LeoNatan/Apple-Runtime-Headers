@@ -9,6 +9,7 @@
 @interface _TtC5TeaUI17KeyCommandManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: isEnabled
+    // Error parsing type: , name: traverser
     // Error parsing type: , name: registries
     // Error parsing type: , name: controller
     // Error parsing type: , name: selector

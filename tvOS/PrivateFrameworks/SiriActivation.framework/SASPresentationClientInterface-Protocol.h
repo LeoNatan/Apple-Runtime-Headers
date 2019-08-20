@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AFBulletin, NSError, NSNumber, NSObject, NSString, SiriDismissalOptions, SiriPresentationIdentifierTransport;
+@class AFBulletin, NSDictionary, NSError, NSNumber, NSString, SiriPresentationIdentifierTransport;
 
 @protocol SASPresentationClientInterface
 - (oneway void)handleMarkBulletinWithIdentifier:(NSString *)arg1 asRead:(NSNumber *)arg2;
 - (AFBulletin *)bulletinForIdentifier:(NSString *)arg1;
-- (NSObject *)bulletinsOnLockScreen;
-- (NSObject *)allBulletins;
+- (NSDictionary *)bulletinsOnLockScreen;
+- (NSDictionary *)allBulletins;
 - (oneway void)failedToPresentSiriWithError:(NSError *)arg1;
 - (oneway void)didPresentSiri;
-- (oneway void)didDismissWithOptions:(SiriDismissalOptions *)arg1;
+- (oneway void)didDismiss;
 - (oneway void)unregisterPresentationIdentifier:(SiriPresentationIdentifierTransport *)arg1;
 - (oneway void)registerPresentationIdentifier:(SiriPresentationIdentifierTransport *)arg1;
 @end

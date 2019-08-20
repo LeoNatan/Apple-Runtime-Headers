@@ -65,7 +65,7 @@
 - (void)setMeteringEnabled:(BOOL)arg1;
 - (unsigned long long)alertStartTime;
 - (BOOL)playAlertSoundForType:(long long)arg1;
-- (BOOL)playRecordStartingAlertAndResetEndpointer;
+- (BOOL)playRecordStartingAlertAndResetEndpointerFromStream:(unsigned long long)arg1;
 - (BOOL)setAlertSoundFromURL:(id)arg1 forType:(long long)arg2;
 - (void)audioDecoderDidDecodePackets:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 timestamp:(unsigned long long)arg5 receivedNumChannels:(unsigned int)arg6;
 - (id)_compensateChannelDataIfNeeded:(id)arg1 receivedNumChannels:(unsigned int)arg2;
@@ -75,7 +75,7 @@
 - (BOOL)_shouldUseRemoteRecordForContext:(id)arg1;
 - (id)voiceTriggerInfo;
 - (id)playbackRoute;
-- (void)configureAlertBehavior:(id)arg1;
+- (void)configureAlertBehavior:(id)arg1 audioStreamHandleId:(unsigned long long)arg2;
 - (void)enableMiniDucking:(BOOL)arg1;
 @property(nonatomic) BOOL duckOthersOption;
 - (BOOL)deactivateAudioSession:(unsigned long long)arg1 streamHandleId:(unsigned long long)arg2 error:(id *)arg3;

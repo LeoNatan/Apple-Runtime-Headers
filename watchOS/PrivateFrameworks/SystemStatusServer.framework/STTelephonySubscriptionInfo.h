@@ -19,6 +19,7 @@
     NSString *_shortSIMLabel;
     NSString *_SIMStatus;
     unsigned int _registrationStatus;
+    unsigned int _cellularRegistrationStatus;
     unsigned int _dataConnectionType;
     _Bool _preferredForDataConnections;
     _Bool _providingDataConnection;
@@ -43,6 +44,7 @@
 @property(readonly, nonatomic, getter=isProvidingDataConnection) _Bool providingDataConnection; // @synthesize providingDataConnection=_providingDataConnection;
 @property(readonly, nonatomic, getter=isPreferredForDataConnections) _Bool preferredForDataConnections; // @synthesize preferredForDataConnections=_preferredForDataConnections;
 @property(readonly, nonatomic) unsigned int dataConnectionType; // @synthesize dataConnectionType=_dataConnectionType;
+@property(readonly, nonatomic) unsigned int cellularRegistrationStatus; // @synthesize cellularRegistrationStatus=_cellularRegistrationStatus;
 @property(readonly, nonatomic) unsigned int registrationStatus; // @synthesize registrationStatus=_registrationStatus;
 @property(readonly, copy, nonatomic) NSString *SIMStatus; // @synthesize SIMStatus=_SIMStatus;
 @property(readonly, copy, nonatomic) NSString *shortSIMLabel; // @synthesize shortSIMLabel=_shortSIMLabel;

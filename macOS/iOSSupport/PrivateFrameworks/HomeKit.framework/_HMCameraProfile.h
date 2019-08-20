@@ -6,7 +6,7 @@
 
 #import <HomeKit/_HMAccessoryProfile.h>
 
-@class HMCameraUserSettings, NSArray, _HMCameraAudioControl, _HMCameraSettingsControl, _HMCameraSnapshotControl, _HMCameraStreamControl;
+@class HMCameraClipManager, HMCameraUserSettings, NSArray, _HMCameraAudioControl, _HMCameraSettingsControl, _HMCameraSnapshotControl, _HMCameraStreamControl;
 
 @interface _HMCameraProfile : _HMAccessoryProfile
 {
@@ -16,15 +16,17 @@
     _HMCameraAudioControl *_speakerControl;
     _HMCameraAudioControl *_microphoneControl;
     HMCameraUserSettings *_userSettings;
+    HMCameraClipManager *_clipManager;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) HMCameraUserSettings *userSettings; // @synthesize userSettings=_userSettings;
-@property(readonly, nonatomic) _HMCameraAudioControl *microphoneControl; // @synthesize microphoneControl=_microphoneControl;
-@property(readonly, nonatomic) _HMCameraAudioControl *speakerControl; // @synthesize speakerControl=_speakerControl;
-@property(readonly, nonatomic) _HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
-@property(readonly, nonatomic) _HMCameraSnapshotControl *snapshotControlInternal; // @synthesize snapshotControlInternal=_snapshotControlInternal;
-@property(readonly, nonatomic) _HMCameraStreamControl *streamControlInternal; // @synthesize streamControlInternal=_streamControlInternal;
+@property(retain) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
+@property(retain) HMCameraUserSettings *userSettings; // @synthesize userSettings=_userSettings;
+@property(readonly) _HMCameraAudioControl *microphoneControl; // @synthesize microphoneControl=_microphoneControl;
+@property(readonly) _HMCameraAudioControl *speakerControl; // @synthesize speakerControl=_speakerControl;
+@property(readonly) _HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
+@property(readonly) _HMCameraSnapshotControl *snapshotControlInternal; // @synthesize snapshotControlInternal=_snapshotControlInternal;
+@property(readonly) _HMCameraStreamControl *streamControlInternal; // @synthesize streamControlInternal=_streamControlInternal;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -33,7 +35,7 @@
 - (void)_registerNotificationHandlers;
 - (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 - (void)_createControls:(id)arg1;
-@property(readonly, nonatomic) NSArray *controls;
+@property(readonly, copy) NSArray *controls;
 - (id)init;
 
 @end

@@ -83,6 +83,7 @@
 - (double)_originalDurationForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 withAdjustedDuration:(double)arg3;
 - (void)_rotateWindow:(id)arg1 toInterfaceOrientation:(int)arg2 duration:(double)arg3 force:(_Bool)arg4;
 - (id)_windowWithUserInteractionEnabled:(_Bool)arg1 windowLevel:(float)arg2 createIfNeeded:(_Bool)arg3 purposeIdentifier:(id)arg4;
+- (void)unregisterNubbit:(id)arg1 shouldUndoFade:(_Bool)arg2;
 - (void)unregisterNubbit:(id)arg1;
 - (void)registerNubbit:(id)arg1 delegate:(id)arg2;
 - (void)hideAlertWithIdentifier:(id)arg1 forService:(id)arg2;

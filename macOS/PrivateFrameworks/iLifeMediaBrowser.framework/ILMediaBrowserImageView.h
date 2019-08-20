@@ -16,7 +16,7 @@
 - (void)setSelectionIndexes:(id)arg1 byExtendingSelection:(BOOL)arg2;
 - (BOOL)selectItem:(BOOL)arg1 atIndex:(unsigned long long)arg2;
 - (BOOL)_shouldSelectIndex:(long long)arg1;
-- (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)copy:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (id)menuForEvent:(id)arg1;

@@ -9,20 +9,18 @@
 #import <CalendarFoundation/CLLocationManagerDelegate-Protocol.h>
 
 @class CLLocationManager, NSString;
-@protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface CalLocationAuthorization : NSObject <CLLocationManagerDelegate>
 {
-    NSObject<OS_dispatch_group> *_initializationGroup;
-    NSObject<OS_dispatch_queue> *_queue;
+    id _bundleOrBundleIdentifier;
     CLLocationManager *_locationManager;
     // Error parsing type: Ai, name: _status
-    BOOL _statusInitialized;
 }
 
 + (int)authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
++ (id)logHandle;
 - (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (int)authorizationStatus;

@@ -93,9 +93,11 @@ __attribute__((visibility("hidden")))
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)_tableView:(id)arg1 sourceCellForRow:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
@@ -131,13 +133,13 @@ __attribute__((visibility("hidden")))
 - (id)_headerViewForTitle:(id)arg1;
 - (void)_determineConceptChartabilityAndInsertChartIfNeeded;
 - (void)_updateTableViewGroups;
-- (void)_showTTRAlertIfInternalInstallWithError:(id)arg1;
 - (void)_startCollectingData;
 - (id)_sampleTypesToDisplay;
 - (id)_filterFromCurrentPredicates;
 - (void)_setupDisplayItemProvider;
 - (void)_assertSearchControllerStatus;
 - (void)_scrollToRecordWithUUID:(id)arg1 animated:(_Bool)arg2;
+- (id)_adjustedIndexPathForRecordId:(id)arg1;
 - (void)_reloadData;
 - (void)_reloadDataWithNotification:(id)arg1;
 - (void)_reloadDataWithDelay:(double)arg1;

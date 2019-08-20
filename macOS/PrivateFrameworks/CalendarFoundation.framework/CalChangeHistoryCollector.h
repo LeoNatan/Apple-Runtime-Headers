@@ -14,14 +14,14 @@
 {
     BOOL _didReset;
     BOOL _hasChanges;
-    NSMutableArray *_insertedContactIdentifiers;
-    NSMutableArray *_updatedContactIdentifiers;
+    NSMutableArray *_insertedContacts;
+    NSMutableArray *_updatedContacts;
     NSMutableArray *_deletedContactIdentifiers;
 }
 
 @property(retain) NSMutableArray *deletedContactIdentifiers; // @synthesize deletedContactIdentifiers=_deletedContactIdentifiers;
-@property(retain) NSMutableArray *updatedContactIdentifiers; // @synthesize updatedContactIdentifiers=_updatedContactIdentifiers;
-@property(retain) NSMutableArray *insertedContactIdentifiers; // @synthesize insertedContactIdentifiers=_insertedContactIdentifiers;
+@property(retain) NSMutableArray *updatedContacts; // @synthesize updatedContacts=_updatedContacts;
+@property(retain) NSMutableArray *insertedContacts; // @synthesize insertedContacts=_insertedContacts;
 @property BOOL hasChanges; // @synthesize hasChanges=_hasChanges;
 @property BOOL didReset; // @synthesize didReset=_didReset;
 - (void).cxx_destruct;

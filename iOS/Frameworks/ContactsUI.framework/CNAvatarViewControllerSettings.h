@@ -21,9 +21,11 @@
 }
 
 + (id)settingsWithLikenessResolver:(id)arg1 likenessRenderer:(id)arg2 contactStore:(id)arg3 threeDTouchEnabled:(_Bool)arg4 schedulerProvider:(id)arg5;
++ (id)settingsWithContactStore:(id)arg1 cacheSize:(unsigned long long)arg2 threeDTouchEnabled:(_Bool)arg3;
 + (id)settingsWithContactStore:(id)arg1 threeDTouchEnabled:(_Bool)arg2;
 + (id)settingsWithContactStore:(id)arg1 personaStore:(id)arg2 threeDTouchEnabled:(_Bool)arg3;
 + (id)settingsWithContactStore:(id)arg1;
++ (id)defaultSettingsWithCacheSize:(unsigned long long)arg1 threeDTouchEnabled:(_Bool)arg2;
 + (id)defaultSettings;
 + (_Bool)threeDTouchEnabledDefaultValue;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;

@@ -8,14 +8,17 @@
 
 #import <FileProvider/FPSearchQueryResultsProviding-Protocol.h>
 
-@class NSFileProviderSearchQuery;
+@class NSFileProviderSearchQuery, NSPredicate;
 
 @interface FPSearchCollection : FPQueryCollection <FPSearchQueryResultsProviding>
 {
+    NSPredicate *_filterPredicate;
 }
 
+- (void).cxx_destruct;
 - (id)scopedSearchQuery;
 @property(copy, nonatomic) NSFileProviderSearchQuery *searchQuery;
+- (BOOL)isCollectionValidForItem:(id)arg1;
 - (id)_enumerationSettingsPredicate;
 - (id)_createDescriptorWithSortDescriptors:(id)arg1;
 - (id)createDataSourceWithSortDescriptors:(id)arg1;

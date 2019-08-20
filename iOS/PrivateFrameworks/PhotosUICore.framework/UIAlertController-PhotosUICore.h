@@ -12,5 +12,6 @@
 + (id)px_alertForStorageUpgradeLoadFailure;
 + (id)px_alertForCPLEnableError:(id)arg1 actionHandler:(CDUnknownBlockType)arg2 cancelHandler:(CDUnknownBlockType)arg3;
 + (id)px_deleteITunesContentAlertWithAssetCount:(long long)arg1 includesPhotos:(_Bool)arg2 includesVideos:(_Bool)arg3 actionHandler:(CDUnknownBlockType)arg4 cancelHandler:(CDUnknownBlockType)arg5;
+@property(nonatomic) _Bool px_shouldForceAlertStyle;
 @end
 

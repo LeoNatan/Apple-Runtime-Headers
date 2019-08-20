@@ -32,7 +32,7 @@
 - (void)_removeHIDEventTapFilter:(id)arg1;
 - (void)removeEventTap:(id)arg1;
 - (id)installKeyboardEventTap:(CDUnknownBlockType)arg1 identifier:(id)arg2 matchingServiceHandler:(CDUnknownBlockType)arg3;
-- (id)_installEventTap:(CDUnknownBlockType)arg1 identifier:(id)arg2 type:(int)arg3 skipDeviceMatching:(BOOL)arg4 wantsDigitizerEvents:(BOOL)arg5 wantsKeyboardEvents:(BOOL)arg6 wantsATVRemoteEvents:(BOOL)arg7 wantsLisaEvents:(BOOL)arg8 wantsMouseEvents:(BOOL)arg9 matchingServiceHandler:(CDUnknownBlockType)arg10;
+- (id)installEventTap:(CDUnknownBlockType)arg1 identifier:(id)arg2 type:(int)arg3 skipDeviceMatching:(BOOL)arg4 wantsDigitizerEvents:(BOOL)arg5 wantsKeyboardEvents:(BOOL)arg6 wantsATVRemoteEvents:(BOOL)arg7 wantsLisaEvents:(BOOL)arg8 wantsMouseEvents:(BOOL)arg9 matchingServiceHandler:(CDUnknownBlockType)arg10;
 - (id)installEventTap:(CDUnknownBlockType)arg1 identifier:(id)arg2 type:(int)arg3 skipDeviceMatching:(BOOL)arg4 wantsDigitizerEvents:(BOOL)arg5 wantsKeyboardEvents:(BOOL)arg6 wantsATVRemoteEvents:(BOOL)arg7 wantsLisaEvents:(BOOL)arg8 wantsMouseEvents:(BOOL)arg9;
 - (id)installEventTap:(CDUnknownBlockType)arg1 identifier:(id)arg2 type:(int)arg3;
 - (void)_installSystemEventTap:(id)arg1;

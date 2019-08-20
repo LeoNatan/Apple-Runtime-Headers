@@ -26,7 +26,7 @@
 - (void).cxx_destruct;
 - (id)_mapItemsForLocation:(id)arg1 withNames:(id)arg2 withinDistance:(double)arg3 options:(id)arg4 error:(id *)arg5;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
-- (id)initWithDistanceCalculator:(id)arg1 mapServiceManager:(id)arg2 parameters:(id)arg3 personalizationPortraitManager:(id)arg4;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3 parameters:(id)arg4 personalizationPortraitManager:(id)arg5;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3 personalizationPortraitManager:(id)arg4;
 - (id)init;
 

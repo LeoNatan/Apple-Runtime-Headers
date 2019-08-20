@@ -8,12 +8,16 @@
 
 @interface NTKBatteryComplicationDataSource : NTKComplicationDataSource
 {
+    _Bool _listeningForNotifications;
+    float _level;
+    int _state;
 }
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 - (void)_handleLocaleChange;
 - (void)_stateDidChange:(id)arg1;
+- (float)_currentBatteryLevelRounded;
 - (void)_levelDidChange:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;

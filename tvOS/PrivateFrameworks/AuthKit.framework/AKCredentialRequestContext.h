@@ -8,10 +8,11 @@
 
 #import <AuthKit/NSSecureCoding-Protocol.h>
 
-@class AKAuthorizationRequest, AKPasswordRequest, NSArray, NSData, NSNumber, NSString, NSUUID;
+@class AKAuthorizationRequest, AKPasswordRequest, NSArray, NSData, NSNumber, NSString, NSUUID, NSValue;
 
 @interface AKCredentialRequestContext : NSObject <NSSecureCoding>
 {
+    _Bool _passcodeProtected;
     _Bool _shouldForceUI;
     _Bool _shouldSkipBiometrics;
     _Bool _shouldSkipAuthorizationUI;
@@ -24,11 +25,13 @@
     NSString *_iconName;
     NSData *_iconData;
     NSNumber *_iconScale;
+    NSValue *_iconSize;
     NSString *_proxiedClientAppName;
     NSString *_proxiedClientBundleID;
     NSString *_proxiedClientAppID;
     NSString *_proxiedClientTeamID;
     NSArray *_proxiedAssociatedDomains;
+    NSString *_callerBundleID;
     NSString *_proxiedDeviceName;
     NSString *_proxiedDeviceClass;
     NSUUID *_requestIdentifier;
@@ -42,6 +45,7 @@
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSString *_proxiedDeviceClass; // @synthesize _proxiedDeviceClass;
 @property(retain, nonatomic) NSString *_proxiedDeviceName; // @synthesize _proxiedDeviceName;
+@property(retain, nonatomic) NSString *_callerBundleID; // @synthesize _callerBundleID;
 @property(nonatomic) _Bool _isRapportLogin; // @synthesize _isRapportLogin;
 @property(nonatomic) _Bool _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
 @property(nonatomic) _Bool _isWebLogin; // @synthesize _isWebLogin;
@@ -52,6 +56,7 @@
 @property(retain, nonatomic) NSString *_proxiedClientBundleID; // @synthesize _proxiedClientBundleID;
 @property(retain, nonatomic) NSString *_proxiedClientAppName; // @synthesize _proxiedClientAppName;
 @property(nonatomic) _Bool _shouldForcePrivateEmail; // @synthesize _shouldForcePrivateEmail;
+@property(copy, nonatomic) NSValue *_iconSize; // @synthesize _iconSize;
 @property(copy, nonatomic) NSNumber *_iconScale; // @synthesize _iconScale;
 @property(copy, nonatomic) NSData *_iconData; // @synthesize _iconData;
 @property(copy, nonatomic) NSString *_iconName; // @synthesize _iconName;

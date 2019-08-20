@@ -21,6 +21,7 @@
     // Error parsing type: , name: intermediateLocations
     // Error parsing type: , name: locatesInProgress
     // Error parsing type: , name: internalLocations
+    // Error parsing type: , name: internalUnshiftedLocations
     // Error parsing type: , name: locationAlertsOnMeByMe
     // Error parsing type: , name: locationAlertsOnMeByFriends
     // Error parsing type: , name: locationAlertsOnFriendsByMe

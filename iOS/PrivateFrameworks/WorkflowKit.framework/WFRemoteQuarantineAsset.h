@@ -8,27 +8,24 @@
 
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSString, WFFileRepresentation;
+@class CKRecordID, NSString, WFFileRepresentation;
 
 @interface WFRemoteQuarantineAsset : NSObject <WFCloudKitItem>
 {
-    NSString *identifier;
+    CKRecordID *identifier;
     long long _compatibilityVersion;
     long long _contentVersion;
     WFFileRepresentation *_assetDataFile;
     NSString *_configuration;
 }
 
-+ (id)nilValues;
-+ (struct NSDictionary *)references;
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
++ (id)properties;
 + (id)recordType;
 @property(copy, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) WFFileRepresentation *assetDataFile; // @synthesize assetDataFile=_assetDataFile;
 @property(nonatomic) long long contentVersion; // @synthesize contentVersion=_contentVersion;
 @property(nonatomic) long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier;
 - (void).cxx_destruct;
 
 // Remaining properties

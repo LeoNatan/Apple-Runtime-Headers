@@ -9,12 +9,14 @@
 #import <RTTUtilities/RTTCallDelegate-Protocol.h>
 #import <RTTUtilities/TUCallCapabilitiesDelegate-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class AXDispatchTimer, NSMutableArray, NSMutableDictionary, NSString;
 @protocol HCHeardControllerProtocol, OS_dispatch_queue;
 
 @interface RTTController : NSObject <RTTCallDelegate, TUCallCapabilitiesDelegate>
 {
     NSObject<OS_dispatch_queue> *_workerQueue;
+    NSMutableDictionary *_localSettingsCache;
+    AXDispatchTimer *_preferredRelayCoalescer;
     NSMutableArray *_rttCalls;
     id <HCHeardControllerProtocol> _delegate;
 }
@@ -31,13 +33,19 @@
 - (id)handleSettingsRequest:(id)arg1;
 - (id)handleDictionaryRequest:(id)arg1;
 - (id)handleDatabaseRequest:(id)arg1;
+- (id)handleMediaAction:(id)arg1;
 - (void)dealloc;
 - (void)displayRTTFirstUseAlert;
 - (void)dismissRTTFirstUseAlert;
 - (id)callForUUID:(id)arg1;
+- (id)_callForUUIDWithoutRefresh:(id)arg1;
 - (void)handleUpdatedCalls:(id)arg1;
+- (void)_refreshCurrentCallListWithExistingCalls:(id)arg1;
+- (void)_refreshCurrentCallList;
 - (void)callDidConnect:(id)arg1;
 - (void)didChangeTelephonyCallingSupport;
+- (void)invalidateServerCaches:(id)arg1;
+- (void)_handlePreferredRelayNumberUpdate;
 - (id)init;
 
 // Remaining properties

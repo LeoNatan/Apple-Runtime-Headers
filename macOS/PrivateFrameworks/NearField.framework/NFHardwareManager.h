@@ -29,9 +29,6 @@
 @property(nonatomic) BOOL suspendBackgroundTagReading;
 @property(readonly, nonatomic) BOOL isBackgroundTagReadingAvailable;
 - (void)invalidateConnection;
-- (id)getBoosterInfo;
-- (id)getSecureElementInfo;
-- (id)getControllerInfo;
 - (BOOL)areFeaturesSupported:(unsigned long long)arg1 outError:(id *)arg2;
 - (BOOL)areSessionsAllowed;
 - (BOOL)isInRestrictedMode;
@@ -87,7 +84,6 @@
 - (id)getDieID;
 - (id)getDieIDWithError:(id *)arg1;
 - (id)rfSettings;
-- (id)boosterInfo;
 @property(readonly) NFHardwareControllerInfo *controllerInfo;
 - (id)controllerInfoWithError:(id *)arg1;
 - (unsigned int)queryHardwareSupport:(id *)arg1;

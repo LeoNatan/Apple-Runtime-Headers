@@ -6,6 +6,7 @@
 
 #import <AVKit/AVPlaybackControlsViewController.h>
 
+#import <AVKit/AVChannelInterstitialContainerDelegate-Protocol.h>
 #import <AVKit/AVFrameSetDelegate-Protocol.h>
 #import <AVKit/AVInfoPanelLanguageDelegate-Protocol.h>
 #import <AVKit/AVInfoPanelNavigationDelegate-Protocol.h>
@@ -14,11 +15,11 @@
 #import <AVKit/AVNowPlayingFrameSource-Protocol.h>
 #import <AVKit/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class AVDurationTimeFormatter, AVFrameSet, AVInfoPanelViewController, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVLoadingIndicatorView, AVNowPlayingDimmingView, AVNowPlayingInfoHintView, AVNowPlayingTransportBar, AVPermissiveSwipeGestureRecognizer, AVSlidewaysTransition, AVStandardScanningDelegate, AVxOverlayViewController, CADisplayLink, NSArray, NSString, NSTimer, NSURL, NSUUID, UIImageView, UIView, UIViewController, _AVFocusContainerView, _UIVisualEffectBackdropView;
+@class AVChannelInterstitialContainer, AVDurationTimeFormatter, AVFrameSet, AVInfoPanelViewController, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVLoadingIndicatorView, AVNowPlayingDimmingView, AVNowPlayingInfoHintView, AVNowPlayingTransportBar, AVPermissiveSwipeGestureRecognizer, AVSlidewaysTransition, AVStandardScanningDelegate, AVxOverlayViewController, CADisplayLink, NSArray, NSString, NSTimer, NSURL, NSUUID, UIImageView, UIPanGestureRecognizer, UIView, UIViewController, _AVFocusContainerView, _UIVisualEffectBackdropView;
 @protocol AVPlayerViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface AVNowPlayingPlaybackControlsViewController : AVPlaybackControlsViewController <AVNowPlayingFrameSource, AVFrameSetDelegate, AVInfoPanelNavigationDelegate, AVInfoPanelSubtitlesDelegate, AVInfoPanelLanguageDelegate, AVInfoPanelViewControllerDelegate, UIViewControllerTransitioningDelegate>
+@interface AVNowPlayingPlaybackControlsViewController : AVPlaybackControlsViewController <AVChannelInterstitialContainerDelegate, AVNowPlayingFrameSource, AVFrameSetDelegate, AVInfoPanelNavigationDelegate, AVInfoPanelSubtitlesDelegate, AVInfoPanelLanguageDelegate, AVInfoPanelViewControllerDelegate, UIViewControllerTransitioningDelegate>
 {
     _Bool _showsLoadingIndicator;
     _Bool _playing;
@@ -45,7 +46,8 @@ __attribute__((visibility("hidden")))
     AVNowPlayingInfoHintView *_previousChannelHintView;
     AVPermissiveSwipeGestureRecognizer *_swipeLeft;
     AVPermissiveSwipeGestureRecognizer *_swipeRight;
-    UIViewController *_channelInterstititialViewController;
+    AVChannelInterstitialContainer *_channelInterstitialContainer;
+    UIViewController *_channelInterstitialViewController;
     AVSlidewaysTransition *_channelTransition;
     CADisplayLink *_displayLink;
     AVFrameSet *_frameSet;
@@ -73,10 +75,12 @@ __attribute__((visibility("hidden")))
     NSArray *_customInfoViewControllers;
     NSString *_infoHint;
     NSArray *_permissiveSwipeGestureRecognizers;
+    UIPanGestureRecognizer *_scrubbingGestureRecognizer;
     AVKeyValueObserverCollection *_nowPlayingKVO;
     AVDurationTimeFormatter *_interstitialTimeFormatter;
     NSUUID *_scanningSesssionUUID;
     AVStandardScanningDelegate *_standardScanningDelegate;
+    struct CGRect _unoccludedBounds;
 }
 
 @property(nonatomic, getter=wasScanningTriggeredBySelectButton) _Bool scanningTriggeredBySelectButton; // @synthesize scanningTriggeredBySelectButton=_scanningTriggeredBySelectButton;
@@ -90,6 +94,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) AVKeyValueObserverCollection *nowPlayingKVO; // @synthesize nowPlayingKVO=_nowPlayingKVO;
 @property(nonatomic, getter=isCustomOverlayHintVisible) _Bool customOverlayHintVisible; // @synthesize customOverlayHintVisible=_customOverlayHintVisible;
+@property(retain, nonatomic) UIPanGestureRecognizer *scrubbingGestureRecognizer; // @synthesize scrubbingGestureRecognizer=_scrubbingGestureRecognizer;
 @property(retain, nonatomic) NSArray *permissiveSwipeGestureRecognizers; // @synthesize permissiveSwipeGestureRecognizers=_permissiveSwipeGestureRecognizers;
 @property(nonatomic, getter=isApplicationResigning) _Bool applicationResigning; // @synthesize applicationResigning=_applicationResigning;
 @property(copy, nonatomic) NSString *infoHint; // @synthesize infoHint=_infoHint;
@@ -98,6 +103,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <AVPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *alternateThumbnailStreamURL; // @synthesize alternateThumbnailStreamURL=_alternateThumbnailStreamURL;
 @property(copy, nonatomic) NSString *needleText; // @synthesize needleText=_needleText;
+@property(readonly, nonatomic) struct CGRect unoccludedBounds; // @synthesize unoccludedBounds=_unoccludedBounds;
 @property(readonly) long long playbackControlsState; // @synthesize playbackControlsState=_playbackControlsState;
 @property(retain, nonatomic) AVInternalPlaybackOptions *playbackOptions; // @synthesize playbackOptions=_playbackOptions;
 - (void).cxx_destruct;
@@ -211,14 +217,19 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool wantPlayback;
 - (void)togglePlayback;
 - (void)_togglePlayback:(id)arg1;
+- (void)channelInterstitialDidSwipeRight:(id)arg1;
+- (void)channelInterstitialDidSwipeLeft:(id)arg1;
 - (double)timeForFrameIndex:(unsigned long long)arg1;
 - (unsigned long long)frameIndexForTime:(double)arg1;
 - (void)mediaServerResetInvalidatedFrameSet:(id)arg1;
 - (void)didLoadFrameAffectingRange:(struct _NSRange)arg1;
 - (void)_currentItemDidChange;
+- (void)_updateUnoccludedBounds;
 - (void)updateTransportBarLiveState;
 - (void)_currentItemDurationDidChange;
 - (void)scrubGestureDetected:(id)arg1;
+- (void)setScrubberEnabled:(_Bool)arg1;
+- (void)_enableOrDisableScrubbingGestureRecognizer;
 - (void)touchesCancelled:(id)arg1;
 - (void)touchesEnded:(id)arg1;
 - (void)touchesMoved:(id)arg1;
@@ -241,14 +252,15 @@ __attribute__((visibility("hidden")))
 - (id)preferredFocusEnvironments;
 - (void)_dismissInteractiveOverlay;
 - (void)_presentInteractiveOverlay;
-- (void)_swipeRight:(id)arg1;
-- (void)_swipeLeft:(id)arg1;
+- (void)_swipeLeftOrRight:(id)arg1;
+- (void)_updateChannelSkippingGestures;
 - (_Bool)_isChannelSkippingEnabled;
 - (_Bool)_isPlayerItemChannel;
 - (void)_presentChannelInterstitialFromSwipeDirection:(unsigned long long)arg1;
 - (void)_didDismissChannelInterstitialResumingPlayback:(_Bool)arg1;
 - (void)_willDismissChannelInterstitialResumingPlayback:(_Bool)arg1;
 - (id)_viewControllerForChannelInterstitial:(_Bool)arg1;
+- (id)_presentedChannelInterstitialViewController;
 - (_Bool)_shouldChannelSkipToNextForSwipeDirection:(unsigned long long)arg1;
 - (void)loadView;
 @property(readonly, nonatomic) _AVFocusContainerView *focusContainerView;

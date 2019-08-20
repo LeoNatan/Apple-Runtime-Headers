@@ -11,7 +11,7 @@
 @protocol ECNWConnectionWrapper <EFCancelable>
 @property(copy, nonatomic) CDUnknownBlockType serverTrustHandler;
 @property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock;
-@property(readonly, nonatomic) NSError *error;
+@property(readonly) NSError *error;
 @property(readonly, nonatomic) BOOL isValid;
 @property(readonly, nonatomic) BOOL isCellularConnection;
 @property(readonly, nonatomic) BOOL isWritable;

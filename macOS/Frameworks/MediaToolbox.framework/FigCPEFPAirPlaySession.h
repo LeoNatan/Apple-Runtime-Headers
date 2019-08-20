@@ -25,7 +25,7 @@
 
 - (void)endSession;
 - (void)beginSessionWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)authorizeItemCompletionHandler_objc:(CDStruct_5723b468 *)arg1 picData:(struct __CFData *)arg2 playerGUID:(struct __CFString *)arg3 error:(int)arg4;
+- (void)authorizeItemCompletionHandler_objc:(CDStruct_82af879e *)arg1 picData:(struct __CFData *)arg2 playerGUID:(struct __CFString *)arg3 error:(int)arg4;
 - (id)copyValueForSINF:(id)arg1 property:(id)arg2 error:(int *)arg3;
 - (id)copyValueFromSinfsArray:(id)arg1 forProperty:(id)arg2 error:(int *)arg3;
 - (id)legacySinfs;

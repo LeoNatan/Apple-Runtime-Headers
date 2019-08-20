@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)automaticallyProvidesMediaController;
 - (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;
 - (id)initWithDocumentServiceRequest:(id)arg1 loadImmediately:(_Bool)arg2 documentRef:(id)arg3 viewControllerIdentifier:(id)arg4;
 

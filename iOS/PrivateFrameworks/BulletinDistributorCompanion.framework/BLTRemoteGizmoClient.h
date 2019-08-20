@@ -34,8 +34,6 @@
 - (void)handleDismissActionRequest:(id)arg1;
 - (void)handleSnoozeActionRequest:(id)arg1;
 - (void)handleAcknowledgeActionRequest:(id)arg1;
-- (id)_phonePublisherBulletinIDForGizmoPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
-- (id)_phonePublisherBulletinIDForGizmoPublisherMatchID:(id)arg1 sectionID:(id)arg2;
 - (void)_pingPairedDeviceWithRetry:(unsigned long long)arg1;
 - (void)_pingPairedDevice;
 - (void)setLastKnownConnectionStatus:(unsigned long long)arg1;

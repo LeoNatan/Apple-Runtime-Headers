@@ -34,6 +34,7 @@
 + (id)unarchiveObjectWithData:(id)arg1 error:(id *)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
 + (id)unarchiveObjectWithFile:(id)arg1;
++ (id)_strictlyUnarchivedObjectOfClasses:(id)arg1 fromData:(id)arg2 error:(id *)arg3;
 + (id)unarchivedObjectOfClasses:(id)arg1 fromData:(id)arg2 error:(id *)arg3;
 + (id)unarchivedObjectOfClass:(Class)arg1 fromData:(id)arg2 error:(id *)arg3;
 + (void)initialize;
@@ -59,12 +60,14 @@
 @property int decodingFailurePolicy;
 - (void)__setError:(id)arg1;
 - (id)error;
+- (void)_enableStrictSecureDecodingMode;
 @property _Bool requiresSecureCoding;
 - (id)allowedClasses;
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (id)decodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)decodeObjectForKey:(id)arg1;
 - (_Bool)_validatePropertyListClass:(Class)arg1 forKey:(id)arg2;
+- (_Bool)_validateAllowedClassesContainsClass:(Class)arg1 forKey:(id)arg2;
 - (_Bool)containsValueForKey:(id)arg1;
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;

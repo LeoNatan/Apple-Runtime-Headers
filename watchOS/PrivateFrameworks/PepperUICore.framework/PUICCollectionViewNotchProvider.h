@@ -18,7 +18,6 @@
     } _collectionViewImplementedDelegateMethodsCache;
     _Bool _checkedCollectionViewDelegateMethods;
     _Bool _createdEdgeNotches;
-    NSMutableSet *_notches;
     PUICCollectionView *_sourceCollectionView;
     NSMutableSet *_notchRestingPositions;
     CDStruct_b31d0695 _startEdgeNotch;
@@ -29,7 +28,6 @@
 @property(nonatomic) CDStruct_b31d0695 startEdgeNotch; // @synthesize startEdgeNotch=_startEdgeNotch;
 @property(nonatomic) _Bool checkedCollectionViewDelegateMethods; // @synthesize checkedCollectionViewDelegateMethods=_checkedCollectionViewDelegateMethods;
 @property(nonatomic) __weak PUICCollectionView *sourceCollectionView; // @synthesize sourceCollectionView=_sourceCollectionView;
-@property(retain, nonatomic) NSMutableSet *notches; // @synthesize notches=_notches;
 - (void).cxx_destruct;
 - (id)_sortedNotchCentersForLogsHighlightingValue:(float)arg1;
 - (id)_previousIndexPathThatParticipatesInNotchesFromIndexPath:(id)arg1;
@@ -38,7 +36,6 @@
 - (unsigned int)_notchBehaviorFromAttributes:(id)arg1 indexPath:(id)arg2;
 - (void)_createEdgeNotchesIfNecessary;
 - (void)_checkCollectionViewDelegateSupportForNotches;
-- (void)_resetNochCaches;
 - (float)firstValidNotchOffsetForCollectionViewItemNotchProvider:(id)arg1;
 - (void)resetNotches;
 - (void)reloadData;

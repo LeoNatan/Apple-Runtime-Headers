@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 + (Class)_determineStrategyForBundleId:(id)arg1;
 + (id)removeNotificationWithIdentifier:(id)arg1 centerBundleId:(id)arg2 logKey:(id)arg3;
 + (id)removeNotification:(id)arg1 centerBundleId:(id)arg2;
-+ (id)postNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)postNotification:(id)arg1 bag:(id)arg2 centerBundleId:(id)arg3;
 + (id)activeNotificationsWithCenterBundleId:(id)arg1;
 @property(readonly) id <AMSUserNotificationStrategy> strategy; // @synthesize strategy=_strategy;
 - (void).cxx_destruct;

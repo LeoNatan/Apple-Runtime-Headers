@@ -36,6 +36,8 @@
 @property(copy, nonatomic) NSString *intentDescription;
 @property(nonatomic) BOOL hasIdiom;
 @property(nonatomic) int idiom;
+@property(readonly, nonatomic) unsigned long long forceNeedsValueForParametersCount;
+@property(copy, nonatomic) NSArray *forceNeedsValueForParameters;
 @property(nonatomic) BOOL hasConfirmed;
 @property(nonatomic) BOOL confirmed;
 @property(nonatomic) BOOL hasBackgroundLaunch;
@@ -65,6 +67,9 @@
 - (void)clearParameterImages;
 - (int)StringAsIdiom:(NSString *)arg1;
 - (NSString *)idiomAsString:(int)arg1;
+- (NSString *)forceNeedsValueForParameterAtIndex:(unsigned long long)arg1;
+- (void)addForceNeedsValueForParameter:(NSString *)arg1;
+- (void)clearForceNeedsValueForParameters;
 - (int)StringAsRequiredEntitlements:(NSString *)arg1;
 - (NSString *)requiredEntitlementsAsString:(int)arg1;
 - (void)setRequiredEntitlements:(int *)arg1 count:(unsigned long long)arg2;

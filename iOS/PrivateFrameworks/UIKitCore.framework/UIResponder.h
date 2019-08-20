@@ -14,7 +14,7 @@
 #import <UIKitCore/_UITouchable-Protocol.h>
 
 @class NSArray, NSString, NSUndoManager, NSUserActivity, UIInputViewController, UITextInputAssistantItem, UITextInputMode, UIView;
-@protocol UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
+@protocol UIActivityItemsConfigurationReading, UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
 
 @interface UIResponder : NSObject <UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UITouchable, UIResponderStandardEditActions>
 {
@@ -100,7 +100,7 @@
 - (_Bool)_enableAutomaticKeyboardPressDone;
 - (_Bool)_disableAutomaticKeyboardUI;
 - (_Bool)_disableAutomaticKeyboardBehavior;
-- (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1;
+- (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1 skipViewControllersPresentingModally:(_Bool)arg2;
 - (id)_keyCommandForEvent:(id)arg1 target:(id *)arg2;
 - (id)_keyCommandForEvent:(id)arg1;
 - (id)_keyCommands;
@@ -135,7 +135,9 @@
 - (void)validateCommand:(id)arg1;
 - (void)_buildMenuFromChainWithBuilder:(id)arg1;
 - (void)buildMenuWithBuilder:(id)arg1;
+- (id)_targetForAction:(SEL)arg1 sender:(id)arg2 skipViewControllersPresentingModally:(_Bool)arg3;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1 nextTargetBlock:(CDUnknownBlockType)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_selectToHereResponderProxy;
@@ -172,6 +174,14 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
+- (_Bool)_handleActivityItemsConfigurationShare:(id)arg1;
+- (_Bool)_handleActivityItemsConfigurationDoesNotHandleSelector:(SEL)arg1;
+- (_Bool)_handleActivityItemsConfigurationCanPerformAction:(SEL)arg1 sender:(id)arg2;
+- (id)_firstNonnullActivityItemsConfigurationInResponderChainForView:(id)arg1 location:(struct CGPoint)arg2 sender:(id)arg3 responder:(id *)arg4;
+@property(retain, nonatomic) id <UIActivityItemsConfigurationReading> activityItemsConfiguration;
+- (id)_effectiveActivityItemsConfigurationForView:(id)arg1 location:(struct CGPoint)arg2 sender:(id)arg3;
+- (id)_effectiveActivityItemsConfiguration;
+- (id)_effectiveActivityItemsConfigurationForSender:(id)arg1;
 - (void)_clearTextInputSource;
 - (void)set_textInputSource:(long long)arg1;
 - (long long)_textInputSource;
@@ -180,8 +190,6 @@
 - (struct CGRect)_lastRectForRange:(id)arg1;
 - (long long)selectionAffinity;
 - (_Bool)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(_Bool)arg3;
-- (void)_phraseBoundaryGesture:(id)arg1;
-- (id)_newPhraseBoundaryGestureRecognizer;
 - (void)_unmarkText;
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
@@ -301,13 +309,7 @@
 - (id)_restorationIdentifierPath;
 @property(copy, nonatomic) NSString *restorationIdentifier;
 - (void)_rebuildStateRestorationIdentifierPath;
-- (_Bool)_handleCopyConfigurationShare:(id)arg1;
-- (_Bool)_handleCopyConfigurationDoesNotHandleSelector:(SEL)arg1;
-- (_Bool)_handleCopyConfigurationCanPerformAction:(SEL)arg1;
-- (id)_firstNonnullCopyConfigurationInResponderChainForView:(id)arg1 location:(struct CGPoint)arg2 responder:(id *)arg3;
 @property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration;
-- (id)_effectiveCopyConfigurationForView:(id)arg1 location:(struct CGPoint)arg2;
-- (id)_effectiveCopyConfiguration;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

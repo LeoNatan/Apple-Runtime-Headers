@@ -34,6 +34,7 @@
     unsigned int _deviceFlags;
     int _deviceType;
     int _distance;
+    unsigned int _hotspotInfo;
     NSUUID *_identifier;
     NSString *_idsIdentifier;
     NSString *_mediaRemoteID;
@@ -43,14 +44,12 @@
     NSString *_rapportIdentifier;
     NSString *_requestSSID;
     unsigned int _systemPairState;
-    unsigned int _hotspotInfo;
     unsigned long long _problemFlags;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned char osVersion; // @synthesize osVersion=_osVersion;
-@property(nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
 @property(readonly, nonatomic) _Bool wifiP2P; // @synthesize wifiP2P=_wifiP2P;
 @property(nonatomic) _Bool watchLocked; // @synthesize watchLocked=_watchLocked;
 @property(nonatomic) _Bool wakeDevice; // @synthesize wakeDevice=_wakeDevice;
@@ -67,6 +66,7 @@
 @property(readonly, copy, nonatomic) NSString *mediaRemoteID; // @synthesize mediaRemoteID=_mediaRemoteID;
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
 @property(nonatomic) _Bool hasProblem; // @synthesize hasProblem=_hasProblem;
 @property(readonly, nonatomic) _Bool duetSync; // @synthesize duetSync=_duetSync;
 @property(nonatomic) int distance; // @synthesize distance=_distance;

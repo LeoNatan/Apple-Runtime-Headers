@@ -11,6 +11,7 @@
 @interface PKEntitlementWhitelist : NSObject
 {
     BOOL _passesAllAccess;
+    BOOL _passesOverviewAccess;
     BOOL _passesAddSilently;
     BOOL _passPresentationSuppression;
     BOOL _paymentAllAccess;
@@ -60,6 +61,7 @@
 @property(readonly) BOOL paymentAllAccess; // @synthesize paymentAllAccess=_paymentAllAccess;
 @property(readonly) BOOL passPresentationSuppression; // @synthesize passPresentationSuppression=_passPresentationSuppression;
 @property(readonly) BOOL passesAddSilently; // @synthesize passesAddSilently=_passesAddSilently;
+@property(readonly) BOOL passesOverviewAccess; // @synthesize passesOverviewAccess=_passesOverviewAccess;
 @property(readonly) BOOL passesAllAccess; // @synthesize passesAllAccess=_passesAllAccess;
 - (void).cxx_destruct;
 - (void)_probeEntitlementsWithConnection:(id)arg1;

@@ -25,7 +25,7 @@
 - (void)invalidate;
 - (void)dealloc;
 @property(readonly, getter=isWirelessCarPlayEnabled) BOOL wirelessCarPlayEnabled;
-@property(readonly, getter=isWirelessAccessPointEnabled) BOOL wirelessAccessPointEnabled;
+@property(getter=isWirelessAccessPointEnabled) BOOL wirelessAccessPointEnabled;
 @property(readonly) BOOL deviceSupportsWAPI;
 @property(getter=isBluetoothEnabled) BOOL bluetoothEnabled;
 @property(getter=isWifiEnabled) BOOL wifiEnabled;

@@ -15,7 +15,6 @@
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_actionImage;
 - (id)activityTitle;
 - (id)_systemImageName;
 - (id)activityType;

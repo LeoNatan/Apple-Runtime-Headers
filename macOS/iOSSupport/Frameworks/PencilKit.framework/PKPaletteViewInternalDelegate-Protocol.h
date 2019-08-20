@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <PencilKit/NSObject-Protocol.h>
+
 @class PKPaletteView, UIView;
 
-@protocol PKPaletteViewInternalDelegate
+@protocol PKPaletteViewInternalDelegate <NSObject>
+@property(readonly, nonatomic, getter=isPaletteVisible) BOOL paletteVisible;
 @property(readonly, nonatomic, getter=isPaletteDragging) BOOL paletteDragging;
 @property(readonly, nonatomic, getter=isPaletteMinimized) BOOL paletteMinimized;
 @property(readonly, nonatomic) unsigned long long paletteEdgeLocation;
 @property(readonly, nonatomic) unsigned long long paletteCornerLocation;
 @property(readonly, nonatomic) UIView *hostingView;
-- (struct CGSize)paletteSizeForEdge:(unsigned long long)arg1;
+- (void)paletteViewShowFeedbackForToolChange:(PKPaletteView *)arg1;
 - (void)paletteView:(PKPaletteView *)arg1 didChangeAnnotationSupport:(BOOL)arg2;
 - (void)paletteView:(PKPaletteView *)arg1 didToggleAutoHideOption:(BOOL)arg2;
+- (struct CGSize)paletteSizeForEdge:(unsigned long long)arg1;
 @end
 

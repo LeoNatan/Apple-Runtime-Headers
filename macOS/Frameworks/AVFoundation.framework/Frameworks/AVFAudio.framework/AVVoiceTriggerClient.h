@@ -36,6 +36,7 @@
 - (void)speakerStateActiveCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)enableSpeakerStateListening:(BOOL)arg1;
 - (void)enableSpeakerStateListening:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)setListeningProperty:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)enableVoiceTriggerListening:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)enableVoiceTriggerListening:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long voiceTriggerPastDataFramesAvailable;

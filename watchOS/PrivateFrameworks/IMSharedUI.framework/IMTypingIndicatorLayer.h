@@ -82,6 +82,7 @@
 - (void)_buildIconImage;
 - (void)_updateForImage;
 - (void)_setup;
+- (id)resolvedColor:(id)arg1 forTraitCollection:(id)arg2;
 - (double)convertedCurrentMediaTime;
 - (id)init;
 

@@ -39,7 +39,7 @@
 - (void).cxx_destruct;
 - (void)updateOrientation;
 - (void)setupAssetClient:(id)arg1 forMode:(id)arg2 key:(id)arg3;
-- (void)_didLoadMode;
+- (void)_didLoadModeWithSuccess:(BOOL)arg1;
 - (void)_loadModeWithConfiguration:(id)arg1 display:(id)arg2;
 - (BOOL)_canLoadModeWithConfiguration:(id)arg1 display:(id)arg2;
 - (BOOL)_shouldLoadModeWithConfiguration:(id)arg1 display:(id)arg2;

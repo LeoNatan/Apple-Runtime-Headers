@@ -14,6 +14,7 @@
 {
 }
 
++ (id)isBusinessChatCustomKey;
 + (id)isFromMeCustomKey;
 + (id)indexTypeCustomKey;
 + (id)auxiliaryItemsForPrimaryAttributes:(id)arg1 withItem:(id)arg2 chat:(id)arg3 isReindexing:(BOOL)arg4;

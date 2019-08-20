@@ -8,16 +8,19 @@
 
 #import <AVKit/UIViewControllerAnimatedTransitioning-Protocol.h>
 
-@class NSString;
+@class NSString, UISpringTimingParameters;
 
 __attribute__((visibility("hidden")))
 @interface AVInfoPanelTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 {
+    UISpringTimingParameters *_presentationSpringTimingParameters;
 }
 
+- (void).cxx_destruct;
 - (id)_drawerAnimatorFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
+- (id)presentationSpringTimingParameters;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

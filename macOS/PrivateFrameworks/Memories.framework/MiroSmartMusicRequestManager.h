@@ -6,14 +6,14 @@
 
 #import <Memories/VEiOSSharedObject.h>
 
-@class FMSongLibrary, MiroAutoEditLogger, NSArray, NSMutableArray, NSMutableDictionary, NSSet;
+@class FMSongLibrary, MiroAutoEditLogger, NSArray, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface MiroSmartMusicRequestManager : VEiOSSharedObject
 {
+    char _moodIsDownloading[12];
     BOOL _allowsDownloads;
-    NSMutableDictionary *_localSongsByMood;
-    NSMutableArray *_moodsDownloading;
+    BOOL _didLogSongs;
     FMSongLibrary *_library;
     NSSet *_moodIDSet;
     double _initTime;
@@ -23,26 +23,27 @@ __attribute__((visibility("hidden")))
 
 @property(retain) NSArray *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MiroAutoEditLogger *logger; // @synthesize logger=_logger;
+@property(nonatomic) BOOL didLogSongs; // @synthesize didLogSongs=_didLogSongs;
 @property(nonatomic) double initTime; // @synthesize initTime=_initTime;
 @property(retain, nonatomic) NSSet *moodIDSet; // @synthesize moodIDSet=_moodIDSet;
 @property(readonly, nonatomic) FMSongLibrary *library; // @synthesize library=_library;
-@property(retain, nonatomic) NSMutableArray *moodsDownloading; // @synthesize moodsDownloading=_moodsDownloading;
-@property(retain, nonatomic) NSMutableDictionary *localSongsByMood; // @synthesize localSongsByMood=_localSongsByMood;
 @property(nonatomic) BOOL allowsDownloads; // @synthesize allowsDownloads=_allowsDownloads;
 - (void).cxx_destruct;
-- (id)allSongsScoredForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4 useLocalOnly:(BOOL)arg5;
+- (id)allSongsScoredForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4 localOptions:(int)arg5;
 - (id)recommendSongUIDForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4;
 - (id)bestLocalSongUIDForKeywords:(id)arg1 musicGenreDistribution:(id)arg2 moodID:(id)arg3 excludingSongs:(id)arg4;
+- (BOOL)hasEnoughLocalSongsForMoodID:(id)arg1;
+- (id)bestSongToDownloadForMoodID:(id)arg1;
 - (double)scoreSong:(id)arg1 withDateLastSelected:(double)arg2;
 - (double)scoreSong:(id)arg1 withMusicGenreDistribution:(id)arg2;
+- (double)scoreSong:(id)arg1 withRegionID:(id)arg2;
+- (double)scoreSong:(id)arg1 forSpecialKeywords:(id)arg2;
 - (double)scoreSong:(id)arg1 withKeywords:(id)arg2;
 - (double)scoreSong:(id)arg1 withMoodID:(id)arg2;
 - (double)scoreLocalityForSong:(id)arg1;
 - (void)storeDatePlayedForSongID:(id)arg1;
 - (void)purgeAllLocalCachedAssets;
 - (BOOL)songHasSpecialKeyword:(id)arg1;
-- (id)unusedLocalSongsForMoodID:(id)arg1;
-- (id)localSongsForMoodID:(id)arg1;
 - (id)genreIDsForSong:(id)arg1;
 - (id)moodIDForSong:(id)arg1;
 - (id)fetchAllSongs;
@@ -53,12 +54,13 @@ __attribute__((visibility("hidden")))
 - (id)songLibrary;
 - (void)_requestDownloadForMoodID:(id)arg1;
 - (void)markSongUIDAsRequested:(id)arg1;
-- (id)_candidateSongsForMoodID:(id)arg1;
 - (void)_downloadInProgressChanged:(id)arg1;
+- (void)_setDownloding:(BOOL)arg1 forMoodID:(id)arg2;
+- (BOOL)_isDownloadingforMoodID:(id)arg1;
+- (BOOL)_isDownloadingAnything;
+- (unsigned long long)_indexForMoodID:(id)arg1;
 - (void)_removeObserversOnLibrary;
 - (id)_addObserversOnSongLibrary:(id)arg1 indicateNetworkActivity:(BOOL)arg2;
-- (void)_updateLocalSongsByMood;
-- (void)_removeConflicts;
 - (void)_setup;
 - (void)dealloc;
 - (id)init;

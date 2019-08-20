@@ -29,7 +29,6 @@
     unsigned int _trafficColor;
     int _type;
     NSString *_uniqueIDstring;
-    _Bool _junctionViewDisplayed;
     _Bool _shortPrompt;
     struct {
         unsigned int endDistance:1;
@@ -45,14 +44,12 @@
         unsigned int stepID:1;
         unsigned int trafficColor:1;
         unsigned int type:1;
-        unsigned int junctionViewDisplayed:1;
         unsigned int shortPrompt:1;
     } _has;
 }
 
 + (Class)junctionViewImageIDType;
 @property(retain, nonatomic) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
-@property(nonatomic) _Bool junctionViewDisplayed; // @synthesize junctionViewDisplayed=_junctionViewDisplayed;
 @property(retain, nonatomic) NSMutableArray *junctionViewImageIDs; // @synthesize junctionViewImageIDs=_junctionViewImageIDs;
 @property(nonatomic) double maneuverTime; // @synthesize maneuverTime=_maneuverTime;
 @property(nonatomic) double endDistance; // @synthesize endDistance=_endDistance;
@@ -80,7 +77,6 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, nonatomic) _Bool hasEventDescription;
-@property(nonatomic) _Bool hasJunctionViewDisplayed;
 - (id)junctionViewImageIDAtIndex:(unsigned long long)arg1;
 - (unsigned long long)junctionViewImageIDsCount;
 - (void)addJunctionViewImageID:(id)arg1;

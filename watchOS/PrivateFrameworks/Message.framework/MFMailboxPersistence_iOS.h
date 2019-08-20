@@ -6,7 +6,7 @@
 
 #import <EmailDaemon/EDMailboxPersistence.h>
 
-@class EDPersistenceDatabase, MFMailMessageLibrary;
+@class EDPersistenceDatabase, MFMailMessageLibrary, MFMailboxProvider;
 
 @interface MFMailboxPersistence_iOS : EDMailboxPersistence
 {
@@ -24,6 +24,9 @@
 - (_Bool)createMailbox:(id)arg1 parentMailboxID:(id)arg2;
 - (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1;
 - (id)initWithMailboxProvider:(id)arg1 database:(id)arg2 library:(id)arg3;
+
+// Remaining properties
+@property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @dynamic mailboxProvider;
 
 @end
 

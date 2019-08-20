@@ -6,19 +6,17 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSArray, NSString;
+@class NSArray;
 
 @interface WFEnumerationParameter : WFParameter
 {
     _Bool _alwaysShowsButton;
-    NSString *_placeholder;
     NSArray *_staticPossibleStates;
     NSArray *_displayNames;
 }
 
 @property(readonly, nonatomic) NSArray *displayNames; // @synthesize displayNames=_displayNames;
 @property(readonly, nonatomic) NSArray *staticPossibleStates; // @synthesize staticPossibleStates=_staticPossibleStates;
-@property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, nonatomic) _Bool alwaysShowsButton; // @synthesize alwaysShowsButton=_alwaysShowsButton;
 - (void).cxx_destruct;
 - (void)possibleStatesDidChange;

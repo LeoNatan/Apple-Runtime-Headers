@@ -18,7 +18,7 @@
     long long _sessionState;
 }
 
-+ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 client:(id)arg2 error:(id *)arg3;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;

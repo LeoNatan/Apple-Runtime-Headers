@@ -82,6 +82,18 @@ struct NSMutableSet {
     Class _field1;
 };
 
+struct SBDeviceApplicationSceneStatusBarStateObserverFlags {
+    unsigned int wantsDidChangeStatusBarStyleTo:1;
+    unsigned int wantsDidChangeStatusBarPartStylesTo:1;
+    unsigned int wantsDidChangeStatusBarAlphaTo:1;
+    unsigned int wantsDidChangeStatusBarHiddenTo_withAnimation:1;
+    unsigned int wantsDidChangeStatusBarOrientationTo:1;
+    unsigned int wantsDidInvalidateStatusBarDescriptionForSceneWithIdentifier:1;
+    unsigned int wantsDidChangeStatusBarStyleOverridesToSuppressTo:1;
+    unsigned int wantsDidChangeStatusBarAvoidanceFrameTo:1;
+    unsigned int wantsDidChangeSceneInterfaceOrientationTo:1;
+};
+
 struct SBDragPreviewShadowParameters {
     double shadowOpacity;
     double shadowRadius;
@@ -231,17 +243,6 @@ typedef struct {
 typedef struct {
     unsigned int _field1[8];
 } CDStruct_6ad76789;
-
-typedef struct {
-    unsigned int delegateWantsDidChangeStatusBarStyleTo:1;
-    unsigned int delegateWantsDidChangeStatusBarPartStylesTo:1;
-    unsigned int delegateWantsDidChangeStatusBarAlphaTo:1;
-    unsigned int delegateWantsDidChangeStatusBarHiddenTo:1;
-    unsigned int delegateWantsDidChangeStatusBarOrientationTo:1;
-    unsigned int delegateWantsDidChangeStatusBarStyleOverridesToSuppressTo:1;
-    unsigned int delegateWantsDidChangeStatusBarAvoidanceFrameTo:1;
-    unsigned int delegateWantsDidInvalidateStatusBarDescriptionForSceneWithIdentifier:1;
-} CDStruct_418fc906;
 
 typedef struct {
     double value;

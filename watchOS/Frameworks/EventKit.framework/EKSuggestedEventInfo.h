@@ -19,12 +19,15 @@
 @property(nonatomic) double timestamp;
 @property(nonatomic) _Bool changesAcknowledged;
 @property(nonatomic) unsigned int changedFields;
+@property(copy, nonatomic) NSString *extractionGroupIdentifier;
 @property(copy, nonatomic) NSString *uniqueKey;
 @property(copy, nonatomic) NSString *opaqueKey;
 - (id)relatedEvent;
 - (id)copy;
 - (id)description;
+- (id)initWithEventStore:(id)arg1 opaqueKey:(id)arg2 uniqueKey:(id)arg3 extractionGroupIdentifier:(id)arg4;
 - (id)initWithEventStore:(id)arg1 opaqueKey:(id)arg2 uniqueKey:(id)arg3;
+- (id)initWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2 extractionGroupIdentifier:(id)arg3;
 - (id)initWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2;
 
 @end

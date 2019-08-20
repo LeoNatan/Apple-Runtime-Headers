@@ -108,10 +108,10 @@
 + (id)assetsWithSavedAssetType:(short)arg1 inManagedObjectContext:(id)arg2;
 + (unsigned int)countUsedAssetsWithKind:(short)arg1 excludeTrashed:(_Bool)arg2 excludeInvisible:(_Bool)arg3 excludeCloudShared:(_Bool)arg4 excludePhotoStream:(_Bool)arg5 inManagedObjectContext:(id)arg6;
 + (long long)totalPurgeableSizeOnDiskInLibrary:(id)arg1 urgency:(int)arg2;
-+ (id)_createAssetModelToInsert:(id)arg1 replacementUUID:(id)arg2;
-+ (id)_insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6 isPlaceholder:(_Bool)arg7 deleteFileOnFailure:(_Bool)arg8;
-+ (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6;
-+ (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource **)arg5 imageData:(id *)arg6 isPlaceholder:(_Bool)arg7 deleteFileOnFailure:(_Bool)arg8;
++ (id)_createAssetModelToInsert:(id)arg1 uuid:(id)arg2 replacementUUID:(id)arg3;
++ (id)_insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 uuid:(id)arg4 replacementUUID:(id)arg5 imageSource:(struct CGImageSource **)arg6 imageData:(id *)arg7 isPlaceholder:(_Bool)arg8 deleteFileOnFailure:(_Bool)arg9;
++ (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 uuid:(id)arg4 replacementUUID:(id)arg5 imageSource:(struct CGImageSource **)arg6 imageData:(id *)arg7;
++ (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 uuid:(id)arg4 replacementUUID:(id)arg5 imageSource:(struct CGImageSource **)arg6 imageData:(id *)arg7 isPlaceholder:(_Bool)arg8 deleteFileOnFailure:(_Bool)arg9;
 + (_Bool)isOrphanedMediaGroupUUID:(id)arg1;
 + (id)fetchPredicateForLegacyRequiredResourcesLocallyAvailable:(_Bool)arg1 photoLibrary:(id)arg2;
 + (id)cloudMasterMediaMetadataForAssetObjectID:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
@@ -152,7 +152,7 @@
 + (id)baseSearchIndexPredicate;
 + (id)assetsToConsiderForTypePromotionInContext:(id)arg1 withExtensions:(id)arg2 error:(id *)arg3;
 + (void)computePreCropThumbnailSize:(struct CGSize *)arg1 andPostCropSize:(struct CGSize *)arg2 forOrientedOriginalSize:(struct CGSize)arg3 andCroppedSize:(struct CGSize)arg4 isLargeThumbnail:(_Bool)arg5;
-+ (void)createThumbnailImage:(struct NSObject **)arg1 previewImage:(struct NSObject **)arg2 withImageSource:(struct CGImageSource *)arg3;
++ (void)createThumbnailImage:(struct NSObject **)arg1 previewImage:(struct NSObject **)arg2 withToBeReleasedImageSource:(struct CGImageSource *)arg3;
 + (id)_newPathAndDateDictionariesByAssetUUIDFromFetchResults:(id)arg1 photoLibrary:(id)arg2;
 + (id)pathAndDateDictionariesForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
 + (int)pfAdjustmentsBaseVersionFromAdjustmentBaseVersion:(int)arg1;
@@ -261,6 +261,7 @@
 @property(readonly, copy, nonatomic) NSString *pathForXMPFile;
 @property(readonly, copy, nonatomic) NSString *pathForPrebakedPortraitScrubberThumbnails;
 @property(readonly, copy, nonatomic) NSString *pathForPrebakedLandscapeScrubberThumbnails;
+- (unsigned short)expectedDeferredProcessingNeededOnAssetCreation;
 - (void)synchronouslyGenerateFullsizeRenderImageIfNecessaryAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(int)arg6 renderedImageFilePath:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)generateLargeThumbnailFileIfNecessary;
@@ -318,6 +319,7 @@
 @property(readonly, copy, nonatomic) NSString *pathForPenultimateFullsizeRenderVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForPenultimateFullsizeRenderImageFile;
 @property(readonly, copy, nonatomic) NSString *pathForFullsizeRenderVideoFile;
+- (id)pathForTransientVideoPosterFramePreview;
 - (id)pathForBestAvailableFullsizeRenderImageFileOutIsSubstandard:(_Bool *)arg1;
 - (id)pathForSubstandardFullsizeRenderImageFile;
 @property(readonly, copy, nonatomic) NSString *pathForFullsizeRenderImageFile;
@@ -330,12 +332,13 @@
 - (_Bool)setCurrentAdjustmentAsOriginalAdjustment;
 - (void)synchronouslyFetchAdjustmentDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_cleanupPenultimateResources;
-- (void)updateDeferredAdjustmentWithFullSizeRenderImageURL:(id)arg1 videoURL:(id)arg2;
-- (void)_ingestAndApplyMetadataChangesFromAdjustmentRenderedContentURL:(id)arg1 fullSizeRenderURL:(id)arg2 renderedVideoComplementContentURL:(id)arg3 ingestionType:(int)arg4 updateAdjustmentDictionary:(id)arg5 shouldUpdateAttributes:(_Bool)arg6 isSubstandardRender:(_Bool)arg7 isRevertToOriginal:(_Bool)arg8;
+- (void)updateDeferredAdjustmentWithFullSizeRenderImageURL:(id)arg1 videoURL:(id)arg2 videoPosterURL:(id)arg3;
+- (void)_ingestAndApplyMetadataChangesFromAdjustmentRenderedContentURL:(id)arg1 fullSizeRenderURL:(id)arg2 renderedVideoComplementContentURL:(id)arg3 videoPosterContentURL:(id)arg4 videoPosterRenderURL:(id)arg5 ingestionType:(int)arg6 updateAdjustmentDictionary:(id)arg7 shouldUpdateAttributes:(_Bool)arg8 isSubstandardRender:(_Bool)arg9 isRevertToOriginal:(_Bool)arg10;
 - (void)_updateDerivativesAndThumbnails:(_Bool)arg1 withPreviewImage:(struct NSObject *)arg2 thumbnailImage:(struct NSObject *)arg3 didRevertToOriginal:(_Bool)arg4 updateInternalResources:(_Bool)arg5 isSubstandardRender:(_Bool)arg6 isDeferred:(_Bool)arg7;
 - (void)setAdjustments:(id)arg1 renderedContentURL:(id)arg2 penultimateRenderedJPEGData:(id)arg3 penultimateRenderedVideoContentURL:(id)arg4 isSubstandardRender:(_Bool)arg5 deferredProcessingNeeded:(_Bool)arg6 fullSizeRenderSize:(struct CGSize)arg7 renderedVideoComplementContentURL:(id)arg8 penultimateRenderedVideoComplementContentURL:(id)arg9 renderedVideoPosterContentURL:(id)arg10 shouldUpdateAttributes:(_Bool)arg11 fileIngestionType:(int)arg12 shouldGenerateThumbnails:(_Bool)arg13;
 - (void)setAdjustments:(id)arg1 renderedContentURL:(id)arg2 penultimateRenderedJPEGData:(id)arg3 penultimateRenderedVideoContentURL:(id)arg4 isSubstandardRender:(_Bool)arg5 fullSizeRenderSize:(struct CGSize)arg6 renderedVideoComplementContentURL:(id)arg7 penultimateRenderedVideoComplementContentURL:(id)arg8 renderedVideoPosterContentURL:(id)arg9 shouldUpdateAttributes:(_Bool)arg10 fileIngestionType:(int)arg11;
-- (void)writeOutAdjustmentsToFile:(id)arg1;
+- (void)_writeOutAdjustmentsToFile:(id)arg1;
+- (void)updateAdjustmentFileWithAdjustmentRenderTypes:(unsigned int)arg1;
 - (int)_prepareFileSystemResourcesForAdjustmentsWithCurrentAdjustmentBaseVersion:(int)arg1 pathForFullsizeRenderFile:(id)arg2 penultimateRenderedJPEGData:(id)arg3 penultimateRenderedVideoContentURL:(id)arg4 renderedVideoComplementContentURL:(id)arg5 penultimateRenderedVideoComplementContentURL:(id)arg6 fileIngestionType:(int)arg7;
 - (void)setAdjustments:(id)arg1 shouldUpdateAttributes:(_Bool)arg2;
 - (void)revertToOriginal;
@@ -785,7 +788,7 @@
 - (id)payloadIDForTombstone:(id)arg1;
 - (id)payloadID;
 - (_Bool)isValidForPersistence;
-- (_Bool)setupPlaceholderAssetWithRequiredPropertiesFromSourceAsset:(id)arg1 assetUUID:(id)arg2 placeholderAssetMomentShareUUID:(id)arg3 bakeInAdjustmentsFromSourceAsset:(_Bool)arg4 flattenLivePhoto:(_Bool)arg5 copySnowplowResources:(_Bool)arg6 library:(id)arg7;
+- (_Bool)setupPlaceholderAssetWithRequiredPropertiesFromSourceAsset:(id)arg1 assetUUID:(id)arg2 placeholderAssetMomentShareUUID:(id)arg3 bakeInAdjustmentsFromSourceAsset:(_Bool)arg4 flattenLivePhoto:(_Bool)arg5 copyTitleDescriptionAndKeywords:(_Bool)arg6 copySnowplowResources:(_Bool)arg7 library:(id)arg8;
 - (unsigned int)masterResourceTypeForAdjustedAssetResourceType:(unsigned int)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(_Bool)arg3;
 - (id)sortPlaceholderCloudResourcesByOrderOfCloudReReference:(id)arg1;
 - (id)filterSnowplowResourcesFromPlaceholderCloudResources:(id)arg1;

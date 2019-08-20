@@ -13,6 +13,8 @@
 - (long long)_ui_resolvedWritingDirection;
 - (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
 - (long long)_ui_resolvedTextAlignment;
+- (id)_ui_rtfDataError:(id *)arg1;
+- (id)_ui_rtfdFileWrapperError:(id *)arg1;
 - (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange)arg1 usingDefaultAttributes:(id)arg2;
 - (id)_ui_fontsInRange:(struct _NSRange)arg1 usingDefaultFont:(id)arg2;
 @end

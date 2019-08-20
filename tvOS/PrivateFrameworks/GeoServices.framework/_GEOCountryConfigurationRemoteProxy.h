@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
     id <_GEOCountryConfigurationServerProxyDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    int _countryCodeChangedToken;
     int _providersChangedToken;
+    id _countryCodeChangeListener;
 }
 
 - (void).cxx_destruct;

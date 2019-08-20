@@ -19,6 +19,7 @@
     _Bool _contentIsVisible;
     _Bool _hasSingleVariant;
     UIImage *_cachedSnapshotImage;
+    UIImage *_cachedFolderBlurImage;
 }
 
 + (id)defaultGradientSilver;
@@ -33,10 +34,16 @@
 + (_Bool)_allowsParallax;
 + (Class)layerClass;
 - (void).cxx_destruct;
+- (void)invalidate;
 - (void)dealloc;
 - (long long)wallpaperType;
 - (_Bool)isDisplayingWallpaperWithConfiguration:(id)arg1 forVariant:(long long)arg2;
+- (id)cacheGroup;
 - (id)snapshotImage;
+- (void)_updateSnapshotImage;
+- (id)_averageColor;
+- (id)_imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2 overrideTraitCollection:(id)arg3;
+- (id)_imageFromColor:(id)arg1;
 - (void)_updateVariantStatus;
 - (void)_screenUndimmed:(id)arg1;
 - (void)_screenDimmed:(id)arg1;
@@ -47,6 +54,9 @@
 - (void)_handleVariantChange;
 - (void)_toggleCircleAnimations:(_Bool)arg1;
 - (void)setWallpaperAnimationEnabled:(_Bool)arg1;
+- (_Bool)_thermalStateIsCritical;
+- (_Bool)_lowPowerModeIsEnabled;
+- (void)_thermalStateDidChange:(id)arg1;
 - (void)_correctGyroValues:(inout double *)arg1 y:(inout double *)arg2;
 - (_Bool)_layerIsOutOfBounds:(id)arg1;
 - (void)_addBokehCircles:(long long)arg1;

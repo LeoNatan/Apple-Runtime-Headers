@@ -16,6 +16,7 @@
 - (void)synchronouslyRemoveQuarantineHardAttributeFromFileAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)writeWebArchiveWithoutQuarantineFlag:(NSData *)arg1 atURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)synchronouslyIssueExtensionForDirectoryContainingDownloadDestinationAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
+- (void)issueRootExtensionWithCompletionHandler:(void (^)(NSString *))arg1;
 - (void)issueDevelopModeExtensionWithCompletionHandler:(void (^)(NSString *))arg1;
 @end
 

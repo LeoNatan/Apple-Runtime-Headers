@@ -13,9 +13,16 @@
 @interface SpeakThisServices : NSObject <AXUIClientDelegate>
 {
     AXUIClient *_client;
+    _Bool _springBoardReady;
+    _Bool _triedToShowSpeechControllerBeforeSBReady;
+    CDUnknownBlockType _errorHandlerFromPriorShowControllerAttempt;
 }
 
++ (id)speakThisMessageKeyKBFrame;
 + (id)sharedInstance;
+@property(nonatomic) CDUnknownBlockType errorHandlerFromPriorShowControllerAttempt; // @synthesize errorHandlerFromPriorShowControllerAttempt=_errorHandlerFromPriorShowControllerAttempt;
+@property(nonatomic) _Bool triedToShowSpeechControllerBeforeSBReady; // @synthesize triedToShowSpeechControllerBeforeSBReady=_triedToShowSpeechControllerBeforeSBReady;
+@property(nonatomic) _Bool springBoardReady; // @synthesize springBoardReady=_springBoardReady;
 - (void).cxx_destruct;
 - (id)_descriptionForErrorCode:(long long)arg1;
 - (id)_descriptionForMessageIdentifier:(unsigned long long)arg1;
@@ -37,6 +44,8 @@
 - (void)didCancelSpeakThisErrorHandler:(CDUnknownBlockType)arg1;
 - (void)speakThisWithOptions:(long long)arg1 useAppAtPoint:(struct CGPoint)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)speakThisWithOptions:(long long)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void)_checkSpringBoardStarted;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

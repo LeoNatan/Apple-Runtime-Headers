@@ -16,6 +16,7 @@
 
 - (id)remote_fetchCloudSyncProgressWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_oldestSampleStartDateInHealthDatabaseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_accountConfigurationDidChangeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_enableCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_disableCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (id)remote_disableCloudSyncAndDeleteAllCloudDataWithCompletion:(CDUnknownBlockType)arg1;

@@ -11,6 +11,7 @@
 @class NSColor, NSString;
 
 @interface NSWindow (UXKit) <UXKitAppearance>
+@property(nonatomic, setter=ux_setToolbarHiddenInFullScreen:) BOOL ux_toolbarHiddenInFullScreen;
 @property(readonly, nonatomic) BOOL ux_inFullScreen;
 - (void)tintColorDidChange;
 @property(nonatomic) long long tintAdjustmentMode;

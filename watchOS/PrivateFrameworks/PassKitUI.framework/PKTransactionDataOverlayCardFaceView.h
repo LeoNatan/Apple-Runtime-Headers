@@ -28,6 +28,7 @@
 @property(nonatomic, getter=isContentSuppressed) _Bool contentSuppressed; // @synthesize contentSuppressed=_contentSuppressed;
 - (void).cxx_destruct;
 - (void)_updateMagnitudesWithStyle:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)updateContent;
 - (void)_updateContentIfPossible;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateCategoryVisualizationWithStyle:(int)arg2;

@@ -16,6 +16,7 @@
 + (id)getAppInfo;
 - (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
+@property(nonatomic) BOOL shouldSearchLocallyOnly;
 @property(copy, nonatomic) NSArray *appIdentifyingInfo;
 - (id)encodedClassName;
 - (id)groupIdentifier;

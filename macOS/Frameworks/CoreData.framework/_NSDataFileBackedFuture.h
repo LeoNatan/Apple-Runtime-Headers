@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (id)_storeMetadata;
 - (void)_setStoreMetadata:(id)arg1;
 - (id)_underlyingData;
+- (BOOL)_evictFile:(id *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;

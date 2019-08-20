@@ -6,11 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class MPCPlayerResponse, MTVisualStylingProvider, MediaControlsTransportButton, NSArray, NSBundle, UIColor;
+#import <MediaControls/MTVisualStylingProviderObservingPrivate-Protocol.h>
+
+@class MPCPlayerResponse, MTVisualStylingProvider, MediaControlsTransportButton, NSArray, NSString;
 @protocol MediaControlsActionsDelegate;
 
 __attribute__((visibility("hidden")))
-@interface MediaControlsTransportStackView : UIView
+@interface MediaControlsTransportStackView : UIView <MTVisualStylingProviderObservingPrivate>
 {
     _Bool _empty;
     long long _style;
@@ -22,16 +24,12 @@ __attribute__((visibility("hidden")))
     MediaControlsTransportButton *_middleButton;
     MediaControlsTransportButton *_rightButton;
     MediaControlsTransportButton *_languageOptionsButton;
-    NSBundle *_mediaControlsBundle;
-    UIColor *_tintColorForCurrentStyle;
     NSArray *_threeButtonContraints;
     NSArray *_fiveButtonContraints;
 }
 
 @property(retain, nonatomic) NSArray *fiveButtonContraints; // @synthesize fiveButtonContraints=_fiveButtonContraints;
 @property(retain, nonatomic) NSArray *threeButtonContraints; // @synthesize threeButtonContraints=_threeButtonContraints;
-@property(retain, nonatomic) UIColor *tintColorForCurrentStyle; // @synthesize tintColorForCurrentStyle=_tintColorForCurrentStyle;
-@property(retain, nonatomic) NSBundle *mediaControlsBundle; // @synthesize mediaControlsBundle=_mediaControlsBundle;
 @property(retain, nonatomic) MediaControlsTransportButton *languageOptionsButton; // @synthesize languageOptionsButton=_languageOptionsButton;
 @property(retain, nonatomic) MediaControlsTransportButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) MediaControlsTransportButton *middleButton; // @synthesize middleButton=_middleButton;
@@ -43,12 +41,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (void)_updateButtonConfiguration;
 - (void)_updateButtonLayout;
 - (void)_resetTransportButton:(id)arg1;
-- (id)_createTransportButtonWithImageNamed:(id)arg1;
+- (id)_createTransportButton;
+- (void)_updateButtonVisualStyling:(id)arg1;
+- (void)_updateVisualStylingForButtons;
+- (void)providedStylesDidChangeForProvider:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)_updateButtonBlendMode:(id)arg1 visualStylingProvider:(id)arg2;
-- (void)_updateButtonImage:(id)arg1 button:(id)arg2;
 - (void)updateOnRouteChange;
 - (void)buttonHoldReleased:(id)arg1;
 - (void)buttonHoldBegan:(id)arg1;
@@ -59,6 +59,12 @@ __attribute__((visibility("hidden")))
 - (void)touchUpInsideHangdogButton:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

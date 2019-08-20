@@ -63,6 +63,7 @@
     HMFWiFiNetworkInfo *_wifiNetworkInfo;
     NSArray *_controlTargetUUIDs;
     HMSymptomsHandler *_symptomsHandler;
+    NSUUID *_networkProtectionGroupUUID;
     _HMContext *_context;
     long long _reachableTransports;
     HMMutableArray *_currentServices;
@@ -96,6 +97,8 @@
 @property(nonatomic) unsigned long long transportTypes; // @synthesize transportTypes=_transportTypes;
 @property(nonatomic) BOOL firmwareUpdateAvailable; // @synthesize firmwareUpdateAvailable=_firmwareUpdateAvailable;
 - (void).cxx_destruct;
+- (void)setNetworkProtectionGroupUUID:(id)arg1;
+@property(readonly) NSUUID *networkProtectionGroupUUID; // @synthesize networkProtectionGroupUUID=_networkProtectionGroupUUID;
 - (void)_handleMultiUserSupportUpdatedMessage:(id)arg1;
 - (void)_notifyClientsOfMultiUserSupportUpdate;
 - (void)_handleTargetControlSupportUpdatedMessage:(id)arg1;

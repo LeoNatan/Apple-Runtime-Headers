@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)isBlockedSoftware:(id)arg1 error:(id *)arg2;
+- (BOOL)getBlockedSoftwareOverride:(id)arg1 error:(id *)arg2;
 - (BOOL)setBlockedSoftwareOverride:(id)arg1 isEnabled:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)addBlockedSoftwareOverride:(id)arg1 error:(id *)arg2;
 - (BOOL)addGatekeeperUserIntent:(id)arg1 error:(id *)arg2;

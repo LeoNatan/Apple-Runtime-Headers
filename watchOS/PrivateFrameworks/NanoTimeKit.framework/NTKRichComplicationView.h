@@ -56,6 +56,7 @@
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_applyPausedUpdate;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
+- (unsigned int)timelineAnimationFadeTypeOverride;
 @property(readonly, nonatomic) NSDate *timeTravelDate;
 @property(readonly, nonatomic) NSDate *complicationDate;
 - (void)setEditing:(_Bool)arg1;

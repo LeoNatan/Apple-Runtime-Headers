@@ -10,12 +10,14 @@
 
 @interface AVTCircularButton : UIButton
 {
+    _Bool _isUsingDynamicBackground;
     CAShapeLayer *_clippingLayer;
     UIColor *_dynamicBackgroundColor;
     UIImage *_symbolImage;
     UIColor *_symbolTintColor;
 }
 
+@property(nonatomic) _Bool isUsingDynamicBackground; // @synthesize isUsingDynamicBackground=_isUsingDynamicBackground;
 @property(retain, nonatomic) UIColor *symbolTintColor; // @synthesize symbolTintColor=_symbolTintColor;
 @property(retain, nonatomic) UIImage *symbolImage; // @synthesize symbolImage=_symbolImage;
 @property(retain, nonatomic) UIColor *dynamicBackgroundColor; // @synthesize dynamicBackgroundColor=_dynamicBackgroundColor;
@@ -28,6 +30,7 @@
 - (double)circleLayerAlpha;
 - (void)tintColorDidChange;
 - (void)updateDynamicBackgroundColor;
+- (void)setBackgroundColor:(id)arg1;
 - (void)updateBackgroundColorIfNeeded;
 - (void)setupView;
 - (id)initWithCoder:(id)arg1;

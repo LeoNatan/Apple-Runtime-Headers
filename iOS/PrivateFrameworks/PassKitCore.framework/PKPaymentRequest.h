@@ -141,6 +141,7 @@
 - (_Bool)isEqualToPaymentRequest:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (id)disbursementPaymentRequest;

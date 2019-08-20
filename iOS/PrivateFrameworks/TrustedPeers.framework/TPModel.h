@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSMutableDictionary, NSMutableSet, NSSet;
+@class NSArray, NSData, NSMutableDictionary, NSMutableSet, NSSet;
 @protocol TPDecrypter;
 
 @interface TPModel : NSObject
@@ -20,9 +20,13 @@
     id <TPDecrypter> _decrypter;
     NSData *_recoverySigningPubKey;
     NSData *_recoveryEncryptionPubKey;
+    NSArray *_cachedViableBottles;
+    NSArray *_cachedPartialViableBottles;
 }
 
 + (id)preapprovalsFromKeys:(id)arg1;
+@property(retain, nonatomic) NSArray *cachedPartialViableBottles; // @synthesize cachedPartialViableBottles=_cachedPartialViableBottles;
+@property(retain, nonatomic) NSArray *cachedViableBottles; // @synthesize cachedViableBottles=_cachedViableBottles;
 @property(retain, nonatomic) NSData *recoveryEncryptionPubKey; // @synthesize recoveryEncryptionPubKey=_recoveryEncryptionPubKey;
 @property(retain, nonatomic) NSData *recoverySigningPubKey; // @synthesize recoverySigningPubKey=_recoverySigningPubKey;
 @property(retain, nonatomic) id <TPDecrypter> decrypter; // @synthesize decrypter=_decrypter;
@@ -33,6 +37,9 @@
 @property(retain, nonatomic) NSSet *disallowedMachineIDs; // @synthesize disallowedMachineIDs=_disallowedMachineIDs;
 @property(retain, nonatomic) NSSet *allowedMachineIDs; // @synthesize allowedMachineIDs=_allowedMachineIDs;
 - (void).cxx_destruct;
+- (void)clearViableBottles;
+- (void)setViableBottles:(id)arg1;
+- (id)currentCachedViableBottlesSet;
 - (void)setRecoveryKeys:(id)arg1;
 - (_Bool)isRecoveryKeyEnrolled;
 - (id)peerIDThatTrustsRecoveryKeys:(id)arg1;

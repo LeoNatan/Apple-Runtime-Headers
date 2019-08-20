@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventDisplayAnalytic, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapKitCounts, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventMarcoLiteUsage, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventPredExTrainingData, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventThrottle, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray, PBDataReader;
+@class GEOLogMsgEventBatchTrafficProbe, GEOLogMsgEventClientACSuggestions, GEOLogMsgEventCommuteWindow, GEOLogMsgEventDirections, GEOLogMsgEventDisplayAnalytic, GEOLogMsgEventFullNavTrace, GEOLogMsgEventGenericAppError, GEOLogMsgEventGridDuration, GEOLogMsgEventListInteractionSession, GEOLogMsgEventLogFramework, GEOLogMsgEventMapKitCounts, GEOLogMsgEventMapLaunch, GEOLogMsgEventMapsWidgetsInteractionSession, GEOLogMsgEventMarcoLiteUsage, GEOLogMsgEventNetwork, GEOLogMsgEventParkedCar, GEOLogMsgEventPlaceDataCache, GEOLogMsgEventPredExTrainingData, GEOLogMsgEventProactiveSuggestionInteractionSession, GEOLogMsgEventRealtimeTrafficProbe, GEOLogMsgEventRefineSearchSession, GEOLogMsgEventStateTiming, GEOLogMsgEventTelemetric, GEOLogMsgEventThrottle, GEOLogMsgEventTileCacheAnalytic, GEOLogMsgEventTileSetState, GEOLogMsgEventTimeToLeaveHypothesis, GEOLogMsgEventTimeToLeaveInitialTravelTime, GEOLogMsgEventTransitAppLaunch, GEOLogMsgEventTripDepartureFeedback, GEOLogMsgEventUserAction, GEOLogMsgEventWifiConnectionQualityProbe, LOGMSGEVENTLogMsgEventRideBookedSession, LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, LOGMSGEVENTLogMsgEventTableBookingSession, NSMutableArray, PBDataReader;
 
 @interface GEOLogMsgEvent : PBCodable <NSCopying>
 {
@@ -48,6 +48,7 @@
     GEOLogMsgEventTimeToLeaveHypothesis *_timeToLeaveHypothesisEvent;
     GEOLogMsgEventTimeToLeaveInitialTravelTime *_timeToLeaveInitialTravelTimeEvent;
     GEOLogMsgEventTransitAppLaunch *_transitAppLaunchEvent;
+    GEOLogMsgEventTripDepartureFeedback *_tripDepartureFeedback;
     double _usageEventTime;
     GEOLogMsgEventUserAction *_userActionEvent;
     GEOLogMsgEventWifiConnectionQualityProbe *_wifiConnectionQualityProbeEvent;
@@ -89,6 +90,7 @@
         unsigned int read_timeToLeaveHypothesisEvent:1;
         unsigned int read_timeToLeaveInitialTravelTimeEvent:1;
         unsigned int read_transitAppLaunchEvent:1;
+        unsigned int read_tripDepartureFeedback:1;
         unsigned int read_userActionEvent:1;
         unsigned int read_wifiConnectionQualityProbeEvent:1;
         unsigned int wrote_batchTrafficProbeCollection:1;
@@ -125,6 +127,7 @@
         unsigned int wrote_timeToLeaveHypothesisEvent:1;
         unsigned int wrote_timeToLeaveInitialTravelTimeEvent:1;
         unsigned int wrote_transitAppLaunchEvent:1;
+        unsigned int wrote_tripDepartureFeedback:1;
         unsigned int wrote_usageEventTime:1;
         unsigned int wrote_userActionEvent:1;
         unsigned int wrote_wifiConnectionQualityProbeEvent:1;
@@ -152,6 +155,9 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLogMsgEventTripDepartureFeedback *tripDepartureFeedback;
+@property(readonly, nonatomic) BOOL hasTripDepartureFeedback;
+- (void)_readTripDepartureFeedback;
 @property(retain, nonatomic) GEOLogMsgEventMarcoLiteUsage *marcoLiteUsage;
 @property(readonly, nonatomic) BOOL hasMarcoLiteUsage;
 - (void)_readMarcoLiteUsage;

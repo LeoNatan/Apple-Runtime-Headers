@@ -14,6 +14,9 @@
 {
 }
 
+- (BOOL)containsMetadata:(id)arg1;
+@property(readonly) struct CGSize originalSize;
+@property(readonly) struct CGRect originalCleanAperture;
 @property(readonly) struct CGRect cleanAperture;
 @property(readonly) id <NUVideoProperties> videoProperties;
 - (id)initWithVideoProperties:(id)arg1 context:(id)arg2;

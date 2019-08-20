@@ -20,6 +20,7 @@
 - (void)clearApplicationState:(NSString *)arg1 completionBlock:(void (^)(NSError *))arg2;
 - (void)runDutyCycleForActivity:(NSObject<OS_xpc_object> *)arg1;
 - (void)copyApplicationState:(NSString *)arg1 block:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)forceApplicationKeysFetch:(NSString *)arg1 block:(void (^)(NSData *, NSError *))arg2;
 - (void)forceApplicationKeysDownload:(NSString *)arg1 block:(void (^)(NSData *, unsigned int, NSError *))arg2;
 - (void)forceConfigUpdate:(void (^)(NSError *))arg1;
 - (void)forceValidateUUID:(NSUUID *)arg1 uri:(NSString *)arg2 block:(void (^)(unsigned int, NSError *))arg3;

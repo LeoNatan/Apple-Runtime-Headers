@@ -12,7 +12,7 @@
 @interface CPSessionConfiguration : NSObject
 {
     unsigned long long _limitedUserInterfaces;
-    unsigned long long _ambientLightStatus;
+    unsigned long long _contentStyle;
     id <CPSessionConfigurationDelegate> _delegate;
     CARSessionStatus *_currentStatus;
 }
@@ -20,7 +20,7 @@
 + (unsigned long long)convertLimitableUserInterfaces:(unsigned long long)arg1;
 @property(retain, nonatomic) CARSessionStatus *currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(nonatomic) __weak id <CPSessionConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) unsigned long long ambientLightStatus; // @synthesize ambientLightStatus=_ambientLightStatus;
+@property(nonatomic) unsigned long long contentStyle; // @synthesize contentStyle=_contentStyle;
 @property(nonatomic) unsigned long long limitedUserInterfaces; // @synthesize limitedUserInterfaces=_limitedUserInterfaces;
 - (void).cxx_destruct;
 - (void)_nightModeDidChange:(id)arg1;

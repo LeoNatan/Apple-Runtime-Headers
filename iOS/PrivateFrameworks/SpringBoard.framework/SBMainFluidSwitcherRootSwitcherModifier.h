@@ -13,6 +13,7 @@
 - (Class)_defaultMultitaskingModifierClass;
 - (long long)_effectiveEnvironmentMode;
 - (id)lowEndHardwareModifier;
+- (id)insertionModifierForInsertionEvent:(id)arg1;
 - (id)entityRemovalModifierForMainTransitionEvent:(id)arg1;
 - (id)multitaskingModifierForEvent:(id)arg1;
 - (id)appExposeModifierForAppExposeEvent:(id)arg1;

@@ -35,9 +35,11 @@ __attribute__((visibility("hidden")))
 - (void)automaticallySetCenterViewControllerBasedOnInputDelegate:(id)arg1;
 - (void)_expandBarItems;
 - (void)_showCandidates;
+- (_Bool)layoutHasBuiltinAssistantView;
 - (_Bool)shouldBeShownForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (_Bool)_centerPredictionViewVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (_Bool)_assistantItemsVisibleForResponder:(id)arg1;
+- (_Bool)_isAssistantPreferenceEnabled;
 - (id)_currentInputDelegate;
 - (id)_inputDelegateAsResponder:(id)arg1;
 - (_Bool)_canShowWhileLocked;

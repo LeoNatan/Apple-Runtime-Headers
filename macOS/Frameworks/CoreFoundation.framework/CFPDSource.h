@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)cleanUpAfterAcceptingMessage:(id)arg1;
 - (id)acceptMessage:(id)arg1;
-- (BOOL)requiresSynchronousWriteAndFlushToDaemonInAgentForWorkaroundFor35459826;
+- (BOOL)requiresSynchronousWriteAndFlushToDaemonInAgentForWorkaroundFor35459826WithKey:(id)arg1;
 - (unsigned long long)approximatePlistSizeIncludingPendingChanges;
 - (void)attachSizeWarningsToReply:(id)arg1 forByteCount:(unsigned long long)arg2;
 - (void)handleNoPlistFound;

@@ -23,7 +23,7 @@
 - (void)deletePhotoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deletePhoto;
 - (void)removeActiveViewControllerAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)showViewController:(id)arg1 wrapInNavController:(_Bool)arg2;
+- (void)showViewController:(id)arg1 usingPresentingViewController:(id)arg2 wrapInNavController:(_Bool)arg3;
 @property(retain, nonatomic) UIViewController<GKAuthenticateViewController> *signInViewController;
 @property(retain, nonatomic) UIViewController *rootViewController;
 @property(retain, nonatomic) UIViewController *activeViewController;
@@ -38,7 +38,7 @@
 - (void)authenticateReturnAlertWithTitle:(id)arg1 message:(id)arg2 localPlayer:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)authenticationShowGreenBuddyUIForLocalPlayer:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)authenticationShowGreenBuddyUIForLocalPlayer:(id)arg1;
-- (void)showOnboardingUI;
+- (void)showOnboardingUIFromViewController:(id)arg1;
 - (_Bool)shouldShowPersonalization;
 - (_Bool)shouldShowPrivacyNotice;
 - (void)authenticationDidCompleteWithError:(id)arg1;

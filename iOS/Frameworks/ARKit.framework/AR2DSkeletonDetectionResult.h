@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
 @class AR2D3DSkeletonLiftingData;
 
-@interface AR2DSkeletonDetectionResult : NSObject <NSSecureCoding>
+@interface AR2DSkeletonDetectionResult : NSObject <NSSecureCoding, NSCopying>
 {
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rawJoints;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rotatedJoints;
@@ -24,6 +25,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)computeDistanceBetweenSkeletonDetectionResult:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

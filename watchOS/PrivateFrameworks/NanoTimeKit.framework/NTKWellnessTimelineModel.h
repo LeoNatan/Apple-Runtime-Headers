@@ -37,9 +37,10 @@
 - (void)_queue_updateCurrentActivitySummaryWithSummary:(id)arg1;
 - (id)_queue_wellnessEntryModelFromCurrentActivitySummary;
 - (_Bool)_loadingStateForActivitySummary:(id)arg1;
-- (void)_queue_restartQueriesPreservingHisoricalData:(_Bool)arg1;
+- (void)_queue_restartQueriesPreservingExistingGoals:(_Bool)arg1;
 - (void)_queue_restartQueriesIfQueryInUse:(id)arg1;
-- (void)_queue_stopQueriesPreservingHistoricalData:(_Bool)arg1;
+- (void)_queue_stopQueriesPreservingExistingGoals:(_Bool)arg1;
+- (id)_currentActivitySummaryQueryCollectionIntervalsOverride;
 - (void)_queue_startQueries;
 - (void)getWellnessEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)getWellnessEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;

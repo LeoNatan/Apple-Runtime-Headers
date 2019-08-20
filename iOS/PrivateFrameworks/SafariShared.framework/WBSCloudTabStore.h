@@ -56,6 +56,7 @@
 - (void)deleteAllDevicesFromCloudKit;
 - (void)handleCloseTabRequestsFromCloudKit;
 - (void)fetchSyncedCloudTabDevicesAndCloseRequestsFromCloudKit;
+- (void)clearTabsForFirstDuplicateDeviceInCloudKitWithName:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (void)clearTabsForFirstDuplicateDeviceInCloudKitWithName:(id)arg1;
 - (void)pruneExpiredDevicesFromCloudKit;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentationOfCurrentDeviceInCloudKit;

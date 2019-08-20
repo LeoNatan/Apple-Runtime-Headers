@@ -10,9 +10,11 @@
 
 @interface DESRecipeEvaluationSession : NSObject
 {
+    NSDate *_startDate;
     NSURL *_baseURL;
     NSString *_localeIdentifier;
     NSDate *_deadline;
+    NSDate *_deferralDate;
     NSArray *_attachmentsToDelete;
     double _resumeTimestamp;
     Class _protocolClass;

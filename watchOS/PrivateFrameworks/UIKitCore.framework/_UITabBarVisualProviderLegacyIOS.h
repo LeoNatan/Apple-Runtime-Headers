@@ -6,10 +6,12 @@
 
 #import <UIKitCore/_UITabBarVisualProvider.h>
 
-@class UIView, _UIBarBackground, _UIBarBackgroundLayout;
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
+
+@class NSString, UIView, _UIBarBackground, _UIBarBackgroundLayout;
 
 __attribute__((visibility("hidden")))
-@interface _UITabBarVisualProviderLegacyIOS : _UITabBarVisualProvider
+@interface _UITabBarVisualProviderLegacyIOS : _UITabBarVisualProvider <_UIBarAppearanceChangeObserver>
 {
     _UIBarBackground *_backgroundView;
     _UIBarBackgroundLayout *_backgroundViewLayout;
@@ -21,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)appearance:(id)arg1 categoriesChanged:(int)arg2;
 - (id)_focusedItemHighlightView;
 - (float)_shim_heightForCustomizingItems;
 - (void)_shim_updateTabBarItemView:(id)arg1;
@@ -33,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)_shim_setAccessoryView:(id)arg1;
 - (id)_shim_compatibilityBackgroundView;
 - (void)_shim_setCustomBackgroundView:(id)arg1;
-- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusedView;
 - (id)_preferredFocusedViewiOS;
 - (id)_preferredFocusedViewCarplay;
@@ -56,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (id)createViewForTabBarItem:(id)arg1;
 - (void)setMinimumWidthForHorizontalLayout:(float)arg1;
 - (float)minimumWidthForHorizontalLayout;
+- (id)appearanceObserver;
 - (void)setUseModernAppearance:(_Bool)arg1;
 - (_Bool)useModernAppearance;
 - (void)changeLayout;
@@ -67,6 +70,12 @@ __attribute__((visibility("hidden")))
 - (void)_updateAppearanceForTransitionFromItem:(id)arg1 toItem:(id)arg2;
 - (void)teardown;
 - (void)prepare;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,8 +6,9 @@
 
 #import <PodcastServices/PODChangesProviderProtocol-Protocol.h>
 #import <PodcastServices/PODFileAccessProviderProtocol-Protocol.h>
+#import <PodcastServices/PODMigratorProtocol-Protocol.h>
 #import <PodcastServices/PODObservableChangesProviderProtocol-Protocol.h>
 
-@protocol PODContentServiceProtocol <PODChangesProviderProtocol, PODObservableChangesProviderProtocol, PODFileAccessProviderProtocol>
+@protocol PODContentServiceProtocol <PODChangesProviderProtocol, PODObservableChangesProviderProtocol, PODFileAccessProviderProtocol, PODMigratorProtocol>
 @end
 

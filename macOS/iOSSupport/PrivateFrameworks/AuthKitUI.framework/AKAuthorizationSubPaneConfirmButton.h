@@ -6,20 +6,29 @@
 
 #import <AuthKitUI/AKAuthorizationSubPane.h>
 
-@class AKAuthorizationButton, AKAuthorizationPaneContext, NSString, UIStackView;
-@protocol AKAuthorizationSubPaneConfirmButtonDelegate;
+@class AKAuthorizationButton, AKAuthorizationPaneContext, NSObject, NSString, UILabel, UIStackView, UIView;
+@protocol AKAuthorizationSubPaneConfirmButtonDelegate, OS_dispatch_group;
 
 @interface AKAuthorizationSubPaneConfirmButton : AKAuthorizationSubPane
 {
+    CDUnknownBlockType _processingStateCompletionHandler;
+    NSObject<OS_dispatch_group> *_processingStateGroup;
+    BOOL _hasTouchIDOnly;
+    BOOL _canPerformBiometricValidation;
     NSString *_bioTextForInactiveState;
     AKAuthorizationButton *_authorizationButton;
     id <AKAuthorizationSubPaneConfirmButtonDelegate> _delegate;
     AKAuthorizationPaneContext *_context;
     UIStackView *_mainStackView;
+    UIView *_authorizationButtonContainer;
+    UILabel *_bioLabel;
 }
 
-+ (id)_createAuthorizationButtonInStackView:(id)arg1;
 + (id)_createMainStackView;
+@property(retain, nonatomic) UILabel *bioLabel; // @synthesize bioLabel=_bioLabel;
+@property BOOL canPerformBiometricValidation; // @synthesize canPerformBiometricValidation=_canPerformBiometricValidation;
+@property BOOL hasTouchIDOnly; // @synthesize hasTouchIDOnly=_hasTouchIDOnly;
+@property(readonly, nonatomic) UIView *authorizationButtonContainer; // @synthesize authorizationButtonContainer=_authorizationButtonContainer;
 @property(retain, nonatomic) UIStackView *mainStackView; // @synthesize mainStackView=_mainStackView;
 @property(retain, nonatomic) AKAuthorizationPaneContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <AKAuthorizationSubPaneConfirmButtonDelegate> delegate; // @synthesize delegate=_delegate;
@@ -29,12 +38,19 @@
 - (void)_performPasscodeValidations:(CDUnknownBlockType)arg1;
 - (id)_passcodeButtonTitle;
 - (id)_passwordButtonTitle;
-- (BOOL)_canPerformBiometricValidation;
 - (void)_switchToPasscode;
+- (void)_setGlyphViewGestureRecognizerEnabled:(BOOL)arg1;
+- (void)_waitForTimeInterval:(double)arg1 withGroup:(id)arg2;
+- (void)invalidateProcessingState;
+- (void)finishProcessingWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_enterProcessingStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_hasTouchIDOnly;
+- (void)_updateLabelWithTitle:(id)arg1;
 - (void)_setupAlertImageWithConstraints:(id)arg1;
 - (void)_setupBioButtonWithConstraints:(id)arg1;
-- (void)_setupLabelWithTitle:(id)arg1 withConstraints:(id)arg2;
+- (void)_setupLabelWithTitle:(id)arg1 withConstraints:(id)arg2 animated:(BOOL)arg3;
+- (void)_addArrangedSpaceToMainStackView:(double)arg1;
+- (id)_spaceWithConstant:(double)arg1;
 - (void)_enableLAUIAuthMechanism;
 - (void)_switchToBioView:(BOOL)arg1 withEnabled:(BOOL)arg2 showAlert:(BOOL)arg3 alertString:(id)arg4;
 - (void)showAlertAndContinueWithPassword:(BOOL)arg1;

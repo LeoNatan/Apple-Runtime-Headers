@@ -16,13 +16,12 @@
 + (Class)_concreteContentViewClass;
 @property(retain, nonatomic) UIColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
 - (void).cxx_destruct;
-- (void)_updateFocusSizeIncrease;
 - (void)_updateAppearanceForFocusUpdateContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)contentView;
-- (void)didMoveToSuperview;
-- (void)layoutSubviews;
+- (void)setFocusSizeIncrease:(struct NSDirectionalEdgeInsets)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

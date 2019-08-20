@@ -24,8 +24,8 @@
     _Bool _shouldUseVerticalLayout;
     id <EKUIEventStatusButtonsViewDelegate> _delegate;
     long long _selectedAction;
-    double _buttonsCharge;
     long long _textSizeMode;
+    struct UIEdgeInsets _buttonsTouchInsets;
 }
 
 + (_Bool)isActionDestructive:(long long)arg1;
@@ -34,7 +34,7 @@
 @property(nonatomic) _Bool shouldUseVerticalLayout; // @synthesize shouldUseVerticalLayout=_shouldUseVerticalLayout;
 @property(nonatomic) _Bool disableButtonHighlights; // @synthesize disableButtonHighlights=_disableButtonHighlights;
 @property(nonatomic) long long textSizeMode; // @synthesize textSizeMode=_textSizeMode;
-@property(nonatomic) double buttonsCharge; // @synthesize buttonsCharge=_buttonsCharge;
+@property(nonatomic) struct UIEdgeInsets buttonsTouchInsets; // @synthesize buttonsTouchInsets=_buttonsTouchInsets;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) long long selectedAction; // @synthesize selectedAction=_selectedAction;
 @property(nonatomic) __weak id <EKUIEventStatusButtonsViewDelegate> delegate; // @synthesize delegate=_delegate;

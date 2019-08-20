@@ -8,13 +8,15 @@
 
 #import <NanoTimeKit/NTKFaceViewComplicationFactory-Protocol.h>
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSMutableOrderedSet, NSString;
 
 @interface NTKCompositeComplicationFactory : NSObject <NTKFaceViewComplicationFactory>
 {
     NSMutableDictionary *_factoriesBySlot;
+    NSMutableOrderedSet *_factories;
 }
 
+@property(retain, nonatomic) NSMutableOrderedSet *factories; // @synthesize factories=_factories;
 @property(retain, nonatomic) NSMutableDictionary *factoriesBySlot; // @synthesize factoriesBySlot=_factoriesBySlot;
 - (void).cxx_destruct;
 - (_Bool)slotSupportsCurvedText:(id)arg1;

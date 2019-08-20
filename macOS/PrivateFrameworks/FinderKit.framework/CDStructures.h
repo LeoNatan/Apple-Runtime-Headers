@@ -270,18 +270,19 @@ struct TCoalescingNodeObserver {
     CDUnknownFunctionPointerType *_field1;
     struct weak_ptr<TNodeEventHandler> _field2;
     CDUnknownFunctionPointerType *_field3;
-    struct map<TFENode, TObserverStats, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TObserverStats>>> _field4;
-    struct unique_ptr<TNodeChangeNotifier, std::__1::default_delete<TNodeChangeNotifier>> _field5;
-    _Bool _field6;
-    unsigned long long _field7;
+    _Bool _field4;
+    struct map<TFENode, TObserverStats, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TObserverStats>>> _field5;
+    struct unique_ptr<TNodeChangeNotifier, std::__1::default_delete<TNodeChangeNotifier>> _field6;
+    _Bool _field7;
     unsigned long long _field8;
-    unsigned int _field9;
-    unsigned long long _field10;
-    struct unordered_map<TFENode, std::__1::shared_ptr<TCoalescedEvents>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, std::__1::shared_ptr<TCoalescedEvents>>>> _field11;
-    struct set<TFENode, std::__1::less<TFENode>, std::__1::allocator<TFENode>> _field12;
-    struct TSpinLock _field13;
-    _Bool _field14;
+    unsigned long long _field9;
+    unsigned int _field10;
+    unsigned long long _field11;
+    struct unordered_map<TFENode, std::__1::shared_ptr<TCoalescedEvents>, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, std::__1::shared_ptr<TCoalescedEvents>>>> _field12;
+    struct set<TFENode, std::__1::less<TFENode>, std::__1::allocator<TFENode>> _field13;
+    struct TSpinLock _field14;
     _Bool _field15;
+    _Bool _field16;
 };
 
 struct TCoalescingNodeObserverCocoaBridge;
@@ -1421,9 +1422,10 @@ struct TNodeObserver {
     CDUnknownFunctionPointerType *_field1;
     struct weak_ptr<TNodeEventHandler> _field2;
     CDUnknownFunctionPointerType *_field3;
-    struct map<TFENode, TObserverStats, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TObserverStats>>> _field4;
-    struct unique_ptr<TNodeChangeNotifier, std::__1::default_delete<TNodeChangeNotifier>> _field5;
-    _Bool _field6;
+    _Bool _field4;
+    struct map<TFENode, TObserverStats, std::__1::less<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TObserverStats>>> _field5;
+    struct unique_ptr<TNodeChangeNotifier, std::__1::default_delete<TNodeChangeNotifier>> _field6;
+    _Bool _field7;
 };
 
 struct TNodeObserverCocoaBridge;

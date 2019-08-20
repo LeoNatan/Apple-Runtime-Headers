@@ -9,7 +9,7 @@
 @class NSXPCListenerEndpoint;
 
 @protocol RemoteProcessingBlockRegistrarHosting <NSObject>
-- (void)registerAsEndpointListener;
-- (void)setListenerEndpoint:(NSXPCListenerEndpoint *)arg1;
+- (void)registerAsEndpointListenerWithReply:(void (^)(NSError *))arg1;
+- (void)setListenerEndpoint:(NSXPCListenerEndpoint *)arg1 withReply:(void (^)(NSError *))arg2;
 @end
 

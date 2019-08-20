@@ -9,6 +9,10 @@
 @class AFAudioPlaybackRequest, AFRequestInfo, AFVoiceInfo, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL, NSUUID;
 
 @protocol AFSettingsService <NSObject>
+- (oneway void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
+- (oneway void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(void (^)(BOOL))arg1;
+- (oneway void)setSpokenNotificationShouldAlwaysSpeakNotifications:(BOOL)arg1;
+- (oneway void)getSpokenNotificationShouldAlwaysSpeakNotificationsWithCompletion:(void (^)(BOOL))arg1;
 - (oneway void)setSpokenNotificationTemporarilyDisabledForApp:(NSString *)arg1 until:(NSDate *)arg2;
 - (oneway void)getSpokenNotificationTemporarilyDisabledEndDateForApp:(NSString *)arg1 completion:(void (^)(NSDate *))arg2;
 - (oneway void)clearSpokenNotificationTemporarilyDisabledStatus;
@@ -23,6 +27,7 @@
 - (oneway void)setNanoPhraseSpotterEnabled:(BOOL)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoDictationEnabled:(BOOL)arg1 withCompletion:(void (^)(void))arg2;
 - (oneway void)setNanoAssistantEnabled:(BOOL)arg1 withCompletion:(void (^)(void))arg2;
+- (oneway void)fetchMultiUserVoiceIdentificationSetting:(void (^)(BOOL))arg1;
 - (oneway void)getSharedUserID:(void (^)(NSString *, NSString *, NSError *))arg1;
 - (oneway void)updateMultiUserWithSharedUserId:(NSString *)arg1 companionId:(NSString *)arg2 companionSpeechId:(NSString *)arg3 idsIdentifier:(NSString *)arg4 productPrefix:(NSString *)arg5 completion:(void (^)(NSError *))arg6;
 - (oneway void)getSharedUserIdForHomeUserId:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;

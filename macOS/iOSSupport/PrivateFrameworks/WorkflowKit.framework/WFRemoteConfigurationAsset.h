@@ -8,11 +8,11 @@
 
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSNumber, NSString, WFFileRepresentation;
+@class CKRecordID, NSNumber, NSString, WFFileRepresentation;
 
 @interface WFRemoteConfigurationAsset : NSObject <WFCloudKitItem>
 {
-    NSString *identifier;
+    CKRecordID *identifier;
     NSString *_assetType;
     NSString *_shortVersion;
     WFFileRepresentation *_assetDataFile;
@@ -20,16 +20,14 @@
     NSNumber *_buildNumber;
 }
 
-+ (struct NSDictionary *)references;
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
++ (id)properties;
 + (id)recordType;
 @property(copy, nonatomic) NSNumber *buildNumber; // @synthesize buildNumber=_buildNumber;
 @property(copy, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) WFFileRepresentation *assetDataFile; // @synthesize assetDataFile=_assetDataFile;
 @property(retain, nonatomic) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(retain, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier;
 - (void).cxx_destruct;
 
 // Remaining properties

@@ -6,15 +6,20 @@
 
 #import <objc/NSObject.h>
 
+@class UIColor;
+
 @interface SXIssueCoverPresentationOptions : NSObject
 {
     _Bool _videoPlaybackEnabled;
+    UIColor *_parentBackgroundColor;
     struct CGSize _size;
 }
 
+@property(readonly, nonatomic) UIColor *parentBackgroundColor; // @synthesize parentBackgroundColor=_parentBackgroundColor;
 @property(readonly, nonatomic) _Bool videoPlaybackEnabled; // @synthesize videoPlaybackEnabled=_videoPlaybackEnabled;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (id)initWithSize:(struct CGSize)arg1 videoPlaybackEnabled:(_Bool)arg2;
+- (void).cxx_destruct;
+- (id)initWithSize:(struct CGSize)arg1 videoPlaybackEnabled:(_Bool)arg2 parentBackgroundColor:(id)arg3;
 
 @end
 

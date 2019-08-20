@@ -30,7 +30,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)attributeDescriptions;
 - (id)initWithParticipantClientIdentifier:(id)arg1 lookupInfo:(id)arg2;
-- (id)initWithParticipantClientIdentifier:(id)arg1 userRecordID:(id)arg2;
+- (id)initWithParticipantClientIdentifier:(id)arg1 cloudShareID:(id)arg2;
 - (id)initWithParticipantClientIdentifier:(id)arg1 phoneNumber:(id)arg2;
 - (id)initWithParticipantClientIdentifier:(id)arg1 emailAddress:(id)arg2;
 

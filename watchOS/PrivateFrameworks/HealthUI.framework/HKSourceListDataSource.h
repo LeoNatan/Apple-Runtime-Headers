@@ -20,6 +20,7 @@
     // Error parsing type: AB, name: _invalidated
     _Bool _shouldFetchAppInstallationStatus;
     _Bool _shouldFetchAppIcons;
+    _Bool _shouldFetchPurposeStrings;
     _Bool _shouldIncludeSpecialSources;
     _Bool _deliverUpdates;
     HKHealthStore *_healthStore;
@@ -28,6 +29,7 @@
 
 @property(nonatomic) _Bool deliverUpdates; // @synthesize deliverUpdates=_deliverUpdates;
 @property(nonatomic) _Bool shouldIncludeSpecialSources; // @synthesize shouldIncludeSpecialSources=_shouldIncludeSpecialSources;
+@property(nonatomic) _Bool shouldFetchPurposeStrings; // @synthesize shouldFetchPurposeStrings=_shouldFetchPurposeStrings;
 @property(nonatomic) _Bool shouldFetchAppIcons; // @synthesize shouldFetchAppIcons=_shouldFetchAppIcons;
 @property(nonatomic) _Bool shouldFetchAppInstallationStatus; // @synthesize shouldFetchAppInstallationStatus=_shouldFetchAppInstallationStatus;
 @property(readonly, nonatomic) HKSourceListDataModel *sources; // @synthesize sources=_sources;
@@ -35,9 +37,11 @@
 - (void).cxx_destruct;
 - (void)_fakeSourceForInstalledAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_specialAppBundleIdentifiers;
+- (void)_remoteWatchAppPurposeStringsForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_didFetchSources:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_performTransformations:(id)arg1 model:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_prependBuiltinTransformers;
+- (CDUnknownBlockType)_builtinPurposeStringsFetchTransformer;
 - (CDUnknownBlockType)_builtinIconFetchTransformer;
 - (CDUnknownBlockType)_builtinInstallationStatusTransformer;
 - (void)addFetchTransformer:(CDUnknownBlockType)arg1;

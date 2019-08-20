@@ -15,6 +15,7 @@
 @interface MTEventRecorderAMSMetricsDelegate : MTObject <AMSMetricsBagContract, MTEventRecorderDelegate>
 {
     _Bool _monitorsLifecycleEvents;
+    _Bool _personalizedWithItunesAccount;
     NSString *_containerId;
     NSDictionary *_lastMetricsDictionary;
     AMSBag *_amsBag;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) AMSBag *amsBag; // @synthesize amsBag=_amsBag;
 @property(retain, nonatomic) NSDictionary *lastMetricsDictionary; // @synthesize lastMetricsDictionary=_lastMetricsDictionary;
 @property(retain, nonatomic) NSString *containerId; // @synthesize containerId=_containerId;
+@property(nonatomic) _Bool personalizedWithItunesAccount; // @synthesize personalizedWithItunesAccount=_personalizedWithItunesAccount;
 @property(nonatomic) _Bool monitorsLifecycleEvents; // @synthesize monitorsLifecycleEvents=_monitorsLifecycleEvents;
 - (void).cxx_destruct;
 - (_Bool)shouldFlushBackgroundMetrics;
@@ -39,6 +41,8 @@
 - (id)flushUnreportedEvents;
 - (id)sendMethod;
 - (id)recordEvent:(id)arg1 toTopic:(id)arg2;
+- (id)activeItunesAccount;
+- (id)lookupItunesAccount:(id)arg1;
 - (id)prepareMetrics;
 - (id)initWithContainerId:(id)arg1 profileName:(id)arg2 profileVersion:(id)arg3;
 - (id)initWithContainerId:(id)arg1 amsBag:(id)arg2;

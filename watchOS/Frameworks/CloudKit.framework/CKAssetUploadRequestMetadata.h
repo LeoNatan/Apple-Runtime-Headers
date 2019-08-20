@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) NSData *fileSignature; // @synthesize fileSignature=_fileSignature;
 @property(nonatomic) int listIndex; // @synthesize listIndex=_listIndex;
 - (void).cxx_destruct;
+- (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

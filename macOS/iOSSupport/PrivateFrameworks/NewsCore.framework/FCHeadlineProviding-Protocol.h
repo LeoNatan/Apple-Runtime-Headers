@@ -95,6 +95,7 @@
 @property(readonly, copy, nonatomic) NSString *versionIdentifier;
 
 @optional
+@property(readonly, nonatomic) BOOL useTransparentNavigationBar;
 @property(readonly, nonatomic) BOOL isLocalDraft;
 @property(readonly, copy, nonatomic) NSString *callToActionText;
 @property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;

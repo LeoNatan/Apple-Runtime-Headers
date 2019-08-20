@@ -13,6 +13,7 @@
     NSArray *_thumbnailQualityClasses;
     struct CGSize _lastTargetSize;
     PHAssetResourceQualityClass *_lastResourceQualityClass;
+    struct CGSize _masterThumbnailSize;
     PHImageManager *_imageManager;
     PHCachingImageManager *_cachingImageManager;
 }
@@ -24,6 +25,7 @@
 - (void)stopCachingImagesForAssets:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4;
 - (void)startCachingImagesForAssets:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4;
 - (void)cancelImageRequest:(long long)arg1;
+- (struct CGSize)masterThumbnailSize;
 - (void)enumerateAvailableThumbnailDataFormats:(CDUnknownBlockType)arg1;
 - (void)preheatDataForThumbnailIndexes:(id)arg1 targetSize:(struct CGSize)arg2;
 - (id)thumbnailDataForAsset:(id)arg1 targetSize:(struct CGSize)arg2 outDataSpec:(struct PXMediaProviderThumbnailDataSpec *)arg3;

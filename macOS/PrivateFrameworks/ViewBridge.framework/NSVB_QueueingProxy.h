@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)removeAllEnqueuedInvocations;
 - (void)resume;
 - (void)_dispatchSuspendedMessages;
+- (BOOL)isValid;
 - (void)suspend;
 - (void)setWantsResume:(BOOL)arg1;
 - (void)ifWantsResume:(CDUnknownBlockType)arg1;

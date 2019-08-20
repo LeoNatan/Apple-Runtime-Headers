@@ -14,12 +14,10 @@
 @interface VCUserNotificationManager : NSObject <UNUserNotificationCenterDelegate>
 {
     id <VCUserNotificationManagerDelegate> _delegate;
-    UNUserNotificationCenter *_daemonNotificationCenter;
-    UNUserNotificationCenter *_appNotificationCenter;
+    UNUserNotificationCenter *_notificationCenter;
 }
 
-@property(readonly, nonatomic) UNUserNotificationCenter *appNotificationCenter; // @synthesize appNotificationCenter=_appNotificationCenter;
-@property(readonly, nonatomic) UNUserNotificationCenter *daemonNotificationCenter; // @synthesize daemonNotificationCenter=_daemonNotificationCenter;
+@property(readonly, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(nonatomic) __weak id <VCUserNotificationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

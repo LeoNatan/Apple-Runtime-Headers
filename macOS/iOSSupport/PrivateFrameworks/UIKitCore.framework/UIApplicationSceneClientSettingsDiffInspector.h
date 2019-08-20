@@ -16,6 +16,7 @@
 - (void)observeVisibleMiniAlertCountWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeUserInterfaceStyleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeWantsExclusiveForegroundWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeHomeIndicatorAutoHiddenWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeScreenEdgesDeferringSystemGesturesWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeActivationConditionsDataWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeSceneActivationBiasWithBlock:(CDUnknownBlockType)arg1;

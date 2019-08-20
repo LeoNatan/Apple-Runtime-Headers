@@ -15,6 +15,8 @@
 + (struct CGColorSpace *)defaultRGBColorSpace;
 + (struct CGColorSpace *)defaultWorkingColorSpace;
 + (int)_crashed_because_nonaddressable_memory_was_passed_to_render:(id)arg1 toBitmap:(void *)arg2 rowBytes:(int)arg3 bounds:(struct CGRect)arg4 format:(int)arg5 colorSpace:(struct CGColorSpace *)arg6;
++ (id)contextWithMTLCommandQueue:(id)arg1 options:(id)arg2;
++ (id)contextWithMTLCommandQueue:(id)arg1;
 + (id)contextWithMTLDevice:(id)arg1 options:(id)arg2;
 + (id)contextWithMTLDevice:(id)arg1;
 + (id)contextWithEAGLContext:(id)arg1 options:(id)arg2;
@@ -25,6 +27,7 @@
 + (id)_singletonContext;
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}12@0:4@8, name: internalCLContextWithOptions:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8^v12, name: internalCLContextWithOptions:glContext:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8@12, name: internalContextWithMTLCommandQueue:options:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8@12, name: internalContextWithMTLDevice:options:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}16@0:4@8@12, name: internalContextWithEAGLContext:options:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}12@0:4@8, name: internalGLContextWithOptions:
@@ -61,6 +64,7 @@
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer *)arg2 bounds:(struct CGRect)arg3 colorSpace:(struct CGColorSpace *)arg4;
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer *)arg2;
 - (void)render:(id)arg1 toBitmap:(void *)arg2 rowBytes:(int)arg3 bounds:(struct CGRect)arg4 format:(int)arg5 colorSpace:(struct CGColorSpace *)arg6;
+- (id)initWithMTLCommandQueue:(id)arg1 options:(id)arg2;
 - (id)initWithMTLDevice:(id)arg1 options:(id)arg2;
 - (id)initWithEAGLContext:(id)arg1 options:(id)arg2;
 - (id)initWithEAGLContext:(id)arg1;

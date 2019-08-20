@@ -12,6 +12,7 @@
     // Error parsing type: , name: tagService
     // Error parsing type: , name: subscriptionService
     // Error parsing type: , name: editorialService
+    // Error parsing type: , name: appConfigurationManager
     // Error parsing type: , name: followingBadgingCoordinator
     // Error parsing type: , name: magazinesBadgingCoordinator
     // Error parsing type: , name: notificationConfiguration

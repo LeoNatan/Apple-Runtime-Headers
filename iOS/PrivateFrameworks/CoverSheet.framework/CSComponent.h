@@ -27,6 +27,7 @@
     struct CGPoint _offset;
 }
 
++ (id)statusBarGradient;
 + (id)scalableContent;
 + (id)quickActions;
 + (id)controlCenterGrabber;

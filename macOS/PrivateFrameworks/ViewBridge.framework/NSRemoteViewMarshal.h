@@ -84,6 +84,7 @@ __attribute__((visibility("hidden")))
     unsigned int _connectionConfiguredWithServiceViewControllerClientInterface:1;
     unsigned int _constraintsDidChangeInAccessoryWindow:1;
     unsigned long long _containingWindowNotifications;
+    unsigned int _deferResizeRequestsUntilAfterRunPhase:1;
     unsigned int _disabledSuddenTermination:1;
     unsigned int _fencingCurrentTransaction:1;
     unsigned int _frameOfServiceWindowChanging:1;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)pauseButton;
 + (id)playButton;
 + (id)searchGlyph;
++ (id)remindersIcon;
 + (id)iCloudDriveIcon;
 + (id)keynoteIcon;
 + (id)numbersIcon;

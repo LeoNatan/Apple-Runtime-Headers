@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)requiresEventOrReminderAccess;
 + (_Bool)requiresReminderAccess;
 + (_Bool)requiresEventAccess;
+- (void)CADDatabaseGetOrCreateSubscribedCalendarsSource:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseGetDeletableSources:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseGetDeletableCalendars:(CDUnknownBlockType)arg1;
 - (_Bool)accessGrantedToPerformSelector:(SEL)arg1;

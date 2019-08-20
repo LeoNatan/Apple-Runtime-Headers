@@ -8,17 +8,17 @@
 
 #import <PassKitCore/PKMicaResizableView-Protocol.h>
 
-@class NSArray, NSString;
+@class NSDictionary, NSString;
 
 @interface PKMicaLayer : CALayer <PKMicaResizableView>
 {
     CALayer *_rootLayer;
-    NSArray *_publishedColorLayers;
-    NSArray *_publishedColorShapeLayers;
+    NSDictionary *_publishedColorLayers;
+    NSDictionary *_publishedColorShapeLayers;
 }
 
-@property(readonly, nonatomic) NSArray *publishedColorShapeLayers; // @synthesize publishedColorShapeLayers=_publishedColorShapeLayers;
-@property(readonly, nonatomic) NSArray *publishedColorLayers; // @synthesize publishedColorLayers=_publishedColorLayers;
+@property(readonly, nonatomic) NSDictionary *publishedColorShapeLayers; // @synthesize publishedColorShapeLayers=_publishedColorShapeLayers;
+@property(readonly, nonatomic) NSDictionary *publishedColorLayers; // @synthesize publishedColorLayers=_publishedColorLayers;
 @property(readonly, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 - (void).cxx_destruct;
 - (struct CGSize)boundsSizeToMatchPointScale:(double)arg1;

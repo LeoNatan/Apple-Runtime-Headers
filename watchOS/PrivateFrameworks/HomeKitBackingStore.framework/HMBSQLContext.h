@@ -14,25 +14,28 @@
     struct sqlite3_stmt *_commit;
     struct sqlite3_stmt *_rollback;
     _Bool _readOnly;
-    struct sqlite3 *_context;
     NSURL *_url;
-    HMFUnfairLock *_lock;
+    struct sqlite3 *_context;
     NSOperationQueue *_queue;
+    HMFUnfairLock *_lock;
     HMFActivity *_activity;
+    unsigned int _mutation;
 }
 
+@property(nonatomic) unsigned int mutation; // @synthesize mutation=_mutation;
 @property(retain, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
-@property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
-@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) struct sqlite3 *context; // @synthesize context=_context;
+@property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (_Bool)fetchSQLite3One:(struct sqlite3_stmt *)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)fetchSQLite3:(struct sqlite3_stmt *)arg1 limit:(unsigned int)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (_Bool)fetchSQLite3:(struct sqlite3_stmt *)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (unsigned int)execSQLite3:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
+- (unsigned int)insertSQLite3:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (_Bool)runSQLite3:(const char *)arg1 error:(id *)arg2;
+- (unsigned int)execSQLite3:(struct sqlite3_stmt *)arg1 error:(id *)arg2;
 - (id)execSQLite3:(struct sqlite3_stmt *)arg1;
 - (id)runSQLite3:(const char *)arg1;
 - (void)rollback;
@@ -45,6 +48,8 @@
 - (void)_unprepare;
 - (id)_prepareFrom:(id)arg1;
 - (id)close;
+- (_Bool)updateSchemaVersionTo:(int)arg1 error:(id *)arg2;
+- (int)migrateFromSchemaVersion:(int)arg1 error:(id *)arg2;
 - (id)prepare;
 - (id)initialize;
 - (void)dealloc;

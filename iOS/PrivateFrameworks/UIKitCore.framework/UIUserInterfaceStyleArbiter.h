@@ -26,6 +26,7 @@
     _UICustomScheduleController *_customScheduleController;
     NSDate *_lastUpdateDate;
     NSBackgroundActivityScheduler *_backgroundActivityScheduler;
+    int _notificationToken;
 }
 
 + (id)sharedInstance;

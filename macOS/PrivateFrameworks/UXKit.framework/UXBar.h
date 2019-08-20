@@ -9,7 +9,7 @@
 #import <UXKit/NSAccessibilityGroup-Protocol.h>
 #import <UXKit/UXBarPositioning-Protocol.h>
 
-@class NSColor, NSMutableSet, NSString, _UXSinglePixelLine;
+@class NSColor, NSMutableSet, NSString, NSView, _UXSinglePixelLine;
 @protocol _UXBarItemsContainer;
 
 @interface UXBar : UXView <NSAccessibilityGroup, UXBarPositioning>
@@ -17,21 +17,26 @@
     _UXSinglePixelLine *_decorationLine;
     NSMutableSet *_previousBarItemContainers;
     long long _containerTransitionAnimationCount;
+    NSView *_placeholderTrailingView;
     BOOL _isInteractiveTransitioning;
+    BOOL _trailingViewNeedsRemoval;
     NSColor *_barTintColor;
     double _interitemSpacing;
     double _height;
     double _baselineOffsetFromBottom;
     double _percent;
     UXView<_UXBarItemsContainer> *_nextItemContainer;
+    NSView *_globalTrailingView;
     UXView<_UXBarItemsContainer> *_barItemsContainer;
     struct NSEdgeInsets _decorationInsets;
 }
 
 @property(nonatomic) struct NSEdgeInsets decorationInsets; // @synthesize decorationInsets=_decorationInsets;
 @property(retain, nonatomic) UXView<_UXBarItemsContainer> *barItemsContainer; // @synthesize barItemsContainer=_barItemsContainer;
+@property(retain, nonatomic) NSView *globalTrailingView; // @synthesize globalTrailingView=_globalTrailingView;
 @property(retain, nonatomic) UXView<_UXBarItemsContainer> *nextItemContainer; // @synthesize nextItemContainer=_nextItemContainer;
 @property(nonatomic) double percent; // @synthesize percent=_percent;
+@property(nonatomic) BOOL trailingViewNeedsRemoval; // @synthesize trailingViewNeedsRemoval=_trailingViewNeedsRemoval;
 @property(nonatomic) BOOL isInteractiveTransitioning; // @synthesize isInteractiveTransitioning=_isInteractiveTransitioning;
 @property(nonatomic) double baselineOffsetFromBottom; // @synthesize baselineOffsetFromBottom=_baselineOffsetFromBottom;
 @property(nonatomic) double height; // @synthesize height=_height;
@@ -48,6 +53,7 @@
 - (void)_animateTransitionFromContainer:(id)arg1 toContainer:(id)arg2 transition:(unsigned long long)arg3 duration:(double)arg4 fromValue:(double)arg5 toValue:(double)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_didCompleteContainerTransitionAnimation;
 - (void)_transitionToContainer:(id)arg1 transition:(unsigned long long)arg2 duration:(double)arg3;
+- (void)_updateTrailingViewWithItemContainer:(id)arg1;
 - (id)borderColor;
 - (void)setBorderColor:(id)arg1;
 @property(nonatomic) BOOL bordered;

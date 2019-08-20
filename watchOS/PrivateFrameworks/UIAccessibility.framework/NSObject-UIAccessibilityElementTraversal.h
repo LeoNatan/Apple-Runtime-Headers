@@ -152,6 +152,7 @@
 - (_Bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityTextHandlingAncestorMatchingBlock:(CDUnknownBlockType)arg1;
 - (id)_accessibilityHandwritingAncestor;
+- (_Bool)_accessibilityCanAppearInContextMenuPreview;
 - (id)_accessibilityElementForTextInsertionAndDeletion;
 - (_Bool)_accessibilitySupportsTextInsertionAndDeletion;
 - (id)accessibilityNextTextNavigationElement;
@@ -328,7 +329,7 @@
 - (_Bool)_accessibilityUsesChildrenFramesForSorting;
 - (struct CGRect)_handleRotatingFrame:(struct CGRect)arg1 fromOrientation:(int)arg2 toOrientation:(int)arg3;
 - (int)_accessibilityCompareElement:(id)arg1 toElement:(id)arg2;
-- (int)_accessibilitySortPriorityWithReturningView:(id *)arg1;
+- (int)_accessibilitySortPriorityWithReturningElement:(id *)arg1;
 - (_Bool)_accessibilityOverridesInvisibility;
 - (void)_accessibilitySetOverridesInvisibility:(_Bool)arg1;
 - (float)_accessibilityAllowedGeometryOverlapX;
@@ -603,6 +604,7 @@
 - (_Bool)_accessibilityVisiblePointHonorsScreenBounds;
 - (_Bool)_accessibilityTouchContainerShouldOutputBraille;
 - (_Bool)accessibilitySupportsTextSelection;
+- (id)_accessibilityTouchContainerStartingWithSelf:(_Bool)arg1;
 - (id)_accessibilityTouchContainer;
 - (_Bool)_accessibilityIsMap;
 - (_Bool)_accessibilityIsGuideElement;
@@ -612,9 +614,11 @@
 - (void)_accessibilityAddTrait:(unsigned long long)arg1;
 - (void)_accessibilityRemoveTrait:(unsigned long long)arg1;
 - (id)_accessibilityCustomActions;
-- (id)_retrieveCustomActions;
+- (id)_retrieveCustomActionsForElement:(id)arg1;
 - (_Bool)_accessibilityPerformLegacyCustomAction:(id)arg1;
 - (id)_privateAccessibilityCustomActions;
+- (void)_accessibilitySetPrivateCustomActionsElement:(id)arg1;
+- (id)_accessibilityPrivateCustomActionsElement;
 - (_Bool)_accessibilityIsDictating;
 - (id)_accessibilitySoftwareMimicKeyboard;
 - (_Bool)_accessibilityIsSoftwareKeyboardMimic;
@@ -915,6 +919,7 @@
 - (_Bool)_accessibilityHandleMagicTapForPronunciation;
 - (void)_setAccessibilityActivateParagraphInTextViewRangeBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityFrameForSortingBlock:(CDUnknownBlockType)arg1;
+- (void)_setAccessibilityCustomActionsBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIsRealtimeElementBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityPerformEscapeBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityActivateBlock:(CDUnknownBlockType)arg1;

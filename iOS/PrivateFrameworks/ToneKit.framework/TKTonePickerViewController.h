@@ -42,6 +42,7 @@
     id <TKTonePickerStyleProvider> _styleProvider;
 }
 
++ (id)_checkmarkImage;
 @property(retain, nonatomic) id <TKTonePickerStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) _Bool showsMedia; // @synthesize showsMedia=_showsMedia;
 @property(nonatomic) _Bool showsIgnoreMute; // @synthesize showsIgnoreMute=_showsIgnoreMute;

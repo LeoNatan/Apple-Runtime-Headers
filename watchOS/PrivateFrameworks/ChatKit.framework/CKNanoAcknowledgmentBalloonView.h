@@ -6,16 +6,27 @@
 
 #import <ChatKit/CKAcknowledgmentBalloonView.h>
 
-@class UIImageView;
+@class NSLayoutConstraint, UIImageView;
 
 @interface CKNanoAcknowledgmentBalloonView : CKAcknowledgmentBalloonView
 {
     UIImageView *_balloonImageView;
+    NSLayoutConstraint *_balloonImageViewLeftAnchor;
+    NSLayoutConstraint *_balloonImageViewRightAnchor;
+    NSLayoutConstraint *_glyphViewLeftAnchor;
+    NSLayoutConstraint *_glyphViewRightAnchor;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *glyphViewRightAnchor; // @synthesize glyphViewRightAnchor=_glyphViewRightAnchor;
+@property(retain, nonatomic) NSLayoutConstraint *glyphViewLeftAnchor; // @synthesize glyphViewLeftAnchor=_glyphViewLeftAnchor;
+@property(retain, nonatomic) NSLayoutConstraint *balloonImageViewRightAnchor; // @synthesize balloonImageViewRightAnchor=_balloonImageViewRightAnchor;
+@property(retain, nonatomic) NSLayoutConstraint *balloonImageViewLeftAnchor; // @synthesize balloonImageViewLeftAnchor=_balloonImageViewLeftAnchor;
 - (void).cxx_destruct;
+- (int)semanticContentAttribute;
 - (void)prepareForDisplay;
+- (void)setOrientation:(BOOL)arg1;
 - (void)layoutSubviews;
+- (void)setGlyphView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

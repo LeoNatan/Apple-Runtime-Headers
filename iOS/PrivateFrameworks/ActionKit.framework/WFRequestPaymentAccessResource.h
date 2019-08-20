@@ -11,9 +11,10 @@
 }
 
 + (_Bool)isSystemResource;
-- (id)localizedAccessPermissionPromptMessage;
-- (id)localizedAccessPermissionPromptTitle;
-- (id)localizedInsufficientPermissionsMessage;
+- (id)localizedWorkflowLevelMessageTemplate;
+- (id)localizedWorkflowLevelPromptTemplate;
+- (id)localizedWorkflowLevelDeniedStatusMessage;
+- (id)localizedWorkflowLevelNotDeterminedStatusMessage;
 - (unsigned long long)globalLevelStatus;
 - (id)associatedAppIdentifier;
 

@@ -28,6 +28,7 @@
 @property(readonly, copy) NSArray *conflictingObjects; // @synthesize conflictingObjects=_conflictingObjects;
 @property(readonly, copy) NSArray *constraint; // @synthesize constraint=_constraint;
 - (BOOL)_isDBConflict;
+- (id)debugDescription;
 - (id)description;
 - (void)_doCleanupForXPCStore:(id)arg1 context:(id)arg2;
 - (id)initWithCoder:(id)arg1;

@@ -86,9 +86,11 @@
 - (void)animationDidComplete:(id)arg1;
 - (void)_noteAnimation:(id)arg1 isRunning:(_Bool)arg2;
 - (_Bool)changeVisibleRectToProposedVisibleRect:(struct CGRect)arg1;
+- (id)presentedItemsGeometryForDataSource:(id)arg1;
 - (struct CGPoint)_adjustInitialVisibleRect:(struct CGRect)arg1 inLayout:(id)arg2 forRecentSection:(long long)arg3;
 - (id)createAnchorForScrollingToInitialPosition;
 @property(readonly, nonatomic) struct CGRect fullyVisibleRect;
+@property(readonly, nonatomic) double bottomMargin;
 @property(readonly, nonatomic) double estimatedHeaderHeight;
 - (void)enumerateSectionBoundariesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_enumerateScrollablePagesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;

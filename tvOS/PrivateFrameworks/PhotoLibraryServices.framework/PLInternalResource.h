@@ -20,7 +20,6 @@
     PLInternalResourceSidecarRepresentation *_sidecarRepresentation;
 }
 
-+ (_Bool)markUnavailableResourcesFromMissingPurgingEventsInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (_Bool)batchResetFileIDInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (_Bool)deleteObsoleteResourcesInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)_obsoleteResourceRecipesWithCPLOff;
@@ -85,7 +84,6 @@
 @property(readonly, copy, nonatomic) id <PLAssetID> assetID;
 @property(readonly, nonatomic) id <PLResourceDataStoreKey> dataStoreKey;
 @property(readonly, nonatomic) id <PLResourceDataStore> dataStore;
-@property(copy, nonatomic) NSData *dataStoreKeyData; // @dynamic dataStoreKeyData;
 @property(readonly, nonatomic) _Bool isDerivative; // @dynamic isDerivative;
 @property(retain, nonatomic) NSString *fingerprint; // @dynamic fingerprint;
 - (id)validateForAssetID:(id)arg1 resourceIdentity:(id)arg2;
@@ -147,6 +145,7 @@
 @property(nonatomic) int cloudSourceType; // @dynamic cloudSourceType;
 @property(retain, nonatomic) PLCodec *codec; // @dynamic codec;
 @property(nonatomic) short dataStoreClassID; // @dynamic dataStoreClassID;
+@property(copy, nonatomic) NSData *dataStoreKeyData; // @dynamic dataStoreKeyData;
 @property(nonatomic) long long dataStoreSubtype; // @dynamic dataStoreSubtype;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) long long fileID; // @dynamic fileID;

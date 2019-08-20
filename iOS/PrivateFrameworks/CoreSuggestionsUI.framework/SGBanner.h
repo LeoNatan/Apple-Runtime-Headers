@@ -23,11 +23,14 @@
     UIImageView *_firstImageView;
     UIImageView *_disclosureImageView;
     NSLayoutConstraint *_imageCenterYConstraint;
+    NSLayoutConstraint *_verticalSpaceBetweenImagesConstraint;
+    NSLayoutConstraint *_horisontalSpaceBetweenImagesConstraint;
     NSLayoutConstraint *_titleLeadingConstraint;
     NSLayoutConstraint *_titleBaselineConstraint;
     NSLayoutConstraint *_subtitleBaselineConstraint;
     NSLayoutConstraint *_closeButtonHorizontalPositionConstraint;
     NSLayoutConstraint *_closeButtonWidthConstraint;
+    NSLayoutConstraint *_disclosureImageViewHorizontalPositionConstraint;
     long long _currentStyle;
     NSArray *_images;
     long long _accessoryType;

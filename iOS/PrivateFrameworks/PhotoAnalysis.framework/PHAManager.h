@@ -43,6 +43,7 @@
 - (void)graphManagerDidUnloadGraph:(id)arg1;
 - (void)graphManagerWillLoadGraph:(id)arg1;
 - (void)backgroundActivityDidBegin;
+- (void)stopAllBackgroundActivities;
 - (void)stopBackgroundActivity;
 - (void)triggerBackgroundActivity;
 - (void)checkForQuiescence;

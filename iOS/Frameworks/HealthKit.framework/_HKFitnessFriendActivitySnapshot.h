@@ -65,6 +65,7 @@
 @property(readonly, nonatomic) double briskMinutesGoalPercentage;
 @property(readonly, nonatomic) double mmgp;
 @property(readonly, nonatomic) double energyBurnedGoalPercentage;
+- (id)_mostSignificantSnapshot:(id)arg1;
 - (id)activitySummary;
 - (id)description;
 

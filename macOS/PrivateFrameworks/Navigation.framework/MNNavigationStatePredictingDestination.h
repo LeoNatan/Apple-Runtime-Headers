@@ -8,16 +8,16 @@
 
 #import <Navigation/MNCommuteSessionObserver-Protocol.h>
 
-@class NSString;
+@class MNCommuteSession, NSString;
 
 @interface MNNavigationStatePredictingDestination : MNNavigationState <MNCommuteSessionObserver>
 {
+    MNCommuteSession *_commuteSession;
 }
 
+- (void).cxx_destruct;
 - (void)commuteSessionDidArrive:(id)arg1;
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
-- (void)updateWithLocation:(id)arg1;
-- (void)addCommuteDestinationSuggestion:(id)arg1;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)stopPredictingDestinations;

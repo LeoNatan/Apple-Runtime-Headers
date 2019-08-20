@@ -9,11 +9,11 @@
 #import <HomeKitDaemon/HMDTLVProtocol-Protocol.h>
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
-@class HMDNetworkRouterAdvertisementProtocol, HMDNetworkRouterDynamicPortRuleDirection, HMDNetworkRouterLANIdentifierList, HMDNetworkRouterProtocol, HMDNetworkRouterServiceType, HMDTLVUnsignedNumberValue, NSString;
+@class HMDNetworkRouterAdvertisementProtocol, HMDNetworkRouterLANIdentifierList, HMDNetworkRouterProtocol, HMDNetworkRouterRuleDirection, HMDNetworkRouterServiceType, HMDTLVUnsignedNumberValue, NSString;
 
 @interface HMDNetworkRouterDynamicPortRule : NSObject <NSCopying, HMDTLVProtocol>
 {
-    HMDNetworkRouterDynamicPortRuleDirection *_direction;
+    HMDNetworkRouterRuleDirection *_direction;
     HMDNetworkRouterLANIdentifierList *_lanIdentifierList;
     HMDNetworkRouterProtocol *_protocol;
     HMDNetworkRouterAdvertisementProtocol *_advertisementProtocol;
@@ -28,7 +28,7 @@
 @property(retain, nonatomic) HMDNetworkRouterAdvertisementProtocol *advertisementProtocol; // @synthesize advertisementProtocol=_advertisementProtocol;
 @property(retain, nonatomic) HMDNetworkRouterProtocol *protocol; // @synthesize protocol=_protocol;
 @property(retain, nonatomic) HMDNetworkRouterLANIdentifierList *lanIdentifierList; // @synthesize lanIdentifierList=_lanIdentifierList;
-@property(retain, nonatomic) HMDNetworkRouterDynamicPortRuleDirection *direction; // @synthesize direction=_direction;
+@property(retain, nonatomic) HMDNetworkRouterRuleDirection *direction; // @synthesize direction=_direction;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;

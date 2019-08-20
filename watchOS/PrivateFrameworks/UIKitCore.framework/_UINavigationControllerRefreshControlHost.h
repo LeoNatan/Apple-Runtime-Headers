@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)canHostRefreshControlOwnedByScrollView:(id)arg1 inNavigationController:(id)arg2;
 @property(retain) NSArray *refreshControlConstraints; // @synthesize refreshControlConstraints=_refreshControlConstraints;
-@property(retain) UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
+@property __weak UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 @property(nonatomic) float unobstructedHeight; // @synthesize unobstructedHeight=_unobstructedHeight;
 @property(retain, nonatomic) UIView *hostContainerView; // @synthesize hostContainerView=_hostContainerView;
 @property(nonatomic) float restingHeightOfRefreshControl; // @synthesize restingHeightOfRefreshControl=_restingHeightOfRefreshControl;
@@ -45,8 +45,10 @@ __attribute__((visibility("hidden")))
 - (void)refreshControl:(id)arg1 didChangeToState:(int)arg2 fromState:(int)arg3;
 - (void)decrementInsetHeight:(float)arg1;
 - (void)incrementInsetHeight:(float)arg1;
+- (void)dealloc;
 - (_Bool)isHostingRefreshControlOwnedByScrollView:(id)arg1;
-- (void)stopAnimationsAndTearDown;
+- (void)stopAnimations;
+@property(readonly, nonatomic) float fullHeightOfRefreshControl;
 - (id)initWithNavigationController:(id)arg1 scrollView:(id)arg2;
 
 // Remaining properties

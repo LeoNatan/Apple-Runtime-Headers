@@ -57,8 +57,6 @@
 + (void)setCardEnrollmentSilent:(int)arg1;
 + (void)setCardEnrollmentManual:(int)arg1;
 + (void)setCardEnrollmentAutomatic:(int)arg1;
-+ (void)setBiometricsTokenUpdateTime:(id)arg1;
-+ (void)setBiometricsState:(int)arg1;
 + (void)setBagURLCookies:(id)arg1;
 + (void)setBagOverrides:(id)arg1;
 + (void)setAuthenticationStarted:(id)arg1;
@@ -100,8 +98,6 @@
 + (int)cardEnrollmentSilent;
 + (int)cardEnrollmentManual;
 + (int)cardEnrollmentAutomatic;
-+ (id)biometricsTokenUpdateTime;
-+ (int)biometricsState;
 + (id)bagURLCookies;
 + (id)bagOverrides;
 + (id)authenticationStarted;

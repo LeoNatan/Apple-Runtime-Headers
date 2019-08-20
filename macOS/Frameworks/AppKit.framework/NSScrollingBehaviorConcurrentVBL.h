@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isStretched;
 - (void)_startGestureScrollWithVBLFilter:(id)arg1;
 - (void)_scrollView:(id)arg1 trackGestureScrollWithEvent:(id)arg2;
-- (void)_scrollView:(id)arg1 discreetScrollWithEvent:(id)arg2;
+- (void)_scrollView:(id)arg1 discreteScrollWithEvent:(id)arg2;
 - (void)_scrollView:(id)arg1 smoothScrollWithEvent:(id)arg2;
 - (void)_updatePageReferenceNumber;
 - (void)_scrollView:(id)arg1 trackScrollMayBegin:(id)arg2;

@@ -13,9 +13,11 @@
     NSArray *_requiredVisibleParameterKeys;
     NSDictionary *_requiredValues;
     NSString *_summaryString;
+    NSString *_key;
 }
 
 + (id)parenthesisRegularExpression;
+@property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, copy, nonatomic) NSString *summaryString; // @synthesize summaryString=_summaryString;
 @property(readonly, copy, nonatomic) NSDictionary *requiredValues; // @synthesize requiredValues=_requiredValues;
 @property(readonly, copy, nonatomic) NSArray *requiredVisibleParameterKeys; // @synthesize requiredVisibleParameterKeys=_requiredVisibleParameterKeys;

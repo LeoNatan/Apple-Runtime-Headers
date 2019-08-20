@@ -6,19 +6,15 @@
 
 #import <WorkflowKit/NSObject-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString;
+@class CKRecordID, NSDate, NSDictionary, NSString;
 
 @protocol WFCloudKitItem <NSObject>
-+ (struct NSDictionary *)keyMap;
-+ (NSArray *)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (NSDictionary *)properties;
 + (NSString *)recordType;
-@property(readonly, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) CKRecordID *identifier;
 
 @optional
-+ (NSDictionary *)nilValues;
 - (void)ensureFileAssets;
-- (void)didUpdatePropertiesFromItemRequest;
 - (void)setCreatedAt:(NSDate *)arg1 modifiedAt:(NSDate *)arg2 createdBy:(NSString *)arg3;
 - (unsigned long long)referenceActionForKey:(NSString *)arg1;
 @end

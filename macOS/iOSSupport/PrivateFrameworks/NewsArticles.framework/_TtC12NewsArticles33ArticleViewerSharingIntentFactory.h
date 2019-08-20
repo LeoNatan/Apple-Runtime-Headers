@@ -8,8 +8,9 @@
 
 @interface _TtC12NewsArticles33ArticleViewerSharingIntentFactory : _TtCs12_SwiftObject
 {
+    // Error parsing type: , name: resolver
     // Error parsing type: , name: activityProviderFactory
-    // Error parsing type: , name: coordinator
+    // Error parsing type: , name: sharingVisibilityProvider
 }
 
 @end

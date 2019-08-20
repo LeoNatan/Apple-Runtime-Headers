@@ -6,14 +6,11 @@
 
 #import <HomeAI/NSObject-Protocol.h>
 
-@class HMICameraVideoFrame, NSArray, NSDictionary;
+@class HMICameraVideoFrame, HMICameraVideoFrameResult, NSDictionary;
 
 @protocol HMICameraVideoFrameAnalyzer <NSObject>
 + (NSDictionary *)classHierarchyMap;
-@property(readonly) NSArray *detections;
-@property(readonly) long long events;
-@property(readonly) NSDictionary *annotationScores;
-- (_Bool)classify:(HMICameraVideoFrame *)arg1 error:(id *)arg2;
+- (HMICameraVideoFrameResult *)classify:(HMICameraVideoFrame *)arg1 error:(id *)arg2;
 - (id)initWithConfidenceThresholds:(struct NSDictionary *)arg1 nmsThreshold:(double)arg2 error:(id *)arg3;
 - (id)init;
 @end

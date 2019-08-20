@@ -32,6 +32,7 @@
 @property(nonatomic) __weak id <SXAutoSizedCanvasControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)interactiveCanvasController:(id)arg1 dragItemForSmartField:(id)arg2 interaction:(id)arg3 session:(id)arg4;
+- (_Bool)interactiveCanvasController:(id)arg1 shouldBeginInteraction:(id)arg2 atPoint:(struct CGPoint)arg3;
 @property(readonly, nonatomic) _Bool isCanvasInteractive;
 - (_Bool)allowSelectionPopover;
 - (_Bool)allowHighlighting;

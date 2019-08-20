@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AXIPCClient, AXIPCServer, NSMapTable, NSMutableArray, _AXAssertionServer;
+@class AXIPCClient, AXIPCServer, NSMapTable, NSMutableArray, RBSProcessMonitor, _AXAssertionServer;
 @protocol AXSpringBoardServerInstanceDelegate;
 
 @interface _AXSpringBoardServerInstance : NSObject
@@ -19,6 +19,7 @@
     NSMapTable *_assertionClients;
     AXIPCClient *_currentSpeakerClient;
     struct __IOHIDManager *_hidManager;
+    RBSProcessMonitor *_processMonitor;
     _Bool _disableNotificationCenterAssertionHeld;
     _Bool _disableControlCenterAssertionHeld;
     _AXAssertionServer *_assertionServer;
@@ -85,6 +86,8 @@
 - (id)_handleLoadGAXBundleForUnmanagedASAM:(id)arg1;
 - (id)_isSpotlightVisible:(id)arg1;
 - (id)_isGuidedAccessActive:(id)arg1;
+- (id)_toggleDarkMode:(id)arg1;
+- (id)_isDarkModeActive:(id)arg1;
 - (id)_handleRevealSpotlight:(id)arg1;
 - (id)_handleToggleSpotlight:(id)arg1;
 - (id)_handleCancelReachabilityTimer:(id)arg1;
@@ -146,6 +149,7 @@
 - (id)_assertionClientForPort:(unsigned int)arg1;
 - (void)registerHandlerForMessageKey:(int)arg1 target:(id)arg2 selector:(SEL)arg3 entitlements:(id)arg4;
 - (void)_initializeHandlers;
+- (void)_updateProcess:(id)arg1;
 - (void)_registerServerAndNotifyClients;
 - (void)_springBoardFinishedLaunching:(id)arg1;
 - (id)_initServer;

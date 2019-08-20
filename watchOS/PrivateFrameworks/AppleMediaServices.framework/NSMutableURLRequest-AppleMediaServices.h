@@ -24,13 +24,13 @@
 - (void)ams_addContentLengthHeaderForData:(id)arg1;
 - (void)ams_addContentTypeHeaderForEncoding:(int)arg1;
 - (void)ams_addConnectionTypeHeader;
-- (void)ams_addClientVersions;
+- (void)ams_addClientVersionsForClient:(id)arg1;
 - (void)ams_addClientIdentifierHeaderForClient:(id)arg1;
 - (void)ams_addCachePolicyHeader;
 - (void)ams_addCacheBusterParameter;
 - (void)ams_addBiometricsHeadersForAccount:(id)arg1 options:(id)arg2;
 - (void)ams_addAuthKitHeaders;
-- (void)ams_addCookiesForAccounts:(id)arg1;
+- (void)ams_addCookiesForAccount:(id)arg1 clientInfo:(id)arg2;
 - (void)ams_addAcceptLanguageHeader;
 - (void)ams_addAnisetteHeadersForAccount:(id)arg1 type:(int)arg2 bag:(id)arg3;
 - (void)ams_addAbsintheHeadersWithBuyParams:(id)arg1 bag:(id)arg2;

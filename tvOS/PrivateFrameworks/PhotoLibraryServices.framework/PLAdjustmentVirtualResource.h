@@ -17,6 +17,7 @@
 @property(copy, nonatomic) NSNumber *cachedDataLength; // @synthesize cachedDataLength=_cachedDataLength;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+- (id)adjustmentDictionary;
 - (long long)estimatedDataLength;
 - (long long)dataLength;
 - (id)initWithAdjustmentFilePath:(id)arg1 forAsset:(id)arg2;

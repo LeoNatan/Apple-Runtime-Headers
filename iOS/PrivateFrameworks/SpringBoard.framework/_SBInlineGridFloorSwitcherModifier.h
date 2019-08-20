@@ -62,6 +62,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)containerStatusBarAnimationDuration;
 - (_Bool)isContainerStatusBarVisible;
+- (unsigned long long)insertionStyle;
 - (double)baseHysteresisForStartingKillGesture;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;
@@ -82,8 +83,9 @@
 - (double)wallpaperOverlayAlphaForIndex:(unsigned long long)arg1;
 - (double)darkeningAlphaForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
-- (id)appExposeAccessoryButtonBundleID;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
 - (double)visibleMarginForItemContainerAtIndex:(unsigned long long)arg1;
 - (_Bool)clipsToUnobscuredMarginAtIndex:(unsigned long long)arg1;
 - (long long)layoutUpdateMode;

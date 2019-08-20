@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: blueprintSelectionProvider
     // Error parsing type: , name: purchaseController
     // Error parsing type: , name: bundleSubscriptionManager
+    // Error parsing type: , name: alertPresenter
     // Error parsing type: , name: previousSelectedIndexPath
 }
 

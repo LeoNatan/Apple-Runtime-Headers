@@ -6,18 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-#import <PassKitUIFoundation/MTKViewDelegate-Protocol.h>
 #import <PassKitUIFoundation/PKMotionManagerClientProtocol-Protocol.h>
 
-@class MTKView, NSArray, NSSet, NSString, UIVisualEffectView;
-@protocol MTLBuffer, MTLCommandQueue, MTLDevice, MTLLibrary, MTLRenderPipelineState, MTLTexture;
+@class NSArray, NSSet, NSString, UIVisualEffectView;
+@protocol MTLBuffer, MTLRenderPipelineState, MTLTexture;
 
-@interface PKCategoryVisualizationCardView : UIView <MTKViewDelegate, PKMotionManagerClientProtocol>
+@interface PKCategoryVisualizationCardView : UIView <PKMotionManagerClientProtocol>
 {
-    MTKView *_metalView;
-    id <MTLDevice> _device;
-    id <MTLLibrary> _library;
-    id <MTLCommandQueue> _commandQueue;
     id <MTLTexture> _texture;
     id <MTLTexture> _overlayTexture;
     id <MTLTexture> _overlayNormalTexture;
@@ -57,11 +52,8 @@
 - (void)_calculateNewCirclePositions;
 - (void)_updateCircles;
 - (void)_empty;
-- (id)_makePipelineStateWithVertexFunction:(id)arg1 fragmentFunction:(id)arg2;
 - (void)_updateTextureAndBlurShader;
 - (void)_createMetalResourcesWithTextures:(id)arg1;
-- (void)drawInMTKView:(id)arg1;
-- (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize)arg2;
 - (void)_updatePausedState;
 - (void)setMagnitudes:(id)arg1 withStyle:(int)arg2;
 - (void)invalidate;

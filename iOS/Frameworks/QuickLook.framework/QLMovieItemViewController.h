@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     PHPlaceholderView *_airPlayPlaceholderView;
     _Bool _isEditing;
     _Bool _isSavingEditsBeforeDismissing;
+    _Bool _assetCanBeRotated;
     AVPlayerViewController *_playerViewController;
     QLOverlayPlayButton *_playButton;
     QLVideoScrubberView *_scrubber;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
     QLMovieEdits *_editsSinceLastSave;
 }
 
+@property(nonatomic) _Bool assetCanBeRotated; // @synthesize assetCanBeRotated=_assetCanBeRotated;
 @property(nonatomic) _Bool isSavingEditsBeforeDismissing; // @synthesize isSavingEditsBeforeDismissing=_isSavingEditsBeforeDismissing;
 @property(retain, nonatomic) QLMovieEdits *editsSinceLastSave; // @synthesize editsSinceLastSave=_editsSinceLastSave;
 @property(retain, nonatomic) QLMovieEdits *edits; // @synthesize edits=_edits;

@@ -21,6 +21,7 @@
 @property(retain, nonatomic) OBTrayButton *setupButton; // @synthesize setupButton=_setupButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)hu_preloadContent;
 - (void)_setupCameraRecording:(id)arg1;

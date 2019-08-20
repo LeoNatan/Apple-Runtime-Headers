@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *locations;
 @property(copy, nonatomic) NSArray *colors;
 @property(readonly, nonatomic) CAGradientLayer *_gradientLayer;
+- (void)setLeftToRight:(_Bool)arg1;
 
 @end
 

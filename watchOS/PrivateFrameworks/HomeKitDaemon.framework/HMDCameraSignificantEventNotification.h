@@ -12,22 +12,24 @@
 @interface HMDCameraSignificantEventNotification : NSObject
 {
     NSUUID *_UUID;
-    unsigned int _significantEvent;
+    unsigned int _reason;
     NSDate *_dateOfOccurrence;
     NSURL *_heroFrameURL;
     HMDCameraProfile *_camera;
     id <HMDHomePresenceCheck> _homePresence;
+    unsigned int _confidenceLevel;
 }
 
+@property(readonly) unsigned int confidenceLevel; // @synthesize confidenceLevel=_confidenceLevel;
 @property(readonly) id <HMDHomePresenceCheck> homePresence; // @synthesize homePresence=_homePresence;
 @property(readonly) HMDCameraProfile *camera; // @synthesize camera=_camera;
 @property(readonly) NSURL *heroFrameURL; // @synthesize heroFrameURL=_heroFrameURL;
 @property(readonly) NSDate *dateOfOccurrence; // @synthesize dateOfOccurrence=_dateOfOccurrence;
-@property(readonly) unsigned int significantEvent; // @synthesize significantEvent=_significantEvent;
+@property(readonly) unsigned int reason; // @synthesize reason=_reason;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
 - (id)initWithModel:(id)arg1 heroFrameURL:(id)arg2 camera:(id)arg3;
-- (id)initWithUUID:(id)arg1 dateOfOccurrence:(id)arg2 significantEvent:(unsigned int)arg3 heroFrameURL:(id)arg4 camera:(id)arg5 homePresence:(id)arg6;
+- (id)initWithUUID:(id)arg1 dateOfOccurrence:(id)arg2 reason:(unsigned int)arg3 confidenceLevel:(unsigned int)arg4 heroFrameURL:(id)arg5 camera:(id)arg6 homePresence:(id)arg7;
 
 @end
 

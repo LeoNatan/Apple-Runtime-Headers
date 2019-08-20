@@ -20,7 +20,6 @@
     struct __CFSet *_wakeOnWiFiDelegates;
     PCSimpleTimer *_wakeOnWiFiDisableTimer;
     void *_interfaceAssertion;
-    int _WWANContextIdentifier;
     NSString *_WWANInterfaceName;
     BOOL _isWWANInterfaceUp;
     NSTimer *_inCallWWANOverrideTimer;
@@ -35,7 +34,6 @@
     BOOL _isInCall;
     BOOL _isWakeOnWiFiSupported;
     BOOL _isWakeOnWiFiEnabled;
-    BOOL _shouldOverrideOnCallBehavior;
     CoreTelephonyClient *_ctClient;
     CTXPCServiceSubscriptionContext *_currentDataSimContext;
     void *_ctServerConnection;

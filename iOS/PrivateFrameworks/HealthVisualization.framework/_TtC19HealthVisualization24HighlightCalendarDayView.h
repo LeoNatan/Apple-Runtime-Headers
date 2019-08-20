@@ -6,7 +6,7 @@
 
 #import <AppSupportUI/NUIContainerBoxView.h>
 
-@class UIView;
+@class NSDate, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _TtC19HealthVisualization24HighlightCalendarDayView : NUIContainerBoxView
@@ -24,7 +24,10 @@ __attribute__((visibility("hidden")))
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(nonatomic, retain) UIView *circleView;
+@property(nonatomic, readonly) long long axCircleState;
+@property(nonatomic, readonly) NSString *axProjectionKind;
+@property(nonatomic, readonly) long long axProbability;
+@property(nonatomic, readonly) NSDate *axDate;
 
 @end
 

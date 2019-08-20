@@ -50,6 +50,8 @@
 @property(nonatomic) _Bool TTYSoftwareEnabled;
 @property(nonatomic) _Bool TTYHardwareEnabled;
 - (void)clearServerSettingsCacheForKey:(id)arg1;
+- (void)clearAllServerSettingsCache;
+- (id)valueForPreferenceKey:(id)arg1 andContext:(id)arg2;
 - (id)valueForPreferenceKey:(id)arg1;
 - (id)objectValueForKey:(id)arg1 withClass:(Class)arg2 andDefaultValue:(id)arg3;
 - (id)objectValueForKey:(id)arg1 andContext:(id)arg2 withClass:(Class)arg3 andDefaultValue:(id)arg4;

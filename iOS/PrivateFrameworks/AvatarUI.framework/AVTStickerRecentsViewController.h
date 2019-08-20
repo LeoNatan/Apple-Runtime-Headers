@@ -11,7 +11,7 @@
 #import <AvatarUI/UICollectionViewDataSource-Protocol.h>
 #import <AvatarUI/UICollectionViewDelegate-Protocol.h>
 
-@class AVTImageStore, AVTSerialTaskScheduler, AVTStickerConfigurationProvider, AVTStickerGenerator, AVTStickerRecentsLayout, AVTStickerRecentsMigrator, AVTStickerRecentsOverlayView, AVTUIEnvironment, AVTUIStickerGeneratorPool, CALayer, NSArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout;
+@class AVTClippableImageStore, AVTSerialTaskScheduler, AVTStickerConfigurationProvider, AVTStickerGenerator, AVTStickerRecentsLayout, AVTStickerRecentsMigrator, AVTStickerRecentsOverlayView, AVTUIEnvironment, AVTUIStickerGeneratorPool, CALayer, NSArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol AVTAvatarRecord, AVTAvatarStoreInternal, AVTResourceCache, AVTStickerRecentsItem, AVTStickerRecentsViewControllerDelegate, NSObject, OS_dispatch_queue;
 
 @interface AVTStickerRecentsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, AVTStickerBackendDelegate, AVTStickerRecentsOverlayDelegate>
@@ -22,7 +22,7 @@
     AVTStickerRecentsOverlayView *_overlayView;
     id <NSObject> _avatarStoreChangeObserver;
     id <AVTAvatarRecord> _defaultMemoji;
-    AVTImageStore *_imageStore;
+    AVTClippableImageStore *_imageStore;
     UICollectionViewFlowLayout *_collectionViewLayout;
     UICollectionView *_collectionView;
     id <AVTAvatarStoreInternal> _avatarStore;
@@ -65,7 +65,7 @@
 @property(readonly, nonatomic) id <AVTAvatarStoreInternal> avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
-@property(retain, nonatomic) AVTImageStore *imageStore; // @synthesize imageStore=_imageStore;
+@property(retain, nonatomic) AVTClippableImageStore *imageStore; // @synthesize imageStore=_imageStore;
 @property(retain, nonatomic) id <AVTAvatarRecord> defaultMemoji; // @synthesize defaultMemoji=_defaultMemoji;
 @property(nonatomic) _Bool hasFetchedDefaultMemoji; // @synthesize hasFetchedDefaultMemoji=_hasFetchedDefaultMemoji;
 @property(retain, nonatomic) id <NSObject> avatarStoreChangeObserver; // @synthesize avatarStoreChangeObserver=_avatarStoreChangeObserver;

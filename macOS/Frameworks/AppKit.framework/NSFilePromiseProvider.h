@@ -43,7 +43,7 @@
 @property(readonly, copy) NSURL *_providedItemsURL;
 - (void)_setDestinationURL:(id)arg1;
 - (id)_destinationURL;
-- (void)_cooridinatedlyWritePromiseToURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_coordinatelyWritePromiseToURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)draggingCancelled:(id)arg1;
 - (void)draggingEnded:(id)arg1;
 - (void)pasteboardFinishedWithDataProvider:(id)arg1;

@@ -9,16 +9,17 @@
 @class NSArray, NSString, NSUUID, UISUIActivityViewControllerConfiguration, _UIActivityDiscoveryContext;
 
 @protocol SDShareSheetSlotManagerProtocol <SDXPCDaemonProtocol>
+- (void)activityViewControllerPerformEditActionsWithSessionID:(NSString *)arg1;
 - (void)activityViewControllerWillEnterForegroundWithSessionID:(NSString *)arg1;
 - (void)activityViewControllerDidEnterBackgroundWithSessionID:(NSString *)arg1;
 - (void)activityViewControllerWithSessionID:(NSString *)arg1 performedActivityWithSuccess:(_Bool)arg2;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 movedActivityAtIndex:(int)arg2 toIndex:(int)arg3 activityCategory:(int)arg4;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedDefaultActivityAtIndex:(int)arg2 activityCategory:(int)arg3;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 favoritedActivity:(_Bool)arg2 atIndex:(int)arg3;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 toggledActivityAtIndex:(int)arg2 activityCategory:(int)arg3;
+- (void)activityViewControllerWithSessionID:(NSString *)arg1 updatedFavoritesProxies:(NSArray *)arg2 activityCategory:(int)arg3;
+- (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedDefaultActivityWithIdentifier:(NSUUID *)arg2 activityCategory:(int)arg3;
+- (void)activityViewControllerWithSessionID:(NSString *)arg1 favoritedActivity:(_Bool)arg2 withIdentifier:(NSUUID *)arg3 activityCategory:(int)arg4;
+- (void)activityViewControllerWithSessionID:(NSString *)arg1 toggledActivityWithIdentifier:(NSUUID *)arg2 activityCategory:(int)arg3;
 - (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedPersonWithIdentifier:(NSUUID *)arg2;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedActionAtIndex:(unsigned int)arg2;
-- (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedActivityAtIndex:(unsigned int)arg2;
+- (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedActionWithIdentifier:(NSUUID *)arg2;
+- (void)activityViewControllerWithSessionID:(NSString *)arg1 selectedActivityWithIdentifier:(NSUUID *)arg2;
 - (void)sendConfiguration:(UISUIActivityViewControllerConfiguration *)arg1 completion:(void (^)(UISDShareSheetSessionConfiguration *))arg2;
 - (void)connectToDaemonWithSessionID:(NSString *)arg1 discoveryContext:(_UIActivityDiscoveryContext *)arg2 assetIdentifiers:(NSArray *)arg3 completionHandler:(void (^)(void))arg4;
 @end

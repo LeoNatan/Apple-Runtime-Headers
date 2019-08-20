@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 - (void).cxx_destruct;
 - (long long)_generationNumber;
+- (void)prepareForDealloc;
 - (id)newClonedEntry;
 @property(readonly, nonatomic) MPSectionedIdentifierListItemEntry *latestDataSourceClone;
 @property(readonly, nonatomic) MPSectionedIdentifierListItemEntry *latestUserClone;

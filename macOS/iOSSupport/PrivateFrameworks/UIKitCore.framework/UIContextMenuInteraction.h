@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIPreviewPlatterPresentationAnimatorDelegate-Protocol.h>
 #import <UIKitCore/_UIPreviewPlatterPresentationControllerDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableDictionary, NSString, UIContextMenuConfiguration, UITargetedPreview, UIView, _UIClickPresentationInteraction, _UIFulfilledContextMenuConfiguration;
+@class NSMutableDictionary, NSString, UIContextMenuConfiguration, UIGestureRecognizer, UITargetedPreview, UIView, _UIClickPresentationInteraction;
 @protocol UIContextMenuInteractionDelegate;
 
 @interface UIContextMenuInteraction : NSObject <_UIClickPresentationInteractionDelegateInternal, _UIPreviewPlatterPresentationControllerDelegate, _UIPreviewPlatterPresentationAnimatorDelegate, UIInteraction>
@@ -22,6 +22,9 @@
         char willCommit;
         char willPresent;
         char didEnd;
+        char willPerformPreviewActionForMenuWithConfiguration;
+        char willDisplayMenuForConfiguration;
+        char willEndForConfiguration;
         char asyncConfigurationForMenuAtLocation;
         char overrideSuggestedActions;
         char styleForMenuWithConfiguration;
@@ -30,45 +33,38 @@
     } _delegateImplements;
     UIView *_view;
     id <UIContextMenuInteractionDelegate> _delegate;
+    UIContextMenuConfiguration *_pendingConfiguration;
+    NSMutableDictionary *_configurationsByIdentifier;
     NSMutableDictionary *_presentationsByIdentifier;
-    NSMutableDictionary *_dragItemsByIdentifier;
-    NSMapTable *_presentationsByDragItem;
     _UIClickPresentationInteraction *_presentationInteraction;
     UITargetedPreview *_stashedPreview;
-    UIContextMenuConfiguration *_currentConfiguration;
-    _UIFulfilledContextMenuConfiguration *_fulfilledConfiguration;
 }
 
-@property(retain, nonatomic) _UIFulfilledContextMenuConfiguration *fulfilledConfiguration; // @synthesize fulfilledConfiguration=_fulfilledConfiguration;
-@property(retain, nonatomic) UIContextMenuConfiguration *currentConfiguration; // @synthesize currentConfiguration=_currentConfiguration;
 @property(copy, nonatomic) UITargetedPreview *stashedPreview; // @synthesize stashedPreview=_stashedPreview;
 @property(retain, nonatomic) _UIClickPresentationInteraction *presentationInteraction; // @synthesize presentationInteraction=_presentationInteraction;
-@property(retain, nonatomic) NSMapTable *presentationsByDragItem; // @synthesize presentationsByDragItem=_presentationsByDragItem;
-@property(retain, nonatomic) NSMutableDictionary *dragItemsByIdentifier; // @synthesize dragItemsByIdentifier=_dragItemsByIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *presentationsByIdentifier; // @synthesize presentationsByIdentifier=_presentationsByIdentifier;
+@property(retain, nonatomic) NSMutableDictionary *configurationsByIdentifier; // @synthesize configurationsByIdentifier=_configurationsByIdentifier;
+@property(retain, nonatomic) UIContextMenuConfiguration *pendingConfiguration; // @synthesize pendingConfiguration=_pendingConfiguration;
 @property(readonly, nonatomic) __weak id <UIContextMenuInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
-- (id)_actionsForUICommandsWithResponder:(id)arg1;
-- (void)createActionsForUICommandMenu:(id)arg1 intoArray:(id)arg2 validatableCommand:(id)arg3;
-- (id)_suggestedActionsForConfiguration:(id)arg1;
-- (void)_presentationInteractionDidEnd;
-- (void)_delegate_contextMenuInteractionDidEnd;
-- (void)_delegate_contextMenuInteractionWillPresent;
-- (void)_delegate_willCommitWithAnimator:(id)arg1;
-- (id)_delegate_previewForDismissing;
-- (id)_delegate_previewForHighlighting;
+- (id)_suggestedMenuForConfiguration:(id)arg1;
+- (id)_delegate_contextMenuInteractionWillEndForConfiguration:(id)arg1;
+- (id)_delegate_contextMenuInteractionWillPresentForConfiguration:(id)arg1;
+- (void)_delegate_tappedPreviewForConfiguration:(id)arg1 withAnimator:(id)arg2;
+- (id)_delegate_previewForDismissingForConfiguration:(id)arg1;
+- (id)_delegate_previewForHighlightingForConfiguration:(id)arg1;
 - (id)_delegate_configurationForMenuAtLocation:(struct CGPoint)arg1;
-- (void)_interactionShouldBegin:(CDUnknownBlockType)arg1;
+- (void)_interactionShouldBeginAtLocation:(struct CGPoint)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)targetedPreviewForAnimator:(id)arg1 dismissingWithStyle:(unsigned long long)arg2;
 - (void)_previewPlatterPresentationControllerDidTapPreview:(id)arg1;
 - (id)actualPlatterContainerViewForPresentationController:(id)arg1;
-- (void)_removeAllReferencesToConfiguration:(id)arg1;
+- (void)_performCleanupForConfigurationWithIdentifier:(id)arg1;
 - (void)_dragMorphDidCompleteForConfiguration:(id)arg1;
 - (void)_previewPlatterPresentationController:(id)arg1 beginDragWithTouch:(id)arg2;
-- (void)_previewPlatterPresentationControllerWantsToBeDismissed:(id)arg1 withReason:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
-- (void)clickPresentationInteractionEnded:(id)arg1 wasCancelled:(BOOL)arg2;
+- (void)_previewPlatterPresentationControllerWantsToBeDismissed:(id)arg1 withReason:(unsigned long long)arg2 alongsideActions:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_clickPresentationInteraction:(id)arg1 dragSessionDidEndForItems:(id)arg2;
+- (void)_clickPresentationInteractionEnded:(id)arg1 forPresentation:(id)arg2 wasCancelled:(BOOL)arg3;
 - (id)_fulfilledConfigurationForConfiguration:(id)arg1;
 - (unsigned long long)_actualLayoutForPreferredLayout:(unsigned long long)arg1 withConfiguration:(id)arg2;
 - (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;
@@ -80,8 +76,12 @@
 - (BOOL)_clickPresentationInteractionShouldAllowDragAfterDismiss:(id)arg1;
 - (BOOL)_clickPresentationInteractionShouldAllowRapidRestart:(id)arg1;
 - (void)_clickPresentationInteraction:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForFailureRelationships;
 @property(nonatomic) BOOL allowSimultaneousRecognition;
+- (void)dismissMenu;
+- (void)_presentMenuAtLocation:(struct CGPoint)arg1;
 - (struct CGPoint)locationInView:(id)arg1;
+- (void)dealloc;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

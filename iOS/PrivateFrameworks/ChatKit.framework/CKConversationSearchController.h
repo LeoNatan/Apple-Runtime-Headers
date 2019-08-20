@@ -16,7 +16,6 @@
 + (id)sectionIdentifier;
 + (_Bool)supportsMenuInteraction;
 + (_Bool)supportsQuicklook;
-+ (id)rankingQueriesWithText:(id)arg1;
 @property(nonatomic) _Bool gotResults; // @synthesize gotResults=_gotResults;
 - (id)layoutGroupWithEnvironment:(id)arg1;
 - (_Bool)applyLayoutMarginsToLayoutGroup;
@@ -30,6 +29,7 @@
 - (void)_searchSpotlightWithText:(id)arg1 mode:(unsigned long long)arg2;
 - (void)_searchZKWWithText:(id)arg1 mode:(unsigned long long)arg2;
 - (void)searchWithText:(id)arg1 mode:(unsigned long long)arg2;
+- (id)rankingQueriesWithText:(id)arg1;
 - (id)filterQueries;
 - (unsigned long long)maxResultsForMode:(unsigned long long)arg1;
 - (id)queryAttributesForText:(id)arg1;

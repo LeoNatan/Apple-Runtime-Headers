@@ -21,7 +21,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)renderToTexture:(id)arg1 commandQueue:(id)arg2 helper:(id)arg3;
+- (void)renderToTexture:(id)arg1 computeCommandHandler:(CDUnknownBlockType)arg2 blitCommandHandler:(CDUnknownBlockType)arg3 helper:(id)arg4;
 - (id)newTextureForDevice:(id)arg1;
 - (void)componentDidChangeForType:(long long)arg1;
 - (void)skinColorDidChange;

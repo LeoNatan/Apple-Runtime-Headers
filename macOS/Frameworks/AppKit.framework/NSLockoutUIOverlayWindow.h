@@ -8,13 +8,12 @@
 
 #import <AppKit/NSLockoutUIOverlayWindow-Protocol.h>
 
-@class NSString, NSViewController;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSLockoutUIOverlayWindow : NSWindow <NSLockoutUIOverlayWindow>
 {
     NSWindow *_original;
-    NSViewController *_lockoutViewController;
     double _animationDuration;
     CDUnknownBlockType _pendingCompletionHandler;
     BOOL _needToEngageMiniaturizedWindow;
@@ -25,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (void)_changeKeyAndMainLimitedOK:(BOOL)arg1;
 - (void)disengageWithDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_disengageFullScreenWindowWithDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)_joinActiveFullScreenSpaceUsingPosition:(unsigned long long)arg1;
+- (BOOL)_canJoinActiveFullScreenSpace;
 - (void)_doFullScreenCleanupForOrderOut;
 - (BOOL)_wantsFullScreenCleanupOnOrderOut;
 - (void)_disengageMiniaturizedWindowWithDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)_engageFullScreenWindowWithDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_engageMiniaturizedWindowWithDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_engageNormalWindowWithDuration:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_callOutPendingCompletionHandlerIfNeeded;
 - (void)_didExitFullScreen:(id)arg1;
 - (void)_didDeminiaturize:(id)arg1;
 - (void)_didOrderOffScreen:(id)arg1;

@@ -19,6 +19,7 @@
 {
     _Bool _receivedPendingInstallItems;
     _Bool _receivedTransferItems;
+    _Bool _isInEligiblePlanPresent;
     NSDate *_nextTimeToAcceptScan;
     CAShapeLayer *_fillWithHoleLayer;
     CAShapeLayer *_holeOutlineLayer;
@@ -61,10 +62,15 @@
 @property(readonly) NSString *fauxCardData; // @synthesize fauxCardData=_fauxCardData;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (long long)navigationBarScrollToEdgeBehavior;
 - (void)_startPendingInstall:(id)arg1;
 - (void)_maybeUpdateTableView;
 - (void)_startPlanTransfer:(id)arg1;
-- (long long)navigationBarScrollToEdgeBehavior;
+- (id)_messageTextForActionSheet:(id)arg1 carrierName:(id)arg2 countryCode:(id)arg3;
+- (void)_presentActionSheetForPendingInstall:(id)arg1;
+- (void)_presentActionSheetForPlanTransfer:(id)arg1;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

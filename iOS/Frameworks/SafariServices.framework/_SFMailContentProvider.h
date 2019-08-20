@@ -13,9 +13,11 @@
 
 @interface _SFMailContentProvider : NSObject <MFMailComposeViewControllerDelegate>
 {
+    _Bool _restrictAddingPDFContent;
     id <_SFMailContentProviderDataSource> _dataSource;
 }
 
+@property(nonatomic) _Bool restrictAddingPDFContent; // @synthesize restrictAddingPDFContent=_restrictAddingPDFContent;
 @property(nonatomic) __weak id <_SFMailContentProviderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;

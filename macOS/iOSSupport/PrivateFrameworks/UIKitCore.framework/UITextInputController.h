@@ -45,6 +45,7 @@
         unsigned int textOrSelectionChangeOriginatesWithMarkedText:1;
         unsigned int nextSelectionChangeMustUpdate:1;
         unsigned int hasTextAlternatives:1;
+        unsigned int hasDictationResultMetadata:1;
         unsigned int suppressDelegateChangeNotifications:1;
     } _tiFlags;
     NSArray *_extraItemsBeforeTextStyleOptions;
@@ -127,6 +128,7 @@
 - (void)lowercaseWord:(id)arg1;
 - (void)uppercaseWord:(id)arg1;
 - (void)pasteItemProviders:(id)arg1;
+- (void)pasteItemProviders:(id)arg1 matchesStyle:(BOOL)arg2;
 - (BOOL)_pasteFromPasteboard:(id)arg1 andMatchStyle:(BOOL)arg2;
 - (void)_pasteAndMatchStyle:(BOOL)arg1;
 - (void)pasteAndMatchStyle:(id)arg1;
@@ -147,7 +149,6 @@
 - (id)_selectedText;
 - (BOOL)_shouldHandleResponderAction:(SEL)arg1;
 - (BOOL)_canHandleResponderAction:(SEL)arg1;
-- (void)delegateWillChangeAttributedText:(id)arg1;
 - (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id *)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
@@ -295,8 +296,6 @@
 - (id)_initWithLayoutManager:(id)arg1;
 - (id)_selectableText;
 - (BOOL)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(BOOL)arg3;
-- (void)_phraseBoundaryGesture:(id)arg1;
-- (id)_newPhraseBoundaryGestureRecognizer;
 - (void)_unmarkText;
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;

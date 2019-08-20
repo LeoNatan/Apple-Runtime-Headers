@@ -20,8 +20,6 @@
 @property(nonatomic) long long devicePosition; // @synthesize devicePosition=_devicePosition;
 - (void).cxx_destruct;
 - (void)_updateTextWithPriorMRCResults:(id)arg1;
-- (struct UIEdgeInsets)_textInsets;
-- (double)_backgroundAlpha;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 
 @end

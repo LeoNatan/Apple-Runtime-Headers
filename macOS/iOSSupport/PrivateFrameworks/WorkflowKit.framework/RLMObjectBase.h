@@ -22,9 +22,11 @@
 
 + (id)objectWithThreadSafeReference:(unique_ptr_d0e912ad)arg1 metadata:(id)arg2 realm:(id)arg3;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)_realmColumnNames;
 + (id)_realmObjectName;
 + (BOOL)shouldIncludeInDefaultSchema;
 + (Class)objectUtilClass:(BOOL)arg1;
++ (void)initializeLinkedObjectSchemas;
 + (id)sharedSchema;
 + (id)className;
 - (id).cxx_construct;

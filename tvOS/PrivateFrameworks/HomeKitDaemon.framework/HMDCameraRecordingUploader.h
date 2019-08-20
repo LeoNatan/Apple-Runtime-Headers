@@ -52,7 +52,7 @@
 - (id)_addOperation:(id)arg1 finalizeClipOnError:(_Bool)arg2;
 - (void)_createClipModel:(id)arg1;
 - (id)finish;
-- (id)addNotificationWithType:(unsigned long long)arg1 dateOfOccurrence:(id)arg2 heroFrameData:(id)arg3 offset:(double)arg4 homePresenceByPairingIdentity:(id)arg5;
+- (id)addNotificationWithReason:(unsigned long long)arg1 confidenceLevel:(unsigned long long)arg2 dateOfOccurrence:(id)arg3 heroFrameData:(id)arg4 offset:(double)arg5 homePresenceByPairingIdentity:(id)arg6;
 - (id)addPosterFrameData:(id)arg1 offset:(double)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4;
 - (id)addVideoSegmentData:(id)arg1 startDate:(id)arg2 duration:(double)arg3;
 - (id)addVideoInitData:(id)arg1;

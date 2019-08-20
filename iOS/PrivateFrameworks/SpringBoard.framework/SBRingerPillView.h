@@ -40,7 +40,7 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)_updateGlyphWithStaticColor:(id)arg1 animationSettings:(id)arg2;
-- (void)_setGlyphTintColor:(id)arg1 animationSettings:(id)arg2;
+- (void)_setGlyphTintColor:(id)arg1 animationDuration:(double)arg2;
 - (id)_visibleViewsForState:(unsigned long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;

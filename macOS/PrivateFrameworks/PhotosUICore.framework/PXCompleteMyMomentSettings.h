@@ -10,8 +10,6 @@
 {
     BOOL _cmmFeatureEnabled;
     BOOL _showCMMSettingsAtTopLevel;
-    BOOL _automaticallyStartWithCMMIfLinkThresholdIsMet;
-    BOOL _suggestCMMLinkForCertainActivitiesIfOverThreshold;
     BOOL _alwaysSortAfterAddMore;
     BOOL _preventNilTitles;
     BOOL _enableLightCuration;
@@ -59,6 +57,7 @@
     BOOL _shouldBakeInIfTimelineTrimmed;
     BOOL _shouldBakeInIfPortraitDepthEffectEnabled;
     BOOL _shouldBakeInIfContainsPenultimateResources;
+    long long _cmmShareSheetBehavior;
     long long _shareSheetLinkAssetCountThreshold;
     unsigned long long _shareSheetLinkTotalFileSizeThresholdMB;
     long long _invitationsDataSourceType;
@@ -145,8 +144,7 @@
 @property(nonatomic) BOOL alwaysSortAfterAddMore; // @synthesize alwaysSortAfterAddMore=_alwaysSortAfterAddMore;
 @property(nonatomic) unsigned long long shareSheetLinkTotalFileSizeThresholdMB; // @synthesize shareSheetLinkTotalFileSizeThresholdMB=_shareSheetLinkTotalFileSizeThresholdMB;
 @property(nonatomic) long long shareSheetLinkAssetCountThreshold; // @synthesize shareSheetLinkAssetCountThreshold=_shareSheetLinkAssetCountThreshold;
-@property(nonatomic) BOOL suggestCMMLinkForCertainActivitiesIfOverThreshold; // @synthesize suggestCMMLinkForCertainActivitiesIfOverThreshold=_suggestCMMLinkForCertainActivitiesIfOverThreshold;
-@property(nonatomic) BOOL automaticallyStartWithCMMIfLinkThresholdIsMet; // @synthesize automaticallyStartWithCMMIfLinkThresholdIsMet=_automaticallyStartWithCMMIfLinkThresholdIsMet;
+@property(nonatomic) long long cmmShareSheetBehavior; // @synthesize cmmShareSheetBehavior=_cmmShareSheetBehavior;
 @property(nonatomic) BOOL showCMMSettingsAtTopLevel; // @synthesize showCMMSettingsAtTopLevel=_showCMMSettingsAtTopLevel;
 @property(nonatomic) BOOL cmmFeatureEnabled; // @synthesize cmmFeatureEnabled=_cmmFeatureEnabled;
 - (void)setDefaultValues;

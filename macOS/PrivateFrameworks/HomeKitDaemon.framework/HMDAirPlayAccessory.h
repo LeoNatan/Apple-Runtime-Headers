@@ -9,12 +9,13 @@
 #import <HomeKitDaemon/HMDAccessoryDisassociation-Protocol.h>
 #import <HomeKitDaemon/HMDAccessoryMinimumUserPrivilegeCapable-Protocol.h>
 #import <HomeKitDaemon/HMDAccessoryUserManagement-Protocol.h>
+#import <HomeKitDaemon/HMDDevicePreferenceDataSource-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
 @class HMFExponentialBackoffTimer, HMFPairingIdentity, NSString;
 
-@interface HMDAirPlayAccessory : HMDMediaAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMFTimerDelegate, HMDAccessoryDisassociation, HMDAccessoryUserManagement, HMFLogging>
+@interface HMDAirPlayAccessory : HMDMediaAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDDevicePreferenceDataSource, HMFTimerDelegate, HMDAccessoryDisassociation, HMDAccessoryUserManagement, HMFLogging>
 {
     HMFPairingIdentity *_pairingIdentity;
     NSString *_password;
@@ -29,6 +30,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)timerDidFire:(id)arg1;
+- (BOOL)supportsDeviceWithCapabilities:(id)arg1;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)pairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

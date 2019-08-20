@@ -28,6 +28,7 @@
 @property(retain, nonatomic) PKSwatchColor *swatchColor; // @synthesize swatchColor=_swatchColor;
 - (void).cxx_destruct;
 - (_Bool)wantsColorBulletVisible;
+- (_Bool)wantsBackgroundViewColor;
 - (id)newColorBackgroundView;
 - (void)_updateColorBulletView;
 - (void)_updateBackgroundView;

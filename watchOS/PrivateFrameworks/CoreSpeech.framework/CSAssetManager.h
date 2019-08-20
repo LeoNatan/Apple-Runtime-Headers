@@ -47,6 +47,7 @@
 - (void)installedAssetForCurrentLanguageOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)installedAssetForCurrentLanguageOfType:(unsigned int)arg1;
 - (void)assetForCurrentLanguageOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)allInstalledAssetsOfType:(unsigned int)arg1 language:(id)arg2;
 - (id)assetForCurrentLanguageOfType:(unsigned int)arg1;
 - (void)setAssetDownloadingOption:(id)arg1;
 - (id)initWithDownloadOption:(id)arg1;

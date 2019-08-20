@@ -19,16 +19,35 @@
     NSSet *_textualContexts;
     NSSet *_appIdentifiers;
     NSUUID *_punctuationGroup;
+    NSNumber *_tableHeaders;
+    NSNumber *_tableRowAndColumn;
+    NSNumber *_speakEmojis;
     NSString *_voiceIdentifier;
     NSNumber *_speechRate;
     NSNumber *_volume;
+    NSNumber *_modifierKeys;
+    NSNumber *_brailleStatusCellGeneral;
+    NSNumber *_brailleStatusCellText;
+    NSString *_brailleTable;
+    NSNumber *_brailleOutput;
+    NSNumber *_brailleInput;
 }
 
++ (id)observerKeys;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool builtIn; // @synthesize builtIn=_builtIn;
+@property(retain, nonatomic) NSNumber *brailleInput; // @synthesize brailleInput=_brailleInput;
+@property(retain, nonatomic) NSNumber *brailleOutput; // @synthesize brailleOutput=_brailleOutput;
+@property(retain, nonatomic) NSString *brailleTable; // @synthesize brailleTable=_brailleTable;
+@property(retain, nonatomic) NSNumber *brailleStatusCellText; // @synthesize brailleStatusCellText=_brailleStatusCellText;
+@property(retain, nonatomic) NSNumber *brailleStatusCellGeneral; // @synthesize brailleStatusCellGeneral=_brailleStatusCellGeneral;
+@property(retain, nonatomic) NSNumber *modifierKeys; // @synthesize modifierKeys=_modifierKeys;
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
 @property(retain, nonatomic) NSNumber *speechRate; // @synthesize speechRate=_speechRate;
 @property(retain, nonatomic) NSString *voiceIdentifier; // @synthesize voiceIdentifier=_voiceIdentifier;
+@property(retain, nonatomic) NSNumber *speakEmojis; // @synthesize speakEmojis=_speakEmojis;
+@property(retain, nonatomic) NSNumber *tableRowAndColumn; // @synthesize tableRowAndColumn=_tableRowAndColumn;
+@property(retain, nonatomic) NSNumber *tableHeaders; // @synthesize tableHeaders=_tableHeaders;
 @property(retain, nonatomic) NSUUID *punctuationGroup; // @synthesize punctuationGroup=_punctuationGroup;
 @property(retain, nonatomic) NSSet *appIdentifiers; // @synthesize appIdentifiers=_appIdentifiers;
 @property(retain, nonatomic) NSSet *textualContexts; // @synthesize textualContexts=_textualContexts;

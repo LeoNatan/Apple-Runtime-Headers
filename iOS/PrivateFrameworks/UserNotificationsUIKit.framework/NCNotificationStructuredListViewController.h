@@ -104,6 +104,7 @@
 - (void)notifyContentObservers;
 - (void)removeContentObserver:(id)arg1;
 - (void)addContentObserver:(id)arg1;
+- (_Bool)interpretsViewAsContent:(id)arg1;
 @property(readonly, nonatomic) NSString *backgroundGroupNameBase;
 - (id)newCaptureOnlyMaterialViewController;
 - (void)listViewControllerPresentedByUserAction;

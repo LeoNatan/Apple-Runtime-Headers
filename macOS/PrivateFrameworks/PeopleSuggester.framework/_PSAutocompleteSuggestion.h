@@ -6,27 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class CNAutocompleteResult, NSArray, NSString;
+#import <PeopleSuggester/NSSecureCoding-Protocol.h>
 
-@interface _PSAutocompleteSuggestion : NSObject
+@class NSArray, NSString;
+
+@interface _PSAutocompleteSuggestion : NSObject <NSSecureCoding>
 {
     NSString *_chatGuid;
     NSString *_displayName;
     NSString *_handle;
     NSString *_contactIdentifier;
     unsigned long long _resultSourceType;
-    CNAutocompleteResult *_autocompleteResult;
     NSArray *_recipients;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
-@property(readonly, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(nonatomic) unsigned long long resultSourceType; // @synthesize resultSourceType=_resultSourceType;
 @property(readonly, copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *chatGuid; // @synthesize chatGuid=_chatGuid;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithChatGuid:(id)arg1 displayName:(id)arg2 handle:(id)arg3 contactIdentifier:(id)arg4 resultSourceType:(unsigned long long)arg5 autocompleteResult:(id)arg6 recipients:(id)arg7;

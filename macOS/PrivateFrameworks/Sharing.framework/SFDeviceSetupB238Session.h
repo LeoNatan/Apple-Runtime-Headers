@@ -88,6 +88,7 @@
     double _pairSetupSecs;
     int _recognizeVoiceEnabled;
     int _recognizeVoiceState;
+    int _recognizeVoiceStepState;
     int _personalRequestsState;
     int _personalRequestsChoice;
     BOOL _siriForEveryoneAnswered;
@@ -110,6 +111,8 @@
     double _cdpSetupSecs;
     int _cdpState;
     BOOL _hasExistingHomePod;
+    int _multiUserEnableState;
+    int _multiUserEnableStepState;
     int _finishState;
     unsigned long long _finishStartTicks;
     double _finishSecs;
@@ -119,6 +122,7 @@
     BOOL _prefBonjourTest;
     BOOL _prefForceSiriGreeting;
     BOOL _prefLEDPasscodeEnabled;
+    BOOL _prefMultiUser;
     BOOL _hasMultipleUsers;
     BOOL _liveOn;
     BOOL _pauseAfterPreAuth;
@@ -190,6 +194,7 @@
 - (void)_playLocalSoundID:(int)arg1 remoteSoundID:(int)arg2;
 - (void)_logMetrics;
 - (void)_homeKitUpdateiCloudSwitchState:(BOOL)arg1;
+- (id)_homeKitFindSettingsWithKeyPath:(id)arg1 group:(id)arg2;
 - (void)_handlePeerEvent:(id)arg1 flags:(unsigned int)arg2;
 - (void)_runFinishResponse:(id)arg1 error:(id)arg2;
 - (void)_runFinishRequest;
@@ -220,7 +225,6 @@
 - (int)_runTerms;
 - (int)_runSiriForEveryone;
 - (int)_runPersonalRequests;
-- (int)_runRecognizeVoice;
 - (int)_runSiriLanguage;
 - (int)_runCheckAccount;
 - (void)_runPreAuthResponse:(id)arg1 error:(id)arg2;

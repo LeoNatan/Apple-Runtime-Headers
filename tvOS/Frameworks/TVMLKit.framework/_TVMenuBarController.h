@@ -12,7 +12,7 @@
 #import <TVMLKit/_TVAppDocumentControllerDelegate-Protocol.h>
 #import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 
-@class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, UIColor, UIView, _TVPlayer;
+@class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, UIColor, UITabBarItem, UIView, _TVPlayer;
 
 __attribute__((visibility("hidden")))
 @interface _TVMenuBarController : UITabBarController <IKAppMenuBarDocumentDelegate, UITabBarControllerDelegate, UITabBarControllerDelegate_Private, _TVAppDocumentControllerDelegate, _TVApplicationInspectorDocumentProvider>
@@ -27,8 +27,10 @@ __attribute__((visibility("hidden")))
     UIView *_leadingAccessory;
     UIView *_trailingAccessory;
     UIColor *_selectionTintColor;
+    UITabBarItem *_searchTabBarItem;
 }
 
+@property(retain, nonatomic) UITabBarItem *searchTabBarItem; // @synthesize searchTabBarItem=_searchTabBarItem;
 @property(retain, nonatomic) UIColor *selectionTintColor; // @synthesize selectionTintColor=_selectionTintColor;
 @property(retain, nonatomic) UIView *trailingAccessory; // @synthesize trailingAccessory=_trailingAccessory;
 @property(retain, nonatomic) UIView *leadingAccessory; // @synthesize leadingAccessory=_leadingAccessory;
@@ -51,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (void)_configureViewController:(id)arg1 forMenuItemElement:(id)arg2;
 - (id)_fontForTextElement:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
-- (id)tabBarController:(id)arg1 animatorForFromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)menuBarDocument:(id)arg1 didSelectMenuItem:(id)arg2 animated:(_Bool)arg3;
 - (void)menuBarDocument:(id)arg1 didReplaceDocumentForMenuItem:(id)arg2;

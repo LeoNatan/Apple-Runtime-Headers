@@ -10,6 +10,7 @@
 
 @interface _PSSuggestionProxy : NSObject
 {
+    BOOL _useGroupsWhenFindingRecipient;
     NSString *_bundleID;
     NSString *_interactionRecipients;
     NSString *_contactID;
@@ -18,6 +19,7 @@
     NSString *_reasonType;
 }
 
+@property(readonly, nonatomic) BOOL useGroupsWhenFindingRecipient; // @synthesize useGroupsWhenFindingRecipient=_useGroupsWhenFindingRecipient;
 @property(readonly, copy, nonatomic) NSString *reasonType; // @synthesize reasonType=_reasonType;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;
@@ -29,6 +31,7 @@
 - (unsigned long long)hash;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *suggestionKey;
+- (id)initWithBundleID:(id)arg1 interactionRecipients:(id)arg2 contactID:(id)arg3 handle:(id)arg4 reason:(id)arg5 reasonType:(id)arg6 useGroupsWhenFindingRecipient:(BOOL)arg7;
 - (id)initWithBundleID:(id)arg1 interactionRecipients:(id)arg2 contactID:(id)arg3 handle:(id)arg4 reason:(id)arg5 reasonType:(id)arg6;
 - (id)initWithBundleID:(id)arg1 interactionRecipients:(id)arg2 contactID:(id)arg3 reason:(id)arg4 reasonType:(id)arg5;
 

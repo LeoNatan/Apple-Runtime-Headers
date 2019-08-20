@@ -48,9 +48,12 @@
 - (unsigned long long)countOfAccounts;
 - (id)indexesOfLegacyAccounts;
 - (id)indexesOfICAccounts;
-- (void)addLegacyAccount:(id)arg1 includeAllNotesFolder:(_Bool)arg2 sortedOnTop:(_Bool)arg3;
+- (void)addLegacyAccount:(id)arg1 includeAllNotesFolder:(_Bool)arg2;
 - (void)addICAccounts:(id)arg1 forMovingFolder:(id)arg2;
-- (void)addICAccount:(id)arg1 includingTrash:(_Bool)arg2 alwaysIncludeAccountProxy:(_Bool)arg3 sortedOnTop:(_Bool)arg4;
+- (void)addFolderListItem:(id)arg1;
+- (unsigned long long)getLegacyAccountFolderListType:(id)arg1;
+- (unsigned long long)getModernAccountFolderListType:(id)arg1;
+- (void)addICAccount:(id)arg1 includingTrash:(_Bool)arg2 alwaysIncludeAccountProxy:(_Bool)arg3;
 - (id)description;
 - (id)init;
 

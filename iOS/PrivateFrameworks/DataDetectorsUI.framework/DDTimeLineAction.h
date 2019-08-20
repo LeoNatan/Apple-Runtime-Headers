@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (id)viewControllerProviderClass;
 - (void).cxx_destruct;
+- (struct CGSize)suggestedContentSize;
 - (id)commitURL;
 - (id)menuActionClasses;
 - (id)previewActions;

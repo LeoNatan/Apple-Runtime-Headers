@@ -7,6 +7,7 @@
 #import <SPOwner/NSObject-Protocol.h>
 
 @protocol SPLocalBeaconManagerXPCProtocol <NSObject>
+- (oneway void)getMacBeaconConfigWithCompletion:(void (^)(SPMacBeaconConfig *, NSError *))arg1;
 - (oneway void)beaconingKeysWithCompletion:(void (^)(NSArray *))arg1;
 - (oneway void)beaconingStateWithCompletion:(void (^)(int))arg1;
 @end

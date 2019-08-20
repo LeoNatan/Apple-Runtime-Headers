@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSError, NSString;
+@class NSData, NSError, NSString, NSUUID;
 
 @protocol SidecarCore_Interface
 - (void)relayTerminateService;
+- (void)relayPresenterServiceReady:(NSString *)arg1 uuid:(NSUUID *)arg2;
 - (void)relayPresenterLaunchService:(NSString *)arg1 results:(void (^)(_Bool, NSError *))arg2;
 - (void)relaySession:(long long)arg1 invalidatedWithError:(NSError *)arg2;
-- (void)relaySession:(long long)arg1 receivedOPACKData:(NSData *)arg2 transport:(long long)arg3;
+- (void)relaySession:(long long)arg1 receivedOPACKData:(NSData *)arg2 dataLink:(long long)arg3;
 @end
 

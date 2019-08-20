@@ -24,6 +24,8 @@
     unsigned int _serviceAccessibilityServerPort;
     unsigned long long _serviceRegisteredScrollToTopViewCount;
     int _applicationDeactivationReason;
+    _Bool _systemAppIsLocked;
+    _Bool _observesLockNotifications;
     id _viewControllerOperatorProxy;
     _UIAsyncInvocation *_viewControllerOperatorHalfDisconnectionInvocation;
     id _textEffectsOperatorProxy;
@@ -111,9 +113,9 @@
 - (void)_appearanceInvocationsDidChange:(id)arg1;
 - (_Bool)shouldPropagateAppearanceCustomizations;
 - (id)_appearanceSource;
-- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id)arg4;
-- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
-- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
+- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)_setSheetConfiguration:(id)arg1;
 - (id)_sheetPresentationController;
 - (void)viewDidInvalidateIntrinsicContentSize;
@@ -182,7 +184,12 @@
 - (void)_updateTouchGrabbingView;
 - (void)_uirvc_windowBecameKey:(id)arg1;
 - (void)_uirvc_windowResignedKey:(id)arg1;
-- (void)_applicationDidAddDeactivationReason:(id)arg1;
+- (void)_updateLockStatusHostingVisibility;
+- (void)setObservesLockNotifications:(_Bool)arg1;
+- (_Bool)observesLockNotifications;
+- (void)_systemApplicationDidUnlock:(id)arg1;
+- (void)_systemApplicationWillLock:(id)arg1;
+- (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_applicationWillDeactivate:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_snapshotAndRemoveTextEffectsRemoteView;

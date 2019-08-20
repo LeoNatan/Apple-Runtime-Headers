@@ -9,7 +9,7 @@
 #import <HeadBoardUI/HBUITopShelfParadeBackgroundViewControllerDelegate-Protocol.h>
 #import <HeadBoardUI/HBUITopShelfParadeContentViewControllerDelegate-Protocol.h>
 
-@class HBUITopShelfParadeMusicTitleView, HBUITopShelfParadePhotosTitleView, HBUITopShelfParadePromotionTitleView, HBUITopShelfParadeStandardTitleView, NSString, UIImageView, UIView, UIViewController;
+@class HBUITopShelfImageView, HBUITopShelfParadeMusicTitleView, HBUITopShelfParadePhotosTitleView, HBUITopShelfParadePromotionTitleView, HBUITopShelfParadeStandardTitleView, NSString, UIImageView, UIView, UIViewController;
 @protocol HBUITopShelfParadeBackgroundViewController, HBUITopShelfParadeContentCoordinatorDelegate, HBUITopShelfParadeContentViewController, HBUITopShelfParadeItem;
 
 __attribute__((visibility("hidden")))
@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_actionsDetailsGradientView;
     UIImageView *_photosGradientView;
     HBUITopShelfParadeStandardTitleView *_standardTitleView;
+    HBUITopShelfImageView *_standardTitleImageView;
     HBUITopShelfParadePromotionTitleView *_promotionTitleView;
     HBUITopShelfParadeMusicTitleView *_musicTitleView;
     HBUITopShelfParadePhotosTitleView *_photosTitleView;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) HBUITopShelfParadePhotosTitleView *photosTitleView; // @synthesize photosTitleView=_photosTitleView;
 @property(readonly, nonatomic) HBUITopShelfParadeMusicTitleView *musicTitleView; // @synthesize musicTitleView=_musicTitleView;
 @property(readonly, nonatomic) HBUITopShelfParadePromotionTitleView *promotionTitleView; // @synthesize promotionTitleView=_promotionTitleView;
+@property(readonly, nonatomic) HBUITopShelfImageView *standardTitleImageView; // @synthesize standardTitleImageView=_standardTitleImageView;
 @property(readonly, nonatomic) HBUITopShelfParadeStandardTitleView *standardTitleView; // @synthesize standardTitleView=_standardTitleView;
 @property(readonly, nonatomic) UIImageView *photosGradientView; // @synthesize photosGradientView=_photosGradientView;
 @property(readonly, nonatomic) UIImageView *actionsDetailsGradientView; // @synthesize actionsDetailsGradientView=_actionsDetailsGradientView;
@@ -53,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)paradeContentViewController:(id)arg1 didSelectAction:(id)arg2 forItem:(id)arg3;
 - (void)paradeBackgroundViewControllerDidFinish:(id)arg1;
 - (void)paradeBackgroundViewControllerContentStateDidChange:(id)arg1;
+- (void)_updateStandardTitleView;
 - (_Bool)_promotionVideoIsPlaying;
 - (void)_updateActionsDetailsViewAlpha;
 - (void)_updateStandardAndPromotionTitleViewAlpha;

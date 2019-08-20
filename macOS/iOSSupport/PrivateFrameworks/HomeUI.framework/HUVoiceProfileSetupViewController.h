@@ -25,13 +25,17 @@
 @property(retain, nonatomic) OBTrayButton *setupButton; // @synthesize setupButton=_setupButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)dismissSetup;
 - (void)showLearnMore;
 - (void)continueSetup;
 - (void)skipSetup;
+- (void)userTappedCancelFromWarning;
 - (void)userTappedContinueFromWarning;
 - (id)hu_preloadContent;
+- (void)_turnOffPersonalRequests;
+- (void)_resetVoiceProfileSetup;
 - (void)_setupVoiceProfile:(id)arg1;
 - (void)_dontSetupVoiceProfile;
 - (void)_dontSetupVoiceProfileWithWarning:(id)arg1;

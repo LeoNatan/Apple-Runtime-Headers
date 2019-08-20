@@ -10,12 +10,13 @@
 #import <SpringBoard/SBUIAnimationControllerObserver-Protocol.h>
 #import <SpringBoard/SBWorkspaceApplicationSceneTransitionContextDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NSTimer, NSUUID, SBAppLayout, SBAutoPiPWorkspaceTransaction, SBFluidSwitcherViewController, SBMainDisplayLayoutState, SBMainWorkspaceTransaction, SBSceneLayoutWorkspaceTransaction, SBTransientOverlayViewController, SBUISwitcherAnimationController, UIApplicationSceneDeactivationAssertion;
+@class NSString, NSTimer, NSUUID, SBAppLayout, SBAutoPiPWorkspaceTransaction, SBFluidSwitcherViewController, SBMainDisplayLayoutState, SBMainWorkspaceTransaction, SBSceneLayoutWorkspaceTransaction, SBTransientOverlayViewController, SBUISwitcherAnimationController, UIApplicationSceneDeactivationAssertion;
 @protocol BSInvalidatable, SBFluidSwitcherGestureWorkspaceTransactionDelegate;
 
 @interface SBFluidSwitcherGestureWorkspaceTransaction : SBSystemGestureWorkspaceTransaction <SBUIAnimationControllerObserver, SBSceneLayoutWorkspaceTransactionDelegate, SBWorkspaceApplicationSceneTransitionContextDelegate>
 {
     _Bool _calledBeginWithGesture;
+    _Bool _hasActiveLayoutStateTransitionCoordinatorTransition;
     _Bool _hasCompletedFirstCACommitSinceTransactionBeganForPPT;
     id <BSInvalidatable> _deferOrientationUpdatesAssertion;
     long long _numberOfAppLayoutsTraveledWithArcSwipe;
@@ -32,7 +33,6 @@
     CDUnknownBlockType _layoutCompletion;
     SBAutoPiPWorkspaceTransaction *_autoPiPWorkspaceTransaction;
     NSTimer *_activateScenesTimer;
-    NSMutableArray *_iconForceTouchWindowHostWrappers;
     SBTransientOverlayViewController *_switcherTransitioningTransientOverlayViewController;
     NSUUID *_gestureID;
     SBAppLayout *_selectedAppLayout;
@@ -42,7 +42,6 @@
 @property(readonly, nonatomic) NSUUID *gestureID; // @synthesize gestureID=_gestureID;
 @property(readonly, nonatomic) _Bool hasCompletedAtLeastOneGesture; // @synthesize hasCompletedAtLeastOneGesture=_hasCompletedAtLeastOneGesture;
 @property(retain, nonatomic) SBTransientOverlayViewController *switcherTransitioningTransientOverlayViewController; // @synthesize switcherTransitioningTransientOverlayViewController=_switcherTransitioningTransientOverlayViewController;
-@property(retain, nonatomic) NSMutableArray *iconForceTouchWindowHostWrappers; // @synthesize iconForceTouchWindowHostWrappers=_iconForceTouchWindowHostWrappers;
 @property(retain, nonatomic) NSTimer *activateScenesTimer; // @synthesize activateScenesTimer=_activateScenesTimer;
 @property(retain, nonatomic) SBAutoPiPWorkspaceTransaction *autoPiPWorkspaceTransaction; // @synthesize autoPiPWorkspaceTransaction=_autoPiPWorkspaceTransaction;
 @property(copy, nonatomic) CDUnknownBlockType layoutCompletion; // @synthesize layoutCompletion=_layoutCompletion;

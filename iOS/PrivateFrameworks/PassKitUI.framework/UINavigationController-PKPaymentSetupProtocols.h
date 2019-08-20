@@ -7,6 +7,7 @@
 #import <UIKit/UINavigationController.h>
 
 @interface UINavigationController (PKPaymentSetupProtocols)
+- (void)_pk_popViewControllersFromViewController:(id)arg1 toViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_pk_popToViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_pk_popToViewControllerMarker:(id)arg1 animated:(_Bool)arg2;
 - (void)_pk_presentPaymentSetupViewController:(id)arg1 animated:(_Bool)arg2 performPreflight:(_Bool)arg3 delay:(long long)arg4 completion:(CDUnknownBlockType)arg5;

@@ -13,10 +13,12 @@
 @interface CKTextBalloonView : CKColoredBalloonView <CKBalloonTextViewInteractionDelegate>
 {
     _Bool _centerTextWhenSkinny;
+    _Bool _containsExcessiveLineHeightCharacters;
     CKBalloonTextView *_textView;
     NSAttributedString *_attributedText;
 }
 
+@property(nonatomic) _Bool containsExcessiveLineHeightCharacters; // @synthesize containsExcessiveLineHeightCharacters=_containsExcessiveLineHeightCharacters;
 @property(nonatomic) _Bool centerTextWhenSkinny; // @synthesize centerTextWhenSkinny=_centerTextWhenSkinny;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(retain, nonatomic) CKBalloonTextView *textView; // @synthesize textView=_textView;

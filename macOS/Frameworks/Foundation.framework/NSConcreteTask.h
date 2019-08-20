@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     int _pid;
     // Error parsing type: AQ, name: __exitRunningInfo
     BOOL _qos;
+    // Error parsing type: AB, name: _isSpawnedProcessDisclaimed
 }
 
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
@@ -64,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)setTerminationHandler:(CDUnknownBlockType)arg1;
 - (void)_setTerminationHandler:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)terminationHandler;
+- (BOOL)isSpawnedProcessDisclaimed;
+- (void)setSpawnedProcessDisclaimed:(BOOL)arg1;
 - (void)setQualityOfService:(long long)arg1;
 - (long long)qualityOfService;
 

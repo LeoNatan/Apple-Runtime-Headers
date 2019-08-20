@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
-- (void)presentShareSheetWithItems:(id)arg1 atRect:(struct CGRect)arg2;
 - (void)presentShareSheetWithItems:(id)arg1 atUIWindowRect:(struct CGRect)arg2;
 - (struct CGRect)convertRectFromUIWindow:(struct CGRect)arg1;
 - (struct CGRect)shareToolbarItemRect;

@@ -38,6 +38,8 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *carplayComposeButtonImage;
 @property(readonly, nonatomic) UIImage *carplayChevronImage;
+@property(readonly, nonatomic) UIFont *searchIndexingSubtitleFont;
+@property(readonly, nonatomic) UIFont *searchIndexingTitleFont;
 @property(readonly, nonatomic) UIFont *searchResultLabelBoldFont;
 @property(readonly, nonatomic) UIFont *searchResultLabelFont;
 @property(readonly, nonatomic) UIFont *searchDetailsHeaderFont;
@@ -402,6 +404,8 @@
 - (id)_rightStatusTranscriptTextAttributes;
 - (id)_leftStatusTranscriptTextAttributes;
 @property(readonly, nonatomic) UIFont *browserCellFont;
+@property(readonly, nonatomic) struct UIEdgeInsets transcriptTextFontLanguageAwareOutsets;
+@property(readonly, nonatomic) struct __CFCharacterSet *systemUIFontExcessiveLineHeightCharacterSet;
 - (id)transcriptDrawerFont;
 @property(readonly, nonatomic) UIFont *transcriptBoldTextFont;
 @property(readonly, nonatomic) UIFont *transcriptDateTextFont;
@@ -580,7 +584,9 @@
 @property(readonly, nonatomic) UIImage *disabledFacetimeAudioImage;
 - (id)imageNamed:(id)arg1 pointSize:(double)arg2 insets:(struct UIEdgeInsets)arg3;
 @property(readonly, nonatomic) UIImage *navBarInfoImage;
+@property(readonly, nonatomic) UIImage *enabledFacetimeVideoImagePill;
 @property(readonly, nonatomic) UIImage *enabledFacetimeVideoImage;
+@property(readonly, nonatomic) UIImage *enabledFacetimeAudioImagePill;
 @property(readonly, nonatomic) UIImage *enabledFacetimeAudioImage;
 - (double)navBarButtonSymbolImageFontSize;
 - (id)disabledNavigationButtonStrokeColor;
@@ -594,6 +600,7 @@
 @property(readonly, nonatomic) double maxNavigationBarHeightValue;
 @property(readonly, nonatomic) double navigationBarMinHeight;
 @property(readonly, nonatomic) double resumeToConversationListTimeInterval;
+@property(readonly, nonatomic) _Bool disableTranscriptOrb;
 @property(readonly, nonatomic) _Bool shouldOnlyResumeToConversationListAfterTimeout;
 @property(readonly, nonatomic) _Bool usesNavigationBarControls;
 @property(readonly, nonatomic) _Bool usesEntryView;

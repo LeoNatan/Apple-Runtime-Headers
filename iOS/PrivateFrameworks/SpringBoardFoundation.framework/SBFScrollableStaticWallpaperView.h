@@ -55,6 +55,8 @@
 - (id)_scrollView;
 - (id)_newImageView;
 - (void)_setupContentViewWithOptions:(unsigned long long)arg1;
+- (void)setContentView:(id)arg1;
+- (void)_resetColorBoxes;
 - (double)_parallaxFactorWithZoomScale:(double)arg1 contentOffset:(struct CGPoint)arg2;
 - (double)_scrollViewParallaxFactor;
 - (double)parallaxFactor;

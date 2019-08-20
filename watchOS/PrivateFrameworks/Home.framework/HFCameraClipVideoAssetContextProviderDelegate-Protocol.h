@@ -6,10 +6,10 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HMCameraClip, HMCameraClipVideoAssetContext, HMFOperation;
+@class HMCameraClip, HMCameraClipFetchVideoAssetContextOperation, HMCameraClipManager, HMCameraClipVideoAssetContext;
 
 @protocol HFCameraClipVideoAssetContextProviderDelegate <NSObject>
-- (HMCameraClipVideoAssetContext *)cachedVideoAssetContextForClip:(HMCameraClip *)arg1;
-- (HMFOperation *)newFetchVideoAssetContextOperationForClip:(HMCameraClip *)arg1;
+- (HMCameraClipVideoAssetContext *)cachedVideoAssetContextForClip:(HMCameraClip *)arg1 clipManager:(HMCameraClipManager *)arg2;
+- (HMCameraClipFetchVideoAssetContextOperation *)newFetchVideoAssetContextOperationForClip:(HMCameraClip *)arg1 clipManager:(HMCameraClipManager *)arg2;
 @end
 

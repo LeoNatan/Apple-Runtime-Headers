@@ -25,17 +25,22 @@
     _Bool _unitTest_useEmbeddedOntologyAsset;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
+    NSURL *_ontologyURL;
     HDSimpleGraphDatabase *_graphDatabase;
 }
 
++ (void)obliterateWithProfile:(id)arg1 reason:(id)arg2;
++ (id)_ontologyURLForProfile:(id)arg1;
 + (id)supportedLocales;
 + (id)_primaryCodingKeyPathForSampleTypeIdentifier:(id)arg1;
 + (id)_unknownConceptName;
 + (id)_bestDisplayableCodingInCodings:(id)arg1 prioritizedCodingSystems:(id)arg2;
 + (id)_bestDisplayNameForCodings:(id)arg1 prioritizedCodingSystems:(id)arg2;
++ (_Bool)graphDatabase:(id)arg1 setVersion:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) _Bool unitTest_useEmbeddedOntologyAsset; // @synthesize unitTest_useEmbeddedOntologyAsset=_unitTest_useEmbeddedOntologyAsset;
 @property(readonly, nonatomic) _Bool unitTest_useEmbeddedOntology; // @synthesize unitTest_useEmbeddedOntology=_unitTest_useEmbeddedOntology;
 @property(retain, nonatomic) HDSimpleGraphDatabase *graphDatabase; // @synthesize graphDatabase=_graphDatabase;
+@property(readonly, copy, nonatomic) NSURL *ontologyURL; // @synthesize ontologyURL=_ontologyURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
@@ -73,7 +78,7 @@
 - (id)_queue_conceptsWithGraphDatabaseCall:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)_conceptsWithGraphDatabaseCall:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)conceptForName:(id)arg1 error:(id *)arg2;
-- (id)conceptsForIdentifiers:(id)arg1 error:(id *)arg2;
+- (id)conceptsForIdentifiers:(id)arg1 expectedOntologyVersion:(id)arg2 error:(id *)arg3;
 - (id)conceptForIdentifier:(id)arg1 error:(id *)arg2;
 - (id)_conceptWithGraphDatabaseCall:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)_work_conceptFromGraphNode:(id)arg1;
@@ -91,6 +96,7 @@
 - (id)versionWithError:(id *)arg1;
 - (long long)_queue_graphDatabaseVersion;
 - (id)_graphDatabaseUserVersionImplementation:(id)arg1 error:(id *)arg2;
+- (_Bool)hd_unitTesting_setVersion:(id)arg1 error:(id *)arg2;
 - (long long)_graphDatabaseVersionImplementation:(id)arg1 error:(id *)arg2;
 - (_Bool)_queue_importReferenceOntology;
 - (_Bool)_queue_copyEmbeddedReferenceOntology;
@@ -103,7 +109,6 @@
 @property(readonly, nonatomic) _Bool ignoresVersionCheckDuringReferenceOntologyImport;
 - (id)_referenceOntologyFileURL;
 - (id)_ontologyAssetManager;
-@property(readonly, copy, nonatomic) NSURL *ontologyURL;
 - (id)_queue_graphDatabase;
 - (void)invalidateAndWait;
 @property(nonatomic, getter=isEnabled) _Bool enabled;

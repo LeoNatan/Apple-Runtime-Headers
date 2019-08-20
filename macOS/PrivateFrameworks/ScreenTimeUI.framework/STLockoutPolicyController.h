@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore, DMFApplicationPolicyMonitor, DMFWebsitePolicyMonitor, NSArray, NSSet, NSString, NSURL, STAskForTimeResource, STConversation, STConversationContext, STManagementState;
+@class CNContactStore, DMFApplicationPolicyMonitor, DMFCategoryPolicyMonitor, DMFWebsitePolicyMonitor, NSArray, NSSet, NSString, NSURL, STAskForTimeResource, STConversation, STConversationContext, STManagementState;
 @protocol STLockoutPolicyControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,10 +18,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _stateBeforePending;
     STManagementState *_managementState;
     STAskForTimeResource *_askForTimeResource;
+    DMFCategoryPolicyMonitor *_categoryPolicyMonitor;
     DMFApplicationPolicyMonitor *_applicationPolicyMonitor;
     NSURL *_websiteURL;
     DMFWebsitePolicyMonitor *_websitePolicyMonitor;
     id <STLockoutPolicyControllerDelegate> _delegate;
+    NSString *_categoryIdentifier;
     NSString *_bundleIdentifier;
     CNContactStore *_contactStore;
     STConversation *_conversation;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(copy, nonatomic) NSURL *websiteURL; // @synthesize websiteURL=_websiteURL;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 - (void).cxx_destruct;
 - (void)_askForTimeResponseWithState:(long long)arg1 respondingParent:(id)arg2 amountGranted:(id)arg3 error:(id)arg4;
 - (id)_makeAskForTimeResource;
@@ -45,7 +48,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_requestAdditionalTime:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_authenticatedApproveForAdditionalTime:(double)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (double)_timeIntervalToEndOfDay;
-- (void)_simulateAskForTimeResponse:(long long)arg1 afterDelay:(double)arg2;
 - (void)_changeStateToInitial;
 - (BOOL)_changeInternalStateTo:(unsigned long long)arg1;
 - (void)_changeStateToBeforePending;
@@ -53,6 +55,9 @@ __attribute__((visibility("hidden")))
 - (void)_changePolicyToCurrent;
 - (void)_changePolicyToCurrentWithURL:(id)arg1;
 - (void)_changePolicyToCurrentWithBundleIdentifier:(id)arg1;
+- (void)_changePolicyToCurrentWithCategoryIdentifier:(id)arg1;
+@property(readonly) BOOL shouldAllowOneMoreMinute;
+- (void)authenticateRestrictionsPasscode:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_isRestrictionsPasscodeSet;
 - (BOOL)_shouldRequestMoreTime;
 - (void)_updateAllowedByScreenTime:(BOOL)arg1 applicationCurrentlyLimited:(BOOL)arg2;
@@ -60,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)_allowedByScreenTimeDidChange:(BOOL)arg1 conversationContext:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_setupWebsitePolicyMonitorForURL:(id)arg1;
+- (void)_setupCategoryPolicyMonitorForIdentifier:(id)arg1;
 @property(readonly, copy) NSSet *blockedContactsHandles;
 - (void)dealloc;
 - (BOOL)handleAction:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -67,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2 delegate:(id)arg3;
 - (id)initWithWebsiteURL:(id)arg1 delegate:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1 delegate:(id)arg2;
+- (id)initWithCategoryIdentifier:(id)arg1 delegate:(id)arg2;
 - (id)init;
 
 @end

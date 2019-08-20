@@ -26,6 +26,7 @@
     struct CGSize _scalableMaxIconSize;
     double _overriddenMaxWidth;
     double _preferredTrailingPosition;
+    double _widthRequiredForLabelLayout;
     struct _NSToolbarMotion *_motion;
     double _xOriginForLayout;
     double _iconWidthForLayout;

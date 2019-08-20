@@ -12,7 +12,7 @@
 #import <AuthKitUI/AKAuthorizationPasswordAuthenticationDelegate-Protocol.h>
 #import <AuthKitUI/AKAuthorizationSubPaneConfirmButtonDelegate-Protocol.h>
 
-@class AKAuthorizationEmailScopeViewController, AKAuthorizationNameScopeViewController, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKTiburonAuthorizationUIReport, AKUserInformation, NSArray, NSString;
+@class AKAuthorizationEmailScopeViewController, AKAuthorizationNameScopeViewController, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKAuthorizationSubPaneImage, AKTiburonAuthorizationUIReport, AKUserInformation, NSArray, NSString;
 
 @interface AKAuthorizationConfirmPaneViewController : AKAuthorizationPaneViewController <AKAuthorizationSubPaneConfirmButtonDelegate, AKAuthorizationPasswordAuthenticationDelegate, AKAuthorizationNameScopeViewControllerDelegate, AKAuthorizationEmailScopeViewControllerDelegate, AKAuthorizationEditableDataSources>
 {
@@ -22,6 +22,9 @@
     AKAuthorizationScopeChoices *_editableScopeChoices;
     AKAuthorizationPresentationContext *_presentationContext;
     AKUserInformation *_editingUserInformation;
+    unsigned long long _editingGivenNameIndex;
+    unsigned long long _editingFamilyNameIndex;
+    AKAuthorizationSubPaneImage *_imageSubPane;
     AKAuthorizationSubPaneConfirmButton *_confirmButton;
     NSArray *_validatedScopes;
     AKAuthorizationNameScopeViewController *_nameScopeViewController;
@@ -32,6 +35,9 @@
 @property __weak AKAuthorizationNameScopeViewController *nameScopeViewController; // @synthesize nameScopeViewController=_nameScopeViewController;
 @property(readonly) NSArray *validatedScopes; // @synthesize validatedScopes=_validatedScopes;
 @property(retain) AKAuthorizationSubPaneConfirmButton *confirmButton; // @synthesize confirmButton=_confirmButton;
+@property(retain) AKAuthorizationSubPaneImage *imageSubPane; // @synthesize imageSubPane=_imageSubPane;
+@property unsigned long long editingFamilyNameIndex; // @synthesize editingFamilyNameIndex=_editingFamilyNameIndex;
+@property unsigned long long editingGivenNameIndex; // @synthesize editingGivenNameIndex=_editingGivenNameIndex;
 @property(copy) AKUserInformation *editingUserInformation; // @synthesize editingUserInformation=_editingUserInformation;
 @property BOOL internalIsEditingName; // @synthesize internalIsEditingName=_internalIsEditingName;
 @property(readonly) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
@@ -47,13 +53,23 @@
 - (BOOL)validateReadyForAuthorization;
 - (void)performAuthorization;
 - (void)performPasswordAuthentication;
-- (void)subPaneConfirmButton:(id)arg1 confirmationResult:(id)arg2;
+- (void)subpaneConfirmButtonDidFailBiometry:(id)arg1;
+- (void)subPaneConfirmButtonDidEnterProcessingState:(id)arg1;
+- (void)_paneDelegate_authorizationPaneViewControllerDidRequestAuthorizationWithUserProvidedInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_paneDelegate_authorizationPaneViewControllerDismissWithAuthorization:(id)arg1 error:(id)arg2;
+- (void)_handleAuthorizationError:(id)arg1;
+- (void)_setCancelButtonEnabled:(BOOL)arg1;
 - (void)didSelectEditScope:(id)arg1 options:(id)arg2;
 - (void)_performPasswordAuthentication;
+- (void)_performAuthorizationWithRawPassword:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_performAuthorizationWithRawPassword:(id)arg1;
 - (id)_localizedEmailKey;
 - (id)_localizedNameKey;
 - (void)_useOtherIDButtonSelected:(id)arg1;
+- (void)_createIconViewWithIcon:(id)arg1;
+- (void)_updateIconViewWithIconContext:(id)arg1;
+- (void)_fetchWebIconIfNeeded;
+- (void)_setupIconView;
 - (void)_addUseOtherIDButtonToContext:(id)arg1;
 - (void)_showOrHideConfirmButton;
 - (void)_enableOrDisableConfirmButton;
@@ -90,6 +106,7 @@
 @property(getter=isEditingName) BOOL editingName;
 - (void)setEmailExpanded:(BOOL)arg1 animated:(BOOL)arg2;
 @property(getter=isEmailExpanded) BOOL emailExpanded;
+- (void)setPaneDelegate:(id)arg1;
 - (void)_reloadData;
 - (void)viewWillAppear;
 - (void)viewDidLoad;

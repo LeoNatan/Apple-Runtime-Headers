@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FI_TICloudProgressObserver : NSObject
@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *iCloudDriveStatus; // @synthesize iCloudDriveStatus=_iCloudDriveStatus;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) NSArray *progresses; // @dynamic progresses;
 - (void)stopObserving;
 - (void)startObserving;
 - (void)dealloc;

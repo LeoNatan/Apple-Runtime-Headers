@@ -10,8 +10,8 @@
 
 @protocol RPClientProtocol <NSObject>
 - (oneway void)appAudioCaptureStopWithHandler:(void (^)(void))arg1;
-- (oneway void)appAudioCaptureResumeWithHandler:(void (^)(void))arg1;
-- (oneway void)appAudioCaptureStartWithAudioStreamDescription:(struct AudioStreamBasicDescription)arg1 didStartHandler:(void (^)(void))arg2;
+- (oneway void)appAudioCaptureResumeWithHandler:(void (^)(NSError *))arg1;
+- (oneway void)appAudioCaptureStartWithAudioStreamDescription:(struct AudioStreamBasicDescription)arg1 didStartHandler:(void (^)(NSError *))arg2;
 - (oneway void)recordingTimerDidUpdate:(NSString *)arg1;
 - (oneway void)recordingDidPause;
 - (oneway void)recordingShouldResume;

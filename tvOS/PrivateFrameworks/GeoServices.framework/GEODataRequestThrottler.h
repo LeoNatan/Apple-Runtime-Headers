@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_source> *_updateStateTimer;
     int _defaultChangedNotification;
     id _networkChangedNotification;
+    unsigned char _throttleEventLogLevel;
 }
 
 + (id)sharedThrottler;

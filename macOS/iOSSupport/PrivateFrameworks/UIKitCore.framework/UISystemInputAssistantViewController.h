@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldBeShownForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (BOOL)_centerPredictionViewVisibleForInputDelegate:(id)arg1 inputViews:(id)arg2;
 - (BOOL)_assistantItemsVisibleForResponder:(id)arg1;
+- (BOOL)_isAssistantPreferenceEnabled;
 - (id)_currentInputDelegate;
 - (id)_inputDelegateAsResponder:(id)arg1;
 - (BOOL)_canShowWhileLocked;

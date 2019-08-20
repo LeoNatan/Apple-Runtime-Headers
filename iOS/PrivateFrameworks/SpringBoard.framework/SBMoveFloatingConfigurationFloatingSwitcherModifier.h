@@ -13,6 +13,7 @@
 - (_Bool)wantsAsynchronousRenderingAssertion;
 - (long long)keyboardSuppressionMode;
 - (_Bool)wantsResignActiveAssertion;
+- (id)layoutSettings;
 - (double)opacityForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (id)transitionWillBegin;

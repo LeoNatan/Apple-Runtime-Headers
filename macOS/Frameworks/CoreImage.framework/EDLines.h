@@ -43,12 +43,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int lineSegmentsCount; // @synthesize lineSegmentsCount=_lineSegmentsCount;
 @property(readonly, nonatomic) struct DetectedLineSegment *lineSegments; // @synthesize lineSegments=_lineSegments;
 - (void).cxx_destruct;
-- (double)leastSquaresLineFitWithXCoordinates:(unsigned short *)arg1 yCoordinates:(unsigned short *)arg2 length:(unsigned int)arg3 m:(double *)arg4 n:(double *)arg5 context:(CDStruct_bae50541 *)arg6 updateFromContext:(BOOL)arg7;
-- (double)leastSquaresLineFitWithXCoordinates:(unsigned short *)arg1 yCoordinates:(unsigned short *)arg2 length:(unsigned int)arg3 equation:(CDStruct_202aea77 *)arg4 context:(CDStruct_bae50541 *)arg5 udpateFromContext:(BOOL)arg6 from:(id)arg7;
+- (double)leastSquaresLineFitWithXCoordinates:(unsigned short *)arg1 yCoordinates:(unsigned short *)arg2 length:(unsigned int)arg3 equation:(CDStruct_202aea77 *)arg4 regression:(id)arg5 regressionReuseInfo:(CDStruct_8b8affab *)arg6 append:(BOOL)arg7;
 - (unsigned char)validateLineSegment:(unsigned short *)arg1 yBuffer:(unsigned short *)arg2 length:(unsigned int)arg3 equation:(CDStruct_202aea77)arg4 relativeError:(double)arg5 resultingLineSegment:(struct DetectedLineSegment *)arg6 from:(id)arg7;
 - (unsigned char)validateInitialLineSegment:(unsigned short *)arg1 yBuffer:(unsigned short *)arg2 length:(unsigned int)arg3 relativeError:(double)arg4;
 - (BOOL)validateEndPointsAgainstRejectionInsets:(struct CGPoint)arg1 endPoint:(struct CGPoint)arg2;
-- (unsigned int)extractLineSegmentsFromXCoordinates:(unsigned short *)arg1 yCoordimnates:(unsigned short *)arg2 length:(unsigned int)arg3 into:(struct DetectedLineSegment *)arg4 usingTempBuffer1:(double *)arg5 tempBuffer2:(double *)arg6 tempBuffer3:(double *)arg7 from:(id)arg8;
+- (unsigned int)extractLineSegmentsFromXCoordinates:(unsigned short *)arg1 yCoordimnates:(unsigned short *)arg2 length:(unsigned int)arg3 into:(struct DetectedLineSegment *)arg4 regression:(id)arg5 from:(id)arg6;
 - (id)compute;
 - (void)dealloc;
 - (id)initWithEdgeDrawing:(id)arg1;

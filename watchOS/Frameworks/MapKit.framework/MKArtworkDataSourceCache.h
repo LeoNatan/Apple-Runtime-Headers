@@ -19,9 +19,9 @@
 - (void).cxx_destruct;
 - (void)_setArtworkImageInCache:(id)arg1 forKey:(id)arg2;
 - (id)_lookupArtworkInCacheWithKey:(id)arg1;
-- (id)imageForArtwork:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 widthPaddingMultiple:(float)arg5;
-- (id)imageForArtwork:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4;
-- (id)imageForSizedArtwork:(id)arg1 scale:(float)arg2;
+- (id)imageForArtwork:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5 widthPaddingMultiple:(float)arg6;
+- (id)imageForArtwork:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5;
+- (id)imageForSizedArtwork:(id)arg1 scale:(float)arg2 nightMode:(_Bool)arg3;
 - (void)purge;
 - (void)_shieldPackDidUpdate;
 - (id)initWithArtworkManager:(id)arg1;

@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)_load;
 @property(readonly, nonatomic) UIImage *thumbnail;
+- (id)accessibilityLabel;
 - (id)initWithDirectoryPath:(id)arg1 orderedConfigurations:(id)arg2;
 
 @end

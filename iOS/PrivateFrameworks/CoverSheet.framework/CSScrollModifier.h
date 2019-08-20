@@ -14,6 +14,7 @@
 @interface CSScrollModifier : NSObject <PTSettingsKeyObserver, BSUIScrollViewDelegate>
 {
     UIView *_targetView;
+    _Bool _hasDraggedSinceReset;
     _Bool _cancelled;
     struct CGPoint _firstLocation;
     struct CGPoint _lastLocation;

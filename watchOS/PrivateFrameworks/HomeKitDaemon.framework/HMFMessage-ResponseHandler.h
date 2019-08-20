@@ -23,6 +23,7 @@
 @property(readonly, copy, nonatomic) NSString *applicationBundleIdentifier;
 @property(readonly, nonatomic) int sourcePid;
 @property(readonly, nonatomic, getter=isBackground) _Bool background;
+@property(readonly, nonatomic, getter=isEntitledForShortcutsAutomationAccess) _Bool entitledForShortcutsAutomationAccess;
 @property(readonly, nonatomic, getter=isEntitledToProvideAccessorySetupPayload) _Bool entitledToProvideAccessorySetupPayload;
 @property(readonly, nonatomic, getter=isEntitledForHomeLocationAccess) _Bool entitledForHomeLocationAccess;
 @property(readonly, nonatomic, getter=isAuthorizedForLocationAccess) _Bool authorizedForLocationAccess;

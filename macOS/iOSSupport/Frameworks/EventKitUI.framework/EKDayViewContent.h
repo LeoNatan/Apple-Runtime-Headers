@@ -10,7 +10,7 @@
 #import <EventKitUI/EKDayOccurrenceViewDelegate-Protocol.h>
 #import <EventKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSMutableDictionary, NSString, NSTimeZone, UIColor, UITraitCollection;
+@class EKCalendarDate, EKDayGridView, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UITraitCollection;
 @protocol EKDayViewContentDelegate;
 
 @interface EKDayViewContent : UIView <CUIKSingleDayTimelineLayoutScreenUtils, EKDayOccurrenceViewDelegate, UIGestureRecognizerDelegate>
@@ -32,14 +32,13 @@
     struct CGRect _latestVisibleRect;
     double *_visiblePinnedStackHeightAbove;
     double *_visiblePinnedStackHeightBelow;
-    EKDayViewContentGeometryDelegate *_geometryDelegate;
+    NSMutableArray *_geometryDelegates;
     NSMutableArray *_reusableViews;
     BOOL _dataLoaded;
     long long _sizeClass;
     BOOL _shouldLayoutInReverse;
     BOOL _shouldAnimateLayout;
     NSMutableArray *_temporaryViewCacheByDay;
-    NSMutableDictionary *_cachedLayoutsByDay;
     long long _saveTemporaryViewsEntryCount;
     BOOL _offscreenOccurrencePinningEnabled;
     BOOL _allowsOccurrenceSelection;
@@ -110,7 +109,7 @@
 - (struct _NSRange)_dayRangeForEvent:(id)arg1 useProposedTime:(BOOL)arg2;
 - (struct _NSRange)_dayRangeForEventWithStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_layoutDay:(unsigned long long)arg1 isLoadingAsync:(BOOL)arg2;
-- (void)_layoutDayIfNeeded:(long long)arg1 isLoadingAsync:(BOOL)arg2;
+- (BOOL)_layoutDayIfNeeded:(long long)arg1 isLoadingAsync:(BOOL)arg2;
 - (void)_layoutDaysIfVisible;
 - (void)layoutSubviews;
 - (void)setNeedsLayout;

@@ -19,6 +19,7 @@
     struct {
         _Bool respondsToWillCenterOnElement;
         _Bool respondsToDidCenterOnElement;
+        _Bool respondsToShouldShowElement;
     } _delegateFlags;
     struct {
         _Bool hasTransitioned;
@@ -65,6 +66,7 @@
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 - (void)appDocumentController:(id)arg1 didHostTemplateViewController:(id)arg2 usedTransitions:(_Bool)arg3;
 - (void)showcaseFactorDidChangeForAppDocumentController:(id)arg1;
+- (_Bool)paradeView:(id)arg1 shouldShowItemAtIndexPath:(id)arg2;
 - (void)paradeView:(id)arg1 didEndDisplayingCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)paradeView:(id)arg1 didCenterCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)paradeView:(id)arg1 willCenterCell:(id)arg2 atIndexPath:(id)arg3;

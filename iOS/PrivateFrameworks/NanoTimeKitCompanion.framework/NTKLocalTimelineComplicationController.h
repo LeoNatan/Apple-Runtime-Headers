@@ -29,6 +29,7 @@
     NSMutableSet *_delayedBlocks;
     CLKComplicationTemplate *_switcherTemplate;
     _Bool _hasBeenLive;
+    long long _dataSourceState;
 }
 
 + (_Bool)_acceptsComplicationType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
@@ -74,6 +75,7 @@
 - (void)setDataMode:(long long)arg1 forDisplayWrapper:(id)arg2;
 - (void)_updateIsComplicationActive:(_Bool)arg1;
 - (void)_applyAnimationMode;
+- (void)_requestDataSourceToUpdateToState:(long long)arg1;
 - (void)_applyUpdatingMode;
 - (void)_applyCachingMode;
 - (void)_resetTimelineForCachingChange;

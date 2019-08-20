@@ -17,6 +17,7 @@
     HMFVersion *_legacyDataVersion;
     HMFVersion *_dataVersion;
     HMFUnfairLock *_propertyLock;
+    NSMapTable *_queryFieldsCache;
     HMBLocalZone *_localZone;
     id <HMBMirrorProtocol> _mirror;
     NSMapTable *_classToNameTransform;
@@ -39,6 +40,7 @@
 @property(copy, nonatomic) NSMapTable *classToNameTransform; // @synthesize classToNameTransform=_classToNameTransform;
 @property(readonly, nonatomic) __weak id <HMBMirrorProtocol> mirror; // @synthesize mirror=_mirror;
 @property(readonly, nonatomic) __weak HMBLocalZone *localZone; // @synthesize localZone=_localZone;
+@property(readonly, nonatomic) NSMapTable *queryFieldsCache; // @synthesize queryFieldsCache=_queryFieldsCache;
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, copy, nonatomic) HMFVersion *dataVersion; // @synthesize dataVersion=_dataVersion;
 @property(readonly, copy, nonatomic) HMFVersion *legacyDataVersion; // @synthesize legacyDataVersion=_legacyDataVersion;
@@ -48,14 +50,14 @@
 - (id)schemaHashForModel:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-- (id)modelFromData:(id)arg1 encoding:(unsigned long long)arg2 error:(id *)arg3;
-- (id)modelFromData:(id)arg1 encoding:(unsigned long long)arg2 type:(id)arg3 error:(id *)arg4;
-- (id)modelFromDictionary:(id)arg1 typeName:(id)arg2 error:(id *)arg3;
-- (id)dataFromModel:(id)arg1 encoding:(unsigned long long)arg2 destination:(unsigned long long)arg3 updatedModelIDs:(id)arg4 error:(id *)arg5;
+- (id)modelFromData:(id)arg1 encoding:(unsigned long long)arg2 storageLocation:(unsigned long long)arg3 error:(id *)arg4;
+- (id)modelFromData:(id)arg1 encoding:(unsigned long long)arg2 storageLocation:(unsigned long long)arg3 type:(id)arg4 error:(id *)arg5;
+- (id)modelFromDictionary:(id)arg1 storageLocation:(unsigned long long)arg2 typeName:(id)arg3 error:(id *)arg4;
+- (id)dataFromModel:(id)arg1 encoding:(unsigned long long)arg2 storageLocation:(unsigned long long)arg3 updatedModelIDs:(id)arg4 error:(id *)arg5;
 - (Class)modelClassForTypeName:(id)arg1;
 - (id)typeNameForModelClass:(Class)arg1;
-- (id)encodeForSibling:(id)arg1 error:(id *)arg2;
-- (unsigned long long)bestModelEncodingFor:(unsigned long long)arg1;
+- (unsigned long long)bestModelEncodingForStorageLocation:(unsigned long long)arg1;
+- (id)queryFieldsForClass:(Class)arg1;
 - (id)unavailableVersionsForModelClass:(Class)arg1;
 - (id)readOnlyVersionsForModelClass:(Class)arg1;
 - (id)initWithDataVersion:(id)arg1 legacyDataVersion:(id)arg2;

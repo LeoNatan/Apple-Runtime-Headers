@@ -68,6 +68,10 @@ __attribute__((visibility("hidden")))
 - (id)_cacheKeysForPlace:(id)arg1;
 - (void)_storePlace:(id)arg1 forRequestKeys:(id)arg2;
 - (BOOL)_meetsManifestVersionPolicyForPlace:(id)arg1;
+- (BOOL)_deleteAndResetDB:(id)arg1;
+- (BOOL)_validateDBLocaleAndResetIfNecessary;
+- (void)_localeChanged:(id)arg1;
+- (void)dealloc;
 - (id)initWithCacheFilePath:(id)arg1 schedulingDelegate:(id)arg2 manifestInfoProvider:(id)arg3;
 
 @end

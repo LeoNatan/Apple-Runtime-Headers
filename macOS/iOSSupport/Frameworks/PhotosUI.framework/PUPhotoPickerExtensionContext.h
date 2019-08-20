@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_temporaryDirectoryInHost;
 }
 
++ (void)configureImageManagerLimit;
 @property(copy, nonatomic) NSString *temporaryDirectoryInHost; // @synthesize temporaryDirectoryInHost=_temporaryDirectoryInHost;
 - (void).cxx_destruct;
 - (id)_createSandboxTokenForPath:(id)arg1;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSOperationQueue *multipleMediaConversionConcurrentQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *multipleMediaIsolationQueue;
 - (void)requestedViewControllerOptionsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

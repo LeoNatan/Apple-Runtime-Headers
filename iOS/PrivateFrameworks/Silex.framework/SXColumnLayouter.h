@@ -39,7 +39,7 @@
 - (struct CGPoint)calculatePositionForComponentNode:(id)arg1 columnLayout:(id)arg2 layoutBlueprint:(id)arg3;
 - (id)findComponentStackBeforeComponent:(id)arg1 inColumnStack:(id)arg2;
 - (void)createDependenciesForLayoutBlueprint:(id)arg1 columnStack:(id)arg2 inDependencyResolver:(id)arg3;
-- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 shouldContinue:(_Bool *)arg3;
+- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 description:(id)arg3 shouldContinue:(_Bool *)arg4;
 - (id)initWithLayouterFactory:(id)arg1 layoutContextFactory:(id)arg2 unitConverterFactory:(id)arg3;
 
 // Remaining properties

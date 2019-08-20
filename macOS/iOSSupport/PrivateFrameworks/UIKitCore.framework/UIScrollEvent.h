@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly) unsigned long long phase; // @synthesize phase=_phase;
 - (void).cxx_destruct;
+- (id)_windows;
 - (BOOL)_sendEventToGestureRecognizer:(id)arg1;
 - (void)_removeGestureRecognizersFromWindows;
 - (void)_removeGestureRecognizer:(id)arg1;

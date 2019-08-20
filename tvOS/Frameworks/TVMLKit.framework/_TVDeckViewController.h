@@ -6,10 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-@class IKViewElement, UIView;
+#import <TVMLKit/TVTabBarAdjusting-Protocol.h>
+
+@class IKViewElement, NSString, UIView;
 
 __attribute__((visibility("hidden")))
-@interface _TVDeckViewController : UIViewController
+@interface _TVDeckViewController : UIViewController <TVTabBarAdjusting>
 {
     _Bool _dissolving;
     CDUnknownBlockType _didDissolveBlock;
@@ -35,8 +37,15 @@ __attribute__((visibility("hidden")))
 - (void)_dissolveToPendingView;
 - (void)_scrollingGridViewReady:(id)arg1;
 - (void)_deckImageViewReady:(id)arg1;
+- (_Bool)shouldAdjustForTabBarSafeAreaInsets;
 - (void)viewDidLoad;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)statusForDebug:(BOOL)arg1;
+- (void)handleOptimizeModeChange;
 - (void)stop;
 - (void)updateCacheDeletePurgeableAmount;
 - (void)startAutomaticPrefetchAndPruneWithTimeout:(BOOL)arg1;

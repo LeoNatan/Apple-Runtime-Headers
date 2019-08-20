@@ -19,11 +19,15 @@ __attribute__((visibility("hidden")))
     id _contents;
     UIColor *_contentsMultiplyColor;
     float _contentsScaleFactor;
+    float _baselineOffsetFromTop;
+    float _baselineOffsetFromBottom;
     struct UIEdgeInsets _contentInsets;
     struct CGAffineTransform _contentsTransform;
 }
 
 + (id)layoutForSource:(id)arg1 inTarget:(id)arg2;
+@property(readonly, nonatomic) float baselineOffsetFromBottom; // @synthesize baselineOffsetFromBottom=_baselineOffsetFromBottom;
+@property(readonly, nonatomic) float baselineOffsetFromTop; // @synthesize baselineOffsetFromTop=_baselineOffsetFromTop;
 @property(readonly, nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(readonly, nonatomic) float contentsScaleFactor; // @synthesize contentsScaleFactor=_contentsScaleFactor;
 @property(readonly, nonatomic) struct CGAffineTransform contentsTransform; // @synthesize contentsTransform=_contentsTransform;

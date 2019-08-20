@@ -18,12 +18,12 @@
 - (void).cxx_destruct;
 - (id)_imageFroMVKImage:(id)arg1;
 - (id)_createImageWithBlockInAutoreleasePoolIfNeeded:(CDUnknownBlockType)arg1;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 fullBleedColor:(id *)arg6;
-- (id)_imageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 fullBleedColor:(id *)arg6;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4;
-- (id)transitArtworkImageWithShieldDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4;
-- (id)_vkImageWithShieldDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 widthPaddingMultiple:(float)arg5;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5 withWidthPaddingMultiple:(float)arg6 fullBleedColor:(id *)arg7;
+- (id)_imageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5 withWidthPaddingMultiple:(float)arg6 fullBleedColor:(id *)arg7;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5 withWidthPaddingMultiple:(float)arg6;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5;
+- (id)transitArtworkImageWithShieldDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5;
+- (id)_vkImageWithShieldDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5 widthPaddingMultiple:(float)arg6;
 - (_Bool)_isMemoryConstrained;
 - (void)purge;
 - (id)initWithIconManager:(id)arg1;

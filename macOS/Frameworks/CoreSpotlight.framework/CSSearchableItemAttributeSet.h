@@ -566,6 +566,7 @@
 @property(copy) NSString *ownerIdentifier;
 @property(copy) NSString *ownerName;
 @property(copy) NSString *parentFileItemID;
+@property(copy) NSString *FPFilename;
 @property(copy) NSString *fileItemID;
 @property(copy) NSString *fileProviderID;
 @property(copy) NSString *punchoutLabel;

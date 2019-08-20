@@ -58,6 +58,7 @@
 - (void)_cancelDyldImageActivityTimer;
 - (void)_scheduleDyldImageActivityTimerWithDelay:(double)arg1;
 - (void)setAccessibilityCodeItemsNeedLoaded;
+- (id)codeItemForBundle:(id)arg1;
 - (id)loadedCodeItemsUsingTrackedItemsIfAvailable:(BOOL)arg1;
 - (id)_queue_loadedCodeItemsUsingTrackedItemsIfAvailable:(BOOL)arg1;
 - (id)loadedCodeItemPathsUsingTrackedItemsIfAvailable:(BOOL)arg1;

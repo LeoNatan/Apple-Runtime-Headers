@@ -41,6 +41,8 @@
 - (id)defaultLanguagesForMultilingualSetup;
 - (id)languagesForMultilingualSetup;
 - (id)_languagesForMultilingualSetupWithKeyboardsIDs:(id)arg1;
+- (_Bool)requiresMultilingualSetup;
+- (_Bool)_requiresMultilingualSetupWithKeyboardIDs:(id)arg1;
 @property(readonly, copy) NSString *explanationTextForSelectableScripts;
 @property(readonly, copy) NSString *optionNameWithColonForSelectableScripts;
 @property(readonly, copy) NSString *optionNameForSelectableScripts;

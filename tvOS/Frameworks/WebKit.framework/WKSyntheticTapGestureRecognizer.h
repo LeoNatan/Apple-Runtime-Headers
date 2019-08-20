@@ -15,8 +15,12 @@ __attribute__((visibility("hidden")))
     SEL _gestureFailedAction;
     id _resetTarget;
     SEL _resetAction;
+    struct RetainPtr<NSNumber> _lastActiveTouchIdentifier;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)lastActiveTouchIdentifier;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)setState:(long long)arg1;

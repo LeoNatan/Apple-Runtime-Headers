@@ -14,6 +14,7 @@
 
 @interface CSUserVoiceProfileStore : NSObject <CSLanguageCodeUpdateMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate>
 {
+    unsigned int _numberOfBaseProfileUtterancesToUpload;
     NSMutableArray *_voiceProfileArray;
     NSString *_languageCode;
     NSObject<OS_dispatch_queue> *_queue;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(retain) NSMutableArray *voiceProfileArray; // @synthesize voiceProfileArray=_voiceProfileArray;
+@property(readonly, nonatomic) unsigned int numberOfBaseProfileUtterancesToUpload; // @synthesize numberOfBaseProfileUtterancesToUpload=_numberOfBaseProfileUtterancesToUpload;
 - (void).cxx_destruct;
 - (void)reevaluateAndCleanupImplicitUtterances;
 - (void)addiTunesAccountForVoiceProfile:(id)arg1 withMultiUserToken:(id)arg2 withDsid:(id)arg3 withAltDsid:(id)arg4 withHomeId:(id)arg5 withHomeUserId:(id)arg6 withCompletionBlock:(CDUnknownBlockType)arg7;

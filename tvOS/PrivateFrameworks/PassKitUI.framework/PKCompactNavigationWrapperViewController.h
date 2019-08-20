@@ -17,6 +17,7 @@
 - (struct CGRect)_wrappedViewControllerFrameForBounds:(struct CGRect)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)loadView;
 - (_Bool)_canShowWhileLocked;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
 - (id)initWithWrappedViewController:(id)arg1;

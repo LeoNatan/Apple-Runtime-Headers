@@ -9,6 +9,7 @@
 @class NSDictionary, NSString;
 
 @protocol MFComposeBodyFieldController <MSComposeBodyFieldController>
+- (void)clearSelection;
 - (void)setDirty:(_Bool)arg1 completionHandler:(void (^)(void))arg2;
 - (void)placeCaretAtStartOfBody;
 - (void)htmlStringsAttachmentURLsAndPlainTextAlternativeRemovingSignature:(_Bool)arg1 attachmentInfoByIdentifier:(NSDictionary *)arg2 completion:(void (^)(ECHTMLStringAndMIMECharset *, NSArray *, NSArray *))arg3;
@@ -16,11 +17,12 @@
 - (void)plainTextContentUsingAttachmentInfoByIdentifier:(NSDictionary *)arg1 completionHandler:(void (^)(NSArray *))arg2;
 - (void)containsRichText:(void (^)(_Bool))arg1;
 - (void)forceNextSelectionFromSecondToFirstLine;
+- (void)displayAttachmentWithIdentifierAsSinglePagePDF:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;
 - (void)removeMediaAttachment:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
-- (void)replacePlaceholderWithAttachment:(NSString *)arg1 identifier:(NSString *)arg2;
-- (void)replacePlaceholderWithImage:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;
+- (void)replaceFilenamePlaceholderWithAttachment:(NSString *)arg1 identifier:(NSString *)arg2;
+- (void)replaceFilenamePlaceholderWithImage:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;
 - (void)countDuplicatedAttachments:(NSString *)arg1 completionHandler:(void (^)(NSNumber *))arg2;
-- (void)insertAttachmentAsImage:(_Bool)arg1 completionHandler:(void (^)(NSString *))arg2;
+- (void)insertAttachmentAsImage:(_Bool)arg1 isSinglePagePDF:(_Bool)arg2 completionHandler:(void (^)(NSString *))arg3;
 - (void)setFileName:(NSString *)arg1 forImageWithContentID:(NSString *)arg2;
 - (void)replaceImagesIfNecessary;
 - (void)setReplacementFilenamesByContentID:(NSDictionary *)arg1;

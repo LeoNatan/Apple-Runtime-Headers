@@ -6,40 +6,36 @@
 
 #import <objc/NSObject.h>
 
-#import <EmailFoundation/EFCacheable-Protocol.h>
 #import <EmailFoundation/NSCopying-Protocol.h>
 #import <EmailFoundation/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSPredicate, NSString;
 
-@interface EFQuery : NSObject <EFCacheable, NSSecureCoding, NSCopying>
+@interface EFQuery : NSObject <NSSecureCoding, NSCopying>
 {
     Class _targetClass;
     NSPredicate *_predicate;
     NSArray *_sortDescriptors;
-    unsigned long long _searchType;
+    unsigned long long _queryOptions;
+    NSString *_label;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
+@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) unsigned long long queryOptions; // @synthesize queryOptions=_queryOptions;
 @property(readonly, copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) Class targetClass; // @synthesize targetClass=_targetClass;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)_isEqualToQuery:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property(readonly, copy) NSString *debugDescription;
+- (unsigned long long)hash;
+- (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 searchType:(unsigned long long)arg4;
+- (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 queryOptions:(unsigned long long)arg4 label:(id)arg5;
 - (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
-- (id)cachedSelf;
-
-// Remaining properties
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

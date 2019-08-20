@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool containsExcessiveLineHeightCharacters;
 @property(readonly, nonatomic) _Bool containsHyperlink;
 @property(readonly, copy, nonatomic) NSAttributedString *subject;
 @property(readonly, copy, nonatomic) NSAttributedString *fallbackCorruptText;

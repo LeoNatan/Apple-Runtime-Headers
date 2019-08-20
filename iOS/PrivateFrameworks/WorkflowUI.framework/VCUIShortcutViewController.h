@@ -12,7 +12,7 @@
 #import <WorkflowUI/UITextFieldDelegate-Protocol.h>
 #import <WorkflowUI/WFWorkflowViewControllerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, OBLinkTrayButton, OBTrayButton, OBWelcomeController, UIBarButtonItem, UINavigationController, UITableView, UIView, WFDatabase, WFWorkflow, WFWorkflowIcon, WFWorkflowViewController;
+@class NSLayoutConstraint, NSString, OBTrayButton, OBWelcomeController, UIBarButtonItem, UINavigationController, UITableView, UIView, WFDatabase, WFWorkflow, WFWorkflowIcon, WFWorkflowViewController;
 @protocol VCUIShortcutViewControllerDelegate;
 
 @interface VCUIShortcutViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate, WFWorkflowViewControllerDelegate>
@@ -33,15 +33,16 @@
     UIView *_customViewContainer;
     UIView *_customView;
     OBTrayButton *_primaryButton;
-    OBLinkTrayButton *_secondaryButton;
+    OBTrayButton *_secondaryButton;
     WFDatabase *_database;
     WFWorkflowViewController *_inlineWorkflowViewController;
 }
 
++ (_Bool)_preventsAppearanceProxyCustomization;
 @property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
 @property(retain, nonatomic) WFWorkflowViewController *inlineWorkflowViewController; // @synthesize inlineWorkflowViewController=_inlineWorkflowViewController;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-@property(retain, nonatomic) OBLinkTrayButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
+@property(retain, nonatomic) OBTrayButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
 @property(retain, nonatomic) OBTrayButton *primaryButton; // @synthesize primaryButton=_primaryButton;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(readonly, nonatomic) UIView *customViewContainer; // @synthesize customViewContainer=_customViewContainer;
@@ -70,6 +71,7 @@
 - (id)headerImage;
 - (id)captionText;
 - (id)secondaryButtonTintColor;
+- (id)createdSecondaryButton;
 - (id)secondaryButtonTitle;
 - (id)primaryButtonTintColor;
 - (id)primaryButtonTitle;

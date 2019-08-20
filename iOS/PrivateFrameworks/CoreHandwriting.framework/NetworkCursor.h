@@ -12,6 +12,7 @@
     unsigned long long _stateType;
 }
 
++ (id)cursorByAddingNodeIndex:(unsigned long long)arg1 toCursor:(id)arg2;
 @property(nonatomic) unsigned long long stateType; // @synthesize stateType=_stateType;
 - (id).cxx_construct;
 - (void).cxx_destruct;

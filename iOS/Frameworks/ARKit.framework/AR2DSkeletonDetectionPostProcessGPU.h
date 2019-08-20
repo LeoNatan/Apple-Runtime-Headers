@@ -14,10 +14,6 @@
     id <MTLCommandQueue> _commandQueue;
     id <MTLComputePipelineState> _pipelineStateInterpolate;
     id <MTLComputePipelineState> _pipelineStateMaxFilter;
-    unsigned long long scale;
-    unsigned long long width;
-    unsigned long long height;
-    unsigned long long nChannels;
     id <MTLTexture> _input;
     id <MTLTexture> _intermediate;
     id <MTLTexture> _output;

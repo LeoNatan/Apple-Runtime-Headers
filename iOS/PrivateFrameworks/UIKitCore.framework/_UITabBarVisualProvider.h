@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString, UITabBar;
+@protocol _UIBarAppearanceChangeObserver;
 
 __attribute__((visibility("hidden")))
 @interface _UITabBarVisualProvider : NSObject
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusedView;
 - (_Bool)wantsFocus;
+- (id)defaultTintColor;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -33,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)updateArchivedSubviews:(id)arg1;
 - (id)createViewForTabBarItem:(id)arg1;
 @property(nonatomic) double minimumWidthForHorizontalLayout;
+@property(readonly, nonatomic) id <_UIBarAppearanceChangeObserver> appearanceObserver;
 @property(nonatomic) _Bool useModernAppearance;
 - (void)updateBackgroundGroupName;
 - (void)changeLayout;

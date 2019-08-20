@@ -11,6 +11,7 @@
 }
 
 + (id)sharedPreferences;
+- (BOOL)opportuneSpeakListenerBypassEnabled;
 - (BOOL)companionSyncVoiceTriggerUtterancesEnabled;
 - (id)fakeHearstModelPath;
 - (void)setHearstSecondPassModelVersion:(id)arg1;

@@ -18,11 +18,15 @@
     NSNumber *_daysMarginScale;
     NSNumber *_allPhotosPreferredIndividualItemsColumns;
     NSNumber *_allPhotosAspectFit;
+    NSNumber *_didShowCurationFooter;
+    NSNumber *_didShowCompletedCurationFooterAnimation;
     id <PXUserDefaultsDataSource> _dataSource;
 }
 
 + (id)standardUserDefaults;
 @property(readonly, nonatomic) __weak id <PXUserDefaultsDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(copy, nonatomic) NSNumber *didShowCompletedCurationFooterAnimation; // @synthesize didShowCompletedCurationFooterAnimation=_didShowCompletedCurationFooterAnimation;
+@property(copy, nonatomic) NSNumber *didShowCurationFooter; // @synthesize didShowCurationFooter=_didShowCurationFooter;
 @property(copy, nonatomic) NSNumber *allPhotosAspectFit; // @synthesize allPhotosAspectFit=_allPhotosAspectFit;
 @property(copy, nonatomic) NSNumber *allPhotosPreferredIndividualItemsColumns; // @synthesize allPhotosPreferredIndividualItemsColumns=_allPhotosPreferredIndividualItemsColumns;
 @property(copy, nonatomic) NSNumber *daysMarginScale; // @synthesize daysMarginScale=_daysMarginScale;

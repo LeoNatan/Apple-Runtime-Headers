@@ -15,7 +15,7 @@
 + (_Bool)_shouldIgnoreChangeToBatteryLevel:(unsigned int)arg1;
 + (unsigned int)_thresholdForLevel:(unsigned int)arg1;
 + (void)initialize;
-- (_Bool)undimsScreen;
+- (_Bool)wakeDisplay;
 - (_Bool)shouldShowInEmergencyCall;
 - (_Bool)shouldShowInLockScreen;
 - (void)_enableLowPowerMode;

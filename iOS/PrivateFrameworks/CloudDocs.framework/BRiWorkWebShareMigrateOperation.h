@@ -15,7 +15,6 @@
     CDUnknownBlockType _shareMigrationCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType shareMigrationCompletionBlock; // @synthesize shareMigrationCompletionBlock=_shareMigrationCompletionBlock;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;

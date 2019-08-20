@@ -24,7 +24,6 @@
 
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (unsigned int)timelineAnimationFadeType;
 @property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(retain, nonatomic) CLKComplicationTemplate *template; // @synthesize template=_template;
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
@@ -34,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)updateDate;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
+- (unsigned int)timelineAnimationFadeTypeOverride;
 - (id)complicationTemplate;
 - (void)setComplicationTemplate:(id)arg1 reason:(int)arg2;
 @property(retain, nonatomic) UIColor *textColor;

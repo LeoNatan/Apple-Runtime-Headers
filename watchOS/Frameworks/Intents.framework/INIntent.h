@@ -131,7 +131,7 @@
 @property(readonly, nonatomic) NSString *_categoryVerb;
 - (void)_setIntentCategory:(int)arg1;
 @property(readonly, nonatomic) int _intentCategory;
-- (id)_defaultImageNameWithSchema:(id)arg1;
+- (id)_defaultImageName;
 @property(readonly, nonatomic) NSString *intentId;
 @property(readonly, nonatomic) NSString *utteranceString;
 @property(retain, nonatomic, setter=_setMetadata:) _INPBIntentMetadata *_metadata;

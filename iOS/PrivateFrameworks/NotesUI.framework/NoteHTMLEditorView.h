@@ -13,7 +13,7 @@
 #import <NotesUI/WKURLSchemeHandler-Protocol.h>
 #import <NotesUI/_WKInputDelegate-Protocol.h>
 
-@class ICSelectorDelayer, NSArray, NSLayoutConstraint, NSString, NoteWKWebView, UILongPressGestureRecognizer, UIViewPrintFormatter, WebArchive;
+@class ICSelectorDelayer, NSArray, NSLayoutConstraint, NSString, NoteWKWebView, UIViewPrintFormatter, WebArchive;
 @protocol NoteHTMLEditorViewActionDelegate, NoteHTMLEditorViewDelegate, NoteHTMLEditorViewLayoutDelegate;
 
 @interface NoteHTMLEditorView : UIView <UIScrollViewDelegate, WKUIDelegatePrivate, _WKInputDelegate, WKNavigationDelegate, WKScriptMessageHandler, WKURLSchemeHandler>
@@ -26,7 +26,6 @@
     id <NoteHTMLEditorViewDelegate> _delegate;
     id <NoteHTMLEditorViewActionDelegate> _actionDelegate;
     id <NoteHTMLEditorViewLayoutDelegate> _layoutDelegate;
-    UILongPressGestureRecognizer *_longPressGestureRecognizer;
     NSLayoutConstraint *_contentSizeHeightConstraint;
     NSLayoutConstraint *_contentSizeWidthConstraint;
     NoteWKWebView *_webView;
@@ -57,17 +56,19 @@
 @property(retain, nonatomic) NoteWKWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) NSLayoutConstraint *contentSizeWidthConstraint; // @synthesize contentSizeWidthConstraint=_contentSizeWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *contentSizeHeightConstraint; // @synthesize contentSizeHeightConstraint=_contentSizeHeightConstraint;
-@property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(nonatomic) __weak id <NoteHTMLEditorViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 @property(nonatomic) __weak id <NoteHTMLEditorViewActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(nonatomic) __weak id <NoteHTMLEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)contextMenuConfigurationForElement:(id)arg1 presentation:(id)arg2;
 - (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)_webView:(id)arg1 contextMenuDidEndForElement:(id)arg2;
+- (void)_webView:(id)arg1 contextMenuConfigurationForElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_webView:(id)arg1 performDataInteractionOperationWithItemProviders:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
@@ -93,15 +94,19 @@
 - (void)adoptEditableState;
 - (void)updateDataDetectors;
 - (void)updateMenuController;
-- (void)replaceSelectionWithHTMLString:(id)arg1;
+- (void)replaceContentIDs:(id)arg1;
 - (void)undoablyRemoveAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
 - (void)undoablyReplaceSelectionWithAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
 - (void)replaceSelectionWithAttachmentPresentation:(id)arg1;
+- (id)jsonStringFromDictionaryOrArray:(id)arg1;
 - (id)attachmentInfoDictionaryForAttachmentPresentation:(id)arg1;
 - (id)contentAsPasteboardItems;
+- (void)insertLinksWithURLs:(id)arg1 titles:(id)arg2;
 - (void)insertLinkWithURL:(id)arg1 title:(id)arg2;
+- (void)insertHTMLString:(id)arg1;
 - (void)setEnableShiftNewlinesInSmartLists:(_Bool)arg1;
 - (void)setEnableSmartLists:(_Bool)arg1;
+- (void)setEnableAttachments:(_Bool)arg1;
 - (void)setHtmlString:(id)arg1 attachments:(id)arg2;
 @property(nonatomic) double textZoomFactor;
 @property(readonly, nonatomic) WebArchive *webArchive;

@@ -20,11 +20,13 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSXPCListener *_xpcListener;
     NSMutableDictionary *_callUUIDToCallMap;
+    NSMutableDictionary *_callUUIDToPublicCallUUIDMap;
     NSMutableSet *_connections;
 }
 
 @property(readonly, nonatomic) int clientsShouldConnectToken; // @synthesize clientsShouldConnectToken=_clientsShouldConnectToken;
 @property(retain, nonatomic) NSMutableSet *connections; // @synthesize connections=_connections;
+@property(retain, nonatomic) NSMutableDictionary *callUUIDToPublicCallUUIDMap; // @synthesize callUUIDToPublicCallUUIDMap=_callUUIDToPublicCallUUIDMap;
 @property(retain, nonatomic) NSMutableDictionary *callUUIDToCallMap; // @synthesize callUUIDToCallMap=_callUUIDToCallMap;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -36,6 +38,7 @@
 - (void)callControllerHostConnectionInvalidated:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)_callsForCallControllerHostConnection:(id)arg1;
+- (id)_sanitizedCallFromCall:(id)arg1 forCallControllerHostConnection:(id)arg2;
 - (void)_performDelegateCallback:(CDUnknownBlockType)arg1;
 - (void)removeCall:(id)arg1;
 - (void)addOrUpdateCall:(id)arg1;

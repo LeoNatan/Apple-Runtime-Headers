@@ -36,6 +36,7 @@
 - (void)_multiFingerTapGesture:(id)arg1;
 - (void)_didInvokeMultiSelectExtendGestureAtLocation:(struct CGPoint)arg1;
 - (void)_didInvokeMultiSelectAppendGestureAtLocation:(struct CGPoint)arg1;
+- (void)_cancelCommonPan:(id)arg1;
 - (void)_endCommonPan:(id)arg1;
 - (void)_updateCommonPan:(id)arg1;
 - (void)_beginCommonPan:(id)arg1;
@@ -49,7 +50,7 @@
 - (BOOL)_isCommandKeyBeingHeldWithGesture:(id)arg1;
 - (BOOL)_isShiftKeyBeingHeldWithGesture:(id)arg1;
 - (void)_askDelegateToAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg1 keepingSelection:(BOOL)arg2;
-- (BOOL)_attemptToAutomaticallyTransitionToMultiSelectModeIfNecessaryAtPoint:(struct CGPoint)arg1;
+- (BOOL)_attemptToAutomaticallyTransitionToMultiSelectModeIfNecessaryAtPoint:(struct CGPoint)arg1 withVelocity:(struct CGPoint)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_endObservingScrollViewOffsetUpdates;
 - (void)_beginObservingScrollViewOffsetUpdates;

@@ -33,6 +33,7 @@
     NSString *_promptString;
     SKScrollDetector *_scrollDetector;
     _Bool _viewWasOnScreen;
+    CDUnknownBlockType _dismissalCompleted;
 }
 
 + (void)_validateURL:(id)arg1 withSheetInfo:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
@@ -69,6 +70,7 @@
 - (void)_resetRemoteViewController;
 - (void)_presentPageWithRequest:(id)arg1 animated:(_Bool)arg2;
 - (void)_loadDidFinishWithResult:(_Bool)arg1 error:(id)arg2;
+- (void)_didFinishDismissal;
 - (void)_didFinishWithResult:(long long)arg1;
 - (void)_didFinish;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -77,6 +79,8 @@
 - (void)finishImmediately;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
 - (void)_sk_applicationDidEnterBackground:(id)arg1;
+- (void)dismissModalViewControllerAnimated:(_Bool)arg1;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (int)_preferredStatusBarVisibility;
 - (long long)preferredStatusBarStyle;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;

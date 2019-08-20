@@ -9,6 +9,7 @@
 @protocol SBSHomeScreenServiceClientToServerInterface
 - (oneway void)requestSuggestedApplicationWithBundleIdentifier:(NSString *)arg1 assertionPort:(BSMachPortSendRight *)arg2 completion:(void (^)(NSError *))arg3;
 - (oneway void)resetHomeScreenLayoutWithCompletion:(void (^)(NSError *))arg1;
+- (void)addWidgetToTodayViewWithBundleIdentifier:(NSString *)arg1;
 - (NSArray *)folderPathToIconWithBundleIdentifier:(NSString *)arg1;
 @end
 

@@ -153,6 +153,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateBarItemsAnimated:(_Bool)arg1;
 - (void)_updateNavigationItemTitle;
 - (void)_updateEnabledNavigationBarItems;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;

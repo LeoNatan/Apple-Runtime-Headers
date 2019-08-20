@@ -11,7 +11,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMFTimer, HMFUnfairLock, NSArray, NSMutableSet, NSString, NSUUID;
+@class HMFTimer, HMFUnfairLock, NSArray, NSMutableDictionary, NSMutableSet, NSString, NSUUID;
 @protocol HMDSettingsControllerProtocol, HMDUserDataControllerDelegate, HMDUserDataControllerTimerCreator, OS_dispatch_queue;
 
 @interface HMDUserDataController : NSObject <HMDAssistantAccessControlModelUpdateReceiver, HMDMediaContentProfileAccessControlModelUpdateReceiver, HMFLogging, HMFTimerDelegate>
@@ -60,6 +60,8 @@
 - (void)timerDidFire:(id)arg1;
 - (void)mediaContentProfileAccessControlModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)mediaContentProfileAccessControlModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, copy) NSMutableDictionary *privateSettingValuesByKeyPathForAWD;
+@property(readonly, copy) NSMutableDictionary *sharedSettingValuesByKeyPathForAWD;
 - (void)assistantAccessControlModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)assisteantAccessControlModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleMediaContentProfileAccessControlUpdatedAccessoryUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;

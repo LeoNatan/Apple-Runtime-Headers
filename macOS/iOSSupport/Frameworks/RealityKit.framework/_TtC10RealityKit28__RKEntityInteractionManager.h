@@ -10,9 +10,11 @@
 {
     // Error parsing type: , name: customTriggerFiredActions
     // Error parsing type: , name: areInteractionsEnabled
+    // Error parsing type: , name: automaticallyInvokesStartTrigger
     // Error parsing type: , name: sceneRef
     // Error parsing type: , name: key
     // Error parsing type: , name: __entityLookupTable
+    // Error parsing type: , name: __simulationSceneCoordinator
     // Error parsing type: , name: __interactions
 }
 

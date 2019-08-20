@@ -29,6 +29,7 @@
     struct WeakObjCPtr<id<_WKInputDelegate>> _inputDelegate;
     Optional_bd583063 _resolutionForShareSheetImmediateCompletionForTesting;
     struct RetainPtr<WKSafeBrowsingWarning> _safeBrowsingWarning;
+    BOOL _usePlatformFindUI;
     struct unique_ptr<WebKit::WebViewImpl, std::__1::default_delete<WebKit::WebViewImpl>> _impl;
     struct RetainPtr<WKTextFinderClient> _textFinderClient;
     unsigned long long _selectionAttributes;
@@ -78,9 +79,11 @@
 - (void)selectFindMatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSelectedText:(CDUnknownBlockType)arg1;
 - (id)documentContainerView;
+- (void)scrollFindMatchToVisible:(id)arg1;
 - (void)replaceMatches:(id)arg1 withString:(id)arg2 inSelectionOnly:(BOOL)arg3 resultCollector:(CDUnknownBlockType)arg4;
 - (void)findMatchesForString:(id)arg1 relativeToMatch:(id)arg2 findOptions:(unsigned long long)arg3 maxResults:(unsigned long long)arg4 resultCollector:(CDUnknownBlockType)arg5;
 - (id)_ensureTextFinderClient;
+@property(nonatomic, setter=_setUsePlatformFindUI:) BOOL _usePlatformFindUI;
 - (void)rotateWithEvent:(id)arg1;
 - (void)magnifyWithEvent:(id)arg1;
 @property(nonatomic) BOOL allowsMagnification;

@@ -6,8 +6,9 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
-@interface _TtC12NewsArticles35SharingIssueImageActivityItemSource : NSObject
+#import <NewsArticles/UIActivityItemSource-Protocol.h>
+
+@interface _TtC12NewsArticles35SharingIssueImageActivityItemSource : NSObject <UIActivityItemSource>
 {
     // Error parsing type: , name: issueImage
 }

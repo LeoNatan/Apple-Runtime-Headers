@@ -27,6 +27,7 @@
     NSMutableArray *_gpuWriteTensorKernelList;
 }
 
++ (id)filteredGPUListIncludingNonLowPoweredBuiltin:(BOOL)arg1;
 + (unsigned long long)calculateImageSizeForTensor:(id)arg1;
 @property(readonly, nonatomic) NSMutableArray *gpuWriteTensorKernelList; // @synthesize gpuWriteTensorKernelList=_gpuWriteTensorKernelList;
 @property(readonly, nonatomic) NSMutableArray *gpuMPSCommandBufferList; // @synthesize gpuMPSCommandBufferList=_gpuMPSCommandBufferList;
@@ -75,6 +76,7 @@
 - (id)initWithType:(int)arg1 gpuDeviceList:(id)arg2 gpuSharedEventList:(id)arg3 currentEventValue:(unsigned long long *)arg4 gpuCommandQueueList:(id)arg5 gpuCommandBufferList:(id)arg6 gpuMPSCommandBufferList:(id)arg7;
 - (id)initWithDeviceList:(id)arg1;
 - (id)initWithType:(int)arg1;
+- (void)setOptimizerLearningRate:(id)arg1 learningRate:(float)arg2;
 - (void)convertUpdatesToTensorDataForLayer:(id)arg1;
 - (void)synchronizeUpdatesForLayer:(id)arg1;
 - (void)updateBatchNormalizationLayer:(id)arg1 optimizer:(id)arg2;
@@ -117,8 +119,8 @@
 - (id)dropoutLayerWithRate:(float)arg1 seed:(unsigned long long)arg2;
 - (id)convolutionTransposeLayerWithDescriptor:(id)arg1 weights:(id)arg2;
 - (id)convolutionLayerWithDescriptor:(id)arg1 weights:(id)arg2 biasTerms:(id)arg3;
-- (id)fusedBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 numOfFeatureChannels:(unsigned long long)arg2 mean:(id)arg3 variance:(id)arg4 beta:(id)arg5 gamma:(id)arg6 variance_epsilon:(float)arg7;
-- (id)batchNormalizationLayeWithChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6;
+- (id)fusedBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 numOfFeatureChannels:(unsigned long long)arg2 mean:(id)arg3 variance:(id)arg4 beta:(id)arg5 gamma:(id)arg6 variance_epsilon:(float)arg7 momentum:(float)arg8;
+- (id)batchNormalizationLayerWithChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6 momentum:(float)arg7;
 - (id)arithmeticLayerWithOperation:(int)arg1;
 
 // Remaining properties

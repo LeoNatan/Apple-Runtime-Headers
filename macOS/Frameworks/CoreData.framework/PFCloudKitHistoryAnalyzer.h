@@ -6,12 +6,9 @@
 
 #import <CoreData/PFHistoryAnalyzer.h>
 
-@class CKRecordZone;
-
 __attribute__((visibility("hidden")))
 @interface PFCloudKitHistoryAnalyzer : PFHistoryAnalyzer
 {
-    CKRecordZone *_recordZone;
 }
 
 + (BOOL)isPrivateContextName:(id)arg1;
@@ -19,8 +16,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)isPrivateTransaction:(id)arg1;
 - (void)processTransaction:(id)arg1 withContext:(id)arg2;
 - (id)instantiateNewAnalyzerContext;
-- (void)dealloc;
-- (id)initWithRecordZone:(id)arg1;
+- (id)cloudKitAnalyzerOptions;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

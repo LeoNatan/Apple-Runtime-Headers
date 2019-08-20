@@ -23,10 +23,12 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_identifiers;
     NSObject<OS_os_transaction> *_transaction;
     NSString *_initiatorIdentifier;
+    NSString *_initiatorDisplayName;
     id <MSPSharedTripGroupSessionDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MSPSharedTripGroupSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSString *initiatorDisplayName; // @synthesize initiatorDisplayName=_initiatorDisplayName;
 @property(readonly, nonatomic) NSString *initiatorIdentifier; // @synthesize initiatorIdentifier=_initiatorIdentifier;
 - (void).cxx_destruct;
 - (void)participantDidLeave:(id)arg1;

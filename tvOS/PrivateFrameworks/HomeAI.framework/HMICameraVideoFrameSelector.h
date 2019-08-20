@@ -13,8 +13,15 @@
 @interface HMICameraVideoFrameSelector : HMFObject <HMFLogging>
 {
     _Bool _enableOpticalFlow;
+    int _maxOpticalFlowCalculations;
+    int _targetSelectionInterval;
+    int _referenceSelectionInterval;
     float _numberFramesToAdvance;
     float _nextFrameToSelectForAnalysis;
+    float _actualAnalysisFPS;
+    int _refFrameNumber;
+    int _targetFrameNumber;
+    int _numOpticalFlowCalculations;
     NSArray *_frames;
     NSString *_logIdentifier;
     double _analysisFPS;
@@ -36,7 +43,11 @@
 }
 
 + (id)logCategory;
+@property int numOpticalFlowCalculations; // @synthesize numOpticalFlowCalculations=_numOpticalFlowCalculations;
+@property int targetFrameNumber; // @synthesize targetFrameNumber=_targetFrameNumber;
+@property int refFrameNumber; // @synthesize refFrameNumber=_refFrameNumber;
 @property struct __CVBuffer *opticalFlowReferenceImage; // @synthesize opticalFlowReferenceImage=_opticalFlowReferenceImage;
+@property float actualAnalysisFPS; // @synthesize actualAnalysisFPS=_actualAnalysisFPS;
 @property unsigned long long frameHeight; // @synthesize frameHeight=_frameHeight;
 @property unsigned long long frameWidth; // @synthesize frameWidth=_frameWidth;
 @property(retain) NSMutableArray *framesScore; // @synthesize framesScore=_framesScore;
@@ -54,9 +65,14 @@
 @property float numberFramesToAdvance; // @synthesize numberFramesToAdvance=_numberFramesToAdvance;
 @property unsigned long long totalNumberOfFramesInFragment; // @synthesize totalNumberOfFramesInFragment=_totalNumberOfFramesInFragment;
 @property(retain) NSMutableArray *framesInternal; // @synthesize framesInternal=_framesInternal;
+@property int referenceSelectionInterval; // @synthesize referenceSelectionInterval=_referenceSelectionInterval;
+@property int targetSelectionInterval; // @synthesize targetSelectionInterval=_targetSelectionInterval;
+@property int maxOpticalFlowCalculations; // @synthesize maxOpticalFlowCalculations=_maxOpticalFlowCalculations;
 @property(readonly) double analysisFPS; // @synthesize analysisFPS=_analysisFPS;
 @property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
+- (float)calculateReferenceFrameSelectionFactor;
+- (int)calculateOpticalFlowInterval:(float)arg1;
 - (long long)getScaledFrameHeight;
 - (long long)getScaledFrameWidth;
 - (float)getScaleFactorHeight;
@@ -69,6 +85,8 @@
 - (float)computeFlowMagnitudeMatrixFromOriginal:(struct __CVBuffer *)arg1 error:(id *)arg2;
 - (_Bool)handleVideoFrame:(id)arg1 error:(id *)arg2;
 - (void)startHandlingFramesFromVideoResource:(id)arg1 fragmentSequenceNumber:(unsigned long long)arg2 frameWidth:(unsigned long long)arg3 frameHeight:(unsigned long long)arg4;
+- (_Bool)getOpticalFlowBackgroundProcessingPreference;
+- (_Bool)getOpticalFlowLowPriorityPreference;
 - (_Bool)getEnableOpticalFlowPreference;
 - (id)initWithAnalysisFPS:(double)arg1 logIdentifier:(id)arg2;
 - (void)dealloc;

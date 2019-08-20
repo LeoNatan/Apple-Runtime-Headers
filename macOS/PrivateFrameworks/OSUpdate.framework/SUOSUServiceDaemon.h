@@ -44,6 +44,7 @@
 - (void)postAndProceedWithAutoUpdateNotification:(CDUnknownBlockType)arg1;
 - (void)mdmMajorOSUpdateStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startInstallingMDMMajorOSUpdateWithBundleId:(id)arg1 orVersion:(id)arg2;
+- (void)queueAutoUpdatesForLater;
 - (void)startInstallingDoItLaterUpdates;
 - (void)postDoItLaterOtherUsersLoggedInNotification;
 - (void)postDoItLaterUpdatesFailedNotificationRestartRequired:(BOOL)arg1 offerLater:(BOOL)arg2;
@@ -57,8 +58,11 @@
 - (void)getMajorOSUpdateStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)postMDMRequestedNotificationToAllLoggedInUsers;
 - (void)getLaterStateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)queueAutoUpdatesForLaterForClients;
 - (void)disarmLaterObserver;
 - (void)armObserverWithMode:(unsigned long long)arg1;
+- (void)armClientsWithMode:(unsigned long long)arg1;
+- (void)armClientsWithAutoUpdate;
 - (void)schedulePeriodicUpdateActions;
 - (void)startListeningForConnections;
 - (void)initializeState;

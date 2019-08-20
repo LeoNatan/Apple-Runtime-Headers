@@ -7,6 +7,9 @@
 #import <NanoRegistry/NRDevice.h>
 
 @interface NRDevice (VersionFactories)
++ (id)versionForString:(id)arg1;
++ (_Bool)activePairedDeviceSupportsIconsPerNotification;
++ (_Bool)activePairedDeviceSupportsNotSendingTemporarySequenceNumbers;
 + (_Bool)activePairedDeviceSupportsNoLocalRemoteNotificationInBulletinContext;
 + (_Bool)activePairedDeviceSupportsEmergencyAlerts;
 + (_Bool)activePairedDeviceSupportsSpokenNotificationSettings;
@@ -22,7 +25,8 @@
 + (_Bool)activePairedDeviceSupportsAttachmentFiles;
 + (_Bool)activePairedDeviceSupportsFileBulletinAdd;
 + (_Bool)activePairedDeviceSupportsFileSettingSync;
-+ (_Bool)activePairedDeviceSupportIsGreaterEqualVersion:(unsigned int)arg1;
++ (_Bool)activePairedDeviceSupportIsGreaterEqualVersion:(unsigned long long)arg1;
 - (unsigned long long)bltVersion;
+- (unsigned long long)watchOSVersion;
 @end
 

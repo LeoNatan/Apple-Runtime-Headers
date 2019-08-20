@@ -9,11 +9,13 @@
 #import <PhotosUICore/NSTextViewDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSProgressIndicator, NSString, NSTextField, NSTextView, PXFooterViewModel;
+@class NSProgressIndicator, NSString, NSTextField, NSTextView, PXFooterAnimatedIconView, PXFooterViewModel;
 @protocol PXPhotosGlobalFooterViewDelegate, PXPhotosGlobalFooterViewLayoutDelegate;
 
 @interface PXPhotosGlobalFooterView : UXCollectionReusableView <PXChangeObserver, NSTextViewDelegate>
 {
+    BOOL _hasAnimatedIconView;
+    PXFooterAnimatedIconView *_animatedIconView;
     NSTextField *_titleLabel;
     NSTextField *_extendedTitleLabel;
     NSTextView *_subtitle1TextView;
@@ -53,6 +55,9 @@
 - (void)_updateSubtitle1;
 - (void)_updateExtendedTitle;
 - (void)_updateTitle;
+- (void)_animatedIconCrossedGridCycleBoundary;
+- (void)_updateAnimatedIcon;
+- (void)setHidden:(BOOL)arg1;
 - (BOOL)isFlipped;
 - (id)init;
 

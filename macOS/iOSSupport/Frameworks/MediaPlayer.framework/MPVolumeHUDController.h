@@ -17,6 +17,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)_updateVisibilityForVolumeDisplays:(id)arg1 inWindowScene:(id)arg2;
 - (void)_updateVisibility;
 - (void)_addCategory:(id)arg1;
 - (void)unregisterView:(id)arg1 inContext:(id)arg2;

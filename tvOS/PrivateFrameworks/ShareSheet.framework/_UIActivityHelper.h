@@ -19,6 +19,7 @@
     CDUnknownBlockType _fetchShortcutsBlock;
 }
 
++ (id)builtinActivityClasses;
 @property(copy, nonatomic) CDUnknownBlockType fetchShortcutsBlock; // @synthesize fetchShortcutsBlock=_fetchShortcutsBlock;
 @property(nonatomic) _Bool primed; // @synthesize primed=_primed;
 @property(readonly, nonatomic) NSArray *cachedBuiltinActivities; // @synthesize cachedBuiltinActivities=_cachedBuiltinActivities;

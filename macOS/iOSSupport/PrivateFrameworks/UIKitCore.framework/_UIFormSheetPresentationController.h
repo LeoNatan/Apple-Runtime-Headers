@@ -13,9 +13,6 @@
 }
 
 + (long long)_initialMode;
-- (id)_preferredAnimationControllerForDismissal;
-- (id)_preferredAnimationControllerForPresentation;
-- (BOOL)_forcesPreferredAnimationControllers;
 - (BOOL)_presentationPotentiallyUnderlapsStatusBar;
 - (long long)_defaultPresentationStyleForTraitCollection:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;

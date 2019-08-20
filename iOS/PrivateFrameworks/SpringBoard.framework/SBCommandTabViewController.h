@@ -8,7 +8,7 @@
 
 #import <SpringBoard/SBIconViewDelegate-Protocol.h>
 
-@class MTMaterialShadowView, NSLayoutConstraint, NSMutableArray, NSOrderedSet, NSString, SBIconController, SBIconModel, SBIconView, UIImageView, UILabel, UIPanGestureRecognizer, UIStackView, UIView;
+@class MTMaterialShadowView, NSLayoutConstraint, NSMutableArray, NSOrderedSet, NSString, SBIconController, SBIconModel, SBIconView, UILabel, UIPanGestureRecognizer, UIStackView, UIView;
 @protocol SBCommandTabViewControllerDelegate;
 
 @interface SBCommandTabViewController : UIViewController <SBIconViewDelegate>
@@ -20,13 +20,14 @@
     NSMutableArray *_iconViews;
     MTMaterialShadowView *_backgroundMaterialView;
     UIView *_blurredBackgroundView;
-    UIImageView *_selectionSquareView;
+    UIView *_selectionSquareView;
     SBIconView *_selectedIconView;
     UILabel *_selectedIconLabel;
     NSLayoutConstraint *_selectionXLayoutConstraint;
     NSLayoutConstraint *_selectedLabelXConstraint;
     NSLayoutConstraint *_selectedLabelBottomConstraint;
     UIStackView *_stackView;
+    SBIconView *_homeIconView;
     UIPanGestureRecognizer *_panGestureRecognizer;
     _Bool _isTouchDown;
     _Bool _isIconSelected;
@@ -35,6 +36,8 @@
 
 @property(nonatomic) __weak id <SBCommandTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateForUserInterfaceStyle;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_handleUIGesture:(id)arg1;
 - (void)_handleShiftCommandTab:(id)arg1;
 - (void)_handleCommandTab:(id)arg1;

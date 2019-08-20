@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)terminateExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)startExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
+- (void)willReplaceExtension:(id)arg1 withExtension:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (void)willUninstallExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)willTerminateExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)willStartExtension:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;

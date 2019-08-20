@@ -6,11 +6,13 @@
 
 #import <AppStoreKit/JSExport-Protocol.h>
 
-@class NSArray, NSString;
+@class JSValue, NSArray, NSString;
 
 @protocol ASKClientExports <JSExport>
+@property(readonly, copy) NSString *activePairedWatchSystemVersion;
 @property(readonly) BOOL supportsHEIF;
 @property(readonly) BOOL isSidepackingEnabled;
+@property(readonly) BOOL isElectrocardiogramInstallationAllowed;
 @property(readonly) BOOL isActivityAvailable;
 @property(readonly) NSString *buildType;
 @property(readonly) NSString *deviceType;
@@ -20,6 +22,7 @@
 @property(readonly, copy) NSString *guid;
 @property(readonly) double screenCornerRadius;
 @property(readonly) struct CGSize screenSize;
+- (BOOL)isActivePairedWatchSystemVersionAtLeastMajorVersion:(JSValue *)arg1 minorVersion:(JSValue *)arg2 patchVersion:(JSValue *)arg3;
 - (BOOL)deviceHasCapabilities:(NSArray *)arg1;
 @end
 

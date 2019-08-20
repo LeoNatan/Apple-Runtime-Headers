@@ -14,6 +14,7 @@
     PKImage *_iconImage2x;
     PKImage *_iconImage;
     PKImage *_notificationIconImage;
+    PKImage *_rawIcon;
     NSData *_iconImageICNSData;
 }
 
@@ -22,6 +23,7 @@
 + (id)archiveName;
 + (long long)imageSetType;
 @property(retain, nonatomic) NSData *iconImageICNSData; // @synthesize iconImageICNSData=_iconImageICNSData;
+@property(retain, nonatomic) PKImage *rawIcon; // @synthesize rawIcon=_rawIcon;
 @property(retain, nonatomic) PKImage *notificationIconImage; // @synthesize notificationIconImage=_notificationIconImage;
 @property(retain, nonatomic) PKImage *iconImage; // @synthesize iconImage=_iconImage;
 - (void).cxx_destruct;

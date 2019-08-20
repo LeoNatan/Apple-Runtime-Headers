@@ -11,6 +11,8 @@
 }
 
 + (float)_meanDepthValueFromFrame:(id)arg1;
++ (id)arrayFromRaycastResults:(id)arg1;
++ (id)dictionaryFromRaycastQuery:(id)arg1;
 + (id)dictionaryFromCLLocation:(id)arg1;
 + (id)traceFrameData:(id)arg1 withFrameIndex:(unsigned long long)arg2;
 + (id)extractDetectedBodiesForFrame:(id)arg1;

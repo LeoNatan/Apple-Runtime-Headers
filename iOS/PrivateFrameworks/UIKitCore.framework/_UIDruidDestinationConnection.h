@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (oneway void)performDropWithItemCollection:(id)arg1 dataProviderEndpoint:(id)arg2 visibleDroppedItems:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (oneway void)addedItemCollection:(id)arg1;
 - (oneway void)requestDragPreviewsForIndexSet:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)requestVisibleItems:(CDUnknownBlockType)arg1;
 - (void)enableKeyboardIfNeeded;
 - (void)requestDropWithOperation:(unsigned long long)arg1;
 - (void)takePotentialDrop:(id)arg1;

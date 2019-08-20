@@ -6,13 +6,14 @@
 
 #import <AuthKitUI/NSObject-Protocol.h>
 
-@class AKAuthorizationPresentationContext, AKAuthorizationSubPaneConfirmButton, NSString;
+@class AKAuthorizationPresentationContext, AKAuthorizationSubPaneConfirmButton;
 
 @protocol AKAuthorizationSubPaneConfirmButtonDelegate <NSObject>
 - (AKAuthorizationPresentationContext *)presentationContext;
 - (void)performAuthorization;
 - (void)performPasswordAuthentication;
-- (void)subPaneConfirmButton:(AKAuthorizationSubPaneConfirmButton *)arg1 confirmationResult:(NSString *)arg2;
+- (void)subpaneConfirmButtonDidFailBiometry:(AKAuthorizationSubPaneConfirmButton *)arg1;
+- (void)subPaneConfirmButtonDidEnterProcessingState:(AKAuthorizationSubPaneConfirmButton *)arg1;
 
 @optional
 - (_Bool)validateReadyForAuthorization;

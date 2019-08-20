@@ -26,7 +26,6 @@
 - (void)_updateSpokenLanguageCode;
 - (void)_spokenLanguageDidChange:(id)arg1;
 - (void)_currentLocaleDidChange:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 

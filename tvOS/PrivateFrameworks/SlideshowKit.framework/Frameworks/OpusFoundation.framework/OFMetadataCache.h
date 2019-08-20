@@ -22,10 +22,6 @@
 @property(retain, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) NSManagedObjectModel *managedObjectModel; // @synthesize managedObjectModel=_managedObjectModel;
-- (void)setAttributes:(id)arg1 forIdentifier:(id)arg2;
-- (void)setValue:(id)arg1 forKey:(id)arg2 andIdentifier:(id)arg3;
-- (id)valueForKey:(id)arg1 andIdentifier:(id)arg2;
-- (id)attributesForIdentifier:(id)arg1;
 - (void)invalidateMemoryCaches;
 - (void)invalidateDiskCaches;
 - (void)_willTerminateNotification;

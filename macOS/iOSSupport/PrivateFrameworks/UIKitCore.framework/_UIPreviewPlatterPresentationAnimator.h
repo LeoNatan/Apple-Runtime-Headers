@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIClickPresentationTransition-Protocol.h>
 
-@class NSString, UITargetedPreview, UIViewPropertyAnimator, _UIPreviewPlatterPresentationController;
+@class NSArray, NSString, UITargetedPreview, UIViewPropertyAnimator, _UIContextMenuAnimator, _UIPreviewPlatterPresentationController;
 @protocol _UIPreviewPlatterPresentationAnimatorDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,16 +16,20 @@ __attribute__((visibility("hidden")))
 {
     struct CGRect _expandedPlatterFrame;
     struct CGRect _expandedActionsFrame;
-    UITargetedPreview *_dismissalTarget;
+    CDStruct_6f807b77 _layoutAnchor;
     BOOL _isDismissTransition;
     UITargetedPreview *_sourcePreview;
     id <_UIPreviewPlatterPresentationAnimatorDelegate> _delegate;
     _UIPreviewPlatterPresentationController *_presentationController;
+    _UIContextMenuAnimator *_alongsideAnimator;
     unsigned long long _dismissalStyle;
+    NSArray *_preferredBackgroundEffects;
 }
 
 @property(nonatomic) BOOL isDismissTransition; // @synthesize isDismissTransition=_isDismissTransition;
+@property(retain, nonatomic) NSArray *preferredBackgroundEffects; // @synthesize preferredBackgroundEffects=_preferredBackgroundEffects;
 @property(nonatomic) unsigned long long dismissalStyle; // @synthesize dismissalStyle=_dismissalStyle;
+@property(retain, nonatomic) _UIContextMenuAnimator *alongsideAnimator; // @synthesize alongsideAnimator=_alongsideAnimator;
 @property(nonatomic) __weak _UIPreviewPlatterPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(nonatomic) __weak id <_UIPreviewPlatterPresentationAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
@@ -42,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (id)_targetedPreviewForDismissalAnimation;
 - (void)_actuallyPerformTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
-- (void)_anchorTransitionViewToTargetedPreview:(id)arg1;
+- (void)_layoutAnchorTransitionViewToTargetedPreview:(id)arg1;
 - (void)prepareTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (id)initWithPresentationController:(id)arg1 asDismissal:(BOOL)arg2;
 

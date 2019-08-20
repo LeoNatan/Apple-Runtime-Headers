@@ -21,6 +21,7 @@
 @property(retain, nonatomic) SOAuthorizationCredential *canceledAuthorizationCredential; // @synthesize canceledAuthorizationCredential=_canceledAuthorizationCredential;
 @property(nonatomic, getter=isAuthorizationCanceled) _Bool authorizationCanceled; // @synthesize authorizationCanceled=_authorizationCanceled;
 - (void).cxx_destruct;
+- (_Bool)_isUserInterfaceAllowed;
 - (id)_hostExtensionContext;
 @property(retain, nonatomic) NSDictionary *authorizationOptions;
 @property(retain, nonatomic) NSString *callerBundleIdentifier;

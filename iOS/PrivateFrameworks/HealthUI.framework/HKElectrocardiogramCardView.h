@@ -25,6 +25,7 @@
     NSLayoutConstraint *_averageHeartRateLabelWidthConstraint;
     NSLayoutConstraint *_symptomsLabelFirstBaselineConstraint;
     NSLayoutConstraint *_graphTopConstraint;
+    NSLayoutConstraint *_heartImageViewHeightConstraint;
     NSArray *_regularConstraints;
     NSArray *_largeTextConstraints;
 }
@@ -42,6 +43,7 @@
 + (double)estimatedHeight;
 @property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
 @property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *heartImageViewHeightConstraint; // @synthesize heartImageViewHeightConstraint=_heartImageViewHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *graphTopConstraint; // @synthesize graphTopConstraint=_graphTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *symptomsLabelFirstBaselineConstraint; // @synthesize symptomsLabelFirstBaselineConstraint=_symptomsLabelFirstBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *averageHeartRateLabelWidthConstraint; // @synthesize averageHeartRateLabelWidthConstraint=_averageHeartRateLabelWidthConstraint;
@@ -58,6 +60,7 @@
 - (void).cxx_destruct;
 - (id)_graphBackgroundColor;
 - (id)_cardBackgroundColor;
+- (id)_chevronColor;
 - (id)_cardHeaderColor;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;
 - (_Bool)_isLayingOutForAccessibility;

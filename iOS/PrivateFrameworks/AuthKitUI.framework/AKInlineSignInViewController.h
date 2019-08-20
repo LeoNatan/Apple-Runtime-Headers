@@ -74,7 +74,6 @@
 @property(copy) NSString *secondaryButtonTitle;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)dealloc;
-- (void)_setBlurAndVibrancy;
 - (id)init;
 - (_Bool)usesDarkMode;
 - (void)setUsesDarkMode:(_Bool)arg1;

@@ -15,12 +15,15 @@
     BOOL _greenCarTicketUsed;
 }
 
++ (Class)equalityClass;
 + (id)passPropertiesForPass:(id)arg1;
 @property(readonly, nonatomic, getter=isGreenCarTicketUsed) BOOL greenCarTicketUsed; // @synthesize greenCarTicketUsed=_greenCarTicketUsed;
 @property(readonly, nonatomic, getter=isLowBalanceGateNotificationEnabled) BOOL lowBalanceGateNotificationEnabled; // @synthesize lowBalanceGateNotificationEnabled=_lowBalanceGateNotificationEnabled;
 @property(readonly, nonatomic, getter=isBalanceAllowedForCommute) BOOL balanceAllowedForCommute; // @synthesize balanceAllowedForCommute=_balanceAllowedForCommute;
 @property(readonly, nonatomic, getter=isInStation) BOOL inStation; // @dynamic inStation;
 @property(readonly, nonatomic, getter=isInShinkansenStation) BOOL inShinkansenStation; // @dynamic inShinkansenStation;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)_initWithProperties:(id)arg1;
 
 // Remaining properties

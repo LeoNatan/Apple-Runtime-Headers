@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct MTLPixelFormatInfo _pixelFormatInfo;
     unsigned long long _bytesPerRow;
     NSData *_imageData;
+    BOOL _expandRGBToRGBA;
 }
 
 - (BOOL)determineCGImageBlockFormatWithComponentType:(int)arg1 alphaInfo:(unsigned int)arg2 andPixelSizeBytes:(unsigned long long)arg3 andColorSpace:(struct CGColorSpace *)arg4 isOptimized:(BOOL)arg5 options:(id)arg6;

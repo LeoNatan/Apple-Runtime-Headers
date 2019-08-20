@@ -6,44 +6,45 @@
 
 #import <objc/NSObject.h>
 
-@class NSCustomToolTipDrawView, NSDate, NSMapTable, NSTimer, NSToolTip, NSWindow;
+@class NSCustomToolTipDrawView, NSDate, NSMapTable, NSTimer, NSToolTip, NSToolTipPanel, NSWindow;
 
 @interface NSToolTipManager : NSObject
 {
-    NSWindow *_toolTipWindow;
     NSMapTable *_toolTipsByView;
-    double toolTipDelay;
-    NSDate *timeToolTipRemovedFromScreen;
+    double _toolTipDelay;
+    NSDate *_timeToolTipRemovedFromScreen;
     struct __CFRunLoopTimer *_toolTipDisplayTimer;
-    NSToolTip *currentDisplayedToolTip;
-    NSToolTip *currentFadingToolTip;
-    double currentFadeValue;
-    NSTimer *fadeTimer;
-    NSWindow *lastToolTipWindow;
-    NSWindow *_expansionToolTipWindow;
-    NSToolTip *_currentExpansionToolTip;
-    NSCustomToolTipDrawView *_toolTipDrawView;
-    NSCustomToolTipDrawView *_expansionDrawView;
+    double _currentFadeValue;
+    NSTimer *_fadeTimer;
+    NSWindow *_lastToolTipWindow;
+    NSToolTip *_currentDisplayedNormalToolTip;
+    NSToolTipPanel *_normalToolTipPanel;
+    NSCustomToolTipDrawView *_normalToolTipDrawView;
+    NSToolTip *_currentDisplayedExpansionToolTip;
+    NSToolTipPanel *_expansionToolTipPanel;
+    NSCustomToolTipDrawView *_expansionToolTipDrawView;
 }
 
 + (BOOL)isCurrentMouseLocationAboveWindow:(id)arg1;
 + (id)sharedToolTipManager;
+- (void).cxx_destruct;
 - (void)orderOutOnlyExpansionToolTip;
-- (BOOL)isRegularToolTipVisible;
+- (void)orderOutOnlyNormalToolTip;
+- (BOOL)isNormalToolTipVisible;
 - (BOOL)isExpansionToolTipVisible;
 - (void)_toolTipTimerFiredWithToolTip:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
-- (BOOL)_isToolTipAlive:(id)arg1;
 - (void)mouseEnteredToolTip:(id)arg1 inWindow:(id)arg2 withEvent:(id)arg3;
 - (BOOL)_inQuickDisplayModeForWindow:(id)arg1;
 - (void)abortToolTip;
-- (void)orderOutToolTipImmediately:(BOOL)arg1;
+- (void)orderOutToolTipsImmediately:(BOOL)arg1;
+- (void)setCurrentDisplayedExpansionToolTip:(id)arg1;
+- (void)setCurrentDisplayedNormalToolTip:(id)arg1;
 - (void)fadeToolTip:(id)arg1;
 - (void)_stopFadeTimer;
-- (void)orderOutToolTip;
 - (void)displayToolTip:(id)arg1;
-- (void)drawToolTip:(id)arg1 attributedString:(id)arg2 inView:(id)arg3;
+- (void)addDrawingSubviewForToolTip:(id)arg1 attributedString:(id)arg2 inView:(id)arg3;
 - (void)_drawToolTipBackgroundInView:(id)arg1;
 - (void)installContentView:(id)arg1 forToolTip:(id)arg2 toolTipWindow:(id)arg3 isNew:(BOOL)arg4;
 - (struct CGPoint)onScreenToolTipWindowFrameOriginForToolTip:(id)arg1 windowFrame:(struct CGRect)arg2 where:(struct CGPoint)arg3 location:(struct CGPoint)arg4;
@@ -79,15 +80,12 @@
 - (void)addTrackingRectForToolTip:(id)arg1 reuseExistingTrackingNum:(BOOL)arg2;
 - (long long)_addTrackingRect:(struct CGRect)arg1 andStartToolTipIfNecessary:(BOOL)arg2 view:(id)arg3 owner:(id)arg4 toolTip:(id)arg5 reuseExistingTrackingNum:(BOOL)arg6;
 - (BOOL)_checkDisplayDelegate:(id)arg1;
-- (void)_getIsExpansionToolTip:(id)arg1;
-- (void)_getDisplayDelegateFadesOutWhenInactive:(id)arg1;
 - (BOOL)_shouldInstallToolTip:(void *)arg1;
 - (void)windowDidBecomeKeyNotification:(id)arg1;
 - (void)setInitialToolTipDelay:(double)arg1;
 - (void)_menuDidBeginTracking:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)_orderOutAllToolTipsImmediately:(BOOL)arg1;
 - (void)_getDisplayDelay:(double *)arg1 inQuickMode:(char *)arg2 forView:(id)arg3;
 - (void)_displayTemporaryToolTipForView:(id)arg1 withDisplayDelegate:(id)arg2 displayInfo:(id)arg3;
 - (void)_displayTemporaryToolTipForView:(id)arg1 withString:(id)arg2;

@@ -40,7 +40,7 @@
 - (id)createInteractiveChartForType:(id)arg1 secondaryTypeIdentifier:(id)arg2 displayDateInterval:(id)arg3;
 - (id)createInteractiveChartForType:(id)arg1 secondaryTypeIdentifier:(id)arg2 displayDate:(id)arg3;
 - (id)createChartForTypeIdentifier:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 minimumSize:(struct CGSize)arg4 disableXAxis:(_Bool)arg5;
-- (id)createDeletedSourceMessageViewController;
+- (id)createDeletedSourceMessageViewControllerForSource:(id)arg1;
 - (id)createDeviceSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
 - (id)createAppSourcesViewControllerUsingInsetStyling:(_Bool)arg1;
 - (id)createSourcesViewControllerUsingInsetStyling:(_Bool)arg1;

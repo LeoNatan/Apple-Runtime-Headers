@@ -21,7 +21,6 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)wantsDefaultClipping;
 - (struct CGImage *)_createTextImage;
-- (BOOL)wantsUpdateLayer;
 
 @end
 

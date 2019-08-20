@@ -26,6 +26,7 @@
 @property(readonly) float userRating;
 @property(readonly, copy) NSURL *productPageURL;
 @property(readonly, copy) NSArray *offers;
+@property(readonly, copy) NSString *offerName;
 @property(readonly) long long numberOfUserRatingsForCurrentVersion;
 @property(readonly) long long numberOfUserRatings;
 @property(readonly, copy) NSNumber *iTunesStoreIdentifier;

@@ -16,13 +16,14 @@
 #import <WebKit/WKActionSheetAssistantDelegate-Protocol.h>
 #import <WebKit/WKFileUploadPanelDelegate-Protocol.h>
 #import <WebKit/WKKeyboardScrollViewAnimatorDelegate-Protocol.h>
+#import <WebKit/WKTouchActionGestureRecognizerDelegate-Protocol.h>
 #import <WebKit/_WKWebViewPrintProvider-Protocol.h>
 
 @class NSArray, NSDictionary, NSIndexSet, NSString, RTIInputSystemSourceSession, UIColor, UIImage, UIInputContextHistory, UITextInputAssistantItem, UITextInputPasswordRules, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIWebFormAccessory, WKBrowsingContextController, WKFormInputControl, WKWebView;
 @protocol UITextInputDelegate, UITextInputSuggestionDelegate, UITextInputTokenizer, WKFormControl;
 
 __attribute__((visibility("hidden")))
-@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate>
+@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate, WKTouchActionGestureRecognizerDelegate>
 {
     RefPtr_a805eeb8 _page;
     WKWebView *_webView;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UITapGestureRecognizer> _twoFingerSingleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _stylusSingleTapGestureRecognizer;
     struct RetainPtr<WKInspectorNodeSearchGestureRecognizer> _inspectorNodeSearchGestureRecognizer;
+    struct RetainPtr<WKTouchActionGestureRecognizer> _touchActionGestureRecognizer;
     struct RetainPtr<UIWKTextInteractionAssistant> _textSelectionAssistant;
     struct OptionSet<WebKit::SuppressSelectionAssistantReason> _suppressSelectionAssistantReasons;
     struct RetainPtr<UITextInputTraits> _traits;
@@ -187,6 +189,7 @@ __attribute__((visibility("hidden")))
 - (void)quickboard:(id)arg1 textEntered:(id)arg2;
 - (void)dismissQuickboardViewControllerAndRevealFocusedFormOverlayIfNecessary:(id)arg1;
 - (id)containerViewForTargetedPreviews;
+@property(readonly, nonatomic) _Bool _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) _Bool _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) _Bool _shouldUseContextMenus;
 - (void)actionSheetAssistant:(id)arg1 getAlternateURLForImage:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -381,6 +384,7 @@ __attribute__((visibility("hidden")))
 - (void)_didStartProvisionalLoadForMainFrame;
 - (void)_handleAutocorrectionContext:(const struct WebAutocorrectionContext *)arg1;
 - (void)requestAutocorrectionContextWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_cancelPendingAutocorrectionContextHandler;
 - (void)_invokePendingAutocorrectionContextHandler:(id)arg1;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDictationContext:(CDUnknownBlockType)arg1;
@@ -606,6 +610,10 @@ __attribute__((visibility("hidden")))
 - (void)_webTouchEvent:(const struct NativeWebTouchEvent *)arg1 preventsNativeGestures:(_Bool)arg2;
 - (void)_inspectorNodeSearchRecognized:(id)arg1;
 - (void)_resetPanningPreventionFlags;
+- (id)touchActionActiveTouches;
+- (_Bool)gestureRecognizerMayDoubleTapToZoomWebView:(id)arg1;
+- (_Bool)gestureRecognizerMayPinchToZoomWebView:(id)arg1;
+- (_Bool)gestureRecognizerMayPanWebView:(id)arg1;
 - (void)_handleTouchActionsForTouchEvent:(const struct NativeWebTouchEvent *)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
 - (Optional_6686b3f7)activeTouchIdentifierForGestureRecognizer:(id)arg1;

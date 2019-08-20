@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIHorizontalIndexTitleBarDelegate-Protocol.h>
 #import <UIKitCore/_UIKeyboardAutoRespondingScrollView-Protocol.h>
 
-@class NSArray, NSHashTable, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UICollectionReusableView, UICollectionViewCell, UICollectionViewData, UICollectionViewLayout, UICollectionViewLayoutAttributes, UICollectionViewUpdate, UIFocusContainerGuide, UITouch, UIView, _UICollectionViewDragAndDropController, _UICollectionViewMultiSelectController, _UICollectionViewOrthogonalScrollerSectionController, _UICollectionViewPrefetchingContext, _UIDynamicAnimationGroup, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar, _UIVelocityIntegrator;
+@class NSArray, NSHashTable, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimer, UICollectionReusableView, UICollectionViewCell, UICollectionViewData, UICollectionViewLayout, UICollectionViewLayoutAttributes, UICollectionViewUpdate, UIFocusContainerGuide, UITouch, UIView, _UICollectionViewDragAndDropController, _UICollectionViewMultiSelectController, _UICollectionViewOrthogonalScrollerSectionController, _UICollectionViewPrefetchingContext, _UIDynamicAnimationGroup, _UIFocusFastScrollingIndexBarEntry, _UIHorizontalIndexTitleBar, _UIIndexPathIdentityTracker, _UIVelocityIntegrator;
 @protocol UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDataSource_Private, UICollectionViewDelegate, UICollectionViewDragDelegate, UICollectionViewDropDelegate;
 
 @interface UICollectionView : UIScrollView <_UIHorizontalIndexTitleBarDelegate, _UIKeyboardAutoRespondingScrollView, _UIDataSourceBackedView, UIDataSourceTranslating>
@@ -47,6 +47,7 @@
     struct CGRect _preRotationBounds;
     struct CGPoint _rotationBoundsOffset;
     int _rotationAnimationCount;
+    _UIIndexPathIdentityTracker *_identityTracker;
     int _updateCount;
     NSMutableArray *_insertItems;
     NSMutableArray *_deleteItems;
@@ -125,6 +126,7 @@
         unsigned int delegateContextMenuConfigurationForItemAtIndexPath:1;
         unsigned int delegateContextMenuPreviewForHighlighting:1;
         unsigned int delegateContextMenuPreviewForDismissing:1;
+        unsigned int delegateContextMenuwillPerformPreviewActionForMenuWithConfiguration:1;
         unsigned int delegateContextMenuWillCommitMenuWithAnimator:1;
         unsigned int dataSourceNumberOfSections:1;
         unsigned int dataSourceViewForSupplementaryElement:1;
@@ -184,9 +186,11 @@
         unsigned int generatingDescriptionWithDataSource:1;
         unsigned int skipAttributesApplication:1;
         unsigned int isApplyingDiffableUpdate:1;
+        unsigned int isAnimatingInteractiveMovementCompletion:1;
     } _collectionViewFlags;
     struct CGPoint _lastLayoutOffset;
     NSIndexPath *_cancellingToIndexPath;
+    NSSet *_currentlyAnimatingReorderedIndexPaths;
     int _prefetchMode;
     _UICollectionViewPrefetchingContext *_currentPrefetchingContext;
     NSMutableDictionary *_prefetchCacheItems;
@@ -268,6 +272,7 @@
 - (id)_presentationIndexPathForDataSourceIndexPath:(id)arg1;
 - (int)_dataSourceSectionIndexForPresentationSectionIndex:(int)arg1;
 - (int)_presentationSectionIndexForDataSourceSectionIndex:(int)arg1;
+- (id)_identityTracker:(_Bool)arg1;
 - (void)performUsingPresentationValues:(CDUnknownBlockType)arg1;
 - (id)dataSourceIndexPathForPresentationIndexPath:(id)arg1;
 - (id)presentationIndexPathForDataSourceIndexPath:(id)arg1;
@@ -415,6 +420,7 @@
 - (void)_reuseSupplementaryView:(id)arg1;
 - (_Bool)_reuseCell:(id)arg1 notifyDidEndDisplaying:(_Bool)arg2;
 - (_Bool)_reuseCell:(id)arg1;
+- (void)_reuseReusableViewIfNeeded:(id)arg1;
 - (_Bool)_isViewInReuseQueue:(id)arg1;
 - (id)_createTemplateLayoutCellForCellsWithIdentifier:(id)arg1;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
@@ -527,6 +533,7 @@
 - (unsigned int)_prefetchItemsForPrefetchingContext:(id)arg1 maxItemsToPrefetch:(unsigned int)arg2;
 - (struct CGPoint)_delegateTargetOffsetForProposedContentOffset:(struct CGPoint)arg1;
 @property(readonly, nonatomic, getter=_reorderingTargetPosition) struct CGPoint reorderingTargetPosition;
+- (id)_reorderingDestinationIndexPaths;
 - (id)_reorderingDestinationIndexPath;
 @property(readonly, nonatomic, getter=_reorderedItems) NSArray *reorderedItems;
 - (id)_reorderedItemForView:(id)arg1;

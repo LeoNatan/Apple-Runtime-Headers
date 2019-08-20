@@ -15,6 +15,8 @@
     NSDate *_exitDeleteTime;
 }
 
++ (BOOL)verifyAndFixLocalAvailabilityForMissingResourcesUsingFileIDInManagedObjectContext:(id)arg1 countPresent:(long long *)arg2 countMissing:(long long *)arg3 countUnableToVerify:(long long *)arg4 error:(id *)arg5;
++ (struct fsid)fsidForURL:(id)arg1;
 + (id)_purgeableResourceDirectoriesForPathManager:(id)arg1;
 + (id)purgeableStateDescriptionForFile:(id)arg1;
 + (BOOL)isPurgeableFile:(id)arg1 outIsPhotoType:(char *)arg2 outUrgencyLevel:(long long *)arg3;
@@ -24,7 +26,6 @@
 + (void)registerNullHandler;
 @property(copy, nonatomic) NSDate *exitDeleteTime; // @synthesize exitDeleteTime=_exitDeleteTime;
 - (void).cxx_destruct;
-- (struct fsid)_fsidForURL:(id)arg1;
 - (void)_markAsNotLocallyAvailableForResourcesWithFileIDsToPath:(id)arg1;
 - (void)_rescanResourcesFromFileSystem;
 - (BOOL)_isFilePurgedForFileID:(id)arg1 purgedPath:(id)arg2;

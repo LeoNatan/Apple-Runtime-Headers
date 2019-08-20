@@ -87,6 +87,8 @@
 - (void)_datePickerChanged:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+@property(readonly, nonatomic) NSString *copyText;
+@property(readonly, nonatomic) _Bool isCopyable;
 - (id)selectOptions;
 - (void)populatePostbackDictionary:(id)arg1;
 - (_Bool)supportsAutomaticSelection;
@@ -94,6 +96,7 @@
 - (void)setValueFromString:(id)arg1 notify:(_Bool)arg2;
 - (_Bool)setSelectPageRowValue:(id)arg1;
 - (void)setSelectRowValue:(id)arg1;
+- (void)setDetailAndPlaceholderText;
 - (id)tableCell;
 - (_Bool)loadAccessoryImage;
 - (void)accessoryImageLoaded;
@@ -106,6 +109,7 @@
 - (void)_updateContentForDisabledState;
 - (void)_updateTextColors;
 - (id)radioGroupSelectedColor;
+- (id)_selectPageRowColor;
 - (id)textColorForAttributeName:(id)arg1;
 - (id)dateFormatterCalendarIdentifier;
 - (void)setAttributes:(id)arg1;

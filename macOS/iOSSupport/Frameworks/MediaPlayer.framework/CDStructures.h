@@ -128,6 +128,10 @@ struct objc_method_description {
     char *_field2;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct vector<int, std::__1::allocator<int>> {
     int *__begin_;
     int *__end_;

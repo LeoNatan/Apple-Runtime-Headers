@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <HealthKit/HKUUIDProvider-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
 @class HKDevice, HKSource, HKSourceRevision, NSDate, NSDictionary, NSString, NSUUID;
 
-@interface HKObject : NSObject <NSCopying, NSSecureCoding>
+@interface HKObject : NSObject <HKUUIDProvider, NSCopying, NSSecureCoding>
 {
     NSUUID *_UUID;
     HKSourceRevision *_sourceRevision;
@@ -45,10 +46,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (long long)_externalSyncObjectCode;
 - (id)_valueDescription;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)_shouldNotifyOnInsert;
 - (id)_validateConfigurationAllowingPrivateMetadata:(_Bool)arg1 applicationSDKVersion:(unsigned int)arg2;
 - (id)_validateConfiguration;
@@ -60,7 +61,12 @@
 - (id)_copyByArchiving;
 - (id)_init;
 - (id)init;
+- (id)hk_UUID;
 - (long long)hk_integerValue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

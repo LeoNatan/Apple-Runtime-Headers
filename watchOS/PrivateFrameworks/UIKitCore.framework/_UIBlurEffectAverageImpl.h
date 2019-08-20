@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIBlurEffectAverageImpl : _UIBlurEffectImpl
 {
+    float _scale;
 }
 
 + (id)sharedInstance;
@@ -17,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithScale:(float)arg1;
 
 @end
 

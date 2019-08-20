@@ -16,5 +16,6 @@
 #import <BookDataStore/BDSNBPinningManagerService-Protocol.h>
 
 @protocol BDSServiceProtocol <BCCloudAssetDetailManager, BCCloudReadingNowDetailManager, BCCloudAssetReviewManager, BCCloudStoreAssetManager, BCCloudCollectionDetailManager, BCCloudCollectionMemberManager, BCCloudKitSyncEnablement, BDSCloudKitSupportSignOut, BCCloudKitTransactionManagerService, BDSNBPinningManagerService>
+- (void)audiobookStoreEnabledWithCompletion:(void (^)(NSNumber *, NSError *))arg1;
 @end
 

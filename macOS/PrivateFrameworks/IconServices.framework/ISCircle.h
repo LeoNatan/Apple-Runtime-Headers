@@ -6,6 +6,7 @@
 
 #import <IconServices/ISShapeCompositorResource.h>
 
+__attribute__((visibility("hidden")))
 @interface ISCircle : ISShapeCompositorResource
 {
 }

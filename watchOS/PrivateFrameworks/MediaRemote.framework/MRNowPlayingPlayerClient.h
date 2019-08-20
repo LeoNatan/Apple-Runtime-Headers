@@ -41,6 +41,8 @@
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
+- (void)_invokePlaybackSessionMigrateRequestOperations:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_handePlaybackSessionMigrateRequest:(struct _MRPlaybackSessionProtobuf *)arg1 request:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updatePlaybackQueueWithCachedUpdates:(id)arg1 forPendingRequest:(id)arg2;
 - (void)clearCachedContentItemArtworkForItems:(id)arg1;
 - (void)cacheContentItemChangesForPendingRequests:(id)arg1;

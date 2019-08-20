@@ -180,6 +180,7 @@
 - (void)markPlayedForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 message:(IMMessageItem *)arg4;
 - (void)markPlayedForMessageGUID:(NSString *)arg1;
 - (void)storeItem:(IMItem *)arg1 inChatGUID:(NSString *)arg2;
+- (void)playSendSoundForMessageGUID:(NSString *)arg1 callerOrigin:(int)arg2;
 - (void)markReadForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 messages:(NSArray *)arg4 clientUnreadCount:(unsigned int)arg5 setUnreadCountToZero:(_Bool)arg6;
 - (void)markReadForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 messages:(NSArray *)arg4 clientUnreadCount:(unsigned int)arg5;
 - (void)markReadForMessageGUID:(NSString *)arg1 callerOrigin:(int)arg2;

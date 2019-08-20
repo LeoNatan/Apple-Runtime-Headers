@@ -20,6 +20,7 @@
 @property(readonly) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void).cxx_destruct;
 - (void)copyApplicationState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)forceApplicationKeysFetch:(CDUnknownBlockType)arg1;
 - (void)forceApplicationKeysDownload:(CDUnknownBlockType)arg1;
 - (void)forceConfigUpdate:(CDUnknownBlockType)arg1;
 - (void)clearState:(CDUnknownBlockType)arg1;

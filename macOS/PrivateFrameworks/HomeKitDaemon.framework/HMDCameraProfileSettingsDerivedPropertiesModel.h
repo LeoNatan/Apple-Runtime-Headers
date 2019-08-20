@@ -13,9 +13,8 @@
 }
 
 + (id)hmbProperties;
-@property(readonly) unsigned long long currentAccessModeChangeReason;
-@property(readonly) unsigned long long currentAccessMode;
-- (void)setCurrentAccessMode:(unsigned long long)arg1 withReason:(unsigned long long)arg2;
+@property unsigned long long currentAccessModeChangeReason;
+@property unsigned long long currentAccessMode;
 
 // Remaining properties
 @property(retain) NSDate *currentAccessModeChangeDate; // @dynamic currentAccessModeChangeDate;

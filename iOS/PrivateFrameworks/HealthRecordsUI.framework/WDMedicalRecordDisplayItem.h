@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     _Bool _extraTopPadding;
     _Bool _separatorHidden;
     _Bool _showDisclosureIndicator;
+    _Bool _useRegularFontForSubtitle;
     long long _displayItemType;
     long long _separatorStyle;
     long long _placement;
@@ -76,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) _Bool useRegularFontForSubtitle; // @synthesize useRegularFontForSubtitle=_useRegularFontForSubtitle;
 @property(nonatomic) _Bool showDisclosureIndicator; // @synthesize showDisclosureIndicator=_showDisclosureIndicator;
 @property(nonatomic) long long recordCategoryType; // @synthesize recordCategoryType=_recordCategoryType;
 @property(nonatomic) long long placement; // @synthesize placement=_placement;

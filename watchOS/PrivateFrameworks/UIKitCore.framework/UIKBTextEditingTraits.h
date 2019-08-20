@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class UIResponder;
+
 @interface UIKBTextEditingTraits : NSObject
 {
     _Bool _canToggleBoldface;
@@ -20,12 +22,14 @@
     _Bool _isBold;
     _Bool _isItalicized;
     _Bool _isUnderlined;
+    UIResponder *_responder;
 }
 
 + (id)traitsWithResponder:(id)arg1 keyMaskFlags:(unsigned int)arg2;
 @property(readonly, nonatomic) _Bool isUnderlined; // @synthesize isUnderlined=_isUnderlined;
 @property(readonly, nonatomic) _Bool isItalicized; // @synthesize isItalicized=_isItalicized;
 @property(readonly, nonatomic) _Bool isBold; // @synthesize isBold=_isBold;
+@property(readonly, nonatomic) __weak UIResponder *responder; // @synthesize responder=_responder;
 @property(readonly, nonatomic) _Bool canMoveCursorRight; // @synthesize canMoveCursorRight=_canMoveCursorRight;
 @property(readonly, nonatomic) _Bool canMoveCursorLeft; // @synthesize canMoveCursorLeft=_canMoveCursorLeft;
 @property(readonly, nonatomic) _Bool canPaste; // @synthesize canPaste=_canPaste;
@@ -35,6 +39,7 @@
 @property(readonly, nonatomic) _Bool canToggleUnderline; // @synthesize canToggleUnderline=_canToggleUnderline;
 @property(readonly, nonatomic) _Bool canToggleItalics; // @synthesize canToggleItalics=_canToggleItalics;
 @property(readonly, nonatomic) _Bool canToggleBoldface; // @synthesize canToggleBoldface=_canToggleBoldface;
+- (void).cxx_destruct;
 - (id)initWithResponder:(id)arg1 keyMaskFlags:(unsigned int)arg2;
 
 @end

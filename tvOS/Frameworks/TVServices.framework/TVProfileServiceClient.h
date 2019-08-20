@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     int _updateToken;
     _Bool _isApp;
+    _Bool _getDone;
     NSXPCConnection *_connection;
     NSPointerArray *_publicInstances;
     NSString *_currentUserIdentifier;
@@ -23,6 +24,7 @@
 }
 
 + (id)sharedInstance;
++ (void)load;
 + (id)_toThirdPartyInterface;
 + (id)_fromThirdPartyInterface;
 - (void).cxx_destruct;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider, PFCloudKitStoreMonitorProvider;
+@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider, PFCloudKitMetricsClient, PFCloudKitStoreMonitorProvider;
 
 @interface NSCloudKitMirroringDelegateOptions : NSObject
 {
@@ -23,6 +23,7 @@
     BOOL _skipCloudKitSetup;
     PFCloudKitContainerProvider *_containerProvider;
     PFCloudKitStoreMonitorProvider *_storeMonitorProvider;
+    PFCloudKitMetricsClient *_metricsClient;
     NSString *_apsConnectionMachServiceName;
     BOOL _useDaemon;
     BOOL _useTestDaemon;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) PFCloudKitStoreMonitorProvider *storeMonitorProvider; // @synthesize storeMonitorProvider=_storeMonitorProvider;
 @property(retain, nonatomic) PFCloudKitContainerProvider *containerProvider; // @synthesize containerProvider=_containerProvider;
 @property(nonatomic) BOOL skipCloudKitSetup; // @synthesize skipCloudKitSetup=_skipCloudKitSetup;
+@property(retain, nonatomic) PFCloudKitMetricsClient *metricsClient; // @synthesize metricsClient=_metricsClient;
 @property(retain, nonatomic) CKNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;
 @property(retain, nonatomic) CKScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(nonatomic) BOOL automaticallyScheduleImportAndExportOperations; // @synthesize automaticallyScheduleImportAndExportOperations=_automaticallyScheduleImportAndExportOperations;

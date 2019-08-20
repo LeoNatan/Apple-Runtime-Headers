@@ -55,6 +55,7 @@
 - (BOOL)usePrivateIndex;
 - (id)protectionClass;
 - (id)bundleIdentifier;
+- (void)indexSearchableItemsToCurrentHistoryToken;
 - (id)initForStoreWithDescription:(id)arg1 coordinator:(id)arg2;
 
 @end

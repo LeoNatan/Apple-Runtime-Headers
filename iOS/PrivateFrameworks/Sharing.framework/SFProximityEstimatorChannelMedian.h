@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (int)_estimateRSSIForSFBLEDevice:(id)arg1;
+- (id)description;
 
 @end
 

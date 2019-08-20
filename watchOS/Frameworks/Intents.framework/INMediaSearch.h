@@ -21,7 +21,6 @@
     NSString *_albumName;
     NSArray *_genreNames;
     NSArray *_moodNames;
-    NSArray *_activityNames;
     INDateComponentsRange *_releaseDate;
     int _reference;
     NSString *_mediaIdentifier;
@@ -32,7 +31,6 @@
 @property(readonly, copy, nonatomic) NSString *mediaIdentifier; // @synthesize mediaIdentifier=_mediaIdentifier;
 @property(readonly, nonatomic) int reference; // @synthesize reference=_reference;
 @property(readonly, copy, nonatomic) INDateComponentsRange *releaseDate; // @synthesize releaseDate=_releaseDate;
-@property(readonly, copy, nonatomic) NSArray *activityNames; // @synthesize activityNames=_activityNames;
 @property(readonly, copy, nonatomic) NSArray *moodNames; // @synthesize moodNames=_moodNames;
 @property(readonly, copy, nonatomic) NSArray *genreNames; // @synthesize genreNames=_genreNames;
 @property(readonly, copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
@@ -50,6 +48,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
+- (id)initWithMediaType:(int)arg1 sortOrder:(int)arg2 mediaName:(id)arg3 artistName:(id)arg4 albumName:(id)arg5 genreNames:(id)arg6 moodNames:(id)arg7 releaseDate:(id)arg8 reference:(int)arg9 mediaIdentifier:(id)arg10;
+@property(readonly, copy, nonatomic) NSArray *activityNames;
 - (id)initWithMediaType:(int)arg1 sortOrder:(int)arg2 mediaName:(id)arg3 artistName:(id)arg4 albumName:(id)arg5 genreNames:(id)arg6 moodNames:(id)arg7 activityNames:(id)arg8 releaseDate:(id)arg9 reference:(int)arg10 mediaIdentifier:(id)arg11;
 
 // Remaining properties

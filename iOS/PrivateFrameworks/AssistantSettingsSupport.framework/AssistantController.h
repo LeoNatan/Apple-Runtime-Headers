@@ -10,7 +10,7 @@
 #import <AssistantSettingsSupport/CNContactPickerDelegate-Protocol.h>
 #import <AssistantSettingsSupport/DevicePINControllerDelegate-Protocol.h>
 
-@class CNContactPickerViewController, CNContactStore, NSArray, NSMutableSet, NSSet, NSString, PSSpecifier, SUICAssistantVoiceSettingsConnection;
+@class AFSettingsConnection, CNContactPickerViewController, CNContactStore, NSArray, NSMutableSet, NSSet, NSString, PSSpecifier, SUICAssistantVoiceSettingsConnection;
 
 @interface AssistantController : PSListController <CNContactPickerDelegate, AssistantVoiceSettingsConnectionProvider, DevicePINControllerDelegate>
 {
@@ -29,6 +29,7 @@
     _Bool _needsReloadSpecifiersOnViewWillAppear;
     NSSet *_installedBundleIDs;
     NSArray *_allAppsSpecifiers;
+    AFSettingsConnection *_AFSettingsConnection;
 }
 
 + (void)presentAssistantEnableAlertForState:(_Bool)arg1 presentingViewController:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
@@ -83,6 +84,8 @@
 - (void)setAssistantSuggestionsEnabled:(id)arg1;
 - (id)isAssistantSuggestionsEnabled;
 - (void)showAssistantConfirmationViewForSpecifier:(id)arg1 presentingViewController:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
+- (void)confirmDisableWithSpecifier:(id)arg1 pairedWatch:(_Bool)arg2 presentingViewController:(id)arg3 actionHandler:(CDUnknownBlockType)arg4;
+- (void)confirmDisableForMultiUserVoiceIdentificationWithSpecifier:(id)arg1 pairedWatch:(_Bool)arg2 presentingViewController:(id)arg3 actionHandler:(CDUnknownBlockType)arg4;
 - (void)_setAssistantEnabled:(id)arg1 forSpecifier:(id)arg2 presentingViewController:(id)arg3 actionHandler:(CDUnknownBlockType)arg4;
 - (void)setAssistantEnabled:(_Bool)arg1;
 - (_Bool)watchSupportsSiriLanguageCode:(id)arg1;

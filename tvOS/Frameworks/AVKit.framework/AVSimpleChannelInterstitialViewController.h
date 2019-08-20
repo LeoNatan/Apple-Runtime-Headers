@@ -6,11 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-@class AVLoadingIndicatorView;
+@class AVLoadingIndicatorView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface AVSimpleChannelInterstitialViewController : UIViewController
 {
+    UILabel *_label;
     AVLoadingIndicatorView *_loadingIndicator;
 }
 
@@ -19,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
+@property(readonly, nonatomic) UILabel *label;
 - (void)dealloc;
 
 @end

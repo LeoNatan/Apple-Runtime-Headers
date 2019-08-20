@@ -7,21 +7,29 @@
 #import <objc/NSObject.h>
 
 @class NSMutableArray;
+@protocol AVTPhysicsControllerDelegate;
 
 @interface AVTPhysicsController : NSObject
 {
     NSMutableArray *_physicsRigs;
     _Bool _setupDone;
     _Bool _firstFrameRendered;
+    id <AVTPhysicsControllerDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <AVTPhysicsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_setupPhysicsChain:(id)arg1 scene:(id)arg2;
-- (void)setupWithAvatarNode:(id)arg1 scene:(id)arg2 downforceNodeCheck:(CDUnknownBlockType)arg3;
--     // Error parsing type: 32@0:8@16@24, name: getPhysicsOffsetOfNode:relativeToNode:
-- (void)redoSetup;
-- (void)updateAtTime:(double)arg1 avatarNode:(id)arg2 scene:(id)arg3 forceMultiplier:(double)arg4 downforceNodeCheck:(CDUnknownBlockType)arg5;
-- (void)applyForces:(double)arg1;
+- (void)resetToPhysicsState:(id)arg1;
+- (id)physicsState;
+- (void)setupPhysicsIfNeeded;
+- (void)downforcesDidChange;
+- (void)_setupPhysicsChain:(id)arg1;
+- (void)_setupCollisionNode:(id)arg1;
+- (void)setupPhysicsDebugNodes;
+- (void)setupPhysics;
+-     // Error parsing type: 32@0:8@16@24, name: offsetFromRestingPositionForNode:inCoordinateSpaceOfNode:
+- (void)updateAtTime:(double)arg1 forceMultiplier:(double)arg2;
+- (void)applyForcesWithMultiplier:(double)arg1;
 
 @end
 

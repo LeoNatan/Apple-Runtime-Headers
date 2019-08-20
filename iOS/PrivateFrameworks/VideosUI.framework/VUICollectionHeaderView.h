@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _selectionHandler;
     IKViewElement *_viewElement;
     IKViewElement *_buttonViewElement;
+    IKViewElement *_imageViewElement;
     VUICollectionHeaderViewLayout *_layout;
     VUILabel *_titleTextView;
     VUILabel *_subtitleTextView;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *subtitleTextView; // @synthesize subtitleTextView=_subtitleTextView;
 @property(retain, nonatomic) VUILabel *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) VUICollectionHeaderViewLayout *layout; // @synthesize layout=_layout;
+@property(retain, nonatomic) IKViewElement *imageViewElement; // @synthesize imageViewElement=_imageViewElement;
 @property(retain, nonatomic) IKViewElement *buttonViewElement; // @synthesize buttonViewElement=_buttonViewElement;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
@@ -41,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)_layoutWithSize:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end
 

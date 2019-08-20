@@ -24,7 +24,6 @@
 - (void)fetchAlternateContentsURLForDocumentURL:(NSURL *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
 - (void)setAlternateContentsURL:(FPSandboxingURLWrapper *)arg1 onDocumentURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)updateBlacklistedProcessNamesForProvider:(NSString *)arg1 processNames:(NSArray *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)updatePresenceAuthorizationWithRequest:(BOOL)arg1 domainIdentifier:(NSString *)arg2 completionHandler:(void (^)(unsigned long long, NSError *))arg3;
 - (void)reimportItemsBelowItemWithID:(FPItemID *)arg1 removeCachedItems:(BOOL)arg2 markItemDataless:(BOOL)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)setEnabled:(BOOL)arg1 forDomainIdentifier:(NSString *)arg2 providerIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)getDomainsForProviderIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
@@ -36,9 +35,10 @@
 - (void)reindexAllSearchableItemsForBundleIDs:(NSArray *)arg1 acknowledgementHandler:(void (^)(void))arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(void (^)(void))arg1;
 - (void)providerDomainForURL:(NSURL *)arg1 completionHandler:(void (^)(FPProviderDomain *, NSError *))arg2;
-- (void)writeCheckReportTo:(NSFileHandle *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)dumpStateTo:(NSFileHandle *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)writeCheckReportTo:(NSFileHandle *)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)dumpStateTo:(NSFileHandle *)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)getURLForContainerWithItemID:(NSString *)arg1 inDataScopeDomainWithIdentifier:(NSString *)arg2 documentsScopeDomainIdentifier:(NSString *)arg3 documentsFolderItemIdentifier:(NSString *)arg4 completionHandler:(void (^)(FPSandboxingURLWrapper *, FPSandboxingURLWrapper *, NSError *))arg5;
+- (void)makeTopologicallySortedItemsOnDisk:(NSArray *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)noteURLBecameFrontmost:(NSURL *)arg1 inWindow:(NSNumber *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)fetchDaemonOperationWithID:(NSString *)arg1 completionHandler:(void (^)(id <FPDaemonActionOperation>, FPActionOperationInfo *, NSError *))arg2;
 - (void)fetchDaemonOperationIDsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;

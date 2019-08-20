@@ -8,7 +8,7 @@
 
 #import <VideosUI/VUILabelTopMarginCalculationProtocol-Protocol.h>
 
-@class IKViewElement, UIView, VUIButtonLayout, VUILabel, _TVImageView;
+@class IKViewElement, UILargeContentViewerInteraction, UIView, VUIButtonLayout, VUILabel, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUIButton : UIControl <VUILabelTopMarginCalculationProtocol>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     IKViewElement *_viewElement;
     CDUnknownBlockType _selectActionHandler;
     UIView *_backdropView;
+    UILargeContentViewerInteraction *_largeContentViewerInteraction;
     _TVImageView *_imagesViewDefaultState;
     _TVImageView *_imagesViewHighlightedState;
     _TVImageView *_backgroundImagesViewDefaultState;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *backgroundImagesViewDefaultState; // @synthesize backgroundImagesViewDefaultState=_backgroundImagesViewDefaultState;
 @property(retain, nonatomic) _TVImageView *imagesViewHighlightedState; // @synthesize imagesViewHighlightedState=_imagesViewHighlightedState;
 @property(retain, nonatomic) _TVImageView *imagesViewDefaultState; // @synthesize imagesViewDefaultState=_imagesViewDefaultState;
+@property(retain, nonatomic) UILargeContentViewerInteraction *largeContentViewerInteraction; // @synthesize largeContentViewerInteraction=_largeContentViewerInteraction;
 @property(retain, nonatomic) UIView *backdropView; // @synthesize backdropView=_backdropView;
 @property(copy, nonatomic) CDUnknownBlockType selectActionHandler; // @synthesize selectActionHandler=_selectActionHandler;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
@@ -40,6 +42,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) VUIButtonLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+- (_Bool)scalesLargeContentImage;
+- (id)largeContentImage;
+- (id)largeContentTitle;
 - (void)_updateBackgroundColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGPoint)_centerWithViewSize:(struct CGSize)arg1 withParentSize:(struct CGSize)arg2;

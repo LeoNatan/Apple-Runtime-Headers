@@ -32,7 +32,6 @@ __attribute__((visibility("hidden")))
     _Bool cancelledByWaitingForLocalResults;
     long long _updatingDocument;
     _Bool _deferredCancellationRequested;
-    _Bool _ignoreFinalizePhrases;
     _Bool _isOfflineMetricsSessionActive;
     _Bool _didUseOfflineDictation;
     long long _lastOfflineDictationMetricEvent;
@@ -48,6 +47,11 @@ __attribute__((visibility("hidden")))
     _Bool _hasPreheated;
     _Bool _logAppEnterBackground;
     _Bool _wantsAvailabilityMonitoringWhenAppActive;
+    _Bool _selectionEndWasInitiallyAtParagraphBoundaryForAsyncDelegate;
+    _Bool _selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate;
+    _Bool _ignoreFinalizePhrases;
+    unsigned short _initialPreviousCharacterForAsyncDelegate;
+    unsigned short _initialCharacterAfterSelectionForAsyncDelegate;
     NSString *_activationIdentifier;
     NSString *_smartLanguageSelectionOverrideLanguage;
     NSMutableArray *_pendingEdits;
@@ -120,6 +124,12 @@ __attribute__((visibility("hidden")))
 + (id)activeInstance;
 + (double)serverManualEndpointingThreshold;
 + (_Bool)usingServerManualEndpointingThreshold;
++ (id)_dictationLog;
+@property(nonatomic) _Bool ignoreFinalizePhrases; // @synthesize ignoreFinalizePhrases=_ignoreFinalizePhrases;
+@property(nonatomic) unsigned short initialCharacterAfterSelectionForAsyncDelegate; // @synthesize initialCharacterAfterSelectionForAsyncDelegate=_initialCharacterAfterSelectionForAsyncDelegate;
+@property(nonatomic) unsigned short initialPreviousCharacterForAsyncDelegate; // @synthesize initialPreviousCharacterForAsyncDelegate=_initialPreviousCharacterForAsyncDelegate;
+@property(nonatomic) _Bool selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate; // @synthesize selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate=_selectionStartWasInitiallyAtParagraphBoundaryForAsyncDelegate;
+@property(nonatomic) _Bool selectionEndWasInitiallyAtParagraphBoundaryForAsyncDelegate; // @synthesize selectionEndWasInitiallyAtParagraphBoundaryForAsyncDelegate=_selectionEndWasInitiallyAtParagraphBoundaryForAsyncDelegate;
 @property(nonatomic) unsigned long long dictationSourceType; // @synthesize dictationSourceType=_dictationSourceType;
 @property(copy, nonatomic) NSString *fallbackDictationLanguage; // @synthesize fallbackDictationLanguage=_fallbackDictationLanguage;
 @property(copy, nonatomic) NSString *initialDictationLanguage; // @synthesize initialDictationLanguage=_initialDictationLanguage;
@@ -147,6 +157,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
 - (void)keyboardDismissed:(id)arg1;
 - (_Bool)smartLanguageSelectionOverridden;
+- (void)endSmartLanguageSelectionOverride;
 - (void)overrideSmartLanguageSelection:(id)arg1;
 - (void)markKeyboardDidReset;
 - (void)markKeyboardDeleteMetricEvent;
@@ -235,6 +246,7 @@ __attribute__((visibility("hidden")))
 - (void)setupForDictationStart;
 - (void)setupForStreamingDictationStart;
 - (void)dismissDictationView:(id)arg1;
+- (_Bool)dictationSearchFieldUISupportsTraitCollection:(id)arg1;
 - (_Bool)_allowsMicsInSearchFieldForLocales:(id)arg1;
 - (_Bool)dictationSearchFieldUIEnabled;
 - (_Bool)currentViewModeSupportsDictationMics;

@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <MessageUI/MFMailCompositionAdditionalDonating-Protocol.h>
+#import <MessageUI/MFMailCompositionShareSheetRecipients-Protocol.h>
 
 @class EMMessage, MFAttachmentComposeManager, MFAttachmentCompositionContext, MFAttachmentManager, MFMailMessage, MFMessageLoadingContext, NSArray, NSMutableArray, NSString, UIView;
 @protocol MFComposeBodyField;
 
-@interface _MFMailCompositionContext : NSObject <MFMailCompositionAdditionalDonating>
+@interface _MFMailCompositionContext : NSObject <MFMailCompositionAdditionalDonating, MFMailCompositionShareSheetRecipients>
 {
     NSString *_sendingAddress;
     NSString *_subject;
@@ -38,6 +39,7 @@
     _Bool _usingDefaultAccount;
     _Bool _prefersFirstLineSelection;
     int _sourceAccountManagement;
+    NSString *_shareSheetSessionID;
     NSArray *_UTITypes;
     NSArray *_photoIDs;
     NSArray *_cloudPhotoIDs;
@@ -68,11 +70,11 @@
 @property(copy, nonatomic) NSArray *cloudPhotoIDs; // @synthesize cloudPhotoIDs=_cloudPhotoIDs;
 @property(copy, nonatomic) NSArray *photoIDs; // @synthesize photoIDs=_photoIDs;
 @property(copy, nonatomic) NSArray *UTITypes; // @synthesize UTITypes=_UTITypes;
+@property(copy, nonatomic) NSString *shareSheetSessionID; // @synthesize shareSheetSessionID=_shareSheetSessionID;
 @property(retain, nonatomic) NSString *attachmentToMarkupContentID; // @synthesize attachmentToMarkupContentID=_attachmentToMarkupContentID;
 @property(readonly, nonatomic) EMMessage *originalMessage; // @synthesize originalMessage=_originalMessage;
 @property(readonly, nonatomic) MFAttachmentCompositionContext *attachmentContext; // @synthesize attachmentContext=_attachmentContext;
 @property(readonly, nonatomic) MFMailMessage *legacyMessage; // @synthesize legacyMessage=_legacyMessage;
-@property(readonly, nonatomic) NSString *autosaveIdentifier; // @synthesize autosaveIdentifier=_autosaveIdentifier;
 @property(readonly, nonatomic) int composeType; // @synthesize composeType=_composeType;
 @property(retain, nonatomic) id originalContent; // @synthesize originalContent=_originalContent;
 @property(nonatomic) _Bool showContentImmediately; // @synthesize showContentImmediately=_showContentImmediately;
@@ -96,10 +98,12 @@
 - (void)recordPasteboardAttachmentsForURLs:(id)arg1;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+@property(readonly, nonatomic) NSString *autosaveIdentifier; // @synthesize autosaveIdentifier=_autosaveIdentifier;
 @property(readonly, nonatomic) NSString *contextID;
 - (void)setMessageBody:(id)arg1 isHTML:(_Bool)arg2;
 @property(readonly, nonatomic) MFAttachmentManager *attachmentManager;
 - (id)messageBody;
+- (void)switchToReplyWithDelegate:(id)arg1;
 - (void)switchToReplyAllWithDelegate:(id)arg1;
 - (void)dealloc;
 - (id)initWithHandoffActivityPayload:(id)arg1;

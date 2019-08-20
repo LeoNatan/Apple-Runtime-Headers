@@ -8,7 +8,7 @@
 
 #import <SidecarCore/SidecarDisplayCore_Interface-Protocol.h>
 
-@class NSArray, SidecarDisplayConfig;
+@class NSArray, SidecarDevice, SidecarDisplayConfig;
 
 @interface SidecarDisplayManager : NSObject <SidecarDisplayCore_Interface>
 {
@@ -17,7 +17,7 @@
     // Error parsing type: AQ, name: _displayGeneration
     SidecarDisplayConfig *_config;
     NSArray *_devices;
-    NSArray *_connectedDevices;
+    SidecarDevice *_connectedDevice;
     NSArray *_recentDevices;
 }
 

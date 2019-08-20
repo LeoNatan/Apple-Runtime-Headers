@@ -9,7 +9,8 @@
 @class NSString;
 
 @protocol QLTExtensionThumbnailItem <NSObject>
+@property _Bool needsAccessToExternalResources;
 @property(readonly, copy, nonatomic) NSString *contentType;
-- (void)provideURLWrapper:(void (^)(FPSandboxingURLWrapper *, NSError *))arg1;
+- (void)provideURLWrapper:(void (^)(FPSandboxingURLWrapper *, FPSandboxingURLWrapper *, NSError *))arg1;
 @end
 

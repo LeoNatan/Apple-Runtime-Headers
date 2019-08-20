@@ -22,6 +22,7 @@
 
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (BOOL)supportsSecureCoding;
++ (id)_bundleIdentifierMap;
 @property(retain, nonatomic) LPImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *application; // @synthesize application=_application;

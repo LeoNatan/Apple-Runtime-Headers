@@ -20,6 +20,7 @@
 - (BOOL)overrideBlurStyle;
 - (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 requireOptionKeyPromptUnlockDevice:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)placeDialRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_transformURLIfNecessary:(id)arg1;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)openURL:(id)arg1;
 - (BOOL)_openURLsOnBackgroundThread;

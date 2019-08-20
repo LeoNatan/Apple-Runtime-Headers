@@ -25,6 +25,7 @@
 - (void)dealloc;
 - (BOOL)releaseBandwidthForOutputStream:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)allocateBandwidth:(unsigned long long)arg1 forOutputStream:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)getQueue:(unsigned int)arg1 fetchDelay:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)getQueue:(unsigned int)arg1 physicalLaunchTimeOffset:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)getQueue:(unsigned int)arg1 mbufLaunchTimeOffset:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)createIIDCIOSurfaceOutputStreamWithID:(unsigned long long)arg1 onVLANID:(unsigned short)arg2 withPriorityCodePoint:(unsigned char)arg3 andDestiantionMAC:(id)arg4 withMaximumSurfacesPerSecond:(unsigned int)arg5 maximumSurfaceDataLength:(unsigned long long)arg6 maximumSurfaceDataLengthPerPDU:(unsigned long long)arg7 streamBandwidth:(unsigned long long)arg8 error:(id *)arg9;

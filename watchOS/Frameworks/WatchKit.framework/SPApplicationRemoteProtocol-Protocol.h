@@ -9,6 +9,6 @@
 @class NSString;
 
 @protocol SPApplicationRemoteProtocol <SPApplicationRemoteXPCProtocol>
-- (void)interfaceViewController:(NSString *)arg1 receivePresentTimerSupportInterfaceWithControllerClass:(Class)arg2 presentCompletion:(void (^)(NSString *))arg3 dismissCompletion:(void (^)(void))arg4;
+- (void)interfaceViewController:(NSString *)arg1 receivePresentInterfaceControllerClass:(Class)arg2 willPresent:(void (^)(NSString *))arg3 didDismiss:(void (^)(void))arg4;
 @end
 

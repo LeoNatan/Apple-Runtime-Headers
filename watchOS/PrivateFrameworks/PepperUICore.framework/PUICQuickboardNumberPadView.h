@@ -15,17 +15,14 @@
     PUICQuickboardKeypadButton *_highlightedButton;
     UIView *_keypad;
     PUICQuickboardKeypadButton *_okButton;
-    PUICQuickboardKeypadButton *_cancelButton;
     int _mode;
     _Bool _dialer;
     id <PUICQuickboardNumberPadViewDelegate> _delegate;
-    PUICQuickboardKeypadButton *_deleteButton;
     UIView *_contentView;
 }
 
 + (int)_numberPadCharacterForTag:(unsigned int)arg1;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-@property(retain, nonatomic) PUICQuickboardKeypadButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) PUICQuickboardKeypadButton *okButton; // @synthesize okButton=_okButton;
 @property(nonatomic) __weak id <PUICQuickboardNumberPadViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isDialer) _Bool dialer; // @synthesize dialer=_dialer;

@@ -23,6 +23,7 @@
 - (void)triggerOnAnyEvent:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)triggerOnEvent:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)triggerOnceWhenAnyEventHasOccurred:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)triggerAlwaysWhenAllEventsHaveOccurred:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)triggerOnceWhenAllEventsHaveOccurred:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)fireEvent:(id)arg1;
 - (id)init;

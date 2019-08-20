@@ -114,7 +114,6 @@
 - (void)isEmergencyNumberWithWhitelistIncluded:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)isEmergencyNumber:(id)arg1 number:(id)arg2 error:(id *)arg3;
 - (void)isEmergencyNumber:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)injectMTsms:(id)arg1 smsData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getEmergencyTextNumbers:(id)arg1 error:(id *)arg2;
 - (void)getEmergencyTextNumbers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getSmscAddress:(id)arg1 error:(id *)arg2;
@@ -373,6 +372,7 @@
 - (void)fetchCallForwardingValue:(id)arg1 reason:(int)arg2 callClass:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)fetchCallWaitingValue:(id)arg1 callClass:(int)arg2;
 - (void)fetchCallWaitingValue:(id)arg1 callClass:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)setVisualVoicemailState:(id)arg1 subscribed:(_Bool)arg2;
 - (void)getVoicemailInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)setSaveDataMode:(id)arg1 enable:(_Bool)arg2;
 - (_Bool)saveDataMode:(id)arg1 error:(id *)arg2;

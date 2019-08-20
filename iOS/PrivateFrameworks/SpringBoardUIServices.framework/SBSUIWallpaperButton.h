@@ -6,11 +6,18 @@
 
 #import <UIKit/UIButton.h>
 
+@class UIVisualEffectView;
+
 @interface SBSUIWallpaperButton : UIButton
 {
+    UIVisualEffectView *_effectView;
 }
 
+- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)_commonInit;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
 
 @end
 

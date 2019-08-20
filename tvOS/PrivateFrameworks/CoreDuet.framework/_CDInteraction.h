@@ -14,6 +14,7 @@
 @interface _CDInteraction : NSObject <_CDPDataPoint, NSSecureCoding>
 {
     _Bool _isResponse;
+    _Bool _forcePersistInteraction;
     NSDate *_startDate;
     NSDate *_endDate;
     NSString *_uuid;
@@ -36,6 +37,7 @@
 + (id)recipientIdentifiersFromMobileMailConversationId:(id)arg1;
 + (id)conversationIdForMobileMailInteractionRecipients:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool forcePersistInteraction; // @synthesize forcePersistInteraction=_forcePersistInteraction;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
 @property(retain) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(retain) NSArray *recipients; // @synthesize recipients=_recipients;

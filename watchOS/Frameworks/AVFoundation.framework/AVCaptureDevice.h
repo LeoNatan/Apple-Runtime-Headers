@@ -47,6 +47,7 @@
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
 - (_Bool)isHEVCMemoryUsageMinimizationSupported;
+- (_Bool)hevcAllowBFramesForHighCTUCountAndHighResolution;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -73,7 +74,6 @@
 - (_Bool)isRawStillImageCaptureSupported;
 - (_Bool)isCameraIntrinsicMatrixDeliverySupported;
 - (_Bool)isVideoStabilizationSupported;
-- (_Bool)isHDRSupported;
 - (float)maxAvailableVideoZoomFactor;
 - (float)minAvailableVideoZoomFactor;
 - (float)dualCameraSwitchOverVideoZoomFactor;

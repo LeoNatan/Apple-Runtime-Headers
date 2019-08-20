@@ -8,36 +8,34 @@
 
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSString, WFFileRepresentation, WFGalleryPage;
+@class CKRecordID, NSString, WFFileRepresentation;
 
 @interface WFGalleryBanner : NSObject <WFCloudKitItem>
 {
-    NSString *_identifier;
+    CKRecordID *_identifier;
     NSString *_name;
-    WFGalleryPage *_detailPage;
+    CKRecordID *_detailPage;
     WFFileRepresentation *_iphone2xImageFile;
     WFFileRepresentation *_iphone3xImageFile;
     WFFileRepresentation *_ipad2xImageFile;
     NSString *_language;
-    WFGalleryBanner *_base;
+    CKRecordID *_base;
 }
 
 + (struct CGSize)pixelSizeForBannerSize:(int)arg1;
 + (struct CGSize)pointSizeForBannerSize:(int)arg1;
 + (float)scaleForBannerSize:(int)arg1;
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredImageKeys;
-+ (id)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (id)propertyForSize:(int)arg1;
++ (id)properties;
 + (id)recordType;
-@property(readonly, nonatomic) WFGalleryBanner *base; // @synthesize base=_base;
+@property(readonly, nonatomic) CKRecordID *base; // @synthesize base=_base;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) WFFileRepresentation *ipad2xImageFile; // @synthesize ipad2xImageFile=_ipad2xImageFile;
 @property(retain, nonatomic) WFFileRepresentation *iphone3xImageFile; // @synthesize iphone3xImageFile=_iphone3xImageFile;
 @property(retain, nonatomic) WFFileRepresentation *iphone2xImageFile; // @synthesize iphone2xImageFile=_iphone2xImageFile;
-@property(readonly, nonatomic) WFGalleryPage *detailPage; // @synthesize detailPage=_detailPage;
+@property(readonly, nonatomic) CKRecordID *detailPage; // @synthesize detailPage=_detailPage;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

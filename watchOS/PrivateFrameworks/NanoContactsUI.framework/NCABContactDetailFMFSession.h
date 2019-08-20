@@ -6,52 +6,48 @@
 
 #import <objc/NSObject.h>
 
-#import <NanoContactsUI/CLLocationManagerDelegate-Protocol.h>
 #import <NanoContactsUI/FMFSessionDelegate-Protocol.h>
 
-@class CLLocation, CLLocationManager, FMFSession, NSData, NSDictionary, NSHashTable, NSMutableDictionary, NSString;
+@class CLLocation, FMFSession, NSData, NSDictionary, NSMapTable, NSMutableDictionary, NSString;
 
-@interface NCABContactDetailFMFSession : NSObject <CLLocationManagerDelegate, FMFSessionDelegate>
+@interface NCABContactDetailFMFSession : NSObject <FMFSessionDelegate>
 {
-    NSHashTable *_observers;
+    NSMapTable *_observers;
     struct os_unfair_lock_s _observersLock;
-    NSDictionary *_followedHandlesAndContactIdentifiers;
-    struct os_unfair_lock_s _handlesLock;
+    NSDictionary *_contactIdentifiers;
+    struct os_unfair_lock_s _contactIdentifiersLock;
+    NSDictionary *_followedHandles;
+    struct os_unfair_lock_s _followedHandlesLock;
     NSMutableDictionary *_locationCache;
     struct os_unfair_lock_s _cacheLock;
     FMFSession *_fmfSession;
-    CLLocationManager *_locationManager;
-    CLLocation *_location;
     NSData *_gridImageData;
+    CLLocation *_location;
 }
 
 + (id)sharedInstance;
 + (void)initialize;
-@property(retain, nonatomic) NSData *gridImageData; // @synthesize gridImageData=_gridImageData;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
+@property(retain, nonatomic) NSData *gridImageData; // @synthesize gridImageData=_gridImageData;
 - (void).cxx_destruct;
+- (void)_contactStoreDidChange:(id)arg1;
 - (void)_handleMapImageRequestResultWithData:(id)arg1 forLocation:(id)arg2;
 - (void)_generateMapImageForLocation:(id)arg1;
 - (void)_generateMapGridImage;
 - (void)_updateObserversWithBlock:(CDUnknownBlockType)arg1;
-- (_Bool)_isLocationEqualTo:(id)arg1 epsilon:(double)arg2;
-- (void)_setupLocationManagerIfNecessary;
+- (void)_setShouldTrackContact:(_Bool)arg1 withIdentifier:(id)arg2;
 - (void)_updateFollowedHandles:(id)arg1;
 - (void)_fetchFollowedHandles;
 - (_Bool)_shouldCreateFMFSession;
 - (void)didStopAbilityToGetLocationForHandle:(id)arg1;
 - (void)didStartAbilityToGetLocationForHandle:(id)arg1;
 - (void)didReceiveLocation:(id)arg1;
-- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
-- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 @property(readonly, nonatomic) struct CGSize mapSize;
 - (id)mapImageDataForContact:(id)arg1;
 - (id)locationForContact:(id)arg1;
 - (_Bool)isFollowingContact:(id)arg1;
-- (_Bool)hasSession;
 - (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1;
+- (void)addObserver:(id)arg1 forContact:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

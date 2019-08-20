@@ -20,6 +20,8 @@
         unsigned int artwork:1;
         unsigned int allowsItemLiking:1;
         unsigned int attributionLabel:1;
+        unsigned int type:1;
+        unsigned int subtype:1;
     } _requestedRadioStationProperties;
     MPPropertySet *_requestedProperties;
 }

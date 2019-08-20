@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     unsigned long long _features;
 }
 
-+ (void)initialize;
 @property __weak AVOutputDeviceDiscoverySession *parentOutputDeviceDiscoverySession; // @synthesize parentOutputDeviceDiscoverySession=_parentSession;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool devicePresenceDetected;

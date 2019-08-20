@@ -37,7 +37,10 @@ __attribute__((visibility("hidden")))
 + (id)highlightedDisclosureImage;
 + (id)disclosureImage;
 + (id)reuseIdentifier;
-+ (double)desiredContentWidthForTitle:(id)arg1 subTitle:(id)arg2 titleFont:(id)arg3 subtitleFont:(id)arg4 cellUserActionLeftMargin:(double)arg5;
++ (struct CGSize)desiredContentSizeForTitle:(id)arg1 subTitle:(id)arg2 navigationListStyle:(id)arg3;
++ (double)subtitleLabelFirstBaselineAnchorConstraintConstantForSubtitle:(id)arg1 navigationListStyle:(id)arg2;
++ (double)contentViewBottomAnchorConstraintConstantForNavigationListStyle:(id)arg1;
++ (double)titleLabelFirstBaselineAnchorConstraintConstantForNavigationListStyle:(id)arg1;
 @property(nonatomic) BOOL showSeparator; // @synthesize showSeparator=_showSeparator;
 @property(readonly, nonatomic) UILayoutGuide *titleImageViewLayoutGuide; // @synthesize titleImageViewLayoutGuide=_titleImageViewLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *accessoryImageViewLayoutGuide; // @synthesize accessoryImageViewLayoutGuide=_accessoryImageViewLayoutGuide;
@@ -57,6 +60,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UIImageView *accessoryImageView; // @synthesize accessoryImageView=_accessoryImageView;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateVisualStateAnimated:(BOOL)arg1;
 - (void)updateConstraintsConstants;
 - (void)updateConstraints;
@@ -69,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)loadContentView;
 - (void)applyStyle;
 - (void)styleUpdated;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (double)titleLabelFirstBaselineAnchorConstraintConstant;

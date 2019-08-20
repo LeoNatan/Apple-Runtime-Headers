@@ -11,14 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (double)horizontalInset;
-- (double)verticalInset;
-- (double)singleBadgeWidth;
+- (double)cornerRadius;
 - (double)maxWidth;
 - (double)edgePadding;
 - (double)fontSize;
-- (BOOL)allowsDrawingOutsideTabBar;
-- (BOOL)usesExternalImage;
+- (id)defaultBadgeColor;
 
 @end
 

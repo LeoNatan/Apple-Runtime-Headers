@@ -17,8 +17,14 @@
     ICUserIdentity *_userIdentity;
 }
 
++ (void)_postNotificationName:(id)arg1 controller:(id)arg2 userInfo:(id)arg3;
++ (void)_postNotificationName:(id)arg1 controller:(id)arg2;
 + (id)controllerWithUserIdentity:(id)arg1;
 + (id)sharedController;
++ (id)_tasteControllerWithUserIdentity:(id)arg1 isSingleton:(BOOL)arg2 createIfRequired:(BOOL)arg3;
++ (id)controllers;
++ (id)globalSerialQueue;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (id)_pendingUpdateRecordForPlaylistGlobalID:(id)arg1;
 - (id)_pendingUpdateRecordForStoreAdamID:(long long)arg1;
@@ -41,7 +47,7 @@
 - (void)setTasteType:(long long)arg1 forPlaylistGlobalID:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setTasteType:(long long)arg1 forMediaEntity:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setTasteType:(long long)arg1 forModel:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (id)initWithUserIdentity:(id)arg1;
+- (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 
 @end

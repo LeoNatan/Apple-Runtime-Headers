@@ -10,10 +10,12 @@
 
 @interface HMDCameraProfileSettingsModel : HMBModel
 {
+    _Bool _cameraDisabledByThirdParty;
     unsigned int _currentAccessMode;
 }
 
 + (id)hmbProperties;
+@property _Bool cameraDisabledByThirdParty; // @synthesize cameraDisabledByThirdParty=_cameraDisabledByThirdParty;
 @property unsigned int currentAccessMode; // @synthesize currentAccessMode=_currentAccessMode;
 @property(retain) HMDBulletinBoardNotification *smartBulletinBoardNotification;
 @property _Bool periodicSnapshotsAllowed;

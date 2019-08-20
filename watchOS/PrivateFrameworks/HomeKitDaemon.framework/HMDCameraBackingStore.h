@@ -14,7 +14,7 @@
 #import <HomeKitDaemon/HMDHomeMessageReceiver-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMBCloudZone, HMBLocalZone, HMDCameraClipsQuotaManager, HMDCameraProfile, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, NSMapTable, NSSet, NSString, NSUUID;
+@class HMBCloudZone, HMBLocalZone, HMDCameraClipsQuotaManager, HMDCameraProfile, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, NSHashTable, NSMapTable, NSSet, NSString, NSUUID;
 @protocol HMDCameraBackingStoreDelegate, HMDDatabase, OS_dispatch_queue;
 
 @interface HMDCameraBackingStore : NSObject <HMFLogging, HMBLocalZoneModelObserver, HMDCloudShareMessengerDelegate, HMDCloudShareParticipantsManagerDataSource, HMDCloudShareParticipantsManagerDelegate, HMDDatabaseDelegate, HMDHomeMessageReceiver>
@@ -27,6 +27,7 @@
     id <HMDDatabase> _database;
     NSString *_zoneName;
     NSMapTable *_subscriptionUUIDToMessageTransportMap;
+    NSHashTable *_subscribedTransports;
     HMDCloudShareMessenger *_shareMessenger;
     HMDCameraClipsQuotaManager *_quotaManager;
     unsigned int _fetchClipsBatchLimit;
@@ -45,6 +46,7 @@
 @property(readonly) unsigned int fetchClipsBatchLimit; // @synthesize fetchClipsBatchLimit=_fetchClipsBatchLimit;
 @property(readonly) HMDCameraClipsQuotaManager *quotaManager; // @synthesize quotaManager=_quotaManager;
 @property(readonly) HMDCloudShareMessenger *shareMessenger; // @synthesize shareMessenger=_shareMessenger;
+@property(readonly) NSHashTable *subscribedTransports; // @synthesize subscribedTransports=_subscribedTransports;
 @property(readonly) NSMapTable *subscriptionUUIDToMessageTransportMap; // @synthesize subscriptionUUIDToMessageTransportMap=_subscriptionUUIDToMessageTransportMap;
 @property(readonly, copy) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(readonly, getter=isOwnerUser) _Bool ownerUser; // @synthesize ownerUser=_ownerUser;
@@ -80,12 +82,21 @@
 - (void)_fetchAssetContextForMessage:(id)arg1 propertyName:(id)arg2;
 - (void)_notifySubscribersOfAddedClipModel:(id)arg1 removedClipModel:(id)arg2 updatedClipModel:(id)arg3;
 - (void)_notifySubscriberUUID:(id)arg1 ofAddedClips:(id)arg2 updatedClips:(id)arg3 removedClipUUIDStrings:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
+- (void)_notifyTransport:(id)arg1 ofUpdatedClips:(id)arg2 removedClipUUIDs:(id)arg3;
+- (void)_notifyTransport:(id)arg1 ofFetchedClips:(id)arg2 forFetchUUID:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_tearDownState;
 - (id)significantEventNotificationsWithUUIDs:(id)arg1;
 - (void)handleDeleteAllClipsMessage:(id)arg1;
 - (void)handleDeleteClipMessage:(id)arg1;
+- (void)handleCollectionDeleteAllClipsMessage:(id)arg1;
+- (void)handleCollectionDeleteClipMessage:(id)arg1;
 - (void)handleFetchVideoSegmentsAssetContextMessage:(id)arg1;
 - (void)handleFetchPosterFramesAssetContextMessage:(id)arg1;
+- (void)handleFetchClipForSignificantEventMessage:(id)arg1;
+- (void)handleFetchClipsMessage:(id)arg1;
+- (void)handleFetchClipMessage:(id)arg1;
+- (void)handleUnsubscribeMessage:(id)arg1;
+- (void)handleSubscribeMessage:(id)arg1;
 - (void)handleRemoveSubscriptionMessage:(id)arg1;
 - (void)handleAddNotificationSubscriptionMessage:(id)arg1;
 - (void)handleAddSubscriptionMessage:(id)arg1;

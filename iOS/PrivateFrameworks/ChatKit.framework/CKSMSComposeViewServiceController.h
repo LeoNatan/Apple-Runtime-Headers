@@ -24,6 +24,7 @@
     NSArray *_photoIDs;
     NSArray *_cloudPhotoIDs;
     NSArray *_contentText;
+    NSString *_shareSheetSessionID;
     CKModalTranscriptController *_modalTranscriptController;
     id <CKSMSComposeViewServiceControllerDelegate> _composeDelegate;
     CDUnknownBlockType _gameCenterPickerBlock;
@@ -59,6 +60,8 @@
 - (void)disableCameraAttachments;
 @property(nonatomic) _Bool canEditRecipients; // @dynamic canEditRecipients;
 - (void)setPendingAddresses:(id)arg1;
+- (void)setShareSheetSessionID:(id)arg1;
+- (id)recipientsFromChatGUID:(id)arg1 groupName:(id)arg2 handles:(id)arg3;
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3 chatGUID:(id)arg4 groupName:(id)arg5;
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;
 - (void)setGameCenterPickedHandles:(id)arg1 playerNames:(id)arg2;
@@ -85,6 +88,7 @@
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (void)dealloc;
+- (_Bool)_canShowWhileLocked;
 - (id)init;
 
 // Remaining properties

@@ -49,6 +49,7 @@
 - (void)smsComposeControllerCancelled;
 - (void)smsComposeControllerAppeared;
 - (void)smsComposeControllerDataInserted;
+- (void)setShareSheetSessionID:(id)arg1;
 - (void)setContentText:(id)arg1;
 - (void)setCloudPhotoIDs:(id)arg1;
 - (void)setPhotoIDs:(id)arg1;
@@ -75,6 +76,7 @@
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)dealloc;
 - (id)initWithNavigationController:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (id)init;
 
 // Remaining properties

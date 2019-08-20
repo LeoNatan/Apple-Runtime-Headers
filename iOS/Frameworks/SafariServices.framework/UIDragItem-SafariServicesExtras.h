@@ -14,6 +14,7 @@
 @property(readonly, nonatomic) _SFTabStateData *_sf_tabStateData;
 @property(readonly, nonatomic) NSURL *_sf_localURL;
 @property(readonly, nonatomic) WebBookmark *_sf_localBookmark;
+- (id)_sf_initWithSiriSuggestion:(id)arg1;
 - (id)_sf_initWithBookmark:(id)arg1;
 @end
 

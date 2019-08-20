@@ -43,6 +43,7 @@
 - (long long)weight;
 - (unsigned short)lastPrefixValue;
 - (unsigned long long)trieValueAtIndex:(unsigned long long)arg1;
+- (long long)costAtIndex:(unsigned long long)arg1;
 - (unsigned short)rcAttrAtIndex:(unsigned long long)arg1;
 - (unsigned short)lcAttrAtIndex:(unsigned long long)arg1;
 - (struct __CFArray *)copySyllableLengthArrayForWordAtIndex:(unsigned long long)arg1;

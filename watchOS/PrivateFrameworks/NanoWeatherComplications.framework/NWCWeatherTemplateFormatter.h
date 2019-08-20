@@ -24,7 +24,7 @@
 - (void)formattedTemplateWithFamily:(int)arg1 entryDate:(id)arg2 isLoading:(_Bool)arg3 withForecast:(id)arg4 templateBlock:(CDUnknownBlockType)arg5;
 - (void)enumerateFutureEntryDatesForFamily:(int)arg1 startingAt:(id)arg2 forForecast:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (id)descriptionForConditions:(id)arg1;
-- (_Bool)acceptsComplicationFamily:(int)arg1;
+- (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)utilitarianLargeTemplateForConditions:(id)arg1;
 - (id)modularSmallTemplateForConditions:(id)arg1;

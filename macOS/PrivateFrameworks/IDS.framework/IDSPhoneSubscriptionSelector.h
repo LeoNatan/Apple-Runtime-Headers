@@ -11,8 +11,10 @@
 @interface IDSPhoneSubscriptionSelector : NSObject
 {
     id _syncDaemonController;
+    CDUnknownBlockType _syncDaemonControllerBuilder;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType syncDaemonControllerBuilder; // @synthesize syncDaemonControllerBuilder=_syncDaemonControllerBuilder;
 @property(retain, nonatomic) IDSXPCDaemonController *syncDaemonController; // @synthesize syncDaemonController=_syncDaemonController;
 - (void).cxx_destruct;
 - (void)_performSyncAction:(CDUnknownBlockType)arg1;
@@ -24,6 +26,8 @@
 - (void)unselectSubscription:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)selectSubscription:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)requestSelectedSubscriptionsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithSyncDaemonControllerBuilder:(CDUnknownBlockType)arg1;
+- (id)init;
 
 @end
 

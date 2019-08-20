@@ -14,6 +14,7 @@
     NSStringDrawingContext *_drawingContext;
 }
 
++ (double)contentBaselineToBoundsBottomWithFont:(id)arg1 boundsWidth:(double)arg2 scale:(double)arg3;
 - (void).cxx_destruct;
 - (struct CGRect)_titleLabelBoundsForSize:(struct CGSize)arg1 withNumberOfLines:(double)arg2;
 - (struct CGRect)_utilityButtonTitleLabelBoundsForSize:(struct CGSize)arg1 withNumberOfLines:(double)arg2;

@@ -221,10 +221,12 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
+- (_Bool)interpretsViewAsContent:(id)arg1;
 @property(nonatomic) __weak id <SBFActionProviding> contentActionProvider;
 @property(readonly, nonatomic) NSString *listViewControllerBackgroundGroupName;
 - (void)resetContentOffset;
 @property(readonly, nonatomic, getter=isShowingMediaControls) _Bool showingMediaControls;
+- (void)_addStateCaptureHandlers;
 @property(readonly, nonatomic) UIScrollView *notificationListScrollView;
 @property(readonly, nonatomic) UIViewController *notificationListViewController;
 - (void)dealloc;

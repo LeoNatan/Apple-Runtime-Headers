@@ -12,6 +12,8 @@
 - (unsigned long long)vcp_fileSize;
 - (BOOL)vcp_isLocallyAvailable;
 - (BOOL)vcp_isDecodable;
+- (BOOL)vcp_isPhotoResourceUsable:(BOOL)arg1;
+- (BOOL)vcp_isVideoResourceUsable:(BOOL)arg1;
 - (BOOL)vcp_isPhoto;
 - (BOOL)vcp_isMovie;
 - (id)vcp_avAsset;

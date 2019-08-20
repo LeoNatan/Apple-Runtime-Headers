@@ -9,31 +9,32 @@
 #import <HealthDaemon/HDDatabaseProtectedDataObserver-Protocol.h>
 #import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
 #import <HealthDaemon/HDHealthOntologyManagerObserver-Protocol.h>
+#import <HealthDaemon/HDHealthRecordsAccountEventObserver-Protocol.h>
 
-@class HDConceptIndexManager, HDConceptIndexer, HDHealthOntologyManager, HDOntologyAssetManager, HDProfile, NSString;
-@protocol HDOntologyTester, OS_dispatch_queue;
+@class HDConceptIndexManager, HDHealthOntologyManager, HDHealthRecordsNotificationManager, HDOntologyAssetManager, HDProfile, NSString;
+@protocol HDOntologyTester;
 
-@interface HDOntologyLifecycleManager : NSObject <HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver, HDHealthOntologyManagerObserver>
+@interface HDOntologyLifecycleManager : NSObject <HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver, HDHealthOntologyManagerObserver, HDHealthRecordsAccountEventObserver>
 {
+    struct os_unfair_lock_s _ivarLock;
     _Bool _ready;
     HDProfile *_profile;
     HDOntologyAssetManager *_assetManager;
     HDHealthOntologyManager *_ontologyManager;
     HDConceptIndexManager *_indexManager;
-    HDConceptIndexer *_indexer;
-    NSObject<OS_dispatch_queue> *_queue;
+    HDHealthRecordsNotificationManager *_notificationManager;
     id <HDOntologyTester> _ontologyTester;
 }
 
 @property(nonatomic) __weak id <HDOntologyTester> ontologyTester; // @synthesize ontologyTester=_ontologyTester;
 @property(nonatomic, getter=isReady) _Bool ready; // @synthesize ready=_ready;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(readonly, nonatomic) HDConceptIndexer *indexer; // @synthesize indexer=_indexer;
+@property(readonly, nonatomic) HDHealthRecordsNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) HDConceptIndexManager *indexManager; // @synthesize indexManager=_indexManager;
-@property(readonly, nonatomic) HDHealthOntologyManager *ontologyManager; // @synthesize ontologyManager=_ontologyManager;
-@property(readonly, nonatomic) HDOntologyAssetManager *assetManager; // @synthesize assetManager=_assetManager;
+@property(retain, nonatomic) HDHealthOntologyManager *ontologyManager; // @synthesize ontologyManager=_ontologyManager;
+@property(retain, nonatomic) HDOntologyAssetManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (void)profileExtension:(id)arg1 accountEventOccurred:(unsigned int)arg2;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)ontologyManagerReferenceOntologyCreated:(id)arg1;
 - (void)ontologyManagerReferenceOntologyFinishedUpdate:(id)arg1 success:(_Bool)arg2 error:(id)arg3;

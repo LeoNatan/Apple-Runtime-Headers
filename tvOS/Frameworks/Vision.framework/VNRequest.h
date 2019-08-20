@@ -24,7 +24,6 @@
     NSObject<OS_dispatch_semaphore> *_cancellationSemaphore;
     NSObject<OS_dispatch_queue> *_cancellationQueue;
     unsigned long long _revision;
-    _Bool _dumpIntermediateImages;
     NSArray *_results;
 }
 
@@ -71,7 +70,6 @@
 @property(nonatomic) unsigned long long metalContextPriority;
 @property(nonatomic) _Bool usesCPUOnly;
 @property(retain, nonatomic) id <MTLDevice> preferredMetalContext;
-@property(nonatomic) _Bool dumpIntermediateImages;
 @property(nonatomic) unsigned long long modelFileBackingStore;
 @property(nonatomic) _Bool preferBackgroundProcessing;
 - (_Bool)cancellationTriggeredAndReturnError:(id *)arg1;

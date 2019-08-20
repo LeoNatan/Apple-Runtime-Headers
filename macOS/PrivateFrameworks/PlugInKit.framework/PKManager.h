@@ -13,6 +13,7 @@
     PKDaemonClient *_client;
 }
 
++ (id)managerForUser:(unsigned int)arg1;
 + (id)defaultManager;
 @property(retain) PKDaemonClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
@@ -35,6 +36,7 @@
 - (void)registerPlugInsInBundle:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)unregisterPlugInAtURL:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)registerPlugInAtURL:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (id)initForUser:(unsigned int)arg1;
 - (id)initForService:(const char *)arg1;
 
 @end

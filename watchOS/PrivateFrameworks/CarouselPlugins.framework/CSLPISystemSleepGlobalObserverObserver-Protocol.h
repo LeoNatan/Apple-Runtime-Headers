@@ -7,7 +7,10 @@
 #import <CarouselPlugins/NSObject-Protocol.h>
 
 @protocol CSLPISystemSleepGlobalObserverObserver <NSObject>
+
+@optional
 - (void)systemWake;
+- (void)willNotSleep;
 - (void)sleepImminent;
 - (_Bool)canSleep;
 @end

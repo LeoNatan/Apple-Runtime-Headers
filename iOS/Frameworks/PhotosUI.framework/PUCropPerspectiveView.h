@@ -7,12 +7,13 @@
 #import <PhotosUI/PUCropTransformedImageView.h>
 
 #import <PhotosUI/NUMediaViewDelegate-Protocol.h>
+#import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 
 @class CALayer, CAShapeLayer, NSObject, NSString, NUCropModel, NUMediaView, PHLivePhotoView, PLImageGeometry, PXImageLayerModulator, PXImageModulationManager;
 @protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
-@interface PUCropPerspectiveView : PUCropTransformedImageView <NUMediaViewDelegate>
+@interface PUCropPerspectiveView : PUCropTransformedImageView <NUMediaViewDelegate, UIGestureRecognizerDelegate>
 {
     PLImageGeometry *_imageGeometry;
     long long _lastGestureType;
@@ -22,16 +23,24 @@ __attribute__((visibility("hidden")))
     PXImageLayerModulator *_imageLayerModulator;
     CDStruct_1b6d18a9 _cachedVideoSeekTime;
     double _zoomOverflow;
-    struct CGRect _gestureStartCropRect;
+    CDStruct_0de14bd3 _panState;
+    struct {
+        struct CGRect startCropRect;
+        double scale;
+    } _pinchState;
+    CDStruct_0de14bd3 _pitchYawRollState;
     double _gestureStartPitch;
     double _gestureStartYaw;
     double _gestureStartRoll;
+    struct CGVector _panRubberBandDelta;
     struct CGVector _panRubberBandOffset;
     struct CGPoint _panSlideVelocity;
     NSObject<OS_dispatch_source> *_panSlideTimer;
     _Bool _muted;
     _Bool _needsLayerTransformUpdate;
     _Bool _layerTransformUpdateAnimated;
+    _Bool _needsUpdateLayerTransforms;
+    _Bool _needsUpdateLayerTransformsAnimated;
     _Bool _isDebugging;
     CALayer *_imageLayer;
     CALayer *_mediaSuperlayer;
@@ -93,6 +102,10 @@ __attribute__((visibility("hidden")))
 - (void)setYawAngle:(double)arg1;
 - (void)setPitchAngle:(double)arg1;
 - (void)_setGestureType:(long long)arg1;
+- (void)_clearGestureTypePinch;
+- (void)_clearGestureTypePan;
+- (void)_setGestureTypePinch;
+- (void)_setGestureTypePan;
 - (void)layoutSubviews;
 - (void)setCanvasFrame:(struct CGRect)arg1;
 - (void)setMuted:(_Bool)arg1;
@@ -105,6 +118,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)masterImageSize;
 - (struct CATransform3D)_imageOrientationTransform;
 - (struct CATransform3D)_imageOrientationTransformWithoutTranslation;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

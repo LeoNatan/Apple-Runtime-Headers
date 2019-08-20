@@ -9,33 +9,35 @@
 #import <CoreSpeech/CSStartOfSpeechDetectorDelegate-Protocol.h>
 #import <CoreSpeech/_EARLanguageDetectorDelegate-Protocol.h>
 
-@class CSAudioCircularBuffer, CSStartOfSpeechDetector, NSMutableArray, NSString, _EARLanguageDetector, _EARLanguageDetectorAudioBuffer;
+@class CSAsset, CSAudioCircularBuffer, CSStartOfSpeechDetector, NSMutableArray, NSString, _EARLanguageDetector, _EARLanguageDetectorAudioBuffer;
 @protocol CSLanguageDetectorDelegate, OS_dispatch_queue;
 
 @interface CSLanguageDetector : NSObject <_EARLanguageDetectorDelegate, CSStartOfSpeechDetectorDelegate>
 {
     _Bool _startOfSpeechDetected;
     _Bool _needsToUpdateModel;
-    _Bool _currentRequestCancelled;
     int _notifyToken;
     _EARLanguageDetector *_languageDetector;
     _EARLanguageDetectorAudioBuffer *_audioBuffer;
     CSStartOfSpeechDetector *_startOfSpeechDetector;
     CSAudioCircularBuffer *_circBuffer;
+    long long _currentState;
     NSMutableArray *_latestDetectedLanguages;
     unsigned long long _numLatestLanguages;
     NSString *_languageDetectorAssetHash;
+    CSAsset *_currentAsset;
     NSObject<OS_dispatch_queue> *_queue;
     id <CSLanguageDetectorDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <CSLanguageDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(retain, nonatomic) NSString *languageDetectorAssetHash; // @synthesize languageDetectorAssetHash=_languageDetectorAssetHash;
 @property(nonatomic) unsigned long long numLatestLanguages; // @synthesize numLatestLanguages=_numLatestLanguages;
 @property(retain, nonatomic) NSMutableArray *latestDetectedLanguages; // @synthesize latestDetectedLanguages=_latestDetectedLanguages;
 @property(nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
-@property(nonatomic) _Bool currentRequestCancelled; // @synthesize currentRequestCancelled=_currentRequestCancelled;
+@property(nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) _Bool needsToUpdateModel; // @synthesize needsToUpdateModel=_needsToUpdateModel;
 @property(nonatomic) _Bool startOfSpeechDetected; // @synthesize startOfSpeechDetected=_startOfSpeechDetected;
 @property(retain, nonatomic) CSAudioCircularBuffer *circBuffer; // @synthesize circBuffer=_circBuffer;
@@ -60,6 +62,7 @@
 - (void)endAudio;
 - (void)addSamples:(id)arg1 numSamples:(unsigned long long)arg2;
 - (void)resetForNewRequest:(id)arg1;
+- (void)_setupLanguageDetectorWithOption:(id)arg1;
 - (void)_startMonitorLanguageDetectorAssetDownload;
 - (void)dealloc;
 - (id)init;

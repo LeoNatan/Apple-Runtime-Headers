@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSMutableArray, NSMutableOrderedSet, NSString, PKPaymentCredentialCache, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
+@class NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSString, PKPaymentCredentialCache, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFlowController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentProvisioningControllerDelegate, PKPaymentSetupPresentationProtocol>
@@ -22,6 +22,7 @@
     NSMutableArray *_refundedCredentialCaches;
     NSMutableArray *_unavailableCredentialCaches;
     NSMutableOrderedSet *_ordering;
+    NSMutableDictionary *_paymentCredentialToCredentialSectionMap;
     PKTableHeaderView *_tableHeader;
     PKPaymentSetupFooterView *_tableFooter;
     _Bool _allowsManualEntry;
@@ -29,6 +30,7 @@
     PKPaymentCredentialTableViewCell *_sizingCell;
     unsigned int _maximumNumberOfSelectableCredentials;
     float _cachedHeaderViewWidth;
+    PKPaymentSetupFlowController *_flowController;
     _Bool _hideSetupLaterButton;
     PKPaymentSetupProduct *_product;
 }
@@ -40,7 +42,7 @@
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentSecurityCapabilitiesFlowWithFeature:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performSecurityCheckForCredentials:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_updatePassSnapshot:(id)arg1 paymentCredential:(id)arg2 credentialsInCache:(id)arg3;
+- (void)_queue_updatePassSnapshot:(id)arg1 paymentCredential:(id)arg2 credentialSection:(unsigned int)arg3 credentialsInCache:(id)arg4;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (void)_terminateSetupFlow;
 - (void)_startProvisioningForCredentials:(id)arg1;
@@ -67,6 +69,8 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (int)_sectionForCredentialSection:(unsigned int)arg1;
+- (unsigned int)_credentialSectionForPaymentCredential:(id)arg1;
 - (unsigned int)_credentialSectionForSection:(int)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;

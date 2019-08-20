@@ -36,9 +36,12 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewDidLoad;
+- (id)dispatchAndReturnTetheredInsertionEventIfNeededWithID:(id)arg1 phase:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)noteAppLayoutsDidChange;
 - (void)removeAppLayout:(id)arg1 forReason:(long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)insertAppLayout:(id)arg1 atIndex:(unsigned long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)noteModelDidMutateForInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2;
+- (id)prepareInsertionOfAppLayouts:(id)arg1 atIndexes:(id)arg2 shouldAnimate:(inout _Bool *)arg3;
 - (void)noteKeyboardFocusDidChangeToSceneID:(id)arg1;
 - (id)enterAppExposeForBundleID:(id)arg1;
 - (void)handleModifierAction:(id)arg1;

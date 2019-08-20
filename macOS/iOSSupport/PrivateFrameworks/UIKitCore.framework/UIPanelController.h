@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
     struct CGSize __lastViewSize;
 }
 
++ (id)_withDisabledAppearanceTransitions:(BOOL)arg1 forVisibleDescendantsOf:(id)arg2 perform:(CDUnknownBlockType)arg3;
 @property(nonatomic, setter=_setChangingViewControllerParentage:) BOOL _changingViewControllerParentage; // @synthesize _changingViewControllerParentage=__changingViewControllerParentage;
 @property(nonatomic, setter=_setNeedsFirstTimeUpdateForTraitCollection:) BOOL _needsFirstTimeUpdateForTraitCollection; // @synthesize _needsFirstTimeUpdateForTraitCollection=__needsFirstTimeUpdateForTraitCollection;
 @property(nonatomic, setter=_setHasUpdatedForTraitCollection:) BOOL _hasUpdatedForTraitCollection; // @synthesize _hasUpdatedForTraitCollection=__hasUpdatedForTraitCollection;
@@ -70,6 +71,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(nonatomic) __weak UIViewController *owningViewController; // @synthesize owningViewController=_owningViewController;
 - (void).cxx_destruct;
+- (double)_preferredThicknessFraction;
 - (void)_doubleClickGestureRecognizerChanged:(id)arg1;
 - (void)_dragGestureRecognizerChanged:(id)arg1;
 - (id)cursorInteraction:(id)arg1 cursorForGestureRecognizerState:(long long)arg2;
@@ -95,10 +97,12 @@ __attribute__((visibility("hidden")))
 - (void)__viewWillLayoutSubviews;
 - (void)_layoutContainerViewDidMoveToWindow:(id)arg1;
 - (void)_layoutContainerViewWillMoveToWindow:(id)arg1;
+- (void)_withDisabledAppearanceTransitionsPerform:(CDUnknownBlockType)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2 superBlock:(CDUnknownBlockType)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2 superBlock:(CDUnknownBlockType)arg3;
 - (void)_expandWithTransitionCoordinator:(id)arg1;
 - (void)_collapseWithTransitionCoordinator:(id)arg1;
+- (BOOL)_needsWorkaroundForCoordinatorBlocks;
 - (void)_updateForTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)_willExpandWithNewTraitCollection:(id)arg1;
 - (BOOL)_willCollapseWithNewTraitCollection:(id)arg1;

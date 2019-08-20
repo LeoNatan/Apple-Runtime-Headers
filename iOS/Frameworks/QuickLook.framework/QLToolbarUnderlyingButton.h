@@ -11,13 +11,16 @@
 __attribute__((visibility("hidden")))
 @interface QLToolbarUnderlyingButton : UIButton
 {
+    _Bool _offsetRoundedSelectedIndicator;
     NSString *_identifier;
     struct CGRect _selectedIndicatorBounds;
 }
 
+@property(nonatomic) _Bool offsetRoundedSelectedIndicator; // @synthesize offsetRoundedSelectedIndicator=_offsetRoundedSelectedIndicator;
 @property struct CGRect selectedIndicatorBounds; // @synthesize selectedIndicatorBounds=_selectedIndicatorBounds;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)_selectedIndicatorBounds;
 
 @end

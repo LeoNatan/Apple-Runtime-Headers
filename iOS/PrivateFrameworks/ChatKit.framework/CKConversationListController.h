@@ -37,6 +37,7 @@
     _Bool _isInitialAppearance;
     _Bool _isShowingSwipeDeleteConfirmation;
     _Bool _draggingConversation;
+    _Bool _compositionWasSent;
     _Bool _shouldUseFastPreviewText;
     _Bool _hasJunkiMessageChats;
     CKConversationList *_conversationList;
@@ -87,6 +88,7 @@
 @property(retain, nonatomic) UIBarButtonItem *optionsButtonItem; // @synthesize optionsButtonItem=_optionsButtonItem;
 @property(retain, nonatomic) UIButton *composeButtonView; // @synthesize composeButtonView=_composeButtonView;
 @property(retain, nonatomic) UIBarButtonItem *composeButton; // @synthesize composeButton=_composeButton;
+@property(nonatomic) _Bool compositionWasSent; // @synthesize compositionWasSent=_compositionWasSent;
 @property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
 @property(retain, nonatomic) CKSearchViewController *modernSearchResultsController; // @synthesize modernSearchResultsController=_modernSearchResultsController;
 @property(retain, nonatomic) CKConversationSearchResultsController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
@@ -237,7 +239,7 @@
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
 - (void)endHoldingAllConversationListUpdatesForKey:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
-- (void)scrollToTop;
+- (void)compositionSent;
 - (void)significantTimeChange;
 - (void)noteUnreadCountsChanged;
 - (void)conversationWillBeMarkedRead:(id)arg1;

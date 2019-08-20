@@ -6,10 +6,21 @@
 
 #import <Foundation/NSUUID.h>
 
-@interface NSUUID (HealthKit)
+#import <HealthKit/HKUUIDProvider-Protocol.h>
+
+@class NSString;
+
+@interface NSUUID (HealthKit) <HKUUIDProvider>
 + (id)hk_UUIDWithData:(id)arg1;
 - (id)hk_shortRepresentation;
 - (long long)hk_compare:(id)arg1;
 - (id)hk_dataForUUIDBytes;
+- (id)hk_UUID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

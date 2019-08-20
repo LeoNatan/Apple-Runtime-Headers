@@ -11,6 +11,7 @@
 @interface RTTSettings : NSObject
 {
     NSLock *_synchronizeDomainsLock;
+    NSMutableDictionary *_serverCachedSettings;
     NSMutableSet *_registeredNotifications;
     NSMutableSet *_synchronizePreferences;
     NSMutableDictionary *_updateBlocks;
@@ -48,6 +49,9 @@
 @property(nonatomic) BOOL incomingCallsTTY;
 @property(nonatomic) BOOL TTYSoftwareEnabled;
 @property(nonatomic) BOOL TTYHardwareEnabled;
+- (void)clearServerSettingsCacheForKey:(id)arg1;
+- (void)clearAllServerSettingsCache;
+- (id)valueForPreferenceKey:(id)arg1 andContext:(id)arg2;
 - (id)valueForPreferenceKey:(id)arg1;
 - (id)objectValueForKey:(id)arg1 withClass:(Class)arg2 andDefaultValue:(id)arg3;
 - (id)objectValueForKey:(id)arg1 andContext:(id)arg2 withClass:(Class)arg3 andDefaultValue:(id)arg4;

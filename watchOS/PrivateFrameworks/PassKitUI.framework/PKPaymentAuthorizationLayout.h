@@ -6,19 +6,30 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface PKPaymentAuthorizationLayout : NSObject
 {
+    _Bool _isAMPPayment;
+    _Bool _shouldSuppressTotal;
     int _style;
     float _contentHorizontalMargin;
     float _valueLeftMargin;
     float _glyphDimension;
+    unsigned int _requestor;
+    NSString *_localizedNavigationTitle;
 }
 
+@property(readonly, nonatomic) _Bool shouldSuppressTotal; // @synthesize shouldSuppressTotal=_shouldSuppressTotal;
+@property(readonly, nonatomic) NSString *localizedNavigationTitle; // @synthesize localizedNavigationTitle=_localizedNavigationTitle;
+@property(readonly, nonatomic) _Bool isAMPPayment; // @synthesize isAMPPayment=_isAMPPayment;
+@property(readonly, nonatomic) unsigned int requestor; // @synthesize requestor=_requestor;
 @property(readonly, nonatomic) float glyphDimension; // @synthesize glyphDimension=_glyphDimension;
 @property(readonly, nonatomic) float valueLeftMargin; // @synthesize valueLeftMargin=_valueLeftMargin;
 @property(readonly, nonatomic) float contentHorizontalMargin; // @synthesize contentHorizontalMargin=_contentHorizontalMargin;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (id)initWithStyle:(int)arg1;
+- (void).cxx_destruct;
+- (id)initWithStyle:(int)arg1 paymentRequest:(id)arg2;
 
 @end
 

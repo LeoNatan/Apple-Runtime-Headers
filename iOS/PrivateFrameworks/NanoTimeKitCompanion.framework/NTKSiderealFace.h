@@ -14,6 +14,7 @@
 + (id)_richComplicationSlotsForDevice:(id)arg1;
 + (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_initialDefaultComplicationForSlot:(id)arg1 forDevice:(id)arg2;
 + (id)_complicationSlotDescriptors;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;
 - (unsigned long long)_indexOfOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;

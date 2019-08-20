@@ -6,21 +6,21 @@
 
 #import <ChatKit/CKAcknowledgmentGlyphView.h>
 
-@class UIImageView;
+@class CKAcknowledgmentGlyphImageView;
 
 __attribute__((visibility("hidden")))
 @interface CKEnglishHaAcknowledgmentGlyphView : CKAcknowledgmentGlyphView
 {
-    UIImageView *_h1;
-    UIImageView *_a1;
-    UIImageView *_h2;
-    UIImageView *_a2;
+    CKAcknowledgmentGlyphImageView *_h1;
+    CKAcknowledgmentGlyphImageView *_a1;
+    CKAcknowledgmentGlyphImageView *_h2;
+    CKAcknowledgmentGlyphImageView *_a2;
 }
 
-@property(retain, nonatomic) UIImageView *a2; // @synthesize a2=_a2;
-@property(retain, nonatomic) UIImageView *h2; // @synthesize h2=_h2;
-@property(retain, nonatomic) UIImageView *a1; // @synthesize a1=_a1;
-@property(retain, nonatomic) UIImageView *h1; // @synthesize h1=_h1;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *a2; // @synthesize a2=_a2;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *h2; // @synthesize h2=_h2;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *a1; // @synthesize a1=_a1;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *h1; // @synthesize h1=_h1;
 - (void).cxx_destruct;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;

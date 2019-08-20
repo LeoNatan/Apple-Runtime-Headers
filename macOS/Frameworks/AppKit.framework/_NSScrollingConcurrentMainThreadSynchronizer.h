@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_dispatchSource;
     _NSScrollingConcurrentSharedData *_sharedData;
     _NSScrollingConcurrentConstantData *_constantData;
+    NSScrollingBehaviorConcurrentVBL *_scrollingBehavior;
     CDUnknownBlockType _completionHandler;
     struct {
         unsigned int isSynchronizing:1;
@@ -23,10 +24,10 @@ __attribute__((visibility("hidden")))
         unsigned int reserved:29;
     } _flags;
     struct CGPoint _lastSetOrigin;
-    NSScrollingBehaviorConcurrentVBL *_scrollingBehavior;
 }
 
-@property(nonatomic) NSScrollingBehaviorConcurrentVBL *scrollingBehavior; // @synthesize scrollingBehavior=_scrollingBehavior;
+@property(nonatomic) __weak NSScrollingBehaviorConcurrentVBL *scrollingBehavior; // @synthesize scrollingBehavior=_scrollingBehavior;
+- (void).cxx_destruct;
 - (void)scrollView:(id)arg1 boundsChangedForClipView:(id)arg2;
 - (void)_synchronize:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_doIdlePrefetch;

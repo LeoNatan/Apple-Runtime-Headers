@@ -29,6 +29,7 @@
 - (id)exportedInterface;
 - (void)_triggerNanoSync;
 - (_Bool)_queue_deleteSamplesOfType:(id)arg1 onDayIndex:(long long)arg2 calendarCache:(id)arg3 error:(id *)arg4;
+- (void)_queue_updateLastLoggedInExperienceDate;
 - (_Bool)_queue_insertSamplesWithClientSource:(id)arg1 error:(id *)arg2;
 - (_Bool)_queue_updateStartOfCycleMetadataForModifiedDayIndex:(long long)arg1 calendarCache:(id)arg2 error:(id *)arg3;
 - (id)_queue_mostRecentMenstrualFlowSampleWithError:(id *)arg1 requiringBeforeDay:(long long)arg2 calendarCache:(id)arg3;

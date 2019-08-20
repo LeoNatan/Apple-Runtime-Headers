@@ -70,11 +70,6 @@ struct SessionManager;
 
 struct Stream;
 
-struct _AVAudioChannelRange {
-    unsigned long long _field1;
-    unsigned long long _field2;
-};
-
 struct __shared_weak_count;
 
 struct shared_ptr<as::client::DataSource> {

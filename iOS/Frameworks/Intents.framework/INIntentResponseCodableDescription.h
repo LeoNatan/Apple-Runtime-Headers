@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Intents/INCodableDescription.h>
+#import <Intents/INRootCodableDescription.h>
 
 @class INCodableAttribute, NSArray, NSMutableDictionary, NSString;
 
-@interface INIntentResponseCodableDescription : INCodableDescription
+@interface INIntentResponseCodableDescription : INRootCodableDescription
 {
     NSMutableDictionary *_intentResponseCodableCodes;
     NSString *_outputAttributeName;

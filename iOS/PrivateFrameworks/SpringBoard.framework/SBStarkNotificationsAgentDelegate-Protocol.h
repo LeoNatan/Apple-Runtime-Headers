@@ -11,6 +11,7 @@
 
 @protocol SBStarkNotificationsAgentDelegate <NSObject>
 - (void)agent:(id <SBStarkNotificationsAgent>)arg1 didDismissNotificationRequest:(NCNotificationRequest *)arg2;
+- (void)agent:(id <SBStarkNotificationsAgent>)arg1 willPresentNotificationRequest:(NCNotificationRequest *)arg2;
 - (void)agent:(id <SBStarkNotificationsAgent>)arg1 executeAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3;
 @end
 

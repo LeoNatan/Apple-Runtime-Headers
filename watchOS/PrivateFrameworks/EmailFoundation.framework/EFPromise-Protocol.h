@@ -7,8 +7,11 @@
 #import <EmailFoundation/NSObject-Protocol.h>
 
 @class EFFuture, NSError;
+@protocol EFObserver;
 
 @protocol EFPromise <NSObject>
+@property(readonly) id <EFObserver> resultsObserverAdapter;
+@property(readonly) id <EFObserver> firstResultObserverAdapter;
 @property(readonly) CDUnknownBlockType errorOnlyCompletionHandlerAdapter;
 @property(readonly) CDUnknownBlockType boolErrorCompletionHandlerAdapter;
 @property(readonly) CDUnknownBlockType completionHandlerAdapter;

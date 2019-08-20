@@ -103,6 +103,8 @@
 - (void)_flattenProperties;
 - (BOOL)isEditable;
 - (id)_initWithEntities:(id)arg1;
+- (id)_entityVersionHashesDigest;
+- (id)_entityVersionHashesDigestFrom:(id)arg1;
 - (id)_entityVersionHashesByNameInStyle:(unsigned long long)arg1;
 - (BOOL)_isConfiguration:(id)arg1 inStyle:(unsigned long long)arg2 compatibleWithStoreMetadata:(id)arg3;
 - (id)immutableCopy;

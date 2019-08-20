@@ -6,9 +6,11 @@
 
 #import <OnBoardingKit/OBWelcomeController.h>
 
-@class HUItemTableViewController, NSLayoutConstraint;
+#import <HomeUI/HUPreloadableViewController-Protocol.h>
 
-@interface HUItemTableOBWelcomeController : OBWelcomeController
+@class HUItemTableViewController, NSLayoutConstraint, NSString;
+
+@interface HUItemTableOBWelcomeController : OBWelcomeController <HUPreloadableViewController>
 {
     HUItemTableViewController *_itemTableViewController;
     NSLayoutConstraint *_itemTableViewHeightConstraint;
@@ -17,12 +19,19 @@
 @property(retain, nonatomic) NSLayoutConstraint *itemTableViewHeightConstraint; // @synthesize itemTableViewHeightConstraint=_itemTableViewHeightConstraint;
 @property(retain, nonatomic) HUItemTableViewController *itemTableViewController; // @synthesize itemTableViewController=_itemTableViewController;
 - (void).cxx_destruct;
+- (id)hu_preloadContent;
 - (void)updateViewConstraints;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3 contentLayout:(long long)arg4;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3 itemTableViewController:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

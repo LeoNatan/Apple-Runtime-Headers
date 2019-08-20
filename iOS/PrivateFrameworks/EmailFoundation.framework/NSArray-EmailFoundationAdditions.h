@@ -35,6 +35,7 @@
 - (id)ef_objectSameAs:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
 - (unsigned long long)ef_indexOfObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
 - (unsigned long long)ef_indexOfObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (void)ef_enumerateObjectsInBatchesOfSize:(unsigned long long)arg1 overlapBy:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (void)ef_enumerateObjectsInBatchesOfSize:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)ef_enumerateObjectsInBatchesOfSize:(unsigned long long)arg1 objectArrayBlock:(CDUnknownBlockType)arg2;
 - (id)ef_indicesOfStringsWithPrefix:(id)arg1;

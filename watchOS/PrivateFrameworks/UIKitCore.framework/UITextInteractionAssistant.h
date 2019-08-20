@@ -9,7 +9,7 @@
 #import <UIKitCore/UIResponderStandardEditActions-Protocol.h>
 #import <UIKitCore/UITextInteraction_AssistantDelegate-Protocol.h>
 
-@class NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextRange, UITextSelectionView;
+@class NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder, UIScrollView, UITapGestureRecognizer, UITextChecker, UITextInteraction, UITextLinkInteraction, UITextRange, UITextSelectionView;
 @protocol UITextInput;
 
 @interface UITextInteractionAssistant : NSObject <UITextInteraction_AssistantDelegate, UIResponderStandardEditActions>
@@ -32,6 +32,7 @@
     _Bool _expectingCommit;
     _Bool _externalTextInput;
     _Bool _suppressSystemUI;
+    UITextLinkInteraction *_linkInteraction;
     UITextInteraction *_interactions;
     int _textInteractionMode;
     UITextInteraction *_externalInteractions;
@@ -106,12 +107,11 @@
 - (void)addGestureRecognizersToView:(id)arg1;
 - (Class)loupeInteractionClass;
 - (Class)selectionInteractionClass;
-- (id)linkInteractionView;
 - (void)setGestureRecognizers;
 - (void)canBeginDragCursor:(id)arg1;
 - (_Bool)useGesturesForEditableContent;
-- (void)resetGestureRecognizersForLinkInteraction;
 - (void)clearGestureRecognizers:(_Bool)arg1;
+- (_Bool)wantsLinkInteraction;
 - (_Bool)containerIsBrowserView;
 - (_Bool)containerAllowsSelectionTintOnly;
 - (_Bool)containerAllowsSelection;
@@ -137,6 +137,7 @@
 @property(readonly, retain, nonatomic) UIGestureRecognizer *doubleTapGesture;
 @property(readonly, retain, nonatomic) UITapGestureRecognizer *singleTapGesture;
 @property(retain, nonatomic) UITextInteraction *externalInteractions;
+@property(retain, nonatomic) UITextLinkInteraction *linkInteraction;
 @property(readonly, retain, nonatomic) UITextInteraction *interactions;
 @property(readonly, nonatomic) UIResponder<UITextInput> *textDocument;
 - (id)_selectionView;

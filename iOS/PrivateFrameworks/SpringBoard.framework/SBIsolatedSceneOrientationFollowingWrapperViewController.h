@@ -20,6 +20,7 @@
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsDiffInspector;
     UIApplicationSceneClientSettingsDiffInspector *_clientSettingsDiffInspector;
     _Bool _sceneWantsDeviceOrientationEvents;
+    _Bool _rendersWhileLocked;
     id <SBIsolatedSceneOrientationFollowingWrapperOrientationDelegate> _orientationDelegate;
 }
 
@@ -32,7 +33,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithContentViewController:(id)arg1 sceneHandle:(id)arg2 orientationDelegate:(id)arg3;
+- (id)initWithContentViewController:(id)arg1 sceneHandle:(id)arg2 orientationDelegate:(id)arg3 rendersWhileLocked:(_Bool)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

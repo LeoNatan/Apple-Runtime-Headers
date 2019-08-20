@@ -122,6 +122,7 @@
 - (id)_credentialCreateIfNecessary:(_Bool)arg1;
 - (id)_credential;
 - (_Bool)supportsMailDrop;
+@property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly, nonatomic, getter=isManaged) _Bool managed;
 @property(copy, nonatomic) NSString *hostname;
 @property(retain) NSString *username;

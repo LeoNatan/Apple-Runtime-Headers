@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)markupDocumentActionForFutureRepresentation:(id)arg1 attachmentHandlingDelegate:(id)arg2;
-+ (id)quicklookActionForFutureRepresentation:(id)arg1 attachmentHandlingDelegate:(id)arg2;
++ (id)markupDocumentActionForFutureRepresentation:(id)arg1 contentRepresentationHandlingDelegate:(id)arg2;
++ (id)quicklookActionForFutureRepresentation:(id)arg1 contentRepresentationHandlingDelegate:(id)arg2;
 + (id)saveAllAttachmentsActionWithTitle:(id)arg1 futureRepresentations:(id)arg2;
 + (id)saveVideoActionForFutureRepresentation:(id)arg1;
 + (id)saveImageActionForFutureRepresentation:(id)arg1;

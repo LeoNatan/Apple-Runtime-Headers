@@ -6,10 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class MapsSuggestionsContacts, MapsSuggestionsRoutine;
+#import <MapsSuggestions/MapsSuggestionsMeCardObserver-Protocol.h>
+#import <MapsSuggestions/MapsSuggestionsMeCardReader-Protocol.h>
+
+@class MapsSuggestionsContacts, MapsSuggestionsMeCard, MapsSuggestionsObservers, MapsSuggestionsRoutine, NSArray, NSString;
 @protocol MapsSuggestionsShortcutStorage, MapsSuggestionsShortcutSuggestor;
 
-@interface MapsSuggestionsShortcutManager : NSObject
+@interface MapsSuggestionsShortcutManager : NSObject <MapsSuggestionsMeCardObserver, MapsSuggestionsMeCardReader>
 {
     struct Queue _queue;
     id <MapsSuggestionsShortcutStorage> _storage;
@@ -17,6 +20,12 @@
     MapsSuggestionsRoutine *_routine;
     MapsSuggestionsContacts *_contacts;
     struct NSMutableArray *_hiddenShortcuts;
+    MapsSuggestionsMeCard *_rawMeCard;
+    struct NSArray *_shortcutsOverlay;
+    MapsSuggestionsObservers *_meCardObservers;
+    MapsSuggestionsMeCard *_currCorrectedMeCard;
+    NSArray *_rawHomeAddressStrings;
+    NSArray *_rawWorkAddressStrings;
 }
 
 - (id).cxx_construct;
@@ -24,14 +33,27 @@
 - (id)routine;
 - (id)suggestor;
 - (id)storage;
+- (void)removeMeCardObserver:(id)arg1;
+- (void)addMeCardObserver:(id)arg1;
+- (_Bool)readMeCardWithHandler:(CDUnknownBlockType)arg1;
+- (void)meCardReader:(id)arg1 didUpdateMeCard:(id)arg2;
+@property(readonly, nonatomic) NSString *uniqueName;
 - (void)setChangeHandler:(CDUnknownBlockType)arg1;
 - (_Bool)proposeAdditionalShortcutsOfType:(int)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)loadAllShortcutsWithHandler:(CDUnknownBlockType)arg1;
-- (_Bool)_loadAllShortcutsWithHandler:(CDUnknownBlockType)arg1;
+- (_Bool)_loadCorrectedMeCardWithHandler:(CDUnknownBlockType)arg1;
+- (_Bool)__loadCorrectedMeCardWithHandler:(CDUnknownBlockType)arg1;
+- (_Bool)_mergeShortcutsToMeCardAndCallHandler:(CDUnknownBlockType)arg1;
 - (id)initWithStorage:(id)arg1 suggestor:(id)arg2 contacts:(id)arg3 routine:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

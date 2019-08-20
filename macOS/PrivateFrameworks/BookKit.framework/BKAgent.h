@@ -44,6 +44,7 @@
 - (void)redactBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)examineBook:(id)arg1 includeCover:(BOOL)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)uncompressBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)validateAuthorization:(CDUnknownBlockType)arg1;
 - (void)moveAsideLibraryStore:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)chooseLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)reconnectToLibrary:(CDUnknownBlockType)arg1;

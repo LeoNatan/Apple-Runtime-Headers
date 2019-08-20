@@ -23,7 +23,7 @@
 @property(nonatomic) long long mirroringQualityOfService; // @synthesize mirroringQualityOfService=_mirroringQualityOfService;
 - (void).cxx_destruct;
 - (BOOL)allowTombstones;
-- (void)_updateRequest:(id)arg1 includingContextOptions:(long long)arg2;
+- (void)_updateRequest:(id *)arg1 includingContextOptions:(long long)arg2;
 - (BOOL)_processError:(inout id *)arg1;
 - (BOOL)_shouldExecute:(id *)arg1;
 - (id)substitutionVariableKeys;

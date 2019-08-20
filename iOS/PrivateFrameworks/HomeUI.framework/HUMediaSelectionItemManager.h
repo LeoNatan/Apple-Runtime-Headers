@@ -33,10 +33,8 @@
     SKCloudServiceController *_cloudServiceController;
     HFPlaybackArchive *_lastSelectedArchive;
     NSNumber *_lastSelectedVolume;
-    long long _lastSelectedPlaybackOptions;
 }
 
-@property(nonatomic) long long lastSelectedPlaybackOptions; // @synthesize lastSelectedPlaybackOptions=_lastSelectedPlaybackOptions;
 @property(retain, nonatomic) NSNumber *lastSelectedVolume; // @synthesize lastSelectedVolume=_lastSelectedVolume;
 @property(retain, nonatomic) HFPlaybackArchive *lastSelectedArchive; // @synthesize lastSelectedArchive=_lastSelectedArchive;
 @property(retain, nonatomic) SKCloudServiceController *cloudServiceController; // @synthesize cloudServiceController=_cloudServiceController;

@@ -373,6 +373,7 @@
 - (void)fetchCallForwardingValue:(id)arg1 reason:(int)arg2 callClass:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)fetchCallWaitingValue:(id)arg1 callClass:(int)arg2;
 - (void)fetchCallWaitingValue:(id)arg1 callClass:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)setVisualVoicemailState:(id)arg1 subscribed:(_Bool)arg2;
 - (void)getVoicemailInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)setSaveDataMode:(id)arg1 enable:(_Bool)arg2;
 - (_Bool)saveDataMode:(id)arg1 error:(id *)arg2;
@@ -391,6 +392,7 @@
 - (void)deleteZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteTransferPlansForEid:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getCurrentIMessageIccidsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)cancelPlanTransfer:(id)arg1 fromDevice:(id)arg2;
 - (void)transferPlans:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)transferPlan:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getTransferPlansWithCompletion:(CDUnknownBlockType)arg1;

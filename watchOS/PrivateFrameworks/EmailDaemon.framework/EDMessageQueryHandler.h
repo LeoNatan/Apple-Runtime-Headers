@@ -10,8 +10,8 @@
 #import <EmailDaemon/EFContentProtectionObserver-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessageQueryHelper, NSMutableDictionary, NSObject, NSString;
-@protocol EFCancelable, OS_dispatch_queue;
+@class EDMessageQueryHelper, EFCancelationToken, NSMutableDictionary, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 @interface EDMessageQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     NSObject<OS_dispatch_queue> *_resultQueue;
     NSMutableDictionary *_oldestMessageIDsByMailboxObjectIDs;
-    id <EFCancelable> _updateOldestMessagesCancelationToken;
+    EFCancelationToken *_updateOldestMessagesCancelationToken;
 }
 
 + (id)findMessagesByPreviousObjectIDForAddedMessages:(id)arg1 messageSource:(id)arg2;
 + (id)log;
-@property(retain, nonatomic) id <EFCancelable> updateOldestMessagesCancelationToken; // @synthesize updateOldestMessagesCancelationToken=_updateOldestMessagesCancelationToken;
+@property(retain, nonatomic) EFCancelationToken *updateOldestMessagesCancelationToken; // @synthesize updateOldestMessagesCancelationToken=_updateOldestMessagesCancelationToken;
 @property(readonly, copy, nonatomic) NSMutableDictionary *oldestMessageIDsByMailboxObjectIDs; // @synthesize oldestMessageIDsByMailboxObjectIDs=_oldestMessageIDsByMailboxObjectIDs;
 @property(nonatomic) _Bool didCancel; // @synthesize didCancel=_didCancel;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resultQueue; // @synthesize resultQueue=_resultQueue;
@@ -35,7 +35,7 @@
 - (id)findMessagesByPreviousObjectIDForAddedMessages:(id)arg1 helper:(id)arg2;
 - (void)_oldestMessagesByMailboxObjectIDsWasUpdated;
 - (id)_oldestItemQueryForMailbox:(id)arg1;
-- (void)_updateOldestMessagesForMailboxes:(id)arg1;
+- (void)_updateOldestMessagesForMailboxes:(id)arg1 cancelationToken:(id)arg2;
 - (void)_oldestMessagesNeedUpdate;
 - (void)_initializeOldestMessagesByMailbox;
 - (void)queryHelperNeedsRestart:(id)arg1;

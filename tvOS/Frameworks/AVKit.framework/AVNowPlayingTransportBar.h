@@ -90,6 +90,7 @@ __attribute__((visibility("hidden")))
     NSDateFormatter *_currentDateFormatter;
     NSDate *_dateCorrespondingToStartTimeTextLabel;
     NSDate *_dateCorrespondingToTimeRemainingTextLabel;
+    struct CGRect _scrubbingRegionBounds;
 }
 
 + (struct CGSize)maximumSizeForFrameImages;
@@ -104,6 +105,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *interstitialTimes; // @synthesize interstitialTimes=_interstitialTimes;
 @property(nonatomic) long long hint; // @synthesize hint=_hint;
 @property(copy, nonatomic) NSString *needleText; // @synthesize needleText=_needleText;
+@property(nonatomic) struct CGRect scrubbingRegionBounds; // @synthesize scrubbingRegionBounds=_scrubbingRegionBounds;
 @property(nonatomic) _Bool displaysScrubbingFrames; // @synthesize displaysScrubbingFrames=_displaysScrubbingFrames;
 @property(readonly, nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic, getter=isRemainingTimeDisplayed) _Bool displaysRemainingTime; // @synthesize displaysRemainingTime=_displaysRemainingTime;
@@ -159,6 +161,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateBorderWidth;
 - (void)_updateTransportBarMaskIfNeeded;
 - (void)layoutSubviews;
+- (void)_updateScrubbingRegionBounds;
 - (void)stopScrubbingWithResetToPauseMarker:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) double currentTimeIntervalForThumbnailOrNeedle;
 - (void)startScrubbingForPauseTime:(double)arg1;

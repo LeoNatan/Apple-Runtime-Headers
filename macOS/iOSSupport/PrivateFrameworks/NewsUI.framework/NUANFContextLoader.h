@@ -14,11 +14,11 @@
 @interface NUANFContextLoader : NSObject <SXResourceDataSource>
 {
     SXContext *_context;
+    NUANFAssetLoader *_assetLoader;
     FCFlintManifest *_flintManifest;
     FCFlintResourceManager *_flintResourceManager;
     id <SXHost> _host;
     id <NUArticleResourceURLTranslator> _resourceURLTranslator;
-    NUANFAssetLoader *_assetLoader;
     FCAsyncOnceOperation *_asyncOnceOperation;
     NSOperationQueue *_imageDecodingQueue;
     id <FCHeadlineProviding> _headline;
@@ -27,11 +27,11 @@
 @property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(readonly, nonatomic) NSOperationQueue *imageDecodingQueue; // @synthesize imageDecodingQueue=_imageDecodingQueue;
 @property(retain, nonatomic) FCAsyncOnceOperation *asyncOnceOperation; // @synthesize asyncOnceOperation=_asyncOnceOperation;
-@property(retain, nonatomic) NUANFAssetLoader *assetLoader; // @synthesize assetLoader=_assetLoader;
 @property(readonly, nonatomic) id <NUArticleResourceURLTranslator> resourceURLTranslator; // @synthesize resourceURLTranslator=_resourceURLTranslator;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
 @property(readonly, nonatomic) FCFlintManifest *flintManifest; // @synthesize flintManifest=_flintManifest;
+@property(retain, nonatomic) NUANFAssetLoader *assetLoader; // @synthesize assetLoader=_assetLoader;
 @property(retain, nonatomic) SXContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)asyncLoadContextOnceWithCompletion:(CDUnknownBlockType)arg1;

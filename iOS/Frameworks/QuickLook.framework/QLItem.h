@@ -29,6 +29,7 @@
     _Bool _shouldUseExtensionPreview;
     _Bool _hasDeterminedShouldUseExtensionThumbnail;
     _Bool _shouldUseExtensionThumbnail;
+    _Bool _needsAccessToExternalResources;
     NSNumber *_previewItemProviderProgress;
     FPItem *_fpItem;
     id <QLPreviewItemPrivateProtocol> _originalPreviewItem;
@@ -69,6 +70,7 @@
 + (id)rtfContentTypes;
 + (id)webContentTypes;
 + (id)supportedContentTypes;
+@property _Bool needsAccessToExternalResources; // @synthesize needsAccessToExternalResources=_needsAccessToExternalResources;
 @property(copy, nonatomic) NSDictionary *clientPreviewOptions; // @synthesize clientPreviewOptions=_clientPreviewOptions;
 @property(retain, nonatomic) FPSandboxingURLWrapper *sandboxingURLWrapper; // @synthesize sandboxingURLWrapper=_sandboxingURLWrapper;
 @property(nonatomic) _Bool shouldUseExtensionThumbnail; // @synthesize shouldUseExtensionThumbnail=_shouldUseExtensionThumbnail;

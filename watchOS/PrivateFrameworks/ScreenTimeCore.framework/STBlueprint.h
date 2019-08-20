@@ -25,7 +25,7 @@
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 fromOrganization:(id)arg2;
 + (id)fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1 ofType:(id)arg2;
 + (id)_fetchRequestMatchingBlueprintsForUserWithDSID:(id)arg1;
-+ (id)fetchRequestMatchingOneMoreMinuteBlueprints;
++ (id)fetchRequestMatchingUnexpiredOneMoreMinuteBlueprints;
 + (id)fetchRequestMatchingDeletedBlueprints;
 + (id)fetchRequestMatchingExpiredBlueprints;
 + (id)defaultAlwaysAllowBundleIDs;

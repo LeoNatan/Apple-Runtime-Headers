@@ -9,7 +9,7 @@
 #import <network/OS_nw_socks5_server-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, OS_nw_array, OS_nw_listener, OS_nw_parameters;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_nw_array, OS_nw_listener, OS_nw_parameters;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_socks5_server : NSObject <OS_nw_socks5_server>
@@ -25,7 +25,12 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_listener> *ss_listener;
     NSObject<OS_nw_array> *ss_socks5_connections;
     struct nw_shoes_statistics ss_stats;
+    unsigned long long ss_assertion_toggle_mach_time;
+    NSObject<OS_dispatch_source> *ss_assertion_timer;
+    unsigned int ss_assertion;
+    unsigned int ss_busy_count;
     unsigned int ss_shoes:1;
+    unsigned int ss_assertion_timer_running:1;
 }
 
 - (void).cxx_destruct;

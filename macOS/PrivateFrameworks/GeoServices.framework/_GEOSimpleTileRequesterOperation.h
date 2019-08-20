@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
     NSString *_requestingBundleId;
     double _tileLoaderCreateTime;
     BOOL _shouldDownloadToDisk;
+    BOOL _isRunning;
 }
 
 @property(nonatomic) double tileLoaderCreateTime; // @synthesize tileLoaderCreateTime=_tileLoaderCreateTime;

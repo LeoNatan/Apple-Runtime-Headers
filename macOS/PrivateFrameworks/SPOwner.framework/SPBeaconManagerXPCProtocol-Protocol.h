@@ -10,7 +10,6 @@
 @class NSArray, NSDateInterval, NSString, NSUUID;
 
 @protocol SPBeaconManagerXPCProtocol <NSObject, SPLocalBeaconManagerXPCProtocol>
-- (oneway void)getMacBeaconConfigWithCompletion:(void (^)(SPMacBeaconConfig *, NSError *))arg1;
 - (oneway void)setServiceState:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)primaryAccountModified;
 - (oneway void)removeLocalAccountDataWithCompletion:(void (^)(BOOL))arg1;

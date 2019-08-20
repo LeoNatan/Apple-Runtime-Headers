@@ -12,12 +12,13 @@
 
 @interface UISApplicationSupportClient : NSObject <BSInvalidatable>
 {
-    BSServiceConnection *_lazy_connection;
-    _Bool _invalidated;
+    struct os_unfair_lock_s _lock;
+    BSServiceConnection *_lock_connection;
+    _Bool _lock_invalidated;
 }
 
 - (void).cxx_destruct;
-- (id)_lazy_connection;
+- (id)_remoteTarget;
 - (void)destroyScenesWithPersistentIdentifiers:(id)arg1 animationType:(unsigned int)arg2 destroySessions:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)applicationInitializationContext;
 - (void)requestPasscodeUnlockUIWithCompletion:(CDUnknownBlockType)arg1;

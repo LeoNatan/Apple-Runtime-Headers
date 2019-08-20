@@ -6,6 +6,7 @@
 
 #import <IconServices/ISImage.h>
 
+__attribute__((visibility("hidden")))
 @interface ISSymbolImage : ISImage
 {
     struct CGImage *_internalCGImage;

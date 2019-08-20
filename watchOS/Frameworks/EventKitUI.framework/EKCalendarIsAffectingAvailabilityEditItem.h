@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)cellWrapsLongText;
 - (id)headerTitle;
 - (id)descriptionLabelText;
 - (id)cellText;

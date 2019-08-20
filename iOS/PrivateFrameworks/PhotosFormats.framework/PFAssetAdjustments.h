@@ -18,6 +18,9 @@
 
 + (id)fingerprintWithAssetAdjustmentFingerprintData:(id)arg1;
 + (id)fingerPrintForData:(id)arg1 error:(id *)arg2;
++ (_Bool)writeReassembleAdjustmentsPropertyListAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
++ (id)dataForOverflowDataReassembledAdjustmentsPropertyListAtURL:(id)arg1 error:(id *)arg2;
++ (_Bool)adjustmentsPropertyListFileRequiresOverflowDataReassemblyAtURL:(id)arg1 predictedSize:(long long *)arg2;
 @property(retain, nonatomic) NSDictionary *propertyListDictionary; // @synthesize propertyListDictionary=_propertyListDictionary;
 - (void).cxx_destruct;
 - (id)description;

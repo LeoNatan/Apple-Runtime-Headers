@@ -6,7 +6,13 @@
 
 #import <Foundation/NSIndexPath.h>
 
-@interface NSIndexPath (_PASAdditions)
+#import <ProactiveSupport/_PASDistilledString-Protocol.h>
+
+@class NSString;
+
+@interface NSIndexPath (_PASAdditions) <_PASDistilledString>
++ (id)_pas_fromVersionString:(id)arg1 withExceptions:(BOOL)arg2;
++ (id)_pas_fromVersionStringIfPossible:(id)arg1;
 + (id)_pas_fromVersionString:(id)arg1;
 - (BOOL)_pas_isGreaterThanVersionString:(id)arg1;
 - (BOOL)_pas_isGreaterThanOrEqualToVersionString:(id)arg1;
@@ -14,5 +20,12 @@
 - (BOOL)_pas_isLessThanOrEqualToVersionString:(id)arg1;
 - (BOOL)_pas_isLessThanVersionString:(id)arg1;
 - (id)_pas_asVersionString;
+- (id)_pas_revivedString;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -6,11 +6,13 @@
 
 #import <coreroutine/RTStore.h>
 
-@class NSMutableArray, RTTimer, RTTimerManager;
+@class NSMutableArray, NSObject, RTTimer, RTTimerManager;
+@protocol OS_os_transaction;
 
 @interface RTLocationStore : RTStore
 {
     RTTimerManager *_timerManager;
+    NSObject<OS_os_transaction> *_flushTransaction;
     NSMutableArray *_locations;
     RTTimer *_flushTimer;
 }

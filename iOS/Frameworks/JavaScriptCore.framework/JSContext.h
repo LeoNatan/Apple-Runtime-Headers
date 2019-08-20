@@ -37,6 +37,7 @@
 @property(readonly) JSVirtualMachine *virtualMachine;
 @property(readonly) JSValue *globalObject;
 @property(retain) JSValue *exception;
+- (id)dependencyIdentifiersForModuleJSScript:(id)arg1;
 - (id)evaluateJSScript:(id)arg1;
 - (id)evaluateScript:(id)arg1 withSourceURL:(id)arg2;
 - (id)evaluateScript:(id)arg1;

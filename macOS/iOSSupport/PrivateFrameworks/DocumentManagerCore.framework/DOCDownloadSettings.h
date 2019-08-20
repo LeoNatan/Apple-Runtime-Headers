@@ -6,32 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSError;
+@class FPItem, NSArray, NSError;
 
 @interface DOCDownloadSettings : NSObject
 {
     NSArray *_providers;
     NSError *_providersObserverError;
     id _providersObserverContext;
+    FPItem *_currentDefaultDownloadsLocationItem;
 }
 
+@property(retain) FPItem *currentDefaultDownloadsLocationItem; // @synthesize currentDefaultDownloadsLocationItem=_currentDefaultDownloadsLocationItem;
 @property(retain) id providersObserverContext; // @synthesize providersObserverContext=_providersObserverContext;
 @property(retain) NSError *providersObserverError; // @synthesize providersObserverError=_providersObserverError;
 @property(retain) NSArray *providers; // @synthesize providers=_providers;
 - (void).cxx_destruct;
-- (id)createErrorForCode:(long long)arg1 localizedDescription:(id)arg2 underlyingError:(id)arg3;
-- (id)preferredProvidersIn:(id)arg1;
-- (void)rootItemOfPreferredProviderInDomains:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchAvailableProviders:(CDUnknownBlockType)arg1;
-- (void)fetchProviders:(CDUnknownBlockType)arg1;
-- (void)createDefaultDownloadsFolderInParent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchDefaultFallbackDownloadLocation:(CDUnknownBlockType)arg1;
+- (id)_createErrorForCode:(long long)arg1 localizedDescription:(id)arg2 underlyingError:(id)arg3;
+- (void)_validatePreferredProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_preferredProvidersIn:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_rootItemOfPreferredProviderInDomains:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_fetchAvailableProviders:(CDUnknownBlockType)arg1;
+- (void)_fetchProviders:(CDUnknownBlockType)arg1;
+- (void)_createDefaultDownloadsFolderInParent:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_fetchDefaultFallbackDownloadLocation:(CDUnknownBlockType)arg1;
 - (void)fetchProvidersSuitableForDownloads:(CDUnknownBlockType)arg1;
 - (void)resetDefaultDownloadsLocationItem;
 - (void)setDefaultDownloadsItemForProviderDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setDefaultDownloadsLocationItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)saveDownloadFolderItem:(id)arg1 error:(id *)arg2;
-- (void)removeCurrentDownloadsLocationFromFavorites;
+- (BOOL)_saveDownloadFolderItem:(id)arg1 error:(id *)arg2;
+- (void)_removeCurrentDownloadsLocationFromFavorites;
 - (void)fetchDefaultDownloadsLocationItem:(CDUnknownBlockType)arg1;
 - (id)init;
 

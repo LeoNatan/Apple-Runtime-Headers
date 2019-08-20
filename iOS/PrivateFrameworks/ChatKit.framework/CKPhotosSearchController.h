@@ -21,6 +21,7 @@
 + (id)sectionTitle;
 + (_Bool)supportsQuicklook;
 @property(nonatomic) unsigned long long contentMode; // @synthesize contentMode=_contentMode;
+- (struct NSDirectionalEdgeInsets)additionalGroupInsets;
 - (void)_saveAttachmentForResult:(id)arg1;
 - (id)_activityItemProviderForResult:(id)arg1;
 - (id)_pasteboardItemsForResult:(id)arg1;

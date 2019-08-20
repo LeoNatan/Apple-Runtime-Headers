@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)_sendIfNeeded;
 - (void)_updateFromCurrentSample;
 @property(readonly, nonatomic, getter=_dropSession) _UIDropSessionImpl *dropSession;
+@property(readonly, nonatomic) BOOL hasActiveGestureRecognizers;
 @property(readonly, nonatomic) BOOL isPolicyDriven;
 @property(readonly, nonatomic) UIWindow *eventWindow;
 @property(readonly, nonatomic, getter=_hitTestedView) UIView *hitTestedView;

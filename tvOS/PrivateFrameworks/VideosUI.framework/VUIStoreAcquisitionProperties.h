@@ -10,7 +10,6 @@
 
 @class NSNumber, NSString;
 
-__attribute__((visibility("hidden")))
 @interface VUIStoreAcquisitionProperties : NSObject <NSCopying>
 {
     _Bool _ignoresForcedPasswordRestriction;

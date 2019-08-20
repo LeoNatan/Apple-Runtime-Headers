@@ -12,18 +12,20 @@
 {
     MTMaterialView *_darkMaterialView;
     CCUICAPackageDescription *_packageDescription;
-    double _expandedWidthForVerticalGlyphLayout;
+    double _additiveGlyphScaleFactor;
+    struct CGSize _expandedMetricsForGlyphLayout;
 }
 
-@property(nonatomic) double expandedWidthForVerticalGlyphLayout; // @synthesize expandedWidthForVerticalGlyphLayout=_expandedWidthForVerticalGlyphLayout;
+@property(nonatomic) struct CGSize expandedMetricsForGlyphLayout; // @synthesize expandedMetricsForGlyphLayout=_expandedMetricsForGlyphLayout;
+@property(nonatomic) double additiveGlyphScaleFactor; // @synthesize additiveGlyphScaleFactor=_additiveGlyphScaleFactor;
 - (void).cxx_destruct;
 - (void)_configureForContentModuleGroupRenderingIfNecessary;
+- (void)_setupDarkMaterialView;
 - (void)setContinuousSliderCornerRadius:(double)arg1;
 - (void)layoutSubviews;
-- (void)_setupDarkMaterialView;
 - (struct CGPoint)glyphCenter;
-- (void)setGlyphVisible:(_Bool)arg1;
 - (id)glyphPackageDescription;
+- (void)stopGlyphAnimations;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithGlyphPackageDescription:(id)arg1;
 

@@ -17,16 +17,20 @@
     long long _orientation;
     NSDictionary *_colorProperties;
     CDStruct_d58201db _size;
+    CDStruct_d58201db _originalSize;
     CDStruct_1b6d18a9 _livePhotoKeyFrameTime;
     CDStruct_1b6d18a9 _duration;
     CDStruct_996ac03c _cleanAperture;
+    CDStruct_996ac03c _originalCleanAperture;
 }
 
 @property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(nonatomic) CDStruct_1b6d18a9 livePhotoKeyFrameTime; // @synthesize livePhotoKeyFrameTime=_livePhotoKeyFrameTime;
 @property(retain, nonatomic) NSDictionary *colorProperties; // @synthesize colorProperties=_colorProperties;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
+@property(nonatomic) CDStruct_996ac03c originalCleanAperture; // @synthesize originalCleanAperture=_originalCleanAperture;
 @property(nonatomic) CDStruct_996ac03c cleanAperture; // @synthesize cleanAperture=_cleanAperture;
+@property(nonatomic) CDStruct_912cb5d2 originalSize; // @synthesize originalSize=_originalSize;
 @property(nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
 @property(retain, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;

@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 @class MPMediaLibraryArtworkRequest, NSArray, NSDictionary, NSURL;
-@protocol OS_dispatch_queue;
 
 @interface MPMediaLibraryArtwork : NSObject
 {
+    struct os_unfair_lock_s _stateLock;
     NSArray *_validSizes;
     MPMediaLibraryArtworkRequest *_artworkRequest;
-    NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
 + (void)fetchArtworkInfoForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -22,7 +21,7 @@
 + (id)availableArtworkWithRequest:(id)arg1;
 + (BOOL)needsToFetchArtworkForRequest:(id)arg1;
 + (BOOL)artworkExistsForRequest:(id)arg1;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
+@property(readonly, nonatomic) struct os_unfair_lock_s stateLock; // @synthesize stateLock=_stateLock;
 @property(nonatomic) __weak MPMediaLibraryArtworkRequest *artworkRequest; // @synthesize artworkRequest=_artworkRequest;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *effectsMetadata;

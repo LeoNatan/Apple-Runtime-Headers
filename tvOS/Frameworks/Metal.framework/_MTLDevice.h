@@ -229,7 +229,6 @@
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (_Bool)areProgrammableSamplePositionsSupported;
-- (_Bool)supportsVersion:(long long)arg1;
 - (_Bool)supportsFamily:(long long)arg1;
 - (void)initGPUFamilySupport;
 - (void)initFeatureQueries;
@@ -319,6 +318,7 @@
 @property(readonly, nonatomic) _Bool supportsNonPrivateMSAATextures;
 @property(readonly, nonatomic) _Bool supportsNonPrivateDepthStencilTextures;
 @property(readonly, nonatomic) _Bool supportsLimitedYUVFormats;
+@property(readonly, nonatomic) _Bool supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) _Bool supportsPlacementHeaps;
 @property(readonly, nonatomic) _Bool supports32bpcMSAATextures;
 @property(readonly, nonatomic) _Bool supportsSamplerAddressModeClampToHalfBorder;

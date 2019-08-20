@@ -13,6 +13,7 @@
 @interface AWDHomeKitHomeConfiguration : PBCodable <NSCopying>
 {
     NSMutableArray *_eventTriggers;
+    NSMutableArray *_homeKitMultiUserSettings;
     int _networkProtectionStatus;
     unsigned int _numAccessories;
     unsigned int _numAccessoriesNetworkProtectionAutoFullAccess;
@@ -42,6 +43,7 @@
     unsigned int _numRooms;
     unsigned int _numScenes;
     unsigned int _numServices;
+    unsigned int _numShortcuts;
     unsigned int _numTargetControllers;
     unsigned int _numTelevisionAccessories;
     unsigned int _numTimerTriggers;
@@ -83,6 +85,7 @@
         unsigned int numRooms:1;
         unsigned int numScenes:1;
         unsigned int numServices:1;
+        unsigned int numShortcuts:1;
         unsigned int numTargetControllers:1;
         unsigned int numTelevisionAccessories:1;
         unsigned int numTimerTriggers:1;
@@ -97,7 +100,10 @@
     } _has;
 }
 
++ (Class)homeKitMultiUserSettingsType;
 + (Class)eventTriggersType;
+@property(retain, nonatomic) NSMutableArray *homeKitMultiUserSettings; // @synthesize homeKitMultiUserSettings=_homeKitMultiUserSettings;
+@property(nonatomic) unsigned int numShortcuts; // @synthesize numShortcuts=_numShortcuts;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionUnprotected; // @synthesize numAccessoriesNetworkProtectionUnprotected=_numAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionHomeKitOnly; // @synthesize numAccessoriesNetworkProtectionHomeKitOnly=_numAccessoriesNetworkProtectionHomeKitOnly;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionFullAccess; // @synthesize numAccessoriesNetworkProtectionFullAccess=_numAccessoriesNetworkProtectionFullAccess;
@@ -148,6 +154,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)homeKitMultiUserSettingsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)homeKitMultiUserSettingsCount;
+- (void)addHomeKitMultiUserSettings:(id)arg1;
+- (void)clearHomeKitMultiUserSettings;
+@property(nonatomic) BOOL hasNumShortcuts;
 @property(nonatomic) BOOL hasNumAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) BOOL hasNumAccessoriesNetworkProtectionHomeKitOnly;
 @property(nonatomic) BOOL hasNumAccessoriesNetworkProtectionFullAccess;

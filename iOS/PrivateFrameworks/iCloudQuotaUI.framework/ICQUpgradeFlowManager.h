@@ -47,6 +47,7 @@
 - (void)_initiateFamilySetupFlow;
 - (void)_simulateDoneButton;
 - (void)sender:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
+- (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_clearBusyOfferViewController;
 - (void)_presentUpgradeComplete;

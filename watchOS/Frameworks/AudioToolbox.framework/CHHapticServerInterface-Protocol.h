@@ -16,6 +16,7 @@
 - (void)detachSequence:(unsigned int)arg1;
 - (void)prepareHapticSequence:(unsigned int)arg1 reply:(void (^)(NSError *))arg2;
 - (void)removeCustomAudioEvent:(unsigned int)arg1 reply:(void (^)(NSError *))arg2;
+- (void)copyCustomAudioEvent:(unsigned int)arg1 options:(NSDictionary *)arg2 reply:(void (^)(unsigned int, NSError *))arg3;
 - (void)createCustomAudioEvent:(NSData *)arg1 format:(AVAudioFormat *)arg2 frames:(unsigned int)arg3 options:(NSDictionary *)arg4 reply:(void (^)(unsigned int, NSError *))arg5;
 - (void)setSequenceEventBehavior:(unsigned int)arg1 behavior:(unsigned int)arg2 channelIndex:(unsigned int)arg3 reply:(void (^)(NSError *))arg4;
 - (void)loadVibePattern:(NSDictionary *)arg1 reply:(void (^)(unsigned int, NSError *))arg2;

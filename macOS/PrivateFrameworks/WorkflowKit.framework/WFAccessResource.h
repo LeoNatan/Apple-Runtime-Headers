@@ -30,9 +30,10 @@
 - (id)localizedAttemptRecoveryFromErrorMessage;
 @property(readonly, nonatomic) NSString *attemptRecoveryFromGlobalLevelErrorMessage;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 userInterface:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-@property(readonly, nonatomic) NSString *insufficientPermissionsMessage;
-@property(readonly, nonatomic) NSString *accessPermissionPromptMessageTemplate;
-@property(readonly, nonatomic) NSString *accessPermissionPromptTitleTemplate;
+@property(readonly, nonatomic) NSString *workflowLevelDeniedStatusMessage;
+@property(readonly, nonatomic) NSString *workflowLevelNotDeterminedStatusMessage;
+@property(readonly, nonatomic) NSString *workflowLevelMessageTemplate;
+@property(readonly, nonatomic) NSString *workflowLevelPromptTemplate;
 @property(readonly, nonatomic) NSError *computedAvailabilityError;
 @property(readonly, nonatomic) NSError *globalLevelAvailabilityError;
 @property(readonly, nonatomic) NSError *workflowLevelAvailabilityError;
@@ -42,9 +43,10 @@
 - (id)localizedErrorReasonForGlobalLevelStatus:(unsigned long long)arg1;
 - (id)errorReasonForGlobalLevelStatus:(unsigned long long)arg1;
 - (void)attemptRecoveryFromGlobalLevelErrorWithOptionIndex:(unsigned long long)arg1 userInterface:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic) NSString *localizedInsufficientPermissionsMessage;
-@property(readonly, nonatomic) NSString *localizedAccessPermissionPromptMessage;
-@property(readonly, nonatomic) NSString *localizedAccessPermissionPromptTitle;
+@property(readonly, nonatomic) NSString *localizedWorkflowLevelDeniedStatusMessage;
+@property(readonly, nonatomic) NSString *localizedWorkflowLevelNotDeterminedStatusMessage;
+@property(readonly, nonatomic) NSString *localizedWorkflowLevelMessageTemplate;
+@property(readonly, nonatomic) NSString *localizedWorkflowLevelPromptTemplate;
 - (id)updatedPermissionStateForPermissionGranted:(BOOL)arg1 overridingPreviouslyDeterminedAuthorizations:(BOOL)arg2;
 @property(readonly, nonatomic) unsigned long long workflowLevelStatus;
 @property(readonly, nonatomic) unsigned long long globalLevelStatus;

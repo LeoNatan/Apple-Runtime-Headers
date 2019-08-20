@@ -9,7 +9,7 @@
 #import <SearchUI/SearchUITableHeaderViewDelegate-Protocol.h>
 #import <SearchUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSString;
+@class NSArray, NSMutableOrderedSet, NSMutableSet, NSString;
 
 @interface SearchUIResultTableViewController : SearchUITableViewController <SearchUITableHeaderViewDelegate, UIGestureRecognizerDelegate>
 {
@@ -17,10 +17,10 @@
     NSString *_queryString;
     NSMutableSet *_expandedSections;
     NSMutableSet *_sectionsThatHaveBeenExpanded;
-    NSMutableArray *_potentiallyVisibleCells;
+    NSMutableOrderedSet *_potentiallyVisibleCells;
     NSMutableOrderedSet *_latestVisibleResultsAccountedForInFeedback;
     unsigned long long _lastVisibleResultsFeedbackEvent;
-    NSMutableArray *_potentiallyVisibleHeaders;
+    NSMutableOrderedSet *_potentiallyVisibleHeaders;
     NSArray *_latestVisibleHeadersAccountedForInFeedback;
     double _cachedHeaderHeight;
 }
@@ -28,10 +28,10 @@
 + (void)fetchContactsIfNeededForTableModel:(id)arg1;
 @property(nonatomic) double cachedHeaderHeight; // @synthesize cachedHeaderHeight=_cachedHeaderHeight;
 @property(retain, nonatomic) NSArray *latestVisibleHeadersAccountedForInFeedback; // @synthesize latestVisibleHeadersAccountedForInFeedback=_latestVisibleHeadersAccountedForInFeedback;
-@property(retain, nonatomic) NSMutableArray *potentiallyVisibleHeaders; // @synthesize potentiallyVisibleHeaders=_potentiallyVisibleHeaders;
+@property(retain, nonatomic) NSMutableOrderedSet *potentiallyVisibleHeaders; // @synthesize potentiallyVisibleHeaders=_potentiallyVisibleHeaders;
 @property(nonatomic) unsigned long long lastVisibleResultsFeedbackEvent; // @synthesize lastVisibleResultsFeedbackEvent=_lastVisibleResultsFeedbackEvent;
 @property(retain, nonatomic) NSMutableOrderedSet *latestVisibleResultsAccountedForInFeedback; // @synthesize latestVisibleResultsAccountedForInFeedback=_latestVisibleResultsAccountedForInFeedback;
-@property(retain, nonatomic) NSMutableArray *potentiallyVisibleCells; // @synthesize potentiallyVisibleCells=_potentiallyVisibleCells;
+@property(retain, nonatomic) NSMutableOrderedSet *potentiallyVisibleCells; // @synthesize potentiallyVisibleCells=_potentiallyVisibleCells;
 @property(retain, nonatomic) NSMutableSet *sectionsThatHaveBeenExpanded; // @synthesize sectionsThatHaveBeenExpanded=_sectionsThatHaveBeenExpanded;
 @property(retain, nonatomic) NSMutableSet *expandedSections; // @synthesize expandedSections=_expandedSections;
 @property(nonatomic) _Bool shortenTopFloatingHeader; // @synthesize shortenTopFloatingHeader=_shortenTopFloatingHeader;
@@ -72,7 +72,6 @@
 - (unsigned long long)handleSelectionAtIndexPath:(id)arg1 wasPop:(_Bool)arg2;
 - (void)didEngageResult:(id)arg1;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(_Bool)arg2;
-- (unsigned long long)queryIDForIndexPath:(id)arg1;
 - (_Bool)sectionShouldBeExpanded:(id)arg1;
 - (void)replaceResult:(id)arg1 withResult:(id)arg2;
 - (void)scrollSectionToTop:(unsigned long long)arg1 animate:(_Bool)arg2;

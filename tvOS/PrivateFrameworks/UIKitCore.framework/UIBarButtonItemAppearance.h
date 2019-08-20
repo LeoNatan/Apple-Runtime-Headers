@@ -10,7 +10,7 @@
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
 @class UIBarButtonItemStateAppearance, _UIBarButtonItemData;
-@protocol _UIBarButtonItemAppearanceChangeObserver;
+@protocol _UIBarButtonItemAppearanceChangeObserver, _UIBarButtonItemDataFallback;
 
 @interface UIBarButtonItemAppearance : NSObject <NSCopying, NSSecureCoding>
 {
@@ -21,23 +21,27 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic, setter=_setChangeObserver:) __weak id <_UIBarButtonItemAppearanceChangeObserver> _changeObserver; // @synthesize _changeObserver;
-@property(retain, nonatomic, setter=_setData:) _UIBarButtonItemData *_data; // @synthesize _data;
+@property(readonly, nonatomic) _UIBarButtonItemData *_data; // @synthesize _data;
 - (void).cxx_destruct;
+- (void)_resetBackIndicatorImages;
+- (void)_setBackIndicatorImage:(id)arg1 transitionMaskImage:(id)arg2;
+- (void)_updateToSupportBackIndicatorsCopyingIndicatorsAndFallbackFrom:(id)arg1;
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *focused;
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *disabled;
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *highlighted;
 @property(readonly, nonatomic) UIBarButtonItemStateAppearance *normal;
 - (void)configureWithDefaultForStyle:(long long)arg1;
 - (id)_proxyForState:(long long)arg1;
-- (id)_dataFromCoder:(id)arg1;
-- (id)_dataForStyle:(long long)arg1;
 - (void)_writeToStorage:(CDUnknownBlockType)arg1;
+@property(retain, nonatomic, setter=_setFallback:) id <_UIBarButtonItemDataFallback> _fallback;
+- (void)_setData:(id)arg1;
 - (void)_updateDataTo:(id)arg1 signal:(_Bool)arg2;
 - (void)_describeInto:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithBarButtonItemAppearance:(id)arg1;

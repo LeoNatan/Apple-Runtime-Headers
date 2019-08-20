@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (void)setInitialState;
 @property(readonly, getter=isInitialState) _Bool initialState;
 @property(readonly) CALayer *packageRootLayer;
-- (void)layoutSubviews;
 - (void)_changeAppearance;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_newStateControllerWithSuperlayer:(id)arg1;

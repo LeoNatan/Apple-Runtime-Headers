@@ -80,9 +80,6 @@
 - (id)callerIdAliasSpecifiers;
 - (id)possibleCallerIdAliases;
 - (_Bool)showCallerId:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setViewpointCorrectionEnabled:(id)arg1 specifier:(id)arg2;
-- (id)getViewpointCorrectionEnabledForSpecifier:(id)arg1;
-- (_Bool)shouldShowFaceTimeViewpointSpecifiers;
 - (void)setFaceTimePhotosEnabled:(id)arg1 specifier:(id)arg2;
 - (id)getFaceTimePhotosEnabledForSpecifier:(id)arg1;
 - (_Bool)shouldShowFaceTimePhotosSpecifiers;

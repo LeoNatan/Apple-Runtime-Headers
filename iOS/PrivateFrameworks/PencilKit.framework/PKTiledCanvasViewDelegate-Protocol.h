@@ -11,6 +11,7 @@
 @protocol PKTiledCanvasViewDelegate <NSObject>
 
 @optional
+- (void)_canvasView:(PKTiledCanvasView *)arg1 showEditMenuFromLocation:(struct CGPoint)arg2;
 - (void)canvasView:(PKTiledCanvasView *)arg1 registerUndoCommand:(PKUndoCommand *)arg2;
 - (void)_canvasViewDidEraseStrokes:(NSArray *)arg1;
 - (_Bool)canvasView:(PKTiledCanvasView *)arg1 shouldBeginDrawingWithTouch:(UITouch *)arg2;

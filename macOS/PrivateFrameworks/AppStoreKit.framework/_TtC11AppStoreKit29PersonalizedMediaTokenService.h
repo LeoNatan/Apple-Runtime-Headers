@@ -9,15 +9,15 @@
 @interface _TtC11AppStoreKit29PersonalizedMediaTokenService : NSObject
 {
     // Error parsing type: , name: tokenService
-    // Error parsing type: , name: accountStore
+    // Error parsing type: , name: accounts
     // Error parsing type: , name: queue
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)accountDidChange:(id)arg1;
 - (void)invalidateMediaToken;
 - (id)fetchMediaToken;
+- (void)accountsDidChange;
 
 @end
 

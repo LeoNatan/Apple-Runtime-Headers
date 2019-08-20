@@ -41,8 +41,9 @@
 - (id)conversationPersistence;
 @property(retain, nonatomic) id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 - (void).cxx_destruct;
+- (void)scheduleRecurringActivity;
 - (void)_configureSearchableIndexManagerIfNecessary;
-- (void)setupWithMailboxProvider:(id)arg1 remoteSearchProvider:(id)arg2;
+- (void)setUpWithMailboxProvider:(id)arg1 remoteSearchProvider:(id)arg2;
 - (id)initWithPath:(id)arg1 inMemoryIdentifier:(id)arg2 library:(id)arg3 propertyMapper:(id)arg4;
 
 // Remaining properties

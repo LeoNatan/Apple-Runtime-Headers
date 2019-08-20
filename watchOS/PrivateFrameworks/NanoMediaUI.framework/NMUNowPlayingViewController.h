@@ -77,6 +77,7 @@
 - (void)_setUnprocessedArtworkVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)nowPlayingViewControllerReceivedTapOnTrackTitles:(id)arg1;
 - (void)_updateForNowPlayingApplicationInfoChange;
+- (void)originObserver:(id)arg1 didUpdatePlaybackQueueForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingApplicationBundleIdentifierForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateSupportedCommandsForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateElapsedTimeForOrigin:(id)arg2;

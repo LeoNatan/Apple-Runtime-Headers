@@ -45,7 +45,7 @@
 - (id)initWithSectionedIdentifierList:(id)arg1 randomSource:(id)arg2 startingItemEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
 
 // Remaining properties
-@property(nonatomic) __weak id <_MPSSILDelegate> delegate;
+@property(nonatomic) __weak id <_MPSSILDelegate> delegate; // @dynamic delegate;
 
 @end
 

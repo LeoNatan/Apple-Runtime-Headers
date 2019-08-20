@@ -9,17 +9,29 @@
 #import <PhotoImaging/NUTimeBased-Protocol.h>
 #import <PhotoImaging/PIFaceObservingAutoCalculator-Protocol.h>
 
-@class NSString, PIFaceObservationCache;
+@class NSNumber, NSString, PIFaceObservationCache;
 
 @interface PICropAutoCalculator : NUAutoCalculator <NUTimeBased, PIFaceObservingAutoCalculator>
 {
     _Bool _shouldPerformAutoCrop;
     _Bool _shouldPerformAutoStraighten;
+    _Bool _shouldUseAutoStraightenVerticalDetector;
+    _Bool _debugFilesEnabled;
     PIFaceObservationCache *_faceObservationCache;
+    NSNumber *_autoStraightenVerticalAngleThreshold;
+    NSNumber *_autoStraightenDominantAngleDiffThreshold;
     double _maxAutoStraighten;
+    double _minAutoStraighten;
+    NSString *_debugFilesPrefix;
 }
 
+@property(copy) NSString *debugFilesPrefix; // @synthesize debugFilesPrefix=_debugFilesPrefix;
+@property _Bool debugFilesEnabled; // @synthesize debugFilesEnabled=_debugFilesEnabled;
+@property double minAutoStraighten; // @synthesize minAutoStraighten=_minAutoStraighten;
 @property double maxAutoStraighten; // @synthesize maxAutoStraighten=_maxAutoStraighten;
+@property(copy) NSNumber *autoStraightenDominantAngleDiffThreshold; // @synthesize autoStraightenDominantAngleDiffThreshold=_autoStraightenDominantAngleDiffThreshold;
+@property(copy) NSNumber *autoStraightenVerticalAngleThreshold; // @synthesize autoStraightenVerticalAngleThreshold=_autoStraightenVerticalAngleThreshold;
+@property _Bool shouldUseAutoStraightenVerticalDetector; // @synthesize shouldUseAutoStraightenVerticalDetector=_shouldUseAutoStraightenVerticalDetector;
 @property _Bool shouldPerformAutoStraighten; // @synthesize shouldPerformAutoStraighten=_shouldPerformAutoStraighten;
 @property _Bool shouldPerformAutoCrop; // @synthesize shouldPerformAutoCrop=_shouldPerformAutoCrop;
 @property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;

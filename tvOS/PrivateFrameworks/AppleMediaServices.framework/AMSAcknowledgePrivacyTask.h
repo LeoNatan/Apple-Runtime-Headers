@@ -6,24 +6,24 @@
 
 #import <AppleMediaServices/AMSTask.h>
 
-@class ACAccount, NSString;
+@class ACAccount, NSSet;
 
 @interface AMSAcknowledgePrivacyTask : AMSTask
 {
     ACAccount *_account;
-    NSString *_privacyIdentifier;
+    NSSet *_privacyIdentifiers;
 }
 
-+ (id)_appStorePrivacyIdentifiers;
 + (id)_storePrivacyIdentifiers;
 + (id)_multiplexPrivacyIdentifier:(id)arg1 contentVersion:(unsigned long long)arg2;
 + (unsigned long long)_contentVersionForPrivacyIdentifier:(id)arg1;
 + (_Bool)acknowledgementNeededForPrivacyIdentifier:(id)arg1 account:(id)arg2;
 + (_Bool)acknowledgementNeededForPrivacyIdentifier:(id)arg1;
-@property(copy, nonatomic) NSString *privacyIdentifier; // @synthesize privacyIdentifier=_privacyIdentifier;
+@property(copy, nonatomic) NSSet *privacyIdentifiers; // @synthesize privacyIdentifiers=_privacyIdentifiers;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (id)acknowledgePrivacy;
+- (id)initWithPrivacyIdentifiers:(id)arg1 account:(id)arg2;
 - (id)initWithPrivacyIdentifier:(id)arg1 account:(id)arg2;
 - (id)initWithPrivacyIdentifier:(id)arg1;
 

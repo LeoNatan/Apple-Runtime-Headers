@@ -25,6 +25,7 @@
 @property(readonly) unsigned long long sampleCount;
 @property(readonly) NSString *label;
 @property(readonly) id <MTLDevice> device;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

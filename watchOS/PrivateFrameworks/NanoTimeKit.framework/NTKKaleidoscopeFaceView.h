@@ -62,6 +62,7 @@
 - (float)_handAlphaForEditMode:(int)arg1;
 - (_Bool)_wantsMinorDetents;
 - (void)_updateFramerate;
+- (void)setDataMode:(int)arg1;
 - (void)screenWillTurnOn;
 - (void)screenDidTurnOff;
 - (void)crownInputSequencerDidEndDecelerating:(id)arg1;
@@ -78,7 +79,6 @@
 - (id)resourceProviderKey;
 - (id)provideAtlasBacking:(id)arg1;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
-- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsUnadornedSnapshot;
 - (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;

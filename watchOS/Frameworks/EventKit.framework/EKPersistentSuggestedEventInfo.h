@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSDate *timestamp; // @dynamic timestamp;
 @property(nonatomic) _Bool changesAcknowledged; // @dynamic changesAcknowledged;
 @property(nonatomic) unsigned int changedFields; // @dynamic changedFields;
+@property(copy, nonatomic) NSString *extractionGroupIdentifier; // @dynamic extractionGroupIdentifier;
 @property(copy, nonatomic) NSString *uniqueKey; // @dynamic uniqueKey;
 @property(copy, nonatomic) NSString *opaqueKey; // @dynamic opaqueKey;
 - (int)entityType;

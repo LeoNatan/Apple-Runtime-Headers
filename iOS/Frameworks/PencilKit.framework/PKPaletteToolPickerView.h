@@ -18,6 +18,7 @@
 @interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteViewStateObserving>
 {
     _Bool _isRulerActive;
+    _Bool _usingShortestToolSpacing;
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> _delegate;
@@ -46,12 +47,14 @@
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <PKPaletteViewStateObservable> paletteViewState; // @synthesize paletteViewState=_paletteViewState;
+@property(nonatomic, getter=isUsingShortestToolSpacing) _Bool usingShortestToolSpacing; // @synthesize usingShortestToolSpacing=_usingShortestToolSpacing;
 @property(nonatomic) _Bool isRulerActive; // @synthesize isRulerActive=_isRulerActive;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
 - (void)didChangeAnnotationSupport:(id)arg1;
+- (id)_firstInkingTool;
 - (void)toggleBetweenLastSelectedToolAndCurrentlySelectedTool;
 - (void)toggleBetweenLastSelectedToolAndEraser;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
@@ -66,7 +69,7 @@
 - (void)_showToolAttributesPopover;
 @property(readonly, nonatomic) _Bool selectedToolSupportsChangingColor;
 @property(readonly, nonatomic) _Bool selectedToolSupportsDisplayingSelectedColor;
-- (id)eraserTool;
+- (id)_eraserTool;
 - (id)_selectedTool;
 - (id)selectedToolIdentifier;
 - (void)setSelectedToolInkColor:(id)arg1;
@@ -74,7 +77,6 @@
 - (void)setSelectedToolIdentifier:(id)arg1;
 - (id)_selectedToolView;
 - (void)_toolTapGestureRecognizer:(id)arg1;
-- (void)layoutSubviews;
 - (void)updateConstraints;
 - (void)_installOverlayView;
 - (void)_installTools;

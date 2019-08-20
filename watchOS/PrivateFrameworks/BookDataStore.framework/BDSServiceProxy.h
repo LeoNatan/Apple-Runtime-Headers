@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) id <BDSServiceProtocol><NSXPCProxyCreating> remoteObjectProxy; // @synthesize remoteObjectProxy=_remoteObjectProxy;
 - (void).cxx_destruct;
+- (void)audiobookStoreEnabledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateBitrateForItemWithAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)updateReadingNowWithCompletion:(CDUnknownBlockType)arg1;
 - (id)updateWantToReadWithCompletion:(CDUnknownBlockType)arg1;
@@ -83,7 +84,6 @@
 - (void)deleteCloudDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dissociateCloudDataFromSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setCloudSyncPaused:(_Bool)arg1;
-- (void)setEnableReadingNowSync:(_Bool)arg1;
 - (void)setEnableCloudSync:(_Bool)arg1 enableReadingNowSync:(_Bool)arg2;
 - (void)setEnableCollectionSync:(_Bool)arg1;
 - (void)shutdown;

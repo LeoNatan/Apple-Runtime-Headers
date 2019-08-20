@@ -87,8 +87,6 @@ __attribute__((visibility("hidden")))
 - (void)tv_updateViewLayout;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
-- (id)overrideTraitCollectionForChildViewController:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;

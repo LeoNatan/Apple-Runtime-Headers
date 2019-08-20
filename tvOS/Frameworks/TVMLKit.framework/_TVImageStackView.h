@@ -22,6 +22,7 @@
     double _shadowSelectionDuration;
     double _shadowUnselectionDuration;
     double _repositionUnselectionDuration;
+    _Bool _layerStackRetainsImageStack;
     _Bool _imageLoaded;
     UIView *_overlayView;
     UIView *_unmaskedOverlayView;
@@ -34,6 +35,7 @@
 @property(nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
 @property(retain, nonatomic) UIView *unmaskedOverlayView; // @synthesize unmaskedOverlayView=_unmaskedOverlayView;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
+@property(nonatomic, getter=_layerStackRetainsImageStack, setter=_setLayerStackRetainsImageStack:) _Bool _layerStackRetainsImageStack; // @synthesize _layerStackRetainsImageStack;
 - (void).cxx_destruct;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
 - (void)_updateStackedImageConfiguration;

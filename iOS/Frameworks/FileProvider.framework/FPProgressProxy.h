@@ -6,7 +6,7 @@
 
 #import <Foundation/NSProgress.h>
 
-@class NSObservation, NSString, NSURL;
+@class NSObservation, NSURL;
 
 @interface FPProgressProxy : NSProgress
 {
@@ -16,11 +16,9 @@
     NSObservation *_observation;
     _Bool _didSetupParentProgress;
     _Bool _updateFileCount;
-    NSString *_publisherKey;
 }
 
 + (void)initialize;
-@property(retain, nonatomic) NSString *publisherKey; // @synthesize publisherKey=_publisherKey;
 @property(nonatomic) _Bool updateFileCount; // @synthesize updateFileCount=_updateFileCount;
 - (void).cxx_destruct;
 - (void)setProgressDidSetupHandler:(CDUnknownBlockType)arg1;

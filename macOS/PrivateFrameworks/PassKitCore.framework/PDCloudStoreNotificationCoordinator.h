@@ -48,6 +48,8 @@
 - (id)_backgroundActivityNameForBackgroundInterval:(unsigned long long)arg1;
 - (double)_nextTimeIntervalForBackgroundInterval:(unsigned long long)arg1;
 - (void)_scheduleCloudStoreContainerSetupBackgroundActivityWithNextInterval:(unsigned long long)arg1;
+- (void)_syncOriginatingTransactionsToCloudStore;
+- (void)scheduleTransactionDeviceDataSyncBackgroundActivity;
 - (void)_performCloudStoreContainerInitalizationBackgroundActivityWithCurrentInterval:(unsigned long long)arg1 nextBackgroundInterval:(unsigned long long)arg2;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (void)noteAccountDeleted;
@@ -59,6 +61,7 @@
 - (void)cloudStoreContainerShouldUnscheduleAllBackgroundActivities:(id)arg1;
 - (void)cloudStoreContainer:(id)arg1 didChangeContainerState:(unsigned long long)arg2;
 - (void)cloudStoreContainer:(id)arg1 createdZoneWithName:(id)arg2;
+- (void)recreateZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

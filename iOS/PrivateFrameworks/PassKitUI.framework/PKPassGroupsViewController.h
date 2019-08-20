@@ -57,6 +57,7 @@
     PKDiscoveryDataSource *_discoveryDataSource;
     _Bool _inField;
     _Bool _handleFieldDetection;
+    _Bool _showingFieldDetectEducation;
     _Bool _welcomeStateEnabled;
     _Bool _externalModalPresentationAllowed;
     long long _style;
@@ -73,6 +74,7 @@
 @property(readonly, nonatomic) __weak PKDiscoveryGalleryView *discoveryGalleryView; // @synthesize discoveryGalleryView=_discoveryGalleryView;
 @property(nonatomic, getter=isExternalModalPresentationAllowed) _Bool externalModalPresentationAllowed; // @synthesize externalModalPresentationAllowed=_externalModalPresentationAllowed;
 @property(nonatomic, getter=isWelcomeStateEnabled) _Bool welcomeStateEnabled; // @synthesize welcomeStateEnabled=_welcomeStateEnabled;
+@property(getter=isShowingFieldDetectEducation) _Bool showingFieldDetectEducation; // @synthesize showingFieldDetectEducation=_showingFieldDetectEducation;
 @property _Bool handleFieldDetection; // @synthesize handleFieldDetection=_handleFieldDetection;
 @property _Bool passesAreOutdated; // @synthesize passesAreOutdated=_passesAreOutdated;
 @property(nonatomic) unsigned long long suppressedContent; // @synthesize suppressedContent=_suppressedContent;

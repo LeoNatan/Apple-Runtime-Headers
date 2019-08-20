@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_printDebugInfo:(id)arg1 detectedObjectsRaw:(id)arg2 faceDetectorBGRAImage:(struct __CVBuffer *)arg3 tempImage:(struct vImage_Buffer)arg4;
 + (id)configurationOptionKeysForDetectorKey;
-+ (id)knownAnimalDetectors;
++ (id)knownAnimalIdentifiers;
 + (id)detectedAnimalObjectClassToAnimalName;
 + (id)detectedObjectRequestClassToRequestInfo;
 + (id)detectedObjectClassToRequestClass;

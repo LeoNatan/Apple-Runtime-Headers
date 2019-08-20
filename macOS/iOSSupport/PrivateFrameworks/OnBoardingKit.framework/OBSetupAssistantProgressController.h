@@ -23,6 +23,7 @@
 - (void)setTitle:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
 - (id)initWithTitle:(id)arg1;
 
 @end

@@ -15,6 +15,7 @@
 + (Class)__AVURLAssetClass;
 + (struct CGSize)sizePreviewAtSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints)arg2 error:(id *)arg3;
 + (struct CGImage *)newPreviewFromSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints)arg2 error:(id *)arg3;
++ (_Bool)isAutoloopAsset:(id)arg1;
 + (id)UTITypes;
 + (id)fetchUTITypes;
 

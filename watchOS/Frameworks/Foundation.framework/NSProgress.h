@@ -20,7 +20,6 @@
     CDUnknownBlockType _pausingHandler;
     CDUnknownBlockType _prioritizationHandler;
     unsigned long long _flags;
-    id _userInfoProxy;
     NSString *_publisherID;
     id _reserved5;
     int _reserved6;
@@ -29,8 +28,9 @@
     NSMutableDictionary *_acknowledgementHandlersByLowercaseBundleID;
     NSMutableDictionary *_lastNotificationTimesByKey;
     NSMutableDictionary *_userInfoLastNotificationTimesByKey;
-    NSLock *_lock;
     NSMutableSet *_children;
+    id _userInfoProxy;
+    NSLock *_lock;
 }
 
 + (id)_addSubscriberForFileURL:(id)arg1 withPublishingHandler:(CDUnknownBlockType)arg2;

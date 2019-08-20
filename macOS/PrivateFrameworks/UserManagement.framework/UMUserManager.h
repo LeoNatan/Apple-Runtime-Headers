@@ -43,10 +43,13 @@
 - (void)setBundlesIdentifiers:(id)arg1 forUniquePersonaType:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setBundlesIdentifiers:(id)arg1 forPersonaWithPersonaUniqueString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setBundlesIdentifiers:(id)arg1 forUniquePersonaWithIDString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchAsidMapOfAllUsersWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchAllPersonasForAllUsersWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchAllPersonasWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchPersonaWithType:(int)arg1 CompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchPersonaWithPersonaUniqueString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchPersonaWithIDString:(id)arg1 CompletionHandler:(CDUnknownBlockType)arg2;
+- (void)disableUserPersonaWithProfileInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteUserPersonaWithProfileInfo:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteUserPersonaWithType:(int)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteUserPersonaWithPersonaUniqueString:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

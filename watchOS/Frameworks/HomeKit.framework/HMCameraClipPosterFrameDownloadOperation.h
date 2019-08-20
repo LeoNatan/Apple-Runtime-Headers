@@ -8,7 +8,7 @@
 
 #import <HomeKit/HMFLogging-Protocol.h>
 
-@class HMCameraClip, HMCameraClipPosterFrame, NSString, NSURL;
+@class HMCameraClip, HMCameraClipManager, HMCameraClipPosterFrame, NSString, NSURL;
 @protocol HMCameraClipFetchAssetContextOperationDataSource;
 
 @interface HMCameraClipPosterFrameDownloadOperation : HMFOperation <HMFLogging>
@@ -17,11 +17,13 @@
     HMCameraClipPosterFrame *_posterFrame;
     NSURL *_destinationFileURL;
     CDUnknownBlockType _downloadPosterFrameCompletionBlock;
+    HMCameraClipManager *_clipManager;
     id <HMCameraClipFetchAssetContextOperationDataSource> _dataSource;
 }
 
 + (id)logCategory;
 @property(readonly) id <HMCameraClipFetchAssetContextOperationDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(copy) CDUnknownBlockType downloadPosterFrameCompletionBlock; // @synthesize downloadPosterFrameCompletionBlock=_downloadPosterFrameCompletionBlock;
 @property(copy) NSURL *destinationFileURL; // @synthesize destinationFileURL=_destinationFileURL;
 @property(readonly) HMCameraClipPosterFrame *posterFrame; // @synthesize posterFrame=_posterFrame;
@@ -31,12 +33,14 @@
 - (id)writeImageData:(id)arg1;
 - (id)decryptData:(id)arg1;
 - (id)downloadImageDataForAssetContext:(id)arg1;
+- (id)fetchAssetContext;
 - (id)fetchImageData;
 - (void)main;
 - (void)finishWithImageData:(id)arg1;
 - (void)cancelWithError:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (id)initWithClip:(id)arg1 posterFrame:(id)arg2 dataSource:(id)arg3;
+- (id)initWithClipManager:(id)arg1 clip:(id)arg2 posterFrame:(id)arg3 dataSource:(id)arg4;
+- (id)initWithClipManager:(id)arg1 clip:(id)arg2 posterFrame:(id)arg3;
 - (id)initWithClip:(id)arg1 posterFrame:(id)arg2;
 
 // Remaining properties

@@ -80,6 +80,7 @@
 @property(retain) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
 - (void)clearLearningDictionary;
 - (void)updateMecabraState;
+- (void)setDebuggingLogEnabled:(BOOL)arg1;
 - (void)clearCache;
 - (void)endInputSession;
 

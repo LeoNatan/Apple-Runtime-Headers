@@ -19,7 +19,6 @@
 - (id)localizedDescriptionSummary;
 - (id)localizedName;
 - (void)runAsynchronouslyWithInput:(id)arg1;
-- (void)initializeParameters;
 @property(readonly, nonatomic) HFTriggerActionSetsBuilder *triggerActionSetsBuilder;
 
 @end

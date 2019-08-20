@@ -11,7 +11,7 @@
 @protocol _UIPreviewPlatterPresentationControllerDelegate <UIAdaptivePresentationControllerDelegate>
 - (UIView *)actualPlatterContainerViewForPresentationController:(_UIPreviewPlatterPresentationController *)arg1;
 - (void)_previewPlatterPresentationController:(_UIPreviewPlatterPresentationController *)arg1 beginDragWithTouch:(UITouch *)arg2;
-- (void)_previewPlatterPresentationControllerWantsToBeDismissed:(_UIPreviewPlatterPresentationController *)arg1 withReason:(unsigned long long)arg2 completion:(void (^)(void))arg3;
+- (void)_previewPlatterPresentationControllerWantsToBeDismissed:(_UIPreviewPlatterPresentationController *)arg1 withReason:(unsigned long long)arg2 alongsideActions:(void (^)(void))arg3 completion:(void (^)(void))arg4;
 - (void)_previewPlatterPresentationControllerDidTapPreview:(_UIPreviewPlatterPresentationController *)arg1;
 @end
 

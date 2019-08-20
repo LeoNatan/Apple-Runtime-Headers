@@ -16,6 +16,7 @@
     unsigned long long _integerLastMigratedClientVersion;
     unsigned long long _integerMinimumClientVersion;
     double _modificationDate;
+    NSData *_accessResourcePermissionStateData;
     NSData *_actionsData;
     unsigned int _iconColor;
     unsigned int _iconGlyph;
@@ -24,6 +25,7 @@
     NSString *_lastMigratedClientVersion;
     NSString *_minimumClientVersion;
     NSString *_name;
+    int _remoteQuarantineStatus;
     NSMutableArray *_workflowTypes;
     struct {
         unsigned int creationDate:1;
@@ -32,11 +34,13 @@
         unsigned int modificationDate:1;
         unsigned int iconColor:1;
         unsigned int iconGlyph:1;
+        unsigned int remoteQuarantineStatus:1;
     } _has;
 }
 
 + (Class)inputClassesType;
 + (Class)workflowTypesType;
+@property(retain, nonatomic) NSData *accessResourcePermissionStateData; // @synthesize accessResourcePermissionStateData=_accessResourcePermissionStateData;
 @property(retain, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property(retain, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
 @property(nonatomic) unsigned long long integerLastMigratedClientVersion; // @synthesize integerLastMigratedClientVersion=_integerLastMigratedClientVersion;
@@ -60,6 +64,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsRemoteQuarantineStatus:(id)arg1;
+- (id)remoteQuarantineStatusAsString:(int)arg1;
+@property(nonatomic) BOOL hasRemoteQuarantineStatus;
+@property(nonatomic) int remoteQuarantineStatus; // @synthesize remoteQuarantineStatus=_remoteQuarantineStatus;
+@property(readonly, nonatomic) BOOL hasAccessResourcePermissionStateData;
 @property(readonly, nonatomic) BOOL hasLastMigratedClientVersion;
 @property(readonly, nonatomic) BOOL hasMinimumClientVersion;
 @property(nonatomic) BOOL hasIntegerLastMigratedClientVersion;

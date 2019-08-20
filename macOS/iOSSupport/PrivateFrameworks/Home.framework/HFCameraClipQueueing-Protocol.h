@@ -6,7 +6,7 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HMCameraClip, NSArray;
+@class HMCameraClip, HMCameraClipManager, NSArray;
 @protocol HFCameraClipQueuableItem;
 
 @protocol HFCameraClipQueueing <NSObject>
@@ -14,6 +14,6 @@
 - (void)seekToOffset:(double)arg1 inItem:(id <HFCameraClipQueuableItem>)arg2;
 - (void)removeQueueableItem:(id <HFCameraClipQueuableItem>)arg1;
 - (void)insertQueueableItem:(id <HFCameraClipQueuableItem>)arg1 afterItem:(id <HFCameraClipQueuableItem>)arg2;
-- (id <HFCameraClipQueuableItem>)createQueueableItemForClip:(HMCameraClip *)arg1;
+- (id <HFCameraClipQueuableItem>)createQueueableItemForClipManager:(HMCameraClipManager *)arg1 clip:(HMCameraClip *)arg2;
 @end
 

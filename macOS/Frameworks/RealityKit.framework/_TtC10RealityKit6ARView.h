@@ -10,9 +10,9 @@
 {
     // Error parsing type: , name: _scene
     // Error parsing type: , name: __delegatePrivate
-    // Error parsing type: , name: __automaticallyInvokesStartTrigger
     // Error parsing type: , name: debugOptions
     // Error parsing type: , name: initialized
+    // Error parsing type: , name: engineStartedByThisView
     // Error parsing type: , name: environment
     // Error parsing type: , name: __environmentEntity
     // Error parsing type: , name: __enableAutomaticFrameRate
@@ -26,6 +26,9 @@
     // Error parsing type: , name: renderSubscription
     // Error parsing type: , name: realityAssetCollisionSubscription
     // Error parsing type: , name: __disableComposition
+    // Error parsing type: , name: __nonARKitDevices
+    // Error parsing type: , name: enablePresentsWithTransaction
+    // Error parsing type: , name: presentsWithTransactionFrames
     // Error parsing type: , name: __statisticsOptions
     // Error parsing type: , name: __disableStatisticsRendering
 }

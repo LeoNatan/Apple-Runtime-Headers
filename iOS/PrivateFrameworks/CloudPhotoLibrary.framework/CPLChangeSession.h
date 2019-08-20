@@ -28,6 +28,8 @@
 @property(readonly, nonatomic) NSProgress *sessionProgress; // @synthesize sessionProgress=_sessionProgress;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
 - (void).cxx_destruct;
+- (id)redactedDescription;
+@property(readonly, copy) NSString *description;
 - (void)tearDownWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)finalizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginSessionWithKnownLibraryVersion:(id)arg1 resetTracker:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -38,7 +40,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

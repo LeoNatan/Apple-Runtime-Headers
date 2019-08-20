@@ -15,6 +15,7 @@
     SidecarDevice *_device;
     SidecarService *_service;
     long long _transport;
+    long long _dataLink;
     long long _handle;
     NSError *_error;
     unsigned int _remote:1;
@@ -32,6 +33,7 @@
 - (_Bool)_invalidate;
 - (void)setError:(id)arg1;
 @property __weak id <SidecarSessionDelegate> delegate;
+@property(readonly, nonatomic) int dataLink;
 @property(readonly, nonatomic) long long transport;
 @property(readonly, nonatomic) SidecarService *service;
 @property(readonly, nonatomic) SidecarDevice *device;

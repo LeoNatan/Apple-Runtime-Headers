@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)_buildRecordListWithCompletion:(CDUnknownBlockType)arg1;
 - (void)listOperation:(id)arg1 wasReplacedByOperation:(id)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithRootItem:(id)arg1 appLibrary:(id)arg2;
 

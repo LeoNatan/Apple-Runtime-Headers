@@ -12,6 +12,7 @@
 {
     MPModelSong *_modelSong;
     MPModelPlayEvent *_modelPlayEvent;
+    NSString *_lyricsID;
     double _visibleDuration;
     long long _displayType;
     long long _displayedCharacterCount;
@@ -28,6 +29,7 @@
 @property(nonatomic) long long displayedCharacterCount; // @synthesize displayedCharacterCount=_displayedCharacterCount;
 @property(nonatomic) long long displayType; // @synthesize displayType=_displayType;
 @property(nonatomic) double visibleDuration; // @synthesize visibleDuration=_visibleDuration;
+@property(retain, nonatomic) NSString *lyricsID; // @synthesize lyricsID=_lyricsID;
 @property(retain, nonatomic) MPModelPlayEvent *modelPlayEvent; // @synthesize modelPlayEvent=_modelPlayEvent;
 @property(retain, nonatomic) MPModelSong *modelSong; // @synthesize modelSong=_modelSong;
 - (void).cxx_destruct;

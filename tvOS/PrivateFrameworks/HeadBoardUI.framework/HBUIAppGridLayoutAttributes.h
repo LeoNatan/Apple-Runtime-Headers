@@ -9,10 +9,8 @@
 @interface HBUIAppGridLayoutAttributes : UICollectionViewLayoutAttributes
 {
     _Bool _inDock;
-    double _topShelfBlurFractionComplete;
 }
 
-@property(nonatomic) double topShelfBlurFractionComplete; // @synthesize topShelfBlurFractionComplete=_topShelfBlurFractionComplete;
 @property(nonatomic, getter=isInDock) _Bool inDock; // @synthesize inDock=_inDock;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -9,19 +9,21 @@
 #import <network/OS_nw_socks5_connection-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, OS_nw_connection, OS_nw_error, OS_nw_path_evaluator;
+@protocol OS_dispatch_queue, OS_nw_connection, OS_nw_error, OS_nw_path_evaluator, OS_nw_socks5_server;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_socks5_connection : NSObject <OS_nw_socks5_connection>
 {
     unsigned long long sc_id;
     NWConcrete_nw_socks5_connection *sc_internally_retained_object;
+    NSObject<OS_nw_socks5_server> *sc_parent;
     NSObject<OS_nw_connection> *sc_in_connection;
     NSObject<OS_dispatch_queue> *sc_queue;
     CDUnknownBlockType sc_cancel;
     unsigned char sc_state;
     unsigned char sc_out_address_type;
     NSObject<OS_nw_path_evaluator> *sc_prefer_wifi_path_evaluator;
+    int sc_prefer_wifi_previous_path_status;
     union {
         char *byte_pointer;
         struct in_addr *ipv4_addr;
@@ -47,7 +49,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithConnection:(id)arg1 queue:(id)arg2 shoes:(_Bool)arg3 disableProxy:(_Bool)arg4;
+- (id)initWithConnection:(id)arg1 queue:(id)arg2 parent:(id)arg3 shoes:(_Bool)arg4 disableProxy:(_Bool)arg5;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

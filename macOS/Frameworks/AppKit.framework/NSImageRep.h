@@ -90,7 +90,6 @@
 @property(getter=isOpaque) BOOL opaque;
 @property(getter=hasAlpha) BOOL alpha;
 @property long long layoutDirection;
-- (void)_setInternalLayoutDirectionFromCUILayoutDirection:(long long)arg1;
 - (long long)_internalLayoutDirection;
 - (long long)_pixelsHighOrResolutionIndependent;
 - (long long)_pixelsWideOrResolutionIndependent;

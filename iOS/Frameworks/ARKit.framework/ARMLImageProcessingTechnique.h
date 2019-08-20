@@ -6,10 +6,12 @@
 
 #import <ARKit/ARImageBasedTechnique.h>
 
+#import <ARKit/ARTechniqueBusyState-Protocol.h>
+
 @class NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface ARMLImageProcessingTechnique : ARImageBasedTechnique
+@interface ARMLImageProcessingTechnique : ARImageBasedTechnique <ARTechniqueBusyState>
 {
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_semaphore> *_processingSemaphore;
@@ -47,7 +49,7 @@
 - (void)_startMLProcessingSignpostWithTimestamp:(double)arg1;
 - (void)_endLoadingMLModelSignpost;
 - (void)_startLoadingMLModelSignpost;
-- (_Bool)isBusy;
+@property(readonly, nonatomic) _Bool isBusy;
 - (long long)_getDeviceOrientation;
 - (_Bool)preProcessNetworkInputImage:(struct __CVBuffer *)arg1;
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 imageDataForNeuralNetwork:(id)arg3 inputImageData:(id)arg4 rotationNeeded:(long long)arg5 regionOfInterest:(struct CGSize)arg6;
@@ -81,6 +83,12 @@
 - (id)processingSemaphore;
 - (void)dealloc;
 - (id)initWithDispatchQueue:(id)arg1 inputTensorNames:(id)arg2 outputTensorNames:(id)arg3 networkInputScaleBeforeRotation:(struct CGSize)arg4 networkFilePath:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

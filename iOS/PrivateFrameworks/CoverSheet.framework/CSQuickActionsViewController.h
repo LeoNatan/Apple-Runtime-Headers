@@ -32,9 +32,9 @@
 - (void).cxx_destruct;
 - (void)_featureLockStateDidChangeNotification:(id)arg1;
 - (void)_deviceBlockStateDidChangeNotification:(id)arg1;
-- (void)_resetFlashlightButtonPermitted;
-- (void)_updateFlashlightButtonAvailable:(_Bool)arg1;
-- (void)_updateState;
+- (void)_updateFlashlightButtonAvailabilityRespectingSuppression:(_Bool)arg1;
+- (void)_updateFlashlightButtonAvailability;
+- (void)_updateFlashlightButtonState;
 - (_Bool)_isFlashlightOn;
 - (void)_tearDownFlashlight;
 - (void)_tearDownFlashlightIfOff;
@@ -51,13 +51,13 @@
 - (_Bool)hasCamera;
 - (_Bool)allowsFlashlight;
 - (_Bool)hasFlashlight;
-- (void)flashlightOverheatedDidChange:(_Bool)arg1;
 - (void)flashlightAvailabilityDidChange:(_Bool)arg1;
 - (void)flashlightLevelDidChange:(unsigned long long)arg1;
 - (_Bool)handleEvent:(id)arg1;
 - (long long)presentationType;
 - (long long)presentationStyle;
 - (long long)presentationPriority;
+- (void)_addStateCaptureHandlers;
 - (id)quickActionsViewIfLoaded;
 - (id)quickActionsView;
 - (void)dealloc;

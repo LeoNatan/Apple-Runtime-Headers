@@ -25,7 +25,6 @@
 - (_Bool)hasExportedClass:(Class)arg1;
 - (_Bool)hasLoadedClass:(Class)arg1;
 - (void)_bundleDidLoad:(id)arg1;
-- (id)guidelinesFromLegacyData:(id)arg1 withMediaURLs:(id)arg2 andMediaLookupDelegate:(id)arg3;
 - (void)setupJavascriptContext:(id)arg1;
 - (id)producerWithPresentation:(id)arg1;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;

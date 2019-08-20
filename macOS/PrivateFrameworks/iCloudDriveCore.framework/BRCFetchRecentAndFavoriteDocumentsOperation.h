@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)main;
 - (void)_performQueryOperationForBit:(unsigned int)arg1 index:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithServerZone:(id)arg1;
 

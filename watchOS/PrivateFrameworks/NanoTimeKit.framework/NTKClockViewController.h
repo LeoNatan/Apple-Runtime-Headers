@@ -70,6 +70,7 @@
 - (struct CGRect)launchRectForComplicationApplicationIdentifier:(id)arg1;
 - (void)_handleDeviceLockChange;
 - (void)_preloadAddableFacesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_handleTimeOffsetChange;
 - (void)_significantTimeChangeNotification;
 - (void)_localeDidChangeNotification;
 - (void)faceCollectionDidLoad:(id)arg1;

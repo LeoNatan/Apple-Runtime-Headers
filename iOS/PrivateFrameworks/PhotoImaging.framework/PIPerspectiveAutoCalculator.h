@@ -22,8 +22,13 @@
     NSNumber *_maxAutoYaw;
     NSNumber *_maxAutoPitch;
     NSNumber *_maxAutoAngle;
+    double _minimumPitchCorrection;
+    double _minimumYawCorrection;
+    double _minimumAngleCorrection;
     double _minimumConfidence;
     double _maxFaceSize;
+    double _minimumPitchCorrectionArea;
+    double _minimumYawCorrectionArea;
     double _minSalientArea;
     double _maxSalientSubjectArea;
     VNSaliencyImageObservation *_saliencyObservation;
@@ -33,6 +38,7 @@
     CIImage *_debugLineDetectionImage;
 }
 
++ (void)requestVisionCleanUp;
 + (void)undoOrientation:(long long)arg1 forPitch:(double *)arg2 yaw:(double *)arg3 angle:(double *)arg4;
 @property(retain, nonatomic) CIImage *debugLineDetectionImage; // @synthesize debugLineDetectionImage=_debugLineDetectionImage;
 @property(readonly) NSMutableDictionary *debugDiagnostics; // @synthesize debugDiagnostics=_debugDiagnostics;
@@ -46,14 +52,20 @@
 @property _Bool shouldRunDetectorsIfNecessary; // @synthesize shouldRunDetectorsIfNecessary=_shouldRunDetectorsIfNecessary;
 @property _Bool disableOnFrontFacingCameraImages; // @synthesize disableOnFrontFacingCameraImages=_disableOnFrontFacingCameraImages;
 @property _Bool disableOnPanos; // @synthesize disableOnPanos=_disableOnPanos;
+@property double minimumYawCorrectionArea; // @synthesize minimumYawCorrectionArea=_minimumYawCorrectionArea;
+@property double minimumPitchCorrectionArea; // @synthesize minimumPitchCorrectionArea=_minimumPitchCorrectionArea;
 @property double maxFaceSize; // @synthesize maxFaceSize=_maxFaceSize;
 @property double minimumConfidence; // @synthesize minimumConfidence=_minimumConfidence;
+@property double minimumAngleCorrection; // @synthesize minimumAngleCorrection=_minimumAngleCorrection;
+@property double minimumYawCorrection; // @synthesize minimumYawCorrection=_minimumYawCorrection;
+@property double minimumPitchCorrection; // @synthesize minimumPitchCorrection=_minimumPitchCorrection;
 @property(copy) NSNumber *maxAutoAngle; // @synthesize maxAutoAngle=_maxAutoAngle;
 @property(copy) NSNumber *maxAutoPitch; // @synthesize maxAutoPitch=_maxAutoPitch;
 @property(copy) NSNumber *maxAutoYaw; // @synthesize maxAutoYaw=_maxAutoYaw;
 @property(retain, nonatomic) PIFaceObservationCache *faceObservationCache; // @synthesize faceObservationCache=_faceObservationCache;
 - (void).cxx_destruct;
 - (void)submitVerified:(CDUnknownBlockType)arg1;
+- (_Bool)passesMinimumCorrectionCheck:(id)arg1 error:(out id *)arg2;
 - (_Bool)passesConfidenceCheck:(id)arg1 error:(out id *)arg2;
 - (_Bool)canGenerateNewCropRect:(out id *)arg1;
 - (id)primaryImageProperties:(out id *)arg1;

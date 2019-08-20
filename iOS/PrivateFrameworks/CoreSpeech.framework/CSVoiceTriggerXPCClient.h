@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_xpc_object;
+@protocol CSVoiceTriggerXPCClientDelegate, OS_xpc_object;
 
 @interface CSVoiceTriggerXPCClient : NSObject
 {
+    id <CSVoiceTriggerXPCClientDelegate> _delegate;
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(nonatomic) __weak id <CSVoiceTriggerXPCClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_sendMessage:(id)arg1 connection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)notifyVoiceTriggeredSiriSessionCancelled;
 - (void)setPhraseSpotterBypassing:(_Bool)arg1 timeout:(double)arg2;
 - (void)enableVoiceTrigger:(_Bool)arg1 withAssertion:(id)arg2 timestamp:(double)arg3;
+- (void)_handleListenerDisconnectedError:(id)arg1;
 - (void)_handleListenerError:(id)arg1;
 - (void)_handleListenerEvent:(id)arg1;
 - (void)dealloc;

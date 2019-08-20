@@ -27,6 +27,7 @@
 - (long long)_currentSpaceConfiguration;
 - (long long)_currentFloatingConfiguration;
 - (id)_sbWorkspaceMainWorkspace;
+- (id)_sbSwitcherTransitionRequestClass;
 - (id)_sbPreviousWorkspaceEntityClass;
 - (id)_sbEmptyEntity;
 - (id)_sbPreviousEntity;
@@ -40,6 +41,7 @@
 - (void)launchApplication:(id)arg1;
 - (void)_requestFloatingAppSwitcherVisible;
 - (void)_requestTransactionWithPrimaryEntity:(id)arg1 sideEntity:(id)arg2 floatingEntity:(id)arg3 spaceConfiguration:(long long)arg4 floatingConfiguration:(long long)arg5;
+- (void)_performSwipeOnFloatingAppSwitcher:(unsigned long long)arg1;
 - (void)_performMedusaGesture:(unsigned long long)arg1;
 - (void)_addResizeGestureRecognizerGesturesIfAllowed:(id)arg1;
 - (void)_addFloatingApplicationGesturesIfAllowed:(id)arg1;

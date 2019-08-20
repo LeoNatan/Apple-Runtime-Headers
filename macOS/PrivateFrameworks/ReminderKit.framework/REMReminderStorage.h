@@ -95,7 +95,8 @@
 @property(copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag;
 @property(copy, nonatomic) NSString *externalIdentifier; // @synthesize externalIdentifier;
 - (void).cxx_destruct;
-- (BOOL)isOverdue;
+@property(readonly, nonatomic) BOOL isRecurrent;
+@property(readonly, nonatomic) BOOL isOverdue;
 - (void)updateDisplayDate;
 - (id)notesReplicaIDSource;
 - (id)titleReplicaIDSource;

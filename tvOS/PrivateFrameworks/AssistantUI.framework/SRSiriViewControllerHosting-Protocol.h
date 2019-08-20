@@ -17,6 +17,7 @@
 - (void)serviceDidResetTextInput;
 - (void)serviceDidRequestKeyboard:(_Bool)arg1;
 - (void)serviceDidRequestKeyboard:(_Bool)arg1 minimized:(_Bool)arg2;
+- (void)serviceViewControllerRequestKeyboardForTapToEditWithCompletion:(void (^)(_Bool))arg1;
 - (void)serviceDidDetectAudioRoutePickerTap;
 - (void)serviceDidExitUITrackingMode;
 - (void)serviceDidEnterUITrackingMode;
@@ -58,6 +59,7 @@
 - (void)serviceRequestsActivationSourceWithReplyHandler:(void (^)(long long))arg1;
 
 @optional
+- (void)extendCurrentTTSRequested;
 - (void)setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)serviceDidDismissBugReporter;
 - (void)serviceDidPresentBugReporter;

@@ -16,6 +16,7 @@
 
 @interface PKPaletteContentView : UIView <PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling, PKPaletteViewStateObserving>
 {
+    _Bool _usingSmallestSupportedWidth;
     unsigned long long _edgeLocation;
     double _scalingFactor;
     PKPaletteUndoRedoView *_undoRedoView;
@@ -28,8 +29,15 @@
     NSLayoutConstraint *_stackViewBottomConstraint;
     NSLayoutConstraint *_stackViewLeftConstraint;
     NSLayoutConstraint *_stackViewRightConstraint;
+    NSLayoutConstraint *_stackViewCenterXConstraint;
+    NSLayoutConstraint *_stackViewCompactLeftConstraint;
+    NSLayoutConstraint *_stackViewCompactRightConstraint;
 }
 
+@property(nonatomic, getter=isUsingSmallestSupportedWidth) _Bool usingSmallestSupportedWidth; // @synthesize usingSmallestSupportedWidth=_usingSmallestSupportedWidth;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewCompactRightConstraint; // @synthesize stackViewCompactRightConstraint=_stackViewCompactRightConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewCompactLeftConstraint; // @synthesize stackViewCompactLeftConstraint=_stackViewCompactLeftConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewCenterXConstraint; // @synthesize stackViewCenterXConstraint=_stackViewCenterXConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewRightConstraint; // @synthesize stackViewRightConstraint=_stackViewRightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewLeftConstraint; // @synthesize stackViewLeftConstraint=_stackViewLeftConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
@@ -53,6 +61,7 @@
 @property(nonatomic) long long contextEditingMode;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)safeAreaInsetsDidChange;
+- (void)layoutSubviews;
 - (void)_installContextualEditingView;
 - (void)_installAdditionalOptionsView;
 @property(readonly, nonatomic) PKPaletteColorPickerView *colorPickerView;

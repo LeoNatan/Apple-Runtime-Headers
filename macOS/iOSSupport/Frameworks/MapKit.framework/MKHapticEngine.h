@@ -13,6 +13,7 @@
 - (void)draggedObjectLanded;
 - (void)draggedObjectLifted;
 - (void)playFailure;
+- (void)prepare;
 - (void)playSuccess;
 - (id)init;
 

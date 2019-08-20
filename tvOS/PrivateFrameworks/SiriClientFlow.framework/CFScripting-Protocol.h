@@ -7,6 +7,8 @@
 @class AFPeerInfo, NSArray, NSString, SACFAbstractClientCommand, SACFClientFlowScript, SACFSignal;
 
 @protocol CFScripting
+- (void)resetScriptExecutorCache;
+- (void)sendClientFlowState;
 - (void)killScripter;
 - (void)removeScripts:(NSArray *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)updateScriptArchiveAtPath:(NSString *)arg1 completion:(void (^)(_Bool))arg2;

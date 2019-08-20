@@ -6,11 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSMutableArray, UIColor;
+#import <NanoTimeKit/NTKColoringView-Protocol.h>
 
-@interface NTKRingsAndDotsView : UIView
+@class NSArray, NSMutableArray, NSString, UIColor;
+
+@interface NTKRingsAndDotsView : UIView <NTKColoringView>
 {
     _Bool _hidesOverlapShadow;
+    UIColor *_overrideColor;
     NSArray *_ringColors;
     NSMutableArray *_ringsFillFractions;
     UIColor *_foregroundColor;
@@ -35,6 +38,7 @@
 @property(nonatomic) _Bool hidesOverlapShadow; // @synthesize hidesOverlapShadow=_hidesOverlapShadow;
 @property(retain, nonatomic) NSMutableArray *ringsFillFractions; // @synthesize ringsFillFractions=_ringsFillFractions;
 @property(retain, nonatomic) NSArray *ringColors; // @synthesize ringColors=_ringColors;
+@property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 - (void).cxx_destruct;
 - (float)radiusForRingAtIndex:(int)arg1;
 - (void)_setDiameter:(float)arg1;
@@ -43,8 +47,17 @@
 - (void)setFilterProvider:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+@property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
+@property(retain, nonatomic) UIColor *color; // @dynamic color;
 - (id)initWithFrame:(struct CGRect)arg1 diameter:(float)arg2 ringWidth:(float)arg3 ringGapWidth:(float)arg4 overlapStrokeWidth:(float)arg5;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic) UIColor *contentColor; // @dynamic contentColor;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

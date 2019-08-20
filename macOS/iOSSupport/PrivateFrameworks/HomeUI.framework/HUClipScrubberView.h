@@ -42,7 +42,7 @@
 - (void)navigateToOffset:(double)arg1;
 - (void)navigateToLivePosition;
 - (void)updateTimeControlStatus:(unsigned long long)arg1 forEngineMode:(unsigned long long)arg2;
-- (id)playOrPauseImage;
+- (id)playOrPauseImageForEngineMode:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (void)_addConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -7,6 +7,7 @@
 @class NSArray, NSNumber, NSString, NSURL;
 
 @protocol AMPLibraryFrameworkProtocol
+- (void)migratedMediaFolderBookmarkWithReply:(void (^)(NSData *, NSError *))arg1;
 - (void)migratedPodcastSettingsWithReply:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)migratedPodcastStationsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)migratedPodcastFeedsWithReply:(void (^)(NSArray *, NSError *))arg1;
@@ -25,6 +26,7 @@
 
 @optional
 - (void)appHasMigrated:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)openLibraryFileAtPath:(NSString *)arg1 withDomains:(unsigned long long)arg2 withReply:(void (^)(NSError *, NSDictionary *))arg3;
 - (void)openDevice:(NSString *)arg1 forClientID:(unsigned int)arg2 withReply:(void (^)(NSError *, NSDictionary *))arg3;
 - (void)synchronousOpenLibrary:(unsigned int)arg1 withReply:(void (^)(NSError *, NSDictionary *))arg2;
 @end

@@ -41,7 +41,6 @@
 - (void)_setupQuickLookWithURL:(id)arg1 activityItems:(id)arg2 isPreview:(_Bool)arg3;
 - (id)activityTitle;
 - (id)_systemImageName;
-- (id)_actionImage;
 - (id)activityType;
 
 // Remaining properties

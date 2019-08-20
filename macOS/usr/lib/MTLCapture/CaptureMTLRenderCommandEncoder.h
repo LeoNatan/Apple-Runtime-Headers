@@ -117,6 +117,7 @@
 - (void)drawIndexedPatches:(unsigned long long)arg1 patchIndexBuffer:(id)arg2 patchIndexBufferOffset:(unsigned long long)arg3 controlPointIndexBuffer:(id)arg4 controlPointIndexBufferOffset:(unsigned long long)arg5 indirectBuffer:(id)arg6 indirectBufferOffset:(unsigned long long)arg7;
 @property(copy) NSString *label;
 @property(readonly) id <MTLDevice> device;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

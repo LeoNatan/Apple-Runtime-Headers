@@ -46,6 +46,8 @@
 - (void)setInSearchShowInSearchEnabled:(id)arg1 specifier:(id)arg2;
 - (id)inSearchShowInSearchEnabled:(id)arg1;
 - (void)_addInSearchSpecifiersToSpecifiers:(id)arg1;
+- (id)_inAppFooterString;
+- (id)_inAppShowToggleLableString;
 - (void)setInAppLearnFromAppEnabled:(id)arg1 specifier:(id)arg2;
 - (id)inAppLearnFromAppEnabled:(id)arg1;
 - (void)setInAppShowSiriSuggestionsEnabled:(id)arg1 specifier:(id)arg2;

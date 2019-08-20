@@ -107,6 +107,7 @@ __attribute__((visibility("hidden")))
 - (id)containerView;
 - (void)showAsHUD;
 - (void)showAsHUDFromLocation:(struct CGPoint)arg1 withInputView:(id)arg2 touchBegan:(double)arg3;
+- (id)_renderConfig;
 - (void)setupShadowViewWithSize:(struct CGSize)arg1;
 - (void)setupBackgroundKeyViewWithSize:(struct CGSize)arg1;
 - (void)show;

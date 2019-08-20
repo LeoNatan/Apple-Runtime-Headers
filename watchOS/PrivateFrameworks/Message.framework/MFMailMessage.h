@@ -9,7 +9,7 @@
 #import <Message/EDIndexableMessage-Protocol.h>
 #import <Message/MFBaseMessage-Protocol.h>
 
-@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, EMMessageObjectID, MFMailboxUid, MFMessageHeaders, MFMessageInfo, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, EMMessageObjectID, MFMailboxUid, MFMessageHeaders, MFMessageInfo, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL, NSUUID;
 @protocol ECMimePart;
 
 @interface MFMailMessage : MFMessage <EDIndexableMessage, MFBaseMessage>
@@ -98,6 +98,7 @@
 @property(readonly, nonatomic) unsigned int dateSentInterval; // @dynamic dateSentInterval;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSUUID *documentID; // @dynamic documentID;
 @property(readonly, nonatomic) unsigned int fileSize;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) MFMessageHeaders *headers; // @dynamic headers;

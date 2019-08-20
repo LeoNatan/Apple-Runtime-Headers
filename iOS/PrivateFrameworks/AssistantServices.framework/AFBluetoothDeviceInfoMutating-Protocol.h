@@ -9,6 +9,8 @@
 @class NSString, NSUUID;
 
 @protocol AFBluetoothDeviceInfoMutating <NSObject>
+- (void)setSupportsListeningModeTransparency:(_Bool)arg1;
+- (void)setSupportsListeningModeANC:(_Bool)arg1;
 - (void)setSupportsSpokenNotification:(_Bool)arg1;
 - (void)setSupportsVoiceTrigger:(_Bool)arg1;
 - (void)setSupportsInEarDetection:(_Bool)arg1;

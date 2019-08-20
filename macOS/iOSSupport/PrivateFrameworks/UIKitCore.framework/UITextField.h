@@ -111,6 +111,7 @@
         unsigned int overridePasscodeStyle:1;
         unsigned int shouldResignWithoutUpdate:1;
         unsigned int blurEnabled:1;
+        unsigned int visualEffectViewEnabled:1;
         unsigned int disableFocus:1;
         unsigned int disableRemoteTextEditing:1;
         unsigned int allowsAttachments:1;
@@ -289,8 +290,6 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)_inPopover;
 - (void)toggleSmartInsertDelete:(id)arg1;
-- (void)toggleContinuousSpellChecking:(id)arg1;
-- (BOOL)_validateUserInterfaceItem:(id)arg1;
 - (void)validateCommand:(id)arg1;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
@@ -393,6 +392,8 @@
 - (void)setSelectionRange:(struct _NSRange)arg1;
 - (struct _NSRange)selectionRange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_setVisualEffectViewEnabled:(BOOL)arg1 backgroundColor:(id)arg2;
+- (BOOL)_visualEffectViewEnabled;
 - (void)_setBlurEnabled:(BOOL)arg1;
 - (BOOL)_blurEnabled;
 - (void)_forceObscureAllText;
@@ -793,6 +794,7 @@
 @property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
 @property(nonatomic) BOOL useAutomaticEndpointing;
 @property(nonatomic) BOOL useInterfaceLanguageForLocalization;
+@property(nonatomic) BOOL usesStandardTextScaling;
 @property(nonatomic) struct _NSRange validTextRange;
 
 @end

@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIInputHostController-Protocol.h>
 #import <UIKitCore/_UITextEffectsSceneObserver-Protocol.h>
 
-@class NSArray, NSDate, NSLayoutConstraint, NSMutableArray, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIInputWindowControllerHosting, UIKeyboardFloatingTransitionController, UIKeyboardPathEffectView, UIView;
+@class NSDate, NSLayoutConstraint, NSMutableArray, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIInputWindowControllerHosting, UIKeyboardFloatingTransitionController, UIKeyboardPathEffectView, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIInputWindowController : UIApplicationRotationFollowingControllerNoTouches <UIInputViewAnimationHost, _UITextEffectsSceneObserver, UIKeyboardFloatingTransitionControllerDelegate, _UIInputHostController>
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
     _Bool _suppressUpdateVisibilityConstraints;
     CDUnknownBlockType _pendingTransitionActivity;
     UIInputWindowControllerHosting *_hosting;
-    NSArray *_rootViewConstraints;
     UIView *_preRotationSnapshot;
     struct CGSize _preRotationInputViewSize;
     struct CGSize _preRotationInputAssistantViewSize;
@@ -163,6 +162,7 @@ __attribute__((visibility("hidden")))
 - (void)updateForKeyplaneChangeWithContext:(id)arg1;
 - (void)checkPlaceholdersForRemoteKeyboardsAndForceConstraintsUpdate:(_Bool)arg1 layoutSubviews:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
+- (struct CGRect)_convertRectFromContainerCoordinateSpaceToScreenSpace:(struct CGRect)arg1;
 - (id)_screenCoordinateSpace;
 - (void)transferActiveNotificationInfoToInfo:(id)arg1;
 - (void)viewWillLayoutSubviews;
@@ -183,8 +183,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (void)updateSupportsDockViewController;
 - (struct UIEdgeInsets)_inputViewPadding;
+- (void)updateRootViewConstraintsForSceneFrame:(struct CGRect)arg1 bounds:(struct CGRect)arg2;
 - (void)updateViewConstraints;
-- (void)viewWillMoveToWindow:(id)arg1;
 - (void)updateViewSizingConstraints;
 - (void)_presentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animationController:(id)arg4 interactionController:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)isViewLandscape;
@@ -223,6 +223,7 @@ __attribute__((visibility("hidden")))
 - (id)inputSetContainerView;
 - (void)didReceiveMemoryWarning;
 - (void)_updatePlacementWithPlacement:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

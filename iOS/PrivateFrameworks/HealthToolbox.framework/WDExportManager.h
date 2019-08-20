@@ -61,7 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)_writeCDAVitalsOrganizerStartWithStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_writeXMLActivitySummary:(id)arg1 activeEnergyBurnedUnit:(id)arg2;
 - (void)_writeXMLWorkoutRouteEnd;
-- (void)_writeXMLWorkoutRouteLocation:(id)arg1;
+- (void)_writeXMLWorkoutRouteFileReference:(id)arg1;
 - (void)_writeXMLWorkoutRouteStart:(id)arg1;
 - (void)_writeXMLMetadataEntries:(id)arg1;
 - (void)_writeXMLSampleAttributes:(id)arg1;

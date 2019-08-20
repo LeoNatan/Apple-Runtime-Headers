@@ -21,6 +21,7 @@
     NSArray *_activeItemSources;
     // Error parsing type: Ai, name: _taskId
     unsigned long long _cloudSharedAssetCount;
+    _Bool _shouldUseMomentShareLinkInMessagesIfThresholdMet;
     _Bool _shouldExcludeLivenessInAllItemSources;
     _Bool _shouldExcludeLocationInAllItemSourcess;
     _Bool _shouldShareAsOriginals;
@@ -53,6 +54,7 @@
 @property(nonatomic) __weak PUActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <PUActivityItemSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool shouldUseMomentShareLinkInMessagesIfThresholdMet; // @synthesize shouldUseMomentShareLinkInMessagesIfThresholdMet=_shouldUseMomentShareLinkInMessagesIfThresholdMet;
 @property(nonatomic) unsigned long long preferredPreparationType; // @synthesize preferredPreparationType=_preferredPreparationType;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

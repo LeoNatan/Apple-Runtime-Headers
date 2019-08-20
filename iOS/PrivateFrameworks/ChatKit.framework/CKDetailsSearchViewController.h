@@ -37,6 +37,8 @@
 - (void)searchControllerDidBeginDragging:(id)arg1;
 - (void)searchController:(id)arg1 didSelectItem:(id)arg2 inChat:(id)arg3;
 - (id)searchController:(id)arg1 conversationForChatGUID:(id)arg2;
+- (void)deleteMessageItem:(id)arg1;
+- (void)deleteTransferGUID:(id)arg1;
 - (void)searchDetailsFooterCellShowAllTapped:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
 - (Class)_searchResultsHeaderClass;

@@ -43,3 +43,7 @@ typedef struct {
     unsigned int pending:1;
 } CDStruct_eab6c78c;
 
+typedef struct {
+    unsigned int success:1;
+} CDStruct_f2ecb737;
+

@@ -354,6 +354,8 @@
 - (void)_setTextAutosizingEnabled:(BOOL)arg1;
 - (float)_minimumZoomFontSize;
 - (void)_setMinimumZoomFontSize:(float)arg1;
+- (void)_setMediaRecorderEnabled:(BOOL)arg1;
+- (BOOL)_mediaRecorderEnabled;
 - (double)_backForwardCacheExpirationInterval;
 - (void)setNeedsStorageAccessFromFileURLsQuirk:(BOOL)arg1;
 - (BOOL)needsStorageAccessFromFileURLsQuirk;

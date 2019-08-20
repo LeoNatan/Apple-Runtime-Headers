@@ -71,7 +71,7 @@ __attribute__((visibility("hidden")))
 + (id)transitionsByMoodIDSortedForBlueprint:(id)arg1;
 + (id)editStyleIDsByMoodIDSorted;
 + (id)titleIDsByMoodIDSorted;
-+ (id)blueprintWithMood:(id)arg1 keywords:(id)arg2 musicGenreDistribution:(id)arg3;
++ (id)blueprintWithMood:(id)arg1 keywords:(id)arg2 musicGenreDistribution:(id)arg3 allowNonLocalSongs:(BOOL)arg4;
 + (id)incrementAnimationStyleForBlueprint:(id)arg1 by:(unsigned long long)arg2;
 + (id)requestStyleBForBlueprint:(id)arg1;
 + (id)blueprintForBlueprint:(id)arg1 replaceProjectFilterByID:(id)arg2;

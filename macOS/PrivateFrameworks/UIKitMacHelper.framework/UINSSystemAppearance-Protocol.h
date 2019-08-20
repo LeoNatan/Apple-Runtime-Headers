@@ -17,8 +17,6 @@
 @property(readonly, nonatomic) BOOL hasDarkWindowChrome;
 @property(readonly, nonatomic) unsigned long long scrollBarClickBehavior;
 @property(readonly, nonatomic) unsigned long long scrollerStyle;
-@property(readonly, nonatomic) id encodedDarkControlAccentColor;
-@property(readonly, nonatomic) id encodedControlAccentColor;
 @property(readonly, nonatomic) id encodedDarkKeyboardFocusIndicatorColor;
 @property(readonly, nonatomic) id encodedKeyboardFocusIndicatorColor;
 @property(readonly, nonatomic) id encodedDarkSelectionMaterialTintColor;

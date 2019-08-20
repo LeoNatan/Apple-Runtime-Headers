@@ -22,6 +22,7 @@
 - (void)getUseriCloudSetting:(void (^)(BOOL, BOOL, NSData *, NSDictionary *, NSDictionary *, NSDictionary *, NSError *))arg1;
 - (void)setUseriCloudSetting:(BOOL)arg1 results:(void (^)(BOOL, NSData *, NSDictionary *, NSDictionary *, NSDictionary *, NSError *))arg2;
 - (void)shutdownService:(void (^)(id, NSError *))arg1;
+- (void)validateAuthorization:(void (^)(id, NSError *))arg1;
 - (void)moveAsideLibraryStore:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;
 - (void)chooseLibrary:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;
 - (void)moveLibrary:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;

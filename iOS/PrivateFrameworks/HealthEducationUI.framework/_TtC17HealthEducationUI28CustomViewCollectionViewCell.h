@@ -9,13 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface _TtC17HealthEducationUI28CustomViewCollectionViewCell : UICollectionViewCell
 {
-    // Error parsing type: , name: stackView
     // Error parsing type: , name: customView
 }
 
 - (void).cxx_destruct;
 - (void)prepareForReuse;
-- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

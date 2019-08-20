@@ -116,6 +116,9 @@
 @property(readonly, nonatomic) unsigned long long _lastAveragedBytes; // @synthesize _lastAveragedBytes;
 @property(nonatomic, setter=_setLastAveragedInterval:) double _lastAveragedInterval; // @synthesize _lastAveragedInterval;
 @property(nonatomic, setter=_setLastUpdatedInterval:) double _lastUpdatedInterval; // @synthesize _lastUpdatedInterval;
+- (void)_swizzleTransferStateIfMissingAttachmentCanBeDownloadedFromCloudKit;
+- (BOOL)_missingAttachmentCanBeDownloadedFromCloudKit;
+- (BOOL)_isCloudKitEnabled;
 - (id)_auxVideoPathIfItExists;
 - (id)description;
 @property(readonly, retain, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
@@ -126,6 +129,9 @@
 @property(readonly, nonatomic) BOOL isOpusAudioMessage;
 @property(readonly, nonatomic) BOOL isAutoloopVideo;
 @property(readonly, nonatomic) BOOL isRecipeBasedSticker;
+@property(readonly, nonatomic) BOOL canMarkPurgable;
+@property(readonly, nonatomic) BOOL wantsAlphaRemoved;
+@property(readonly, nonatomic) BOOL isAnimojiV2;
 @property(readonly, nonatomic) BOOL existsAtLocalPath;
 @property(readonly, retain, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) BOOL isFinished;

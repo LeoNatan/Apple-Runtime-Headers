@@ -25,10 +25,13 @@
 @property(readonly, nonatomic) NPKDoubleClickToApproveView *doubleClickToApproveView; // @synthesize doubleClickToApproveView=_doubleClickToApproveView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (unsigned int)_contentAlignmentForDoubleClickContentAlignment:(unsigned int)arg1;
+- (unsigned int)_doubleClickContentAlignmentForContentAlignment:(unsigned int)arg1;
 - (void)_setUpVerticalConstraints;
 - (void)_setUpHorizontalConstraints;
 - (void)_setUpCallToActionStackView;
 - (void)_setUpContentView;
+@property(nonatomic) unsigned int contentAlignment;
 @property(copy, nonatomic) NSString *instructionText;
 - (id)initWithFrame:(struct CGRect)arg1;
 

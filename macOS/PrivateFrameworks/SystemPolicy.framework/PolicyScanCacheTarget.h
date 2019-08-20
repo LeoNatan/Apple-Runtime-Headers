@@ -23,8 +23,10 @@
     NSNumber *_matchType;
     NSNumber *_malwareResult;
     NSNumber *_flags;
+    NSDate *_lastRevocationCheckTime;
 }
 
+@property(readonly, nonatomic) NSDate *lastRevocationCheckTime; // @synthesize lastRevocationCheckTime=_lastRevocationCheckTime;
 @property(readonly, nonatomic) NSNumber *flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) NSNumber *malwareResult; // @synthesize malwareResult=_malwareResult;
 @property(readonly, nonatomic) NSNumber *matchType; // @synthesize matchType=_matchType;

@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)_scrollView:(id)arg1 snabRubberBandWithVelocity:(struct CGSize)arg2;
 - (void)_endSnapBackAnimationIfNeededForScrollView:(id)arg1;
 - (void)scrollView:(id)arg1 scrollWheelWithEvent:(id)arg2;
-- (void)_scrollView:(id)arg1 discreetScrollWithEvent:(id)arg2;
+- (void)_scrollView:(id)arg1 discreteScrollWithEvent:(id)arg2;
 - (void)_scrollView:(id)arg1 smoothScrollWithEvent:(id)arg2;
 - (void)scrollView:(id)arg1 endScrollGestureDueToReason:(id)arg2;
 - (id)scrollView:(id)arg1 responderToForwardScrollEvents:(id)arg2;

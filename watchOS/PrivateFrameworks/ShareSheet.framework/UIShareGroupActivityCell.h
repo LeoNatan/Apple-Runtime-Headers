@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UICollectionViewCell.h>
 
-@class CALayer, UIImageView, UILabel, UIView, UIVisualEffectView, _UIHostActivityProxy;
+@class CALayer, NSArray, UIImageView, UILabel, UIView, UIVisualEffectView, _UIHostActivityProxy;
 
 @interface UIShareGroupActivityCell : UICollectionViewCell
 {
@@ -20,8 +20,12 @@
     CALayer *_darkeningLayer;
     UIVisualEffectView *_vibrantLabelView;
     UIImageView *_darkenedImageView;
+    NSArray *_regularConstraints;
+    NSArray *_largeTextConstraints;
 }
 
+@property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
+@property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) UIImageView *darkenedImageView; // @synthesize darkenedImageView=_darkenedImageView;
 @property(retain, nonatomic) UIVisualEffectView *vibrantLabelView; // @synthesize vibrantLabelView=_vibrantLabelView;
 @property(retain, nonatomic) CALayer *darkeningLayer; // @synthesize darkeningLayer=_darkeningLayer;
@@ -36,6 +40,8 @@
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)updateDarkening;
+- (void)_updateForCurrentSizeCategory;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForReuse;
 - (void)setupConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

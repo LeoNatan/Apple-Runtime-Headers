@@ -32,6 +32,7 @@
 - (void)_updateBackgroundColor;
 - (void)_updateCornerRadius;
 - (void)_updateDisplay;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_createCCMaterialViewIfNecessary;
 - (void)_createEffectViewIfNecessary;
 

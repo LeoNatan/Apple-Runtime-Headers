@@ -4,16 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/_UIBadgePhonePadHorizontalVisualStyle.h>
+#import <UIKitCore/_UIBadgePadHorizontalVisualStyle.h>
 
 __attribute__((visibility("hidden")))
-@interface _UIBadgePhoneLandscapeVisualStyle : _UIBadgePhonePadHorizontalVisualStyle
+@interface _UIBadgePhoneLandscapeVisualStyle : _UIBadgePadHorizontalVisualStyle
 {
 }
 
-- (float)singleBadgeWidth;
+- (float)cornerRadius;
 - (float)minWidth;
-- (float)verticalInset;
 - (float)edgePadding;
 - (id)font;
 - (float)fontSize;

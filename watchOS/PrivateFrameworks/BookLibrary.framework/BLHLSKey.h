@@ -23,7 +23,11 @@
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) int method; // @synthesize method=_method;
 - (void).cxx_destruct;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToHLSKey:(id)arg1;
 - (id)description;
+- (_Bool)isFormatSupported;
 - (void)setPropertiesFromAttributeList:(id)arg1;
 
 @end

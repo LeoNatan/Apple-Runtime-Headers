@@ -11,7 +11,7 @@
 @interface MLNeuralNetworkContainer : NSObject
 {
     _Bool _hasBidirectionalLayer;
-    _Bool _has1DConvOptional;
+    _Bool _hasOptionalInputSequenceConcat;
     _Bool _hasDynamicLayer;
     _Bool _ndArrayInterpretation;
     NSString *_modelFilePath;
@@ -44,7 +44,7 @@
 @property(retain) NSString *classScoreVectorName; // @synthesize classScoreVectorName=_classScoreVectorName;
 @property(retain) NSArray *classLabels; // @synthesize classLabels=_classLabels;
 @property(nonatomic) _Bool hasDynamicLayer; // @synthesize hasDynamicLayer=_hasDynamicLayer;
-@property(nonatomic) _Bool has1DConvOptional; // @synthesize has1DConvOptional=_has1DConvOptional;
+@property(nonatomic) _Bool hasOptionalInputSequenceConcat; // @synthesize hasOptionalInputSequenceConcat=_hasOptionalInputSequenceConcat;
 @property(nonatomic) _Bool hasBidirectionalLayer; // @synthesize hasBidirectionalLayer=_hasBidirectionalLayer;
 @property(retain, nonatomic) NSArray *configurationList; // @synthesize configurationList=_configurationList;
 @property(retain, nonatomic) NSDictionary *imageParameters; // @synthesize imageParameters=_imageParameters;
@@ -56,7 +56,7 @@
 @property(retain, nonatomic) NSString *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithFeatureDescriptions:(id)arg1 transformDesc:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4 configurations:(id)arg5 classScoreVectorName:(id)arg6 classLabels:(id)arg7 hasBidirectionalLayer:(_Bool)arg8 has1DConvOptional:(_Bool)arg9 hasDynamicLayer:(_Bool)arg10;
+- (id)initWithFeatureDescriptions:(id)arg1 transformDesc:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4 configurations:(id)arg5 classScoreVectorName:(id)arg6 classLabels:(id)arg7 hasBidirectionalLayer:(_Bool)arg8 hasOptionalInputSequenceConcat:(_Bool)arg9 hasDynamicLayer:(_Bool)arg10;
 - (id)initWithFilePath:(id)arg1 inputLayerNames:(id)arg2 outputLayerNames:(id)arg3 parameters:(id)arg4;
 
 @end

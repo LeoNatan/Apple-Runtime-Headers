@@ -30,6 +30,7 @@
 - (void)_cplDownloadFinishedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;
+- (void)abortClientSide;
 - (void)runDaemonSide;
 - (void)_handleLocalAvailabilityChangeForResource:(id)arg1 mutableInfo:(id)arg2 fileURL:(id *)arg3 uti:(id *)arg4 orientation:(unsigned int *)arg5 data:(id *)arg6;
 - (id)_availabilityRequestOptions;

@@ -75,6 +75,7 @@
 - (void)beginIndexingForActivityType:(id)arg1 activity:(id)arg2;
 - (void)_beginIndexingForActivityType:(id)arg1 activity:(id)arg2;
 - (void)_stopScheduling;
+- (void)_registerActivityForType:(id)arg1 builder:(CDUnknownBlockType)arg2 runner:(CDUnknownBlockType)arg3;
 - (void)_startScheduling;
 - (CDUnknownBlockType)_xpcCriteriaBuilderBlockForActivityType:(id)arg1;
 - (id)_xpcActivityIdentifierForActivityType:(id)arg1;

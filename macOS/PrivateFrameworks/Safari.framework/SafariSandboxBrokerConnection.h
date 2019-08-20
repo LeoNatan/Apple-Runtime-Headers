@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)extractArchiveAtPath:(id)arg1 type:(unsigned long long)arg2 identifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)writeWebArchiveWithoutQuarantineFlag:(id)arg1 atURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)synchronouslyIssueExtensionForDirectoryContainingDownloadDestinationAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)issueRootExtensionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)issueDevelopModeExtensionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_establishSynchronousConnectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_connectionWithCompletionHandler:(CDUnknownBlockType)arg1;

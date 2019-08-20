@@ -7,6 +7,9 @@
 @class NSString, NSXPCListenerEndpoint;
 
 @protocol AuxiliaryCallsClient
+
+@optional
+- (void)retrievePreviewEndpoint:(void (^)(NSError *, NSXPCListenerEndpoint *))arg1;
 - (void)addFreeWindow:(CDStruct_5d2c0651)arg1 identifier:(NSString *)arg2 listenerEndpoint:(NSXPCListenerEndpoint *)arg3 reply:(void (^)(NSError *, struct CGRect))arg4;
 @end
 

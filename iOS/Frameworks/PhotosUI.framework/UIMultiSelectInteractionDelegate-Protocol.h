@@ -15,13 +15,15 @@
 - (void)multiSelectInteraction:(UIMultiSelectInteraction *)arg1 toggleSelectionStateUpToPoint:(struct CGPoint)arg2;
 - (void)willBeginMultiSelectInteraction:(UIMultiSelectInteraction *)arg1 atPoint:(struct CGPoint)arg2;
 - (_Bool)shouldBeginMultiSelectInteraction:(UIMultiSelectInteraction *)arg1 atPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
-- (_Bool)interaction:(UIMultiSelectInteraction *)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
+- (_Bool)interaction:(UIMultiSelectInteraction *)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(_Bool)arg1;
 - (_Bool)isInMultiSelectMode;
 - (_Bool)supportsMultiSelectInteraction:(UIMultiSelectInteraction *)arg1;
 
 @optional
+- (_Bool)interaction:(UIMultiSelectInteraction *)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
 - (void)automaticallyTransitionToMultiSelectMode;
+- (void)didCancelMultiSelectInteraction:(UIMultiSelectInteraction *)arg1 atPoint:(struct CGPoint)arg2;
 - (_Bool)multiSelectInteractionGestureShouldPreventDragLiftGesture:(UIGestureRecognizer *)arg1;
 @end
 

@@ -39,6 +39,7 @@
 - (void)userInterfaceDirectionDidChange;
 - (void)screenScaleDidChange;
 - (void)safeAreaInsetsDidChange;
+- (void)containingScrollViewDidScroll:(struct CGPoint)arg1;
 - (void)visibleRectDidChange;
 - (void)referenceSizeDidChange;
 - (void)viewEnvironmentDidChange;

@@ -9,7 +9,7 @@
 #import <GeoServices/GEOCompanionCompatibility-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOInstructionSet, GEOLatLng, GEOTransitArrivalInfo, GEOTransitBaseFare, GEOTransitSurcharge, GEOTransitVehiclePositionInfo, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
+@class GEOInstructionSet, GEOLatLng, GEOTransitArrivalInfo, GEOTransitBaseFare, GEOTransitScheduleInfo, GEOTransitSurcharge, GEOTransitVehiclePositionInfo, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 @protocol GEOTransitVehicleEntries;
 
 @interface GEOTransitStep : PBCodable <GEOCompanionCompatibility, NSCopying>
@@ -24,6 +24,7 @@
     NSMutableArray *_enterExitInfos;
     GEOInstructionSet *_instructions;
     GEOLatLng *_location;
+    GEOTransitScheduleInfo *_scheduleInfo;
     GEOTransitSurcharge *_surcharge;
     NSMutableArray *_transferInfos;
     NSData *_updateIdentifier;
@@ -68,6 +69,7 @@
         unsigned int read_enterExitInfos:1;
         unsigned int read_instructions:1;
         unsigned int read_location:1;
+        unsigned int read_scheduleInfo:1;
         unsigned int read_surcharge:1;
         unsigned int read_transferInfos:1;
         unsigned int read_updateIdentifier:1;
@@ -81,6 +83,7 @@
         unsigned int wrote_enterExitInfos:1;
         unsigned int wrote_instructions:1;
         unsigned int wrote_location:1;
+        unsigned int wrote_scheduleInfo:1;
         unsigned int wrote_surcharge:1;
         unsigned int wrote_transferInfos:1;
         unsigned int wrote_updateIdentifier:1;
@@ -121,6 +124,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) GEOTransitScheduleInfo *scheduleInfo;
+@property(readonly, nonatomic) _Bool hasScheduleInfo;
+- (void)_readScheduleInfo;
 @property(retain, nonatomic) GEOTransitVehiclePositionInfo *vehiclePositionInfo;
 @property(readonly, nonatomic) _Bool hasVehiclePositionInfo;
 - (void)_readVehiclePositionInfo;

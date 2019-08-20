@@ -26,6 +26,8 @@
 - (void)clearTrafficIncidentsBulletin;
 - (void)clearTrafficIncidentBulletinWithAlertID:(NSData *)arg1;
 - (void)showTrafficIncidentAlertWithID:(NSData *)arg1 withReroute:(_Bool)arg2 title:(NSString *)arg3 description:(NSString *)arg4;
+- (void)clearMapsSuggestionsBulletin;
+- (void)showMapsSuggestionsBulletinWithTitle:(NSString *)arg1 message:(NSString *)arg2 actionURL:(NSURL *)arg3;
 - (void)clearTrafficConditionsBulletin;
 - (void)showTrafficConditionsBulletinWithTitle:(NSString *)arg1 message:(NSString *)arg2 actionURL:(NSURL *)arg3;
 - (void)removeProblemStatusResponseWithNotificationID:(NSString *)arg1;

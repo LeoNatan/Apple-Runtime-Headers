@@ -16,10 +16,14 @@
     float _zkw;
     float _recentResult;
     float _other;
+    float _querySuggestion;
+    float _image;
     int _totalEngagements;
 }
 
 @property(nonatomic) int totalEngagements; // @synthesize totalEngagements=_totalEngagements;
+@property(nonatomic) float image; // @synthesize image=_image;
+@property(nonatomic) float querySuggestion; // @synthesize querySuggestion=_querySuggestion;
 @property(nonatomic) float other; // @synthesize other=_other;
 @property(nonatomic) float recentResult; // @synthesize recentResult=_recentResult;
 @property(nonatomic) float zkw; // @synthesize zkw=_zkw;

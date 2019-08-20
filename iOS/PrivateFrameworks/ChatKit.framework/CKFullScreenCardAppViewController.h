@@ -8,12 +8,13 @@
 
 #import <ChatKit/CKBrowserViewControllerProtocol-Protocol.h>
 #import <ChatKit/CKFullScreenAppViewControllerProtocol-Protocol.h>
+#import <ChatKit/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <ChatKit/UIGestureRecognizerDelegate-Protocol.h>
 
 @class CKBrowserDragManager, CKConversation, CKDismissView, IMBalloonPlugin, IMBalloonPluginDataSource, NSArray, NSData, NSNumber, NSObject, NSString, UIView;
 @protocol CKBrowserViewControllerProtocol, CKBrowserViewControllerSendDelegate, CKFullScreenAppViewControllerDelegate, UIViewControllerTransitioningDelegate;
 
-@interface CKFullScreenCardAppViewController : UIViewController <CKBrowserViewControllerProtocol, UIGestureRecognizerDelegate, CKFullScreenAppViewControllerProtocol>
+@interface CKFullScreenCardAppViewController : UIViewController <CKBrowserViewControllerProtocol, UIGestureRecognizerDelegate, UIAdaptivePresentationControllerDelegate, CKFullScreenAppViewControllerProtocol>
 {
     _Bool _inTransition;
     UIViewController<CKBrowserViewControllerProtocol> *_contentViewController;
@@ -40,7 +41,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)canBecomeFirstResponder;
 - (id)inputAccessoryView;
-@property(readonly, nonatomic) long long parentModalPresentationStyle;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)preferredStatusBarStyle;
 - (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
@@ -89,6 +90,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) struct CGRect horizontalSwipeExclusionRect;
+@property(readonly, nonatomic) long long parentModalPresentationStyle;
 @property(retain, nonatomic) NSArray *recipients;
 @property(readonly, nonatomic) UIViewController *remoteViewController;
 @property(retain, nonatomic) NSString *sender;

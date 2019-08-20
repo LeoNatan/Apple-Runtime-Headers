@@ -11,7 +11,6 @@
 @class AMSPromise, NSArray, NSMutableArray, NSMutableSet, NWNetworkOfInterestManager;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface AMSNetworkQualityInquiry : NSObject <NWNetworkOfInterestManagerDelegate>
 {
     NSArray *_lastKnownReports;
@@ -24,19 +23,22 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)isEntitled;
++ (void)updateLastConnectionReportWithTask:(id)arg1;
++ (id)reportForTask:(id)arg1 fromReports:(id)arg2;
++ (id)lastConnectionReport;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *knownNetworksReadyHandlers; // @synthesize knownNetworksReadyHandlers=_knownNetworksReadyHandlers;
 @property(readonly, nonatomic) NSMutableSet *knownNetworks; // @synthesize knownNetworks=_knownNetworks;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NWNetworkOfInterestManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
-- (id)investigateNetworks;
 - (void)didStopTrackingAllNOIs:(id)arg1;
 - (void)didStopTrackingNOI:(id)arg1;
 - (void)didStartTrackingNOI:(id)arg1;
 - (void)drainKnownNetworksReadyHandlers;
 - (void)performWhenKnownNetworksReady:(CDUnknownBlockType)arg1;
 - (BOOL)areKnownNetworksReady;
+- (id)investigateNetworks;
 - (void)dealloc;
 - (id)init;
 

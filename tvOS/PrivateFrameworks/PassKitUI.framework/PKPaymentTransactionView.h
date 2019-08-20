@@ -40,6 +40,7 @@
 @property(retain, nonatomic) UIColor *secondaryColor; // @synthesize secondaryColor=_secondaryColor;
 @property(retain, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 - (void).cxx_destruct;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (double)_defaultLayoutHeight;
@@ -47,7 +48,8 @@
 - (id)_disclosureView;
 - (_Bool)shouldShowTransactionPreviewForTouchAtPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)_updateAvatarView;
-- (void)setPrimaryImage:(id)arg1 strokeImage:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)_updateImageViewDynamicColors;
+- (void)setPrimaryImage:(id)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) NSAttributedString *transactionValueAttributedText; // @dynamic transactionValueAttributedText;
 @property(retain, nonatomic) NSString *rewardsValueString;
 - (id)defaultSecondaryColor;

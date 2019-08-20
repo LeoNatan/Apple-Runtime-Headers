@@ -6,20 +6,20 @@
 
 #import <NewsArticles/NAActivity.h>
 
-@class NSString;
+@class NSString, UIImage;
 
 @interface _TtC12NewsArticles19SharingActivityItem : NAActivity
 {
     // Error parsing type: , name: performActivityHandler
     // Error parsing type: , name: type
     // Error parsing type: , name: title
-    // Error parsing type: , name: name
+    // Error parsing type: , name: image
 }
 
 - (void).cxx_destruct;
 - (id)init;
 - (void)performActivity;
-- (id)_systemImageName;
+@property(nonatomic, readonly) UIImage *activityImage;
 @property(nonatomic, readonly) NSString *activityTitle;
 @property(nonatomic, readonly) NSString *activityType;
 - (BOOL)canPerformWithActivityItems:(id)arg1;

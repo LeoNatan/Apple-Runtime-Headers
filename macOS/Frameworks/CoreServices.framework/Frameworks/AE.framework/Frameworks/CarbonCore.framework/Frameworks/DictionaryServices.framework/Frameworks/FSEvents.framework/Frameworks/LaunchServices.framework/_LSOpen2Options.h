@@ -14,7 +14,7 @@
 __attribute__((visibility("hidden")))
 @interface _LSOpen2Options : NSObject <NSSecureCoding, NSCopying>
 {
-    BOOL _preferRunningInstance;
+    unsigned char _preferRunningInstance;
     BOOL _captureDiagnostics;
     BOOL _allowErrorUI;
     BOOL _requiresUniversalLinks;
@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *launchReason; // @synthesize launchReason=_launchReason;
 @property(nonatomic) BOOL allowErrorUI; // @synthesize allowErrorUI=_allowErrorUI;
 @property(nonatomic) BOOL captureDiagnostics; // @synthesize captureDiagnostics=_captureDiagnostics;
-@property(nonatomic) BOOL preferRunningInstance; // @synthesize preferRunningInstance=_preferRunningInstance;
+@property(nonatomic) unsigned char preferRunningInstance; // @synthesize preferRunningInstance=_preferRunningInstance;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

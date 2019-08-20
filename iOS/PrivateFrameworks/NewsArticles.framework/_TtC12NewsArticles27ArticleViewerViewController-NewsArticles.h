@@ -8,7 +8,6 @@
 
 @interface _TtC12NewsArticles27ArticleViewerViewController (NewsArticles)
 @property(nonatomic, readonly) long long preferredStatusBarStyle;
-- (id)overrideTraitCollectionForChildViewController:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;

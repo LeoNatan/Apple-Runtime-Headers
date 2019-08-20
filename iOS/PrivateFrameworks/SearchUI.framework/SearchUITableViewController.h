@@ -81,7 +81,6 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(_Bool)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (unsigned long long)queryIDForIndexPath:(id)arg1;
 - (void)willDismissViewController:(id)arg1;
 - (void)showViewController:(id)arg1;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 forceModalPresentation:(_Bool)arg3;

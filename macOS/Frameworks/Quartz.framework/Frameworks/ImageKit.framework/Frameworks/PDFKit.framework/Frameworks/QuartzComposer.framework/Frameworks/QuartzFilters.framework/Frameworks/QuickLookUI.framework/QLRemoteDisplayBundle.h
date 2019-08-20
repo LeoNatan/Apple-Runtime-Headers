@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
     BOOL _markupSupported;
     BOOL _rotateSupported;
     QLUIServiceEditToolbarHostViewController *_editToolbarViewController;
+    long long _currentScreentimePolicy;
 }
 
 + (id)keyPathsForValuesAffectingTouchBar;
@@ -76,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSURL *launchURL; // @synthesize launchURL=_launchURL;
 @property BOOL overlayVisibilityOptions; // @synthesize overlayVisibilityOptions=_overlayVisibilityOptions;
 @property BOOL keepThumbnailUnderInlinePreview; // @synthesize keepThumbnailUnderInlinePreview=_keepThumbnailUnderInlinePreview;
+@property long long currentScreentimePolicy; // @synthesize currentScreentimePolicy=_currentScreentimePolicy;
 @property(copy) NSString *customDisplayName; // @synthesize customDisplayName=_customDisplayName;
 @property(retain) NSDictionary *openingApplicationInfo; // @synthesize openingApplicationInfo=_openingApplicationInfo;
 @property int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
@@ -146,7 +148,7 @@ __attribute__((visibility("hidden")))
 - (void)didOpen;
 - (void)willOpen;
 - (void)refreshQuickLookFrame;
-- (void)didShowScreentimeLockout:(BOOL)arg1;
+- (void)didShowScreentimeLockout:(BOOL)arg1 withPolicy:(long long)arg2;
 - (void)didLoad;
 - (void)discard;
 - (void)deactivate;

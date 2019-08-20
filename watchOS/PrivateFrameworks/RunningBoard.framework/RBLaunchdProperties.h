@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     int _type;
     _Bool _multiInstance;
     _Bool _systemShell;
+    _Bool _variableEUID;
     unsigned char _overrideManageFlags;
     _Bool _doesOverrideManagement;
     NSString *_path;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *jobLabel; // @synthesize jobLabel=_jobLabel;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) unsigned char overrideManageFlags; // @synthesize overrideManageFlags=_overrideManageFlags;
+@property(readonly, nonatomic, getter=hasVariableEUID) _Bool variableEUID; // @synthesize variableEUID=_variableEUID;
 @property(readonly, nonatomic, getter=isSystemShell) _Bool systemShell; // @synthesize systemShell=_systemShell;
 @property(readonly, nonatomic, getter=isMultiInstance) _Bool multiInstance; // @synthesize multiInstance=_multiInstance;
 @property(readonly, nonatomic) int hostPid; // @synthesize hostPid=_hostPid;

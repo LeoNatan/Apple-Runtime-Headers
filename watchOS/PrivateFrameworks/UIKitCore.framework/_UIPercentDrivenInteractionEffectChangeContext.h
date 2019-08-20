@@ -14,9 +14,11 @@
 {
     _Bool _ended;
     float _progress;
+    float _maximumProgress;
 }
 
 @property(nonatomic) _Bool ended; // @synthesize ended=_ended;
+@property(nonatomic) float maximumProgress; // @synthesize maximumProgress=_maximumProgress;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 
 // Remaining properties

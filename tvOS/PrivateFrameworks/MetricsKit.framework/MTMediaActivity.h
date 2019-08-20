@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (id)stopEventHandler;
 - (id)startEventHandler;
+- (id)eventDataForTransitioningEvents;
 - (_Bool)isStopped;
 - (void)stoppedAtOverallPosition:(unsigned long long)arg1 type:(id)arg2 reason:(id)arg3 eventData:(id)arg4;
 - (void)startedAtOverallPosition:(unsigned long long)arg1 type:(id)arg2 reason:(id)arg3 eventData:(id)arg4;

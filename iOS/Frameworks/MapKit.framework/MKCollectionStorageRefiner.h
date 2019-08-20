@@ -15,6 +15,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)fetchMapItems:(CDUnknownBlockType)arg1 traits:(id)arg2;
 - (void)fetchMapItems:(CDUnknownBlockType)arg1;
 - (void)_sharedInitWithCollectionStorage:(id)arg1;
 - (id)initWithCollectionStorage:(id)arg1;

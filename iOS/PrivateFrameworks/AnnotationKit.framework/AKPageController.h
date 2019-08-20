@@ -74,6 +74,7 @@
 - (double)currentModelToScreenScaleFactor;
 - (long long)currentModelToScreenExifOrientation;
 - (void)updateScaleFactor:(double)arg1 isLiveUpdate:(_Bool)arg2 forceUpdate:(_Bool)arg3;
+- (void)updateOverlayViewLayers;
 - (void)overlayWasAddedToSuperview;
 - (_Bool)relinquishablesAreLoaded;
 - (void)releaseRelinquishables;

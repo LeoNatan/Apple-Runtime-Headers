@@ -19,12 +19,14 @@
     NSUUID *_storageIdentifier;
     NSString *_customName;
     struct GEOMapItemStorage *_geoMapItem;
+    NSString *_originatingAddressString;
     NSArray *_contacts;
 }
 
 + (id)shortcutWithData:(id)arg1;
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
+@property(copy, nonatomic) NSString *originatingAddressString; // @synthesize originatingAddressString=_originatingAddressString;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(copy, nonatomic) GEOMapItemStorage *geoMapItem; // @synthesize geoMapItem=_geoMapItem;
 @property(copy, nonatomic) NSString *customName; // @synthesize customName=_customName;
@@ -50,11 +52,11 @@
 - (id)_originalName;
 - (id)initSetupPlaceholderOfType:(int)arg1;
 - (id)initBackedPlaceholderWithType:(int)arg1 identifier:(id)arg2 customName:(id)arg3;
+- (id)initBackedPlaceholderWithType:(int)arg1 identifier:(id)arg2 originatingAddress:(id)arg3 customName:(id)arg4;
 - (id)initWithGEOMapItem:(struct GEOMapItemStorage *)arg1 customName:(id)arg2;
 - (id)initWithType:(int)arg1 geoMapItem:(struct GEOMapItemStorage *)arg2 customName:(id)arg3;
 - (id)initWithType:(int)arg1 identifier:(id)arg2 geoMapItem:(struct GEOMapItemStorage *)arg3 customName:(id)arg4;
-- (id)initWithType:(int)arg1 identifier:(id)arg2 geoMapItem:(struct GEOMapItemStorage *)arg3 customName:(id)arg4 contacts:(id)arg5;
-- (id)initWithType:(int)arg1 identifier:(id)arg2 geoMapItem:(struct GEOMapItemStorage *)arg3 customName:(id)arg4 contacts:(id)arg5 isHidden:(_Bool)arg6;
+- (id)initWithType:(int)arg1 identifier:(id)arg2 geoMapItem:(struct GEOMapItemStorage *)arg3 customName:(id)arg4 contacts:(id)arg5 isHidden:(_Bool)arg6 originatingAddress:(id)arg7;
 - (_Bool)isEqualToPinnedPlace:(id)arg1;
 - (int)pinnedStorageType;
 - (id)initWithPinnedPlace:(id)arg1;

@@ -10,7 +10,7 @@
 #import <ContactsUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <ContactsUI/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class CNContact, CNContactContentViewController, CNContactFormatter, CNContactRecentsReference, CNContactStore, CNContainer, CNGroup, CNPolicy, NSArray, NSString, UIView, _UIAccessDeniedView, _UIRemoteViewController;
+@class CNContact, CNContactContentViewController, CNContactFormatter, CNContactRecentsReference, CNContactStore, CNContainer, CNGroup, CNPolicy, NSArray, NSAttributedString, NSString, UIView, _UIAccessDeniedView, _UIRemoteViewController;
 @protocol CNContactContentViewController, CNContactViewControllerDelegate, CNContactViewControllerPPTDelegate, CNContactViewControllerPrivateDelegate;
 
 @interface CNContactViewController : UIViewController <CNContactViewHostProtocol, _UIRemoteViewControllerContaining, UIAdaptivePresentationControllerDelegate>
@@ -52,6 +52,7 @@
     NSString *_primaryPropertyKey;
     NSString *_importantMessage;
     NSString *_warningMessage;
+    NSAttributedString *_verifiedInfoMessage;
     UIView *_contactHeaderView;
     UIViewController *_contactHeaderViewController;
 }
@@ -63,6 +64,7 @@
 + (id)descriptorForRequiredKeys;
 @property(retain, nonatomic) UIViewController *contactHeaderViewController; // @synthesize contactHeaderViewController=_contactHeaderViewController;
 @property(retain, nonatomic) UIView *contactHeaderView; // @synthesize contactHeaderView=_contactHeaderView;
+@property(copy, nonatomic) NSAttributedString *verifiedInfoMessage; // @synthesize verifiedInfoMessage=_verifiedInfoMessage;
 @property(copy, nonatomic) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
 @property(copy, nonatomic) NSString *importantMessage; // @synthesize importantMessage=_importantMessage;
 @property(nonatomic) BOOL ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;

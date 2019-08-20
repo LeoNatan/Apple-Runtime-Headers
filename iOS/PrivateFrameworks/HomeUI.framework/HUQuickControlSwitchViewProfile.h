@@ -15,6 +15,7 @@
 }
 
 @property(readonly, nonatomic) _Bool hasSecondaryValue;
+- (_Bool)supportsTouchContinuation;
 - (double)gestureDragCoefficient;
 @property(readonly, nonatomic) HFNumberValueConstraints *secondaryValueConstraints;
 @property(readonly, nonatomic) HFNumberValueConstraints *primaryValueConstraints;

@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) _PSMapsFeedbackAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (id)knowledgeEvent;
+- (id)feedbackPayload;
 @property(readonly, nonatomic) unsigned long long indexOfEngagedSuggestion;
 - (id)initWithFeedbackAction:(id)arg1 predictionContext:(id)arg2 suggestions:(id)arg3;
 

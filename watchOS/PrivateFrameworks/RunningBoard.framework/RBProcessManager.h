@@ -29,7 +29,6 @@
     RBProcessMap *_processState;
     NSMutableDictionary *_identityToPendingExitBlock;
     NSMapTable *_identityToProcessLifecycleQueue;
-    void *_canary;
     _Bool _systemPreventsIdleSleep;
 }
 

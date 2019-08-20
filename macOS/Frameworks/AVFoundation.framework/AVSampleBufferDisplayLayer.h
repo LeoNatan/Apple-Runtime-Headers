@@ -62,6 +62,10 @@
 @property(readonly, nonatomic) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property(nonatomic) BOOL preventsCapture;
 @property(nonatomic) BOOL preventsDisplaySleepDuringVideoPlayback;
+- (void)resetUpcomingSampleBufferPresentationTimeExpectations;
+- (void)expectMonotonicallyIncreasingUpcomingSampleBufferPresentationTimes;
+- (void)expectMinimumUpcomingSampleBufferPresentationTime:(CDStruct_1b6d18a9)arg1;
+- (BOOL)setUpcomingPresentationTimeExpectations:(int)arg1 minimumPresentationTime:(CDStruct_1b6d18a9)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

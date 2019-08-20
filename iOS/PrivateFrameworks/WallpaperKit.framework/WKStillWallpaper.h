@@ -19,8 +19,9 @@
 @property(copy, nonatomic) NSURL *thumbnailImageURL; // @synthesize thumbnailImageURL=_thumbnailImageURL;
 @property(copy, nonatomic) NSURL *fullsizeImageURL; // @synthesize fullsizeImageURL=_fullsizeImageURL;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) unsigned long long type;
+@property(readonly, nonatomic) double stillTimeInVideo;
 @property(readonly, copy, nonatomic) NSURL *videoAssetURL;
+@property(readonly, nonatomic) unsigned long long type;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(unsigned long long)arg1 name:(id)arg2 thumbnailImageURL:(id)arg3 fullsizeImageURL:(id)arg4;
 - (id)initWithIdentifier:(unsigned long long)arg1 name:(id)arg2;

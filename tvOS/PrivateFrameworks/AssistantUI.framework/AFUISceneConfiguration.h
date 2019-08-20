@@ -15,10 +15,9 @@
     FBSDisplayConfiguration *_displayConfigruation;
     _Bool _foreground;
     _Bool _takeAssertionsWhenInBackground;
-    _Bool _terminateWindowSceneOnDeactivation;
-    _Bool _deferHIDEventsFromForegroundWindowSceneApp;
     _Bool _cancelSceneLoadingAfterTimeout;
     long long _launchIntent;
+    long long _preferredDeferralMode;
     double _sceneLoadingTimeOutDuration;
     FBSSceneParameters *_sceneParameters;
     long long _userInterfaceStyle;
@@ -33,8 +32,7 @@
 @property(readonly, nonatomic) struct CGRect initialBounds; // @synthesize initialBounds=_initialBounds;
 @property(nonatomic) double sceneLoadingTimeOutDuration; // @synthesize sceneLoadingTimeOutDuration=_sceneLoadingTimeOutDuration;
 @property(nonatomic) _Bool cancelSceneLoadingAfterTimeout; // @synthesize cancelSceneLoadingAfterTimeout=_cancelSceneLoadingAfterTimeout;
-@property(nonatomic) _Bool deferHIDEventsFromForegroundWindowSceneApp; // @synthesize deferHIDEventsFromForegroundWindowSceneApp=_deferHIDEventsFromForegroundWindowSceneApp;
-@property(nonatomic) _Bool terminateWindowSceneOnDeactivation; // @synthesize terminateWindowSceneOnDeactivation=_terminateWindowSceneOnDeactivation;
+@property(nonatomic) long long preferredDeferralMode; // @synthesize preferredDeferralMode=_preferredDeferralMode;
 @property(nonatomic) _Bool takeAssertionsWhenInBackground; // @synthesize takeAssertionsWhenInBackground=_takeAssertionsWhenInBackground;
 @property(nonatomic) long long launchIntent; // @synthesize launchIntent=_launchIntent;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;

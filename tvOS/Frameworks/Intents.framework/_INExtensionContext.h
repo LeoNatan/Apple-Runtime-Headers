@@ -49,10 +49,10 @@
 - (CDUnknownBlockType)_processOptionsForIntent:(id)arg1 parameterNamed:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)_processResolutionDataProviderForIntent:(id)arg1 intentSlotDescription:(id)arg2 updateIntent:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (CDUnknownBlockType)_processIntentResponseCompletionHandlerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_invokeIntentHandlerMethodForIntent:(id)arg1 parameterNamed:(id)arg2 keyForSelectors:(id)arg3 executionHandler:(CDUnknownBlockType)arg4 unimplementedHandler:(CDUnknownBlockType)arg5;
+- (void)_invokeIntentHandlerMethodForIntent:(id)arg1 intentHandler:(id)arg2 parameterNamed:(id)arg3 keyForSelectors:(id)arg4 executionHandler:(CDUnknownBlockType)arg5 unimplementedHandler:(CDUnknownBlockType)arg6;
 - (oneway void)handleIntent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (oneway void)confirmIntent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_resolveIntentSlot:(id)arg1 forIntent:(id)arg2 updateIntent:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)_resolveIntentSlot:(id)arg1 forIntent:(id)arg2 intentHandler:(id)arg3 updateIntent:(_Bool)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (oneway void)resolveIntentSlot:(id)arg1 forIntent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (oneway void)resolveIntentSlots:(id)arg1 forIntent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (oneway void)getIntentParameterDefaultValue:(id)arg1 forIntent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

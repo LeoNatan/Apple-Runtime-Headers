@@ -15,6 +15,7 @@
 {
     CDUnknownBlockType changeHandler;
     CDUnknownBlockType relevancyHandler;
+    unsigned long long _cacheExpirationInDays;
     NSMutableDictionary *_networks;
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_storeURL;
@@ -27,6 +28,7 @@
 @property(copy, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *networks; // @synthesize networks=_networks;
+@property(nonatomic) unsigned long long cacheExpirationInDays; // @synthesize cacheExpirationInDays=_cacheExpirationInDays;
 @property(copy, nonatomic) CDUnknownBlockType relevancyHandler; // @synthesize relevancyHandler;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler;
 - (void).cxx_destruct;
@@ -34,7 +36,7 @@
 - (void)submitCacheAnalyticsEvent;
 - (id)relevantNetworks;
 - (void)forceFetch3BarsNetworkMatchingBSSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)_matchSearchBSSIDs:(id)arg1 toResults:(id)arg2;
+- (id)_matchSearchBSSIDs:(id)arg1 toResponse:(id)arg2;
 - (void)fetchCandidateNetworksMatchingBSSIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)prune3BarsNetworks:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetch3BarsNetworksPredictedForLocation:(id)arg1 duration:(double)arg2 maxLocations:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

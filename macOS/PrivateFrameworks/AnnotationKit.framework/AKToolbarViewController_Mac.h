@@ -42,8 +42,10 @@
     NSPopover *_highlightsPopover;
     AKTextAttributesViewController *_textAttributesViewController;
     AKLineStylesViewController_Mac *_lineStylesViewController;
+    id _eventMonitor;
 }
 
+@property(retain) id eventMonitor; // @synthesize eventMonitor=_eventMonitor;
 @property(retain) AKLineStylesViewController_Mac *lineStylesViewController; // @synthesize lineStylesViewController=_lineStylesViewController;
 @property(retain) AKTextAttributesViewController *textAttributesViewController; // @synthesize textAttributesViewController=_textAttributesViewController;
 @property(retain) NSPopover *highlightsPopover; // @synthesize highlightsPopover=_highlightsPopover;

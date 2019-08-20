@@ -31,7 +31,7 @@
     NSNumber *_includeExpiredMomentSharesNumber;
     NSNumber *_includeFavoriteMemoriesCollectionListNumber;
     NSNumber *_includePlacesSmartAlbumNumber;
-    NSNumber *_includeRecentsSmartAlbumNumber;
+    NSNumber *_includeAllPhotosSmartAlbumNumber;
     NSNumber *_includeRecentlyEditedSmartAlbumNumber;
     NSNumber *_includeScreenRecordingsSmartAlbumNumber;
     NSNumber *_includeRootFolderNumber;
@@ -49,6 +49,7 @@
     NSNumber *_highlightCurationTypeNumber;
     NSNumber *_sharingStreamNumber;
     NSNumber *_includeUserSmartAlbumsNumber;
+    BOOL _includeRecentsSmartAlbum;
     NSPredicate *_predicate;
     NSArray *_sortDescriptors;
     NSArray *_customObjectIDSortOrder;
@@ -66,6 +67,7 @@
 + (id)fetchOptionsWithInclusiveDefaults;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(copy, nonatomic) NSSet *verifiedPersonTypes; // @synthesize verifiedPersonTypes=_verifiedPersonTypes;
+@property(nonatomic) BOOL includeRecentsSmartAlbum; // @synthesize includeRecentsSmartAlbum=_includeRecentsSmartAlbum;
 @property(retain, nonatomic) NSPredicate *internalInclusionPredicate; // @synthesize internalInclusionPredicate=_internalInclusionPredicate;
 @property(retain, nonatomic) NSArray *internalSortDescriptors; // @synthesize internalSortDescriptors=_internalSortDescriptors;
 @property(retain, nonatomic) NSPredicate *internalPredicate; // @synthesize internalPredicate=_internalPredicate;
@@ -91,7 +93,7 @@
 @property(nonatomic) BOOL includeRootFolder;
 @property(nonatomic) BOOL includeScreenRecordingsSmartAlbum;
 @property(nonatomic) BOOL includeRecentlyEditedSmartAlbum;
-@property(nonatomic) BOOL includeRecentsSmartAlbum;
+@property(nonatomic) BOOL includeAllPhotosSmartAlbum;
 @property(nonatomic) BOOL includePlacesSmartAlbum;
 @property(nonatomic) BOOL includeFavoriteMemoriesCollectionList;
 @property(nonatomic) BOOL includeExpiredMomentShares;

@@ -6,12 +6,11 @@
 
 #import <AvatarKit/AVTAvatar.h>
 
-@class AVTColorPreset, AVTComponent, AVTComponentInstance, AVTCompositor, AVTMemojiSkeleton, AVTPreset, AVTRig, NSDictionary, NSString, SCNMaterial, SCNNode;
+@class AVTColorPreset, AVTComponent, AVTComponentInstance, AVTCompositor, AVTPreset, NSDictionary, NSString, SCNMaterial, SCNNode;
 
 @interface AVTMemoji : AVTAvatar
 {
     struct UIColor *_backgroundColor;
-    _Bool _ignoreRigsDidChange;
     _Bool _needsUpdate;
     SCNNode *_componentContainer;
     long long _componentDirtyMask;
@@ -20,27 +19,17 @@
     SCNMaterial *_eyeMaterial;
     NSDictionary *_eyesAndMouthSpecializationSettings;
     AVTComponent *_components[28];
-    AVTRig *_rigs[15];
     NSString *_faceMorphVariants[7];
     AVTPreset *_presets[32];
     AVTPreset *_resolvedPresets[32];
     _Bool _hasPresetDependency[32];
     AVTColorPreset *_colorPresets[32][3];
-    double _browsThickness;
-    double _upperLipThickness;
-    double _lowerLipThickness;
-    double _eyeRoundness;
-    double _noseSharpness;
-    double _noseDirection;
-    double _hairOrientation;
-    double _hairSideLength;
-    double _hairTopLength;
     struct CGImage *_combinedAOImage;
     _Bool _aoValid;
     AVTCompositor *_compositor;
-    _Bool _hairPhysicsDisabled;
+    _Bool _hairPhysicsShouldIgnoreUpperNodes;
     NSString *_currentHatVariant;
-    AVTMemojiSkeleton *_skeleton;
+    SCNNode *_skeletonRootNode;
     AVTComponentInstance *_componentInstances[28];
     NSDictionary *_specializationSettings;
 }
@@ -58,14 +47,9 @@
 + (id)neutralMemoji;
 + (id)neutralMemojiDataRepresentation;
 - (void).cxx_destruct;
+- (id)stickerPhysicsStateIdentifier;
 - (id)specializationSettings;
 - (void)rebuildSpecializationSettings;
-- (void)updateRig:(id)arg1 fromBone:(id)arg2 symmetry:(_Bool)arg3 applyRange:(_Bool)arg4;
-- (id)bonesForRig:(id)arg1;
-- (void)getRigValues:(id)arg1 symmetry:(_Bool)arg2 withBone:(id)arg3 spacingOut:(double *)arg4 elevationOut:(double *)arg5 scaleOut:(double *)arg6 rotationOut:(double *)arg7;
-- (struct SCNVector3)absolutePositionForRigElevation:(double)arg1 spacing:(double)arg2 symmetry:(_Bool)arg3;
-- (void)updateBonesFromRigs;
-- (void)updateBoneForRig:(id)arg1;
 - (void)updateHeadMorphVariant;
 - (void)_update;
 - (void)applyVariantDependencies;
@@ -79,34 +63,12 @@
 - (struct CGImage *)createSkinAO;
 - (void)removeComponentAssetNodeFromParentNode:(id)arg1;
 - (void)addComponentAssetNode:(id)arg1 toNode:(id)arg2;
-- (void)avatarRigsDidChange:(id)arg1;
 - (void)morphTo:(id)arg1;
 - (id)presetForCategory:(long long)arg1;
 - (void)setPreset:(id)arg1 forCategory:(long long)arg2;
 - (void)randomize;
-- (void)applyRigConstraints;
-- (void)setHairTopLength:(double)arg1;
-- (double)hairTopLength;
-- (void)setHairSideLength:(double)arg1;
-- (double)hairSideLength;
-- (void)setHairOrientation:(double)arg1;
-- (double)hairOrientation;
-- (void)setNoseDirection:(double)arg1;
-- (double)noseDirection;
-- (void)setNoseSharpness:(double)arg1;
-- (double)noseSharpness;
-- (void)setEyeRoundness:(double)arg1;
-- (double)eyeRoundness;
-- (void)setLowerLipThickness:(double)arg1;
-- (double)lowerLipThickness;
-- (void)setUpperLipThickness:(double)arg1;
-- (double)upperLipThickness;
-- (void)setBrowsThickness:(double)arg1;
-- (double)browsThickness;
 - (void)setMorphVariant:(id)arg1 forFacialFeature:(long long)arg2;
 - (id)morphVariantForFacialFeature:(long long)arg1;
-- (id)rigWithType:(long long)arg1;
-- (id)rigs;
 - (_Bool)usesSkinningForEyeOrientation;
 - (void)componentMaterialDidUpdate:(id)arg1;
 - (void)componentDidChange:(id)arg1;

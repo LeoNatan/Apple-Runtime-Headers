@@ -12,6 +12,8 @@
 
 @interface _EMMessageIDCollectionItemID : EMMessageCollectionItemID <EFCacheable>
 {
+    // Error parsing type: Aq, name: _messageIDHeaderHashValue
+    // Error parsing type: Aq, name: _alternateIDHeaderHashValue
     ECAngleBracketIDHash *_messageIDHeaderHash;
     ECAngleBracketIDHash *_alternateIDHeaderHash;
 }

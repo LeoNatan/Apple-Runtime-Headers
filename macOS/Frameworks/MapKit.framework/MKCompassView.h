@@ -36,6 +36,7 @@
 - (BOOL)isPointInNorthEastHalf:(struct CGPoint)arg1;
 - (BOOL)isPointInOuterRing:(struct CGPoint)arg1;
 - (BOOL)isPointInInnerPortion:(struct CGPoint)arg1;
+- (BOOL)isPointInCompass:(struct CGPoint)arg1;
 - (void)resetCompassFlatWithMapPitch:(double)arg1 pitchEnabled:(BOOL)arg2 mapType:(int)arg3 changeButtonTextWithPitch:(BOOL)arg4;
 - (void)updateAccessibilityDescriptionWithAngle:(double)arg1;
 - (void)layout;

@@ -6,20 +6,23 @@
 
 #import <ChatKit/CKMessagePartChatItem.h>
 
-@class CKMediaObject, NSString;
+@class CKMediaObject, NSString, UITraitCollection;
 
 @interface CKAttachmentMessagePartChatItem : CKMessagePartChatItem
 {
+    UITraitCollection *_transcriptTraitCollection;
     CKMediaObject *_mediaObject;
 }
 
 @property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
+- (id)transcriptTraitCollection;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *transferGUID;
 - (id)pasteboardItems;
 - (_Bool)shouldCacheSize;
 - (unsigned int)balloonCorners;
 - (Class)balloonViewClass;
+- (void)setTranscriptTraitCollection:(id)arg1;
 - (_Bool)stickersSnapToPoint;
 - (_Bool)canExport;
 - (_Bool)canForward;

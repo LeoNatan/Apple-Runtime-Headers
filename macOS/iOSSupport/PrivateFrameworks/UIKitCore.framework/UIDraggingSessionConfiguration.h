@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSXPCListenerEndpoint, PBItemCollection, UIDraggingSystemTouchRoutingPolicy;
+@class NSArray, NSString, NSXPCListenerEndpoint, PBItemCollection, UIDraggingSystemTouchRoutingPolicy;
 
 @interface UIDraggingSessionConfiguration : NSObject <NSSecureCoding>
 {
@@ -18,10 +18,12 @@
     PBItemCollection *_itemCollection;
     NSXPCListenerEndpoint *_dataProviderEndpoint;
     NSXPCListenerEndpoint *_axEndpoint;
+    NSString *_sceneIdentifier;
     struct CGPoint _initialCentroid;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(nonatomic) BOOL supportsSystemDrag; // @synthesize supportsSystemDrag=_supportsSystemDrag;
 @property(retain, nonatomic) NSXPCListenerEndpoint *axEndpoint; // @synthesize axEndpoint=_axEndpoint;
 @property(retain, nonatomic) NSXPCListenerEndpoint *dataProviderEndpoint; // @synthesize dataProviderEndpoint=_dataProviderEndpoint;

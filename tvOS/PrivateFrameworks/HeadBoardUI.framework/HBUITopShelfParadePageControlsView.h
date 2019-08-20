@@ -6,23 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UIPageControl;
+@class UIPageControl, _HBUITopShelfParadeSwipeAffordanceView;
 
 __attribute__((visibility("hidden")))
 @interface HBUITopShelfParadePageControlsView : UIView
 {
-    _Bool _swipeLeftAffordanceViewHidden;
-    _Bool _swipeRightAffordanceViewHidden;
-    UIImageView *_swipeLeftAffordanceView;
-    UIImageView *_swipeRightAffordanceView;
+    _Bool _leadingSwipeAffordanceViewHidden;
+    _Bool _trailingSwipeAffordanceViewHidden;
     UIPageControl *_pageControl;
+    _HBUITopShelfParadeSwipeAffordanceView *_leadingSwipeAffordanceView;
+    _HBUITopShelfParadeSwipeAffordanceView *_trailingSwipeAffordanceView;
 }
 
-@property(nonatomic, getter=isSwipeRightAffordanceViewHidden) _Bool swipeRightAffordanceViewHidden; // @synthesize swipeRightAffordanceViewHidden=_swipeRightAffordanceViewHidden;
-@property(nonatomic, getter=isSwipeLeftAffordanceViewHidden) _Bool swipeLeftAffordanceViewHidden; // @synthesize swipeLeftAffordanceViewHidden=_swipeLeftAffordanceViewHidden;
+@property(readonly, nonatomic) _HBUITopShelfParadeSwipeAffordanceView *trailingSwipeAffordanceView; // @synthesize trailingSwipeAffordanceView=_trailingSwipeAffordanceView;
+@property(readonly, nonatomic) _HBUITopShelfParadeSwipeAffordanceView *leadingSwipeAffordanceView; // @synthesize leadingSwipeAffordanceView=_leadingSwipeAffordanceView;
+@property(nonatomic, getter=isTrailingSwipeAffordanceViewHidden) _Bool trailingSwipeAffordanceViewHidden; // @synthesize trailingSwipeAffordanceViewHidden=_trailingSwipeAffordanceViewHidden;
+@property(nonatomic, getter=isLeadingSwipeAffordanceViewHidden) _Bool leadingSwipeAffordanceViewHidden; // @synthesize leadingSwipeAffordanceViewHidden=_leadingSwipeAffordanceViewHidden;
 @property(readonly, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
-@property(readonly, nonatomic) UIImageView *swipeRightAffordanceView; // @synthesize swipeRightAffordanceView=_swipeRightAffordanceView;
-@property(readonly, nonatomic) UIImageView *swipeLeftAffordanceView; // @synthesize swipeLeftAffordanceView=_swipeLeftAffordanceView;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 

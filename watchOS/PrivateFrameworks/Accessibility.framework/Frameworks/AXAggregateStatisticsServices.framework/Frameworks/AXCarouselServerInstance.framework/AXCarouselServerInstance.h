@@ -16,6 +16,7 @@
     AXIPCServer *_server;
 }
 
++ (id)domainAccessorForDomain:(id)arg1;
 + (id)sharedInstance;
 + (void)initialize;
 @property(nonatomic) _Bool voiceOverIsEnabled; // @synthesize voiceOverIsEnabled=_voiceOverIsEnabled;
@@ -32,6 +33,7 @@
 - (id)_isNotificationCenterVisible:(id)arg1;
 - (id)_systemAppPID:(id)arg1;
 - (void)_voiceOverStatusChanged;
+- (void)_touchAccommodationsStatusChanged;
 - (void)_startSystemAppServerIfNeeded;
 - (_Bool)_shouldStartupSystemServer;
 - (void)_updateAccessibilityProductStatus;

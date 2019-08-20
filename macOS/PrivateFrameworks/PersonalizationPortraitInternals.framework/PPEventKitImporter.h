@@ -36,6 +36,7 @@
 - (void)_donateEntitiesForPropertiesOfEvent:(id)arg1 source:(id)arg2;
 - (void)_importEvent:(id)arg1;
 - (void)importEvent:(id)arg1;
+- (void)importEventDataWithShouldContinueBlock:(CDUnknownBlockType)arg1;
 - (void)importEventData;
 - (BOOL)_setDissectorsFromPipeline;
 - (id)init;

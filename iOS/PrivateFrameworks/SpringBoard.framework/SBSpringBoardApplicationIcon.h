@@ -6,30 +6,20 @@
 
 #import <SpringBoardHome/SBLeafIcon.h>
 
-#import <SpringBoard/SBLeafIconDataSource-Protocol.h>
-
-@class NSString;
-
-@interface SBSpringBoardApplicationIcon : SBLeafIcon <SBLeafIconDataSource>
+@interface SBSpringBoardApplicationIcon : SBLeafIcon
 {
+    long long _interfaceStyle;
 }
 
 - (id)_generateImageWithInfo:(struct SBIconImageInfo)arg1;
-- (_Bool)iconSupportsUninstall:(id)arg1;
-- (_Bool)iconCanTightenLabel:(id)arg1;
-- (_Bool)iconCanTruncateLabel:(id)arg1;
-- (id)icon:(id)arg1 displayNameForLocation:(id)arg2;
-- (id)icon:(id)arg1 defaultImageWithInfo:(struct SBIconImageInfo)arg2;
-- (id)icon:(id)arg1 imageWithInfo:(struct SBIconImageInfo)arg2;
-- (unsigned long long)priorityForIcon:(id)arg1;
+- (_Bool)isUninstallSupported;
+- (_Bool)canTightenLabel;
+- (_Bool)canTruncateLabel;
+- (id)displayNameForLocation:(id)arg1;
+- (id)generateIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)initWithLeafIdentifier:(id)arg1 applicationBundleID:(id)arg2;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithInterfaceStyle:(long long)arg1;
 
 @end
 

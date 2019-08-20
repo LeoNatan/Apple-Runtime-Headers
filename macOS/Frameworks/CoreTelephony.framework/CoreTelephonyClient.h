@@ -278,6 +278,7 @@
 - (void)deleteZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteTransferPlansForEid:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getCurrentIMessageIccidsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)cancelPlanTransfer:(id)arg1 fromDevice:(id)arg2;
 - (void)transferPlans:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)transferPlan:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getTransferPlansWithCompletion:(CDUnknownBlockType)arg1;
@@ -286,6 +287,7 @@
 - (BOOL)supportsPlanProvisioning:(id)arg1 carrierDescriptors:(id)arg2 smdpUrl:(id)arg3 iccidPrefix:(id)arg4;
 - (void)addPlanWith:(id)arg1 appName:(id)arg2 appType:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)addPlanWith:(id)arg1 request:(id)arg2 appName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)setVisualVoicemailState:(id)arg1 subscribed:(BOOL)arg2;
 - (void)getVoicemailInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)copyPriVersion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearUserEnteredBillingEndDayOfMonth:(id)arg1 error:(id *)arg2;

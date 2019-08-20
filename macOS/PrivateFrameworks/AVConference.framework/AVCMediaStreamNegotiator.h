@@ -40,6 +40,7 @@
 - (BOOL)createOffer;
 - (id)initWithMode:(long long)arg1 error:(id *)arg2;
 - (_Bool)initNegotiatorLocalConfiguration:(id *)arg1;
+- (void)refreshLoggingParameters;
 - (void)dealloc;
 - (unsigned char)VCVideoFeatureListStringTypeWithAVCMediaStreamMode:(long long)arg1;
 - (long long)clientCodecTypeWithCodecType:(long long)arg1;

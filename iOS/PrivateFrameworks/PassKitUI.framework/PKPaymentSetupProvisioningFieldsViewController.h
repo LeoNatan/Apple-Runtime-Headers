@@ -37,6 +37,7 @@
 - (void).cxx_destruct;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;
+- (void)resetRightBarButtonState;
 - (void)resetProvisioningState;
 - (void)resetAllFieldsAndProvisioningState;
 - (void)updateFieldsModelWithPaymentCredential:(id)arg1;
@@ -56,7 +57,7 @@
 - (void)declineTerms;
 - (void)acceptTerms;
 - (void)displayTermsForEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)performPasscodeUpgradeIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performPasscodeUpgradeIfNeeded:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)displayTermsForTermsURL:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
 - (void)_provisioningLocalizedProgressDescriptionDidChange:(id)arg1;

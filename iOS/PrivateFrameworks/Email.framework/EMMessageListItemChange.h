@@ -61,14 +61,14 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)applyToMessageListItem:(id)arg1;
+- (_Bool)applyToMessageListItem:(id)arg1;
 - (void)addChange:(id)arg1;
 @property(copy, nonatomic) NSArray *mailboxes;
 @property(copy, nonatomic) NSArray *mailboxObjectIDs;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)_changeDescriptionsForDebug:(_Bool)arg1;
-- (id)_descriptionForDebug:(_Bool)arg1;
+- (id)_changeDescriptionsForInternal:(_Bool)arg1 useDebugDescriptions:(_Bool)arg2;
+- (id)_descriptionForInternal:(_Bool)arg1 useDebugDescriptions:(_Bool)arg2;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

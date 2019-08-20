@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)addFetchParentChainCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)main;
 - (void)_fetchParentChain:(id)arg1;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithParentID:(id)arg1 zone:(id)arg2 isUserWaiting:(BOOL)arg3;
 @property(readonly, nonatomic) BRCItemID *parentIDToList;

@@ -26,6 +26,7 @@
 + (id)validateAndFilterIDsForContactsBatchFetch:(id)arg1;
 + (id)descriptionForCNContact:(id)arg1;
 + (BOOL)isCNContactAKnownContact:(id)arg1;
++ (id)dialingForCurrentLocale;
 + (id)dialingCodeForID:(id)arg1;
 + (BOOL)isContactsCachingEnabled;
 + (BOOL)isContactsBatchingEnabled;
@@ -43,6 +44,7 @@
 + (id)abbreviatedNameForCNContact:(id)arg1;
 + (id)nickNameForCNContact:(id)arg1;
 + (id)companyNameForCNContact:(id)arg1;
++ (id)_stringFromContact:(id)arg1 withStyle:(long long)arg2;
 + (id)fullNameForCNContact:(id)arg1;
 + (id)lastNameForCNContact:(id)arg1;
 + (id)firstNameForCNContact:(id)arg1;
@@ -84,9 +86,10 @@
 - (void)contactStoreChanged:(id)arg1;
 - (void)addEntriesToIDToCNContactMap:(id)arg1;
 - (id)getAllKeysFromIDToCNContactMap;
-- (void)removeCNContactWithIDFromMap:(id)arg1;
-- (id)getCNContactWithID:(id)arg1;
-- (void)addCNContactToIDToCNContactMap:(id)arg1 withID:(id)arg2;
+- (void)replaceContact:(id)arg1 withID:(id)arg2;
+- (void)removeContactWithID:(id)arg1;
+- (id)getContactForID:(id)arg1;
+- (void)addContact:(id)arg1 withID:(id)arg2;
 - (BOOL)isContactWithIDAlreadyFetched:(id)arg1;
 - (void)generateCNIDToHandleIDMap;
 - (id)handleIDForCNID:(id)arg1;

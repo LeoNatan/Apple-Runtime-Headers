@@ -20,6 +20,7 @@
     unsigned long long _userInterfaceStyle;
 }
 
++ (id)defaultContext;
 @property(readonly, nonatomic) unsigned long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(readonly, nonatomic) unsigned long long artworkSubtype; // @synthesize artworkSubtype=_artworkSubtype;
 @property(readonly, nonatomic) UISApplicationSupportDisplayEdgeInfo *displayEdgeInfo; // @synthesize displayEdgeInfo=_displayEdgeInfo;

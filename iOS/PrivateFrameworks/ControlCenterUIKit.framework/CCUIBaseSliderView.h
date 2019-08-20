@@ -8,10 +8,11 @@
 
 #import <ControlCenterUIKit/CCUIContentModuleTopLevelGestureProvider-Protocol.h>
 #import <ControlCenterUIKit/CCUIGroupRendering-Protocol.h>
+#import <ControlCenterUIKit/CCUITouchContinuationProviding-Protocol.h>
 
 @class CALayer, CCUICAPackageDescription, CCUICAPackageView, MTVisualStylingProvider, NSArray, NSString, UIImage, UIImageView;
 
-@interface CCUIBaseSliderView : UIControl <CCUIGroupRendering, CCUIContentModuleTopLevelGestureProvider>
+@interface CCUIBaseSliderView : UIControl <CCUIGroupRendering, CCUITouchContinuationProviding, CCUIContentModuleTopLevelGestureProvider>
 {
     UIImageView *_glyphImageView;
     CCUICAPackageView *_glyphPackageView;
@@ -24,8 +25,10 @@
     UIImage *_glyphImage;
     CCUICAPackageDescription *_glyphPackageDescription;
     NSString *_glyphState;
+    double _glyphScale;
 }
 
+@property(nonatomic) double glyphScale; // @synthesize glyphScale=_glyphScale;
 @property(nonatomic, getter=isInteractiveWhenUnexpanded) _Bool interactiveWhenUnexpanded; // @synthesize interactiveWhenUnexpanded=_interactiveWhenUnexpanded;
 @property(nonatomic, getter=isGlyphVisible) _Bool glyphVisible; // @synthesize glyphVisible=_glyphVisible;
 @property(retain, nonatomic) NSString *glyphState; // @synthesize glyphState=_glyphState;
@@ -38,6 +41,7 @@
 - (void)_configureGlyphPackageView:(id)arg1;
 - (id)_newGlyphPackageView;
 - (void)_updateGlyphImageViewVisualStyling;
+- (id)viewForTouchContinuation;
 @property(readonly, nonatomic) NSArray *topLevelBlockingGestureRecognizers;
 @property(readonly, nonatomic) CALayer *punchOutRootLayer;
 @property(readonly, nonatomic) NSArray *punchOutRootLayers;

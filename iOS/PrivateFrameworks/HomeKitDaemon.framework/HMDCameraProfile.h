@@ -45,10 +45,10 @@
 @property(readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler; // @synthesize streamSnapshotHandler=_streamSnapshotHandler;
 @property(readonly) HMDCameraSnapshotManager *snapshotManager; // @synthesize snapshotManager=_snapshotManager;
 @property(readonly) NSSet *cameraStreamManagers; // @synthesize cameraStreamManagers=_cameraStreamManagers;
-@property(readonly, nonatomic) __weak HMDHAPAccessory *hapAccessory; // @synthesize hapAccessory=_hapAccessory;
-@property(readonly, nonatomic) HMDService *recordingManagementService; // @synthesize recordingManagementService=_recordingManagementService;
-@property(readonly, nonatomic) HMDCameraBackingStore *cameraBackingStore; // @synthesize cameraBackingStore=_cameraBackingStore;
-@property(readonly, nonatomic) NSUUID *cloudZoneUUID; // @synthesize cloudZoneUUID=_cloudZoneUUID;
+@property(readonly) __weak HMDHAPAccessory *hapAccessory; // @synthesize hapAccessory=_hapAccessory;
+@property(readonly) HMDService *recordingManagementService; // @synthesize recordingManagementService=_recordingManagementService;
+@property(readonly) HMDCameraBackingStore *cameraBackingStore; // @synthesize cameraBackingStore=_cameraBackingStore;
+@property(readonly) NSUUID *cloudZoneUUID; // @synthesize cloudZoneUUID=_cloudZoneUUID;
 @property(readonly, nonatomic, getter=isSpeakerPresent) _Bool speakerPresent; // @synthesize speakerPresent=_speakerPresent;
 @property(readonly, nonatomic, getter=isMicrophonePresent) _Bool microphonePresent; // @synthesize microphonePresent=_microphonePresent;
 - (void).cxx_destruct;
@@ -63,7 +63,7 @@
 - (_Bool)canPostSignificantEventNotification:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
-@property(readonly, nonatomic) HMDCameraProfileSettingsModel *currentSettingsModel;
+@property(readonly) HMDCameraProfileSettingsModel *currentSettingsModel;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)cameraSettingProactiveReaderDidCompleteRead:(id)arg1 negotiateStreamMessageWasHandled:(_Bool)arg2;
@@ -81,7 +81,6 @@
 - (void)setUp;
 @property(readonly, nonatomic, getter=isCameraRecordingFeatureSupported) _Bool supportsCameraRecordingFeature;
 - (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3 settingsManager:(id)arg4 workQueue:(id)arg5;
-- (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3;
 - (id)assistantObject;
 - (id)url;
 

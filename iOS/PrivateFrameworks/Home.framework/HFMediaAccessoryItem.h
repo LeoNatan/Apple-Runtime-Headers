@@ -14,6 +14,7 @@
 
 @interface HFMediaAccessoryItem : HFItem <HFMediaAccessoryLikeItem, HFActionBuilderFactory>
 {
+    _Bool _inServiceAction;
     id <HFHomeKitObject> _homeKitObject;
     id <HFHomeKitSettingsVendor> _homeKitSettingsVendor;
     id <HFCharacteristicValueSource> _valueSource;
@@ -21,6 +22,7 @@
     long long _mediaAccessoryItemType;
 }
 
+@property(nonatomic) _Bool inServiceAction; // @synthesize inServiceAction=_inServiceAction;
 @property(readonly, nonatomic) long long mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
@@ -36,7 +38,7 @@
 - (id)performStandardUpdateWithOptions:(id)arg1;
 - (void)_decorateWithMediaSystemSpecificKeys:(id)arg1;
 - (void)_decorateServiceLikeItemKeys:(id)arg1;
-- (void)_decorateWithMediaSessionKeys:(id)arg1 inServiceAction:(_Bool)arg2;
+- (void)_decorateWithMediaSessionKeys:(id)arg1;
 - (void)_decorateWithSoftwareUpdateStateKeys:(id)arg1;
 - (void)_decorateOutcomeWithAccessorySpecificKeys:(id)arg1;
 - (_Bool)supportsAlarmQuickControls;

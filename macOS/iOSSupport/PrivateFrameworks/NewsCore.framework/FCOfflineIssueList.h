@@ -28,6 +28,7 @@
 - (BOOL)everContainedIssueID:(id)arg1;
 - (BOOL)containsIssueID:(id)arg1;
 - (void)addIssueID:(id)arg1 source:(long long)arg2;
+- (id)initWithStoreDirectoryFileURL:(id)arg1;
 - (id)init;
 
 @end

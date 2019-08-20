@@ -51,7 +51,7 @@
 - (void)btDeviceConnectionNotification:(id)arg1 forDevice:(id)arg2;
 - (void)modelBluetoothOffPower;
 - (void)modelBluetoothPower:(id)arg1;
-- (void)logEventBackwardClientScan;
+- (void)logEventBackwardWirelessProximity:(id)arg1;
 - (void)logEventBackwardPowerProfileStats;
 - (void)logEventIntervalConnectedDevices;
 - (void)logEventIntervalWakeVSE:(id)arg1;

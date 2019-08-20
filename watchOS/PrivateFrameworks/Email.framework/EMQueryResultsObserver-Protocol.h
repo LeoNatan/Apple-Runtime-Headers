@@ -9,6 +9,7 @@
 @class EMObjectID, NSArray, NSDictionary;
 
 @protocol EMQueryResultsObserver <EMObject>
+- (void)queryReplacedObjectID:(EMObjectID *)arg1 withNewObjectID:(EMObjectID *)arg2;
 - (_Bool)observerContainsObjectID:(EMObjectID *)arg1;
 - (void)queryDidFinishRemoteSearch;
 - (void)queryDidFinishInitialLoad;

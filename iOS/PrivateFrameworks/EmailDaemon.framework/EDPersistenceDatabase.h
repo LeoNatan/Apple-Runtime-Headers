@@ -36,6 +36,8 @@
 @property(readonly, nonatomic) EFSQLSchema *schema; // @synthesize schema=_schema;
 - (void).cxx_destruct;
 - (id)urlForDatabasePath:(id)arg1 type:(long long)arg2;
+- (id)urlForDatabasePath:(id)arg1 type:(long long)arg2 fileProtection:(id)arg3;
+- (id)fileProtectionForDatabaseType:(long long)arg1;
 - (void)scheduleRecurringActivity;
 @property(readonly, nonatomic) _Bool enforceDataProtection;
 - (void)reconcileJournalWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -45,10 +47,10 @@
 - (id)checkOutConnectionIsWriter:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isNestedDatabaseCall;
 - (void)closeAllConnections;
-- (void)performBlock:(CDUnknownBlockType)arg1 isWriter:(_Bool)arg2 useTransaction:(_Bool)arg3;
-- (void)performDatabaseSetupUsingTransaction:(_Bool)arg1 block:(CDUnknownBlockType)arg2;
-- (void)performWriteBlock:(CDUnknownBlockType)arg1;
-- (void)performReadBlock:(CDUnknownBlockType)arg1;
+- (_Bool)performBlock:(CDUnknownBlockType)arg1 isWriter:(_Bool)arg2 useTransaction:(_Bool)arg3;
+- (_Bool)performDatabaseSetupUsingTransaction:(_Bool)arg1 block:(CDUnknownBlockType)arg2;
+- (_Bool)performWriteBlock:(CDUnknownBlockType)arg1;
+- (_Bool)performReadBlock:(CDUnknownBlockType)arg1;
 - (void)performDatabaseWorkInBlockWithHighPriority:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool writersAreWaiting;
 - (id)initWithBasePath:(id)arg1 databaseName:(id)arg2 maxConcurrentReaders:(unsigned long long)arg3 schema:(id)arg4 protectedSchema:(id)arg5 propertyMapper:(id)arg6 protectedDatabasePersistence:(id)arg7;

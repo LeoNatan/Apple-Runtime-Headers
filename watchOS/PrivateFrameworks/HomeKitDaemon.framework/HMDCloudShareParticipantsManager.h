@@ -31,7 +31,7 @@
 - (void)handleHomeUserRemovedNotification:(id)arg1;
 - (void)handleHomeUserAddedNotification:(id)arg1;
 - (id)invitationContextForUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
-- (id)createInvitationToUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
+- (id)fetchInvitationToUser:(id)arg1 shouldGrantWriteAccess:(_Bool)arg2;
 - (void)updateShareParticipants;
 - (void)configure;
 @property(readonly) NSSet *participatingUsers;

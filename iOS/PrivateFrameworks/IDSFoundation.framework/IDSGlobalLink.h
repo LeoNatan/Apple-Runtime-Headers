@@ -104,6 +104,8 @@
     double _previousReportTime;
     struct os_unfair_lock_s _lock;
     short _remoteGlobalLinkVersion;
+    _Bool _reduceCellularUsage;
+    _Bool _reduceRelayLinkCreation;
 }
 
 @property __weak id <IDSLinkDelegate> alternateDelegate; // @synthesize alternateDelegate=_alternateDelegate;
@@ -120,7 +122,7 @@
 - (void)_notifySessionInfoReceived:(id)arg1 relayGroupID:(id)arg2 relaySessionID:(id)arg3 success:(_Bool)arg4;
 - (void)_convergeSharedSessions:(id)arg1;
 - (void)_setupNewQRLinkIfNecessary:(id)arg1;
-- (void)_requestNewQRAllocationWithPreferredRemoteInterface:(int)arg1;
+- (void)_requestNewQRAllocationWithPreferredRemoteInterface:(int)arg1 withPreferredLocalInterface:(int)arg2;
 - (_Bool)_qrLinkLimitExceededWithNewLinkType:(unsigned char)arg1 cellularRelayLinkCount:(unsigned short)arg2 wifiRelayLinkCount:(unsigned short)arg3;
 - (_Bool)link:(id)arg1 didReceivePacket:(CDStruct_12676517 *)arg2 fromDeviceUniqueID:(id)arg3 cbuuid:(id)arg4;
 - (void)link:(id)arg1 didDisconnectForDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
@@ -239,8 +241,8 @@
 - (_Bool)_isBetterCandidatePair:(id)arg1 newCandidatePair:(id)arg2;
 - (void)_updateDefaultCandidatePair:(id)arg1;
 - (void)disconnectWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_connectWithSessionInfo:(id)arg1 interfaceAddress:(id)arg2 joinSession:(_Bool)arg3 allocbindFailover:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)connectWithSessionInfo:(id)arg1 interfaceAddress:(id)arg2 joinSession:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_connectWithSessionInfo:(id)arg1 interfaceAddress:(id)arg2 joinSession:(_Bool)arg3 allocbindFailover:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5 withLocalInterfacePreference:(int)arg6;
+- (void)connectWithSessionInfo:(id)arg1 interfaceAddress:(id)arg2 joinSession:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4 withLocalInterfacePreference:(int)arg5;
 - (void)_addQRAAWDBlock:(id)arg1 allocateRequestTime:(double)arg2 inferredExternalIP:(unsigned int)arg3 stunTransport:(long long)arg4 relayProviderType:(long long)arg5 idsSessionID:(id)arg6;
 - (_Bool)hasReachableInterface:(unsigned long long)arg1;
 - (unsigned long long)defaultLinkType;

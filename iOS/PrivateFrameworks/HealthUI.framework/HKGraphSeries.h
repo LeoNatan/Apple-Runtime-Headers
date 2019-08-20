@@ -24,6 +24,7 @@
     _Bool _adjustYAxisForLabels;
     _Bool _animatingDuringAutoscale;
     _Bool _primarySeriesForAutoscale;
+    _Bool _wantsRoundingDuringYRangeExpansion;
     HKGraphSeriesDataSource *_dataSource;
     NSArray *_titleLegendEntries;
     NSArray *_detailLegendEntries;
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) UIView *cachedYAxisAccessoryView; // @synthesize cachedYAxisAccessoryView=_cachedYAxisAccessoryView;
 @property(retain, nonatomic) id <HKGraphSeriesAxisScalingRule> axisScalingRule; // @synthesize axisScalingRule=_axisScalingRule;
 @property(copy, nonatomic) HKAxis *yAxis; // @synthesize yAxis=_yAxis;
+@property(nonatomic) _Bool wantsRoundingDuringYRangeExpansion; // @synthesize wantsRoundingDuringYRangeExpansion=_wantsRoundingDuringYRangeExpansion;
 @property(nonatomic) _Bool primarySeriesForAutoscale; // @synthesize primarySeriesForAutoscale=_primarySeriesForAutoscale;
 @property(readonly, nonatomic) _Bool animatingDuringAutoscale; // @synthesize animatingDuringAutoscale=_animatingDuringAutoscale;
 @property(retain, nonatomic) id context; // @synthesize context=_context;

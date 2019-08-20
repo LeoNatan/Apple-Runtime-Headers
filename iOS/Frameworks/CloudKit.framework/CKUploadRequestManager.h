@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKUploadRequestManagerInternals, NSString;
+@class CKContainer, CKSyncEngine, CKUploadRequestManagerInternals, CKUploadRequestPersistentStore, NSString;
 
 @interface CKUploadRequestManager : NSObject
 {
@@ -15,21 +15,22 @@
 
 + (id)activityIdentifierForSchedulingRepairsInContainer:(id)arg1;
 + (double)retryableErrorMaxRetryCount;
++ (double)cancelledErrorRetryTime;
 + (double)retryableErrorRetryTime;
 + (double)tryAgainLaterRetryTime;
-+ (double)initialSyncDelay;
++ (double)recurringFetchPeriod;
 @property(readonly, nonatomic) CKUploadRequestManagerInternals *internals; // @synthesize internals=_internals;
 - (void).cxx_destruct;
 - (void)setCallback:(CDUnknownBlockType)arg1 forOverridePoint:(long long)arg2;
 - (void)cancelAllOperations;
+- (void)scheduleOrInvokeRepairsNow;
 - (void)fetchServerChanges:(CDUnknownBlockType)arg1;
 - (void)manuallyTriggerUploadRequests;
 - (void)unregister;
 - (void)registerForItemRequests;
-- (id)database;
-- (id)repairContainer;
-- (id)repairZoneSyncEngine;
-@property _Bool skipSyncOnFirstLaunch;
+@property(readonly, nonatomic) CKUploadRequestPersistentStore *database;
+@property(readonly, nonatomic) CKContainer *repairContainer;
+@property(readonly, nonatomic) CKSyncEngine *repairZoneSyncEngine;
 @property(readonly, nonatomic) NSString *activityIdentifierForSchedulingRepairs;
 @property(copy) NSString *machServiceName;
 @property(copy) CDUnknownBlockType packageRequestCallback;

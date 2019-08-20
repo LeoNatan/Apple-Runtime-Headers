@@ -25,7 +25,7 @@
     struct CGRect _keyboardFrame;
     double _impressionThreshold;
     UIActivityIndicatorView *_spinner;
-    UIView *_originalSearchFieldRigthView;
+    UIView *_originalSearchFieldRightView;
     long long _originalSearchFieldRightViewMode;
     IKViewElement *_viewElement;
 }

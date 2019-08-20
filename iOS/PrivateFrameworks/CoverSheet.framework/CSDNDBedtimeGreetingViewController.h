@@ -23,6 +23,7 @@
 - (id)_greetingString;
 - (void)handleTouchEventForView:(id)arg1;
 - (void)handleSecondaryActionForView:(id)arg1;
+- (void)aggregateAppearance:(id)arg1;
 - (void)loadView;
 - (id)initWithLegibilityPrimaryColor:(id)arg1;
 

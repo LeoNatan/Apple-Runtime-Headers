@@ -13,6 +13,7 @@
     float _minHeight;
     float _maxHeight;
     float _targetHeight;
+    BOOL _usePreciseRate;
     NSMutableArray *_modes;
 }
 
@@ -23,7 +24,7 @@
 - (BOOL)addModeToBucket:(id)arg1;
 - (BOOL)modeFitsBucket:(id)arg1;
 - (void)dealloc;
-- (id)initWithMinHeight:(float)arg1 maxHeight:(float)arg2 targetHeight:(float)arg3;
+- (id)initWithMinHeight:(float)arg1 maxHeight:(float)arg2 targetHeight:(float)arg3 usingPreciseRate:(BOOL)arg4;
 
 @end
 

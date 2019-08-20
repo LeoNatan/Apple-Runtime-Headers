@@ -16,7 +16,7 @@
 {
 }
 
-+ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 client:(id)arg2 error:(id *)arg3;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
@@ -35,8 +35,10 @@
 - (void)remote_queryConceptsByAttribute:(long long)arg1 withValue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_unitTest_queryConceptByExactNameMatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_queryConceptByID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_displayNamesByResolvingContexts:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_conceptByResolvingContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_ontologyVersionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)remote_currentIndexingState:(CDUnknownBlockType)arg1;
 - (void)remote_testTaskServerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_startTaskServerIfNeeded;
 - (void)connectionInvalidated;

@@ -11,8 +11,10 @@
     unsigned long long _baseProfileConfidenceScoreThreshold;
     unsigned long long _implicitConfidenceScoreThreshold;
     unsigned long long _implicitDeltaConfidenceScoreThreshold;
+    unsigned long long _maxNumberOfBaseProfileUtterances;
 }
 
+@property(readonly, nonatomic) unsigned long long maxNumberOfBaseProfileUtterances; // @synthesize maxNumberOfBaseProfileUtterances=_maxNumberOfBaseProfileUtterances;
 @property(readonly, nonatomic) unsigned long long implicitDeltaConfidenceScoreThreshold; // @synthesize implicitDeltaConfidenceScoreThreshold=_implicitDeltaConfidenceScoreThreshold;
 @property(readonly, nonatomic) unsigned long long implicitConfidenceScoreThreshold; // @synthesize implicitConfidenceScoreThreshold=_implicitConfidenceScoreThreshold;
 @property(readonly, nonatomic) unsigned long long baseProfileConfidenceScoreThreshold; // @synthesize baseProfileConfidenceScoreThreshold=_baseProfileConfidenceScoreThreshold;

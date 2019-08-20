@@ -15,8 +15,12 @@
     _Bool _shouldClearName;
     NSString *_applicationName;
     AKUserInformation *_userInformation;
+    unsigned int _editingGivenNameIndex;
+    unsigned int _editingFamilyNameIndex;
 }
 
+@property(nonatomic) unsigned int editingFamilyNameIndex; // @synthesize editingFamilyNameIndex=_editingFamilyNameIndex;
+@property(nonatomic) unsigned int editingGivenNameIndex; // @synthesize editingGivenNameIndex=_editingGivenNameIndex;
 @property(retain, nonatomic) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
 @property(nonatomic) _Bool shouldClearName; // @synthesize shouldClearName=_shouldClearName;
 @property(copy, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;

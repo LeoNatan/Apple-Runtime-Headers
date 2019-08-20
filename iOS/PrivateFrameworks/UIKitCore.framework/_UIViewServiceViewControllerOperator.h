@@ -140,9 +140,9 @@ __attribute__((visibility("hidden")))
 - (id)invalidate;
 - (void)dummyPopoverController:(id)arg1 popoverViewDidSetUseToolbarShine:(_Bool)arg2;
 - (void)dummyPopoverController:(id)arg1 didChangeContentSize:(struct CGSize)arg2 animated:(_Bool)arg3;
-- (void)_completeInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id)arg4;
-- (void)_updateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
-- (void)_startInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)_completeInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)_updateInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
+- (void)_startInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)presentationControllerDidAttemptToDismiss:(id)arg1;
 - (_Bool)isModalInPresentation;
 - (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;

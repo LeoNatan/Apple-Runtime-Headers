@@ -13,7 +13,6 @@
 - (BOOL)supportsImportQuestions;
 - (id)defaultSupportedVariableTypes;
 - (id)possibleStates;
-- (id)placeholder;
 - (BOOL)alwaysShowsButton;
 - (Class)singleStateClass;
 

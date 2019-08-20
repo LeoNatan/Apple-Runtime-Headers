@@ -8,12 +8,11 @@
 
 #import <AppKit/NSLockoutUIWindow-Protocol.h>
 
-@class NSString, NSViewController;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSLockoutUIPlaceholderWindow : NSWindow <NSLockoutUIWindow>
 {
-    NSViewController *_lockoutViewController;
     double _animationDuration;
     BOOL _engaged;
 }

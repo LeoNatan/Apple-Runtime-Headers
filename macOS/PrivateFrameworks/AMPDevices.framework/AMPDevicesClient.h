@@ -57,6 +57,7 @@
 - (id)copyItemAtURL:(id)arg1 toURL:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchFileSharingItemsForApp:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchFileSharingAppsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)fetchIPodVoiceOverKitStatusForDevice:(id)arg1 WithReply:(CDUnknownBlockType)arg2;
 - (void)ejectDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)revealDeviceInFinder:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)resetWarningsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;

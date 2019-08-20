@@ -18,6 +18,7 @@
     id <ACSHFunctionKeyMapperDelegate> _delegate;
     struct IONotificationPort *_notificationPort;
     NSMutableDictionary *_systemActionKeyCodeMapsByIdentifier;
+    NSMutableDictionary *_preDFRSystemActionKeyCodeMapsByIdentifier;
     NSMutableDictionary *_keyboardMacKeyCodeMapsByIdentifier;
     NSMutableArray *_orderedKeyboardIdentifiers;
 }
@@ -30,7 +31,7 @@
 + (id)specialKeyCodesbySystemActionMap;
 + (id)_fallbackFKeyModifiedMacKeyCodeMap;
 + (id)_fKeyModifiedMacKeyCodeMapForDevice:(unsigned int)arg1;
-+ (id)_systemActionTypeByFKeyMacKeyCodeMapForDevice:(unsigned int)arg1;
++ (id)_systemActionTypeByFKeyMacKeyCodeMapForDevice:(unsigned int)arg1 addingDFR:(BOOL)arg2;
 + (id)_fKeyMacKeyCodeMapByAddingDFRActionIfNeeded:(id)arg1;
 + (id)_fallbackSystemActionTypeByFKeyMacKeyCodeMap;
 + (id)_systemActionTypesByHIDCode;
@@ -41,18 +42,21 @@
 @property(nonatomic) BOOL fnKeyMode; // @synthesize fnKeyMode=_fnKeyMode;
 @property(retain) NSMutableArray *orderedKeyboardIdentifiers; // @synthesize orderedKeyboardIdentifiers=_orderedKeyboardIdentifiers;
 @property(retain) NSMutableDictionary *keyboardMacKeyCodeMapsByIdentifier; // @synthesize keyboardMacKeyCodeMapsByIdentifier=_keyboardMacKeyCodeMapsByIdentifier;
+@property(retain) NSMutableDictionary *preDFRSystemActionKeyCodeMapsByIdentifier; // @synthesize preDFRSystemActionKeyCodeMapsByIdentifier=_preDFRSystemActionKeyCodeMapsByIdentifier;
 @property(retain) NSMutableDictionary *systemActionKeyCodeMapsByIdentifier; // @synthesize systemActionKeyCodeMapsByIdentifier=_systemActionKeyCodeMapsByIdentifier;
 @property unsigned int keyboardDisconnectedIterator; // @synthesize keyboardDisconnectedIterator=_keyboardDisconnectedIterator;
 @property unsigned int keyboardConnectedIterator; // @synthesize keyboardConnectedIterator=_keyboardConnectedIterator;
 @property(nonatomic) struct IONotificationPort *notificationPort; // @synthesize notificationPort=_notificationPort;
 @property __weak id <ACSHFunctionKeyMapperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_disconnectedCallback:(unsigned int)arg1;
 - (void)_connectedCallback:(unsigned int)arg1;
 - (void)_ioHIDPropertyChangedForProperty:(id)arg1 value:(id)arg2;
 - (void)_removeDevice:(unsigned int)arg1;
 - (void)_addDevice:(unsigned int)arg1;
 - (void)_updateFNKeyMode;
+- (void)_dynamicFunctionRowAvailableChanged;
 - (unsigned long long)systemActionTypeForHIDUsagePage:(unsigned long long)arg1 usage:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSArray *keyCodesGeneratedByFunctionKeyModification;
 - (unsigned long long)fKeyModifiedMacKeyCodeForUSBKeyCode:(unsigned long long)arg1;
@@ -64,6 +68,7 @@
 - (struct __IOHIDEventSystemClient *)ioHIDEventSystemClient;
 - (void)_createNotificationPortIfNeeded;
 - (void)_registerForNotificationsIfNeeded;
+- (void)_registerForDFRNotifications;
 - (void)_configureIOHIDSystemClientIfNeeded;
 - (void)dealloc;
 - (id)init;

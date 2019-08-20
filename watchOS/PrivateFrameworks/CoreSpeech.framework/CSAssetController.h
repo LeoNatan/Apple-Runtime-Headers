@@ -53,6 +53,7 @@
 - (void)installedAssetOfType:(unsigned int)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)installedAssetOfType:(unsigned int)arg1 language:(id)arg2;
 - (void)assetOfType:(unsigned int)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)allInstalledAssetsOfType:(unsigned int)arg1 language:(id)arg2;
 - (id)assetOfType:(unsigned int)arg1 language:(id)arg2;
 - (void)_cleanUpMobileAssetV1Directory;
 - (id)init;

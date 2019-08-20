@@ -24,6 +24,7 @@
 @property(nonatomic) _Bool useBetaVoice;
 @property(nonatomic) float streamBufferDuration;
 @property(nonatomic) _Bool disableOspreyStreaming;
+@property(nonatomic) _Bool forceOsprey;
 @property(nonatomic) _Bool disableOsprey;
 @property(nonatomic) _Bool disableDeviceRacing;
 @property(nonatomic) _Bool disableServerTTS;

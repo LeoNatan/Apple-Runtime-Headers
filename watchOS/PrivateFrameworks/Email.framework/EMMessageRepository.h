@@ -27,6 +27,7 @@
 }
 
 + (id)remoteInterface;
++ (id)signpostLog;
 + (id)log;
 @property(readonly, nonatomic) EMMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(retain, nonatomic) NSCache *queryCountCache; // @synthesize queryCountCache=_queryCountCache;
@@ -36,7 +37,6 @@
 - (void)_broadcastMessageListItemChangesToObservers:(CDUnknownBlockType)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
-- (void)_updateAlternateIDForObjectID:(id)arg1 alternateID:(id)arg2;
 - (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 observerationIdentifier:(id)arg2 matchedChangesHandler:(CDUnknownBlockType)arg3;
 - (void)_applyChangesToCachedObjects:(id)arg1;
 - (void)loadOlderMessagesForMailboxes:(id)arg1;
@@ -68,6 +68,7 @@
 - (void)_notifyRecoverableObservers;
 - (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3;
 - (id)_init;
+- (unsigned long long)signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

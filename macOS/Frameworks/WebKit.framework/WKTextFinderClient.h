@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSView *_view;
     struct Deque<WTF::Function<void (NSArray *, bool)>, 0> _findReplyCallbacks;
     struct Deque<WTF::Function<void (NSImage *)>, 0> _imageReplyCallbacks;
+    BOOL _usePlatformFindUI;
 }
 
 - (id).cxx_construct;
@@ -22,12 +23,13 @@ __attribute__((visibility("hidden")))
 - (void)getImageForMatchResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didGetImageForMatchResult:(struct WebImage *)arg1;
 - (void)didFindStringMatchesWithRects:(const Vector_dad0b2b1 *)arg1 didWrapAround:(BOOL)arg2;
+- (void)scrollFindMatchToVisible:(id)arg1;
 - (void)selectFindMatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSelectedText:(CDUnknownBlockType)arg1;
 - (void)findMatchesForString:(id)arg1 relativeToMatch:(id)arg2 findOptions:(unsigned long long)arg3 maxResults:(unsigned long long)arg4 resultCollector:(CDUnknownBlockType)arg5;
 - (void)replaceMatches:(id)arg1 withString:(id)arg2 inSelectionOnly:(BOOL)arg3 resultCollector:(CDUnknownBlockType)arg4;
 - (void)willDestroyView:(id)arg1;
-- (id)initWithPage:(struct WebPageProxy *)arg1 view:(id)arg2;
+- (id)initWithPage:(struct WebPageProxy *)arg1 view:(id)arg2 usePlatformFindUI:(BOOL)arg3;
 
 @end
 

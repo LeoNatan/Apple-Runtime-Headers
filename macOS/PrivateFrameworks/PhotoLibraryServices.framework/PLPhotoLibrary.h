@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSPersistentStore, NSSet, NSString, PLGenericAlbum, PLKeywordManager, PLLibraryServicesManager, PLManagedObjectContext, PLPhotoLibraryBundle, PLPhotoLibraryOptions, PLPhotoLibraryPathManager, PLSimpleDCIMDirectory, PLThumbnailIndexes, PLThumbnailManager;
+@class NSArray, NSMutableArray, NSPersistentStore, NSSet, NSString, PLGenericAlbum, PLKeywordManager, PLLibraryServicesManager, PLManagedObjectContext, PLPhotoLibraryBundle, PLPhotoLibraryOptions, PLPhotoLibraryPathManager, PLThumbnailIndexes, PLThumbnailManager;
 @protocol PLAlbumProtocol;
 
 @interface PLPhotoLibrary : NSObject
@@ -20,7 +20,6 @@
     NSSet *_audioFileExtensions;
     NSSet *_extraVideoExtensions;
     PLPhotoLibraryBundle *_libraryBundle;
-    PLSimpleDCIMDirectory *_simpleDCIMDirectory;
     struct os_unfair_lock_s _managedObjectContextLock;
     PLManagedObjectContext *_managedObjectContext;
     NSPersistentStore *_loadedPersistentStore;
@@ -120,7 +119,6 @@
 - (id)albumListForContentMode:(int)arg1;
 @property(readonly) PLKeywordManager *keywordManager;
 - (id)assetsdClient;
-- (id)simpleDCIMDirectory;
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
 - (void)_applyAdjustmentFileInfo:(id)arg1 renderedContentFileInfo:(id)arg2 renderedVideoComplementFileInfo:(id)arg3 toAsset:(id)arg4 withMainFileURL:(id)arg5;
 - (void)_applySideCarFiles:(id)arg1 toAsset:(id)arg2 withMainFileURL:(id)arg3;

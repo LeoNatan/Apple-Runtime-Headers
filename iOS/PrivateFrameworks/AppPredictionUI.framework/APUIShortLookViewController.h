@@ -11,16 +11,16 @@
 #import <AppPredictionUI/APUILongLookViewControllerDelegate-Protocol.h>
 #import <AppPredictionUI/CRKCardPresentationDelegate-Protocol.h>
 #import <AppPredictionUI/CRKCardViewControllerDelegate-Protocol.h>
-#import <AppPredictionUI/PLPreviewInteractionManagerDelegate-Protocol.h>
-#import <AppPredictionUI/PLPreviewInteractionPresenting-Protocol.h>
+#import <AppPredictionUI/PLClickPresentationInteractionManagerDelegate-Protocol.h>
+#import <AppPredictionUI/PLClickPresentationInteractionPresenting-Protocol.h>
 #import <AppPredictionUI/SearchUIResultShortLook-Protocol.h>
 
-@class APUIIntentHandlingViewController, APUILongLookViewController, APUITVIntentHandler, ATXAction, CRKCardPresentation, INIntent, INInteraction, NSString, NSUserActivity, NSUserDefaults, PLPreviewInteractionManager, SFSearchResult, UIView;
-@protocol APUIShortLookViewControllerDelegate, CRKCardViewControllerDelegate, CRKCardViewControlling, PLPreviewInteractionPresentable;
+@class APUIIntentHandlingViewController, APUILongLookViewController, APUITVIntentHandler, ATXAction, CRKCardPresentation, INIntent, INInteraction, NSString, NSUserActivity, NSUserDefaults, PLClickPresentationInteractionManager, SFSearchResult, UIView;
+@protocol APUIShortLookViewControllerDelegate, CRKCardViewControllerDelegate, CRKCardViewControlling, PLClickPresentationInteractionPresentable;
 
-@interface APUIShortLookViewController : UIViewController <APUIIntentHandlingViewControllerDelegate, CRKCardPresentationDelegate, CRKCardViewControllerDelegate, PLPreviewInteractionPresenting, PLPreviewInteractionManagerDelegate, APUILongLookViewControllerDataSource, APUILongLookViewControllerDelegate, SearchUIResultShortLook>
+@interface APUIShortLookViewController : UIViewController <APUIIntentHandlingViewControllerDelegate, CRKCardPresentationDelegate, CRKCardViewControllerDelegate, PLClickPresentationInteractionPresenting, PLClickPresentationInteractionManagerDelegate, APUILongLookViewControllerDataSource, APUILongLookViewControllerDelegate, SearchUIResultShortLook>
 {
-    APUILongLookViewController<PLPreviewInteractionPresentable> *_presentableViewController;
+    APUILongLookViewController<PLClickPresentationInteractionPresentable> *_presentableViewController;
     APUITVIntentHandler *_tvIntentHandler;
     double _preferredPlatterContentHeight;
     _Bool _acceptPlatterTaps;
@@ -32,7 +32,7 @@
     NSUserDefaults *_userDefaults;
     INIntent *_intent;
     NSUserActivity *_userActivity;
-    PLPreviewInteractionManager *_previewInteractionManager;
+    PLClickPresentationInteractionManager *_clickPresentationInteractionManager;
     NSString *_bundleId;
     SFSearchResult *_searchResult;
     id <APUIShortLookViewControllerDelegate> _delegate;
@@ -51,7 +51,7 @@
 @property(nonatomic) __weak id <APUIShortLookViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SFSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-@property(readonly, nonatomic) PLPreviewInteractionManager *previewInteractionManager; // @synthesize previewInteractionManager=_previewInteractionManager;
+@property(readonly, nonatomic) PLClickPresentationInteractionManager *clickPresentationInteractionManager; // @synthesize clickPresentationInteractionManager=_clickPresentationInteractionManager;
 - (void).cxx_destruct;
 - (void)intentHandlingViewController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)intentHandlingViewControllerDidFailAuthorizationCheck:(id)arg1;
@@ -72,12 +72,12 @@
 - (id)bundleIdentifierForAppIconInLongLook:(id)arg1;
 - (id)appIconImageForLongLook:(id)arg1;
 - (id)interfaceActionsForLongLook:(id)arg1;
-- (void)previewInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
-- (void)previewInteractionManagerDidEndUserInteraction:(id)arg1;
-- (void)previewInteractionManagerWillBeginUserInteraction:(id)arg1;
-- (_Bool)previewInteractionManagerShouldAutomaticallyTransitionToPreviewAfterDelay:(id)arg1;
-- (id)containerViewForPreviewInteractionManager:(id)arg1;
-- (id)presentedViewControllerForPreviewInteractionManager:(id)arg1;
+- (void)clickPresentationInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
+- (void)clickPresentationInteractionManagerDidEndUserInteraction:(id)arg1;
+- (void)clickPresentationInteractionManagerWillBeginUserInteraction:(id)arg1;
+- (_Bool)clickPresentationInteractionManagerShouldAutomaticallyTransitionToPreviewAfterDelay:(id)arg1;
+- (id)containerViewForclickPresentationInteractionManager:(id)arg1;
+- (id)presentedViewControllerForClickPresentationInteractionManager:(id)arg1;
 - (id)_debugStringForNSUA;
 - (_Bool)_isDoNotDisturbIntent;
 - (_Bool)_shouldAcceptPlatterTaps;
@@ -104,6 +104,7 @@
 @property(readonly, nonatomic) struct CGRect finalDismissedFrameOfViewForPreview;
 @property(readonly, nonatomic) struct CGRect finalPresentedFrameOfViewForPreview;
 @property(readonly) unsigned long long hash;
+@property(nonatomic, getter=isHighlighted) _Bool highlighted;
 @property(readonly, nonatomic) struct CGRect initialPresentedFrameOfViewForPreview;
 @property(readonly) Class superclass;
 

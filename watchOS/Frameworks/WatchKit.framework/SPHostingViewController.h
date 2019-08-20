@@ -23,7 +23,7 @@
 - (_Bool)canBecomeFirstResponder;
 - (struct CGSize)hostedViewSizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)hostedViewIntrisicContentSize;
-- (void)setHostedViewController:(id)arg1;
+- (void)setUnderlyingUIHostingController:(id)arg1;
 - (void)setInterfaceValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
 - (_Bool)prefersStatusBarHidden;
 - (void)updateTitleForViewController:(id)arg1;

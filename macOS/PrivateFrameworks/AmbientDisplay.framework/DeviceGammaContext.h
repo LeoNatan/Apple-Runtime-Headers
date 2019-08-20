@@ -60,6 +60,7 @@
     double compositionalAmbientEnvironmentLux;
     int systemGammaMode;
     double staticGamma;
+    NSObject<OS_dispatch_semaphore> *animationSemaphore;
 }
 
 - (CDStruct_5a4619cb *)copyPrefsIntentionDictionary;
@@ -136,6 +137,9 @@
 - (int)requestAndWaitForAnimationToEndNonLocking;
 - (int)requestAndWaitForAnimationToEndLocking;
 - (int)waitForAnimationToEndLocking;
+- (void)signalAnimationToEnd;
+- (void)resetAnimationSemaphore;
+- (_Bool)preemptableAnimationSleepSeconds:(double)arg1;
 - (void)dealloc;
 - (id)initWithCount:(int)arg1 withDisplayID:(unsigned int)arg2;
 

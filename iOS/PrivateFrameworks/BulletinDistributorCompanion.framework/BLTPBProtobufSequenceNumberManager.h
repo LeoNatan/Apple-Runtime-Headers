@@ -15,6 +15,7 @@
     NSLock *_sequenceNumberAccess;
     BLTCircularBitBuffer *_duplicateEntries;
     NSURL *_sequenceNumbersURL;
+    _Bool _updateSequenceNumbersOnOutOfOrder;
     unsigned long long _sessionState;
     NSString *_serviceName;
     NSUUID *_currentSessionIdentifier;
@@ -26,14 +27,14 @@
 @property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic) unsigned long long sessionState; // @synthesize sessionState=_sessionState;
 - (void).cxx_destruct;
-- (void)_writeSequenceNumbersToStore;
+- (_Bool)_writeSequenceNumbersToStore;
 - (void)_readSequenceNumbersFromStoreWithInitialDuplicateCapacity:(unsigned long long)arg1;
 - (id)_sequenceNumbersURL;
 - (_Bool)_isSequenceNumberInOrder:(unsigned long long)arg1;
-- (unsigned long long)nextSendSequenceNumber;
+- (id)nextSendSequenceNumber;
 - (long long)setRecvSequenceNumber:(unsigned long long)arg1 recvSessionIdentifier:(id)arg2 force:(_Bool)arg3;
-- (id)initWithServiceName:(id)arg1 duplicateCapacity:(unsigned long long)arg2;
-- (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 updateSequenceNumbersOnOutOfOrder:(_Bool)arg2 duplicateCapacity:(unsigned long long)arg3;
+- (id)initWithServiceName:(id)arg1 updateSequenceNumbersOnOutOfOrder:(_Bool)arg2;
 
 @end
 

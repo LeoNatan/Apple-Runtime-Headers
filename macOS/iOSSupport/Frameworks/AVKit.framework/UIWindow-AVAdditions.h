@@ -7,7 +7,7 @@
 #import <UIKit/UIWindow.h>
 
 @interface UIWindow (AVAdditions)
-- (void)avkit_ensureOrientation:(long long)arg1;
+- (void)avkit_ensureOrientation:(long long)arg1 disableTouchCancellation:(BOOL)arg2;
 - (BOOL)avkit_supportsAutorotationForInterfaceOrientationMask:(unsigned long long)arg1;
 - (BOOL)avkit_canAttemptSecondWindowForRotability;
 - (BOOL)avkit_canAttemptRotation;

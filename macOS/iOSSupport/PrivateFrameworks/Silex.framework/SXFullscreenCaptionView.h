@@ -61,7 +61,6 @@
 - (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)forceFullExpandsionMode;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleSwipeGestureRecognizer:(id)arg1;
 - (void)handleTapGestureRecognizer:(id)arg1;

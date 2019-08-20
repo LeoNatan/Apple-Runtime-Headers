@@ -24,7 +24,7 @@
 - (void)CADDatabaseMarkIndividualChangesConsumed:(NSArray *)arg1 reply:(void (^)(int))arg2;
 - (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(long long)arg1 reply:(void (^)(int))arg2;
 - (void)CADDatabaseFetchObjectChangesForEntityTypes:(NSArray *)arg1 insideObject:(CADObjectID *)arg2 reply:(void (^)(int, _Bool, long long, NSArray *))arg3;
-- (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(long long)arg1 reply:(void (^)(int, _Bool, long long, NSArray *, NSArray *, NSArray *))arg2;
+- (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(long long)arg1 reply:(void (^)(int, _Bool, long long, NSData *, int, int, int))arg2;
 - (void)CADDatabaseUnregisterForDetailedChangeTracking:(void (^)(int))arg1;
 - (void)CADDatabaseRegisterForDetailedChangeTracking:(void (^)(int, long long))arg1;
 - (void)CADDatabaseGetUUID:(void (^)(int, NSString *))arg1;

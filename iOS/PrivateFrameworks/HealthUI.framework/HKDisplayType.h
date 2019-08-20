@@ -36,6 +36,7 @@
     _Bool _shouldDisplayUnitStringOnYAxis;
     _Bool _disallowsSourceReordering;
     _Bool _excludeFromDataTypeSearch;
+    _Bool _useSecondsWhenDisplayingDuration;
     _Bool _shouldUseSingleSecondaryValue;
     _Bool __wheelchairUser;
     long long _displayTypeIdentifier;
@@ -50,9 +51,11 @@
     HKObjectType *_objectType;
 }
 
+@property(readonly, copy, nonatomic) NSString *displayNameKey; // @synthesize displayNameKey=_displayNameKey;
 @property(getter=_isWheelchairUser, setter=_setWheelchairUser:) _Bool _wheelchairUser; // @synthesize _wheelchairUser=__wheelchairUser;
 @property(readonly, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
 @property(readonly, nonatomic) _Bool shouldUseSingleSecondaryValue; // @synthesize shouldUseSingleSecondaryValue=_shouldUseSingleSecondaryValue;
+@property(readonly, nonatomic) _Bool useSecondsWhenDisplayingDuration; // @synthesize useSecondsWhenDisplayingDuration=_useSecondsWhenDisplayingDuration;
 @property(readonly, nonatomic) _Bool excludeFromDataTypeSearch; // @synthesize excludeFromDataTypeSearch=_excludeFromDataTypeSearch;
 @property(retain, nonatomic) HKValueRange *defaultAxisRangeOverride; // @synthesize defaultAxisRangeOverride=_defaultAxisRangeOverride;
 @property(readonly, nonatomic) unsigned long long statisticsMergeStrategy; // @synthesize statisticsMergeStrategy=_statisticsMergeStrategy;

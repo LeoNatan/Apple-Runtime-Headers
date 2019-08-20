@@ -10,7 +10,7 @@
 
 @interface ATXAVRoutingSessionHelper : NSObject
 {
-    float _threshod;
+    float _threshold;
     AVRoutingSessionManager *_avRoutingSessionManager;
     ATXAVRouteInfo *_internalPredictedRouteInfo;
 }

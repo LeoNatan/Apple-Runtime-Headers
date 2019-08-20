@@ -26,7 +26,6 @@
     unsigned long long _currentMode;
     CLKRelativeDateTextProvider *_totalTimeTextProvider;
     CLKRelativeDateTextProvider *_lapTimeTextProvider;
-    _Bool _stopwatchShouldShowSeconds;
     NSDate *_stopwatchStartDate;
 }
 
@@ -42,7 +41,7 @@
 - (void)reload;
 - (void)lapAdded;
 - (void)_updateLapLabelLaps;
-- (unsigned long long)_chronoTimeUnitsWithSeconds:(_Bool)arg1;
+- (unsigned long long)_chronoTimeUnits;
 - (void)_updateChronoTimeLabelsWithUnmodifiedDateForNow:(id)arg1;
 - (void)_synchronizeStopwatchStartDate;
 - (void)_synchronizeChronoTimeLabelsWithStopwatch;
@@ -119,6 +118,7 @@
 - (id)_slotForUtilitySlot:(long long)arg1;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_canStartTimeScrubbing;
+- (void)_updateStopwatchTimeViewsMaxWidth;
 - (void)_layoutStopwatchTimeViews;
 - (void)_layoutForegroundContainerView;
 - (void)_loadLayoutRules;

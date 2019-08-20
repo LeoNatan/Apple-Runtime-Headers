@@ -37,7 +37,7 @@
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(int)arg2;
 - (id)mediaProfileContainerForRouteID:(id)arg1;
 - (id)cachedPlaybackStateWriteErrorForRouteID:(id)arg1;
-- (id)writePlaybackState:(int)arg1 playbackArchive:(id)arg2 playbackOptions:(int)arg3 forRouteID:(id)arg4;
+- (id)writePlaybackState:(int)arg1 playbackArchive:(id)arg2 forRouteID:(id)arg3;
 - (int)lastPlaybackStateForProfileForRouteID:(id)arg1;
 - (_Bool)hasPendingWritesForRouteID:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;

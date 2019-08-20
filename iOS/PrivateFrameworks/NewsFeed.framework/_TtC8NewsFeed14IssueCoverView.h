@@ -15,6 +15,7 @@
     // Error parsing type: , name: shadowView
     // Error parsing type: , name: shadowMotionLayer
     // Error parsing type: , name: observingMotion
+    // Error parsing type: , name: identifier
 }
 
 - (void).cxx_destruct;

@@ -64,6 +64,8 @@
 - (void)_resetSessionID;
 - (void)_renewThirtyDayCountsSessionID;
 - (void)_renewLongSessionID;
+- (void)_rollInitialLongSessionId;
+- (void)_createLongSessionWithOffset:(_Bool)arg1;
 @property(readonly, nonatomic) GEOUserSessionEntity *cohortSessionEntity;
 - (void)_safe_renewCohortSessionID;
 - (void)_renewCohortSessionID;

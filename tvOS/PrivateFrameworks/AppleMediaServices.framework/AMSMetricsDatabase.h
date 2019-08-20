@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)unlockEvents:(id)arg1 error:(id *)arg2;
 - (void)unlockAllEventsWithKey:(id)arg1 error:(id *)arg2;
 - (id)lockAllEventsWithError:(id *)arg1;
-- (void)interruptKeepAlive;
 - (void)insertEvents:(id)arg1 error:(id *)arg2;
 - (void)enumerateTopicsWithLockKey:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)enumerateEventsWithTopic:(id)arg1 lockKey:(id)arg2 objectBlock:(CDUnknownBlockType)arg3;

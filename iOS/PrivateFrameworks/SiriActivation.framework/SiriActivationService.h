@@ -19,7 +19,7 @@
 @interface SiriActivationService : NSObject <SASRequestOptionsBuilderDataSource, SASHeaterDelegate, AFMyriadDelegate, SASLockStateMonitorDelegate, SASBulletinManagerDelegate, SASStateChangeListener>
 {
     CDUnknownBlockType _buttonTrigger;
-    _Bool _activationHandled;
+    NSString *_preheatedPresentation;
     int _voiceTriggerNotifyToken;
     AFMyriadCoordinator *_myriad;
     NSObject<OS_dispatch_queue> *_voiceTriggerDispatchQueue;
@@ -27,10 +27,10 @@
     NSTimer *_B188ActivationTimer;
     _Bool _xcTestingActive;
     _Bool _siriTetherIsAttached;
-    _Bool _preheated;
     _Bool _voiceTriggerNotifyTokenIsValid;
     _Bool _buttonDownHasOccurredSinceActivation;
     _Bool _canActivateFromDirectActionSource;
+    _Bool _pocketStateFetchingInProgressForHeadsetActivation;
     SASSystemState *_systemState;
     AFPreferences *_afPreferences;
     SASLockStateMonitor *_lockStateMonitor;
@@ -53,6 +53,7 @@
 
 + (id)new;
 + (id)service;
+@property(nonatomic, getter=_pocketStateFetchingInProgressForHeadsetActivation, setter=_setPocketStateFetchingInProgressForHeadsetActivation:) _Bool pocketStateFetchingInProgressForHeadsetActivation; // @synthesize pocketStateFetchingInProgressForHeadsetActivation=_pocketStateFetchingInProgressForHeadsetActivation;
 @property(nonatomic) _Bool canActivateFromDirectActionSource; // @synthesize canActivateFromDirectActionSource=_canActivateFromDirectActionSource;
 @property(nonatomic) _Bool buttonDownHasOccurredSinceActivation; // @synthesize buttonDownHasOccurredSinceActivation=_buttonDownHasOccurredSinceActivation;
 @property(retain, nonatomic) NSMutableDictionary *avExternalButtonEvents; // @synthesize avExternalButtonEvents=_avExternalButtonEvents;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) SASRemoteRequestManager *remoteRequestManager; // @synthesize remoteRequestManager=_remoteRequestManager;
 @property(retain, nonatomic) SASBulletinManager *bulletinManager; // @synthesize bulletinManager=_bulletinManager;
 @property(nonatomic) _Bool voiceTriggerNotifyTokenIsValid; // @synthesize voiceTriggerNotifyTokenIsValid=_voiceTriggerNotifyTokenIsValid;
-@property(nonatomic) _Bool preheated; // @synthesize preheated=_preheated;
 @property(nonatomic) double activationTimestamp; // @synthesize activationTimestamp=_activationTimestamp;
 @property(nonatomic) double preparationTimestamp; // @synthesize preparationTimestamp=_preparationTimestamp;
 @property(nonatomic) _Bool siriTetherIsAttached; // @synthesize siriTetherIsAttached=_siriTetherIsAttached;
@@ -113,9 +113,10 @@
 - (void)_cancelActivationPreparationForSetup;
 - (void)_cancelActivationPreparationIfNecessary;
 - (void)_attachToTether;
-- (void)_preheat;
+- (void)_preheatPresentation;
 - (void)_cancelTTS;
 - (void)_dismissSiri:(id)arg1;
+- (void)_handlePocketStateFetchForScreenWakeForPresentationServer:(id)arg1 requestOptions:(id)arg2 presentationOptions:(id)arg3;
 - (void)_activatePresentation:(id)arg1 requestOptions:(id)arg2 analyticsContext:(id)arg3;
 - (void)dismissSiriWithOptions:(id)arg1;
 - (_Bool)handleActivationRequest:(id)arg1 systemState:(id)arg2;
@@ -153,7 +154,7 @@
 - (void)_notifySourcesOfCanActivateFromDirectActionSourceChange:(_Bool)arg1;
 - (void)_updateCanActivateFromDirectActionSource;
 - (void)_notifySourcesOfActiveChange:(_Bool)arg1;
-- (_Bool)_shouldTreatAsActive:(long long)arg1;
+- (_Bool)_shouldRejectNewActivations:(long long)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)_init;

@@ -6,9 +6,9 @@
 
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class DNDClientEventBehavior, DNDClientEventDetails, DNDSRemoteServiceProvider, NSDate, NSString;
+@class DNDClientEventBehavior, DNDClientEventDetails, DNDSClientDetails, DNDSRemoteServiceProvider, NSDate;
 
 @protocol DNDSRemoteServiceProviderBehaviorResolutionDelegate <NSObject>
-- (DNDClientEventBehavior *)remoteServiceProvider:(DNDSRemoteServiceProvider *)arg1 resolveBehaviorForEventDetails:(DNDClientEventDetails *)arg2 clientIdentifier:(NSString *)arg3 date:(NSDate *)arg4 error:(id *)arg5;
+- (DNDClientEventBehavior *)remoteServiceProvider:(DNDSRemoteServiceProvider *)arg1 resolveBehaviorForEventDetails:(DNDClientEventDetails *)arg2 clientDetails:(DNDSClientDetails *)arg3 date:(NSDate *)arg4 error:(id *)arg5;
 @end
 

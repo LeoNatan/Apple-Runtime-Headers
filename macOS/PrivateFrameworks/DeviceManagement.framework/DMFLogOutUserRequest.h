@@ -10,9 +10,7 @@
 {
 }
 
-+ (BOOL)isPermittedOnUserConnection;
-+ (BOOL)isPermittedOnSystemConnection;
-+ (id)permittedPlatforms;
+- (Class)classForCoder;
 
 @end
 

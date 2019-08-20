@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_onQueue_registerForInvalidationWithUnresolvedPlayerPath:(id)arg1 invalidationPlayerPath:(void *)arg2;
 - (id)resolvedPlayerPathForPlayerPath:(id)arg1;
+- (id)observationTokenDescriptionForPlayerPath:(id)arg1;
 - (void)dealloc;
 - (id)_init;
 

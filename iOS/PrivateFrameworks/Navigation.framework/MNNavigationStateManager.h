@@ -6,26 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <Navigation/MNLocationManagerObserver-Protocol.h>
 #import <Navigation/MNNavigationStateInterface-Protocol.h>
-#import <Navigation/MNSuggestionsManagerObserver-Protocol.h>
 
-@class GEOApplicationAuditToken, MNCommuteSession, MNNavigationState, MNObserverHashTable, MNSuggestionsManager, NSString;
+@class GEOApplicationAuditToken, MNNavigationState, MNObserverHashTable, NSString;
 @protocol MNNavigationSessionManagerDelegate;
 
-@interface MNNavigationStateManager : NSObject <MNLocationManagerObserver, MNSuggestionsManagerObserver, MNNavigationStateInterface>
+@interface MNNavigationStateManager : NSObject <MNNavigationStateInterface>
 {
     _Bool _isStarted;
     MNNavigationState *_currentState;
-    MNSuggestionsManager *_suggestionsManager;
-    MNCommuteSession *_commuteSession;
     MNObserverHashTable *_navigationStateObservers;
     GEOApplicationAuditToken *_auditToken;
     id <MNNavigationSessionManagerDelegate> _navigationDelegate;
 }
 
 + (id)sharedManager;
-@property(readonly, nonatomic) MNSuggestionsManager *suggestionsManager; // @synthesize suggestionsManager=_suggestionsManager;
 @property(readonly, nonatomic) MNNavigationState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) _Bool isStarted; // @synthesize isStarted=_isStarted;
 @property(nonatomic) __weak id <MNNavigationSessionManagerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
@@ -64,20 +59,12 @@
 - (void)stopNavigation;
 - (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
-- (void)suggestionsManager:(id)arg1 didAddSuggestion:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
-- (void)locationManagerDidResumeLocationUpdates:(id)arg1;
-- (void)locationManagerDidPauseLocationUpdates:(id)arg1;
-- (_Bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
-- (void)locationManagerDidReset:(id)arg1;
-- (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (void)locationManagerUpdatedLocation:(id)arg1;
 - (id)_initialState;
 - (void)_replayStateForNewObserver:(id)arg1;
 - (void)commuteSessionDidArrive:(id)arg1;
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
-@property(readonly, nonatomic) MNCommuteSession *commuteSession;
 @property(readonly, nonatomic) unsigned long long currentStateType;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

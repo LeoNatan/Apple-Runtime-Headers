@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
-@protocol OS_dispatch_queue;
+@class NSDictionary, WKWallpaperBundleImporter;
 
 @interface WKDefaultWallpaperManager : NSObject
 {
     NSDictionary *__defaultWallpaperLookup;
-    NSObject<OS_dispatch_queue> *__wallpaperLookupQueue;
+    WKWallpaperBundleImporter *__defaultWallpaperBundleImporter;
 }
 
 + (id)deviceEnclosureColor;
@@ -22,7 +21,7 @@
 + (id)defaultWallpaperLookupURL;
 + (id)_pathForStillWallpapers;
 + (id)defaultWallpaperManager;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_wallpaperLookupQueue; // @synthesize _wallpaperLookupQueue=__wallpaperLookupQueue;
+@property(retain, nonatomic) WKWallpaperBundleImporter *_defaultWallpaperBundleImporter; // @synthesize _defaultWallpaperBundleImporter=__defaultWallpaperBundleImporter;
 @property(retain, nonatomic) NSDictionary *_defaultWallpaperLookup; // @synthesize _defaultWallpaperLookup=__defaultWallpaperLookup;
 - (void).cxx_destruct;
 - (id)defaultWallpaperBundle;

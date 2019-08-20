@@ -11,10 +11,15 @@ __attribute__((visibility("hidden")))
 {
     BOOL _didComplete;
     unsigned long long _reason;
+    CDUnknownBlockType _alongsideActions;
+    CDUnknownBlockType _completion;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(copy, nonatomic) CDUnknownBlockType alongsideActions; // @synthesize alongsideActions=_alongsideActions;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(nonatomic) BOOL didComplete; // @synthesize didComplete=_didComplete;
+- (void).cxx_destruct;
 
 @end
 

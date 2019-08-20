@@ -7,11 +7,10 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (HKAdditions)
-+ (id)hk_hearingHealthAudioExposureSymbolForClassification:(unsigned long long)arg1 textStyle:(id)arg2;
++ (id)hk_hearingHealthAudioExposureSymbolForClassification:(unsigned long long)arg1 font:(id)arg2;
 + (id)hk_arrowStandImage;
 + (id)hk_arrowExerciseImage;
 + (id)hk_arrowMoveImage;
-+ (id)hk_electrocardiogramHeartImage;
 + (id)hk_disclosureChevronImage;
 + (id)hk_transparentInterfaceImageWithSize:(struct CGSize)arg1;
 - (id)hk_resizedInterfaceImageWithSize:(struct CGSize)arg1;

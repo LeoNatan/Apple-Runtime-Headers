@@ -11,11 +11,13 @@
 @protocol IMTypingIndicatorLayerProtocol <NSObject>
 @property(nonatomic) _Bool hasDarkBackground;
 - (void)startGrowAnimation;
-- (void)setTraitCollection:(UITraitCollection *)arg1;
 - (void)stopAnimation;
 - (void)stopPulseAnimation;
 - (void)startPulseAnimation;
 - (void)startShrinkAnimationWithCompletionBlock:(void (^)(void))arg1;
 - (void)startGrowAnimationWithCompletionBlock:(void (^)(void))arg1;
+
+@optional
+- (void)setTraitCollection:(UITraitCollection *)arg1;
 @end
 

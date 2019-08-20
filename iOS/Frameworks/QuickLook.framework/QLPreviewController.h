@@ -17,7 +17,7 @@
 #import <QuickLook/UIScrollViewDelegate-Protocol.h>
 #import <QuickLook/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSString, NSURL, QLActivityItemProvider, QLBarButtonItem, QLErrorView, QLItem, QLNavigationState, QLPinchRotationTracker, QLPreviewItemStore, QLStateManager, QLSwipeDownTracker, QLToolbarController, QLTransitionController, UIAlertController, UIColor, UIDocumentInteractionController, UINavigationController, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer;
+@class NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSString, NSURL, QLActivityItemProvider, QLBarButtonItem, QLCustomURLSharingProxyDelegate, QLErrorView, QLItem, QLNavigationState, QLPinchRotationTracker, QLPreviewItemStore, QLStateManager, QLSwipeDownTracker, QLToolbarController, QLTransitionController, UIAlertController, UIColor, UIDocumentInteractionController, UINavigationController, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer;
 @protocol QLPreviewCollectionProtocol, QLPreviewControllerDataSource, QLPreviewControllerDelegate, QLPreviewItem, QLPrintingProtocol, QLRemotePopoverTracker;
 
 @interface QLPreviewController : UIViewController <UIScreenshotServiceDelegate, UIDocumentInteractionControllerDelegate, UIGestureRecognizerDelegate, QLPreviewItemStoreDelegate, QLPreviewItemProvider, QLPreviewControllerStateProtocolHostOnly, UIPageViewControllerDelegate, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
@@ -28,7 +28,6 @@
     _Bool _previewCollectionNeedsConfiguration;
     _Bool _previewCollectionIsLoading;
     _Bool _changingCurrentPreview;
-    NSMutableDictionary *_previewKeyCommands;
     NSMutableArray *_previewCollectionReadyCompletionBlocks;
     NSString *_loadingTextForMissingFiles;
     long long _whitePointAdaptivityStyle;
@@ -62,6 +61,7 @@
     id <QLPreviewControllerDataSource> _dataSource;
     id <QLPrintingProtocol> _printer;
     id <QLPreviewControllerDelegate> _delegate;
+    NSMutableDictionary *_previewKeyCommands;
     UIViewController<QLPreviewCollectionProtocol> *_previewCollection;
     NSArray *_previewToolbarButtons;
     NSArray *_excludedToolbarButtonIdentifiers;
@@ -71,6 +71,7 @@
     QLToolbarController *_toolbarController;
     QLPreviewItemStore *_previewItemStore;
     QLActivityItemProvider *_currentItemProvider;
+    QLCustomURLSharingProxyDelegate *_customURLSharingProxyDelegate;
     UIDocumentInteractionController *_sharingInteractionController;
     id <QLRemotePopoverTracker> _shareSheetPopoverTracker;
     CDUnknownBlockType _shareSheetDismissCompletion;
@@ -135,6 +136,7 @@
 @property(copy, nonatomic) CDUnknownBlockType shareSheetDismissCompletion; // @synthesize shareSheetDismissCompletion=_shareSheetDismissCompletion;
 @property(retain, nonatomic) id <QLRemotePopoverTracker> shareSheetPopoverTracker; // @synthesize shareSheetPopoverTracker=_shareSheetPopoverTracker;
 @property(retain) UIDocumentInteractionController *sharingInteractionController; // @synthesize sharingInteractionController=_sharingInteractionController;
+@property(retain, nonatomic) QLCustomURLSharingProxyDelegate *customURLSharingProxyDelegate; // @synthesize customURLSharingProxyDelegate=_customURLSharingProxyDelegate;
 @property(retain) QLActivityItemProvider *currentItemProvider; // @synthesize currentItemProvider=_currentItemProvider;
 @property(readonly) QLPreviewItemStore *previewItemStore; // @synthesize previewItemStore=_previewItemStore;
 @property(readonly, nonatomic) QLToolbarController *toolbarController; // @synthesize toolbarController=_toolbarController;
@@ -151,6 +153,7 @@
 @property(nonatomic) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(nonatomic) _Bool overlayHidden; // @synthesize overlayHidden=_overlayHidden;
 @property(nonatomic) _Bool canChangeCurrentPage; // @synthesize canChangeCurrentPage=_canChangeCurrentPage;
+@property(retain, nonatomic) NSMutableDictionary *previewKeyCommands; // @synthesize previewKeyCommands=_previewKeyCommands;
 @property(nonatomic) __weak id <QLPreviewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <QLPrintingProtocol> printer; // @synthesize printer=_printer;
 @property(nonatomic) __weak id <QLPreviewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -233,7 +236,6 @@
 @property(readonly) id <QLPreviewItem> currentPreviewItem;
 @property long long currentPreviewItemIndex; // @synthesize currentPreviewItemIndex=_currentPreviewItemIndex;
 - (void)_setCurrentPreviewItemIndex:(long long)arg1 updatePreview:(_Bool)arg2 animated:(_Bool)arg3;
-- (struct CGSize)preferredContentSize;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)waitForPreviewCollectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_removePreviewCollectionFromViewHierarchy;

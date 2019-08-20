@@ -8,11 +8,17 @@
 
 @interface NSURL (dd_private)
 + (id)dd_URLWithPotentiallyInvalidURLString:(id)arg1;
+- (id)dd_emailFromValidSchemes:(id)arg1;
+- (id)dd_phoneNumberFromValidSchemes:(id)arg1;
 - (id)dd_rdarLinkFromTelScheme;
+- (id)dd_emailFromFacetimeScheme;
+- (id)dd_phoneNumberFromFacetimeScheme;
+- (id)dd_handleFromFacetimeSchemeFilteringForEmail:(_Bool)arg1;
 - (id)dd_emailFromMailtoScheme;
 - (id)dd_phoneNumberFromTelSchemeAndExtractBody:(id *)arg1;
 - (id)dd_phoneNumberFromTelScheme;
 - (_Bool)dd_isAnySimpleTelephonyScheme;
+- (_Bool)dd_isMaps:(_Bool)arg1 isDirections:(_Bool *)arg2;
 - (_Bool)dd_isMaps:(_Bool)arg1;
 - (id)dd_formattedPhoneNumber;
 @end

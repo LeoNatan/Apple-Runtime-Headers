@@ -35,6 +35,7 @@
 + (id)recognizerFromOptionsDictionary:(id)arg1;
 + (unsigned long long)revisionNumber;
 + (id)supportedLanguagesForOptions:(id)arg1 revision:(long long)arg2 error:(id *)arg3;
++ (id)_lmQueues;
 + (void)calculateTargetOutputSize:(struct CGSize *)arg1 andAdjustedInputScale:(double *)arg2 andPaddedSize:(struct CGSize *)arg3 forImageSize:(struct CGSize)arg4 withMaximumSize:(struct CGSize)arg5;
 @property _Bool shouldCancel; // @synthesize shouldCancel=_shouldCancel;
 @property(retain, nonatomic) CRRegex *regExpressions; // @synthesize regExpressions=_regExpressions;
@@ -57,9 +58,9 @@
 - (id)signpostLog;
 - (id)defaultOptions;
 - (id)textDetectorResultsForImageAtURL:(id)arg1 options:(id)arg2;
-- (id)textDetectorResultsForImage:(id)arg1 options:(id)arg2;
+- (id)textDetectorResultsForImage:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)textRecognizerResultsForTextFeatures:(id)arg1 forImageAtURL:(id)arg2 options:(id)arg3;
-- (id)textRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3;
+- (id)textRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)textResultsForImage:(id)arg1 options:(id)arg2 withProgressHandler:(CDUnknownBlockType)arg3 title:(id *)arg4;
 - (id)textResultsForImage:(id)arg1 options:(id)arg2 title:(id *)arg3;
 - (id)textResultsForImage:(id)arg1 options:(id)arg2;
@@ -77,12 +78,11 @@
 - (id)correctLMDecodingWithRegex:(id)arg1 noLMDecoding:(id)arg2;
 - (_Bool)mleValidateProbability:(id)arg1 options:(id)arg2;
 - (void)getWordBoundariesForWhiteSpaceRanges:(id)arg1 topPoints:(id *)arg2 bottomPoints:(id *)arg3 image:(id)arg4 scale:(float)arg5 rect:(struct CGRect)arg6 rotatedRoi:(struct CGRect)arg7 radians:(float)arg8;
-- (void)recognizeFeatures:(id)arg1 widthIndex:(long long)arg2 inImage:(id)arg3 options:(id)arg4;
+- (void)recognizeFeatures:(id)arg1 widthIndex:(long long)arg2 inImage:(id)arg3 options:(id)arg4 error:(id *)arg5;
 - (void)lmDecodeFeaturesWithInfo:(id)arg1 activationMaps:(id)arg2 image:(id)arg3 options:(id)arg4;
 - (void)maxDecodeFeaturesWithInfo:(id)arg1 activationMaps:(id)arg2 image:(id)arg3 options:(id)arg4;
 - (void)enumerateInputsForFeatures:(id)arg1 widthIndex:(long long)arg2 inImage:(id)arg3 options:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;
-- (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 withProgressHandler:(CDUnknownBlockType)arg4 title:(id *)arg5;
-- (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 title:(id *)arg4;
+- (id)mleTextRecognizerResultsForTextFeatures:(id)arg1 inImage:(id)arg2 options:(id)arg3 withProgressHandler:(CDUnknownBlockType)arg4 title:(id *)arg5 error:(id *)arg6;
 - (id)sortedRotateTextFeatures:(id)arg1 center:(struct CGPoint)arg2 radians:(float)arg3;
 - (void)rotatePolygon:(vector_e1abc270 *)arg1 center:(struct CGPoint)arg2 angle:(float)arg3 dest:(vector_e1abc270 *)arg4;
 - (id)combinedLineFeature:(id)arg1 lineFeature:(id)arg2;
@@ -94,7 +94,7 @@
 - (id)genPolyResults:(struct vImage_Buffer *)arg1 geoMap:(struct vImage_Buffer **)arg2 targetSize:(struct CGSize)arg3 scale:(struct CGSize)arg4;
 - (void)aggregateScoreAndGeoMap:(id)arg1 inputGeo:(id)arg2 targetSize:(struct CGSize)arg3 outputScoreMap:(struct vImage_Buffer *)arg4 outputGeoMap:(struct vImage_Buffer *[5])arg5 outputOrigin:(struct CGPoint)arg6 withScale:(struct CGSize)arg7;
 - (id)textFeaturesFromPolygons:(vector_5c537674 *)arg1 withScale:(const float *)arg2;
-- (id)detectCRTextFeaturesInImage:(id)arg1 logIntermediateDetectorResult:(id *)arg2 options:(id)arg3;
+- (id)detectCRTextFeaturesInImage:(id)arg1 logIntermediateDetectorResult:(id *)arg2 options:(id)arg3 error:(id *)arg4;
 - (void)masksForScoreMap:(struct vImage_Buffer *)arg1 imageMask:(struct vImage_Buffer *)arg2 binaryMask:(struct vImage_Buffer *)arg3;
 - (void)scaleBufferNearestNeighbor:(struct vImage_Buffer *)arg1 geoMap:(struct vImage_Buffer **)arg2 dest:(struct vImage_Buffer *)arg3 destGeomap:(struct vImage_Buffer **)arg4 binaryMask:(struct vImage_Buffer *)arg5;
 - (struct __CVBuffer *)createCroppedRegion:(struct CGRect)arg1 fromPixelBuffer:(struct __CVBuffer *)arg2;
@@ -103,9 +103,8 @@
 - (struct __CVBuffer *)pixelBufferFromCGImage:(struct CGImage *)arg1 withScale:(double)arg2 paddedToSize:(struct CGSize)arg3;
 - (struct __CVBuffer *)pixelBufferFromCGImage:(struct CGImage *)arg1 withScale:(float)arg2;
 - (struct __CVBuffer *)grayscalePixelBufferFromCGImage:(struct CGImage *)arg1 withScale:(float)arg2;
-- (id)mleTextDetectorResultsForImage:(id)arg1 options:(id)arg2;
-- (id)mleTextResultsInImage:(id)arg1 options:(id)arg2 withProgressHandler:(CDUnknownBlockType)arg3 title:(id *)arg4;
-- (id)mleTextResultsInImage:(id)arg1 options:(id)arg2 title:(id *)arg3;
+- (id)mleTextDetectorResultsForImage:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)mleTextResultsInImage:(id)arg1 options:(id)arg2 withProgressHandler:(CDUnknownBlockType)arg3 title:(id *)arg4 error:(id *)arg5;
 - (_Bool)futharkValidateProbability:(id)arg1 options:(id)arg2;
 - (id)futharkTextResultsInImage:(id)arg1 options:(id)arg2;
 - (_Bool)lfpValidateProbability:(id)arg1 options:(id)arg2;

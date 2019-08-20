@@ -75,6 +75,7 @@
 - (id)_secondaryRightItemViewForTraitCollection:(id)arg1;
 - (id)_rightItemViewForTraitCollection:(id)arg1;
 - (id)_leftItemViewForTraitCollection:(id)arg1;
+- (void)updateContentsForConversation:(id)arg1;
 - (void)_initializeForTraitCollection:(id)arg1;
 - (void)updateTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)configureForEditing:(_Bool)arg1;

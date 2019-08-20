@@ -6,14 +6,14 @@
 
 #import <AppKit/NSToolbarItem.h>
 
-@protocol UINSSharedItemsProviding;
+@protocol UINSActivityItemsConfigurationReading;
 
 @interface UINSSharingToolbarItem : NSToolbarItem
 {
-    id <UINSSharedItemsProviding> _copyConfiguration;
+    id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration;
 }
 
-@property(retain, nonatomic, setter=_setCopyConfiguration:) id <UINSSharedItemsProviding> _copyConfiguration; // @synthesize _copyConfiguration;
+@property(retain, nonatomic, setter=_setActivityItemsConfiguration:) id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration; // @synthesize _activityItemsConfiguration;
 - (void).cxx_destruct;
 - (void)_share:(id)arg1;
 - (void)setAction:(SEL)arg1;

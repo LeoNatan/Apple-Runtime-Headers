@@ -45,6 +45,7 @@
     NSButton *lockButton;
     double topBorderThickness;
     double bottomBorderThickness;
+    struct CGSize _stoplightOffset;
     double _customTitlebarHeight;
     double _customTitlebarHeightPriorToFSMode;
 }
@@ -74,6 +75,7 @@
 + (double)_minXWindowBorderWidth:(unsigned long long)arg1;
 + (double)_windowBorderThickness:(unsigned long long)arg1;
 + (BOOL)automaticallyNotifiesObserversOf_backdropView;
++ (void)_installMenuTrackingObserver;
 + (id)_cuiMaskOnlyOptionsForWindowType:(struct __CFString *)arg1 cornerMask:(unsigned long long)arg2 inRect:(struct CGRect)arg3;
 + (void)clearCornerMaskOnLayer:(id)arg1;
 + (void)drawBevel:(struct CGRect)arg1 inFrame:(struct CGRect)arg2 topCornerRounded:(BOOL)arg3 bottomCornerRounded:(BOOL)arg4;
@@ -192,6 +194,7 @@
 - (BOOL)_shouldFlipTrafficLightsForRTL;
 - (struct CGRect)_maxTitlebarTitleRect;
 - (double)_titlebarHeight;
+@property struct CGSize stoplightOffset;
 @property double customTitlebarHeight; // @synthesize customTitlebarHeight=_customTitlebarHeight;
 - (double)_titlebarHeight2;
 - (double)_sideTitlebarWidth;

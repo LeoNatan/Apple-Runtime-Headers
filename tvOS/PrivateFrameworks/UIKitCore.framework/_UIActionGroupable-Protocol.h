@@ -10,6 +10,7 @@
 @class NSString, UIImage;
 
 @protocol _UIActionGroupable <NSObject, NSCopying>
+@property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) long long style;
 @property(readonly, nonatomic) UIImage *image;
 @property(readonly, nonatomic) NSString *title;

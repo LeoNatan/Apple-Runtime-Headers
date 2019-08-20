@@ -31,6 +31,7 @@
 - (void)removeAllActions;
 - (void)removeAction:(id)arg1;
 - (void)updateAction:(id)arg1;
+- (id)_existingActionBuilder:(id)arg1 inSet:(id)arg2;
 - (void)updateActionBuildersDiff:(id)arg1;
 - (void)addAction:(id)arg1;
 - (void)addAction:(id)arg1 actionSetType:(unsigned int)arg2;

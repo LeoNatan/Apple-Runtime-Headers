@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSDictionary, RVItem, UIView, _UIMenuBarMenu;
-@protocol _UICopyConfigurationReading;
+@protocol UIActivityItemsConfigurationReading;
 
 __attribute__((visibility("hidden")))
 @interface _UIMenuBarController : NSObject
 {
-    id <_UICopyConfigurationReading> __copyConfiguration;
+    id <UIActivityItemsConfigurationReading> __activityItemsConfiguration;
     UIView *_contextMenuView;
     RVItem *_contextMenuRVItem;
     CDUnknownBlockType _contextMenuDidClose;
@@ -21,8 +21,6 @@ __attribute__((visibility("hidden")))
     struct CGPoint _contextMenuLocation;
 }
 
-+ (unsigned long long)_searchScopeForAction:(SEL)arg1;
-+ (id)_selectorSearchScopes;
 + (id)sharedInstance;
 @property(retain, nonatomic) _UIMenuBarMenu *_mainMenu; // @synthesize _mainMenu=__mainMenu;
 @property(copy, nonatomic) NSDictionary *keyEquivalentForKeyInput; // @synthesize keyEquivalentForKeyInput=_keyEquivalentForKeyInput;
@@ -30,16 +28,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) RVItem *contextMenuRVItem; // @synthesize contextMenuRVItem=_contextMenuRVItem;
 @property(nonatomic) struct CGPoint contextMenuLocation; // @synthesize contextMenuLocation=_contextMenuLocation;
 @property(retain, nonatomic) UIView *contextMenuView; // @synthesize contextMenuView=_contextMenuView;
-@property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration; // @synthesize _copyConfiguration=__copyConfiguration;
+@property(retain, nonatomic, setter=_setActivityItemsConfiguration:) id <UIActivityItemsConfigurationReading> _activityItemsConfiguration; // @synthesize _activityItemsConfiguration=__activityItemsConfiguration;
 - (void).cxx_destruct;
 - (id)_newSpeechMenuItem;
 - (void)_notifyContextMenuClosed;
-- (void)_makeContextMenuMoreMacLike:(id)arg1 isTextContextMenu:(BOOL)arg2 textIsEditable:(BOOL)arg3 hasItemsToShare:(BOOL)arg4;
-- (void)_showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
-- (void)showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
+- (void)_makeContextMenuMoreMacLike:(id)arg1 isTextContextMenu:(BOOL)arg2 textIsEditable:(BOOL)arg3 textIsSecure:(BOOL)arg4 hasItemsToShare:(BOOL)arg5;
+- (void)_showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 activityItemsConfiguration:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
+- (void)showContextMenu:(id)arg1 inWindow:(id)arg2 atLocationInWindow:(struct CGPoint)arg3 activityItemsConfiguration:(id)arg4 notifyingWhenClosed:(CDUnknownBlockType)arg5;
 - (void)_examineContextMenuForAlwaysVisibleItems:(id)arg1;
-- (void)buildAndShowContextMenuForActionGroup:(id)arg1 inView:(id)arg2 locationInOwningView:(struct CGPoint)arg3;
-- (id)commandMenuForActionGroup:(id)arg1;
+- (void)buildAndShowContextMenu:(id)arg1 inView:(id)arg2 locationInOwningView:(struct CGPoint)arg3;
 - (void)buildAndShowContextMenuForView:(id)arg1 locationInOwningView:(struct CGPoint)arg2 withRVItem:(id)arg3;
 - (void)showContextMenuForCommandMenu:(id)arg1 view:(id)arg2 locationInOwningView:(struct CGPoint)arg3 withRVItem:(id)arg4;
 - (BOOL)shouldDeleteStandardItem:(id)arg1;
@@ -48,7 +45,8 @@ __attribute__((visibility("hidden")))
 - (void)menuChanged:(id)arg1;
 - (void)buildMenuBar;
 - (void)_rebuildRootCommandGroup;
-- (id)_createMenuItemWithCommand:(id)arg1 alternate:(id)arg2 keyEquivalent:(id)arg3 keyModifiers:(long long)arg4;
+- (id)_createMenuItemWithMenuLeaf:(id)arg1 alternate:(id)arg2 keyEquivalent:(id)arg3 keyModifiers:(long long)arg4;
+- (void)configureRevealItemForMenuBarItem:(id)arg1 withAction:(SEL)arg2;
 - (id)_copyMenuItemsForCommandMenu:(id)arg1 ignoringKeyboardShortcuts:(BOOL)arg2;
 - (id)_convertCommandMenuToMenu:(id)arg1 ignoringKeyboardShortcuts:(BOOL)arg2;
 - (id)_createFontMenuItem:(BOOL)arg1;

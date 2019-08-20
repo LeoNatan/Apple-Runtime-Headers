@@ -9,7 +9,7 @@
 #import <UIKitMacHelper/NSSharingServicePickerDelegate-Protocol.h>
 #import <UIKitMacHelper/UINSWindow-Protocol.h>
 
-@class CAContext, NSArray, NSDictionary, NSISEngine, NSObject, NSString, NSToolbar, UINSSceneWindowController, UIWindow;
+@class CAContext, NSArray, NSDictionary, NSISEngine, NSObject, NSPointerArray, NSString, NSToolbar, NSURL, UINSSceneWindowController, UIWindow;
 @protocol NSObject, UINSToolbar, UINSTouchBarCoordinator;
 
 __attribute__((visibility("hidden")))
@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
     NSObject<UINSTouchBarCoordinator> *_touchBarCoordinator;
     id <UINSToolbar> _uins_toolbar;
     long long _windowAppearance;
+    NSPointerArray *_uiWindows;
+    UIWindow *_keyUIWindow;
     BOOL _lastChangedAppearsKey;
     id <NSObject> _startLiveResizeObserver;
     id <NSObject> _endLiveResizeObserver;
@@ -33,6 +35,7 @@ __attribute__((visibility("hidden")))
     UIWindow *_uiWindow;
 }
 
++ (id)keyPathsForValuesAffectingContentLayoutGuide;
 @property(retain, nonatomic) UIWindow *uiWindow; // @synthesize uiWindow=_uiWindow;
 @property(copy, nonatomic) CDUnknownBlockType liveResizeDidEndHandler; // @synthesize liveResizeDidEndHandler=_liveResizeDidEndHandler;
 @property(copy, nonatomic) CDUnknownBlockType startLiveResizeHandler; // @synthesize startLiveResizeHandler=_startLiveResizeHandler;
@@ -44,7 +47,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UINSToolbar> uins_toolbar; // @synthesize uins_toolbar=_uins_toolbar;
 @property(retain, nonatomic) NSObject<UINSTouchBarCoordinator> *touchBarCoordinator; // @synthesize touchBarCoordinator=_touchBarCoordinator;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *uiWindows;
+@property(nonatomic) __weak UIWindow *keyUIWindow;
+@property(retain, nonatomic) NSArray *uiWindows;
+- (void)setNeedsSizeRestrictionsUpdate;
 - (struct CGSRegionObject *)_regionForOpaqueViewsBlockingDraggableFrame:(struct CGRect)arg1;
 - (void)setNeedsDragRegionsUpdate;
 - (id)_contextForLayerHosting;
@@ -56,6 +61,8 @@ __attribute__((visibility("hidden")))
 - (id)newSheetAlert;
 - (struct CGRect)convertRectToUIWindow:(struct CGRect)arg1;
 - (struct CGRect)convertRectFromUIWindow:(struct CGRect)arg1;
+- (struct CGSize)convertSizeToUIWindow:(struct CGSize)arg1;
+- (struct CGSize)convertSizeFromUIWindow:(struct CGSize)arg1;
 - (struct CGPoint)convertPointToUIWindow:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointFromUIWindow:(struct CGPoint)arg1;
 - (struct CGRect)convertRectFromWindowSceneView:(struct CGRect)arg1;
@@ -84,6 +91,9 @@ __attribute__((visibility("hidden")))
 - (void)notifyIfAppearsKeyChanged;
 @property(readonly, nonatomic) BOOL appearsKeyIncludingSheets;
 @property(readonly, nonatomic) BOOL appearsKey;
+- (id)_prioritySupplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (id)_responderProxyForAction:(SEL)arg1 sender:(id)arg2;
 @property(nonatomic) struct CGSize contentMinSize;
 @property(retain, nonatomic) NSToolbar *toolbar;
 @property(nonatomic, getter=isTitlebarTransparent) BOOL titlebarTransparent;
@@ -102,6 +112,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy) NSURL *representedURL;
 @property(readonly) Class superclass;
 @property(copy, nonatomic) NSString *title;
 

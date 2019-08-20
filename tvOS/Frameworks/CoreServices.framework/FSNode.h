@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)checkResourceIsReachableAndReturnError:(id *)arg1;
 - (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
 - (_Bool)getTemporaryResourceValue:(id *)arg1 forKey:(id)arg2;
+- (void)removeCachedResourceValueForKey:(id)arg1;
 - (_Bool)setResourceValue:(id)arg1 forKey:(id)arg2 options:(unsigned char)arg3 error:(id *)arg4;
 - (_Bool)getResourceValue:(id *)arg1 forKey:(id)arg2 options:(unsigned char)arg3 error:(id *)arg4;
 - (void)clearURLPropertyCacheIfStale;

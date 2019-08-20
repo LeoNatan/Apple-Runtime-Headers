@@ -21,9 +21,11 @@
     WFActionDrawerResults *_listResults;
     NSString *_categoryName;
     WFAction *_action;
+    NSString *_bundleIdentifier;
 }
 
 + (id)concatStates:(id)arg1;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) WFAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(retain, nonatomic) WFActionDrawerResults *listResults; // @synthesize listResults=_listResults;

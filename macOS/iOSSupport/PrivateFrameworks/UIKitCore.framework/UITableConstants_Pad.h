@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (double)defaultRowHeightForTableView:(id)arg1;
 - (double)defaultRowHeightForTableView:(id)arg1 cellStyle:(long long)arg2;
 - (BOOL)supportsUserInterfaceStyles;
+- (id)variantForActive:(BOOL)arg1 dark:(BOOL)arg2 focused:(BOOL)arg3;
 - (id)sidebarVariant;
 
 @end

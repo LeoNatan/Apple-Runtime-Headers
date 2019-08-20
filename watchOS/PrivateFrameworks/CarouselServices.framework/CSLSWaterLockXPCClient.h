@@ -14,10 +14,13 @@
 }
 
 - (void).cxx_destruct;
+- (void)queue_connectionWasInterrupted;
+- (void)_queue_updateLockedState:(_Bool)arg1;
 - (void)queue_handleMessage:(id)arg1;
 - (void)_sendLock:(_Bool)arg1 byIdentifier:(id)arg2;
 - (void)unlockByIdentifier:(id)arg1;
 - (void)lockByIdentifier:(id)arg1;
+- (void)_requestLockedStateWithBlock:(CDUnknownBlockType)arg1 waitForReply:(_Bool)arg2;
 - (_Bool)isLocked;
 - (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (id)init;

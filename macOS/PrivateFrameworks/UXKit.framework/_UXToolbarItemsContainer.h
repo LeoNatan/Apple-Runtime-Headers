@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (double)lastBaselineOffsetFromBottom;
 - (void)updateConstraints;
+@property(readonly, nonatomic) BOOL hidesGlobalTrailingView;
 - (void)prepareForTransition;
 - (id)initWithFrame:(struct CGRect)arg1;
 

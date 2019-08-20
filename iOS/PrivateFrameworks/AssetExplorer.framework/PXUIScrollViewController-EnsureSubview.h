@@ -8,6 +8,5 @@
 
 @interface PXUIScrollViewController (EnsureSubview)
 - (void)ae_ensureSubview:(id)arg1;
-- (void)ae_ensureSubview:(id)arg1;
 @end
 

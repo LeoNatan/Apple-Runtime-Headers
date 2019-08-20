@@ -118,6 +118,7 @@
 - (void)_dismissFromBackButton:(id)arg1;
 - (void)_uninstallBackGestureRecognizer;
 - (void)_installBackGestureRecognizer;
+- (void)_setupForCurrentTraitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateVisibilityOfSearchResultsForSearchBar:(id)arg1;
 - (void)_dismissPresentation:(_Bool)arg1;

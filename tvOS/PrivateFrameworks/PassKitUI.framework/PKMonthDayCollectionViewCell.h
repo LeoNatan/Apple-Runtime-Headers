@@ -22,6 +22,7 @@
 @property(nonatomic) long long dayNumber; // @synthesize dayNumber=_dayNumber;
 - (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
+- (void)setDayNumber:(long long)arg1 withTitle:(id)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

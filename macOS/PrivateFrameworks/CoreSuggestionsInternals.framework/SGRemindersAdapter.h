@@ -16,6 +16,7 @@
     SGSqlEntityStore *_store;
 }
 
++ (unsigned long long)remindersCreatedBetweenStartDate:(id)arg1 endDate:(id)arg2;
 + (BOOL)reminderHasDuplicate:(id)arg1 usingStore:(id)arg2;
 @property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;

@@ -15,6 +15,7 @@
 @interface MPMediaLibraryDataProviderML3 : NSObject <MPMediaLibraryDataProviderPrivate, MPUserIdentityConsuming>
 {
     NSObject<OS_dispatch_queue> *_backgroundTaskQueue;
+    NSObject<OS_dispatch_queue> *_cloudUpdateQueue;
     unsigned int _backgroundTask;
     unsigned int _backgroundTaskCount;
     _Bool _hasScheduledEventPosting;
@@ -36,6 +37,7 @@
 + (id)_unadjustedValueForItemPropertyRatingWithDefaultValue:(id)arg1;
 + (id)_unadjustedValueForItemPropertyVolumeAdjustmentWithDefaultValue:(id)arg1;
 + (id)_unadjustedValueForItemPropertyVolumeNormalizationWithDefaultValue:(id)arg1;
++ (id)onDiskProviders;
 @property(nonatomic) __weak MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) id <MPArtworkDataSource> artworkDataSource; // @synthesize artworkDataSource=_artworkDataSource;
@@ -163,6 +165,7 @@
 - (unsigned long long)currentEntityRevision;
 - (id)lastModifiedDate;
 @property(readonly, nonatomic) NSString *databasePath;
+@property(readonly, copy, nonatomic) NSString *accountDSID;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 @property(readonly, nonatomic) NSString *name;
 - (void)dealloc;

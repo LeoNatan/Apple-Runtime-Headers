@@ -313,6 +313,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (_Bool)_insetsBackground;
 - (struct CGRect)contentRectForState:(unsigned long long)arg1;
@@ -504,9 +505,8 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)_menuDismissed:(id)arg1;
 - (void)_updateContentClip;
-- (void)_setContentClipCorners:(unsigned long long)arg1;
+- (void)_setContentClipCorners:(unsigned long long)arg1 updateCorners:(_Bool)arg2;
 - (void)_showMenuFromLongPressGesture;
 - (void)_longPressGestureRecognized:(id)arg1;
 - (_Bool)_gestureRecognizerShouldBegin:(id)arg1;

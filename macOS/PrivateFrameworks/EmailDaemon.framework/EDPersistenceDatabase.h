@@ -36,6 +36,8 @@
 @property(readonly, nonatomic) EFSQLSchema *schema; // @synthesize schema=_schema;
 - (void).cxx_destruct;
 - (id)urlForDatabasePath:(id)arg1 type:(long long)arg2;
+- (id)urlForDatabasePath:(id)arg1 type:(long long)arg2 fileProtection:(id)arg3;
+- (id)fileProtectionForDatabaseType:(long long)arg1;
 - (void)scheduleRecurringActivity;
 @property(readonly, nonatomic) BOOL enforceDataProtection;
 - (void)reconcileJournalWithCompletionBlock:(CDUnknownBlockType)arg1;

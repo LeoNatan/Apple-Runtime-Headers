@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)eventViewController:(id)arg1 didSelectReadOnlySubitem:(unsigned int)arg2;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (id)_dayPreviewViewController;
+- (void)_datesForPreviewViewControllerWithStartDate:(id *)arg1 endDate:(id *)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (_Bool)configureWithCalendar:(id)arg1 preview:(_Bool)arg2;

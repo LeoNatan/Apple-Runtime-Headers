@@ -23,13 +23,12 @@ __attribute__((visibility("hidden")))
 - (id)preferredFocusEnvironments;
 - (void)_updateContentCoordinatorContentHidden;
 - (_Bool)_isParadeContentViewEligibleForFocus;
-- (void)_setParadeContentHidden:(_Bool)arg1;
 - (void)paradeContentViewDidChange:(id)arg1;
 - (void)paradeBackgroundViewDidChange:(id)arg1;
 @property(readonly, nonatomic) UIView *paradeContentView;
 @property(readonly, nonatomic) UIView *paradeBackgroundView;
-- (void)normalizedPositionWillChange:(double)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

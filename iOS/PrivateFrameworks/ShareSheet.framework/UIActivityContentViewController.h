@@ -8,7 +8,7 @@
 
 #import <ShareSheet/UICollectionViewDelegate-Protocol.h>
 
-@class LPLinkMetadata, LPLinkMetadataObserver, LPLinkView, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSUUID, UIBarButtonItem, UICollectionView, UIVisualEffectView, _UICollectionViewDiffableDataSource, _UINavigationBarTitleView;
+@class LPLinkMetadata, LPLinkMetadataObserver, LPLinkView, NSArray, NSDictionary, NSDiffableDataSourceSnapshot, NSMutableDictionary, NSNumber, NSString, NSUUID, UIBarButtonItem, UICollectionViewDiffableDataSource, UIVisualEffectView, _UIActivityContentCollectionView, _UIActivityContentTitleView;
 @protocol UIActivityContentDelegate;
 
 @interface UIActivityContentViewController : UIViewController <UICollectionViewDelegate>
@@ -21,15 +21,17 @@
     _Bool _contentInstalled;
     id <UIActivityContentDelegate> _delegate;
     UIViewController *_photosCarouselViewController;
+    NSArray *_applicationActivities;
     NSDictionary *_activitiesByUUID;
     NSMutableDictionary *_identifierToProgress;
     NSMutableDictionary *_identifierToPulse;
     NSMutableDictionary *_identifierToSubtitle;
-    UICollectionView *_activityCollectionView;
-    _UICollectionViewDiffableDataSource *_dataSource;
+    _UIActivityContentCollectionView *_activityCollectionView;
+    UICollectionViewDiffableDataSource *_dataSource;
+    NSDiffableDataSourceSnapshot *_currentSnapshot;
     LPLinkView *_headerLinkView;
     LPLinkMetadataObserver *_headerMetadataObserver;
-    _UINavigationBarTitleView *_headerTitleView;
+    _UIActivityContentTitleView *_headerTitleView;
     UIBarButtonItem *_cancelButton;
     UIBarButtonItem *_nextButton;
     UIBarButtonItem *_closeButton;
@@ -56,15 +58,17 @@
 @property(retain, nonatomic) UIBarButtonItem *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) UIBarButtonItem *cancelButton; // @synthesize cancelButton=_cancelButton;
-@property(retain, nonatomic) _UINavigationBarTitleView *headerTitleView; // @synthesize headerTitleView=_headerTitleView;
+@property(retain, nonatomic) _UIActivityContentTitleView *headerTitleView; // @synthesize headerTitleView=_headerTitleView;
 @property(retain, nonatomic) LPLinkMetadataObserver *headerMetadataObserver; // @synthesize headerMetadataObserver=_headerMetadataObserver;
 @property(retain, nonatomic) LPLinkView *headerLinkView; // @synthesize headerLinkView=_headerLinkView;
-@property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
-@property(retain, nonatomic) UICollectionView *activityCollectionView; // @synthesize activityCollectionView=_activityCollectionView;
+@property(retain, nonatomic) NSDiffableDataSourceSnapshot *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) _UIActivityContentCollectionView *activityCollectionView; // @synthesize activityCollectionView=_activityCollectionView;
 @property(retain, nonatomic) NSMutableDictionary *identifierToSubtitle; // @synthesize identifierToSubtitle=_identifierToSubtitle;
 @property(retain, nonatomic) NSMutableDictionary *identifierToPulse; // @synthesize identifierToPulse=_identifierToPulse;
 @property(retain, nonatomic) NSMutableDictionary *identifierToProgress; // @synthesize identifierToProgress=_identifierToProgress;
 @property(retain, nonatomic) NSDictionary *activitiesByUUID; // @synthesize activitiesByUUID=_activitiesByUUID;
+@property(retain, nonatomic) NSArray *applicationActivities; // @synthesize applicationActivities=_applicationActivities;
 @property(retain, nonatomic) UIViewController *photosCarouselViewController; // @synthesize photosCarouselViewController=_photosCarouselViewController;
 @property(nonatomic) _Bool sharingCollapsed; // @synthesize sharingCollapsed=_sharingCollapsed;
 @property(nonatomic) _Bool wantsObjectManipulation; // @synthesize wantsObjectManipulation=_wantsObjectManipulation;
@@ -74,6 +78,7 @@
 - (void).cxx_destruct;
 - (_Bool)_presentedInFormSheet;
 - (void)updateProgress:(double)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(_Bool)arg5 animated:(_Bool)arg6;
+- (void)_editActionsTapped;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)nextButtonTapped;
 - (void)closeButtonTapped;
@@ -82,11 +87,14 @@
 - (id)cancelBarButton;
 - (id)_activityWithActivityUUID:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)refreshContent;
 - (void)layoutContentCollectionView:(_Bool)arg1;
-- (void)updateContentWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 activitiesByUUID:(id)arg4 nearbyCountSlotID:(id)arg5;
+- (void)updateContentWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 activitiesByUUID:(id)arg4 nearbyCountSlotID:(id)arg5 animated:(_Bool)arg6;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureCollectionViewIfNeeded;
 - (id)activityCollectionViewLayout;
 @property(readonly, nonatomic) LPLinkMetadata *headerMetadata;
+- (void)updateHeaderSize;
 - (void)updateHeaderMetadata;
 - (void)configureHeaderViewIfNeeded;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

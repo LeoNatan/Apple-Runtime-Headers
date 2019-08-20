@@ -8,7 +8,7 @@
 
 #import <Message/EDLibraryMessage-Protocol.h>
 
-@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFMailboxUid, MFMessageHeaders, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFMailboxUid, MFMessageHeaders, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString, NSUUID;
 @protocol ECMimePart;
 
 @interface MFLibraryMessage : MFMailMessage <EDLibraryMessage>
@@ -38,7 +38,7 @@
 - (_Bool)isLibraryMessage;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(_Bool)arg2;
-- (void)setRemoteID:(const char *)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(long long)arg4 originalMailboxID:(long long)arg5;
+- (void)setRemoteID:(id)arg1 flags:(unsigned long long)arg2 size:(unsigned int)arg3 mailboxID:(long long)arg4 originalMailboxID:(long long)arg5;
 - (unsigned long long)conversationFlags;
 - (void)setConversationFlags:(unsigned long long)arg1;
 - (id)preferredAccountToUseForReplying;
@@ -99,6 +99,7 @@
 @property(readonly, nonatomic) NSDate *dateSent;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSUUID *documentID; // @dynamic documentID;
 @property(readonly, nonatomic) ECMessageFlags *flags;
 @property(readonly, copy, nonatomic) NSArray *from;
 @property(readonly, nonatomic) MFMessageHeaders *headers; // @dynamic headers;

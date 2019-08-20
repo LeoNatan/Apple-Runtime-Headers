@@ -20,15 +20,17 @@
     NSString *_firstServiceName;
     NSString *_mediaAccessoryName;
     NSMutableArray *_icons;
+    NSMutableArray *_iconDescriptors;
     NSMutableDictionary *_iconCounter;
     NSString *_summaryDescription;
-    NSArray *_summaryIconNames;
+    NSArray *_summaryDescriptors;
 }
 
 @property(nonatomic) BOOL needsIconSort; // @synthesize needsIconSort=_needsIconSort;
-@property(readonly, nonatomic) NSArray *summaryIconNames; // @synthesize summaryIconNames=_summaryIconNames;
+@property(readonly, nonatomic) NSArray *summaryDescriptors; // @synthesize summaryDescriptors=_summaryDescriptors;
 @property(readonly, nonatomic) NSString *summaryDescription; // @synthesize summaryDescription=_summaryDescription;
 @property(retain, nonatomic) NSMutableDictionary *iconCounter; // @synthesize iconCounter=_iconCounter;
+@property(retain, nonatomic) NSMutableArray *iconDescriptors; // @synthesize iconDescriptors=_iconDescriptors;
 @property(retain, nonatomic) NSMutableArray *icons; // @synthesize icons=_icons;
 @property(retain, nonatomic) NSString *mediaAccessoryName; // @synthesize mediaAccessoryName=_mediaAccessoryName;
 @property(retain, nonatomic) NSString *firstServiceName; // @synthesize firstServiceName=_firstServiceName;
@@ -40,12 +42,13 @@
 @property(retain, nonatomic) NSString *uniqueServiceGroupName; // @synthesize uniqueServiceGroupName=_uniqueServiceGroupName;
 - (void).cxx_destruct;
 - (void)addMediaAccessoryNamed:(id)arg1;
-- (void)_sortIconNames;
-- (void)_incrementiconCounter:(id)arg1;
-- (void)addIconNamed:(id)arg1;
+- (void)_sortIconDescriptors;
+- (void)_incrementIconCounter:(id)arg1;
+- (void)addIconDescriptor:(id)arg1;
 - (void)addServiceNamed:(id)arg1;
 - (void)addSceneNamed:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfIcons;
+- (id)summaryIconDescriptors;
 - (id)summaryIcons;
 - (id)_descriptionForZeroScenes;
 - (id)_descriptionForZeroAccessories;
@@ -54,6 +57,7 @@
 @property(readonly, nonatomic) BOOL hasUniqueServiceGroup;
 - (id)init;
 - (id)initWithSummaryText:(id)arg1 summaryIconNames:(id)arg2;
+- (id)initWithSummaryText:(id)arg1 summaryIconDescriptors:(id)arg2;
 
 @end
 

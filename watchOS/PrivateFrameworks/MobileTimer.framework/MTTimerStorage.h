@@ -36,12 +36,14 @@
 @property(retain, nonatomic) NSMutableArray *orderedTimers; // @synthesize orderedTimers=_orderedTimers;
 @property(nonatomic) __weak MTTimerScheduler *scheduler; // @synthesize scheduler=_scheduler;
 - (void).cxx_destruct;
+- (void)_removeTimerDataIfNecessary:(id)arg1;
 - (void)observedApplicationDidUninstallForBundleIdentifier:(id)arg1;
 - (void)scheduler:(id)arg1 didFireTimer:(id)arg2;
 - (void)scheduler:(id)arg1 didChangeNextTimer:(id)arg2;
 - (id)_diagnosticTimerDictionary;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
+- (void)handleMigrationFinish;
 - (void)handleF5Reset;
 - (void)_queue_sortTimers;
 - (void)_queue_persistTimers;

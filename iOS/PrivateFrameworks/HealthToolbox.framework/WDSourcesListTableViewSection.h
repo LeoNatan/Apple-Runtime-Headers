@@ -20,7 +20,7 @@
 @property(copy, nonatomic) NSString *restorationSourceBundleIdentifier; // @synthesize restorationSourceBundleIdentifier=_restorationSourceBundleIdentifier;
 @property(retain, nonatomic) HKSourceListDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (id)detailViewControllerForSource:(id)arg1;
+- (id)detailViewControllerForSourceModel:(id)arg1;
 - (id)noneString;
 - (id)noneCellForTableView:(id)arg1;
 - (void)dataSourceDidUpdate;

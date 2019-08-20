@@ -9,7 +9,6 @@
 @interface _TtC7NewsUI219MagazineFeedService : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: emitterFactory
-    // Error parsing type: , name: magazineConfigurationService
     // Error parsing type: , name: magazineFeedPoolManager
     // Error parsing type: , name: personalizationService
     // Error parsing type: , name: bundleSubscriptionManager

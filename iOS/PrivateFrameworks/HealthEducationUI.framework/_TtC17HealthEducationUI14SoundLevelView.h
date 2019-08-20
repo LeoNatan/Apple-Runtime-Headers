@@ -9,10 +9,12 @@
 @interface _TtC17HealthEducationUI14SoundLevelView : UIView
 {
     // Error parsing type: , name: meterLevelView
+    // Error parsing type: , name: headerStackView
 }
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

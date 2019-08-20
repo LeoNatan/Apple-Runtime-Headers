@@ -74,6 +74,7 @@
 - (id)preferredApp;
 - (_Bool)shouldBeHiddenFromUI;
 - (_Bool)supportsPublicIap;
+- (id)protocolDetails;
 - (id)ppid;
 - (id)certData;
 - (id)certSerial;

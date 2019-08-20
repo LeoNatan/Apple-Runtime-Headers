@@ -7,14 +7,17 @@
 #import <objc/NSObject.h>
 
 @class CSVoiceIdXPCClient;
+@protocol OS_dispatch_queue;
 
 @interface CSVoiceProfileManager : NSObject
 {
     unsigned int _currentDeviceCategory;
     CSVoiceIdXPCClient *_xpcClient;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSVoiceIdXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
 @property(nonatomic) unsigned int currentDeviceCategory; // @synthesize currentDeviceCategory=_currentDeviceCategory;
 - (void).cxx_destruct;
@@ -52,8 +55,9 @@
 - (id)_getEnrolledLanguageList;
 - (id)_prepareVoiceProfileWithSiriProfileId:(id)arg1 withUploadBlock:(CDUnknownBlockType)arg2;
 - (id)_copyVoiceProfileAtPath:(id)arg1 toPath:(id)arg2;
+- (void)_copySATFilesFromPath:(id)arg1 toPath:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)_getVoiceProfilePathsToBeUploadedForSiriProfileId:(id)arg1;
-- (void)_stageVoiceProfileWithSiriProfileId:(id)arg1 fromPath:(id)arg2;
+- (void)_stageVoiceProfileWithSiriProfileId:(id)arg1 fromPath:(id)arg2 withForceUpload:(_Bool)arg3;
 - (void)notifyUserVoiceProfileUploadComplete;
 - (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
 - (void)uploadUserVoiceProfileForSiriProfileId:(id)arg1 withUploadTrigger:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;

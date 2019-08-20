@@ -20,13 +20,13 @@
     BSServiceQuality *_serviceQuality;
     BSServiceInterface *_interface;
     id _configOnly_interfaceTarget;
-    NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
     _Bool _configured;
-    BSServiceConnection *_connection;
-    _Bool _connectionDenied;
-    _Bool _activated;
-    _Bool _invalidated;
+    struct os_unfair_lock_s _lock;
+    BSServiceConnection *_lock_connection;
+    _Bool _lock_connectionDenied;
+    _Bool _lock_activated;
+    _Bool _lock_invalidated;
     _Bool _uisHack;
 }
 
@@ -37,8 +37,8 @@
 - (void).cxx_destruct;
 - (void)_queue_handleMessage:(id)arg1;
 - (void)_queue_handleError:(id)arg1;
-- (void)_queue_activate;
-- (void)_queue_invalidate;
+- (void)_lock_activate;
+- (void)_lock_invalidate;
 - (_Bool)_isValid;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2 replyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4 timeout:(double)arg5;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2;

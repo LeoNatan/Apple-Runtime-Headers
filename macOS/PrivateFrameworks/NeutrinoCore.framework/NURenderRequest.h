@@ -43,6 +43,7 @@
 @property(copy, nonatomic) NSArray *pipelineFilters; // @synthesize pipelineFilters=_pipelineFilters;
 @property(nonatomic) long long sampleMode; // @synthesize sampleMode=_sampleMode;
 - (void).cxx_destruct;
+- (void)introspectPrepare:(CDUnknownBlockType)arg1;
 - (id)submitGenericSynchronous:(out id *)arg1;
 - (void)submitGenericConfiguringRequest:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submitGeneric:(CDUnknownBlockType)arg1;

@@ -64,6 +64,7 @@
 - (void)_applicationDidRemoveDeactivationReason:(id)arg1;
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
+- (_Bool)_shouldStopPlaybackDueToDeactivationReasons:(unsigned long long)arg1;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)tabBar:(id)arg1 didSelectItem:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;

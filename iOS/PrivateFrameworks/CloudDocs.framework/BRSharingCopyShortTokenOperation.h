@@ -14,7 +14,6 @@
     CDUnknownBlockType _shortTokenCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType shortTokenCompletionBlock; // @synthesize shortTokenCompletionBlock=_shortTokenCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

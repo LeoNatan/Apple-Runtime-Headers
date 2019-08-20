@@ -6,12 +6,16 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableSet;
+
 @interface IMDCoreSpotlightManager : NSObject
 {
+    NSMutableSet *_blacklistMessageGUIDs;
 }
 
 + (id)chatStyleCustomKey;
 + (id)sharedInstance;
+@property(retain, nonatomic) NSMutableSet *blacklistMessageGUIDs; // @synthesize blacklistMessageGUIDs=_blacklistMessageGUIDs;
 - (unsigned long long)_lastIndexedRowID;
 - (unsigned long long)_batchSizeForTargetBatchSize:(unsigned long long)arg1 lastIndexedRowID:(unsigned long long)arg2 lastBatch:(_Bool *)arg3;
 - (_Bool)_shouldIndexNextBatchForBatchSize:(unsigned long long)arg1;
@@ -21,6 +25,7 @@
 - (unsigned long long)_currentIndexVersion;
 - (unsigned long long)_expectedIndexVersion;
 - (void)_setLastIndexedRowID:(unsigned long long)arg1;
+- (void)_setMaxIndexRowID:(unsigned long long)arg1;
 - (void)_setNeedsDeferredIndexing:(_Bool)arg1;
 - (void)_setNeedsIndexing:(_Bool)arg1;
 - (_Bool)_shouldBypassForTesting;
@@ -43,8 +48,11 @@
 - (void)_geocodeItems:(id)arg1;
 -     // Error parsing type: @28@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16B24, name: newSearchableItemsForMessage:reindexing:
 - (id)newSearchableItemsForMessageGUID:(id)arg1 reindexing:(_Bool)arg2;
+- (void)clearMessageGUIDFromScrutiny:(id)arg1;
+- (void)setMessageGUIDUnderScrutiny:(id)arg1;
 - (long long)maxRowID;
 - (id)searchableIndex;
+- (void)dealloc;
 
 @end
 

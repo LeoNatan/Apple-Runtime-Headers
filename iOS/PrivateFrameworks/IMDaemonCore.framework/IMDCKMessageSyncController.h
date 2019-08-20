@@ -35,15 +35,16 @@
 - (id)_sharedIMDMessageStore;
 - (void)_deleteMessagesWithRecordIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processRecordDeletionCompletion:(id)arg1 error:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)clearLocalSyncState;
+- (void)clearLocalSyncState:(unsigned long long)arg1;
 - (void)deleteMessagesZone;
 - (void)deleteMessageSyncToken;
 - (void)syncMessagesWithSyncType:(long long)arg1 deviceConditionsToCheck:(unsigned long long)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (_Bool)_kickOffWriteIfNeededForSyncType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_kickOffWriteOnCKQueueWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_updateAllMessagesAsNotNeedingReUpload;
+- (void)_hasMarkedAllMessagesAsNeedingSync;
 - (void)_markAllUnsuccessFullSyncMessagesAsNeedingSync;
 - (_Bool)_shouldMarkAllMessagesAsNeedingSync;
+- (void)_needsToMarkAllMessagesAsNeedingSync;
 - (void)_noteSyncEnded;
 - (void)_fetchMessageZoneChangesSyncType:(long long)arg1 currentBatchCount:(long long)arg2 maxNumberOfBatches:(long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (_Bool)_isDiskSpaceAvailableForSyncType:(long long)arg1 currentBatchCount:(long long)arg2;

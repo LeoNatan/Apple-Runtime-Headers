@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPMediaItem, NSMutableArray, VUIMPMediaItemDownloadControllerState;
+@class MPMediaItem, NSHashTable, VUIMPMediaItemDownloadControllerState;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     MPMediaItem *_mediaItem;
     VUIMPMediaItemDownloadControllerState *_state;
     NSObject<OS_dispatch_queue> *_serialProcessingDispatchQueue;
-    NSMutableArray *_observers;
+    NSHashTable *_observers;
 }
 
-@property(retain, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(copy, nonatomic) VUIMPMediaItemDownloadControllerState *state; // @synthesize state=_state;
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;

@@ -33,6 +33,7 @@
 - (id)initWithHeap:(id)arg1 device:(id)arg2;
 - (void)validateHeapTextureUsage:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)validateHeapResourceOptions:(unsigned long long)arg1 isTexture:(_Bool)arg2 isIOSurface:(_Bool)arg3;
+- (void)validatePixelFormatWithHeap:(unsigned long long)arg1;
 
 @end
 

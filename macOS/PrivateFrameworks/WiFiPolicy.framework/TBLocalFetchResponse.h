@@ -8,21 +8,25 @@
 
 #import <WiFiPolicy/TBFetchResponse-Protocol.h>
 
-@class NSArray, NSError, NSSet, NSString;
+@class NSArray, NSDictionary, NSError, NSSet, NSString;
 
 @interface TBLocalFetchResponse : NSObject <TBFetchResponse>
 {
     NSError *error;
     NSSet *_tiles;
     NSArray *_results;
+    NSDictionary *_resultsByBSSID;
 }
 
++ (id)responseWithResultsByBSSID:(id)arg1;
 + (id)responseWithResults:(id)arg1 entityDescription:(id)arg2;
+@property(retain, nonatomic) NSDictionary *resultsByBSSID; // @synthesize resultsByBSSID=_resultsByBSSID;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) NSSet *tiles; // @synthesize tiles=_tiles;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error;
 - (void).cxx_destruct;
 - (id)initWithResults:(id)arg1 entityDescription:(id)arg2;
+- (id)initWithResultsByBSSID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

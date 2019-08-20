@@ -16,10 +16,16 @@
         unsigned long long count;
         unsigned long long size;
     } _homographyParams;
+    long long _epoch;
     long long _timeValue;
+    int _flags;
+    int _timeScale;
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(nonatomic) int flags; // @synthesize flags=_flags;
+@property(nonatomic) long long epoch; // @synthesize epoch=_epoch;
+@property(nonatomic) int timeScale; // @synthesize timeScale=_timeScale;
 @property(nonatomic) long long timeValue; // @synthesize timeValue=_timeValue;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

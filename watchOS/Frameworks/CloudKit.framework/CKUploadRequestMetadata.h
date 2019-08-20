@@ -27,6 +27,8 @@
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) int databaseScope; // @synthesize databaseScope=_databaseScope;
 - (void).cxx_destruct;
+- (id)description;
+- (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

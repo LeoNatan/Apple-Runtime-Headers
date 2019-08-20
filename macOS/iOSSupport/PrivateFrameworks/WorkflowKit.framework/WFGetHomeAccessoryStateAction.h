@@ -15,6 +15,8 @@
 - (id)characteristic;
 - (id)homeName;
 - (id)home;
+- (id)localizedDefaultOutputName;
+- (id)outputMeasurementUnit;
 - (id)outputContentClasses;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)localizedAttribution;

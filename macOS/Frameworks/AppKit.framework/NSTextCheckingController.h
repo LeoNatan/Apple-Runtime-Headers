@@ -253,6 +253,7 @@
 - (BOOL)needsLinkAnnotations;
 - (id)convertFromStringAnnotatedString:(id)arg1;
 - (id)convertToStringAnnotatedString:(id)arg1;
+- (id)convertFromStringAnnotationDictionary:(id)arg1 excludingKeys:(id)arg2;
 - (id)convertFromStringAnnotationDictionary:(id)arg1;
 - (id)convertToStringAnnotationDictionary:(id)arg1;
 - (id)validAnnotations;

@@ -18,7 +18,7 @@
 #import <WorkflowUI/WFRunWorkflowToolbarDelegate-Protocol.h>
 #import <WorkflowUI/WFWorkflowControllerDelegate-Protocol.h>
 
-@class NSIndexPath, NSString, UIView, WFAction, WFContentCollection, WFDatabase, WFModulesQuickLookView, WFRunWorkflowFooterView, WFRunWorkflowToolbar, WFWorkflow, WFWorkflowController, WFWorkflowViewController;
+@class NSIndexPath, NSString, UIView, WFAction, WFContentCollection, WFDatabase, WFModulesQuickLookView, WFRunWorkflowFooterView, WFRunWorkflowToolbar, WFWorkflow, WFWorkflowController, WFWorkflowRunEvent, WFWorkflowViewController;
 @protocol WFRunWorkflowViewControllerDelegate;
 
 @interface WFRunWorkflowViewController : UIViewController <WFModuleModelProvider, WFWorkflowControllerDelegate, WFParameterInputViewControllerDelegate, WFActionParameterInputProvider, WFModulesSupplementaryViewDataSource, WFModulesQuickLookViewDelegate, QLPreviewControllerDelegate, UIScrollViewDelegate, UIDropInteractionDelegate, WFRunWorkflowFooterViewDelegate, WFRunWorkflowToolbarDelegate>
@@ -41,12 +41,14 @@
     UIView *_inputDropZoneView;
     CDUnknownBlockType _prepareToRunCompletion;
     NSIndexPath *_prepareToRunIndexPath;
+    WFWorkflowRunEvent *_runEvent;
     WFAction *_currentlyRunningAction;
     WFWorkflowViewController *_workflowViewController;
 }
 
 @property(readonly, nonatomic) __weak WFWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(retain, nonatomic) WFAction *currentlyRunningAction; // @synthesize currentlyRunningAction=_currentlyRunningAction;
+@property(retain, nonatomic) WFWorkflowRunEvent *runEvent; // @synthesize runEvent=_runEvent;
 @property(retain, nonatomic) NSIndexPath *prepareToRunIndexPath; // @synthesize prepareToRunIndexPath=_prepareToRunIndexPath;
 @property(copy, nonatomic) CDUnknownBlockType prepareToRunCompletion; // @synthesize prepareToRunCompletion=_prepareToRunCompletion;
 @property(readonly, nonatomic) __weak UIView *inputDropZoneView; // @synthesize inputDropZoneView=_inputDropZoneView;

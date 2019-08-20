@@ -23,7 +23,6 @@
     NSMutableSet *_lastAvailableEndpointRouteUIDs;
     BKSProcessAssertion *_endpointDiscoveryProcessAssertion;
     struct __CFArray *_availableOriginRefs;
-    void *_activeOriginRef;
 }
 
 + (id)sharedManager;
@@ -35,10 +34,10 @@
 - (void)_forgetDiscoveredEndpoints;
 - (void)_setEndpointDiscoveryEnabled:(_Bool)arg1;
 - (_Bool)_isEndpointDiscoveryEnabled;
-- (void)_updateMediaRemoteActiveOrigin;
-- (void)_updateMediaRemoteAvailableOrigins;
+- (void)_updateMediaRemoteAvailableAndActiveOrigins;
 - (void)_updateMediaRemoteLocalOrigin;
-- (void)_updateAvailableOrigins;
+- (void)_onQueue_updateActiveOriginIdentifier:(id)arg1;
+- (void)_onQueue_updateAvailableOrigins;
 - (id)originWithUniqueIdentifier:(id)arg1;
 - (id)originWithDeviceIdentifier:(id)arg1;
 @property(readonly, nonatomic) NMROrigin *companionOrigin;

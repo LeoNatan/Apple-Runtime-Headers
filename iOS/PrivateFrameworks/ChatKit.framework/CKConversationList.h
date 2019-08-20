@@ -13,18 +13,22 @@
     NSMutableArray *_trackedConversations;
     _Bool _loadingConversations;
     _Bool _loadedConversations;
+    _Bool _remergingConversations;
     CKConversation *_pendingConversation;
 }
 
 + (void)_handleRegistryDidLoadNotification:(id)arg1;
 + (void)initialize;
 + (id)sharedConversationList;
+@property(nonatomic) _Bool remergingConversations; // @synthesize remergingConversations=_remergingConversations;
 @property(readonly, nonatomic) _Bool loadedConversations; // @synthesize loadedConversations=_loadedConversations;
 @property(readonly, nonatomic) _Bool loadingConversations; // @synthesize loadingConversations=_loadingConversations;
 @property(retain, nonatomic) CKConversation *pendingConversation; // @synthesize pendingConversation=_pendingConversation;
 - (void).cxx_destruct;
 - (void)_handleMemoryWarning:(id)arg1;
 - (id)pendingConversationCreatingIfNecessary;
+- (void)_handleChatsDidRemergeNotification:(id)arg1;
+- (void)_handleChatsWillRemergeNotification:(id)arg1;
 - (void)_chatPropertiesChanged:(id)arg1;
 - (void)_handleEngroupFinishedUpdating:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;

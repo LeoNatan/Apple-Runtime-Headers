@@ -198,6 +198,7 @@
 - (id)makeAnchorDateFromPreviousAnchorDate:(id)arg1 previousEffectiveVisibleRange:(id)arg2 previousTimeScope:(long long)arg3 currentTimeScope:(long long)arg4;
 - (_Bool)_visibleRangeIsNowForTimeScope:(long long)arg1;
 - (id)_graphViewAxisAndVisibleDateRangeForTimeScope:(long long)arg1 fixedRange:(id)arg2;
+- (_Bool)_acceptSubclassRange:(id)arg1 proposedRange:(id)arg2 axisRange:(id)arg3;
 - (void)_setGraphViewAxisAndVisibleDateRangeForTimeScope:(long long)arg1 anchorDate:(id)arg2 preserveScrollPosition:(_Bool)arg3;
 - (_Bool)_valueRange:(id)arg1 fitsInsideValueRange:(id)arg2;
 - (id)visibleRangeForTimeScope:(long long)arg1 proposedRange:(id)arg2;

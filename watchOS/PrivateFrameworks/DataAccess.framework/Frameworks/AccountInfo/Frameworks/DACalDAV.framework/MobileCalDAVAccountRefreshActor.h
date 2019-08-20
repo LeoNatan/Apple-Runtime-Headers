@@ -66,7 +66,6 @@
 - (void)_handleAttachmentUploadComplete:(id)arg1 attachmentUUID:(id)arg2;
 - (void)_uploadAttachments:(struct __CFArray *)arg1 forOwnerURL:(id)arg2 syncKey:(id)arg3 scheduleTag:(id)arg4;
 - (void)_uploadAttachments:(id)arg1 calDAVItemsByOwnerURL:(id)arg2;
-- (id)_eventsByUUID;
 - (id)_attachmentsByOwnerURL:(struct __CFArray *)arg1 calDAVItemsByOwnerURL:(id *)arg2;
 - (struct __CFArray *)_copyArrayOfAttachmentsToUpload;
 - (void)_uploadAttachments;
@@ -82,6 +81,8 @@
 - (void)_saveMoveChange:(id)arg1;
 - (void)_clearMoveChange:(id)arg1;
 - (void)_sendMoveTasks;
+- (_Bool)_cleanUpDuplicateCalendar:(id)arg1 ofCalendar:(id)arg2;
+- (void)_cleanUpDuplicateCalendars;
 - (void)calendarRefreshForPrincipal:(id)arg1 completedWithNewCTags:(id)arg2 newSyncTokens:(id)arg3 calendarHomeSyncToken:(id)arg4 updatedCalendars:(id)arg5 error:(id)arg6;
 - (void)calendarRefreshFoundDeletedContainerURL:(id)arg1;
 - (void)calendarRefreshFoundUpdatedSpecialContainer:(id)arg1;

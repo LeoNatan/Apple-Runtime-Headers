@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setGrabberAlpha:(double)arg1;
 @property(readonly, nonatomic) UIView *deepestClippingView;
-- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(_Bool)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(_Bool)arg3 stylesSheetsAsCards:(_Bool)arg4;
 
 @end
 

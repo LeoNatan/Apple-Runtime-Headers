@@ -225,6 +225,8 @@
 - (void)finalizeAccountSetup;
 - (id)makeAddressBookAtPath;
 @property(retain, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
+- (id)delegateInfos;
+- (id)addressBookInitOptions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)shouldUnload;
 - (void)willUnload;

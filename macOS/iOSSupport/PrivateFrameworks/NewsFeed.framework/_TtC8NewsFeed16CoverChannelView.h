@@ -9,6 +9,7 @@
 @interface _TtC8NewsFeed16CoverChannelView : UIView
 {
     // Error parsing type: , name: followButton
+    // Error parsing type: , name: moreActionsButton
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: coverImage
     // Error parsing type: , name: accessoryLabel

@@ -6,7 +6,7 @@
 
 #import <CFNetwork/__NSCFLocalSessionTask.h>
 
-@class NSData, NSError, NSMutableArray;
+@class NSData, NSError, NSMutableArray, NSString;
 
 @interface __NSURLSessionWebSocketTask : __NSCFLocalSessionTask
 {
@@ -21,8 +21,10 @@
     NSMutableArray *_highPriorityPendingWork;
     NSMutableArray *_delegateWork;
     NSError *_webSocketError;
+    NSString *_protocolPicked;
 }
 
+@property(retain) NSString *protocolPicked; // @synthesize protocolPicked=_protocolPicked;
 @property(retain) NSError *webSocketError; // @synthesize webSocketError=_webSocketError;
 @property _Bool readInProgress; // @synthesize readInProgress=_readInProgress;
 @property _Bool webSocketHandshakeCompleted; // @synthesize webSocketHandshakeCompleted=_webSocketHandshakeCompleted;
@@ -37,6 +39,8 @@
 - (void).cxx_destruct;
 - (void)connection:(id)arg1 didFinishLoadingWithError:(id)arg2;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_onqueue_validateWebSocketHandshake;
+- (void)_onqueue_handshakeFailureWithReason:(unsigned long long)arg1;
 - (void)_onqueue_cancelWebSocketTaskWithError:(long long)arg1;
 - (void)_onqueue_checkForCompletion;
 - (void)_onqueue_cancel;

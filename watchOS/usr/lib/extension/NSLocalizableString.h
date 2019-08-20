@@ -13,6 +13,7 @@
 }
 
 + (id)localizableStringWithStringsFileKey:(id)arg1 developmentLanguageString:(id)arg2;
++ (_Bool)supportsSecureCoding;
 - (void)setDevelopmentLanguageString:(id)arg1;
 @property(readonly, copy) NSString *developmentLanguageString;
 - (void)setStringsFileKey:(id)arg1;

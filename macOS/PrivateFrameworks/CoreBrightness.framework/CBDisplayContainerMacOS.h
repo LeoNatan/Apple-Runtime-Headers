@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _serialNumber;
     struct IONotificationPort *_hidDisplayServicePublishedNotifyPort;
     unsigned int _hidDisplayServiceIterator;
+    BOOL _brightnessDisabled;
+    BOOL _autoBrightnessDisabled;
     _Bool _running;
 }
 

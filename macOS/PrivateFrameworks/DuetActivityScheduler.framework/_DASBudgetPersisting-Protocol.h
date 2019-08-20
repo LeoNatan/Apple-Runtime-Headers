@@ -6,13 +6,13 @@
 
 #import <DuetActivityScheduler/NSObject-Protocol.h>
 
-@class NSArray, NSDate, _DASBudget;
+@class NSArray, NSDate, NSSet, _DASBudget;
 
 @protocol _DASBudgetPersisting <NSObject>
 - (NSDate *)lastModulationDate;
 - (void)saveModulationDate:(NSDate *)arg1;
 - (void)updateBudget:(_DASBudget *)arg1;
 - (void)saveBudgets:(NSArray *)arg1;
-- (NSArray *)loadBudgets;
+- (NSArray *)loadBudgetsWithExpectedNames:(NSSet *)arg1;
 @end
 

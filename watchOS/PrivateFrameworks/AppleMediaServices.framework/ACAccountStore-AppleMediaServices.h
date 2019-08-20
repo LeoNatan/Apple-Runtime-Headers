@@ -20,6 +20,7 @@
 - (_Bool)_isAccountNew:(id)arg1;
 - (void)_createLocalAccount;
 - (id)_correspondingAccountWithAccountTypeIdentifier:(id)arg1 forAccount:(id)arg2;
+- (id)_cachedAccountWithIdentifier:(id)arg1;
 - (id)_alliTunesAccounts;
 - (_Bool)_addUserCookiesForResponse:(id)arg1 account:(id)arg2 error:(id *)arg3;
 - (_Bool)_addGlobalCookiesForResponse:(id)arg1 error:(id *)arg2;

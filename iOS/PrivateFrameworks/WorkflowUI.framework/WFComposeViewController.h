@@ -32,7 +32,6 @@
     WFRunWorkflowToolbar *_toolbar;
     NSLayoutConstraint *_toolbarBottomAnchor;
     WFWorkflowSettingsLayoutMetrics *_layoutMetrics;
-    NSLayoutConstraint *_constraintToWorkflowViewController;
     WFActionDrawerCoordinator *_drawerCoordinator;
     UINavigationController *_drawerNavigationController;
     WFDrawerController *_drawerController;
@@ -47,7 +46,6 @@
 @property(retain, nonatomic) WFDrawerController *drawerController; // @synthesize drawerController=_drawerController;
 @property(retain, nonatomic) UINavigationController *drawerNavigationController; // @synthesize drawerNavigationController=_drawerNavigationController;
 @property(retain, nonatomic) WFActionDrawerCoordinator *drawerCoordinator; // @synthesize drawerCoordinator=_drawerCoordinator;
-@property(retain, nonatomic) NSLayoutConstraint *constraintToWorkflowViewController; // @synthesize constraintToWorkflowViewController=_constraintToWorkflowViewController;
 @property(retain, nonatomic) WFWorkflowSettingsLayoutMetrics *layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 @property(nonatomic) _Bool shouldShowShareButton; // @synthesize shouldShowShareButton=_shouldShowShareButton;
 @property(nonatomic) _Bool shouldProvideNavigationBar; // @synthesize shouldProvideNavigationBar=_shouldProvideNavigationBar;
@@ -122,6 +120,7 @@
 - (void)updateToolbarVisibility;
 - (void)updateDrawerVisibility;
 - (void)updateBottomContentInsetForVisibility:(unsigned long long)arg1;
+- (id)workflowSubViewController;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

@@ -14,6 +14,7 @@
     _Bool _isRequestingExtension;
     NSExtension *_extension;
     long long _extensionScore;
+    unsigned long long _externalResourcesPermission;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_completionHandlersQueue;
     NSExtensionContext *_context;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) NSExtensionContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionHandlersQueue; // @synthesize completionHandlersQueue=_completionHandlersQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property unsigned long long externalResourcesPermission; // @synthesize externalResourcesPermission=_externalResourcesPermission;
 @property long long extensionScore; // @synthesize extensionScore=_extensionScore;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 - (void).cxx_destruct;

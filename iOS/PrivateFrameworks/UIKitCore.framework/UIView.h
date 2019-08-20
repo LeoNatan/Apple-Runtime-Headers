@@ -185,6 +185,7 @@
         unsigned int hasDynamicBackgroundColor:1;
         unsigned int hasLocalOverrideTraitCollection:1;
         unsigned int hasPendingTraitStorageConstraints:1;
+        unsigned int hasEverBeenInAWindow:1;
     } _viewFlags;
     unsigned short _unsatisfiableConstraintsLoggingSuspensionCount;
     unsigned int _pseudo_id;
@@ -277,6 +278,7 @@
 + (void)setAnimationFrameInterval:(double)arg1;
 + (void)setAnimationDelay:(double)arg1;
 + (void)setAnimationDuration:(double)arg1;
++ (void)_performWithAnimation:(CDUnknownBlockType)arg1;
 + (void)_performWithoutAnimation:(CDUnknownBlockType)arg1;
 + (void)performWithoutAnimation:(CDUnknownBlockType)arg1;
 + (_Bool)areAnimationsEnabled;
@@ -357,7 +359,6 @@
 + (void)_createTransformerWithInputAnimatableProperties:(id)arg1 modelValueSetter:(CDUnknownBlockType)arg2 presentationValueSetter:(CDUnknownBlockType)arg3;
 + (void)_animateUsingSpringWithDuration:(double)arg1 delay:(double)arg2 options:(unsigned long long)arg3 mass:(double)arg4 stiffness:(double)arg5 damping:(double)arg6 initialVelocity:(double)arg7 animations:(CDUnknownBlockType)arg8 start:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10;
 + (id)_collectedViewPropertiesByPerforming:(CDUnknownBlockType)arg1;
-+ (void)_collectViewPropertiesIn:(id)arg1 byPerforming:(CDUnknownBlockType)arg2;
 + (void)_animateWithAnimationAndComposerGetter:(CDUnknownBlockType)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)_animateWithAnimationAndComposerGetter:(CDUnknownBlockType)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 animationStateSetup:(CDUnknownBlockType)arg4;
 + (void)_performWithoutRetargetingAnimations:(CDUnknownBlockType)arg1;
@@ -544,8 +545,8 @@
 - (void)_recursivelyConsiderResumingMotionEffects;
 - (void)_recursivelySuspendMotionEffects;
 - (_Bool)_motionEffectsAreSuspended;
-- (void)setMotionEffects:(id)arg1;
 - (id)_motionEffects;
+- (void)setMotionEffects:(id)arg1;
 - (id)motionEffects;
 - (void)_endSuspendingMotionEffects;
 - (void)_beginSuspendingMotionEffects;
@@ -818,6 +819,8 @@
 - (_Bool)accessibilityInvertFilterApplied;
 - (id)_enclosingInterfaceActionGroupView;
 - (id)_enclosingInterfaceActionRepresentationView;
+@property(nonatomic) _Bool allowsGroupBlending;
+@property(nonatomic) _Bool allowsGroupOpacity;
 - (void)_uinavigationbar_prepareToAppearInNavigationItem:(id)arg1 onLeft:(_Bool)arg2;
 - (id)_visualRecursiveDescription;
 @property(nonatomic, setter=_setFlipsHorizontalAxis:) _Bool _flipsHorizontalAxis;
@@ -833,7 +836,7 @@
 - (void)_beginDragWithInteractionGestureRecognizer:(id)arg1;
 @property(nonatomic, getter=_draggingSourceDelegate, setter=_setDraggingSourceDelegate:) __weak id <_UIViewInternalDraggingSourceDelegate> _draggingSourceDelegate;
 @property(readonly, nonatomic) UIInputResponderController *inputResponderController;
-- (id)_copyConfigurationAtLocation:(struct CGPoint)arg1;
+- (id)_activityItemsConfigurationAtLocation:(struct CGPoint)arg1;
 - (long long)_depthFirstCompare:(id)arg1;
 - (id)_fallbackTraitCollection;
 - (double)_findAutolayoutHeightConstraint;
@@ -850,6 +853,7 @@
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
 - (struct CGRect)_compatibleBounds;
 - (void)reduceWidth:(double)arg1;
+- (_Bool)_isKnownUISearchBarComponentContainer;
 - (id)textInputView;
 - (_Bool)_canBeReusedInPickerView;
 - (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
@@ -884,6 +888,7 @@
 - (void)_setLargeContentStoredProperties:(id)arg1;
 - (id)_largeContentStoredProperties;
 - (id)_largeContentStoredPropertiesCreatingIfNecessary:(_Bool)arg1;
+- (id)_largeContentViewerItemAtPoint:(struct CGPoint)arg1;
 - (id)_colorViewBoundsOverlayCreateIfNecessary:(_Bool)arg1;
 - (void)_removeColorViewBoundsOverlays;
 - (id)_hierarchyRepresentation;
@@ -1407,6 +1412,7 @@
 - (_Bool)_isInExclusiveTouchSubviewTree;
 - (_Bool)_appliesExclusiveTouchToSubviewTree;
 - (_Bool)_shouldResignFirstResponderWithInteractionDisabled;
+- (_Bool)_gestureRecognizerShouldReceiveTouch:(id)arg1;
 - (void)_addGestureRecognizer:(id)arg1 atEnd:(_Bool)arg2;
 - (id)_gestureRecognizers;
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <ContactsAutocompleteUI/CNComposeTableViewCell.h>
 
-@class UIImageView;
+@class UIImageView, UIView;
 
 @interface CNAutocompleteDisambiguatingTableViewCell : CNComposeTableViewCell
 {
@@ -14,11 +14,12 @@
     UIImageView *_checkmarkImageView;
 }
 
++ (id)createCheckmarkView;
 + (id)identifier;
 @property(retain) UIImageView *checkmarkImageView; // @synthesize checkmarkImageView=_checkmarkImageView;
 @property(nonatomic, getter=isCheckmarkVisible) _Bool checkmarkVisible; // @synthesize checkmarkVisible=_checkmarkVisible;
 - (void).cxx_destruct;
-- (void)setLabelColor:(id)arg1 animated:(_Bool)arg2;
+@property(readonly) UIView *checkmarkView;
 - (void)setRecipient:(id)arg1;
 - (id)titleTextStyle;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

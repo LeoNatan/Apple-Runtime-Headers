@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)applicationActivateLifecyleNotifications;
++ (id)applicationDeactivateLifecyleNotifications;
 + (id)sanitize:(id)arg1;
 + (BOOL)isSanitizedVersionOf:(id)arg1 equalTo:(id)arg2;
 + (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id *)arg2;

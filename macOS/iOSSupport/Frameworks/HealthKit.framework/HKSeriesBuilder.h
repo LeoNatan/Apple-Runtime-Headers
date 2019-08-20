@@ -27,6 +27,7 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)serverInterface;
 + (id)clientInterface;
++ (id)taskServerIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(readonly, nonatomic) HKHealthStore *store; // @synthesize store=_store;

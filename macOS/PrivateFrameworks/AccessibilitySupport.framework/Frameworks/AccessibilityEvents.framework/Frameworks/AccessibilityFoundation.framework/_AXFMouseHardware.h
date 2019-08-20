@@ -24,9 +24,11 @@
     unsigned long long __currentModifierFlags;
     NSTimer *__cursorTypeUpdateTimer;
     double __cursorScaleCache;
+    struct CGPoint __lastMouseButtonPressLocation;
 }
 
 + (id)_cursorImageIfChanged;
+@property(nonatomic) struct CGPoint _lastMouseButtonPressLocation; // @synthesize _lastMouseButtonPressLocation=__lastMouseButtonPressLocation;
 @property(nonatomic) double _cursorScaleCache; // @synthesize _cursorScaleCache=__cursorScaleCache;
 @property(retain, nonatomic) NSTimer *_cursorTypeUpdateTimer; // @synthesize _cursorTypeUpdateTimer=__cursorTypeUpdateTimer;
 @property(nonatomic) unsigned int _currentSystemCursorSeed; // @synthesize _currentSystemCursorSeed=__currentSystemCursorSeed;

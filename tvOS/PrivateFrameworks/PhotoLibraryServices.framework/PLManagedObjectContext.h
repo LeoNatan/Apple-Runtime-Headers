@@ -63,8 +63,10 @@
 + (id)managedObjectModelURL;
 + (void)getPersistentStoreURL:(id *)arg1 options:(id *)arg2 forDatabasePath:(id)arg3;
 + (_Bool)hasConfiguredPhotoLibrary;
++ (_Bool)shouldHavePhotoLibrary;
 + (void)removePhotosDatabaseWithPathManager:(id)arg1;
 + (_Bool)canMergeRemoteChanges;
++ (id)contextForManagedObjectLookupItemCache:(id)arg1 coordinator:(id)arg2;
 + (id)contextForRepairingSingletonObjects:(const char *)arg1 libraryURL:(id)arg2 error:(id *)arg3;
 + (id)contextForPhotoLibrary:(id)arg1 automaticallyMerges:(_Bool)arg2 name:(const char *)arg3;
 @property(nonatomic) _Bool isBackingALAssetsLibrary; // @synthesize isBackingALAssetsLibrary=_isBackingALAssetsLibrary;

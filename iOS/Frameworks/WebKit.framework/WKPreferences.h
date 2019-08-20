@@ -46,6 +46,7 @@
 @property(nonatomic, setter=_setColorFilterEnabled:) _Bool _colorFilterEnabled;
 @property(nonatomic, setter=_setAVFoundationEnabled:) _Bool _avFoundationEnabled;
 @property(nonatomic, setter=_setEditableLinkBehavior:) long long _editableLinkBehavior;
+@property(nonatomic, setter=_setShouldAllowDesignSystemUIFonts:) _Bool _shouldAllowDesignSystemUIFonts;
 @property(nonatomic, setter=_setShouldAllowUserInstalledFonts:) _Bool _shouldAllowUserInstalledFonts;
 @property(nonatomic, setter=_setWebRTCLegacyAPIEnabled:) _Bool _webRTCLegacyAPIEnabled;
 @property(nonatomic, setter=_setICECandidateFilteringEnabled:) _Bool _iceCandidateFilteringEnabled;

@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_group, OS_dispatch_queue;
+@class _NACAVRoutingDiscoverySession;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface NACEndpointObserver : NSObject
 {
-    void *_discoverySession;
-    void *_callbackToken;
-    NSObject<OS_dispatch_group> *_initialFetchGroup;
     NSObject<OS_dispatch_queue> *_serialQueue;
+    _NACAVRoutingDiscoverySession *_nacDiscoverySession;
 }
 
 + (id)sharedObserver;
 - (void).cxx_destruct;
 - (void)fetchRouteForOriginIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)invalidateDiscoverySession;
 - (id)init;
 
 @end

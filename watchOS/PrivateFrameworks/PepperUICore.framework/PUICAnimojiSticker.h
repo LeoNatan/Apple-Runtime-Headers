@@ -25,6 +25,7 @@
 - (id)_thumbnailData;
 - (id)IMSticker;
 @property(readonly, nonatomic) UIImage *thumbnail;
+- (id)accessibilityLabel;
 - (id)initWithDirectoryPath:(id)arg1;
 
 @end

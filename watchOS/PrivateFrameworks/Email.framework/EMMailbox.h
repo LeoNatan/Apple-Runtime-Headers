@@ -23,6 +23,7 @@
     EMMailbox *_parent;
     EMMailboxCollection *_children;
     NSString *_name;
+    NSString *_redactedName;
     int _type;
 }
 
@@ -47,11 +48,11 @@
 @property(nonatomic) _Bool canArchive; // @synthesize canArchive=_canArchive;
 @property(nonatomic) _Bool canContainMessages; // @synthesize canContainMessages=_canContainMessages;
 @property(nonatomic) int type; // @synthesize type=_type;
+@property(readonly, copy, nonatomic) NSString *redactedName; // @synthesize redactedName=_redactedName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) EMMailboxCollection *children; // @synthesize children=_children;
 @property(nonatomic) __weak EMMailbox *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) EMObjectID *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-@property(nonatomic) _Bool descriptionUsesRealName; // @synthesize descriptionUsesRealName=_descriptionUsesRealName;
 - (void).cxx_destruct;
 - (_Bool)_canArchiveForMailboxType:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -59,7 +60,7 @@
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy, nonatomic) NSString *redactedName;
+@property(nonatomic) _Bool descriptionUsesRealName;
 @property(readonly, nonatomic) _Bool supportsSelectAll;
 @property(readonly, nonatomic) _Bool isSentMailbox;
 @property(readonly, nonatomic) _Bool isOutgoingMailbox;

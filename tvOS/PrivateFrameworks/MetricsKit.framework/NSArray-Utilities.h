@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (Utilities)
+- (id)deepCopy;
 - (id)map:(CDUnknownBlockType)arg1;
 - (void)verifyEventData;
 @end

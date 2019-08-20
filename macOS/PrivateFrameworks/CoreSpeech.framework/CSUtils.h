@@ -62,6 +62,13 @@
 + (double)hostTimeToTimeInterval:(unsigned long long)arg1;
 + (float)hostTimeToSeconds:(unsigned long long)arg1;
 + (unsigned long long)secondsToHostTime:(float)arg1;
++ (unsigned long long)macHostTimeFromBridgeHostTime:(unsigned long long)arg1;
++ (unsigned long long)sampleCountFromHostTime:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
++ (unsigned long long)hostTimeFromSampleCount:(unsigned long long)arg1 anchorHostTime:(unsigned long long)arg2 anchorSampleCount:(unsigned long long)arg3;
++ (double)getHostClockFrequency;
++ (double)hostTimeToTimeInterval:(unsigned long long)arg1;
++ (float)hostTimeToSeconds:(unsigned long long)arg1;
++ (unsigned long long)secondsToHostTime:(float)arg1;
 + (id)getSiriLanguageWithFallback:(id)arg1;
 + (void)apply12dBGain:(id)arg1;
 + (id)convertToShortLPCMBufFromFloatLPCMBuf:(id)arg1;
@@ -89,6 +96,8 @@
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
 + (id)spIdDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
++ (id)getHomeUserIdForVoiceProfile:(id)arg1;
++ (id)getContentsOfDirectory:(id)arg1;
 + (id)getVoiceProfilesMarkedForUpload;
 + (void)markVoiceProfileUploaded:(id)arg1;
 + (void)markUploadForVoiceProfile:(id)arg1;
@@ -109,7 +118,7 @@
 + (unsigned long long)getVoiceProfileVersionFromVersionFilePath:(id)arg1;
 + (unsigned long long)getCurrentVoiceProfileVersionForProfileId:(id)arg1 forLanguageCode:(id)arg2;
 + (id)getProfileVersionFilePathForProfileId:(id)arg1 forLanguageCode:(id)arg2;
-+ (BOOL)isSpidAssetsAvailable;
++ (BOOL)isSpidSupportedInCurrentLanguage;
 + (void)streamAudioFromFileUrl:(id)arg1 audioStreamBasicDescriptor:(struct AudioStreamBasicDescription)arg2 samplesPerStreamChunk:(unsigned long long)arg3 audioDataAvailableHandler:(CDUnknownBlockType)arg4;
 + (id)spidAudioTrainUtterancesDir;
 + (void)cleanupOrphanedVoiceIdGradingFiles;

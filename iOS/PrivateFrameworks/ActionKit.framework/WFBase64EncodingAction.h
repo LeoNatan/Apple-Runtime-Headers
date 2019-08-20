@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)outputContentClasses;
 - (id)inputContentClasses;
 - (id)itemFromBase64EncodedString:(id)arg1 nameIfKnown:(id)arg2;

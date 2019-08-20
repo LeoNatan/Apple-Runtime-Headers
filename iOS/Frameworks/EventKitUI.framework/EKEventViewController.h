@@ -58,7 +58,7 @@
     NSArray *_tableViewTopConstraints;
     UIView *_blankFooterView;
     _Bool _showingBlankFooterView;
-    UIViewController *_confirmationAlertPresentationSourceViewController;
+    UIViewController *_presentationSourceViewController;
     NSMutableDictionary *_cellHeights;
     _Bool _allowsEditing;
     _Bool _viewIsVisible;
@@ -170,7 +170,7 @@
 - (void)eventItemDidStartEditing:(id)arg1;
 - (void)eventDetailItemWantsRefeshForHeightChange;
 - (void)_presentDetachSheet;
-@property(nonatomic) __weak UIViewController *confirmationAlertPresentationSourceViewController;
+@property(nonatomic) __weak UIViewController *presentationSourceViewController;
 - (void)viewLayoutMarginsDidChange;
 - (struct CGSize)preferredContentSize;
 - (void)_performDelete:(long long)arg1;

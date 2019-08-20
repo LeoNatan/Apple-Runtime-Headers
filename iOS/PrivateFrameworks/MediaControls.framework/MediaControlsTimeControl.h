@@ -6,12 +6,13 @@
 
 #import <UIKit/UIControl.h>
 
+#import <MediaControls/MTVisualStylingProviderObservingPrivate-Protocol.h>
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
 @class AVTimeFormatter, CADisplayLink, CAGradientLayer, MPCPlayerResponse, MPCPlayerResponseItem, MTVisualStylingProvider, NSArray, NSLayoutConstraint, NSString, UILabel, UILayoutGuide, UIView;
 
 __attribute__((visibility("hidden")))
-@interface MediaControlsTimeControl : UIControl <UIGestureRecognizerDelegate>
+@interface MediaControlsTimeControl : UIControl <MTVisualStylingProviderObservingPrivate, UIGestureRecognizerDelegate>
 {
     NSArray *_defaultConstraints;
     NSArray *_trackingConstraints;
@@ -66,6 +67,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 - (void).cxx_destruct;
+- (void)providedStylesDidChangeForProvider:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateBackgroundMask;
 - (void)invalidateDisplayLinkIfNeeded;

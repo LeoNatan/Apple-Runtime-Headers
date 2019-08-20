@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *mTouchServersQueue;
     int mNotifyToken;
     _Bool mValidToken;
+    _Bool mConnectionAcknowledged;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;

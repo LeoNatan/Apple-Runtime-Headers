@@ -74,7 +74,6 @@ __attribute__((visibility("hidden")))
 - (id)wrapAssetKey:(id)arg1 withRecordPCS:(struct _OpaquePCSShareProtection *)arg2 inContext:(id)arg3 withError:(id *)arg4;
 - (id)unwrapAssetKey:(id)arg1 withRecordPCS:(struct _OpaquePCSShareProtection *)arg2 inContext:(id)arg3 withError:(id *)arg4;
 - (BOOL)containerSupportsEnhancedContext;
-- (id)participantPCSDataFromSharingInvitationData:(id)arg1 error:(id *)arg2;
 - (id)decryptChainPCSForRecordPCS:(id)arg1;
 - (id)sharingIdentityDataFromPCS:(struct _OpaquePCSShareProtection *)arg1 error:(id *)arg2;
 - (id)removePublicKeyID:(id)arg1 fromPCS:(struct _OpaquePCSShareProtection *)arg2;
@@ -139,6 +138,7 @@ __attribute__((visibility("hidden")))
 - (void)preflightIdentitiesForService:(unsigned long long)arg1 withSyncKeyRegistryRetry:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_locked_preflightIdentitiesForService:(unsigned long long)arg1 withSyncKeyRegistryRetry:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)availableIdentityForService:(unsigned long long)arg1 error:(id *)arg2;
+- (void)createIngestedPPPCSDataFromInvitationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)createZonePCSFromData:(id)arg1 usingServiceIdentityWithType:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_createPCSFromData:(id)arg1 ofType:(unsigned long long)arg2 usingPCSServiceType:(unsigned long long)arg3 withSyncKeyRegistryRetry:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_triggerAutobugCaptureForLostManateeIdentityError;

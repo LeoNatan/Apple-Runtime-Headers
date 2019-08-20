@@ -36,7 +36,6 @@
 + (id)inkWithType:(id)arg1 color:(id)arg2 weight:(double)arg3;
 + (id)identifierForInkType:(id)arg1;
 + (id)identifierForCommandType:(unsigned int)arg1 wantsObjectErase:(_Bool)arg2;
-+ (unsigned int)commandTypeForIdentifier:(id)arg1 wantsObjectErase:(_Bool)arg2;
 @property(readonly, nonatomic) NSString *variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) PKInkBehavior *behavior; // @synthesize behavior=_behavior;

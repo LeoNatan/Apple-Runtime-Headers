@@ -32,6 +32,7 @@
 @property(retain, nonatomic) FIFinderViewGutsController *controller; // @synthesize controller=_controller;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)startDownloadingSelectedItemsIfNecessary;
 - (double)fauxToolbarHeightForAppCentric:(BOOL)arg1 runningAsAService:(BOOL)arg2;
 - (BOOL)hasCollapseButton;
 - (BOOL)shouldEnableTagsButton;

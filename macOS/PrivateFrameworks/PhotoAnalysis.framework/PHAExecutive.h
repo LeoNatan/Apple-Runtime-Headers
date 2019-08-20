@@ -61,6 +61,7 @@
 - (void)handleOperation:(id)arg1;
 - (void)photoLibraryDidBecomeUnavailable:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)stopAllBackgroundActivities;
 - (void)stopBackgroundActivityForManager:(id)arg1;
 - (void)triggerBackgroundActivity;
 - (void)checkQuiescenceForManager:(id)arg1;

@@ -6,14 +6,13 @@
 
 #import <PepperUICore/PUICTableViewCell.h>
 
-@class FMFLocation, NSLayoutConstraint, NSString, PUICButton, PUICKeylineView, UIImage, UIImageView, UILabel, UILayoutGuide;
+@class FMFLocation, NSLayoutConstraint, PUICButton, PUICKeylineView, UIImage, UIImageView, UILabel, UILayoutGuide;
 
 @interface NCABContactMapCell : PUICTableViewCell
 {
     UILayoutGuide *_layoutGuide;
     PUICKeylineView *_keyline;
     UILabel *_headerLabel;
-    UILabel *_distanceLabel;
     UILabel *_timeLabel;
     UILabel *_locationLabel;
     UIImageView *_mapView;
@@ -21,34 +20,25 @@
     PUICButton *_appButton;
     NSLayoutConstraint *_headerLabelBaselineConstraint;
     NSLayoutConstraint *_headerLabelHeightConstraint;
-    NSLayoutConstraint *_distanceLabelBaselineConstraint;
-    NSLayoutConstraint *_distanceLabelHeightConstraint;
-    NSLayoutConstraint *_timeLabelHorizontalSpacingConstraint;
+    NSLayoutConstraint *_timeLabelBaselineConstraint;
     NSLayoutConstraint *_timeLabelHeightConstraint;
     NSLayoutConstraint *_locationLabelBaselineConstraint;
     NSLayoutConstraint *_locationLabelHeightConstraint;
     _Bool _constraintsAdded;
     FMFLocation *_location;
-    NSString *_distance;
 }
 
-+ (id)_sharedDistanceCalculatorQueue;
-+ (id)_sharedDistanceCalculator;
 + (void)initialize;
-@property(retain, nonatomic) NSString *distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) FMFLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
 - (void)_appButtonTapped;
 - (id)_noLocationString;
 - (void)_updateLocationLabel;
 - (void)_updateTimeLabel;
-- (void)_updateDistanceLabel;
-- (void)_updateDistance;
 - (void)_updateLabels;
 - (void)_updateDynamicConstraints;
 - (void)_updateLabelFonts;
 - (void)_setupViewConstraints;
-- (void)_userLocationDidUpdate:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 @property(readonly, nonatomic, getter=hasNoLocation) _Bool noLocation;
 @property(retain, nonatomic) UIImage *mapImage;

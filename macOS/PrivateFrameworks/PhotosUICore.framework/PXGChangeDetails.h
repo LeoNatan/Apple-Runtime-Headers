@@ -21,6 +21,7 @@
     BOOL _hasMoves;
     char *_tempBuffer;
     long long _tempBufferCapacity;
+    PXArrayChangeDetails *_cachedArrayChangeDetails;
     unsigned int _numberOfSpritesAfterChange;
     unsigned int _numberOfSpritesBeforeChange;
     long long _layoutVersionBeforeChange;
@@ -35,6 +36,7 @@
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) PXArrayChangeDetails *arrayChangeDetails;
+- (void)_invalidateCachedArrayChangeDetails;
 - (void)applyToDictionary:(id)arg1 removalHandler:(CDUnknownBlockType)arg2;
 - (void)applyToArray:(void *)arg1 elementSize:(unsigned long long)arg2 countAfterChanges:(unsigned long long)arg3 insertionHandler:(CDUnknownBlockType)arg4 modifiedHandler:(CDUnknownBlockType)arg5;
 - (void)applyToSpriteIndexes:(unsigned int *)arg1 atIndexes:(id)arg2;

@@ -9,11 +9,11 @@
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 #import <WorkflowKit/WFLoggableObject-Protocol.h>
 
-@class NSDate, NSDictionary, NSNumber, NSString, WFFileRepresentation, WFWorkflowIcon, WFWorkflowRecord;
+@class CKRecordID, NSDate, NSDictionary, NSNumber, NSString, WFFileRepresentation, WFWorkflowIcon, WFWorkflowRecord;
 
 @interface WFSharedShortcut : NSObject <WFCloudKitItem, WFLoggableObject>
 {
-    NSString *_identifier;
+    CKRecordID *_identifier;
     NSString *_name;
     WFWorkflowRecord *_workflowRecord;
     NSDate *_createdAt;
@@ -24,9 +24,7 @@
     WFFileRepresentation *_iconFile;
 }
 
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (id)properties;
 + (id)recordType;
 @property(retain, nonatomic) WFFileRepresentation *iconFile; // @synthesize iconFile=_iconFile;
 @property(retain, nonatomic) WFFileRepresentation *shortcutFile; // @synthesize shortcutFile=_shortcutFile;
@@ -36,7 +34,7 @@
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(retain, nonatomic) WFWorkflowRecord *workflowRecord; // @synthesize workflowRecord=_workflowRecord;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *propertiesForEventLogging;
 - (id)sharingURL;

@@ -16,11 +16,13 @@
     double *_x;
     double *_y;
     int _n;
+    BOOL _isDisqualified;
     int _iterations;
 }
 
 + (id)getModelForX:(double *)arg1 y:(double *)arg2 n:(int)arg3;
 @property(readonly, nonatomic) int iterations; // @synthesize iterations=_iterations;
+@property(nonatomic) BOOL isDisqualified; // @synthesize isDisqualified=_isDisqualified;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) double error; // @synthesize error=_error;
 @property(readonly, nonatomic) int n; // @synthesize n=_n;
@@ -33,6 +35,7 @@
 @property(readonly, nonatomic) BOOL dataSatisfiesInitialConditions;
 - (id)modelFunctionStringForParameters:(double *)arg1 significantFigures:(int)arg2;
 @property(readonly, nonatomic) NSArray *partialDerivatives;
+- (void)disqualifyModelIfNecessary;
 - (void)getInitialParams:(double *)arg1;
 @property(readonly, nonatomic) int modelParameterCount;
 @property(readonly, nonatomic) CDUnknownBlockType modelFunction;

@@ -15,6 +15,7 @@
     _Bool _present;
     unsigned int _connectedServices;
     int _colorCode;
+    unsigned int _deviceFlags;
     int _primaryPlacement;
     int _secondaryPlacement;
     unsigned int _productIdentifier;
@@ -36,6 +37,7 @@
 @property(copy, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(nonatomic) _Bool magicPaired; // @synthesize magicPaired=_magicPaired;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) unsigned int deviceFlags; // @synthesize deviceFlags=_deviceFlags;
 @property(nonatomic) int colorCode; // @synthesize colorCode=_colorCode;
 @property(nonatomic) unsigned int connectedServices; // @synthesize connectedServices=_connectedServices;
 @property(copy, nonatomic) NSString *addressString; // @synthesize addressString=_addressString;

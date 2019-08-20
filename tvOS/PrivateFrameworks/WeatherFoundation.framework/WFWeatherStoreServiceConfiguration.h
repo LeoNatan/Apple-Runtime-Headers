@@ -7,16 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <WeatherFoundation/NSCopying-Protocol.h>
+#import <WeatherFoundation/NSURLSessionTaskDelegate-Protocol.h>
 
 @class NSString, NSURL, NSURLSession, NWPathEvaluator, WFSettingsManager;
 
-@interface WFWeatherStoreServiceConfiguration : NSObject <NSCopying>
+@interface WFWeatherStoreServiceConfiguration : NSObject <NSURLSessionTaskDelegate, NSCopying>
 {
+    struct os_unfair_lock_s _serviceConnectivityEvaluationURLLock;
     NWPathEvaluator *_serviceConnectivityEvaluator;
+    NSURL *_serviceConnectivityEvaluationURL;
     NSURLSession *_session;
     NSURL *_cacheURL;
     Class _cacheClass;
-    NSURL *_serviceConnectivityEvaluationURL;
     WFSettingsManager *_settingsManager;
 }
 
@@ -24,7 +26,7 @@
 + (id)defaultConfiguration;
 + (id)defaultConfigurationWithSourceBundleIdentifier:(id)arg1;
 @property(retain, nonatomic) WFSettingsManager *settingsManager; // @synthesize settingsManager=_settingsManager;
-@property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
+@property(nonatomic) struct os_unfair_lock_s serviceConnectivityEvaluationURLLock; // @synthesize serviceConnectivityEvaluationURLLock=_serviceConnectivityEvaluationURLLock;
 @property(retain, nonatomic) Class cacheClass; // @synthesize cacheClass=_cacheClass;
 @property(copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -40,7 +42,15 @@
 - (id)apiConfigurationForAPIVersion:(id)arg1;
 - (id)apiConfiguration;
 @property(readonly, nonatomic) NSString *apiVersion;
+- (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
+@property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,11 +6,12 @@
 
 #import <HomeKitBackingStore/HMBModelReference.h>
 
+#import <HomeKitBackingStore/HMBModelObjectStorage-Protocol.h>
 #import <HomeKitBackingStore/NSSecureCoding-Protocol.h>
 
-@class CKReference, HMBCloudZone;
+@class CKReference, HMBCloudZone, NSString;
 
-@interface HMBModelCloudReference : HMBModelReference <NSSecureCoding>
+@interface HMBModelCloudReference : HMBModelReference <HMBModelObjectStorage, NSSecureCoding>
 {
     CKReference *_reference;
     HMBCloudZone *_cloudZone;
@@ -18,18 +19,25 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned long long)arg2 error:(id *)arg3;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(nonatomic) __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain, nonatomic) CKReference *reference; // @synthesize reference=_reference;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)referencedModelFromCloudZone:(id)arg1 allowExternalFetch:(BOOL)arg2;
 - (id)referencedModelFrom:(id)arg1 error:(id *)arg2;
 - (void)associateWithContainer:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithModelID:(id)arg1 action:(unsigned long long)arg2;
+- (id)hmbEncodeForStorageLocation:(unsigned long long)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

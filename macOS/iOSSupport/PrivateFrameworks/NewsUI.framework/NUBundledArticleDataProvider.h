@@ -27,6 +27,8 @@
 - (CDUnknownBlockType)loadImagesForImageRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)registerFontsWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSString *articleID;
+- (void)cancelAssetPrefetch;
+- (void)prefetchAssets;
 - (void)loadContextWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)performBlockForFontsInBundle:(CDUnknownBlockType)arg1;
 - (id)initWithArticle:(id)arg1;

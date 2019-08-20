@@ -6,20 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIFetchContentInBackgroundAction;
+@class SBBackgroundFetchTask, UIFetchContentInBackgroundAction;
 
 @interface SBBackgroundFetchExternalRequest : NSObject
 {
-    int _sequenceNumber;
+    SBBackgroundFetchTask *_task;
     UIFetchContentInBackgroundAction *_action;
-    NSString *_bundleID;
 }
 
-@property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(nonatomic) int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-@property(retain, nonatomic) UIFetchContentInBackgroundAction *action; // @synthesize action=_action;
+@property(readonly, nonatomic) UIFetchContentInBackgroundAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (void)execute;
+- (void)dealloc;
 - (id)initForBundleID:(id)arg1;
 
 @end

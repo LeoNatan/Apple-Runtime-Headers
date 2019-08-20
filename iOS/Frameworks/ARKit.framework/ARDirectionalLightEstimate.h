@@ -35,7 +35,7 @@
 -     // Error parsing type: @64@0:8{?=[3]}16, name: lightEstimateByApplyingRotation:
 @property(readonly, copy, nonatomic) NSData *sphericalHarmonicsCoefficients;
 - (id)initWithDirectionalLightEstimate:(id)arg1;
-- (id)initWithSphericalHarmonics:(CDStruct_9c26ff66)arg1 temperature:(double)arg2;
+- (id)initWithSphericalHarmonics:(CDStruct_9c26ff66)arg1 ambientIntensity:(double)arg2 temperature:(double)arg3;
 
 @end
 

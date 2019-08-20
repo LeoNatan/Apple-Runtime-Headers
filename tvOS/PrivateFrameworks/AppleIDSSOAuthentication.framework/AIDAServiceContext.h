@@ -16,6 +16,7 @@
 {
     NSDictionary *_authenticationResults;
     _Bool _shouldForceOperation;
+    long long _operationUIPermissions;
     UIViewController *_viewController;
     id <CDPStateUIProvider> _cdpUiProvider;
 }
@@ -24,6 +25,7 @@
 + (_Bool)accessInstanceVariablesDirectly;
 @property(readonly, nonatomic) __weak id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
+@property(readonly, nonatomic) long long operationUIPermissions; // @synthesize operationUIPermissions=_operationUIPermissions;
 @property(readonly, nonatomic) _Bool shouldForceOperation; // @synthesize shouldForceOperation=_shouldForceOperation;
 @property(readonly, copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
 - (void).cxx_destruct;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id presentationValue; // @synthesize presentationValue=_presentationValue;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (id)transformer;
 - (void)setTransformer:(id)arg1;
 - (void)invalidateAndStopImmediately:(_Bool)arg1;

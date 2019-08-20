@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
     double _widthFractionForTallMedia;
 }
 
++ (id)iconPlatterCornerRadius;
++ (id)iconPlatterPaddingForReason:(long long)arg1;
 + (void)addClient:(id)arg1;
 + (id)themeWithStyle:(long long)arg1 icon:(id)arg2 platform:(long long)arg3 sizeClass:(unsigned long long)arg4;
 + (id)secondaryLabelColor;

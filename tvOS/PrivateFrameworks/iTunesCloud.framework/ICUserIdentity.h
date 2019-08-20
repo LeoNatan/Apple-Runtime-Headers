@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) _Bool allowsAccountEstablishment; // @synthesize allowsAccountEstablishment=_allowsAccountEstablishment;
 @property(readonly, nonatomic) _Bool allowsDelegation; // @synthesize allowsDelegation=_allowsDelegation;
 - (void).cxx_destruct;
+- (void)_resolveDSIDForEncoding;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
@@ -42,6 +43,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToIdentity:(id)arg1;
+- (void)_setResolvedDSID:(id)arg1;
 - (id)identityAllowingEstablishment:(_Bool)arg1;
 - (id)identityAllowingDelegation:(_Bool)arg1;
 @property(readonly, copy, nonatomic) NSString *deviceIdentifier;

@@ -32,8 +32,8 @@
     PXAssetsDataSource *_currentDataSource;
     PXCuratedLibraryAssetDecorationSource *_assetDecorationSource;
     PXPhotoKitUIMediaProvider *_preheatMediaProvider;
-    struct _NSRange _preheatedThumbsForItemsByColumnIndex[5];
-    char _isPreheatingByColumnIndex[5];
+    struct _NSRange _preheatedThumbsForItemsByColumnIndex[10];
+    char _isPreheatingByColumnIndex[10];
     BOOL _isPerformingUpdate;
     struct _NSRange _prefetchedForLoadedItems;
     struct _NSRange _cachedClampedItemRange;
@@ -45,9 +45,12 @@
     NSMutableSet *_itemLayoutsAllowedToLoad;
     NSDateInterval *_lastReturnedDateInterval;
     NSArray *_lastReturnedLocationNames;
+    BOOL _scrolledWhileAnimatingZoom;
     BOOL _performedInitialVisualShift;
     long long _visuallyStableAnchorItem;
     long long _visuallyStableAnchorItemDesiredColumn;
+    unsigned long long _dataSourceIdentifierOfCachedRangeForSelectedItems;
+    struct _NSRange _cachedRangeForSelectedItems;
     BOOL _shouldAnimateTowardsAnchor;
     BOOL _wasTracking;
     PXCuratedLibraryLayoutSpec *_spec;
@@ -68,9 +71,9 @@
 @property(readonly, nonatomic) BOOL wasTracking; // @synthesize wasTracking=_wasTracking;
 @property(readonly, nonatomic) BOOL shouldAnimateTowardsAnchor; // @synthesize shouldAnimateTowardsAnchor=_shouldAnimateTowardsAnchor;
 @property(readonly, nonatomic) PXNumberAnimator *anchorViewportScaleCenterVelocityTracker; // @synthesize anchorViewportScaleCenterVelocityTracker=_anchorViewportScaleCenterVelocityTracker;
-@property(readonly, nonatomic) PXPointAnimator *anchorViewportScaleCenterAnimator; // @synthesize anchorViewportScaleCenterAnimator=_anchorViewportScaleCenterAnimator;
 @property(readonly, nonatomic) struct CGPoint normalizedScaleCenterInAnchorSprite; // @synthesize normalizedScaleCenterInAnchorSprite=_normalizedScaleCenterInAnchorSprite;
 @property(readonly, nonatomic) struct CGPoint anchorTargetViewportCenter; // @synthesize anchorTargetViewportCenter=_anchorTargetViewportCenter;
+@property(readonly, nonatomic) PXPointAnimator *anchorViewportScaleCenterAnimator; // @synthesize anchorViewportScaleCenterAnimator=_anchorViewportScaleCenterAnimator;
 @property(readonly, nonatomic) PXGAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, nonatomic) PXAssetsDataSource *presentedDataSource; // @synthesize presentedDataSource=_presentedDataSource;
 @property(readonly, nonatomic) PXCuratedLibraryViewModel *viewModel; // @synthesize viewModel=_viewModel;
@@ -93,6 +96,7 @@
 - (CDStruct_3fe57b01)spriteTransformForLevel:(unsigned long long)arg1;
 - (struct CGRect)frameForItemAtIndexPath:(struct PXSimpleIndexPath)arg1 level:(unsigned long long)arg2;
 - (id)_displayAssetForItem:(long long)arg1;
+- (struct _NSRange)rangeOfItemsToPreventUnloadingInItemsLayout:(id)arg1;
 - (void)itemsLayout:(id)arg1 updateTagsInSpriteInfos:(CDStruct_9d1ebe49 *)arg2 forItemsInRange:(struct _NSRange)arg3;
 - (struct CGRect)itemsLayout:(id)arg1 bestCropRectForItem:(long long)arg2 withAspectRatio:(double)arg3;
 - (double)itemsLayout:(id)arg1 aspectRatioForItem:(long long)arg2;
@@ -129,6 +133,7 @@
 - (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
 - (void)screenScaleDidChange;
 - (void)visibleRectDidChange;
+- (void)containingScrollViewDidScroll:(struct CGPoint)arg1;
 - (id)init;
 - (id)initWithViewModel:(id)arg1 spec:(id)arg2;
 

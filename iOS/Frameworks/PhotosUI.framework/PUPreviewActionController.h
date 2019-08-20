@@ -7,30 +7,25 @@
 #import <objc/NSObject.h>
 
 #import <PhotosUI/PUAssetActionPerformerDelegate-Protocol.h>
-#import <PhotosUI/PUBrowsingViewModelChangeObserver-Protocol.h>
 
 @class NSArray, NSString, PUAssetActionPerformer, PUBrowsingSession, PXActionManager, UIViewController;
 @protocol PUPreviewActionControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PUPreviewActionController : NSObject <PUBrowsingViewModelChangeObserver, PUAssetActionPerformerDelegate>
+@interface PUPreviewActionController : NSObject <PUAssetActionPerformerDelegate>
 {
     struct {
         _Bool didDismissWithActionIdentifier;
         _Bool preventRevealInMomentAction;
     } _delegateRespondsTo;
-    _Bool __needsUpdateActions;
     PUBrowsingSession *_browsingSession;
     UIViewController *_presentingViewController;
     id <PUPreviewActionControllerDelegate> _delegate;
     PXActionManager *_photosUICoreActionManager;
-    NSArray *_actions;
     PUAssetActionPerformer *__activeActionPerformer;
 }
 
 @property(retain, nonatomic, setter=_setActiveActionPerformer:) PUAssetActionPerformer *_activeActionPerformer; // @synthesize _activeActionPerformer=__activeActionPerformer;
-@property(nonatomic, setter=_setNeedsUpdateActions:) _Bool _needsUpdateActions; // @synthesize _needsUpdateActions=__needsUpdateActions;
-@property(retain, nonatomic, setter=_setActions:) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) PXActionManager *photosUICoreActionManager; // @synthesize photosUICoreActionManager=_photosUICoreActionManager;
 @property(nonatomic) __weak id <PUPreviewActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
@@ -38,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)assetActionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)assetActionPerformer:(id)arg1 presentViewController:(id)arg2;
-- (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)_executeActionPerformer:(id)arg1;
 - (void)_performRevealInMomentAction;
 - (void)_performCopyAction;
@@ -48,10 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)_performSimpleActionWithType:(unsigned long long)arg1;
 - (void)_notifiyDelegateOfAction:(id)arg1;
 - (unsigned long long)_actionForPreferredAction:(unsigned long long)arg1;
-- (void)_updateActionsIfNeeded;
-- (void)_updateIfNeeded;
-- (_Bool)_needsUpdate;
-- (void)_invalidateActions;
+@property(readonly, nonatomic) NSArray *actions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -93,6 +93,8 @@
 - (void)setupAnimatedLassoForStrokes:(id)arg1 lassoLayer:(id)arg2 whiteLassoLayer:(id)arg3 isSelection:(_Bool)arg4 lassoStroke:(id)arg5;
 - (void)setupAnimatedLasso;
 - (void)generateStrokeImageForPasteAndDND;
+- (void)_clearSelection:(id)arg1;
+- (void)_setupWindowNotificationsForScene:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (struct CGColor *)selectionColor;
 - (void)dealloc;

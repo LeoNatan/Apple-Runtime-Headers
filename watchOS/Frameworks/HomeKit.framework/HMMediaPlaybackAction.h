@@ -17,7 +17,6 @@
 {
     NSSet *_mediaProfiles;
     int _state;
-    int _options;
     NSNumber *_volume;
     MPPlaybackArchive *_playbackArchive;
     HMFUnfairLock *_lock;
@@ -26,9 +25,9 @@
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)mediaPlaybackActionWithProtoBuf:(id)arg1 home:(id)arg2;
++ (_Bool)isSupportedForHome:(id)arg1;
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
-@property(nonatomic) int options; // @synthesize options=_options;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 - (void).cxx_destruct;
@@ -49,8 +48,8 @@
 - (id)encodeAsProtoBuf;
 - (unsigned int)type;
 - (id)initWithPlaybackAction:(id)arg1 uuid:(id)arg2;
-- (id)initWithMediaProfiles:(id)arg1 playbackState:(int)arg2 volume:(id)arg3 options:(int)arg4 playbackArchive:(id)arg5;
-- (id)initWithMediaProfiles:(id)arg1 playbackState:(int)arg2 volume:(id)arg3 options:(int)arg4 playbackArchive:(id)arg5 uuid:(id)arg6;
+- (id)initWithMediaProfiles:(id)arg1 playbackState:(int)arg2 volume:(id)arg3 playbackArchive:(id)arg4;
+- (id)initWithMediaProfiles:(id)arg1 playbackState:(int)arg2 volume:(id)arg3 playbackArchive:(id)arg4 uuid:(id)arg5;
 - (id)initWithUUID:(id)arg1;
 - (id)init;
 

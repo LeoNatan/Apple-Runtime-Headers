@@ -10,20 +10,26 @@
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSString, UIImage, UISearchBar, UITableView;
+@class NSArray, NSMutableDictionary, NSMutableOrderedSet, NSString, UIImage, UISearchBar, UITableView;
 @protocol WFAppSearchViewControllerDelegate;
 
 @interface WFAppSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 {
+    BOOL _allowMultipleSelection;
     id <WFAppSearchViewControllerDelegate> _delegate;
     UITableView *_tableView;
     UISearchBar *_searchBar;
     NSArray *_apps;
+    NSMutableOrderedSet *_selectedApps;
+    NSMutableDictionary *_cachedAppIconForBundleId;
     UIImage *_placeholderImage;
 }
 
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
+@property(retain, nonatomic) NSMutableDictionary *cachedAppIconForBundleId; // @synthesize cachedAppIconForBundleId=_cachedAppIconForBundleId;
+@property(retain, nonatomic) NSMutableOrderedSet *selectedApps; // @synthesize selectedApps=_selectedApps;
 @property(readonly, nonatomic) NSArray *apps; // @synthesize apps=_apps;
+@property(nonatomic) BOOL allowMultipleSelection; // @synthesize allowMultipleSelection=_allowMultipleSelection;
 @property(nonatomic) __weak UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WFAppSearchViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -32,16 +38,20 @@
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)updateDoneButtonEnabledState;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)applicationIconForBundleIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *filteredApps;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)adjustInsetsForKeyboard;
+- (void)done;
 - (void)cancel;
 - (void)loadView;
 - (void)dealloc;
+- (id)initWithAppSearchType:(long long)arg1 allowMultipleSelection:(BOOL)arg2 selectedApps:(id)arg3;
 - (id)initWithAppSearchType:(long long)arg1;
 - (id)init;
 

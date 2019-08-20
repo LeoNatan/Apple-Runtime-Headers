@@ -21,6 +21,7 @@
     NSView *_titleCenteringTrackedView;
     NSArray *_items;
     NSImage *_backIndicatorImage;
+    NSView *_globalTrailingView;
     NSMutableArray *_internalItems;
     _UXNavigationItemContainerView *_topItemContainer;
     long long _currentOperation;
@@ -48,6 +49,7 @@
 @property(nonatomic) long long currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(retain, nonatomic) _UXNavigationItemContainerView *topItemContainer; // @synthesize topItemContainer=_topItemContainer;
 @property(retain, nonatomic) NSMutableArray *internalItems; // @synthesize internalItems=_internalItems;
+@property(retain, nonatomic) NSView *globalTrailingView; // @synthesize globalTrailingView=_globalTrailingView;
 @property(retain, nonatomic) NSImage *backIndicatorImage; // @synthesize backIndicatorImage=_backIndicatorImage;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak NSView *titleCenteringTrackedView; // @synthesize titleCenteringTrackedView=_titleCenteringTrackedView;

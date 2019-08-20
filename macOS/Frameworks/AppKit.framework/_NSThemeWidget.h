@@ -20,6 +20,7 @@
 - (void)viewDidMoveToWindow;
 - (void)stopMonitoringFlagsChanged;
 - (void)startMonitoringFlagsChanged;
+- (void)flagsChanged;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (void)update;
 - (void)mouseDown:(id)arg1;

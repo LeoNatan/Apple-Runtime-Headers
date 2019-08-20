@@ -43,6 +43,7 @@
 @property(readonly, copy) NSString *filePath;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) NSArray *arguments;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

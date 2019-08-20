@@ -27,7 +27,6 @@
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;
 - (id)_itemAtPoint:(struct CGPoint)arg1;
-- (id)_itemAtPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
 @property(readonly, nonatomic) __weak UIView *view;

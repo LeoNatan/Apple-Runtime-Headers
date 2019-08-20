@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
 @property(readonly, nonatomic) BOOL supportsCollapsing;
 @property(readonly, nonatomic) BOOL isPerformingSizingAnimation;
+- (void)_cleanUp;
 - (void)dealloc;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;

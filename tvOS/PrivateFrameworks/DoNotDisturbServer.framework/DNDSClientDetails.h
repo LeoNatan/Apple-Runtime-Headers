@@ -8,24 +8,30 @@
 
 #import <DoNotDisturbServer/NSCopying-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface DNDSClientDetails : NSObject <NSCopying>
 {
+    _Bool _resolutionContextAssumingDeviceUILocked;
     _Bool _userInteractionClient;
     _Bool _persistentAssertionClient;
     _Bool _syncSuppressedClient;
+    NSString *_clientIdentifier;
     NSArray *_identifiers;
 }
 
++ (id)_detailsForBundleInfoDictionary:(id)arg1;
++ (id)detailsForClientIdentifier:(id)arg1 applicationBundleURL:(id)arg2;
 + (id)detailsForBundleAtURL:(id)arg1;
 @property(readonly, nonatomic, getter=isSyncSuppressedClient) _Bool syncSuppressedClient; // @synthesize syncSuppressedClient=_syncSuppressedClient;
 @property(readonly, nonatomic, getter=isPersistentAssertionClient) _Bool persistentAssertionClient; // @synthesize persistentAssertionClient=_persistentAssertionClient;
 @property(readonly, nonatomic, getter=isUserInteractionClient) _Bool userInteractionClient; // @synthesize userInteractionClient=_userInteractionClient;
+@property(readonly, nonatomic, getter=isResolutionContextAssumingDeviceUILocked) _Bool resolutionContextAssumingDeviceUILocked; // @synthesize resolutionContextAssumingDeviceUILocked=_resolutionContextAssumingDeviceUILocked;
 @property(readonly, copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithIdentifiers:(id)arg1 userInteractionClient:(_Bool)arg2 persistentAssertionClient:(_Bool)arg3 syncSuppressedClient:(_Bool)arg4;
+- (id)initWithClientIdentifier:(id)arg1 identifiers:(id)arg2 resolutionContextAssumingDeviceUILocked:(_Bool)arg3 userInteractionClient:(_Bool)arg4 persistentAssertionClient:(_Bool)arg5 syncSuppressedClient:(_Bool)arg6;
 
 @end
 

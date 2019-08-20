@@ -73,11 +73,12 @@
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;
 - (BOOL)_createSchemaWithMonitor:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (void)_performSchemaInitializationRequest:(id)arg1;
+- (void)finishedAutomatedRequestWithResult:(id)arg1;
 - (void)_finishedRequest:(id)arg1 withResult:(id)arg2;
 - (void)checkAndExecuteNextRequest;
 - (id)newActivityWithIdentifier:(id)arg1;
 - (BOOL)_dateExceedsSchedulingThreshold:(id)arg1;
-- (void)checkAndScheduleImportIfNecessary;
+- (void)checkAndScheduleImportIfNecessary:(BOOL)arg1;
 - (void)scheduleExportWithMonitor:(id)arg1;
 - (void)remoteStoreDidChange:(id)arg1;
 - (void)managedObjectContextSaved:(id)arg1;
@@ -86,6 +87,7 @@
 - (void)postDidResetNotificationForError:(id)arg1;
 - (void)postWillResetNotificationForError:(id)arg1;
 - (BOOL)purgeMetadataMatchingObjectIDs:(id)arg1 inRequest:(id)arg2 inStore:(id)arg3 withMonitor:(id)arg4 error:(id *)arg5;
+- (BOOL)purgeMetadataFromStore:(id)arg1 inMonitor:(id)arg2 withOptions:(unsigned long long)arg3 forRecordZones:(id)arg4 andTransactionAuthor:(id)arg5 error:(id *)arg6;
 - (BOOL)purgeMetadataFromStore:(id)arg1 inMonitor:(id)arg2 withOptions:(unsigned long long)arg3 forRecordZones:(id)arg4 error:(id *)arg5;
 - (BOOL)_recoverFromPartialError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)_recoverFromError:(id)arg1 withMonitor:(id)arg2;

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)setupLocalVideoTestGroupSwitches;
 - (void)setupLocalAudioTestGroupSwitches;
 - (void)setupLocalOnOffSwitchesFromMasterSwitch;
+- (void)setupLocalSwitchesForTesting;
 - (void)setupLocalABTestSwitches;
 - (void)setupLocalOnOffSwitches;
 - (void)initializeLocalSwitches;

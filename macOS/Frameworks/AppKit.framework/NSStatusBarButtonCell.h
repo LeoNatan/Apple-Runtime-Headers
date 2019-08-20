@@ -49,6 +49,7 @@
 - (BOOL)_disabledForDrawingContent;
 @property BOOL looksDisabled;
 - (void)setImagePosition:(unsigned long long)arg1;
+- (void)setFont:(id)arg1;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setAlternateImage:(id)arg1;

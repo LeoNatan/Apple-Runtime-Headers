@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (BOOL)_isKnownUISearchBarComponentContainer;
 
 @end
 

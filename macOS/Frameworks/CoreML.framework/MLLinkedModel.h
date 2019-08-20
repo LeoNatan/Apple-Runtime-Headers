@@ -24,9 +24,11 @@
 @property(retain) NSString *modelFileName; // @synthesize modelFileName=_modelFileName;
 @property(retain) MLModel *linkedModel; // @synthesize linkedModel=_linkedModel;
 - (void).cxx_destruct;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initWithLinkedModel:(id)arg1 modelFileName:(id)arg2 modelSearchPath:(id)arg3 configuration:(id)arg4;
+- (void)updateParameterDescriptionsByUnarchivingSpecification:(const struct LinkedModelFile *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

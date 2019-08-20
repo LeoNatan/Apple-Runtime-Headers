@@ -14,6 +14,7 @@
 {
 }
 
+- (_Bool)isUILocked;
 - (_Bool)isOrientationLocked;
 - (void)unlockOrientation;
 - (void)lockOrientation;

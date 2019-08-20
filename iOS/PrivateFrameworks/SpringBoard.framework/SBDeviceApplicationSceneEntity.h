@@ -27,6 +27,7 @@
 - (id)initWithApplicationForMainDisplay:(id)arg1 targetContentIdentifier:(id)arg2;
 - (id)initWithApplicationForMainSecureDisplay:(id)arg1;
 - (id)initWithApplicationForMainDisplay:(id)arg1 uniqueIdentifier:(id)arg2;
+- (id)initWithApplicationForMainDisplay:(id)arg1 generatingNewPrimarySceneIfRequired:(_Bool)arg2;
 - (id)initWithApplicationForMainDisplay:(id)arg1;
 - (id)initWithApplicationSceneHandle:(id)arg1;
 - (id)initWithApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3 sceneHandleProvider:(id)arg4;

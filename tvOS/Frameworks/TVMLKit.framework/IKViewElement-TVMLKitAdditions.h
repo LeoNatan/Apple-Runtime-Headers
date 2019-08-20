@@ -6,8 +6,6 @@
 
 #import <ITMLKit/IKViewElement.h>
 
-@class UIView;
-
 @interface IKViewElement (TVMLKitAdditions)
 + (id)tv_approximateViewElementForView:(id)arg1;
 - (void)retrievePresentationDocumentWithResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -20,6 +18,6 @@
 - (unsigned long long)tv_elementType;
 - (id)tv_associatedViewElementWithDefaultClass:(Class)arg1;
 - (id)tv_associatedViewElement;
-@property(nonatomic, setter=tv_setProxyView:) __weak UIView *tv_proxyView;
+@property(nonatomic, setter=tv_setProxyView:) __weak id tv_proxyView;
 @end
 

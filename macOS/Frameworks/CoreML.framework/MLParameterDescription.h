@@ -6,19 +6,30 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreML/NSSecureCoding-Protocol.h>
+
 @class MLNumericConstraint, MLParameterKey;
 
-@interface MLParameterDescription : NSObject
+@interface MLParameterDescription : NSObject <NSSecureCoding>
 {
     MLParameterKey *_key;
     id _defaultValue;
     MLNumericConstraint *_numericConstraint;
 }
 
-@property(readonly, nonatomic) MLNumericConstraint *numericConstraint; // @synthesize numericConstraint=_numericConstraint;
-@property(readonly, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
-@property(readonly, nonatomic) MLParameterKey *key; // @synthesize key=_key;
++ (BOOL)supportsSecureCoding;
++ (id)parameterDescriptionForKey:(id)arg1 defaultValue:(id)arg2 numericConstraint:(id)arg3;
++ (id)parameterDescriptionForKey:(id)arg1 boolParameterSpec:(const struct BoolParameter *)arg2;
++ (id)parameterDescriptionForKey:(id)arg1 stringParameterSpec:(const struct StringParameter *)arg2;
++ (id)parameterDescriptionForKey:(id)arg1 doubleParameterSpec:(const struct DoubleParameter *)arg2;
++ (id)parameterDescriptionForKey:(id)arg1 int64ParameterSpec:(const struct Int64Parameter *)arg2;
+@property(retain, nonatomic) MLNumericConstraint *numericConstraint; // @synthesize numericConstraint=_numericConstraint;
+@property(retain, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
+@property(retain, nonatomic) MLParameterKey *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+- (id)description;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

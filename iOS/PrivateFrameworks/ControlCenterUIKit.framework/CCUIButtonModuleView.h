@@ -21,6 +21,7 @@
     UIImage *_selectedGlyphImage;
     UIColor *_selectedGlyphColor;
     double _glyphAlpha;
+    double _glyphScale;
     CCUICAPackageDescription *_glyphPackageDescription;
     NSString *_glyphState;
     struct NSDirectionalEdgeInsets _contentEdgeInsets;
@@ -29,6 +30,7 @@
 @property(nonatomic) struct NSDirectionalEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(copy, nonatomic) NSString *glyphState; // @synthesize glyphState=_glyphState;
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
+@property(nonatomic) double glyphScale; // @synthesize glyphScale=_glyphScale;
 @property(nonatomic) double glyphAlpha; // @synthesize glyphAlpha=_glyphAlpha;
 @property(retain, nonatomic) UIColor *selectedGlyphColor; // @synthesize selectedGlyphColor=_selectedGlyphColor;
 @property(retain, nonatomic) UIImage *selectedGlyphImage; // @synthesize selectedGlyphImage=_selectedGlyphImage;
@@ -37,6 +39,7 @@
 - (void).cxx_destruct;
 - (void)_updateGlyphImageViewVisualStyling;
 - (id)_tintColorForSelectedState:(_Bool)arg1;
+- (void)_setGlyphScale:(double)arg1;
 - (void)_setGlyphAlpha:(double)arg1;
 - (void)_setGlyphState:(id)arg1;
 - (void)_setGlyphPackageDescription:(id)arg1;

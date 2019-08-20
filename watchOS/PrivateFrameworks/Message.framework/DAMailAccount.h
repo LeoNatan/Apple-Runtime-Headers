@@ -72,9 +72,6 @@
 - (void).cxx_destruct;
 - (_Bool)moveSupportedFromMailboxURL:(id)arg1 toURL:(id)arg2;
 - (id)messageDataForMessage:(id)arg1;
-- (id)_deleteMessagesWithAction:(id)arg1;
-- (id)_appendMessagesWithAction:(id)arg1;
-- (id)_moveMessagesWithAction:(id)arg1;
 - (id)_remoteIDsForFlagChangeAction:(id)arg1;
 - (id)replayAction:(id)arg1;
 - (_Bool)moveSupported;

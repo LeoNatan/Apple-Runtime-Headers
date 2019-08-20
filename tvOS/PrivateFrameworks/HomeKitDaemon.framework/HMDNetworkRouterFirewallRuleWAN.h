@@ -6,37 +6,40 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRule.h>
 
-@class HMFNetAddress;
+@class HMFNetAddress, NSString;
 
 @interface HMDNetworkRouterFirewallRuleWAN : HMDNetworkRouterFirewallRule
 {
     unsigned char _transportProtocol;
-    _Bool _usingIGD;
     unsigned short _portStart;
     unsigned short _portEnd;
     unsigned long long _purpose;
+    NSString *_hostname;
     HMFNetAddress *_address;
     HMFNetAddress *_addressEnd;
 }
 
 + (id)createWithJSONDictionary:(struct NSDictionary *)arg1;
 + (_Bool)__decodePorts:(struct NSDictionary *)arg1 portStart:(unsigned short *)arg2 portEnd:(unsigned short *)arg3;
-+ (_Bool)__decodeAddresses:(struct NSDictionary *)arg1 address:(id *)arg2 addressEnd:(id *)arg3;
-+ (_Bool)__decodeType:(struct NSDictionary *)arg1 transportProtocol:(unsigned char *)arg2 usingIGD:(_Bool *)arg3;
++ (_Bool)__decodeHostnameOrAddresses:(struct NSDictionary *)arg1 hostname:(id *)arg2 address:(id *)arg3 addressEnd:(id *)arg4;
++ (_Bool)__decodeType:(struct NSDictionary *)arg1 transportProtocol:(unsigned char *)arg2;
 + (_Bool)__decodeFlags:(struct NSDictionary *)arg1 critical:(_Bool *)arg2;
 + (_Bool)__decodePurpose:(struct NSDictionary *)arg1 purpose:(unsigned long long *)arg2;
-+ (id)__ipAddressAny;
++ (_Bool)__isWildcardAddress:(id)arg1;
++ (id)ipAddressAny;
++ (id)ipAddressAnyIPv6;
++ (id)ipAddressAnyIPv4;
 @property(readonly, nonatomic) unsigned short portEnd; // @synthesize portEnd=_portEnd;
 @property(readonly, nonatomic) unsigned short portStart; // @synthesize portStart=_portStart;
 @property(readonly, nonatomic) HMFNetAddress *addressEnd; // @synthesize addressEnd=_addressEnd;
 @property(readonly, nonatomic) HMFNetAddress *address; // @synthesize address=_address;
-@property(readonly, nonatomic, getter=isUsingIGD) _Bool usingIGD; // @synthesize usingIGD=_usingIGD;
+@property(readonly, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(readonly, nonatomic) unsigned char transportProtocol; // @synthesize transportProtocol=_transportProtocol;
 @property(readonly, nonatomic) unsigned long long purpose; // @synthesize purpose=_purpose;
 - (void).cxx_destruct;
 - (struct NSDictionary *)prettyJSONDictionary;
 - (id)attributeDescriptions;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 transportProtocol:(unsigned char)arg5 usingIGD:(_Bool)arg6 address:(id)arg7 addressEnd:(id)arg8 portStart:(unsigned short)arg9 portEnd:(unsigned short)arg10;
+- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(_Bool)arg3 purpose:(unsigned long long)arg4 transportProtocol:(unsigned char)arg5 hostname:(id)arg6 address:(id)arg7 addressEnd:(id)arg8 portStart:(unsigned short)arg9 portEnd:(unsigned short)arg10;
 
 @end
 

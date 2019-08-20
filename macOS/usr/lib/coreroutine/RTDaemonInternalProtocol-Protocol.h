@@ -6,13 +6,13 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class CLLocation, NSArray, NSDate, NSDictionary, NSString, NSURL, NSUUID, RTFetchFingerprintsOptions, RTFingerprint, RTLocationOfInterest, RTLocationOfInterestVisit, RTPlaceInferenceOptions, RTScenarioTrigger, RTSignalGeneratorOptions, RTVisit;
+@class CLLocation, NSArray, NSDate, NSDictionary, NSNumber, NSString, NSURL, NSUUID, RTFetchFingerprintsOptions, RTFingerprint, RTLocation, RTLocationOfInterest, RTLocationOfInterestVisit, RTPlaceInferenceOptions, RTScenarioTrigger, RTSignalGeneratorOptions, RTVisit;
 
 @protocol RTDaemonInternalProtocol <NSObject>
+- (void)logDatabasesWithReply:(void (^)(NSError *))arg1;
 - (void)submitMetrics:(NSDictionary *)arg1 metricName:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)fetchMotionActivitiesFromStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchFMCEnabledWithReply:(void (^)(BOOL, NSError *))arg1;
-- (void)logDatabasesWithReply:(void (^)(NSError *))arg1;
 - (void)injectWiFiAccessPointWithMac:(NSString *)arg1 rssi:(long long)arg2 channel:(long long)arg3 age:(double)arg4 date:(NSDate *)arg5 reply:(void (^)(NSError *))arg6;
 - (void)injectFingerprintWithSettledState:(BOOL)arg1 start:(NSDate *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)injectFingerprintWithIdentifier:(NSUUID *)arg1 settledState:(unsigned long long)arg2 start:(NSDate *)arg3 reply:(void (^)(NSError *))arg4;
@@ -22,12 +22,12 @@
 - (void)fetchInferredMapItemForVisitIdentifier:(NSUUID *)arg1 reply:(void (^)(RTInferredMapItem *, NSError *))arg2;
 - (void)fetchFusionCandidatesForVisitIdentifier:(NSUUID *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (void)submitHintAtLocation:(CLLocation *)arg1 reply:(void (^)(NSError *))arg2;
-- (void)fetchVisitsBetweenStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)tearDownPersistenceStack:(void (^)(NSError *))arg1;
 - (void)mirroringDelegateSetupState:(void (^)(long long, NSError *))arg1;
 - (void)performZoneResetMirroringRequest:(void (^)(NSError *))arg1;
 - (void)performExportMirroringRequest:(void (^)(NSError *))arg1;
 - (void)performImportMirroringRequest:(void (^)(NSError *))arg1;
+- (void)fetchVisitsBetweenStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)simulateVisit:(RTVisit *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)reconstructTransitionsWithReply:(void (^)(NSError *))arg1;
 - (void)updateTransitionWithIdentifier:(NSUUID *)arg1 modeOfTransportation:(long long)arg2 reply:(void (^)(NSError *))arg3;
@@ -40,6 +40,7 @@
 - (void)forceRelabeling:(void (^)(NSError *))arg1;
 - (void)fetchVisitsWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)fetchStoredLocationsCountFromDate:(NSDate *)arg1 toDate:(NSDate *)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 reply:(void (^)(unsigned long long, NSError *))arg5;
+- (void)fetchLocationsOfInterestWithVisitsWithinDistance:(NSNumber *)arg1 location:(RTLocation *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)clearAllLocationsOfInterestWithReply:(void (^)(NSError *))arg1;
 - (void)injectVisit:(RTLocationOfInterestVisit *)arg1 locationOfInterest:(RTLocationOfInterest *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)injectLocationOfInterest:(RTLocationOfInterest *)arg1 reply:(void (^)(NSError *))arg2;

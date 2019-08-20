@@ -19,6 +19,9 @@
 @property _Bool cachedIsRestrictionsPasscodeSet; // @synthesize cachedIsRestrictionsPasscodeSet=_cachedIsRestrictionsPasscodeSet;
 @property _Bool cachedShouldRequestMoreTime; // @synthesize cachedShouldRequestMoreTime=_cachedShouldRequestMoreTime;
 - (void).cxx_destruct;
+- (void)isExplicitContentRestricted:(CDUnknownBlockType)arg1;
+- (id)shouldAllowOneMoreMinuteForWebsiteURL:(id)arg1 error:(id *)arg2;
+- (id)shouldAllowOneMoreMinuteForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)permitWebFilterURL:(id)arg1 pageTitle:(id)arg2 error:(id *)arg3;
 - (_Bool)performMigrationFromMCXSettings:(id)arg1 error:(id *)arg2;
 - (void)contactManagementStateForDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

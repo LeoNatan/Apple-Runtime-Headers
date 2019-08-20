@@ -20,6 +20,7 @@
     _Bool _hasMoreContent;
     id <EMContentItem> _contentItem;
     NSURL *_publicMessageURL;
+    NSArray *_replyToList;
     EMMessage *_contentMessage;
     NSArray *_relatedContentItems;
     EMSecurityInformation *_securityInformation;
@@ -45,6 +46,7 @@
 @property(retain, nonatomic) EMSecurityInformation *securityInformation; // @synthesize securityInformation=_securityInformation;
 @property(copy, nonatomic) NSArray *relatedContentItems; // @synthesize relatedContentItems=_relatedContentItems;
 @property(retain, nonatomic) EMMessage *contentMessage; // @synthesize contentMessage=_contentMessage;
+@property(copy, nonatomic) NSArray *replyToList; // @synthesize replyToList=_replyToList;
 @property(retain, nonatomic) NSURL *publicMessageURL; // @synthesize publicMessageURL=_publicMessageURL;
 @property(nonatomic) __weak id <EMContentItem> contentItem; // @synthesize contentItem=_contentItem;
 - (void).cxx_destruct;

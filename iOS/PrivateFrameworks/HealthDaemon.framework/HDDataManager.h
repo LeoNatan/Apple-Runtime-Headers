@@ -65,7 +65,8 @@
 - (_Bool)deleteSamplesWithTypes:(id)arg1 sourceBundleIdentifier:(id)arg2 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (_Bool)deleteDataObjectsOfClass:(Class)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 deletedSampleCount:(unsigned long long *)arg4 notifyObservers:(_Bool)arg5 generateDeletedObjects:(_Bool)arg6 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg7 error:(id *)arg8;
 - (_Bool)deleteDataObjects:(id)arg1 restrictedSourceEntities:(id)arg2 failIfNotFound:(_Bool)arg3 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg4 error:(id *)arg5;
-- (_Bool)deleteObjectsWithUUIDs:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
+- (id)_deleteDataObjectsByUUIDSQLStringForConfiguration:(id)arg1 entityType:(long long)arg2 error:(id *)arg3;
+- (_Bool)deleteObjectsWithUUIDCollection:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 - (void)_callObservers:(id)arg1 samples:(id)arg2 type:(id)arg3 anchor:(id)arg4;
 - (void)_notifyObserversWithAddedObjectsBySampleType:(id)arg1 lastAnchor:(id)arg2;
 - (void)_callObserversIfPossible;

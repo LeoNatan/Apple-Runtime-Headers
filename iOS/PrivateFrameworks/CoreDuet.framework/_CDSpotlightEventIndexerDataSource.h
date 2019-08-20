@@ -15,6 +15,7 @@
     _DKEventStream *_stream;
 }
 
++ (unsigned long long)currentVersion;
 @property(readonly, nonatomic) _DKEventStream *stream; // @synthesize stream=_stream;
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void).cxx_destruct;

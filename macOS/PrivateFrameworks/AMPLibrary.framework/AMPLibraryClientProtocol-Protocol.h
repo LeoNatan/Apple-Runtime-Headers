@@ -10,6 +10,7 @@
 - (void)synchronousAddToCloudMusicLibrary:(AMPLibraryAddToCloudMusicLibraryRequest *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)synchronousRefreshSubscribedPlaylist:(unsigned long long)arg1 withCloudID:(unsigned long long)arg2 withReason:(unsigned char)arg3 withReply:(void (^)(NSError *))arg4;
 - (void)synchronousCloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(void (^)(NSError *))arg4;
+- (void)cloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(void (^)(NSError *))arg4;
 - (void)sendDBChangesToLibrary:(NSDictionary *)arg1 fromRevision:(unsigned int)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)addTrackToLibrary:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)enqueueSynchronousLibraryCommand:(unsigned int)arg1 commandData:(NSDictionary *)arg2 withReply:(void (^)(NSError *))arg3;

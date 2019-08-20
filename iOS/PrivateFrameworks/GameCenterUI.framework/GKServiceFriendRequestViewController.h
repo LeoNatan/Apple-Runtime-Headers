@@ -12,11 +12,13 @@
 
 @interface GKServiceFriendRequestViewController : GKServiceViewController <MFMessageComposeViewControllerInternalDelegate>
 {
+    _Bool _messageComposeSent;
     MFMessageComposeViewController *_composeController;
     NSString *_friendCode;
     NSString *_friendSupportPageURL;
 }
 
+@property(nonatomic) _Bool messageComposeSent; // @synthesize messageComposeSent=_messageComposeSent;
 @property(retain, nonatomic) NSString *friendSupportPageURL; // @synthesize friendSupportPageURL=_friendSupportPageURL;
 @property(retain, nonatomic) NSString *friendCode; // @synthesize friendCode=_friendCode;
 @property(retain, nonatomic) MFMessageComposeViewController *composeController; // @synthesize composeController=_composeController;

@@ -15,13 +15,8 @@
 
 @property(readonly) TransparencyLogSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
-- (_Bool)downloadURL:(id)arg1 requestData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)fetchURL:(id)arg1 timeout:(double)arg2 requestData:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)fetchURL:(id)arg1 requestData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)buildProtoRequestForURL:(id)arg1 timeout:(double)arg2 contents:(id)arg3 error:(id *)arg4;
+- (_Bool)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)fetch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)fetchURL:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)fetchURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithBackgroundSession:(id)arg1;
 
 @end

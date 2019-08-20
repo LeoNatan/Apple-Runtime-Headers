@@ -139,6 +139,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
 - (_Bool)isHEVCMemoryUsageMinimizationSupported;
+- (_Bool)hevcAllowBFramesForHighCTUCountAndHighResolution;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -179,7 +180,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isVideoHDREnabled;
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(_Bool)arg1;
 - (_Bool)automaticallyAdjustsVideoHDREnabled;
-- (_Bool)isHDRSupported;
 - (void)_setMaxAvailableVideoZoomFactor:(float)arg1;
 - (float)maxAvailableVideoZoomFactor;
 - (void)_setMinAvailableVideoZoomFactor:(float)arg1;

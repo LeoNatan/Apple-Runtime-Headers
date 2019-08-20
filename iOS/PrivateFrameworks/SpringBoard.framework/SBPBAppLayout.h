@@ -17,11 +17,13 @@
     SBPBDisplayItem *_primaryDisplayItem;
     SBPBDisplayItem *_secondaryDisplayItem;
     int _secondaryDisplayItemRole;
+    _Bool _hidden;
     struct {
         unsigned int secondaryDisplayItemRole:1;
     } _has;
 }
 
+@property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) int environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) SBPBDisplayItem *secondaryDisplayItem; // @synthesize secondaryDisplayItem=_secondaryDisplayItem;
 @property(retain, nonatomic) SBPBDisplayItem *primaryDisplayItem; // @synthesize primaryDisplayItem=_primaryDisplayItem;

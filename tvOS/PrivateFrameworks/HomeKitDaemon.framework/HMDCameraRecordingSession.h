@@ -27,7 +27,6 @@
     HMFActivity *_sessionActivity;
     HMDCameraRecordingUploader *_recordingUploader;
     unsigned long long _pendingFragmentsCount;
-    unsigned long long _notificationAddedForSignificantEventMask;
     NSString *_fragmentDirectoryPath;
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDCameraProfile *_camera;
@@ -35,11 +34,13 @@
     HMDCameraRecordingSessionFactory *_factory;
     NSNumber *_remainingRecordingExtensionDuration;
     unsigned long long _sequenceNumberOfMostRecentFragmentWithActiveTrigger;
+    NSMutableDictionary *_confidenceLevelsByEventReason;
     NSMutableDictionary *_analysisEventsBySequenceNumber;
 }
 
 + (id)logCategory;
 @property(readonly) NSMutableDictionary *analysisEventsBySequenceNumber; // @synthesize analysisEventsBySequenceNumber=_analysisEventsBySequenceNumber;
+@property(readonly) NSMutableDictionary *confidenceLevelsByEventReason; // @synthesize confidenceLevelsByEventReason=_confidenceLevelsByEventReason;
 @property unsigned long long sequenceNumberOfMostRecentFragmentWithActiveTrigger; // @synthesize sequenceNumberOfMostRecentFragmentWithActiveTrigger=_sequenceNumberOfMostRecentFragmentWithActiveTrigger;
 @property(retain) NSNumber *remainingRecordingExtensionDuration; // @synthesize remainingRecordingExtensionDuration=_remainingRecordingExtensionDuration;
 @property(readonly) HMDCameraRecordingSessionFactory *factory; // @synthesize factory=_factory;
@@ -48,7 +49,6 @@
 @property(retain) HMDCameraProfile *camera; // @synthesize camera=_camera;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(copy) NSString *fragmentDirectoryPath; // @synthesize fragmentDirectoryPath=_fragmentDirectoryPath;
-@property unsigned long long notificationAddedForSignificantEventMask; // @synthesize notificationAddedForSignificantEventMask=_notificationAddedForSignificantEventMask;
 @property unsigned long long pendingFragmentsCount; // @synthesize pendingFragmentsCount=_pendingFragmentsCount;
 @property(retain) HMDCameraRecordingUploader *recordingUploader; // @synthesize recordingUploader=_recordingUploader;
 @property(getter=isActive) _Bool active; // @synthesize active=_active;
@@ -74,7 +74,7 @@
 - (void)_handleDidFailAnalysisForFragment:(id)arg1 withError:(id)arg2;
 - (void)analyzer:(id)arg1 didFailAnalysisForFragment:(id)arg2 withError:(id)arg3;
 - (void)_submitNotificationSuccessMetricWithRecordingEventTriggers:(unsigned long long)arg1 fragmentNumber:(unsigned long long)arg2;
-- (void)_addNotificationWithType:(unsigned long long)arg1 dateOfOccurrence:(id)arg2 heroFrameData:(id)arg3 offset:(double)arg4 recordingEventTriggers:(unsigned long long)arg5 fragmentNumber:(unsigned long long)arg6;
+- (void)_addNotificationForReason:(unsigned long long)arg1 confidenceLevel:(unsigned long long)arg2 dateOfOccurence:(id)arg3 heroFrameData:(id)arg4 offset:(double)arg5 recordingEventTriggers:(unsigned long long)arg6 fragmentNumber:(unsigned long long)arg7;
 - (void)_handleDidFindSignificantEvent:(id)arg1 inFragment:(id)arg2;
 - (void)analyzer:(id)arg1 didFindSignificantEvent:(id)arg2 inFragment:(id)arg3;
 - (void)_handleAnalyzedFragment:(id)arg1 withResult:(id)arg2;

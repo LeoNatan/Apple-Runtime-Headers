@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSString *_titleString;
     NSString *_subtitleString;
     _Bool _showDisclosureIndicator;
+    _Bool _useRegularFontForSubtitle;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIView *_disclosureChevronView;
@@ -21,16 +22,12 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_titleChevronConstraint;
 }
 
-+ (double)_subtitleLabelLastBaselineToBottom;
-+ (double)_subtitleLabelTopToFirstBaseline;
-+ (id)_subtitleLabelFont;
-+ (double)_titleLabelTopToFirstBaseline;
-+ (id)_titleLabelFont;
 @property(retain, nonatomic) NSLayoutConstraint *titleChevronConstraint; // @synthesize titleChevronConstraint=_titleChevronConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titlePillConstraint; // @synthesize titlePillConstraint=_titlePillConstraint;
 @property(retain, nonatomic) UIView *disclosureChevronView; // @synthesize disclosureChevronView=_disclosureChevronView;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(nonatomic) _Bool useRegularFontForSubtitle; // @synthesize useRegularFontForSubtitle=_useRegularFontForSubtitle;
 @property(nonatomic) _Bool showDisclosureIndicator; // @synthesize showDisclosureIndicator=_showDisclosureIndicator;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subtitle;

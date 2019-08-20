@@ -9,16 +9,15 @@
 #import <AssistantServices/NSCopying-Protocol.h>
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
-@class AFAudioPlaybackRequest;
+@class AFAccessibilityState, AFAudioPlaybackRequest;
 
 @interface AFClientConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _isDeviceInSetupFlow;
     _Bool _isDeviceInCarDNDMode;
     _Bool _isDeviceInStarkMode;
-    _Bool _isAccessibilityVoiceOverTouchEnabled;
-    _Bool _isAccessibilityVibrationDisabled;
     float _outputVolume;
+    AFAccessibilityState *_accessibilityState;
     long long _deviceRingerSwitchState;
     AFAudioPlaybackRequest *_tapToSiriAudioPlaybackRequest;
     AFAudioPlaybackRequest *_twoShotAudioPlaybackRequest;
@@ -29,12 +28,11 @@
 @property(readonly, copy, nonatomic) AFAudioPlaybackRequest *twoShotAudioPlaybackRequest; // @synthesize twoShotAudioPlaybackRequest=_twoShotAudioPlaybackRequest;
 @property(readonly, copy, nonatomic) AFAudioPlaybackRequest *tapToSiriAudioPlaybackRequest; // @synthesize tapToSiriAudioPlaybackRequest=_tapToSiriAudioPlaybackRequest;
 @property(readonly, nonatomic) float outputVolume; // @synthesize outputVolume=_outputVolume;
-@property(readonly, nonatomic) _Bool isAccessibilityVibrationDisabled; // @synthesize isAccessibilityVibrationDisabled=_isAccessibilityVibrationDisabled;
-@property(readonly, nonatomic) _Bool isAccessibilityVoiceOverTouchEnabled; // @synthesize isAccessibilityVoiceOverTouchEnabled=_isAccessibilityVoiceOverTouchEnabled;
 @property(readonly, nonatomic) _Bool isDeviceInStarkMode; // @synthesize isDeviceInStarkMode=_isDeviceInStarkMode;
 @property(readonly, nonatomic) _Bool isDeviceInCarDNDMode; // @synthesize isDeviceInCarDNDMode=_isDeviceInCarDNDMode;
 @property(readonly, nonatomic) _Bool isDeviceInSetupFlow; // @synthesize isDeviceInSetupFlow=_isDeviceInSetupFlow;
 @property(readonly, nonatomic) long long deviceRingerSwitchState; // @synthesize deviceRingerSwitchState=_deviceRingerSwitchState;
+@property(readonly, copy, nonatomic) AFAccessibilityState *accessibilityState; // @synthesize accessibilityState=_accessibilityState;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -43,7 +41,7 @@
 - (unsigned long long)hash;
 - (id)_descriptionWithIndent:(unsigned long long)arg1;
 - (id)description;
-- (id)initWithDeviceRingerSwitchState:(long long)arg1 isDeviceInSetupFlow:(_Bool)arg2 isDeviceInCarDNDMode:(_Bool)arg3 isDeviceInStarkMode:(_Bool)arg4 isAccessibilityVoiceOverTouchEnabled:(_Bool)arg5 isAccessibilityVibrationDisabled:(_Bool)arg6 outputVolume:(float)arg7 tapToSiriAudioPlaybackRequest:(id)arg8 twoShotAudioPlaybackRequest:(id)arg9;
+- (id)initWithAccessibilityState:(id)arg1 deviceRingerSwitchState:(long long)arg2 isDeviceInSetupFlow:(_Bool)arg3 isDeviceInCarDNDMode:(_Bool)arg4 isDeviceInStarkMode:(_Bool)arg5 outputVolume:(float)arg6 tapToSiriAudioPlaybackRequest:(id)arg7 twoShotAudioPlaybackRequest:(id)arg8;
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 
 @end

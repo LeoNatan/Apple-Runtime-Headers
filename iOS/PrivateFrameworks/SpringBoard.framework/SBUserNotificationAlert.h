@@ -69,7 +69,7 @@
     unsigned int _dontDismissOnUnlock:1;
     unsigned int _behavesSuperModally:1;
     unsigned int _allowMenuButtonDismissal:1;
-    unsigned int _undimsScreen:1;
+    unsigned int _wakeDisplay:1;
     unsigned int _forcesModalAlertAppearance:1;
     unsigned int _dismissesOverlaysOnLockScreen:1;
     unsigned int _disableIdleSleepWhileVisible:1;
@@ -152,7 +152,7 @@
 - (id)sound;
 - (void)willActivate;
 - (_Bool)_displayActionButtonOnLockScreen;
-- (_Bool)undimsScreen;
+- (_Bool)wakeDisplay;
 - (_Bool)allowMenuButtonDismissal;
 - (_Bool)dismissOnLock;
 - (_Bool)shouldShowInLockScreen;

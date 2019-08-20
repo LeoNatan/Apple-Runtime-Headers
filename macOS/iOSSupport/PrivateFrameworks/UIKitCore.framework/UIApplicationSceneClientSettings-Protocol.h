@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSArray *audioCategoriesDisablingVolumeHUD;
 @property(readonly, nonatomic) unsigned long long visibleMiniAlertCount;
 @property(readonly, nonatomic) BOOL wantsExclusiveForeground;
+@property(readonly, nonatomic) BOOL homeIndicatorAutoHidden;
 @property(readonly, nonatomic) unsigned long long screenEdgesDeferringSystemGestures;
 @property(readonly, nonatomic, getter=isReachabilitySupported) BOOL reachabilitySupported;
 @property(readonly, copy, nonatomic) FBSDisplayConfigurationRequest *displayConfigurationRequest;

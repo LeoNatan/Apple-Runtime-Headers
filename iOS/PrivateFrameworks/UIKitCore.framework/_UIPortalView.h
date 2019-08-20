@@ -19,11 +19,13 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CAPortalLayer *portalLayer; // @dynamic portalLayer;
 - (id)description;
+@property(nonatomic) _Bool allowsHitTesting;
 @property(nonatomic) _Bool allowsBackdropGroups; // @dynamic allowsBackdropGroups;
 @property(nonatomic) _Bool matchesPosition; // @dynamic matchesPosition;
 @property(nonatomic) _Bool matchesTransform; // @dynamic matchesTransform;
 @property(nonatomic) _Bool matchesAlpha; // @dynamic matchesAlpha;
 @property(nonatomic) _Bool hidesSourceView; // @dynamic hidesSourceView;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

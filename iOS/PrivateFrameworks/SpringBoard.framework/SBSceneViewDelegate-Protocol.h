@@ -6,11 +6,12 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class BSUIAnimationFactory;
+@class BSUIAnimationFactory, SBSceneView;
 
 @protocol SBSceneViewDelegate <NSObject>
 
 @optional
+- (void)sceneView:(SBSceneView *)arg1 changedPreferredStatusBarStyleTo:(long long)arg2;
 - (BSUIAnimationFactory *)animationFactoryForImplicitTransitionFromMode:(long long)arg1 toMode:(long long)arg2 defaultFactory:(BSUIAnimationFactory *)arg3;
 @end
 

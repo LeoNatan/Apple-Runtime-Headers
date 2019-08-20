@@ -6,12 +6,9 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@protocol _UIValidatedUserInterfaceItem;
-
 @protocol _UIUserInterfaceValidations <NSObject>
 
 @optional
-- (BOOL)_validateUserInterfaceItem:(id <_UIValidatedUserInterfaceItem>)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 @end
 

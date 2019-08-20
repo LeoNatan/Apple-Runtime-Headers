@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: paragraphText
     // Error parsing type: , name: linkedText
-    // Error parsing type: , name: linkedAction
+    // Error parsing type: , name: linkedURL
 }
 
 - (void).cxx_destruct;

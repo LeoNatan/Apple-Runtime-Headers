@@ -59,6 +59,7 @@
 @property(readonly, copy) NSString *description;
 - (id)appDragLocalContextForDragItem:(id)arg1;
 - (void)setAppDragLocalContext:(id)arg1 forDragItem:(id)arg2;
+- (id)listModelEnumeratorForBouncedIcons;
 - (id)bouncedIconForListModel:(id)arg1;
 - (void)setBouncedIcon:(id)arg1 forListModel:(id)arg2;
 - (void)setInitialIndexPath:(id)arg1 forIcon:(id)arg2;

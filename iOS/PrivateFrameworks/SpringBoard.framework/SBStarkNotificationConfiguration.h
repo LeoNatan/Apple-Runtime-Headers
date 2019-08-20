@@ -33,6 +33,7 @@
 - (_Bool)shouldClipForWindow:(id)arg1;
 - (struct CGRect)frameWithInterfaceOrientation:(long long)arg1;
 - (id)policyForApp:(id)arg1;
+- (void)setGeoSupported:(_Bool)arg1;
 - (id)init;
 
 // Remaining properties

@@ -60,6 +60,8 @@
 @property(readonly, nonatomic, getter=isContentClippingRequired) _Bool contentClippingRequired;
 - (void)contentModuleWillTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)didMoveToWindow;
+- (void)_updateStepViewVisibility;
+- (void)_layoutStepViews;
 - (void)layoutSubviews;
 - (void)setValue:(float)arg1 andUpdateStep:(_Bool)arg2;
 - (void)setValue:(float)arg1;

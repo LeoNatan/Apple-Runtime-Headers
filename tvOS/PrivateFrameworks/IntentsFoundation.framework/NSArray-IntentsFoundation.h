@@ -23,6 +23,8 @@
 - (id)if_objectsWithValue:(id)arg1 forKey:(id)arg2;
 - (id)if_objectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)_inf_objectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)if_arrayByRemovingObjectsInArray:(id)arg1;
+- (id)if_arrayByRemovingObject:(id)arg1;
 - (id)if_escapedComponentsJoinedByString:(id)arg1 forLocale:(id)arg2;
 - (void)if_flatMapAsynchronouslyOnQueue:(id)arg1 transform:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)if_flatMapAsynchronously:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;

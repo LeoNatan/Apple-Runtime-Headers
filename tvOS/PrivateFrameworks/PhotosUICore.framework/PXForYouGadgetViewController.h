@@ -43,6 +43,7 @@
 - (void)rootGadgetControllerDidDisappear;
 - (void)rootGadgetControllerWillAppear;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

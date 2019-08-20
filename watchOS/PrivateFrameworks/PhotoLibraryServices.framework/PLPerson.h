@@ -16,7 +16,7 @@
 {
 }
 
-+ (id)fetchFinalMergeTargetPersonForPersonWithUUID:(id)arg1 context:(id)arg2;
++ (id)fetchFinalMergeTargetPersonForPersonWithUUID:(id)arg1 context:(id)arg2 predicate:(id)arg3;
 + (_Bool)resetAllInLibrary:(id)arg1 error:(id *)arg2;
 + (id)predicateForPersistence;
 + (id)predicateForVisibleKeyFace;

@@ -12,7 +12,7 @@
 @class ICAccount, ICAccountUtilities, ICFolderCustomNoteSortType, ICManagedObjectContextUpdater, ICNote, ICNotesCrossProcessChangeCoordinator, ICPersistentContainer, NSArray, NSData, NSDictionary, NSError, NSManagedObjectContext, NSString, NSTimer;
 @protocol OS_dispatch_queue;
 
-@interface ICNoteContext : NSObject <ICNoteContainer, ICManagedObjectContextUpdaterDelegate>
+@interface ICNoteContext : NSObject <ICManagedObjectContextUpdaterDelegate, ICNoteContainer>
 {
     BOOL _delaySaving;
     BOOL _databaseOpenFailedDueToLowDiskSpace;

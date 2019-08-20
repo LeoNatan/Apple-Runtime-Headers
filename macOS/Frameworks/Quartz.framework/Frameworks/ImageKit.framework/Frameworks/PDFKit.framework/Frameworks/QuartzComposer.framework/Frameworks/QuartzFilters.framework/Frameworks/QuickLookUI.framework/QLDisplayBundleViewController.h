@@ -54,7 +54,7 @@
 - (void)exitMarkup:(long long)arg1 needsSave:(char *)arg2;
 - (void)enterMarkupWithSaveInPlace:(BOOL)arg1;
 - (void)promptSaveForCloseWithCloseHandler:(CDUnknownBlockType)arg1;
-- (void)presentScreenTimeLockout:(BOOL)arg1 withScreentimeID:(id)arg2;
+- (void)presentScreenTimeLockout:(BOOL)arg1 displayBundle:(id)arg2;
 - (void)_updateOverlayControls;
 @property(readonly) double backingScaleFactor;
 @property BOOL playing;

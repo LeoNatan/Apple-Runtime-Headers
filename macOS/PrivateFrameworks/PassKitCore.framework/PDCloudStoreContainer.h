@@ -6,18 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <PassKitCore/PDScheduledActivityClient-Protocol.h>
+@class CKContainer, NSArray, NSError, NSMutableDictionary, NSMutableSet;
+@protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source, PDCloudStoreContainerDelegate, PDCloudStoreDataSource;
 
-@class CKContainer, NSArray, NSError, NSMutableDictionary, NSMutableSet, NSString;
-@protocol OS_dispatch_group, OS_dispatch_queue, PDCloudStoreContainerDelegate, PDCloudStoreDataSource;
-
-@interface PDCloudStoreContainer : NSObject <PDScheduledActivityClient>
+@interface PDCloudStoreContainer : NSObject
 {
     NSMutableSet *_initializationCompletionHandlers;
     NSObject<OS_dispatch_queue> *_backgroundQueue;
     NSObject<OS_dispatch_group> *_batchUpdateGroup;
     BOOL _shouldInvalidateCloudStore;
     BOOL _shouldCancelAllTasks;
+    NSObject<OS_dispatch_source> *_timeoutTimer;
     BOOL _accountChangedNotificationReceived;
     BOOL _cloudContainerSetupInProgress;
     BOOL _resettingCloudContainer;
@@ -57,8 +56,8 @@
 - (id)_cannotPerformActionErrorWithFailureReason:(id)arg1;
 - (void)_resetContainerValues;
 - (void)_resetCachedZoneDataForZoneID:(id)arg1;
-@property(readonly, copy) NSString *description;
-- (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
+- (id)description;
+- (void)_cloudStoreInitializationTimerFired;
 - (void)_cancelCloudStoreInitializationTimer;
 - (void)_startCloudStoreInitializationTimer;
 - (void)saveServerSubscriptionsForKey:(id)arg1;
@@ -82,6 +81,7 @@
 - (void)_subscriptionOperationWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 cursor:(id)arg3 fetchedRecords:(id)arg4 zone:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 zone:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)fetchAndProccessRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 zone:(id)arg4 shouldUpdateLocalDatabase:(BOOL)arg5 userInfo:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_modifyRecordsOperationWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -118,7 +118,7 @@
 - (id)recordTypesForCloudStoreItemType:(unsigned long long)arg1;
 - (id)zoneForCloudStoreItemType:(unsigned long long)arg1;
 - (id)cloudRecordObjectFromItemType:(unsigned long long)arg1 records:(id)arg2;
-- (BOOL)shouldFetchAndStoreCloudDataAtStartup;
+- (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)canUpdateAndFetchRecords;
 - (BOOL)canInitializeContainer;
 - (BOOL)isSetup;
@@ -126,11 +126,6 @@
 - (void)initialCloudDatabaseSetupWithOperationGroupNameSuffix:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)initialCloudDatabaseSetupWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithDataSource:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

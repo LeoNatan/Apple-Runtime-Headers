@@ -10,6 +10,7 @@
 
 @interface AKAuthorizationRequest : AKCredentialRequest
 {
+    _Bool _isSilentAppTransfer;
     NSString *_altDSID;
     ACAccount *_authkitAccount;
     NSArray *_requestedScopes;
@@ -29,10 +30,12 @@
 @property(copy, nonatomic) NSString *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
 @property(copy, nonatomic) NSArray *requestedScopes; // @synthesize requestedScopes=_requestedScopes;
+@property(nonatomic) _Bool _isSilentAppTransfer; // @synthesize _isSilentAppTransfer;
 @property(retain, nonatomic) ACAccount *authkitAccount; // @synthesize authkitAccount=_authkitAccount;
 - (void).cxx_destruct;
 - (id)description;
 - (id)altDSID;
+@property(readonly, nonatomic) ACAccount *internalAuthKitAccount;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

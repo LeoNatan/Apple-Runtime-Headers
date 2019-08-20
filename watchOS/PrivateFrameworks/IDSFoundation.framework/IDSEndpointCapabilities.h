@@ -21,6 +21,8 @@
     BOOL _supportsFullScreenMomentsV1;
     BOOL _supportsFullScreenMomentsV2;
     BOOL _supportsFullScreenMomentsV3;
+    BOOL _supportsScreenTimeV2;
+    BOOL _supportsIncomingFindMyV1;
     BOOL _supportsInvisibleInkV1;
     BOOL _supportsImpactEffectsV1;
     BOOL _supportsUpdateAttachmentsV1;

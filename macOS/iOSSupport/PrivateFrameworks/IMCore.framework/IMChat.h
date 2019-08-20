@@ -67,6 +67,7 @@
     BOOL _hasSurfRequest;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
+    NSString *_groupChatIdentifierUppercase;
     double _latestTypingIndicatorTimeInterval;
     IMOrderingTools *_orderingTools;
     NSString *_currentLocationGUID;
@@ -84,13 +85,11 @@
 + (void)removeGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (BOOL)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
-+ (void)_removeGUID:(id)arg1 fromList:(id)arg2;
-+ (void)_storeGUID:(id)arg1 forKey:(id)arg2;
-+ (id)_GUIDsForKey:(id)arg1;
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
+@property(retain, nonatomic) NSString *groupChatIdentifierUppercase; // @synthesize groupChatIdentifierUppercase=_groupChatIdentifierUppercase;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
 @property(nonatomic) BOOL hasSurfRequest; // @synthesize hasSurfRequest=_hasSurfRequest;

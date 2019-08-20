@@ -28,11 +28,13 @@
 @property(nonatomic, getter=isBlurDisabled) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
 @property(nonatomic) _Bool showPlaceholder; // @synthesize showPlaceholder=_showPlaceholder;
 - (void).cxx_destruct;
+- (void)_updatePlaceholderImage;
 - (void)_updatePlaceholder;
 - (void)_generateImageForSummary:(id)arg1 barHeight:(double)arg2 maximumHeight:(double)arg3 synchronous:(_Bool)arg4;
 - (void)_callCompletion;
 - (void)_updateImageWithImage:(id)arg1;
 - (void)layoutSubviews;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)configureWithSummary:(id)arg1 maximumHeight:(double)arg2 barHeight:(double)arg3 synchronous:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)initWithFrame:(struct CGRect)arg1;
 

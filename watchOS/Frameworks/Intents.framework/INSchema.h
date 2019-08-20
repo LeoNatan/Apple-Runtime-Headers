@@ -26,6 +26,7 @@
 + (void)_resetCache;
 + (id)_cache;
 + (id)_defaultSchemaForBundle:(id)arg1;
++ (id)_schemaWithIntentDefinitionURLs:(id)arg1 bundleIdentifier:(id)arg2 contentOptions:(unsigned int)arg3;
 + (id)_defaultSchemaForBundle:(id)arg1 contentOptions:(unsigned int)arg2;
 + (id)systemSchema;
 + (id)defaultSchema;

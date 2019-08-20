@@ -17,6 +17,8 @@
     BOOL _enableColorMatching;
     BOOL _debugExtendedColorRange;
     BOOL _debugOpaque;
+    BOOL _debugResolution;
+    BOOL _debugColorTransform;
     BOOL _colorCopiedImages;
     BOOL _requestThumbnailsOnly;
     BOOL _requestMasterThumbsOnly;
@@ -38,6 +40,8 @@
     BOOL _enableRectDiagnosticsForDecorationSprites;
     BOOL _enableRectDiagnosticsForViewSprites;
     BOOL _wantsPerspectiveDebug;
+    BOOL _shouldShowBoundariesOfTextTextures;
+    BOOL _shouldIncludeSpecialCharactersInTextTextures;
     long long _sampleCount;
     long long _blockOnMissingThumbnailsAtSpeedRegime;
     long long _videoAllowedAtOrBelowSpeed;
@@ -51,6 +55,8 @@
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) BOOL shouldIncludeSpecialCharactersInTextTextures; // @synthesize shouldIncludeSpecialCharactersInTextTextures=_shouldIncludeSpecialCharactersInTextTextures;
+@property(nonatomic) BOOL shouldShowBoundariesOfTextTextures; // @synthesize shouldShowBoundariesOfTextTextures=_shouldShowBoundariesOfTextTextures;
 @property(nonatomic) double perspectiveAngle; // @synthesize perspectiveAngle=_perspectiveAngle;
 @property(nonatomic) BOOL wantsPerspectiveDebug; // @synthesize wantsPerspectiveDebug=_wantsPerspectiveDebug;
 @property(nonatomic) BOOL enableRectDiagnosticsForViewSprites; // @synthesize enableRectDiagnosticsForViewSprites=_enableRectDiagnosticsForViewSprites;
@@ -80,6 +86,8 @@
 @property(nonatomic) BOOL requestMasterThumbsOnly; // @synthesize requestMasterThumbsOnly=_requestMasterThumbsOnly;
 @property(nonatomic) BOOL requestThumbnailsOnly; // @synthesize requestThumbnailsOnly=_requestThumbnailsOnly;
 @property(nonatomic) BOOL colorCopiedImages; // @synthesize colorCopiedImages=_colorCopiedImages;
+@property(nonatomic) BOOL debugColorTransform; // @synthesize debugColorTransform=_debugColorTransform;
+@property(nonatomic) BOOL debugResolution; // @synthesize debugResolution=_debugResolution;
 @property(nonatomic) BOOL debugOpaque; // @synthesize debugOpaque=_debugOpaque;
 @property(nonatomic) BOOL debugExtendedColorRange; // @synthesize debugExtendedColorRange=_debugExtendedColorRange;
 @property(nonatomic) long long sampleCount; // @synthesize sampleCount=_sampleCount;

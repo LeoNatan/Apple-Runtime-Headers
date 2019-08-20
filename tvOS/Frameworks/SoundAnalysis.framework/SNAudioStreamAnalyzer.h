@@ -10,6 +10,7 @@
 #import <SoundAnalysis/SNTimeConverting-Protocol.h>
 
 @class AVAudioFormat, NSArray, NSMutableArray, NSString, SNAudioProcessorCache;
+@protocol OS_dispatch_queue;
 
 @interface SNAudioStreamAnalyzer : NSObject <SNTimeConverting, SNResultsGating>
 {
@@ -19,7 +20,9 @@
     AVAudioFormat *_currentFormat;
     NSArray *_requests;
     NSMutableArray *_analyzerInfos;
-    _Bool _needToConfigureAnalyzers;
+    _Bool _shouldRebuildProcessingTree;
+    _Bool _isInErrorState;
+    NSObject<OS_dispatch_queue> *_analyzerQueue;
     _Bool _shouldProduceResults;
 }
 
@@ -31,23 +34,24 @@
 - (void)writeDSPGraphDotFilesToDirectory:(id)arg1;
 @property(readonly, nonatomic) double clientSampleRate;
 - (long long)clientSampleTimeFromSampleTime:(long long)arg1 fromBox:(struct Box *)arg2;
-- (void)sendUnexpectedErrorToAllRequests;
+- (void)handleAnalyzeAudioBufferError;
 - (void)sendErrorToAllRequests:(id)arg1;
+- (void)enterErrorState:(id)arg1;
 - (void)_analyzeAudioBuffer:(id)arg1 atAudioFramePosition:(long long)arg2;
 - (void)analyzeAudioBuffer:(id)arg1 atAudioFramePosition:(long long)arg2;
 - (void)completeAnalysis;
 - (void)analyzeAudioBufferList:(struct AudioBufferList *)arg1 withAudioFrameCount:(unsigned int)arg2 atAudioFramePosition:(long long)arg3;
-- (_Bool)primeWithFormat:(id)arg1;
-- (void)updateProcessingTreeFormatWithFormat:(id)arg1;
-- (void)markAllAnalyzersNeedConfiguring;
+- (_Bool)configureAnalysisTreeWithFormat:(id)arg1;
+- (void)updateProcessingTreeFormat:(id)arg1;
 - (_Bool)updateTreeProcessingContexts;
-- (_Bool)configureUnconfiguredAnalyzersWithFormat:(id)arg1;
+- (_Bool)configureAnalyzer:(id)arg1 withFormat:(id)arg2;
 - (void)removeAllRequests;
 - (void)_removeRequest:(id)arg1;
 - (void)removeRequest:(id)arg1;
+- (_Bool)_addRequest:(id)arg1 withObserver:(id)arg2 error:(id *)arg3;
 - (_Bool)addRequest:(id)arg1 withObserver:(id)arg2 error:(id *)arg3;
 - (void)removeAnalyzerInfoForRequest:(id)arg1;
-- (void)addAnalyzerInfoForRequest:(id)arg1 resultsObserver:(id)arg2;
+- (id)createAnalyzerInfoForRequest:(id)arg1 resultsObserver:(id)arg2;
 - (id)analyzerInfoForRequest:(id)arg1;
 - (id)initWithFormat:(id)arg1;
 

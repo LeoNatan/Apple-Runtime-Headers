@@ -26,6 +26,7 @@
 - (void)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)didChangeActiveProvider:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)willBecomeInactiveProvider:(CDUnknownBlockType)arg1;
+- (void)handleScreenUnblanked;
 - (void)handleScreenBlanked;
 - (void)setIsActiveProvider:(_Bool)arg1;
 @property(readonly, copy) NSString *description;

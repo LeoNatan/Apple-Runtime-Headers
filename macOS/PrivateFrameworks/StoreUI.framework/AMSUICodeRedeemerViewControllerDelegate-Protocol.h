@@ -13,6 +13,7 @@
 - (void)codeRedeemerDidFindBox:(AMSUICodeRedeemerViewController *)arg1;
 - (void)codeRedeemerDidFadeStatus:(AMSUICodeRedeemerViewController *)arg1;
 - (void)codeRedeemerDidStart:(AMSUICodeRedeemerViewController *)arg1;
+- (void)codeRedeemerDidDismiss:(AMSUICodeRedeemerViewController *)arg1;
 - (void)codeRedeemer:(AMSUICodeRedeemerViewController *)arg1 willRecognizeCodes:(NSArray *)arg2;
 - (void)codeRedeemer:(AMSUICodeRedeemerViewController *)arg1 didSucceedWithCodes:(NSArray *)arg2;
 - (void)codeRedeemer:(AMSUICodeRedeemerViewController *)arg1 didFailWithError:(NSError *)arg2;

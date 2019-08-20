@@ -19,8 +19,6 @@
 - (void).cxx_destruct;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint)arg2;
 - (id)viewForDragManager:(id)arg1;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (void)forceImageViewFullscreen:(id)arg1;
 - (id)imageViewForLocation:(struct CGPoint)arg1;
 - (id)hostingView;

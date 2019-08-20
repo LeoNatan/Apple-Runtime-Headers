@@ -14,11 +14,13 @@
     NSDictionary *_outputSettings;
     NSArray *_metadata;
     NSProgress *_progress;
+    double _bitRateMultiplicationFactor;
     NUColorSpace *_cachedColorSpace;
 }
 
 @property(nonatomic) BOOL requiresVideoComposition; // @synthesize requiresVideoComposition=_requiresVideoComposition;
 @property(retain) NUColorSpace *cachedColorSpace; // @synthesize cachedColorSpace=_cachedColorSpace;
+@property(nonatomic) double bitRateMultiplicationFactor; // @synthesize bitRateMultiplicationFactor=_bitRateMultiplicationFactor;
 @property(retain) NSProgress *progress; // @synthesize progress=_progress;
 @property(copy) NSArray *metadata; // @synthesize metadata=_metadata;
 @property(copy) NSDictionary *outputSettings; // @synthesize outputSettings=_outputSettings;

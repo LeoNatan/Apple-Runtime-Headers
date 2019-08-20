@@ -185,6 +185,7 @@
 + (id)systemPinkColor;
 + (id)systemYellowColor;
 + (id)systemOrangeColor;
++ (id)_systemBlueColor2;
 + (id)systemBlueColor;
 + (id)systemGreenColor;
 + (id)systemRedColor;

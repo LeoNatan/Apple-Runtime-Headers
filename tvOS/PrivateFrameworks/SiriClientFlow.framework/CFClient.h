@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (id)initWithClientLiteWithConnectionName:(id)arg1;
 - (id)initWithServiceHelper:(id)arg1 withConnectionName:(id)arg2;
-- (void)_initEpoch;
+- (void)resetScriptExecutorCache;
 - (void)rebootScripter;
 - (void)_executeRemoteCommand:(id)arg1 peerInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cancelOperationsForRequestID:(id)arg1;
@@ -30,8 +30,6 @@
 - (void)executeCommand:(id)arg1 peerInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)executeCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)warmUpWithSignal:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_invalidateConnection:(id)arg1 withReason:(id)arg2 capturedEpoch:(unsigned int)arg3 afterDelayInSeconds:(int)arg4;
-- (unsigned int)_incrementAndCaptureEpoch;
 
 @end
 

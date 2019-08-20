@@ -65,6 +65,7 @@
 - (BOOL)icd_isParentOfURL:(id)arg1;
 - (BOOL)icd_isParentOfURL:(id)arg1 strictly:(BOOL)arg2;
 - (BOOL)icd_isInLocalHomeDirectory;
+- (id)icd_slashPrivateURL;
 - (id)icd_realpathURL;
 - (id)icd_pathComponentDisplayMetadataWithOptions:(unsigned long long)arg1;
 @end

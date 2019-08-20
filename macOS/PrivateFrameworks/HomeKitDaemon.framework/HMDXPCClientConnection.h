@@ -14,11 +14,11 @@
 
 @interface HMDXPCClientConnection : HMFMessageTransport <HMDaemonConnection, HMFLogging>
 {
+    BOOL _activated;
     BOOL _entitledForAPIAccess;
     BOOL _entitledForBackgroundMode;
     BOOL _entitledForCameraClipsAccess;
     BOOL _entitledForMultiUserSetupAccess;
-    BOOL _activated;
     NSXPCConnection *_xpcConnection;
     HMDProcessInfo *_processInfo;
     unsigned long long _entitlements;
@@ -31,7 +31,6 @@
 + (id)logCategory;
 + (unsigned long long)entitlementsForConnection:(id)arg1;
 @property(nonatomic) __weak HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
-@property(nonatomic) BOOL activated; // @synthesize activated=_activated;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDXPCRequestTracker *requestTracker; // @synthesize requestTracker=_requestTracker;
 @property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
@@ -40,6 +39,7 @@
 @property(readonly, nonatomic, getter=isEntitledForBackgroundMode) BOOL entitledForBackgroundMode; // @synthesize entitledForBackgroundMode=_entitledForBackgroundMode;
 @property(readonly, nonatomic, getter=isEntitledForAPIAccess) BOOL entitledForAPIAccess; // @synthesize entitledForAPIAccess=_entitledForAPIAccess;
 @property(readonly) unsigned long long entitlements; // @synthesize entitlements=_entitlements;
+@property(nonatomic, getter=isActivated) BOOL activated; // @synthesize activated=_activated;
 @property(nonatomic) __weak HMDProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 @property(nonatomic) __weak NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
@@ -64,6 +64,7 @@
 @property(readonly, nonatomic) int clientPid;
 @property(readonly, nonatomic) NSString *name;
 - (id)_displayName;
+@property(readonly, nonatomic, getter=isEntitledForShortcutsAutomationAccess) BOOL entitledForShortcutsAutomationAccess;
 @property(readonly, nonatomic, getter=isEntitledToProvideAccessorySetupPayload) BOOL entitledToProvideAccessorySetupPayload;
 @property(readonly, nonatomic, getter=isEntitledForHomeLocationAccess) BOOL entitledForHomeLocationAccess;
 @property(readonly, nonatomic, getter=isAuthorizedForLocationAccess) BOOL authorizedForLocationAccess;

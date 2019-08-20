@@ -35,6 +35,7 @@
 + (void)updateKeyAssetForHighlights:(id)arg1;
 + (void)_updateParentHighlighNeedingNewKeyAsset:(id)arg1 withProvisionalKeyAsset:(id)arg2 updatedHighlights:(id)arg3;
 + (BOOL)_shouldUpdateKeyAssetForParentHighlight:(id)arg1 withKeyAssetObjectID:(id)arg2;
++ (BOOL)assetEligibleForRecents:(id)arg1;
 + (void)updateTitleForHighlights:(id)arg1 forKind:(unsigned short)arg2 forceUpdateLocale:(BOOL)arg3;
 @property(retain, nonatomic) NSMutableSet *highlightsNeedingNewKeyAsset; // @synthesize highlightsNeedingNewKeyAsset=_highlightsNeedingNewKeyAsset;
 @property(nonatomic) __weak id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> dataManager; // @synthesize dataManager=_dataManager;

@@ -9,7 +9,7 @@
 #import <GeoServices/GEOMotionContextProviderDelegate-Protocol.h>
 
 @class NSString;
-@protocol GEOMotionContextProvider;
+@protocol GEOMotionContextDelegate, GEOMotionContextProvider;
 
 @interface GEOMotionContext : NSObject <GEOMotionContextProviderDelegate>
 {
@@ -17,8 +17,10 @@
     unsigned long long _motionType;
     unsigned long long _exitType;
     unsigned long long _confidence;
+    id <GEOMotionContextDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <GEOMotionContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned long long exitType; // @synthesize exitType=_exitType;
 @property(readonly, nonatomic) unsigned long long motionType; // @synthesize motionType=_motionType;

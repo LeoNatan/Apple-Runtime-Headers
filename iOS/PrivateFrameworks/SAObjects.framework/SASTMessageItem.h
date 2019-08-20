@@ -16,6 +16,7 @@
 
 + (id)messageItemWithDictionary:(id)arg1 context:(id)arg2;
 + (id)messageItem;
+@property(copy, nonatomic) NSString *serviceType;
 @property(retain, nonatomic) SAUIDecoratedText *recipient;
 @property(retain, nonatomic) SAUIDecoratedText *content;
 @property(copy, nonatomic) NSString *bundleId;

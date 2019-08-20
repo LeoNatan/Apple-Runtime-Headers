@@ -24,6 +24,7 @@
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 - (void).cxx_destruct;
 - (void)calculateUsage;
+- (void)presentAlert:(id)arg1;
 - (void)didFailToSetPolicy:(id)arg1 forSpecifier:(id)arg2;
 - (void)prefetchResourcesFor:(id)arg1;
 - (id)specifiers;

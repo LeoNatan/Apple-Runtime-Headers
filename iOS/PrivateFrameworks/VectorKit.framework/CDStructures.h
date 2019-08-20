@@ -111,6 +111,8 @@ struct BufferMemory {
     char *_data;
 };
 
+struct BumpAnimator;
+
 struct CGColor;
 
 struct CGPoint {
@@ -1024,16 +1026,6 @@ struct MuninJunction {
     unsigned char _field8;
 };
 
-struct MuninLogic {
-    CDUnknownFunctionPointerType *_field1;
-    _Bool _field2;
-    unsigned short _field3;
-    struct unique_ptr<md::mun::MuninMetadataContainer, std::__1::default_delete<md::mun::MuninMetadataContainer>> _field4;
-    struct function<void (VKMuninAvailability)> _field5;
-    long long _field6;
-    struct vector<std::__1::shared_ptr<md::MuninAvailabilityData>, std::__1::allocator<std::__1::shared_ptr<md::MuninAvailabilityData>>> _field7;
-};
-
 struct MuninMetadataContainer;
 
 struct MuninNavigation;
@@ -1060,7 +1052,7 @@ struct MuninSceneLogic {
     struct World *_field5;
     struct LoadingStatusTracker *_field6;
     struct RunLoopController *_field7;
-    struct MuninMetadataContainer *_field8;
+    struct unique_ptr<md::mun::MuninMetadataContainer, std::__1::default_delete<md::mun::MuninMetadataContainer>> _field8;
     struct vector<md::mun::ViewId, std::__1::allocator<md::mun::ViewId>> _field9;
     unordered_set_bb7a56cc _field10;
     struct linear_map<unsigned short, std::__1::unordered_set<mdc::LayerDataRequestKey, mdc::LayerDataRequestKeyHash, std::__1::equal_to<mdc::LayerDataRequestKey>, std::__1::allocator<mdc::LayerDataRequestKey>>, std::__1::equal_to<unsigned short>, std::__1::allocator<std::__1::pair<unsigned short, std::__1::unordered_set<mdc::LayerDataRequestKey, mdc::LayerDataRequestKeyHash, std::__1::equal_to<mdc::LayerDataRequestKey>, std::__1::allocator<mdc::LayerDataRequestKey>>>>, std::__1::vector<std::__1::pair<unsigned short, std::__1::unordered_set<mdc::LayerDataRequestKey, mdc::LayerDataRequestKeyHash, std::__1::equal_to<mdc::LayerDataRequestKey>, std::__1::allocator<mdc::LayerDataRequestKey>>>, std::__1::allocator<std::__1::pair<unsigned short, std::__1::unordered_set<mdc::LayerDataRequestKey, mdc::LayerDataRequestKeyHash, std::__1::equal_to<mdc::LayerDataRequestKey>, std::__1::allocator<mdc::LayerDataRequestKey>>>>>> _field11;
@@ -1316,8 +1308,6 @@ struct RealisticRenderer {
 };
 
 struct RenderBuffer;
-
-struct RenderFrame;
 
 struct RenderItem;
 
@@ -2417,13 +2407,6 @@ struct function<void (NSError *)> {
     } _field1;
 };
 
-struct function<void (VKMuninAvailability)> {
-    struct __value_func<void (VKMuninAvailability)> {
-        struct type _field1;
-        struct __base<void (VKMuninAvailability)> *_field2;
-    } _field1;
-};
-
 struct function<void (mdc::SceneStatus)> {
     struct __value_func<void (mdc::SceneStatus)> {
         struct type _field1;
@@ -3098,8 +3081,6 @@ struct shared_ptr<md::LabelTransitRouteLine> {
     struct __shared_weak_count *_field2;
 };
 
-struct shared_ptr<md::MuninAvailabilityData>;
-
 struct shared_ptr<md::NavCurrentRoadSign> {
     struct NavCurrentRoadSign *__ptr_;
     struct __shared_weak_count *__cntrl_;
@@ -3202,6 +3183,12 @@ struct type {
 
 struct unfair_lock {
     struct os_unfair_lock_s _lock;
+};
+
+struct unique_ptr<(anonymous namespace)::BumpAnimator, std::__1::default_delete<(anonymous namespace)::BumpAnimator>> {
+    struct __compressed_pair<(anonymous namespace)::BumpAnimator *, std::__1::default_delete<(anonymous namespace)::BumpAnimator>> {
+        struct BumpAnimator *__value_;
+    } __ptr_;
 };
 
 struct unique_ptr<(anonymous namespace)::CustomLandmarksContainer, std::__1::default_delete<(anonymous namespace)::CustomLandmarksContainer>> {
@@ -3327,12 +3314,6 @@ struct unique_ptr<ggl::PrefilteredLine::PrefilteredLineMesh, std::__1::default_d
 struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> {
     struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer>> {
         struct RenderBuffer *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<ggl::RenderFrame, std::__1::default_delete<ggl::RenderFrame>> {
-    struct __compressed_pair<ggl::RenderFrame *, std::__1::default_delete<ggl::RenderFrame>> {
-        struct RenderFrame *__value_;
     } __ptr_;
 };
 
@@ -4423,14 +4404,6 @@ struct vector<std::__1::shared_ptr<md::LabelFeature>, geo::StdAllocator<std::__1
     struct __compressed_pair<std::__1::shared_ptr<md::LabelFeature>*, geo::StdAllocator<std::__1::shared_ptr<md::LabelFeature>, mdm::Allocator>> {
         struct shared_ptr<md::LabelFeature> *_field1;
         struct StdAllocator<std::__1::shared_ptr<md::LabelFeature>, mdm::Allocator> _field2;
-    } _field3;
-};
-
-struct vector<std::__1::shared_ptr<md::MuninAvailabilityData>, std::__1::allocator<std::__1::shared_ptr<md::MuninAvailabilityData>>> {
-    struct shared_ptr<md::MuninAvailabilityData> *_field1;
-    struct shared_ptr<md::MuninAvailabilityData> *_field2;
-    struct __compressed_pair<std::__1::shared_ptr<md::MuninAvailabilityData>*, std::__1::allocator<std::__1::shared_ptr<md::MuninAvailabilityData>>> {
-        struct shared_ptr<md::MuninAvailabilityData> *_field1;
     } _field3;
 };
 

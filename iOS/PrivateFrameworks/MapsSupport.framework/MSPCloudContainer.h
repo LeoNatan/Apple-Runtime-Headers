@@ -19,14 +19,18 @@
     MSPCloudKitAccountAccess *_access;
     MSPCloudContainerCache *_cache;
     NSObject<OS_dispatch_queue> *_observerQueue;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
     MSPJournal *_journal;
     NSHashTable *_observers;
+    unsigned long long _operationBatchSize;
 }
 
+@property(nonatomic) unsigned long long operationBatchSize; // @synthesize operationBatchSize=_operationBatchSize;
 @property(nonatomic) _Bool useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
 @property(nonatomic) _Bool hasActiveSubscription; // @synthesize hasActiveSubscription=_hasActiveSubscription;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(retain, nonatomic) MSPCloudContainerCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) MSPCloudKitAccountAccess *access; // @synthesize access=_access;
@@ -45,6 +49,8 @@
 - (void)mergeRemoteChanges:(id)arg1 withGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)mergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pushChanges:(id)arg1 withGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)batchedOperationsFromRecords:(id)arg1 toDelete:(id)arg2 group:(id)arg3 batchSize:(unsigned long long)arg4 modifyRecordsCompletionBlock:(CDUnknownBlockType)arg5;
+- (id)_modifyRecordsOperationWithRecordsToSave:(id)arg1 toDelete:(id)arg2 group:(id)arg3 modifyRecordsCompletion:(CDUnknownBlockType)arg4;
 - (void)fetchChangesWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)subscribeToChangesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setupCloudContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -55,6 +61,7 @@
 - (id)description;
 - (id)initWithContainer:(id)arg1 accountID:(id)arg2;
 - (id)initWithContainer:(id)arg1 cache:(id)arg2;
+- (id)initWithContainer:(id)arg1 cache:(id)arg2 access:(id)arg3;
 
 @end
 

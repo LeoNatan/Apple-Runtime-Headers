@@ -12,6 +12,7 @@
 @interface SBRemovalSwitcherModifier : SBSwitcherModifier
 {
     SBAppLayout *_appLayout;
+    long long _reason;
     SBSwitcherModifier<SBFluidSwitcherScrollProviding> *_multitaskingModifier;
     _Bool _simulatingPostRemovalState;
     unsigned long long _indexToScrollToAfterRemoval;
@@ -29,7 +30,7 @@
 - (struct CGPoint)scrollViewContentOffset;
 - (id)appLayouts;
 - (id)handleRemovalEvent:(id)arg1;
-- (id)initWithAppLayout:(id)arg1 multitaskingModifier:(id)arg2;
+- (id)initWithAppLayout:(id)arg1 reason:(long long)arg2 multitaskingModifier:(id)arg3;
 
 @end
 

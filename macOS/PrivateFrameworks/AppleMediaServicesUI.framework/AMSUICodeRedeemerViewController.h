@@ -15,11 +15,11 @@
 {
     id <AMSUICodeRedeemerViewControllerDelegate> _delegate;
     CRCodeRedeemerView *_codeRedeemView;
-    NSButton *_cancelButton;
+    NSButton *_dismissButton;
 }
 
 + (BOOL)isSupported;
-@property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(retain) NSButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(retain) CRCodeRedeemerView *codeRedeemView; // @synthesize codeRedeemView=_codeRedeemView;
 @property __weak id <AMSUICodeRedeemerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -37,6 +37,8 @@
 - (void)showStatus:(id)arg1 withColor:(struct CGColor *)arg2 duration:(double)arg3 style:(unsigned long long)arg4;
 - (void)viewWillLayout;
 - (void)loadView;
+- (id)initWithDismissButtonLabel:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

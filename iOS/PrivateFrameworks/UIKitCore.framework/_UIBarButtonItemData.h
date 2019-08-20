@@ -6,10 +6,13 @@
 
 #import <UIKitCore/_UIBarAppearanceData.h>
 
-@class NSDictionary, UIImage, UIImageSymbolConfiguration;
+#import <UIKitCore/_UIBarButtonItemDataFallback-Protocol.h>
+
+@class NSDictionary, NSString, UIImage, UIImageSymbolConfiguration;
+@protocol _UIBarButtonItemDataFallback;
 
 __attribute__((visibility("hidden")))
-@interface _UIBarButtonItemData : _UIBarAppearanceData
+@interface _UIBarButtonItemData : _UIBarAppearanceData <_UIBarButtonItemDataFallback>
 {
     NSDictionary *_titleTextAttributes[4];
     UIImage *_backgroundImage[4];
@@ -17,33 +20,40 @@ __attribute__((visibility("hidden")))
     struct UIOffset _backgroundImagePositionAdjustment[4];
     UIImageSymbolConfiguration *_preferredSymbolConfiguration;
     UIImageSymbolConfiguration *_compactPreferredSymbolConfiguration;
+    UIImage *_backIndicatorImage;
+    UIImage *_backIndicatorTransitionMaskImage;
+    id <_UIBarButtonItemDataFallback> _fallback;
     struct {
-        unsigned int hasUserTitleTextAttributes:1;
+        unsigned int hasUserFont:1;
+        unsigned int hasUserColor:1;
         unsigned int hasUserTitlePosition:1;
         unsigned int hasUserBackgroundImage:1;
         unsigned int hasUserBackgroundImagePosition:1;
     } _stateFlags[4];
+    struct {
+        unsigned int isBackButtonData:1;
+    } _dataFlags;
     long long _style;
 }
 
 + (id)decodeFromCoder:(id)arg1 prefix:(id)arg2;
++ (id)standardBackButtonData;
 + (id)standardItemDataForStyle:(long long)arg1;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (struct UIOffset)backgroundImagePositionAdjustmentForState:(long long)arg1 style:(long long)arg2;
+- (id)backgroundImageForState:(long long)arg1 style:(long long)arg2;
+- (struct UIOffset)titlePositionAdjustmentForState:(long long)arg1 style:(long long)arg2;
+- (id)colorForState:(long long)arg1 style:(long long)arg2;
+- (id)fontForState:(long long)arg1 style:(long long)arg2;
 @property(readonly, nonatomic) UIImage *compactBackIndicatorTransitionMaskImage;
 @property(readonly, nonatomic) UIImage *compactBackIndicatorImage;
 @property(readonly, nonatomic) UIImage *backIndicatorTransitionMaskImage;
 @property(readonly, nonatomic) UIImage *backIndicatorImage;
+- (void)resetBackIndicatorImages;
+- (void)setBackIndicatorImage:(id)arg1 transitionMaskImage:(id)arg2;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *compactPreferredSymbolConfiguration;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
-- (struct UIOffset)resolvedBackgroundImagePositionAdjustmentForState:(long long)arg1;
-- (id)resolvedBackgroundImageForState:(long long)arg1;
-- (struct UIOffset)resolvedTitlePositionAdjustmentForState:(long long)arg1;
-- (id)resolvedTitleTextAttributesForState:(long long)arg1;
-- (_Bool)hasUserBackgroundImagePositionAdjustmentForState:(long long)arg1;
-- (_Bool)hasUserBackgroundImageForState:(long long)arg1;
-- (_Bool)hasUserTitlePositionAdjustmentForState:(long long)arg1;
-- (_Bool)hasUserTitleTextAttributesForState:(long long)arg1;
 - (void)setBackgroundImagePositionAdjustment:(struct UIOffset)arg1 forState:(long long)arg2;
 - (struct UIOffset)backgroundImagePositionAdjustmentForState:(long long)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(long long)arg2;
@@ -52,7 +62,8 @@ __attribute__((visibility("hidden")))
 - (struct UIOffset)titlePositionAdjustmentForState:(long long)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(long long)arg2;
 - (id)titleTextAttributesForState:(long long)arg1;
-- (void)loadFonts;
+- (id)_fallbackColorForState:(long long)arg1;
+- (id)_fallbackFontForState:(long long)arg1;
 - (id)replicate;
 - (_Bool)checkEqualTo:(id)arg1;
 - (long long)hashInto:(long long)arg1;
@@ -62,8 +73,17 @@ __attribute__((visibility("hidden")))
 - (void)_decodeTitlePositionAdjustmentsFromCoder:(id)arg1 prefix:(id)arg2;
 - (void)_decodeBackgroundImagesFromCoder:(id)arg1 prefix:(id)arg2;
 - (void)_decodeTitleTextAttributesFromCoder:(id)arg1 prefix:(id)arg2;
-- (id)initWithWithItemData:(id)arg1;
+- (id)copyAsBackButtonDataWithIndicatorsAndFallbackFrom:(id)arg1;
+@property(readonly, nonatomic) id <_UIBarButtonItemDataFallback> fallback;
+- (id)dataWithNewFallback:(id)arg1;
+@property(readonly, nonatomic) _Bool isBackButtonData;
 - (id)initWithStyle:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

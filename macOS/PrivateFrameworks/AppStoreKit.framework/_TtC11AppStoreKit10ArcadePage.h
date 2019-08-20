@@ -13,6 +13,8 @@
     // Error parsing type: , name: titleEffect
     // Error parsing type: , name: subscriptionOfferAction
     // Error parsing type: , name: subscriptionOfferDisplayProperties
+    // Error parsing type: , name: subscriptionOfferTitle
+    // Error parsing type: , name: subscriptionOfferSubtitle
 }
 
 @end

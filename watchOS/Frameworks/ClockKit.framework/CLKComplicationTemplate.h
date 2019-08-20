@@ -9,12 +9,12 @@
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSMutableSet, UIColor;
+@class NSDictionary, NSHashTable, UIColor;
 
 @interface CLKComplicationTemplate : NSObject <NSSecureCoding, NSCopying>
 {
     NSDictionary *_metadata;
-    NSMutableSet *_activeClients;
+    NSHashTable *_activeClients;
     _Bool _finalized;
     _Bool _linkedOnOrAfterGrace;
     UIColor *_tintColor;

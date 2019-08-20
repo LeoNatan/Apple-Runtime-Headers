@@ -17,7 +17,8 @@ __attribute__((visibility("hidden")))
     NSCharacterSet *_digitCharSet;
     NSCharacterSet *_startPunctuationCharSet;
     NSCharacterSet *_middlePunctuationCharSet;
-    NSCharacterSet *_endPunctuationCharSet;
+    NSCharacterSet *_endOfWordPunctuationCharSet;
+    NSCharacterSet *_endOfSentencePunctuationCharSet;
     NSCharacterSet *_digitStartPunctuationCharSet;
     NSCharacterSet *_digitEndPunctuationCharSet;
     NSCharacterSet *_arithmeticOperatorCharSet;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
     map_c01bf9e9 _signatureUniChar;
 }
 
++ (unsigned int)characterTypeFromString:(id)arg1;
 + (unsigned int)characterType:(unsigned int)arg1;
 + (unsigned long)expectedMaxDotCount:(unsigned int)arg1;
 + (unsigned long)expectedMinStrokeCount:(unsigned int)arg1;
@@ -67,7 +69,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSCharacterSet *arithmeticOperatorCharSet; // @synthesize arithmeticOperatorCharSet=_arithmeticOperatorCharSet;
 @property(retain, nonatomic) NSCharacterSet *digitEndPunctuationCharSet; // @synthesize digitEndPunctuationCharSet=_digitEndPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *digitStartPunctuationCharSet; // @synthesize digitStartPunctuationCharSet=_digitStartPunctuationCharSet;
-@property(retain, nonatomic) NSCharacterSet *endPunctuationCharSet; // @synthesize endPunctuationCharSet=_endPunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *endOfSentencePunctuationCharSet; // @synthesize endOfSentencePunctuationCharSet=_endOfSentencePunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *endOfWordPunctuationCharSet; // @synthesize endOfWordPunctuationCharSet=_endOfWordPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *middlePunctuationCharSet; // @synthesize middlePunctuationCharSet=_middlePunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *startPunctuationCharSet; // @synthesize startPunctuationCharSet=_startPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *digitCharSet; // @synthesize digitCharSet=_digitCharSet;

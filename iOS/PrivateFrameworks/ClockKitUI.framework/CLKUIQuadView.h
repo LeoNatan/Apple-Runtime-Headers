@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (void)discardContents;
 - (void)_handleQuadArrayChange:(id)arg1;
-- (_Bool)_displayWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_displayAndCheckForDrawable:(_Bool)arg1 WithCompletion:(CDUnknownBlockType)arg2;
 - (id)_snapshotInRect:(struct CGRect)arg1 scale:(double)arg2 time:(double)arg3;
 - (id)snapshotInRect:(struct CGRect)arg1 scale:(double)arg2 time:(double)arg3;
 - (void)_prerenderForTime:(double)arg1;
@@ -42,7 +42,7 @@
 @property(readonly, nonatomic) unsigned long long frameNum;
 @property(nonatomic, getter=isPaused) _Bool paused;
 @property(nonatomic) long long preferredFramesPerSecond;
-- (_Bool)_prepareAndRenderForTime:(double)arg1 inGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)_prepareAndRenderForTime:(double)arg1 inGroup:(id)arg2 checkForDrawable:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;

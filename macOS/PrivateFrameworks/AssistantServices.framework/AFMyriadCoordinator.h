@@ -56,6 +56,7 @@
     BOOL _BTLEReady;
     BOOL _inTask;
     BOOL _ducking;
+    BOOL _stateMachineEncounteredError;
     BOOL _supportsExtended;
     BOOL _listenTimerIsRunning;
     BOOL _coordinationEnabled;
@@ -103,10 +104,13 @@
 - (void)heySiriStartedAdvertising:(id)arg1;
 - (void)heySiri:(id)arg1 foundDevice:(id)arg2 withInfo:(id)arg3;
 - (void)heySiriDidUpdateState:(id)arg1;
+- (void)_leaveBLEDiagnosticMode;
+- (void)_enterBLEDiagnosticMode;
 - (void)_waitWiProxAndExecute:(CDUnknownBlockType)arg1;
 - (void)_waitWiProx:(long long)arg1 andExecute:(CDUnknownBlockType)arg2;
 - (void)_ageWedgeFilter;
 - (BOOL)_testAndUpdateWedgeFilter:(id)arg1;
+- (void)_updateRepliesWith:(id)arg1 id:(id)arg2 data:(id)arg3;
 - (BOOL)_isAlreadyAdvertising;
 - (BOOL)_inTaskTriggerWasTooSoon;
 - (id)_sortedReplies:(id)arg1;
@@ -140,6 +144,7 @@
 - (void)_adjustActionWindowsFromSlowdown:(int)arg1;
 - (void)_resetActionWindows;
 - (void)_setupActionWindows;
+- (void)_handleStateMachineErrorIfNeeded;
 - (void)_unduck;
 - (void)_stopAdvertisingAndListening;
 - (void)stopListening;

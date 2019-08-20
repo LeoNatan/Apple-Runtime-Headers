@@ -12,26 +12,21 @@
 
 @interface WGCarouselListViewController : WGMajorListViewController <WGWidgetPinningTeachingViewDelegate>
 {
-    double _threshold1;
-    double _threshold2;
-    double _threshold3;
-    double _threshold4;
-    double _threshold5;
-    double _threshold6;
-    double _threshold7;
+    id _sizeChangeObserver;
     _Bool _revealed;
     _Bool _visuallyRevealed;
     _Bool _footerVisible;
-    double _headerHeight;
     double _revealProgress;
     double _dismissProgress;
     NSMutableDictionary *_catchupProperties;
     NSMutableDictionary *_catchupTimers;
     WGWidgetPinningTeachingView *_teachingView;
     NSMutableDictionary *_resizeContexts;
+    NSMutableDictionary *_cachedThresholds;
     struct WGWidgetListSettings _listSettings;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *cachedThresholds; // @synthesize cachedThresholds=_cachedThresholds;
 @property(retain, nonatomic) NSMutableDictionary *resizeContexts; // @synthesize resizeContexts=_resizeContexts;
 @property(retain, nonatomic) WGWidgetPinningTeachingView *teachingView; // @synthesize teachingView=_teachingView;
 @property(nonatomic, getter=isFooterVisible) _Bool footerVisible; // @synthesize footerVisible=_footerVisible;
@@ -41,23 +36,22 @@
 @property(nonatomic) double dismissProgress; // @synthesize dismissProgress=_dismissProgress;
 @property(nonatomic) double revealProgress; // @synthesize revealProgress=_revealProgress;
 @property(nonatomic, getter=isRevealed) _Bool revealed; // @synthesize revealed=_revealed;
-@property(nonatomic, getter=_headerHeight) double headerHeight; // @synthesize headerHeight=_headerHeight;
 @property(nonatomic) struct WGWidgetListSettings listSettings; // @synthesize listSettings=_listSettings;
 - (void).cxx_destruct;
 - (_Bool)shouldShowTeachingView;
 - (void)widgetPinningTeachingViewDidSelectNo:(id)arg1;
 - (void)widgetPinningTeachingViewDidSelectYes:(id)arg1;
-- (void)_updateThresholds;
+- (id)_thresholdsForCell:(id)arg1;
 - (void)_styleTeachingView:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3;
 - (void)_styleHeaderView:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3;
-- (void)_styleFooterView:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3;
-- (void)_styleFullyInvisibleBottomCell:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2;
-- (void)_styleDisapearingCellForBottomEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 previousCellFrameInContainerView:(struct CGRect)arg3;
-- (void)_styleCroppedAndScaledCellForBottomEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3;
-- (void)_styleCroppedCellForBottomEdge:(id)arg1 intersectionRect:(struct CGRect)arg2;
+- (void)_styleFooterView:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3 containerHeight:(double)arg4;
+- (void)_styleFullyInvisibleBottomCell:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 thresholds:(id)arg3;
+- (void)_styleDisapearingCellForBottomEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 previousCellFrameInContainerView:(struct CGRect)arg3 thresholds:(id)arg4;
+- (void)_styleCroppedAndScaledCellForBottomEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3 thresholds:(id)arg4;
+- (void)_styleCroppedCellForBottomEdge:(id)arg1 intersectionRect:(struct CGRect)arg2 thresholds:(id)arg3;
 - (void)_styleFullyVisibleCell:(id)arg1;
-- (void)_styleCroppedCellForTopEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3;
-- (void)_styleCroppedAndScaledCellForTopEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2;
+- (void)_styleCroppedCellForTopEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 intersectionRect:(struct CGRect)arg3 thresholds:(id)arg4;
+- (void)_styleCroppedAndScaledCellForTopEdge:(id)arg1 withCellFrameInScrollViewBounds:(struct CGRect)arg2 thresholds:(id)arg3;
 - (void)_styleFullyInvisibleTopCell:(id)arg1;
 - (struct CGRect)_cellFrameInScrollBoundsForCell:(id)arg1;
 - (void)_updateTeachingViewVisibilityAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -82,11 +76,13 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)resizeWidgetWrapperView:(id)arg1 toSize:(struct CGSize)arg2 withTransitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_didUpdateStackViewArrangedSubviews;
 - (unsigned long long)_insertionIndexofListItem:(id)arg1 intoWidgetViews:(id)arg2 withOrderedIdentifiers:(id)arg3;
 - (void)_repopulateStackViewWithWidgetIdentifiers:(id)arg1;
+- (void)dealloc;
 - (id)initWithWidgetDiscoveryController:(id)arg1 listSettings:(struct WGWidgetListSettings)arg2;
 
 // Remaining properties

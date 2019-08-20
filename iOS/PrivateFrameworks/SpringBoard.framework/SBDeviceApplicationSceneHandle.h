@@ -9,7 +9,7 @@
 #import <SpringBoard/FBApplicationProcessObserver-Protocol.h>
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 
-@class NSData, NSDictionary, NSMutableSet, NSString, SBDeviceApplicationSceneStatusBarBreadcrumbProvider, SBModalAlertPresenter, _UIStatusBarData;
+@class NSData, NSDictionary, NSMutableSet, NSString, SBDeviceApplicationSceneStatusBarBreadcrumbProvider, SBDeviceApplicationSceneStatusBarStateProvider, SBModalAlertPresenter, _UIStatusBarData;
 @protocol SBIdleTimerCoordinating;
 
 @interface SBDeviceApplicationSceneHandle : SBApplicationSceneHandle <FBApplicationProcessObserver, SBIdleTimerProviding>
@@ -26,6 +26,7 @@
     NSDictionary *_alertSuppressionContextsBySectionIdentifier;
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
     SBDeviceApplicationSceneStatusBarBreadcrumbProvider *_breadcrumbProvider;
+    SBDeviceApplicationSceneStatusBarStateProvider *_statusBarStateProvider;
     struct CGRect _statusBarAvoidanceFrame;
 }
 
@@ -80,10 +81,12 @@
 @property(readonly, nonatomic) long long wallpaperStyle;
 @property(readonly, nonatomic) long long backgroundStyle;
 @property(readonly, copy, nonatomic) NSData *activationConditionsData;
+@property(readonly, nonatomic) long long activationBias;
 @property(readonly, copy, nonatomic) NSString *sceneTitle;
 - (_Bool)wantsDeviceOrientationEventsEnabled;
 - (long long)activationInterfaceOrientationForOrientation:(long long)arg1;
 - (long long)activationInterfaceOrientationForCurrentOrientation;
+- (long long)defaultInterfaceOrientation;
 - (long long)currentInterfaceOrientation;
 @property(nonatomic) long long statusBarParts;
 - (long long)statusBarOrientation;
@@ -104,6 +107,7 @@
 - (long long)defaultStatusBarStyle;
 - (long long)currentStatusBarStyle;
 @property(readonly, copy, nonatomic) _UIStatusBarData *overlayStatusBarData;
+@property(readonly, nonatomic) SBDeviceApplicationSceneStatusBarStateProvider *statusBarStateProvider;
 - (_Bool)shouldSuppressAlertForSuppressionContexts:(id)arg1 sectionIdentifier:(id)arg2;
 - (void)setAlertSuppressionContextsBySectionIdentifier:(id)arg1;
 @property(readonly, nonatomic, getter=isShowingModalAlert) _Bool showingModalAlert;
@@ -112,6 +116,7 @@
 - (void)addObserver:(id)arg1;
 - (id)mostRecentSceneSnapshotsForScale:(double)arg1 launchingOrientation:(long long)arg2;
 - (void)saveSuspendSnapshot:(id)arg1;
+- (void)dealloc;
 - (void)_commonInit;
 
 // Remaining properties

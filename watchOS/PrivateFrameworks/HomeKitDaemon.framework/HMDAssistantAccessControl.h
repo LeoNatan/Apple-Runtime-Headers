@@ -59,7 +59,7 @@
 - (void)dealloc;
 - (void)configure;
 - (id)initWithUser:(id)arg1;
-- (id)initWithUser:(id)arg1 accessories:(id)arg2;
+- (id)initWithUser:(id)arg1 accessories:(id)arg2 enabled:(_Bool)arg3;
 - (id)initWithUser:(id)arg1 model:(id)arg2;
 - (id)init;
 

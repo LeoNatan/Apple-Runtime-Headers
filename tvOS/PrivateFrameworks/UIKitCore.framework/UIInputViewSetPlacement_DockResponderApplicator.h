@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) UIKeyboardPopoverContainer *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 - (struct CGRect)popoverFrame;
 - (void)invalidate;
 - (void)prepare;

@@ -13,6 +13,7 @@
 
 @interface EMInteractionLogger : NSObject <EFLoggable>
 {
+    _Bool _appLaunched;
     EMRemoteConnection *_connection;
     NSObject<OS_dispatch_queue> *_stateTrackingQueue;
     NSMutableDictionary *_viewedMessages;
@@ -22,6 +23,7 @@
 
 + (id)remoteInterface;
 + (id)log;
+@property _Bool appLaunched; // @synthesize appLaunched=_appLaunched;
 @property(nonatomic) struct _NSRange messageListVisibleRows; // @synthesize messageListVisibleRows=_messageListVisibleRows;
 @property(retain, nonatomic) NSMutableDictionary *messageListMessages; // @synthesize messageListMessages=_messageListMessages;
 @property(retain, nonatomic) NSMutableDictionary *viewedMessages; // @synthesize viewedMessages=_viewedMessages;

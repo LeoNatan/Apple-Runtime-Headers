@@ -9,6 +9,7 @@
 @interface _TtC12NewsArticles41FollowChannelArticleViewerFeatureProvider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: subscriptionController
+    // Error parsing type: , name: didTapButton
 }
 
 @end

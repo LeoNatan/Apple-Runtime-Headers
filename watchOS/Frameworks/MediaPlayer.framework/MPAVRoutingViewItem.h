@@ -10,17 +10,21 @@
 
 @interface MPAVRoutingViewItem : NSObject
 {
+    _Bool _enabled;
     NSString *_localizedTitle;
     int _type;
     MPAVRoute *_route;
+    NSString *_localizedSubtitle;
     UIImage *_image;
     NSString *_actionIdentifier;
 }
 
-+ (id)itemWithActionTitle:(id)arg1 identifier:(id)arg2 image:(id)arg3;
++ (id)itemWithActionTitle:(id)arg1 subtitle:(id)arg2 enabled:(_Bool)arg3 identifier:(id)arg4 image:(id)arg5;
 + (id)itemWithRoute:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(readonly, nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
+@property(readonly, copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;

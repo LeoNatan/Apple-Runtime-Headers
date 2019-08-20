@@ -24,6 +24,7 @@
     AVTStickerConfiguration *_previousConfiguration;
     NSArray *_overridenMorphers;
     NSArray *_overridenPresets;
+    NSArray *_appliedShaderModifiers;
 }
 
 + (struct CGRect)clippingRectForBaseSize:(struct CGSize)arg1;
@@ -33,7 +34,9 @@
 + (void)addProps:(id)arg1 toScene:(id)arg2 forAvatar:(id)arg3 withCamera:(id)arg4 forExport:(_Bool)arg5 async:(_Bool)arg6 workQueue:(id)arg7 callbackQueue:(id)arg8 completion:(CDUnknownBlockType)arg9;
 + (void)applyConfiguration:(id)arg1 toScene:(id)arg2 withAvatar:(id)arg3 defaultCamera:(id)arg4 forExport:(_Bool)arg5 async:(_Bool)arg6 workQueue:(id)arg7 callbackQueue:(id)arg8 completion:(CDUnknownBlockType)arg9;
 + (void)applyConfiguration:(id)arg1 toScene:(id)arg2 withAvatar:(id)arg3 defaultCamera:(id)arg4 forExport:(_Bool)arg5 completion:(CDUnknownBlockType)arg6 async:(_Bool)arg7;
++ (void)removeConfiguration:(id)arg1 fromScene:(id)arg2 withAvatar:(id)arg3 appliedShaderModifier:(id)arg4;
 + (void)removeConfiguration:(id)arg1 fromScene:(id)arg2 withAvatar:(id)arg3;
+@property(retain, nonatomic) NSArray *appliedShaderModifiers; // @synthesize appliedShaderModifiers=_appliedShaderModifiers;
 @property(retain, nonatomic) NSArray *overridenPresets; // @synthesize overridenPresets=_overridenPresets;
 @property(retain, nonatomic) NSArray *overridenMorphers; // @synthesize overridenMorphers=_overridenMorphers;
 @property(retain, nonatomic) AVTStickerConfiguration *previousConfiguration; // @synthesize previousConfiguration=_previousConfiguration;

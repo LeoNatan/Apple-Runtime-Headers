@@ -8,7 +8,7 @@
 
 #import <HomeKit/HMFLogging-Protocol.h>
 
-@class HMCameraClipAssetContext, HMCameraClipVideoAssetContext, HMCameraClipVideoHLSPlaylistGenerator, HMCameraProfile, HMFUnfairLock, NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString, NSUUID, _HMCameraClip, _HMContext;
+@class HMCameraClipAssetContext, HMCameraClipVideoAssetContext, HMCameraClipVideoHLSPlaylistGenerator, HMCameraProfile, HMFUnfairLock, NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString, NSUUID, _HMCameraClip, _HMContext;
 
 @interface HMCameraClip : NSObject <HMFLogging>
 {
@@ -22,12 +22,14 @@
     NSArray *_eventNotifications;
     _HMContext *_context;
     _HMCameraClip *_internalClip;
+    NSUUID *_profileUniqueIdentifier;
     CDUnknownBlockType _currentDateGenerator;
 }
 
 + (id)logCategory;
 + (id)requiredHTTPHeadersForStreamingAssetVersion:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType currentDateGenerator; // @synthesize currentDateGenerator=_currentDateGenerator;
+@property(readonly, copy) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
 @property(retain, nonatomic) _HMCameraClip *internalClip; // @synthesize internalClip=_internalClip;
 @property(readonly) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSArray *eventNotifications; // @synthesize eventNotifications=_eventNotifications;
@@ -47,6 +49,7 @@
 @property(retain) HMCameraClipAssetContext *videoSegmentsAssetContext; // @synthesize videoSegmentsAssetContext=_videoSegmentsAssetContext;
 @property(retain) HMCameraClipAssetContext *posterFramesAssetContext; // @synthesize posterFramesAssetContext=_posterFramesAssetContext;
 @property(readonly) HMCameraClipVideoAssetContext *videoAssetContext;
+@property(readonly, nonatomic) NSSet *significantEvents;
 @property(readonly, copy) NSArray *videoSegments;
 @property(readonly, nonatomic) NSArray *posterFrames;
 @property(readonly, nonatomic) NSData *heroImageData;
@@ -57,7 +60,7 @@
 @property(readonly, nonatomic) NSDate *startDate;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier;
 @property(readonly, nonatomic) NSDictionary *videoAssetRequiredHTTPHeaders;
-- (id)initWithClip:(id)arg1 cameraProfile:(id)arg2 context:(id)arg3;
+- (id)initWithClip:(id)arg1 profileUniqueIdentifier:(id)arg2 context:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

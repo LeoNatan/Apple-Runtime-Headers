@@ -19,11 +19,15 @@ __attribute__((visibility("hidden")))
     _Bool _textShouldRenderWithTintColor;
     _Bool _allowsVibrancyInContent;
     _Bool _disableInPlaceFiltering;
+    _Bool _requestAlphaTransition;
     UIView<_UIVisualEffectViewParticipating> *_identityContainerView;
     UIView<_UIVisualEffectViewParticipating> *_requestedContainerView;
+    long long _alphaTransition;
 }
 
 + (id)newTransitionDescriptorForStops:(id)arg1;
+@property(nonatomic) long long alphaTransition; // @synthesize alphaTransition=_alphaTransition;
+@property(nonatomic) _Bool requestAlphaTransition; // @synthesize requestAlphaTransition=_requestAlphaTransition;
 @property(nonatomic) _Bool disableInPlaceFiltering; // @synthesize disableInPlaceFiltering=_disableInPlaceFiltering;
 @property(nonatomic) _Bool allowsVibrancyInContent; // @synthesize allowsVibrancyInContent=_allowsVibrancyInContent;
 @property(nonatomic) _Bool textShouldRenderWithTintColor; // @synthesize textShouldRenderWithTintColor=_textShouldRenderWithTintColor;

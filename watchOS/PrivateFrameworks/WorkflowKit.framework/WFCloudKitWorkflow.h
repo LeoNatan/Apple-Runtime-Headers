@@ -8,11 +8,11 @@
 
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSData, NSDate, NSString, WFFileRepresentation, WFWorkflowRecord;
+@class CKRecordID, NSData, NSDate, NSString, WFFileRepresentation, WFWorkflowRecord;
 
 @interface WFCloudKitWorkflow : NSObject <WFCloudKitItem>
 {
-    NSString *_identifier;
+    CKRecordID *_identifier;
     NSDate *_createdAt;
     NSDate *_modifiedAt;
     NSString *_name;
@@ -21,17 +21,16 @@
     WFFileRepresentation *_serializedDataFile;
     int _cachedSyncHash;
     NSData *_serializedQuarantineData;
+    NSData *_serializedAccessResourcePermissionStateData;
     NSString *_lastSavedOnDeviceName;
     WFWorkflowRecord *_cachedRecord;
 }
 
-+ (id)nilValues;
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (id)properties;
 + (id)recordType;
 @property(retain, nonatomic) WFWorkflowRecord *cachedRecord; // @synthesize cachedRecord=_cachedRecord;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
+@property(copy, nonatomic) NSData *serializedAccessResourcePermissionStateData; // @synthesize serializedAccessResourcePermissionStateData=_serializedAccessResourcePermissionStateData;
 @property(copy, nonatomic) NSData *serializedQuarantineData; // @synthesize serializedQuarantineData=_serializedQuarantineData;
 @property(nonatomic) int cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
 @property(retain, nonatomic) WFFileRepresentation *serializedDataFile; // @synthesize serializedDataFile=_serializedDataFile;
@@ -40,7 +39,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSDate *modifiedAt; // @synthesize modifiedAt=_modifiedAt;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (_Bool)isValidForSyncing;
 - (id)recordRepresentationWithError:(id *)arg1;

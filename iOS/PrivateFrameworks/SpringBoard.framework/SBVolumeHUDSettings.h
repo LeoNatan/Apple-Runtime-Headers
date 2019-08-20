@@ -12,6 +12,7 @@
     _Bool _autoDismiss;
     _Bool _forceEUVolumeMode;
     float _EUVolumeLimit;
+    float _volumeStepDelta;
     double _minMaxXScaleSpringRetargetImpulse;
     double _minMaxXScaleSpringDampingRatio;
     double _minMaxXScaleSpringResponse;
@@ -31,8 +32,6 @@
     double _scaleSpringRetargetImpulse;
     double _scaleSpringDampingRatio;
     double _scaleSpringResponse;
-    double _scaleSpringVolumeDownInput;
-    double _scaleSpringVolumeUpInput;
     double _scaleSpringVolumeToMin;
     double _scaleSpringVolumeToMax;
     double _scaleSpringBase;
@@ -46,6 +45,10 @@
     double _onscreenLeadingMargin;
     double _offscreenTopMargin;
     double _offscreenLeadingMargin;
+    double _landscapeScaleSpringVolumeDownInput;
+    double _landscapeScaleSpringVolumeUpInput;
+    double _portraitScaleSpringVolumeDownInput;
+    double _portraitScaleSpringVolumeUpInput;
     double _landscapeState1CornerRadius;
     double _landscapeState2CornerRadius;
     double _landscapeState3CornerRadius;
@@ -66,15 +69,16 @@
     double _portraitState1Height;
     double _portraitState2Height;
     double _portraitState3Height;
-    double _volumeButtonCenterY;
+    double _volumeButtonsCenterY;
 }
 
 + (id)settingsControllerModule;
+@property(nonatomic) float volumeStepDelta; // @synthesize volumeStepDelta=_volumeStepDelta;
 @property(nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(nonatomic) _Bool forceEUVolumeMode; // @synthesize forceEUVolumeMode=_forceEUVolumeMode;
 @property(nonatomic) _Bool autoDismiss; // @synthesize autoDismiss=_autoDismiss;
 @property(nonatomic) _Bool showDebugUI; // @synthesize showDebugUI=_showDebugUI;
-@property(nonatomic) double volumeButtonCenterY; // @synthesize volumeButtonCenterY=_volumeButtonCenterY;
+@property(nonatomic) double volumeButtonsCenterY; // @synthesize volumeButtonsCenterY=_volumeButtonsCenterY;
 @property(nonatomic) double portraitState3Height; // @synthesize portraitState3Height=_portraitState3Height;
 @property(nonatomic) double portraitState2Height; // @synthesize portraitState2Height=_portraitState2Height;
 @property(nonatomic) double portraitState1Height; // @synthesize portraitState1Height=_portraitState1Height;
@@ -95,6 +99,10 @@
 @property(nonatomic) double landscapeState3CornerRadius; // @synthesize landscapeState3CornerRadius=_landscapeState3CornerRadius;
 @property(nonatomic) double landscapeState2CornerRadius; // @synthesize landscapeState2CornerRadius=_landscapeState2CornerRadius;
 @property(nonatomic) double landscapeState1CornerRadius; // @synthesize landscapeState1CornerRadius=_landscapeState1CornerRadius;
+@property(nonatomic) double portraitScaleSpringVolumeUpInput; // @synthesize portraitScaleSpringVolumeUpInput=_portraitScaleSpringVolumeUpInput;
+@property(nonatomic) double portraitScaleSpringVolumeDownInput; // @synthesize portraitScaleSpringVolumeDownInput=_portraitScaleSpringVolumeDownInput;
+@property(nonatomic) double landscapeScaleSpringVolumeUpInput; // @synthesize landscapeScaleSpringVolumeUpInput=_landscapeScaleSpringVolumeUpInput;
+@property(nonatomic) double landscapeScaleSpringVolumeDownInput; // @synthesize landscapeScaleSpringVolumeDownInput=_landscapeScaleSpringVolumeDownInput;
 @property(nonatomic) double offscreenLeadingMargin; // @synthesize offscreenLeadingMargin=_offscreenLeadingMargin;
 @property(nonatomic) double offscreenTopMargin; // @synthesize offscreenTopMargin=_offscreenTopMargin;
 @property(nonatomic) double onscreenLeadingMargin; // @synthesize onscreenLeadingMargin=_onscreenLeadingMargin;
@@ -108,8 +116,6 @@
 @property(nonatomic) double scaleSpringBase; // @synthesize scaleSpringBase=_scaleSpringBase;
 @property(nonatomic) double scaleSpringVolumeToMax; // @synthesize scaleSpringVolumeToMax=_scaleSpringVolumeToMax;
 @property(nonatomic) double scaleSpringVolumeToMin; // @synthesize scaleSpringVolumeToMin=_scaleSpringVolumeToMin;
-@property(nonatomic) double scaleSpringVolumeUpInput; // @synthesize scaleSpringVolumeUpInput=_scaleSpringVolumeUpInput;
-@property(nonatomic) double scaleSpringVolumeDownInput; // @synthesize scaleSpringVolumeDownInput=_scaleSpringVolumeDownInput;
 @property(nonatomic) double scaleSpringResponse; // @synthesize scaleSpringResponse=_scaleSpringResponse;
 @property(nonatomic) double scaleSpringDampingRatio; // @synthesize scaleSpringDampingRatio=_scaleSpringDampingRatio;
 @property(nonatomic) double scaleSpringRetargetImpulse; // @synthesize scaleSpringRetargetImpulse=_scaleSpringRetargetImpulse;

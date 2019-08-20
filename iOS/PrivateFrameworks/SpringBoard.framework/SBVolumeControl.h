@@ -10,7 +10,7 @@
 #import <SpringBoard/SBAVSystemControllerCacheObserver-Protocol.h>
 #import <SpringBoard/SBVolumeHUDViewControllerDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, SBAVSystemControllerCache, SBHUDController, SBRingerControl, SBVolumeHUDSettings;
+@class NSArray, NSMutableArray, NSMutableSet, NSString, SBAVSystemControllerCache, SBHUDController, SBRingerControl, SBVolumeHUDSettings;
 @protocol OS_dispatch_queue;
 
 @interface SBVolumeControl : NSObject <SBVolumeHUDViewControllerDelegate, PTSettingsKeyObserver, SBAVSystemControllerCacheObserver>
@@ -20,6 +20,7 @@
     SBRingerControl *_ringerControl;
     _Bool _debounce;
     unsigned long long _mode;
+    NSMutableArray *_activeAudioRoutes;
     NSMutableSet *_alwaysHiddenCategories;
     NSString *_lastEventCategory;
     _Bool _hudHandledLastVolumeChange;
@@ -29,9 +30,9 @@
     _Bool _volumeDownButtonIsDown;
     _Bool _volumeUpButtonIsDown;
     _Bool _controlCenterIsPresented;
+    int _anyCallActive;
     struct os_unfair_lock_s _effectiveVolumeLock;
     float _effectiveVolume;
-    float _rawVolume;
     NSObject<OS_dispatch_queue> *_avSystemControllerQueue;
     SBAVSystemControllerCache *_avCache;
     int _darwinNotificationToken;
@@ -42,7 +43,10 @@
 + (id)sharedInstance;
 @property(readonly, nonatomic) NSString *lastDisplayedCategory; // @synthesize lastDisplayedCategory=_lastDisplayedCategory;
 - (void).cxx_destruct;
-- (void)cache:(id)arg1 didUpdateActiveAudioRoute:(id)arg2;
+- (void)cache:(id)arg1 didUpdateActiveAudioRoutingWithRoute:(id)arg2 routeAttributes:(id)arg3 activeOutputDevices:(id)arg4;
+- (void)_activeCallStatusStateChanged:(id)arg1;
+- (_Bool)_updateAnyCallActive;
+- (_Bool)_anyCallActive;
 - (void)_updateEUVolumeSettings;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)volumeHUDViewControllerRequestsDismissal:(id)arg1;
@@ -52,6 +56,9 @@
 - (void)_resetMediaServerConnection;
 - (void)_serverConnectionDied:(id)arg1;
 - (void)_effectiveVolumeChanged:(id)arg1;
+- (long long)_audioRouteTypeForActiveAudioRoute:(id)arg1 withAttributes:(id)arg2;
+- (long long)_audioRouteTypeForOutputDevice:(id)arg1;
+- (void)_updateAudioRoutesIfNecessary:(_Bool)arg1 forRoute:(id)arg2 withAttributes:(id)arg3 andOutputDevices:(id)arg4;
 - (_Bool)_isVolumeHUDVisibleOrFading;
 - (_Bool)_isVolumeHUDVisible;
 - (void)_presentVolumeHUDWithVolume:(float)arg1;
@@ -64,22 +71,23 @@
 - (_Bool)_isCategoryAlwaysHidden:(id)arg1;
 - (float)_volumeStepUp:(_Bool)arg1;
 - (void)_sendEUVolumeLimitAcknowledgementIfNecessary;
+- (float)_getMediaVolumeForIAP;
+- (void)_setMediaVolumeForIAP:(float)arg1;
 - (void)_controlCenterDidDismiss:(id)arg1;
 - (void)_controlCenterWillPresent:(id)arg1;
-- (float)getMediaVolume;
-- (void)setMediaVolume:(float)arg1;
+- (float)getActiveCategoryVolume;
+- (void)setActiveCategoryVolume:(float)arg1;
 - (_Bool)userHasAcknowledgedEUVolumeLimit;
 - (id)acquireVolumeHUDHiddenAssertionForReason:(id)arg1;
 - (void)hideVolumeHUDIfVisible;
-- (id)onscreenSuperGreatVolumeHUDViewController;
+- (id)presentedVolumeHUDViewController;
 - (void)clearAlwaysHiddenCategories;
 - (void)removeAlwaysHiddenCategory:(id)arg1;
-@property(readonly, nonatomic) _Bool headphonesPresent;
+@property(readonly, nonatomic) NSArray *activeAudioRouteTypes;
 - (void)cancelVolumeEvent;
 - (void)handleVolumeButtonWithType:(long long)arg1 down:(_Bool)arg2;
 - (void)decreaseVolume;
 - (void)increaseVolume;
-@property(readonly, nonatomic) NSString *activeAudioRoute;
 - (void)setVolume:(float)arg1 forCategory:(id)arg2;
 - (void)_updateEffectiveVolume:(float)arg1;
 - (float)_effectiveVolume;

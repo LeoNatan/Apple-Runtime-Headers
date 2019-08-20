@@ -8,7 +8,7 @@
 
 #import <EventKitUI/CalendarEventLoaderDelegate-Protocol.h>
 
-@class CalendarEventLoader, EKCalendarDate, EKEvent, EKEventStore, EKSource, NSArray, NSCalendar, NSLock, NSSet, NSString, _EKNotificationMonitor;
+@class CalendarEventLoader, CalendarModelSceneState, EKCalendarDate, EKEvent, EKEventStore, EKSource, NSArray, NSCalendar, NSLock, NSMutableDictionary, NSSet, NSString, _EKNotificationMonitor;
 @protocol OccurrenceCacheDataSourceProtocol;
 
 @interface CalendarModel : NSObject <CalendarEventLoaderDelegate>
@@ -26,12 +26,11 @@
     id <OccurrenceCacheDataSourceProtocol> _occurrenceCacheDataSource;
     id <OccurrenceCacheDataSourceProtocol> _occurrenceCacheFilteredDataSource;
     int _cachedFakeTodayIndex;
-    int _displayableAccountErrorsCount;
+    NSMutableDictionary *_displayableAccountErrorCounts;
     int _initialAccountSyncCount;
-    _Bool _showDayAsList;
-    _Bool _showMonthAsDivided;
     _Bool _suspendSelectedDateChanges;
     EKCalendarDate *_suspendedSelectedDate;
+    CalendarModelSceneState *_persistedSceneState;
     _Bool _autoStartNotificationMonitor;
     NSSet *_selectedCalendars;
     NSString *_searchString;
@@ -71,6 +70,7 @@
 - (id)_notificationMonitor;
 - (void)startNotificationMonitor;
 - (_Bool)removeEvent:(id)arg1 withSpan:(int)arg2 error:(id *)arg3;
+- (id)persistedSceneState;
 @property(nonatomic) _Bool showMonthAsDivided;
 @property(nonatomic) _Bool showDayAsList;
 - (void)_systemWake;
@@ -91,8 +91,8 @@
 - (void)simulateFirstLoadFinished;
 - (int)countAccountsInInitialSync;
 @property(readonly, nonatomic) int accountsInInitialSyncCount;
-- (int)countSourcesWithErrors;
-@property(readonly, nonatomic) int displayableAccountErrorsCount;
+- (_Bool)countSourcesWithErrors;
+- (int)displayableAccountErrorsForSource:(id)arg1;
 - (void)_checkSources;
 - (void)_processReloadForCacheOnly:(_Bool)arg1 includingCalendars:(_Bool)arg2 checkCalendarsValid:(_Bool)arg3 checkSources:(_Bool)arg4;
 - (void)_invalidateOccurrenceCacheDataSources;

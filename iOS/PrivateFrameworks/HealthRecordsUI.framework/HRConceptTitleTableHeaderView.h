@@ -14,6 +14,7 @@
     // Error parsing type: , name: fontChoices
     // Error parsing type: , name: widthCache
     // Error parsing type: , name: titleCache
+    // Error parsing type: , name: bottomExtraSpace
 }
 
 - (void).cxx_destruct;
@@ -22,6 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(nonatomic, copy) NSString *title;
+@property(nonatomic) double bottomExtraSpace; // @synthesize bottomExtraSpace;
 
 @end
 

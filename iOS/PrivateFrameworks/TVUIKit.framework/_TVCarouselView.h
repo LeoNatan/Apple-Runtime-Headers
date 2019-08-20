@@ -39,8 +39,12 @@
     double _originalSelectionDuration;
     double _originalUnselectionDuration;
     long long _numFocusChangesInInterval;
-    _Bool _layoutUpdateInProgress;
     NSDictionary *_previousCollectionToDatasourceIndexMap;
+    struct {
+        _Bool layoutUpdateInProgress;
+        _Bool firstLayoutPass;
+    } _flags;
+    _Bool _shouldScaleOnIdleFocus;
     id <TVCarouselViewDataSource> _dataSource;
     id <TVCarouselViewDelegate> _delegate;
     double _interitemSpacing;
@@ -69,6 +73,7 @@
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) UIFocusGuide *focusGuide; // @synthesize focusGuide=_focusGuide;
 @property(retain, nonatomic) NSDictionary *collectionToDatasourceIndexMap; // @synthesize collectionToDatasourceIndexMap=_collectionToDatasourceIndexMap;
+@property(nonatomic) _Bool shouldScaleOnIdleFocus; // @synthesize shouldScaleOnIdleFocus=_shouldScaleOnIdleFocus;
 @property(nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
@@ -113,11 +118,12 @@
 - (id)focusedCell;
 - (id)_cellForItemAtIndex:(unsigned long long)arg1;
 - (void)_handlePlayGesture:(id)arg1;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (_Bool)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
+- (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
@@ -135,7 +141,6 @@
 - (id)preferredFocusedView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)didMoveToWindow;
-- (void)didMoveToSuperview;
 - (id)_collectionView;
 - (void)dealloc;
 - (void)_stopContinuousScroll;

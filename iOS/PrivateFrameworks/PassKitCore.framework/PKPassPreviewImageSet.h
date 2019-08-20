@@ -12,12 +12,14 @@
 {
     PKImage *_iconImage;
     PKImage *_notificationIconImage;
+    PKImage *_rawIcon;
 }
 
 + (_Bool)supportsSecureCoding;
 + (unsigned int)currentVersion;
 + (id)archiveName;
 + (long long)imageSetType;
+@property(retain, nonatomic) PKImage *rawIcon; // @synthesize rawIcon=_rawIcon;
 @property(retain, nonatomic) PKImage *notificationIconImage; // @synthesize notificationIconImage=_notificationIconImage;
 @property(retain, nonatomic) PKImage *iconImage; // @synthesize iconImage=_iconImage;
 - (void).cxx_destruct;

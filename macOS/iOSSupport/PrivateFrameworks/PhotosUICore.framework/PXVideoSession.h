@@ -56,6 +56,7 @@
     BOOL _stateQueue_isAtBeginning;
     struct CGAffineTransform _stateQueue_videoRotationTransform;
     struct __CVBuffer *_stateQueue_currentPixelBuffer;
+    BOOL _stateQueue_readyForSeeking;
     CDStruct_5f1286c4 _updateQueue_updateFlags;
     BOOL _updateQueue_didFinishInitializingAudioSession;
     NSDate *_updateQueue_playRequestDate;
@@ -90,6 +91,7 @@
 - (void)_removeAllVideoOutputs;
 - (void)_updateAVPlayerPlayState;
 - (void)_updatePlayState;
+- (void)_updateReadyForSeeking;
 - (void)_updatePlayerVolume;
 - (void)_updateVolumeAnimator;
 - (void)_updatePlayerItemInPlayer;
@@ -107,7 +109,6 @@
 - (void)_handlePlayerTimeAdvancementTimer:(id)arg1;
 - (void)_avPlayerTimeDidChange:(CDStruct_1b6d18a9)arg1;
 - (void)_handlePreferredTransformDidLoad;
-- (unsigned long long)pixelBufferPausedOutputTokenCount;
 - (unsigned long long)pixelBufferOutputTokenCount;
 @property(nonatomic, setter=setAtEnd:) BOOL isAtEnd;
 @property(nonatomic, setter=setAtBeginning:) BOOL isAtBeginning;
@@ -115,6 +116,8 @@
 @property(readonly, nonatomic) long long desiredPlayState;
 - (void)setPlayState:(long long)arg1;
 @property(readonly, nonatomic) long long playState;
+- (void)setIsReadyForSeeking:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL isReadyForSeeking;
 @property(nonatomic, getter=isBuffering) BOOL buffering;
 @property(nonatomic, setter=setStalled:) BOOL isStalled;
 - (void)setPlayable:(BOOL)arg1;
@@ -165,6 +168,7 @@
 - (void)_performChanges:(CDUnknownBlockType)arg1;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (void)seekToTime:(CDStruct_1b6d18a9)arg1 toleranceBefore:(CDStruct_1b6d18a9)arg2 toleranceAfter:(CDStruct_1b6d18a9)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)seekToTime:(CDStruct_1b6d18a9)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (struct CGImage *)generateSnapshotImage;
 - (void)cancelLoading;
 - (void)loadIfNeededWithPriority:(long long)arg1;
@@ -172,8 +176,6 @@
 @property(readonly, nonatomic) unsigned long long audioSessionCategoryOptions;
 - (void)_audioSessionQueue_updateAudioSessionWithCategory:(id)arg1 options:(unsigned long long)arg2;
 - (void)setAudioSessionCategory:(id)arg1 options:(unsigned long long)arg2;
-- (void)resumePixelBufferOutputWithRequestIdentifier:(id)arg1;
-- (void)pausePixelBufferOutputWithRequestIdentifier:(id)arg1;
 - (void)cancelPixelBufferOutputWithRequestIdentifier:(id)arg1;
 - (void)requestPixelBufferOutputWithRequestIdentifier:(id)arg1;
 - (void)recycleVideoView:(id)arg1;

@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic, getter=isVIP) _Bool VIP; // @synthesize VIP=_VIP;
 - (void)updateTransportButtons;
+- (void)updateValueWithPropertyItem:(id)arg1;
 - (_Bool)shouldPerformDefaultAction;
 - (_Bool)shouldShowStar;
 

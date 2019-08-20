@@ -17,6 +17,8 @@
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
+- (id)joinWithInterval:(id)arg1;
+- (_Bool)intersects:(id)arg1;
 - (id)description;
 
 @end

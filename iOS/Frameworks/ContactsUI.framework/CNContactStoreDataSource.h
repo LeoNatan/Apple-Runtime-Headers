@@ -9,7 +9,7 @@
 #import <ContactsUI/CNContactDataSource-Protocol.h>
 
 @class CNContact, CNContactFilter, CNContactFormatter, CNContactStore, CNContactStoreFilter, CNContactStoreSnapshot, CNManagedConfiguration, NSArray, NSDictionary, NSString;
-@protocol CNContactDataSourceDelegate, NSObject, OS_dispatch_queue;
+@protocol CNContactDataSourceDelegate, CNScheduler, OS_dispatch_queue;
 
 @interface CNContactStoreDataSource : NSObject <CNContactDataSource>
 {
@@ -17,6 +17,7 @@
     NSDictionary *_sectionHeadersDictionary;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _loadingSnapshot;
+    id <CNScheduler> _mainThreadScheduler;
     _Bool _fetchUnified;
     _Bool _meContactNeedsUpdate;
     CNContactFormatter *contactFormatter;
@@ -26,16 +27,12 @@
     CNManagedConfiguration *_managedConfiguration;
     NSArray *_keysToFetch;
     CNContact *_meContact;
-    id <NSObject> _contactStoreDidChangeNotificationToken;
-    id <NSObject> _contactStoreMeContactDidChangeNotificationToken;
     NSDictionary *_localizedSectionIndices;
 }
 
 + (id)keyPathsForValuesAffectingEffectiveFilter;
 + (_Bool)isErrorPossiblyRelatedToExtraStores:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *localizedSectionIndices; // @synthesize localizedSectionIndices=_localizedSectionIndices;
-@property(retain, nonatomic) id <NSObject> contactStoreMeContactDidChangeNotificationToken; // @synthesize contactStoreMeContactDidChangeNotificationToken=_contactStoreMeContactDidChangeNotificationToken;
-@property(retain, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
 @property(nonatomic) _Bool meContactNeedsUpdate; // @synthesize meContactNeedsUpdate=_meContactNeedsUpdate;
 @property(copy, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(nonatomic) _Bool fetchUnified; // @synthesize fetchUnified=_fetchUnified;

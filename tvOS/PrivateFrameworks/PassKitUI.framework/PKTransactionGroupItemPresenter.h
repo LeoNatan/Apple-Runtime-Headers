@@ -22,6 +22,7 @@
     UIImage *_interestImage;
     UIImage *_appleCardImage;
     UIImage *_refundsImage;
+    UIImage *_adjustmentsImage;
     NSCache *_iconsPerMerchantCategory;
     NSCache *_iconsPerMerchant;
     struct CGSize _groupSize;
@@ -33,6 +34,7 @@
 
 - (void).cxx_destruct;
 - (struct CGSize)_imageSize;
+- (id)adjustmentsImage;
 - (id)refundsImage;
 - (id)appleCardImage;
 - (id)interestImage;

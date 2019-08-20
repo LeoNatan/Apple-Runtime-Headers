@@ -26,7 +26,7 @@
 
 + (void)removeFlag:(int)arg1 fromPath:(id)arg2;
 + (BOOL)moveFilesAtPaths:(id)arg1 toPreservationFolderAtPath:(id)arg2;
-+ (id)validPathsForPreservation:(id)arg1 onMountpoint:(id)arg2 ignoreFiles:(id)arg3;
++ (id)validPathsForPreservation:(id)arg1 onMountpoint:(id)arg2 ignoreFiles:(id)arg3 keepFiles:(id)arg4;
 + (BOOL)setupMigrationWithOptions:(id)arg1 error:(id *)arg2;
 @property(retain) SMPaths *pather; // @synthesize pather=_pather;
 - (void).cxx_destruct;

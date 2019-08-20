@@ -15,7 +15,7 @@
 }
 
 + (id)remindersImage;
-- (long long)alarmProximity;
+@property(readonly, nonatomic) long long locationProximity;
 @property(readonly, nonatomic) _Bool wantsExtendedDetailOnlyView;
 @property(readonly, nonatomic) NSAttributedString *title;
 @property(readonly, nonatomic) NSUserActivity *userActivity;
@@ -34,7 +34,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) long long locationProximity;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) _Bool titleIsGeneratedSuggestion;
 

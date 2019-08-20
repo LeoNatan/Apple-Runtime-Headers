@@ -6,7 +6,7 @@
 
 #import <AVConference/VCConnectionManager.h>
 
-@class NSMutableArray, NSString;
+@class NSString;
 @protocol VCConnectionProtocol;
 
 __attribute__((visibility("hidden")))
@@ -14,13 +14,13 @@ __attribute__((visibility("hidden")))
 {
     id <VCConnectionProtocol> _pendingPrimaryConnection;
     id <VCConnectionProtocol> _pendingSecondaryConnection;
-    NSMutableArray *_validConnections;
     NSString *_relayConnectionID;
 }
 
 @property(copy, nonatomic) NSString *relayConnectionID; // @synthesize relayConnectionID=_relayConnectionID;
 @property(retain, nonatomic) id <VCConnectionProtocol> pendingSecondaryConnection; // @synthesize pendingSecondaryConnection=_pendingSecondaryConnection;
 @property(retain, nonatomic) id <VCConnectionProtocol> pendingPrimaryConnection; // @synthesize pendingPrimaryConnection=_pendingPrimaryConnection;
+- (void)updateConnectionForDuplication;
 - (unsigned int)getByteCountWithIndex:(unsigned char)arg1 isOutgoing:(_Bool)arg2;
 - (unsigned int)getPacketCountWithIndex:(unsigned char)arg1 isOutgoing:(_Bool)arg2;
 - (void)synchronizeParticipantGenerationCounter:(unsigned char)arg1;

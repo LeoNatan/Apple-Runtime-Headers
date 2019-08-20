@@ -43,7 +43,7 @@
 - (id)initWithQuery:(id)arg1;
 - (id)removeBlackListedSectionsForMapping:(id)arg1;
 - (id)makeTopHitSectionUsingSections:(id)arg1 withItemRanker:(id)arg2 sectionHeader:(id)arg3 shortcutResult:(id)arg4;
-- (void)applyTopHitRankingPolicyToSection:(id)arg1 topResultSection:(id)arg2 maxTopHitCount:(long long)arg3;
+- (void)applyTopHitRankingPolicyToSection:(id)arg1 topResultSection:(id)arg2 maxTopHitCount:(long long)arg3 isShortcut:(_Bool)arg4;
 - (id)relativeRankWithAbsRank:(id)arg1 numberValues:(unsigned long long)arg2;
 - (id)removeBlackListedSectionsForMapping:(id)arg1 withRankingConfiguration:(id)arg2;
 - (double)roundedValueForScore:(double)arg1;

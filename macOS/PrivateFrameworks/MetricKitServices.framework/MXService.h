@@ -14,6 +14,7 @@
 
 @property(readonly) long long sourceID; // @synthesize sourceID=_sourceID;
 @property(readonly) BOOL isStarted; // @synthesize isStarted=_isStarted;
+- (BOOL)metricsAvailableForDate:(id)arg1;
 - (BOOL)stopService;
 - (BOOL)startService;
 - (id)getMetricsForClient:(id)arg1 dateString:(id)arg2;

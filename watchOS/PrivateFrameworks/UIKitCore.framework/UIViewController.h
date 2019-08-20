@@ -864,6 +864,7 @@
 - (void)_setUseTelephonyUI:(_Bool)arg1;
 - (struct CGSize)_resolvedPreferredContentSize;
 @property(readonly, nonatomic) UIMultiColumnViewController *_multiColumnViewController;
+@property(readonly, nonatomic) _Bool performsActionsWhilePresentingModally;
 - (id)moreListTableCell;
 - (id)moreListSelectedImage;
 - (id)moreListImage;

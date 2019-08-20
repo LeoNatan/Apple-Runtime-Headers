@@ -8,11 +8,13 @@
 
 #import <AuthKitUI/AKSignInViewControllerDelegate-Protocol.h>
 
-@class AKAuthorizationPresentationContext, NSString;
+@class AKAuthorizationPresentationContext, AKModalSignInViewController, NSString;
 @protocol AKAuthorizationPasswordAuthenticationDelegate;
 
 @interface AKAuthorizationPasswordAuthenticationViewController : AKAuthorizationPaneViewController <AKSignInViewControllerDelegate>
 {
+    AKModalSignInViewController *_modalSignInViewController;
+    double _keyboardHeight;
     id <AKAuthorizationPasswordAuthenticationDelegate> _delegate;
     AKAuthorizationPresentationContext *_presentationContext;
 }
@@ -21,6 +23,10 @@
 @property(nonatomic) __weak id <AKAuthorizationPasswordAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
+- (void)keyboardDidShow:(id)arg1;
+- (void)sizeToFitPaneContentAnimated:(BOOL)arg1;
+- (double)intrinsicContentHeight;
+- (void)dealloc;
 - (id)_username;
 - (id)_contextForAuthentication;
 - (void)viewDidLoad;

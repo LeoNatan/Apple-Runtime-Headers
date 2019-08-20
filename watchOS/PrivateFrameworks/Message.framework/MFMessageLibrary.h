@@ -51,7 +51,6 @@
 - (void)lockDBForWriting;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
 - (id)allUIDsInMailbox:(id)arg1;
-- (id)deletedUIDsInMailbox:(id)arg1;
 - (id)UIDsToDeleteInMailbox:(id)arg1;
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
 - (void)closeDatabaseConnections;
@@ -125,7 +124,6 @@
 - (id)messagesWithSummariesForMailbox:(id)arg1 range:(struct _NSRange)arg2;
 - (id)dateOfOldestNonIndexedNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
-- (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;
 - (id)serverSearchResultMessagesForMailbox:(id)arg1;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(int)arg2;
 - (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;

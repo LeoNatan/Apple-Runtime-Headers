@@ -22,12 +22,16 @@
 + (id)audiogramSampleWithSensitivityPoints:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4;
 @property(retain, nonatomic) NSData *encodedSensitivityPoints; // @synthesize encodedSensitivityPoints=_encodedSensitivityPoints;
 - (void).cxx_destruct;
+- (id)maximumSensitivity;
+- (id)minimumSensitivity;
 - (id)averageRightEarSensitivity;
 - (id)averageLeftEarSensitivity;
 - (unsigned int)diagnostic;
 - (unsigned int)_diagnosticForSensitivity:(id)arg1;
 - (id)_averageEarSensitivityForDiagnosticSensitivityPoints:(id)arg1;
 - (id)_pureToneAverageForDiagnosticSensitivityPoints:(id)arg1;
+- (id)_rightSensitivityPoints;
+- (id)_leftSensitivityPoints;
 - (id)_rightDiagnosticSensitivityPoints;
 - (id)_leftDiagnosticSensitivityPoints;
 - (void)encodeWithCoder:(id)arg1;

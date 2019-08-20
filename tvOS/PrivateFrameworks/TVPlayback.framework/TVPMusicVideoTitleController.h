@@ -29,8 +29,8 @@
 @property(nonatomic) __weak id <TVPMusicVideoTitleControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *musicVideoView; // @synthesize musicVideoView=_musicVideoView;
 - (void).cxx_destruct;
+- (void)_playbackStateDidChange:(id)arg1;
 - (void)_mediaItemDidChange:(id)arg1;
-- (void)_handleTogglePlayPause:(id)arg1;
 - (void)_handleSelectButton:(id)arg1;
 - (void)_fingerRestRecognized:(id)arg1;
 - (void)_getCurrentItemTitle:(id *)arg1 andSubtitle:(id *)arg2;

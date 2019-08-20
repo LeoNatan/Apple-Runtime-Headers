@@ -19,6 +19,7 @@
     CDUnknownBlockType _activityCompletionWithItemsHandler;
     CDUnknownBlockType _didFinishPerformingActivityHandler;
     long long _maxPreviews;
+    NSString *_contentSizeCategory;
     unsigned long long _indexInApplicationDefinedActivities;
     NSUUID *_activityUUID;
 }
@@ -26,7 +27,9 @@
 + (Class)classForPreparingExtensionItemData;
 + (id)preparedActivityExtensionItemDataForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (id)_activityExtensionItemsForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
-+ (id)_actionImageForActionRepresentationImage:(id)arg1;
++ (id)_actionImageForActionRepresentationImage:(id)arg1 contentSizeCategory:(id)arg2;
++ (void)_loadItemProvidersFromActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (double)imageWidthForContentSizeCategory:(id)arg1;
 + (void)_performAfterActivityImageLoadingCompletes:(CDUnknownBlockType)arg1;
 + (id)_defaultFallbackActivityType;
 + (_Bool)_isCapabilityBasedActivity;
@@ -43,6 +46,7 @@
 + (unsigned long long)_xpcAttributes;
 @property(readonly, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(nonatomic) unsigned long long indexInApplicationDefinedActivities; // @synthesize indexInApplicationDefinedActivities=_indexInApplicationDefinedActivities;
+@property(retain, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) long long maxPreviews; // @synthesize maxPreviews=_maxPreviews;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPerformingActivityHandler; // @synthesize didFinishPerformingActivityHandler=_didFinishPerformingActivityHandler;
 @property(copy, nonatomic) CDUnknownBlockType activityCompletionWithItemsHandler; // @synthesize activityCompletionWithItemsHandler=_activityCompletionWithItemsHandler;
@@ -80,6 +84,7 @@
 @property(readonly, nonatomic) NSString *activityType;
 - (id)init;
 - (struct CGSize)_thumbnailSize;
+- (void)_prepareWithActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_needsResolvedActivityItems;
 - (_Bool)_managesOwnPresentation;
 - (_Bool)_dismissActivityFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

@@ -13,6 +13,8 @@
 
 @interface STLockoutViewController : PUICActionContentController <STLockoutPolicyControllerDelegate>
 {
+    _Bool _okButtonAlwaysHidden;
+    _Bool _mainButtonAlwaysHidden;
     _Bool _forSnapshot;
     _Bool _didFinishDismissing;
     STLockoutPolicyController *_policyController;
@@ -26,6 +28,11 @@
     id <STLockoutViewControllerDelegate> _viewControllerDelegate;
 }
 
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
++ (id)lockoutViewControllerWithWebsiteURL:(id)arg1;
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
++ (id)lockoutViewControllerWithCategoryIdentifier:(id)arg1;
 @property(nonatomic) __weak id <STLockoutViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
 @property int okButtonAction; // @synthesize okButtonAction=_okButtonAction;
 @property(readonly, nonatomic) _Bool didFinishDismissing; // @synthesize didFinishDismissing=_didFinishDismissing;
@@ -37,6 +44,8 @@
 @property(retain) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly) int style; // @synthesize style=_style;
 @property(readonly) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
+@property(nonatomic) _Bool mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
+@property(nonatomic) _Bool okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
 - (void).cxx_destruct;
 - (void)stateDidChange:(unsigned int)arg1;
 - (void)viewWillLayoutSubviews;
@@ -45,6 +54,7 @@
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
 - (id)initWithWebsiteURL:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
+- (id)initWithCategoryIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

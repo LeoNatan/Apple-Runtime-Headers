@@ -19,6 +19,7 @@
     long long _detailViewStyle;
     NSDictionary *_recurringDetailsRowMap;
     NSNumberFormatter *_currencyFormatter;
+    NSNumberFormatter *_localizedDayNumberFormatter;
     NSDateFormatter *_productDateFormatter;
     NSDateFormatter *_productDayFormatter;
     NSDateFormatter *_localTimeFormatter;

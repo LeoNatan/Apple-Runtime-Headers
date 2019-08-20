@@ -14,7 +14,7 @@
 #import <NanoTimeKitCompanion/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <NanoTimeKitCompanion/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView, _UICollectionViewDiffableDataSource;
+@class NSArray, NSMutableArray, NSMutableSet, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, REUIRelevanceEngineController, REUpNextScheduler, UICollectionViewDiffableDataSource, UIImage, UITapGestureRecognizer, UIView;
 
 @interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate>
 {
@@ -22,7 +22,7 @@
     NTKDigitalTimeLabelStyle *_timeLabelSmallInUpperRightCornerStyle;
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     NTKUpNextCollectionView *_collectionView;
-    _UICollectionViewDiffableDataSource *_collectionViewDataSource;
+    UICollectionViewDiffableDataSource *_collectionViewDataSource;
     NTKUpNextCollectionViewFlowLayout *_layout;
     REUIRelevanceEngineController *_engineController;
     UITapGestureRecognizer *_viewModeTapGesture;
@@ -48,6 +48,7 @@
     _Bool _suppressCrownEvents;
     _Bool _inBatchUpdate;
     _Bool _isBacklightOn;
+    NSMutableSet *_batchReloadIdentifiers;
     NSOrderedSet *_currentApplicationIdentifiers;
     REUpNextScheduler *_applicationIdentifierUpdateScheduler;
     NSSet *_dwellIndexPathes;
@@ -106,6 +107,7 @@
 - (void)engineController:(id)arg1 didInsertContent:(id)arg2 atIndexPath:(id)arg3;
 - (void)engineController:(id)arg1 didRemoveContent:(id)arg2 atIndexPath:(id)arg3;
 - (void)engineController:(id)arg1 didReloadContent:(id)arg2 atIndexPath:(id)arg3;
+- (void)engineController:(id)arg1 didReloadContent:(id)arg2 withIdentifier:(id)arg3;
 - (void)engineController:(id)arg1 performBatchUpdateBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)setViewMode:(long long)arg1;
@@ -153,8 +155,10 @@
 - (long long)_numberOfSectionsInCollectionView;
 - (void)_configureVisibleCell:(id)arg1;
 - (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)_configureCellForItemAtIndexPath:(id)arg1;
-- (void)_loadCollectionViewDataAnimated:(_Bool)arg1;
+- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2;
+- (void)_removeUnmanagedCollectionViewCells;
+- (void)_loadCollectionViewDataAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_reloadCollectionViewData;
 - (void)_configureCollectionViewDataSource;
 - (_Bool)_dismissPresentedViewControllerIfNecessary:(_Bool)arg1;
 - (void)_stopViewResetTimer;

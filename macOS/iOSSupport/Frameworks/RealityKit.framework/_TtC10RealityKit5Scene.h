@@ -10,7 +10,6 @@
 {
     // Error parsing type: , name: coreScene
     // Error parsing type: , name: __audioListener
-    // Error parsing type: , name: automaticallyInvokesStartTrigger
     // Error parsing type: , name: internalAudioListener
     // Error parsing type: , name: defaultCamera
     // Error parsing type: , name: activeCamera

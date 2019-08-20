@@ -43,7 +43,9 @@
     struct NSEdgeInsets _hitTestPadding;
 }
 
-+ (BOOL)hasMetalDevices;
++ (BOOL)forceAccessibilityEnabled;
++ (void)setForceAccessibilityEnabled:(BOOL)arg1;
++ (BOOL)isAvailable;
 + (BOOL)hasExtendedColorDisplay;
 + (long long)screenPixelCount;
 @property(readonly, nonatomic) PXGEngine *engine; // @synthesize engine=_engine;
@@ -148,6 +150,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_updateAccessibilityStatus;
+- (void)_forceAccessibilityEnabledChanged:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)curatedLibraryHitTestResultsInRect:(struct CGRect)arg1 withControl:(long long)arg2;
@@ -156,6 +159,7 @@
 - (id)firstCuratedLibraryHitTestResultsAtPoint:(struct CGPoint)arg1 withControl:(long long)arg2;
 - (void)enumerateCuratedLibraryHitTestResultsAtPoint:(struct CGPoint)arg1 withControls:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateCuratedLibraryHitTestResultsAtPoint:(struct CGPoint)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (BOOL)isObjectReference:(id)arg1 visuallyBeforeObjectReference:(id)arg2;
 - (struct CGImage *)_fallbackImageForAssetReference:(id)arg1 mediaProvider:(id)arg2;
 - (id)regionOfInterestForAssetReference:(id)arg1 image:(struct CGImage **)arg2 fallbackMediaProvider:(id)arg3;
 - (id)regionOfInterestForObjectReference:(id)arg1;

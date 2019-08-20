@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class DEExtension, NSString;
+
 __attribute__((visibility("hidden")))
 @interface AirPlayReceiverPlatform : NSObject
 {
@@ -22,6 +24,9 @@ __attribute__((visibility("hidden")))
     unsigned char _voiceForTelephony;
     unsigned char _isMuted;
     float _volumeSliderValueBeforeMute;
+    DEExtension *_wifiDiagnosticExtension;
+    NSString *_wifiDECaptureUUID;
+    unsigned long long _stalledSessionCount;
     unsigned char _isAmbientAudioPlaying;
     unsigned char _isMediaAudioPlaying;
     unsigned char _isVideoPlaying;

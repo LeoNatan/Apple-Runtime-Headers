@@ -12,13 +12,14 @@
 
 @interface SBDeviceApplicationRemoteTransientOverlayViewProvider : SBDeviceApplicationSceneOverlayViewProvider <SBTransientOverlayViewControllerDelegate>
 {
-    NSMutableArray *_presentedVCs;
+    NSMutableArray *_activePresentationContexts;
     SBDeviceApplicationRemoteTransientOverlayContainerViewController *_containerVC;
     NSMapTable *_keyboardFocusRedirectionsByRemoteVC;
     _Bool _needsDeactivationWithNoActiveTransientOverlays;
 }
 
 - (void).cxx_destruct;
+- (void)_handleCoverSheetDidPresent:(id)arg1;
 - (void)_dismissRemoteOverlayVC:(id)arg1;
 - (id)_realOverlayViewController;
 - (void)_deactivateIfPossible;
@@ -42,7 +43,7 @@
 - (long long)preferredStatusBarStyle;
 - (_Bool)isPresentingTransientOverlay:(id)arg1;
 - (void)dismissRemoteTransientOverlayViewController:(id)arg1;
-- (void)presentRemoteTransientOverlayViewController:(id)arg1;
+- (void)presentRemoteTransientOverlayViewController:(id)arg1 presentationTarget:(id)arg2;
 - (void)dealloc;
 - (id)initWithSceneHandle:(id)arg1 delegate:(id)arg2;
 

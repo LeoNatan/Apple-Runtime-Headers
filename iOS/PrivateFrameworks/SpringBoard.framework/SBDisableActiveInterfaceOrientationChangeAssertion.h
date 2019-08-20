@@ -6,18 +6,27 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoard/BSInvalidatable-Protocol.h>
+
 @class NSString;
 
-@interface SBDisableActiveInterfaceOrientationChangeAssertion : NSObject
+@interface SBDisableActiveInterfaceOrientationChangeAssertion : NSObject <BSInvalidatable>
 {
     NSString *_reason;
+    _Bool _invalidated;
+    _Bool _nudge;
 }
 
 - (void).cxx_destruct;
 - (void)invalidate;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithReason:(id)arg1;
+- (id)initWithReason:(id)arg1 nudgeOrientationOnInvalidate:(_Bool)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

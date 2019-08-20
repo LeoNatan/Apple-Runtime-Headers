@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *_daemonConnection;
     unsigned int _launchdUID;
     unsigned int _euid;
+    // Error parsing type: Ac, name: _userHomeDirectoryState
     struct os_unfair_lock_s _sourcesLock;
     struct os_unfair_lock_s _searchListsLock;
     struct os_unfair_lock_s _namedVolatileSourcesLock;
@@ -69,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)unregisterUserDefaultsInstance:(id)arg1;
 - (id)init;
 - (BOOL)canLookUpAgents;
+- (BOOL)currentUserHasInvalidHomeDirectory;
 - (unsigned int)euid;
 - (void)assertEquivalence:(BOOL)arg1 ofIdentifiers:(struct __CFArray *)arg2 users:(struct __CFArray *)arg3 hosts:(struct __CFArray *)arg4 containers:(struct __CFArray *)arg5 managedFlags:(struct __CFArray *)arg6 cloudFlags:(struct __CFArray *)arg7;
 - (void)withNamedVolatileSources:(CDUnknownBlockType)arg1;

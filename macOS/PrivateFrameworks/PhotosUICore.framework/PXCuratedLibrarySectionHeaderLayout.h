@@ -11,7 +11,7 @@
 #import <PhotosUICore/PXGViewSource-Protocol.h>
 #import <PhotosUICore/PXLibrarySummaryOutputPresenter-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDictionary, NSObject, NSSet, NSString, PXAssetCollectionReference, PXCuratedLibraryActionPerformer, PXCuratedLibraryEllipsisButtonActionPerformer, PXCuratedLibrarySectionHeaderLayoutSpec;
+@class NSArray, NSAttributedString, NSDictionary, NSObject, NSSet, NSString, PXAssetCollectionReference, PXCuratedLibraryActionPerformer, PXCuratedLibraryEllipsisButtonActionPerformer, PXCuratedLibrarySectionHeaderLayoutSpec, PXTitleSubtitleLabelSpec;
 @protocol OS_dispatch_queue;
 
 @interface PXCuratedLibrarySectionHeaderLayout : PXGLayout <PXGTitleSubtitleSource, PXGViewSource, PXGNamedImageSource, PXLibrarySummaryOutputPresenter>
@@ -27,7 +27,7 @@
     unsigned short _controlStackButtonVersion;
     NSArray *_itemIdentifierBySpriteIndex;
     unsigned short _gradientResizableCapInsetsIndex;
-    struct CGSize _cachedSizeByButtonIdentifier[7];
+    struct CGSize _cachedSizeByButtonIdentifier[8];
     struct CGSize _cachedExternalTrailingButtonsSize;
     struct CGSize _cachedExternalLeadingButtonsSize;
     long long _asyncDateGeneration;
@@ -36,6 +36,7 @@
     BOOL _showsDebugDescription;
     BOOL _shouldRespectSafeAreaInsets;
     BOOL _controlStackButtonSelected;
+    BOOL _usesCompactToggleAspectFitButton;
     float _buttonsZIndex;
     NSString *_title;
     NSString *_subtitle;
@@ -53,18 +54,23 @@
     NSString *_selectButtonTitle;
     NSString *_toggleAspectFitButtonTitle;
     NSSet *_toggleAspectFitButtonPossibleTitles;
+    long long _toggleAspectFitCompactButtonSymbol;
     NSArray *_externalTrailingButtonConfigurations;
     NSArray *_externalLeadingButtonConfigurations;
     PXCuratedLibrarySectionHeaderLayoutSpec *_effectiveSpec;
+    PXTitleSubtitleLabelSpec *_effectiveTitleSubtitleLabelSpec;
     struct CGRect _titleSubtitleFrame;
 }
 
+@property(nonatomic) BOOL usesCompactToggleAspectFitButton; // @synthesize usesCompactToggleAspectFitButton=_usesCompactToggleAspectFitButton;
 @property(nonatomic) BOOL controlStackButtonSelected; // @synthesize controlStackButtonSelected=_controlStackButtonSelected;
+@property(retain, nonatomic) PXTitleSubtitleLabelSpec *effectiveTitleSubtitleLabelSpec; // @synthesize effectiveTitleSubtitleLabelSpec=_effectiveTitleSubtitleLabelSpec;
 @property(retain, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *effectiveSpec; // @synthesize effectiveSpec=_effectiveSpec;
 @property(copy, nonatomic) NSArray *externalLeadingButtonConfigurations; // @synthesize externalLeadingButtonConfigurations=_externalLeadingButtonConfigurations;
 @property(copy, nonatomic) NSArray *externalTrailingButtonConfigurations; // @synthesize externalTrailingButtonConfigurations=_externalTrailingButtonConfigurations;
 @property(nonatomic) BOOL shouldRespectSafeAreaInsets; // @synthesize shouldRespectSafeAreaInsets=_shouldRespectSafeAreaInsets;
 @property(readonly, nonatomic) struct CGRect titleSubtitleFrame; // @synthesize titleSubtitleFrame=_titleSubtitleFrame;
+@property(nonatomic) long long toggleAspectFitCompactButtonSymbol; // @synthesize toggleAspectFitCompactButtonSymbol=_toggleAspectFitCompactButtonSymbol;
 @property(copy, nonatomic) NSSet *toggleAspectFitButtonPossibleTitles; // @synthesize toggleAspectFitButtonPossibleTitles=_toggleAspectFitButtonPossibleTitles;
 @property(copy, nonatomic) NSString *toggleAspectFitButtonTitle; // @synthesize toggleAspectFitButtonTitle=_toggleAspectFitButtonTitle;
 @property(copy, nonatomic) NSString *selectButtonTitle; // @synthesize selectButtonTitle=_selectButtonTitle;
@@ -97,6 +103,7 @@
 - (id)titleForSpriteAtIndex:(unsigned int)arg1;
 - (void)_handleAsyncDateDescription:(id)arg1 placement:(long long)arg2 generation:(long long)arg3;
 - (void)_updateTitleAndSubtitle;
+- (id)_effectiveTitleSubtitleLabelSpec:(id)arg1;
 - (void)_updateEffectiveSpec;
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
@@ -106,6 +113,7 @@
 - (void)visibleRectDidChange;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned long long toggleAspectFitButton;
 - (struct NSEdgeInsets)actualSafeAreaInsets;
 - (void)_updateSpritesAlpha;
 - (void)_updateSpriteTags;

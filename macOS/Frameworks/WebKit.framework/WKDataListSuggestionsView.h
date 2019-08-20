@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)dropdownRectForElementRect:(const struct IntRect *)arg1;
 - (void)invalidate;
 - (void)moveSelectionByDirection:(const struct String *)arg1;
+- (void)notifyAccessibilityClients:(id)arg1;
 - (void)updateWithInformation:(struct DataListSuggestionInformation *)arg1;
 - (struct String)currentSelectedString;
 - (id)initWithInformation:(struct DataListSuggestionInformation *)arg1 inView:(id)arg2;

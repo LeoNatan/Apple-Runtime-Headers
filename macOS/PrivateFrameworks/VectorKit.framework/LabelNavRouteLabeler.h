@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     BOOL _checkIfRouteSubrangeChanged;
     BOOL _useRouteSubrange;
     BOOL _regenerateRoadSigns;
+    BOOL _isStylesheetAnimating;
     struct PolylineCoordinate _routeSubrangeStart;
     struct PolylineCoordinate _routeSubrangeEnd;
     struct VKLabelNavArtworkCache *_artworkCache;
@@ -94,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (unsigned char)orientationForRoadSign:(id)arg1 roadLabel:(id)arg2 navContext:(struct NavContext *)arg3;
 - (void)_generateCurrentRoadSignWithContext:(struct NavContext *)arg1;
 - (void)styleManagerDidFinishAnimating;
+- (void)styleManagerDidStartAnimating;
 - (void)styleManagerDidChange:(BOOL)arg1;
 - (BOOL)_collideLabel:(id)arg1 activeLabel:(id)arg2 labelsToRemove:(id)arg3;
 - (void)_tryAddLabel:(id)arg1 navContext:(struct NavContext *)arg2 labelCollisionEnabled:(BOOL)arg3;

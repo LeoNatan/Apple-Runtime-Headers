@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isShiftKeyBeingHeldForGesture:(id)arg1;
 - (void)oneFingerDoubleTap:(id)arg1;
 - (void)oneFingerTripleTap:(id)arg1;
+- (void)toggleSelectionCommands;
 - (void)_applyTransientState:(id)arg1;
 - (id)_transientState;
 - (void)didMoveToView:(id)arg1;

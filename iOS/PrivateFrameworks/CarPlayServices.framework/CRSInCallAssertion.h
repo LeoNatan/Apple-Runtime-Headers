@@ -18,6 +18,7 @@
     _Bool _lock_presented;
     _Bool _lock_activated;
     _Bool _lock_invalidated;
+    _Bool _lock_allowsBanners;
     NSString *_reason;
     BSServiceConnection *_connection;
 }
@@ -28,6 +29,7 @@
 - (void)_handleConnectionInterrupted;
 - (void)_handleConnectionActivated;
 - (void)invalidate;
+@property(nonatomic) _Bool allowsBanners;
 - (void)activate;
 - (id)initWithReason:(id)arg1;
 

@@ -14,22 +14,24 @@
 __attribute__((visibility("hidden")))
 @interface MLCustomLayerWrapper : NSObject <EspressoBrick>
 {
+    _Bool _ndMode;
     NSString *_className;
     NSObject<MLCustomLayer> *_customImpl;
 }
 
 + (id)factory;
 + (int)intFromFourBytes:(char *)arg1;
-+ (id)espressoTensorsToCoremlTensors:(id)arg1;
++ (id)espressoTensorsToCoremlTensors:(id)arg1 ndMode:(_Bool)arg2;
 + (id)espressoTensorsToCoremlTensorsGPU:(id)arg1;
-+ (id)espressoTensorToCoremlTensor:(id)arg1;
++ (id)espressoTensorToCoremlTensor:(id)arg1 ndMode:(_Bool)arg2;
 + (id)getStrides:(id)arg1;
-+ (id)coremlShapesToEspressoShapes:(id)arg1;
-+ (id)coremlShapeToEspressoShape:(id)arg1;
-+ (id)espressoShapesToCoremlShapes:(id)arg1;
-+ (id)espressoShapeToCoremlShape:(id)arg1;
++ (id)coremlShapesToEspressoShapes:(id)arg1 ndMode:(_Bool)arg2;
++ (id)coremlShapeToEspressoShape:(id)arg1 ndMode:(_Bool)arg2;
++ (id)espressoShapesToCoremlShapes:(id)arg1 ndMode:(_Bool)arg2;
++ (id)espressoShapeToCoremlShape:(id)arg1 ndMode:(_Bool)arg2;
 @property(retain, nonatomic) NSObject<MLCustomLayer> *customImpl; // @synthesize customImpl=_customImpl;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
+@property(readonly, nonatomic) _Bool ndMode; // @synthesize ndMode=_ndMode;
 - (void).cxx_destruct;
 - (_Bool)hasGPUSupport;
 - (void)encodeToMetalCommandBuffer:(id)arg1 inputTensors:(id)arg2 outputTensors:(id)arg3;

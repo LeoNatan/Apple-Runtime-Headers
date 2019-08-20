@@ -33,10 +33,11 @@
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlIconViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (void)_updateLabelFrames;
+- (void)_updateLabelFramesOrigins;
 - (struct CGRect)_getLabelsContainingRect;
 - (void)_updateLabelSizes;
 - (void)_updateLayout;
+- (double)_iconAndLabelsHeight;
 - (void)_updateUI;
 - (void)layoutSubviews;
 - (void)_updateUIForReachabilityState:(unsigned long long)arg1;

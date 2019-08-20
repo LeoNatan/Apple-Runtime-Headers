@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <MediaControls/FBSDisplayLayoutObserver-Protocol.h>
 #import <MediaControls/MPAVRoutingViewControllerDelegate-Protocol.h>
 #import <MediaControls/MPAVRoutingViewControllerThemeDelegate-Protocol.h>
 #import <MediaControls/MTVisualStylingRequiring-Protocol.h>
@@ -16,10 +15,10 @@
 #import <MediaControls/MediaControlsMasterVolumeSliderDelegate-Protocol.h>
 #import <MediaControls/MediaControlsPanelViewControllerDelegate-Protocol.h>
 
-@class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MTVisualStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, UIView;
+@class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MSVTimer, MTVisualStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, UIView;
 @protocol MRPlatterViewControllerDelegate;
 
-@interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, FBSDisplayLayoutObserver, MTVisualStylingRequiring, MediaControlsCollectionItemViewController>
+@interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, MTVisualStylingRequiring, MediaControlsCollectionItemViewController>
 {
     MTVisualStylingProvider *_visualStylingProvider;
     _Bool _selected;
@@ -52,6 +51,7 @@
     NSString *_explicitString;
     long long _failedArtworkRetryCount;
     id _volumeControlAssertion;
+    MSVTimer *_artworkTimer;
     NSString *_label;
     unsigned long long _supportedModes;
     long long _selectedMode;
@@ -68,6 +68,7 @@
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
 @property(nonatomic) unsigned long long supportedModes; // @synthesize supportedModes=_supportedModes;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(retain, nonatomic) MSVTimer *artworkTimer; // @synthesize artworkTimer=_artworkTimer;
 @property(retain, nonatomic) id volumeControlAssertion; // @synthesize volumeControlAssertion=_volumeControlAssertion;
 @property(readonly, nonatomic) long long failedArtworkRetryCount; // @synthesize failedArtworkRetryCount=_failedArtworkRetryCount;
 @property(nonatomic) _Bool failedToLoadArtwork; // @synthesize failedToLoadArtwork=_failedToLoadArtwork;
@@ -129,6 +130,7 @@
 - (void)footerViewButtonPressed:(id)arg1;
 - (void)_updateSecondaryStringFormat;
 - (void)_updatePlaceholderArtwork;
+- (void)_showPlaceholderArtwork;
 - (void)_updateRouteNameLabel;
 - (void)_updateControlCenterMetadata:(id)arg1 sectionMetadata:(id)arg2;
 - (void)_updateHeaderUI;

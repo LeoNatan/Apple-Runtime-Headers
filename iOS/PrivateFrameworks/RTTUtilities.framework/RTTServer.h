@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)primeRTTServer;
 - (void)setTTYDictionaryAvailability:(_Bool)arg1;
+- (void)_takeStackshot;
 - (id)valueForTTYSetting:(id)arg1;
 - (_Bool)contactIsTTYContact:(id)arg1;
 - (_Bool)deleteConversationWithCallUID:(id)arg1;

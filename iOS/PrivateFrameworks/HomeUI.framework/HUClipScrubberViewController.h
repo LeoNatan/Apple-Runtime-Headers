@@ -20,6 +20,7 @@
     CDUnknownBlockType _accessoryButtonHandler;
     CDUnknownBlockType _beginEditingHandler;
     CDUnknownBlockType _endEditingHandler;
+    CDUnknownBlockType _deletionHandler;
     HFCameraPlaybackEngine *_playbackEngine;
     HULegibilityLabel *_dayLabel;
     HULegibilityLabel *_timeLabel;
@@ -62,14 +63,14 @@
 @property(retain, nonatomic) HULegibilityLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) HULegibilityLabel *dayLabel; // @synthesize dayLabel=_dayLabel;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
+@property(copy, nonatomic) CDUnknownBlockType deletionHandler; // @synthesize deletionHandler=_deletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType endEditingHandler; // @synthesize endEditingHandler=_endEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType beginEditingHandler; // @synthesize beginEditingHandler=_beginEditingHandler;
 @property(copy, nonatomic) CDUnknownBlockType accessoryButtonHandler; // @synthesize accessoryButtonHandler=_accessoryButtonHandler;
 - (void).cxx_destruct;
 - (void)manager:(id)arg1 failedToSubmitClipWithIdentifier:(id)arg2 error:(id)arg3;
-- (void)manager:(id)arg1 didSubmitClipCollection:(id)arg2;
+- (void)manager:(id)arg1 didSubmitCameraClips:(id)arg2;
 - (void)manager:(id)arg1 didSubmitCameraClip:(id)arg2;
-- (id)hf_clipCollection;
 - (void)submitAllUnsubmittedClips;
 - (void)verifySubmitAllClips;
 - (void)submitCurrentClip;
@@ -106,7 +107,7 @@
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
-- (void)playbackEngine:(id)arg1 didUpdateClipCollection:(id)arg2;
+- (void)playbackEngine:(id)arg1 didUpdateClipManager:(id)arg2;
 - (void)showAssociatedAccessories;
 - (void)cancelLiveTimer;
 - (void)startLiveTimer;
@@ -120,7 +121,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)updateScrubberViewAndAssociatedConstraints;
 - (void)loadView;
-- (void)reloadClipCollection:(id)arg1;
+- (void)reloadClipManager:(id)arg1;
 - (void)dealloc;
 - (id)initWithPlaybackEngine:(id)arg1;
 

@@ -6,10 +6,12 @@
 
 #import <HMFoundation/HMFObject.h>
 
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
+
 @class HMDBulletinBoard, HMDDeviceFileManager, HMDHeroFrameDataSource, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HMDCameraClipUserNotificationCenter : HMFObject
+@interface HMDCameraClipUserNotificationCenter : HMFObject <HMFLogging>
 {
     HMDBulletinBoard *_bulletinBoard;
     HMDDeviceFileManager *_fileManager;
@@ -18,6 +20,7 @@
     NSString *_heroFrameDirPath;
 }
 
++ (id)logCategory;
 @property(readonly) NSString *heroFrameDirPath; // @synthesize heroFrameDirPath=_heroFrameDirPath;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) HMDHeroFrameDataSource *dataSource; // @synthesize dataSource=_dataSource;
@@ -26,12 +29,19 @@
 - (void).cxx_destruct;
 - (void)removeEventNotificationForClipWithUUID:(id)arg1;
 - (void)_postClipSignificantEventNotification:(id)arg1 postedNotificationUUIDs:(id)arg2;
+- (unsigned long long)_reasonForSignificantEventNotification:(id)arg1;
 - (void)postClipSignificantEventNotification:(id)arg1;
 - (void)postSignificantEventNotification:(id)arg1;
 - (id)_writeHeroFrameDataToFileForNotification:(id)arg1;
 - (void)_removeFile:(id)arg1;
 - (_Bool)_createDirectoryAtPathIfNonExistent:(id)arg1;
 - (id)initWithBulletinBoard:(id)arg1 fileManager:(id)arg2 dataSource:(id)arg3 workQueue:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

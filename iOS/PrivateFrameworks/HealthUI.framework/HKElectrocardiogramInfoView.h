@@ -14,8 +14,10 @@
     UILabel *_bodyLabel;
     NSLayoutConstraint *_heartRateLabelLeadingConstraint;
     NSLayoutConstraint *_heartRateFirstBaselineConstraint;
+    NSLayoutConstraint *_heartImageViewHeightConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *heartImageViewHeightConstraint; // @synthesize heartImageViewHeightConstraint=_heartImageViewHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heartRateFirstBaselineConstraint; // @synthesize heartRateFirstBaselineConstraint=_heartRateFirstBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heartRateLabelLeadingConstraint; // @synthesize heartRateLabelLeadingConstraint=_heartRateLabelLeadingConstraint;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;

@@ -73,6 +73,7 @@
 @property(readonly, nonatomic, getter=isOrientationSupported) _Bool orientationSupported;
 @property(copy) NSString *videoGravity;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (void)layoutSublayers;
 - (void)setBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic, getter=isPreviewing) _Bool previewing;

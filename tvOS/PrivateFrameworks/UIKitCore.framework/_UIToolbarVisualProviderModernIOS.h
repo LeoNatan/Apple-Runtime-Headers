@@ -6,12 +6,13 @@
 
 #import <UIKitCore/_UIToolbarVisualProvider.h>
 
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
 #import <UIKitCore/_UIBarButtonItemViewOwner-Protocol.h>
 
 @class NSString, UIView, _UIBarBackground, _UIBarBackgroundLayout, _UIToolbarContentView;
 
 __attribute__((visibility("hidden")))
-@interface _UIToolbarVisualProviderModernIOS : _UIToolbarVisualProvider <_UIBarButtonItemViewOwner>
+@interface _UIToolbarVisualProviderModernIOS : _UIToolbarVisualProvider <_UIBarButtonItemViewOwner, _UIBarAppearanceChangeObserver>
 {
     _UIBarBackground *_backgroundView;
     _UIBarBackgroundLayout *_backgroundViewLayout;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateBackgroundModern;
 - (void)_updateBackgroundLegacyForPosition:(long long)arg1;
 - (void)updateAppearance;
+- (id)appearanceObserver;
 - (void)setUseModernAppearance:(_Bool)arg1;
 - (_Bool)useModernAppearance;
 - (void)updateBarForStyle:(long long)arg1;
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)setCustomBackgroundView:(id)arg1;
 - (void)updateBarBackgroundSize;
 - (struct CGRect)_backgroundFrame;
+- (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
 - (void)_itemDidChangeWidth:(id)arg1;
 - (void)_itemDidChangeSecondaryActionState:(id)arg1;
 - (void)_itemDidChangeSecondaryActions:(id)arg1;

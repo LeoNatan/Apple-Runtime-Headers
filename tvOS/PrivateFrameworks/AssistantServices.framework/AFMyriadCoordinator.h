@@ -54,6 +54,7 @@
     _Bool _BTLEReady;
     _Bool _inTask;
     _Bool _ducking;
+    _Bool _stateMachineEncounteredError;
     _Bool _supportsExtended;
     _Bool _listenTimerIsRunning;
     _Bool _coordinationEnabled;
@@ -91,10 +92,14 @@
 - (unsigned short)recentEventBump;
 - (void)logCoreDuetResults:(id)arg1;
 - (id)activityEventStream;
+- (void)_leaveBLEDiagnosticMode;
+- (void)_enterBLEDiagnosticMode;
 - (void)_waitWiProxAndExecute:(CDUnknownBlockType)arg1;
 - (void)_waitWiProx:(long long)arg1 andExecute:(CDUnknownBlockType)arg2;
 - (void)_ageWedgeFilter;
 - (_Bool)_testAndUpdateWedgeFilter:(id)arg1;
+- (void)notifyCurrentDecisionResult;
+- (void)_updateRepliesWith:(id)arg1 id:(id)arg2 data:(id)arg3;
 - (_Bool)_isAlreadyAdvertising;
 - (_Bool)_inTaskTriggerWasTooSoon;
 - (id)_sortedReplies:(id)arg1;
@@ -128,6 +133,7 @@
 - (void)_adjustActionWindowsFromSlowdown:(int)arg1;
 - (void)_resetActionWindows;
 - (void)_setupActionWindows;
+- (void)_handleStateMachineErrorIfNeeded;
 - (void)_unduck;
 - (void)_stopAdvertisingAndListening;
 - (void)stopListening;

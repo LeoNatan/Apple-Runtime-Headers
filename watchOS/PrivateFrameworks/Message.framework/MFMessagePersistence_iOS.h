@@ -20,11 +20,13 @@
     MFMailMessageLibrary *_library;
     MFMailMessageLibraryQueryTransformer *_queryTransformer;
     MFMessageTransformer *_libraryMessageTransformer;
-    id <EFScheduler> _contentLoadScheduler;
+    id <EFScheduler> _networkContentLoadScheduler;
+    id <EFScheduler> _offlineContentLoadScheduler;
 }
 
 + (id)log;
-@property(retain, nonatomic) id <EFScheduler> contentLoadScheduler; // @synthesize contentLoadScheduler=_contentLoadScheduler;
+@property(retain, nonatomic) id <EFScheduler> offlineContentLoadScheduler; // @synthesize offlineContentLoadScheduler=_offlineContentLoadScheduler;
+@property(retain, nonatomic) id <EFScheduler> networkContentLoadScheduler; // @synthesize networkContentLoadScheduler=_networkContentLoadScheduler;
 @property(retain, nonatomic) MFMessageTransformer *libraryMessageTransformer; // @synthesize libraryMessageTransformer=_libraryMessageTransformer;
 @property(retain, nonatomic) MFMailMessageLibraryQueryTransformer *queryTransformer; // @synthesize queryTransformer=_queryTransformer;
 @property(nonatomic) __weak MFMailMessageLibrary *library; // @synthesize library=_library;

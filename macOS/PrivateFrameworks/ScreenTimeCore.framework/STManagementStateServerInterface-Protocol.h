@@ -9,6 +9,9 @@
 @class NSDateInterval, NSDictionary, NSNumber, NSString, NSURL;
 
 @protocol STManagementStateServerInterface <NSObject>
+- (void)isExplicitContentRestrictedWithCompletionHandler:(void (^)(BOOL, NSError *))arg1;
+- (void)shouldAllowOneMoreMinuteForWebsiteURL:(NSURL *)arg1 replyHandler:(void (^)(NSNumber *, NSError *))arg2;
+- (void)shouldAllowOneMoreMinuteForBundleIdentifier:(NSString *)arg1 replyHandler:(void (^)(NSNumber *, NSError *))arg2;
 - (void)permitWebFilterURL:(NSURL *)arg1 pageTitle:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)performMigrationFromMCXSettings:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)contactManagementStateForDSID:(NSNumber *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
@@ -19,6 +22,7 @@
 - (void)deleteWebHistoryDuringInterval:(NSDateInterval *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)deleteWebHistoryForDomain:(NSString *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)deleteWebHistoryForURL:(NSURL *)arg1 webApplication:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)authenticateRestrictionsPasscode:(NSString *)arg1 replyHandler:(void (^)(NSError *))arg2;
 - (void)isRestrictionsPasscodeSetWithCompletionHandler:(void (^)(BOOL, NSError *))arg1;
 - (void)clearRestrictionsPasscodeWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)shouldRequestMoreTimeWithCompletionHandler:(void (^)(BOOL, NSError *))arg1;

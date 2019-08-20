@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (struct MicrophoneConfiguration)getMicrophoneConfiguration:(unsigned int)arg1;
 - (vector_28162c3a)getAvailableMicrophoneConfigurations:(unsigned long long)arg1 configRequest:(id)arg2;
+- (unordered_map_9e6f8272)getAvailableDSPModuleTypes:(const vector_d47d98e2 *)arg1;
 - (set_6185be97)getAllActiveHWStreamIDs:(id)arg1;
 - (vector_fefeec75)getSupportedIOStreamFormats:(id)arg1 forIOController:(const struct IOControllerDescription *)arg2 forIOStream:(unsigned int)arg3 isInput:(BOOL)arg4;
 - (unsigned int)getDSPFlavor:(id)arg1 ioControllerDescription:(const struct IOControllerDescription *)arg2 forIOStream:(unsigned int)arg3 isInput:(BOOL)arg4;

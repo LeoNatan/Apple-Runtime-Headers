@@ -10,6 +10,7 @@
 {
 }
 
+- (void)viewDidLoad;
 - (void)addBulletedListItemWithDescription:(id)arg1 image:(id)arg2;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3;
 

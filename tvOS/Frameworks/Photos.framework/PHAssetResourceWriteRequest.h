@@ -16,6 +16,7 @@
 {
     PHAssetResourceRequest *_dataRequest;
     NSError *_error;
+    struct os_unfair_lock_s _completionHandlerLock;
     int _requestID;
     PHAssetResource *_assetResource;
     PHAssetResourceRequestOptions *_options;

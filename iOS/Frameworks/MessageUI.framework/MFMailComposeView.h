@@ -152,6 +152,7 @@
 - (void)_adjustScrollerForBottomView;
 - (void)_normalizeBodyFieldFrame;
 - (void)setNeedsLayout;
+- (void)_layoutLoadingView;
 - (void)layoutSubviews;
 - (void)composeBodyFieldDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)composeBodyFieldDidDraw:(id)arg1;

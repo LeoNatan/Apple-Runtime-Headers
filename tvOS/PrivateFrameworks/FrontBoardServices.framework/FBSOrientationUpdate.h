@@ -11,13 +11,15 @@
     long long _orientation;
     double _duration;
     long long _rotationDirection;
+    unsigned long long _sequenceNumber;
 }
 
+@property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(nonatomic) long long rotationDirection; // @synthesize rotationDirection=_rotationDirection;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 - (id)description;
-- (id)initWithOrientation:(long long)arg1 duration:(double)arg2 rotationDirection:(long long)arg3;
+- (id)initWithOrientation:(long long)arg1 sequenceNumber:(unsigned long long)arg2 duration:(double)arg3 rotationDirection:(long long)arg4;
 - (id)init;
 
 @end

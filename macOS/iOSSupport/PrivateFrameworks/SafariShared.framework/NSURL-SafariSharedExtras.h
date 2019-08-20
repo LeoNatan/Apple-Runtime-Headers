@@ -39,6 +39,7 @@
 @property(readonly, nonatomic) BOOL safari_isEligibleToShowNotSecureWarning;
 @property(readonly, nonatomic) BOOL safari_isLocalOrPrivateNetworkURL;
 @property(readonly, nonatomic) BOOL safari_isSafariResourceURL;
+- (BOOL)safari_isMailtoURL;
 @property(readonly, nonatomic) BOOL safari_isBlobURL;
 - (BOOL)safari_isDataURL;
 - (BOOL)safari_isHTTPURL;

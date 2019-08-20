@@ -40,9 +40,11 @@
     MKMapView *_mapView;
     int _scaleVisibility;
     int _legendAlignment;
+    unsigned int _mapType;
 }
 
 + (id)scaleViewWithMapView:(id)arg1;
+@property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(nonatomic) _Bool usedInternallyByMapView; // @synthesize usedInternallyByMapView=_usedInternallyByMapView;
 @property(nonatomic) int legendAlignment; // @synthesize legendAlignment=_legendAlignment;
 @property(nonatomic) int scaleVisibility; // @synthesize scaleVisibility=_scaleVisibility;

@@ -6,11 +6,11 @@
 
 #import <WorkflowKit/WFGalleryWorkflow.h>
 
-@class NSDate, NSNumber, NSString, WFWorkflowIcon, WFWorkflowRecord;
+@class CKRecordID, NSDate, NSNumber, NSString, WFWorkflowIcon, WFWorkflowRecord;
 
 @interface WFMutableGalleryWorkflow : WFGalleryWorkflow
 {
-    NSString *identifier;
+    CKRecordID *identifier;
     NSString *name;
     NSString *shortDescription;
     NSString *longDescription;
@@ -18,10 +18,10 @@
     NSNumber *searchable;
     WFWorkflowRecord *workflowRecord;
     NSString *language;
-    WFGalleryWorkflow *base;
+    CKRecordID *base;
 }
 
-@property(retain, nonatomic) WFGalleryWorkflow *base; // @synthesize base;
+@property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
 @property(retain, nonatomic) WFWorkflowRecord *workflowRecord; // @synthesize workflowRecord;
 @property(retain, nonatomic) NSNumber *searchable; // @synthesize searchable;
@@ -29,7 +29,7 @@
 @property(copy, nonatomic) NSString *longDescription; // @synthesize longDescription;
 @property(copy, nonatomic) NSString *shortDescription; // @synthesize shortDescription;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
 - (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflowIcon *icon; // @dynamic icon;
 

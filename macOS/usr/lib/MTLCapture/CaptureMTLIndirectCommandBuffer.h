@@ -48,6 +48,7 @@
 @property(readonly) unsigned long long cpuCacheMode;
 @property(readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
 @property(readonly) unsigned long long allocatedSize;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

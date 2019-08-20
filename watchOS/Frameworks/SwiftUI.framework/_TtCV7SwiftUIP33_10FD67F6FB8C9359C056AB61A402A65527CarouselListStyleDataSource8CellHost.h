@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)_setHiddenForReuse:(_Bool)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 
 @end

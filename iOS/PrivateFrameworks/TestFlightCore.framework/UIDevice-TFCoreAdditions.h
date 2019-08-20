@@ -7,6 +7,8 @@
 #import <UIKit/UIDevice.h>
 
 @interface UIDevice (TFCoreAdditions)
++ (_Bool)tf_deviceHasTopPowerButton;
 + (_Bool)tf_deviceHasFaceID;
++ (id)tf_screenshotInstructionImageName;
 @end
 

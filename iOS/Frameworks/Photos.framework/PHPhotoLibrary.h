@@ -207,6 +207,7 @@
 @property(retain, nonatomic) id <PLPhotoAnalysisServiceTaxonomyResolver> taxonomyResolver;
 - (void)requestPermissionToDownloadFaceResourcesOfCount:(unsigned long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)sceneInformationFromStartDate:(id)arg1 toEndDate:(id)arg2;
+- (id)migrationDate;
 - (id)cloudIdentifiersForLocalIdentifiers:(id)arg1;
 - (id)localIdentifiersForCloudIdentifiers:(id)arg1;
 - (id)_cloudIdentifierKeysByFetchType;

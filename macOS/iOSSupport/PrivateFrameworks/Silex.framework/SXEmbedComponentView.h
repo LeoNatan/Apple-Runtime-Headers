@@ -98,7 +98,9 @@
 - (void)finalizeLayoutForSize:(struct CGSize)arg1;
 - (void)layoutWebViewForSize:(struct CGSize)arg1;
 - (void)reloadEmbed;
+- (void)loadWebView;
 - (void)loadWebViewIfNeeded;
+- (void)prewarmWebView;
 - (void)displayEmbedIfNeeded;
 - (void)loadEmbedData;
 - (void)loadEmbedIfNeeded;
@@ -106,6 +108,7 @@
 - (void)willPresentComponentWithChanges:(CDStruct_74be42e1)arg1;
 - (void)discardContents;
 - (void)renderContents;
+- (void)loadComponent:(id)arg1;
 - (void)dealloc;
 - (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 reachabilityProvider:(id)arg5 embedService:(id)arg6 actionHandler:(id)arg7 layoutInvalidator:(id)arg8 websiteDataStore:(id)arg9 relatedWebViewCache:(id)arg10;
 

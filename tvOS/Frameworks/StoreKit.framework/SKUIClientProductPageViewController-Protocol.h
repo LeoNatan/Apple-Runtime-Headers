@@ -15,6 +15,7 @@
 - (void)presentPageWithRequest:(NSDictionary *)arg1 animated:(NSNumber *)arg2;
 - (void)loadDidFinishWithResult:(NSNumber *)arg1 error:(NSError *)arg2;
 - (void)didReceiveTitle:(NSString *)arg1;
+- (void)didFinishDismissal;
 - (void)didFinishWithResult:(NSNumber *)arg1;
 - (void)didFinish;
 @end

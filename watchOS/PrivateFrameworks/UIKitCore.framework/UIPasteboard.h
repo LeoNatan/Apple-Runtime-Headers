@@ -59,6 +59,7 @@
 - (id)dataForPasteboardType:(id)arg1;
 - (_Bool)containsPasteboardTypes:(id)arg1;
 @property(readonly, nonatomic) NSArray *pasteboardTypes;
+@property(readonly, nonatomic) int _changeCountIgnoringPinningActivity;
 @property(readonly, nonatomic) int changeCount;
 - (void)setPersistent:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isPersistent) _Bool persistent;

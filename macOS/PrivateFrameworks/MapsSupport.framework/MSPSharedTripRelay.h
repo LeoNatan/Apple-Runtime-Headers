@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     IDSService *_sharingService;
     NSString *_clientID;
+    NSString *_displayName;
     MSPSharedTripGroupSession *_sharingETAGroupSession;
     NSMutableDictionary *_sharedTripGroupIDSSessions;
     NSMutableDictionary *_packetBuckets;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
     id <MSPSharedTripRelayDelegate> _delegate;
 }
 
-+ (id)sharedRelay;
 @property(nonatomic) __weak id <MSPSharedTripRelayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MSPSharedTripStorageController *storageController; // @synthesize storageController=_storageController;
 - (void).cxx_destruct;
@@ -42,6 +42,10 @@ __attribute__((visibility("hidden")))
 - (id)removeSharingWith:(id)arg1;
 - (id)startSharingGroupSessionWithTripIdentifer:(id)arg1;
 - (void)_startService;
+@property(readonly, nonatomic) NSString *sharingHandle;
+@property(readonly, nonatomic) NSString *sharingName;
+- (void)_fetchDisplayName;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

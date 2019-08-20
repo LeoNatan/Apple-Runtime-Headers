@@ -40,6 +40,7 @@
 - (id)_diagnosticTimerDictionary;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
+- (void)handleMigrationFinish;
 - (void)handleF5Reset;
 - (void)_queue_sortTimers;
 - (void)_queue_persistTimers;

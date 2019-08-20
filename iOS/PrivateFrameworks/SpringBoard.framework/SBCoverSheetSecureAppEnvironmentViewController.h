@@ -38,6 +38,7 @@
 - (void)secureAppOfTypeDidTakeNewAssertion:(unsigned long long)arg1;
 - (void)secureAppOfTypeDidBegin:(unsigned long long)arg1;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;
 - (_Bool)isHostingAnApp;
 - (_Bool)canHostAnApp;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIDownloadDataSource *downloadManager; // @synthesize downloadManager=_downloadManager;
 @property(retain, nonatomic) UITableView *downloadEntitiesTableView; // @synthesize downloadEntitiesTableView=_downloadEntitiesTableView;
 - (void).cxx_destruct;
+- (void)_updateMediaEntitiesWithNewDownloads:(id)arg1;
 - (void)_exitEditingMode;
 - (id)_configureAlertControllerForIndexPath:(id)arg1;
 - (void)_cancelPressed;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     VUITVEpisodeInformationView *_informationView;
 }
 
++ (struct CGSize)sizeForEpisodeListCellWithDescription:(id)arg1 width:(double)arg2 cornerRadius:(double)arg3;
 + (id)configureWithElement:(id)arg1 existingView:(id)arg2;
 + (void)configureVUITVLibraryEpisodeListCell:(id)arg1 withMedia:(id)arg2 width:(double)arg3 cornerRadius:(double)arg4;
 @property(retain, nonatomic) VUITVEpisodeInformationView *informationView; // @synthesize informationView=_informationView;

@@ -6,7 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSDate, NSOperationQueue, TBPreferLocalFetchDataSource;
+@class NSArray, NSDate, NSOperationQueue, TBPreferLocalFetchDataSource;
 @protocol TBFetchRequest, TBFetchResponse;
 
 @interface TBPreferLocalFetchOperation : NSOperation
@@ -18,8 +18,12 @@
     id <TBFetchResponse> _response;
     TBPreferLocalFetchDataSource *_dataSource;
     NSOperationQueue *_fetchQueue;
+    NSArray *_remoteKeysToFetch;
+    NSArray *_satisfiedLocalKeys;
 }
 
+@property(retain, nonatomic) NSArray *satisfiedLocalKeys; // @synthesize satisfiedLocalKeys=_satisfiedLocalKeys;
+@property(retain, nonatomic) NSArray *remoteKeysToFetch; // @synthesize remoteKeysToFetch=_remoteKeysToFetch;
 @property(retain, nonatomic) NSOperationQueue *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
 @property(retain, nonatomic) TBPreferLocalFetchDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) id <TBFetchResponse> response; // @synthesize response=_response;
@@ -30,7 +34,10 @@
 - (id)name;
 - (void)finish;
 - (void)finishAndCallCompletionWithResponse:(id)arg1;
+- (id)_tileItemsFromTileKeys:(id)arg1;
+- (void)_mergeLocalAndRemoteResults:(id)arg1;
 - (void)_fetchRemote;
+- (BOOL)_doResults:(id)arg1 satisfyFetchRequest:(id)arg2 keysToFetchRemotely:(id *)arg3 satisfiedKeys:(id *)arg4;
 - (void)_fetchLocal;
 - (void)start;
 - (BOOL)isReady;

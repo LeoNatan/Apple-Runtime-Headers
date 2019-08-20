@@ -173,6 +173,7 @@ __attribute__((visibility("hidden")))
 - (void)updateRightView;
 - (void)updatePlaceholderColor;
 - (void)updateNeedForBackdrop;
+- (void)updateDictationButton;
 - (void)_removeBackdropVisualEffectView;
 - (void)_removeLegacyBackdropView;
 - (void)updateMagnifyingGlassView;

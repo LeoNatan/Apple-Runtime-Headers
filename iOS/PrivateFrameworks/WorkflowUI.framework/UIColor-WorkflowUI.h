@@ -25,8 +25,6 @@
 + (id)wf_contentBackgroundColor;
 + (id)wf_homeTintColor;
 + (id)wf_drawerSuggestionCellImageBackgroundColor;
-+ (id)bannerHighlightedColor;
-+ (id)bannerBackgroundColor;
 + (id)wf_galleryModuleConnectionColor;
 + (id)gallerySearchSectionHeaderButtonColor;
 + (id)gallerySearchSectionHeaderColor;
@@ -78,6 +76,7 @@
 + (id)wf_modulesViewBackgroundColor;
 + (id)wf_moduleNewCellBackgroundColor;
 + (id)moduleTintColor;
++ (id)wf_actionDrawerGrabberColor;
 + (id)actionDrawerNonBlurBackgroundColor;
 + (id)actionDescriptionColor;
 + (id)actionColor;

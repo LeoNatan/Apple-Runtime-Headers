@@ -28,7 +28,7 @@
 #import <CoverSheet/UIGestureRecognizerDelegate-Protocol.h>
 #import <CoverSheet/_UISettingsKeyObserver-Protocol.h>
 
-@class BSTimer, CSAppearance, CSBehavior, CSChargingViewController, CSCoverSheetView, CSDismissableModalViewController, CSFixedFooterViewController, CSHomeButtonShowPasscodeRecognizer, CSHomeButtonSuppressAfterUnlockRecognizer, CSInterstitialTransitionSource, CSLayoutStrategy, CSLockScreenSettings, CSLocketForcePressGestureRecognizer, CSLocketTransitionSource, CSMainPageContentViewController, CSModalPresentationViewController, CSNotificationClearingTrigger, CSNotificationDispatcher, CSPowerChangeObserver, CSPresentation, CSPresentationViewController, CSProudLockViewController, CSQuickActionsViewController, CSScrollGestureController, CSTeachableMomentsContainerViewController, CSTimerViewController, FBDisplayLayoutTransition, NSArray, NSHashTable, NSSet, NSString, SBFLockScreenActionContext, SBFLockScreenDateSubtitleView, SBFLockScreenDateViewController, SBFLockScreenWakeAnimator, SBFSteppedAnimationTimingFunctionCalculator, SBLockScreenDefaults, SBWallpaperAggdLogger, UIColor, UIGestureRecognizer, UIStatusBar, UITapGestureRecognizer, UIVisualEffectView, _UILegibilitySettings;
+@class BSTimer, CSAppearance, CSBehavior, CSChargingViewController, CSCoverSheetView, CSDismissableModalViewController, CSFixedFooterViewController, CSHomeButtonShowPasscodeRecognizer, CSHomeButtonSuppressAfterUnlockRecognizer, CSInterstitialTransitionSource, CSLayoutStrategy, CSLockScreenSettings, CSLocketForcePressGestureRecognizer, CSLocketTransitionSource, CSMainPageContentViewController, CSModalPresentationViewController, CSNotificationClearingTrigger, CSNotificationDispatcher, CSPowerChangeObserver, CSPresentation, CSPresentationViewController, CSProudLockViewController, CSQuickActionsViewController, CSScrollGestureController, CSTeachableMomentsContainerViewController, CSTimerViewController, CSUserPresenceMonitor, FBDisplayLayoutTransition, NSArray, NSHashTable, NSSet, NSString, SBFLockScreenActionContext, SBFLockScreenDateSubtitleView, SBFLockScreenDateViewController, SBFLockScreenWakeAnimator, SBFSteppedAnimationTimingFunctionCalculator, SBLockScreenDefaults, SBWallpaperAggdLogger, UIColor, UIGestureRecognizer, UIStatusBar, UITapGestureRecognizer, UIVisualEffectView, _UILegibilitySettings;
 @protocol CSApplicationLaunching, CSCameraPrewarming, CSCoverSheetContextProviding, CSCoverSheetViewControllerDelegate, CSCoverSheetViewPresenting, CSCoverSheetViewTransitionSource, CSEmergencyCalling, CSIdleTimerControlling, CSLegibilityProviding, CSNotificationDispatcher, CSOrientationUpdateControlling, CSSpotlightPresenting, CSWallpaperColorProvider, SBFIrisWallpaperView, SBFLockOutStatusProvider, SBFScreenWakeAnimationControlling, SBFScreenWakeAnimationTarget, SBFTodayOverlayControlling><CSExternalBehaviorProviding><CSExternalEventHandling, SBNotificationDestination, UICoordinateSpace;
 
 @interface CSCoverSheetViewController : UIViewController <CSPersistentContentLayoutProviding, CSDateTimeLayoutAggregating, CSCoverSheetViewDelegate, UIGestureRecognizerDelegate, CSLegibilityProviderDelegate, SBLockScreenActionProvider, SBFIrisWallpaperViewDelegate, CSCoverSheetViewTransitionSource, CSNotificationDestination, CSTimerViewControllerDelegate, _UISettingsKeyObserver, CSScrollGestureControllerDelegate, CSNotificationClearingTriggerDelegate, CSInterstitialTransitionDelegate, CSLocketTransitionDelegate, CSPasscodeViewControllerDelegate, CSLocketViewControllerDelegate, SBFTodayOverlayObserving, FBSDisplayLayoutPublisherObserving, CSCoverSheetViewControllerProtocol, BSDescriptionProviding>
@@ -81,6 +81,8 @@
     SBFLockScreenWakeAnimator *_lockScreenWakeAnimator;
     CSDismissableModalViewController *_dismissableModalViewController;
     SBFLockScreenDateSubtitleView *_chargingLabel;
+    CSUserPresenceMonitor *_userPresenceMonitor;
+    _Bool _contentAboveIsControlCenter;
     _Bool _authenticated;
     _Bool _irisPlayerIsInteracting;
     _Bool _shouldTransitionIrisWallpaperToStillWhenPlaybackFinishes;
@@ -215,6 +217,7 @@
 - (void)_actuallyUpdateUIForIrisPlaying;
 - (void)_updateUIForPlaying:(_Bool)arg1 immediately:(_Bool)arg2;
 - (void)_setupWallpaperGesture;
+- (_Bool)_wallpaperGestureShouldRequireUserPresence;
 - (id)_averageLockScreenWallpaperColor;
 - (void)_handleQuickNoteLaunch:(id)arg1;
 - (void)_setupQuickNoteGestureRecognizer;
@@ -226,6 +229,7 @@
 - (void)updateStatusBarForLockScreenComeback;
 - (void)updateStatusBarForLockScreenTeardown;
 - (void)_updateLegibilitySettings;
+- (void)_updateStatusBarGradient;
 - (void)_updateTintingView;
 - (void)_updateWallpaperEffectView;
 - (void)_updateIdleTimerBehavior;
@@ -301,6 +305,7 @@
 - (void)handleBiometricEvent:(unsigned long long)arg1;
 - (_Bool)shouldAutoUnlockForSource:(int)arg1;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;
 - (_Bool)isHostingAnApp;
 - (_Bool)canHostAnApp;
@@ -398,6 +403,7 @@
 - (void)prepareForUIUnlock;
 - (_Bool)willUIUnlockFromSource:(int)arg1;
 - (_Bool)isUnlockDisabled;
+- (void)_sendAuthenticationChangedEvent;
 - (void)setPasscodeLockVisible:(_Bool)arg1 animated:(_Bool)arg2 forceBiometricPresentation:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setPasscodeLockVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setPasscodeLockVisible:(_Bool)arg1 animated:(_Bool)arg2;

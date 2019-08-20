@@ -15,6 +15,7 @@
 - (void)siriViewController:(id <SiriUIViewController>)arg1 startCorrectedSpeechRequestWithText:(NSString *)arg2 correctionIdentifier:(id)arg3 userSelectionResults:(AFUserUtteranceSelectionResults *)arg4;
 - (void)siriViewControllerDidEndEditing:(id <SiriUIViewController>)arg1;
 - (void)siriViewControllerWillBeginEditing:(id <SiriUIViewController>)arg1;
+- (void)siriViewControllerRequestKeyboardForTapToEditWithCompletion:(void (^)(_Bool))arg1;
 - (_Bool)siriViewControllerShouldPreventUserInteraction:(id <SiriUIViewController>)arg1;
 @end
 

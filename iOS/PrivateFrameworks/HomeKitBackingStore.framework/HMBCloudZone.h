@@ -9,7 +9,7 @@
 #import <HomeKitBackingStore/HMBMirrorProtocol-Protocol.h>
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class CKDatabase, CKRecord, CKShareParticipant, HMBCloudDatabase, HMBCloudZoneID, HMBCloudZoneShareModel, HMBCloudZoneStateModel, HMBLocalZone, HMBModelContainer, HMFUnfairLock, NAFuture, NSMapTable, NSMutableDictionary, NSSet, NSString;
+@class CKDatabase, CKShareParticipant, HMBCloudDatabase, HMBCloudZoneID, HMBCloudZoneShareModel, HMBCloudZoneStateModel, HMBLocalZone, HMBModelContainer, HMFUnfairLock, NAFuture, NSMapTable, NSMutableDictionary, NSSet, NSString;
 @protocol HMBCloudZoneDelegate;
 
 @interface HMBCloudZone : HMFObject <HMFLogging, HMBMirrorProtocol>
@@ -22,7 +22,6 @@
     HMBLocalZone *_stateZone;
     HMBCloudZoneStateModel *_state;
     HMBCloudZoneShareModel *_share;
-    CKRecord *_currentLeafRecord;
     HMBCloudZoneID *_zoneID;
     NSMapTable *_modelClassToRequiresPostProcessingMap;
     NSMapTable *_inflightPushOperations;
@@ -30,6 +29,8 @@
     NSString *_deviceIdentifier;
     NAFuture *_shutdownFuture;
     NAFuture *_destroyFuture;
+    NAFuture *_currentCloudPullFuture;
+    NAFuture *_queuedCloudPullFuture;
     HMBModelContainer *_modelContainer;
     NSMutableDictionary *_shareParticipants;
 }
@@ -38,6 +39,8 @@
 + (id)logCategory;
 @property(readonly, nonatomic) NSMutableDictionary *shareParticipants; // @synthesize shareParticipants=_shareParticipants;
 @property(retain, nonatomic) HMBModelContainer *modelContainer; // @synthesize modelContainer=_modelContainer;
+@property(retain, nonatomic) NAFuture *queuedCloudPullFuture; // @synthesize queuedCloudPullFuture=_queuedCloudPullFuture;
+@property(retain, nonatomic) NAFuture *currentCloudPullFuture; // @synthesize currentCloudPullFuture=_currentCloudPullFuture;
 @property(retain, nonatomic) NAFuture *destroyFuture; // @synthesize destroyFuture=_destroyFuture;
 @property(retain, nonatomic) NAFuture *shutdownFuture; // @synthesize shutdownFuture=_shutdownFuture;
 @property(readonly, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
@@ -45,7 +48,6 @@
 @property(retain, nonatomic) NSMapTable *inflightPushOperations; // @synthesize inflightPushOperations=_inflightPushOperations;
 @property(readonly, nonatomic) NSMapTable *modelClassToRequiresPostProcessingMap; // @synthesize modelClassToRequiresPostProcessingMap=_modelClassToRequiresPostProcessingMap;
 @property(retain, nonatomic) HMBCloudZoneID *zoneID; // @synthesize zoneID=_zoneID;
-@property(readonly, nonatomic) CKRecord *currentLeafRecord; // @synthesize currentLeafRecord=_currentLeafRecord;
 @property(retain, nonatomic) HMBCloudZoneShareModel *share; // @synthesize share=_share;
 @property(readonly, nonatomic) HMBCloudZoneStateModel *state; // @synthesize state=_state;
 @property(nonatomic) __weak HMBLocalZone *stateZone; // @synthesize stateZone=_stateZone;
@@ -74,7 +76,7 @@
 - (id)decodeModelFrom:(id)arg1 fullyPopulatedRecord:(_Bool)arg2 error:(id *)arg3;
 - (id)decodeShareModelFromShare:(id)arg1;
 - (id)encodeShareModel:(id)arg1;
-- (id)pushRecordsToUpdate:(id)arg1 recordIDsToRemove:(id)arg2 configuration:(id)arg3;
+- (id)pushRecordsToUpdate:(id)arg1 recordIDsToRemove:(id)arg2 configuration:(id)arg3 rollbackEnabled:(_Bool)arg4;
 - (id)decodeManateeCloudFrom:(id)arg1 fullyPopulatedRecord:(_Bool)arg2 error:(id *)arg3;
 - (id)encodeManateeCloudModel:(id)arg1 externalData:(id)arg2 createdRecords:(id)arg3 error:(id *)arg4;
 - (_Bool)populateManateeCloudRecord:(id)arg1 withModel:(id)arg2 createdRecords:(id)arg3 error:(id *)arg4;
@@ -98,8 +100,11 @@
 - (id)revokeShareForParticipant:(id)arg1;
 - (id)_setWriteAccessEnabled:(_Bool)arg1 forParticipant:(id)arg2;
 - (id)setWriteAccessEnabled:(_Bool)arg1 forParticipant:(id)arg2;
-- (id)_createInvitationWithContext:(id)arg1;
-- (id)createInvitationWithContext:(id)arg1;
+- (id)_fetchInvitationWithContext:(id)arg1;
+- (id)fetchInvitationWithContext:(id)arg1;
+- (id)fetchCloudShareIDForShareParticipantClientIdentifier:(id)arg1;
+- (id)fetchOwnerCloudShareID;
+- (id)ownerCloudShareID;
 - (id)removeParticipant:(id)arg1;
 - (id)updateParticipant:(id)arg1;
 - (id)cloudFieldForEncoding:(unsigned long long)arg1;

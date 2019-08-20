@@ -12,7 +12,7 @@
 @protocol HFMediaValueSource <NSObject>
 - (NSError *)cachedPlaybackStateWriteErrorForRouteID:(NSString *)arg1;
 - (_Bool)hasPendingWritesForRouteID:(NSString *)arg1;
-- (NAFuture *)writePlaybackState:(int)arg1 playbackArchive:(HFPlaybackArchive *)arg2 playbackOptions:(int)arg3 forRouteID:(NSString *)arg4;
+- (NAFuture *)writePlaybackState:(int)arg1 playbackArchive:(HFPlaybackArchive *)arg2 forRouteID:(NSString *)arg3;
 - (int)lastPlaybackStateForProfileForRouteID:(NSString *)arg1;
 - (id <HFMediaProfileContainer>)mediaProfileContainerForRouteID:(NSString *)arg1;
 @end

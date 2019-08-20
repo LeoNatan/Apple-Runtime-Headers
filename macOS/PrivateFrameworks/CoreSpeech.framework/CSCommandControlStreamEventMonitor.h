@@ -16,6 +16,7 @@
 }
 
 + (id)sharedInstance;
+- (void)_notifyStopCommandControl;
 - (void)commandControlBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;
 - (void)commandControlBehaviorMonitor:(id)arg1 willStopStream:(id)arg2;
 - (void)commandControlBehaviorMonitor:(id)arg1 didStartStreamWithContext:(id)arg2 successfully:(BOOL)arg3 option:(id)arg4;

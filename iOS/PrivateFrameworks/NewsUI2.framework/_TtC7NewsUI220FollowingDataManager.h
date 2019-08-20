@@ -16,7 +16,6 @@
     // Error parsing type: , name: tagReorderService
     // Error parsing type: , name: followingBadgingCoordinator
     // Error parsing type: , name: magazinesBadgingCoordinator
-    // Error parsing type: , name: appConfigurationManager
     // Error parsing type: , name: userNotificationCenter
     // Error parsing type: , name: purchaseController
     // Error parsing type: , name: familySharingStatusManager

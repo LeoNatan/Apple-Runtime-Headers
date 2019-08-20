@@ -19,6 +19,7 @@
 }
 
 + (Class)layerClass;
++ (double)defaultCornerRadius;
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;

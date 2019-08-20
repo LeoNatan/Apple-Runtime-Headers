@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VSSpeechConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)killDaemon;
 - (void)forwardStreamObject:(id)arg1;
 - (void)getTTSServerVoicesWithFilter:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getLogToFile:(CDUnknownBlockType)arg1;

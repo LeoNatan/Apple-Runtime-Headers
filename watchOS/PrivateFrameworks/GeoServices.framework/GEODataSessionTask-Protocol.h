@@ -10,6 +10,7 @@
 @protocol GEORequestCounterTicket, NSObject;
 
 @protocol GEODataSessionTask <NSObject>
+@property(readonly, nonatomic) _Bool receivedRNFNotification;
 @property(readonly, nonatomic) _Bool mptcpNegotiated;
 @property(readonly, nonatomic) unsigned int requestedMultipathServiceType;
 @property(readonly, nonatomic) id <NSObject> parsedResponse;

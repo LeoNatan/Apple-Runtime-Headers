@@ -26,7 +26,8 @@
 @property(retain, nonatomic) NSArray *contentItems; // @synthesize contentItems=_contentItems;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
-- (id)startDownloadForContentItem:(id)arg1 userInitiated:(_Bool)arg2 shouldLoadRemainingMessageContent:(_Bool)arg3;
+- (void)downloadAllMailDropAttachments;
+- (id)startDownloadForContentItem:(id)arg1 userInitiated:(_Bool)arg2;
 - (void)inlineImageFinishedDownloading:(id)arg1;
 - (void)setPercentCompleted:(double)arg1 forContentItem:(id)arg2;
 - (void)setDisplayState:(long long)arg1 forContentItem:(id)arg2;
@@ -38,6 +39,7 @@
 - (void)displayViewerForContentItem:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)attachmentWasTappedWithContentID:(id)arg1 rect:(struct CGRect)arg2 view:(id)arg3;
 - (void)noteDidFailLoadingResourceWithURL:(id)arg1;
+- (void)noteDidFinishDocumentLoadForURL:(id)arg1;
 - (id)contentItemForContentID:(id)arg1;
 - (id)contentItemForElementID:(id)arg1;
 - (void)associateElementID:(id)arg1 withWKAttachmentID:(id)arg2;

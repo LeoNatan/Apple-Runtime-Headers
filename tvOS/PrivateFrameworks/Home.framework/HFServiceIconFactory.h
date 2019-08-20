@@ -10,8 +10,12 @@
 {
 }
 
++ (id)_replacementIdentifierForIconIdentifier:(id)arg1;
++ (id)iconModifiersForService:(id)arg1;
 + (id)iconDescriptorForAccessoryCategoryType:(id)arg1;
 + (id)iconDescriptorForAccessoryCategory:(id)arg1;
++ (id)iconDescriptorForAccessory:(id)arg1;
++ (id)overrideIconDescriptorForMultiServiceAccessory:(id)arg1 iconDescriptor:(id)arg2;
 + (id)allIconDescriptorsForServiceType:(id)arg1 serviceSubtype:(id)arg2;
 + (id)allIconDescriptorsForService:(id)arg1;
 + (id)iconDescriptorWithIdentifier:(id)arg1 forServiceType:(id)arg2 serviceSubtype:(id)arg3;

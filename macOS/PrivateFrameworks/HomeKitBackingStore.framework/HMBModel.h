@@ -9,7 +9,7 @@
 #import <HomeKitBackingStore/HMBModelProperties-Protocol.h>
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class HMFVersion, NSMutableDictionary, NSSet, NSString, NSUUID;
+@class HMBModelContainer, HMFVersion, NSDictionary, NSMutableDictionary, NSSet, NSString, NSUUID;
 
 @interface HMBModel : HMFObject <HMFLogging, HMBModelProperties>
 {
@@ -19,9 +19,9 @@
     NSString *_hmbType;
     HMFVersion *_hmbDataVersion;
     unsigned long long _hmbRecordRow;
-    HMFVersion *_hmbContainerDataVersion;
     NSSet *_hmbUnavailableProperties;
     NSSet *_hmbReadOnlyProperties;
+    HMBModelContainer *_hmbModelContainer;
 }
 
 + (id)shortDescription;
@@ -39,9 +39,9 @@
 + (void)setHmbShouldLogPrivateInformation:(BOOL)arg1;
 + (BOOL)hmbShouldLogPrivateInformation;
 + (id)sort:(id)arg1;
+@property(nonatomic) __weak HMBModelContainer *hmbModelContainer; // @synthesize hmbModelContainer=_hmbModelContainer;
 @property(retain, nonatomic) NSSet *hmbReadOnlyProperties; // @synthesize hmbReadOnlyProperties=_hmbReadOnlyProperties;
 @property(retain, nonatomic) NSSet *hmbUnavailableProperties; // @synthesize hmbUnavailableProperties=_hmbUnavailableProperties;
-@property(retain, nonatomic) HMFVersion *hmbContainerDataVersion; // @synthesize hmbContainerDataVersion=_hmbContainerDataVersion;
 @property(nonatomic) unsigned long long hmbRecordRow; // @synthesize hmbRecordRow=_hmbRecordRow;
 @property(retain, nonatomic) HMFVersion *hmbDataVersion; // @synthesize hmbDataVersion=_hmbDataVersion;
 @property(retain, nonatomic) NSString *hmbType; // @synthesize hmbType=_hmbType;
@@ -53,6 +53,7 @@
 @property(readonly, nonatomic) NSString *hmbDescription;
 - (void)dumpDebug;
 - (void)dumpDebug:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *hmbQueryableProperties;
 - (BOOL)hmbPropertyIsExternal:(id)arg1;
 @property(nonatomic) BOOL hmbExternallyFetched;
 - (id)copy;
@@ -68,8 +69,8 @@
 @property(readonly, nonatomic) BOOL hmbIgnoreModel;
 @property(retain, nonatomic) HMFVersion *hmbIgnoredBefore;
 - (BOOL)hmbDiff:(id)arg1 differingFields:(id *)arg2;
-- (id)hmbMerge:(id)arg1 from:(unsigned long long)arg2;
-- (void)hmbMergeMetadataFromModel:(id)arg1 location:(unsigned long long)arg2;
+- (id)hmbMerge:(id)arg1 fromStorageLocation:(unsigned long long)arg2;
+- (void)hmbMergeMetadataFromModel:(id)arg1 fromStorageLocation:(unsigned long long)arg2;
 - (BOOL)hmbValidForStorage:(id)arg1;
 - (BOOL)hmbPropertyIsAvailable:(id)arg1;
 - (BOOL)hmbPropertyIsReadOnly:(id)arg1;
@@ -79,14 +80,15 @@
 @property(readonly, nonatomic) NSSet *hmbSetProperties;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)prepareFor:(unsigned long long)arg1 using:(id)arg2 updatedModelIDs:(id)arg3 error:(id *)arg4;
+- (id)prepareForStorageLocation:(unsigned long long)arg1 using:(id)arg2 updatedModelIDs:(id)arg3 error:(id *)arg4;
 - (id)hmbPrepareFor:(unsigned long long)arg1;
 - (id)validateType:(id)arg1 path:(id)arg2;
 - (BOOL)_validateType:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSSet *hmbDependentUUIDs;
+@property(readonly, nonatomic) HMFVersion *hmbContainerDataVersion;
 - (void)hmbAssociateWithContainer:(id)arg1;
 - (id)initWithModelID:(id)arg1 parentModelID:(id)arg2;
-- (id)populateModelWithDictionary:(id)arg1;
+- (id)populateModelWithDictionary:(id)arg1 fromStorageLocation:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly) Class superclass;

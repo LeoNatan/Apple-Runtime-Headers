@@ -91,12 +91,13 @@
 - (void)performFetchShareParticipantsOperation:(CKFetchShareParticipantsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performDiscoverAllIdentitiesOperation:(CKDiscoverUserIdentitiesOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performDiscoverUserIdentitiesOperation:(CKDiscoverUserIdentitiesOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
+- (void)frameworkCachesDirectoryWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
 - (void)requestApplicationPermission:(unsigned long long)arg1 setupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(long long, NSError *))arg3;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 setupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(long long, NSError *))arg3;
 - (void)importantUserIDsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)accountInfoWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(CKAccountInfo *, NSError *))arg2;
 - (void)accountStatusWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
-- (void)cancelOperationWithIdentifier:(NSString *)arg1;
+- (void)cancelOperationWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
 @end
 

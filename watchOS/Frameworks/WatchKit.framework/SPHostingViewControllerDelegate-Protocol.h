@@ -9,7 +9,7 @@
 @class NSArray, SPHostingViewController, UIViewController;
 
 @protocol SPHostingViewControllerDelegate <SPViewControllerDelegate>
-- (UIViewController *)timerSupportViewControllerForHostingViewController:(SPHostingViewController *)arg1;
-- (NSArray *)timerSupportActionItemsForHostingViewController:(SPHostingViewController *)arg1;
+- (UIViewController *)underlyingUIHostingControllerForHostingViewController:(SPHostingViewController *)arg1;
+- (NSArray *)actionItemsForHostingViewController:(SPHostingViewController *)arg1;
 @end
 

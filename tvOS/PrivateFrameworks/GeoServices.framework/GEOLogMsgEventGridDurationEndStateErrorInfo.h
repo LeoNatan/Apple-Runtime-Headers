@@ -12,10 +12,7 @@
 {
     unsigned int _count;
     int _type;
-    struct {
-        unsigned int has_count:1;
-        unsigned int has_type:1;
-    } _flags;
+    CDStruct_dd28a305 _flags;
 }
 
 + (_Bool)isValid:(id)arg1;

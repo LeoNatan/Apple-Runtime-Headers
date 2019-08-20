@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSSet, SFDevice, SFDeviceOperationHomeKitSetup, SFSession, TROperationQueue, TRSession, UIViewController;
+@class NSMutableArray, NSSet, SFDevice, SFDeviceOperationCDPSetup, SFDeviceOperationHomeKitSetup, SFSession, TROperationQueue, TRSession, UIViewController;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceSetupWHASession : NSObject
@@ -19,6 +19,8 @@
     int _pairVerifyState;
     int _pairSetupState;
     int _infoExchangeState;
+    unsigned long long _peerFeatureFlags;
+    unsigned long long _peerProblemsFlags;
     int _trSessionState;
     TRSession *_trSession;
     NSMutableArray *_trOperations;
@@ -28,6 +30,10 @@
     NSSet *_trUnauthServices;
     _Bool _trAuthenticationEnabled;
     int _trAuthenticationState;
+    _Bool _cdpEnabled;
+    SFDeviceOperationCDPSetup *_cdpSetupOperation;
+    double _cdpSetupSecs;
+    int _cdpState;
     SFDeviceOperationHomeKitSetup *_homeKitSetup;
     int _homeKitState;
     _Bool _homeKitDoFullSetup;
@@ -52,6 +58,7 @@
 - (_Bool)_verifyiCloudMatch:(unsigned long long)arg1 error:(id *)arg2;
 - (int)_runFinish;
 - (int)_runHomeKitSetup;
+- (int)_runCDPSetup;
 - (int)_runTRAuthentication;
 - (int)_runTRSetupConfiguration;
 - (int)_runTRSessionStart;

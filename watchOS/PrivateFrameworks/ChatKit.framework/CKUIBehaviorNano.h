@@ -170,6 +170,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)minBalloonsForTranscriptHeight;
 - (unsigned int)defaultConversationLoadMoreCount;
 - (unsigned int)defaultConversationViewingMessageCount;
+- (_Bool)disableTranscriptOrb;
 - (_Bool)usesNavigationBarControls;
 - (_Bool)usesEntryView;
 - (_Bool)shouldUseTranslucentBars;

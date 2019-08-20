@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CoreSpeech/CSAudioSessionInfoProvidingDelegate-Protocol.h>
-#import <CoreSpeech/CSCoreSpeechDaemonStateMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSXPCClientDelegate-Protocol.h>
 
 @class CSXPCClient, NSHashTable, NSString;
 @protocol CSAudioSessionInfoProviding, OS_dispatch_queue;
 
-@interface CSAudioSessionController : NSObject <CSAudioSessionInfoProvidingDelegate, CSCoreSpeechDaemonStateMonitorDelegate, CSXPCClientDelegate>
+@interface CSAudioSessionController : NSObject <CSAudioSessionInfoProvidingDelegate, CSXPCClientDelegate>
 {
     BOOL _shouldKeepConnection;
     NSObject<OS_dispatch_queue> *_queue;
@@ -31,7 +30,6 @@
 - (void).cxx_destruct;
 - (void)CSXPCClient:(id)arg1 didDisconnect:(BOOL)arg2;
 - (void)_teardownXPCClientIfNeeded;
-- (void)coreSpeechDaemonStateMonitor:(id)arg1 didReceiveStateChanged:(unsigned long long)arg2;
 - (void)_stopMonitoring;
 - (void)_startMonitoring;
 - (unsigned int)_getLocalAudioSessionID;

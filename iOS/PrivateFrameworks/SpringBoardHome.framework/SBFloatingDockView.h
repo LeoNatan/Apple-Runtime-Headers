@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets platterShadowOutsets;
 @property(nonatomic) _Bool hasPlatterShadow;
 @property(readonly, nonatomic) struct CGRect platterFrame;
+@property(retain, nonatomic) UIView *backgroundView;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGSize maximumIconSize;
 @property(readonly, nonatomic) double maximumPlatterHeight;

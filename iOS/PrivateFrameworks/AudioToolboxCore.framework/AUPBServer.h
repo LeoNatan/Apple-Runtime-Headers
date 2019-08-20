@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     unsigned int mAUHandleCntr;
     int mNotifyToken;
     _Bool mValidToken;
+    _Bool mConnectionAcknowledged;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;

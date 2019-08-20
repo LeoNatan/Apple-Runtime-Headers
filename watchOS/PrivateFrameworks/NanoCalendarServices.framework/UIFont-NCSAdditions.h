@@ -26,9 +26,10 @@
 + (id)ncs_upNextDetailFont;
 + (id)ncs_upNextDesignatorFont;
 + (id)ncs_upNextBodyFont;
-+ (id)ncs_bodyFont;
++ (id)ncs_bodyDesignatorFont;
 + (id)ncs_bodyTimeFeaturesFont;
 + (id)ncs_bodyShortFont;
++ (id)ncs_bodyFont;
 - (id)_NCSFontByApplyingFeatureSettings:(id)arg1;
 - (id)NCSFontWithAlternativePunctuation;
 - (id)NCSFontWithMonospacedNumbers;

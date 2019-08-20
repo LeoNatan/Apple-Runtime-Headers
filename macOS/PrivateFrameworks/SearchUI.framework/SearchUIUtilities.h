@@ -12,7 +12,7 @@
 
 + (id)bundleIdentifierForApp:(unsigned long long)arg1;
 + (void)openApplicationWithBundleIdentifier:(id)arg1;
-+ (id)richTextForBlockedAppName:(id)arg1;
++ (id)imageForBlockedApp;
 + (BOOL)bundleIdentifierIsBlockedForScreenTimeExpiration:(id)arg1;
 + (BOOL)resultIsSiriAction:(id)arg1;
 + (BOOL)appIsValidForBundleIdentifier:(id)arg1;
@@ -23,9 +23,9 @@
 + (void)playNegativeHaptic;
 + (void)requestDeviceUnlockWithSuccessHandler:(CDUnknownBlockType)arg1;
 + (BOOL)deviceIsAuthenticated;
-+ (id)sendFeedbackForPunchout:(id)arg1 toListener:(id)arg2 fromCardSection:(id)arg3 triggerEvent:(unsigned long long)arg4;
++ (id)sendFeedbackForPunchout:(id)arg1 toListener:(id)arg2 fromCardSection:(id)arg3 triggerEvent:(unsigned long long)arg4 queryId:(unsigned long long)arg5;
 + (BOOL)shouldHandleCardSectionEngagement:(id)arg1 feedbackListener:(id)arg2;
-+ (void)openPunchout:(id)arg1 fromCardSection:(id)arg2 toListener:(id)arg3 triggerEvent:(unsigned long long)arg4;
++ (void)openPunchout:(id)arg1 fromCardSection:(id)arg2 toListener:(id)arg3 triggerEvent:(unsigned long long)arg4 queryId:(unsigned long long)arg5;
 + (void)performOpenTask:(CDUnknownBlockType)arg1;
 + (id)openOptions;
 + (void)openUserActivity:(id)arg1 applicationBundleIdentifier:(id)arg2;

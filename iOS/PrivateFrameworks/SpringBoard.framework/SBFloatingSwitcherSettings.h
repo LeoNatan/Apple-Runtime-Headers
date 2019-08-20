@@ -26,12 +26,16 @@
     double _titleAndIconOpacityFadeDistance;
     double _titleOpacityMinimumDistanceThreshold;
     double _titleOpacityFadeDistance;
+    double _overshootPullbackDelayOffscreen;
+    double _overshootPullbackDelayOnscreen;
     MTLumaDodgePillSettings *_homeAffordanceSettings;
 }
 
 + (id)settingsControllerModule;
 @property _Bool showFloats; // @synthesize showFloats=_showFloats;
 @property(retain) MTLumaDodgePillSettings *homeAffordanceSettings; // @synthesize homeAffordanceSettings=_homeAffordanceSettings;
+@property double overshootPullbackDelayOnscreen; // @synthesize overshootPullbackDelayOnscreen=_overshootPullbackDelayOnscreen;
+@property double overshootPullbackDelayOffscreen; // @synthesize overshootPullbackDelayOffscreen=_overshootPullbackDelayOffscreen;
 @property double titleOpacityFadeDistance; // @synthesize titleOpacityFadeDistance=_titleOpacityFadeDistance;
 @property double titleOpacityMinimumDistanceThreshold; // @synthesize titleOpacityMinimumDistanceThreshold=_titleOpacityMinimumDistanceThreshold;
 @property double titleAndIconOpacityFadeDistance; // @synthesize titleAndIconOpacityFadeDistance=_titleAndIconOpacityFadeDistance;

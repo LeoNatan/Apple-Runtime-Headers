@@ -313,7 +313,7 @@
 - (id)markedText;
 - (void)setMarkedText;
 - (void)setPhraseBoundaryIfNecessary;
-- (BOOL)hasPathInInput;
+- (BOOL)shouldDelayUpdateComposedText;
 - (BOOL)shouldClearInputOnMarkedTextOutOfSync;
 - (BOOL)isProgressivelyPathing;
 - (id)contextBeforeWithDesiredLength:(unsigned long long)arg1;

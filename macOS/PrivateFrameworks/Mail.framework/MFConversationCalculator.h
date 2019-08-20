@@ -36,10 +36,8 @@
 - (BOOL)isRootMessageSubject:(id)arg1;
 - (void)_updatePrefixWithConnection:(id)arg1 withNewPrefix:(id)arg2 forMessagesWithSubject:(long long)arg3;
 - (BOOL)updateSubjectPrefixesWithConnection:(id)arg1 onlyForMessagesMissingConversations:(BOOL)arg2;
-- (int)_conversationPositionForMessageWithRowID:(long long)arg1 dateReceived:(int)arg2 conversationID:(long long)arg3 context:(id)arg4;
-- (void)_fixupConversationPositionsForConversation:(id)arg1;
 - (void)_mergeMessagesInConversations:(id)arg1 withConversation:(id)arg2;
-- (void)_addMessage:(id)arg1 toConversation:(long long)arg2 withConversationPosition:(int)arg3;
+- (void)_addMessage:(id)arg1 toConversation:(long long)arg2;
 - (long long)_createNewConversationFromMessage:(id)arg1;
 - (void)_calculateConversationForMessage:(id)arg1;
 - (void)_updateAllRowsMissingRootValueWithConnection:(id)arg1;

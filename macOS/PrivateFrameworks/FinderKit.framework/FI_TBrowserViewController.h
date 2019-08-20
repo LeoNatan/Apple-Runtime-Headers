@@ -84,7 +84,6 @@ __attribute__((visibility("hidden")))
 - (id)dragFlockIconImageForNode:(const struct TFENode *)arg1 atIconSize:(double)arg2 inView:(id)arg3;
 - (id)dragFlockLabelImageForNode:(const struct TFENode *)arg1 outFrame:(struct CGRect *)arg2 inView:(id)arg3;
 - (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2 dragSourceView:(id)arg3;
-- (void)ensureCGSurfaceUpdateOnDraw:(_Bool)arg1;
 - (_Bool)quickLookShouldShowOpenButtonForNode:(const struct TFENode *)arg1;
 - (void)openQuickLookNode:(const struct TFENode *)arg1;
 - (_Bool)quickLookHandleEvent:(id)arg1;

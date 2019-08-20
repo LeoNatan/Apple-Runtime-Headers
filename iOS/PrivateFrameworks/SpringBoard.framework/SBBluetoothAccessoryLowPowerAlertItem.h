@@ -15,7 +15,7 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)unlocksScreen;
+- (_Bool)wakeDisplay;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (id)initWithAccessory:(id)arg1 batteryLevel:(long long)arg2;
 

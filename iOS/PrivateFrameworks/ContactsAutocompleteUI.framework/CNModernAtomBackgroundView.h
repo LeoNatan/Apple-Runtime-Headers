@@ -34,6 +34,7 @@
 - (struct UIEdgeInsets)_backgroundBleedArea;
 - (double)separatorWidth;
 - (void)tintColorDidChange;
+- (id)wrappedTintColor;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

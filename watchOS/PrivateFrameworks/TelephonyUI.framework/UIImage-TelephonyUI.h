@@ -44,6 +44,7 @@
 + (id)favoritesAudioGlyphImage;
 + (id)telephonyUIImageNamed:(id)arg1;
 + (id)telephonyUIUnreadIndicatorGlyphImage;
++ (id)telephonyUIInfoButtonGlyphImage;
 + (id)telephonyUIActionButtonGlyphImage;
 + (id)systemImageNameForSymbolType:(int)arg1;
 + (id)tpImageForSymbolType:(int)arg1 configuration:(id)arg2;

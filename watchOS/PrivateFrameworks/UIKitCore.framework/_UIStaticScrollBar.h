@@ -34,6 +34,8 @@
 @property(readonly, nonatomic) _Bool overlay;
 - (id)_constraintsForEdge:(int)arg1;
 - (void)updateConstraints;
+- (void)layoutSubviews;
+- (void)_setupSubviewsIfNeeded;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -26,6 +26,7 @@
     _Bool _areCurrentCellConstraintsForLargeText;
     _Bool _carplayMode;
     _Bool _includesTopTimeLabel;
+    struct CGSize _sizeWhenLayerLastCalculated;
     UIVisualEffectView *_primaryVisualEffectParentView;
     UIVisualEffectView *_secondaryVisualEffectParentView;
     _Bool _travelTimeTemplate;

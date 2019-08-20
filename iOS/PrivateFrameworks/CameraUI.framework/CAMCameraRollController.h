@@ -103,6 +103,7 @@
 - (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)_updateTransientDataSourceIfNeeded;
 - (void)_invalidateTransientAssets;
+- (id)_cameraRollCollectionListFetchResult;
 - (void)_update;
 - (void)_ensureCameraRollViewController;
 - (void)_startNewSession;

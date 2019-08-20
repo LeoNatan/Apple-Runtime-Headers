@@ -29,6 +29,7 @@
 @property(readonly) MLModelMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly) MLModelInterface *interface; // @synthesize interface=_interface;
 - (void).cxx_destruct;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionsFromBatch:(id)arg1 error:(id *)arg2;
 - (id)description;

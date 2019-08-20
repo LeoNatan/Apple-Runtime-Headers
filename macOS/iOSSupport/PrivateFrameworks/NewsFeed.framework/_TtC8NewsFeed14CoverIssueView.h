@@ -10,21 +10,21 @@
 
 @interface _TtC8NewsFeed14CoverIssueView : UIView
 {
-    // Error parsing type: , name: downloadButton
+    // Error parsing type: , name: moreActionsButton
     // Error parsing type: , name: followButton
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: issueCoverView
     // Error parsing type: , name: accessoryLabel
+    // Error parsing type: , name: downloadProgressBar
+    // Error parsing type: , name: cloudIcon
     // Error parsing type: , name: debugButton
     // Error parsing type: , name: downloadButtonDataProvider
     // Error parsing type: , name: downloadStateDisposable
-    // Error parsing type: , name: downloadAction
-    // Error parsing type: , name: cancelDownloadAction
+    // Error parsing type: , name: downloadProgressDisposable
 }
 
 - (void).cxx_destruct;
 @property(nonatomic, copy) NSString *accessibilityValue;
-- (BOOL)performDownloadAction;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

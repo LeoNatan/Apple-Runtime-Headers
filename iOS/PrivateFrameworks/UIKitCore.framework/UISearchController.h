@@ -139,6 +139,7 @@
 @property(nonatomic) _Bool automaticallyShowsCancelButton;
 @property(nonatomic, setter=_setAutomaticallyShowsCancelButton:) _Bool _automaticallyShowsCancelButton;
 @property(nonatomic) _Bool showsSearchResultsController;
+@property(readonly, nonatomic) _Bool _isShowingSearchResultsControllerWhileActive;
 @property(nonatomic, getter=_showsSearchResultsController, setter=_setShowsSearchResultsController:) _Bool _showsSearchResultsController;
 @property(nonatomic) _Bool automaticallyShowsSearchResultsController;
 @property(nonatomic, getter=_automaticallyShowsSearchResultsController, setter=_setAutomaticallyShowsSearchResultsController:) _Bool _automaticallyShowsSearchResultsController;

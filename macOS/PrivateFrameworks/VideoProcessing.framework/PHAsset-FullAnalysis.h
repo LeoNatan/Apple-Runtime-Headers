@@ -7,10 +7,11 @@
 #import <Photos/PHAsset.h>
 
 @interface PHAsset (FullAnalysis)
++ (unsigned long long)vcp_fullAnalysisTypesForAssetType:(unsigned long long)arg1;
 + (BOOL)vcp_usePHFaceExpression;
 + (BOOL)vcp_usePHFace;
 + (id)vcp_fetchAssetsMatchingFingerprint:(id)arg1 forPhotoLibrary:(id)arg2;
-+ (id)vcp_fetchOptionsForLibrary:(id)arg1;
++ (id)vcp_fetchOptionsForLibrary:(id)arg1 forTaskID:(unsigned long long)arg2;
 - (unsigned long long)vcp_fullAnalysisTypesForResources:(id)arg1;
 - (unsigned long long)vcp_fullAnalysisTypes;
 - (int)vcp_queryPHFaces:(unsigned long long *)arg1 results:(id *)arg2;
@@ -26,6 +27,5 @@
 - (BOOL)vcp_isShortMovie;
 - (BOOL)vcp_isVideoTimelapse;
 - (BOOL)vcp_isVideoSlowmo;
-- (id)vcp_streamingMovieResourceURL;
 @end
 

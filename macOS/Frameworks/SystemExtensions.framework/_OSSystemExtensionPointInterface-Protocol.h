@@ -11,6 +11,7 @@
 @protocol _OSSystemExtensionPointInterface <NSObject>
 - (void)terminateExtension:(OSSystemExtensionInfo *)arg1 replyHandler:(void (^)(NSError *))arg2;
 - (void)startExtension:(OSSystemExtensionInfo *)arg1 replyHandler:(void (^)(NSError *))arg2;
+- (void)willReplaceExtension:(OSSystemExtensionInfo *)arg1 withExtension:(OSSystemExtensionInfo *)arg2 replyHandler:(void (^)(NSError *))arg3;
 - (void)willUninstallExtension:(OSSystemExtensionInfo *)arg1 replyHandler:(void (^)(NSError *))arg2;
 - (void)willTerminateExtension:(OSSystemExtensionInfo *)arg1 replyHandler:(void (^)(NSError *))arg2;
 - (void)willStartExtension:(OSSystemExtensionInfo *)arg1 replyHandler:(void (^)(NSError *))arg2;

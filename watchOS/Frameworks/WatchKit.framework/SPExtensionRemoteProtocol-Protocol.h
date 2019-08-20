@@ -6,10 +6,14 @@
 
 #import <WatchKit/NSObject-Protocol.h>
 
-@class BSMachPortSendRight, INIntent, NSArray, NSData, NSDictionary, NSError, NSNumber, NSString, NSUUID, NSUserActivity, UIViewController;
+@class BSMachPortSendRight, INIntent, NSArray, NSData, NSDictionary, NSError, NSNumber, NSString, NSUUID, NSUserActivity, UIViewController, WKInterfaceController;
 @protocol SPRemoteNotificationViewHost;
 
 @protocol SPExtensionRemoteProtocol <NSObject>
+- (WKInterfaceController *)interfaceControllerForIdentifier:(NSString *)arg1;
+- (_Bool)isWKHostingControllerClass:(NSString *)arg1;
+- (UIViewController *)underlyingUIHostingControllerForInterfaceController:(NSString *)arg1;
+- (NSArray *)actionItemsForInterfaceController:(NSString *)arg1;
 - (void)tearDownAccessibilityPortIfNecessaryWithCompletionHandler:(void (^)(void))arg1;
 - (void)exchangeAccessibilityPortInformation:(BSMachPortSendRight *)arg1 replyHandler:(void (^)(BSMachPortSendRight *, NSError *))arg2;
 - (NSString *)extendLaunchTest;
@@ -58,9 +62,5 @@
 - (void)receiveDataFromApplication:(NSData *)arg1 fromIdentifier:(NSString *)arg2;
 - (void)interfaceViewController:(NSString *)arg1 gestureData:(NSDictionary *)arg2;
 - (void)interfaceViewController:(NSString *)arg1 crownData:(NSDictionary *)arg2;
-- (id)interfaceControllerForIdentifier:(NSString *)arg1;
-- (_Bool)isTimerSupportHostingControllerClass:(NSString *)arg1;
-- (UIViewController *)timerSupportViewControllerForInterfaceController:(NSString *)arg1;
-- (NSArray *)timerSupportActionItemsForInterfaceViewController:(NSString *)arg1;
 @end
 

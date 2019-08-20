@@ -18,8 +18,9 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedClient;
 - (void).cxx_destruct;
+- (id)_synchronousProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_proxyWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)fetchTrackAssetAvailabilityForTrackPID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (int)trackAssetAvailabilityForTrackPID:(id)arg1;
 - (void)fetchCompanionCloudAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)discoverAndConnectEndpoints;
 - (void)prewarmCompanionSystemMusicApp;

@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
     struct CGSize __lastViewSize;
 }
 
++ (id)_withDisabledAppearanceTransitions:(_Bool)arg1 forVisibleDescendantsOf:(id)arg2 perform:(CDUnknownBlockType)arg3;
 @property(nonatomic, setter=_setChangingViewControllerParentage:) _Bool _changingViewControllerParentage; // @synthesize _changingViewControllerParentage=__changingViewControllerParentage;
 @property(nonatomic, setter=_setNeedsFirstTimeUpdateForTraitCollection:) _Bool _needsFirstTimeUpdateForTraitCollection; // @synthesize _needsFirstTimeUpdateForTraitCollection=__needsFirstTimeUpdateForTraitCollection;
 @property(nonatomic, setter=_setHasUpdatedForTraitCollection:) _Bool _hasUpdatedForTraitCollection; // @synthesize _hasUpdatedForTraitCollection=__hasUpdatedForTraitCollection;
@@ -88,10 +89,12 @@ __attribute__((visibility("hidden")))
 - (void)__viewWillLayoutSubviews;
 - (void)_layoutContainerViewDidMoveToWindow:(id)arg1;
 - (void)_layoutContainerViewWillMoveToWindow:(id)arg1;
+- (void)_withDisabledAppearanceTransitionsPerform:(CDUnknownBlockType)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2 superBlock:(CDUnknownBlockType)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2 superBlock:(CDUnknownBlockType)arg3;
 - (void)_expandWithTransitionCoordinator:(id)arg1;
 - (void)_collapseWithTransitionCoordinator:(id)arg1;
+- (_Bool)_needsWorkaroundForCoordinatorBlocks;
 - (void)_updateForTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)_willExpandWithNewTraitCollection:(id)arg1;
 - (_Bool)_willCollapseWithNewTraitCollection:(id)arg1;
@@ -119,6 +122,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *leadingViewController;
 - (void)setMainViewController:(id)arg1 changingParentage:(_Bool)arg2;
 @property(retain, nonatomic) UIViewController *mainViewController;
+- (_Bool)shouldRunOurRotationAlongSideAnimationBeforeClientAlongSideAnimation;
 - (void)dealloc;
 - (id)initWithOwningViewController:(id)arg1;
 

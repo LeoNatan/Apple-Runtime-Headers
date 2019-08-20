@@ -34,7 +34,7 @@
 - (void)requestChangesSinceAnchor:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)addChanges:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)markFinishedMigratingChangeSet:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)requestAllMigratableContent:(CDUnknownBlockType)arg1;
+- (void)requestAllMigratableContent:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)requestSyncableContentSince:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)sendChangesToPodcastWithUpdatedPlayMetadata:(id)arg1 sourceIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeServiceObserver:(id)arg1;

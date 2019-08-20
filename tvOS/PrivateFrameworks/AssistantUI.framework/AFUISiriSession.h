@@ -12,7 +12,7 @@
 #import <AssistantUI/AFUISpeechSynthesisLocalDelegate-Protocol.h>
 #import <AssistantUI/AFUIStateMachineDelegate-Protocol.h>
 
-@class AFAnalyticsTurnBasedInstrumentationContext, AFConnection, AFSettingsConnection, AFSpeechSynthesisRecord, AFUISiriSessionInfo, AFUISpeechSynthesis, AFUIStateMachine, NSMutableSet, NSString;
+@class AFAnalyticsTurnBasedInstrumentationContext, AFConnection, AFSettingsConnection, AFSpeechSynthesisRecord, AFUISiriSessionInfo, AFUISpeechSynthesis, AFUIStateMachine, NSArray, NSMutableSet, NSString;
 @protocol AFUISiriSessionDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUIStateMachineDelegate, AFUISpeechSynthesisLocalDelegate, AFUISiriSession>
@@ -27,12 +27,15 @@
     CDUnknownBlockType _continuePendingRequest;
     _Bool _sendContextBeforeContinuingSpeechRequest;
     AFSettingsConnection *_settingsConnection;
+    _Bool _isDeviceInStarkMode;
     _Bool _eyesFree;
     _Bool _isProcessingAcousticIdRequest;
     id <AFUISiriSessionDelegate> _delegate;
     id <AFUISiriSessionLocalDataSource> _localDataSource;
     id <AFUISiriSessionLocalDelegate> _localDelegate;
     AFUISiriSessionInfo *_siriSessionInfo;
+    NSArray *_sessionDelegateContext;
+    NSArray *_directActionContext;
     NSObject<OS_dispatch_group> *_currentSpeechRequestGroup;
     AFAnalyticsTurnBasedInstrumentationContext *_instrumentationTurnContext;
 }
@@ -42,6 +45,8 @@
 + (unsigned long long)availabilityState;
 @property(retain, nonatomic, getter=_instrumentationTurnContext, setter=_setInstrumentationTurnContext:) AFAnalyticsTurnBasedInstrumentationContext *instrumentationTurnContext; // @synthesize instrumentationTurnContext=_instrumentationTurnContext;
 @property(retain, nonatomic, getter=_currentSpeechRequestGroup, setter=_setCurrentSpeechRequestGroup:) NSObject<OS_dispatch_group> *currentSpeechRequestGroup; // @synthesize currentSpeechRequestGroup=_currentSpeechRequestGroup;
+@property(retain, nonatomic) NSArray *directActionContext; // @synthesize directActionContext=_directActionContext;
+@property(retain, nonatomic) NSArray *sessionDelegateContext; // @synthesize sessionDelegateContext=_sessionDelegateContext;
 @property(retain, nonatomic) AFUISiriSessionInfo *siriSessionInfo; // @synthesize siriSessionInfo=_siriSessionInfo;
 @property(readonly, nonatomic) _Bool isProcessingAcousticIdRequest; // @synthesize isProcessingAcousticIdRequest=_isProcessingAcousticIdRequest;
 @property(nonatomic, getter=isEyesFree) _Bool eyesFree; // @synthesize eyesFree=_eyesFree;
@@ -59,10 +64,12 @@
 - (float)recordingPowerLevel;
 - (_Bool)isListening;
 - (_Bool)isPreventingActivationGesture;
+- (void)endForReason:(long long)arg1;
 - (void)end;
 - (void)_discardCurrentSpeechGroup;
 - (void)performAceCommands:(id)arg1;
 - (void)performAceCommand:(id)arg1;
+- (void)siriUIDidPresentDynamicSnippetWithInfo:(id)arg1;
 - (void)performAceCommand:(id)arg1 conflictHandler:(CDUnknownBlockType)arg2;
 - (void)_handleRequestUpdateViewsCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performAceCommand:(id)arg1 forRequestUpdateViewsCommand:(id)arg2 afterDelay:(double)arg3;
@@ -73,6 +80,7 @@
 - (void)rollbackClearContext;
 - (void)resetContextTypes:(long long)arg1;
 - (void)clearContext;
+- (void)setApplicationContextForDirectAction:(_Bool)arg1;
 - (void)setApplicationContext;
 - (void)setAlertContext;
 - (void)telephonyRequestCompleted;

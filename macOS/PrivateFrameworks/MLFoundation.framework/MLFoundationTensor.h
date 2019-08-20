@@ -20,18 +20,20 @@
     NSMutableArray *_parentLayers;
     NSMutableArray *_childLayers;
     NSMutableArray *_deviceMemory;
-    NSData *_deviceTensorData;
+    NSData *_tensorDataOHWIForMPSConvolution;
 }
 
 + (id)newRandomDataForWeightTensorDescriptor:(id)arg1;
++ (id)newDataForTensorDescriptor:(id)arg1 fillWithFloatData:(float)arg2;
 + (id)tensorWithSequenceLength:(unsigned long long)arg1 featureChannels:(unsigned long long)arg2 batchSize:(unsigned long long)arg3 tensorValue:(int)arg4 tensorData:(id)arg5;
 + (id)tensorWithSequenceLength:(unsigned long long)arg1 featureChannels:(unsigned long long)arg2 batchSize:(unsigned long long)arg3 randomData:(BOOL)arg4;
 + (id)tensorWithSequenceLength:(unsigned long long)arg1 featureChannels:(unsigned long long)arg2 batchSize:(unsigned long long)arg3;
 + (id)tensorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4 tensorValue:(int)arg5 tensorData:(id)arg6;
 + (id)tensorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4 randomData:(BOOL)arg5;
++ (id)tensorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4 fillWithFloatData:(float)arg5;
 + (id)tensorWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 featureChannels:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;
 + (id)tensorWithDescriptor:(id)arg1 randomData:(BOOL)arg2;
-@property(copy, nonatomic) NSData *deviceTensorData; // @synthesize deviceTensorData=_deviceTensorData;
+@property(copy, nonatomic) NSData *tensorDataOHWIForMPSConvolution; // @synthesize tensorDataOHWIForMPSConvolution=_tensorDataOHWIForMPSConvolution;
 @property(retain, nonatomic) NSMutableArray *deviceMemory; // @synthesize deviceMemory=_deviceMemory;
 @property(retain, nonatomic) NSMutableArray *childLayers; // @synthesize childLayers=_childLayers;
 @property(retain, nonatomic) NSMutableArray *parentLayers; // @synthesize parentLayers=_parentLayers;

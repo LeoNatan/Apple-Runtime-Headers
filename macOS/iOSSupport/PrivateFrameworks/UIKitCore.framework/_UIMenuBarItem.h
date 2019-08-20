@@ -30,9 +30,7 @@
     id _target;
     long long _type;
     id _cachedTarget;
-    unsigned long long _targetSearchScopeMask;
     NSString *_actionName;
-    NSString *_hostActionName;
     UICommand *_command;
     UICommandAlternate *_altCmd;
 }
@@ -41,9 +39,7 @@
 @property(nonatomic) BOOL remainsVisibleWhenDisabled; // @synthesize remainsVisibleWhenDisabled=_remainsVisibleWhenDisabled;
 @property(retain, nonatomic) UICommandAlternate *altCmd; // @synthesize altCmd=_altCmd;
 @property(retain, nonatomic) UICommand *command; // @synthesize command=_command;
-@property(copy, nonatomic) NSString *hostActionName; // @synthesize hostActionName=_hostActionName;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
-@property(nonatomic) unsigned long long targetSearchScopeMask; // @synthesize targetSearchScopeMask=_targetSearchScopeMask;
 @property(nonatomic) __weak id cachedTarget; // @synthesize cachedTarget=_cachedTarget;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) __weak id target; // @synthesize target=_target;

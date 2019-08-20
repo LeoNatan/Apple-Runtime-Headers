@@ -67,6 +67,7 @@
     _Bool _hasSurfRequest;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
+    NSString *_groupChatIdentifierUppercase;
     double _latestTypingIndicatorTimeInterval;
     IMOrderingTools *_orderingTools;
     NSString *_currentLocationGUID;
@@ -84,13 +85,11 @@
 + (void)removeGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (_Bool)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
-+ (void)_removeGUID:(id)arg1 fromList:(id)arg2;
-+ (void)_storeGUID:(id)arg1 forKey:(id)arg2;
-+ (id)_GUIDsForKey:(id)arg1;
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
+@property(retain, nonatomic) NSString *groupChatIdentifierUppercase; // @synthesize groupChatIdentifierUppercase=_groupChatIdentifierUppercase;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
 @property(nonatomic) _Bool hasSurfRequest; // @synthesize hasSurfRequest=_hasSurfRequest;
@@ -210,6 +209,7 @@
 - (void)_showErrorMessage:(id)arg1;
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (void)_setJoinState:(long long)arg1 quietly:(_Bool)arg2;
+- (void)_clearPendingMessages;
 - (void)_setJoinState:(long long)arg1;
 - (_Bool)_handleIncomingItem:(id)arg1;
 - (void)_fixSendingItemDateAndSortID:(id)arg1;
@@ -372,6 +372,7 @@
 - (void)_markItemAsPlayed:(id)arg1;
 - (void)markChatItemAsPlayed:(id)arg1;
 - (void)markChatItemAsSaved:(id)arg1;
+- (void)deleteIMMessageItems:(id)arg1;
 - (void)deleteChatItems:(id)arg1;
 - (id)_getMessageChatItemMap:(id)arg1 withDeleteMap:(id)arg2 andAllChatItems:(id)arg3;
 - (id)_getDeleteChatItemMap:(id)arg1;

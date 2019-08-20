@@ -16,6 +16,7 @@
     // Error parsing type: , name: arcadeSubscriptionFamilyId
     // Error parsing type: , name: subscriptionEntitlements
     // Error parsing type: , name: subscriptionState
+    // Error parsing type: , name: paymentCallbacks
     // Error parsing type: , name: logger
 }
 

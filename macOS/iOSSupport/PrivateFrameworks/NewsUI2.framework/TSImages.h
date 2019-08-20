@@ -18,6 +18,11 @@
 + (id)followHUD;
 + (id)macSidebar;
 + (id)sidebar;
++ (id)actionSheetUnfollow;
++ (id)actionSheetFollow;
++ (id)actionSheetUnblock;
++ (id)actionSheetBlock;
++ (id)actionSheetStopSuggesting;
 + (id)iconArticleMarkingShare;
 + (id)iconArticleMarkingSaveSelected;
 + (id)iconArticleMarkingSave;

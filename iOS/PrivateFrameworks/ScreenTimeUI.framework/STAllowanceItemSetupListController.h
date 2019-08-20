@@ -8,7 +8,7 @@
 
 #import <ScreenTimeUI/UISearchControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSMutableOrderedSet, NSString;
+@class NSArray, NSMutableDictionary, NSMutableOrderedSet, NSString, STAllowanceItemSearchResultsController;
 
 __attribute__((visibility("hidden")))
 @interface STAllowanceItemSetupListController : PSListController <UISearchControllerDelegate>
@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_selectedCategoryIdentifiers;
     NSArray *_categorySpecifiers;
     NSMutableDictionary *_applicationAndWebDomainSpecifiersByCategoryIdentifier;
+    STAllowanceItemSearchResultsController *_searchResultsController;
 }
 
+@property(retain) STAllowanceItemSearchResultsController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
 @property(readonly, nonatomic) NSMutableDictionary *applicationAndWebDomainSpecifiersByCategoryIdentifier; // @synthesize applicationAndWebDomainSpecifiersByCategoryIdentifier=_applicationAndWebDomainSpecifiersByCategoryIdentifier;
 @property(copy) NSArray *categorySpecifiers; // @synthesize categorySpecifiers=_categorySpecifiers;
 @property(readonly) NSMutableOrderedSet *selectedCategoryIdentifiers; // @synthesize selectedCategoryIdentifiers=_selectedCategoryIdentifiers;
@@ -46,11 +48,14 @@ __attribute__((visibility("hidden")))
 - (void)_updateApplicationSpecifiersWithBundleIdentifier:(id)arg1 categoryIdentifier:(id)arg2 shouldInsertSpecifier:(_Bool)arg3;
 - (id)specifiers;
 - (void)setSpecifier:(id)arg1;
+- (void)_hasSelectionDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)willResignActive;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)canBeShownFromSuspendedState;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

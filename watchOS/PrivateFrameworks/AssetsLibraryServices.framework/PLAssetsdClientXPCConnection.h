@@ -14,6 +14,7 @@
 @interface PLAssetsdClientXPCConnection : NSObject <PLXPCProxyCreating>
 {
     NSObject<OS_dispatch_queue> *_isolationQueue;
+    NSObject<OS_dispatch_queue> *_externalNotificationQueue;
     NSXPCConnection *_connection;
     PLXPCMessageLogger *_connectionLogger;
     PLAssetsdClientService *_assetsdClientService;
@@ -29,6 +30,7 @@
 - (id)connectionWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)prepareToShutdown;
 - (void)handleInvalidation;
+- (void)_postInterruptedNotification;
 - (void)handleInterruption;
 - (void)addPhotoLibraryUnavailabilityHandler:(CDUnknownBlockType)arg1;
 - (id)init;

@@ -15,7 +15,6 @@
 {
     EFCancelationToken *_cancelable;
     EFObservable<EFObserver> *_inputObservable;
-    EFObservable *_contentObservable;
     id <EFScheduler> _trustReevaluationScheduler;
     EFObservable<EFObserver> *_trustReevaluationObservable;
     EFObservable *_smimeObservable;
@@ -32,6 +31,7 @@
     MFMailMessage *_message;
     MFMimeBody *_messageBody;
     MFAttachmentManager *_attachmentManager;
+    EFObservable *_contentObservable;
     MFMimePart *_loadedPart;
     unsigned long long _contentOffset;
 }
@@ -39,6 +39,7 @@
 + (unsigned long long)_nextOffsetForOffset:(unsigned long long)arg1 totalLength:(unsigned long long)arg2 requestedAmount:(unsigned long long)arg3;
 @property(nonatomic) unsigned long long contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(retain, nonatomic) MFMimePart *loadedPart; // @synthesize loadedPart=_loadedPart;
+@property(readonly, nonatomic) EFObservable *contentObservable; // @synthesize contentObservable=_contentObservable;
 @property(readonly, nonatomic, getter=isEditableMessage) _Bool editableMessage; // @synthesize editableMessage=_editableMessage;
 @property(readonly, nonatomic, getter=isDraftMessage) _Bool draftMessage; // @synthesize draftMessage=_draftMessage;
 @property(readonly, nonatomic, getter=isOutgoingMessage) _Bool outgoingMessage; // @synthesize outgoingMessage=_outgoingMessage;

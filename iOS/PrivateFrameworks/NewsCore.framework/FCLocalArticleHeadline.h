@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (_Bool)webEmbedsEnabled;
 - (void).cxx_destruct;
+- (_Bool)useTransparentNavigationBar;
 - (_Bool)isPremium;
 - (id)localDraftPath;
 - (id)surfacedByBinID;

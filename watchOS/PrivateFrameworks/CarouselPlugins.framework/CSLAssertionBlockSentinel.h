@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CarouselPlugins/CSLAssertionBlockSentinelBase.h>
 
 @class NSString;
 
-@interface CSLAssertionBlockSentinel : NSObject
+@interface CSLAssertionBlockSentinel : CSLAssertionBlockSentinelBase
 {
-    _Bool _called;
     NSString *_message;
 }
 
-@property(nonatomic, getter=isCalled) _Bool called; // @synthesize called=_called;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -25,8 +25,8 @@
     UIColor *_cornerComplicationOuterTextColor;
     UIColor *_cornerComplicationInnerTextColor;
     UIColor *_simpleTextComplicationColor;
-    UIColor *_circularComplicationColor;
-    UIColor *_circularComplicationAlternateColor;
+    UIColor *_circularComplicationColorA;
+    UIColor *_circularComplicationColorB;
     UIColor *_bezelComplicationColor;
     UIColor *_circularDialSubtickColor;
     CLKDevice *_device;
@@ -42,8 +42,8 @@
 @property(readonly, nonatomic) UIColor *platterTextColor;
 @property(readonly, nonatomic) long long richComplicationViewTheme;
 @property(readonly, nonatomic) UIColor *bezelComplicationColor;
-@property(readonly, nonatomic) UIColor *circularComplicationAlternateColor;
-@property(readonly, nonatomic) UIColor *circularComplicationColor;
+@property(readonly, nonatomic) UIColor *circularComplicationColorB;
+@property(readonly, nonatomic) UIColor *circularComplicationColorA;
 @property(readonly, nonatomic) UIColor *simpleTextComplicationColor;
 @property(readonly, nonatomic) UIColor *cornerComplicationInnerTextColor;
 @property(readonly, nonatomic) UIColor *cornerComplicationOuterTextColor;

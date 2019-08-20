@@ -8,7 +8,7 @@
 
 #import <ChatKit/CKTranscriptPluginViewDelegate-Protocol.h>
 
-@class CKBalloonImageView, CKInteractiveBalloonImageView, IMBalloonPluginDataSource, NSString, UIView;
+@class CKBalloonImageView, CKInteractiveBalloonImageView, IMBalloonPluginDataSource, NSString, UIView, UIViewController;
 @protocol CKTranscriptPluginView;
 
 @interface CKTranscriptPluginBalloonView : CKBalloonView <CKTranscriptPluginViewDelegate>
@@ -18,6 +18,7 @@
     _Bool _suppressMask;
     int _userInterfaceStyle;
     int _userInterfaceLevel;
+    UIViewController *_pluginViewController;
     UIView<CKTranscriptPluginView> *_pluginView;
     IMBalloonPluginDataSource *_dataSource;
     UIView *_pluginSnapshotViewForThrowAnimation;
@@ -35,6 +36,7 @@
 @property(nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(retain, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIView<CKTranscriptPluginView> *pluginView; // @synthesize pluginView=_pluginView;
+@property(nonatomic) __weak UIViewController *pluginViewController; // @synthesize pluginViewController=_pluginViewController;
 - (int)userInterfaceLevel;
 - (int)userInterfaceStyle;
 - (void).cxx_destruct;

@@ -14,6 +14,7 @@
 }
 
 + (id)transactionWithDescription:(id)arg1;
++ (id)log;
 - (void).cxx_destruct;
 - (void)invalidate;
 - (_Bool)extend;

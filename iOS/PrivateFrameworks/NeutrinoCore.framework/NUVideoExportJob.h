@@ -12,8 +12,6 @@
 }
 
 - (_Bool)renderVideoFrames:(id)arg1 intoPixelBuffer:(struct __CVBuffer *)arg2 time:(CDStruct_1b6d18a9)arg3 colorSpace:(id)arg4 error:(out id *)arg5;
-- (void)_setCleanApertureInSettings:(id)arg1 withSize:(CDStruct_912cb5d2)arg2 horizontalOffset:(long long)arg3 verticalOffset:(long long)arg4;
-- (CDStruct_912cb5d2)_evenPixelSizeFromPixelSize:(CDStruct_912cb5d2)arg1;
 - (_Bool)writeVideoFrom:(id)arg1 toWriter:(id)arg2 stillImageTime:(CDStruct_1b6d18a9)arg3 error:(out id *)arg4;
 - (_Bool)render:(out id *)arg1;
 - (id)generateVideoComposition:(out id *)arg1;

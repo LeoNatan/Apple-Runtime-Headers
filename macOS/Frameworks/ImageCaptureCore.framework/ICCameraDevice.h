@@ -48,7 +48,6 @@
 - (void)signalOperationIdle;
 - (void)startSerializedOperationWithDictionary:(id)arg1 andOperationType:(unsigned long long)arg2;
 - (id)operationIdentifier:(id)arg1;
-- (void)setiCloudPhotosEnabled:(BOOL)arg1;
 - (BOOL)updateMediaPresentation;
 @property unsigned long long mediaPresentation;
 - (BOOL)setDefaultMediaPresentation:(unsigned long long)arg1;
@@ -123,6 +122,8 @@
 - (void)setTetheredCaptureEnabled:(BOOL)arg1;
 - (void)setEstimatedCountOfMediafiles:(unsigned long long)arg1;
 - (void)setContentCatalogPercentCompleted:(unsigned long long)arg1;
+- (void)addCapability:(id)arg1;
+- (void)setICloudPhotosEnabled:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL iCloudPhotosEnabled;
 @property(readonly) NSArray *supportedSidecarFiles;
 @property(readonly) NSString *productVersion;

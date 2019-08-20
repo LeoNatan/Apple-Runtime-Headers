@@ -13,6 +13,7 @@
 - (UIViewController<PLClickPresentationInteractionPresentable> *)presentedViewControllerForClickPresentationInteractionManager:(PLClickPresentationInteractionManager *)arg1;
 
 @optional
+- (_Bool)clickPresentationInteractionManagerShouldAllowLongPressGesture:(PLClickPresentationInteractionManager *)arg1;
 - (void)clickPresentationInteractionManager:(PLClickPresentationInteractionManager *)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
 - (void)clickPresentationInteractionManager:(PLClickPresentationInteractionManager *)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (void)clickPresentationInteractionManager:(PLClickPresentationInteractionManager *)arg1 shouldFinishInteractionWithCompletionBlock:(void (^)(_Bool))arg2;

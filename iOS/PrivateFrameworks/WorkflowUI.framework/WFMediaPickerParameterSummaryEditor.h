@@ -6,12 +6,12 @@
 
 #import <WorkflowUI/WFModuleSummaryEditor.h>
 
-#import <WorkflowUI/MPMediaPickerControllerDelegate-Protocol.h>
+#import <WorkflowUI/MPMediaPickerControllerDelegatePrivate-Protocol.h>
 #import <WorkflowUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class NSString, UIViewController;
 
-@interface WFMediaPickerParameterSummaryEditor : WFModuleSummaryEditor <MPMediaPickerControllerDelegate, UIPopoverPresentationControllerDelegate>
+@interface WFMediaPickerParameterSummaryEditor : WFModuleSummaryEditor <MPMediaPickerControllerDelegatePrivate, UIPopoverPresentationControllerDelegate>
 {
     UIViewController *_presentedViewController;
 }
@@ -23,6 +23,7 @@
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)mediaPickerDidCancel:(id)arg1;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
+- (void)mediaPicker:(id)arg1 didPickPlaybackArchive:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(_Bool)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;

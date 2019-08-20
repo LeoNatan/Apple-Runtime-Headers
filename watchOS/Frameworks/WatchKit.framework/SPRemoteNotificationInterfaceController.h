@@ -35,8 +35,8 @@
 @property(retain) SPRemoteNotificationHostedWindow *hostedWindow; // @synthesize hostedWindow=_hostedWindow;
 @property(retain) CAContext *layerContext; // @synthesize layerContext=_layerContext;
 - (void).cxx_destruct;
-- (id)timerSupportViewControllerForHostingViewController:(id)arg1;
-- (id)timerSupportActionItemsForHostingViewController:(id)arg1;
+- (id)underlyingUIHostingControllerForHostingViewController:(id)arg1;
+- (id)actionItemsForHostingViewController:(id)arg1;
 - (id)interfaceControllerForViewController:(id)arg1;
 - (void)interfaceContentSystemMinimumLayoutMargins:(id)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
 - (void)interfaceContentSafeAreaInsets:(id)arg1 withValue:(struct UIEdgeInsets)arg2;
@@ -58,7 +58,7 @@
 - (void)viewControllerWillActivate:(id)arg1;
 - (void)viewControllerDidRelease:(id)arg1;
 - (void)viewController:(id)arg1 createWKInterfaceControllerClass:(id)arg2 properties:(id)arg3 contextID:(id)arg4 creationCompletion:(CDUnknownBlockType)arg5;
-- (void)_vendInterface:(id)arg1 isTimerSupport:(_Bool)arg2;
+- (void)_vendInterface:(id)arg1 isHostingController:(_Bool)arg2;
 - (void)_setHostActiveService;
 - (void)takeSnapshot:(CDUnknownBlockType)arg1;
 - (void)sizeThatFits:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;

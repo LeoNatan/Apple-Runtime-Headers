@@ -139,6 +139,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) CDStruct_1b6d18a9 adjustedStillFrameTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 currentStillFrameTime;
 - (id)currentEditSource;
+- (void)releaseAVObjects;
+@property(readonly, nonatomic) double scrubberHeight;
 - (void)trimScrubberDidLayoutSubviews:(id)arg1;
 - (void)trimScrubberDidUnzoom:(id)arg1;
 - (void)trimScrubber:(id)arg1 didZoomToMinimumValue:(double)arg2 maximumValue:(double)arg3;

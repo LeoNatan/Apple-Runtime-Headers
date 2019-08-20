@@ -32,12 +32,12 @@
 - (id)_actionForCharacteristic:(id)arg1;
 - (id)_existingActionBuilderForProfile:(id)arg1;
 - (id)_existingActionBuilderForCharacteristic:(id)arg1;
-- (id)writePlaybackState:(int)arg1 playbackArchive:(id)arg2 playbackOptions:(int)arg3 forRouteID:(id)arg4;
+- (id)writePlaybackState:(int)arg1 playbackArchive:(id)arg2 forRouteID:(id)arg3;
 - (id)mediaProfileContainerForRouteID:(id)arg1;
 - (int)lastPlaybackStateForProfileForRouteID:(id)arg1;
 - (_Bool)hasPendingWritesForRouteID:(id)arg1;
 - (id)cachedPlaybackStateWriteErrorForRouteID:(id)arg1;
-- (void)mediaValueUpdated:(id)arg1 playbackState:(int)arg2 playbackArchive:(id)arg3 playbackOptions:(int)arg4;
+- (void)mediaValueUpdated:(id)arg1 playbackState:(int)arg2 playbackArchive:(id)arg3;
 - (void)commitTransactionWithReason:(id)arg1;
 - (void)beginTransactionWithReason:(id)arg1 readPolicy:(id)arg2 logger:(id)arg3;
 - (id)cachedValueForCharacteristic:(id)arg1;

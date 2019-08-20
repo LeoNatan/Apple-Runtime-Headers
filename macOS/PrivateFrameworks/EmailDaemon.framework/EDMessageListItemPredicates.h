@@ -15,7 +15,7 @@
 + (id)predicateForSubjectPredicate:(id)arg1;
 + (id)predicateForSenderPredicate:(id)arg1;
 + (id)predicateForAnyRecipientPredicate:(id)arg1;
-+ (id)predicateForMessageIDPredicate:(id)arg1;
++ (id)predicateForMessageIDHeaderHashPredicate:(id)arg1;
 + (id)predicateForAnyMailboxWithPredicate:(id)arg1;
 + (id)_objectIDsFromRightExpression:(id)arg1;
 + (id)predicateForMessagesWithObjectIDsPredicate:(id)arg1 messagePersistence:(id)arg2;

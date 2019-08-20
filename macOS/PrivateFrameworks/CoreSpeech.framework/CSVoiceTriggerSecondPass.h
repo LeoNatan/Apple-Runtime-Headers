@@ -18,12 +18,13 @@
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVolumeMonitorDelegate-Protocol.h>
 
-@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
+@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString, NSUUID;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
 @interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpIdVTTextDependentSpeakerRecognizerDelegate, CSSelfTriggerDetectorDelegate>
 {
     BOOL _hasReceivedNDEAPIResult;
+    BOOL _isSecondChanceHot;
     BOOL _isSATDetectionRunning;
     BOOL _shouldUsePHS;
     BOOL _hasPendingNearMiss;
@@ -34,8 +35,12 @@
     BOOL _isStartSampleCountMarked;
     BOOL _secondPassHasMadeDecision;
     BOOL _skipTdsrProc;
+    BOOL _tdsrResultPending;
+    BOOL _kwdRejectCleanupPending;
     float _referenceKeywordThreshold;
     float _keywordThreshold;
+    float _keywordThresholdSecondChance;
+    float _effectiveKeywordThreshold;
     float _keywordLoggingThreshold;
     float _lastScore;
     float _recognizerScore;
@@ -48,6 +53,7 @@
     float _mediaVolume;
     NSString *_UUID;
     id <CSVoiceTriggerDelegate> _delegate;
+    unsigned long long _secondChanceHotTillMachTime;
     NSObject<OS_dispatch_queue> *_queue;
     CSAsset *_currentAsset;
     CSAudioStream *_audioStream;
@@ -93,11 +99,17 @@
     long long _mediaPlayingState;
     NSMutableDictionary *_lastVoiceTriggerEventInfo;
     NSDate *_tdsrStartTime;
+    unsigned long long _kwdRejectCleanupSecondPassResult;
+    NSUUID *_kwdRejectCleanupToken;
 }
 
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+@property(retain, nonatomic) NSUUID *kwdRejectCleanupToken; // @synthesize kwdRejectCleanupToken=_kwdRejectCleanupToken;
+@property(nonatomic) unsigned long long kwdRejectCleanupSecondPassResult; // @synthesize kwdRejectCleanupSecondPassResult=_kwdRejectCleanupSecondPassResult;
+@property(nonatomic) BOOL kwdRejectCleanupPending; // @synthesize kwdRejectCleanupPending=_kwdRejectCleanupPending;
+@property(nonatomic) BOOL tdsrResultPending; // @synthesize tdsrResultPending=_tdsrResultPending;
 @property(retain, nonatomic) NSDate *tdsrStartTime; // @synthesize tdsrStartTime=_tdsrStartTime;
 @property(nonatomic) BOOL skipTdsrProc; // @synthesize skipTdsrProc=_skipTdsrProc;
 @property(retain, nonatomic) NSMutableDictionary *lastVoiceTriggerEventInfo; // @synthesize lastVoiceTriggerEventInfo=_lastVoiceTriggerEventInfo;
@@ -145,8 +157,11 @@
 @property(nonatomic) unsigned long long analyzerTrailingSamples; // @synthesize analyzerTrailingSamples=_analyzerTrailingSamples;
 @property(nonatomic) unsigned long long analyzerPrependingSamples; // @synthesize analyzerPrependingSamples=_analyzerPrependingSamples;
 @property(nonatomic) unsigned long long extraSamplesAtStart; // @synthesize extraSamplesAtStart=_extraSamplesAtStart;
+@property(nonatomic) BOOL isSecondChanceHot; // @synthesize isSecondChanceHot=_isSecondChanceHot;
 @property(nonatomic) float lastScore; // @synthesize lastScore=_lastScore;
 @property(nonatomic) float keywordLoggingThreshold; // @synthesize keywordLoggingThreshold=_keywordLoggingThreshold;
+@property(nonatomic) float effectiveKeywordThreshold; // @synthesize effectiveKeywordThreshold=_effectiveKeywordThreshold;
+@property(nonatomic) float keywordThresholdSecondChance; // @synthesize keywordThresholdSecondChance=_keywordThresholdSecondChance;
 @property(nonatomic) float keywordThreshold; // @synthesize keywordThreshold=_keywordThreshold;
 @property(nonatomic) float referenceKeywordThreshold; // @synthesize referenceKeywordThreshold=_referenceKeywordThreshold;
 @property(nonatomic) unsigned long long numAnalyzedSamples; // @synthesize numAnalyzedSamples=_numAnalyzedSamples;
@@ -166,6 +181,7 @@
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
@@ -196,13 +212,16 @@
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDEAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
+- (void)_handleTDSRTimeout;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(BOOL)arg4;
 - (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
 - (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
+- (void)_computeEffectiveThreshold;
 - (BOOL)_isTDSRProcessingAllowed;
 - (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectly:(long long)arg2;
 - (void)_didStopAudioStream;
 - (void)_didStartAudioStream;
+- (void)_cleanupKeywordRejectionWithToken:(id)arg1 result:(unsigned long long)arg2 voiceTriggerInfo:(id)arg3;
 - (void)_notifySecondPassReject:(id)arg1 result:(unsigned long long)arg2;
 - (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)cancelCurrentRequest;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)serviceViewControllerInterface;
 - (void)stopDiscoveringAudioRoutes;
 - (void)startDiscoveringAudioRoutes;
+@property(nonatomic) BOOL prioritizesVideoDevices;
 @property(nonatomic) BOOL useSystemAudioOutputContext;
 @property(copy, nonatomic) NSString *outputContextID;
 

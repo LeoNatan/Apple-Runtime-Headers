@@ -8,6 +8,12 @@
 
 @interface QTHUDContainerView : NSView
 {
+    struct {
+        unsigned int leftEdgeRounded:1;
+        unsigned int rightEdgeRounded:1;
+        unsigned int style:1;
+        unsigned int reserved:29;
+    } _internal;
 }
 
 - (void)setRightEdgeRounded:(BOOL)arg1;

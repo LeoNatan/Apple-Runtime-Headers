@@ -23,6 +23,7 @@
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak id <_HKXPCExportable> exportedObject; // @synthesize exportedObject=_exportedObject;
 - (void).cxx_destruct;
+- (id)_loggingPrefix;
 - (void)unitTest_interrupt;
 - (void)invalidate;
 - (void)resume;

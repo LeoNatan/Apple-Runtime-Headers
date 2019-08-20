@@ -68,7 +68,7 @@
 - (id)fp_shortDescription;
 - (id)fp_issueSandboxExtensionOfClass:(const char *)arg1 error:(id *)arg2;
 - (id)fp_copyToTempFolderWithFilename:(id)arg1 queue:(id)arg2 precomputedItemSize:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)fp_copyToURL:(id)arg1 queue:(id)arg2 precomputedItemSize:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)fp_copyToURL:(id)arg1 queue:(id)arg2 precomputedItemSize:(unsigned long long)arg3 replacePlaceholder:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)fp_removeFileProviderXattrsWithError:(id *)arg1;
 - (BOOL)fp_getSize:(unsigned long long *)arg1 error:(id *)arg2;
 @end

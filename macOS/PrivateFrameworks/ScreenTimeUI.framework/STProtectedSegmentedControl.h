@@ -11,10 +11,13 @@
 @interface STProtectedSegmentedControl : NSSegmentedControl
 {
     id <STProtectedControlDelegate> _actionCancelDelegate;
+    long long _selectedSegmentIndex;
 }
 
+@property(nonatomic) long long selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
 @property __weak id <STProtectedControlDelegate> actionCancelDelegate; // @synthesize actionCancelDelegate=_actionCancelDelegate;
 - (void).cxx_destruct;
+- (long long)selectedSegment;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2;
 
 @end

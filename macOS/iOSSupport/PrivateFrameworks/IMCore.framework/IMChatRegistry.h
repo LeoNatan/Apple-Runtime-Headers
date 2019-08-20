@@ -9,7 +9,7 @@
 #import <IMCore/NSFastEnumeration-Protocol.h>
 #import <IMCore/TUConversationManagerDelegate-Protocol.h>
 
-@class IDSKVStore, IMTimer, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString, NSUserActivity, TUConversationManager;
+@class IMTimer, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet, NSString, NSUserActivity, TUConversationManager;
 @protocol OS_dispatch_queue;
 
 @interface IMChatRegistry : NSObject <TUConversationManagerDelegate, NSFastEnumeration>
@@ -41,7 +41,6 @@
     NSMutableDictionary *_chatPersonIDToChatMap;
     NSMutableDictionary *_groupIDToChatMap;
     NSMutableDictionary *_groupParticipantToChatsMap;
-    IDSKVStore *_chatRenderMetaDataStore;
     NSSet *_registryChangeHistoryChatsToObserve;
     NSSet *_registryChangeHistoryChatsToUnregister;
     BOOL _personaKitRetriveAPITimedOut;
@@ -73,8 +72,9 @@
 @property(nonatomic, setter=_setDefaultNumberOfMessagesToLoad:) unsigned long long _defaultNumberOfMessagesToLoad; // @synthesize _defaultNumberOfMessagesToLoad;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isBatchProcessing;
-- (void)_setMetaDictionary:(id)arg1 forKey:(id)arg2;
-- (id)_transcriptRenderingMetaDictionaryForKey:(id)arg1;
+- (void)_setMetaDictionary:(id)arg1 forChatIdentifier:(id)arg2;
+- (id)scrutinyInfo;
+- (id)_transcriptRenderingMetaDictionaryForChatIdentifier:(id)arg1;
 - (double)_maxDurationForScrutinyMode;
 - (BOOL)_firstLoad;
 - (void)systemApplicationDidResume;
@@ -101,10 +101,11 @@
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3 displayName:(id)arg4 ignoresDisplayName:(BOOL)arg5 joinedChatsOnly:(BOOL)arg6;
 - (id)existingChatForAddresses:(id)arg1 allowRetargeting:(BOOL)arg2 bestHandles:(id *)arg3;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3;
+- (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(BOOL)arg2 fixChatHandle:(BOOL)arg3;
 - (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(BOOL)arg2;
 - (id)_existingChatFromSiblingsForIMHandle:(id)arg1;
 - (id)_existingChatForIMHandleUsingPersonID:(id)arg1;
-- (id)_existingChatForIMHandle:(id)arg1;
+- (id)_existingChatForIMHandle:(id)arg1 fixChatHandle:(BOOL)arg2;
 - (id)existingConversationForTUConversationUUID:(id)arg1;
 - (id)existingChatForEngramID:(id)arg1;
 - (id)exisitingChatForGroupID:(id)arg1;
@@ -162,7 +163,6 @@
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(BOOL)arg3 newGUID:(id)arg4 shouldPostNotification:(BOOL)arg5;
 - (void)dealloc;
 - (id)init;
-- (id)_chatMetaDataDBPath;
 - (id)_chatInstanceForGUID:(id)arg1;
 - (void)_noteChatDealloc:(id)arg1;
 - (void)_noteChatInit:(id)arg1;

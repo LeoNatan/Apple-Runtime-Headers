@@ -6,29 +6,29 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, UIColor, UIImageView, UILabel;
+@class NSDictionary, NSMutableDictionary, NSString, UIColor, UILabel, _UIBadgeVisualStyle;
 
 __attribute__((visibility("hidden")))
 @interface _UIBadgeView : UIView
 {
     UILabel *_label;
-    UIImageView *_background;
     NSMutableDictionary *_mergedTextAttributes;
     NSString *_text;
     NSDictionary *_textAttributes;
-    UIColor *_backgroundColor;
+    UIColor *_badgeColor;
+    _UIBadgeVisualStyle *_style;
+    struct UIOffset _textOffset;
 }
 
-@property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(retain, nonatomic) _UIBadgeVisualStyle *style; // @synthesize style=_style;
+@property(nonatomic) struct UIOffset textOffset; // @synthesize textOffset=_textOffset;
+@property(copy, nonatomic) UIColor *badgeColor; // @synthesize badgeColor=_badgeColor;
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
-- (void)_updateBackground;
-- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
 - (void)layoutSubviews;
-- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_applyTextToLabel;
-- (void)_setupLabelIfNecessary;
+- (void)_setUpLabelIfNecessary;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithText:(id)arg1;
 

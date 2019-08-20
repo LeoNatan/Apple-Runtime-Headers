@@ -25,10 +25,12 @@
     NSString *_vehicleModelName;
     NSString *_PPID;
     NSString *_internalNotes;
+    long long _albumArtUserPreference;
 }
 
 + (id)vehicleForVehicleAccessory:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long albumArtUserPreference; // @synthesize albumArtUserPreference=_albumArtUserPreference;
 @property(retain, nonatomic) NSString *internalNotes; // @synthesize internalNotes=_internalNotes;
 @property(retain, nonatomic) NSString *PPID; // @synthesize PPID=_PPID;
 @property(retain, nonatomic) NSString *vehicleModelName; // @synthesize vehicleModelName=_vehicleModelName;

@@ -23,9 +23,9 @@
 - (id)shortDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)initWithTarget:(id)arg1 account:(id)arg2 multicast:(BOOL)arg3 deviceCapabilities:(id)arg4;
 - (id)initWithTarget:(id)arg1 account:(id)arg2 multicast:(BOOL)arg3;
-- (id)initWithTarget:(id)arg1 handle:(id)arg2 multicast:(BOOL)arg3;
-- (id)initWithTarget:(id)arg1;
+- (id)initWithTarget:(id)arg1 handle:(id)arg2 multicast:(BOOL)arg3 deviceCapabilities:(id)arg4;
 
 @end
 

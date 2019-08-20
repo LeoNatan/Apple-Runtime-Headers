@@ -13,6 +13,8 @@
 + (id)presetsGivenOneMemojiWithIdentifier:(id)arg1;
 + (id)presetsGivenNoMemoji;
 + (id)paddedStickerRecordsWithRecents:(id)arg1 paddingMemojiIdentifier:(id)arg2 numberOfStickers:(long long)arg3;
++ (id)filteredRecentStickers:(id)arg1 withAvailableRecordIdentifiersMap:(id)arg2;
++ (void)filteredAndPaddedStickerRecordsWithRecents:(id)arg1 paddingMemojiIdentifier:(id)arg2 avatarStore:(id)arg3 numberOfStickers:(long long)arg4 resultBlock:(CDUnknownBlockType)arg5;
 
 @end
 

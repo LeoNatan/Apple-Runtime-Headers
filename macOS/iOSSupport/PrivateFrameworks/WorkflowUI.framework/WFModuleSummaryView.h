@@ -6,7 +6,6 @@
 
 #import <UIKit/UIView.h>
 
-#import <WorkflowUI/WFComponentEditingSession-Protocol.h>
 #import <WorkflowUI/WFModuleSummaryEditorDelegate-Protocol.h>
 #import <WorkflowUI/WFSlotTemplateViewDelegate-Protocol.h>
 #import <WorkflowUI/WFVariableDelegate-Protocol.h>
@@ -14,7 +13,7 @@
 @class NSDictionary, NSHashTable, NSMutableDictionary, NSSet, NSString, UIFont, WFModuleSummaryEditor, WFModuleSummaryTemplateBuilder, WFSlotIdentifier, WFSlotTemplateView, WFVariable;
 @protocol WFModuleSummaryViewDelegate, WFVariableProvider, WFVariableUIDelegate;
 
-@interface WFModuleSummaryView : UIView <WFComponentEditingSession, WFSlotTemplateViewDelegate, WFModuleSummaryEditorDelegate, WFVariableDelegate>
+@interface WFModuleSummaryView : UIView <WFSlotTemplateViewDelegate, WFModuleSummaryEditorDelegate, WFVariableDelegate>
 {
     BOOL _processing;
     NSString *_summaryFormatString;

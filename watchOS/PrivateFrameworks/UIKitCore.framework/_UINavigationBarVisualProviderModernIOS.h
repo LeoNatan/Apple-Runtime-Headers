@@ -6,6 +6,7 @@
 
 #import <UIKitCore/_UINavigationBarVisualProvider.h>
 
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
 #import <UIKitCore/_UIBasicAnimationFactory-Protocol.h>
 #import <UIKitCore/_UINavigationBarContentViewDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationControllerRefreshControlHostDelegate-Protocol.h>
@@ -14,7 +15,7 @@
 @class NSString, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
 
 __attribute__((visibility("hidden")))
-@interface _UINavigationBarVisualProviderModernIOS : _UINavigationBarVisualProvider <_UINavigationBarContentViewDelegate, _UINavigationItemChangeObserver, _UINavigationControllerRefreshControlHostDelegate, _UIBasicAnimationFactory>
+@interface _UINavigationBarVisualProviderModernIOS : _UINavigationBarVisualProvider <_UINavigationBarContentViewDelegate, _UINavigationItemChangeObserver, _UIBarAppearanceChangeObserver, _UINavigationControllerRefreshControlHostDelegate, _UIBasicAnimationFactory>
 {
     _UIBarBackground *_backgroundView;
     _UINavigationBarContentView *_contentView;
@@ -52,11 +53,12 @@ __attribute__((visibility("hidden")))
 - (_Bool)_shouldAnimateAdditivelyForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimationInView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
+- (void)appearance:(id)arg1 categoriesChanged:(int)arg2;
 - (void)navigationItemUpdatedScrollEdgeProgress:(id)arg1;
 - (void)navigationItemUpdatedBottomPalette:(id)arg1 oldPalette:(id)arg2;
 - (void)navigationItemUpdatedSearchController:(id)arg1 oldSearchController:(id)arg2;
 - (void)navigationItemUpdatedBackgroundAppearance:(id)arg1;
-- (void)navigationItemUpdatedAppearance:(id)arg1;
+- (void)navigationItem:(id)arg1 appearance:(id)arg2 categoriesChanged:(int)arg3;
 - (void)navigationItemUpdatedCanvasView:(id)arg1;
 - (void)navigationItemUpdatedPromptContent:(id)arg1;
 - (void)navigationItemUpdatedLargeTitleContent:(id)arg1;
@@ -103,6 +105,7 @@ __attribute__((visibility("hidden")))
 - (void)_setupTransitionContextForTransition:(int)arg1;
 - (void)_updateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)layoutSubviews;
+- (void)_configureMarginsOnContentViewsAndPalette:(id)arg1 withContentMargin:(float)arg2;
 - (struct NSDirectionalEdgeInsets)resolvedLargeTitleMargins;
 - (void)_updateAugmentedTitleDataSources;
 - (void)updateBackgroundGroupName;
@@ -131,6 +134,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)useManualScrollEdgeAppearanceForItem:(id)arg1;
 - (_Bool)forceScrollEdgeAppearance;
 - (void)_upgradeAppearanceAPIForItemIfNecessary:(id)arg1;
+- (id)appearanceObserver;
 - (void)setAppearanceAPIVersion:(int)arg1;
 - (int)appearanceAPIVersion;
 - (void)setTitleAlpha:(float)arg1;

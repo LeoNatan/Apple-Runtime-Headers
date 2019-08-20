@@ -9,10 +9,8 @@
 @interface SFPersonImageView : UIImageView
 {
     _Bool _imageIsSquare;
-    _Bool _darkStyle;
 }
 
-@property(nonatomic) _Bool darkStyle; // @synthesize darkStyle=_darkStyle;
 @property(nonatomic) _Bool imageIsSquare; // @synthesize imageIsSquare=_imageIsSquare;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setImage:(id)arg1;

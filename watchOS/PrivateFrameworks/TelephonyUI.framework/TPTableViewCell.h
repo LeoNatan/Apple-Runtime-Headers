@@ -29,9 +29,8 @@
 @property(nonatomic, getter=isForegroundViewLoaded) _Bool foregroundViewLoaded; // @synthesize foregroundViewLoaded=_foregroundViewLoaded;
 @property(nonatomic, getter=isConstraintsLoaded) _Bool constraintsLoaded; // @synthesize constraintsLoaded=_constraintsLoaded;
 @property(nonatomic, getter=isAccessiblityConstraintsEnabled) _Bool accessiblityConstraintsEnabled; // @synthesize accessiblityConstraintsEnabled=_accessiblityConstraintsEnabled;
+@property(retain, nonatomic) UIView *foregroundView; // @synthesize foregroundView=_foregroundView;
 - (void).cxx_destruct;
-- (void)setForegroundView:(id)arg1;
-@property(readonly, nonatomic) UIView *foregroundView; // @synthesize foregroundView=_foregroundView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) struct UIEdgeInsets intrinsicSeparatorInset;

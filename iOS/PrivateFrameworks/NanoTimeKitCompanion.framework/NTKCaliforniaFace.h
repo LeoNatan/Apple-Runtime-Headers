@@ -26,6 +26,7 @@
 - (id)_customEditModes;
 - (_Bool)complicationExistenceInvalidatesSnapshot;
 - (id)_localizedNameForComplicationSlot:(id)arg1;
+- (void)setIsLibraryFace:(_Bool)arg1;
 
 @end
 

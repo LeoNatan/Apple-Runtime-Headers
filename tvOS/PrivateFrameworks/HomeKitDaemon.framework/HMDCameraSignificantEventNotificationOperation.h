@@ -13,19 +13,21 @@
 @interface HMDCameraSignificantEventNotificationOperation : HMDCameraClipModelOperation <HMFLogging>
 {
     NSDate *_dateOfOccurrence;
-    unsigned long long _eventType;
+    unsigned long long _significantEventReason;
     NSData *_heroFrameData;
     double _offset;
     NSDictionary *_homePresenceByPairingIdentity;
+    unsigned long long _confidenceLevel;
     NSURL *_heroFrameURL;
 }
 
 + (id)logCategory;
 @property(readonly) NSURL *heroFrameURL; // @synthesize heroFrameURL=_heroFrameURL;
+@property(readonly) unsigned long long confidenceLevel; // @synthesize confidenceLevel=_confidenceLevel;
 @property(readonly) NSDictionary *homePresenceByPairingIdentity; // @synthesize homePresenceByPairingIdentity=_homePresenceByPairingIdentity;
 @property(readonly) double offset; // @synthesize offset=_offset;
 @property(readonly) NSData *heroFrameData; // @synthesize heroFrameData=_heroFrameData;
-@property(readonly) unsigned long long eventType; // @synthesize eventType=_eventType;
+@property(readonly) unsigned long long significantEventReason; // @synthesize significantEventReason=_significantEventReason;
 @property(readonly) NSDate *dateOfOccurrence; // @synthesize dateOfOccurrence=_dateOfOccurrence;
 - (void).cxx_destruct;
 - (id)attributeDescriptions;
@@ -34,7 +36,7 @@
 - (void)cancelWithError:(id)arg1;
 - (void)finish;
 - (void)main;
-- (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3 dateOfOccurrence:(id)arg4 significantEventType:(unsigned long long)arg5 heroFrameData:(id)arg6 offset:(double)arg7 homePresenceByPairingIdentity:(id)arg8 dataSource:(id)arg9;
+- (id)initWithClipModelID:(id)arg1 localZone:(id)arg2 encryptionManager:(id)arg3 dateOfOccurrence:(id)arg4 significantEventReason:(unsigned long long)arg5 confidenceLevel:(unsigned long long)arg6 heroFrameData:(id)arg7 offset:(double)arg8 homePresenceByPairingIdentity:(id)arg9 dataSource:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

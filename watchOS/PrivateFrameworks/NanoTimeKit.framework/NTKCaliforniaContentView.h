@@ -64,6 +64,7 @@
 - (id)_digitLayersForStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
 - (id)textForDigit:(unsigned int)arg1 style:(unsigned int)arg2;
 - (id)createLabelForStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
+- (id)pillLayerFromHourMarkerView:(id)arg1;
 - (void)setColorInHourMarkerView:(id)arg1 color:(id)arg2;
 - (void)_createTemporaryDigitsIfNeededWithStyle:(unsigned int)arg1 dial:(unsigned int)arg2;
 - (void)_createDigitsIfNeededWithStyle:(unsigned int)arg1 dial:(unsigned int)arg2;

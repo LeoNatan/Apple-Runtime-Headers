@@ -33,11 +33,12 @@
 - (void).cxx_destruct;
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodePreviewActionForContext:URL:result:contact:ics:
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodeActionsForContext:URL:result:contact:ics:
-- (_Bool)_phoneNumberIsABusinessNumber:(id)arg1;
+- (_Bool)_phoneNumberIsABusinessNumber:(id)arg1 messageable:(_Bool *)arg2;
 -     // Error parsing type: @24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _phoneNumberFromResult:
--     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyLaunchDefaultActionForPhoneNumberResult:
-- (_Bool)_shouldImmediatelyLaunchDefaultActionForPhoneNumberURL:(id)arg1;
+-     // Error parsing type: B32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16^B24, name: _checkIfBusinessWithResult:messageable:
+- (_Bool)_checkIfBusinessWithURL:(id)arg1 messageable:(_Bool *)arg2;
 - (_Bool)_shouldImmediatelyShowActionSheetForURL:(id)arg1;
+- (id)_ensureURLIsURL:(id)arg1;
 -     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyShowActionSheetForCoreResult:
 - (void)_cacheBusinessPhoneNumber:(id)arg1;
 -     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _interactionDidStartForResult:
@@ -46,6 +47,7 @@
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40@0:8@16@24^@32, name: _resultForIdentifier:forContainer:context:
 -     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: interactionDidStartForResult:
 - (void)interactionDidStartForURL:(id)arg1;
+- (_Bool)shouldIgnoreMessageActionForURL:(id)arg1;
 -     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: shouldImmediatelyLaunchDefaultActionForResult:
 - (_Bool)shouldImmediatelyLaunchDefaultActionForURL:(id)arg1;
 - (void)cancelAction;
@@ -110,6 +112,7 @@
 - (_Bool)shouldImmediatelyLaunchDefaultActionForTapAndHoldAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
 - (_Bool)shouldImmediatelyShowActionSheetForTapAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
 - (id)_resultForLinkAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 subResult:(id *)arg3 url:(id *)arg4 effectiveRange:(struct _NSRange *)arg5;
+- (id)linkAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
 - (struct __DDResult *)resultForLinkAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
 - (id)_subResultAtIndex:(unsigned long long)arg1 ofResult:(id)arg2;
 - (void)resetResultsForTextView:(id)arg1;

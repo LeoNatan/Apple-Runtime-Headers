@@ -59,6 +59,7 @@
 - (int)inputMethodType;
 @property(readonly, nonatomic) TIKeyboardCandidate *candidateForInlineTextSegmentation;
 @property(readonly, nonatomic, getter=isPhraseBoundarySet) _Bool phraseBoundarySet;
+- (_Bool)shouldDelayUpdateComposedText;
 - (void)updateComposedText;
 - (void)wordSearchEngineDidFindPredictionCandidates:(id)arg1;
 - (void)wordSearchEngineDidFindCandidates:(id)arg1 forOperation:(id)arg2;
@@ -128,6 +129,7 @@
 - (id)internalStringToExternal:(id)arg1;
 - (id)externalStringToInternal:(id)arg1;
 - (_Bool)doesComposeText;
+- (id)searchStringForMarkedText;
 - (id)rawInputString;
 @property(readonly, copy, nonatomic) NSString *internalInputString;
 - (void)revertToAmbiguousPinyinSyllable;

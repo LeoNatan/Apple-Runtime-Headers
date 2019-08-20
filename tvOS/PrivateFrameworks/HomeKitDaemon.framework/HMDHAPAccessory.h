@@ -14,7 +14,7 @@
 #import <HomeKitDaemon/HMDTimeInformationMonitorDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessorySymptomHandler, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDNetworkRouterSatelliteProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
+@class HMDAccessorySymptomHandler, HMDCameraProfileSettingsManager, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDNetworkRouterSatelliteProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
 
 @interface HMDHAPAccessory : HMDAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDServiceOwner, HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify, HMDAccessoryUserManagement>
 {
@@ -47,6 +47,7 @@
     HMDNetworkRouterController *_networkRouterController;
     HMFConnectivityInfo *_connectivityInfo;
     NSMutableArray *_powerOnCompletionRoutines;
+    HMDCameraProfileSettingsManager *_cameraProfileSettingsManager;
     NSString *_uniqueIdentifier;
     long long _certificationStatus;
     unsigned long long _activationAttempts;
@@ -100,6 +101,7 @@
 @property(copy, nonatomic) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
 @property(retain, nonatomic) NSString *relayIdentifier; // @synthesize relayIdentifier=_relayIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDCameraProfileSettingsManager *cameraProfileSettingsManager; // @synthesize cameraProfileSettingsManager=_cameraProfileSettingsManager;
 - (id)cameraClipCloudZoneUUIDForRecordingService:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *hapInstanceId;
 - (id)backingStoreTransactionWithName:(id)arg1;

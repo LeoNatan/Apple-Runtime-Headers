@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/NSObject-Protocol.h>
+#import <UIKitCore/UIActivityItemsConfigurationReading-Protocol.h>
 
 @class NSArray, NSItemProvider, NSString;
 
-@protocol _UICopyConfigurationReading <NSObject>
+@protocol _UICopyConfigurationReading <UIActivityItemsConfigurationReading>
 @property(readonly, copy, nonatomic) NSArray *activityItemsForSharing;
 @property(readonly, copy, nonatomic) NSArray *itemProvidersForSharing;
 @property(readonly, nonatomic) BOOL allowsSharing;

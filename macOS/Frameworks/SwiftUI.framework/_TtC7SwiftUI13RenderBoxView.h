@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <SwiftUI/_TtC7SwiftUI15_NSGraphicsView.h>
 
 __attribute__((visibility("hidden")))
-@interface _TtC7SwiftUI13RenderBoxView : NSView
+@interface _TtC7SwiftUI13RenderBoxView : _TtC7SwiftUI15_NSGraphicsView
 {
 }
 

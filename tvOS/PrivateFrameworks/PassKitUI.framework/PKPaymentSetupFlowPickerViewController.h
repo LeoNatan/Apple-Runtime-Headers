@@ -11,7 +11,7 @@
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSMutableArray, NSSet, NSString, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKTableHeaderView;
+@class NSMutableArray, NSSet, NSString, PKPaymentProvisioningController, PKPaymentSetupFlowController, PKPaymentSetupFooterView, PKTableHeaderView;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol>
@@ -20,6 +20,7 @@
     PKPaymentSetupFooterView *_footerView;
     NSMutableArray *_pickerSections;
     NSSet *_betaNetworks;
+    PKPaymentSetupFlowController *_flowController;
     _Bool _hideSetupLaterButton;
     _Bool _allowsManualEntry;
     PKPaymentProvisioningController *_provisioningController;
@@ -49,7 +50,7 @@
 - (void)_prepareViewControllerForProvsioningFlow:(id)arg1;
 - (void)productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)_didSelectProducts:(id)arg1;
+- (void)_didSelectProducts:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)addPickerSection:(id)arg1;
 - (void)addPickerItems:(id)arg1 toSection:(id)arg2;
 - (void)addPickerItem:(id)arg1 toSection:(id)arg2;

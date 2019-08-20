@@ -10,7 +10,7 @@
 #import <VideosUI/TVMediaControllerHosting-Protocol.h>
 #import <VideosUI/VUIPostPlayControllerDelegate-Protocol.h>
 
-@class IKAppContext, NSArray, NSString, TVMediaPlaybackManager, UITapGestureRecognizer, VUIButton, VUIMediaController, VUINowPlayingHudView, VUINowPlayingHudViewLayout, VUINowPlayingSkipButtonLayout, VUINowPlayingViewModel, VUIPostPlayDocumentServiceViewController, VUIVideoAdvisoryView;
+@class IKAppContext, NSArray, NSString, TVMediaPlaybackManager, UITapGestureRecognizer, VUIButton, VUIMediaController, VUINowPlayingHudView, VUINowPlayingSkipButtonLayout, VUINowPlayingViewModel, VUIPostPlayDocumentServiceViewController, VUIVideoAdvisoryView;
 @protocol TVMediaControllerHosting, VUINowPlayingViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -24,12 +24,13 @@ __attribute__((visibility("hidden")))
         _Bool respondsToViewDidDisappear;
         _Bool respondsToEnableUIMode;
         _Bool respondsToSkipIntro;
+        _Bool respondsToFromBeginning;
+        _Bool respondsToMoreInfo;
         _Bool respondsToMenuPress;
         _Bool respondsToSafeAreaChange;
         _Bool respondsToUserDidInteract;
         _Bool respondsToMediaInfoDidChange;
     } _delegateFlags;
-    _Bool _finishedPostPlayBootstrap;
     _Bool _showsNowPlayingHUD;
     _Bool _nowPlayingHudVisible;
     _Bool _popWhenDone;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
     NSArray *_enabledUIModes;
     UIViewController<TVMediaControllerHosting> *_mediaControllerHost;
     VUINowPlayingHudView *_nowPlayingHudView;
-    VUINowPlayingHudViewLayout *_nowPlayingHudLayout;
     VUINowPlayingViewModel *_viewModel;
     VUIButton *_skipIntroButton;
     VUIPostPlayDocumentServiceViewController *_postPlayViewController;
@@ -66,7 +66,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=shouldPopWhenDone) _Bool popWhenDone; // @synthesize popWhenDone=_popWhenDone;
 @property(readonly, nonatomic, getter=isNowPlayingHudVisible) _Bool nowPlayingHudVisible; // @synthesize nowPlayingHudVisible=_nowPlayingHudVisible;
 @property(retain, nonatomic) VUINowPlayingViewModel *viewModel; // @synthesize viewModel=_viewModel;
-@property(retain, nonatomic) VUINowPlayingHudViewLayout *nowPlayingHudLayout; // @synthesize nowPlayingHudLayout=_nowPlayingHudLayout;
 @property(retain, nonatomic) VUINowPlayingHudView *nowPlayingHudView; // @synthesize nowPlayingHudView=_nowPlayingHudView;
 @property(nonatomic) __weak UIViewController<TVMediaControllerHosting> *mediaControllerHost; // @synthesize mediaControllerHost=_mediaControllerHost;
 @property(copy, nonatomic) NSArray *enabledUIModes; // @synthesize enabledUIModes=_enabledUIModes;
@@ -75,17 +74,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showsNowPlayingHUD; // @synthesize showsNowPlayingHUD=_showsNowPlayingHUD;
 @property(retain, nonatomic) VUIMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(retain, nonatomic) TVMediaPlaybackManager *mediaPlaybackManager; // @synthesize mediaPlaybackManager=_mediaPlaybackManager;
-@property(nonatomic) _Bool finishedPostPlayBootstrap; // @synthesize finishedPostPlayBootstrap=_finishedPostPlayBootstrap;
 @property(nonatomic) __weak id <VUINowPlayingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_sendPostPlayShouldUpdateNotification;
-- (void)_updatePostPlayContextDataForCurrentMediaType:(id)arg1 updateEvent:(_Bool)arg2;
+- (void)_sendPostPlayShouldUpdateNotificationExcludingCanonicals:(id)arg1;
+- (void)_updatePostPlayContextDataForCurrentMediaType:(id)arg1 excludingCanonicals:(id)arg2 updateEvent:(_Bool)arg3;
 - (void)_createPostPlayViewController;
 - (struct UIEdgeInsets)_postPlaySafeAreaInset:(_Bool)arg1;
 - (_Bool)_isPostPlayVisible;
-- (void)_showProductPage;
 - (struct UIEdgeInsets)_nowPlayingHudSafeAreaInset:(_Bool)arg1;
 - (void)_createAndConfigureNowPlayingHudView;
 - (id)_documentRefContextDataForCurrentMediaType;
@@ -127,6 +124,7 @@ __attribute__((visibility("hidden")))
 - (id)relinquishOwnership;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
+- (void)showMoreInfo;
 - (void)showStillWatchingAlertWithFinishedHandler:(CDUnknownBlockType)arg1;
 - (void)showSkipIntro:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)showAdvisory:(_Bool)arg1 image:(id)arg2 animated:(_Bool)arg3;
@@ -134,10 +132,12 @@ __attribute__((visibility("hidden")))
 - (void)showNowPlayingHud:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic) _Bool showsProductPageButton;
 - (void)transferMediaControllerIfNeeded;
+- (void)prepareForPostPlayExcludingCanonicals:(id)arg1;
 @property(readonly, nonatomic) NSString *showCanonicalID;
 @property(readonly, nonatomic) NSString *canonicalID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)preferredFocusEnvironments;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

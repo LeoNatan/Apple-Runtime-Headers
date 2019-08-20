@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class HDProfile, HKMCAnalysis;
+@class HDKeyValueDomain, HDProfile, HKMCAnalysis;
 
 __attribute__((visibility("hidden")))
 @interface HDMCDailyAnalytics : NSObject
 {
     HDProfile *_profile;
     HKMCAnalysis *_analysis;
+    HDKeyValueDomain *_keyValueDomain;
 }
 
 + (_Bool)shouldSubmit;

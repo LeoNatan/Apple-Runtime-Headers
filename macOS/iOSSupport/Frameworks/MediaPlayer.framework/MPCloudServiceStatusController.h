@@ -12,33 +12,30 @@
 @interface MPCloudServiceStatusController : NSObject
 {
     _MPCloudServiceStatusControllerImplementation *_implementation;
-    ICUserIdentity *_userIdentity;
     ICMusicSubscriptionFairPlayKeyStatus *_lastKnownSubscriptionFairPlayKeyStatus;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
 + (void)_postNotificationName:(id)arg1 controller:(id)arg2 userInfo:(id)arg3;
 + (void)_postNotificationName:(id)arg1 controller:(id)arg2;
++ (id)_cloudServiceStatusControllerWithUserIdentity:(id)arg1 createIfRequired:(BOOL)arg2;
 + (id)cloudServiceStatusControllerWithUserIdentity:(id)arg1;
 + (id)sharedController;
 + (id)internalToExternalNotificationMapping;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, nonatomic) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus; // @synthesize lastKnownSubscriptionFairPlayKeyStatus=_lastKnownSubscriptionFairPlayKeyStatus;
-@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (void)setImplementation:(id)arg1;
 @property(readonly, nonatomic) _MPCloudServiceStatusControllerImplementation *implementation; // @synthesize implementation=_implementation;
-- (void)getSubscriptionStatusWithOptions:(id)arg1 statusBlock:(CDUnknownBlockType)arg2;
-- (void)endObservingSubscriptionStatus;
 - (void)endObservingSubscriptionAvailability;
 - (void)endObservingPurchaseHistoryEnabled;
 - (void)endObservingFairPlaySubscriptionStatus;
 - (void)endObservingMatchStatus;
 - (void)endObservingCloudLibraryEnabled;
-- (void)beginObservingSubscriptionStatus;
 - (void)beginObservingSubscriptionAvailability;
 - (void)beginObservingPurchaseHistoryEnabled;
 - (void)beginObservingFairPlaySubscriptionStatus;
+- (void)refreshMusicSubscriptionStatus;
 - (void)beginObservingMatchStatus;
 - (void)beginObservingCloudLibraryEnabled;
 @property(readonly, copy, nonatomic) ICMusicSubscriptionStatus *musicSubscriptionStatus;
@@ -49,7 +46,9 @@
 @property(readonly, nonatomic, getter=isSubscriptionAvailable) BOOL subscriptionAvailable;
 @property(readonly, nonatomic, getter=isPurchaseHistoryEnabled) BOOL purchaseHistoryEnabled;
 @property(readonly, nonatomic, getter=isCloudLibraryEnabled) BOOL cloudLibraryEnabled;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity;
 - (void)_receivedImplementationNotification:(id)arg1;
+- (id)description;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 

@@ -15,6 +15,7 @@
 - (id)findLEImage;
 - (id)findNonAppleImage;
 - (id)findApplePIDVIDImage;
+- (id)findGameControllerImage;
 - (id)findiPhoneImage;
 - (id)findiPadImage;
 - (id)findMacImage;

@@ -15,6 +15,7 @@
 - (id)_viewControllerToPresentForNetworkConfigurationGroupItem:(id)arg1;
 - (unsigned long long)didSelectItem:(id)arg1;
 - (_Bool)canSelectItem:(id)arg1;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(_Bool)arg3;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;
 - (Class)cellClassForItem:(id)arg1;
 - (id)presentNetworkConfigurationSettingsForItem:(id)arg1 animated:(_Bool)arg2;

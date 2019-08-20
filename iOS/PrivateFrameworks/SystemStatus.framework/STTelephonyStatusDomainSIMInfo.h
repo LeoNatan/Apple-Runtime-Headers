@@ -20,6 +20,7 @@
     unsigned long long _signalStrengthBars;
     unsigned long long _maxSignalStrengthBars;
     unsigned long long _serviceState;
+    unsigned long long _cellularServiceState;
     NSString *_serviceDescription;
     NSString *_secondaryServiceDescription;
     unsigned long long _dataNetworkType;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) unsigned long long dataNetworkType; // @synthesize dataNetworkType=_dataNetworkType;
 @property(readonly, copy, nonatomic) NSString *secondaryServiceDescription; // @synthesize secondaryServiceDescription=_secondaryServiceDescription;
 @property(readonly, copy, nonatomic) NSString *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
+@property(readonly, nonatomic) unsigned long long cellularServiceState; // @synthesize cellularServiceState=_cellularServiceState;
 @property(readonly, nonatomic) unsigned long long serviceState; // @synthesize serviceState=_serviceState;
 @property(readonly, nonatomic) unsigned long long maxSignalStrengthBars; // @synthesize maxSignalStrengthBars=_maxSignalStrengthBars;
 @property(readonly, nonatomic) unsigned long long signalStrengthBars; // @synthesize signalStrengthBars=_signalStrengthBars;
@@ -57,7 +59,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithSIMPresent:(_Bool)arg1 label:(id)arg2 shortLabel:(id)arg3 signalStrengthBars:(unsigned long long)arg4 maxSignalStrengthBars:(unsigned long long)arg5 serviceState:(unsigned long long)arg6 serviceDescription:(id)arg7 secondaryServiceDescription:(id)arg8 dataNetworkType:(unsigned long long)arg9 providingDataConnection:(_Bool)arg10 preferredForDataConnections:(_Bool)arg11 registeredWithoutCellular:(_Bool)arg12 callForwardingEnabled:(_Bool)arg13;
+- (id)initWithSIMPresent:(_Bool)arg1 label:(id)arg2 shortLabel:(id)arg3 signalStrengthBars:(unsigned long long)arg4 maxSignalStrengthBars:(unsigned long long)arg5 serviceState:(unsigned long long)arg6 cellularServiceState:(unsigned long long)arg7 serviceDescription:(id)arg8 secondaryServiceDescription:(id)arg9 dataNetworkType:(unsigned long long)arg10 providingDataConnection:(_Bool)arg11 preferredForDataConnections:(_Bool)arg12 registeredWithoutCellular:(_Bool)arg13 callForwardingEnabled:(_Bool)arg14;
 - (id)initWithSIMInfo:(id)arg1;
 - (id)init;
 

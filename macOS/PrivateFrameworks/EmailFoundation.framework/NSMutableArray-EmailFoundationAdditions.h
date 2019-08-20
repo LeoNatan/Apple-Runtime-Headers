@@ -7,12 +7,14 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (EmailFoundationAdditions)
+- (void)ef_trimToCount:(unsigned long long)arg1 fromStart:(BOOL)arg2;
 - (void)ef_addOptionalObject:(id)arg1;
 - (unsigned long long)ef_removeObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
 - (unsigned long long)ef_removeObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
 - (unsigned long long)ef_insertObjectIfAbsent:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
 - (unsigned long long)ef_insertObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3 allowDuplicates:(BOOL)arg4;
 - (unsigned long long)ef_insertObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2 allowDuplicates:(BOOL)arg3;
+- (unsigned long long)ef_insertObject:(id)arg1 usingSortDescriptors:(id)arg2;
 - (void)ef_reverseObjects;
 - (void)ef_addAbsentObjectsFromArrayAccordingToEquals:(id)arg1;
 - (void)ef_moveObjectAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;

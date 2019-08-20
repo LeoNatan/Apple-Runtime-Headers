@@ -16,9 +16,9 @@
 }
 
 + (id)libraryViewWithUserIdentity:(id)arg1;
-+ (id)defaultLibraryView;
 + (id)personalizedResponseForContentDescriptor:(id)arg1 requestedProperties:(id)arg2;
-+ (id)sharedQueue;
++ (id)preferredQueue;
++ (BOOL)requiresNetwork;
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) MPSectionedCollection *representedObjects; // @synthesize representedObjects=_representedObjects;
 @property(readonly, nonatomic) MPSectionedCollection *unpersonalizedContentDescriptors; // @synthesize unpersonalizedContentDescriptors=_unpersonalizedContentDescriptors;

@@ -35,8 +35,12 @@
 - (id)basalBodyTempForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)sexualActivityForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)completeOnboardingForDemoPerson:(id)arg1;
+- (void)addSymptomSampleForDemoPersonFromWatch:(id)arg1 date:(id)arg2 categoryType:(id)arg3 objectCollection:(id)arg4;
+- (void)addMenstruationSampleForDemoPersonFromWatch:(id)arg1 date:(id)arg2 flow:(struct HDDemoDataMenstrualFlow)arg3 objectCollection:(id)arg4;
 - (void)generateSamplesForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3 objectCollection:(id)arg4;
 - (void)setupWithDemoDataGenerator:(id)arg1;
+- (void)generateWatchFirstRunSampleForDemoPerson:(id)arg1 firstDate:(id)arg2 objectCollection:(id)arg3;
+- (void)generatePhoneFirstRunSampleForDemoPerson:(id)arg1 firstDate:(id)arg2 objectCollection:(id)arg3;
 - (void)generateFirstRunSampleForDemoPerson:(id)arg1 firstDate:(id)arg2 objectCollection:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

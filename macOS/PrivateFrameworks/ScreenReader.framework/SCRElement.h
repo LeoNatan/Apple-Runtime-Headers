@@ -646,6 +646,7 @@
 - (id)typeDescription;
 - (id)statusDescription;
 - (void)appendExpandedStatusDescription:(id)arg1;
+- (void)appendHasPopupDescription:(id)arg1;
 - (void)appendSortOrderStatusDescription:(id)arg1;
 - (void)appendCurrentStatusDescription:(id)arg1;
 - (id)statusDescriptionForARIACurrent;

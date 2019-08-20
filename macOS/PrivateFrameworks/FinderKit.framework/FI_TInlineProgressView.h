@@ -6,17 +6,24 @@
 
 #import <FinderKit/FI_TUpdateLayerView.h>
 
+#import <FinderKit/NSAccessibilityProgressIndicator-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface FI_TInlineProgressView : FI_TUpdateLayerView
+@interface FI_TInlineProgressView : FI_TUpdateLayerView <NSAccessibilityProgressIndicator>
 {
     _Bool _dimmed;
     struct TNSRef<FI_TPieChartProgressLayer, void> _pieChartLayer;
-    struct TNSRef<NSView, void> _templateImageView;
+    struct TNSRef<NSImageView, void> _templateImageView;
 }
 
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)accessibilityMaxValue;
+- (id)accessibilityMinValue;
+- (id)accessibilityValue;
 - (_Bool)isProgressAnimationCompleted;
 - (void)setProgressDidCompleteHandler:(const function_b1fce659 *)arg1;
 @property(nonatomic) double progress; // @dynamic progress;
@@ -25,6 +32,12 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)intrinsicContentSize;
 - (void)layout;
 - (void)initCommon;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -16,6 +16,7 @@
 }
 
 + (void)migrateUserDefaults;
++ (id)_oldDeprecatedAppGroupUserDefaults;
 + (id)appGroupUserDefaults;
 + (id)daemonUserDefaults;
 @property(readonly, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;

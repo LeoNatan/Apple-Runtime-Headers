@@ -11,7 +11,7 @@
 }
 
 + (id)sharedTrainer;
-- (BOOL)trainUtterance:(id)arg1 languageCode:(id)arg2 payload:(BOOL)arg3;
+- (BOOL)trainUtterance:(id)arg1 languageCode:(id)arg2 withAsset:(id)arg3;
 - (BOOL)trainUtterance:(id)arg1 languageCode:(id)arg2;
 
 @end

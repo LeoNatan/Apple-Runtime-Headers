@@ -12,7 +12,7 @@
 + (id)mailAttachmentsFilterColor;
 + (id)mailTodayFilterColor;
 + (id)mailCardBackgroundColor;
-+ (id)mailCellSelectionStateColor;
++ (id)mailCellSelectionStateColorForInterfaceLevel:(long long)arg1;
 + (id)mailSplitViewBackgroundColor;
 + (id)mailTransferStackViewBackgroundColor;
 + (id)mailExpandedConversationViewCellDateLabelColor;

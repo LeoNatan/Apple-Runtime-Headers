@@ -8,19 +8,24 @@
 
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
+@class NSString;
+
 @interface UIDraggingSystemSessionInfo : NSObject <NSSecureCoding>
 {
     _Bool _supportsSystemDrag;
     unsigned int _sessionIdentifier;
     int _processIdentifier;
+    NSString *_sceneIdentifier;
     CDStruct_4c969caf _auditToken;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(nonatomic) _Bool supportsSystemDrag; // @synthesize supportsSystemDrag=_supportsSystemDrag;
 @property(nonatomic) CDStruct_4c969caf auditToken; // @synthesize auditToken=_auditToken;
 @property(nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <PhotosUICore/PXSettings.h>
 
-@class PXAlbumsDebugUISettings, PXApplicationSettings, PXAssetVariationsSettings, PXAssetsSceneSettings, PXCompleteMyMomentSettings, PXCuratedLibrarySettings, PXDiagnosticsSettings, PXDragAndDropSettings, PXForYouSettings, PXGPPTSettings, PXGridKitSettings, PXGridSettings, PXImportSettings, PXKitSettings, PXMemoriesFeedSettings, PXMemoriesRelatedSettings, PXModelSettings, PXPeopleDetailSettings, PXPeopleUISettings, PXPhotoPickerSettings, PXPhotosDataSourceSettings, PXPhotosDetailsHeaderTileSettings, PXPhotosDetailsSettings, PXRelatedSettings, PXSearchSettings, PXSharingSettings, PXSnapBackSettings, PXTilingSettings, PXViewControllerTransitionSettings;
+@class PXAlbumsDebugUISettings, PXApplicationSettings, PXAssetVariationsSettings, PXAssetsSceneSettings, PXCompleteMyMomentSettings, PXCuratedLibrarySettings, PXDiagnosticsSettings, PXDragAndDropSettings, PXFooterSettings, PXForYouSettings, PXGPPTSettings, PXGridKitSettings, PXGridSettings, PXImportSettings, PXKitSettings, PXMemoriesFeedSettings, PXMemoriesRelatedSettings, PXModelSettings, PXPeopleDetailSettings, PXPeopleUISettings, PXPhotoPickerSettings, PXPhotosDataSourceSettings, PXPhotosDetailsHeaderTileSettings, PXPhotosDetailsSettings, PXRelatedSettings, PXSearchSettings, PXSharingSettings, PXSnapBackSettings, PXTilingSettings, PXViewControllerTransitionSettings;
 
 @interface PXRootSettings : PXSettings
 {
@@ -41,12 +41,14 @@
     PXSearchSettings *_searchSettings;
     PXAlbumsDebugUISettings *_albumsDebugUISettings;
     PXApplicationSettings *_applicationSettings;
+    PXFooterSettings *_footerSettings;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
 @property(nonatomic) _Bool showWIPAlertRadar; // @synthesize showWIPAlertRadar=_showWIPAlertRadar;
 @property(nonatomic) _Bool showTapToRadar; // @synthesize showTapToRadar=_showTapToRadar;
+@property(retain, nonatomic) PXFooterSettings *footerSettings; // @synthesize footerSettings=_footerSettings;
 @property(retain, nonatomic) PXApplicationSettings *applicationSettings; // @synthesize applicationSettings=_applicationSettings;
 @property(retain, nonatomic) PXAlbumsDebugUISettings *albumsDebugUISettings; // @synthesize albumsDebugUISettings=_albumsDebugUISettings;
 @property(retain, nonatomic) PXSearchSettings *searchSettings; // @synthesize searchSettings=_searchSettings;

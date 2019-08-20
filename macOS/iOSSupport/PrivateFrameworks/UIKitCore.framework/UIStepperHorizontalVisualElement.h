@@ -15,6 +15,10 @@ __attribute__((visibility("hidden")))
 @interface UIStepperHorizontalVisualElement : UIView <UIStepperVisualElement>
 {
     BOOL _isRtoL;
+    UIImageView *_leftBackground;
+    UIImageView *_rightBackground;
+    UIImageView *_leftHighlight;
+    UIImageView *_rightHighlight;
     UIImageView *_middleView;
     UIButton *_plusButton;
     UIButton *_minusButton;
@@ -73,17 +77,21 @@ __attribute__((visibility("hidden")))
 - (BOOL)pointMostlyInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateDividerImageForButtonState;
 - (void)_updateBackgroundForButtonState;
-- (void)_updateButton:(id)arg1 lowerBackgroundView:(id)arg2 upperBackgroundView:(id)arg3 highlightView:(id)arg4 lowerBackgroundImage:(id)arg5 upperBackgroundImage:(id)arg6 highlightImage:(id)arg7 onRight:(BOOL)arg8;
+- (void)_updateButton:(id)arg1 backgroundView:(id)arg2 highlightView:(id)arg3 backgroundImage:(id)arg4 highlightImage:(id)arg5 onRight:(BOOL)arg6;
 - (void)_updateHighlight:(id)arg1 button:(id)arg2 onRight:(BOOL)arg3;
 - (id)_alphaAnimator:(BOOL)arg1;
+- (struct CGRect)_rightHighlightInsetFrame;
 - (struct CGRect)_rightHighlightFrame;
+- (struct CGRect)_leftHighlightInsetFrame;
 - (struct CGRect)_leftHighlightFrame;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_updateHighlightingAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateButtonEnabled;
 - (void)_commonStepperInit;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 forControl:(id)arg2;
 - (struct CGSize)intrinsicSizeWithinSize:(struct CGSize)arg1 forControl:(id)arg2;
+- (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

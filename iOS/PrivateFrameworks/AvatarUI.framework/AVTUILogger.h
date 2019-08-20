@@ -194,6 +194,8 @@
 - (void)fetchingRecords:(CDUnknownBlockType)arg1;
 - (void)deletingRecords:(CDUnknownBlockType)arg1;
 - (void)savingRecords:(CDUnknownBlockType)arg1;
+- (void)logPerformedRecentStickersMigration:(_Bool)arg1;
+- (void)logFetchedOrphanedRecentSticker:(id)arg1;
 - (void)logErrorFetchingRecentStickers:(id)arg1;
 - (void)logErrorSavingRecentSticker:(id)arg1;
 - (void)logRecordsNotFoundInRecordStore:(id)arg1;

@@ -38,9 +38,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_newStackView;
 - (id)_newContainerView;
-- (id)iconForData:(id)arg1 scale:(double)arg2;
-- (id)iconForName:(id)arg1;
-- (id)iconForContext:(id)arg1;
 - (void)setAutomaticResizeDelay:(double)arg1;
 - (void)endAutomaticResizeDisabled;
 - (void)beginAutomaticResizeDisabled;

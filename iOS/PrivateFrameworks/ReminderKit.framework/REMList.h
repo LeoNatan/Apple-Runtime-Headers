@@ -53,8 +53,10 @@
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+@property(readonly, nonatomic) _Bool isSharedToMe;
 @property(readonly, nonatomic) _Bool isOwnedByMe;
 @property(readonly, nonatomic) _Bool isShared;
+@property(readonly, nonatomic) _Bool canBeIncludedInGroup;
 @property(readonly, nonatomic) _Bool canBeShared;
 - (id)ekColor;
 @property(readonly, nonatomic) NSOrderedSet *reminderIDsOrdering;

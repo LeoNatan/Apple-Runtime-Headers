@@ -140,6 +140,7 @@
 - (id)newRenderRequestForComposition:(id)arg1 scalePolicy:(id)arg2 regionPolicy:(id)arg3;
 - (id)init;
 - (id)initWithMediaView:(id)arg1;
+- (void)_releaseAVObjects;
 - (void)_withComposition:(id)arg1 visitRenderClient:(CDUnknownBlockType)arg2;
 
 // Remaining properties

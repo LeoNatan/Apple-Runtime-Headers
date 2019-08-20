@@ -29,6 +29,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+- (_Bool)scalesLargeContentImage;
+- (id)largeContentImage;
+- (id)largeContentTitle;
 - (id)_imageLayout;
 - (id)_titleLayout;
 - (void)prepareForReuse;

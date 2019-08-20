@@ -63,7 +63,7 @@
 - (id)initWithPresentingViewController:(id)arg1 delegate:(id)arg2;
 - (void)_delegateDeclinedDismissingPresentedContentWithTrigger:(long long)arg1;
 - (void)_delegateWillDismissPresentedContentWithTrigger:(long long)arg1;
-- (void)_delegateShouldFinishInteractionWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_delegateShouldFinishInteractionThatReachedForceThreshold:(_Bool)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_delegateDidEndUserInteraction;
 - (void)_delegateWillBeginUserInteraction;
 - (_Bool)_delegateShouldBeginInteractionWithTouchAtLocation:(struct CGPoint)arg1;

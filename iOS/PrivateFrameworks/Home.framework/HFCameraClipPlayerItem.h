@@ -9,12 +9,13 @@
 #import <Home/AVAssetResourceLoaderDelegate-Protocol.h>
 #import <Home/HFCameraClipQueuableItem-Protocol.h>
 
-@class HFCameraClipVideoAssetContextProvider, HMCameraClip, NSObject, NSString;
+@class HFCameraClipVideoAssetContextProvider, HMCameraClip, HMCameraClipManager, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HFCameraClipPlayerItem : AVPlayerItem <AVAssetResourceLoaderDelegate, HFCameraClipQueuableItem>
 {
     HMCameraClip *_clip;
+    HMCameraClipManager *_clipManager;
     NSObject<OS_dispatch_queue> *_resourceLoaderQueue;
     HFCameraClipVideoAssetContextProvider *_videoContextProvider;
 }
@@ -23,12 +24,13 @@
 + (id)_playlistURL;
 @property(readonly, nonatomic) HFCameraClipVideoAssetContextProvider *videoContextProvider; // @synthesize videoContextProvider=_videoContextProvider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resourceLoaderQueue; // @synthesize resourceLoaderQueue=_resourceLoaderQueue;
+@property(readonly, nonatomic) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(readonly, nonatomic) HMCameraClip *clip; // @synthesize clip=_clip;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 @property(readonly, nonatomic, getter=isPlayable) _Bool playable;
-- (id)initWithClip:(id)arg1;
+- (id)initWithClipManager:(id)arg1 clip:(id)arg2;
 - (id)initWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 
 // Remaining properties

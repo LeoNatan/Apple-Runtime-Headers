@@ -16,12 +16,12 @@
     unsigned long long _lastSequenceNumber;
     unsigned long long _firstSequenceNumber;
     double _nominalFrameRate;
-    struct CGSize _naturalSize;
+    struct CGSize _dimensions;
     CDStruct_1b6d18a9 _assetDuration;
 }
 
 + (id)logCategory;
-@property(readonly) struct CGSize naturalSize; // @synthesize naturalSize=_naturalSize;
+@property(readonly) struct CGSize dimensions; // @synthesize dimensions=_dimensions;
 @property(readonly) double nominalFrameRate; // @synthesize nominalFrameRate=_nominalFrameRate;
 @property(readonly) unsigned long long firstSequenceNumber; // @synthesize firstSequenceNumber=_firstSequenceNumber;
 @property(readonly) unsigned long long lastSequenceNumber; // @synthesize lastSequenceNumber=_lastSequenceNumber;
@@ -31,7 +31,7 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithAssetData:(id)arg1 error:(id *)arg2;
-- (id)initWithAssetDuration:(CDStruct_1b6d18a9)arg1 creationDate:(id)arg2 firstSequenceNumber:(unsigned long long)arg3 lastSequenceNumber:(unsigned long long)arg4 nominalFrameRate:(double)arg5 naturalSize:(struct CGSize)arg6;
+- (id)initWithAssetDuration:(CDStruct_1b6d18a9)arg1 creationDate:(id)arg2 firstSequenceNumber:(unsigned long long)arg3 lastSequenceNumber:(unsigned long long)arg4 nominalFrameRate:(double)arg5 dimensions:(struct CGSize)arg6;
 - (id)initWithAssetDuration:(CDStruct_1b6d18a9)arg1 creationDate:(id)arg2;
 - (id)initWithAssetDuration:(CDStruct_1b6d18a9)arg1 creationDate:(id)arg2 firstSequenceNumber:(unsigned long long)arg3 lastSequenceNumber:(unsigned long long)arg4;
 

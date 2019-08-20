@@ -18,6 +18,7 @@
     _Bool _didFinishInitialLoad;
     _Bool _didFinishInitialViewAppear;
     _Bool _visible;
+    _Bool _hasInvalidatedDummyTabs;
     MCDPCContainer *_container;
     UITabBarController *_tabBarController;
     UITabBarController *_hostTabBarController;
@@ -28,6 +29,7 @@
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
+@property(nonatomic) _Bool hasInvalidatedDummyTabs; // @synthesize hasInvalidatedDummyTabs=_hasInvalidatedDummyTabs;
 @property(nonatomic) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) _Bool didFinishInitialViewAppear; // @synthesize didFinishInitialViewAppear=_didFinishInitialViewAppear;
 @property(nonatomic) _Bool didFinishInitialLoad; // @synthesize didFinishInitialLoad=_didFinishInitialLoad;

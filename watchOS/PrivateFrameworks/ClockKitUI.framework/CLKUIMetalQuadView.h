@@ -26,7 +26,7 @@
 - (id)_newRenderPassDescriptor;
 - (id)metalLayer;
 - (void)discardContents;
-- (_Bool)_displayWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_displayAndCheckForDrawable:(_Bool)arg1 WithCompletion:(CDUnknownBlockType)arg2;
 - (id)_snapshotTexture:(id)arg1 scale:(float)arg2;
 - (id)_snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
 - (void)_handleQuadArrayChange:(id)arg1;

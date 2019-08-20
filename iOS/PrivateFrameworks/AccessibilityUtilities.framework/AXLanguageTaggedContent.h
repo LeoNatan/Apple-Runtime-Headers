@@ -45,6 +45,7 @@
 - (_Bool)_isStringCombinationOfCommonAndEmoji:(id)arg1;
 - (void)tagContent;
 - (_Bool)_addLanguageTagForCurrentChunk;
+- (_Bool)_addLanguageTagForDateIfNecessary;
 - (id)_overrideLanguageDetection:(id)arg1;
 - (CDStruct_3a8d9e70 *)_languageHintsEvenlyDistributedWithProbability:(float)arg1 excludingHints:(id)arg2;
 - (id)_allLangIDs;

@@ -15,7 +15,6 @@
 
 + (id)collectionForBookmarkDataDictionaryRepresentation:(id)arg1 error:(id *)arg2;
 + (id)collectionWithMainResourceURL:(id)arg1;
-+ (id)collectionWithMainResourceURL:(id)arg1 typeIdentifier:(id)arg2;
 @property(retain) NSMutableDictionary *urlReferencesByRole; // @synthesize urlReferencesByRole=_urlReferencesByRole;
 - (void).cxx_destruct;
 - (BOOL)copyURL:(id)arg1 forRole:(id)arg2 toDirectory:(id)arg3 error:(id *)arg4;
@@ -31,8 +30,9 @@
 - (id)typeIdentifierForResourceURLWithRole:(id)arg1;
 - (BOOL)containsAnyRole:(id)arg1;
 - (BOOL)containsAllRoles:(id)arg1;
+- (void)setShouldDeleteURLOnDeallocation:(BOOL)arg1 forRole:(id)arg2;
 - (id)resourceURLForRole:(id)arg1;
-- (void)setResourceURL:(id)arg1 typeIdentifier:(id)arg2 forRole:(id)arg3;
+- (void)setResourceURL:(id)arg1 forRole:(id)arg2 deleteOnDeallocation:(BOOL)arg3;
 - (void)setResourceURL:(id)arg1 forRole:(id)arg2;
 - (id)init;
 

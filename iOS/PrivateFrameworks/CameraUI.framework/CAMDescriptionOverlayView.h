@@ -19,7 +19,9 @@
     CAShapeLayer *__blackoutMask;
     CAMPortraitModeDescriptionOverlayPrimaryVibrancyEffectView *__primaryVibrancyEffectView;
     UILabel *__titleLabel;
+    UILabel *__descriptionTitleLabel;
     UILabel *__descriptionLabel;
+    UILabel *__infoTitleLabel;
     UILabel *__infoLabel;
     UIButton *__acknowledgmentButton;
     double __descriptionFontSizeMultiplier;
@@ -31,7 +33,9 @@
 @property(nonatomic, setter=_setDescriptionFontSizeMultiplier:) double _descriptionFontSizeMultiplier; // @synthesize _descriptionFontSizeMultiplier=__descriptionFontSizeMultiplier;
 @property(readonly, nonatomic) UIButton *_acknowledgmentButton; // @synthesize _acknowledgmentButton=__acknowledgmentButton;
 @property(readonly, nonatomic) UILabel *_infoLabel; // @synthesize _infoLabel=__infoLabel;
+@property(readonly, nonatomic) UILabel *_infoTitleLabel; // @synthesize _infoTitleLabel=__infoTitleLabel;
 @property(readonly, nonatomic) UILabel *_descriptionLabel; // @synthesize _descriptionLabel=__descriptionLabel;
+@property(readonly, nonatomic) UILabel *_descriptionTitleLabel; // @synthesize _descriptionTitleLabel=__descriptionTitleLabel;
 @property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel=__titleLabel;
 @property(readonly, nonatomic) CAMPortraitModeDescriptionOverlayPrimaryVibrancyEffectView *_primaryVibrancyEffectView; // @synthesize _primaryVibrancyEffectView=__primaryVibrancyEffectView;
 @property(readonly, nonatomic) CAShapeLayer *_blackoutMask; // @synthesize _blackoutMask=__blackoutMask;
@@ -46,7 +50,9 @@
 - (double)maxInfoTextWidthForNarrowWidth:(_Bool)arg1 isLandscape:(_Bool)arg2 usingFontSizeMultiplier:(double)arg3;
 - (double)maxDescriptionTextWidthForNarrowWidth:(_Bool)arg1 isLandscape:(_Bool)arg2 usingFontSizeMultiplier:(double)arg3;
 - (id)infoTextUsingNarrowWidth:(_Bool)arg1;
+- (id)infoTitleTextUsingNarrowWidth:(_Bool)arg1;
 - (id)descriptionTextUsingNarrowWidth:(_Bool)arg1;
+- (id)descriptionTitleTextUsingNarrowWidth:(_Bool)arg1;
 - (id)acknowledgmentTextUsingNarrowWidth:(_Bool)arg1;
 - (id)titleTextUsingNarrowWidth:(_Bool)arg1;
 - (void)setVisible:(_Bool)arg1 animationDuration:(double)arg2 completion:(CDUnknownBlockType)arg3;

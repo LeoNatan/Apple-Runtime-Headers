@@ -8,6 +8,7 @@
 
 @interface NSError (AppSSOKerberos)
 + (id)kerberosErrorWithCode:(long long)arg1 withDescription:(id)arg2;
++ (id)sourceAppNotAllowed;
 + (id)unhandledKerberosResult;
 + (id)hostNameMissing;
 + (id)invalidKerberosOperation;

@@ -24,11 +24,11 @@
 - (_Bool)setProceduralWallpaperInfo:(NSDictionary *)arg1 forVariants:(long long)arg2;
 - (NSDictionary *)proceduralWallpaperInfoForVariant:(long long)arg1;
 - (void)removeVideoForVariant:(long long)arg1;
-- (_Bool)setOriginalVideoURL:(NSURL *)arg1 forVariant:(long long)arg2;
-- (_Bool)setVideoURL:(NSURL *)arg1 forVariant:(long long)arg2;
-- (NSURL *)verifiedOriginalVideoURLForVariant:(long long)arg1;
-- (NSURL *)verifiedVideoURLForVariant:(long long)arg1;
-- (NSURL *)unverifiedVideoURLForVariant:(long long)arg1;
+- (_Bool)setOriginalVideoURL:(NSURL *)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setVideoURL:(NSURL *)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (NSURL *)verifiedOriginalVideoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (NSURL *)verifiedVideoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (NSURL *)unverifiedVideoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (void)removeWallpaperImageHashDataForVariants:(long long)arg1;
 - (NSData *)wallpaperImageHashDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (_Bool)setWallpaperImageHashData:(NSData *)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;

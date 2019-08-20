@@ -13,6 +13,7 @@
 @interface _UIAction : NSObject <_UIActionGroupable>
 {
     unsigned long long _options;
+    long long _type;
     NSString *_title;
     UIImage *_image;
     long long _style;
@@ -24,6 +25,7 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

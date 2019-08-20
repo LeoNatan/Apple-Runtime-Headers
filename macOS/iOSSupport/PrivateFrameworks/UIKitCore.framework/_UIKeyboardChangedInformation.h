@@ -13,11 +13,12 @@
 
 @interface _UIKeyboardChangedInformation : NSObject <NSCopying, NSSecureCoding>
 {
+    struct os_unfair_lock_s _animationFenceLock;
+    BKSAnimationFenceHandle *_animationFence;
     BOOL _keyboardOnScreen;
     BOOL _shouldTakeSnapshot;
     NSString *_sourceCanvasIdentifier;
     NSString *_sourceDisplayIdentifier;
-    BKSAnimationFenceHandle *_animationFence;
     struct CGRect _keyboardPosition;
     struct CGRect _keyboardPositionWithIAV;
 }
@@ -25,12 +26,13 @@
 + (BOOL)supportsSecureCoding;
 + (id)informationForKeyboardUp:(struct CGRect)arg1 withIAV:(struct CGRect)arg2;
 + (id)informationForKeyboardDown;
++ (void)setDisallowsFencing:(BOOL)arg1;
++ (BOOL)disallowsFencing;
 + (id)animationFence;
 @property(nonatomic) BOOL shouldTakeSnapshot; // @synthesize shouldTakeSnapshot=_shouldTakeSnapshot;
 @property(readonly) BOOL keyboardOnScreen; // @synthesize keyboardOnScreen=_keyboardOnScreen;
 @property(readonly) struct CGRect keyboardPositionWithIAV; // @synthesize keyboardPositionWithIAV=_keyboardPositionWithIAV;
 @property(readonly) struct CGRect keyboardPosition; // @synthesize keyboardPosition=_keyboardPosition;
-@property(readonly, copy) BKSAnimationFenceHandle *animationFence; // @synthesize animationFence=_animationFence;
 @property(copy, nonatomic) NSString *sourceDisplayIdentifier; // @synthesize sourceDisplayIdentifier=_sourceDisplayIdentifier;
 @property(copy, nonatomic) NSString *sourceCanvasIdentifier; // @synthesize sourceCanvasIdentifier=_sourceCanvasIdentifier;
 - (void).cxx_destruct;
@@ -42,6 +44,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithoutFence;
 - (id)copyWithoutIAV;
+@property(readonly, copy) BKSAnimationFenceHandle *animationFence;
 - (id)initWithKeyboardRect:(struct CGRect)arg1 iavPosition:(struct CGRect)arg2 onScreen:(BOOL)arg3 takeSnapshot:(BOOL)arg4 fence:(id)arg5;
 
 @end

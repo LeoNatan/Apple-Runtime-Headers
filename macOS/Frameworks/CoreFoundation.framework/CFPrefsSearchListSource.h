@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 - (struct __CFDictionary *)alreadylocked_copyDictionary;
 - (void)alreadylocked_reloadCacheIfStale;
 - (long long)generationCount;
-- (void)handleRemoteChangeNotificationForDomainIdentifier:(struct __CFString *)arg1;
+- (void)handleChangeNotificationForDomainIdentifier:(struct __CFString *)arg1 isRemote:(BOOL)arg2;
 - (long long)alreadylocked_generationCountFromListOfSources:(id *)arg1 count:(long long)arg2;
 - (void)synchronouslySendDaemonMessage:(id)arg1 andAgentMessage:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (id)createRequestNewContentMessageForDaemon:(int)arg1;

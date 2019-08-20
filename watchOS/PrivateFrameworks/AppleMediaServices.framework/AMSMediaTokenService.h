@@ -59,6 +59,7 @@
 @property(nonatomic) __weak AMSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSString *keychainAccessGroup;
 @property(retain, nonatomic) AMSMediaToken *cachedMediaToken;
+- (id)initWithClientIdentifier:(id)arg1 keychainAccessGroup:(id)arg2 bag:(id)arg3;
 - (id)initWithClientIdentifier:(id)arg1 bag:(id)arg2;
 
 // Remaining properties

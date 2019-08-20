@@ -6,14 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <CarouselUIServices/CUISBulletinClientFactoryActionDelegate-Protocol.h>
+
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 @protocol CUISBulletinClientFactoryDelegate;
 
-@interface CUISBulletinClientFactory : NSObject
+@interface CUISBulletinClientFactory : NSObject <CUISBulletinClientFactoryActionDelegate>
 {
     NSArray *_bulletins;
     NSObject *_attachment;
     NSMutableArray *_mutableNotifications;
+    NSMutableDictionary *_actionIdentifiersToActions;
+    NSArray *_notificationActions;
     NSMutableArray *_mutableBulletins;
     NSMutableDictionary *_notificationToBulletin;
     _Bool _playedSound;
@@ -48,8 +52,9 @@
 - (_Bool)shouldDismissExistingPresentationWithModifiedBulletin:(id)arg1;
 - (_Bool)shouldClearBulletinsAfterDismissalForReason:(unsigned int)arg1;
 - (_Bool)shouldPresentActionMenu;
-- (void)_handleAction:(id)arg1;
-- (id)bbActions;
+- (_Bool)handleNotificationResponse:(id)arg1;
+- (void)handleAction:(id)arg1;
+@property(retain, nonatomic) NSArray *notificationActions;
 - (id)actionMenuPresentation;
 - (id)primaryPagePresentation;
 - (_Bool)isPlayingContinuousAudioFeedback;
@@ -62,6 +67,12 @@
 - (id)initWithBulletins:(id)arg1;
 - (id)initWithBulletins:(id)arg1 attachment:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -106,6 +106,7 @@
 @property(readonly, copy, nonatomic) NSSet *currentLeafIdentifiers;
 @property(readonly, copy, nonatomic) NSSet *leafIconIdentifiers;
 - (id)iconsOfClass:(Class)arg1;
+- (void)addIconsOfClass:(Class)arg1 toSet:(id)arg2;
 - (id)leafIconsForIdentifiers:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *leafIcons;
 - (void)enumerateLeafIconsUsingBlock:(CDUnknownBlockType)arg1;

@@ -16,6 +16,7 @@
 {
     _Bool _retry;
     NSString *_type;
+    NSString *_typeName;
     NSDictionary *_parameters;
     double _executeAfterDuration;
 }
@@ -24,6 +25,7 @@
 @property(nonatomic) _Bool retry; // @synthesize retry=_retry;
 @property(nonatomic) double executeAfterDuration; // @synthesize executeAfterDuration=_executeAfterDuration;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
+@property(retain, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)description;
@@ -32,7 +34,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(id)arg1 parameters:(id)arg2 executeAfterDuration:(double)arg3 retry:(_Bool)arg4;
+- (id)initWithType:(id)arg1 typeName:(id)arg2 parameters:(id)arg3 executeAfterDuration:(double)arg4 retry:(_Bool)arg5;
 - (id)init;
 
 @end

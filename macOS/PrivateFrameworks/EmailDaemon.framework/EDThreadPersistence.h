@@ -83,6 +83,7 @@
 - (void)_iterateWrappedMessagesByConversationForPersistedMessages:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)persistenceDidReconcileProtectedData;
 - (void)persistenceWillReplaceDatabaseID:(long long)arg1 with:(long long)arg2 forTable:(id)arg3 column:(id)arg4;
+- (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
 - (BOOL)_messagesAreJournaledForThreadWithObjectID:(id)arg1;
 - (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
 - (void)persistenceIsChangingConversationID:(long long)arg1 messages:(id)arg2;

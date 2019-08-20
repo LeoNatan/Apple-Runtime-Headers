@@ -15,7 +15,9 @@
 {
     _Bool _joinOnce;
     _Bool _hidden;
+    _Bool _useSSIDPrefix;
     NSString *_SSID;
+    NSString *_SSIDPrefix;
     NSNumber *_lifeTimeInDays;
     long long _securityType;
     NSString *_passphrase;
@@ -24,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool useSSIDPrefix; // @synthesize useSSIDPrefix=_useSSIDPrefix;
 @property(copy) NEHotspotHS20Settings *hs20Settings; // @synthesize hs20Settings=_hs20Settings;
 @property(copy) NEHotspotEAPSettings *eapSettings; // @synthesize eapSettings=_eapSettings;
 @property(copy) NSString *passphrase; // @synthesize passphrase=_passphrase;
@@ -31,6 +34,7 @@
 @property _Bool hidden; // @synthesize hidden=_hidden;
 @property(copy) NSNumber *lifeTimeInDays; // @synthesize lifeTimeInDays=_lifeTimeInDays;
 @property _Bool joinOnce; // @synthesize joinOnce=_joinOnce;
+@property(readonly) NSString *SSIDPrefix; // @synthesize SSIDPrefix=_SSIDPrefix;
 @property(readonly) NSString *SSID; // @synthesize SSID=_SSID;
 - (void).cxx_destruct;
 - (long long)validate;
@@ -43,6 +47,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithSSIDPrefix:(id)arg1 passphrase:(id)arg2 isWEP:(_Bool)arg3;
+- (id)initWithSSIDPrefix:(id)arg1;
 - (id)initWithHS20Settings:(id)arg1 eapSettings:(id)arg2;
 - (id)initWithSSID:(id)arg1 eapSettings:(id)arg2;
 - (id)initWithSSID:(id)arg1 passphrase:(id)arg2 isWEP:(_Bool)arg3;

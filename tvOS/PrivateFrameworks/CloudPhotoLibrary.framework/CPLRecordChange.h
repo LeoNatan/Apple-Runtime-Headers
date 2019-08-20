@@ -124,6 +124,7 @@
 - (id)resources;
 - (_Bool)supportsDirectDeletion;
 - (_Bool)supportsDeletion;
+- (_Bool)supportsResourceType:(unsigned long long)arg1;
 - (_Bool)supportsResources;
 - (_Bool)isDelete;
 - (_Bool)isFullRecord;

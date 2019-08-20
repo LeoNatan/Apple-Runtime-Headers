@@ -49,6 +49,10 @@
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_mediaControllerStateDidChange;
+- (void)_resetTimers;
+- (void)_transitionToPlayingMediaIfNeeded;
+- (void)_playMedia;
+- (void)_processMediaInfo;
 - (void)_mediaControllerStateWillChange;
 - (long long)_processTransitionToPlayVideoForegroundStateForEvent:(long long)arg1;
 - (long long)_processTransitionToForegroundVideoStateForEvent:(long long)arg1;
@@ -58,9 +62,13 @@
 - (long long)_processShowImageStateForEvent:(long long)arg1;
 - (long long)_processTransitionToImageStateForEvent:(long long)arg1;
 - (long long)_processLoadingStateForEvent:(long long)arg1;
+- (long long)_processPlayingMediaStateForEvent:(long long)arg1;
+- (long long)_processTransitionToPlayingStateMediaForEvent:(long long)arg1;
+- (long long)_processTransitionToLoadingStateForEvent:(long long)arg1;
 - (long long)_processInitialStateForEvent:(long long)arg1;
 - (void)processMediaControllerEvent:(long long)arg1;
 - (void)_setImageProxy:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) UIImage *coverImage;

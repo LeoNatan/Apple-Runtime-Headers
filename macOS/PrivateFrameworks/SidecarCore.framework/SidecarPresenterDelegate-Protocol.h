@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class NSString, NSUUID;
 
 @protocol SidecarPresenterDelegate
+- (void)presenterService:(NSString *)arg1 readyWithUUID:(NSUUID *)arg2;
 - (void)presenterLaunchService:(NSString *)arg1 results:(void (^)(_Bool, NSError *))arg2;
 @end
 

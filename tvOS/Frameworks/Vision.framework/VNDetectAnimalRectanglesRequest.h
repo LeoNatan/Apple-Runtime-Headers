@@ -4,19 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Vision/VNImageBasedRequest.h>
+#import <Vision/VNRecognizeAnimalsRequest.h>
 
-@interface VNDetectAnimalRectanglesRequest : VNImageBasedRequest
+@interface VNDetectAnimalRectanglesRequest : VNRecognizeAnimalsRequest
 {
 }
 
-+ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
-+ (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 + (id)knownAnimalDetectorsForRevision:(unsigned long long)arg1;
 + (const CDStruct_7d93034e *)revisionAvailability;
-- (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
-- (long long)dependencyProcessingOrdinality;
-- (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 
 @end
 

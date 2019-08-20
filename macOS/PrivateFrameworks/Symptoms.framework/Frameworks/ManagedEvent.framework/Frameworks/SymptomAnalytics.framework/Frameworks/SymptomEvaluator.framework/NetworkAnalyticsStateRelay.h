@@ -41,9 +41,11 @@
     unsigned long long _lastReportedL2TxRetry;
     unsigned long long _lastReportedL2TxFail;
     NSDate *_madePrimaryDate;
+    unsigned long long _l2MetricsCount;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property unsigned long long l2MetricsCount; // @synthesize l2MetricsCount=_l2MetricsCount;
 @property(retain) NSDate *madePrimaryDate; // @synthesize madePrimaryDate=_madePrimaryDate;
 @property unsigned long long lastReportedL2TxFail; // @synthesize lastReportedL2TxFail=_lastReportedL2TxFail;
 @property unsigned long long lastReportedL2TxRetry; // @synthesize lastReportedL2TxRetry=_lastReportedL2TxRetry;

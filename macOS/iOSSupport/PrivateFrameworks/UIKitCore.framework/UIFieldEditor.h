@@ -42,6 +42,7 @@
         unsigned int needsInvalidationAfterObscuredRangeChange:1;
         unsigned int isAnimatingPaste:1;
         unsigned int contentInsetsFromFontsValid:1;
+        unsigned int drawingFindIndicator:1;
     } _feFlags;
     struct UIEdgeInsets _padding;
     struct _NSRange _unobscuredSecureRange;
@@ -65,6 +66,8 @@
 @property(nonatomic) BOOL allowsAttachments; // @synthesize allowsAttachments=_allowsAttachments;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 - (void).cxx_destruct;
+- (void)setDrawingFindIndicator:(BOOL)arg1;
+- (BOOL)isDrawingFindIndicator;
 - (BOOL)_shouldIgnoreAutofillSave;
 - (BOOL)_hasDictationPlaceholder;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -106,6 +109,7 @@
 - (struct CGRect)frameForDictationResultPlaceholder:(id)arg1;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
 - (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
+- (BOOL)_mightHaveSelection;
 - (BOOL)isEditing;
 - (id)characterRangeAtPoint:(struct CGPoint)arg1;
 - (id)closestPositionToPoint:(struct CGPoint)arg1 withinRange:(id)arg2;

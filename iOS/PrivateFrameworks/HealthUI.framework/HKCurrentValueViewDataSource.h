@@ -13,7 +13,6 @@
 
 @interface HKCurrentValueViewDataSource : NSObject <HKInteractiveChartCurrentValueViewDataSource>
 {
-    _Bool _shouldUseLastRecordedDate;
     _Bool _pendingData;
     NSArray *_selectedRangeData;
     id <HKCurrentValueViewDataSourceValueRangeFormatter> _valueRangeFormatter;
@@ -40,12 +39,12 @@
 @property(retain, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) HKSelectedRangeFormatter *selectedRangeFormatter; // @synthesize selectedRangeFormatter=_selectedRangeFormatter;
 @property(nonatomic) _Bool pendingData; // @synthesize pendingData=_pendingData;
-@property(nonatomic) _Bool shouldUseLastRecordedDate; // @synthesize shouldUseLastRecordedDate=_shouldUseLastRecordedDate;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) __weak id <HKCurrentValueViewDataSourceValueRangeFormatter> valueRangeFormatter; // @synthesize valueRangeFormatter=_valueRangeFormatter;
 @property(retain, nonatomic) NSArray *selectedRangeData; // @synthesize selectedRangeData=_selectedRangeData;
 - (void).cxx_destruct;
 - (id)_selectedRangeDataForColumnAtIndex:(long long)arg1;
+- (_Bool)_isMenstruationDisplayType;
 - (_Bool)_isAudioExposureDisplayType;
 - (_Bool)_isDataMinMax;
 - (long long)_numberOfColumns;
@@ -53,11 +52,11 @@
 - (id)textColorForCurrentValueView:(id)arg1;
 - (id)secondaryStringForCurrentValueView:(id)arg1;
 - (id)attributedValueStringForCurrentValueView:(id)arg1;
+- (_Bool)_rangeDataIsMenstruation:(id)arg1;
 - (_Bool)_rangeDataIsSleep:(id)arg1;
 - (_Bool)_rangeDataIsBloodPressure:(id)arg1;
 - (id)_dividerForRangeData:(id)arg1 font:(id)arg2 foregroundColor:(id)arg3;
 - (id)attributedTitleStringForCurrentValueView:(id)arg1;
-- (void)loadLastRecordedDateStringForMenstrualCycleStartWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateDataSourceWithGraphView:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;
 - (id)initWithDateCache:(id)arg1 displayCategoryController:(id)arg2 healthStore:(id)arg3 selectedRangeFormatter:(id)arg4;
 

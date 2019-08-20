@@ -26,6 +26,7 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (void)_setTransitionPhase:(unsigned long long)arg1;
 - (long long)keyboardSuppressionMode;
+- (_Bool)wantsAsynchronousSurfaceRetentionAssertion;
 - (_Bool)wantsAsynchronousRenderingAssertion;
 - (long long)sceneDeactivationReason;
 - (_Bool)wantsResignActiveAssertion;

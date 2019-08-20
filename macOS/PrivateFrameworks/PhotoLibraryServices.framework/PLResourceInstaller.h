@@ -12,18 +12,18 @@
 
 + (id)generateValidatedExternalOtherResourceOfType:(unsigned int)arg1 forFilePath:(id)arg2 uti:(id)arg3 requireFileToBePresent:(BOOL)arg4 version:(unsigned int)arg5;
 + (id)generateValidatedExternalImageResourceOfType:(unsigned int)arg1 forFilePath:(id)arg2 requireFileToBePresent:(BOOL)arg3 version:(unsigned int)arg4 basedOnFullSizeWidth:(long long)arg5 andHeight:(long long)arg6 isNativeColorSpace:(BOOL)arg7 isLosslessEncoding:(BOOL)arg8 recipe:(id)arg9 assetKind:(short)arg10 context:(id)arg11;
-+ (id)externalResourcesForExistingAsset:(id)arg1;
++ (id)externalResourcesForExistingAsset:(id)arg1 referencedResourceURLs:(id)arg2;
 + (BOOL)installInternalResourcesForExistingAssetsWithNoExistingResourcesInManagedObjectContext:(id)arg1 migrator:(id)arg2;
-+ (BOOL)installInternalResourcesForExistingAsset:(id)arg1 assumeNoExistingResources:(BOOL)arg2 error:(id *)arg3;
++ (BOOL)installInternalResourcesForExistingAsset:(id)arg1 assumeNoExistingResources:(BOOL)arg2 referencedResourceURLs:(id)arg3 error:(id *)arg4;
 + (BOOL)removeLegacyCloudResourcesInStore:(id)arg1 migrator:(id)arg2;
 + (BOOL)createInternalResourcesForExistingAssetsWithNoExistingResourcesInStore:(id)arg1 migrator:(id)arg2;
 + (BOOL)resetInternalResourcesInStore:(id)arg1 resetUTIs:(BOOL)arg2 resetCodecs:(BOOL)arg3 resetMasters:(BOOL)arg4 migrator:(id)arg5;
 + (BOOL)reconsiderSavedAssetTypeInStore:(id)arg1 migrator:(id)arg2;
 + (BOOL)resetImageRequestHintsInStore:(id)arg1 migrator:(id)arg2;
 + (id)_validatedExternalResourcesFromSharedStreamAsset:(id)arg1;
-+ (id)generateVideoResourcesFromVideoAsset:(id)arg1;
++ (id)generateVideoResourcesFromVideoAsset:(id)arg1 referencedVideoPath:(id)arg2;
 + (id)validatedExternalResourceForLocalVideoIfPresentAtPath:(id)arg1 context:(id)arg2;
-+ (id)_validatedExternalResourcesFromLocalImageOrVideoAsset:(id)arg1;
++ (id)_validatedExternalResourcesFromLocalImageOrVideoAsset:(id)arg1 referencedResourceURLs:(id)arg2;
 + (id)generateAdjustedFullSizeRenderResourceForFilePath:(id)arg1 requireFileToBePresent:(BOOL)arg2 basedOnFullSizeWidth:(long long)arg3 andHeight:(long long)arg4 context:(id)arg5;
 + (id)onDemand_installOriginalAdjustmentResourceIfPresentForAsset:(id)arg1;
 + (id)onDemand_installAdjustedFullSizeVideoComplementResourceIfPresentForAsset:(id)arg1;
@@ -31,7 +31,7 @@
 + (id)onDemand_installPrimaryImageResourceWithRecipe:(id)arg1 version:(unsigned int)arg2 forAsset:(id)arg3;
 + (id)_predicateForUnrecoverableResources;
 + (void)_applyImageIOMetadataToExternalResource:(id)arg1 fromFileURL:(id)arg2 assumedWidth:(long long)arg3 assumedHeight:(long long)arg4 recipe:(id)arg5 assetKind:(short)arg6 context:(id)arg7;
-+ (BOOL)_installInternalResourcesForExistingAsset:(id)arg1 assumeNoExistingResources:(BOOL)arg2 includeLegacyCloudResources:(BOOL)arg3 outResourcesStoreCount:(unsigned long long *)arg4 error:(id *)arg5;
++ (BOOL)_installInternalResourcesForExistingAsset:(id)arg1 assumeNoExistingResources:(BOOL)arg2 referencedResourceURLs:(id)arg3 includeLegacyCloudResources:(BOOL)arg4 outResourcesStoreCount:(unsigned long long *)arg5 error:(id *)arg6;
 + (BOOL)installSupplementalResourceForExistingFileAtURL:(id)arg1 ptpTrashedState:(long long)arg2 index:(id)arg3 forAsset:(id)arg4 resultingResource:(id *)arg5 error:(id *)arg6;
 + (BOOL)recoverSupplementalResourcesForAsset:(id)arg1 usingSidecarFinder:(id)arg2 outResourcesStoreCount:(unsigned long long *)arg3 error:(id *)arg4;
 + (id)_validatedExternalResourceIfPresentForAudioOrUnknownAsset:(id)arg1;

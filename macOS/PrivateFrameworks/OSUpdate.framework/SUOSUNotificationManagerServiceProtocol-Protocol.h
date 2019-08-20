@@ -10,6 +10,7 @@
 - (void)postAndProceedWithAutoUpdateNotification:(void (^)(BOOL))arg1;
 - (void)mdmMajorOSUpdateStatusWithCompletionHandler:(void (^)(NSDictionary *))arg1;
 - (void)startInstallingMDMMajorOSUpdateWithBundleId:(NSString *)arg1 orVersion:(NSString *)arg2 completionHandler:(void (^)(void))arg3;
+- (void)queueAutoUpdatesForLaterWithCompletionHandler:(void (^)(void))arg1;
 - (void)startInstallingDoItLaterUpdatesWithCompletionHandler:(void (^)(void))arg1;
 - (void)postDoItLaterOtherUsersLoggedInNotificationWithCompletionHandler:(void (^)(void))arg1;
 - (void)postDoItLaterUpdatesFailedNotificationRestartRequired:(BOOL)arg1 offerLater:(BOOL)arg2 completionHandler:(void (^)(void))arg3;

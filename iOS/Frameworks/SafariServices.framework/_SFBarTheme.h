@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UIBlurEffect, UIColor;
+@class NSArray, UIBlurEffect, UIColor;
 
 @interface _SFBarTheme : NSObject
 {
@@ -14,17 +14,21 @@
     _Bool _backdropIsDark;
     unsigned long long _tintStyle;
     UIColor *_controlsTintColor;
+    UIColor *_preferredProgressBarTintColor;
     UIColor *_preferredBarTintColor;
     long long _overrideUserInterfaceStyle;
     UIBlurEffect *_backdropEffect;
+    NSArray *_backdropAdjustmentEffects;
 }
 
 + (id)themeWithBarTintStyle:(unsigned long long)arg1 preferredBarTintColor:(id)arg2 controlsTintColor:(id)arg3;
 + (id)themeWithBarTintStyle:(unsigned long long)arg1;
 + (id)themeWithTheme:(id)arg1;
+@property(readonly, nonatomic) NSArray *backdropAdjustmentEffects; // @synthesize backdropAdjustmentEffects=_backdropAdjustmentEffects;
 @property(readonly, nonatomic) UIBlurEffect *backdropEffect; // @synthesize backdropEffect=_backdropEffect;
 @property(readonly, nonatomic) long long overrideUserInterfaceStyle; // @synthesize overrideUserInterfaceStyle=_overrideUserInterfaceStyle;
 @property(readonly, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
+@property(readonly, nonatomic) UIColor *preferredProgressBarTintColor; // @synthesize preferredProgressBarTintColor=_preferredProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *controlsTintColor; // @synthesize controlsTintColor=_controlsTintColor;
 @property(readonly, nonatomic) unsigned long long tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(readonly, nonatomic) _Bool backdropIsDark; // @synthesize backdropIsDark=_backdropIsDark;

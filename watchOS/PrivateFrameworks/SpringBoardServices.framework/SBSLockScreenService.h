@@ -17,6 +17,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)preventSpuriousScreenUndimWithReason:(id)arg1;
 - (id)preventPasscodeLockWithReason:(id)arg1;
 - (void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)launchEmergencyDialerWithCompletion:(CDUnknownBlockType)arg1;

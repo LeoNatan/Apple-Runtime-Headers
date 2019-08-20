@@ -9,7 +9,7 @@
 #import <SpringBoard/BSServiceConnectionListenerDelegate-Protocol.h>
 #import <SpringBoard/SBSLockScreenServiceServerInterface-Protocol.h>
 
-@class BSServiceConnectionListener, FBServiceClientAuthenticator, NSMutableSet, NSString, SBFAuthenticationAssertion, SBLockScreenManager, SBMainWorkspace, SBRemoteTransientOverlaySessionManager;
+@class BSServiceConnectionListener, FBServiceClientAuthenticator, NSMutableSet, NSString, SBFAuthenticationAssertion, SBLockScreenManager, SBMainWorkspace, SBRemoteTransientOverlaySessionManager, SBSpuriousScreenUndimmingAssertion;
 @protocol SBFAuthenticationAssertionProviding;
 
 @interface SBLockScreenService : NSObject <BSServiceConnectionListenerDelegate, SBSLockScreenServiceServerInterface>
@@ -23,9 +23,12 @@
     NSMutableSet *_connections;
     NSMutableSet *_connectionsPreventingPasscodeLock;
     SBFAuthenticationAssertion *_preventPasscodeLockAssertion;
+    NSMutableSet *_connectionsPreventingSpuriousScreenUndim;
+    SBSpuriousScreenUndimmingAssertion *_preventSpuriousScreenUndimAssertion;
 }
 
 - (void).cxx_destruct;
+- (oneway void)setPreventSpuriousScreenUndim:(id)arg1;
 - (oneway void)setPreventPasscodeLock:(id)arg1;
 - (oneway void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (oneway void)launchEmergencyDialerWithCompletion:(CDUnknownBlockType)arg1;

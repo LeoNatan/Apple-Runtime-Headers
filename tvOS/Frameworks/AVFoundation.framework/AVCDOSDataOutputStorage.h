@@ -7,19 +7,21 @@
 #import <objc/NSObject.h>
 
 @class AVCaptureOutput, NSMutableArray;
-@protocol AVCaptureDataOutputDelegateOverride;
+@protocol AVCaptureDataOutputDelegateOverride, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVCDOSDataOutputStorage : NSObject
 {
     AVCaptureOutput<AVCaptureDataOutputDelegateOverride> *_dataOutput;
     NSMutableArray *_synchronizedDataQueue;
+    NSObject<OS_dispatch_queue> *_delegateOverrideCallbackQueue;
     NSMutableArray *_timestampAdjustmentsDataQueue;
     NSMutableArray *_mdoTimeStampHistoryQueue;
 }
 
 @property(retain, nonatomic) NSMutableArray *mdoTimeStampHistoryQueue; // @synthesize mdoTimeStampHistoryQueue=_mdoTimeStampHistoryQueue;
 @property(retain, nonatomic) NSMutableArray *timestampAdjustmentsDataQueue; // @synthesize timestampAdjustmentsDataQueue=_timestampAdjustmentsDataQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateOverrideCallbackQueue; // @synthesize delegateOverrideCallbackQueue=_delegateOverrideCallbackQueue;
 @property(readonly, nonatomic) NSMutableArray *synchronizedDataQueue; // @synthesize synchronizedDataQueue=_synchronizedDataQueue;
 @property(readonly, nonatomic) AVCaptureOutput<AVCaptureDataOutputDelegateOverride> *dataOutput; // @synthesize dataOutput=_dataOutput;
 @property(readonly, nonatomic, getter=isLive) _Bool live;

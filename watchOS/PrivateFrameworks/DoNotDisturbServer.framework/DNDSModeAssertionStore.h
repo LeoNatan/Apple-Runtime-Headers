@@ -38,6 +38,7 @@
 - (id)init;
 - (id)syncDictionaryRepresentationWithDate:(id)arg1 messageUUID:(id)arg2;
 - (id)dictionaryRepresentation;
+- (id)sysdiagnoseDictionaryRepresentation;
 - (id)peaceSyncDictionaryRepresentationWithDate:(id)arg1 messageUUID:(id)arg2 userRequestedClientIdentifierHandler:(CDUnknownBlockType)arg3;
 - (id)lastUpdateDate;
 

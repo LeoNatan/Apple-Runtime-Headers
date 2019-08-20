@@ -21,8 +21,8 @@
 }
 
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
-@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
+@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void)finishWithError:(id)arg1;
 - (void)finish;
 - (void)execute;

@@ -11,6 +11,7 @@
     // Error parsing type: , name: diskHealthExperienceStoreVersionKey
     // Error parsing type: , name: diskHealthExperienceStoreLocaleKey
     // Error parsing type: , name: previousMergeFailed
+    // Error parsing type: , name: fetchLimit
     // Error parsing type: , name: $__lazy_storage_$_sharedBackgroundContext
     // Error parsing type: , name: $__lazy_storage_$_allEntities
     // Error parsing type: , name: persistentHistoryToken

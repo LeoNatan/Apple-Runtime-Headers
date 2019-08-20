@@ -21,9 +21,10 @@
     NUIContainerStackView *_labelViewStack;
 }
 
++ (id)axCappedSymbolConfigurationIsBold:(_Bool)arg1;
 + (id)axCappedFontWithTextStyle:(id)arg1 bold:(_Bool)arg2;
 + (void)requireIntrinsicSizeForView:(id)arg1;
-+ (double)separatorInset;
++ (double)additionalSeparatorInset;
 + (Class)containerViewClass;
 + (id)identifier;
 @property(retain, nonatomic) NUIContainerStackView *labelViewStack; // @synthesize labelViewStack=_labelViewStack;
@@ -34,8 +35,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CNComposeRecipient *recipient; // @synthesize recipient=_recipient;
 - (void).cxx_destruct;
-- (void)crossfadeLabel:(id)arg1 withBlock:(CDUnknownBlockType)arg2 animated:(_Bool)arg3;
-- (void)setLabelColor:(id)arg1 animated:(_Bool)arg2;
 - (void)labelsChangedWidth:(double)arg1;
 - (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;

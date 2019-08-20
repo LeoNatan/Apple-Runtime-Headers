@@ -6,16 +6,16 @@
 
 #import <MapsSuggestions/MapsSuggestionsBaseSource.h>
 
+#import <MapsSuggestions/MapsSuggestionsMeCardObserver-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class MapsSuggestionsShortcutManager, NSObject, NSString;
+@class MapsSuggestionsCanKicker, MapsSuggestionsShortcutManager, NSObject, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue;
 
-@interface MapsSuggestionsShortcutSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
+@interface MapsSuggestionsShortcutSource : MapsSuggestionsBaseSource <MapsSuggestionsMeCardObserver, MapsSuggestionsSource>
 {
-    struct NSMutableDictionary *_currentCache;
     NSObject<OS_dispatch_queue> *_queue;
-    CDUnknownBlockType _treatShortcutsBlock;
+    MapsSuggestionsCanKicker *_updateForcer;
     MapsSuggestionsShortcutManager *_shortcutManager;
 }
 
@@ -23,12 +23,14 @@
 + (_Bool)isEnabled;
 @property(retain, nonatomic) MapsSuggestionsShortcutManager *shortcutManager; // @synthesize shortcutManager=_shortcutManager;
 - (void).cxx_destruct;
+- (void)meCardReader:(id)arg1 didUpdateMeCard:(id)arg2;
 - (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)canProduceEntriesOfType:(int)arg1;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;
 - (void)_updateSuggestionEntries;
+- (void)_treatShortcuts:(struct NSArray *)arg1 error:(id)arg2;
 - (id)initWithDelegate:(id)arg1 name:(struct NSString *)arg2;
 - (void)_renameDuplicateMeCardTypes:(struct NSArray *)arg1;
 

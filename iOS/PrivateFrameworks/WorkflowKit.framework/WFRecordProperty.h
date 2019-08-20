@@ -11,6 +11,8 @@
 @interface WFRecordProperty : NSObject
 {
     _Bool _readOnly;
+    _Bool _nonAtomic;
+    _Bool _dynamic;
     NSString *_name;
     NSString *_getter;
     NSString *_setter;
@@ -18,6 +20,8 @@
 
 @property(readonly, nonatomic) NSString *setter; // @synthesize setter=_setter;
 @property(readonly, nonatomic) NSString *getter; // @synthesize getter=_getter;
+@property(readonly, nonatomic, getter=isDynamic) _Bool dynamic; // @synthesize dynamic=_dynamic;
+@property(readonly, nonatomic, getter=isNonAtomic) _Bool nonAtomic; // @synthesize nonAtomic=_nonAtomic;
 @property(readonly, nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

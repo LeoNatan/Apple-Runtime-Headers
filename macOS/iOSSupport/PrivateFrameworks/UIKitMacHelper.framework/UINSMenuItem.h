@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     BOOL _enabled;
     BOOL _separatorItem;
     BOOL _replacedBySubmenuItems;
+    id _target;
     NSString *_actionName;
-    NSString *_hostActionName;
     NSString *_keyEquivalent;
     unsigned long long _keyEquivalentModifiers;
     long long _state;
@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     NSDictionary *_properties;
     NSDictionary *_validatedProperties;
     id <UINSMenu> _submenu;
-    unsigned long long _targetSearchScopeMask;
     NSString *_title;
     RVItem *_rvItem;
     id <UIRVPresenterHighlightDelegate> _rvHighlighter;
@@ -37,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UIRVPresenterHighlightDelegate> rvHighlighter; // @synthesize rvHighlighter=_rvHighlighter;
 @property(retain, nonatomic) RVItem *rvItem; // @synthesize rvItem=_rvItem;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) unsigned long long targetSearchScopeMask; // @synthesize targetSearchScopeMask=_targetSearchScopeMask;
 @property(retain, nonatomic) id <UINSMenu> submenu; // @synthesize submenu=_submenu;
 @property(readonly, nonatomic) NSDictionary *validatedProperties; // @synthesize validatedProperties=_validatedProperties;
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
@@ -49,8 +47,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isAlternate) BOOL alternate; // @synthesize alternate=_alternate;
 @property(nonatomic) unsigned long long keyEquivalentModifiers; // @synthesize keyEquivalentModifiers=_keyEquivalentModifiers;
 @property(copy, nonatomic) NSString *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
-@property(copy, nonatomic) NSString *hostActionName; // @synthesize hostActionName=_hostActionName;
 @property(copy, nonatomic) NSString *actionName; // @synthesize actionName=_actionName;
+@property(nonatomic) __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;
 
 @end

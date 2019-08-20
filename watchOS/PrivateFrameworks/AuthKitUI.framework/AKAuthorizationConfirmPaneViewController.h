@@ -36,6 +36,7 @@
 - (void)_presentPasscodeEntryController;
 - (void)_performPasswordAuthentication;
 - (void)_authorizationButtonSelected;
+- (void)_handleAuthorizationError:(id)arg1;
 - (void)_performAuthorization;
 - (void)didSelectEditScope:(id)arg1;
 - (id)_localizedNameForSectionFooterWithIdentifier:(int)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSNumber;
+@class NSData, NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
 @interface QuickTypeWeightUpdates : NSObject
@@ -14,8 +14,12 @@ __attribute__((visibility("hidden")))
     NSData *_weightUpdates;
     NSNumber *_l2Norm;
     NSNumber *_maxNorm;
+    NSString *_privacyDiagnosticReport;
+    NSString *_weightUpdatesDiagnosticReport;
 }
 
+@property(copy, nonatomic) NSString *weightUpdatesDiagnosticReport; // @synthesize weightUpdatesDiagnosticReport=_weightUpdatesDiagnosticReport;
+@property(copy, nonatomic) NSString *privacyDiagnosticReport; // @synthesize privacyDiagnosticReport=_privacyDiagnosticReport;
 @property(copy, nonatomic) NSNumber *maxNorm; // @synthesize maxNorm=_maxNorm;
 @property(copy, nonatomic) NSNumber *l2Norm; // @synthesize l2Norm=_l2Norm;
 @property(retain, nonatomic) NSData *weightUpdates; // @synthesize weightUpdates=_weightUpdates;

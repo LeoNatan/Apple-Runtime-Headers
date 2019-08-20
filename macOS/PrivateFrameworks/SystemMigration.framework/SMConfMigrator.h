@@ -10,7 +10,6 @@
 
 @interface SMConfMigrator : NSObject
 {
-    BOOL _cleanInstall;
     BOOL _doNotModifyTarget;
     SMSystem_Daemon *_source;
     SMSystem_Daemon *_destination;
@@ -28,7 +27,6 @@
 @property(retain) NSArray *synthesizedLegacyServerRules; // @synthesize synthesizedLegacyServerRules=_synthesizedLegacyServerRules;
 @property double parentProgressPendingUnits; // @synthesize parentProgressPendingUnits=_parentProgressPendingUnits;
 @property(retain) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
-@property(getter=isCleanInstall) BOOL cleanInstall; // @synthesize cleanInstall=_cleanInstall;
 @property __weak SMSystem_Daemon *destination; // @synthesize destination=_destination;
 @property __weak SMSystem_Daemon *source; // @synthesize source=_source;
 - (void).cxx_destruct;

@@ -11,7 +11,9 @@
 + (id)ak_errorWithCode:(long long)arg1 underlyingError:(id)arg2;
 + (id)ak_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)ak_errorWithCode:(long long)arg1;
+- (BOOL)ak_isAuthenticationErrorWithCode:(long long)arg1;
 - (BOOL)ak_isServiceError;
+- (BOOL)ak_isUserInitiatedError;
 - (BOOL)ak_isUserTryAgainError;
 - (BOOL)ak_isUserSkippedError;
 - (BOOL)ak_isUserCancelError;

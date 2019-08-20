@@ -131,7 +131,7 @@
 - (unsigned long long)autoquoteType;
 - (_Bool)shouldClearInputOnMarkedTextOutOfSync;
 @property(readonly, nonatomic) RefPtr_54d74a7c baseLayout; // @synthesize baseLayout=_baseLayout;
-- (_Bool)hasPathInInput;
+- (_Bool)shouldDelayUpdateComposedText;
 - (_Bool)isProgressivelyPathing;
 @property(readonly, nonatomic) _Bool usesComposingInput;
 @property(readonly, nonatomic) MCKeyboardInput *composingInput; // @synthesize composingInput=_composingInput;

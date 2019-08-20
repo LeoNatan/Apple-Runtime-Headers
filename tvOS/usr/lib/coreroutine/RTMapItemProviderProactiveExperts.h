@@ -25,8 +25,8 @@
 - (id)_filterConnectionLocations:(id)arg1 location:(id)arg2 distance:(double)arg3 error:(id *)arg4;
 - (id)_recentLocationsFrom:(id)arg1 error:(id *)arg2;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
-- (id)initWithPersonalizationPortraitManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3 parameters:(id)arg4;
-- (id)initWithPersonalizationPortraitManager:(id)arg1 defaultsManager:(id)arg2 distanceCalculator:(id)arg3 mapServiceManager:(id)arg4;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3 parameters:(id)arg4 personalizationPortraitManager:(id)arg5;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3 personalizationPortraitManager:(id)arg4;
 - (id)init;
 
 // Remaining properties

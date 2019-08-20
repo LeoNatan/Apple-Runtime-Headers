@@ -14,7 +14,6 @@
     CKDatabase *_database;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;

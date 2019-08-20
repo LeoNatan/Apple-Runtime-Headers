@@ -88,8 +88,6 @@
 - (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 atResourceIndex:(unsigned long long)arg3;
 - (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newBufferWithIOSurface:(struct __IOSurface *)arg1;
-- (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(CDUnknownBlockType)arg4;
-- (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 atResourceIndex:(unsigned long long)arg4 deallocator:(CDUnknownBlockType)arg5;
 - (id)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 atResourceIndex:(unsigned long long)arg4;
 - (id)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newArgumentEncoderWithLayout:(id)arg1;
@@ -222,6 +220,8 @@
 // Property attributes: T^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}},R
 
 - (void)touch;
+- (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(CDUnknownBlockType)arg4;
+- (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 atResourceIndex:(unsigned long long)arg4 deallocator:(CDUnknownBlockType)arg5;
 - (id)newPipelineLibraryWithFilePath:(id)arg1 error:(id *)arg2;
 - (void)_setDeviceWrapper:(id)arg1;
 - (id)newSharedTextureWithHandle:(id)arg1;

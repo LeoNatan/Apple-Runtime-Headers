@@ -14,6 +14,7 @@
 {
     PKPaymentPass *_paymentPass;
     PKAccount *_account;
+    unsigned long long _feature;
     PKCreditAccountStatement *_statement;
     PKCreditAccountStatement *_previousStatement;
     PKBalanceSummaryFetcher *_fetcher;
@@ -38,7 +39,7 @@
     NSArray *_sortedYears;
     NSDateFormatter *_monthYearFormatter;
     NSDateFormatter *_dateFormatter;
-    PKDashboardTitleHeaderView *_sampleView;
+    PKDashboardTitleHeaderView *_sampleHeaderView;
     PKDashboardFooterTextView *_sampleFooterView;
     NSArray *_sectionMap;
     unsigned long long _numberOfStaticSections;
@@ -59,6 +60,7 @@
 - (_Bool)_hasHeaderForSectionIndex:(unsigned long long)arg1;
 - (id)_summaryItemForIndexPath:(id)arg1;
 - (unsigned long long)_sectionForIndex:(unsigned long long)arg1;
+- (void)showStatement:(id)arg1 style:(long long)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;

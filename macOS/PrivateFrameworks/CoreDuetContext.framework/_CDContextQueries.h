@@ -141,6 +141,10 @@
 + (id)locationOfInterestTypeKey;
 + (id)locationOfInterestUUIDKey;
 + (id)keyPathForPredictedLocationOfInterestTransitions;
++ (id)bundleIDKey;
++ (id)calleeHandleKey;
++ (id)calleeContactIDKey;
++ (id)keyPathForActiveCall;
 + (id)nowPlayingCreationDateKey;
 + (id)nowPlayingOutputDeviceIDsKey;
 + (id)nowPlayingTrackKey;

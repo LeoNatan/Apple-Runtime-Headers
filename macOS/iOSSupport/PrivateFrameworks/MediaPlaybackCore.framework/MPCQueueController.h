@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)describePlayer:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *dataSources; // @synthesize dataSources=_dataSources;
 @property(retain, nonatomic) MPShuffleableSectionedIdentifierList *identifierList; // @synthesize identifierList=_identifierList;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -52,8 +53,10 @@
 @property(nonatomic) BOOL allowsQueueModifications; // @synthesize allowsQueueModifications=_allowsQueueModifications;
 @property(readonly, nonatomic) BOOL hasUserMutations; // @synthesize hasUserMutations=_hasUserMutations;
 - (void).cxx_destruct;
-- (id)_stateDictionary;
+- (id)_stateDictionaryIncludingIdentifierList:(BOOL)arg1;
 - (void)_soundCheckEnabledChangedNotification:(id)arg1;
+- (id)_nextValidIdentifierPairStartingAtContentItemID:(id)arg1 wasInvalid:(char *)arg2;
+- (id)_itemForPair:(id)arg1;
 - (id)_itemForContentItemID:(id)arg1 allowReuse:(BOOL)arg2;
 - (id)_firstContentItemID;
 - (BOOL)_containsLiveStreamDataSource;
@@ -70,7 +73,6 @@
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
 @property(readonly, nonatomic) BOOL userCanChangeShuffleAndRepeatType;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
-- (void)removeAllItemsAfterContentItemID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeContentItemID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;

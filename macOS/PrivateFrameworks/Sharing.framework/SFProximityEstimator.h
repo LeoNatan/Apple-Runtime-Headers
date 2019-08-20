@@ -20,6 +20,8 @@
 @property(readonly, nonatomic) int estimatedRSSI; // @synthesize estimatedRSSI=_estimatedRSSI;
 - (int)_estimateRSSIForSFBLEDevice:(id)arg1;
 - (unsigned int)updateWithSFBLEDevice:(id)arg1;
+- (id)descriptionParams;
+- (id)description;
 - (id)initWithProximityInfo:(id)arg1;
 
 @end

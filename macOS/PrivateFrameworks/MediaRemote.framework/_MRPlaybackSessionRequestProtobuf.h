@@ -15,8 +15,8 @@
     NSString *_identifier;
     int _length;
     int _location;
+    NSString *_requestID;
     NSString *_type;
-    NSString *_uuid;
     struct {
         unsigned int length:1;
         unsigned int location:1;
@@ -28,7 +28,7 @@
 @property(nonatomic) int length; // @synthesize length=_length;
 @property(nonatomic) int location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+@property(retain, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -43,7 +43,7 @@
 @property(nonatomic) BOOL hasLength;
 @property(nonatomic) BOOL hasLocation;
 @property(readonly, nonatomic) BOOL hasIdentifier;
-@property(readonly, nonatomic) BOOL hasUuid;
+@property(readonly, nonatomic) BOOL hasRequestID;
 - (id)customDescription;
 
 @end

@@ -35,6 +35,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (id)initWithMediaDestinationType:(int)arg1 playlistName:(id)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

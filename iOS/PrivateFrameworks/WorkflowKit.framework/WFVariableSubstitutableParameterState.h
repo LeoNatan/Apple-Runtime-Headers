@@ -33,7 +33,6 @@
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)initWithVariable:(id)arg1;
 - (id)initWithValue:(id)arg1;
-- (Class)processingValueClass;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -23,14 +23,13 @@
     struct WeakObjCPtr<id<_WKInputDelegate>> _inputDelegate;
     Optional_bd583063 _resolutionForShareSheetImmediateCompletionForTesting;
     struct RetainPtr<WKSafeBrowsingWarning> _safeBrowsingWarning;
+    BOOL _usePlatformFindUI;
     struct RetainPtr<_WKRemoteObjectRegistry> _remoteObjectRegistry;
     struct RetainPtr<WKScrollView> _scrollView;
     struct RetainPtr<WKContentView> _contentView;
-    BOOL _overridesViewLayoutSize;
-    struct CGSize _viewLayoutSizeOverride;
+    struct Optional<CGSize> _viewLayoutSizeOverride;
     struct Optional<WebCore::FloatSize> _lastSentViewLayoutSize;
-    BOOL _overridesMaximumUnobscuredSize;
-    struct CGSize _maximumUnobscuredSizeOverride;
+    struct Optional<CGSize> _maximumUnobscuredSizeOverride;
     struct Optional<WebCore::FloatSize> _lastSentMaximumUnobscuredSize;
     struct CGRect _inputViewBounds;
     double _viewportMetaTagWidth;

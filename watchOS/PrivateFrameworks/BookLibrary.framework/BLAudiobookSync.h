@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BLAudiobookCache, BLAudiobookCacheDirectoryUtils, BLAudiobookInfo, BLFileFetcher, BLHLSPlaylist, BLHLSStreamInf, MPMediaItem, NSMutableArray, NSProgress, NSURL;
+@class BLAudiobookCache, BLAudiobookCacheDirectoryUtils, BLAudiobookInfo, BLFileFetcher, BLHLSPlaylist, BLHLSStreamInf, MPMediaItem, NSMutableArray, NSMutableSet, NSProgress, NSURL;
 
 @interface BLAudiobookSync : NSObject
 {
@@ -17,6 +17,7 @@
     CDUnknownBlockType _completion;
     NSProgress *_parentProgress;
     NSProgress *_downloadHLSPlaylistsProgress;
+    NSProgress *_parentKeyRequestProgress;
     unsigned int _mediaPlaylistCount;
     MPMediaItem *_mediaItem;
     BLFileFetcher *_fileFetcher;
@@ -24,12 +25,14 @@
     BLHLSPlaylist *_mediaPlaylist;
     BLHLSStreamInf *_preferredStreamInf;
     NSMutableArray *_pendingMediaPlaylistURLs;
+    NSMutableSet *_pendingMediaPlaylistKeys;
     BLAudiobookCacheDirectoryUtils *_cacheDirectoryUtils;
     unsigned long long _bitrate;
 }
 
 @property(retain, nonatomic) BLAudiobookCacheDirectoryUtils *cacheDirectoryUtils; // @synthesize cacheDirectoryUtils=_cacheDirectoryUtils;
 @property(nonatomic) _Bool trimMasterPlaylist; // @synthesize trimMasterPlaylist=_trimMasterPlaylist;
+@property(retain, nonatomic) NSMutableSet *pendingMediaPlaylistKeys; // @synthesize pendingMediaPlaylistKeys=_pendingMediaPlaylistKeys;
 @property(retain, nonatomic) NSMutableArray *pendingMediaPlaylistURLs; // @synthesize pendingMediaPlaylistURLs=_pendingMediaPlaylistURLs;
 @property(retain, nonatomic) BLHLSStreamInf *preferredStreamInf; // @synthesize preferredStreamInf=_preferredStreamInf;
 @property(nonatomic) unsigned long long bitrate; // @synthesize bitrate=_bitrate;
@@ -39,6 +42,7 @@
 @property(retain, nonatomic) BLFileFetcher *fileFetcher; // @synthesize fileFetcher=_fileFetcher;
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(nonatomic) unsigned int mediaPlaylistCount; // @synthesize mediaPlaylistCount=_mediaPlaylistCount;
+@property(retain, nonatomic) NSProgress *parentKeyRequestProgress; // @synthesize parentKeyRequestProgress=_parentKeyRequestProgress;
 @property(retain, nonatomic) NSProgress *downloadHLSPlaylistsProgress; // @synthesize downloadHLSPlaylistsProgress=_downloadHLSPlaylistsProgress;
 @property(retain, nonatomic) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -50,6 +54,7 @@
 - (void)_completeWithError:(id)arg1 description:(id)arg2;
 - (void)_completeWithError:(id)arg1;
 - (void)_downloadSegments;
+- (void)_fetchNextKey;
 - (void)_fetchKeys;
 - (void)_downloadNextMediaPlaylist;
 - (void)_downloadMediaPlaylistFromURL:(id)arg1;

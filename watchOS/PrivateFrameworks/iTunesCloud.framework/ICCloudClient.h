@@ -43,7 +43,7 @@
 - (void)_tearDownNotifications;
 - (void)_setupNotifications;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (id)listenerEndpointForService:(int)arg1;
+- (id)listenerEndpointForService:(int)arg1 error:(id *)arg2;
 - (_Bool)shouldProhibitActionsForCurrentNetworkConditions;
 - (_Bool)isCellularDataRestricted;
 - (_Bool)canShowCloudVideo;

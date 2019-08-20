@@ -17,8 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)typeDescription;
 + (id)contentCategories;
 + (id)outputTypes;
-+ (void)generateContentItemWithItemProviderItem:(id)arg1 photoMediaFileRepresentation:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
-+ (void)generateALAssetContentItemWithPhotoMediaFileRepresentation:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
++ (id)itemWithItemProviderItem:(id)arg1 photoMediaFileRepresentation:(id)arg2 assetIdentifier:(id)arg3;
 - (id)outputTypes;
 
 @end

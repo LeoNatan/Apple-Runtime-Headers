@@ -9,7 +9,7 @@
 #import <MIME/EFPubliclyDescribable-Protocol.h>
 #import <MIME/NSCopying-Protocol.h>
 
-@class ECAngleBracketIDHash, ECSubject, MFMessageStore, MFMimePart, NSArray, NSString, NSURL;
+@class ECAngleBracketIDHash, ECSubject, MFMessageStore, MFMimePart, NSArray, NSString, NSURL, NSUUID;
 
 @interface MFMessage : NSObject <EFPubliclyDescribable, NSCopying>
 {
@@ -29,6 +29,7 @@
     ECAngleBracketIDHash *_listIDHash;
     NSString *_summary;
     NSString *_externalID;
+    NSUUID *_documentID;
     MFMimePart *_parentPart;
     NSURL *_messageURL;
     NSString *_cachedMessageIDHeader;
@@ -39,6 +40,7 @@
 
 + (void)setMessageClassForStore:(id)arg1;
 + (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2 generateMessageIDHash:(_Bool)arg3;
++ (id)messageWithRFC822Data:(id)arg1 forMailboxUID:(id)arg2;
 + (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2;
 + (id)messageWithRFC822Data:(id)arg1;
 + (Class)dataMessageStoreToUse;
@@ -79,6 +81,7 @@
 - (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHash:(long long)arg8 conversationID:(long long)arg9 summary:(id)arg10;
 - (id)uniqueArray:(id)arg1 withStore:(id)arg2;
 - (id)summary;
+@property(retain, nonatomic) NSUUID *documentID; // @synthesize documentID=_documentID;
 @property(retain, nonatomic) NSString *externalID;
 - (void)setListIDHash:(id)arg1;
 - (id)listIDHash;

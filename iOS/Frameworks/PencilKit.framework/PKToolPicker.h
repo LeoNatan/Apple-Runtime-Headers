@@ -9,7 +9,8 @@
 #import <PencilKit/PKPaletteViewDelegate-Protocol.h>
 #import <PencilKit/UIInputResponderControllerVisibilityObserver-Protocol.h>
 
-@class NSHashTable, NSString, PKPaletteViewInteraction, PKTool, UIResponder;
+@class NSHashTable, NSString, PKPaletteHostView, PKPaletteViewInteraction, PKTool, UIResponder;
+@protocol PKToolPickerPrivateDelegate;
 
 @interface PKToolPicker : NSObject <PKPaletteViewDelegate, UIInputResponderControllerVisibilityObserver>
 {
@@ -18,10 +19,12 @@
     NSHashTable *__firstRespondersForVisibleUI;
     PKPaletteViewInteraction *__interaction;
     UIResponder *__previousFirstResponder;
+    id <PKToolPickerPrivateDelegate> __delegate;
 }
 
 + (id)sharedToolPickerForWindow:(id)arg1;
 + (id)activeToolPickerForWindow:(id)arg1;
+@property(nonatomic) __weak id <PKToolPickerPrivateDelegate> _delegate; // @synthesize _delegate=__delegate;
 @property(nonatomic) __weak UIResponder *_previousFirstResponder; // @synthesize _previousFirstResponder=__previousFirstResponder;
 @property(nonatomic) _Bool _paletteWasCompact; // @synthesize _paletteWasCompact=__paletteWasCompact;
 @property(retain, nonatomic) PKPaletteViewInteraction *_interaction; // @synthesize _interaction=__interaction;
@@ -31,12 +34,14 @@
 - (_Bool)_internalClassWantsToolPickerVisibleForResponder:(id)arg1;
 - (id)_internalClassesAcceptingFirstResponder;
 - (void)_updatePaletteTraitCollection:(id)arg1;
-- (id)_paletteHostView;
-- (void)_setBackgroundMaterialUpdatingPaused:(_Bool)arg1;
-- (_Bool)_isBackgroundMaterialUpdatingPaused;
+@property(readonly, nonatomic) PKPaletteHostView *_paletteHostView;
+@property(nonatomic, getter=_isBackgroundMaterialUpdatingPaused, setter=_setBackgroundMaterialUpdatingPaused:) _Bool _backgroundMaterialUpdatingPaused;
 - (_Bool)_wantsPaletteToStayVisibleForPopovers;
 - (void)inputResponderController:(id)arg1 inputViewSetVisibilityDidChange:(_Bool)arg2 includedReset:(_Bool)arg3;
 - (void)visibilityDidChange:(_Bool)arg1;
+- (id)_colorPickerPopoverPresentationSourceView:(id)arg1;
+- (struct CGRect)paletteViewColorPickerPopoverPresentationSourceRect:(id)arg1;
+- (void)paletteView:(id)arg1 didChangeColor:(id)arg2;
 - (void)paletteViewDidChangePosition:(id)arg1;
 - (void)paletteViewDidToggleRuler:(id)arg1;
 - (void)paletteViewSelectedToolInkDidChange:(id)arg1;
@@ -52,7 +57,7 @@
 - (long long)_colorUserInterfaceStyle;
 - (id)_convertTool:(id)arg1 from:(long long)arg2 to:(long long)arg3;
 - (id)_paletteView;
-- (void)_updateVisibilityForFirstResponder;
+- (void)_updateVisibilityForFirstResponder:(id)arg1;
 - (void)setVisible:(_Bool)arg1 forFirstResponder:(id)arg2;
 - (void)_saveStateIfNecessary;
 - (void)_forceSetVisible:(_Bool)arg1;

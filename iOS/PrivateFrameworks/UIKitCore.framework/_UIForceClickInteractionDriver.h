@@ -15,25 +15,32 @@
 __attribute__((visibility("hidden")))
 @interface _UIForceClickInteractionDriver : NSObject <UIGestureRecognizerDelegatePrivate, _UIClickInteractionDriving>
 {
+    _Bool _cancelsTouchesInView;
     id <_UIClickInteractionDriverDelegate> _delegate;
     UIView *_view;
     _UIStateMachine *_stateMachine;
     UITouchForceGestureRecognizer *_gestureRecognizer;
 }
 
++ (_Bool)prefersCancelsTouchesInView;
++ (_Bool)requiresForceCapability;
 @property(retain, nonatomic) UITouchForceGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(nonatomic) _Bool cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleGestureRecognizer:(id)arg1;
+- (_Bool)allowsRepeatedClicks;
+@property(readonly, nonatomic) _Bool clicksUpAutomaticallyAfterTimeout;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
 @property(readonly, nonatomic) _Bool isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(readonly, nonatomic) double touchDuration;
+@property(readonly, nonatomic) double maximumEffectProgress;
 - (void)_prepareStateMachine;
 @property(nonatomic) double allowableMovement;
 @property(readonly, nonatomic) double touchForce;

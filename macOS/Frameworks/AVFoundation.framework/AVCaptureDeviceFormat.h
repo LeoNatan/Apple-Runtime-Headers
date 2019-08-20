@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) long long autoFocusSystem;
 @property(readonly, nonatomic) CDStruct_79c71658 highResolutionStillImageDimensions;
 @property(readonly, nonatomic, getter=isVideoHDRSupported) BOOL videoHDRSupported;
+@property(readonly, nonatomic, getter=isGlobalToneMappingSupported) BOOL globalToneMappingSupported;
 @property(readonly, nonatomic) float maxISO;
 @property(readonly, nonatomic) float minISO;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 maxExposureDuration;

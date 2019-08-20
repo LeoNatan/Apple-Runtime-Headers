@@ -72,11 +72,11 @@
 @property(retain, nonatomic) VUIPlayer *mainPlayer; // @synthesize mainPlayer=_mainPlayer;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
+- (void)_updateStopWhenBackgroundedFeatureForApplicationState:(long long)arg1 isFullScreen:(_Bool)arg2;
 - (void)_showStillWatchingAlertFeature:(id)arg1;
 - (void)_updateTimeTriggeredFeature:(id)arg1 animated:(_Bool)arg2;
 - (id)_stillWatchingAlertDurationOverride;
 - (void)_configureStillWatchingFeatureMonitoringIfLivePlayback;
-- (_Bool)_isiPhone;
 - (void)_handleTapGesture:(id)arg1;
 - (void)_removeTappableViewForSkipButtonIfNeeded;
 - (void)_addTappableViewToRemoveSkipButton;
@@ -100,6 +100,7 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_registerApplicationNotifications;
+- (void)_externalPlaybackTypeDidChange:(id)arg1;
 - (void)_playbackErrorDidOccur:(id)arg1;
 - (void)_currentMediaItemDidChange:(id)arg1;
 - (void)_playbackStateDidChange:(id)arg1;

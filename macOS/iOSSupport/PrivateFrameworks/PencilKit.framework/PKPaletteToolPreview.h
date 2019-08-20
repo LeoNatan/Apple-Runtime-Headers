@@ -12,24 +12,38 @@
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, PKColorPicker, PKPaletteToolView, UIColor;
+@class NSLayoutConstraint, NSString, PKColorPicker, PKPaletteToolView, UIColor, UILayoutGuide;
 @protocol PKPalettePopoverPresenting><PKPaletteToolPreviewDelegate;
 
 @interface PKPaletteToolPreview : UIView <UIPopoverPresentationControllerDelegate, PKColorPickerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
 {
+    BOOL _toolViewVisible;
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPreviewDelegate> _delegate;
+    long long _colorUserInterfaceStyle;
     PKPaletteToolView *_tool;
     PKColorPicker *_colorPickerPopover;
     NSLayoutConstraint *_toolViewTopAnchor;
     NSLayoutConstraint *_toolViewHeightAnchor;
+    UILayoutGuide *_layoutGuide;
+    NSLayoutConstraint *_layoutGuideTopConstraint;
+    NSLayoutConstraint *_layoutGuideWidthConstraint;
+    NSLayoutConstraint *_layoutGuideHeightConstraint;
+    NSLayoutConstraint *_layoutGuideCenterXConstraint;
 }
 
+@property(nonatomic, getter=isToolViewVisible) BOOL toolViewVisible; // @synthesize toolViewVisible=_toolViewVisible;
+@property(retain, nonatomic) NSLayoutConstraint *layoutGuideCenterXConstraint; // @synthesize layoutGuideCenterXConstraint=_layoutGuideCenterXConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *layoutGuideHeightConstraint; // @synthesize layoutGuideHeightConstraint=_layoutGuideHeightConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *layoutGuideWidthConstraint; // @synthesize layoutGuideWidthConstraint=_layoutGuideWidthConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *layoutGuideTopConstraint; // @synthesize layoutGuideTopConstraint=_layoutGuideTopConstraint;
+@property(retain, nonatomic) UILayoutGuide *layoutGuide; // @synthesize layoutGuide=_layoutGuide;
 @property(retain, nonatomic) NSLayoutConstraint *toolViewHeightAnchor; // @synthesize toolViewHeightAnchor=_toolViewHeightAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *toolViewTopAnchor; // @synthesize toolViewTopAnchor=_toolViewTopAnchor;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) PKPaletteToolView *tool; // @synthesize tool=_tool;
+@property(nonatomic) long long colorUserInterfaceStyle; // @synthesize colorUserInterfaceStyle=_colorUserInterfaceStyle;
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPreviewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
@@ -38,10 +52,17 @@
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
+- (id)_popoverPresentingSourceview;
+- (struct CGRect)_popoverPresentingSourceRect;
 - (void)_showColorSelectionPopover;
 - (void)toggleColorSelectionPopover;
-- (void)updateConstraints;
 @property(readonly, nonatomic) UIColor *toolColor;
+- (double)_toolViewTopSpacing;
+- (void)updateConstraints;
+- (void)_updateInkingToolAttributesFromInk:(id)arg1;
+- (void)_replaceCurrentToolWithToolWithInkIdentifier:(id)arg1;
+- (void)_updateLayoutGuideConstraints;
+- (void)_animateToolViewToVisible:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showPreviewForToolWithInk:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

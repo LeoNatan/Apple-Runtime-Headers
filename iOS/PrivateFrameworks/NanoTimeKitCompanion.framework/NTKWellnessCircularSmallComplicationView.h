@@ -19,6 +19,7 @@
 - (void)_updateColors;
 - (void)_setLayoutEmptyRings;
 - (void)_updateForTemplateChange;
+- (void)_enumerateForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)layoutSubviews;
 - (void)setSecondaryForegroundColor:(id)arg1;
 - (void)setUsesMultiColor:(_Bool)arg1;

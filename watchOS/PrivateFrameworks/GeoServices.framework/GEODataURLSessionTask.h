@@ -29,6 +29,7 @@
     CDStruct_d1a7ebee _requestKind;
     unsigned int _taskIdentifier;
     _Bool _mptcpNegotiated;
+    _Bool _receivedRNFNotification;
     unsigned long long _stateCaptureHandle;
     float _priority;
     unsigned int _sessionIdentifier;
@@ -40,6 +41,7 @@
     id <NSObject> _parsedResponse;
 }
 
+@property(nonatomic) _Bool receivedRNFNotification; // @synthesize receivedRNFNotification=_receivedRNFNotification;
 @property(readonly, nonatomic) _Bool mptcpNegotiated; // @synthesize mptcpNegotiated=_mptcpNegotiated;
 @property(nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, nonatomic) _Bool finished; // @synthesize finished=_finished;

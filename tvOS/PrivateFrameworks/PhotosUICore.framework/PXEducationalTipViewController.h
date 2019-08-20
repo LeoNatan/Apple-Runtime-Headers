@@ -25,6 +25,7 @@
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)_handleDismissButton:(id)arg1;
 - (void)_invalidateContent;
 - (void)setTitle:(id)arg1;

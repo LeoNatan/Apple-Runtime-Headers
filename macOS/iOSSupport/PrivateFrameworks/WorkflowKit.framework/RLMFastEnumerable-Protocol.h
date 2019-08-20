@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class RLMRealm;
+@class RLMFastEnumerator, RLMRealm;
 
 @protocol RLMFastEnumerable
 @property(readonly, nonatomic) unsigned long long count;
 @property(readonly, nonatomic) struct RLMClassInfo *objectInfo;
 @property(readonly, nonatomic) RLMRealm *realm;
+- (RLMFastEnumerator *)fastEnumerator;
 - (struct TableView)tableView;
-- (unsigned long long)indexInSource:(unsigned long long)arg1;
 @end
 

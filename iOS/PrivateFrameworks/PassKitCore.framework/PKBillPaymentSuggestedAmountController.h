@@ -16,6 +16,8 @@
     NSDecimalNumber *_previousStatementPaymentsSum;
     NSDecimalNumber *_statementPurchasesSum;
     NSMutableDictionary *_merchantCategoryTransactionSums;
+    _Bool _isOnPlanCompletion;
+    _Bool _isOnPaymentPlan;
     _Bool _currentStatementIsLastMonthsStatement;
     _Bool _isMonthZero;
     _Bool _isMonthOne;
@@ -56,8 +58,11 @@
 - (_Bool)_categoryIsCurrentBalanceType:(unsigned long long)arg1;
 - (_Bool)_categoryIsPaymentPlan:(unsigned long long)arg1;
 - (_Bool)_suggestedAmountListIsValidAfterPurgeIfNecessary:(id)arg1;
+- (id)_calculateThresholdForLastPaymentCategory:(unsigned long long)arg1 statementBalance:(id)arg2 suggestedAmountWithSameCategory:(id)arg3;
+- (id)_suggestedAmountsForPayOffDateForStatementBalance:(id)arg1 creditUtilization:(id)arg2 lastPaymentCategory:(unsigned long long)arg3;
 - (void)_minimumMerchcantCategoriesAboveMinimumAmount:(id)arg1 minMerchantCategory1:(long long *)arg2 minMerchantCategory2:(long long *)arg3 minMerchantCategorySum1:(id *)arg4 minMerchantCategorySum2:(id *)arg5;
 - (_Bool)_allMandatoryValuesAreSameAmount;
+- (void)_populatePriorityValuesForList:(id)arg1;
 - (void)_populateStringValuesForList:(id)arg1;
 - (void)_zerothOrFirstMonthBillPaymentSuggestionsForList:(id)arg1;
 - (void)_generateAmountSuggestionListUsingTransactionHistoryForList:(id)arg1;

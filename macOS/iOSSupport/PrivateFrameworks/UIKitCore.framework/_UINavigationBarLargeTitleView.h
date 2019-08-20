@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, _UINavigationBarLargeTitleViewLayout, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
+@class NSArray, NSDictionary, NSString, _UINavigationBarLargeTitleViewLayout, _UINavigationBarTransitionContext;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarLargeTitleView : UIView <_UINavigationBarTransitionContextParticipant>
@@ -25,12 +25,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _twoLineMode;
     UIView *_accessoryView;
     unsigned long long _accessoryViewHorizontalAlignment;
-    _UINavigationControllerRefreshControlHost *_refreshControlHost;
     _UINavigationBarLargeTitleViewLayout *_layout;
 }
 
 @property(readonly, nonatomic) _UINavigationBarLargeTitleViewLayout *layout; // @synthesize layout=_layout;
-@property(retain, nonatomic) _UINavigationControllerRefreshControlHost *refreshControlHost; // @synthesize refreshControlHost=_refreshControlHost;
 @property(nonatomic) unsigned long long accessoryViewHorizontalAlignment; // @synthesize accessoryViewHorizontalAlignment=_accessoryViewHorizontalAlignment;
 @property(nonatomic) BOOL alignAccessoryViewToTitleBaseline; // @synthesize alignAccessoryViewToTitleBaseline=_alignAccessoryViewToTitleBaseline;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
@@ -48,7 +46,6 @@ __attribute__((visibility("hidden")))
 - (void)recordToStateForTransition:(id)arg1;
 - (void)prepareToRecordToState:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
-@property(nonatomic) double restingHeightOfRefreshControl; // @dynamic restingHeightOfRefreshControl;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContent;
 - (void)_updateContentAndInvalidate:(BOOL)arg1;

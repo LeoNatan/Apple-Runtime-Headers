@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_notifyObserversOfEvent:(id)arg1;
 - (void)_notifyObserver:(id)arg1 ofRefreshEvent:(id)arg2;
+- (void)_handleLocationDidChangeNotification:(id)arg1;
 - (void)_handleLocationAuthorizationDidChangeNotification:(id)arg1;
 - (void)_handleClearPlayHistoryNotification:(id)arg1;
 - (void)_handlePreferredVideoFormatDidChangeNotification:(id)arg1;
@@ -39,11 +40,13 @@ __attribute__((visibility("hidden")))
 - (void)_handleRemoveFromPlayHistoryRequestDidFinishNotification:(id)arg1;
 - (void)_handleFavoritesRequestDidFinishNotification:(id)arg1;
 - (void)_handlePlayHistoryUpdatedNotification:(id)arg1;
+- (void)_handleXPUpNextRequestDidFinishNotification:(id)arg1;
 - (void)_handleUpNextRequestDidFinishNotification:(id)arg1;
 - (void)_handlePostPlayUpNextShouldUpdateNotification:(id)arg1;
 - (void)_handleUTSKDidChangeNotification:(id)arg1;
 - (void)_handleEntitlementsDidChangeNotification:(id)arg1;
 - (void)_handleSubscriptionDidChangeNotification:(id)arg1;
+- (void)_handleXPPurchaseFlowDidFinishNotification:(id)arg1;
 - (void)_handlePurchaseFlowDidFinishNotification:(id)arg1;
 - (void)_handleAppLibraryDidChangeNotification:(id)arg1;
 - (void)_handleSettingsDidChangeNotification:(id)arg1;

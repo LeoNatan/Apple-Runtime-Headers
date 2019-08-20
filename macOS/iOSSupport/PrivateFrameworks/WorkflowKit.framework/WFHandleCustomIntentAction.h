@@ -23,7 +23,6 @@
     WFIntentDynamicResolutionRequest *_lastDynamicResolutionRequest;
 }
 
-+ (id)runnableIntentWithSchema:(id)arg1 className:(id)arg2 bundleIdentifier:(id)arg3;
 @property(retain, nonatomic) WFIntentDynamicResolutionRequest *lastDynamicResolutionRequest; // @synthesize lastDynamicResolutionRequest=_lastDynamicResolutionRequest;
 @property(readonly, nonatomic) WFIntentDynamicResolver *dynamicResolver; // @synthesize dynamicResolver=_dynamicResolver;
 @property(readonly, copy, nonatomic) INSchema *schema; // @synthesize schema=_schema;
@@ -41,12 +40,9 @@
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
 - (void)loadPossibleStatesForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadDefaultSerializedRepresentationForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)allowsInteractiveSlotResolution;
-- (BOOL)isBuiltInAction;
 - (id)parameterKeysIgnoredForParameterSummary;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 @property(readonly, copy, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
-- (BOOL)shouldBeIncludedByAppsViewController;
 - (id)slots;
 - (id)codableDescription;
 - (id)localizedKeyParameterDisplayName;

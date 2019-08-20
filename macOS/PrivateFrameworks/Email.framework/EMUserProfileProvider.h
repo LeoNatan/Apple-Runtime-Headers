@@ -8,7 +8,7 @@
 
 #import <Email/EMUserProfileProvider-Protocol.h>
 
-@class CNContactStore, NSDictionary, NSSet, NSString;
+@class CNContactStore, NSDictionary, NSMutableArray, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface EMUserProfileProvider : NSObject <EMUserProfileProvider>
@@ -17,11 +17,15 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
     int _outstandingCacheRefreshes;
     NSDictionary *_cache;
+    NSMutableArray *_knownToBeMyEmail;
+    NSMutableArray *_knownToNotBeMyEmail;
     CNContactStore *_contactStore;
 }
 
 + (BOOL)doesAddressList:(id)arg1 containAddressInSet:(id)arg2;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(readonly, nonatomic) NSMutableArray *knownToNotBeMyEmail; // @synthesize knownToNotBeMyEmail=_knownToNotBeMyEmail;
+@property(readonly, nonatomic) NSMutableArray *knownToBeMyEmail; // @synthesize knownToBeMyEmail=_knownToBeMyEmail;
 @property(retain, nonatomic) NSDictionary *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
 - (id)_contactEmailAddresses;
@@ -30,6 +34,7 @@
 - (void)_accountsChanged:(id)arg1;
 - (void)waitForOutstandingCacheRefreshes;
 - (void)refreshCachedValues;
+- (BOOL)_isMyEmailAddressContainedInAddressStrings:(id)arg1;
 - (BOOL)isMyEmailAddressContainedInAddressList:(id)arg1;
 @property(readonly, copy) NSSet *allEmailAddresses;
 - (id)contactWithKeysToFetch:(id)arg1;

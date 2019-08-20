@@ -16,6 +16,7 @@
 {
     UIAlertController *_alertView;
     UIWindow *_alertWindow;
+    UIWindow *_btAlertWindow;
     UITableView *_tableView;
     NSMutableArray *_deviceList;
     NSString *_title;
@@ -53,6 +54,7 @@
 - (void)powerChanged:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)cancelDevicePicker;
+- (void)createBTAlertWindow;
 - (void)createAlertWindow;
 - (void)startScanning;
 - (void)checkAttachTimeout;

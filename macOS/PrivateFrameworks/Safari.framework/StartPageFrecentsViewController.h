@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL supportsCollapsing;
 - (void)reloadData;
 @property(readonly, nonatomic) BOOL isPerformingSizingAnimation;
+- (void)_cleanUp;
 - (void)dealloc;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;

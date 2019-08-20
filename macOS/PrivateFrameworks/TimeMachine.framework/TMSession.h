@@ -39,11 +39,13 @@
 + (BOOL)checkAndSetIsInCurrentSystemDataVolumeForPath:(id)arg1 ranges:(struct TMBackupPathRanges)arg2;
 + (id)_inferBackupRootPathFromBackedUpItemPath:(id)arg1;
 + (id)_inferOriginalPathFromBackedUpItemPath:(id)arg1;
++ (id)_pathInBackupForVolumeRelativePath:(id)arg1 volumeName:(id)arg2 volumeUUID:(id)arg3 pathToBackup:(id)arg4;
 + (id)_mountDestinationForDestinationID:(id)arg1 error:(id *)arg2;
 + (id)_browsingSessionForDestinationID:(id)arg1 error:(id *)arg2;
 + (id)currentDataVolumeMountPoint;
 + (id)currentDataVolumeUUID;
 + (id)currentDataVolume;
++ (id)currentSystemVolume;
 + (void)clearROSPCache;
 + (id)ROSPVolumeStoreInfoCache;
 @property(copy) NSArray *backups; // @synthesize backups=_backups;

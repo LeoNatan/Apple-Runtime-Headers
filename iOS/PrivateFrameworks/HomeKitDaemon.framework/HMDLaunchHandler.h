@@ -6,15 +6,18 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class NSMutableSet, NSObject;
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
+
+@class NSMutableSet, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HMDLaunchHandler : HMFObject
+@interface HMDLaunchHandler : HMFObject <HMFLogging>
 {
     NSObject<OS_dispatch_queue> *_handlerQueue;
     NSMutableSet *_registeredRelaunchClients;
 }
 
++ (id)logCategory;
 + (int)_setJetsamPriorityUsingCommand:(int)arg1;
 + (_Bool)_removeFileAtPath:(id)arg1 error:(id *)arg2;
 + (_Bool)_fileExistsAtPath:(id)arg1;
@@ -30,6 +33,12 @@
 - (void)registerForRelaunch:(id)arg1;
 - (void)removePersistentRelaunchRegistrationsIfNecessary;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

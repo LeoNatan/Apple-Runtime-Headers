@@ -14,8 +14,8 @@
     UITableView *_tableView;
 }
 
-@property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(retain) HKQuantitySeriesDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
+@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(retain, nonatomic) HKQuantitySeriesDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void).cxx_destruct;
 - (void)loadView;
 - (void)willMoveToParentViewController:(id)arg1;

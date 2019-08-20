@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSDate;
+@class NSCalendar, NSDate, NSLocale;
 @protocol PKDatePickerDelegate;
 
 @interface PKDatePicker : UIView
@@ -17,6 +17,8 @@
     _Bool _showsYear;
     _Bool _usesDarkAppearance;
     unsigned int _style;
+    NSLocale *_locale;
+    NSCalendar *_calendar;
     NSDate *_date;
     id <PKDatePickerDelegate> _delegate;
 }
@@ -25,6 +27,8 @@
 @property(nonatomic) _Bool usesDarkAppearance; // @synthesize usesDarkAppearance=_usesDarkAppearance;
 @property(nonatomic) id <PKDatePickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
+@property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 @property(readonly, nonatomic) _Bool showsYear; // @synthesize showsYear=_showsYear;
 @property(readonly, nonatomic) _Bool showsMonth; // @synthesize showsMonth=_showsMonth;
@@ -37,7 +41,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
-- (void)reconfigureToShowDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 style:(unsigned int)arg4;
+- (void)reconfigureToShowDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 style:(unsigned int)arg4 locale:(id)arg5 calendar:(id)arg6;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

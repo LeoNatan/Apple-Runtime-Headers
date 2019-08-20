@@ -8,7 +8,7 @@
 
 #import <ChatKit/QLPreviewItem-Protocol.h>
 
-@class NSData, NSDictionary, NSString, NSURL;
+@class NSData, NSDictionary, NSString, NSURL, UITraitCollection;
 @protocol CKFileTransfer, OS_dispatch_group;
 
 @interface CKMediaObject : NSObject <QLPreviewItem>
@@ -17,6 +17,7 @@
     _Bool _suppressPreviewForUnknownSender;
     _Bool _forceInlinePreviewGeneration;
     id <CKFileTransfer> _transfer;
+    UITraitCollection *_transcriptTraitCollection;
     NSURL *_cachedHighQualityFileURL;
     NSObject<OS_dispatch_group> *_highQualityFetchInProgressGroup;
     unsigned long long _oopPreviewRequestCount;
@@ -36,6 +37,7 @@
 @property(nonatomic) _Bool forceInlinePreviewGeneration; // @synthesize forceInlinePreviewGeneration=_forceInlinePreviewGeneration;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *highQualityFetchInProgressGroup; // @synthesize highQualityFetchInProgressGroup=_highQualityFetchInProgressGroup;
 @property(retain, nonatomic) NSURL *cachedHighQualityFileURL; // @synthesize cachedHighQualityFileURL=_cachedHighQualityFileURL;
+@property(retain, nonatomic) UITraitCollection *transcriptTraitCollection; // @synthesize transcriptTraitCollection=_transcriptTraitCollection;
 @property(nonatomic) _Bool suppressPreviewForUnknownSender; // @synthesize suppressPreviewForUnknownSender=_suppressPreviewForUnknownSender;
 @property(nonatomic) _Bool isFromMe; // @synthesize isFromMe=_isFromMe;
 @property(retain, nonatomic) id <CKFileTransfer> transfer; // @synthesize transfer=_transfer;

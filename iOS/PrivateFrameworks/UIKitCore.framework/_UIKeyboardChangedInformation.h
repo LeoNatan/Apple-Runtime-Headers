@@ -40,6 +40,7 @@
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyAsOffscreen;
 - (id)copyWithoutFence;
 - (id)copyWithoutIAV;
 - (id)initWithKeyboardRect:(struct CGRect)arg1 iavPosition:(struct CGRect)arg2 onScreen:(_Bool)arg3 takeSnapshot:(_Bool)arg4 fence:(id)arg5;

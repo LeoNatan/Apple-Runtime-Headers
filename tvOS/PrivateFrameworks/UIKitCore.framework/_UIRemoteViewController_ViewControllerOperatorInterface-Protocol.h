@@ -12,9 +12,9 @@
 - (void)__showEditAlertViewWithToken:(long long)arg1 canUndo:(_Bool)arg2 canRedo:(_Bool)arg3;
 - (void)__trampolineButtonPressData:(NSData *)arg1 canceled:(_Bool)arg2;
 - (void)__viewServiceDidUpdatePreferredUserInterfaceStyle:(long long)arg1;
-- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id <UITimingCurveProvider>)arg4;
-- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
-- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id <UITimingCurveProvider>)arg5;
+- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
+- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(long long)arg1 animationSettings:(BSAnimationSettings *)arg2;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 preferredStatusBarVisibility:(int)arg2 updateAnimation:(long long)arg3 currentAnimationSettings:(BSAnimationSettings *)arg4;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize)arg1 fence:(BKSAnimationFenceHandle *)arg2;

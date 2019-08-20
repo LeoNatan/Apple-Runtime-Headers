@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)anticipatingMoreDisks;
 - (id)copyCurrentDisks;
 - (struct __DADisk *)copyCurrentDiskForKey:(id)arg1 value:(id)arg2;
+- (void)doReleaseAndRemoveDisksFromList;
 - (void)doBlockingSearch;
 - (void)dealloc;
 - (id)initWithSession:(struct __DASession *)arg1 timeout:(double)arg2 withDMTool:(id)arg3;

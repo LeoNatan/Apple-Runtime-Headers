@@ -13,6 +13,7 @@
 + (id)_mockStatus;
 + (BOOL)shouldUseMock;
 - (void)_updateStatusProperties;
+- (void)alternateTitleIndexDidChange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithDataSourceManager:(id)arg1;

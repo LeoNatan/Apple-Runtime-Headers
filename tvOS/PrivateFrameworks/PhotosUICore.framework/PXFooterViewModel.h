@@ -12,6 +12,7 @@
 {
     _Bool _isPaused;
     float _progress;
+    long long _animatedIconMode;
     NSString *_title;
     NSString *_extendedTitle;
     NSString *_subtitle1;
@@ -38,7 +39,9 @@
 @property(readonly, nonatomic) NSString *subtitle1; // @synthesize subtitle1=_subtitle1;
 @property(readonly, nonatomic) NSString *extendedTitle; // @synthesize extendedTitle=_extendedTitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
+@property(readonly, nonatomic) long long animatedIconMode; // @synthesize animatedIconMode=_animatedIconMode;
 - (void).cxx_destruct;
+- (void)setAnimatedIconMode:(long long)arg1;
 - (void)setAccessoryView:(id)arg1;
 - (void)setAction:(CDUnknownBlockType)arg1;
 - (void)setActionConfirmationAlertButtonTitle:(id)arg1;
@@ -52,6 +55,7 @@
 - (void)setExtendedTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)mutableChangeObject;
+- (void)footerAnimationCrossedGridCycleBoundary;
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (id)init;
 

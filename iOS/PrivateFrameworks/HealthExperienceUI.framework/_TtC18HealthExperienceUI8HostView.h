@@ -11,8 +11,8 @@
     // Error parsing type: , name: recreateViewControllerOnHostedFeedItemChange
     // Error parsing type: , name: recreateViewControllerOnNextChange
     // Error parsing type: , name: userDataObserver
-    // Error parsing type: , name: storyboardIdentifierObserver
-    // Error parsing type: , name: currentStoryboardIdentifier
+    // Error parsing type: , name: currentUserInterface
+    // Error parsing type: , name: currentFeedItemUniqueIdentifier
     // Error parsing type: , name: parentViewController
     // Error parsing type: , name: hostedFeedItem
     // Error parsing type: , name: hostedViewController

@@ -15,6 +15,7 @@
 - (id)_cleanupPayloadUtterancesExceedingLifeTimeInDays:(long long)arg1 forType:(unsigned long long)arg2 forLanguageCode:(id)arg3 dryRun:(_Bool)arg4;
 - (id)_cleanupOrphanedMetafilesAtURL:(id)arg1 dryRun:(_Bool)arg2;
 - (id)_cleanupInvalidAudioFiles:(id)arg1 dryRun:(_Bool)arg2;
+- (id)_cleanupContentsOfSatFolderWithLanguageCode:(id)arg1 dryRun:(_Bool)arg2;
 - (id)_cleanupOrphanedMetafilesForLanguage:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(_Bool)arg3;
 - (void)_cleanupImplicitUtteranceCache;
 - (id)cleanupInvalidSATEntriesAtSATRoot:(id)arg1 payloadUtteranceLifeTimeInDays:(long long)arg2 dryRun:(_Bool)arg3;

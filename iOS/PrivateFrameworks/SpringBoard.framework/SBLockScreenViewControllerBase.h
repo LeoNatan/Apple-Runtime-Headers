@@ -65,6 +65,7 @@
 - (_Bool)shouldDisableALS;
 @property(readonly, nonatomic) _Bool contentOccludesBackground;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;
 - (_Bool)isHostingAnApp;
 - (_Bool)canHostAnApp;

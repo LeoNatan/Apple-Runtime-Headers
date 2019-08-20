@@ -37,7 +37,6 @@
     _MKTokenAttributedString *_priceToken;
     _MKTokenAttributedString *_categoryToken;
     _MKTokenAttributedString *_openStateToken;
-    _MKTokenAttributedString *_hoursToken;
     _MKTokenAttributedString *_userLocationToken;
     _MKTokenAttributedString *_venueToken;
     _MKTokenAttributedString *_verifiedToken;
@@ -75,7 +74,6 @@
 - (void)_loadLogo;
 - (_Bool)_isLikelyToShowDistance;
 - (void)_setupDatas;
-- (id)_localizedHours;
 - (id)_openStateString;
 - (id)_reviewLabelText;
 - (id)_verifiedText;

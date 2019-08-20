@@ -120,6 +120,7 @@ __attribute__((visibility("hidden")))
 + (id)activeInstance;
 + (float)serverManualEndpointingThreshold;
 + (_Bool)usingServerManualEndpointingThreshold;
++ (id)_dictationLog;
 @property(nonatomic) unsigned int dictationSourceType; // @synthesize dictationSourceType=_dictationSourceType;
 @property(copy, nonatomic) NSString *fallbackDictationLanguage; // @synthesize fallbackDictationLanguage=_fallbackDictationLanguage;
 @property(copy, nonatomic) NSString *initialDictationLanguage; // @synthesize initialDictationLanguage=_initialDictationLanguage;
@@ -147,6 +148,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
 - (void)keyboardDismissed:(id)arg1;
 - (_Bool)smartLanguageSelectionOverridden;
+- (void)endSmartLanguageSelectionOverride;
 - (void)overrideSmartLanguageSelection:(id)arg1;
 - (void)markKeyboardDidReset;
 - (void)markKeyboardDeleteMetricEvent;
@@ -235,6 +237,7 @@ __attribute__((visibility("hidden")))
 - (void)setupForDictationStart;
 - (void)setupForStreamingDictationStart;
 - (void)dismissDictationView:(id)arg1;
+- (_Bool)dictationSearchFieldUISupportsTraitCollection:(id)arg1;
 - (_Bool)_allowsMicsInSearchFieldForLocales:(id)arg1;
 - (_Bool)dictationSearchFieldUIEnabled;
 - (_Bool)currentViewModeSupportsDictationMics;

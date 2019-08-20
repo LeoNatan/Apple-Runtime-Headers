@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSURL;
+@class NSURL;
 
 @interface PAMediaConversionServiceResourceURLReference : NSObject
 {
     BOOL _mustStopAccessingURL;
+    BOOL _shouldDeleteOnDeallocation;
     NSURL *_url;
-    NSString *_typeIdentifier;
 }
 
 + (id)referenceWithDictionaryRepresentation:(id)arg1 error:(id *)arg2;
 + (id)referenceWithURL:(id)arg1;
+@property BOOL shouldDeleteOnDeallocation; // @synthesize shouldDeleteOnDeallocation=_shouldDeleteOnDeallocation;
 @property BOOL mustStopAccessingURL; // @synthesize mustStopAccessingURL=_mustStopAccessingURL;
-@property(retain) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
 @property(retain) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentationWithError:(id *)arg1;

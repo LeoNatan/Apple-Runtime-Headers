@@ -26,7 +26,7 @@
 #import <MessageUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <MessageUI/VNDocumentCameraViewControllerDelegate-Protocol.h>
 
-@class CNComposeRecipient, CNComposeRecipientAtom, CNContactPickerViewController, CNContactViewController, CNRecentComposeRecipient, EFFuture, EMMailboxObjectID, EMMessageObjectID, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeDisplayMetrics, MFComposeImageSizeView, MFComposeSubjectView, MFLANHandoffAgent, MFLock, MFMailComposeRecipientTextView, MFMailComposeToField, MFMailPopoverManager, MFMailSignatureController, MFMessageContentProgressLayer, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFPhotoPickerController, MFSecureMIMECompositionManager, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIButton, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, VNDocumentCameraViewController, _MFMailCompositionContext;
+@class CNComposeRecipient, CNComposeRecipientAtom, CNContactPickerViewController, CNContactViewController, CNRecentComposeRecipient, EFFuture, EMMailboxObjectID, EMMessageObjectID, MFAddressPickerReformatter, MFAttachment, MFComposeActivityHandoffOperation, MFComposeDisplayMetrics, MFComposeImageSizeView, MFComposeSubjectView, MFLANHandoffAgent, MFLock, MFMailComposeRecipientTextView, MFMailComposeToField, MFMailPopoverManager, MFMailSignatureController, MFMessageContentProgressLayer, MFMutableMessageHeaders, MFOutgoingMessageDelivery, MFPhotoPickerController, MFSecureMIMECompositionManager, MSAutosaveSession, NSArray, NSDate, NSDictionary, NSMutableSet, NSObject, NSString, NSTimer, QLPreviewController, UIAlertController, UIBarButtonItem, UIButton, UIImagePickerController, UIKeyCommand, UIProgressView, UIResponder, UIView, VNDocumentCameraViewController, _MFMailCompositionContext;
 @protocol EFScheduler, MFComposeBodyField, MFMailAccountProxyGenerator, OS_dispatch_group;
 
 @interface MFMailComposeController : UIViewController <UINavigationControllerDelegate, CNContactContentViewControllerDelegate, MFMailComposeToFieldDelegate, NSUserActivityDelegate, MFComposeActivityHandoffOperationDelegate, MFPhotoPickerControllerDelegate, QLPreviewControllerDelegate, VNDocumentCameraViewControllerDelegate, MFMailComposeViewDelegate, CNComposeHeaderViewDelegate, MFComposeSubjectViewDelegate, MFComposeImageSizeViewDelegate, MFSecureMIMECompositionManagerDelegate, MFComposeTypeFactoryDelegate, MFMailComposeRecipientTextViewDelegate, UIImagePickerControllerDelegate, UIPopoverPresentationControllerDelegate, CNAutocompleteGroupDetailViewControllerDelegate, CNContactPickerDelegate>
@@ -139,6 +139,7 @@
     unsigned long long _markupReplyAttachmentLoadingProgress;
     NSMutableSet *_drawingFileAttachments;
     id <EFScheduler> _autosaveQueue;
+    MSAutosaveSession *_autosaveSession;
     VNDocumentCameraViewController *_documentCameraViewController;
     MFComposeDisplayMetrics *_displayMetrics;
 }
@@ -151,6 +152,7 @@
 + (id)signpostLog;
 @property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(nonatomic) __weak VNDocumentCameraViewController *documentCameraViewController; // @synthesize documentCameraViewController=_documentCameraViewController;
+@property(retain, nonatomic) MSAutosaveSession *autosaveSession; // @synthesize autosaveSession=_autosaveSession;
 @property(retain, nonatomic) id <EFScheduler> autosaveQueue; // @synthesize autosaveQueue=_autosaveQueue;
 @property(retain, nonatomic) NSMutableSet *drawingFileAttachments; // @synthesize drawingFileAttachments=_drawingFileAttachments;
 @property(nonatomic) unsigned long long markupReplyAttachmentLoadingProgress; // @synthesize markupReplyAttachmentLoadingProgress=_markupReplyAttachmentLoadingProgress;
@@ -292,8 +294,10 @@
 - (void)contactPickerDidCancel:(id)arg1;
 - (void)_dismissPeoplePicker:(id)arg1;
 - (long long)popoverPresentationStyleForViewController:(id)arg1;
+- (_Bool)_isDummyViewController;
 @property(readonly, nonatomic, getter=isVerticallyCompact) _Bool verticallyCompact;
 - (id)keyCommands;
+- (void)_replyCommandInvoked:(id)arg1;
 - (void)_replyAllCommandInvoked:(id)arg1;
 - (void)_focusBccHeaderCommandInvoked:(id)arg1;
 - (void)_tabKeyCommandInvoked:(id)arg1;
@@ -368,6 +372,8 @@
 - (void)finishedBackingUpDraftWithSuccess:(_Bool)arg1;
 - (void)backUpDraft;
 - (void)setHeadersForDraft;
+- (void)_updateAutosaveSession;
+- (void)autosaveIfNecessaryWithHandler:(CDUnknownBlockType)arg1;
 - (void)autosaveWithHandler:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) NSString *autosaveIdentifier;
 - (void)_autosaveTimerFired:(id)arg1;
@@ -484,6 +490,7 @@
 - (void)_draftContentDidChange;
 - (_Bool)isDirty;
 - (void)saveAndResignFirstResponder;
+- (void)saveFirstResponder;
 - (void)pickInitialFirstResponder;
 - (void)_placeCaretAtStartOfBodyField;
 - (_Bool)_shouldPrependBlankLineForAttachments;

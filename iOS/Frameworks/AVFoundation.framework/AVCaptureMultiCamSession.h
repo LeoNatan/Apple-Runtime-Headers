@@ -26,8 +26,6 @@
 - (_Bool)_addConnection:(id)arg1 exceptionReason:(id *)arg2;
 - (_Bool)_canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (_Bool)_canAddOutput:(id)arg1 failureReason:(id *)arg2;
-- (void)_removeInput:(id)arg1;
-- (_Bool)_addInputWithNoConnections:(id)arg1 exceptionReason:(id *)arg2;
 - (_Bool)_canAddInput:(id)arg1 failureReason:(id *)arg2;
 - (_Bool)canSetSessionPreset:(id)arg1;
 - (void)startRunning;

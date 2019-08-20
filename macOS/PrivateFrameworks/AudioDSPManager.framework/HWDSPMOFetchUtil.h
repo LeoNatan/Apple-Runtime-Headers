@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (id)fetchAllWithPortType:(id)arg1;
-- (id)fetchWithPortType:(id)arg1;
+- (id)fetchAllWithPortType:(id)arg1 category:(id)arg2 mode:(id)arg3;
+- (id)fetchWithPortType:(id)arg1 category:(id)arg2 mode:(id)arg3;
 - (id)initWithManagedObjectContext:(id)arg1;
 
 @end

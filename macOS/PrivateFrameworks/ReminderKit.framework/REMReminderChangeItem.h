@@ -42,9 +42,11 @@
 - (BOOL)isSubtask;
 - (void)removeAllAlarms;
 - (void)removeAlarm:(id)arg1;
+- (void)setAlarms:(id)arg1;
 - (void)addAlarm:(id)arg1;
 - (id)addAlarmWithTrigger:(id)arg1;
 - (id)nextRecurrentDueDateComponentsAfter:(id)arg1;
+- (double)nextRecurrentAdvanceAmountAfter:(id)arg1;
 - (void)removeAllRecurrenceRules;
 - (void)removeRecurrenceRule:(id)arg1;
 - (void)insertRecurrenceRule:(id)arg1 afterRecurrenceRule:(id)arg2;
@@ -66,7 +68,7 @@
 - (id)shallowCopyWithSaveRequest:(id)arg1;
 - (void)_copyAlarmsInto:(id)arg1;
 - (void)copyInto:(id)arg1;
-- (id)duplicateForRecurrence;
+- (id)duplicateForRecurrenceUsingReminderID:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) REMAccountCapabilities *accountCapabilities; // @dynamic accountCapabilities;
 - (id)initWithReminderChangeItem:(id)arg1 insertIntoParentReminderSubtaskContextChangeItem:(id)arg2;
@@ -79,9 +81,11 @@
 - (id)confirmForSiriFoundInAppsAppendingToList:(id)arg1;
 - (id)_cleanupOriginalAlarmsForSnoozing;
 - (void)_createSnoozeAlarmWithDateComponents:(id)arg1;
+- (double)_timeIntervalToAddSinceStartDate:(id)arg1 withNow:(id)arg2 step:(double)arg3;
 - (void)snoozeFromDueDateForFutureIntegralMultipleOfTimeInterval:(double)arg1;
 - (void)snoozeForever;
 - (void)snoozeToNextThirds;
+- (void)snoozeToDate:(id)arg1;
 - (void)snoozeFromNowForTimeInterval:(double)arg1;
 - (void)removeAllSnoozeAlarms;
 
@@ -104,6 +108,7 @@
 @property(readonly) unsigned long long hash;
 @property(retain, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
 @property(readonly, nonatomic) BOOL isOverdue; // @dynamic isOverdue;
+@property(readonly, nonatomic) BOOL isRecurrent; // @dynamic isRecurrent;
 @property(copy, nonatomic) NSDate *lastBannerPresentationDate; // @dynamic lastBannerPresentationDate;
 @property(copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;

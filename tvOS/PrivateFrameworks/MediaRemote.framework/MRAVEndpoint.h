@@ -29,6 +29,7 @@
 @property(nonatomic, getter=isProxyGroupPlayer) _Bool proxyGroupPlayer; // @synthesize proxyGroupPlayer=_proxyGroupPlayer;
 @property(readonly, nonatomic) long long connectionType; // @synthesize connectionType=_connectionType;
 - (void).cxx_destruct;
+- (id)_initiatorStringWithInitiator:(id)arg1 uid:(id)arg2;
 - (void)_callAllCompletionHandlersWithError:(id)arg1;
 - (void)_externalDeviceConnectionStateDidChangeNotification:(id)arg1;
 - (void)_requestSharedAudioPresentationOutputContextModificationWithAddingDevices:(id)arg1 removingDevices:(id)arg2 settingDevices:(id)arg3 replyQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;
@@ -40,9 +41,10 @@
 - (void)_prepareToMigrateToEndpoint:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)canMigrateToEndpoint:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)migrateToEndpoint:(id)arg1 request:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)migrateToOutputDevice:(id)arg1 request:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)migrateToOrSetOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)migrateToOrAddOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)migrateToLogicalOutputDevice:(id)arg1 request:(id)arg2 initiator:(id)arg3 queue:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)migrateToOutputDevice:(id)arg1 request:(id)arg2 initiator:(id)arg3 queue:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)migrateToOrSetOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)migrateToOrAddOutputDevices:(id)arg1 initiator:(id)arg2 withReplyQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;

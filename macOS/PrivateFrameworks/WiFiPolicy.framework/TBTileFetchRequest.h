@@ -17,17 +17,20 @@
     unsigned long long _sourcePolicy;
     NSDictionary *userInfo;
     CDUnknownBlockType resultsHandler;
+    CDUnknownBlockType preferLocalHandler;
     TBTileFetchRequestDescriptor *_descriptor;
 }
 
 + (id)fetchRequestWithDescriptor:(id)arg1 sourcePolicy:(unsigned long long)arg2 cacheable:(BOOL)arg3;
 @property(retain, nonatomic) TBTileFetchRequestDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(copy, nonatomic) CDUnknownBlockType preferLocalHandler; // @synthesize preferLocalHandler;
 @property(copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
 @property(nonatomic) BOOL cacheable; // @synthesize cacheable=_cacheable;
 @property(nonatomic) unsigned long long sourcePolicy; // @synthesize sourcePolicy=_sourcePolicy;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)doesLocalResultsSatisfyRequest:(id)arg1;
 - (void)handlePreferLocalResponse:(id)arg1;
 - (void)handleResponse:(id)arg1;
 - (id)initWithDescriptor:(id)arg1 sourcePolicy:(unsigned long long)arg2 cacheable:(BOOL)arg3;

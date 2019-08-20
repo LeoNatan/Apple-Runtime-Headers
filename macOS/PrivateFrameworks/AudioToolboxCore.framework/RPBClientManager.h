@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: AI, name: mRPBServerCounter
     int mNotifyToken;
     BOOL mValidToken;
+    BOOL mConnectionAcknowledged;
 }
 
 + (id)sharedInstance;

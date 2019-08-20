@@ -65,6 +65,7 @@
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)_webView:(id)arg1 didInsertAttachment:(id)arg2 withSource:(id)arg3;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
 - (BOOL)_webView:(id)arg1 focusShouldStartInputSession:(id)arg2;
 - (void)setSelectionToEnd;
@@ -80,10 +81,12 @@
 - (void)updateApperanceIfNecessary;
 - (void)alwaysShowLightContentDidChange:(id)arg1;
 - (void)accentColorDidChange:(id)arg1;
+- (void)stopEditingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopEditing;
 - (void)startEditing;
 - (void)adoptEditableState;
 - (void)updateDataDetectors;
+- (void)replaceContentIDs:(id)arg1;
 - (void)undoablyRemoveAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
 - (void)undoablyReplaceSelectionWithAttachmentPresentations:(id)arg1 undoManager:(id)arg2;
 - (void)replaceSelectionWithAttachmentPresentation:(id)arg1;
@@ -92,8 +95,10 @@
 - (id)contentAsPasteboardItems;
 - (void)insertLinksWithURLs:(id)arg1 titles:(id)arg2;
 - (void)insertLinkWithURL:(id)arg1 title:(id)arg2;
+- (void)insertHTMLString:(id)arg1;
 - (void)setEnableShiftNewlinesInSmartLists:(BOOL)arg1;
 - (void)setEnableSmartLists:(BOOL)arg1;
+- (void)setEnableAttachments:(BOOL)arg1;
 - (void)setHtmlString:(id)arg1 attachments:(id)arg2;
 @property(nonatomic) double textZoomFactor;
 @property(readonly, nonatomic) WebArchive *webArchive;

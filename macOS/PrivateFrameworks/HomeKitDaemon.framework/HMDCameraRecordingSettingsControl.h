@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDCharacteristic, HMDHAPAccessory, HMDService, NSDictionary, NSNumber, NSObject, NSString;
+@class HMDCameraRecordingGeneralConfiguration, HMDCameraRecordingSelectedConfiguration, HMDCameraRecordingSupportedAudioConfiguration, HMDCameraRecordingSupportedVideoConfiguration, HMDHAPAccessory, HMDService, NSDictionary, NSMutableDictionary, NSNumber, NSObject, NSString;
 @protocol HMDCameraRecordingSettingsControlDelegate, OS_dispatch_queue;
 
 @interface HMDCameraRecordingSettingsControl : HMFObject <HMFLogging>
@@ -24,7 +24,7 @@
     HMDCameraRecordingGeneralConfiguration *_supportedRecordingConfiguration;
     HMDCameraRecordingSupportedVideoConfiguration *_supportedVideoConfiguration;
     HMDCameraRecordingSupportedAudioConfiguration *_supportedAudioConfiguration;
-    HMDCharacteristic *_activeCharacteristic;
+    NSMutableDictionary *_characteristicByType;
     HMDCameraRecordingSelectedConfiguration *_currentSelectedConfiguration;
 }
 
@@ -42,7 +42,7 @@
 @property(retain) HMDCameraRecordingSelectedConfiguration *currentSelectedConfiguration; // @synthesize currentSelectedConfiguration=_currentSelectedConfiguration;
 @property BOOL canConfigureCameraForRecording; // @synthesize canConfigureCameraForRecording=_canConfigureCameraForRecording;
 @property BOOL configureCameraInProgress; // @synthesize configureCameraInProgress=_configureCameraInProgress;
-@property(retain) HMDCharacteristic *activeCharacteristic; // @synthesize activeCharacteristic=_activeCharacteristic;
+@property(readonly) NSMutableDictionary *characteristicByType; // @synthesize characteristicByType=_characteristicByType;
 @property(retain) HMDCameraRecordingSupportedAudioConfiguration *supportedAudioConfiguration; // @synthesize supportedAudioConfiguration=_supportedAudioConfiguration;
 @property(retain) HMDCameraRecordingSupportedVideoConfiguration *supportedVideoConfiguration; // @synthesize supportedVideoConfiguration=_supportedVideoConfiguration;
 @property(retain) HMDCameraRecordingGeneralConfiguration *supportedRecordingConfiguration; // @synthesize supportedRecordingConfiguration=_supportedRecordingConfiguration;
@@ -60,15 +60,23 @@
 - (id)_parseSupportedVideoConfiguration:(id)arg1;
 - (id)_parseSupportedAudioConfiguration:(id)arg1;
 - (id)_parseSupportedRecordingConfiguration:(id)arg1;
+- (id)_parseSelectedRecordingConfiguration:(id)arg1;
 - (void)_handleSupportedConfigurationCharacteristicsReadResponse:(id)arg1;
 - (void)_readSupportedCameraRecordingConfiguration;
+- (void)_handleSelectedCameraRecordingConfigurationReadResponse:(id)arg1;
+- (void)_readSelectedCameraRecordingConfiguration;
+- (void)_readCameraRecordingSettings;
+- (void)_selectedConfigurationDidUpdateTo:(id)arg1;
+- (void)_configureCameraRecordingSettings;
 - (void)configureCameraRecordingSettings;
+- (void)dealloc;
 - (void)updateCanConfigureCameraForRecording;
 - (id)_recordingAudioConfiguration;
 - (id)_recordingVideoConfiguration;
 - (id)_preferredAudioConfigurationOverride;
 - (id)_preferredVideoConfigurationOverride;
 - (id)_recordingGeneralConfiguration;
+- (void)handleCameraProfileSettingsDidWriteToAccessory:(id)arg1;
 - (void)handleCharacteristicValueUpdated:(id)arg1;
 - (void)handleCharacteristicsUpdated:(id)arg1;
 - (void)handleAccessoryReachable:(id)arg1;

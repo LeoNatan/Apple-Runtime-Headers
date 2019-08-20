@@ -18,6 +18,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)log;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)translateToLocalActionWithConnection:(id)arg1;

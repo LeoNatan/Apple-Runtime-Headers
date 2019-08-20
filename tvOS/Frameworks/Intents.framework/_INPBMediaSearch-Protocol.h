@@ -11,7 +11,6 @@
 @protocol _INPBMediaSearch <NSObject>
 + (Class)moodNamesType;
 + (Class)genreNamesType;
-+ (Class)activityNamesType;
 @property(nonatomic) _Bool hasSortOrder;
 @property(nonatomic) int sortOrder;
 @property(readonly, nonatomic) _Bool hasReleaseDate;
@@ -32,8 +31,6 @@
 @property(retain, nonatomic) _INPBString *artistName;
 @property(readonly, nonatomic) _Bool hasAlbumName;
 @property(retain, nonatomic) _INPBString *albumName;
-@property(readonly, nonatomic) unsigned long long activityNamesCount;
-@property(copy, nonatomic) NSArray *activityNames;
 - (int)StringAsSortOrder:(NSString *)arg1;
 - (NSString *)sortOrderAsString:(int)arg1;
 - (int)StringAsReference:(NSString *)arg1;
@@ -46,8 +43,5 @@
 - (_INPBString *)genreNamesAtIndex:(unsigned long long)arg1;
 - (void)addGenreNames:(_INPBString *)arg1;
 - (void)clearGenreNames;
-- (_INPBString *)activityNamesAtIndex:(unsigned long long)arg1;
-- (void)addActivityNames:(_INPBString *)arg1;
-- (void)clearActivityNames;
 @end
 

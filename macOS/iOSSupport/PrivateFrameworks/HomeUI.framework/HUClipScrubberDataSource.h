@@ -49,7 +49,7 @@
 - (void)updateSelectionViewIfNeeded;
 - (void)updateMostRecentClipIndex;
 - (id)_indexPathsForClip:(id)arg1;
-- (void)playbackEngine:(id)arg1 clipCollection:(id)arg2 addedClips:(id)arg3 removedClips:(id)arg4 updatedClips:(id)arg5;
+- (void)playbackEngineDidUpdateClips:(id)arg1;
 - (double)scrubbingResolutionForClip:(id)arg1;
 - (id)selectedDateFromCell:(id)arg1 atCurrentOffset:(double)arg2;
 - (id)startDateFromCell:(id)arg1;

@@ -6,19 +6,27 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreML/NSSecureCoding-Protocol.h>
+
 @class NSNumber, NSSet;
 
-@interface MLNumericConstraint : NSObject
+@interface MLNumericConstraint : NSObject <NSSecureCoding>
 {
     NSNumber *_minNumber;
     NSNumber *_maxNumber;
     NSSet *_enumeratedNumbers;
 }
 
-@property(readonly, nonatomic) NSSet *enumeratedNumbers; // @synthesize enumeratedNumbers=_enumeratedNumbers;
-@property(readonly, nonatomic) NSNumber *maxNumber; // @synthesize maxNumber=_maxNumber;
-@property(readonly, nonatomic) NSNumber *minNumber; // @synthesize minNumber=_minNumber;
++ (BOOL)supportsSecureCoding;
++ (id)numericConstraintWithEnumeratedNumbers:(id)arg1;
++ (id)numericConstraintWithMinNumber:(id)arg1 maxNumber:(id)arg2;
+@property(retain, nonatomic) NSSet *enumeratedNumbers; // @synthesize enumeratedNumbers=_enumeratedNumbers;
+@property(retain, nonatomic) NSNumber *maxNumber; // @synthesize maxNumber=_maxNumber;
+@property(retain, nonatomic) NSNumber *minNumber; // @synthesize minNumber=_minNumber;
 - (void).cxx_destruct;
+- (id)description;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

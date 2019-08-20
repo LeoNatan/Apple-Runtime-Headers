@@ -86,6 +86,7 @@
 - (_Bool)_canRunTimeAnimation;
 - (void)_stopTimeAnimation;
 - (void)_startNewTimeAnimation;
+- (double)_timeAnimationFramesPerSecondForDevice:(id)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)didMoveToWindow;

@@ -10,15 +10,21 @@
 
 @interface HBUIMainAppGridTopShelfContainerView : UICollectionReusableView
 {
-    UIView *_topShelfContentView;
     double _blurFractionComplete;
+    UIView *_topShelfContentView;
+    unsigned long long _snapshotRequestToken;
+    UIView *_contentSnapshotOverlayView;
 }
 
-@property(readonly, nonatomic) double blurFractionComplete; // @synthesize blurFractionComplete=_blurFractionComplete;
+@property(retain, nonatomic) UIView *contentSnapshotOverlayView; // @synthesize contentSnapshotOverlayView=_contentSnapshotOverlayView;
+@property(nonatomic) unsigned long long snapshotRequestToken; // @synthesize snapshotRequestToken=_snapshotRequestToken;
 @property(retain, nonatomic) UIView *topShelfContentView; // @synthesize topShelfContentView=_topShelfContentView;
+@property(nonatomic) double blurFractionComplete; // @synthesize blurFractionComplete=_blurFractionComplete;
 - (void).cxx_destruct;
-- (void)_applyBlurFractionComplete:(double)arg1;
-- (void)applyLayoutAttributes:(id)arg1;
+- (void)updateBlurStateForceSnapshot:(_Bool)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)willRemoveSubview:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

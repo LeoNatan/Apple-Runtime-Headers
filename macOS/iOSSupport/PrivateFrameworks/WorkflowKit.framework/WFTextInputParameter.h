@@ -14,6 +14,7 @@
     BOOL _smartQuotesDisabled;
     BOOL _smartDashesDisabled;
     BOOL _multiline;
+    BOOL _processesIntoContentItems;
     NSString *_prefix;
     NSString *_placeholder;
     long long _keyboardType;
@@ -25,6 +26,7 @@
     unsigned long long _syntaxHighlightingType;
 }
 
+@property(readonly, nonatomic) BOOL processesIntoContentItems; // @synthesize processesIntoContentItems=_processesIntoContentItems;
 @property(readonly, nonatomic) unsigned long long syntaxHighlightingType; // @synthesize syntaxHighlightingType=_syntaxHighlightingType;
 @property(readonly, nonatomic) unsigned long long hintDisplayMode; // @synthesize hintDisplayMode=_hintDisplayMode;
 @property(readonly, nonatomic, getter=isMultiline) BOOL multiline; // @synthesize multiline=_multiline;

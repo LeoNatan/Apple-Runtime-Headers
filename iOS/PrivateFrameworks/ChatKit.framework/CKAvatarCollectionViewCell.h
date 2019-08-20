@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (void)configureWithEntity:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)prepareForReuse;
 
 @end
 

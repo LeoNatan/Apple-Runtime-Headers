@@ -40,6 +40,7 @@
 + (void)_clearCacheInOtherProcesses;
 + (void)_clearCacheLocally;
 + (id)_sharedReceiptsCache;
+- (id)additionalInfo;
 - (id)installPrefixPath;
 - (id)installProcessName;
 - (id)installDate;

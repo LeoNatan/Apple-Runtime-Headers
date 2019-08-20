@@ -6,17 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-#import <PassKitUIFoundation/MTKViewDelegate-Protocol.h>
+#import <PassKitUIFoundation/PKMetalRenderLoopDelegate-Protocol.h>
 #import <PassKitUIFoundation/PKMotionManagerClientProtocol-Protocol.h>
 
-@class MPSUnaryImageKernel, MTKView, NSArray, NSSet, NSString;
-@protocol MTLBuffer, MTLCommandQueue, MTLDevice, MTLLibrary, MTLRenderPipelineState, MTLTexture;
+@class MPSUnaryImageKernel, MTLRenderPassDescriptor, NSArray, NSSet, NSString, PKMetalRenderLoop;
+@protocol MTLBuffer, MTLCommandQueue, MTLRenderPipelineState, MTLTexture;
 
-@interface PKCategoryVisualizationCardView : UIView <MTKViewDelegate, PKMotionManagerClientProtocol>
+@interface PKCategoryVisualizationCardView : UIView <PKMetalRenderLoopDelegate, PKMotionManagerClientProtocol>
 {
-    MTKView *_metalView;
-    id <MTLDevice> _device;
-    id <MTLLibrary> _library;
+    PKMetalRenderLoop *_renderLoop;
+    MTLRenderPassDescriptor *_renderPassDescriptor;
+    MTLRenderPassDescriptor *_secondRenderPassDescriptor;
+    unsigned long long _drawableWidth;
+    unsigned long long _drawableHeight;
     id <MTLCommandQueue> _commandQueue;
     id <MTLTexture> _texture;
     id <MTLTexture> _overlayTexture;
@@ -55,11 +57,11 @@
 - (void)_calculateNewCirclePositions;
 - (void)_updateCircles;
 - (void)_empty;
-- (id)_makePipelineStateWithVertexFunction:(id)arg1 fragmentFunction:(id)arg2;
 - (void)_updateTextureAndBlurShader;
 - (void)_createMetalResourcesWithTextures:(id)arg1;
-- (void)drawInMTKView:(id)arg1;
-- (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize)arg2;
+- (void)_updateRenderPassDescriptorWithDrawable:(id)arg1;
+- (void)renderLoop:(id)arg1 drawAtTime:(double)arg2;
+- (void)renderLoop:(id)arg1 drawableSizeDidChange:(struct CGSize)arg2;
 - (void)_updatePausedState;
 - (void)setMagnitudes:(id)arg1 withStyle:(long long)arg2;
 - (void)invalidate;

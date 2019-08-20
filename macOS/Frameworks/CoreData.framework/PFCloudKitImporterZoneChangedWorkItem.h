@@ -8,7 +8,7 @@
 
 #import <CoreData/PFCloudKitSerializerDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSUUID;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSUUID, PFCloudKitFetchedAssetBytesMetric, PFCloudKitFetchedRecordBytesMetric;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitImporterZoneChangedWorkItem : PFCloudKitImporterWorkItem <PFCloudKitSerializerDelegate>
@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     NSUUID *_importOperationIdentifier;
     NSMutableArray *_updatedRecords;
     unsigned long long _totalAssetBytes;
+    PFCloudKitFetchedAssetBytesMetric *_fetchedAssetBytesMetric;
+    PFCloudKitFetchedRecordBytesMetric *_fetchedRecordBytesMetric;
     NSMutableDictionary *_recordTypeToDeletedRecordID;
     NSMutableArray *_allRecordIDs;
     NSMutableArray *_encounteredErrors;
@@ -46,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)addUpdatedRecord:(id)arg1;
 - (id)newMirroringResultByApplyingAccumulatedChanges:(id *)arg1;
 - (void)doWorkWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) unsigned long long totalRecordBytes;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithChangedRecordZoneIDs:(id)arg1 options:(id)arg2 request:(id)arg3;

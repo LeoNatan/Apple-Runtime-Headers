@@ -39,8 +39,16 @@ __attribute__((visibility("hidden")))
     float vRZ;
     float hRY;
     float hRZ;
+    long long pitchFailureReason;
+    long long yawFailureReason;
+    double minimumPitchCorrectionAreaCoverage;
+    double minimumYawCorrectionAreaCoverage;
 }
 
+@property(readonly) long long yawFailureReason; // @synthesize yawFailureReason;
+@property(readonly) long long pitchFailureReason; // @synthesize pitchFailureReason;
+@property double minimumYawCorrectionAreaCoverage; // @synthesize minimumYawCorrectionAreaCoverage;
+@property double minimumPitchCorrectionAreaCoverage; // @synthesize minimumPitchCorrectionAreaCoverage;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)houghSpaceImage;

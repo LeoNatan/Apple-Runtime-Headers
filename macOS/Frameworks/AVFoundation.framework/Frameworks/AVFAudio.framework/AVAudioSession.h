@@ -121,6 +121,8 @@
 - (BOOL)setDefaultChatMode:(id)arg1 error:(id *)arg2;
 @property(readonly, getter=isHardwareFormatFixedToMultiChannel) BOOL hardwareFormatFixedToMultiChannel;
 @property BOOL allowAllBuiltInDataSources;
+- (BOOL)setRecordingFromRemoteInput:(BOOL)arg1 error:(id *)arg2;
+@property(readonly) BOOL recordingFromRemoteInput;
 - (BOOL)setForceSoundCheck:(BOOL)arg1 error:(id *)arg2;
 @property(readonly) BOOL forceSoundCheck;
 @property(readonly) BOOL isPiPAvailable;
@@ -139,7 +141,6 @@
 @property(readonly) NSArray *activeSessionDisplayIDs;
 @property(readonly) unsigned int opaqueSessionID;
 @property(readonly) NSDictionary *pickedRoute;
-@property(readonly) BOOL recordingFromRemoteInput;
 @property(readonly) BOOL requiresNoAudioResources;
 @property(readonly) double speechDetectionDeviceSampleRate;
 @property(readonly) BOOL usingLongFormAudio;

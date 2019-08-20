@@ -20,19 +20,15 @@
     _Bool _notified90;
     AXDispatchTimer *_edDummyDataTimer;
     AXDispatchTimer *_adamSuspendedTimer;
-    NSMutableArray *_leqBufferAboveThreshold;
-    NSMutableArray *_leqBufferBelowThreshold;
+    NSMutableArray *_leqBuffer;
     float _slowLeq;
     float _fastLeq;
     unsigned int _thresholdLevel;
     NSDate *_timeNotified;
     float _sampleDuration;
-    NSMutableArray *_leqBufferAbove80Threshold;
-    NSMutableArray *_leqBufferBelow80Threshold;
-    NSMutableArray *_leqBufferAbove85Threshold;
-    NSMutableArray *_leqBufferBelow85Threshold;
-    NSMutableArray *_leqBufferAbove90Threshold;
-    NSMutableArray *_leqBufferBelow90Threshold;
+    NSMutableArray *_leqBuffer80Threshold;
+    NSMutableArray *_leqBuffer85Threshold;
+    NSMutableArray *_leqBuffer90Threshold;
     NSDate *_timeNotified80;
     NSDate *_timeNotified85;
     NSDate *_timeNotified90;
@@ -40,6 +36,7 @@
     UNUserNotificationCenter *_userNotificationCenter;
 }
 
++ (_Bool)deviceSupportsEnvironmentalDosimetry;
 + (id)sharedController;
 @property(readonly, nonatomic) UNUserNotificationCenter *userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dataQueue; // @synthesize dataQueue=_dataQueue;
@@ -49,12 +46,9 @@
 @property(nonatomic, getter=isNotified90) _Bool notified90; // @synthesize notified90=_notified90;
 @property(nonatomic, getter=isNotified85) _Bool notified85; // @synthesize notified85=_notified85;
 @property(nonatomic, getter=isNotified80) _Bool notified80; // @synthesize notified80=_notified80;
-@property(retain, nonatomic) NSMutableArray *leqBufferBelow90Threshold; // @synthesize leqBufferBelow90Threshold=_leqBufferBelow90Threshold;
-@property(retain, nonatomic) NSMutableArray *leqBufferAbove90Threshold; // @synthesize leqBufferAbove90Threshold=_leqBufferAbove90Threshold;
-@property(retain, nonatomic) NSMutableArray *leqBufferBelow85Threshold; // @synthesize leqBufferBelow85Threshold=_leqBufferBelow85Threshold;
-@property(retain, nonatomic) NSMutableArray *leqBufferAbove85Threshold; // @synthesize leqBufferAbove85Threshold=_leqBufferAbove85Threshold;
-@property(retain, nonatomic) NSMutableArray *leqBufferBelow80Threshold; // @synthesize leqBufferBelow80Threshold=_leqBufferBelow80Threshold;
-@property(retain, nonatomic) NSMutableArray *leqBufferAbove80Threshold; // @synthesize leqBufferAbove80Threshold=_leqBufferAbove80Threshold;
+@property(retain, nonatomic) NSMutableArray *leqBuffer90Threshold; // @synthesize leqBuffer90Threshold=_leqBuffer90Threshold;
+@property(retain, nonatomic) NSMutableArray *leqBuffer85Threshold; // @synthesize leqBuffer85Threshold=_leqBuffer85Threshold;
+@property(retain, nonatomic) NSMutableArray *leqBuffer80Threshold; // @synthesize leqBuffer80Threshold=_leqBuffer80Threshold;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic, getter=isNotified) _Bool notified; // @synthesize notified=_notified;
 @property(nonatomic) float sampleDuration; // @synthesize sampleDuration=_sampleDuration;
@@ -63,8 +57,7 @@
 @property(nonatomic, getter=isMeasurementEnabled) _Bool measurementEnabled; // @synthesize measurementEnabled=_measurementEnabled;
 @property(nonatomic) float fastLeq; // @synthesize fastLeq=_fastLeq;
 @property(nonatomic) float slowLeq; // @synthesize slowLeq=_slowLeq;
-@property(retain, nonatomic) NSMutableArray *leqBufferBelowThreshold; // @synthesize leqBufferBelowThreshold=_leqBufferBelowThreshold;
-@property(retain, nonatomic) NSMutableArray *leqBufferAboveThreshold; // @synthesize leqBufferAboveThreshold=_leqBufferAboveThreshold;
+@property(retain, nonatomic) NSMutableArray *leqBuffer; // @synthesize leqBuffer=_leqBuffer;
 @property(retain, nonatomic) AXDispatchTimer *adamSuspendedTimer; // @synthesize adamSuspendedTimer=_adamSuspendedTimer;
 @property(retain, nonatomic) AXDispatchTimer *edDummyDataTimer; // @synthesize edDummyDataTimer=_edDummyDataTimer;
 - (void).cxx_destruct;

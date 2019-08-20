@@ -15,6 +15,7 @@
     MPSectionedCollection *_radioStationTracks;
 }
 
++ (BOOL)requiresNetwork;
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

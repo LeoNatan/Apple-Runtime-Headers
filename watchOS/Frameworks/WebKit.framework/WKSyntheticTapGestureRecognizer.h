@@ -17,13 +17,14 @@ __attribute__((visibility("hidden")))
     SEL _gestureFailedAction;
     id _resetTarget;
     SEL _resetAction;
+    struct RetainPtr<NSNumber> _lastActiveTouchIdentifier;
     UIWebTouchEventsGestureRecognizer *_supportingWebTouchEventsGestureRecognizer;
-    NSNumber *_lastActiveTouchIdentifier;
 }
 
-@property(readonly, nonatomic) NSNumber *lastActiveTouchIdentifier; // @synthesize lastActiveTouchIdentifier=_lastActiveTouchIdentifier;
 @property(nonatomic) __weak UIWebTouchEventsGestureRecognizer *supportingWebTouchEventsGestureRecognizer; // @synthesize supportingWebTouchEventsGestureRecognizer=_supportingWebTouchEventsGestureRecognizer;
+- (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *lastActiveTouchIdentifier;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)setState:(int)arg1;

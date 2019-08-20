@@ -8,11 +8,12 @@
 
 #import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
 
-@class CSAudioStreamRequest, NSString;
+@class CSAudioStreamRequest, NSString, NSUUID;
 @protocol CSAudioStreamProviding, CSAudioStreamProvidingDelegate;
 
 @interface CSAudioStream : NSObject <CSAudioStreamProvidingDelegate>
 {
+    _Bool _scheduledFutureSample;
     _Bool _streaming;
     id <CSAudioStreamProvidingDelegate> _delegate;
     unsigned int _lastForwardedSampleCount;
@@ -20,13 +21,16 @@
     CSAudioStreamRequest *_streamRequest;
     NSString *_UUID;
     id <CSAudioStreamProviding> _streamProvider;
+    NSUUID *_streamingUUID;
 }
 
+@property(retain) NSUUID *streamingUUID; // @synthesize streamingUUID=_streamingUUID;
 @property _Bool streaming; // @synthesize streaming=_streaming;
 @property(nonatomic) __weak id <CSAudioStreamProviding> streamProvider; // @synthesize streamProvider=_streamProvider;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) CSAudioStreamRequest *streamRequest; // @synthesize streamRequest=_streamRequest;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) _Bool scheduledFutureSample; // @synthesize scheduledFutureSample=_scheduledFutureSample;
 @property(nonatomic) unsigned int lastForwardedSampleCount; // @synthesize lastForwardedSampleCount=_lastForwardedSampleCount;
 @property(nonatomic) __weak id <CSAudioStreamProvidingDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

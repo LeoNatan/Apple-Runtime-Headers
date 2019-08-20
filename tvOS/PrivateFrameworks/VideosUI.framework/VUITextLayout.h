@@ -27,6 +27,8 @@
     UIColor *_darkHighlightOrSelectedColor;
     UIColor *_seeMoreTextColor;
     UIColor *_darkSeeMoreTextColor;
+    NSString *_compositingFilter;
+    NSString *_darkCompositingFilter;
     long long _textTransform;
     long long _alignment;
     unsigned long long _numberOfLines;
@@ -50,6 +52,8 @@
 @property(nonatomic) unsigned long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) long long textTransform; // @synthesize textTransform=_textTransform;
+@property(retain, nonatomic) NSString *darkCompositingFilter; // @synthesize darkCompositingFilter=_darkCompositingFilter;
+@property(retain, nonatomic) NSString *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(retain, nonatomic) UIColor *darkSeeMoreTextColor; // @synthesize darkSeeMoreTextColor=_darkSeeMoreTextColor;
 @property(retain, nonatomic) UIColor *seeMoreTextColor; // @synthesize seeMoreTextColor=_seeMoreTextColor;
 @property(retain, nonatomic) UIColor *darkHighlightOrSelectedColor; // @synthesize darkHighlightOrSelectedColor=_darkHighlightOrSelectedColor;

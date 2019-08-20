@@ -11,6 +11,7 @@
 @class NSDictionary, NSString;
 @protocol ISVariantResourceProviderProtocol;
 
+__attribute__((visibility("hidden")))
 @interface ISCompositVariantResourceLayer : NSObject <ISCompositVariantResourceLayerProtocol>
 {
     NSDictionary *_layerInfo;

@@ -38,7 +38,6 @@
 + (id)auxiliaryOutputContext;
 + (id)sharedAudioPresentationOutputContext;
 + (id)routingContextFactory;
-+ (void)initialize;
 @property __weak AVOutputContext *parentOutputContext; // @synthesize parentOutputContext=_parentContext;
 @property(readonly, nonatomic) struct OpaqueFigRoutingContext *figRoutingContext; // @synthesize figRoutingContext=_routingContext;
 - (void).cxx_destruct;

@@ -38,7 +38,6 @@
     struct os_unfair_lock_s _mainThreadAccessibleIvarLock;
     id <EFScheduler> _indexingBatchScheduler;
     EFLazyCache *_searchResultsCache;
-    BOOL _isForeground;
     BOOL _isActive;
     BOOL _needsRefresh;
     BOOL _needsVerification;
@@ -167,7 +166,7 @@
 - (void)_fetchLastClientState;
 - (void)applicationWillResume;
 - (void)applicationWillSuspend;
-@property(nonatomic, getter=_isForeground, setter=_setForeground:) BOOL foreground;
+- (void)setForeground:(BOOL)arg1;
 - (double)_throttleRequestedSize:(unsigned long long *)arg1 targetTime:(double)arg2 action:(CDUnknownBlockType)arg3;
 - (void)_verifySpotlightIndex;
 - (void)_registerDistantFutureSpotlightVerification;

@@ -13,7 +13,7 @@
 - (void)_test_callFileProviderManagerAPIs:(void (^)(NSError *))arg1;
 - (void)importDidFinishWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)signalEnumeratorForMaterializedItemsWithCompletionHandler:(void (^)(NSError *))arg1;
-- (void)itemChanged:(FPItem *)arg1 baseVersion:(NSFileProviderItemVersion *)arg2 changedFields:(unsigned long long)arg3 contents:(FPSandboxingURLWrapper *)arg4 completionHandler:(void (^)(FPItem *, NSError *))arg5;
+- (void)changeItem:(FPItem *)arg1 baseVersion:(NSFileProviderItemVersion *)arg2 changedFields:(unsigned long long)arg3 contents:(FPSandboxingURLWrapper *)arg4 options:(unsigned long long)arg5 completionHandler:(void (^)(FPItem *, NSError *))arg6;
 - (NSProgress *)updateExistingContents:(FPSandboxingURLWrapper *)arg1 ofItemWithIdentifier:(FPItemID *)arg2 existingVersion:(NSFileProviderItemVersion *)arg3 toVersion:(NSFileProviderItemVersion *)arg4 request:(NSFileProviderRequest *)arg5 completionHandler:(void (^)(FPSandboxingURLWrapper *, FPItem *, NSError *))arg6;
 - (NSProgress *)contentsForItemWithIdentifier:(FPItemID *)arg1 version:(NSFileProviderItemVersion *)arg2 request:(NSFileProviderRequest *)arg3 completionHandler:(void (^)(FPSandboxingURLWrapper *, FPItem *, NSError *))arg4;
 - (void)acknowledgeUserVisibleRootDidChangeForDomain:(NSString *)arg1 urlWrapper:(FPSandboxingURLWrapper *)arg2 completionHandler:(void (^)(NSError *))arg3;

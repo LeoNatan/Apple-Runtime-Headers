@@ -46,6 +46,7 @@
 - (void)_handleWalletTermsLink:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_loadHTMLViewController;
 - (void)_loadHTML;
+- (id)displayTitle;
 - (void)presentErrorAlert;
 - (void)termsAccepted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)termsShown;

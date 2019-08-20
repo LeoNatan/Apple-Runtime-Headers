@@ -8,12 +8,9 @@
 
 @interface NSFileManager (CPLAdditions)
 - (_Bool)cplFileExistsAtURL:(id)arg1;
-- (_Bool)cplIsHardLinkNotPossibleError:(id)arg1;
 - (_Bool)cplIsFileDoesNotExistError:(id)arg1;
 - (_Bool)cplIsFileExistsError:(id)arg1;
-- (_Bool)cplMoveItemAtURL:(id)arg1 toURL:(id)arg2 shouldApplyDataProtection:(_Bool)arg3 error:(id *)arg4;
+- (_Bool)cplMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (_Bool)cplCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
-- (_Bool)cplLinkItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
-- (_Bool)cplLinkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 shouldCopy:(_Bool)arg3 shouldApplyDataProtection:(_Bool)arg4 error:(id *)arg5;
 @end
 

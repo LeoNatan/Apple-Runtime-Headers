@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class ICCloudClient, ICConnectionConfiguration, MSVDistributedNotificationObserver;
+@class ICCloudClient, ICConnectionConfiguration, ICUserIdentity, MSVDistributedNotificationObserver;
 @protocol ICCloudAvailability, OS_dispatch_queue;
 
 @interface _MPCloudControllerImplementation : NSObject
 {
+    _Bool _active;
     _Bool _cloudEnabled;
     _Bool _jaliscoGeniusEnabled;
     _Bool _preferencesChangedNotifyTokenIsValid;
@@ -26,6 +27,7 @@
     _Bool _cloudLibraryInitialImport;
     _Bool _jaliscoUpdateInProgress;
     _Bool _jaliscoInitialImport;
+    ICUserIdentity *_userIdentity;
     ICCloudClient *_cloudClient;
     NSObject<ICCloudAvailability> *_cloudAvailabilityController;
     ICConnectionConfiguration *_configuration;
@@ -37,7 +39,8 @@
     MSVDistributedNotificationObserver *_addToPlaylistBehaviorChangedObserver;
 }
 
-+ (id)controllerWithUserIdentity:(id)arg1 entitledApplication:(_Bool)arg2;
++ (_Bool)isMediaApplication;
++ (id)controllerWithUserIdentity:(id)arg1;
 + (id)implementations;
 + (id)globalSerialQueue;
 @property(nonatomic, getter=isJaliscoInitialImport) _Bool jaliscoInitialImport; // @synthesize jaliscoInitialImport=_jaliscoInitialImport;
@@ -63,6 +66,7 @@
 @property(readonly, nonatomic) NSObject<ICCloudAvailability> *cloudAvailabilityController; // @synthesize cloudAvailabilityController=_cloudAvailabilityController;
 @property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) _Bool jaliscoGeniusEnabled; // @synthesize jaliscoGeniusEnabled=_jaliscoGeniusEnabled;
 @property(readonly, nonatomic) ICCloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(nonatomic, getter=isCloudEnabled) _Bool cloudEnabled; // @synthesize cloudEnabled=_cloudEnabled;
 - (void).cxx_destruct;
 - (id)_referralForModelObject:(id)arg1;
@@ -92,6 +96,7 @@
 - (void)loadUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool isGeniusEnabled;
+@property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (void)becomeActiveAndWaitUntilDone:(_Bool)arg1;
 - (void)becomeActive;
 - (void)deprioritizeArtworkRequestForEntityPersistentID:(long long)arg1 entityType:(int)arg2 artworkType:(int)arg3 artworkSourceType:(int)arg4;
@@ -134,7 +139,7 @@
 - (void)canShowCloudTracksDidChangeNotification:(id)arg1;
 - (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (id)initWithUserIdentity:(id)arg1 entitledApplication:(_Bool)arg2;
+- (id)initWithUserIdentity:(id)arg1;
 
 @end
 

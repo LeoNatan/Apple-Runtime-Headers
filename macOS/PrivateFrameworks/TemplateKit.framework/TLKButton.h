@@ -20,6 +20,7 @@
     CAShapeLayer *_innerProgressLayer;
     double _progress;
     TLKImageView *_imageView;
+    struct CGSize _fixedSize;
 }
 
 + (CDStruct_afa449f9)_calculateStatistics:(struct CGImage *)arg1 withSize:(struct CGSize)arg2;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) CAShapeLayer *outerProgressLayer; // @synthesize outerProgressLayer=_outerProgressLayer;
 @property(retain, nonatomic) TLKTapContainerButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic, getter=isIndeterminate) BOOL indeterminate; // @synthesize indeterminate=_indeterminate;
+@property(nonatomic) struct CGSize fixedSize; // @synthesize fixedSize=_fixedSize;
 @property(retain, nonatomic) NSImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(retain, nonatomic) NSImage *toggledImage; // @synthesize toggledImage=_toggledImage;
 @property(retain, nonatomic) NSImage *untoggledImage; // @synthesize untoggledImage=_untoggledImage;

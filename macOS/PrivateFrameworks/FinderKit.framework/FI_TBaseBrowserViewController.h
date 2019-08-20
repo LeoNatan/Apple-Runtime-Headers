@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
     struct TRef<__CFRunLoopSource *, TRetainReleasePolicy<CFRunLoopSourceRef>> _modifierFlagsEventSource;
     struct TNSRef<NSEvent, void> _mouseDownEventForDrag;
     struct TFENode _nodeToDoubleClick;
-    struct TFENodeVector fOrderedSelection;
+    struct TFENodeVector _orderedSelection;
     struct TNSRef<NSSharingServicePicker, void> _toolbarSharingServicePicker;
     struct TNSRef<NSView, void> _anchoringViewForSharingService;
     struct TNotificationCenterObserver _browserViewWillMoveToWindowObserver;

@@ -21,9 +21,6 @@
 
 + (_Bool)_allowsRasterization;
 + (_Bool)_allowsParallax;
-+ (id)imageByScalingImage:(id)arg1 withDownsampleFactor:(double)arg2 needsLuminanceTreatment:(_Bool)arg3 needsDimmingTreatment:(_Bool)arg4;
-+ (id)dimmingTreatmentFilters;
-+ (id)luminanceTreatmentFilters;
 + (_Bool)_canDownscaleSampleImage;
 + (_Bool)_canCacheImages;
 @property(copy, nonatomic) NSString *displayedImageHashString; // @synthesize displayedImageHashString=_displayedImageHashString;
@@ -32,15 +29,14 @@
 @property(retain, nonatomic, getter=_displayedImage, setter=_setDisplayedImage:) UIImage *displayedImage; // @synthesize displayedImage=_displayedImage;
 - (void).cxx_destruct;
 @property(retain, nonatomic) SBFColorBoxes *colorBoxes;
+- (void)_updateColorBoxesWithKey:(id)arg1 image:(id)arg2;
 - (id)_createColorBoxes;
 - (id)_wallpaperImageForAnalysis;
-- (void)_resetColorBoxes;
 - (struct CGSize)_imageSize;
 - (float)_zoomScale;
 - (void)_displayImage:(id)arg1;
 - (void)_setUpStaticImageContentView:(id)arg1;
 - (void)_setupContentViewWithOptions:(unsigned long long)arg1;
-- (void)setContentView:(id)arg1;
 - (void)setCropRect:(struct CGRect)arg1 zoomScale:(double)arg2;
 - (double)cropZoomScale;
 - (id)_averageColorInContentViewRect:(struct CGRect)arg1 smudgeRadius:(double)arg2;
@@ -57,7 +53,7 @@
 - (void)preheatImageData;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
 - (id)cacheUniqueIdentifier;
-- (void)_generateImageForImage:(id)arg1 options:(unsigned long long)arg2 downsampleFactor:(double)arg3 needsDimmingTreatment:(_Bool)arg4 generationHandler:(CDUnknownBlockType)arg5;
+- (void)_generateImageForImage:(id)arg1 cacheKey:(id)arg2 options:(unsigned long long)arg3 downsampleFactor:(double)arg4 needsDimmingTreatment:(_Bool)arg5 generationHandler:(CDUnknownBlockType)arg6;
 - (void)_setupWallpaperImageFromConfiguration:(id)arg1 options:(unsigned long long)arg2;
 - (long long)wallpaperType;
 

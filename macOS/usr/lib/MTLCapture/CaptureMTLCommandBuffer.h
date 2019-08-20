@@ -66,6 +66,7 @@
 @property(readonly) id <MTLCommandQueue> commandQueue;
 @property(readonly) double GPUStartTime;
 @property(readonly) double GPUEndTime;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

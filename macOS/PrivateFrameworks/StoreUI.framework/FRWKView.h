@@ -13,7 +13,6 @@
 
 @interface FRWKView : WKView <FRJSMessagingDelegate>
 {
-    NSMutableArray *_downloads;
     struct OpaqueWKContext *_processContextRef;
     BOOL _disableScrolling;
     BOOL _navigationEnabled;
@@ -57,7 +56,6 @@
 - (struct WKPageLoaderClientV5)_loadClient;
 - (struct WKPagePolicyClientV1)_policyClient;
 - (struct WKContextDownloadClientV0)_downloadClient;
-- (id)_infoForDownload:(struct OpaqueWKDownload *)arg1;
 - (void)_doAction:(id)arg1;
 - (BOOL)_dismissIfSheet;
 - (void)_buttonClicked:(BOOL)arg1 forDialog:(id)arg2;

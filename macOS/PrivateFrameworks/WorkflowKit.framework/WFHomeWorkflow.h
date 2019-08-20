@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) BOOL requiresDeviceUnlock;
+@property(readonly, copy, nonatomic) NSArray *summaryIconDescriptors;
 @property(readonly, copy, nonatomic) NSArray *summaryIconNames;
 @property(readonly, copy, nonatomic) NSString *summaryString;
 - (id)initWithData:(id)arg1;

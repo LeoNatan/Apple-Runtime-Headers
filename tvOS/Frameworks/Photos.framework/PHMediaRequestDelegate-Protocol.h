@@ -11,7 +11,7 @@
 
 @protocol PHMediaRequestDelegate <NSObject>
 - (void)mediaRequest:(PHMediaRequest *)arg1 didFinishWithResult:(PHCompositeMediaResult *)arg2;
-- (void)mediaRequest:(PHMediaRequest *)arg1 isRequestingLocalAvailabilityChangeForResource:(id <PLResourceIdentity>)arg2;
+- (_Bool)mediaRequest:(PHMediaRequest *)arg1 didStartLocalAvailabilityChangeRequestForResource:(id <PLResourceIdentity>)arg2;
 - (void)mediaRequest:(PHMediaRequest *)arg1 didFindLocallyAvailableResult:(_Bool)arg2 isDegraded:(_Bool)arg3;
 @end
 

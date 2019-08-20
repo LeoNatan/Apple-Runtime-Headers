@@ -8,6 +8,7 @@
 
 @class NSNumber;
 
+__attribute__((visibility("hidden")))
 @interface ISPrefsCache : NSObject
 {
     NSNumber *_focusRingTint;

@@ -72,6 +72,7 @@
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 @property(readonly, nonatomic, getter=_remoteViewController) _UIShareInvitationRemoteViewController *remoteViewController;
 - (void)_updatePresentationStyleForLegacyAppearance;
+- (void)_presentationControllerDidDismiss:(id)arg1;
 - (void)dealloc;
 - (id)initWithFileURL:(id)arg1 error:(id *)arg2;
 - (id)initWithFileURL:(id)arg1;

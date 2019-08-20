@@ -12,7 +12,7 @@
 #import <MediaControls/MediaControlsVolumeControllerObserver-Protocol.h>
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CALayer, MediaControlsVolumeController, MediaControlsVolumeSliderView, NSArray, NSString, UIImageView, UIViewPropertyAnimator;
+@class CALayer, MediaControlsVolumeController, MediaControlsVolumeSliderView, NSArray, NSString, UIImageView, UIViewPropertyAnimator, UIWindowScene;
 @protocol MediaControlsVolumeViewControllerDelegate;
 
 @interface MediaControlsVolumeViewController : UIViewController <MediaControlsVolumeControllerObserver, MPVolumeDisplaying, CCUIGroupRendering, UIGestureRecognizerDelegate, CCUIContentModuleContentViewController>
@@ -21,7 +21,6 @@
     MediaControlsVolumeSliderView *_secondarySlider;
     UIImageView *_affordanceImageView;
     _Bool _isExpanded;
-    _Bool _isSplitRoute;
     id <MediaControlsVolumeViewControllerDelegate> _delegate;
     MediaControlsVolumeController *_volumeController;
 }
@@ -39,6 +38,7 @@
 - (void)mediaControlsVolumeController:(id)arg1 didUpdateSplitRoute:(_Bool)arg2;
 @property(readonly, nonatomic) NSString *volumeAudioCategory;
 @property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;
+@property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 @property(readonly, nonatomic) NSArray *punchOutRootLayers;
 @property(readonly, nonatomic, getter=isGroupRenderingRequired) _Bool groupRenderingRequired;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;

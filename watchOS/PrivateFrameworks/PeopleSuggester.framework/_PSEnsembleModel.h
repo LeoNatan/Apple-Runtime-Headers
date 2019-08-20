@@ -8,7 +8,7 @@
 
 #import <PeopleSuggester/_PSModel-Protocol.h>
 
-@class CNContactStore, NSArray, NSUserDefaults, _CDInteractionCache, _CDInteractionStore, _PSHeuristics, _PSKNNModel, _PSRuleMiningModel;
+@class CNContactStore, NSArray, NSUserDefaults, _CDInteractionCache, _CDInteractionStore, _PSHeuristics, _PSInteractionAndContactMonitor, _PSKNNModel, _PSRuleMiningModel;
 @protocol _DKKnowledgeQuerying><_DKKnowledgeSaving;
 
 @interface _PSEnsembleModel : NSObject <_PSModel>
@@ -21,18 +21,22 @@
     NSUserDefaults *_peopleSuggesterDefaults;
     CNContactStore *_contactStore;
     NSArray *_contactKeysToFetch;
+    NSArray *_supportedBundleIds;
     _PSRuleMiningModel *_ruleMiningModel;
     _PSKNNModel *_knnModel;
     _PSKNNModel *_knnZkwModel;
-    _PSKNNModel *_knnNameRankerModel;
+    _PSKNNModel *_knnNameOrContactRankerModel;
     _PSHeuristics *_heuristics;
+    _PSInteractionAndContactMonitor *_contactMonitor;
 }
 
+@property(retain, nonatomic) _PSInteractionAndContactMonitor *contactMonitor; // @synthesize contactMonitor=_contactMonitor;
 @property(retain, nonatomic) _PSHeuristics *heuristics; // @synthesize heuristics=_heuristics;
-@property(retain, nonatomic) _PSKNNModel *knnNameRankerModel; // @synthesize knnNameRankerModel=_knnNameRankerModel;
+@property(retain, nonatomic) _PSKNNModel *knnNameOrContactRankerModel; // @synthesize knnNameOrContactRankerModel=_knnNameOrContactRankerModel;
 @property(retain, nonatomic) _PSKNNModel *knnZkwModel; // @synthesize knnZkwModel=_knnZkwModel;
 @property(retain, nonatomic) _PSKNNModel *knnModel; // @synthesize knnModel=_knnModel;
 @property(retain, nonatomic) _PSRuleMiningModel *ruleMiningModel; // @synthesize ruleMiningModel=_ruleMiningModel;
+@property(copy, nonatomic) NSArray *supportedBundleIds; // @synthesize supportedBundleIds=_supportedBundleIds;
 @property(retain, nonatomic) NSArray *contactKeysToFetch; // @synthesize contactKeysToFetch=_contactKeysToFetch;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) NSUserDefaults *peopleSuggesterDefaults; // @synthesize peopleSuggesterDefaults=_peopleSuggesterDefaults;
@@ -42,15 +46,16 @@
 @property(retain, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
 - (void).cxx_destruct;
 - (id)appExtensionSuggestionsFromContext:(id)arg1;
+- (id)rankedAutocompleteSuggestionsFromContext:(id)arg1 candidates:(id)arg2;
 - (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 name:(id)arg2;
+- (id)rankedContactSuggestionsWithPredictionContext:(id)arg1 contactsOnly:(_Bool)arg2 maxSuggestions:(unsigned int)arg3;
 - (id)suggestZKWMessagesSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned int)arg2;
-- (id)mapsSuggestionArrayWithArray:(id)arg1 appendingUniqueElementsFromArray:(id)arg2 contactResolver:(id)arg3;
+- (id)mapsSuggestionArrayWithArray:(id)arg1 appendingUniqueElementsFromArray:(id)arg2 contactResolver:(id)arg3 meContactId:(id)arg4;
 - (id)predictWithMapsPredictionContext:(id)arg1 maxSuggestions:(unsigned int)arg2;
 - (id)suggestionsFromSuggestionProxies:(id)arg1;
 - (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned int)arg2;
 - (void)populateCachesWithSupportedBundleIDs:(id)arg1;
 - (void)populateCaches;
-- (id)fetchShareSheetSupportedBundleIDs;
 - (id)init;
 
 @end

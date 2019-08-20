@@ -15,7 +15,6 @@
 
 - (void)_notifyInfoChanged;
 - (unsigned int)_persistingOptions;
-- (_Bool)_shouldSynchronizeSyncInfoToPhoneForBundleIdentifier:(id)arg1;
 - (void)_writeInfo;
 - (void)_updateAggregateInfoIfNeeded;
 - (id)_infoForItem:(id)arg1;

@@ -20,8 +20,8 @@
 - (void *)_createResourceChange:(id)arg1 withType:(unsigned int)arg2 forNotification:(void *)arg3;
 - (void *)_createResourceChange:(id)arg1 withType:(unsigned int)arg2 forNotification:(void *)arg3 withRecurrenceID:(id)arg4;
 - (void *)_copyCalItemFromAnyCalendarWithExternalID:(id)arg1;
-- (_Bool)_handleInviteReply:(id)arg1 withResource:(id)arg2 owningNotification:(id)arg3 uid:(id)arg4;
-- (void)_setInviteReplyCalendarForReplyItem:(id)arg1 onNotification:(void *)arg2;
+- (void)_handleInviteReply:(id)arg1 withResource:(id)arg2 owningNotification:(id)arg3 uid:(id)arg4;
+- (void *)_copyCalendarForReplyItem:(id)arg1;
 - (_Bool)_handleInviteNotification:(id)arg1 withResource:(id)arg2 uid:(id)arg3;
 - (void)recordDiagnosticsForAccountSync:(id)arg1;
 - (void)prepareMergeSyncActionsWithCompletionBlock:(CDUnknownBlockType)arg1;

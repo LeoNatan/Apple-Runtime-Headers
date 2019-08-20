@@ -31,7 +31,7 @@
     ARCoachingSpringDouble3 *_bottomPlaneTranslationSpring;
     ARCoachingStateSpring *_cubeResolveSpring;
     ARCoachingStateSpring *_planeResolveSpring;
-    ARCoachingStateSpring *_verticalPlaneResolvingSpring;
+    ARCoachingStateSpring *_verticalResolvingSpring;
     ARCoachingStateSpring *_alphaSpring;
     ARCoachingBasicSpring *_orientationSpring;
     // Error parsing type: {?="vector"}, name: _rotation
@@ -53,7 +53,7 @@
 @property(nonatomic) float a_vel; // @synthesize a_vel=_a_vel;
 @property(nonatomic) float rotationAngleY; // @synthesize rotationAngleY=_rotationAngleY;
 - (void).cxx_destruct;
-- (void)resetAnimationTime;
+- (void)resetAnimationTime:(double)arg1;
 - (void)restartAnimation;
 - (void)resetData;
 - (void)setOrientationAngle:(float)arg1;

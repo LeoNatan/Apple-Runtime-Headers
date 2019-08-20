@@ -42,12 +42,12 @@
 - (BOOL)updateWithSettingValue:(id)arg1;
 - (void)addConstraint:(id)arg1;
 @property(readonly, copy) id value;
+@property(readonly, copy) NSString *description;
 - (id)initWithIdentifier:(id)arg1 parentIdentifier:(id)arg2 name:(id)arg3 properties:(id)arg4 type:(id)arg5 value:(id)arg6 constraints:(id)arg7;
 - (id)initWithModel:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

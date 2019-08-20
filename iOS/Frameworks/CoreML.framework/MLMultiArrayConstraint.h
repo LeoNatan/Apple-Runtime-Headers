@@ -31,7 +31,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isAllowedValue:(id)arg1 error:(id *)arg2;
-- (_Bool)isAllowedValue:(id)arg1 neuralNetworkInput:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)isAllowedValue:(id)arg1 isNeuralNetworkInput:(_Bool)arg2 usingRank5Mapping:(_Bool)arg3 featureName:(id)arg4 error:(id *)arg5;
 - (_Bool)isAllowedDataType:(long long)arg1 error:(id *)arg2;
 - (_Bool)isAllowedShape:(id)arg1 error:(id *)arg2;
 - (id)initWithShape:(id)arg1 dataType:(long long)arg2 shapeConstraint:(id)arg3;

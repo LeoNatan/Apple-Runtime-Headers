@@ -10,7 +10,7 @@
 #import <EmailDaemon/EDThreadChangeHookResponder-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDThreadPersistence, EFCancelationToken, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class EDThreadPersistence, EDUpdateThrottler, EFCancelationToken, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol EFCancelable, EFScheduler;
 
 @interface EDPrecomputedThreadQueryHandler : EDThreadQueryHandler <EDMessageChangeHookResponder, EDThreadChangeHookResponder, EFLoggable>
@@ -22,17 +22,21 @@
     EFCancelationToken *_cancelationToken;
     NSMutableDictionary *_pendingChanges;
     NSMutableArray *_pendingPositionChanges;
+    NSMutableSet *_pendingDeletes;
     NSMutableSet *_unreportedJournaledObjectIDs;
     NSMutableDictionary *_reportedJournaledObjectIDs;
     NSMutableDictionary *_oldestThreadObjectIDsByMailbox;
     id <EFCancelable> _updateOldestThreadsCancelationToken;
+    EDUpdateThrottler *_updateThrottler;
 }
 
 + (id)log;
+@property(readonly, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
 @property(retain, nonatomic) id <EFCancelable> updateOldestThreadsCancelationToken; // @synthesize updateOldestThreadsCancelationToken=_updateOldestThreadsCancelationToken;
 @property(retain, nonatomic) NSMutableDictionary *oldestThreadObjectIDsByMailbox; // @synthesize oldestThreadObjectIDsByMailbox=_oldestThreadObjectIDsByMailbox;
 @property(retain, nonatomic) NSMutableDictionary *reportedJournaledObjectIDs; // @synthesize reportedJournaledObjectIDs=_reportedJournaledObjectIDs;
 @property(retain, nonatomic) NSMutableSet *unreportedJournaledObjectIDs; // @synthesize unreportedJournaledObjectIDs=_unreportedJournaledObjectIDs;
+@property(retain, nonatomic) NSMutableSet *pendingDeletes; // @synthesize pendingDeletes=_pendingDeletes;
 @property(retain, nonatomic) NSMutableArray *pendingPositionChanges; // @synthesize pendingPositionChanges=_pendingPositionChanges;
 @property(retain, nonatomic) NSMutableDictionary *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
 @property(retain, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
@@ -55,6 +59,9 @@
 - (void)persistenceIsMarkingThreadAsJournaledWithObjectID:(id)arg1;
 - (void)_persistenceIsAddingThreadWithObjectID:(id)arg1;
 - (void)persistenceIsAddingThreadWithObjectID:(id)arg1 journaled:(_Bool)arg2;
+- (void)_flushUpdatesWithReason:(id)arg1;
+- (_Bool)_isAddingOrDeletingObjectID:(id)arg1;
+- (void)_addChangeToPendingChanges:(id)arg1 forThreadObjectID:(id)arg2;
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
 - (void)_getInitialResults;
 - (void)cancel;

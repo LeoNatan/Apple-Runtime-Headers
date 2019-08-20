@@ -10,11 +10,12 @@
 #import <HomeUI/HUQuickControlContentCharacteristicWriting-Protocol.h>
 #import <HomeUI/HUQuickControlInteractiveContentContaining-Protocol.h>
 #import <HomeUI/HUQuickControlItemUpdating-Protocol.h>
+#import <HomeUI/HUQuickControlTouchContinuing-Protocol.h>
 
 @class HUQuickControlCollectionItemManager, HUQuickControlCollectionViewControllerLayoutOptions, HUQuickControlCollectionViewLayout, HUQuickControlContentCharacteristicWritingUpdateAdapter, NSMapTable, NSSet, NSString;
 @protocol HULayoutAnchorProviding, HUQuickControlContentCharacteristicWritingDelegate, HUQuickControlContentHosting;
 
-@interface HUQuickControlCollectionViewController : HUItemCollectionViewController <HUQuickControlCollectionViewDelegateLayout, HUQuickControlItemUpdating, HUQuickControlInteractiveContentContaining, HUQuickControlContentCharacteristicWriting>
+@interface HUQuickControlCollectionViewController : HUItemCollectionViewController <HUQuickControlCollectionViewDelegateLayout, HUQuickControlItemUpdating, HUQuickControlInteractiveContentContaining, HUQuickControlContentCharacteristicWriting, HUQuickControlTouchContinuing>
 {
     _Bool _userInteractionEnabled;
     _Bool _disableItemUpdatesForOverrideCharacteristicValueChanges;
@@ -41,6 +42,7 @@
 - (void)quickControlItemHost:(id)arg1 didUpdateVisibility:(_Bool)arg2;
 - (double)heightForSupplementaryViewAtIndexPath:(id)arg1;
 - (id)intrinsicSizeDescriptorForItemAtIndexPath:(id)arg1 itemSize:(unsigned long long)arg2;
+- (id)viewForTouchContinuation;
 - (id)_allContentViewControllers;
 - (id)_allViewControllers;
 - (void)_propagateInteractiveContentStateForChildViewControllers:(id)arg1;

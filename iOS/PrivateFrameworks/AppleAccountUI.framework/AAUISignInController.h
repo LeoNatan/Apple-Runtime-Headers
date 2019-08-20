@@ -6,12 +6,12 @@
 
 #import <UIKit/UINavigationController.h>
 
-#import <AppleAccountUI/AAUISignInViewControllerDelegate-Protocol.h>
+#import <AppleAccountUI/AAUISignInViewControllerInternalDelegate-Protocol.h>
 
 @class NSDictionary, NSString;
 @protocol AAUISignInControllerDelegate, AIDAServiceOwnerProtocol;
 
-@interface AAUISignInController : UINavigationController <AAUISignInViewControllerDelegate>
+@interface AAUISignInController : UINavigationController <AAUISignInViewControllerInternalDelegate>
 {
     NSDictionary *_authenticationResults;
     id <AIDAServiceOwnerProtocol> _serviceOwnersManager;
@@ -28,6 +28,7 @@
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
+- (void)willAuthenticateWithContext:(id)arg1;
 - (void)signInViewControllerDidCancel:(id)arg1;
 - (void)signInViewController:(id)arg1 didCompleteWithAuthenticationResults:(id)arg2;
 - (void)_delegate_signInControllerDidCancel;

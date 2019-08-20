@@ -13,8 +13,10 @@
 {
     UIColor *_dimmingViewBackgroundColorBlackOpaque;
     UIColor *_dimmingViewBackgroundColorBlackTranslucent;
+    UIColor *_dimmingViewBackgroundColorClear;
     UIColor *_dimmingViewBackgroundColorPhotosOpaque;
     _Bool _photosDimmingStyle;
+    _Bool _pipDimmingStyle;
     id <MKMuninContainerViewDelegate> _delegate;
     MKMapItem *_mapItem;
     unsigned long long _dimmingState;
@@ -28,6 +30,7 @@
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) MKMuninContainerBadgeView *badgeView; // @synthesize badgeView=_badgeView;
+@property(nonatomic) _Bool pipDimmingStyle; // @synthesize pipDimmingStyle=_pipDimmingStyle;
 @property(nonatomic) _Bool photosDimmingStyle; // @synthesize photosDimmingStyle=_photosDimmingStyle;
 @property(nonatomic) unsigned long long dimmingState; // @synthesize dimmingState=_dimmingState;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
@@ -52,6 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)_commonInitWithMuninView:(id)arg1;
 @property(readonly, nonatomic) UIColor *dimmingViewBackgroundColorPhotosOpaque;
+@property(readonly, nonatomic) UIColor *dimmingViewBackgroundColorClear;
 @property(readonly, nonatomic) UIColor *dimmingViewBackgroundColorBlackTranslucent;
 @property(readonly, nonatomic) UIColor *dimmingViewBackgroundColorBlackOpaque;
 

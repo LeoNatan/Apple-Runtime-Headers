@@ -35,11 +35,13 @@ __attribute__((visibility("hidden")))
     NSString *_clientPrefix;
     NSString *_pushBundleID;
     NSString *_associatedApplicationBundleID;
+    NSString *_applicationContainerPath;
 }
 
 @property(nonatomic) _Bool canSetExplicitCodeOperationURL; // @synthesize canSetExplicitCodeOperationURL=_canSetExplicitCodeOperationURL;
 @property(nonatomic) _Bool allowUnverifiedAccount; // @synthesize allowUnverifiedAccount=_allowUnverifiedAccount;
 @property(nonatomic) _Bool canUseNonLegacyShareURL; // @synthesize canUseNonLegacyShareURL=_canUseNonLegacyShareURL;
+@property(retain, nonatomic) NSString *applicationContainerPath; // @synthesize applicationContainerPath=_applicationContainerPath;
 @property(retain, nonatomic) NSString *associatedApplicationBundleID; // @synthesize associatedApplicationBundleID=_associatedApplicationBundleID;
 @property(retain, nonatomic) NSString *pushBundleID; // @synthesize pushBundleID=_pushBundleID;
 @property(retain, nonatomic) NSString *clientPrefix; // @synthesize clientPrefix=_clientPrefix;

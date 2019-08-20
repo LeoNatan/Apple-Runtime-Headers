@@ -36,10 +36,17 @@ __attribute__((visibility("hidden")))
 - (BOOL)generateBatchDeleteUpdateHistoryTriggerForEntity:(id)arg1 andRelationship:(id)arg2 batchHistory:(struct __CFDictionary *)arg3 error:(id *)arg4;
 - (id)createCleanupSQLForRelationship:(id)arg1 existing:(struct __CFDictionary *)arg2 correlationTableTriggers:(struct __CFDictionary *)arg3 batchHistory:(struct __CFDictionary *)arg4 error:(id *)arg5;
 - (id)newCreateTriggersForEntity:(id)arg1 existingRtreeTables:(id)arg2;
+- (id)newDropIndexStatementsForEntity:(id)arg1;
+- (id)newDropIndexStatementsForEntity:(id)arg1 defaultIndicesOnly:(BOOL)arg2;
 - (id)newCreateIndexStatementsForEntity:(id)arg1;
 - (id)newCreateIndexStatementsForEntity:(id)arg1 defaultIndicesOnly:(BOOL)arg2;
+- (id)generateDropRTreeIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
+- (id)generateDropBinaryIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
 - (id)generateRTreeIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
 - (id)generateBinaryIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
+- (id)newDropIndexStatementForCorrelationTable:(id)arg1;
+- (id)newDropIndexStatementForColumnWithName:(id)arg1 inTableWithName:(id)arg2;
+- (id)newDropIndexStatementForColumn:(id)arg1;
 - (id)newCreateIndexStatementForColumns:(id)arg1 name:(id)arg2;
 - (id)newCreateIndexStatementForColumn:(id)arg1;
 - (id)newCreateIndexStatementForCorrelationTable:(id)arg1;

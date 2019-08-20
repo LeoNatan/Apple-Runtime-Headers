@@ -48,9 +48,10 @@
 - (void).cxx_destruct;
 - (void)_animateSubtitleLabelToNextAvailableText;
 - (void)_updateSpinnerStyle;
-- (void)_updateSubtitleTextLabelForRoute:(id)arg1;
+- (void)_updateSubtitleTextLabelForRouteItem:(id)arg1;
 - (void)_updateSmartAudioAccessory;
 - (id)_checkmarkImageForSmartAudio;
+- (id)_checkmarkAccessibilityLabelForSmartAudio;
 - (id)_checkmarkImageNameForSmartAudio;
 - (id)_iconImageForRoute:(id)arg1;
 - (id)_pairedDeviceTextForRoute:(id)arg1;

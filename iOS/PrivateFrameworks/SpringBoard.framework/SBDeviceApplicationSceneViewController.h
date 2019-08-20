@@ -21,6 +21,7 @@
     NSMutableArray *_overlayViewProviders;
     NSMutableArray *_activeOverlayViewProviders;
     SBSceneViewStatusBarAssertion *_activeOverlayStatusBarAssertion;
+    SBSceneViewStatusBarAssertion *_placeholderStatusBarAssertion;
     UIStatusBar *_fakeStatusBar;
     id <BSInvalidatable> _liveContentDisableAssertion;
     SBFHomeGrabberSettings *_homeGrabberSettings;
@@ -49,8 +50,10 @@
 - (void)_destroySceneOverlayViewProviders;
 - (void)_createSceneOverlayViewProvidersIfNecessary;
 - (void)sceneHandle:(id)arg1 didChangeStatusBarParts:(long long)arg2;
+- (void)sceneView:(id)arg1 changedPreferredStatusBarStyleTo:(long long)arg2;
 - (id)animationFactoryForImplicitTransitionFromMode:(long long)arg1 toMode:(long long)arg2 defaultFactory:(id)arg3;
 - (_Bool)_isApplicationStatusBarHidden;
+- (_Bool)overlayViewProviderRendersWhileLocked:(id)arg1;
 - (void)deactivateOverlayForViewProvider:(id)arg1;
 - (void)activateOverlayForViewProvider:(id)arg1;
 - (void)_statusBarAssertionsDidUpdate;

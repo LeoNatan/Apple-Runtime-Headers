@@ -20,7 +20,6 @@
 - (void)updateSuggestedEventWithEventStore:(id)arg1;
 - (Class)_SGSuggestionsServiceClass;
 @property(readonly, nonatomic) NSString *originAppName;
-- (_Bool)hiddenFromNotificationCenter;
 
 @end
 

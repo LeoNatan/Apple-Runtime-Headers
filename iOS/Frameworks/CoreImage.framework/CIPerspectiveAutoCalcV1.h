@@ -16,48 +16,51 @@ __attribute__((visibility("hidden")))
     // Error parsing type: {float3x3="columns"[3]}, name: T
     // Error parsing type: {float3x3="columns"[3]}, name: invT
     CIImage *gradMap;
-    // Error parsing type: ^, name: gradMapBMP
     unsigned long long gradMapW;
     unsigned long long gradMapH;
-    unsigned long long gradMapRB;
-    struct HoughTransform *HT;
-    CIImage *houghImage;
-    struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> vLines;
-    struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> hLines;
-    struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> vLineCluster;
-    struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> hLineCluster;
+    // Error parsing type: ^, name: gradMapBmp
+    unsigned long long gradMapRb;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> vLines;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> hLines;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> vLineCluster;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> hLineCluster;
     _Bool vGuidesValid;
     _Bool hGuidesValid;
     float vGuidesAOE;
     float hGuidesAOE;
-    // Error parsing type: {?="theta"f"rho"f"a""b"}, name: vGuide0
-    // Error parsing type: {?="theta"f"rho"f"a""b"}, name: vGuide1
-    // Error parsing type: {?="theta"f"rho"f"a""b"}, name: hGuide0
-    // Error parsing type: {?="theta"f"rho"f"a""b"}, name: hGuide1
+    // Error parsing type: {?="a""b"}, name: vGuide0
+    // Error parsing type: {?="a""b"}, name: vGuide1
+    // Error parsing type: {?="a""b"}, name: hGuide0
+    // Error parsing type: {?="a""b"}, name: hGuide1
     struct PseudoRand pseudoRando;
-    float vRX;
-    float vRZ;
-    float hRY;
-    float hRZ;
+    float rX;
+    float rY;
+    float rZ;
+    float pitchCorrectionAreaCoverage;
+    float yawCorrectionAreaCoverage;
+    double minimumPitchCorrectionAreaCoverage;
+    double minimumYawCorrectionAreaCoverage;
 }
 
+@property(readonly) float yawCorrectionAreaCoverage; // @synthesize yawCorrectionAreaCoverage;
+@property(readonly) float pitchCorrectionAreaCoverage; // @synthesize pitchCorrectionAreaCoverage;
+@property double minimumYawCorrectionAreaCoverage; // @synthesize minimumYawCorrectionAreaCoverage;
+@property double minimumPitchCorrectionAreaCoverage; // @synthesize minimumPitchCorrectionAreaCoverage;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)houghSpaceImage;
 - (void)computeTransform;
 - (void)computeGuides;
 - (void)clusterLineSegments;
-- (void)coalesceLineSegments;
 - (void)extractLineSegments;
-- (void)saliencyMaskGradientMap;
-- (void)refineGradientMap;
+- (void)rangeLimitGradientMap;
+- (void)thresholdGradientMap;
+- (void)normalizeGradientMap;
 - (void)createGradientMap;
 - (void)standardizeImage;
-- (id)debugImage;
-- (float)confidence;
+- (double)confidence;
 - (_Bool)compute;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1 image:(id)arg2 config:(const CDStruct_20caa88f *)arg3;
+- (id)initWithContext:(id)arg1 image:(id)arg2 config:(const CDStruct_58ac58eb *)arg3;
 
 @end
 

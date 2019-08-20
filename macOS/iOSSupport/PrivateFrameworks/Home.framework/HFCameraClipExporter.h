@@ -10,6 +10,7 @@
 {
 }
 
++ (id)userFriendlyExportNameForClip:(id)arg1 fromCameraProfile:(id)arg2;
 + (id)destinationURLForStrippedAudioFileFromCameraClipUUIDString:(id)arg1;
 + (id)destinationURLForMovieFileFromCameraClipUUIDString:(id)arg1;
 

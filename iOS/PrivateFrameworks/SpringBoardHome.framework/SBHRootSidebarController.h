@@ -9,15 +9,15 @@
 #import <SpringBoardHome/SBHSidebarProvider-Protocol.h>
 #import <SpringBoardHome/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSMutableArray, NSString, SBHDateHeaderViewController, WGWidgetGroupViewController, _UILegibilitySettings;
-@protocol SBHSidebarProviderDelegate, SBIconListLayoutProvider;
+@class NSLayoutConstraint, NSMutableArray, NSString, SBHDateHeaderViewController, SBHSidebarVisualConfiguration, WGWidgetGroupViewController, _UILegibilitySettings;
+@protocol SBHSidebarProviderDelegate;
 
 @interface SBHRootSidebarController : UIViewController <UIGestureRecognizerDelegate, SBHSidebarProvider>
 {
     SBHDateHeaderViewController *_dateViewController;
     _UILegibilitySettings *_legibilitySettings;
     WGWidgetGroupViewController *_widgetViewController;
-    id <SBIconListLayoutProvider> _listLayoutProvider;
+    SBHSidebarVisualConfiguration *_sidebarVisualConfiguration;
     unsigned long long _layoutInsetsIgnoredEdges;
     id <SBHSidebarProviderDelegate> _delegate;
     NSMutableArray *_widgetViewControllerConstraints;
@@ -28,7 +28,7 @@
 @property(copy, nonatomic) NSMutableArray *widgetViewControllerConstraints; // @synthesize widgetViewControllerConstraints=_widgetViewControllerConstraints;
 @property(nonatomic) __weak id <SBHSidebarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long layoutInsetsIgnoredEdges; // @synthesize layoutInsetsIgnoredEdges=_layoutInsetsIgnoredEdges;
-@property(retain, nonatomic) id <SBIconListLayoutProvider> listLayoutProvider; // @synthesize listLayoutProvider=_listLayoutProvider;
+@property(retain, nonatomic) SBHSidebarVisualConfiguration *sidebarVisualConfiguration; // @synthesize sidebarVisualConfiguration=_sidebarVisualConfiguration;
 @property(retain, nonatomic) WGWidgetGroupViewController *widgetViewController; // @synthesize widgetViewController=_widgetViewController;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 - (void).cxx_destruct;

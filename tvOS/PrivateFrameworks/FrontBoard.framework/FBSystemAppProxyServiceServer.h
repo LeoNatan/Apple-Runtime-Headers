@@ -14,6 +14,7 @@
     FBServiceClientAuthenticator *_keyboardFocusAuthenticator;
 }
 
++ (id)targetQueue;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;

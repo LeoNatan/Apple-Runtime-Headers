@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewHeaderFooterView.h>
 
-@class NSLayoutConstraint, UIImageView, UILabel;
+@class NSLayoutConstraint, UIImageView, UILabel, _TtC18HealthExperienceUI21ScaledLabelConstraint;
 
 @interface _TtC18HealthExperienceUI23TableHeaderWithIconView : UITableViewHeaderFooterView
 {
@@ -25,8 +25,8 @@
 - (void)awakeFromNib;
 @property(nonatomic) __weak NSLayoutConstraint *iconImageViewCenterYConstraint; // @synthesize iconImageViewCenterYConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *iconImageViewBaselineConstraint; // @synthesize iconImageViewBaselineConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *iconImageViewHeightConstraint; // @synthesize iconImageViewHeightConstraint;
-@property(nonatomic) __weak NSLayoutConstraint *iconImageViewWidthConstraint; // @synthesize iconImageViewWidthConstraint;
+@property(nonatomic) __weak _TtC18HealthExperienceUI21ScaledLabelConstraint *iconImageViewHeightConstraint; // @synthesize iconImageViewHeightConstraint;
+@property(nonatomic) __weak _TtC18HealthExperienceUI21ScaledLabelConstraint *iconImageViewWidthConstraint; // @synthesize iconImageViewWidthConstraint;
 @property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView;
 @property(nonatomic) __weak UILabel *title; // @synthesize title;
 

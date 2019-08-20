@@ -8,19 +8,21 @@
 
 #import <HomeUI/HUFeatureOnboardingFlow-Protocol.h>
 
-@class HFUserItem, NAFuture, NSString, UIViewController;
+@class NAFuture, NSString, UIViewController;
 @protocol HUConfigurationViewController;
 
 @interface HUVoiceProfileOnboardingFlow : NSObject <HUFeatureOnboardingFlow>
 {
     BOOL _shouldAbortThisOnboardingFlowGroup;
     BOOL _shouldAbortAllOnboarding;
+    BOOL _initialCheckedResult;
     NAFuture *_onboardingFuture;
     UIViewController<HUConfigurationViewController> *_initialViewController;
-    HFUserItem *_userItem;
+    NSString *_initialCheckedLanguage;
 }
 
-@property(retain, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
+@property(nonatomic) BOOL initialCheckedResult; // @synthesize initialCheckedResult=_initialCheckedResult;
+@property(retain, nonatomic) NSString *initialCheckedLanguage; // @synthesize initialCheckedLanguage=_initialCheckedLanguage;
 @property(nonatomic) BOOL shouldAbortAllOnboarding; // @synthesize shouldAbortAllOnboarding=_shouldAbortAllOnboarding;
 @property(nonatomic) BOOL shouldAbortThisOnboardingFlowGroup; // @synthesize shouldAbortThisOnboardingFlowGroup=_shouldAbortThisOnboardingFlowGroup;
 @property(retain, nonatomic) UIViewController<HUConfigurationViewController> *initialViewController; // @synthesize initialViewController=_initialViewController;

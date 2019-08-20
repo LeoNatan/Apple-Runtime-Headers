@@ -6,26 +6,23 @@
 
 #import <CoreData/NSPersistentStoreResult.h>
 
-@class CKServerChangeToken, NSCloudKitMirroringRequest, NSError, NSPersistentHistoryToken;
+@class NSCloudKitMirroringRequest, NSError;
 
 @interface NSCloudKitMirroringResult : NSPersistentStoreResult
 {
     BOOL _success;
     BOOL _madeChanges;
     NSError *_error;
-    CKServerChangeToken *_changeToken;
-    NSPersistentHistoryToken *_historyToken;
     NSCloudKitMirroringRequest *_request;
 }
 
-@property(readonly, nonatomic) NSPersistentHistoryToken *historyToken; // @synthesize historyToken=_historyToken;
-@property(readonly, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly, nonatomic) BOOL madeChanges; // @synthesize madeChanges=_madeChanges;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) BOOL success; // @synthesize success=_success;
 @property(readonly, nonatomic) NSCloudKitMirroringRequest *request; // @synthesize request=_request;
+- (id)description;
 - (void)dealloc;
-- (id)initWithRequest:(id)arg1 success:(BOOL)arg2 madeChanges:(BOOL)arg3 error:(id)arg4 changeToken:(id)arg5 historyToken:(id)arg6;
+- (id)initWithRequest:(id)arg1 success:(BOOL)arg2 madeChanges:(BOOL)arg3 error:(id)arg4;
 
 @end
 

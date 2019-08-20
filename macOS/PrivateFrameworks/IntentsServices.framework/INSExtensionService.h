@@ -33,7 +33,6 @@
 - (void)analytics:(id)arg1 needsToLogEventWithType:(long long)arg2 context:(id)arg3 contextNoCopy:(BOOL)arg4;
 - (BOOL)_shouldPrepareAudioSessionForCommand:(id)arg1 intent:(id)arg2;
 - (void)_requiresHandlingCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (BOOL)_shouldLoadNativeMessagesExtensionAsBundle;
 - (id)_siriLanguageCode;
 - (void)_logEventWithType:(long long)arg1 context:(id)arg2 contextNoCopy:(BOOL)arg3;
 - (void)_logPrewarmDidEndWithCommand:(id)arg1 applicationIdentifier:(id)arg2 wasPrewarmed:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;

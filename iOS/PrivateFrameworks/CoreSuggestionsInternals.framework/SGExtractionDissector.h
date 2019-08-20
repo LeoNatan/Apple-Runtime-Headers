@@ -12,7 +12,7 @@
 @interface SGExtractionDissector : SGPipelineDissector
 {
     NSXPCConnection *_xpcConnection;
-    id <SGReverseTemplateJS> _reverseTemplateJS;
+    id <SGReverseTemplateJS> _reverseTemplateJSNoXPC;
 }
 
 + (id)addressDictionaryToString:(id)arg1;
@@ -40,6 +40,8 @@
 - (id)packedEntityForJS:(id)arg1;
 - (id)entityForOutputItem:(id)arg1 withSiblings:(id)arg2 parentEntity:(id)arg3 outputExceptions:(id)arg4 outputInfos:(id)arg5;
 - (id)entityForOutputItem:(id)arg1 parentEntity:(id)arg2 outputExceptions:(id)arg3 outputInfos:(id)arg4;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

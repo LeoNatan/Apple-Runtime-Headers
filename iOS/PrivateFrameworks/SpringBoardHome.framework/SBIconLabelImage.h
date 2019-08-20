@@ -16,6 +16,8 @@
     UIImage *_legibilityImage;
 }
 
++ (void)applyKerning:(double)arg1 whitespaceKerning:(double)arg2 toAttributedString:(id)arg3;
++ (_Bool)attributedText:(id)arg1 fitsInRect:(struct CGRect)arg2 textRect:(out struct CGRect *)arg3;
 + (_Bool)needsLegibilityImageForParameters:(id)arg1;
 + (double)legibilityStrengthForLegibilityStyle:(long long)arg1;
 + (id)legibilityImageForIconLabelImage:(id)arg1 parameters:(id)arg2 pool:(id)arg3;

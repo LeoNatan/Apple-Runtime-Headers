@@ -7,19 +7,19 @@
 #import <UIKit/UIViewController.h>
 
 #import <SpringBoard/FBSceneManagerObserver-Protocol.h>
-#import <SpringBoard/SBApplicationSceneStatusBarDescribingDelegate-Protocol.h>
+#import <SpringBoard/SBDeviceApplicationSceneStatusBarStateObserver-Protocol.h>
 #import <SpringBoard/SBMultiplexedSpotlightDelegate-Protocol.h>
 #import <SpringBoard/SBScrollToTopSceneProxyViewDelegate-Protocol.h>
 
-@class NSString, SBAppStatusBarSettingsAssertion, SBDeviceApplicationSceneStatusBarObserver, SBScrollToTopSceneProxyView, UIGestureRecognizer, UIView, _UILegibilitySettings;
+@class NSString, SBAppStatusBarSettingsAssertion, SBDeviceApplicationSceneStatusBarStateProvider, SBScrollToTopSceneProxyView, UIGestureRecognizer, UIView, _UILegibilitySettings;
 @protocol SPUIRemoteSearchViewDelegate;
 
-@interface SBSpotlightMultiplexingViewController : UIViewController <SBMultiplexedSpotlightDelegate, FBSceneManagerObserver, SBApplicationSceneStatusBarDescribingDelegate, SBScrollToTopSceneProxyViewDelegate>
+@interface SBSpotlightMultiplexingViewController : UIViewController <SBMultiplexedSpotlightDelegate, FBSceneManagerObserver, SBDeviceApplicationSceneStatusBarStateObserver, SBScrollToTopSceneProxyViewDelegate>
 {
     _Bool _reachabilityEnabled;
     UIView *_reachabilityContainerView;
     UIGestureRecognizer *_dismissReachabilityGesture;
-    SBDeviceApplicationSceneStatusBarObserver *_statusBarObserver;
+    SBDeviceApplicationSceneStatusBarStateProvider *_statusBarStateProvider;
     SBAppStatusBarSettingsAssertion *_statusBarAssertion;
     SBScrollToTopSceneProxyView *_scrollToTopView;
     _Bool _activeDelegate;
@@ -40,7 +40,7 @@
 - (void)_registerStatusBarScrollToTopViewWithWindow:(id)arg1;
 - (void)_registerStatusBarScrollToTopView;
 - (void)_configureStatusBarScrollToTopView;
-- (void)_configureStatusBarObserver;
+- (void)_configureStatusBarStateProvider;
 - (id)_spotlightSceneIdentifier;
 - (void)_invalidateStatusBarAssertionIfNeeded;
 - (void)_acquireStatusBarAssertionIfNeeded;
@@ -48,7 +48,7 @@
 - (void)scrollToTopSceneProxyViewWillExitViewHierarchy:(id)arg1 rootedAtWindow:(id)arg2;
 - (void)scrollToTopSceneProxyViewDidEnterViewHierarchy:(id)arg1 rootedAtWindow:(id)arg2;
 - (double)_effectiveStatusBarAlpha;
-- (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarHiddenTo:(_Bool)arg2;
+- (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarHiddenTo:(_Bool)arg2 withAnimation:(long long)arg3;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarStyleTo:(long long)arg2;
 - (void)sceneWithIdentifier:(id)arg1 didChangeStatusBarAlphaTo:(double)arg2;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;

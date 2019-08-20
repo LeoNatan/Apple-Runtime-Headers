@@ -16,7 +16,6 @@
 }
 
 + (id)compressionOptionsWithDescription:(id)arg1;
-- (void).cxx_destruct;
 - (id)magicCookie;
 - (id)channelLayout;
 - (struct AudioStreamBasicDescription)audioStreamBasicDescription;

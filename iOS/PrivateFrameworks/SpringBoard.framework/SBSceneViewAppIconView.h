@@ -6,20 +6,18 @@
 
 #import <UIKit/UIView.h>
 
-@class SBIconImageView, UILabel;
+@class PLPlatterView, SBIconImageView, UILabel;
 
 @interface SBSceneViewAppIconView : UIView
 {
-    _Bool _showsAppIconBorder;
     SBIconImageView *_imageView;
     UILabel *_label;
-    UIView *_iconBorderView;
+    PLPlatterView *_shadowView;
 }
 
-@property(retain, nonatomic) UIView *iconBorderView; // @synthesize iconBorderView=_iconBorderView;
+@property(readonly, nonatomic) PLPlatterView *shadowView; // @synthesize shadowView=_shadowView;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) SBIconImageView *imageView; // @synthesize imageView=_imageView;
-@property(nonatomic) _Bool showsAppIconBorder; // @synthesize showsAppIconBorder=_showsAppIconBorder;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

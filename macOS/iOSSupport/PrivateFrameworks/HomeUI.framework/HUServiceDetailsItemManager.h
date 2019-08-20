@@ -51,6 +51,7 @@
     HFItem *_resetItem;
     HFItem *_accessoryItem;
     HFItem *_audioSettingsItem;
+    HFItem *_cameraStatusLightItem;
     HFItem *_cameraNightModeItem;
     HFItem *_internalDebuggingItem;
     HFItem *_restartItem;
@@ -66,6 +67,7 @@
     NSArray *_inputSourceEditorSections;
     NSArray *_televisionSettingsSections;
     NSArray *_cameraRecordingSettingSections;
+    NSArray *_cameraStatusLightSections;
     NSArray *_cameraNightModeSections;
     HFAssociatedServiceTypeOptionItemProvider *_associatedServiceTypeOptionItemProvider;
     HFStaticItemProvider *_staticItemProvider;
@@ -85,6 +87,7 @@
 @property(retain, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(retain, nonatomic) HFAssociatedServiceTypeOptionItemProvider *associatedServiceTypeOptionItemProvider; // @synthesize associatedServiceTypeOptionItemProvider=_associatedServiceTypeOptionItemProvider;
 @property(retain, nonatomic) NSArray *cameraNightModeSections; // @synthesize cameraNightModeSections=_cameraNightModeSections;
+@property(retain, nonatomic) NSArray *cameraStatusLightSections; // @synthesize cameraStatusLightSections=_cameraStatusLightSections;
 @property(retain, nonatomic) NSArray *cameraRecordingSettingSections; // @synthesize cameraRecordingSettingSections=_cameraRecordingSettingSections;
 @property(retain, nonatomic) NSArray *televisionSettingsSections; // @synthesize televisionSettingsSections=_televisionSettingsSections;
 @property(retain, nonatomic) NSArray *inputSourceEditorSections; // @synthesize inputSourceEditorSections=_inputSourceEditorSections;
@@ -103,6 +106,7 @@
 @property(retain, nonatomic) HFItem *restartItem; // @synthesize restartItem=_restartItem;
 @property(retain, nonatomic) HFItem *internalDebuggingItem; // @synthesize internalDebuggingItem=_internalDebuggingItem;
 @property(retain, nonatomic) HFItem *cameraNightModeItem; // @synthesize cameraNightModeItem=_cameraNightModeItem;
+@property(retain, nonatomic) HFItem *cameraStatusLightItem; // @synthesize cameraStatusLightItem=_cameraStatusLightItem;
 @property(retain, nonatomic) HFItem *audioSettingsItem; // @synthesize audioSettingsItem=_audioSettingsItem;
 @property(retain, nonatomic) HFItem *accessoryItem; // @synthesize accessoryItem=_accessoryItem;
 @property(retain, nonatomic) HFItem *resetItem; // @synthesize resetItem=_resetItem;
@@ -146,6 +150,7 @@
 - (void)_setupDeviceOptionsAdapterForMediaAccessoryItem:(id)arg1;
 - (id)hf_MediaAccessoryItem;
 - (BOOL)shouldShowDeviceOptionsForAccessoryItem:(id)arg1;
+- (BOOL)_isRestartSupportedForGroupedHomePod:(id)arg1;
 - (BOOL)_isGroupedHomePod:(id)arg1;
 - (BOOL)_shouldShowLinkedApplicationSection;
 - (BOOL)_shouldShowFirmwareUpdateSection;
@@ -162,7 +167,8 @@
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)_buildItemModulesForHome:(id)arg1;
-- (void)updateCameraNightModeOn:(BOOL)arg1;
+- (void)updateCameraNightMode:(BOOL)arg1;
+- (void)updateCameraStatusLight:(BOOL)arg1;
 - (void)toggleAccessoryInfoItem:(id)arg1;
 - (BOOL)canToggleAccessoryInfoItem:(id)arg1;
 - (BOOL)isAccessoryInfoItem:(id)arg1;

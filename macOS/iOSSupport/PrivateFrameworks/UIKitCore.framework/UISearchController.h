@@ -118,6 +118,7 @@
 - (void)_dismissFromBackButton:(id)arg1;
 - (void)_uninstallBackGestureRecognizer;
 - (void)_installBackGestureRecognizer;
+- (void)_setupForCurrentTraitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateVisibilityOfSearchResultsForSearchBar:(id)arg1;
 - (void)_dismissPresentation:(BOOL)arg1;
@@ -139,6 +140,7 @@
 @property(nonatomic) BOOL automaticallyShowsCancelButton;
 @property(nonatomic, setter=_setAutomaticallyShowsCancelButton:) BOOL _automaticallyShowsCancelButton;
 @property(nonatomic) BOOL showsSearchResultsController;
+@property(readonly, nonatomic) BOOL _isShowingSearchResultsControllerWhileActive;
 @property(nonatomic, getter=_showsSearchResultsController, setter=_setShowsSearchResultsController:) BOOL _showsSearchResultsController;
 @property(nonatomic) BOOL automaticallyShowsSearchResultsController;
 @property(nonatomic, getter=_automaticallyShowsSearchResultsController, setter=_setAutomaticallyShowsSearchResultsController:) BOOL _automaticallyShowsSearchResultsController;

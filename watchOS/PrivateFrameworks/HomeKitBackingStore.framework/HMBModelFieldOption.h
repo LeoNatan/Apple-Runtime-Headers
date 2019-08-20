@@ -10,6 +10,8 @@
 {
 }
 
++ (id)queryableFieldWithEncodeBlock:(CDUnknownBlockType)arg1 decodeBlock:(CDUnknownBlockType)arg2;
++ (id)queryableField;
 + (id)excludeFromCloudStorage;
 + (id)encryptedExternalRecordField:(id)arg1;
 + (id)externalRecordField:(id)arg1;

@@ -22,15 +22,15 @@
 @property(readonly, nonatomic) id <CALNInboxNotificationProvider> inboxNotificationProvider; // @synthesize inboxNotificationProvider=_inboxNotificationProvider;
 @property(readonly, nonatomic) id <EKEventStoreProvider> eventStoreProvider; // @synthesize eventStoreProvider=_eventStoreProvider;
 - (void).cxx_destruct;
-- (id)_notificationInfoFromNotification:(id)arg1;
-- (id)_notificationInfoFromNotificationReference:(id)arg1;
+- (id)_notificationInfoFromNotification:(id)arg1 inEventStore:(id)arg2;
 - (id)_eventForSourceClientIdentifier:(id)arg1 eventStore:(id)arg2;
 - (void)_acknowledgeSuggestedEventWithSourceClientIdentifier:(id)arg1 accept:(_Bool)arg2;
 - (void)deleteCanceledSuggestedEventWithSourceClientIdentifier:(id)arg1;
 - (void)ignoreSuggestedEventWithSourceClientIdentifier:(id)arg1;
 - (void)confirmSuggestedEventWithSourceClientIdentifier:(id)arg1;
-- (id)fetchSuggestedEventNotificationWithSourceClientIdentifier:(id)arg1;
-- (id)fetchSuggestedEventNotificationSourceClientIdentifiers;
+- (id)fetchSuggestedEventNotificationWithObjectID:(id)arg1;
+- (id)fetchSuggestedEventNotificationsWithSourceClientIdentifier:(id)arg1;
+- (id)fetchSuggestedEventNotificationObjectIDs;
 - (id)fetchSuggestedEventNotifications;
 - (id)initWithEventStoreProvider:(id)arg1 inboxNotificationProvider:(id)arg2 notificationReferenceProvider:(id)arg3;
 

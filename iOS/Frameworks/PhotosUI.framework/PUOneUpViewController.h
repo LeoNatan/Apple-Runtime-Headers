@@ -221,6 +221,7 @@
 - (void)irisImageTileViewControllerDidBeginHinting:(id)arg1;
 - (void)oneUpAssetTransition:(id)arg1 animateTransitionWithContext:(id)arg2 duration:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)createAssetTransitionInfo;
+- (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(CDUnknownBlockType)arg2 options:(unsigned long long)arg3;
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(CDUnknownBlockType)arg2;
 - (void)oneUpAssetTransitionDidEnd:(id)arg1;
 - (void)oneUpAssetTransitionWillBegin:(id)arg1;
@@ -330,7 +331,7 @@
 - (void)_arrowKey:(id)arg1;
 - (id)keyCommands;
 - (_Bool)previewActionControllerPreventRevealInMomentAction:(id)arg1;
-- (void)createPreviewActionControllerForManagerIfNeeded:(id)arg1;
+- (void)createPreviewActionControllerForManagerIfNeeded:(id)arg1 withPresentingViewController:(id)arg2;
 - (long long)pu_preferredBarStyle;
 - (_Bool)pu_wantsTabBarVisible;
 - (_Bool)pu_wantsToolbarVisible;

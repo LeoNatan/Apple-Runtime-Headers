@@ -6,29 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSString, _MRContentItemProtobuf, _MRPlaybackSessionMigrateRequestProtobuf;
 
 @interface MRPlaybackSessionMigrateRequest : NSObject
 {
-    NSMutableArray *_events;
-    NSMutableArray *_customOptions;
-    long long _playerOptions;
-    long long _endpointOptions;
-    NSString *_identifier;
+    _MRPlaybackSessionMigrateRequestProtobuf *_descriptor;
 }
 
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) long long endpointOptions; // @synthesize endpointOptions=_endpointOptions;
-@property(nonatomic) long long playerOptions; // @synthesize playerOptions=_playerOptions;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSArray *customOptions;
-- (void)addCustomOption:(id)arg1 timeout:(double)arg2 block:(CDUnknownBlockType)arg3;
+- (void)merge:(id)arg1;
 @property(readonly, nonatomic) double duration;
 - (void)endEvent:(id)arg1 withError:(id)arg2;
 - (void)endEvent:(id)arg1;
 - (void)startEvent:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NSString *report;
+@property(readonly, nonatomic) _MRPlaybackSessionMigrateRequestProtobuf *descriptor;
+@property(retain, nonatomic) _MRContentItemProtobuf *contentItem;
+@property(nonatomic) double playbackPosition;
+@property(nonatomic) unsigned int playbackState;
+@property(nonatomic) long long endpointOptions;
+@property(nonatomic) long long playerOptions;
+@property(retain, nonatomic) NSString *requestID;
+- (id)initWithDescriptor:(id)arg1;
 - (id)init;
 
 @end

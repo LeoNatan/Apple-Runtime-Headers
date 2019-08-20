@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     CXCallObserver *_callObserver;
     int _activeCallCount;
     int _connectedCallCount;
+    int _familyBuddyToken;
     _Bool _familyFailed;
     NSArray *_familyMembers;
     _Bool _familyObserving;

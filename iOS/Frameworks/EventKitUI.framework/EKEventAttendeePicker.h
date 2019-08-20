@@ -80,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)consumeCorecipientSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
 - (id)_searchManager;
+- (void)scrollComposeViewToEnd;
 - (_Bool)_zeroKeyworkSearchEnabled;
 - (double)_maxScrollerHeight;
 - (void)_showSearchResultsView;
@@ -94,12 +95,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *addresses;
 @property(readonly, nonatomic) NSString *remainingText;
 - (void)commitRemainingText;
-- (void)viewDidLayoutSubviews;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
+- (id)initWithFrame:(struct CGRect)arg1 event:(id)arg2 calendar:(id)arg3 overriddenEventStartDate:(id)arg4 overriddenEventEndDate:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

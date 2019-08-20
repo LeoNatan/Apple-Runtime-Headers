@@ -5,6 +5,7 @@
 //
 
 @protocol VCHardwareSettingsEmbeddedProtocol
+@property(readonly, nonatomic) BOOL isSecondDisplaySupportEnabled;
 @property(readonly, nonatomic) BOOL supportsHEIFEncoding;
 @property(readonly, nonatomic) BOOL hasAppleNeuralEngine;
 @property(readonly, nonatomic) BOOL isDeviceLargeScreen;

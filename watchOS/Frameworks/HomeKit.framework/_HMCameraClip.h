@@ -8,7 +8,7 @@
 
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMCameraClipEncryptionContext, NSArray, NSDate, NSString, NSUUID;
+@class HMCameraClipEncryptionContext, NSArray, NSDate, NSSet, NSString, NSUUID;
 
 @interface _HMCameraClip : NSObject <NSSecureCoding>
 {
@@ -19,11 +19,13 @@
     HMCameraClipEncryptionContext *_encryptionContext;
     NSArray *_posterFrames;
     NSArray *_videoSegments;
+    NSSet *_significantEvents;
     double _duration;
     double _targetFragmentDuration;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy) NSSet *significantEvents; // @synthesize significantEvents=_significantEvents;
 @property(readonly, copy) NSArray *videoSegments; // @synthesize videoSegments=_videoSegments;
 @property(readonly, copy) NSArray *posterFrames; // @synthesize posterFrames=_posterFrames;
 @property(readonly, copy) HMCameraClipEncryptionContext *encryptionContext; // @synthesize encryptionContext=_encryptionContext;
@@ -39,7 +41,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithUniqueIdentifier:(id)arg1 startDate:(id)arg2 duration:(double)arg3 targetFragmentDuration:(double)arg4 isComplete:(_Bool)arg5 streamingAssetVersion:(id)arg6 encryptionContext:(id)arg7 posterFrames:(id)arg8 videoSegments:(id)arg9;
+- (id)initWithUniqueIdentifier:(id)arg1 startDate:(id)arg2 duration:(double)arg3 targetFragmentDuration:(double)arg4 isComplete:(_Bool)arg5 streamingAssetVersion:(id)arg6 encryptionContext:(id)arg7 posterFrames:(id)arg8 videoSegments:(id)arg9 significantEvents:(id)arg10;
 
 @end
 

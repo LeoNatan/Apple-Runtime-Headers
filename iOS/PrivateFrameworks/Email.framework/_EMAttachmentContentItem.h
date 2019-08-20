@@ -16,6 +16,7 @@
 {
     _Bool _isAvailableLocally;
     _Bool _isSinglePagePDF;
+    int _exchangeEventUID;
     NSArray *_availableRepresentations;
     NSString *_contentID;
     long long _dataTransferByteCount;
@@ -27,6 +28,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void)setExchangeEventUID:(int)arg1;
+@property(readonly, nonatomic) int exchangeEventUID;
 - (void)setExpiryDate:(id)arg1;
 @property(readonly, nonatomic) NSDate *expiryDate;
 @property(nonatomic) _Bool isSinglePagePDF; // @synthesize isSinglePagePDF=_isSinglePagePDF;

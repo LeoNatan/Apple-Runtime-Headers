@@ -28,6 +28,7 @@
     CKMessageEntryRichTextView *_textView;
     float _placeHolderWidth;
     float _maxContentWidthWhenExpanded;
+    float _maxPreviewContentWidthWhenExpanded;
     float _containerViewLineWidth;
     float _sendButtonTextInsetWidth;
     UIViewController<CKPluginEntryViewController> *_pluginEntryViewController;
@@ -61,6 +62,7 @@
 @property(retain, nonatomic) UIViewController<CKPluginEntryViewController> *pluginEntryViewController; // @synthesize pluginEntryViewController=_pluginEntryViewController;
 @property(nonatomic) float sendButtonTextInsetWidth; // @synthesize sendButtonTextInsetWidth=_sendButtonTextInsetWidth;
 @property(nonatomic) float containerViewLineWidth; // @synthesize containerViewLineWidth=_containerViewLineWidth;
+@property(nonatomic) float maxPreviewContentWidthWhenExpanded; // @synthesize maxPreviewContentWidthWhenExpanded=_maxPreviewContentWidthWhenExpanded;
 @property(nonatomic) float maxContentWidthWhenExpanded; // @synthesize maxContentWidthWhenExpanded=_maxContentWidthWhenExpanded;
 @property(nonatomic) float placeHolderWidth; // @synthesize placeHolderWidth=_placeHolderWidth;
 @property(retain, nonatomic) CKMessageEntryRichTextView *textView; // @synthesize textView=_textView;

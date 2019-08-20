@@ -61,6 +61,8 @@
 - (void)clearTrafficIncidentsBulletin;
 - (void)clearTrafficIncidentBulletinWithAlertID:(id)arg1;
 - (void)showTrafficIncidentAlertWithID:(id)arg1 withReroute:(_Bool)arg2 title:(id)arg3 description:(id)arg4;
+- (void)clearMapsSuggestionsBulletin;
+- (void)showMapsSuggestionsBulletinWithTitle:(id)arg1 message:(id)arg2 actionURL:(id)arg3;
 - (void)clearTrafficConditionsBulletin;
 - (void)showTrafficConditionsBulletinWithTitle:(id)arg1 message:(id)arg2 actionURL:(id)arg3;
 - (void)setShouldUseDevAPNS:(_Bool)arg1;

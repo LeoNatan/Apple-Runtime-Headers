@@ -9,9 +9,6 @@
 @interface UIColor (HUAdditions)
 + (id)hu_quickControlBackgroundGrayColor;
 + (id)hu_mediaPlatterBackgroundColor;
-+ (id)hu_cameraOffColor;
-+ (id)hu_cameraRecordingColor;
-+ (id)hu_cameraLiveColor;
 + (id)hu_keyColor;
 + (id)hu_alarmsSwitchTintColor;
 + (id)hu_alarmsCellAccessoryColor;

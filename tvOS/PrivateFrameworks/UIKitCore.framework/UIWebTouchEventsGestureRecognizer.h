@@ -18,6 +18,7 @@
     _Bool _defaultPrevented;
     _Bool _dispatchingTouchEvents;
     _Bool _isPotentialTap;
+    _Bool _wasExplicitlyCancelled;
     double _originalGestureDistance;
     double _originalGestureAngle;
     struct _UIWebTouchEvent _lastTouchEvent;

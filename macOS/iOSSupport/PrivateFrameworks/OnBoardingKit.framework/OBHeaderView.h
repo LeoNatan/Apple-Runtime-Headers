@@ -10,6 +10,7 @@
 
 @interface OBHeaderView : UIView
 {
+    BOOL _usingSymbolImage;
     BOOL _iconInheritsTint;
     OBImageView *_imageView;
     OBTemplateLabel *_headerLabel;

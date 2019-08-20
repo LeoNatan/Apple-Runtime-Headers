@@ -271,6 +271,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsNonSquareTileShaders;
 @property(readonly, nonatomic) _Bool supportsNonUniformThreadgroupSize;
 @property(readonly, nonatomic) _Bool supportsNorm16BCubicFiltering;
+@property(readonly, nonatomic) _Bool supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) _Bool supportsPacked32TextureBufferWrites;
 @property(readonly, nonatomic) _Bool supportsPipelineLibraries;
 @property(readonly, nonatomic) _Bool supportsPlacementHeaps;

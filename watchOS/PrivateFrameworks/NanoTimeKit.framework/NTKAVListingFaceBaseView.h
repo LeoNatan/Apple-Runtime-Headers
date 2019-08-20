@@ -40,6 +40,7 @@
 - (void)_cancelPauseLockout;
 - (void)_activatePauseLockout;
 - (void)_cancelDelayedPlayback;
+- (void)_handleFaceStyleDidChange;
 - (void)_playNextVideoAfterDelay:(double)arg1;
 - (void)_playNextVideo;
 - (void)_playQueuedUpVideo;

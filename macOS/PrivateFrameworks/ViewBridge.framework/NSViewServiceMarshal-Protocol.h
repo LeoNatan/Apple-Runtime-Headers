@@ -47,7 +47,7 @@
 - (void)beginHostAppModalSession:(NSString *)arg1 parameters:(const CDStruct_9fbe0e86 *)arg2 title:(NSString *)arg3 style:(unsigned long long)arg4 size:(struct CGSize)arg5 withReply:(void (^)(NSError *))arg6;
 - (void)setRemoteViewEffectiveAppearance:(NSAppearance *)arg1;
 - (void)setViewVibrantBlendingStyle:(unsigned long long)arg1;
-- (void)bootstrap:(CDStruct_278a5119)arg1 withReply:(void (^)(NSString *, struct, NSProxy<NSXPCProxyCreating> *, NSProxy<NSXPCProxyCreating> *))arg2;
+- (void)bootstrap:(CDStruct_4172db96)arg1 withReply:(void (^)(NSString *, struct, NSProxy<NSXPCProxyCreating> *, NSProxy<NSXPCProxyCreating> *))arg2;
 - (void)snapshot:(void (^)(NSError *, NSBitmapImageRep *))arg1;
 - (void)endPrivateEventLoop;
 @end

@@ -34,6 +34,7 @@
 - (double)progressPercentForIcon:(id)arg1;
 - (long long)progressStateForIcon:(id)arg1;
 - (unsigned long long)priorityForIcon:(id)arg1;
+- (id)icon:(id)arg1 imageWithInfo:(struct SBIconImageInfo)arg2;
 - (id)icon:(id)arg1 displayNameForLocation:(id)arg2;
 @property(readonly, nonatomic, getter=isDownloading) _Bool downloading;
 @property(readonly, nonatomic, getter=isInstalling) _Bool installing;

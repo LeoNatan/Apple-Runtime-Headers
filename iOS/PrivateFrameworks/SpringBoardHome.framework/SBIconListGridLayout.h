@@ -46,7 +46,6 @@
 @property(readonly, nonatomic) struct SBIconImageInfo iconImageInfo;
 - (id)init;
 - (id)initWithLayoutConfiguration:(id)arg1;
-- (id)initWithLayoutInfo:(const in struct SBIconListGridLayoutInfo *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

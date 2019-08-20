@@ -14,12 +14,10 @@
     NSString *_keyPath;
 }
 
-+ (id)sortDescriptorWithProperty:(id)arg1 ascending:(BOOL)arg2;
 + (id)sortDescriptorWithKeyPath:(id)arg1 ascending:(BOOL)arg2;
 @property(readonly, nonatomic) BOOL ascending; // @synthesize ascending=_ascending;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *property;
 - (id)reversedSortDescriptor;
 
 @end

@@ -27,6 +27,8 @@
 + (_Bool)ingestItemAtURL:(id)arg1 toURL:(id)arg2 type:(int)arg3 options:(unsigned int)arg4 error:(id *)arg5;
 + (id)descriptionForFileIngestionType:(int)arg1;
 + (_Bool)removeDisconnectedSQLiteDatabaseFileWithPath:(id)arg1 error:(id *)arg2;
++ (_Bool)removeFilesInDirectoryAtURL:(id)arg1 withPrefix:(id)arg2 error:(id *)arg3 progress:(CDUnknownBlockType)arg4;
++ (int)directoryEntryCountAtURL:(id)arg1 error:(id *)arg2;
 + (_Bool)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (_Bool)cloneFileAtPath:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
 + (_Bool)secureMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;

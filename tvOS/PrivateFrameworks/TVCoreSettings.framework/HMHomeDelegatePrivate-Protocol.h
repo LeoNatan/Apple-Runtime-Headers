@@ -6,15 +6,18 @@
 
 #import <TVCoreSettings/HMHomeDelegate-Protocol.h>
 
-@class CLLocation, HMAccessory, HMActionSet, HMHome, HMMediaSystem, HMResidentDevice, HMRoom, HMServiceGroup, HMUser, NSArray, NSString;
+@class CLLocation, HMAccessory, HMAccessoryNetworkProtectionGroup, HMActionSet, HMHome, HMMediaSystem, HMResidentDevice, HMRoom, HMServiceGroup, HMUser, NSArray, NSString;
 
 @protocol HMHomeDelegatePrivate <HMHomeDelegate>
 
 @optional
+- (void)home:(HMHome *)arg1 didUpdateAccessoryNetworkProtectionGroup:(HMAccessoryNetworkProtectionGroup *)arg2;
+- (void)home:(HMHome *)arg1 didRemoveAccessoryNetworkProtectionGroup:(HMAccessoryNetworkProtectionGroup *)arg2;
+- (void)home:(HMHome *)arg1 didAddAccessoryNetworkProtectionGroup:(HMAccessoryNetworkProtectionGroup *)arg2;
 - (void)homeDidSetHasAnyUserAcknowledgedCameraRecordingOnboarding:(HMHome *)arg1;
 - (void)homeDidEnableMultiUser:(HMHome *)arg1;
 - (void)homeDidUpdateHomeLocationStatus:(HMHome *)arg1;
-- (void)homeDidUpdateSupportNetworkProtection:(HMHome *)arg1;
+- (void)homeDidUpdateNetworkRouterSupport:(HMHome *)arg1;
 - (void)homeDidUpdateProtectionMode:(HMHome *)arg1;
 - (void)home:(HMHome *)arg1 didUpdateReprovisionStateForAccessory:(HMAccessory *)arg2;
 - (void)home:(HMHome *)arg1 didRemoveMediaSystem:(HMMediaSystem *)arg2;

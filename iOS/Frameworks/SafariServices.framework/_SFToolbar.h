@@ -17,6 +17,7 @@
     UIVisualEffectView *_backgroundView;
     UIBlurEffect *_customBackdropEffect;
     UIView *_separator;
+    _Bool _usesLegacyDarkBackdrop;
     long long _placement;
     _SFBarTheme *_theme;
     id <_SFBarRegistrationToken> _barRegistration;
@@ -25,6 +26,7 @@
 
 @property(nonatomic) __weak UIView *superviewOwningLayout; // @synthesize superviewOwningLayout=_superviewOwningLayout;
 @property(nonatomic) __weak id <_SFBarRegistrationToken> barRegistration; // @synthesize barRegistration=_barRegistration;
+@property(nonatomic) _Bool usesLegacyDarkBackdrop; // @synthesize usesLegacyDarkBackdrop=_usesLegacyDarkBackdrop;
 @property(retain, nonatomic) _SFBarTheme *theme; // @synthesize theme=_theme;
 @property(readonly, nonatomic) long long placement; // @synthesize placement=_placement;
 - (void).cxx_destruct;
@@ -39,6 +41,7 @@
 @property(copy, nonatomic) NSString *backdropGroupName;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) double baselineOffsetAdjustment;
+- (void)_updateBackgroundViewEffects;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;
 - (void)dealloc;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

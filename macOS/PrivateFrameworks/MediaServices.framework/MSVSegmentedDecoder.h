@@ -32,7 +32,7 @@
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (BOOL)containsValueForKey:(id)arg1;
 - (id)decodeRootObjectOfClasses:(id)arg1 error:(id *)arg2;
-- (id)initWithCodingPackage:(id)arg1;
+- (id)initWithCodingPackage:(id)arg1 error:(id *)arg2;
 
 @end
 

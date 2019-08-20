@@ -59,7 +59,6 @@
 - (void)activateHomeButton;
 - (void)activateVoiceControl;
 - (void)activateSiri;
-- (void)prepareSiri;
 - (id)init;
 
 @end

@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (struct CGRect)_frameWithScaleAppliedForIndex:(unsigned long long)arg1;
 - (id)transitionChildModifierForMainTransitionEvent:(id)arg1 activeGestureModifier:(id)arg2;
 - (id)gestureChildModifierForGestureEvent:(id)arg1 activeTransitionModifier:(id)arg2;
 - (long long)gestureType;

@@ -45,8 +45,6 @@
 - (void).cxx_destruct;
 - (void)_setBackgroundDownloadTaskIdentifier:(unsigned long long)arg1;
 - (unsigned long long)_backgroundDownloadTaskIdentifier;
-- (BOOL)shouldApplyDataProtection;
-- (BOOL)shouldCopy;
 - (unsigned long long)estimatedResourceSize;
 - (BOOL)isTrackedForUpload;
 - (id)bestFileNameForResource;

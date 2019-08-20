@@ -61,6 +61,7 @@
 - (void)updateNotifyButton;
 @property(nonatomic, getter=isNotifyButtonSelected) _Bool notifyButtonSelected;
 - (void)setShowNotifyButton:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -16,7 +16,7 @@
 @property(readonly, nonatomic, getter=isChangingVolume) _Bool changingVolume;
 - (void)setTargetVolume:(float)arg1;
 - (void)endChangingVolume;
-- (void)beginChangingVolume;
-- (void)setClientWithIdentifier:(NSString *)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2;
+- (void)beginChangingVolumeForWindowSceneSessionID:(NSString *)arg1;
+- (void)setClientWithIdentifier:(NSString *)arg1 prefersSystemVolumeHUDHidden:(_Bool)arg2 forWindowSceneSessionWithIdentifier:(NSString *)arg3;
 @end
 

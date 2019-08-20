@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     int minorVersion;
     _Bool isEncrypted;
     _Bool isUnlocked;
+    int accessPermissions;
     _Bool allowsPrinting;
     _Bool allowsCopying;
     _Bool allowsDocumentChanges;
@@ -43,8 +44,9 @@ __attribute__((visibility("hidden")))
     _Bool allowsCommenting;
     _Bool allowsFormFieldEntry;
     long long permission;
+    NSString *ownerPassword;
+    NSString *userPassword;
     NSDictionary *attributes;
-    NSString *password;
     PDFOutline *outline;
     NSObject<OS_dispatch_queue> *textExtractionQueue;
     _Bool finding;

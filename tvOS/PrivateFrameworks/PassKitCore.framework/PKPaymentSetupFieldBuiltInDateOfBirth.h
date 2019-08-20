@@ -10,7 +10,7 @@
 {
 }
 
-- (id)_locale;
+- (_Bool)submissionStringMeetsAllRequirements;
 - (_Bool)isBuiltIn;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 

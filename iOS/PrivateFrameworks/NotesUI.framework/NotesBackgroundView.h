@@ -41,6 +41,7 @@
 @property(nonatomic, getter=isContentViewVisible) _Bool contentViewVisible; // @synthesize contentViewVisible=_contentViewVisible;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (_Bool)_accessibilityIsScannerGroup;
 - (void)reparentAccessibilityChildrenOfElement:(id)arg1;
 - (id)accessibilityElements;
 @property(readonly, nonatomic) NotesTextureView *backgroundView;

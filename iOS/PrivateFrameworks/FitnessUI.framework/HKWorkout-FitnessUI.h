@@ -7,6 +7,7 @@
 #import <HealthKit/HKWorkout.h>
 
 @interface HKWorkout (FitnessUI)
++ (_Bool)fiui_activitySupportsMetricType:(unsigned long long)arg1 activityType:(id)arg2;
 + (unsigned long long)fiui_associatedMetricForGoalType:(unsigned long long)arg1;
 + (_Bool)fiui_shouldTrackPaceWithOdometerForActivityType:(unsigned long long)arg1;
 + (_Bool)_isHeartRateSupportedInPowerSettingsForActivityType:(unsigned long long)arg1;

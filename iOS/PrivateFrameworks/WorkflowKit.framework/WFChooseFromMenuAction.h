@@ -13,12 +13,10 @@
 
 @interface WFChooseFromMenuAction : WFControlFlowAction <WFArrayParameterEventObserver, WFVariableDelegate>
 {
-    _Bool _usesLegacyBehavior;
     long long _latestMenuChoice;
     WFVariableString *_itemTitle;
 }
 
-@property(readonly, nonatomic) _Bool usesLegacyBehavior; // @synthesize usesLegacyBehavior=_usesLegacyBehavior;
 @property(copy, nonatomic) WFVariableString *itemTitle; // @synthesize itemTitle=_itemTitle;
 @property(readonly, nonatomic) long long latestMenuChoice; // @synthesize latestMenuChoice=_latestMenuChoice;
 - (void).cxx_destruct;

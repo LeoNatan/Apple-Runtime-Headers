@@ -83,6 +83,7 @@
     NSString *_cloudContainerIdentifier;
     NSString *_providerID;
     NSData *_fsID;
+    NSString *_fileSystemFilename;
 }
 
 + (id)allUbiquitousResourceKeys;
@@ -97,6 +98,7 @@
 + (id)placeholderWithCopyOfExistingItem:(id)arg1 lastUsageUpdatePolicy:(unsigned long long)arg2 underParent:(id)arg3 inProviderDomainID:(id)arg4;
 + (id)generatePlaceholderIdentifierWithOriginalID:(id)arg1;
 + (id)generatePlaceholderIdentifier;
+@property(copy, nonatomic) NSString *fileSystemFilename; // @synthesize fileSystemFilename=_fileSystemFilename;
 @property(retain, nonatomic) NSData *fsID; // @synthesize fsID=_fsID;
 @property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
 @property(nonatomic, getter=isPending) BOOL pending; // @synthesize pending=_pending;
@@ -123,7 +125,7 @@
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 @property(nonatomic, getter=isInPinnedFolder) BOOL inPinnedFolder; // @synthesize inPinnedFolder=_inPinnedFolder;
 @property(retain, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
-@property(readonly, nonatomic) NSString *fp_parentDomainIdentifier; // @synthesize fp_parentDomainIdentifier=_fp_parentDomainIdentifier;
+@property(retain, nonatomic) NSString *fp_parentDomainIdentifier; // @synthesize fp_parentDomainIdentifier=_fp_parentDomainIdentifier;
 @property(retain, nonatomic) id <NSFileProviderItemFlags> flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSDictionary *extendedAttributes; // @synthesize extendedAttributes=_extendedAttributes;
 @property(nonatomic, getter=isTopLevelSharedItem) BOOL topLevelSharedItem; // @synthesize topLevelSharedItem=_topLevelSharedItem;

@@ -26,7 +26,7 @@
 #import <HomeUI/HUTriggerEditorDelegate-Protocol.h>
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class HFItem, HFNamingComponents, HMHome, HUAccessorySettingsItemModuleController, HUAssociatedSceneAndTriggerModuleController, HUCameraSettingsModuleController, HUChildServiceItemModuleController, HUControlPanelController, HUNameItemModuleController, HUQuickControlSummaryNavigationBarTitleView, HUServiceDetailsItemManager, HUServiceDetailsTextViewDelegate, HUSoftwareUpdateItemModuleController, HUTelevisionSettingsItemModuleController, NSHashTable, NSString, UILongPressGestureRecognizer;
+@class HFItem, HFNamingComponents, HMHome, HUAccessorySettingsItemModuleController, HUAssociatedSceneAndTriggerModuleController, HUCameraSettingsModuleController, HUChildServiceItemModuleController, HUControlPanelController, HUNameItemModuleController, HUQuickControlSummaryNavigationBarTitleView, HUServiceDetailsItemManager, HUServiceDetailsTextViewDelegate, HUSoftwareUpdateItemModuleController, HUTelevisionSettingsItemModuleController, NSHashTable, NSString, UIButton, UILongPressGestureRecognizer;
 @protocol HFServiceLikeItem, HUPresentationDelegate;
 
 @interface HUServiceDetailsViewController : HUItemTableViewController <HUControlPanelControllerDelegate, HUPresentationDelegate, HUServiceDetailsItemManagerDelegate, HUSwitchCellDelegate, HUServiceGroupEditorViewControllerDelegate, HUContainedServiceGridViewControllerDelegate, HUEditRoomViewControllerPresentationDelegate, HUTriggerEditorDelegate, HFAccessoryObserver, UIGestureRecognizerDelegate, HUAccessorySettingsItemModuleControllerDelegate, HUSoftwareUpdateItemModuleControllerDelegate, HUMediaSystemEditorViewControllerDelegate, HUContainedMediaAccessoriesGridViewControllerDelegate, HUChildServiceModuleControllerDelegate, HFHomeObserver, HUPickerCellDelegate, HUDetailsPresentationDelegateHost, HUServiceLikeItemDetailsViewControllerProtocol>
@@ -55,9 +55,11 @@
     HUServiceDetailsTextViewDelegate *_textViewDelegate;
     HFNamingComponents *_namingComponent;
     HUQuickControlSummaryNavigationBarTitleView *_navigationBarTitleView;
+    UIButton *_closeButton;
 }
 
 + (id)acceptableItemClasses;
+@property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) BOOL isPresentingRoomsList; // @synthesize isPresentingRoomsList=_isPresentingRoomsList;
 @property(nonatomic) BOOL shouldTrackProgrammableSwitchActivations; // @synthesize shouldTrackProgrammableSwitchActivations=_shouldTrackProgrammableSwitchActivations;
 @property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
@@ -106,6 +108,7 @@
 - (BOOL)triggerEditor:(id)arg1 shouldCommitTriggerBuilder:(id)arg2;
 - (void)_presentTriggerEditorForProgrammableSwitchEventOptionItem:(id)arg1;
 - (void)_presentRemoveRouterConfirmation;
+- (BOOL)_shouldPresentRemoveRouterConfirmation;
 - (void)_presentRemoveConfirmation;
 - (void)_presentResetHomePodConfirmation;
 - (void)_restartGroupedHomePodAccessory;

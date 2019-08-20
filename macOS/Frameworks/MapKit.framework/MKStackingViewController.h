@@ -40,8 +40,10 @@
     NSView *_titleView;
     NSArray *_viewControllers;
     id <MKStackingViewControllerDelegate> _stackingDelegate;
+    double _verticalScrollerInset;
 }
 
+@property(readonly, nonatomic) double verticalScrollerInset; // @synthesize verticalScrollerInset=_verticalScrollerInset;
 @property(nonatomic) __weak id <MKStackingViewControllerDelegate> stackingDelegate; // @synthesize stackingDelegate=_stackingDelegate;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) NSView *titleView; // @synthesize titleView=_titleView;
@@ -61,7 +63,6 @@
 - (void)_updateScrollerInsetWithPhase:(long long)arg1;
 - (void)_updateScrollerInsetFromFrameChange;
 - (void)setVerticalScrollerInset:(double)arg1;
-@property(readonly, nonatomic) double verticalScrollerInset;
 @property(retain, nonatomic) NSLayoutConstraint *titleViewLeadingConstraint;
 - (void)updateViewConstraints;
 - (void)_removePreferredHeightConstraintFromViewController:(id)arg1;

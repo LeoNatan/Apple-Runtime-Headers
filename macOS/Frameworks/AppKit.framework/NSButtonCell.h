@@ -245,6 +245,7 @@
 - (struct NSEdgeInsets)_alignmentRectInsetsForRect:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (struct CGSize)_autolayout_cellSize;
+- (struct CGSize)_extraContentPaddingForAutolayout;
 - (struct CGSize)_minCellSizeIncrement;
 - (struct CGSize)_minCellSize;
 - (struct CGRect)imageRectForBounds:(struct CGRect)arg1;

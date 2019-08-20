@@ -54,7 +54,7 @@
 - (void)_deleteNotificationsForMemoriesWithUUID:(id)arg1 notificationTypes:(id)arg2;
 - (void)_deleteNotificationsForObjectWithUUID:(id)arg1 notificationDictionaryKey:(id)arg2 notificationTypes:(id)arg3;
 - (void)removeNotificationForInterestingMemoryWithUUID:(id)arg1;
-- (void)postNotificationForInterestingMemoryWithUUID:(id)arg1 keyAssetUUID:(id)arg2 notificationTitle:(id)arg3 notificationSubtitle:(id)arg4 notificationDeliveryDate:(id)arg5;
+- (void)postNotificationForInterestingMemoryWithMemoryUUID:(id)arg1 library:(id)arg2 notificationDeliveryDate:(id)arg3;
 - (id)_generateMemoryNotificationRepresentationWithMemoryUUID:(id)arg1 keyAssetUUID:(id)arg2 notificationTitle:(id)arg3 notificationSubtitle:(id)arg4 notificationDeliveryDate:(id)arg5;
 - (id)_memoryNotificationFromDictionaryRepresentation:(id)arg1;
 - (void)userViewedNotificationWithAlbumCloudGUID:(id)arg1;

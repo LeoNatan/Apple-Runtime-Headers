@@ -17,6 +17,7 @@
 }
 
 + (id)sharedInstance;
++ (id)os_log;
 @property(readonly) id <ABAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
 - (void)accountsDidChange:(id)arg1;
 - (void)startObserving;
@@ -27,6 +28,7 @@
 @property(readonly, copy) NSString *basePath;
 - (void)dealloc;
 - (id)initWithDelegateInfos:(id)arg1;
+- (id)initWithAccountCollection:(id)arg1 watchesForAccountChanges:(BOOL)arg2 readOnlyStores:(BOOL)arg3;
 - (id)initWithAccountCollection:(id)arg1 readOnly:(BOOL)arg2;
 
 @end

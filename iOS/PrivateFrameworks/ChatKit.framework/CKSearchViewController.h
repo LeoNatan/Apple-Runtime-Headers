@@ -12,7 +12,7 @@
 #import <ChatKit/UISearchResultsUpdating-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKSearchCollectionView, IMTimingCollection, NSArray, NSMutableSet, NSString, UICollectionViewDiffableDataSource, _UICollectionViewCompositionalLayout, _UIContextMenuInteraction;
+@class CKSearchCollectionView, IMTimingCollection, NSArray, NSMutableSet, NSString, UICollectionViewCompositionalLayout, UICollectionViewCompositionalLayoutConfiguration, UICollectionViewDiffableDataSource, _UIContextMenuInteraction;
 @protocol CKContainerSearchControllerDelegate;
 
 @interface CKSearchViewController : CKScrollViewController <CKSearchResultsTitleHeaderCellDelegate, _UIContextMenuInteractionDelegate, UISearchResultsUpdating, UICollectionViewDelegate, CKSearchControllerDelegate>
@@ -24,19 +24,21 @@
     NSString *_searchText;
     CKSearchCollectionView *_collectionView;
     UICollectionViewDiffableDataSource *_dataSource;
-    _UICollectionViewCompositionalLayout *_collectionViewLayout;
+    UICollectionViewCompositionalLayout *_collectionViewLayout;
     CDUnknownBlockType _performAfterInitialLoadBlock;
     NSMutableSet *_searchCompleteControllerSet;
     IMTimingCollection *_timingCollection;
+    UICollectionViewCompositionalLayoutConfiguration *_layoutConfiguration;
     _UIContextMenuInteraction *_contextMenuInteraction;
 }
 
 @property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
+@property(retain, nonatomic) UICollectionViewCompositionalLayoutConfiguration *layoutConfiguration; // @synthesize layoutConfiguration=_layoutConfiguration;
 @property(retain, nonatomic) IMTimingCollection *timingCollection; // @synthesize timingCollection=_timingCollection;
 @property(retain, nonatomic) NSMutableSet *searchCompleteControllerSet; // @synthesize searchCompleteControllerSet=_searchCompleteControllerSet;
 @property(copy, nonatomic) CDUnknownBlockType performAfterInitialLoadBlock; // @synthesize performAfterInitialLoadBlock=_performAfterInitialLoadBlock;
 @property(nonatomic) _Bool isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
-@property(retain, nonatomic) _UICollectionViewCompositionalLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
+@property(retain, nonatomic) UICollectionViewCompositionalLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CKSearchCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
@@ -50,6 +52,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)_currentModeIsDetails;
 - (Class)_searchResultsHeaderClass;
+- (id)globalLayoutConfiguration;
 - (id)footerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)headerBoundryItemsForController:(id)arg1 withEnvironment:(id)arg2;
 - (id)_layoutSectionForController:(id)arg1 withEnvironment:(id)arg2;
@@ -58,9 +61,13 @@
 - (void)reloadData;
 - (void)searchEnded;
 - (void)cancelCurrentQuery;
+- (id)containerTraitCollectionForController:(id)arg1;
 - (double)containerWidthForController:(id)arg1;
 - (struct UIEdgeInsets)parentMarginInsetsForSearchController:(id)arg1;
-- (void)searchController:(id)arg1 requestsPresentationOfShareController:(id)arg2;
+- (void)deleteMessageItem:(id)arg1;
+- (void)deleteTransferGUID:(id)arg1;
+- (void)searchController:(id)arg1 requestsPresentationOfAlertController:(id)arg2 atRect:(struct CGRect)arg3;
+- (void)searchController:(id)arg1 requestsPresentationOfShareController:(id)arg2 atRect:(struct CGRect)arg3;
 - (id)searchController:(id)arg1 conversationForChatGUID:(id)arg2;
 - (void)searchControllerContentsDidChange:(id)arg1;
 - (void)_searchImmediately;
@@ -72,6 +79,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (void)_configureIndexingCell:(id)arg1;
 - (id)cellForSupplementryItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 forSupplementryViewKind:(id)arg3;
 - (id)cellForItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 withIdentifier:(id)arg3;
 - (id)layoutSectionForSection:(long long)arg1 withEnvironment:(id)arg2;

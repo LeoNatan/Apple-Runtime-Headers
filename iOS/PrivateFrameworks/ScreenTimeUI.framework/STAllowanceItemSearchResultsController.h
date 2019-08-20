@@ -8,19 +8,25 @@
 
 #import <ScreenTimeUI/UISearchResultsUpdating-Protocol.h>
 
-@class NSArray, NSMutableOrderedSet, NSString;
+@class NSArray, NSMutableOrderedSet, NSOrderedSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface STAllowanceItemSearchResultsController : UITableViewController <UISearchResultsUpdating>
 {
+    _Bool _hasNewSelection;
     NSMutableOrderedSet *_selectedBundleIdentifiers;
     NSMutableOrderedSet *_selectedWebDomains;
     NSArray *_allowanceItemSpecifiers;
     NSArray *_filteredAllowanceItemSpecifiers;
+    NSOrderedSet *_initialWebDomains;
+    NSOrderedSet *_initalBundleIdentifiers;
 }
 
+@property(copy) NSOrderedSet *initalBundleIdentifiers; // @synthesize initalBundleIdentifiers=_initalBundleIdentifiers;
+@property(copy) NSOrderedSet *initialWebDomains; // @synthesize initialWebDomains=_initialWebDomains;
 @property(copy) NSArray *filteredAllowanceItemSpecifiers; // @synthesize filteredAllowanceItemSpecifiers=_filteredAllowanceItemSpecifiers;
 @property(copy) NSArray *allowanceItemSpecifiers; // @synthesize allowanceItemSpecifiers=_allowanceItemSpecifiers;
+@property _Bool hasNewSelection; // @synthesize hasNewSelection=_hasNewSelection;
 @property(retain) NSMutableOrderedSet *selectedWebDomains; // @synthesize selectedWebDomains=_selectedWebDomains;
 @property(retain) NSMutableOrderedSet *selectedBundleIdentifiers; // @synthesize selectedBundleIdentifiers=_selectedBundleIdentifiers;
 - (void).cxx_destruct;
@@ -30,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 
 // Remaining properties

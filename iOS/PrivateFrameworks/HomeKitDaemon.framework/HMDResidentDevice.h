@@ -20,6 +20,8 @@
     _Bool _confirmed;
     _Bool _reachable;
     _Bool _lowBattery;
+    _Bool _supportsMediaActions;
+    _Bool _supportsShortcutActions;
     HMDDevice *_device;
     NSUUID *_identifier;
     long long _batteryState;
@@ -33,6 +35,8 @@
 + (id)shortDescription;
 @property(nonatomic) __weak HMDResidentDeviceManager *residentDeviceManager; // @synthesize residentDeviceManager=_residentDeviceManager;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
+@property(readonly, nonatomic) _Bool supportsShortcutActions; // @synthesize supportsShortcutActions=_supportsShortcutActions;
+@property(readonly, nonatomic) _Bool supportsMediaActions; // @synthesize supportsMediaActions=_supportsMediaActions;
 @property(nonatomic, getter=isLowBattery) _Bool lowBattery; // @synthesize lowBattery=_lowBattery;
 @property(nonatomic) long long batteryState; // @synthesize batteryState=_batteryState;
 @property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
@@ -55,7 +59,8 @@
 - (void)__deviceAdded:(id)arg1;
 - (void)__accountAdded:(id)arg1;
 - (id)runtimeState;
-@property(readonly, nonatomic) _Bool supportsMediaActionExecution;
+- (_Bool)supportsResidentShortcutActions;
+- (_Bool)supportsResidentMediaActions;
 @property(readonly, nonatomic) _Bool supportsMediaSystem;
 @property(readonly, nonatomic) _Bool supportsSharedEventTriggerActivation;
 @property(readonly, nonatomic) unsigned long long status;

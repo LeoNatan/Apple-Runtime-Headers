@@ -16,6 +16,7 @@
     NSString *_bundleIdentifier;
     unsigned long long _supportedOptions;
     unsigned long long _copyOptions;
+    unsigned long long _queueControlOptions;
     NSString *_playbackSessionIdentifier;
     NSString *_playbackSessionType;
     NSData *_playbackSessionData;
@@ -26,18 +27,20 @@
 @property(readonly, copy, nonatomic) NSData *playbackSessionData; // @synthesize playbackSessionData=_playbackSessionData;
 @property(readonly, copy, nonatomic) NSString *playbackSessionType; // @synthesize playbackSessionType=_playbackSessionType;
 @property(readonly, copy, nonatomic) NSString *playbackSessionIdentifier; // @synthesize playbackSessionIdentifier=_playbackSessionIdentifier;
+@property(nonatomic) unsigned long long queueControlOptions; // @synthesize queueControlOptions=_queueControlOptions;
 @property(nonatomic) unsigned long long copyOptions; // @synthesize copyOptions=_copyOptions;
-@property(nonatomic) unsigned long long supportedOptions; // @synthesize supportedOptions=_supportedOptions;
+@property(readonly, nonatomic) unsigned long long supportedOptions; // @synthesize supportedOptions=_supportedOptions;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) MPPlaybackArchiveDisplayProperties *displayProperties; // @synthesize displayProperties=_displayProperties;
 - (void).cxx_destruct;
+- (id)initWithPlaybackSessionIdentifier:(id)arg1 playbackSessionData:(id)arg2 playbackSessionType:(id)arg3 bundleIdentifier:(id)arg4 displayProperties:(id)arg5;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)copyWithOptions:(unsigned long long)arg1;
 - (_Bool)boolValueForOption:(long long)arg1;
 - (void)setBOOLValue:(_Bool)arg1 forOption:(long long)arg2;
-- (id)initWithPlaybackSessionIdentifier:(id)arg1 playbackSessionData:(id)arg2 playbackSessionType:(id)arg3 bundleIdentifier:(id)arg4 displayProperties:(id)arg5;
+- (id)initWithPlaybackSessionIdentifier:(id)arg1 playbackSessionData:(id)arg2 playbackSessionType:(id)arg3 bundleIdentifier:(id)arg4 supportedOptions:(unsigned long long)arg5 displayProperties:(id)arg6;
 
 @end
 

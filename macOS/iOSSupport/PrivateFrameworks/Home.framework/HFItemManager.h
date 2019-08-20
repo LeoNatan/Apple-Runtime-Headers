@@ -225,6 +225,7 @@
 - (void)home:(id)arg1 willWriteValuesForCharacteristics:(id)arg2;
 - (void)home:(id)arg1 willReadValuesForCharacteristics:(id)arg2;
 - (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
+- (void)homeDidUpdateNetworkRouterSupport:(id)arg1;
 - (void)homeDidUpdateProtectionMode:(id)arg1;
 - (void)profileDidUpdateSatellites:(id)arg1;
 - (void)profileDidUpdateNetworkStatus:(id)arg1;

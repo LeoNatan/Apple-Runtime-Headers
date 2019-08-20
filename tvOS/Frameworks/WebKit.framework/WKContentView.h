@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UILongPressGestureRecognizer> _longPressGestureRecognizer;
     struct RetainPtr<WKSyntheticTapGestureRecognizer> _doubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _nonBlockingDoubleTapGestureRecognizer;
+    struct RetainPtr<UITapGestureRecognizer> _doubleTapGestureRecognizerForDoubleClick;
     struct RetainPtr<UITapGestureRecognizer> _twoFingerDoubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _twoFingerSingleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _stylusSingleTapGestureRecognizer;
@@ -92,6 +93,7 @@ __attribute__((visibility("hidden")))
     _Bool _resigningFirstResponder;
     _Bool _needsDeferredEndScrollingSelectionUpdate;
     _Bool _isChangingFocus;
+    _Bool _isFocusingElementWithKeyboard;
     _Bool _isBlurringFocusedElement;
     _Bool _focusRequiresStrongPasswordAssistance;
     _Bool _waitingForEditDragSnapshot;
@@ -130,7 +132,6 @@ __attribute__((visibility("hidden")))
 - (void)_setAcceleratedCompositingRootView:(id)arg1;
 - (void)_layerTreeCommitComplete;
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction *)arg1;
-- (void)_didCommitLoadForMainFrame;
 - (void)_didRelaunchProcess;
 - (void)_processWillSwap;
 - (void)_processDidExit;
@@ -165,6 +166,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
 - (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;
 - (id)containerViewForTargetedPreviews;
+@property(readonly, nonatomic) _Bool _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) _Bool _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) _Bool _shouldUseContextMenus;
 - (void)actionSheetAssistant:(id)arg1 getAlternateURLForImage:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -212,6 +214,7 @@ __attribute__((visibility("hidden")))
 - (void)showGlobalMenuControllerInRect:(struct CGRect)arg1;
 - (void)_didUpdateInputMode:(unsigned char)arg1;
 - (void)_hardwareKeyboardAvailabilityChanged;
+@property(readonly, nonatomic) _Bool shouldIgnoreKeyboardWillHideNotification;
 - (void)_elementDidBlur;
 - (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(_Bool)arg2 blurPreviousNode:(_Bool)arg3 activityStateChanges:(OptionSet_05ce0fa5)arg4 userObject:(id)arg5;
 - (Vector_116a0919 *)focusedSelectElementOptions;
@@ -325,17 +328,17 @@ __attribute__((visibility("hidden")))
 - (void)accessoryTab:(_Bool)arg1;
 - (void)accessoryDone;
 - (void)accessoryClear;
-- (float)_doubleTapForDoubleClickRadius;
-- (double)_doubleTapForDoubleClickDelay;
 - (void)_setDoubleTapGesturesEnabled:(_Bool)arg1;
 - (struct Color)_tapHighlightColorForFastClick:(_Bool)arg1;
 - (void)_becomeFirstResponderWithSelectionMovingForward:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_previousAccessoryTabForWebView:(id)arg1;
 - (void)_nextAccessoryTabForWebView:(id)arg1;
 - (id)keyCommands;
+- (void)_didCommitLoadForMainFrame;
 - (void)_didStartProvisionalLoadForMainFrame;
 - (void)_handleAutocorrectionContext:(const struct WebAutocorrectionContext *)arg1;
 - (void)requestAutocorrectionContextWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_cancelPendingAutocorrectionContextHandler;
 - (void)_invokePendingAutocorrectionContextHandler:(id)arg1;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDictationContext:(CDUnknownBlockType)arg1;
@@ -510,6 +513,7 @@ __attribute__((visibility("hidden")))
 - (void)_longPressRecognized:(id)arg1;
 - (void)_stylusSingleTapRecognized:(id)arg1;
 - (void)_twoFingerSingleTapGestureRecognized:(id)arg1;
+- (void)_doubleTapRecognizedForDoubleClick:(id)arg1;
 - (void)_highlightLongPressRecognized:(id)arg1;
 - (id)webSelectionRects;
 - (id)webSelectionRectsForSelectionRects:(const Vector_029b09a9 *)arg1;
@@ -593,7 +597,6 @@ __attribute__((visibility("hidden")))
 - (void)_removeDefaultGestureRecognizers;
 - (void)cleanupInteraction;
 - (void)setupInteraction;
-- (void)_ensureNonBlockingDoubleTapGestureRecognizer;
 - (void)_createAndConfigureLongPressGestureRecognizer;
 - (void)_createAndConfigureDoubleTapGestureRecognizer;
 - (id)_formInputSession;

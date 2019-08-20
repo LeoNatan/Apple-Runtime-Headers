@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)restoreDefaultWallpaperWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)setWallpaperColorName:(id)arg1 forVariants:(unsigned int)arg2;
-- (_Bool)setWallpaperWithVideo:(id)arg1 cropRect:(struct CGRect)arg2;
+- (_Bool)setWallpaperWithVideoWithWallpaperMode:(id)arg1 cropRect:(struct CGRect)arg2 wallpaperMode:(int)arg3;
 - (void)fetchThumbnailForVariant:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)dealloc;

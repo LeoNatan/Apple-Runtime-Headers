@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UISceneComponentProviding-Protocol.h>
 
-@class NSString, NSToolbar, UIScene;
+@class NSString, NSToolbar, NSURL, UIScene;
 @protocol UINSWindow;
 
 __attribute__((visibility("hidden")))
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     BOOL _autoHidesToolbarInFullScreen;
     NSToolbar *_toolbar;
     long long _userInterfaceStyle;
+    NSURL *_representedURL;
 }
 
 + (void)initializeConnections;
@@ -28,6 +29,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateHostWindowUserInterfaceStyle;
 - (void)setUserInterfaceStyle:(long long)arg1;
 - (long long)userInterfaceStyle;
+- (void)_updateRepresentedURL;
+@property(copy, nonatomic) NSURL *representedURL;
 - (void)_updateTitleVisibilityBehavior;
 @property long long titleVisibility;
 - (void)_updateToolbar;

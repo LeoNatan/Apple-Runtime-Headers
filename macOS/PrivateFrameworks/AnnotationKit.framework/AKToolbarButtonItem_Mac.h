@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSButton, NSImage, NSImageView, NSLayoutConstraint, NSString;
+@class NSButton, NSImage, NSLayoutConstraint, NSPulldownIndicatorImageView, NSString;
 @protocol AKUserInterfaceItem;
 
 @interface AKToolbarButtonItem_Mac : NSView
@@ -14,7 +14,7 @@
     NSLayoutConstraint *_buttonWidthConstraint;
     NSLayoutConstraint *_buttonHeightConstraint;
     NSLayoutConstraint *_pulldownIndicatorWidthConstraint;
-    NSImageView *_pulldownIndicatorView;
+    NSPulldownIndicatorImageView *_pulldownIndicatorView;
     BOOL _showsPulldown;
     BOOL _enabled;
     unsigned long long _displayMode;

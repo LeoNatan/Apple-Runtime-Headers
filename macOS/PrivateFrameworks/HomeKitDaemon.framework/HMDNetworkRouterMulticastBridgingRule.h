@@ -9,11 +9,11 @@
 #import <HomeKitDaemon/HMDTLVProtocol-Protocol.h>
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
-@class HMDNetworkRouterIPAddress, HMDNetworkRouterLANIdentifierList, HMDNetworkRouterMulticastBridgingRuleDirection, HMDTLVUnsignedNumberValue, NSString;
+@class HMDNetworkRouterIPAddress, HMDNetworkRouterLANIdentifierList, HMDNetworkRouterRuleDirection, HMDTLVUnsignedNumberValue, NSString;
 
 @interface HMDNetworkRouterMulticastBridgingRule : NSObject <NSCopying, HMDTLVProtocol>
 {
-    HMDNetworkRouterMulticastBridgingRuleDirection *_direction;
+    HMDNetworkRouterRuleDirection *_direction;
     HMDNetworkRouterLANIdentifierList *_lanIdentifierList;
     HMDNetworkRouterIPAddress *_destinationIPAddress;
     HMDTLVUnsignedNumberValue *_destinationPort;
@@ -24,7 +24,7 @@
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *destinationPort; // @synthesize destinationPort=_destinationPort;
 @property(retain, nonatomic) HMDNetworkRouterIPAddress *destinationIPAddress; // @synthesize destinationIPAddress=_destinationIPAddress;
 @property(retain, nonatomic) HMDNetworkRouterLANIdentifierList *lanIdentifierList; // @synthesize lanIdentifierList=_lanIdentifierList;
-@property(retain, nonatomic) HMDNetworkRouterMulticastBridgingRuleDirection *direction; // @synthesize direction=_direction;
+@property(retain, nonatomic) HMDNetworkRouterRuleDirection *direction; // @synthesize direction=_direction;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;

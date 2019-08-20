@@ -29,7 +29,6 @@
     SBNubView *_nubView;
     UIView *_darkenView;
     _Bool _isBlurred;
-    _Bool _isTransitioningBlur;
     SBApplicationBlurContentView *_blurView;
     NSHashTable *_statusBarAssertions;
     SBSceneViewStatusBarAssertion *_inlineAppExposeStatusBarAssertion;

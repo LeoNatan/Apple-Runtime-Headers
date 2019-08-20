@@ -10,6 +10,7 @@
 
 @interface PLXPCAgent : PLAgent
 {
+    int _lastLinearBrightness;
     PLXPCListenerOperatorComposition *_testMarkerXPCListener;
     PLXPCListenerOperatorComposition *_UIKitKeyboardXPCListener;
     PLXPCListenerOperatorComposition *_UIKitActivityXPCListener;
@@ -74,6 +75,7 @@
     PLXPCListenerOperatorComposition *_ODOffXPCListener;
     PLXPCListenerOperatorComposition *_ODOnXPCListener;
     PLXPCListenerOperatorComposition *_ODHNXPCListener;
+    PLXPCListenerOperatorComposition *_DRMaxRateListener;
     PLXPCListenerOperatorComposition *_AirTrafficAssetDownloadXPCListener;
     PLXPCListenerOperatorComposition *_CoreDuetKnowledgeSyncXPCListener;
     PLXPCListenerOperatorComposition *_AppleBacklightBrightnessXPCListener;
@@ -92,6 +94,7 @@
 + (id)entryEventBackwardDefinitionCKKSSyncing;
 + (id)entryEventBackwardDefinitionUbiquityAccountStatistics;
 + (id)entryEventBackwardDefinitionMediaServerdRTC;
++ (id)entryEventBackwardDefinitionDRMaxRate;
 + (id)entryEventBackwardDefinitionODHN;
 + (id)entryEventBackwardDefinitionODOn;
 + (id)entryEventBackwardDefinitionODOff;
@@ -159,6 +162,7 @@
 + (BOOL)shouldLogiOSWatchOSOnly;
 + (id)defaults;
 + (void)load;
+@property int lastLinearBrightness; // @synthesize lastLinearBrightness=_lastLinearBrightness;
 @property(retain) PLEntry *lastDosimetryEntry; // @synthesize lastDosimetryEntry=_lastDosimetryEntry;
 @property(retain) PLXPCListenerOperatorComposition *DosimetryXPCListener; // @synthesize DosimetryXPCListener=_DosimetryXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *RapportReceivedMessageXPCListener; // @synthesize RapportReceivedMessageXPCListener=_RapportReceivedMessageXPCListener;
@@ -166,6 +170,7 @@
 @property(retain) PLXPCListenerOperatorComposition *AppleBacklightBrightnessXPCListener; // @synthesize AppleBacklightBrightnessXPCListener=_AppleBacklightBrightnessXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *CoreDuetKnowledgeSyncXPCListener; // @synthesize CoreDuetKnowledgeSyncXPCListener=_CoreDuetKnowledgeSyncXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *AirTrafficAssetDownloadXPCListener; // @synthesize AirTrafficAssetDownloadXPCListener=_AirTrafficAssetDownloadXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *DRMaxRateListener; // @synthesize DRMaxRateListener=_DRMaxRateListener;
 @property(retain) PLXPCListenerOperatorComposition *ODHNXPCListener; // @synthesize ODHNXPCListener=_ODHNXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *ODOnXPCListener; // @synthesize ODOnXPCListener=_ODOnXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *ODOffXPCListener; // @synthesize ODOffXPCListener=_ODOffXPCListener;
@@ -240,6 +245,7 @@
 - (void)logEventPointCacheDelete:(id)arg1;
 - (void)logEventPointNetworkSymptomsAdviosry:(id)arg1;
 - (void)logEventBackwardUbiquityAccountStatistics:(id)arg1;
+- (void)logEventBackwardDRMaxRate:(id)arg1;
 - (void)logEventBackwardODHN:(id)arg1;
 - (void)logEventBackwardODOn:(id)arg1;
 - (void)logEventBackwardODOff:(id)arg1;

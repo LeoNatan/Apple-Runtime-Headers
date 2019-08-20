@@ -33,6 +33,8 @@
 + (_Bool)sessionTypeIsExtendedRuntime:(int)arg1;
 + (id)sessionForBundleID:(id)arg1 type:(int)arg2;
 + (id)sessionForBundleID:(id)arg1 withURL:(id)arg2 type:(int)arg3;
++ (id)sessionOfType:(int)arg1;
++ (id)sessionWithURL:(id)arg1 type:(int)arg2;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(getter=isLaunchable) _Bool launchable; // @synthesize launchable=_launchable;
 @property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;

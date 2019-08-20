@@ -33,9 +33,7 @@
 - (void)transitionToMonochromeWithFraction:(double)arg1;
 - (double)_stopwatchCurrentTime;
 - (void)_updateDialProgress;
-- (void)_updateSubviews;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
-- (void)_applyPausedUpdate;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)init;

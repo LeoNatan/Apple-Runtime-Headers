@@ -15,6 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface _UITextContainerView : UIView <NSUITextViewCommonMethods, _UITextViewCanvasViewContext>
 {
+    BOOL _drawingFindIndicator;
     struct UIEdgeInsets _textContainerInset;
     struct CGPoint _textContainerOrigin;
     struct CGSize _minSize;
@@ -43,6 +44,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_UITextContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSTextContainer *textContainer; // @synthesize textContainer=_textContainer;
 - (void).cxx_destruct;
+- (void)setDrawingFindIndicator:(BOOL)arg1;
+- (BOOL)isDrawingFindIndicator;
 - (struct CGRect)_intersectRectWithConstrainedTiledRenderingRect:(struct CGRect)arg1;
 - (void)_unconstrainTiledRendering;
 - (void)_constrainTiledRenderingToRect:(struct CGRect)arg1;

@@ -8,22 +8,31 @@
 
 #import <AuthKitUI/LAUIAuthenticationDelegate-Protocol.h>
 
-@class AKAuthorizationButton, AKAuthorizationPaneContext, LAUIAuthenticationView, NSString, UIStackView;
-@protocol AKAuthorizationSubPaneConfirmButtonDelegate;
+@class AKAuthorizationButton, AKAuthorizationPaneContext, LAUIAuthenticationView, NSObject, NSString, UILabel, UIStackView, UIView;
+@protocol AKAuthorizationSubPaneConfirmButtonDelegate, OS_dispatch_group;
 
 @interface AKAuthorizationSubPaneConfirmButton : AKAuthorizationSubPane <LAUIAuthenticationDelegate>
 {
+    CDUnknownBlockType _processingStateCompletionHandler;
+    NSObject<OS_dispatch_group> *_processingStateGroup;
+    _Bool _hasTouchIDOnly;
+    _Bool _canPerformBiometricValidation;
     NSString *_bioTextForInactiveState;
     AKAuthorizationButton *_authorizationButton;
     id <AKAuthorizationSubPaneConfirmButtonDelegate> _delegate;
     AKAuthorizationPaneContext *_context;
     UIStackView *_mainStackView;
+    UIView *_authorizationButtonContainer;
+    UILabel *_bioLabel;
     LAUIAuthenticationView *_bioView;
 }
 
-+ (id)_createAuthorizationButtonInStackView:(id)arg1;
 + (id)_createMainStackView;
 @property(retain, nonatomic) LAUIAuthenticationView *bioView; // @synthesize bioView=_bioView;
+@property(retain, nonatomic) UILabel *bioLabel; // @synthesize bioLabel=_bioLabel;
+@property _Bool canPerformBiometricValidation; // @synthesize canPerformBiometricValidation=_canPerformBiometricValidation;
+@property _Bool hasTouchIDOnly; // @synthesize hasTouchIDOnly=_hasTouchIDOnly;
+@property(readonly, nonatomic) UIView *authorizationButtonContainer; // @synthesize authorizationButtonContainer=_authorizationButtonContainer;
 @property(retain, nonatomic) UIStackView *mainStackView; // @synthesize mainStackView=_mainStackView;
 @property(retain, nonatomic) AKAuthorizationPaneContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <AKAuthorizationSubPaneConfirmButtonDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,13 +42,21 @@
 - (void)_performPasscodeValidations:(CDUnknownBlockType)arg1;
 - (id)_passcodeButtonTitle;
 - (id)_passwordButtonTitle;
-- (_Bool)_canPerformBiometricValidation;
 - (void)_switchToPasscode;
+- (void)_setGlyphViewGestureRecognizerEnabled:(_Bool)arg1;
+- (void)_waitForTimeInterval:(double)arg1 withGroup:(id)arg2;
+- (void)invalidateProcessingState;
+- (void)finishProcessingWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_enterProcessingStateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)processBiometricMatchWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)authenticationResult:(id)arg1 error:(id)arg2 context:(id)arg3;
 - (_Bool)_hasTouchIDOnly;
+- (void)_updateLabelWithTitle:(id)arg1;
 - (void)_setupAlertImageWithConstraints:(id)arg1;
 - (void)_setupBioButtonWithConstraints:(id)arg1;
-- (void)_setupLabelWithTitle:(id)arg1 withConstraints:(id)arg2;
+- (void)_setupLabelWithTitle:(id)arg1 withConstraints:(id)arg2 animated:(_Bool)arg3;
+- (void)_addArrangedSpaceToMainStackView:(double)arg1;
+- (id)_spaceWithConstant:(double)arg1;
 - (void)_enableLAUIAuthMechanism;
 - (void)_switchToBioView:(_Bool)arg1 withEnabled:(_Bool)arg2 showAlert:(_Bool)arg3 alertString:(id)arg4;
 - (void)showAlertAndContinueWithPassword:(_Bool)arg1;

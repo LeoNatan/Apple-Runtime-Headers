@@ -23,6 +23,8 @@
 - (void)_updateIsPartOfForegroundScene;
 - (void)_windowSceneDidEnterBackground:(id)arg1;
 - (_Bool)_currentWindowSceneIsForeground;
+- (void)setForScrubbingOnly:(_Bool)arg1;
+- (_Bool)isForScrubbingOnly;
 - (struct CGRect)_videoRectForBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect videoRect;
 - (void)setLanczosFilterDownscaleFactor:(int)arg1;
@@ -66,7 +68,6 @@
 - (void)setContentsScale:(float)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSublayers;
-- (id)_compactDescription;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 

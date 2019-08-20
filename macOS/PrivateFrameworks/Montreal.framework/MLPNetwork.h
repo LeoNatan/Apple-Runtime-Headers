@@ -10,6 +10,7 @@
 
 @interface MLPNetwork : NSObject
 {
+    BOOL _computeLossOnInference;
     NSDictionary *_options;
     NSArray *_layers;
     unsigned long long _networkType;
@@ -25,6 +26,7 @@
 }
 
 + (id)networkWithLayers:(id)arg1 inputLength:(unsigned long long)arg2 inputHeight:(unsigned long long)arg3 inputChannels:(unsigned long long)arg4 batchSize:(unsigned long long)arg5 lossBatchSize:(unsigned long long)arg6 options:(id)arg7 deviceHandler:(id)arg8 optimizerParams:(id)arg9;
+@property BOOL computeLossOnInference; // @synthesize computeLossOnInference=_computeLossOnInference;
 @property unsigned long long lossBatchSize; // @synthesize lossBatchSize=_lossBatchSize;
 @property unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property unsigned long long inputChannels; // @synthesize inputChannels=_inputChannels;

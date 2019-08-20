@@ -57,7 +57,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_sourceTableIsClean:(id)arg1;
 - (id)tableMigrationDescriptionForEntity:(id)arg1;
 - (id)entityMigrationDescriptionForEntity:(id)arg1;
-- (void)_determineAncillaryModelIndexesForMigration;
 - (void)_determineAttributeTriggerToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
 - (void)_determineRTreeExtensionsToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
 - (void)_determineDerivedAttributesToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
@@ -77,6 +76,7 @@ __attribute__((visibility("hidden")))
 - (void)generatePKTableUpdateStatements;
 - (id)_originalRootsForAddedEntity:(id)arg1;
 - (void)_disconnect;
+@property(readonly, nonatomic) NSSQLiteConnection *connection;
 - (void)dealloc;
 - (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 

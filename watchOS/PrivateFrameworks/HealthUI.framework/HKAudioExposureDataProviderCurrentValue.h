@@ -21,7 +21,7 @@
 
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
-- (id)_attributedSymbolForClassification:(unsigned int)arg1 textStyle:(id)arg2;
+- (id)_attributedSymbolForClassification:(unsigned int)arg1 font:(id)arg2;
 - (id)attributedSupplementaryStringWithDisplayType:(id)arg1 unitController:(id)arg2 font:(id)arg3;
 - (id)stringWithDisplayType:(id)arg1 unitController:(id)arg2;
 - (id)lastUpdatedShortDescriptionWithDateCache:(id)arg1;

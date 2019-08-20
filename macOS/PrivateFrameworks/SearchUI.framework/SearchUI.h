@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)mapViewControllerForData:(id)arg1 feedbackListener:(id)arg2;
 + (id)viewControllerForResult:(id)arg1 feedbackListener:(id)arg2;
 + (BOOL)hasViewControllerForResult:(id)arg1;
 + (id)cardFromResult:(id)arg1;

@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)mouseMoved:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
+- (void)cancelOutstandingMouseButtons;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (unsigned int)_contextIdAtWindowLocation:(struct CGPoint)arg1;
 - (struct CGPoint)_convertScrollDeltaToSceneDelta:(id)arg1;

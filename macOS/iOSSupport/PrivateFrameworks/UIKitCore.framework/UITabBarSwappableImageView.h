@@ -26,6 +26,10 @@ __attribute__((visibility("hidden")))
 - (void)showAlternateImage:(BOOL)arg1;
 - (void)setCurrentImage;
 - (void)didMoveToWindow;
+- (id)_selectedCompactImage;
+- (id)_selectedImage;
+- (id)_unselectedCompactImage;
+- (id)_unselectedImage;
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2 landscapeImage:(id)arg3 landscapeAlternateImage:(id)arg4;
 
 @end

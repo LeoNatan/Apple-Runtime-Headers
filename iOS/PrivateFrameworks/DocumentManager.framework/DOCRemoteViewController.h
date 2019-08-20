@@ -31,9 +31,6 @@
 @property __weak id <DOCRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
-- (void)updateBackgroundColor;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)updateAppearance:(id)arg1 shouldFlushCA:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)updateAppearance:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)updateEditingTo:(_Bool)arg1 animated:(_Bool)arg2;

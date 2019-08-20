@@ -16,7 +16,7 @@
 }
 
 + (_Bool)supportsAnchorBasedAuthorization;
-+ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 client:(id)arg2 error:(id *)arg3;
 + (id)requiredEntitlements;
 + (Class)queryClass;
 - (void).cxx_destruct;

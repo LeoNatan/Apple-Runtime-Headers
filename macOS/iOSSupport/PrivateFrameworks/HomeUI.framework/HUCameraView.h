@@ -12,7 +12,7 @@
 {
     BOOL _showActivityIndicator;
     unsigned long long _maskedCameraCorners;
-    NSLayoutYAxisAnchor *_badgeTopAnchor;
+    NSLayoutYAxisAnchor *_badgeBottomAnchor;
     HUCameraErrorContent *_errorContent;
     UIImageView *_demoSnapshotImageView;
     HURemoteContextHostingView *_cameraContainerView;
@@ -25,14 +25,14 @@
     NADecayingTimer *_snapshotAgeUpdateTimer;
     NSArray *_staticConstraints;
     NSLayoutConstraint *_cameraAspectRatioConstraint;
-    NSLayoutConstraint *_badgeTopConstraint;
-    NSLayoutConstraint *_badgeLeadingConstraint;
+    NSLayoutConstraint *_badgeBottomConstraint;
+    NSLayoutConstraint *_badgeTrailingConstraint;
     struct UIOffset _badgeOffset;
 }
 
 + (BOOL)requiresConstraintBasedLayout;
-@property(retain, nonatomic) NSLayoutConstraint *badgeLeadingConstraint; // @synthesize badgeLeadingConstraint=_badgeLeadingConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *badgeTopConstraint; // @synthesize badgeTopConstraint=_badgeTopConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *badgeTrailingConstraint; // @synthesize badgeTrailingConstraint=_badgeTrailingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *badgeBottomConstraint; // @synthesize badgeBottomConstraint=_badgeBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *cameraAspectRatioConstraint; // @synthesize cameraAspectRatioConstraint=_cameraAspectRatioConstraint;
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
 @property(retain, nonatomic) NADecayingTimer *snapshotAgeUpdateTimer; // @synthesize snapshotAgeUpdateTimer=_snapshotAgeUpdateTimer;
@@ -46,7 +46,7 @@
 @property(retain, nonatomic) UIImageView *demoSnapshotImageView; // @synthesize demoSnapshotImageView=_demoSnapshotImageView;
 @property(nonatomic) BOOL showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 @property(retain, nonatomic) HUCameraErrorContent *errorContent; // @synthesize errorContent=_errorContent;
-@property(retain, nonatomic) NSLayoutYAxisAnchor *badgeTopAnchor; // @synthesize badgeTopAnchor=_badgeTopAnchor;
+@property(retain, nonatomic) NSLayoutYAxisAnchor *badgeBottomAnchor; // @synthesize badgeBottomAnchor=_badgeBottomAnchor;
 @property(nonatomic) struct UIOffset badgeOffset; // @synthesize badgeOffset=_badgeOffset;
 @property(nonatomic) unsigned long long maskedCameraCorners; // @synthesize maskedCameraCorners=_maskedCameraCorners;
 - (void).cxx_destruct;

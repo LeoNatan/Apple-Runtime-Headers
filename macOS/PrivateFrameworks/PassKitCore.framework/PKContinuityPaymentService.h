@@ -29,7 +29,7 @@
 - (void)didReceivePaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)didReceivePaymentHostUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)didReceiveUpdatedPaymentDevices:(id)arg1;
-- (void)promptDetailsForVirtualCard:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)promptDetailsForVirtualCard:(id)arg1 showNotification:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)sendPaymentSetupRequest:(id)arg1 appDisplayName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setRemoteDevices:(id)arg1;
 @property(readonly, nonatomic) NSArray *remoteDevices; // @synthesize remoteDevices=_remoteDevices;

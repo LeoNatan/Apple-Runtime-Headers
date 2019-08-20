@@ -11,7 +11,6 @@
 @interface SBHHomeScreenSettings : PTSettings
 {
     _Bool _usesMinimumViableHomeScreen;
-    _Bool _usesLowDensityLayout;
     _Bool _showPopOvers;
     _Bool _showWidgets;
     double _defaultDragInteractionLiftDelay;
@@ -29,7 +28,6 @@
 @property(nonatomic) double defaultDragInteractionLiftDelay; // @synthesize defaultDragInteractionLiftDelay=_defaultDragInteractionLiftDelay;
 @property(nonatomic) _Bool showWidgets; // @synthesize showWidgets=_showWidgets;
 @property(nonatomic) _Bool showPopOvers; // @synthesize showPopOvers=_showPopOvers;
-@property(nonatomic) _Bool usesLowDensityLayout; // @synthesize usesLowDensityLayout=_usesLowDensityLayout;
 @property(nonatomic) _Bool usesMinimumViableHomeScreen; // @synthesize usesMinimumViableHomeScreen=_usesMinimumViableHomeScreen;
 - (void).cxx_destruct;
 - (void)setDefaultValues;

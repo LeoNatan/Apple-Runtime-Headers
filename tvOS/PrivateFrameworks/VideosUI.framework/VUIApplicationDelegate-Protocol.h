@@ -10,5 +10,6 @@
 
 @protocol VUIApplicationDelegate <UIApplicationDelegate>
 @property(readonly, nonatomic) TVApplicationController *appController;
+- (void)applicationDidInitialize:(_Bool)arg1;
 @end
 

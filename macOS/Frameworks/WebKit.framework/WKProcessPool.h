@@ -36,6 +36,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)_initWithConfiguration:(id)arg1;
+- (void)_clearPermanentCredentialsForProtectionSpace:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_networkProcessHasEntitlementForTesting:(id)arg1;
 - (void)_getActivePagesOriginsInWebProcessForTesting:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_resumeDownloadFromData:(id)arg1 path:(id)arg2 originatingWebView:(id)arg3;

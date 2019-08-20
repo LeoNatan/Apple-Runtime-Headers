@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSMutableSet;
+@class IOUSBHostInterestNotificationReference, NSArray, NSMutableDictionary, NSMutableSet;
 @protocol OS_dispatch_queue;
 
 @interface IOUSBHostObject : NSObject
@@ -23,8 +23,10 @@
     NSMutableSet *_invalidDescriptorCache;
     NSMutableDictionary *_descriptorCache;
     NSArray *_supportedStringLanguages;
+    IOUSBHostInterestNotificationReference *_interestNotificationReference;
 }
 
+@property(retain) IOUSBHostInterestNotificationReference *interestNotificationReference; // @synthesize interestNotificationReference=_interestNotificationReference;
 @property(retain) NSArray *supportedStringLanguages; // @synthesize supportedStringLanguages=_supportedStringLanguages;
 @property(retain) NSMutableDictionary *descriptorCache; // @synthesize descriptorCache=_descriptorCache;
 @property(retain) NSMutableSet *invalidDescriptorCache; // @synthesize invalidDescriptorCache=_invalidDescriptorCache;

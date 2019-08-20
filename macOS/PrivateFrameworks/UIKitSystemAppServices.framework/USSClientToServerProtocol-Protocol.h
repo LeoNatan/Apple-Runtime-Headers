@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString, USSApplicationGracefulTerminationRequest, USSBackgroundLaunchRequest, USSEnableApplicationAccessibilityRequest, USSOpenURLRequest, USSSceneActiveRequest, USSSceneResizeRequest, USSUserActivityContinuationRequest, USSUserNotificationResponseRequest;
+@class NSSet, NSString, USSApplicationGracefulTerminationRequest, USSBackgroundLaunchRequest, USSEnableApplicationAccessibilityRequest, USSOpenURLRequest, USSSceneActiveRequest, USSSceneResizeRequest, USSUserActivityContinuationRequest, USSUserNotificationResponseRequest;
 
 @protocol USSClientToServerProtocol
 - (void)submitBackgroundLaunchRequest:(USSBackgroundLaunchRequest *)arg1 completionHandler:(void (^)(NSError *))arg2;
@@ -17,6 +17,7 @@
 - (void)submitSceneActiveRequest:(USSSceneActiveRequest *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)submitSceneSizeRequest:(USSSceneResizeRequest *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)beginSendingNotificationsCompletionHandler:(void (^)(void))arg1;
+- (void)forgetPersistentScenesWithIdentifiers:(NSSet *)arg1;
 - (void)createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *, NSString *))arg3;
 - (void)connectCompletionHandler:(void (^)(void))arg1;
 - (void)waitForServerToBeReadyCompletionHandler:(void (^)(void))arg1;

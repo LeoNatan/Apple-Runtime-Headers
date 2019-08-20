@@ -20,8 +20,10 @@
     NSMutableArray *_children;
     ICFolderListItem *_parent;
     ICFolderListViewState *_viewState;
+    unsigned long long _folderListItemAccountType;
 }
 
+@property(nonatomic) unsigned long long folderListItemAccountType; // @synthesize folderListItemAccountType=_folderListItemAccountType;
 @property(nonatomic) __weak ICFolderListViewState *viewState; // @synthesize viewState=_viewState;
 @property(nonatomic) __weak ICFolderListItem *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;

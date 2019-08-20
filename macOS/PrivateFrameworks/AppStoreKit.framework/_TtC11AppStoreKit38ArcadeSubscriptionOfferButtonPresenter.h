@@ -15,6 +15,7 @@
     // Error parsing type: , name: alignment
     // Error parsing type: , name: subtitlePosition
     // Error parsing type: , name: arcadeSubscriptionManager
+    // Error parsing type: , name: restrictions
     // Error parsing type: , name: currentState
 }
 

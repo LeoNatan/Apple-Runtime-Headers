@@ -12,6 +12,7 @@
 
 + (id)keyPathsForValuesAffectingFormatID;
 @property unsigned long long formatID; // @dynamic formatID;
+- (id)init;
 
 @end
 

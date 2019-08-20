@@ -20,7 +20,6 @@
 }
 
 + (id)compressionOptionsWithDescription:(id)arg1;
-- (void).cxx_destruct;
 - (long long)height;
 - (long long)width;
 - (long long)sizeMode;

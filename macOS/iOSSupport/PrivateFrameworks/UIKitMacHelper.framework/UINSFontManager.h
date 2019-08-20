@@ -18,7 +18,10 @@
 + (void)toggleFontPanelShown:(id)arg1;
 + (BOOL)isFontPanelVisible;
 + (id)sharedFontManager;
+@property(readonly) id <UINSFontManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)changeColor:(id)arg1;
+- (void)changeColorWithColor:(id)arg1;
 - (void)changeAttributes:(id)arg1;
 - (void)changeFont:(id)arg1;
 - (void)setSelectedAttributes:(id)arg1 isMultiple:(BOOL)arg2;

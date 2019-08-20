@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) HBUILaunchScreenSaverAnimationDescription *appGridAnimation; // @synthesize appGridAnimation=_appGridAnimation;
 @property(readonly, nonatomic) HBUILaunchScreenSaverAnimationDescription *topShelfAnimation; // @synthesize topShelfAnimation=_topShelfAnimation;
 @property(readonly, nonatomic) HBUILaunchAnimationContext *context; // @synthesize context=_context;
-@property(readonly, nonatomic) BKSAnimationFenceHandle *animationDidCompleteFence; // @synthesize animationDidCompleteFence=_animationDidCompleteFence;
+@property(retain, nonatomic) BKSAnimationFenceHandle *animationDidCompleteFence; // @synthesize animationDidCompleteFence=_animationDidCompleteFence;
 - (void).cxx_destruct;
 - (_Bool)_canBeInterrupted;
 - (void)_didComplete;

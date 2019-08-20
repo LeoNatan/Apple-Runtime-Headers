@@ -10,6 +10,7 @@
 
 @interface _UIFontDescriptorCacheKey : _UIFontCacheKey
 {
+    _Bool _textLegibility;
     UIFontDescriptor *_fontDescriptor;
     double _pointSize;
     NSString *_textStyleForScaling;
@@ -17,6 +18,7 @@
     double _maximumPointSizeAfterScaling;
 }
 
+@property(nonatomic) _Bool textLegibility; // @synthesize textLegibility=_textLegibility;
 @property(nonatomic) double maximumPointSizeAfterScaling; // @synthesize maximumPointSizeAfterScaling=_maximumPointSizeAfterScaling;
 @property(nonatomic) double pointSizeForScaling; // @synthesize pointSizeForScaling=_pointSizeForScaling;
 @property(copy, nonatomic) NSString *textStyleForScaling; // @synthesize textStyleForScaling=_textStyleForScaling;

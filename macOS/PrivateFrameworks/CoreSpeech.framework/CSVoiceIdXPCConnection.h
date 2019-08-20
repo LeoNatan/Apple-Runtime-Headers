@@ -20,7 +20,7 @@
 - (void)_sendReplyMessageWithResult:(BOOL)arg1 error:(id)arg2 event:(id)arg3 client:(id)arg4;
 - (void)_handleClientError:(id)arg1 client:(id)arg2;
 - (void)_handleClientMessage:(id)arg1 client:(id)arg2;
-- (void)_handleClientEvent:(id)arg1 client:(id)arg2;
+- (void)_handleClientEvent:(id)arg1;
 - (void)activateConnection;
 - (id)initWithConnection:(id)arg1;
 

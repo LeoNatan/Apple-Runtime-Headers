@@ -17,7 +17,6 @@
     struct OpaqueFigEndpoint *_figEndpoint;
 }
 
-+ (void)initialize;
 @property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
 - (void).cxx_destruct;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

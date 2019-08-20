@@ -12,7 +12,6 @@
 
 @optional
 - (void)performExternalAnalyticsRequest:(NSSExternalAnalyticsRequest *)arg1 withCompletion:(void (^)(NSError *))arg2;
-- (void)submitEnvelopes:(NSArray *)arg1 withForegroundUploadCompletion:(void (^)(NSError *))arg2;
 - (void)submitEnvelopes:(NSArray *)arg1 withCompletion:(void (^)(NSError *))arg2;
 @end
 

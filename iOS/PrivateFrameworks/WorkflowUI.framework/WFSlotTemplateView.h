@@ -72,9 +72,10 @@
 - (void)slotTemplateStorageDidInvalidateDisplay:(id)arg1;
 - (void)tintColorDidChange;
 - (void)updateEnabledStateInTextStorage;
+- (struct CGRect)sourceRectForSlot:(id)arg1;
 - (struct CGRect)sourceRectForSlotWithIdentifier:(id)arg1;
-- (struct CGRect)firstLineRectForSlot:(id)arg1;
 - (id)slotAtPoint:(struct CGPoint)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)handleTouch:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

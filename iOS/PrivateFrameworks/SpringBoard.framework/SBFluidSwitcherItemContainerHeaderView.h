@@ -8,18 +8,18 @@
 
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
 
-@class MTVisualStyling, NSArray, NSString, SBFluidSwitcherIconImageContainerView, SBFluidSwitcherItemContainerHeaderItem, UILabel;
+@class BSUIEmojiLabelView, MTVisualStyling, NSArray, NSString, SBFluidSwitcherIconImageContainerView, SBFluidSwitcherItemContainerHeaderItem, UILabel;
 
 @interface SBFluidSwitcherItemContainerHeaderView : UIView <PTSettingsKeyObserver>
 {
     SBFluidSwitcherItemContainerHeaderItem *_firstItem;
     SBFluidSwitcherIconImageContainerView *_firstIconImageView;
     UILabel *_firstTitleLabel;
-    UILabel *_firstSubtitleLabel;
+    BSUIEmojiLabelView *_firstSubtitleLabelView;
     SBFluidSwitcherItemContainerHeaderItem *_secondItem;
     SBFluidSwitcherIconImageContainerView *_secondIconImageView;
     UILabel *_secondTitleLabel;
-    UILabel *_secondSubtitleLabel;
+    BSUIEmojiLabelView *_secondSubtitleLabelView;
     long long _subtitleVisualStylingInterfaceStyle;
     MTVisualStyling *_subtitleVisualStyling;
     double _spacingBetweenLeadingEdgeAndIcon;

@@ -93,6 +93,7 @@
 - (void)_scene:(id)arg1 willUpdateWithSettings:(id)arg2 transitionContext:(id)arg3;
 - (void)_scene:(id)arg1 interceptUpdateWithNewSettings:(id)arg2;
 - (_Bool)_handleAction:(id)arg1 forScene:(id)arg2;
+- (_Bool)_shouldTrackScenesForDeactivation;
 - (_Bool)_shouldAutoHostScene:(id)arg1;
 - (id)_createRootWindowScenePresentationBinder;
 @property(nonatomic, getter=isHidden) _Bool hidden;

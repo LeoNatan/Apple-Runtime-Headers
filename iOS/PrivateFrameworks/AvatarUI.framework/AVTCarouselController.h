@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <UIKit/UIViewController.h>
 
 #import <AvatarUI/AVTAvatarActionsViewControllerDelegate-Protocol.h>
 #import <AvatarUI/AVTAvatarDisplayingControllerDelegate-Protocol.h>
@@ -16,14 +16,13 @@
 @class AVTAvatarRecordDataSource, AVTMultiAvatarController, AVTRecordView, AVTSingleAvatarController, AVTUIEnvironment, AVTView, AVTViewCarouselLayout, AVTViewSession, AVTViewSessionProvider, NSString, UIView;
 @protocol AVTAvatarDisplayingController, AVTAvatarRecord, AVTDisplayingCarouselControllerDelegate, AVTPresenterDelegate, AVTRecordingCarouselControllerDelegate, AVTUILogger;
 
-@interface AVTCarouselController : NSObject <AVTAvatarActionsViewControllerDelegate, AVTAvatarEditorViewControllerDelegate, AVTAvatarDisplayingControllerDelegate, AVTAvatarRecordDataSourceObserver, AVTRecordingCarouselController, AVTDisplayingCarouselController>
+@interface AVTCarouselController : UIViewController <AVTAvatarActionsViewControllerDelegate, AVTAvatarEditorViewControllerDelegate, AVTAvatarDisplayingControllerDelegate, AVTAvatarRecordDataSourceObserver, AVTRecordingCarouselController, AVTDisplayingCarouselController>
 {
     _Bool _singleAvatarMode;
     id <AVTPresenterDelegate> presenterDelegate;
     id <AVTDisplayingCarouselControllerDelegate> displayingDelegate;
     id <AVTRecordingCarouselControllerDelegate> recordingDelegate;
     double _decelerationRate;
-    UIView *_view;
     AVTAvatarRecordDataSource *_dataSource;
     id <AVTUILogger> _logger;
     AVTUIEnvironment *_environment;
@@ -54,7 +53,6 @@
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTAvatarRecordDataSource *dataSource; // @synthesize dataSource=_dataSource;
-@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) _Bool singleAvatarMode; // @synthesize singleAvatarMode=_singleAvatarMode;
 @property(nonatomic) __weak id <AVTRecordingCarouselControllerDelegate> recordingDelegate; // @synthesize recordingDelegate;
 @property(nonatomic) __weak id <AVTDisplayingCarouselControllerDelegate> displayingDelegate; // @synthesize displayingDelegate;
@@ -98,6 +96,7 @@
 - (void)reloadDataCenteringToAvatarRecord:(id)arg1;
 - (void)reloadData;
 - (void)beginAVTViewSession;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 @property(nonatomic) double decelerationRate; // @synthesize decelerationRate=_decelerationRate;
 - (id)initWithMode:(long long)arg1 sessionProvider:(id)arg2 dataSource:(id)arg3 environment:(id)arg4;
@@ -108,6 +107,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) UIView *view;
 
 @end
 

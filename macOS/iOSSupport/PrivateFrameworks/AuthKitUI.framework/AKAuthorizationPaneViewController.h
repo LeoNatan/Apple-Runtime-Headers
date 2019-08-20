@@ -6,14 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <AuthKitUI/UIScrollViewDelegate-Protocol.h>
 #import <AuthKitUI/UITableViewDataSource-Protocol.h>
 #import <AuthKitUI/UITableViewDelegate-Protocol.h>
 
 @class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, NSString, UIStackView, UITableView, UIVisualEffectView;
 @protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate;
 
-@interface AKAuthorizationPaneViewController : UIViewController <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface AKAuthorizationPaneViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *_tableView;
     id <AKAuthorizationPaneViewControllerDelegate> _paneDelegate;
@@ -45,6 +44,8 @@
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (long long)_safeIndexWithCount:(long long)arg1;
+- (id)_indexPathForLastRow;
 - (id)_newStackView;
 - (id)_newContainerView;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
@@ -55,19 +56,21 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)_adjustForPositionOfScrollView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (id)iconForData:(id)arg1 scale:(double)arg2;
-- (id)iconForName:(id)arg1;
-- (id)iconForContext:(id)arg1;
 - (double)_navigationBarHeaderHeight;
 - (double)_deviceSafeAreaBottomInset;
 - (void)sizeToFitPaneContent;
 - (double)maximumContentHeight;
 - (double)intrinsicContentHeight;
+- (double)contentTrayOffset;
+- (BOOL)_isContentUnderNavigationBar;
+- (BOOL)_isContentUnderTray;
+- (double)_contentTrayOffsetAdjustedForScrollInset:(BOOL)arg1;
+- (void)_updateBlurForTray;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)_setupContexts;
 - (void)viewSafeAreaInsetsDidChange;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)init;

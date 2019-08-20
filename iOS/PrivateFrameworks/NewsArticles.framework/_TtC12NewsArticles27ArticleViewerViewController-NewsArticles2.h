@@ -10,6 +10,9 @@
 
 @interface _TtC12NewsArticles27ArticleViewerViewController (NewsArticles2)
 - (void)showTableOfContentsKeyCommand;
+- (void)saveStoryKeyCommand;
+- (void)dislikeStoryKeyCommand;
+- (void)likeStoryKeyCommand;
 - (void)closeStoryKeyCommand;
 - (void)nextStoryKeyCommand;
 - (void)previousStoryKeyCommand;

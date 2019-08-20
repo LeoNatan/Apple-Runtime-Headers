@@ -15,7 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (id)getIOControllerSemanticMOArrayWithCategory:(id)arg1 mode:(id)arg2;
+- (id)fetchAllWithCategory:(id)arg1 exceptMode:(id)arg2;
+- (id)fetchAllWithCategory:(id)arg1 mode:(id)arg2;
 - (id)fetchWithCategory:(id)arg1 mode:(id)arg2;
 - (id)initWithManagedObjectContext:(id)arg1;
 

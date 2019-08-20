@@ -20,7 +20,7 @@
     NSObject<OS_dispatch_queue> *_targetQueue;
     NSArray *_mainRunLoopModes;
     struct __CFRunLoopSource *_runLoopSource;
-    _Bool _runLoopSourceHandlingBlock;
+    _Bool _callingOut;
     NSObject<OS_dispatch_semaphore> *_synchronizingEnqueueSemaphore;
     unsigned long long _lastSynchronizingWorkspaceName;
 }
@@ -33,6 +33,7 @@
 @property(readonly) unsigned long long hash;
 - (void)_performNextFromRunLoopSource;
 - (void)_setSynchronizingEnqueueSemaphore:(id)arg1 forWorkspaceWithName:(unsigned long long)arg2;
+- (_Bool)_queue_performNextIfPossible;
 - (_Bool)_performNext;
 - (_Bool)_hasNext;
 - (void)_queue_performAsync:(CDUnknownBlockType)arg1;

@@ -11,13 +11,13 @@
 
 @interface QLPreviewTextOverlayController : NSObject
 {
-    QLOverlayView *_containingOverlayView;
+    QLOverlayView *_overlayView;
     NSTextField *_textOverlayField;
     CALayer *_pathOverlayLayer;
     NSView<QLPreviewTextOverlayHostDelegate> *_hostView;
 }
 
-@property(retain) NSView *overlayView; // @synthesize overlayView=_containingOverlayView;
+@property(retain) NSView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain) NSTextField *textOverlayField; // @synthesize textOverlayField=_textOverlayField;
 @property NSView<QLPreviewTextOverlayHostDelegate> *hostView; // @synthesize hostView=_hostView;
 - (void)setShowOverlay:(BOOL)arg1;

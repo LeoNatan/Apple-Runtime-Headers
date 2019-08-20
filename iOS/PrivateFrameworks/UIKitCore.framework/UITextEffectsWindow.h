@@ -42,6 +42,7 @@
 + (id)sharedTextEffectsWindowForCanvas:(id)arg1;
 + (id)_sharedTextEffectsWindowforWindowScene:(id)arg1 allowHosted:(_Bool)arg2 matchesStatusBarOrientationOnAccess:(_Bool)arg3 shouldCreateIfNecessary:(_Bool)arg4;
 + (_Bool)_isSecure;
++ (_Bool)_shouldSoftAssertOnSetScreen;
 @property(nonatomic) struct UIEdgeInsets hostedSafeInsets; // @synthesize hostedSafeInsets=_hostedSafeInsets;
 @property(nonatomic) struct CGSize hostedSceneSize; // @synthesize hostedSceneSize=_hostedSceneSize;
 @property(nonatomic) struct CGPoint hostedWindowOffset; // @synthesize hostedWindowOffset=_hostedWindowOffset;
@@ -67,6 +68,7 @@
 - (struct CGRect)actualSceneBoundsForLandscape:(_Bool)arg1;
 - (void)_updateTransformLayer;
 - (void)_sceneBoundsDidChange;
+- (_Bool)_shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)updateEditingOverlayContainer;
 - (_Bool)_shouldResizeWithScene;
 - (id)aboveStatusBarWindow;
@@ -84,6 +86,7 @@
 - (void)_didRemoveSubview:(id)arg1;
 - (void)delayHideWindow;
 - (void)_updateRootViewConstraintsForInterfaceOrientationAndStatusBarHeight;
+- (id)_inputWindowController;
 - (void)handleStatusBarChangeFromHeight:(double)arg1 toHeight:(double)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2;

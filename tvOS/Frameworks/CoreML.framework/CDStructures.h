@@ -35,6 +35,13 @@ struct ArrayFeatureType_ShapeRange;
 
 struct BayesianProbitRegression;
 
+struct BoolParameter {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    _Bool _field3;
+    int _field4;
+};
+
 struct CGPoint {
     double _field1;
     double _field2;
@@ -68,6 +75,19 @@ struct DictionaryFeatureType {
 };
 
 struct DoubleFeatureType;
+
+struct DoubleParameter {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    double _field3;
+    union AllowedValuesUnion {
+        struct DoubleRange *_field1;
+    } _field4;
+    int _field5;
+    unsigned int _field6[1];
+};
+
+struct DoubleRange;
 
 struct FeatureDescription {
     CDUnknownFunctionPointerType *_field1;
@@ -121,8 +141,32 @@ struct InnerMap;
 
 struct Int64FeatureType;
 
+struct Int64Parameter {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    long long _field3;
+    union AllowedValuesUnion {
+        struct Int64Range *_field1;
+        struct Int64Set *_field2;
+    } _field4;
+    int _field5;
+    unsigned int _field6[1];
+};
+
+struct Int64Range;
+
+struct Int64Set;
+
 struct InternalMetadataWithArenaLite {
     void *_field1;
+};
+
+struct LinkedModelFile {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    struct StringParameter *_field3;
+    struct StringParameter *_field4;
+    int _field5;
 };
 
 struct MMappedFile;
@@ -188,11 +232,24 @@ struct NSString {
     Class _field1;
 };
 
+struct NetworkUpdateParameters {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    struct RepeatedPtrField<CoreML::Specification::LossLayer> _field3;
+    struct Optimizer *_field4;
+    struct Int64Parameter *_field5;
+    struct BoolParameter *_field6;
+    struct Int64Parameter *_field7;
+    int _field8;
+};
+
 struct OArchive {
     _Bool _field1;
     struct shared_ptr<Archiver::_OArchiveImpl> _field2;
     struct map<std::__1::basic_string<char>, OArchive, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, OArchive>>> _field3;
 };
+
+struct Optimizer;
 
 struct Pipeline {
     CDUnknownFunctionPointerType *_field1;
@@ -220,6 +277,13 @@ struct RepeatedField<long long> {
 };
 
 struct RepeatedPtrField<CoreML::Specification::FeatureDescription> {
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+};
+
+struct RepeatedPtrField<CoreML::Specification::LossLayer> {
     struct Arena *_field1;
     int _field2;
     int _field3;
@@ -261,6 +325,13 @@ struct SizeRange {
 };
 
 struct StringFeatureType;
+
+struct StringParameter {
+    CDUnknownFunctionPointerType *_field1;
+    struct InternalMetadataWithArenaLite _field2;
+    struct ArenaStringPtr _field3;
+    int _field4;
+};
 
 struct TreeEnsembleClassifier {
     CDUnknownFunctionPointerType *_field1;

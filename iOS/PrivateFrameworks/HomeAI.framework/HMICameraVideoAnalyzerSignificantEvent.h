@@ -8,19 +8,22 @@
 
 #import <HomeAI/NSSecureCoding-Protocol.h>
 
-@class HMICameraVideoFrame;
+@class HMICameraVideoFrame, NSDictionary;
 
 @interface HMICameraVideoAnalyzerSignificantEvent : NSObject <NSSecureCoding>
 {
     long long _events;
     HMICameraVideoFrame *_videoFrame;
+    NSDictionary *_annotationScores;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly) NSDictionary *annotationScores; // @synthesize annotationScores=_annotationScores;
 @property(readonly) HMICameraVideoFrame *videoFrame; // @synthesize videoFrame=_videoFrame;
 @property(readonly) long long events; // @synthesize events=_events;
 - (void).cxx_destruct;
-- (id)initWithEvents:(long long)arg1 videoFrame:(id)arg2;
+- (long long)confidenceThatEventOccurred:(long long)arg1;
+- (id)initWithEvents:(long long)arg1 annotationScores:(id)arg2 videoFrame:(id)arg3;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

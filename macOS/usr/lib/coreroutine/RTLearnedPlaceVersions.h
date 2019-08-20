@@ -12,11 +12,13 @@
 
 @interface RTLearnedPlaceVersions : NSObject <NSCopying>
 {
+    BOOL _isRotted;
     RTLearnedPlace *_inferredVersion;
     RTLearnedPlace *_existingVersion;
     RTLearnedPlace *_truthfulCounterpart;
 }
 
+@property(nonatomic) BOOL isRotted; // @synthesize isRotted=_isRotted;
 @property(retain, nonatomic) RTLearnedPlace *truthfulCounterpart; // @synthesize truthfulCounterpart=_truthfulCounterpart;
 @property(retain, nonatomic) RTLearnedPlace *existingVersion; // @synthesize existingVersion=_existingVersion;
 @property(retain, nonatomic) RTLearnedPlace *inferredVersion; // @synthesize inferredVersion=_inferredVersion;

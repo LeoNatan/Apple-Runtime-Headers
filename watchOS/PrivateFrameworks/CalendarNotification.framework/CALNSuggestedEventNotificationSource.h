@@ -18,7 +18,6 @@
     id <CALNCalendarIconIdentifierProvider> _iconIdentifierProvider;
 }
 
-+ (id)_characterSetForEncodingIdentifierComponents;
 + (id)_bundle;
 + (id)deleteActionIdentifier;
 + (id)ignoreActionIdentifier;
@@ -26,15 +25,12 @@
 + (id)suggestedEventCanceledCategoryIdentifier;
 + (id)coalescedSuggestedEventCategoryIdentifier;
 + (id)defaultSuggestedEventCategoryIdentifier;
-+ (id)sourceClientIdentifiersForSourceClientIdentifier:(id)arg1;
-+ (id)sourceClientIdentifierForSourceClientIdentifiers:(id)arg1;
 @property(readonly, nonatomic) id <CALNCalendarIconIdentifierProvider> iconIdentifierProvider; // @synthesize iconIdentifierProvider=_iconIdentifierProvider;
 @property(readonly, nonatomic) __weak id <CALNNotificationManager> notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) id <CALNSuggestedEventNotificationDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (id)_notificationInfosForSourceClientIdentifier:(id)arg1;
 - (void)didReceiveResponse:(id)arg1;
-- (_Bool)_needToRefreshWithSourceClientIdentifiers:(id)arg1 changes:(id)arg2;
+- (id)_sourceClientIdentifiersForObjectIDs:(id)arg1;
 - (void)refreshNotifications:(id)arg1;
 - (id)contentForNotificationWithSourceClientIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *categories;

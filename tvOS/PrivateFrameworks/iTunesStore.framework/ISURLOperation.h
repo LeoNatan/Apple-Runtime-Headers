@@ -48,7 +48,6 @@
 @property(getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) _Bool _loadsHTTPFailures; // @synthesize _loadsHTTPFailures;
 @property(retain) ISDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(readonly, copy) NSURLRequest *activeURLRequest; // @synthesize activeURLRequest=_activeURLRequest;
-@property(retain) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 - (void).cxx_destruct;
 - (_Bool)_validateContentLength:(long long)arg1 error:(id *)arg2;
 - (void)_updateProgress;
@@ -118,6 +117,7 @@
 - (void)run;
 @property(copy) SSURLRequestProperties *requestProperties;
 - (void)setRequest:(id)arg1;
+@property(retain) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
 - (id)request;
 - (void)dealloc;
 - (id)initWithSessionManager:(id)arg1;

@@ -6,24 +6,24 @@
 
 #import <WorkflowKit/WFGalleryCollection.h>
 
-@class NSArray, NSString;
+@class CKRecordID, NSArray, NSString;
 
 @interface WFMutableGalleryCollection : WFGalleryCollection
 {
-    NSString *identifier;
+    CKRecordID *identifier;
     NSString *name;
     NSString *collectionDescription;
     NSArray *workflows;
     NSString *language;
-    WFGalleryCollection *base;
+    CKRecordID *base;
 }
 
-@property(retain, nonatomic) WFGalleryCollection *base; // @synthesize base;
+@property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
 @property(copy, nonatomic) NSArray *workflows; // @synthesize workflows;
 @property(copy, nonatomic) NSString *collectionDescription; // @synthesize collectionDescription;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
 - (void).cxx_destruct;
 
 @end

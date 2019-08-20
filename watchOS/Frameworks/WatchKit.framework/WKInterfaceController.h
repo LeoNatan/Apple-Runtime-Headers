@@ -25,7 +25,8 @@
     struct NSDirectionalEdgeInsets _contentSystemMinimumLayoutMargins;
 }
 
-+ (_Bool)_isTimerSupportHostingControllerClass;
++ (_Bool)_isCalculatorSupportHostingControllerClass;
++ (_Bool)isWKHostingController;
 + (id)addDefaultCancelActionForAlertSheetIfNecessary:(id)arg1;
 + (void)_removePageControllersAtIndexes:(id)arg1;
 + (void)_movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
@@ -46,10 +47,17 @@
 @property(nonatomic, getter=isTableScrollingHapticFeedbackEnabled) _Bool tableScrollingHapticFeedbackEnabled; // @synthesize tableScrollingHapticFeedbackEnabled=_tableScrollingHapticFeedbackEnabled;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 - (void).cxx_destruct;
-- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
-- (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
-- (id)_timerSupportUnderlyingHostingController;
+- (void)_setFullScreen:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 tintColor:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_presentTimerSupportInterfaceWithControllerClass:(Class)arg1 presentCompletion:(CDUnknownBlockType)arg2 dismissCompletion:(CDUnknownBlockType)arg3;
+- (void)_pushTimerSupportInterfaceWithName:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_pushTimerSupportInterfaceWithControllerClass:(Class)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_timerSupportActionItems;
+- (id)_timerSupportUnderlyingHostingController;
+- (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (id)underlyingUIHostingController;
+- (id)actionItems;
 - (void)forceRenderAllSpriteKitAndSceneKitScenes;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets systemMinimumLayoutMargins;
 @property(readonly, nonatomic) WKCrownSequencer *crownSequencer;
@@ -84,10 +92,10 @@
 - (void)dismissTextInputController;
 - (void)presentTextInputControllerWithSuggestionsForLanguage:(CDUnknownBlockType)arg1 allowedInputMode:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 tintColor:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 tintColor:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dismissController;
 - (void)presentControllerWithNames:(id)arg1 contexts:(id)arg2;
-- (void)_presentTimerSupportInterfaceWithControllerClass:(Class)arg1 presentCompletion:(CDUnknownBlockType)arg2 dismissCompletion:(CDUnknownBlockType)arg3;
+- (void)presentControllerClass:(Class)arg1 willPresent:(CDUnknownBlockType)arg2 didDismiss:(CDUnknownBlockType)arg3;
 - (void)presentControllerWithName:(id)arg1 context:(id)arg2;
 - (void)becomeCurrentPage;
 - (void)interfaceOffsetDidScrollToBottom;
@@ -96,10 +104,10 @@
 - (void)scrollToObject:(id)arg1 atScrollPosition:(int)arg2 animated:(_Bool)arg3;
 - (void)popToRootController;
 - (void)popController;
-- (void)_pushTimerSupportInterfaceWithControllerClass:(Class)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_pushTimerSupportInterfaceWithName:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)pushControllerClass:(Class)arg1 willPush:(CDUnknownBlockType)arg2;
+- (void)pushControllerWithName:(id)arg1 context:(id)arg2 willPush:(CDUnknownBlockType)arg3;
 - (void)pushControllerWithName:(id)arg1 context:(id)arg2;
-- (void)_setFullScreen:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setFullScreenEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setTitle:(id)arg1;
 - (void)handleUserActivity:(id)arg1;
 - (void)handleActionWithIdentifier:(id)arg1 forLocalNotification:(id)arg2;

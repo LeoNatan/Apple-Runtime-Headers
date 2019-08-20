@@ -61,7 +61,7 @@
 - (void)clickPresentationInteractionManager:(id)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
 - (void)clickPresentationInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (void)_handlePresentedContentDismissalWithTrigger:(long long)arg1;
-- (void)clickPresentationInteractionManager:(id)arg1 shouldFinishInteractionWithCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)clickPresentationInteractionManager:(id)arg1 shouldFinishInteractionThatReachedForceThreshold:(_Bool)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)clickPresentationInteractionManagerDidEndUserInteraction:(id)arg1;
 - (void)clickPresentationInteractionManagerWillBeginUserInteraction:(id)arg1;
 - (_Bool)clickPresentationInteractionManager:(id)arg1 shouldBeginInteractionWithTouchAtLocation:(struct CGPoint)arg2;
@@ -69,7 +69,6 @@
 - (id)transitioningDelegateForClickPresentationInteractionManager:(id)arg1;
 - (id)presentedViewControllerForClickPresentationInteractionManager:(id)arg1;
 - (id)_longLookNotificationViewController;
-- (void)customContentDidLoadExtension:(id)arg1;
 - (void)dragInteraction:(id)arg1 session:(id)arg2 willEndWithOperation:(unsigned long long)arg3;
 - (void)dragInteraction:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
 - (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
@@ -82,7 +81,7 @@
 - (id)_requiredContextIDsForDragSessionInView:(id)arg1;
 - (void)_presentLongLookForScrollAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentLongLookAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_presentLongLookViaPreviewInteraction:(CDUnknownBlockType)arg1;
+- (void)_presentLongLookViaClickPresentationInteraction:(CDUnknownBlockType)arg1;
 - (void)_loadPresentationContainerViewIfNecessary;
 - (id)_notificationShortLookViewIfLoaded;
 - (void)_expandCoalescedNotificationBundle;
@@ -95,7 +94,6 @@
 - (unsigned long long)_maximumNumberOfSecondaryTextLinesForProvidedStaticContent;
 - (unsigned long long)_maximumNumberOfPrimaryLargeTextLinesForProvidedStaticContent;
 - (unsigned long long)_maximumNumberOfPrimaryTextLinesForProvidedStaticContent;
-- (void)_updateWithProvidedStaticContent;
 - (_Bool)_tryDismissingShortLookInScrollView:(id)arg1;
 - (void)_handleTapOnView:(id)arg1;
 - (void)_notificationViewControllerViewDidLoad;
@@ -115,6 +113,7 @@
 - (void)presentLongLookAnimated:(_Bool)arg1 trigger:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillLayoutSubviews;
+- (void)setContentReplacedWithSnapshot:(_Bool)arg1;
 - (void)setHasShadow:(_Bool)arg1;
 - (void)setNotificationContentViewHidden:(_Bool)arg1;
 - (void)setCustomContentHomeAffordanceGestureRecognizer:(id)arg1;

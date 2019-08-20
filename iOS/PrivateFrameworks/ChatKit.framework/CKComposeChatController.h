@@ -90,6 +90,7 @@
 - (_Bool)_isWhitelistedBusinessRecipient;
 - (void)_processBizIntentIfNeeded;
 - (void)addBizIntentToConversation:(id)arg1;
+- (id)traitCollection;
 - (void)_prepareForSendFromCardIfNecessaryAndSend:(CDUnknownBlockType)arg1;
 - (id)_currentPresentationController;
 - (void)sendComposition:(id)arg1;

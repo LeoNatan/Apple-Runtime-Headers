@@ -9,11 +9,12 @@
 @class NSArray, NSNumber, NSURL, NSUUID;
 
 @protocol UIActivityContentDelegate <NSObject>
+- (void)_editActionsTapped;
 - (NSURL *)fallbackURLForLinkPresentation;
 - (NSArray *)requestMetadataValues;
 - (void)showScreenTimeRestrictedAlert;
-- (void)selectedActionAtIndex:(unsigned int)arg1;
-- (void)selectedAppAtIndex:(unsigned int)arg1;
+- (void)selectedActionWithIdentifier:(NSUUID *)arg1;
+- (void)selectedAppWithIdentifier:(NSUUID *)arg1;
 - (void)selectedPersonWithIdentifier:(NSUUID *)arg1;
 - (void)nextButtonTappedWithPeopleProxies:(NSArray *)arg1 shareProxies:(NSArray *)arg2 actionProxies:(NSArray *)arg3 nearbyCountSlotID:(NSNumber *)arg4;
 - (void)optionsButtonTapped;

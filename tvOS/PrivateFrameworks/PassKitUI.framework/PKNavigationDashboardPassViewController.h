@@ -98,6 +98,7 @@
 - (id)_paymentPassDetailsViewControllerForPaymentPass:(id)arg1;
 - (void)presentDailyCashForComponents:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_canPresentCreditDetailsViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)showStatement:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentBalanceDetailsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)summaryTypeDidChange;
 - (void)presentSpendingSummaryWithType:(unsigned long long)arg1 unit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

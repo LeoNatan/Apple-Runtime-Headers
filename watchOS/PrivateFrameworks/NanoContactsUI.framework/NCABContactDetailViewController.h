@@ -63,11 +63,14 @@
 - (id)initWithPerson:(void *)arg1 withFilter:(unsigned int)arg2;
 - (id)initWithPerson:(void *)arg1;
 - (_Bool)_shouldShowLocationSection;
-- (void)_checkIfFollowingFriendAndBecomeObserver:(_Bool)arg1;
+- (void)_updateIsFollowingContactLocation;
+- (void)_becomeFMFSessionObserver:(_Bool)arg1;
 - (_Bool)isEmergencyContactCheck;
 - (void)_checkForDowntimeContact;
 - (id)_senderIdentity;
 - (_Bool)_isEnableCallIconSetForDemo;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
 - (void)canWalkieTalkieChanged:(id)arg1;
 - (void)canCallPossiblyChanged:(id)arg1;
 - (void)quickCellDidSelectWalkieTalkie:(id)arg1;
@@ -88,6 +91,8 @@
 - (id)transitionAvatarView;
 - (void)contactDidChange:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

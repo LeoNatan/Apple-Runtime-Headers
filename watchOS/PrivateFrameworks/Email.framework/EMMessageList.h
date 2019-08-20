@@ -27,8 +27,8 @@
     EMMessageList *_unfilteredMessageList;
 }
 
-+ (id)simpleMessageListForMailboxes:(id)arg1 withRepository:(id)arg2;
-+ (id)threadedMessageListForMailboxes:(id)arg1 withRepository:(id)arg2;
++ (id)simpleMessageListForMailboxes:(id)arg1 withRepository:(id)arg2 shouldTrackOldestItems:(_Bool)arg3;
++ (id)threadedMessageListForMailboxes:(id)arg1 withRepository:(id)arg2 shouldTrackOldestItems:(_Bool)arg3;
 + (id)log;
 @property(retain, nonatomic) EMMessageList *unfilteredMessageList; // @synthesize unfilteredMessageList=_unfilteredMessageList;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
@@ -45,6 +45,7 @@
 - (void)queryMatchedChangedObjectIDs:(id)arg1;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 after:(id)arg2;
 - (void)queryMatchedMovedObjectIDs:(id)arg1 before:(id)arg2;
+- (void)collection:(id)arg1 replacedExistingItemID:(id)arg2 withNewItemID:(id)arg3;
 - (void)collectionDidFinishInitialLoad:(id)arg1;
 - (void)collection:(id)arg1 deletedItemIDs:(id)arg2;
 - (void)collection:(id)arg1 changedItemIDs:(id)arg2;
@@ -53,6 +54,7 @@
 - (void)collection:(id)arg1 addedItemIDs:(id)arg2 after:(id)arg3;
 - (void)collection:(id)arg1 addedItemIDs:(id)arg2 before:(id)arg3;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (void)finishRecovery;
 - (id)itemIDOfMessageListItemWithDisplayMessage:(id)arg1;
 - (void)_attemptToFinishRetryingPromisesByItemID:(id)arg1;
 - (id)_availableMessageListItemsForItemIDs:(id)arg1;

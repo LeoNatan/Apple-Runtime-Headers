@@ -14,11 +14,13 @@
     NSString *_routeUID;
     NSString *_batteryText;
     NSString *_pairedDeviceText;
+    NSString *_localizedSubtitle;
     unsigned long long _currentVisibleTextType;
 }
 
 @property(nonatomic) unsigned long long currentVisibleTextType; // @synthesize currentVisibleTextType=_currentVisibleTextType;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
+@property(copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(copy, nonatomic) NSString *pairedDeviceText; // @synthesize pairedDeviceText=_pairedDeviceText;
 @property(copy, nonatomic) NSString *batteryText; // @synthesize batteryText=_batteryText;
 @property(copy, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;

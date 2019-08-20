@@ -41,6 +41,7 @@
 - (void)removePlugIns:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)addPlugIns:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)errorInReply:(id)arg1;
+- (id)initWithServiceName:(const char *)arg1 user:(unsigned int)arg2;
 - (id)initWithServiceName:(const char *)arg1;
 
 @end

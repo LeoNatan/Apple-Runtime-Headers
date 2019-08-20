@@ -48,6 +48,8 @@
 - (id)_backgroundActivityNameForBackgroundInterval:(unsigned long long)arg1;
 - (double)_nextTimeIntervalForBackgroundInterval:(unsigned long long)arg1;
 - (void)_scheduleCloudStoreContainerSetupBackgroundActivityWithNextInterval:(unsigned long long)arg1;
+- (void)_syncOriginatingTransactionsToCloudStore;
+- (void)scheduleTransactionDeviceDataSyncBackgroundActivity;
 - (void)_performCloudStoreContainerInitalizationBackgroundActivityWithCurrentInterval:(unsigned long long)arg1 nextBackgroundInterval:(unsigned long long)arg2;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (void)noteAccountDeleted;

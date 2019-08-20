@@ -20,7 +20,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) NSArray *webUsage; // @synthesize webUsage=_webUsage;
-@property(readonly, copy) NSArray *applicationUsage; // @synthesize applicationUsage=_applicationUsage;
+@property(copy) NSArray *applicationUsage; // @synthesize applicationUsage=_applicationUsage;
 @property(readonly) double totalUsageTime; // @synthesize totalUsageTime=_totalUsageTime;
 @property(readonly, copy) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 - (void).cxx_destruct;

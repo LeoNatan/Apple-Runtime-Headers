@@ -21,11 +21,15 @@
     NSObject<OS_dispatch_queue> *_requestQueue;
     NSObject<OS_dispatch_queue> *_iVarQueue;
     NSMutableDictionary *_clientDictionary;
+    NSString *_currentDataActivityDate;
+    long long _currentDataActivityRetryCount;
     MXSource *_source;
 }
 
 + (id)sharedCore;
 @property(retain) MXSource *source; // @synthesize source=_source;
+@property long long currentDataActivityRetryCount; // @synthesize currentDataActivityRetryCount=_currentDataActivityRetryCount;
+@property(retain, nonatomic) NSString *currentDataActivityDate; // @synthesize currentDataActivityDate=_currentDataActivityDate;
 @property(retain, nonatomic) NSMutableDictionary *clientDictionary; // @synthesize clientDictionary=_clientDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *iVarQueue; // @synthesize iVarQueue=_iVarQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
@@ -45,7 +49,9 @@
 - (id)bundleIDFromURL:(id)arg1;
 - (void)stopServices;
 - (void)createServices;
-- (id)getXPCActivityCriteria;
+- (BOOL)checkSourceDataAvailableForDate:(id)arg1;
+- (id)getRetryActivityCriteria;
+- (id)getDailyActivityCriteria;
 - (void)scheduleDataActivity;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)init;

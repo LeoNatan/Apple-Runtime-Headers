@@ -23,6 +23,7 @@
 + (id)mobileMailBundleId;
 + (id)macMessagesBundleId;
 + (id)mobileMessagesBundleId;
++ (id)mobilePhotosBundleId;
 
 @end
 

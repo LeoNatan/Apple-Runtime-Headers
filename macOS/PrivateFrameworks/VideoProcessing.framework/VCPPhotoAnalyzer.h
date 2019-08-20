@@ -12,7 +12,6 @@
 {
     unsigned long long _requestedAnalyses;
     NSMutableDictionary *_analysis;
-    NSMutableDictionary *_results;
     unsigned long long _irisAnalyses;
     NSDictionary *_phFaceResults;
     unsigned long long _phFaceFlags;
@@ -32,7 +31,7 @@
 - (int)analyzeImage:(unsigned long long *)arg1 performedAnalyses:(unsigned long long *)arg2 movingObjectResults:(id)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)downscaleImage:(struct __CVBuffer *)arg1 scaledImage:(struct __CVBuffer **)arg2 majorDimension:(int)arg3;
 - (void)updateDegradedFlagForMajorDimension:(unsigned long long)arg1;
-- (id)existingAnalysisForMovieAnalzyer;
+- (id)existingAnalysisForMovieAnalyzer;
 - (void)processExistingAnalyses:(id)arg1;
 - (id)initWithPHAsset:(id)arg1 withExistingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
 - (id)initWithVCPAsset:(id)arg1 withExistingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;

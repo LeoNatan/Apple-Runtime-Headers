@@ -41,11 +41,11 @@
 - (void)updateProceduralWallpaperDefaultsWithIdentifier:(id)arg1 options:(id)arg2 forVariant:(long long)arg3;
 - (id)proceduralWallpaperInfoForVariant:(long long)arg1;
 - (void)removeVideoForVariant:(long long)arg1;
-- (_Bool)setOriginalVideoURL:(id)arg1 forVariant:(long long)arg2;
-- (_Bool)setVideoURL:(id)arg1 forVariant:(long long)arg2;
-- (id)verifiedOriginalVideoURLForVariant:(long long)arg1;
-- (id)verifiedVideoURLForVariant:(long long)arg1;
-- (id)unverifiedVideoURLForVariant:(long long)arg1;
+- (_Bool)setOriginalVideoURL:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setVideoURL:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (id)verifiedOriginalVideoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)verifiedVideoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)unverifiedVideoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (void)removeWallpaperImageHashDataForVariants:(long long)arg1;
 - (id)wallpaperImageHashDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (_Bool)setWallpaperImageHashData:(id)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;

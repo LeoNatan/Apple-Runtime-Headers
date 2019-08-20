@@ -63,6 +63,7 @@
 - (void)playerController:(id)arg1 didUpdateElapsedTime:(double)arg2 duration:(double)arg3;
 - (void)playerControllerDidFinishPlaying:(id)arg1 duration:(double)arg2;
 - (void)playerViewReadyForDisplayDidChange:(id)arg1;
+- (void)_releaseAVObjects;
 - (id)snapshotImage;
 - (id)_viewRecursiveDescription;
 - (id)_layerRecursiveDescription;

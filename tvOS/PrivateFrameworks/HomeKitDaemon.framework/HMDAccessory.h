@@ -39,12 +39,14 @@
     unsigned long long _configNumber;
     NSNumber *_networkClientIdentifier;
     NSUUID *_networkRouterUUID;
-    long long _targetNetworkProtectionMode;
+    long long _deprecatedTargetNetworkProtectionMode;
     long long _currentNetworkProtectionMode;
     long long _networkClientLAN;
     long long _wiFiCredentialType;
     NSArray *_allowedHosts;
     NSData *_wiFiUniquePreSharedKey;
+    NSUUID *_configuredNetworkProtectionGroupUUID;
+    NSUUID *_defaultNetworkProtectionGroupUUID;
     NSUUID *_uuid;
     HMAccessoryCategory *_category;
     HMDHome *_home;
@@ -108,6 +110,9 @@
 - (_Bool)shouldEnableDaemonRelaunch;
 - (void)logDuetRoomEvent;
 - (void)didEncounterError:(id)arg1;
+@property(retain, nonatomic) NSUUID *configuredNetworkProtectionGroupUUID; // @synthesize configuredNetworkProtectionGroupUUID=_configuredNetworkProtectionGroupUUID;
+@property(readonly, nonatomic) NSUUID *defaultNetworkProtectionGroupUUID; // @synthesize defaultNetworkProtectionGroupUUID=_defaultNetworkProtectionGroupUUID;
+- (id)networkProtectionGroupUUID;
 - (void)saveNetworkAccessViolation:(id)arg1;
 - (void)saveWiFiUniquePreSharedKey:(id)arg1 credentialType:(long long)arg2;
 @property(retain, nonatomic) NSData *wiFiUniquePreSharedKey; // @synthesize wiFiUniquePreSharedKey=_wiFiUniquePreSharedKey;
@@ -117,7 +122,8 @@
 - (void)saveCurrentNetworkProtectionMode:(long long)arg1 assignedLAN:(long long)arg2 appliedFirewallWANRules:(id)arg3;
 @property(nonatomic) long long networkClientLAN; // @synthesize networkClientLAN=_networkClientLAN;
 @property(nonatomic) long long currentNetworkProtectionMode; // @synthesize currentNetworkProtectionMode=_currentNetworkProtectionMode;
-@property(nonatomic) long long targetNetworkProtectionMode; // @synthesize targetNetworkProtectionMode=_targetNetworkProtectionMode;
+- (long long)targetNetworkProtectionMode;
+@property(nonatomic) long long deprecatedTargetNetworkProtectionMode; // @synthesize deprecatedTargetNetworkProtectionMode=_deprecatedTargetNetworkProtectionMode;
 - (void)saveNetworkClientIdentifier:(id)arg1 networkRouterUUID:(id)arg2;
 @property(retain, nonatomic) NSUUID *networkRouterUUID; // @synthesize networkRouterUUID=_networkRouterUUID;
 @property(retain, nonatomic) NSNumber *networkClientIdentifier; // @synthesize networkClientIdentifier=_networkClientIdentifier;

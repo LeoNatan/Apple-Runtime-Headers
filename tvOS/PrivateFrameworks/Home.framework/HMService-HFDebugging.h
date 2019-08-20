@@ -34,14 +34,13 @@
 @property(readonly, nonatomic) _Bool hf_hasSetFavorite;
 @property(readonly, nonatomic) _Bool hf_isFavorite;
 - (id)hf_requiredCharacteristicTypesForDisplayMetadata;
-- (id)hf_defaultName;
-- (id)hf_editingName;
 - (_Bool)hf_canGroupWithService:(id)arg1;
 - (id)hf_effectiveServiceSubtype;
 - (id)hf_parentService;
 - (_Bool)_hf_isDirectlyOrIndirectlyLinkedToService:(id)arg1;
 - (id)hf_childServices;
 - (id)hf_childServicesOfType:(id)arg1;
+- (_Bool)hf_isTelevision;
 - (_Bool)hf_isVisible;
 - (_Bool)hf_isLegacyService;
 - (_Bool)hf_isInGroup;

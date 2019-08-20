@@ -467,6 +467,7 @@ struct URLResponse {
     long long fExpectedContentLength;
     double fExpiration;
     double fCreationTime;
+    struct __CFDictionary *fDownloadAssessment;
     struct __CFDictionary *fSSLCertContext;
     int fRecommendedPolicy;
     struct __CFData *fPeerAddress;

@@ -36,7 +36,7 @@
 - (id)serviceSourceForClass:(Class)arg1 itemIdentifier:(id)arg2;
 - (id)customPushTopics;
 - (void)materializedItemsDidChangeWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)itemChanged:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)changeItem:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 options:(unsigned long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)fetchContentsForItemWithIdentifier:(id)arg1 version:(id)arg2 usingExistingContentsAtURL:(id)arg3 existingVersion:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_performTwoPhasePackageDownloadWithExistingContents:(id)arg1 version:(id)arg2 fileObjectID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_performPackageDownloadPhaseWithExistingContents:(id)arg1 progress:(id)arg2 fileObjectID:(id)arg3 clientZone:(id)arg4 syncContext:(id)arg5 desiredIndices:(id)arg6 stageID:(id)arg7 recordID:(id)arg8 versionSignature:(id)arg9 fileProviderItem:(id)arg10 completionHandler:(CDUnknownBlockType)arg11;

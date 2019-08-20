@@ -6,22 +6,31 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <MediaPlayer/MPClientMediaPickerController-Protocol.h>
+#import <MediaPlayer/MPMusicMediaPickerClientController-Protocol.h>
+
 @class MPMediaPickerConfiguration, NSString;
 @protocol MPMediaPickerControllerDelegate, MPMediaPickerRemoteViewLoader;
 
-@interface MPMediaPickerController : UIViewController
+@interface MPMediaPickerController : UIViewController <MPClientMediaPickerController, MPMusicMediaPickerClientController>
 {
     MPMediaPickerConfiguration *_configuration;
     id <MPMediaPickerControllerDelegate> _delegate;
     id <MPMediaPickerRemoteViewLoader> _loader;
 }
 
++ (void)load;
 + (void)preheatMediaPicker;
 + (_Bool)useNewPicker;
 @property(retain, nonatomic) id <MPMediaPickerRemoteViewLoader> loader; // @synthesize loader=_loader;
 @property(nonatomic) __weak id <MPMediaPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)_keynote_preferredInterfaceOrientationForPresentation;
+- (unsigned int)_keynote_supportedInterfaceOrientations;
+- (int)_mediaPickerController_preferredInterfaceOrientationForPresentation;
+- (unsigned int)_mediaPickerController_supportedInterfaceOrientations;
 - (void)_synchronizeSettings;
+- (void)_resetRemoteViewController;
 - (void)_addRemoteView;
 - (_Bool)_hasAddedRemoteView;
 - (void)_pickerDidPickPlaybackArchive:(id)arg1;
@@ -48,14 +57,24 @@
 - (void)remoteMediaPickerDidCancel;
 - (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
 - (int)_preferredModalPresentationStyle;
+- (int)preferredInterfaceOrientationForPresentation;
+- (unsigned int)supportedInterfaceOrientations;
+- (int)modalPresentationStyle;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithSupportedTypeIdentifiers:(id)arg1 selectionMode:(int)arg2;
 - (id)initWithMediaTypes:(unsigned int)arg1;
+- (void)_sharedInit;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

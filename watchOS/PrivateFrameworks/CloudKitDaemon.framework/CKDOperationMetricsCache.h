@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (void)addOperationCombinedMetrics:(id)arg1 forOperationID:(id)arg2 operationType:(int)arg3 operationGroupID:(id)arg4 operationGroupName:(id)arg5 operationGroupQuantity:(unsigned int)arg6 operationQualityOfService:(int)arg7 appContainerTuple:(id)arg8;
 - (void)flushMetricsToPowerLog;
-- (id)init;
+- (id)_initWithCacheDir:(id)arg1;
 
 @end
 

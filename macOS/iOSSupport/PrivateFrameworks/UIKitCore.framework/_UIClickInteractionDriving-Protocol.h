@@ -10,6 +10,9 @@
 @protocol UICoordinateSpace, _UIClickInteractionDriverDelegate;
 
 @protocol _UIClickInteractionDriving <NSObject>
++ (BOOL)requiresForceCapability;
+@property(readonly, nonatomic) double maximumEffectProgress;
+@property(readonly, nonatomic) BOOL clicksUpAutomaticallyAfterTimeout;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) double touchDuration;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;

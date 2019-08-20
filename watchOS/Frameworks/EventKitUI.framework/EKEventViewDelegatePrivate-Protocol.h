@@ -11,6 +11,7 @@
 @protocol EKEventViewDelegatePrivate <EKEventViewDelegate>
 
 @optional
+- (int)editorPresentationStyle;
 - (void)eventViewController:(EKEventViewController *)arg1 requestsDisplayOfDeleteAlert:(UIAlertController *)arg2;
 - (_Bool)eventViewDelegateShouldHandlePresentationOfDeleteAlert:(EKEventViewController *)arg1;
 - (_Bool)eventViewControllerEditButtonTemporarilyDisabled:(EKEventViewController *)arg1;

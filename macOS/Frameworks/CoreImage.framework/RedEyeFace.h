@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float junkiness; // @synthesize junkiness=_junkiness;
 @property(nonatomic) float faceOrientation; // @synthesize faceOrientation=_faceOrientation;
 @property(nonatomic) int imageOrientation; // @synthesize imageOrientation=_imageOrientation;
+- (void)dealloc;
 - (id)init;
 
 @end

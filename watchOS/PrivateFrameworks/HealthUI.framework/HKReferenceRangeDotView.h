@@ -6,17 +6,18 @@
 
 #import <UIKit/UIView.h>
 
-@class UIColor;
+@class UIColor, _HKReferenceRangeDotViewDot;
 
 @interface HKReferenceRangeDotView : UIView
 {
-    UIColor *_dotColor;
+    _HKReferenceRangeDotViewDot *_dotView;
 }
 
-@property(retain, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
+@property(nonatomic) __weak _HKReferenceRangeDotViewDot *dotView; // @synthesize dotView=_dotView;
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
+@property(retain, nonatomic) UIColor *dotColor;
+- (struct CGRect)desiredDotViewFrame;
+- (void)setFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -47,8 +47,10 @@
 + (id)temporaryVideoPathForCollectionGUID:(id)arg1;
 + (id)temporaryThumbnailPathForCollectionGUID:(id)arg1;
 + (id)temporaryDerivativePathForCollectionGUID:(id)arg1 uti:(id)arg2;
++ (id)_temporaryUploadDerivativesPathForCollectionGUID:(id)arg1 pathExtension:(id)arg2;
 + (float)derivedAssetSmallDimensionLimitForType:(int)arg1;
 + (id)derivativesForMasterAsset:(id)arg1 withSpecifications:(id)arg2;
++ (id)_videoDerivativeForVideoAtURL:(id)arg1 outputURL:(id)arg2 withPreset:(id)arg3 outputFileType:(id)arg4;
 + (id)videoDerivativesForAssetCollection:(id)arg1 withSpecifications:(id)arg2;
 + (void)deleteCommentWithGUIDFromServer:(id)arg1;
 + (void)publishCloudSharedCommentToServer:(id)arg1;

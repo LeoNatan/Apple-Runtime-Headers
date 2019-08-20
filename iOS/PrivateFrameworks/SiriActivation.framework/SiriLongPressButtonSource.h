@@ -8,14 +8,12 @@
 
 #import <SiriActivation/SiriButtonSource-Protocol.h>
 
-@class BSServiceConnection, NSMutableArray, NSString, SiriLongPressButtonContext;
+@class NSMutableArray, NSString, SiriLongPressButtonContext;
 
 @interface SiriLongPressButtonSource : SiriActivationSource <SiriButtonSource>
 {
-    struct os_unfair_lock_s _lock;
     double _longPressInterval;
     long long _buttonIdentifier;
-    BSServiceConnection *_connection;
     NSMutableArray *_lock_activityAssertions;
     SiriLongPressButtonContext *_context;
 }
@@ -24,8 +22,6 @@
 + (id)longPressButtonForIdentifier:(long long)arg1;
 @property(retain, nonatomic) SiriLongPressButtonContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSMutableArray *lock_activityAssertions; // @synthesize lock_activityAssertions=_lock_activityAssertions;
-@property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
-@property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(nonatomic) long long buttonIdentifier; // @synthesize buttonIdentifier=_buttonIdentifier;
 @property(nonatomic) double longPressInterval; // @synthesize longPressInterval=_longPressInterval;
 - (void).cxx_destruct;

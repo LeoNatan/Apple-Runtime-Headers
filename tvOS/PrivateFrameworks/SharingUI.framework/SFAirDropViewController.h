@@ -14,6 +14,7 @@
 @interface SFAirDropViewController : UIViewController <SFAirDropViewServiceHostProtocol>
 {
     _SFAirDropRemoteViewController *_childViewController;
+    id _extensionRequest;
     id <SFAirDropViewControllerDelegate> _delegate;
     NSExtension *_extension;
 }
@@ -27,7 +28,9 @@
 - (void)airDropViewServiceDidSuccessfullyStartTransfer;
 - (void)airDropViewServiceDidRequestDismissal;
 - (void)_setChildViewController:(id)arg1;
+- (void)_setExtensionRequest:(id)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

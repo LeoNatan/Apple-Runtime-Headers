@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/WFRecordStorage-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSString, RLMArray, RLMLinkingObjects, WFRealmWorkflowIcon, WFRealmWorkflowQuarantine, WFWorkflowIcon, WFWorkflowQuarantine, WFWorkflowTrustedResources;
+@class NSArray, NSData, NSDate, NSSet, NSString, RLMArray, RLMLinkingObjects, WFRealmWorkflowIcon, WFRealmWorkflowQuarantine, WFWorkflowIcon, WFWorkflowQuarantine, WFWorkflowTrustedResources;
 @protocol WFWorkflowInputClass, WFWorkflowType;
 
 @interface WFRealmWorkflow : RLMObject <WFRecordStorage>
@@ -38,6 +38,7 @@
     NSString *_lastSavedOnDeviceName;
     long long _lastSyncedHash;
     NSString *_lastMigratedClientVersion;
+    long long _remoteQuarantineStatus;
 }
 
 + (id)linkingObjectsProperties;
@@ -46,6 +47,7 @@
 + (id)defaultPropertyValues;
 + (id)primaryKey;
 + (id)className;
+@property long long remoteQuarantineStatus; // @synthesize remoteQuarantineStatus=_remoteQuarantineStatus;
 @property(copy) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property BOOL deleted; // @synthesize deleted=_deleted;
 @property long long lastSyncedHash; // @synthesize lastSyncedHash=_lastSyncedHash;
@@ -72,6 +74,7 @@
 @property(retain) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(copy) NSString *workflowID; // @synthesize workflowID=_workflowID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *accessResourcePermissionStates;
 @property(copy, nonatomic) NSArray *importQuestions;
 @property(copy, nonatomic) NSArray *actions;
 @property(copy, nonatomic) NSArray *inputClasses;

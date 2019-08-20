@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 - (void).cxx_destruct;
 - (void)providedStylesDidChangeForProvider:(id)arg1;
-- (void)setMaximumTrackVisualStyling:(id)arg1;
-- (void)setMinimumTrackVisualStyling:(id)arg1;
+- (void)setMaximumTrackVisualProvider:(id)arg1;
+- (void)setMinimumTrackVisualProvider:(id)arg1;
 - (void)tintColorDidChange;
 - (id)_thumbImageForStyle:(long long)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)trackRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;
 - (id)createThumbView;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

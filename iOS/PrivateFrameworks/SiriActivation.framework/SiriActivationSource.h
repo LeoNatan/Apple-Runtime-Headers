@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class BSServiceConnection, NSString;
 
 @interface SiriActivationSource : NSObject
 {
+    BSServiceConnection *_connection;
+    struct os_unfair_lock_s _lock;
     _Bool _active;
     _Bool _knowsIfActive;
     NSString *_identifier;
@@ -18,8 +20,10 @@
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (oneway void)activeChangedTo:(id)arg1;
+- (void)invalidate;
 - (_Bool)isActive;
 - (_Bool)isEnabled;
+- (void)dealloc;
 - (id)init;
 
 @end

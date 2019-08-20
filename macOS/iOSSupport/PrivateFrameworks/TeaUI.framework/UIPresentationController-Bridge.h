@@ -7,6 +7,8 @@
 #import <UIKit/UIPresentationController.h>
 
 @interface UIPresentationController (Bridge)
++ (id)ts_dismissalTransitionDidEndNotification;
++ (id)ts_presentationTransitionDidEndNotification;
 - (void)ts_containerIgnoresDirectTouchEvents:(BOOL)arg1;
 @end
 

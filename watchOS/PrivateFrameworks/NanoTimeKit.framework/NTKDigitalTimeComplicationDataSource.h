@@ -20,7 +20,6 @@
 - (_Bool)alwaysShowIdealizedTemplateInSwitcher;
 - (id)currentSwitcherTemplate;
 - (unsigned int)timelineAnimationBehavior;
-- (void)resume;
 - (_Bool)supportsTapAction;
 - (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 

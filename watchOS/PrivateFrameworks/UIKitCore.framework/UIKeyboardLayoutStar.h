@@ -434,6 +434,7 @@ __attribute__((visibility("hidden")))
 - (void)reloadCurrentKeyplane;
 - (_Bool)_allowPaddle;
 - (_Bool)_allowContinuousPathUI;
+- (_Bool)_allowStartingContinuousPathForTouchInfo:(id)arg1;
 - (unsigned int)keyplaneShiftState;
 - (_Bool)shouldAllowCurrentKeyplaneReload;
 - (_Bool)shouldMergeAssistantBarWithKeyboardLayout;

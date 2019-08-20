@@ -15,6 +15,7 @@
 + (unsigned long long)_dateComplicationSlotSupportedStylesForDevice:(id)arg1;
 + (id)_dateComplicationSlotForDevice:(id)arg1;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_initialDefaultComplicationForSlot:(id)arg1 forDevice:(id)arg2;
 + (id)_complicationSlotDescriptors;
 - (id)_localizedNameForComplicationSlot:(id)arg1;
 - (id)_defaultColorOption;

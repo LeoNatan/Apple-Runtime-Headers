@@ -100,13 +100,14 @@ __attribute__((visibility("hidden")))
 - (void)performFetchShareParticipantsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performDiscoverAllIdentitiesOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performDiscoverUserIdentitiesOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)frameworkCachesDirectoryWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)importantUserIDsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)accountInfoWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)accountStatusWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)cancelOperationWithIdentifier:(id)arg1;
+- (void)cancelOperationWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_handlePerformDaemonCallWithOperationInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2 forwardingBlock:(CDUnknownBlockType)arg3;
 - (void)_addProxyOperationWithInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2 longlivedProxyPreparationBlock:(CDUnknownBlockType)arg3;
 - (id)initWithConnection:(id)arg1;

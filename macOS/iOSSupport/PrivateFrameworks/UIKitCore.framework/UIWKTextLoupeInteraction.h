@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
     BOOL _isSelecting;
 }
 
-- (void)delayedSelectionAction:(id)arg1;
 - (void)loupeGestureWithState:(long long)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(long long)arg5 shouldCancel:(char *)arg6;
 
 @end

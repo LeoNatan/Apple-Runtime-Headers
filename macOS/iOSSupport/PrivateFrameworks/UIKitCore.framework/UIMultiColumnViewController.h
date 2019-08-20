@@ -75,6 +75,7 @@
 - (void)_splitViewControllerWillCollapseOntoPrimaryViewController:(id)arg1;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
 - (id)title;
+- (id)childViewControllerForStatusBarStyle;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;

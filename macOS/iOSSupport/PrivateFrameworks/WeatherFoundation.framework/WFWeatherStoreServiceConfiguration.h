@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <WeatherFoundation/NSCopying-Protocol.h>
+#import <WeatherFoundation/NSURLSessionTaskDelegate-Protocol.h>
 
 @class NSString, NSURL, NSURLSession, NWPathEvaluator, WFSettingsManager;
 
-@interface WFWeatherStoreServiceConfiguration : NSObject <NSCopying>
+@interface WFWeatherStoreServiceConfiguration : NSObject <NSURLSessionTaskDelegate, NSCopying>
 {
     NWPathEvaluator *_serviceConnectivityEvaluator;
     NSURLSession *_session;
@@ -40,7 +41,14 @@
 - (id)apiConfigurationForAPIVersion:(id)arg1;
 - (id)apiConfiguration;
 @property(readonly, nonatomic) NSString *apiVersion;
+- (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

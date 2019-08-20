@@ -6,12 +6,10 @@
 
 #import <UIKit/UIView.h>
 
-@class MKMapItem, MKMapSnapshotView, NSError, NSLayoutConstraint, NSMutableArray, NSObject, NSTimer;
-@protocol OS_dispatch_group;
+@class MKMapItem, MKMapSnapshotView, NSError, NSLayoutConstraint, NSMutableArray, NSTimer;
 
 @interface MKMapItemView : UIView
 {
-    NSObject<OS_dispatch_group> *_renderDispatchGroup;
     MKMapSnapshotView *_snapshotView;
     CDStruct_951efa70 _coordinateSpan;
     CDUnknownBlockType _mapItemloadedCompletionHandler;
@@ -36,22 +34,17 @@
 - (void)triggerAnimation;
 - (void)_resetState;
 - (void)cancel;
-- (void)cancelSnapshot;
-- (void)_cropImage;
 - (void)_callCompletionHandler;
 - (void)_renderMapItem;
-- (void)_resetTimer;
-- (void)_dispatchGroupDidNotify;
+- (void)_takeSnapshotCompleted;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_reloadSnapshot;
-- (void)_loadTimeoutTimerDidFire:(id)arg1;
-- (void)_setupTimer;
 - (void)_setupSnapshotConstraints;
 - (void)_handleTapOnSnapshot:(id)arg1;
 - (id)_annotationView;
-- (id)_deriveSnapshotOptions;
+- (id)_deriveSnapshotOptions:(BOOL)arg1;
 - (void)layoutSubviews;
-- (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(BOOL)arg2;
 - (CDStruct_c3b9c2ee)_clampCoordinateSpan:(CDStruct_c3b9c2ee)arg1;
 - (void)loadMapItem:(id)arg1 coordinateSpan:(CDStruct_c3b9c2ee)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;

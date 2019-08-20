@@ -6,7 +6,7 @@
 
 #import <WorkflowKit/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSOrderedSet, NSString, NSURL, WFCloudKitSyncToken, WFConfiguredTrigger, WFConfiguredTriggerRecord, WFDatabaseObjectDescriptor, WFDatabaseResult, WFWorkflowRecord, WFWorkflowReference, WFWorkflowRunEvent;
+@class NSArray, NSData, NSOrderedSet, NSString, NSURL, WFCloudKitSyncToken, WFConfiguredTrigger, WFConfiguredTriggerRecord, WFDatabaseObjectDescriptor, WFDatabaseResult, WFWorkflowCreationOptions, WFWorkflowReference, WFWorkflowRunEvent;
 
 @protocol WFDatabaseBackingStore <NSObject>
 @property(readonly, nonatomic) NSURL *fileURL;
@@ -38,7 +38,7 @@
 - (void)setConflictingReference:(WFWorkflowReference *)arg1 forReference:(WFWorkflowReference *)arg2;
 - (WFWorkflowReference *)conflictingReferenceForReference:(WFWorkflowReference *)arg1;
 - (WFWorkflowReference *)duplicateReference:(WFWorkflowReference *)arg1 newName:(NSString *)arg2 error:(id *)arg3;
-- (WFWorkflowReference *)createWorkflowWithRecord:(WFWorkflowRecord *)arg1 identifier:(NSString *)arg2 error:(id *)arg3;
+- (WFWorkflowReference *)createWorkflowWithOptions:(WFWorkflowCreationOptions *)arg1 error:(id *)arg2;
 - (WFWorkflowReference *)workflowReferenceWithName:(NSString *)arg1;
 - (_Bool)deleteReference:(WFDatabaseObjectDescriptor *)arg1 tombstone:(_Bool)arg2 error:(id *)arg3;
 - (void)moveReferenceFromIndex:(long long)arg1 toIndex:(long long)arg2;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class UINavigationItem, UISearchController, _UINavigationBarPalette;
+@class UINavigationBarAppearance, UINavigationItem, UISearchController, _UINavigationBarPalette;
 
 @protocol _UINavigationItemChangeObserver
 - (void)navigationItemUpdatedBottomPalette:(UINavigationItem *)arg1 oldPalette:(_UINavigationBarPalette *)arg2;
@@ -13,7 +13,7 @@
 - (void)navigationItemUpdatedCanvasView:(UINavigationItem *)arg1;
 - (void)navigationItemUpdatedScrollEdgeProgress:(UINavigationItem *)arg1;
 - (void)navigationItemUpdatedBackgroundAppearance:(UINavigationItem *)arg1;
-- (void)navigationItemUpdatedAppearance:(UINavigationItem *)arg1;
+- (void)navigationItem:(UINavigationItem *)arg1 appearance:(UINavigationBarAppearance *)arg2 categoriesChanged:(int)arg3;
 - (void)navigationItemUpdatedLargeTitleContent:(UINavigationItem *)arg1;
 - (void)navigationItemUpdatedLargeTitleDisplayMode:(UINavigationItem *)arg1;
 - (void)navigationItemUpdatedBackButtonContent:(UINavigationItem *)arg1 animated:(_Bool)arg2;

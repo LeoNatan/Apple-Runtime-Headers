@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType acceptShareCompletionBlock; // @synthesize acceptShareCompletionBlock=_acceptShareCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (void)main;
 - (id)initWithShareMetadata:(id)arg1 syncContext:(id)arg2;

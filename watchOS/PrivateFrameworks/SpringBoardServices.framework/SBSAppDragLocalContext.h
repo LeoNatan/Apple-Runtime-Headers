@@ -11,6 +11,7 @@
 @interface SBSAppDragLocalContext : NSObject
 {
     _Bool _cancelsViaScaleAndFade;
+    _Bool _sourceLocal;
     NSString *_applicationBundleIdentifier;
     NSSet *_launchActions;
     int _startLocation;
@@ -19,6 +20,7 @@
     UIView *_portaledPreview;
 }
 
+@property(nonatomic, getter=isSourceLocal) _Bool sourceLocal; // @synthesize sourceLocal=_sourceLocal;
 @property(nonatomic) _Bool cancelsViaScaleAndFade; // @synthesize cancelsViaScaleAndFade=_cancelsViaScaleAndFade;
 @property(retain, nonatomic) UIView *portaledPreview; // @synthesize portaledPreview=_portaledPreview;
 @property(copy, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;

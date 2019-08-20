@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)_createSyncDownOperation;
 - (void)_saveChangedRecords:(id)arg1 deletedRecords:(id)arg2 serverChangeToken:(id)arg3 clientChangeToken:(id)arg4;
 - (void)_createZone;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithSession:(id)arg1 changeToken:(id)arg2;
 

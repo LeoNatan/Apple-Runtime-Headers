@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     UITouchForceGestureRecognizer *_gestureRecognizer;
 }
 
++ (BOOL)requiresForceCapability;
 @property(retain, nonatomic) UITouchForceGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
@@ -29,11 +30,13 @@ __attribute__((visibility("hidden")))
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleGestureRecognizer:(id)arg1;
+@property(readonly, nonatomic) BOOL clicksUpAutomaticallyAfterTimeout;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(readonly, nonatomic) double touchDuration;
+@property(readonly, nonatomic) double maximumEffectProgress;
 - (void)_prepareStateMachine;
 @property(nonatomic) double allowableMovement;
 @property(readonly, nonatomic) double touchForce;

@@ -9,11 +9,7 @@
 @class UIImage;
 
 @protocol MKArtworkImageSource <NSObject>
-- (UIImage *)badgeImageToDisplayWithScreenScale:(double)arg1;
-- (UIImage *)imageToDisplayWithScreenScale:(double)arg1;
-
-@optional
-@property(readonly, nonatomic) _Bool primaryImage;
-@property(readonly, nonatomic) _Bool shouldHighlight;
+- (UIImage *)badgeImageToDisplayWithScreenScale:(double)arg1 nightMode:(_Bool)arg2;
+- (UIImage *)imageToDisplayWithScreenScale:(double)arg1 nightMode:(_Bool)arg2;
 @end
 

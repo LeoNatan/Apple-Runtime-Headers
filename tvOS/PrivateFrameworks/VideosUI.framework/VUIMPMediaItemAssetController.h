@@ -29,14 +29,13 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)_assetControllerStatusFromDownloadControllerState:(id)arg1;
 + (_Bool)_supportsStartingDownloadWithMediaItem:(id)arg1;
-@property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
+@property(readonly, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(nonatomic, getter=isRequestingPermissionToDownload) _Bool requestingPermissionToDownload; // @synthesize requestingPermissionToDownload=_requestingPermissionToDownload;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(retain, nonatomic) VUIMPMediaItemDownloadController *downloadController; // @synthesize downloadController=_downloadController;
 @property(copy, nonatomic) NSObject<VUIMediaEntityIdentifier> *mediaEntityIdentifier; // @synthesize mediaEntityIdentifier=_mediaEntityIdentifier;
 @property(readonly, nonatomic) _Bool supportsStartingDownload; // @synthesize supportsStartingDownload=_supportsStartingDownload;
 - (void).cxx_destruct;
-- (void)_postStateDidChangeNotificationWithFromState:(id)arg1 toState:(id)arg2;
 - (void)_notifyDelegateStateDidChange:(id)arg1;
 - (void)_enqueueCompletionQueueBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueAsyncProcessingQueueStrongSelfBlock:(CDUnknownBlockType)arg1;
@@ -52,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)_onProcessingQueue_setDownloadController:(id)arg1;
 - (id)_onProcessingQueue_downloadController;
 - (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
-- (void)_handleMediaItemAssetControllerStateDidChangeNotification:(id)arg1;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (void)mediaItemDownloadController:(id)arg1 stateDidChange:(id)arg2;
 - (void)cancelAndRemoveDownload;

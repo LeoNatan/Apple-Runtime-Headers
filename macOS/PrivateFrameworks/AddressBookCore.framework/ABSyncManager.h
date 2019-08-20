@@ -10,6 +10,9 @@
 {
 }
 
++ (id)toolName;
++ (id)productionPath;
++ (id)debugPath;
 + (id)toolPath;
 + (id)defaultClientID;
 + (id)clientID;

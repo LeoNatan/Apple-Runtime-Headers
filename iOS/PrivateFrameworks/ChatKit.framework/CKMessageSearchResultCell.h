@@ -8,26 +8,28 @@
 
 #import <ChatKit/CKSearchResultCell-Protocol.h>
 
-@class CALayer, CKConversationListSearchCell, CKSpotlightQueryResult, NSString;
+@class CALayer, CKSpotlightQueryResult, NSString, UITableViewCell;
+@protocol CKConversationSearchCellProtocol;
 
 @interface CKMessageSearchResultCell : UICollectionViewCell <CKSearchResultCell>
 {
     NSString *_searchText;
     CALayer *_topHairline;
     CALayer *_bottomHairline;
-    CKConversationListSearchCell *_searchCell;
+    UITableViewCell<CKConversationSearchCellProtocol> *_searchCell;
     CKSpotlightQueryResult *_result;
     struct UIEdgeInsets marginInsets;
 }
 
 + (id)reuseIdentifier;
 @property(retain, nonatomic) CKSpotlightQueryResult *result; // @synthesize result=_result;
-@property(retain, nonatomic) CKConversationListSearchCell *searchCell; // @synthesize searchCell=_searchCell;
+@property(retain, nonatomic) UITableViewCell<CKConversationSearchCellProtocol> *searchCell; // @synthesize searchCell=_searchCell;
 @property(retain, nonatomic) CALayer *bottomHairline; // @synthesize bottomHairline=_bottomHairline;
 @property(retain, nonatomic) CALayer *topHairline; // @synthesize topHairline=_topHairline;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
 - (void).cxx_destruct;
+- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

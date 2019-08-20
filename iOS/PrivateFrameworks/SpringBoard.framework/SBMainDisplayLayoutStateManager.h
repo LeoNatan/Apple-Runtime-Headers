@@ -14,12 +14,16 @@
 
 + (Class)_layoutStateClass;
 - (id)_applicationSceneEntityFromApplicationBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2;
+- (_Bool)_hasAppLayoutBeenUserKilledWithinThresholdToCreateNewScene:(id)arg1;
 @property(readonly, nonatomic) SBRecentAppLayouts *_recentAppLayouts;
 @property(readonly, nonatomic) SBMainDisplaySceneManager *_mainDisplaySceneManager;
 @property(readonly, nonatomic) SBMainWorkspace *_mainWorkspace;
 @property(readonly, nonatomic) SBPlatformController *_platformController;
 - (id)_layoutStateForApplicationTransitionContext:(id)arg1;
 - (id)_mostRecentAppLayoutMatchingWorkspaceUniqueIdentifiers:(id)arg1;
+- (id)_sceneIDIfAppLayoutContainsPrimarySceneIDForBundleIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
+- (_Bool)_doesSceneIDSpecifyPrimaryScene:(id)arg1 forApplicationIdentifier:(id)arg2;
+- (id)primarySceneIdentifierForBundleIdentifier:(id)arg1;
 - (id)defaultSceneIdentifierForBundleIdentifier:(id)arg1 targetContentIdentifier:(id)arg2 allowCanMatches:(_Bool)arg3 preferNewScene:(_Bool)arg4 visibleSceneIdentifiers:(id)arg5 excludingSceneIdentifiers:(id)arg6;
 - (id)layoutStateForApplicationTransitionContext:(id)arg1;
 

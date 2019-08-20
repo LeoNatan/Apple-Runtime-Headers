@@ -24,6 +24,9 @@
 + (long long)dateSortOrderFromSortDescriptors:(id)arg1;
 + (id)sortDescriptorForDateAscending:(BOOL)arg1;
 + (id)predicateFromPredicate:(id)arg1 ignoringKeyPaths:(id)arg2;
++ (id)_predicateForMessagesInMailboxWithURL:(id)arg1;
++ (id)predicateForExcludingDeletedMessages;
++ (id)predicateForExcludingMessagesInMailboxWithURL:(id)arg1;
 + (id)predicateForMessagesNewerThanDate:(id)arg1;
 + (id)predicateForCCMeMessages;
 + (id)predicateForToMeMessages;
@@ -48,7 +51,6 @@
 + (id)predicateForMessagesInMailboxWithObjectID:(id)arg1;
 + (id)predicateForMessagesInMailbox:(id)arg1;
 + (id)predicateForExcludingMessagesInMailboxesWithTypes:(id)arg1;
-+ (id)_predicateForExcludingMessagesInMailboxWithType:(id)arg1;
 + (id)predicateForExcludingMessagesInMailboxWithType:(long long)arg1;
 + (id)predicateForMessagesInMailboxesWithTypes:(id)arg1;
 + (id)_predicateForMessagesInMailboxWithType:(id)arg1;

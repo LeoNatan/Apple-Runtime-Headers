@@ -8,7 +8,7 @@
 
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSMutableArray, NSURLRequest, NSURLResponse, NSUUID, __CFN_ConnectionMetrics, __CFN_SessionMetrics, __CFN_TaskMetrics;
+@class NSDictionary, NSURLRequest, NSURLResponse, NSUUID, __CFN_ConnectionMetrics, __CFN_SessionMetrics, __CFN_TaskMetrics;
 
 @interface __CFN_TransactionMetrics : NSObject <NSSecureCoding>
 {
@@ -21,7 +21,7 @@
     NSURLRequest *_request;
     NSURLRequest *_transferredRequest;
     NSURLResponse *_cachedResponse;
-    NSMutableArray *_responses;
+    NSURLResponse *_lastResponse;
     __CFN_ConnectionMetrics *_connectionMetrics;
     unsigned int _endReason;
     int _schedulingTier;
@@ -85,7 +85,7 @@
 @property(nonatomic) _Bool firstOnConnection; // @synthesize firstOnConnection=_firstOnConnection;
 @property(nonatomic) _Bool scheduledOriginLoad; // @synthesize scheduledOriginLoad=_scheduledOriginLoad;
 @property(retain, nonatomic) __CFN_ConnectionMetrics *connectionMetrics; // @synthesize connectionMetrics=_connectionMetrics;
-@property(retain, nonatomic) NSMutableArray *responses; // @synthesize responses=_responses;
+@property(retain, nonatomic) NSURLResponse *lastResponse; // @synthesize lastResponse=_lastResponse;
 @property(retain, nonatomic) NSURLResponse *cachedResponse; // @synthesize cachedResponse=_cachedResponse;
 @property(retain, nonatomic) NSURLRequest *transferredRequest; // @synthesize transferredRequest=_transferredRequest;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;

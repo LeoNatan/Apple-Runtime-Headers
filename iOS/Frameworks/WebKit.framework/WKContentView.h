@@ -21,13 +21,14 @@
 #import <WebKit/WKFileUploadPanelDelegate-Protocol.h>
 #import <WebKit/WKKeyboardScrollViewAnimatorDelegate-Protocol.h>
 #import <WebKit/WKShareSheetDelegate-Protocol.h>
+#import <WebKit/WKTouchActionGestureRecognizerDelegate-Protocol.h>
 #import <WebKit/_WKWebViewPrintProvider-Protocol.h>
 
 @class NSArray, NSDictionary, NSIndexSet, NSString, RTIInputSystemSourceSession, UIColor, UIImage, UIInputContextHistory, UITextInputAssistantItem, UITextInputPasswordRules, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIWebFormAccessory, WKBrowsingContextController, WKFormInputControl, WKWebView;
 @protocol UITextInputDelegate, UITextInputSuggestionDelegate, UITextInputTokenizer, WKFormControl;
 
 __attribute__((visibility("hidden")))
-@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate, WKShareSheetDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UIContextMenuInteractionDelegate, UIPreviewItemDelegate>
+@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate, WKShareSheetDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, WKTouchActionGestureRecognizerDelegate, UIContextMenuInteractionDelegate, UIPreviewItemDelegate>
 {
     RefPtr_a805eeb8 _page;
     WKWebView *_webView;
@@ -44,12 +45,14 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UITapGestureRecognizer> _twoFingerSingleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _stylusSingleTapGestureRecognizer;
     struct RetainPtr<WKInspectorNodeSearchGestureRecognizer> _inspectorNodeSearchGestureRecognizer;
+    struct RetainPtr<WKTouchActionGestureRecognizer> _touchActionGestureRecognizer;
     struct RetainPtr<UIWKTextInteractionAssistant> _textSelectionAssistant;
     struct OptionSet<WebKit::SuppressSelectionAssistantReason> _suppressSelectionAssistantReasons;
     struct RetainPtr<UITextInputTraits> _traits;
     struct RetainPtr<UIWebFormAccessory> _formAccessoryView;
     struct RetainPtr<_UIHighlightView> _highlightView;
     struct RetainPtr<UIView> _interactionViewsContainerView;
+    struct RetainPtr<UIView> _contextMenuHintContainerView;
     struct RetainPtr<NSString> _markedText;
     struct RetainPtr<WKActionSheetAssistant> _actionSheetAssistant;
     struct RetainPtr<WKAirPlayRoutePicker> _airPlayRoutePicker;
@@ -111,6 +114,7 @@ __attribute__((visibility("hidden")))
     _Bool _resigningFirstResponder;
     _Bool _needsDeferredEndScrollingSelectionUpdate;
     _Bool _isChangingFocus;
+    _Bool _isFocusingElementWithKeyboard;
     _Bool _isBlurringFocusedElement;
     _Bool _focusRequiresStrongPasswordAssistance;
     _Bool _waitingForEditDragSnapshot;
@@ -247,7 +251,9 @@ __attribute__((visibility("hidden")))
 - (id)webViewUIDelegate;
 - (double)dragLiftDelay;
 - (void)_didChangeDragInteractionPolicy;
+- (void)_hideContextMenuHintContainer;
 - (id)containerViewForTargetedPreviews;
+@property(readonly, nonatomic) _Bool _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) _Bool _shouldAvoidResizingWhenInputViewBoundsChange;
 @property(readonly, nonatomic) _Bool _shouldUseContextMenus;
 - (void)actionSheetAssistant:(id)arg1 getAlternateURLForImage:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -264,7 +270,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (Optional_48d42d68)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_2b0652bb)positionInformationForActionSheetAssistant:(id)arg1;
 - (_Bool)isAnyTouchOverActiveArea:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (_Bool)shouldIgnoreWebTouch;
@@ -298,6 +304,7 @@ __attribute__((visibility("hidden")))
 - (void)showGlobalMenuControllerInRect:(struct CGRect)arg1;
 - (void)_didUpdateInputMode:(unsigned char)arg1;
 - (void)_hardwareKeyboardAvailabilityChanged;
+@property(readonly, nonatomic) _Bool shouldIgnoreKeyboardWillHideNotification;
 - (void)_elementDidBlur;
 - (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(_Bool)arg2 blurPreviousNode:(_Bool)arg3 activityStateChanges:(OptionSet_05ce0fa5)arg4 userObject:(id)arg5;
 - (Vector_116a0919 *)focusedSelectElementOptions;
@@ -422,6 +429,7 @@ __attribute__((visibility("hidden")))
 - (void)_didStartProvisionalLoadForMainFrame;
 - (void)_handleAutocorrectionContext:(const struct WebAutocorrectionContext *)arg1;
 - (void)requestAutocorrectionContextWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_cancelPendingAutocorrectionContextHandler;
 - (void)_invokePendingAutocorrectionContextHandler:(id)arg1;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDictationContext:(CDUnknownBlockType)arg1;
@@ -649,6 +657,10 @@ __attribute__((visibility("hidden")))
 - (void)_webTouchEvent:(const struct NativeWebTouchEvent *)arg1 preventsNativeGestures:(_Bool)arg2;
 - (void)_inspectorNodeSearchRecognized:(id)arg1;
 - (void)_resetPanningPreventionFlags;
+- (id)touchActionActiveTouches;
+- (_Bool)gestureRecognizerMayDoubleTapToZoomWebView:(id)arg1;
+- (_Bool)gestureRecognizerMayPinchToZoomWebView:(id)arg1;
+- (_Bool)gestureRecognizerMayPanWebView:(id)arg1;
 - (void)_handleTouchActionsForTouchEvent:(const struct NativeWebTouchEvent *)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
 - (Optional_6686b3f7)activeTouchIdentifierForGestureRecognizer:(id)arg1;
@@ -712,18 +724,19 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_presentationRectForPreviewItemController:(id)arg1;
 - (id)_dataForPreviewItemController:(id)arg1 atPosition:(struct CGPoint)arg2 type:(long long *)arg3;
 - (_Bool)_interactionShouldBeginFromPreviewItemController:(id)arg1 forPosition:(struct CGPoint)arg2;
-- (void)contextMenuInteractionDidEnd:(id)arg1;
-- (void)contextMenuInteraction:(id)arg1 willCommitWithAnimator:(id)arg2;
+- (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
+- (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
+- (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 previewForDismissingMenuWithConfiguration:(id)arg2;
-- (void)contextMenuInteractionWillPresent:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
 - (id)_createTargetedPreviewIfPossible;
 - (id)_contextMenuInteraction:(id)arg1 overrideSuggestedActionsForConfiguration:(id)arg2;
+- (_Bool)continueContextMenuInteractionWithDataDetectors:(CDUnknownBlockType)arg1;
 - (void)continueContextMenuInteraction:(CDUnknownBlockType)arg1;
 - (void)_contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (void)assignLegacyDataForContextMenuInteraction;
-- (void)_showLinkPreviewsPreferenceChanged:(id)arg1;
 - (void)_unregisterPreview;
 - (void)_registerPreview;
 

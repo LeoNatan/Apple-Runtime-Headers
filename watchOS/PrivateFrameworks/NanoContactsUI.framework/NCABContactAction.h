@@ -38,8 +38,6 @@
 
 + (id)_keysToFetchForContactAction;
 + (id)_contactFromDestination:(id)arg1;
-+ (_Bool)_allowedByScreenTime:(id)arg1;
-+ (void)initialize;
 @property(retain, nonatomic) id tinCanContacts; // @synthesize tinCanContacts=_tinCanContacts;
 @property(nonatomic, getter=isWalkieTalkieAvailable) _Bool walkieTalkieAvailable; // @synthesize walkieTalkieAvailable=_walkieTalkieAvailable;
 @property(retain, nonatomic) TUCallProviderManager *providerManager; // @synthesize providerManager=_providerManager;
@@ -79,7 +77,6 @@
 - (void)contactDidChange:(id)arg1;
 - (void)actionSheetController:(id)arg1 didDismissWithActionAtIndexPath:(id)arg2;
 - (void)idsDestinationsStatusControllerStatusDidChange:(id)arg1;
-- (void)_showBlockedContactViewController:(id)arg1;
 - (void)walkieTalkie;
 - (_Bool)canWalkieTalkie;
 - (void)mail;

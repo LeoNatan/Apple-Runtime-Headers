@@ -72,3 +72,9 @@ typedef struct {
     CDStruct_c3b9c2ee _field2;
 } CDStruct_2b0c6e0b;
 
+// Ambiguous groups
+typedef struct {
+    unsigned int actionCount:1;
+    unsigned int source:1;
+} CDStruct_fce072d8;
+

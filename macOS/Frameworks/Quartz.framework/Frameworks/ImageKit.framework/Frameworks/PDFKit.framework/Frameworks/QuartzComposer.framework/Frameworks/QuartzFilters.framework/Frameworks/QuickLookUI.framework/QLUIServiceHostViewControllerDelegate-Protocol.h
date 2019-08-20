@@ -9,7 +9,7 @@
 @class NSDictionary, NSURL, QLPreview;
 
 @protocol QLUIServiceHostViewControllerDelegate <QLRemoteViewControllerDelegate>
-- (void)didShowScreentimeLockout:(BOOL)arg1;
+- (void)didShowScreentimeLockout:(BOOL)arg1 withPolicy:(long long)arg2;
 - (void)didSaveEdit:(BOOL)arg1 toURL:(NSURL *)arg2;
 - (void)remotePreviewDesistedWithHints:(NSDictionary *)arg1;
 - (BOOL)deactivated;

@@ -39,7 +39,7 @@
 - (void)envelopeStore:(id)arg1 didFlushEnvelopesForEntries:(id)arg2;
 - (void)uploadSchedulerDidDropScheduledBackgroundUpload:(id)arg1;
 - (void)uploadScheduler:(id)arg1 performUploadWithCompletion:(CDUnknownBlockType)arg2;
-- (void)submitEnvelopes:(id)arg1 withForegroundUploadCompletion:(CDUnknownBlockType)arg2;
+- (void)submitEnvelopes:(id)arg1 withSubmissionCompletion:(CDUnknownBlockType)arg2 foregroundUploadCompletion:(CDUnknownBlockType)arg3;
 - (void)submitEnvelopes:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleLaunchEventForBackgroundSessionWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithAppConfigurationManager:(id)arg1 storeDirectoryFileURL:(id)arg2 URLSessionQueue:(id)arg3 envelopeTracker:(id)arg4;

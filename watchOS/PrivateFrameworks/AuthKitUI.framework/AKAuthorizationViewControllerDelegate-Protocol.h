@@ -6,12 +6,13 @@
 
 #import <AuthKitUI/NSObject-Protocol.h>
 
-@class AKAuthorizationUserResponse, AKAuthorizationViewController, NSError;
+@class AKAuthorization, AKAuthorizationUserResponse, AKAuthorizationViewController, AKCredentialRequestContext, NSError;
 
 @protocol AKAuthorizationViewControllerDelegate <NSObject>
 
 @optional
-- (void)authorizationViewController:(AKAuthorizationViewController *)arg1 didRequestAuthorizationWithUserProvidedInformation:(AKAuthorizationUserResponse *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)authorizationViewController:(AKAuthorizationViewController *)arg1 didCompleteWithError:(NSError *)arg2;
+- (void)authorizationViewController:(AKAuthorizationViewController *)arg1 didRequestIconForRequestContext:(AKCredentialRequestContext *)arg2 completion:(void (^)(NSData *, NSError *))arg3;
+- (void)authorizationViewController:(AKAuthorizationViewController *)arg1 didRequestAuthorizationWithUserProvidedInformation:(AKAuthorizationUserResponse *)arg2 completion:(void (^)(AKAuthorization *, NSError *))arg3;
+- (void)authorizationViewController:(AKAuthorizationViewController *)arg1 didCompleteWithAuthorization:(AKAuthorization *)arg2 error:(NSError *)arg3;
 @end
 

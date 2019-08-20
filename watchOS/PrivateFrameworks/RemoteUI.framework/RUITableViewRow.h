@@ -87,6 +87,8 @@
 - (void)_datePickerChanged:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+@property(readonly, nonatomic) NSString *copyText;
+@property(readonly, nonatomic) _Bool isCopyable;
 - (id)selectOptions;
 - (void)populatePostbackDictionary:(id)arg1;
 - (_Bool)supportsAutomaticSelection;

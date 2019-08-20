@@ -129,7 +129,7 @@
 - (void)updateDefaultInputModesIfNecessaryForIdiom;
 - (id)fallbackCurrentInputModeForFilteredInputModeIdentifier:(id)arg1 fromInputModeIdentifiers:(id)arg2;
 - (id)fallbackCurrentInputModeForFilteredInputMode:(id)arg1 fromInputModes:(id)arg2;
-- (id)filteredPadInputModesFromInputModes:(id)arg1;
+- (id)filteredPadInputModesFromInputModes:(id)arg1 withRules:(id)arg2;
 - (id)inputModeByReplacingSoftwareLayoutWithSoftwareLayout:(id)arg1 inInputMode:(id)arg2;
 - (id)filteredTVInputModesFromInputModes:(id)arg1;
 - (id)filteredInputModesForSiriLanguageFromInputModes:(id)arg1;
@@ -138,6 +138,7 @@
 - (void)_setCurrentInputMode:(id)arg1 force:(_Bool)arg2;
 @property(retain) UIKeyboardInputMode *currentInputMode;
 @property(readonly, nonatomic) _Bool containsDictationSupportedInputMode;
+- (void)updateEnabledDictationAndSLSLanguagesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)updateEnabledDictationLanguages:(_Bool)arg1;
 - (_Bool)isDictationLanguageEnabled:(id)arg1;
 @property(readonly, nonatomic) NSArray *enabledDictationLanguages;

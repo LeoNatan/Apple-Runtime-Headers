@@ -16,7 +16,8 @@
     BOOL _accountActive;
     BOOL _cloudHomeDataRecordExists;
     BOOL _keychainSyncEnabled;
-    BOOL _firstV3Fetch;
+    BOOL _firstV3FetchRun;
+    BOOL _firstDBQueryRun;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     CKContainer *_container;
     CKDatabase *_database;
@@ -43,7 +44,8 @@
 }
 
 + (BOOL)isControllerKeyAvailable;
-@property(nonatomic, getter=isFirstV3Fetch) BOOL firstV3Fetch; // @synthesize firstV3Fetch=_firstV3Fetch;
+@property(nonatomic, getter=isFirstDBQueryRun) BOOL firstDBQueryRun; // @synthesize firstDBQueryRun=_firstDBQueryRun;
+@property(nonatomic, getter=isFirstV3FetchRun) BOOL firstV3FetchRun; // @synthesize firstV3FetchRun=_firstV3FetchRun;
 @property(copy, nonatomic) CDUnknownBlockType accountActiveUpdateHandler; // @synthesize accountActiveUpdateHandler=_accountActiveUpdateHandler;
 @property(copy, nonatomic) CDUnknownBlockType dataDecryptionFailedHandler; // @synthesize dataDecryptionFailedHandler=_dataDecryptionFailedHandler;
 @property(retain, nonatomic) NSMutableArray *currentBackoffTimerValuesInMinutes; // @synthesize currentBackoffTimerValuesInMinutes=_currentBackoffTimerValuesInMinutes;

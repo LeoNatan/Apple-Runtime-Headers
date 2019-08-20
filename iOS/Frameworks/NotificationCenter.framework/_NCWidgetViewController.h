@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     NSString *_widgetIdentifier;
     NSString *_containerIdentifier;
     struct UIEdgeInsets _clientMarginInsets;
+    struct UIEdgeInsets _initialLayoutMargins;
 }
 
 + (void)_reduceTransparencyDidChange:(id)arg1;
@@ -42,11 +43,13 @@ __attribute__((visibility("hidden")))
 + (id)_remoteViewControllerInterface;
 @property(copy, nonatomic, getter=_containerIdentifier) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(copy, nonatomic, getter=_widgetIdentifier) NSString *widgetIdentifier; // @synthesize widgetIdentifier=_widgetIdentifier;
+@property(nonatomic, getter=_initialLayoutMargins, setter=_setInitialLayoutMargins:) struct UIEdgeInsets initialLayoutMargins; // @synthesize initialLayoutMargins=_initialLayoutMargins;
 @property(nonatomic, getter=_clientMarginInsets, setter=_setClientMarginInsets:) struct UIEdgeInsets clientMarginInsets; // @synthesize clientMarginInsets=_clientMarginInsets;
 @property(retain, nonatomic, getter=_contentView, setter=_setContentView:) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic, getter=_visibilityState, setter=_setVisibilityState:) long long visibilityState; // @synthesize visibilityState=_visibilityState;
 @property(retain, nonatomic, getter=_contentProvidingViewController) UIViewController<NCWidgetProvidingPrivate> *contentProvidingViewController; // @synthesize contentProvidingViewController=_contentProvidingViewController;
 - (void).cxx_destruct;
+- (void)__updateLayoutMargins:(id)arg1;
 - (void)__updateVisibleFrame:(struct CGRect)arg1 withReplyHandler:(CDUnknownBlockType)arg2;
 - (void)__updateVisibilityState:(long long)arg1;
 - (void)__openTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(id)arg2;

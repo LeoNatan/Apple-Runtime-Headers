@@ -25,6 +25,7 @@
 + (id)sizesFromSet:(unsigned int)arg1;
 + (int)findVariantFromSet:(unsigned int)arg1 deviceIdiom:(unsigned int)arg2 size:(struct CGSize)arg3 scale:(float)arg4;
 + (struct _LIIconVariantInfo *)variantInfoForSet:(unsigned int)arg1 count:(unsigned int *)arg2;
+- (float)_aspectRatio;
 - (id)iconWithDecorations:(id)arg1;
 @property(readonly, nonatomic) NSArray *decorations;
 - (unsigned int)badgeOptions;

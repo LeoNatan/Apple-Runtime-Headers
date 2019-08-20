@@ -8,14 +8,14 @@
 
 #import <UIKitCore/_UIBarButtonItemAppearanceChangeObserver-Protocol.h>
 
-@class NSDictionary, NSString, UIBarButtonItemAppearance, UIImage, _UINavBackButtonAppearance, _UINavTitleAppearanceData;
+@class NSDictionary, NSString, UIBarButtonItemAppearance, UIImage, _UINavTitleAppearanceData;
 
 @interface UINavigationBarAppearance : UIBarAppearance <_UIBarButtonItemAppearanceChangeObserver>
 {
     _UINavTitleAppearanceData *_barTitleData;
-    _UINavBackButtonAppearance *_backButtonAppearance;
     UIBarButtonItemAppearance *_buttonAppearance;
     UIBarButtonItemAppearance *_doneButtonAppearance;
+    UIBarButtonItemAppearance *_backButtonAppearance;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -23,7 +23,8 @@
 @property(copy, nonatomic) UIBarButtonItemAppearance *doneButtonAppearance; // @synthesize doneButtonAppearance=_doneButtonAppearance;
 @property(copy, nonatomic) UIBarButtonItemAppearance *buttonAppearance; // @synthesize buttonAppearance=_buttonAppearance;
 - (void).cxx_destruct;
-- (void)barButtonItemApperanceChangedItemData:(id)arg1 toItemData:(id)arg2 fromItemData:(id)arg3;
+- (void)_barButtonItemDataChanged:(id)arg1;
+- (void)_barButtonItemAppearanceChangedItemData:(id)arg1 toItemData:(id)arg2 fromItemData:(id)arg3;
 - (void)setBackIndicatorImage:(id)arg1 transitionMaskImage:(id)arg2;
 @property(readonly, nonatomic) UIImage *backIndicatorTransitionMaskImage;
 @property(readonly, nonatomic) UIImage *backIndicatorImage;

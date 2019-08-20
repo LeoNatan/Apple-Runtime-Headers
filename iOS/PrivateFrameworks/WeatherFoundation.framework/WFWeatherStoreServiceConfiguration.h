@@ -12,11 +12,12 @@
 
 @interface WFWeatherStoreServiceConfiguration : NSObject <NSCopying>
 {
+    struct os_unfair_lock_s _serviceConnectivityEvaluationURLLock;
     NWPathEvaluator *_serviceConnectivityEvaluator;
+    NSURL *_serviceConnectivityEvaluationURL;
     NSURLSession *_session;
     NSURL *_cacheURL;
     Class _cacheClass;
-    NSURL *_serviceConnectivityEvaluationURL;
     WFSettingsManager *_settingsManager;
 }
 
@@ -24,7 +25,7 @@
 + (id)defaultConfiguration;
 + (id)defaultConfigurationWithSourceBundleIdentifier:(id)arg1;
 @property(retain, nonatomic) WFSettingsManager *settingsManager; // @synthesize settingsManager=_settingsManager;
-@property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
+@property(nonatomic) struct os_unfair_lock_s serviceConnectivityEvaluationURLLock; // @synthesize serviceConnectivityEvaluationURLLock=_serviceConnectivityEvaluationURLLock;
 @property(retain, nonatomic) Class cacheClass; // @synthesize cacheClass=_cacheClass;
 @property(copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -40,6 +41,7 @@
 - (id)apiConfigurationForAPIVersion:(id)arg1;
 - (id)apiConfiguration;
 @property(readonly, nonatomic) NSString *apiVersion;
+@property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
 - (id)init;
 
 @end

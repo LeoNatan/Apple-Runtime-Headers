@@ -16,7 +16,8 @@
     unsigned long long _state;
     NSObject<OS_dispatch_queue> *_stateAccessQueue;
     NSObject<OS_dispatch_queue> *_cacheUpdateAndFillQueue;
-    NSArray *_actionProviders;
+    NSArray *_actionProvidersForFilling;
+    NSArray *_actionProvidersForLoading;
     NSDictionary *_actionsByIdentifier;
     NSMapTable *_actionsByActionProvider;
     NSDictionary *_actionsByCategory;
@@ -26,7 +27,8 @@
 @property(readonly, nonatomic) NSDictionary *actionsByCategory; // @synthesize actionsByCategory=_actionsByCategory;
 @property(readonly, nonatomic) NSMapTable *actionsByActionProvider; // @synthesize actionsByActionProvider=_actionsByActionProvider;
 @property(readonly, nonatomic) NSDictionary *actionsByIdentifier; // @synthesize actionsByIdentifier=_actionsByIdentifier;
-@property(readonly, nonatomic) NSArray *actionProviders; // @synthesize actionProviders=_actionProviders;
+@property(readonly, nonatomic) NSArray *actionProvidersForLoading; // @synthesize actionProvidersForLoading=_actionProvidersForLoading;
+@property(readonly, nonatomic) NSArray *actionProvidersForFilling; // @synthesize actionProvidersForFilling=_actionProvidersForFilling;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cacheUpdateAndFillQueue; // @synthesize cacheUpdateAndFillQueue=_cacheUpdateAndFillQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateAccessQueue; // @synthesize stateAccessQueue=_stateAccessQueue;
 - (void).cxx_destruct;

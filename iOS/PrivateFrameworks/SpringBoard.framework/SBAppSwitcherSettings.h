@@ -28,6 +28,8 @@
     _Bool _simplicityOptionNoSnapshotBkg;
     _Bool _showFloats;
     long long _switcherStyle;
+    double _asynchronousRenderingDisableSurfaceCacheDelayDuration;
+    double _preventMedusaSnapshotsAfterTransitionDuration;
     SBFloatingSwitcherSettings *_floatingSwitcherSettings;
     SBAppSwitcherOrbGestureSettings *_orbGestureSettings;
     double _mScale;
@@ -79,7 +81,6 @@
     double _titleOpacityBCoeff;
     double _titleOpacityCCoeff;
     double _titleOpacityDCoeff;
-    double _cmdTabSwitcherSelectionSquareCornerRadiusRatio;
     SBFluidSwitcherAnimationSettings *_animationSettings;
     PTOutlet *_stashModelOutlet;
     PTOutlet *_loadModelOutlet;
@@ -106,7 +107,6 @@
 @property _Bool showFloatingModifierTimeline; // @synthesize showFloatingModifierTimeline=_showFloatingModifierTimeline;
 @property _Bool showMainModifierTimeline; // @synthesize showMainModifierTimeline=_showMainModifierTimeline;
 @property _Bool showModifierDebugLabel; // @synthesize showModifierDebugLabel=_showModifierDebugLabel;
-@property double cmdTabSwitcherSelectionSquareCornerRadiusRatio; // @synthesize cmdTabSwitcherSelectionSquareCornerRadiusRatio=_cmdTabSwitcherSelectionSquareCornerRadiusRatio;
 @property double titleOpacityDCoeff; // @synthesize titleOpacityDCoeff=_titleOpacityDCoeff;
 @property double titleOpacityCCoeff; // @synthesize titleOpacityCCoeff=_titleOpacityCCoeff;
 @property double titleOpacityBCoeff; // @synthesize titleOpacityBCoeff=_titleOpacityBCoeff;
@@ -159,6 +159,8 @@
 @property double mScale; // @synthesize mScale=_mScale;
 @property(retain, nonatomic) SBAppSwitcherOrbGestureSettings *orbGestureSettings; // @synthesize orbGestureSettings=_orbGestureSettings;
 @property(retain, nonatomic) SBFloatingSwitcherSettings *floatingSwitcherSettings; // @synthesize floatingSwitcherSettings=_floatingSwitcherSettings;
+@property double preventMedusaSnapshotsAfterTransitionDuration; // @synthesize preventMedusaSnapshotsAfterTransitionDuration=_preventMedusaSnapshotsAfterTransitionDuration;
+@property double asynchronousRenderingDisableSurfaceCacheDelayDuration; // @synthesize asynchronousRenderingDisableSurfaceCacheDelayDuration=_asynchronousRenderingDisableSurfaceCacheDelayDuration;
 @property _Bool shouldRoundCornersDuringSwipeUp; // @synthesize shouldRoundCornersDuringSwipeUp=_shouldRoundCornersDuringSwipeUp;
 @property _Bool useAsynchronousRendering; // @synthesize useAsynchronousRendering=_useAsynchronousRendering;
 @property long long switcherStyle; // @synthesize switcherStyle=_switcherStyle;

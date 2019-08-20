@@ -15,6 +15,7 @@
     NSTextField *_internalTitleView;
     BOOL _hidesBackButton;
     BOOL _hidesAlternateTitleView;
+    BOOL _hidesGlobalTrailingView;
     BOOL _leftItemsSupplementBackButton;
     NSString *_title;
     UXBarButtonItem *_backBarButtonItem;
@@ -25,6 +26,7 @@
 
 @property(retain, nonatomic) NSView *condensedTitleView; // @synthesize condensedTitleView=_condensedTitleView;
 @property(nonatomic) BOOL leftItemsSupplementBackButton; // @synthesize leftItemsSupplementBackButton=_leftItemsSupplementBackButton;
+@property(nonatomic) BOOL hidesGlobalTrailingView; // @synthesize hidesGlobalTrailingView=_hidesGlobalTrailingView;
 @property(nonatomic) BOOL hidesAlternateTitleView; // @synthesize hidesAlternateTitleView=_hidesAlternateTitleView;
 @property(nonatomic) BOOL hidesBackButton; // @synthesize hidesBackButton=_hidesBackButton;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;

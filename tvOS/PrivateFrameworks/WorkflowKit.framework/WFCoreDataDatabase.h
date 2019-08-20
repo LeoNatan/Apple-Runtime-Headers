@@ -53,7 +53,7 @@
 - (void)setConflictingReference:(id)arg1 forReference:(id)arg2;
 - (id)conflictingReferenceForReference:(id)arg1;
 - (id)duplicateReference:(id)arg1 newName:(id)arg2 error:(id *)arg3;
-- (id)createWorkflowWithRecord:(id)arg1 identifier:(id)arg2 error:(id *)arg3;
+- (id)createWorkflowWithOptions:(id)arg1 error:(id *)arg2;
 - (id)workflowReferenceWithName:(id)arg1;
 - (_Bool)deleteReference:(id)arg1 tombstone:(_Bool)arg2 error:(id *)arg3;
 - (void)moveReferenceFromIndex:(long long)arg1 toIndex:(long long)arg2;

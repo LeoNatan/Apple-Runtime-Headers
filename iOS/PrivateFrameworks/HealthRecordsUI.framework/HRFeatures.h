@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)shouldShowDescriptionFreeSpinner;
 + (_Bool)shouldUseConsumerFriendlyName;
 + (void)setHideCategoryNameFromHeader:(_Bool)arg1;
 + (_Bool)hideCategoryNameFromHeader;

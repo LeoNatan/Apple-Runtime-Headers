@@ -8,9 +8,11 @@
 
 @interface PXMemoriesFeedWidgetDataSourceManager : PXMemoriesFeedDataSourceManagerBase
 {
+    _Bool _onlyFavorites;
     unsigned long long _maxCount;
 }
 
+@property(nonatomic) _Bool onlyFavorites; // @synthesize onlyFavorites=_onlyFavorites;
 @property(nonatomic) unsigned long long maxCount; // @synthesize maxCount=_maxCount;
 - (void)handleChangedKeyAssetsForMemories:(id)arg1;
 - (void)handleNonIncrementalFetchResultChange:(id)arg1;

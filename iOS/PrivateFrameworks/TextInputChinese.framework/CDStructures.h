@@ -15,6 +15,10 @@ struct CGPoint {
     double _field2;
 };
 
+struct ConfidenceModel {
+    struct Params _field1;
+};
+
 struct ContinuousPathDetector {
     struct map<int, KB::ContinuousPathDetector::AnnotatedPath, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, KB::ContinuousPathDetector::AnnotatedPath>>> _field1;
     struct Parameters _field2;
@@ -53,6 +57,16 @@ struct Parameters {
     float _field6;
 };
 
+struct Params {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    int _field6;
+    int _field7;
+};
+
 struct RefPtr<KB::DictionaryContainer> {
     struct DictionaryContainer *_field1;
 };
@@ -82,25 +96,25 @@ struct TIInputManager {
     unsigned int _field5;
     struct String _field6;
     struct retain_ptr<const __CFLocale *> _field7;
-    struct LockedInput _field8;
-    struct unique_ptr<TI::Favonius::StrokeBuildManager, std::__1::default_delete<TI::Favonius::StrokeBuildManager>> _field9;
-    struct String _field10;
-    struct RefPtr<KB::DictionaryContainer> _field11;
-    struct shared_ptr<KB::LanguageModel> _field12;
-    unsigned int _field13;
-    struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> _field14;
-    _Bool _field15;
-    struct String _field16;
-    struct RefPtr<TI::Favonius::KeyboardLayout> _field17;
-    struct ContinuousPathDetector _field18;
-    int _field19;
-    _Bool _field20;
-    struct String _field21;
-    struct LanguageModelContext _field22;
-    struct shared_ptr<KB::InputManagerSpecialization> _field23;
-    CDUnknownBlockType _field24;
-    struct shared_ptr<KB::TypologyLogger> _field25;
-    _Bool _field26;
+    struct ConfidenceModel _field8;
+    struct LockedInput _field9;
+    struct unique_ptr<TI::Favonius::StrokeBuildManager, std::__1::default_delete<TI::Favonius::StrokeBuildManager>> _field10;
+    struct String _field11;
+    struct RefPtr<KB::DictionaryContainer> _field12;
+    struct shared_ptr<KB::LanguageModel> _field13;
+    unsigned int _field14;
+    struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> _field15;
+    _Bool _field16;
+    struct String _field17;
+    struct RefPtr<TI::Favonius::KeyboardLayout> _field18;
+    struct ContinuousPathDetector _field19;
+    int _field20;
+    _Bool _field21;
+    struct String _field22;
+    struct LanguageModelContext _field23;
+    struct shared_ptr<KB::InputManagerSpecialization> _field24;
+    CDUnknownBlockType _field25;
+    struct shared_ptr<KB::TypologyLogger> _field26;
     _Bool _field27;
     _Bool _field28;
     _Bool _field29;
@@ -109,6 +123,7 @@ struct TIInputManager {
     _Bool _field32;
     _Bool _field33;
     _Bool _field34;
+    _Bool _field35;
 };
 
 struct TITokenID;

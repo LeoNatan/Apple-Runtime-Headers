@@ -6,10 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class HDAssertion, HDProfile;
+#import <HealthDaemon/HDContentProtectionObserver-Protocol.h>
+#import <HealthDaemon/HDDatabaseProtectedDataObserver-Protocol.h>
+#import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
+
+@class HDAssertion, HDProfile, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HDCloudSyncManager : NSObject
+@interface HDCloudSyncManager : NSObject <HDContentProtectionObserver, HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver>
 {
     HDAssertion *_preparedDatabaseAccessibilityAssertion;
     _Bool _supportsRebase;
@@ -28,7 +32,11 @@
 @property(retain) HDAssertion *preparedDatabaseAccessibilityAssertion; // @synthesize preparedDatabaseAccessibilityAssertion=_preparedDatabaseAccessibilityAssertion;
 - (void).cxx_destruct;
 - (void)unitTest_setSupportsRebase:(_Bool)arg1;
-- (id)lastPushForwardProgressDate;
+- (void)_queue_considerStartingBackstopSyncForThreshold:(double)arg1;
+- (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
+- (void)daemonReady:(id)arg1;
+- (void)_queue_updateAccessibilityAssertion;
 - (void)_addFinalProgressUpdateWithTaskTree:(id)arg1 progress:(id)arg2;
 - (void)_primaryContainerIdentifiersForCurrentAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_containerIdentifiersForCurrentAccountWithCompletion:(CDUnknownBlockType)arg1;
@@ -46,10 +54,17 @@
 - (id)syncSessionForSyncStore:(id)arg1 reason:(id)arg2 delegate:(id)arg3 accessibilityAssertion:(id)arg4 excludedStores:(id)arg5;
 - (void)requestImmediateResync;
 - (void)prepareForSync;
+- (id)lastPushForwardProgressDate;
 @property(readonly) int bytesPerChangeRecordAssetThresholdHardLimit;
 @property(readonly) int bytesPerChangeRecordAssetThreshold;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -15,7 +15,9 @@
 + (id)fetchRequest;
 
 // Remaining properties
+@property(nonatomic) short image; // @dynamic image;
 @property(nonatomic) short other; // @dynamic other;
+@property(nonatomic) short querySuggestion; // @dynamic querySuggestion;
 @property(nonatomic) short recentResult; // @dynamic recentResult;
 @property(copy, nonatomic) NSDate *timestamp; // @dynamic timestamp;
 @property(nonatomic) short zkw; // @dynamic zkw;

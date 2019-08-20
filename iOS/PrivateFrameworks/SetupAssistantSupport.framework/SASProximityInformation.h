@@ -44,11 +44,13 @@
     NSNumber *_deviceToDeviceMigrationVersion;
     NSNumber *_storageAvailable;
     NSNumber *_storageCapacity;
+    NSNumber *_preventSoftwareUpdateDeviceMigration;
     NSNumber *_hasTransferrableTelephonyPlan;
 }
 
 + (_Bool)supportsSecureCoding;
 @property NSNumber *hasTransferrableTelephonyPlan; // @synthesize hasTransferrableTelephonyPlan=_hasTransferrableTelephonyPlan;
+@property(retain) NSNumber *preventSoftwareUpdateDeviceMigration; // @synthesize preventSoftwareUpdateDeviceMigration=_preventSoftwareUpdateDeviceMigration;
 @property(retain) NSNumber *storageCapacity; // @synthesize storageCapacity=_storageCapacity;
 @property(retain) NSNumber *storageAvailable; // @synthesize storageAvailable=_storageAvailable;
 @property(retain) NSNumber *deviceToDeviceMigrationVersion; // @synthesize deviceToDeviceMigrationVersion=_deviceToDeviceMigrationVersion;

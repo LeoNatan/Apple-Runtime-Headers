@@ -10,6 +10,7 @@
 {
 }
 
++ (id)integerTemperatureRangeWithinNumberRange:(id)arg1 representsCelsius:(BOOL)arg2;
 + (long long)_heatingCoolingValueForCurrentHeaterCoolerState:(long long)arg1 isActive:(BOOL)arg2;
 + (id)targetTemperatureValueInResponse:(id)arg1;
 + (id)targetHeatingCoolingModeValueInResponse:(id)arg1;

@@ -21,7 +21,6 @@
 - (BSAnimationSettings *)hideHomeAffordanceAnimationSettingsForNotificationViewController:(NCNotificationViewController *)arg1;
 - (id <PLKeyboardHomeAffordanceAssertion>)notificationViewController:(NCNotificationViewController *)arg1 keyboardAssertionForGestureWindow:(UIWindow *)arg2;
 - (NSDictionary *)notificationUsageTrackingStateForNotificationViewController:(NCNotificationViewController *)arg1;
-- (void)notificationViewControllerIsReadyToBePresented:(NCNotificationViewController *)arg1;
 - (_Bool)showAdditionalMessageLinesForNotificationViewController:(NCNotificationViewController *)arg1;
 - (_Bool)notificationViewController:(NCNotificationViewController *)arg1 suggestsDismissingShortLookWithSourceGestureRecognizer:(UIGestureRecognizer *)arg2 animated:(_Bool)arg3;
 - (void)notificationViewController:(NCNotificationViewController *)arg1 shouldFinishLongLookTransitionForTrigger:(long long)arg2 withCompletionBlock:(void (^)(_Bool))arg3;

@@ -33,7 +33,6 @@
 - (id)_iconForCacheKey:(id)arg1;
 - (void)queue_processNextIconRequest;
 - (void)iconForTransaction:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
-- (_Bool)cachedIconRequiresStrokeForTransaction:(id)arg1 size:(struct CGSize)arg2;
 - (id)cachedIconForTransaction:(id)arg1 size:(struct CGSize)arg2;
 - (void)_updatePrimaryLabelOnTransactionCell:(id)arg1 withPeerPaymentCounterpartHandle:(id)arg2 contact:(id)arg3;
 - (void)_updateAvatarOnTransactionCell:(id)arg1 withTransaction:(id)arg2 contact:(id)arg3;

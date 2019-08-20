@@ -38,9 +38,9 @@
 - (id)performBatchInferenceWithFeatureVector:(const float *)arg1 featureVectorLength:(unsigned long long)arg2 start:(unsigned long long)arg3 firstTimeStepDate:(id)arg4;
 - (void)clearWorkingVisitCluster;
 - (id)createVisitWithLocations:(id)arg1 entryDate:(id)arg2 exitDate:(id)arg3;
-- (const float *)computeFeatureVectorFromLocations:(id)arg1 start:(unsigned long long)arg2 end:(unsigned long long)arg3;
+- (float *)computeFeatureVectorFromLocations:(id)arg1 start:(unsigned long long)arg2 end:(unsigned long long)arg3;
 - (_Bool)computeFeatureVector:(float *)arg1 cumSumNumLocations:(unsigned long long)arg2 cumSumNorthings:(double *)arg3 cumSumEastings:(double *)arg4 cumSumSquaredNorthings:(double *)arg5 cumSumSquaredEastings:(double *)arg6 sequenceLength:(unsigned long long)arg7;
-- (const float *)computeFeatureVectorFromLocalFramesNumOfLocations:(unsigned long long)arg1 northings:(const double *)arg2 eastings:(const double *)arg3 sequenceLength:(unsigned long long)arg4;
+- (float *)computeFeatureVectorFromLocalFramesNumOfLocations:(unsigned long long)arg1 northings:(const double *)arg2 eastings:(const double *)arg3 sequenceLength:(unsigned long long)arg4;
 - (double)computeRadiusFromCumSumNorthings:(const double *)arg1 cumSumEastings:(const double *)arg2 cumSumSquaredNorthings:(const double *)arg3 cumSumSuaredEastings:(const double *)arg4 firstLocationIndex:(unsigned long long)arg5 lastLocationIndex:(unsigned long long)arg6;
 - (unsigned long long)sequenceIndexFromDate:(id)arg1 firstTimeStepDate:(id)arg2;
 - (unsigned long long)startLocationIndex:(unsigned long long)arg1;

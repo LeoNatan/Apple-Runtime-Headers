@@ -6,10 +6,13 @@
 
 #import <WorkflowUI/NSObject-Protocol.h>
 
-@class LSApplicationProxy, WFAppSearchViewController;
+@class LSApplicationProxy, NSArray, WFAppSearchViewController;
 
 @protocol WFAppSearchViewControllerDelegate <NSObject>
-- (void)appSearchViewController:(WFAppSearchViewController *)arg1 didFinishWithApp:(LSApplicationProxy *)arg2;
 - (void)appSearchViewControllerDidCancel:(WFAppSearchViewController *)arg1;
+
+@optional
+- (void)appSearchViewController:(WFAppSearchViewController *)arg1 didFinishWithApps:(NSArray *)arg2;
+- (void)appSearchViewController:(WFAppSearchViewController *)arg1 didFinishWithApp:(LSApplicationProxy *)arg2;
 @end
 

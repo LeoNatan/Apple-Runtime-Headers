@@ -6,26 +6,19 @@
 
 #import <ContactsUI/CNAvatarView.h>
 
-@class CNContact, CNMutableContact, NSString, UIViewController;
+@class NSString, UIViewController;
 
 @interface CKAvatarView : CNAvatarView
 {
-    _Bool _usingNicknameContact;
     UIViewController *_presentingViewController;
     NSString *_preferredHandle;
-    CNMutableContact *_nicknameContact;
-    CNContact *_nonNicknameContact;
-    NSString *_currentRecordID;
 }
 
-@property(copy, nonatomic) NSString *currentRecordID; // @synthesize currentRecordID=_currentRecordID;
-@property(nonatomic) _Bool usingNicknameContact; // @synthesize usingNicknameContact=_usingNicknameContact;
-@property(nonatomic) CNContact *nonNicknameContact; // @synthesize nonNicknameContact=_nonNicknameContact;
-@property(retain, nonatomic) CNMutableContact *nicknameContact; // @synthesize nicknameContact=_nicknameContact;
 @property(nonatomic) __weak NSString *preferredHandle; // @synthesize preferredHandle=_preferredHandle;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 
 @end

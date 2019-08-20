@@ -41,6 +41,7 @@
 - (_Bool)_isTouchRoutingPolicyBased;
 - (struct CGPoint)_digitizerLocation;
 - (_Bool)_isKeyDown;
+- (unsigned long long)_clickCount;
 - (long long)_modifierFlags;
 - (id)_unmodifiedInput;
 - (id)_modifiedInput;

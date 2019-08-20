@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)dropInteraction:(id)arg1 sessionDidExit:(id)arg2;
 - (void)dropInteraction:(id)arg1 sessionDidEnter:(id)arg2;
 - (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;
+- (id)footerTitle;
 - (void)documentPickerWasCancelled:(id)arg1;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
 - (void)_showAddAttachmentViewController;

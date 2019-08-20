@@ -186,6 +186,7 @@
         unsigned int hasDynamicBackgroundColor:1;
         unsigned int hasLocalOverrideTraitCollection:1;
         unsigned int hasPendingTraitStorageConstraints:1;
+        unsigned int hasEverBeenInAWindow:1;
     } _viewFlags;
     unsigned short _unsatisfiableConstraintsLoggingSuspensionCount;
     unsigned int _pseudo_id;
@@ -276,6 +277,7 @@
 + (void)setAnimationFrameInterval:(double)arg1;
 + (void)setAnimationDelay:(double)arg1;
 + (void)setAnimationDuration:(double)arg1;
++ (void)_performWithAnimation:(CDUnknownBlockType)arg1;
 + (void)_performWithoutAnimation:(CDUnknownBlockType)arg1;
 + (void)performWithoutAnimation:(CDUnknownBlockType)arg1;
 + (BOOL)areAnimationsEnabled;
@@ -356,7 +358,6 @@
 + (void)_createTransformerWithInputAnimatableProperties:(id)arg1 modelValueSetter:(CDUnknownBlockType)arg2 presentationValueSetter:(CDUnknownBlockType)arg3;
 + (void)_animateUsingSpringWithDuration:(double)arg1 delay:(double)arg2 options:(unsigned long long)arg3 mass:(double)arg4 stiffness:(double)arg5 damping:(double)arg6 initialVelocity:(double)arg7 animations:(CDUnknownBlockType)arg8 start:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10;
 + (id)_collectedViewPropertiesByPerforming:(CDUnknownBlockType)arg1;
-+ (void)_collectViewPropertiesIn:(id)arg1 byPerforming:(CDUnknownBlockType)arg2;
 + (void)_animateWithAnimationAndComposerGetter:(CDUnknownBlockType)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)_animateWithAnimationAndComposerGetter:(CDUnknownBlockType)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 animationStateSetup:(CDUnknownBlockType)arg4;
 + (void)_performWithoutRetargetingAnimations:(CDUnknownBlockType)arg1;
@@ -528,6 +529,7 @@
 - (long long)_currentUserInterfaceIdiom;
 - (struct CGRect)_responderExternalTouchRectForWindow:(id)arg1;
 - (struct CGRect)_responderSelectionRectForWindow:(id)arg1;
+- (void)setMotionEffects:(id)arg1;
 - (id)motionEffects;
 - (void)_endSuspendingMotionEffects;
 - (void)_beginSuspendingMotionEffects;
@@ -815,7 +817,7 @@
 - (void)_beginDragWithInteractionGestureRecognizer:(id)arg1;
 @property(nonatomic, getter=_draggingSourceDelegate, setter=_setDraggingSourceDelegate:) __weak id <_UIViewInternalDraggingSourceDelegate> _draggingSourceDelegate;
 @property(readonly, nonatomic) UIInputResponderController *inputResponderController;
-- (id)_copyConfigurationAtLocation:(struct CGPoint)arg1;
+- (id)_activityItemsConfigurationAtLocation:(struct CGPoint)arg1;
 - (long long)_depthFirstCompare:(id)arg1;
 - (id)_fallbackTraitCollection;
 - (double)_findAutolayoutHeightConstraint;
@@ -832,6 +834,7 @@
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
 - (struct CGRect)_compatibleBounds;
 - (void)reduceWidth:(double)arg1;
+- (BOOL)_isKnownUISearchBarComponentContainer;
 - (id)textInputView;
 - (BOOL)_canBeReusedInPickerView;
 - (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
@@ -868,6 +871,7 @@
 - (void)_setLargeContentStoredProperties:(id)arg1;
 - (id)_largeContentStoredProperties;
 - (id)_largeContentStoredPropertiesCreatingIfNecessary:(BOOL)arg1;
+- (id)_largeContentViewerItemAtPoint:(struct CGPoint)arg1;
 - (id)_colorViewBoundsOverlayCreateIfNecessary:(BOOL)arg1;
 - (void)_removeColorViewBoundsOverlays;
 - (id)_hierarchyRepresentation;
@@ -1389,11 +1393,13 @@
 - (void)_monitoredView:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (BOOL)_monitorsView:(id)arg1;
 @property(nonatomic, getter=_monitorsSubtree, setter=_setMonitorsSubtree:) BOOL monitorsSubtree;
+@property(nonatomic, getter=isDrawingFindIndicator) BOOL drawingFindIndicator;
 @property(readonly, nonatomic, getter=_acceptsActivatingTouch) BOOL _acceptsActivatingTouch;
 - (BOOL)_shouldApplyExclusiveTouch;
 - (BOOL)_isInExclusiveTouchSubviewTree;
 - (BOOL)_appliesExclusiveTouchToSubviewTree;
 - (BOOL)_shouldResignFirstResponderWithInteractionDisabled;
+- (BOOL)_gestureRecognizerShouldReceiveTouch:(id)arg1;
 - (void)_addGestureRecognizer:(id)arg1 atEnd:(BOOL)arg2;
 - (id)_gestureRecognizers;
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
@@ -1582,10 +1588,9 @@
 - (unsigned long long)_effectiveFocusRingType;
 - (unsigned long long)_defaultFocusRingType;
 - (id)_designatedFocusRingView;
-- (BOOL)_validateUserInterfaceItem:(id)arg1;
-- (void)_showContextMenuToShareCopyConfiguration:(id)arg1 touchLocation:(struct CGPoint)arg2;
+- (void)_showContextMenuToShareActivityItemsConfiguration:(id)arg1 touchLocation:(struct CGPoint)arg2;
 - (void)_showContextMenuToShareObjects:(id)arg1 touchLocation:(struct CGPoint)arg2;
-- (id)_copyConfigurationForServicesMenu;
+- (id)_activityItemsConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(id)arg1;
 - (id)_servicesMenuProviderForReturnType:(id)arg1;
 - (id)_asTextInputServicesMenuDataProvider;

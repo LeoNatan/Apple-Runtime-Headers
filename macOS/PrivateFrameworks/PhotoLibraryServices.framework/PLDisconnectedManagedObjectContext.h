@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)shouldHavePhotoLibrary;
 + (BOOL)canMergeRemoteChanges;
 - (id)photoLibrary;
 - (BOOL)isDatabaseCreationContext;

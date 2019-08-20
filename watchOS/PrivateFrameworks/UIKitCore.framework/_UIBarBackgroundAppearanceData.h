@@ -6,7 +6,7 @@
 
 #import <UIKitCore/_UIBarAppearanceData.h>
 
-@class NSArray, UIBlurEffect, UIColor, UIImage;
+@class NSArray, UIBlurEffect, UIColor, UIImage, UIVibrancyEffect;
 
 __attribute__((visibility("hidden")))
 @interface _UIBarBackgroundAppearanceData : _UIBarAppearanceData
@@ -15,7 +15,9 @@ __attribute__((visibility("hidden")))
         unsigned int backgroundEffectsAreSingular:1;
         unsigned int hasBackground:1;
         unsigned int hasShadow:1;
+        unsigned int needsToCalculateVibrantEffect:1;
     } _flags;
+    UIVibrancyEffect *_defaultVibrancyEffect;
     NSArray *_backgroundEffects;
     UIColor *_backgroundColor;
     UIImage *_backgroundImage;
@@ -35,14 +37,15 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIVibrancyEffect *defaultVibrancyEffect; // @synthesize defaultVibrancyEffect=_defaultVibrancyEffect;
 @property(readonly, nonatomic) UIColor *shadowViewTintColor;
 @property(readonly, nonatomic) UIColor *shadowViewBackgroundColor;
 - (int)behaviorForTransitioningTo:(id)arg1;
 @property(readonly, nonatomic) _Bool hasShadow;
 @property(readonly, nonatomic) _Bool hasBackground;
 - (void)_updateShadowFlags;
-- (void)_updateBackgroundFlags;
 @property(copy, nonatomic) UIBlurEffect *backgroundEffect;
+- (void)_updateBackgroundFlags;
 - (id)replicate;
 - (_Bool)checkEqualTo:(id)arg1;
 - (int)hashInto:(int)arg1;

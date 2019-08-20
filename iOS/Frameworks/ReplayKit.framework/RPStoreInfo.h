@@ -15,8 +15,10 @@
     NSString *_author;
     NSString *_itemURL;
     NSArray *_categories;
+    NSArray *_artworkDictionary;
 }
 
+@property(retain, nonatomic) NSArray *artworkDictionary; // @synthesize artworkDictionary=_artworkDictionary;
 @property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(retain, nonatomic) NSString *itemURL; // @synthesize itemURL=_itemURL;
 @property(retain, nonatomic) NSString *author; // @synthesize author=_author;

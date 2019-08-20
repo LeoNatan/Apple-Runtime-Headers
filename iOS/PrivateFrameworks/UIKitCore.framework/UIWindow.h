@@ -73,6 +73,7 @@
         unsigned int isUpdatingSafeAreaInsets:1;
     } _windowFlags;
     id _windowController;
+    int _userInterfaceStyleNotificationToken;
     _UISystemGestureGateGestureRecognizer *_systemGestureGateForGestures;
     _UISystemGestureGateGestureRecognizer *_systemGestureGateForTouches;
     UITraitCollection *_traitCollection;
@@ -86,6 +87,7 @@
     UIAccessibilityHUDView *_accessibilityHUD;
     id <BSInvalidatable> _eventFocusDeferralToken;
     _Bool _shouldDisableTransformLayerScalingForSnapshotting;
+    _Bool _canResizeToFitContent;
     _Bool __shouldHitTestEntireScreen;
     _Bool __usesLegacySupportedOrientationChecks;
     _Bool ___hostViewUnderlapsStatusBar;
@@ -134,6 +136,7 @@
 + (void)_setKeyWindowStackEnabled:(_Bool)arg1;
 + (unsigned long long)_keyWindowStackSize;
 + (void)_clearKeyWindowStack;
++ (_Bool)_shouldSoftAssertOnSetScreen;
 + (_Bool)_clearPreCommitHandlerRegistration;
 + (void)_synchronizeDrawingWithFence:(id)arg1 preCommitHandler:(CDUnknownBlockType)arg2;
 + (void)_synchronizeDrawingWithFence:(id)arg1;
@@ -174,6 +177,7 @@
 @property(nonatomic, getter=_rememberedFocusedItem, setter=_setRememberedFocusedItem:) __weak id <UIFocusItem> rememberedFocusedItem; // @synthesize rememberedFocusedItem=_rememberedFocusedItem;
 @property(nonatomic, setter=_setShouldHitTestEntireScreen:) _Bool _shouldHitTestEntireScreen; // @synthesize _shouldHitTestEntireScreen=__shouldHitTestEntireScreen;
 @property(nonatomic, setter=_setDeferredLaunchOrientation:) long long _deferredLaunchOrientation; // @synthesize _deferredLaunchOrientation=__deferredLaunchOrientation;
+@property(nonatomic, setter=setCanResizeToFitContent:) _Bool canResizeToFitContent; // @synthesize canResizeToFitContent=_canResizeToFitContent;
 @property(copy, nonatomic, setter=_setDeferredLaunchBlock:) CDUnknownBlockType _deferredLaunchBlock; // @synthesize _deferredLaunchBlock;
 @property(nonatomic, setter=_setBoundContext:) __weak CAContext *_boundContext; // @synthesize _boundContext=_layerContext;
 @property(nonatomic, setter=_setContextBinder:) __weak _UIContextBinder *_contextBinder; // @synthesize _contextBinder;
@@ -259,6 +263,7 @@
 - (struct CGPoint)_convertPointToSceneReferenceSpace:(struct CGPoint)arg1;
 - (struct CGPoint)_convertPointFromSceneReferenceSpace:(struct CGPoint)arg1;
 - (struct CGRect)_sceneReferenceBounds;
+- (long long)_sceneClientOrientation;
 - (long long)_sceneOrientation;
 - (struct CGRect)_sceneBounds;
 - (_Bool)_isHostedInAnotherProcess;
@@ -473,6 +478,7 @@
 - (unsigned int)_contextId;
 - (_Bool)_disableGroupOpacity;
 - (_Bool)_ignoresHitTest;
+- (void)_updateLayerOrderingAndSetLayerHidden:(_Bool)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)_updateLayerOrderingAndSetLayerHidden:(_Bool)arg1;
 - (_Bool)_hasContext;
 - (void)_configureContextOptions:(id)arg1;
@@ -566,6 +572,7 @@
 - (id)_uiib_layoutEngineCreatingIfNecessary;
 - (id)_layoutEngineIfAvailable;
 - (id)_layoutEngineCreateIfNecessary;
+- (void)_initializeLayoutEngineDiscardingOldIfNeeded:(_Bool)arg1;
 - (void)_initializeLayoutEngine;
 - (void)_switchToLayoutEngine:(id)arg1;
 - (void)_constraints_subviewWillChangeSuperview:(id)arg1;

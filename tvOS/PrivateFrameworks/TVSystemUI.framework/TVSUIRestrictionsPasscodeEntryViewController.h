@@ -6,15 +6,11 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <TVSystemUI/TVSUIDigitEntryViewControllerDelegate-Protocol.h>
+@class TVDigitEntryViewController;
 
-@class NSString, TVSUIDigitEntryViewController, UIView;
-
-@interface TVSUIRestrictionsPasscodeEntryViewController : UIViewController <TVSUIDigitEntryViewControllerDelegate>
+@interface TVSUIRestrictionsPasscodeEntryViewController : UIViewController
 {
-    _Bool _wallpaperEnabled;
-    UIView *_wallpaperView;
-    TVSUIDigitEntryViewController *_passcodeEntryViewController;
+    TVDigitEntryViewController *_passcodeEntryViewController;
     UIViewController *_guardedViewController;
     CDUnknownBlockType _completionHandler;
 }
@@ -23,24 +19,17 @@
 + (id)restrictionsPasscodeEntryViewControllerGuarding:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) UIViewController *guardedViewController; // @synthesize guardedViewController=_guardedViewController;
-@property(retain, nonatomic) TVSUIDigitEntryViewController *passcodeEntryViewController; // @synthesize passcodeEntryViewController=_passcodeEntryViewController;
-@property(retain, nonatomic) UIView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
-@property(nonatomic, getter=isWallpaperEnabled) _Bool wallpaperEnabled; // @synthesize wallpaperEnabled=_wallpaperEnabled;
+@property(retain, nonatomic) TVDigitEntryViewController *passcodeEntryViewController; // @synthesize passcodeEntryViewController=_passcodeEntryViewController;
 - (void).cxx_destruct;
-- (void)digitEntryViewControllerDidFinish:(id)arg1;
-- (void)digitEntryViewControllerDidCancel:(id)arg1;
+- (void)_handleFinishedWithResult:(id)arg1;
+- (void)_handleCancelled;
+- (void)setOverrideUserInterfaceStyle:(long long)arg1;
 - (void)shake;
 - (id)preferredFocusEnvironments;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 prompt:(id)arg2 guarding:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithTitle:(id)arg1 prompt:(id)arg2 completion:(CDUnknownBlockType)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

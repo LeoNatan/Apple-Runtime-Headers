@@ -11,6 +11,7 @@
 }
 
 + (_Bool)deviceIsPhone;
++ (_Bool)supportsLEA2;
 + (_Bool)watchSupportsPairingHearingAids;
 + (_Bool)deviceHasHomeButton;
 + (_Bool)deviceIsPod;

@@ -25,6 +25,7 @@
     _Bool _ignoreUppercaseStyle;
     _Bool _paused;
     _Bool _italicized;
+    _Bool _monospacedNumbers;
     _Bool _useMonospacedNumbersForTimeTravel;
     UIColor *_tintColor;
     NSString *_accessibilityLabel;
@@ -42,6 +43,7 @@
 @property(nonatomic) int timeTravelUpdateFrequency; // @synthesize timeTravelUpdateFrequency=_timeTravelUpdateFrequency;
 @property(nonatomic) _Bool useMonospacedNumbersForTimeTravel; // @synthesize useMonospacedNumbersForTimeTravel=_useMonospacedNumbersForTimeTravel;
 @property(nonatomic) int shrinkTextPreference; // @synthesize shrinkTextPreference=_shrinkTextPreference;
+@property(nonatomic) _Bool monospacedNumbers; // @synthesize monospacedNumbers=_monospacedNumbers;
 @property(nonatomic) _Bool italicized; // @synthesize italicized=_italicized;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) _Bool ignoreUppercaseStyle; // @synthesize ignoreUppercaseStyle=_ignoreUppercaseStyle;
@@ -61,6 +63,7 @@
 - (void)_pruneCacheKeysIfNecessary;
 - (id)_cacheForKey:(id)arg1;
 - (id)_defaultCache;
+- (id)_monospacedNumbers:(id)arg1;
 - (id)_italicize:(id)arg1;
 - (id)_localizedTextProviderWithBundle:(id)arg1 forLocalization:(id)arg2;
 - (int)_updateFrequency;

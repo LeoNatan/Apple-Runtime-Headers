@@ -40,7 +40,8 @@
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy) NSString *diagnosticScoresDescription;
-- (void)prepareForInactive;
+- (void)prepareForInvisible;
+- (void)prepareForVisible;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3;
 
 @end

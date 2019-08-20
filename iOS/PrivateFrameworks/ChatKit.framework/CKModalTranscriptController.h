@@ -51,6 +51,7 @@
 - (void)insertRichLinkWithURL:(id)arg1 data:(id)arg2;
 - (_Bool)_insertMediaObject:(id)arg1;
 - (void)_insertMediaObjectAndReturnFrame:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_canShowWhileLocked;
 - (void)setComposition:(id)arg1;
 - (id)initWithNavigationController:(id)arg1;
 

@@ -29,7 +29,7 @@
 @property(copy, nonatomic) NSString *_identifier; // @synthesize _identifier;
 - (void).cxx_destruct;
 - (long long)_nextFailureInterval;
-- (void)_registerXPCActivity;
+@property(readonly, nonatomic) CDUnknownBlockType activityHandlerBlock;
 - (id)_xpcCriteriaForInterval:(long long)arg1;
 - (void)_stopSchedulingActivity:(id)arg1;
 - (void)_rescheduleAfterFailureActivity:(id)arg1;

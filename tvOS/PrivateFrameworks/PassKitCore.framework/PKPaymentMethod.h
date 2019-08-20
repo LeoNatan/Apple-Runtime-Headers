@@ -9,7 +9,7 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSString, PKDisbursementVoucher, PKPaymentPass, PKRemotePaymentInstrument;
+@class CNContact, NSString, PKDisbursementVoucher, PKPaymentPass, PKRemotePaymentInstrument;
 
 @interface PKPaymentMethod : NSObject <NSSecureCoding, NSCopying>
 {
@@ -17,6 +17,7 @@
     NSString *_network;
     unsigned long long _type;
     PKPaymentPass *_paymentPass;
+    CNContact *_billingAddress;
     PKRemotePaymentInstrument *_remoteInstrument;
     NSString *_peerPaymentQuoteIdentifier;
     PKDisbursementVoucher *_disbursementVoucher;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) PKDisbursementVoucher *disbursementVoucher; // @synthesize disbursementVoucher=_disbursementVoucher;
 @property(copy, nonatomic) NSString *peerPaymentQuoteIdentifier; // @synthesize peerPaymentQuoteIdentifier=_peerPaymentQuoteIdentifier;
 @property(retain, nonatomic) PKRemotePaymentInstrument *remoteInstrument; // @synthesize remoteInstrument=_remoteInstrument;
+@property(copy, nonatomic) CNContact *billingAddress; // @synthesize billingAddress=_billingAddress;
 @property(copy, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *network; // @synthesize network=_network;

@@ -25,6 +25,7 @@
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
 - (void)modelValueDidChange;
 - (void)updateMainStatusStringWithValue:(id)arg1;
+- (void)invalidateViewProfile;
 - (void)interactionCoordinator:(id)arg1 viewValueDidChange:(id)arg2;
 - (id)controlToViewValueTransformer;
 - (id)createViewProfile;

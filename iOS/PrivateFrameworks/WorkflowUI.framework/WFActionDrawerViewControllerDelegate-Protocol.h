@@ -11,7 +11,6 @@
 @protocol WFActionDrawerViewControllerDelegate <NSObject>
 - (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectSection:(WFActionDrawerSection *)arg2;
 - (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
-- (void)actionDrawerViewController:(WFActionDrawerViewController *)arg1 didSelectCategoryForAppWithBundleIdentifier:(NSString *)arg2 shouldLoadSuggestions:(_Bool)arg3;
 - (void)actionDrawerViewControllerDidSelectCategoryScripting:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryFavorites:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryApps:(WFActionDrawerViewController *)arg1 title:(NSString *)arg2;

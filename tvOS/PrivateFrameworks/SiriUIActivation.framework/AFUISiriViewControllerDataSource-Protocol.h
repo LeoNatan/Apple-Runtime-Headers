@@ -13,5 +13,9 @@
 - (unsigned long long)lockStateForSiriViewController:(AFUISiriViewController *)arg1;
 - (AFBulletin *)siriViewController:(AFUISiriViewController *)arg1 bulletinWithIdentifier:(NSString *)arg2;
 - (NSArray *)bulletinsForSiriViewController:(AFUISiriViewController *)arg1;
+
+@optional
+- (NSArray *)currentCarPlaySupportedOEMAppsForSiriViewController:(AFUISiriViewController *)arg1;
+- (NSArray *)starkAppBundleIdentifierContextForSiriViewController:(AFUISiriViewController *)arg1;
 @end
 

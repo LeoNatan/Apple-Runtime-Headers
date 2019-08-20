@@ -18,7 +18,7 @@
     WFActionDrawerCategoriesCollectionViewManager *_categoriesCollectionViewManager;
 }
 
-+ (double)preferredHeight;
++ (double)preferredHeightForContentTypeCategories:(id)arg1;
 @property(retain, nonatomic) WFActionDrawerCategoriesCollectionViewManager *categoriesCollectionViewManager; // @synthesize categoriesCollectionViewManager=_categoriesCollectionViewManager;
 @property(nonatomic) __weak UICollectionView *categoriesCollectionView; // @synthesize categoriesCollectionView=_categoriesCollectionView;
 @property(nonatomic) __weak id <WFActionDrawerCategoriesTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;

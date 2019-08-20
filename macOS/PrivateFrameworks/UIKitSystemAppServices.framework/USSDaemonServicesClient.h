@@ -6,19 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSXPCConnection;
-
 @interface USSDaemonServicesClient : NSObject
 {
-    NSString *_name;
-    NSXPCConnection *_connection;
     CDUnknownBlockType _disconnectionHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType disconnectionHandler; // @synthesize disconnectionHandler=_disconnectionHandler;
 - (void).cxx_destruct;
 - (void)sendPushNotificationRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)_serverProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)connect;
 @property(readonly, nonatomic, getter=isConnected) BOOL connected;
 - (id)initWithDaemonName:(id)arg1;

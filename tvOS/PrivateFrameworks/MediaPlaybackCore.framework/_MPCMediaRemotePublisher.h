@@ -15,7 +15,8 @@
 {
     MPLibraryAddStatusObserver *_libraryAddStatusObserver;
     NSString *_lastContextID;
-    _Bool _isLastKnownSubscriptionStatusTypeEnabled;
+    _Bool _allowsSubscriptionPlayback;
+    _Bool _isSubscriptionEnabled;
     NSString *_hashedDSID;
     _Bool _initializedSupportedCommands;
     _Bool _engineRestoringState;
@@ -32,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)_performCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateSupportedCommands;
+- (_Bool)_playbackStateIsIdle:(long long)arg1;
 - (void)_updateSubscriptionStatus;
 - (void)_updateLaunchCommands;
 - (id)_supportedSessionTypes;

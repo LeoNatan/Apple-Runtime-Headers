@@ -9,6 +9,7 @@
 @interface _TtC19HealthVisualization23AggregateChangeDetector : NSObject
 {
     // Error parsing type: , name: healthStore
+    // Error parsing type: , name: includeChangeDetails
     // Error parsing type: , name: name
     // Error parsing type: , name: deliveryQueue
     // Error parsing type: , name: changesHandler

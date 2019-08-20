@@ -25,9 +25,11 @@
     NSObject<OS_dispatch_queue> *_userDefaultsMutationQueue;
     NSNumber *_currentPrivateListeningEnabledValue;
     NSObject<OS_dispatch_queue> *_loadValuesQueue;
+    NSNumber *_devicePrivateListeningEnabled;
 }
 
 + (id)standardUserDefaults;
+@property(copy, nonatomic, getter=isDevicePrivateListeningEnabled) NSNumber *devicePrivateListeningEnabled; // @synthesize devicePrivateListeningEnabled=_devicePrivateListeningEnabled;
 @property(readonly, nonatomic) int musicEQPreset; // @synthesize musicEQPreset=_musicEQPreset;
 - (id).cxx_construct;
 - (void).cxx_destruct;

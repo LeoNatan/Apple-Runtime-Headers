@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
 - (void).cxx_destruct;
 - (id)interactionEventsForTypes:(id)arg1 error:(id *)arg2;
+- (id)batchFetchedPhotoSuggestionsForInteractions:(id)arg1;
 - (id)init;
 - (id)initWithInteractionStore:(id)arg1;
 

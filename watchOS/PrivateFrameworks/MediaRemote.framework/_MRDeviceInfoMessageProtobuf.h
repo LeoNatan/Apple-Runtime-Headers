@@ -23,6 +23,7 @@
     NSString *_groupUID;
     NSMutableArray *_groupedDevices;
     unsigned int _lastSupportedMessageType;
+    NSString *_linkAgent;
     NSString *_localizedModelName;
     unsigned int _logicalDeviceCount;
     NSString *_managedConfigDeviceID;
@@ -65,6 +66,7 @@
 
 + (Class)airplayReceiversType;
 + (Class)groupedDevicesType;
+@property(retain, nonatomic) NSString *linkAgent; // @synthesize linkAgent=_linkAgent;
 @property(retain, nonatomic) NSMutableArray *airplayReceivers; // @synthesize airplayReceivers=_airplayReceivers;
 @property(retain, nonatomic) NSString *senderDefaultGroupUID; // @synthesize senderDefaultGroupUID=_senderDefaultGroupUID;
 @property(retain, nonatomic) NSString *systemPodcastApplication; // @synthesize systemPodcastApplication=_systemPodcastApplication;
@@ -106,6 +108,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasLinkAgent;
 - (id)airplayReceiversAtIndex:(unsigned int)arg1;
 - (unsigned int)airplayReceiversCount;
 - (void)addAirplayReceivers:(id)arg1;

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CWInterface, CWWiFiClient, CWWiFiUIProxyClient, NSMenu, NSString, NSUUID, NSWindow, NSWindowController;
-@protocol AirPortPrefs;
+@protocol AirPortPrefs, OS_dispatch_queue;
 
 @interface AirPortScanController : NSObject
 {
@@ -21,6 +21,7 @@
     BOOL _menuWillBeShownInPopUp;
     NSWindowController *_currentDialog;
     NSWindow *_window;
+    NSObject<OS_dispatch_queue> *_updateQueue;
     BOOL _includePasspoint;
     unsigned long long _menuScanCounter;
 }
@@ -69,8 +70,8 @@
 - (id)scanMenu;
 - (void)menuDidClose:(id)arg1;
 - (id)__menuWithScan:(BOOL)arg1;
+- (void)__updateMenu;
 @property(readonly) NSWindow *window; // @dynamic window;
-- (void)updateMenu;
 - (id)localizedStringForKey:(id)arg1;
 @property(readonly) CWInterface *interface;
 - (void)dealloc;

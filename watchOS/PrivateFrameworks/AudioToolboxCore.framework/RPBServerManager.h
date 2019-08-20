@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *mIDToRPBHost;
     int mNotifyToken;
     _Bool mValidToken;
+    _Bool mConnectionAcknowledged;
 }
 
 + (id)sharedInstance;

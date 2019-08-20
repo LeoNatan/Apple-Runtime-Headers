@@ -10,6 +10,7 @@
 
 @interface NTKBaseAlarmComplicationDataSource : NTKComplicationDataSource
 {
+    _Bool _listeningForNotifications;
     MTAlarmManager *_alarmManager;
     NTKTimelineEntryModel *_currentAlarmModel;
     NTKNextAlarm *_nextAlarm;

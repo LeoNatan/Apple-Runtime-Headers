@@ -29,6 +29,7 @@
     _Bool _automaticPlaybackStop;
     _Bool _shouldPlayAfterAppBecomesActive;
     _Bool _didWeCreatePlayer;
+    _Bool _observingPictureInPictureActive;
     NSObject<TVPAVFPlayback> *_player;
     AVPlayerViewController *_avPlayerViewController;
     TVMediaInfo *_mediaInfo;
@@ -53,9 +54,12 @@
     unsigned long long _vpafPlaybackStartReason;
     unsigned long long _vpafPlaybackStopReason;
     NSString *_titleForLogging;
+    unsigned long long _deactivationReasons;
 }
 
+@property(nonatomic) unsigned long long deactivationReasons; // @synthesize deactivationReasons=_deactivationReasons;
 @property(copy, nonatomic) NSString *titleForLogging; // @synthesize titleForLogging=_titleForLogging;
+@property(nonatomic) _Bool observingPictureInPictureActive; // @synthesize observingPictureInPictureActive=_observingPictureInPictureActive;
 @property(nonatomic) _Bool didWeCreatePlayer; // @synthesize didWeCreatePlayer=_didWeCreatePlayer;
 @property(nonatomic) _Bool shouldPlayAfterAppBecomesActive; // @synthesize shouldPlayAfterAppBecomesActive=_shouldPlayAfterAppBecomesActive;
 @property(nonatomic) unsigned long long vpafPlaybackStopReason; // @synthesize vpafPlaybackStopReason=_vpafPlaybackStopReason;
@@ -108,6 +112,7 @@
 - (struct CGRect)_playbackContainerViewFrame:(_Bool)arg1 hasSecondaryVideoView:(_Bool)arg2;
 - (_Bool)_shouldIgnorePlaybackStop;
 @property(readonly, nonatomic, getter=isBackgrounded) _Bool backgrounded;
+- (void)_updatePlayerMuteStateWithReason:(id)arg1;
 - (void)_mediaControllerStartedPlayback:(id)arg1;
 - (void)_handlePlaybackErrorNotification:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
@@ -126,6 +131,9 @@
 - (_Bool)_canPause;
 - (void)_unregisterPlayerNotifications;
 - (void)_registerPlayerNotifications;
+- (void)_applicationDidRemoveDeactivationReason:(id)arg1;
+- (void)_applicationWillAddDeactivationReason:(id)arg1;
+- (_Bool)_shouldPausePlaybackDueToDeactivationReasons;
 - (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
 - (void)_handleApplicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_handleApplicationWillResignActiveNotification:(id)arg1;

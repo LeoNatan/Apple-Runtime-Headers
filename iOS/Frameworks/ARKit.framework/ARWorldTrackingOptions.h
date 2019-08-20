@@ -8,10 +8,12 @@
 
 #import <ARKit/NSCopying-Protocol.h>
 
-@class ARImageSensorSettings, ARWorldMap, NSDictionary, NSString;
+@class ARImageSensorSettings, ARWorldMap, NSDictionary, NSMutableDictionary, NSString;
+@protocol OS_dispatch_semaphore;
 
 @interface ARWorldTrackingOptions : NSObject <NSCopying>
 {
+    NSObject<OS_dispatch_semaphore> *_activeVideoFormatsSemaphore;
     _Bool _relocalizationEnabled;
     _Bool _deterministicMode;
     _Bool _mlModelEnabled;
@@ -23,8 +25,10 @@
     NSString *_slamConfiguration;
     unsigned long long _planeDetection;
     double _minVergenceAngle;
+    NSMutableDictionary *_activeVideoFormatsMap;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *activeVideoFormatsMap; // @synthesize activeVideoFormatsMap=_activeVideoFormatsMap;
 @property(nonatomic, getter=isCollaborationEnabled) _Bool collaborationEnabled; // @synthesize collaborationEnabled=_collaborationEnabled;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
 @property(nonatomic) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
@@ -41,6 +45,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionary;
 - (unsigned int)cameraIdForCaptureDeviceType:(id)arg1;
+- (void)updateCameraMap;
 - (id)initWithImageSensorSettings:(id)arg1;
 - (id)init;
 

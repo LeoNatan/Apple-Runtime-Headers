@@ -45,6 +45,8 @@ __attribute__((visibility("hidden")))
 - (void)actionsModel:(id)arg1 didAssignToContact:(id)arg2 atIndexPath:(id)arg3;
 - (void)performDuplicateTransitionToItem:(id)arg1 fromView:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)performDeleteTransitionToItem:(id)arg1;
+- (double)deleteMoveInDelay;
+- (double)deleteMoveInDuration;
 - (double)duplicateScaleDelay;
 - (double)duplicateScaleDuration;
 - (void)updateActionsModelWithProviderItem:(id)arg1;

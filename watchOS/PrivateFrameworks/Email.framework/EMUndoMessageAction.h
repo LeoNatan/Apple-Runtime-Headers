@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (int)signpostType;
 - (id)initWithIndividualActions:(id)arg1;
 
 @end

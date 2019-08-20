@@ -81,7 +81,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)_setIdleTimerDisabled:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

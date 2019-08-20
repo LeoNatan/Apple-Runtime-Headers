@@ -9,13 +9,13 @@
 #import <UIKitCore/UINSTouchBarCoordinator-Protocol.h>
 #import <UIKitCore/_UISceneComponentProviding-Protocol.h>
 
-@class NSArray, NSMutableOrderedSet, NSString, UIScene;
+@class NSArray, NSMutableOrderedSet, NSString, UIScene, UIWindowScene;
 @protocol UINSWindow;
 
 __attribute__((visibility("hidden")))
 @interface _UIWindowSceneTouchBarCoordinator : NSObject <UINSTouchBarCoordinator, _UISceneComponentProviding>
 {
-    UIScene *_scene;
+    UIWindowScene *_scene;
     id <UINSWindow> _hostWindow;
     NSMutableOrderedSet *_defaultProviders;
     NSArray *_activeTouchBars;

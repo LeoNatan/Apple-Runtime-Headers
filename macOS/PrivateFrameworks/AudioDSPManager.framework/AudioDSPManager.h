@@ -9,7 +9,7 @@
 #import <AudioDSPManager/NSSecureCoding-Protocol.h>
 #import <AudioDSPManager/dspd_DSPDelegate-Protocol.h>
 
-@class ADMNotificationManager, ConfigurationChangeRequestParser, ConfigurationChangeRequestTransaction, DatabaseController, GraphManager, NSString, SystemStateManager, VolumeManager;
+@class ADMNotificationManager, ConfigurationChangeRequestParser, ConfigurationChangeRequestTransaction, DSPModuleFactory, DatabaseController, GraphManager, NSString, SystemStateManager, VolumeManager;
 
 __attribute__((visibility("hidden")))
 @interface AudioDSPManager : NSObject <dspd_DSPDelegate, NSSecureCoding>
@@ -22,9 +22,11 @@ __attribute__((visibility("hidden")))
     ADMNotificationManager *_notificationManager;
     ConfigurationChangeRequestParser *_configChangeRequestParser;
     ConfigurationChangeRequestTransaction *_pendingConfigRequestTransaction;
+    DSPModuleFactory *_dspModuleFactory;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) DSPModuleFactory *dspModuleFactory; // @synthesize dspModuleFactory=_dspModuleFactory;
 @property(readonly, nonatomic) ConfigurationChangeRequestTransaction *pendingConfigRequestTransaction; // @synthesize pendingConfigRequestTransaction=_pendingConfigRequestTransaction;
 @property(readonly, nonatomic) ConfigurationChangeRequestParser *configChangeRequestParser; // @synthesize configChangeRequestParser=_configChangeRequestParser;
 @property(readonly, nonatomic) ADMNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;

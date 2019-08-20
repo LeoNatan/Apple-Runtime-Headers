@@ -54,6 +54,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithType:(int)arg1;
+- (void)setOptimizerLearningRate:(id)arg1 learningRate:(float)arg2;
 - (void)convertUpdatesToTensorDataForLayer:(id)arg1;
 - (void)synchronizeUpdatesForLayer:(id)arg1;
 - (void)updateFullyConnectedLayer:(id)arg1 optimizer:(id)arg2;
@@ -93,16 +94,16 @@
 - (id)lossYOLOLayerWithDescriptor:(id)arg1;
 - (id)lossLayerWithDescriptor:(id)arg1;
 - (id)imageReshapeWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 alignCorners:(BOOL)arg3;
-- (id)fusedFullyConnectedBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 varianceEpsilon:(float)arg6 neuronDescriptor:(id)arg7 weights:(id)arg8 biasTerms:(id)arg9;
+- (id)fusedFullyConnectedBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 varianceEpsilon:(float)arg6 momentum:(float)arg7 neuronDescriptor:(id)arg8 weights:(id)arg9 biasTerms:(id)arg10;
 - (id)fusedFullyConnectedAndNeuronLayerWithDescriptor:(id)arg1 convolutionDescriptor:(id)arg2 weights:(id)arg3 biasTerms:(id)arg4;
 - (id)fullyConnectedLayerWithDescriptor:(id)arg1 weights:(id)arg2 biasTerms:(id)arg3;
 - (id)dropoutLayerWithRate:(float)arg1 seed:(unsigned long long)arg2;
 - (id)convolutionTransposeLayerWithDescriptor:(id)arg1 weights:(id)arg2;
-- (id)fusedConvolutionBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 varianceEpsilon:(float)arg6 neuronDescriptor:(id)arg7 weights:(id)arg8 biasTerms:(id)arg9;
+- (id)fusedConvolutionBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 varianceEpsilon:(float)arg6 momentum:(float)arg7 neuronDescriptor:(id)arg8 weights:(id)arg9 biasTerms:(id)arg10;
 - (id)fusedConvolutionAndNeuronLayerWithDescriptor:(id)arg1 convolutionDescriptor:(id)arg2 weights:(id)arg3 biasTerms:(id)arg4;
 - (id)convolutionLayerWithDescriptor:(id)arg1 weights:(id)arg2 biasTerms:(id)arg3;
-- (id)fusedBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 numOfFeatureChannels:(unsigned long long)arg2 mean:(id)arg3 variance:(id)arg4 beta:(id)arg5 gamma:(id)arg6 variance_epsilon:(float)arg7;
-- (id)batchNormalizationLayeWithChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6;
+- (id)fusedBatchNormalizationAndNeuronLayerWithDescriptor:(id)arg1 numOfFeatureChannels:(unsigned long long)arg2 mean:(id)arg3 variance:(id)arg4 beta:(id)arg5 gamma:(id)arg6 variance_epsilon:(float)arg7 momentum:(float)arg8;
+- (id)batchNormalizationLayerWithChannelCount:(unsigned long long)arg1 mean:(id)arg2 variance:(id)arg3 beta:(id)arg4 gamma:(id)arg5 variance_epsilon:(float)arg6 momentum:(float)arg7;
 - (id)arithmeticLayerWithOperation:(int)arg1;
 
 // Remaining properties

@@ -14,39 +14,44 @@
 @interface SBRingerHUDViewController : UIViewController <UIViewControllerTransitioningDelegate>
 {
     _Bool _ringerSilent;
-    float _rawVolume;
+    _Bool _lastEventIsAVolumeChange;
+    float _volume;
     id <SBRingerHUDViewControllerDelegate> _delegate;
     SBRingerPillView *_pillView;
     UIViewFloatAnimatableProperty *_positionSpring;
     UIViewFloatAnimatableProperty *_ringerValueSpring;
     NSTimer *_dismissalTimer;
+    double _overshoot;
 }
 
+@property(nonatomic) double overshoot; // @synthesize overshoot=_overshoot;
+@property(nonatomic) _Bool lastEventIsAVolumeChange; // @synthesize lastEventIsAVolumeChange=_lastEventIsAVolumeChange;
 @property(retain, nonatomic) NSTimer *dismissalTimer; // @synthesize dismissalTimer=_dismissalTimer;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *ringerValueSpring; // @synthesize ringerValueSpring=_ringerValueSpring;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *positionSpring; // @synthesize positionSpring=_positionSpring;
 @property(retain, nonatomic) SBRingerPillView *pillView; // @synthesize pillView=_pillView;
-@property(nonatomic) float rawVolume; // @synthesize rawVolume=_rawVolume;
+@property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(nonatomic) __weak id <SBRingerHUDViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool ringerSilent; // @synthesize ringerSilent=_ringerSilent;
 - (void).cxx_destruct;
 - (void)_extendDismissalTimer;
 @property(readonly, nonatomic, getter=isPresented) _Bool presented;
 - (void)_dismiss;
-- (void)present;
+- (void)presentForMuteSwitch:(_Bool)arg1;
 - (void)_setPositionSpringValue:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_createSprings;
 - (void)_updateStateAnimated:(_Bool)arg1 invert:(_Bool)arg2;
 - (void)swipeGesture:(id)arg1;
 - (void)_updateVolumeSliderAnimated:(_Bool)arg1;
 - (void)_layoutPillView;
-- (void)setRawVolume:(float)arg1 animated:(_Bool)arg2;
+- (void)setVolume:(float)arg1 animated:(_Bool)arg2 forKeyPress:(_Bool)arg3;
 - (void)refreshAudioUI;
 - (void)noteVolumeDidChange:(float)arg1;
 - (void)noteVolumeDownWasHit:(_Bool)arg1;
+- (void)buttonReleased;
+- (void)nudgeUp:(_Bool)arg1;
 - (void)noteVolumeUpWasHit:(_Bool)arg1;
 - (_Bool)_canShowWhileLocked;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

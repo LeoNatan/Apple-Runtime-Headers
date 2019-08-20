@@ -10,6 +10,9 @@
 {
 }
 
++ (_Bool)_generatePosterFrameExportForVideoURL:(id)arg1 imageDestinationToAddToAndFinalize:(struct CGImageDestination *)arg2 maximumSize:(struct CGSize)arg3 error:(id *)arg4;
++ (_Bool)generatePosterFrameExportForVideoURL:(id)arg1 outputData:(id *)arg2 maximumSize:(struct CGSize)arg3 error:(id *)arg4;
++ (_Bool)generatePosterFrameExportForVideoURL:(id)arg1 destinationURL:(id)arg2 maximumSize:(struct CGSize)arg3 error:(id *)arg4;
 + (id)imagePropertiesForFileAtURL:(id)arg1;
 + (id)imageDataForPassthroughConversionForSourceURL:(id)arg1 metadataPolicy:(id)arg2 outResultImageSize:(struct CGSize *)arg3;
 

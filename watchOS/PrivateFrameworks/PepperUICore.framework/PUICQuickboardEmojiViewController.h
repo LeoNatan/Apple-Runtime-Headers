@@ -50,6 +50,7 @@
 - (void)_pushNewAnimojiStickerPackViewControllerForIdentifier:(id)arg1;
 - (void)animojiView:(id)arg1 didSelectSticker:(id)arg2 preview:(id)arg3;
 - (void)animojiView:(id)arg1 didSelectStickerPack:(id)arg2;
+- (void)didCancelRecentEmojiView:(id)arg1;
 - (void)recentEmojiView:(id)arg1 didSelectSticker:(id)arg2 preview:(id)arg3;
 - (void)recentEmojiView:(id)arg1 didSelectEmojiString:(id)arg2;
 - (void)recentEmojiView:(id)arg1 didSelectEmojiCategory:(id)arg2;

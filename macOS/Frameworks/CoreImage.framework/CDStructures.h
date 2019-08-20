@@ -286,10 +286,7 @@ typedef struct {
     double _field1[4];
     double _field2[2];
     unsigned int _field3;
-    double *_field4;
-    double *_field5;
-    double *_field6;
-} CDStruct_bae50541;
+} CDStruct_8b8affab;
 
 typedef struct {
     float _field1[4];

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: invalidator
     // Error parsing type: , name: scrollView
+    // Error parsing type: , name: delegate
 }
 
 @end

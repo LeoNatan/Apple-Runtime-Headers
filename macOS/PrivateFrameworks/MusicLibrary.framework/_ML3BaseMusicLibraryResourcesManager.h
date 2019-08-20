@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)_pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(char *)arg4;
 - (id)_controlDirectoryPathWithBasePath:(id)arg1;
 - (id)_libraryContainerPathForDSID:(id)arg1;
+- (BOOL)_mediaResourceRequiresLibraryContainerAccess:(int)arg1;
 - (id)pathForBaseLocationPath:(long long)arg1;
 - (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 createParentFolderIfNecessary:(BOOL)arg4;
 - (id)pathForResourceFileOrFolder:(int)arg1;

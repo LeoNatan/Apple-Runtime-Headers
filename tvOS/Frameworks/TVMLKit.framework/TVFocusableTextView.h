@@ -24,6 +24,7 @@
     _Bool _needsTextSizeComputation;
     UIColor *_descriptionTextColor;
     UIColor *_descriptionTextHighlightColor;
+    long long _descriptionTextAlignment;
     UIColor *_highlightBackgroundColor;
     double _moreHighlightPadding;
     UIColor *_moreLabelTextColor;
@@ -62,6 +63,7 @@
 @property(nonatomic) double moreHighlightPadding; // @synthesize moreHighlightPadding=_moreHighlightPadding;
 @property(readonly, nonatomic, getter=isTextTruncating) _Bool textTruncating; // @synthesize textTruncating=_textTruncating;
 @property(retain, nonatomic) UIColor *highlightBackgroundColor; // @synthesize highlightBackgroundColor=_highlightBackgroundColor;
+@property(nonatomic) long long descriptionTextAlignment; // @synthesize descriptionTextAlignment=_descriptionTextAlignment;
 @property(retain, nonatomic) UIColor *descriptionTextHighlightColor; // @synthesize descriptionTextHighlightColor=_descriptionTextHighlightColor;
 @property(retain, nonatomic) UIColor *descriptionTextColor; // @synthesize descriptionTextColor=_descriptionTextColor;
 - (void).cxx_destruct;

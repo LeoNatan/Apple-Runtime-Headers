@@ -21,10 +21,10 @@
     NSMutableDictionary *_lastSavedOrFetchedValues;
 }
 
-+ (void)setValueFromProperty:(id)arg1 of:(id)arg2 toProperty:(id)arg3 of:(id)arg4 assignIfReadOnly:(_Bool)arg5;
 + (Class)allocateLeafClassForRecordClass:(Class)arg1 named:(id)arg2;
 + (id)propertiesForClass:(Class)arg1;
 + (id)propertiesForClass:(Class)arg1 walkingSuperclassesUntilReaching:(Class)arg2;
++ (id)ignoredPropertyNames;
 + (id)defaultPropertyValues;
 @property(readonly, nonatomic) NSMutableDictionary *lastSavedOrFetchedValues; // @synthesize lastSavedOrFetchedValues=_lastSavedOrFetchedValues;
 @property(readonly, nonatomic) NSMutableSet *modifiedPropertyNamesSinceLastSave; // @synthesize modifiedPropertyNamesSinceLastSave=_modifiedPropertyNamesSinceLastSave;

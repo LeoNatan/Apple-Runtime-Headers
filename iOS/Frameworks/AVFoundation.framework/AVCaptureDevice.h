@@ -48,6 +48,7 @@
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
 - (_Bool)isHEVCMemoryUsageMinimizationSupported;
+- (_Bool)hevcAllowBFramesForHighCTUCountAndHighResolution;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -79,7 +80,6 @@
 - (_Bool)isCameraIntrinsicMatrixDeliverySupported;
 - (_Bool)isVideoStabilizationSupported;
 - (_Bool)isAutoRedEyeReductionSupported;
-- (_Bool)isHDRSupported;
 - (id)cameraPoseMatrix;
 - (double)maxAvailableVideoZoomFactor;
 - (double)minAvailableVideoZoomFactor;
@@ -119,6 +119,8 @@
 - (void)setWhiteBalanceMode:(long long)arg1;
 - (long long)whiteBalanceMode;
 - (_Bool)isWhiteBalanceModeSupported:(long long)arg1;
+- (void)setGlobalToneMappingEnabled:(_Bool)arg1;
+- (_Bool)isGlobalToneMappingEnabled;
 - (_Bool)isAdjustingExposure;
 - (void)setExposureTargetBias:(float)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (float)maxExposureTargetBias;

@@ -51,6 +51,7 @@
 + (Class)layoutAttributesClass;
 @property(nonatomic, getter=_sublayoutType, setter=_setSublayoutType:) int sublayoutType; // @synthesize sublayoutType=_sublayoutType;
 - (void).cxx_destruct;
+- (id)_orthogonalScrollingTrace;
 - (_Bool)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
 - (struct CGRect)_orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(id)arg1 frame:(struct CGRect)arg2;
 - (_Bool)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;

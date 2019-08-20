@@ -28,6 +28,7 @@
 - (void)_resourceURLReceivedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;
+- (void)abortClientSide;
 - (void)runDaemonSide;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;

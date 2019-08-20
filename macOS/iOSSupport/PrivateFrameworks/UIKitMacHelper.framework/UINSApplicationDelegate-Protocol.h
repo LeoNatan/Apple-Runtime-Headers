@@ -26,6 +26,7 @@
 - (void)didCreateSceneWithSceneIdentifier:(NSString *)arg1 persistentIdentifier:(NSString *)arg2;
 - (id <UINSUserInterfaceTheme>)aquaTheme;
 - (id <UINSWindow>)hostWindowForSceneIdentifier:(NSString *)arg1;
+- (id <UINSWindow>)_hostWindowForUIWindow:(id)arg1;
 - (id <UINSWindow>)hostWindowForUIWindow:(id)arg1;
 - (void)didReceiveLaunchActions;
 @end

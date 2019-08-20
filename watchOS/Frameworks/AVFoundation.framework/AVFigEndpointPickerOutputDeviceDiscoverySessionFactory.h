@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)initialize;
 - (id)outputDeviceDiscoverySessionOfClass:(Class)arg1 withDeviceFeatures:(unsigned int)arg2;
 
 // Remaining properties

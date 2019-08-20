@@ -9,7 +9,7 @@
 #import <GeoServices/GEOPListStateCapturing-Protocol.h>
 #import <GeoServices/_GEONetworkDefaultsServerProxy-Protocol.h>
 
-@class NSMutableArray, NSString, NSURLSession, geo_isolater;
+@class NSMutableArray, NSString, geo_isolater;
 @protocol _GEONetworkDefaultsServerProxyDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     id <_GEONetworkDefaultsServerProxyDelegate> _delegate;
     geo_isolater *_isolation;
     NSMutableArray *_updateCompletionHandlers;
-    NSURLSession *_session;
     unsigned long long _stateCaptureHandle;
 }
 
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (void)_processNetworkDefaultsResponse:(id)arg1 data:(id)arg2 error:(id)arg3 request:(id)arg4;
 - (id)_urlRequestForNetworkDefaults;
 - (void)updateNetworkDefaults:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

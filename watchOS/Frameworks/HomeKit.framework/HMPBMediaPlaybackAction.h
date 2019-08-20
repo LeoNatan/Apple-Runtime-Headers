@@ -13,13 +13,11 @@
 @interface HMPBMediaPlaybackAction : PBCodable <NSCopying>
 {
     NSData *_actionUUID;
-    int _mediaPlaybackOptions;
     int _mediaPlaybackState;
     NSMutableArray *_mediaProfiles;
     NSData *_playbackArchive;
     NSData *_volume;
     struct {
-        unsigned int mediaPlaybackOptions:1;
         unsigned int mediaPlaybackState:1;
     } _has;
 }
@@ -27,7 +25,6 @@
 + (Class)mediaProfilesType;
 @property(retain, nonatomic) NSData *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSData *volume; // @synthesize volume=_volume;
-@property(nonatomic) int mediaPlaybackOptions; // @synthesize mediaPlaybackOptions=_mediaPlaybackOptions;
 @property(nonatomic) int mediaPlaybackState; // @synthesize mediaPlaybackState=_mediaPlaybackState;
 @property(retain, nonatomic) NSMutableArray *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
 @property(retain, nonatomic) NSData *actionUUID; // @synthesize actionUUID=_actionUUID;
@@ -43,7 +40,6 @@
 - (id)description;
 @property(readonly, nonatomic) _Bool hasPlaybackArchive;
 @property(readonly, nonatomic) _Bool hasVolume;
-@property(nonatomic) _Bool hasMediaPlaybackOptions;
 @property(nonatomic) _Bool hasMediaPlaybackState;
 - (id)mediaProfilesAtIndex:(unsigned int)arg1;
 - (unsigned int)mediaProfilesCount;

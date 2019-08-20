@@ -22,7 +22,7 @@
     BOOL _usingCPU;
     _Bool _isEspresoBiasPreprocessingShared;
     _Bool _hasBidirectionalLayer;
-    _Bool _has1DConvOptional;
+    _Bool _hasOptionalInputSequenceConcat;
     BOOL _isGPUPathForbidden;
     BOOL _isANEPathForbidden;
     int _precision;
@@ -79,7 +79,7 @@
 @property(retain) NSObject<OS_dispatch_queue> *predictionsQueue; // @synthesize predictionsQueue=_predictionsQueue;
 @property(retain) NSObject<OS_dispatch_queue> *espressoQueue; // @synthesize espressoQueue=_espressoQueue;
 @property(retain) NSObject<OS_dispatch_semaphore> *bufferSemaphore; // @synthesize bufferSemaphore=_bufferSemaphore;
-@property(nonatomic) _Bool has1DConvOptional; // @synthesize has1DConvOptional=_has1DConvOptional;
+@property(nonatomic) _Bool hasOptionalInputSequenceConcat; // @synthesize hasOptionalInputSequenceConcat=_hasOptionalInputSequenceConcat;
 @property(nonatomic) _Bool hasBidirectionalLayer; // @synthesize hasBidirectionalLayer=_hasBidirectionalLayer;
 @property(nonatomic) map_7c549560 optionalInputTypes; // @synthesize optionalInputTypes=_optionalInputTypes;
 @property(retain, nonatomic) NSString *modelFilePath; // @synthesize modelFilePath=_modelFilePath;
@@ -114,6 +114,7 @@
 @property(retain, nonatomic) NSArray *classLabels; // @synthesize classLabels=_classLabels;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (void)dumpTestVectorsToPath:(id)arg1;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
@@ -156,7 +157,7 @@
 @property(readonly) unsigned long long hash;
 @property(readonly) MLModelInterface *interface;
 @property(readonly) MLModelMetadata *metadata;
-@property(readonly, nonatomic) MLModelDescription *modelDescription;
+@property(retain, nonatomic) MLModelDescription *modelDescription;
 @property(readonly) Class superclass;
 
 @end

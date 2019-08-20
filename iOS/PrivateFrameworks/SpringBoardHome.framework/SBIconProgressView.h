@@ -30,6 +30,7 @@
     double _pauseRadiusFraction;
     long long _displayedState;
     double _displayedFraction;
+    struct SBIconImageInfo _iconImageInfo;
 }
 
 + (id)_pieImageAtFraction:(double)arg1;
@@ -44,6 +45,7 @@
 @property(nonatomic) double circleRadiusFraction; // @synthesize circleRadiusFraction=_circleRadiusFraction;
 @property(nonatomic) double foregroundAlpha; // @synthesize foregroundAlpha=_foregroundAlpha;
 @property(nonatomic) double backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
+@property(nonatomic) struct SBIconImageInfo iconImageInfo; // @synthesize iconImageInfo=_iconImageInfo;
 @property(nonatomic) _Bool canAnimate; // @synthesize canAnimate=_canAnimate;
 @property(retain, nonatomic) UIImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(nonatomic) __weak id <SBIconProgressViewDelegate> delegate; // @synthesize delegate=_delegate;

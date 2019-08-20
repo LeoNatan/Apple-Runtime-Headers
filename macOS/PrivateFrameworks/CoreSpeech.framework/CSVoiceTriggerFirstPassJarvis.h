@@ -38,11 +38,13 @@
     CSVoiceTriggerRTModel *_rtModel;
     CSPlainAudioFileWriter *_audioFileWriter;
     CSVoiceTriggerSecondPass *_voiceTriggerSecondPass;
+    unsigned long long _secondChanceHotTillMachTime;
 }
 
 + (id)timeStampString;
 + (id)jarvisAudioLogDirectory;
 + (id)jarvisAudioLoggingFilePath;
+@property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(nonatomic) BOOL isSiriClientListening; // @synthesize isSiriClientListening=_isSiriClientListening;
 @property(nonatomic) BOOL isSecondPassRunning; // @synthesize isSecondPassRunning=_isSecondPassRunning;
 @property(retain, nonatomic) CSVoiceTriggerSecondPass *voiceTriggerSecondPass; // @synthesize voiceTriggerSecondPass=_voiceTriggerSecondPass;
@@ -73,7 +75,7 @@
 - (void)_holdAudioStreamWithTimeout:(double)arg1;
 - (void)_teardownSecondPass;
 - (void)_createSecondPassIfNeeded;
-- (void)_handleSecondPassResult:(unsigned long long)arg1 deviceId:(id)arg2 voiceTriggerInfo:(id)arg3 error:(id)arg4;
+- (void)_handleSecondPassResult:(unsigned long long)arg1 deviceId:(id)arg2 voiceTriggerInfo:(id)arg3 secondChanceCandidate:(BOOL)arg4 error:(id)arg5;
 - (void)_reportJarvisVoiceTriggerFire;
 - (void)_notifyJarvisVoiceTriggerReject;
 - (void)_didDetectKeywordFromDeviceId:(id)arg1 activationInfo:(id)arg2 triggerHostTime:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;

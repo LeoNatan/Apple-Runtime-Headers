@@ -9,6 +9,7 @@
 #import <AppKit/NSMenuItemValidation-Protocol.h>
 
 @class NSArray, NSMenu, NSMenuItem, NSString;
+@protocol NSPopUpButtonCellDelegate;
 
 @interface NSPopUpButtonCell : NSMenuItemCell <NSMenuItemValidation>
 {
@@ -27,10 +28,13 @@
         unsigned int RESERVED:20;
     } _pbcFlags;
     id _popupReserved;
+    id <NSPopUpButtonCellDelegate> _delegate;
 }
 
 + (id)_attachedCell;
 + (void)initialize;
+@property __weak id <NSPopUpButtonCellDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)_highlightTextColor;
 - (id)_highlightColor;
 - (BOOL)_allowsContextMenus;

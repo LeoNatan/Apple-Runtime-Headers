@@ -26,7 +26,7 @@
     id <EMVIPManager> _vipManager;
     EFLazyCache *_contactIDCache;
     NSString *_meContactIdentifier;
-    NSData *_monthSalt;
+    NSData *_rotatingSalt;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSURL *_directory;
     NSFileHandle *_logFileHandle;
@@ -45,7 +45,7 @@
 // Property attributes: TAI,N,V_sequenceNumber
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(readonly, nonatomic) NSData *monthSalt; // @synthesize monthSalt=_monthSalt;
+@property(retain, nonatomic) NSData *rotatingSalt; // @synthesize rotatingSalt=_rotatingSalt;
 @property(retain, nonatomic) NSString *meContactIdentifier; // @synthesize meContactIdentifier=_meContactIdentifier;
 @property(readonly, nonatomic) EFLazyCache *contactIDCache; // @synthesize contactIDCache=_contactIDCache;
 @property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
@@ -90,6 +90,9 @@
 - (id)_buildLogFileURLInDir:(id)arg1;
 - (BOOL)_openCurrentLogfile;
 - (void)_rotateLogWithCompressedData:(id)arg1;
+- (void)_resetIdentifiers;
+- (unsigned int)_persistentBits;
+- (id)_salt;
 @property(readonly, nonatomic) long long deviceID; // @synthesize deviceID=_deviceID;
 @property(readonly, nonatomic) long long userID; // @synthesize userID=_userID;
 - (id)initWithDirectory:(id)arg1 userProfileProvider:(id)arg2 saltProvider:(id)arg3 contactStore:(id)arg4 vipManager:(id)arg5;

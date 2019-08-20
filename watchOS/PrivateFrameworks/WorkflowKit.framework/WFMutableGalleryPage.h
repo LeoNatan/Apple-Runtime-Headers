@@ -6,11 +6,11 @@
 
 #import <WorkflowKit/WFGalleryPage.h>
 
-@class NSArray, NSNumber, NSString;
+@class CKRecordID, NSArray, NSNumber, NSString;
 
 @interface WFMutableGalleryPage : WFGalleryPage
 {
-    NSString *identifier;
+    CKRecordID *identifier;
     NSString *name;
     NSNumber *minVersion;
     NSNumber *isRoot;
@@ -18,14 +18,14 @@
     NSArray *collections;
     NSArray *routines;
     NSString *language;
-    WFGalleryPage *base;
+    CKRecordID *base;
     NSArray *donations;
     NSArray *donationsGroupedByApp;
 }
 
 @property(copy, nonatomic) NSArray *donationsGroupedByApp; // @synthesize donationsGroupedByApp;
 @property(copy, nonatomic) NSArray *donations; // @synthesize donations;
-@property(retain, nonatomic) WFGalleryPage *base; // @synthesize base;
+@property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
 @property(copy, nonatomic) NSArray *routines; // @synthesize routines;
 @property(copy, nonatomic) NSArray *collections; // @synthesize collections;
@@ -33,7 +33,7 @@
 @property(copy, nonatomic) NSNumber *isRoot; // @synthesize isRoot;
 @property(copy, nonatomic) NSNumber *minVersion; // @synthesize minVersion;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
 - (void).cxx_destruct;
 
 @end

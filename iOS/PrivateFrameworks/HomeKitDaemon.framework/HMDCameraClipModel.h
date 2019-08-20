@@ -15,6 +15,7 @@
 + (id)hmbExternalRecordType;
 + (id)sentinelParentUUID;
 + (id)hmbProperties;
+- (id)createClipWithSignificantEvents:(id)arg1;
 - (id)createClip;
 
 // Remaining properties
@@ -23,11 +24,13 @@
 @property(retain, nonatomic) NSNumber *encryptionScheme; // @dynamic encryptionScheme;
 @property(retain, nonatomic) NSNumber *isComplete; // @dynamic isComplete;
 @property(retain, nonatomic) NSArray *posterFramesMetadata; // @dynamic posterFramesMetadata;
+@property(retain, nonatomic) NSArray *posterFramesMetadataArray; // @dynamic posterFramesMetadataArray;
 @property(retain, nonatomic) CKStreamingAsset *posterFramesStreamingAsset; // @dynamic posterFramesStreamingAsset;
 @property(retain, nonatomic) NSDate *startDate; // @dynamic startDate;
 @property(retain, nonatomic) NSString *streamingAssetVersion; // @dynamic streamingAssetVersion;
 @property(retain, nonatomic) NSNumber *targetFragmentDuration; // @dynamic targetFragmentDuration;
 @property(retain, nonatomic) NSArray *videoMetadata; // @dynamic videoMetadata;
+@property(retain, nonatomic) NSArray *videoMetadataArray; // @dynamic videoMetadataArray;
 @property(retain, nonatomic) CKStreamingAsset *videoStreamingAsset; // @dynamic videoStreamingAsset;
 
 @end

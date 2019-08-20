@@ -15,24 +15,24 @@
 {
     BOOL matched;
     BOOL _unwantedNetworkName;
-    NSString *_SSID;
     NSString *password;
     NSSet *_attributes;
     id <TBScore> _qualityScore;
     id <TBScore> _popularityScore;
     NSString *_uniqueIdentifier;
+    NSString *_SSID;
     id <TBNetwork> _network;
 }
 
 @property(nonatomic) BOOL unwantedNetworkName; // @synthesize unwantedNetworkName=_unwantedNetworkName;
 @property(retain, nonatomic) id <TBNetwork> network; // @synthesize network=_network;
+@property(copy, nonatomic) NSString *SSID; // @synthesize SSID=_SSID;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) BOOL matched; // @synthesize matched;
 @property(readonly, nonatomic) id <TBScore> popularityScore; // @synthesize popularityScore=_popularityScore;
 @property(readonly, nonatomic) id <TBScore> qualityScore; // @synthesize qualityScore=_qualityScore;
 @property(readonly, nonatomic) NSSet *attributes; // @synthesize attributes=_attributes;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password;
-@property(copy, nonatomic) NSString *SSID; // @synthesize SSID=_SSID;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)containsAccessPointMatchingBSSIDs:(id)arg1;

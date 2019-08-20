@@ -16,23 +16,15 @@ __attribute__((visibility("hidden")))
     MPCPlayerCommandRequest *_touchUpInsideCommandRequest;
     MPCPlayerCommandRequest *_holdBeginCommandRequest;
     MPCPlayerCommandRequest *_holdEndCommandRequest;
-    double _scaleFactor;
-    struct CGAffineTransform _highlightTransform;
 }
 
-@property(nonatomic) struct CGAffineTransform highlightTransform; // @synthesize highlightTransform=_highlightTransform;
 @property(readonly, nonatomic, getter=isPerformingHighlightAnimation) _Bool performingHighlightAnimation; // @synthesize performingHighlightAnimation=_performingHighlightAnimation;
-@property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) _Bool shouldPresentActionSheet; // @synthesize shouldPresentActionSheet=_shouldPresentActionSheet;
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdEndCommandRequest; // @synthesize holdEndCommandRequest=_holdEndCommandRequest;
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdBeginCommandRequest; // @synthesize holdBeginCommandRequest=_holdBeginCommandRequest;
 @property(retain, nonatomic) MPCPlayerCommandRequest *touchUpInsideCommandRequest; // @synthesize touchUpInsideCommandRequest=_touchUpInsideCommandRequest;
 - (void).cxx_destruct;
-- (void)_layoutImageAndTitleViews;
-- (void)endHighlight;
-- (void)beginHighlight;
 - (void)setHighlighted:(_Bool)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

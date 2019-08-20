@@ -24,6 +24,7 @@
 + (void)prewarmEntryViewButtons;
 + (id)imageNameForEntryViewButtonType:(long long)arg1;
 + (id)entryViewButtonOfType:(long long)arg1;
++ (id)entryViewButtonOfType:(long long)arg1 wantsVibrancy:(_Bool)arg2;
 @property(retain, nonatomic) UIVisualEffectView *vibrancyView; // @synthesize vibrancyView=_vibrancyView;
 @property(nonatomic) long long entryViewButtonType; // @synthesize entryViewButtonType=_entryViewButtonType;
 @property(nonatomic) _Bool wantsVibrancy; // @synthesize wantsVibrancy=_wantsVibrancy;
@@ -35,7 +36,7 @@
 - (_Bool)isEnabled;
 - (void)setEnabled:(_Bool)arg1;
 - (void)layoutSubviews;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 wantsVibrancy:(_Bool)arg2;
 
 @end
 

@@ -25,8 +25,6 @@
 {
     NSUndoManager *_undoManager;
     _Bool _autoHideEnabled;
-    CDUnknownBlockType _dockToCornerAnimations;
-    CDUnknownBlockType _dockToEdgeAnimations;
     _Bool _paletteIsCompactSize;
     _Bool _paletteHasLayoutSubviews;
     _Bool _wantsUndoRedoButtonsInCompactSize;
@@ -42,6 +40,7 @@
     id <PKPaletteViewInternalDelegate> _internalDelegate;
     PKPaletteUndoRedoView *_undoRedoCompactView;
     UIView *_clippingView;
+    MTMaterialView *_backgroundView;
     PKPaletteContainerView *_containerView;
     PKPaletteContentView *_contentView;
     PKPaletteToolPreview *_toolPreview;
@@ -68,6 +67,7 @@
     struct UIEdgeInsets _palettePopoverLayoutSceneMargins;
 }
 
++ (id)makeBackgroundView;
 @property(retain, nonatomic) UIViewController *popoverPresentingController; // @synthesize popoverPresentingController=_popoverPresentingController;
 @property(readonly, nonatomic) UIPencilInteraction *pencilInteraction; // @synthesize pencilInteraction=_pencilInteraction;
 @property(nonatomic) struct UIEdgeInsets palettePopoverLayoutSceneMargins; // @synthesize palettePopoverLayoutSceneMargins=_palettePopoverLayoutSceneMargins;
@@ -98,6 +98,7 @@
 @property(retain, nonatomic) PKPaletteToolPreview *toolPreview; // @synthesize toolPreview=_toolPreview;
 @property(retain, nonatomic) PKPaletteContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) PKPaletteContainerView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *clippingView; // @synthesize clippingView=_clippingView;
 @property(retain, nonatomic) PKPaletteUndoRedoView *undoRedoCompactView; // @synthesize undoRedoCompactView=_undoRedoCompactView;
 @property(nonatomic) __weak id <PKPaletteViewInternalDelegate> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
@@ -105,7 +106,6 @@
 @property(nonatomic) long long palettePosition; // @synthesize palettePosition=_palettePosition;
 @property(nonatomic) __weak id <PKPaletteViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentationController; // @synthesize presentationController=_presentationController;
-@property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(readonly, nonatomic) unsigned long long autoHideCorner; // @synthesize autoHideCorner=_autoHideCorner;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isBackgroundMaterialUpdatingPaused) _Bool backgroundMaterialUpdatingPaused;
@@ -116,14 +116,15 @@
 - (struct CGRect)plusButtonFrame;
 - (unsigned long long)edgeLocationToDockFromCorner:(unsigned long long)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)endOpacityEditing;
 - (void)startOpacityEditing;
 - (unsigned long long)_nextAutoHideCorner;
 - (void)_notifyPaletteDidChangePosition;
 - (void)didEndAppearanceAnimation;
 - (void)willStartAppearanceAnimation;
-- (void)animationToDockToEdge:(unsigned long long)arg1;
-@property(readonly, nonatomic) CDUnknownBlockType dockToCornerAnimations;
+- (void)configureForDockedAtEdge:(unsigned long long)arg1;
+- (void)configureForDockedAtCorner;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)pencilInteractionDidTap:(id)arg1;
@@ -151,6 +152,7 @@
 - (void)undoRedoViewDidTapUndo:(id)arg1;
 - (void)_updateContainerSizeConstraintsForEdge:(unsigned long long)arg1;
 - (void)_updateToolPreviewForEdge:(unsigned long long)arg1;
+- (void)_updateToolPreviewVisibility;
 - (void)_updateToolPreview;
 - (void)_updateColorPickerSelectedColor;
 - (void)setSelectedAnnotationType:(long long)arg1;
@@ -166,20 +168,28 @@
 - (void)_updateUIForAnnotationSupportIfNeeded;
 - (void)updateUndoRedo;
 @property(readonly, nonatomic, getter=isAnnotationSupportEnabled) _Bool annotationSupportEnabled;
+- (id)_clippingViewBackgroundColor;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) _Bool useCompactSize;
+- (id)palettePopoverSourceView;
+- (struct CGRect)palettePopoverSourceRect;
+- (_Bool)wantsCustomPalettePopoverPresentationSource;
 - (struct UIEdgeInsets)palettePopoverLayoutMargins;
 - (unsigned long long)palettePopoverPermittedArrowDirections;
 - (id)palettePopoverPassthroughViews;
 - (_Bool)shouldPalettePresentPopover;
 - (_Bool)isPalettePresentingPopover;
+@property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
+@property(nonatomic) double paletteContentAlpha;
 - (void)_setCornerRadius:(double)arg1;
+- (struct CGSize)_paletteSizeForEdge:(unsigned long long)arg1;
 - (void)_installUndoRedoButtonsViewAtTop;
 - (void)_installToolPreview;
 - (void)_installBackgroundView;
 - (void)_installContentView;
 - (void)_installClippingView;
 - (void)dealloc;
+- (void)safeAreaInsetsDidChange;
 @property(readonly, nonatomic, getter=isAutoHideEnabled) _Bool autoHideEnabled;
 - (id)initWithInternalDelegate:(id)arg1;
 

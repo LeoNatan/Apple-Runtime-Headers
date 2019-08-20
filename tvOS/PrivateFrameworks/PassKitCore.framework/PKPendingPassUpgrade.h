@@ -11,6 +11,7 @@
 @interface PKPendingPassUpgrade : NSObject
 {
     _Bool _appletDidUpgrade;
+    _Bool _webRequestFinished;
     _Bool _requiresAppletUpgrade;
     _Bool _passUpgradeInProgress;
     PKPassUpgradeRequest *_upgradeRequest;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) PKPaymentPass *upgradedPass; // @synthesize upgradedPass=_upgradedPass;
 @property(nonatomic) _Bool appletDidUpgrade; // @synthesize appletDidUpgrade=_appletDidUpgrade;
 @property(nonatomic) _Bool requiresAppletUpgrade; // @synthesize requiresAppletUpgrade=_requiresAppletUpgrade;
+@property(nonatomic) _Bool webRequestFinished; // @synthesize webRequestFinished=_webRequestFinished;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(readonly, nonatomic) PKPassUpgradeRequest *upgradeRequest; // @synthesize upgradeRequest=_upgradeRequest;
 - (void).cxx_destruct;

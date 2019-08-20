@@ -25,8 +25,10 @@
 - (void)startGuidedAccessForSiriViewController:(AFUISiriViewController *)arg1;
 - (void)dismissSiriViewController:(AFUISiriViewController *)arg1 delayForTTS:(_Bool)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didEncounterUnexpectedError:(NSError *)arg2;
+- (void)siriViewControllerDidFinishDismissing:(AFUISiriViewController *)arg1;
 
 @optional
+- (void)extendCurrentTTSRequested;
 - (void)siriViewController:(AFUISiriViewController *)arg1 failTest:(NSString *)arg2 withReason:(NSString *)arg3;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didFinishTest:(NSString *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 willStartTest:(NSString *)arg2;

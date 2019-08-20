@@ -6,26 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable;
+@class AFAccessibilityState, NSHashTable;
 @protocol OS_dispatch_queue;
 
 @interface AFAccessibilityObserver : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    struct AccessibilityPreferences _preferences;
+    struct os_unfair_lock_s _stateLock;
+    AFAccessibilityState *_state;
+    unsigned long long _stateDirtyFlags;
     NSHashTable *_listeners;
 }
 
 + (id)sharedObserver;
 - (void).cxx_destruct;
+- (void)_setState:(id)arg1 clearDirtyFlags:(unsigned long long)arg2;
 - (void)_updateVibrationDisabledPreference;
 - (void)_updateVoiceOverTouchEnabledPreference;
+- (_Bool)_fetchIsVibrationDisabled;
+- (_Bool)_fetchIsVoiceOverTouchEnabled;
 - (void)vibrationDisabledPreferenceDidChange:(id)arg1;
 - (void)voiceOverTouchEnabledPreferenceDidChange:(id)arg1;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;
-@property(readonly, nonatomic) _Bool isVibrationDisabled;
-@property(readonly, nonatomic) _Bool isVoiceOverTouchEnabled;
+- (void)getStateWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, copy, nonatomic) AFAccessibilityState *state;
+- (id)currentState;
 - (id)init;
 
 @end

@@ -63,6 +63,8 @@
 - (void)moveItemToEnd:(id)arg1 fromSection:(id)arg2;
 - (void)moveItemToStart:(id)arg1 fromSection:(id)arg2;
 @property(readonly, nonatomic) int itemCount;
+- (_Bool)isDeletedItem:(id)arg1 inSection:(id)arg2;
+- (_Bool)hasSection:(id)arg1;
 - (_Bool)hasItem:(id)arg1 inSection:(id)arg2;
 - (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addDataSource:(id)arg1 section:(id)arg2 afterTailOfSection:(id)arg3 completion:(CDUnknownBlockType)arg4;

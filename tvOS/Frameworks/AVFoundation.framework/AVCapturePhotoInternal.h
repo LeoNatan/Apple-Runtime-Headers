@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 timestamp;
     struct __IOSurface *photoSurface;
     unsigned long long photoSurfaceSize;
+    NSString *processedFileType;
     struct __CVBuffer *photoPixelBuffer;
     struct __CVBuffer *previewPixelBuffer;
     struct __CVBuffer *embeddedThumbnailSourcePixelBuffer;

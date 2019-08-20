@@ -24,6 +24,7 @@
 - (id)contentViewControllerForContext:(id)arg1;
 - (void)reconfigureView;
 - (void)refreshState;
+@property(readonly, nonatomic) double glyphScale;
 @property(readonly, copy, nonatomic) NSString *glyphState;
 - (id)glyphPackage;
 @property(readonly, copy, nonatomic) UIColor *selectedColor; // @dynamic selectedColor;

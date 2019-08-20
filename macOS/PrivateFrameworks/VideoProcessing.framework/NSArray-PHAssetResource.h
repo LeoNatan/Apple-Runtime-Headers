@@ -14,6 +14,8 @@
 - (id)vcp_adjustmentsResource;
 - (id)vcp_originalVideoResource;
 - (id)vcp_originalResource;
+- (id)vcp_smallMovieDerivativeResource;
+- (id)vcp_smallResourceMeetingCriteria:(CDUnknownBlockType)arg1;
 - (id)vcp_thumbnailResource;
 - (BOOL)vcp_hasLocalSlowmo;
 - (BOOL)vcp_hasLocalAdjustments;

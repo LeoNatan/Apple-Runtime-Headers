@@ -6,17 +6,21 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class NSString, UILabel;
+@class NSLayoutConstraint, NSString, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface WDMedicalRecordSpacerTextCell : UITableViewCell
 {
+    _Bool _useTallTopPadding;
     NSString *_title;
     UILabel *_titleLabel;
+    NSLayoutConstraint *_topConstraint;
 }
 
 + (id)defaultReuseIdentifier;
+@property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(nonatomic) _Bool useTallTopPadding; // @synthesize useTallTopPadding=_useTallTopPadding;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)_setupSubviews;

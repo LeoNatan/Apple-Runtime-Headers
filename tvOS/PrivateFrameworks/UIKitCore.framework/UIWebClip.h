@@ -19,6 +19,7 @@
     NSURL *startupLandscapeImageURL;
     NSString *title;
     NSString *applicationBundleIdentifier;
+    unsigned long long bundleVersion;
     _Bool fullScreen;
     _Bool classicMode;
     _Bool removalDisallowed;
@@ -76,6 +77,7 @@
 @property _Bool removalDisallowed; // @synthesize removalDisallowed;
 @property _Bool classicMode; // @synthesize classicMode;
 @property _Bool fullScreen; // @synthesize fullScreen;
+@property(readonly, nonatomic) unsigned long long bundleVersion; // @synthesize bundleVersion;
 @property(copy, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier;
 @property(copy, nonatomic) NSString *title; // @synthesize title;
 @property(retain) NSURL *startupLandscapeImageURL; // @synthesize startupLandscapeImageURL;

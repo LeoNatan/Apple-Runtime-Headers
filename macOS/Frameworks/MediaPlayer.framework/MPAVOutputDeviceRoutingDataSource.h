@@ -23,10 +23,12 @@
     BOOL _supportsRoutePrediction;
     MPMRAVOutputContextWrapper *_applicationOutputContext;
     MPAVEndpointRoute *_endpointRoute;
+    NSString *_initiator;
 }
 
 + (id)_globalAudioSessionLock;
 @property(nonatomic) BOOL supportsRoutePrediction; // @synthesize supportsRoutePrediction=_supportsRoutePrediction;
+@property(retain, nonatomic) NSString *initiator; // @synthesize initiator=_initiator;
 @property(retain, nonatomic) MPAVEndpointRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) BOOL supportsMultipleSelection; // @synthesize supportsMultipleSelection=_supportsMultipleSelection;
 @property(retain, nonatomic) MPMRAVOutputContextWrapper *applicationOutputContext; // @synthesize applicationOutputContext=_applicationOutputContext;

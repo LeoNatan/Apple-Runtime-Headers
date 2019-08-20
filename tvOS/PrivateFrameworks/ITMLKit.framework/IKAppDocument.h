@@ -15,8 +15,8 @@
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridgeInternal, IKStyleMediaQueryEvaluator>
 {
     NSMutableDictionary *_mediaQueryCache;
+    long long _implicitUpdatesStack;
     _Bool _parsingDOM;
-    _Bool _isTrackingImplicitUpdates;
     NSMapTable *_viewElementRegistry;
     _Bool _isViewElementRegistryDirty;
     _Bool _updated;
@@ -58,8 +58,10 @@
 @property(readonly, nonatomic) __weak IKDOMDocument *jsDocument; // @synthesize jsDocument=_jsDocument;
 @property(readonly) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 - (void).cxx_destruct;
+- (void)_resetImplicitUpdates;
 - (_Bool)markImplicitlyUpdated;
-- (void)performImplicitUpdates:(CDUnknownBlockType)arg1;
+- (void)popTrackingImplictUpdates;
+- (void)pushTrackingImplictUpdates;
 - (void)_setViewElementStylesDirtyForced:(_Bool)arg1;
 - (void)_updateWithXML:(id)arg1;
 - (id)_viewElementForNodeID:(unsigned long long)arg1;

@@ -9,6 +9,9 @@
 @interface NSApplication (UINSApplicationSwizzling)
 + (void)load;
 + (void)_exchangeImplementation:(SEL)arg1 with:(SEL)arg2;
+- (id)_prioritySupplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
+- (id)_responderProxyForAction:(SEL)arg1 sender:(id)arg2;
 - (id)_swizzledFindWindowUsingContextID:(long long)arg1;
 - (void)_swizzledEmitApplicationLaunchSignpost;
 @end

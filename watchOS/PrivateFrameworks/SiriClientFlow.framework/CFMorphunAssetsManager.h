@@ -21,7 +21,9 @@
 - (void)downloadAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadAssets:(id)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)downloadedLocalAsset:(id)arg1 forLanguage:(id)arg2 error:(id *)arg3;
-- (void)downloadMorphunAssetsForAssetType:(id)arg1 forLanguage:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)downloadAssetsForAssetType:(id)arg1 forLanguage:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)downloadMorphunAssetsForLanguage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)triggerMorphunAssetsManagement;
 - (id)morphunAssetsPathForLanguage:(id)arg1;
 - (id)morphunAssetsVersion:(id)arg1 forLanguage:(id)arg2;
 - (id)init;

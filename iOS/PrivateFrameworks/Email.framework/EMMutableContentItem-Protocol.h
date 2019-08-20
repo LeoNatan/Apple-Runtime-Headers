@@ -9,6 +9,7 @@
 @class NSArray, NSDate, NSString;
 
 @protocol EMMutableContentItem <EMExtendedContentItem>
+@property(nonatomic) int exchangeEventUID;
 @property(retain, nonatomic) NSDate *expiryDate;
 @property(nonatomic) long long storageByteCount;
 @property(nonatomic) long long dataTransferByteCount;

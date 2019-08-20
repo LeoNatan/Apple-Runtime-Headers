@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 @class ICSelectorDelayer, NSDate, NSManagedObjectContext, NSPersistentHistoryToken, NSPersistentStore;
-@protocol OS_dispatch_queue;
+@protocol ICManagedObjectContextUpdaterDelegate, OS_dispatch_queue;
 
 @interface ICManagedObjectContextUpdater : NSObject
 {
     _Bool _listening;
     NSPersistentStore *_store;
     NSManagedObjectContext *_context;
+    id <ICManagedObjectContextUpdaterDelegate> _delegate;
     NSPersistentHistoryToken *_previousHistoryToken;
     NSDate *_previousHistoryDate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -28,9 +29,11 @@
 @property(nonatomic, getter=isListening) _Bool listening; // @synthesize listening=_listening;
 @property(retain, nonatomic) NSDate *previousHistoryDate; // @synthesize previousHistoryDate=_previousHistoryDate;
 @property(retain, nonatomic) NSPersistentHistoryToken *previousHistoryToken; // @synthesize previousHistoryToken=_previousHistoryToken;
+@property(nonatomic) __weak id <ICManagedObjectContextUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSManagedObjectContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+- (void)processObejctsInChangeDictionary:(id)arg1;
 - (void)fetchChangeHistory;
 - (void)handlePersistentStoreRemoteChangeNotification:(id)arg1;
 - (void)requestUpdate;

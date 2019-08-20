@@ -176,6 +176,7 @@
 - (_Bool)resetScrollViewToMainPageAnimated:(_Bool)arg1 withAnimationSettings:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (_Bool)resetScrollViewToMainPageAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSArray *pageViews;
+- (void)updateStatusBarLegibilityForForceLegibilityGradientHidden:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

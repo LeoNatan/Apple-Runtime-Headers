@@ -12,13 +12,11 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: $__lazy_storage_$_textView
     // Error parsing type: , name: text
     // Error parsing type: , name: attributes
-    // Error parsing type: , name: $__lazy_storage_$_widthConstraint
 }
 
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

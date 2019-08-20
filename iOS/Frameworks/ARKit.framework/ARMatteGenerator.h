@@ -18,6 +18,7 @@
 @property(nonatomic) unsigned long long uncertaintyRadius; // @synthesize uncertaintyRadius=_uncertaintyRadius;
 - (id)generateDilatedDepthFromFrame:(id)arg1 commandBuffer:(id)arg2;
 - (id)generateMatteFromFrame:(id)arg1 commandBuffer:(id)arg2;
+- (void)_commonInitWithDevice:(id)arg1 matteResolution:(long long)arg2 useSmoothing:(_Bool)arg3;
 - (id)initWithDevice:(id)arg1 matteResolution:(long long)arg2;
 - (id)initWithDevice:(id)arg1 matteResolution:(long long)arg2 useSmoothing:(_Bool)arg3;
 

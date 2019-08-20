@@ -8,11 +8,12 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
+#import <UIKitCore/NSUIImageConfiguration-Protocol.h>
 #import <UIKitCore/UIImageConfiguration-Protocol.h>
 
 @class NSString, UITraitCollection;
 
-@interface UIImageConfiguration : NSObject <UIImageConfiguration, NSCopying, NSSecureCoding>
+@interface UIImageConfiguration : NSObject <NSUIImageConfiguration, UIImageConfiguration, NSCopying, NSSecureCoding>
 {
     BOOL _ignoresDynamicType;
     UITraitCollection *_traitCollection;

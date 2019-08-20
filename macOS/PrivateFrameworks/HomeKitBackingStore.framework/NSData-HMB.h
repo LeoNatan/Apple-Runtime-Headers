@@ -6,13 +6,23 @@
 
 #import <Foundation/NSData.h>
 
+#import <HomeKitBackingStore/HMBModelQueryableParameterCoder-Protocol.h>
+
 @class NSString;
 
-@interface NSData (HMB)
+@interface NSData (HMB) <HMBModelQueryableParameterCoder>
++ (id)hmbDecodeQueryableParameterFromData:(id)arg1;
 + (id)hmbDataWithSQLite3Column:(struct sqlite3_stmt *)arg1 column:(int)arg2;
 + (id)hmbDataWithSQLite3ColumnNoCopy:(struct sqlite3_stmt *)arg1 column:(int)arg2;
+- (id)hmbEncodeQueryableParameter;
 @property(readonly, copy) NSString *hmbDescription;
 - (id)hmbUncompress;
 - (id)hmbCompress;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

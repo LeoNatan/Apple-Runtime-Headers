@@ -18,7 +18,7 @@
     SKSpriteNode *_logo2Node;
     SKNode *_multicolorContainerNode;
     SKSpriteNode *_multicolorBackground;
-    SKSpriteNode *_multicolorSplit[4];
+    SKSpriteNode *_multicolorSplit[5];
     double _previousCorrectionTime;
     double _currentTime;
     float _startSplitRotation;

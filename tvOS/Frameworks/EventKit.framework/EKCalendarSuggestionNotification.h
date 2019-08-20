@@ -13,7 +13,6 @@
 }
 
 @property(readonly, nonatomic) NSString *originAppName;
-- (_Bool)hiddenFromNotificationCenter;
 
 @end
 

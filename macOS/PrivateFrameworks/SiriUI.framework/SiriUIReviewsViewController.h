@@ -68,7 +68,6 @@
 - (double)_minCellWidth;
 - (id)_displayStringForReviewCount:(long long)arg1 providerName:(id)arg2 providerView:(id)arg3;
 - (void)updateSubtitle;
-- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

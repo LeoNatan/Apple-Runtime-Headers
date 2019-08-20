@@ -12,7 +12,6 @@
 #import <DoNotDisturbServer/DNDSLegacyAssertionSyncManagerDataSource-Protocol.h>
 #import <DoNotDisturbServer/DNDSLifetimeMonitorDataSource-Protocol.h>
 #import <DoNotDisturbServer/DNDSLifetimeMonitorDelegate-Protocol.h>
-#import <DoNotDisturbServer/DNDSModeAssertionStateProviderDataSource-Protocol.h>
 #import <DoNotDisturbServer/DNDSPairedDeviceStateMonitorDelegate-Protocol.h>
 #import <DoNotDisturbServer/DNDSRemoteServiceProviderDelegate-Protocol.h>
 #import <DoNotDisturbServer/DNDSScheduleLifetimeMonitorDataSource-Protocol.h>
@@ -20,12 +19,12 @@
 #import <DoNotDisturbServer/DNDSSettingsManagerDelegate-Protocol.h>
 #import <DoNotDisturbServer/DNDSSettingsSyncManagerDataSource-Protocol.h>
 #import <DoNotDisturbServer/DNDSSettingsSyncManagerDelegate-Protocol.h>
-#import <DoNotDisturbServer/DNDSStateProviderUpdateListener-Protocol.h>
+#import <DoNotDisturbServer/DNDSStateProviderDataSource-Protocol.h>
 
-@class DNDSCalendarEventLifetimeMonitor, DNDSClientDetailsProvider, DNDSEventBehaviorResolver, DNDSModeAssertionManager, DNDSModeAssertionStateProvider, DNDSPairedDeviceStateMonitor, DNDSRemoteServiceProvider, DNDSScheduleLifetimeMonitor, DNDSScheduleManager, DNDSSettingsManager, NSArray, NSString;
+@class DNDSCalendarEventLifetimeMonitor, DNDSClientDetailsProvider, DNDSEventBehaviorResolver, DNDSModeAssertionManager, DNDSPairedDeviceStateMonitor, DNDSRemoteServiceProvider, DNDSScheduleLifetimeMonitor, DNDSScheduleManager, DNDSSettingsManager, DNDSStateProvider, NSArray, NSString;
 @protocol DNDSAssertionSyncManager, DNDSSettingsSyncManager, OS_dispatch_queue;
 
-@interface DNDSServer : NSObject <DNDSEventBehaviorResolverDataSource, DNDSLifetimeMonitorDataSource, DNDSScheduleLifetimeMonitorDataSource, DNDSLifetimeMonitorDelegate, DNDSModeAssertionStateProviderDataSource, DNDSStateProviderUpdateListener, DNDSRemoteServiceProviderDelegate, DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSLegacyAssertionSyncManagerDataSource, DNDSSettingsSyncManagerDataSource, DNDSSettingsSyncManagerDelegate, DNDSScheduleManagerDataSource, DNDSSettingsManagerDelegate, DNDSPairedDeviceStateMonitorDelegate>
+@interface DNDSServer : NSObject <DNDSEventBehaviorResolverDataSource, DNDSLifetimeMonitorDataSource, DNDSScheduleLifetimeMonitorDataSource, DNDSLifetimeMonitorDelegate, DNDSStateProviderDataSource, DNDSRemoteServiceProviderDelegate, DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSLegacyAssertionSyncManagerDataSource, DNDSSettingsSyncManagerDataSource, DNDSSettingsSyncManagerDelegate, DNDSScheduleManagerDataSource, DNDSSettingsManagerDelegate, DNDSPairedDeviceStateMonitorDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     DNDSClientDetailsProvider *_clientDetailsProvider;
@@ -34,7 +33,7 @@
     DNDSScheduleLifetimeMonitor *_scheduleLifetimeMonitor;
     NSArray *_lifetimeMonitors;
     DNDSScheduleManager *_scheduleManager;
-    DNDSModeAssertionStateProvider *_stateProvider;
+    DNDSStateProvider *_stateProvider;
     DNDSEventBehaviorResolver *_eventBehaviorResolver;
     DNDSRemoteServiceProvider *_serviceProvider;
     id <DNDSAssertionSyncManager> _assertionSyncManager;
@@ -80,8 +79,7 @@
 - (id)remoteServiceProvider:(id)arg1 invalidateModeAssertionWithUUID:(id)arg2 reason:(unsigned long long)arg3 reasonOverride:(unsigned long long)arg4 error:(id *)arg5;
 - (id)remoteServiceProvider:(id)arg1 takeModeAssertionWithDetails:(id)arg2 clientIdentifier:(id)arg3 error:(id *)arg4;
 - (id)remoteServiceProvider:(id)arg1 assertionWithClientIdentifer:(id)arg2 error:(id *)arg3;
-- (id)remoteServiceProvider:(id)arg1 resolveBehaviorForEventDetails:(id)arg2 clientIdentifier:(id)arg3 date:(id)arg4 error:(id *)arg5;
-- (void)stateProvider:(id)arg1 didUpdateDoNotDisturbState:(id)arg2;
+- (id)remoteServiceProvider:(id)arg1 resolveBehaviorForEventDetails:(id)arg2 clientDetails:(id)arg3 date:(id)arg4 error:(id *)arg5;
 - (unsigned long long)currentLostModeStateForStateProvider:(id)arg1;
 - (unsigned long long)currentInterruptionBehaviorSettingForStateProvider:(id)arg1;
 - (id)stateProvider:(id)arg1 activeDateIntervalForModeAssertion:(id)arg2;

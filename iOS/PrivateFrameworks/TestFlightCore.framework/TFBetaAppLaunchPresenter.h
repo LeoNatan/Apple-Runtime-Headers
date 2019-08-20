@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <TFBetaAppLaunchPresenterView> presenterView; // @synthesize presenterView=_presenterView;
 - (void).cxx_destruct;
-- (id)_howToImageIdentifier;
 - (void)_abortLaunchScreenLoadWithError:(id)arg1;
 - (void)_showHowToViewWithLaunchScreen:(id)arg1;
 - (void)_showTestNotesViewWithLaunchScreen:(id)arg1;

@@ -17,6 +17,7 @@
 - (void)filterBuddy:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ICRadioPlaybackHistory, ICRadioPlaybackHistoryStore, ICStoreRequestContext, MPModelRadioStation, MPSectionedCollection, _MPCModelRadioPlaybackQueueStationTracksCollection;
+@class ICRadioPlaybackHistory, ICRadioPlaybackHistoryStore, ICStoreRequestContext, MPCModelGenericAVItemUserIdentityPropertySet, MPModelRadioStation, MPSectionedCollection, _MPCModelRadioPlaybackQueueStationTracksCollection;
 
 @interface MPCModelRadioPlaybackQueue : NSObject
 {
@@ -30,7 +30,8 @@
 @property(readonly, nonatomic) int numberOfItems;
 - (_Bool)isExplicitItemAtIndex:(int)arg1;
 - (id)AVItemAtIndex:(int)arg1;
-- (id)initWithPlaybackContext:(id)arg1 identityPropertySet:(id)arg2;
+@property(retain, nonatomic) MPCModelGenericAVItemUserIdentityPropertySet *identityPropertySet;
+- (id)initWithPlaybackContext:(id)arg1;
 
 @end
 

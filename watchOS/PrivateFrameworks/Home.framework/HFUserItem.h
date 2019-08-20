@@ -36,6 +36,8 @@
 @property(readonly, nonatomic) HMUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+- (_Bool)hasDismissedUserSplitMediaAccountWarning;
+- (id)setDismissUserSplitMediaAccountWarning:(_Bool)arg1;
 - (_Bool)isIdentifyVoiceEnabled;
 - (id)setEnableIdentifyVoice:(_Bool)arg1;
 - (id)setDismissCameraRecordingReminderBanner:(_Bool)arg1;

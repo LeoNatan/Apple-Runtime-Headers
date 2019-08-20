@@ -37,8 +37,10 @@ __attribute__((visibility("hidden")))
 - (void)_swipeUpGestureDetected:(id)arg1;
 - (void)_dismiss;
 - (void)_setupTabs;
+- (id)_findWrapperForCustomViewController:(id)arg1;
 - (void)infoMenuController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+@property(readonly, nonatomic) struct CGRect viewBoundsOccluded;
 @property(nonatomic) _Bool suppressDescriptionSubpanel;
 @property(readonly) AVInfoPanelNavigationCollectionViewController *navigationViewController;
 @property(readonly) AVInfoPanelDescriptionViewController *descriptionViewController;

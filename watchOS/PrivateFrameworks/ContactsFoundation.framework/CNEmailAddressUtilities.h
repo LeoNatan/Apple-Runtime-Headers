@@ -10,6 +10,7 @@
 {
 }
 
++ (id)safeUserVisibleEmailAddress:(id)arg1;
 + (id)aliasedDomains;
 + (id)expandAliasedDomainsInAddress:(id)arg1;
 

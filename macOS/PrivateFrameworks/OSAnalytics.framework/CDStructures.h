@@ -109,6 +109,14 @@ struct memorystatus_kernel_stats {
     char _field17[80];
 };
 
+struct stackshot_thread_turnstileinfo {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+    unsigned long long _field5;
+};
+
 struct stackshot_thread_waitinfo {
     unsigned long long _field1;
     unsigned long long _field2;

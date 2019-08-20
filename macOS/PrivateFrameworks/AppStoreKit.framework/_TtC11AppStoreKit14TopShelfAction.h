@@ -11,6 +11,7 @@
     // Error parsing type: , name: target
     // Error parsing type: , name: title
     // Error parsing type: , name: subtitle
+    // Error parsing type: , name: imageName
     // Error parsing type: , name: userInfo
 }
 

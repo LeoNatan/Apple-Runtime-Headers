@@ -8,6 +8,7 @@
 
 @interface _TtC18HealthExperienceUI15MultilineButton : UIButton
 {
+    // Error parsing type: , name: labelLeadingConstraint
     // Error parsing type: , name: labelTopConstraint
     // Error parsing type: , name: labelBottomConstraint
 }

@@ -10,15 +10,18 @@
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
 @class NSArray, UIBlurEffect, UIColor, UIImage, _UIBarBackgroundAppearanceData;
+@protocol _UIBarAppearanceChangeObserver;
 
 @interface UIBarAppearance : NSObject <NSCopying, NSSecureCoding>
 {
     long long _idiom;
+    id <_UIBarAppearanceChangeObserver> _changeObserver;
     _UIBarBackgroundAppearanceData *_backgroundData;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long idiom; // @synthesize idiom=_idiom;
+@property(nonatomic, setter=_setChangeObserver:) __weak id <_UIBarAppearanceChangeObserver> _changeObserver; // @synthesize _changeObserver;
 - (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *shadowColor;
 @property(retain, nonatomic) UIImage *shadowImage;
@@ -52,6 +55,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -22,6 +22,7 @@
 + (struct CGColorSpace *)srgbColorSpace;
 @property(retain) NSUUID *uuid; // @dynamic uuid;
 - (id)debugDescription;
+- (id)description;
 @property(readonly) struct CGImage *CGImage; // @dynamic CGImage;
 @property(readonly) NSData *bitmapData;
 @property(readonly) struct CGSize pixelSize;

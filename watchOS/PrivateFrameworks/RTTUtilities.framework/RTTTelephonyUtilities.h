@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <RTTUtilities/CoreTelephonyClientCarrierBundleDelegate-Protocol.h>
+#import <RTTUtilities/TUCallCapabilitiesDelegate-Protocol.h>
 #import <RTTUtilities/TUCallCapabilitiesDelegatePrivate-Protocol.h>
 
-@class ACAccountStore, AXDispatchTimer, CNContactStore, CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSSet, NSString;
+@class ACAccountStore, AXDispatchTimer, CNContactStore, CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSNumber, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface RTTTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate, TUCallCapabilitiesDelegatePrivate>
+@interface RTTTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate, TUCallCapabilitiesDelegatePrivate, TUCallCapabilitiesDelegate>
 {
     ACAccountStore *_accountStore;
     AXDispatchTimer *_icloudAccountConsolidator;
@@ -24,6 +25,7 @@
     CNContactStore *_contactStore;
     CoreTelephonyClient *_telephonyClient;
     NSObject<OS_dispatch_queue> *_telephonyUpdateQueue;
+    NSNumber *_callCapabilitiesSupportsTelephonyCalls;
 }
 
 + (id)relayPhoneNumberForContext:(id)arg1;
@@ -35,6 +37,7 @@
 + (_Bool)isRTTSupportedForContext:(id)arg1;
 + (_Bool)isTTYSupportedForContext:(id)arg1;
 + (_Bool)softwareTTYIsSupported;
++ (_Bool)isRelayRTTSupported;
 + (_Bool)hardwareTTYIsSupported;
 + (id)relayPhoneNumber;
 + (_Bool)relayIsSupported;
@@ -47,6 +50,7 @@
 + (void)performCallCenterTask:(CDUnknownBlockType)arg1;
 + (id)sharedCallCenter;
 + (id)sharedUtilityProvider;
+@property(retain, nonatomic) NSNumber *callCapabilitiesSupportsTelephonyCalls; // @synthesize callCapabilitiesSupportsTelephonyCalls=_callCapabilitiesSupportsTelephonyCalls;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *telephonyUpdateQueue; // @synthesize telephonyUpdateQueue=_telephonyUpdateQueue;
 @property(retain, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) _Bool headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
@@ -61,13 +65,14 @@
 - (void)iCloudRTTRelayDidChange:(id)arg1;
 - (void)didChangeOutgoingRelayCallerID;
 - (void)listenForCloudRelayChanges;
+- (_Bool)currentProcessHandlesCloudRelay;
 - (id)relayNumberForContext:(id)arg1;
 - (_Bool)isTTYSupportedForContext:(id)arg1;
 - (_Bool)isTTYOverIMSSupportedForContext:(id)arg1;
 - (id)getCarrierValueForKeyHierarchy:(id)arg1 andContext:(id)arg2;
 - (id)getCarrierValueForKey:(id)arg1 andContext:(id)arg2;
 - (void)reloadDefaultVoiceContext;
-- (void)reloadRelayPhoneNumbers;
+- (_Bool)reloadRelayPhoneNumbers;
 - (id)subscriptionContexts;
 - (void)simLessSubscriptionsDidChange;
 - (void)activeSubscriptionsDidChange;
@@ -86,6 +91,7 @@
 - (unsigned int)currentPreferredTransportMethod;
 - (void)headphoneStateChangedNotification:(id)arg1;
 - (void)updateHeadphoneState;
+- (void)didChangeTelephonyCallingSupport;
 - (void)setTTYDictionaryAvailability:(_Bool)arg1;
 - (void)dealloc;
 - (id)init;

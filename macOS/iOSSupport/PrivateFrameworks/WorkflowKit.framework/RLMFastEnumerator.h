@@ -7,7 +7,6 @@
 #import <objc/NSObject.h>
 
 @class RLMRealm;
-@protocol RLMFastEnumerable;
 
 __attribute__((visibility("hidden")))
 @interface RLMFastEnumerator : NSObject
@@ -15,8 +14,9 @@ __attribute__((visibility("hidden")))
     id _strongBuffer[16];
     RLMRealm *_realm;
     struct RLMClassInfo *_info;
-    id <RLMFastEnumerable> _collection;
-    struct TableView _tableView;
+    struct Results *_results;
+    struct Results _snapshot;
+    id _collection;
 }
 
 - (id).cxx_construct;
@@ -24,7 +24,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 count:(unsigned long long)arg2;
 - (void)detach;
 - (void)dealloc;
-- (id)initWithCollection:(id)arg1 objectSchema:(struct RLMClassInfo *)arg2;
+- (id)initWithResults:(struct Results *)arg1 collection:(id)arg2 realm:(id)arg3 classInfo:(struct RLMClassInfo *)arg4;
+- (id)initWithList:(struct List *)arg1 collection:(id)arg2 realm:(id)arg3 classInfo:(struct RLMClassInfo *)arg4;
 
 @end
 

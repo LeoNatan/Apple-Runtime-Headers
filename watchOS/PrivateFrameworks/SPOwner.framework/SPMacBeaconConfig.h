@@ -31,6 +31,7 @@
 @property(nonatomic) double fastRollAdvertisementDuration; // @synthesize fastRollAdvertisementDuration=_fastRollAdvertisementDuration;
 @property(nonatomic) double initialNoBeaconDuration; // @synthesize initialNoBeaconDuration=_initialNoBeaconDuration;
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

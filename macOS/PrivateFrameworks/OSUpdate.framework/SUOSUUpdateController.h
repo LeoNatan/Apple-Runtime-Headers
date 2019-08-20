@@ -38,6 +38,7 @@
 - (void)postAndProceedWithAutoUpdateNotification:(CDUnknownBlockType)arg1;
 - (void)mdmMajorOSUpdateStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startInstallingMDMMajorOSUpdateWithBundleId:(id)arg1 orVersion:(id)arg2;
+- (void)queueAutoUpdatesForLater;
 - (void)startInstallingDoItLaterUpdates;
 - (void)postDoItLaterOtherUsersLoggedInNotification;
 - (void)postDoItLaterUpdatesFailedNotificationRestartRequired:(BOOL)arg1 offerLater:(BOOL)arg2;

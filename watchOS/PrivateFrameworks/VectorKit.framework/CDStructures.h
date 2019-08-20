@@ -1166,8 +1166,6 @@ struct RealisticRenderer {
 
 struct RenderBuffer;
 
-struct RenderFrame;
-
 struct RenderItem;
 
 struct RenderQueue {
@@ -3080,12 +3078,6 @@ struct unique_ptr<ggl::PrefilteredLine::PrefilteredLineMesh, std::__1::default_d
 struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> {
     struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer>> {
         struct RenderBuffer *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<ggl::RenderFrame, std::__1::default_delete<ggl::RenderFrame>> {
-    struct __compressed_pair<ggl::RenderFrame *, std::__1::default_delete<ggl::RenderFrame>> {
-        struct RenderFrame *__value_;
     } __ptr_;
 };
 

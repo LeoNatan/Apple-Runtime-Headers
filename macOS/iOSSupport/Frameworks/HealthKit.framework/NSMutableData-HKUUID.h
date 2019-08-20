@@ -7,6 +7,7 @@
 #import <Foundation/NSMutableData.h>
 
 @interface NSMutableData (HKUUID)
+- (void)hk_appendUUIDBytes:(unsigned char [16])arg1;
 - (void)hk_appendBytesWithUUID:(id)arg1;
 @end
 

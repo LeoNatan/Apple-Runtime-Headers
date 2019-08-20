@@ -8,7 +8,7 @@
 
 #import <DACalDAV/CDBAccountInfo-Protocol.h>
 
-@class CalDAVPrincipalSearchPropertySet, CalDAVRefreshContext, CalDAVServerVersion, CoreDAVDiscoveryTaskGroup, DACoreDAVLogger, DACoreDAVTaskManager, MobileCalDAVAccountRefreshActor, MobileCalDAVPrincipal, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimeZone, NSURL;
+@class CalDAVPrincipalSearchPropertySet, CalDAVRefreshContext, CalDAVServerVersion, CoreDAVDiscoveryTaskGroup, DACoreDAVLogger, DACoreDAVTaskManager, MobileCalDAVAccountRefreshActor, MobileCalDAVPrincipal, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimeZone, NSURL;
 
 @interface MobileCalDAVAccount : DAAccount <CDBAccountInfo>
 {
@@ -17,6 +17,7 @@
     NSMutableDictionary *_itemIDsToMoveActions;
     NSMutableSet *_mMovedItemURLStrings;
     NSMutableSet *_calendars;
+    NSMutableArray *_duplicateCalendars;
     CalDAVServerVersion *_serverVersion;
     _Bool _needsAccountPropertyRefresh;
     _Bool _isRefreshing;
@@ -121,6 +122,10 @@
 - (void)removePrincipal:(id)arg1;
 - (void)addPrincipal:(id)arg1;
 - (void)reloadCalendars;
+@property(readonly, nonatomic) NSArray *duplicateCalendars;
+- (void)_foundDuplicateCalendars:(int)arg1;
+- (void)_logDuplicateCalendarDetails:(void *)arg1;
+- (void)_foundDuplicateCalendar:(id)arg1 ofCalendar:(id)arg2;
 @property(readonly, nonatomic) NSSet *calendars;
 - (void)removeCalendarWithURL:(id)arg1;
 - (void)removeCalendar:(id)arg1;

@@ -49,7 +49,7 @@
 - (void)reloadData;
 - (id)_selectedItem;
 - (void)_updateItemsForLayoutStyle:(long long)arg1;
-- (id)_fontForLayoutStyle:(long long)arg1;
+- (id)_fontForLayoutStyle:(long long)arg1 selected:(_Bool)arg2;
 - (void)_updateContainerCenterFromSelectedModeAnimated:(_Bool)arg1;
 - (struct CGPoint)_verticalContainerCenterForMode:(long long)arg1;
 - (struct CGPoint)_horizontalContainerCenterForMode:(long long)arg1;

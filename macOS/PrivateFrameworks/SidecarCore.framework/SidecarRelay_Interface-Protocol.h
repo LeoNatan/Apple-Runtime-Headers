@@ -18,8 +18,10 @@
 - (void)relaySession:(long long)arg1 sendOPACKData:(NSData *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)relaySession:(long long)arg1 serviceIdentifier:(NSString *)arg2 destination:(NSUUID *)arg3 requestID:(long long)arg4 transport:(long long)arg5 completion:(void (^)(NSError *))arg6;
 - (void)relayDevicesForServiceIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (void)relayServicePresenterReady:(void (^)(NSError *))arg1;
 - (void)relayRegisterServicePresenter:(void (^)(NSError *))arg1;
 - (void)relayOptOutOfReconnect:(void (^)(NSError *))arg1;
+- (void)relayServiceReady:(NSString *)arg1 uuid:(NSUUID *)arg2;
 - (void)relayRegisterServiceProvider:(void (^)(NSError *))arg1;
 @end
 

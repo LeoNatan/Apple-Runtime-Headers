@@ -24,6 +24,8 @@
 - (void).cxx_destruct;
 - (void)_logError:(id)arg1;
 - (void)_clearState;
+- (_Bool)_enumerateLinesInCurrentEntryWithBlock:(CDUnknownBlockType)arg1;
+- (_Bool)enumerateLinesInCurrentEntryWithError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (id)lastError;
 - (unsigned long long)numberOfEntries;
 - (void)enumerateEntriesUsingBlock:(CDUnknownBlockType)arg1;

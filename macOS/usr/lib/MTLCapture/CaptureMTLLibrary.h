@@ -28,6 +28,7 @@
 @property(readonly) NSArray *functionNames;
 @property(readonly) NSArray *externFunctionNames;
 @property(readonly) id <MTLDevice> device;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

@@ -22,7 +22,9 @@
     struct sqlite3_stmt *selectReadyInputBlocks;
     struct sqlite3_stmt *deleteNullBlocks;
     struct sqlite3_stmt *insertItem;
-    struct sqlite3_stmt *insertItemForModel;
+    struct sqlite3_stmt *insertDeletionItemsForRecordsOfType;
+    struct sqlite3_stmt *insertDeletionItemsForRecordWithUUID;
+    struct sqlite3_stmt *insertDeletionItemsForRecordsWithParentUUID;
     struct sqlite3_stmt *updateItem;
     struct sqlite3_stmt *deleteItem;
     struct sqlite3_stmt *deleteItemsBlock;
@@ -48,6 +50,7 @@
     struct sqlite3_stmt *deleteRecordExternal;
     struct sqlite3_stmt *deleteRecordsStore;
     struct sqlite3_stmt *deleteZombieRecords;
+    struct sqlite3_stmt *selectRecord;
     struct sqlite3_stmt *selectRecordUUIDExternal;
     struct sqlite3_stmt *selectRecordUUID;
     struct sqlite3_stmt *selectRecordExternal;
@@ -57,6 +60,10 @@
     struct sqlite3_stmt *selectRecordsOfType;
     struct sqlite3_stmt *selectRecordsOfTypeOrderedByID;
     struct sqlite3_stmt *selectRecords;
+    struct sqlite3_stmt *deleteQueryableStore;
+    struct sqlite3_stmt *deleteQueryableRecord;
+    struct sqlite3_stmt *updateQueryable;
+    struct sqlite3_stmt *selectQueryable;
 }
 
 + (id)logCategory;
@@ -64,13 +71,20 @@
 + (void)unlinkDatastoreAt:(id)arg1 everything:(_Bool)arg2;
 - (id)logIdentifier;
 - (id)flush:(_Bool)arg1;
+- (id)_selectQueryableWithZoneRow:(unsigned int)arg1 type:(id)arg2 desired:(id)arg3 limit:(unsigned int)arg4 after:(unsigned int)arg5 error:(id *)arg6;
+- (_Bool)_updateQueryableWithZoneRow:(unsigned int)arg1 recordRow:(unsigned int)arg2 type:(id)arg3 fields:(id)arg4 error:(id *)arg5;
+- (_Bool)_deleteQueryableWithRecordRow:(unsigned int)arg1 error:(id *)arg2;
+- (_Bool)_deleteQueryableWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
 - (id)_selectRecordsWithBlockRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
 - (id)_selectRecordsWithZoneRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
+- (_Bool)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 limit:(unsigned int)arg3 returning:(unsigned int)arg4 error:(id *)arg5 handler:(CDUnknownBlockType)arg6;
+- (id)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 limit:(unsigned int)arg3 returning:(unsigned int)arg4 error:(id *)arg5;
 - (_Bool)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)_selectRecordsWithZoneRow:(unsigned int)arg1 modelType:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
 - (id)_selectRecordWithZoneRow:(unsigned int)arg1 parentModelID:(id)arg2 modelType:(id)arg3 returning:(unsigned int)arg4 error:(id *)arg5;
 - (id)_selectRecordWithZoneRow:(unsigned int)arg1 parentModelID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
 - (id)_selectRecordWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
+- (id)_selectRecordWithRow:(unsigned int)arg1 returning:(unsigned int)arg2 error:(id *)arg3;
 - (id)_selectRecordWithZoneRow:(unsigned int)arg1 modelID:(id)arg2 returning:(unsigned int)arg3 error:(id *)arg4;
 - (id)_selectRecordModelIDWithZoneRow:(unsigned int)arg1 externalID:(id)arg2 error:(id *)arg3;
 - (_Bool)_deleteZombieRecordsWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
@@ -99,6 +113,9 @@
 - (_Bool)_deleteItemWithRow:(unsigned int)arg1 error:(id *)arg2;
 - (_Bool)_updateItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 externalID:(id)arg4 externalData:(id)arg5 modelEncoding:(unsigned int)arg6 modelData:(id)arg7 error:(id *)arg8;
 - (unsigned int)_insertItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelType:(id)arg4 error:(id *)arg5;
+- (unsigned int)_insertDeletionItemsWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 parentModelID:(id)arg4 error:(id *)arg5;
+- (unsigned int)_insertDeletionItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelID:(id)arg4 error:(id *)arg5;
+- (unsigned int)_insertDeletionItemsWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 modelType:(id)arg4 error:(id *)arg5;
 - (unsigned int)_insertItemWithZoneRow:(unsigned int)arg1 blockRow:(unsigned int)arg2 type:(unsigned int)arg3 externalID:(id)arg4 externalData:(id)arg5 modelEncoding:(unsigned int)arg6 modelData:(id)arg7 error:(id *)arg8;
 - (unsigned int)_insertBlockWithZoneRow:(unsigned int)arg1 type:(unsigned int)arg2 options:(id)arg3 items:(id)arg4 error:(id *)arg5;
 - (_Bool)_deleteNullBlocksWithZoneRow:(unsigned int)arg1 error:(id *)arg2;
@@ -114,6 +131,7 @@
 - (id)_fetchAllZones:(id *)arg1;
 - (_Bool)_deleteZoneWithRow:(unsigned int)arg1 error:(id *)arg2;
 - (unsigned int)_insertZoneWithIdentification:(id)arg1 name:(id)arg2 error:(id *)arg3;
+- (int)migrateFromSchemaVersion:(int)arg1 error:(id *)arg2;
 - (id)close;
 - (id)initialize;
 - (id)prepare;
@@ -121,6 +139,7 @@
 - (_Bool)sqlBlockWithActivity:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)sqlTransactionWithActivity:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)sqlBlockWithActivity:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (int)migrateToSchema01WithError:(id *)arg1;
 
 @end
 

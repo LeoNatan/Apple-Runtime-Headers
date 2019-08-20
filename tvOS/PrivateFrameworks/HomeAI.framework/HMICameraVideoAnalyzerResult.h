@@ -12,6 +12,7 @@
 
 @interface HMICameraVideoAnalyzerResult : NSObject <NSSecureCoding>
 {
+    float _analysisFPS;
     long long _events;
     NSDictionary *_annotationScores;
     NSArray *_posterFrames;
@@ -27,6 +28,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly) unsigned long long lastSequenceNumber; // @synthesize lastSequenceNumber=_lastSequenceNumber;
+@property float analysisFPS; // @synthesize analysisFPS=_analysisFPS;
 @property(retain) HMICameraVideoFragment *videoFragment; // @synthesize videoFragment=_videoFragment;
 @property double timeSinceFragmentWasSubmitted; // @synthesize timeSinceFragmentWasSubmitted=_timeSinceFragmentWasSubmitted;
 @property double timeToAnalyzeFragment; // @synthesize timeToAnalyzeFragment=_timeToAnalyzeFragment;
@@ -39,8 +41,7 @@
 @property(readonly) long long events; // @synthesize events=_events;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1 excludeTime:(_Bool)arg2;
-- (id)initWithEvents:(long long)arg1 posterFrames:(id)arg2 frameResults:(id)arg3 duration:(CDStruct_1b6d18a9)arg4 creationDate:(id)arg5;
-- (id)initWithEvents:(long long)arg1 posterFrames:(id)arg2 frameResults:(id)arg3 annotationScores:(id)arg4 duration:(CDStruct_1b6d18a9)arg5 creationDate:(id)arg6;
+- (long long)confidenceThatEventOccurred:(long long)arg1;
 - (id)initWithEvents:(long long)arg1 posterFrames:(id)arg2 frameResults:(id)arg3 annotationScores:(id)arg4 duration:(CDStruct_1b6d18a9)arg5 creationDate:(id)arg6 resultCode:(long long)arg7 lastSequenceNumber:(unsigned long long)arg8;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

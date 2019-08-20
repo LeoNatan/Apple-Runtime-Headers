@@ -38,6 +38,7 @@
 - (_Bool)detachProtectedDatabase;
 - (_Bool)attachProtectedDatabaseWithName:(id)arg1;
 - (_Bool)attachProtectedDatabaseWithName:(id)arg1 error:(id *)arg2;
+- (_Bool)attachProtectedDatabaseWithName:(id)arg1 url:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) _Bool journalDatabaseAttached;
 @property(readonly, nonatomic) _Bool protectedDatabaseAttached;
 - (_Bool)columnExists:(id)arg1 inTable:(id)arg2 database:(id)arg3 type:(unsigned int *)arg4;
@@ -47,6 +48,7 @@
 - (_Bool)databaseIsAttached:(id)arg1;
 - (int)_adjustedDatabaseTypeForType:(int)arg1;
 - (id)_databasePathForFileName:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *protectedDatabasePath;
 @property(readonly, nonatomic) NSString *fullPath;
 - (void)_fixFilePermissionForPath:(const char *)arg1;
 - (void)handleSQLResult:(int)arg1 message:(id)arg2;

@@ -18,24 +18,28 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: skipNotifyForAttachmentChanged
     // Error parsing type: , name: attachmentsStorage
     // Error parsing type: , name: cachedCombinedAttachment
-    // Error parsing type: , name: inViewContainer
+    // Error parsing type: , name: focusableAncestor
 }
 
 - (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
-- (void)accessibilityElementDidLoseFocus;
-- (void)accessibilityElementDidBecomeFocused;
-- (BOOL)accessibilityPerformCancel;
-- (BOOL)accessibilityPerformPress;
+- (BOOL)isAccessibilityFocused;
+- (void)setAccessibilityFocused:(BOOL)arg1;
 - (id)accessibilityCustomActions;
 - (BOOL)accessibilityPerformDecrement;
 - (BOOL)accessibilityPerformIncrement;
+- (BOOL)accessibilityPerformDelete;
+- (BOOL)accessibilityPerformShowMenu;
+- (BOOL)accessibilityPerformCancel;
+- (BOOL)accessibilityPerformPress;
+- (BOOL)isAccessibilitySelected;
 - (id)accessibilityIdentifier;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityChildren;
 - (struct CGPoint)accessibilityActivationPoint;
 - (struct CGRect)accessibilityFrame;
+- (id)accessibilityWindow;
 - (id)accessibilityHelp;
 - (id)accessibilityValueDescription;
 - (id)accessibilityValue;

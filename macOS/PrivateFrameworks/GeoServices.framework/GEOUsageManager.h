@@ -26,9 +26,6 @@
 - (id)logContextByAddingNavigationStateWithLineType:(int)arg1 navState:(int)arg2 distanceToDestination:(double)arg3 upcomingManeuverType:(int)arg4 distanceToManeuver:(int)arg5 isGroupedManeuver:(BOOL)arg6 speedBucket:(int)arg7 toLogContext:(id)arg8;
 - (id)logContextByAddingPlaceCardStateWithPlaceActionDetails:(id)arg1 placeCardType:(int)arg2 mapItemCategory:(id)arg3 availableActions:(id)arg4 unactionableUIElements:(id)arg5 toLogContext:(id)arg6;
 - (void)registerTouristInfo:(BOOL)arg1;
-- (void)captureTelemetricEntityForEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;
-- (void)captureTelemetricEntityCountForEventKey:(int)arg1 eventDetail:(id)arg2;
-- (BOOL)_isDiagnosticSubmissionEnabled;
 - (void)captureStateTransitionEventWithStates:(id)arg1 generateOnlyIfStateChanged:(BOOL)arg2;
 - (void)clearStateTimingData;
 

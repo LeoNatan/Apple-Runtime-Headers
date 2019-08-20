@@ -6,7 +6,7 @@
 
 #import <HomeKit/HMAccessoryProfile.h>
 
-@class HMCameraAudioControl, HMCameraSettingsControl, HMCameraSnapshotControl, HMCameraStreamControl, HMCameraUserSettings, _HMCameraProfile;
+@class HMCameraAudioControl, HMCameraClipManager, HMCameraSettingsControl, HMCameraSnapshotControl, HMCameraStreamControl, HMCameraUserSettings, _HMCameraProfile;
 @protocol HMCameraProfileUserSettingsDelegate;
 
 @interface HMCameraProfile : HMAccessoryProfile
@@ -29,6 +29,7 @@
 - (void)deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)services;
+@property(readonly) HMCameraClipManager *clipManager;
 @property(readonly) HMCameraUserSettings *userSettings;
 @property(readonly, nonatomic) _HMCameraProfile *cameraProfile;
 - (id)initWithCameraProfile:(id)arg1;

@@ -39,6 +39,7 @@
     _Bool _passesHaveReloaded;
     _Bool _useTransitionalContentOffset;
     _Bool _shouldDelayReleaseScreenOnAssertion;
+    _Bool _statusBarIsShown;
     NPKActivatingUIAssertion *_activatingUIAssertion;
     NSArray *_paymentPassDescriptionsForDisplay;
     NSArray *_nonPaymentPassDescriptionsForDisplay;
@@ -75,6 +76,7 @@
     struct CGRect _frameForVASStatusView;
 }
 
+@property(nonatomic) _Bool statusBarIsShown; // @synthesize statusBarIsShown=_statusBarIsShown;
 @property(retain, nonatomic) NPKSynchronizedAnimationCoordinator *animationCoordinatorFORVASReadyView; // @synthesize animationCoordinatorFORVASReadyView=_animationCoordinatorFORVASReadyView;
 @property(retain, nonatomic) NPKPaymentStatusViewAnimationCoordinator *animationCoordinatorForVASStatusView; // @synthesize animationCoordinatorForVASStatusView=_animationCoordinatorForVASStatusView;
 @property(nonatomic) _Bool shouldDelayReleaseScreenOnAssertion; // @synthesize shouldDelayReleaseScreenOnAssertion=_shouldDelayReleaseScreenOnAssertion;
@@ -205,6 +207,8 @@
 - (void)npkPassCollectionViewCellDidReceiveNewZIndex:(id)arg1;
 - (void)npkPassCollectionViewCellDidChangeSuperview:(id)arg1;
 - (void)npkPassCollectionViewCellBeganDragging:(id)arg1;
+- (void)npkPassCollectionViewBarcodeDidExitFullscreen:(id)arg1;
+- (void)npkPassCollectionViewBarcodeDidEnterFullscreen:(id)arg1;
 - (void)npkPassCollectionViewCellTapped:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (_Bool)npkCollectionViewIsShowingHelperCell;
@@ -225,6 +229,7 @@
 - (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 showServiceMode:(_Bool)arg3 animated:(_Bool)arg4;
 - (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)selectCardWithUniqueID:(id)arg1 actionType:(unsigned int)arg2 animated:(_Bool)arg3;
+- (_Bool)prefersStatusBarHidden;
 - (void)dealloc;
 - (id)initWithGroupsController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

@@ -21,6 +21,8 @@
     struct os_unfair_lock_s _iCloudAccountTypeLock;
 }
 
++ (void)performWithinPersonaForAccount:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (id)personaIDIfCurrentPersonaIsEnterprise;
 + (id)stringRepresentationForService:(long long)arg1;
 + (_Bool)isAccountsFrameworkAvailable;
 + (id)sharedInstance;

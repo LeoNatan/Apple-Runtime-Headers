@@ -14,16 +14,19 @@
     CDUnknownBlockType _reloadHandler;
     NSString *_version;
     NSDate *_timestamp;
+    struct __FSEventStream *_stream;
 }
 
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+- (void)forceReload;
 - (void)reloadIfNecessary;
 - (void)loadInternalData:(id)arg1;
 - (void)doReload;
-- (id)initWithURL:(id)arg1 withReloadBlock:(CDUnknownBlockType)arg2;
+- (id)initWithURL:(id)arg1 withReloadBlock:(CDUnknownBlockType)arg2 watchForUpdates:(BOOL)arg3;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -16,6 +16,7 @@
     unsigned long long _resultsLimit;
     FCCloudContext *_cloudContext;
     CDUnknownBlockType _articleSearchCompletion;
+    unsigned long long _parsecQueryID;
     FCArticleStreamingResults *_results;
     NSError *_searchError;
     FCArticleSearchOperationFeedbackResult *_feedbackResult;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) FCArticleSearchOperationFeedbackResult *feedbackResult; // @synthesize feedbackResult=_feedbackResult;
 @property(retain, nonatomic) NSError *searchError; // @synthesize searchError=_searchError;
 @property(retain, nonatomic) FCArticleStreamingResults *results; // @synthesize results=_results;
+@property(nonatomic) unsigned long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(copy) CDUnknownBlockType articleSearchCompletion; // @synthesize articleSearchCompletion=_articleSearchCompletion;
 @property(retain, nonatomic) FCCloudContext *cloudContext; // @synthesize cloudContext=_cloudContext;
 @property(nonatomic) unsigned long long resultsLimit; // @synthesize resultsLimit=_resultsLimit;
@@ -35,6 +37,7 @@
 - (void)_performSearchQuery:(CDUnknownBlockType)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;
+- (id)initWithParsecQueryID:(unsigned long long)arg1;
 
 @end
 

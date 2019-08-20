@@ -20,7 +20,7 @@
 - (void)reportAsJunkPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg1;
 - (void)respondToPhotoStreamInvitationWithAlbumCloudGUID:(id)arg1 acceptInvitation:(_Bool)arg2;
 - (void)noteInterestingMemoryAlertViewedWithUUID:(id)arg1;
-- (void)noteInterestingMemoryAlertWithMemoryUUID:(id)arg1 keyAssetUUID:(id)arg2 notificationTitle:(id)arg3 notificationSubtitle:(id)arg4 notificationDeliveryDate:(id)arg5;
+- (void)noteInterestingMemoryAlertWithMemoryUUID:(id)arg1 notificationDeliveryDate:(id)arg2;
 - (void)userViewedNotificationWithAlbumCloudGUID:(id)arg1;
 
 // Remaining properties

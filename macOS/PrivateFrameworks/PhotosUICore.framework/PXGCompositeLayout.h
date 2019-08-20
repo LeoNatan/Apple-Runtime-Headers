@@ -9,18 +9,21 @@
 #import <PhotosUICore/PXGDataSourceDrivenLayout-Protocol.h>
 
 @class NSString, PXGSublayoutComposition;
+@protocol PXGSublayoutFaultingDelegate;
 
 @interface PXGCompositeLayout : PXGLayout <PXGDataSourceDrivenLayout>
 {
     CDStruct_5f1286c4 _updateFlags;
     BOOL _isUpdatingSublayouts;
     PXGSublayoutComposition *_composition;
+    id <PXGSublayoutFaultingDelegate> _sublayoutFaultingDelegate;
     struct NSEdgeInsets _faultInOutsets;
     struct NSEdgeInsets _faultOutOutsets;
 }
 
 @property(nonatomic) struct NSEdgeInsets faultOutOutsets; // @synthesize faultOutOutsets=_faultOutOutsets;
 @property(nonatomic) struct NSEdgeInsets faultInOutsets; // @synthesize faultInOutsets=_faultInOutsets;
+@property(nonatomic) __weak id <PXGSublayoutFaultingDelegate> sublayoutFaultingDelegate; // @synthesize sublayoutFaultingDelegate=_sublayoutFaultingDelegate;
 @property(retain, nonatomic) PXGSublayoutComposition *composition; // @synthesize composition=_composition;
 - (void).cxx_destruct;
 - (void)_updateSublayouts;

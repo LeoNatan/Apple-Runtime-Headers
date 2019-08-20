@@ -23,10 +23,12 @@ __attribute__((visibility("hidden")))
     CBABRamp *_ramp;
     BOOL _updatesFrozen;
     BOOL _suspendAutoBrightness;
+    BOOL _fastRamp;
     CBDisplayModule *_displayModule;
 }
 
 @property(readonly) CBDisplayModule *displayModule; // @synthesize displayModule=_displayModule;
+- (void)endFastRamp;
 - (BOOL)getAggregatedLux:(float *)arg1;
 - (void)handleNotificationForKey:(id)arg1 withProperty:(id)arg2;
 - (void)sendNotificationForKey:(id)arg1 withValue:(id)arg2;

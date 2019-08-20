@@ -73,7 +73,6 @@
 - (void)_createCloseButtonImage;
 - (void)awakeFromNib;
 - (void)cleanupFlames;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

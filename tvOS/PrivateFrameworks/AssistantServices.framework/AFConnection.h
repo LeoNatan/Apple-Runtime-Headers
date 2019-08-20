@@ -12,8 +12,8 @@
 #import <AssistantServices/AFInterstitialProviderDelegate-Protocol.h>
 #import <AssistantServices/NSXPCListenerDelegate-Protocol.h>
 
-@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
-@protocol AFAssistantUIService, AFSpeechDelegate, OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
+@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, AFWatchdogTimer, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
+@protocol AFAssistantUIService, AFSpeechDelegate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface AFConnection : NSObject <NSXPCListenerDelegate, AFAudioPowerUpdaterDelegate, AFAccessibilityListening, AFDeviceRingerSwitchListening, AFInterstitialProviderDelegate>
 {
@@ -27,7 +27,7 @@
     NSUUID *_activeRequestUUID;
     long long _activeRequestType;
     long long _activeRequestUsefulUserResultType;
-    NSObject<OS_dispatch_source> *_requestTimeoutTimer;
+    AFWatchdogTimer *_requestTimeoutTimer;
     AFOneArgumentSafetyBlock *_requestCompletion;
     long long _activeRequestSpeechEvent;
     _Bool _activeRequestHasSpeechRecognition;
@@ -92,6 +92,7 @@
 - (void)setOverriddenApplicationContext:(id)arg1 withContext:(id)arg2;
 - (void)setApplicationContextForApplicationInfos:(id)arg1;
 - (void)setApplicationContextForApplicationInfos:(id)arg1 withRefId:(id)arg2;
+- (void)fetchAppicationContextForApplicationInfo:(id)arg1 supplementalContext:(id)arg2 refID:(id)arg3;
 - (void)setApplicationContext:(id)arg1;
 - (void)willSetApplicationContextWithRefId:(id)arg1;
 - (void)clearContext;
@@ -117,6 +118,7 @@
 - (void)stopSpeech;
 - (void)reportIssueForError:(id)arg1 type:(long long)arg2 context:(id)arg3;
 - (void)failRequestWithError:(id)arg1;
+- (void)cancelRequestForReason:(long long)arg1;
 - (void)cancelRequest;
 - (void)cancelSpeech;
 - (void)startAcousticIDRequestWithOptions:(id)arg1;
@@ -138,8 +140,7 @@
 - (void)setMyriadDecisionResult:(_Bool)arg1;
 - (void)setShouldWaitForMyriad:(_Bool)arg1;
 - (void)setDeviceRingerSwitchState:(long long)arg1;
-- (void)setIsAccessibilityVibrationDisabled:(_Bool)arg1;
-- (void)setIsAccessibilityVoiceOverTouchEnabled:(_Bool)arg1;
+- (void)setAccessibilityState:(id)arg1;
 - (void)setCarDNDActive:(_Bool)arg1;
 - (void)setIsDeviceInStarkMode:(_Bool)arg1;
 - (void)setLockState:(_Bool)arg1 screenLocked:(_Bool)arg2;
@@ -148,6 +149,7 @@
 - (void)resumeInterruptedAudioPlaybackIfNeeded;
 - (void)forceAudioSessionInactiveWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceAudioSessionInactive;
+- (void)forceAudioSessionActiveWithOptions:(unsigned long long)arg1 reason:(long long)arg2 speechRequestOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)forceAudioSessionActiveWithOptions:(unsigned long long)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)forceAudioSessionActiveWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceAudioSessionActive;
@@ -173,6 +175,8 @@
 - (void)_extendExistingRequestTimeoutForReason:(id)arg1;
 - (void)_extendRequestTimeoutForReason:(id)arg1;
 - (void)_cancelRequestTimeoutForReason:(id)arg1;
+- (void)_resumeRequestTimeoutForReason:(id)arg1;
+- (void)_pauseRequestTimeoutForReason:(id)arg1;
 - (void)_invokeRequestTimeoutForReason:(id)arg1;
 - (void)_scheduleRequestTimeoutForReason:(id)arg1;
 - (id)_connection;
@@ -180,8 +184,7 @@
 - (void)_connectionFailedWithError:(id)arg1;
 - (void)interstitialProvider:(id)arg1 handlePhase:(long long)arg2 displayText:(id)arg3 speakableText:(id)arg4 context:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)deviceRingerObserver:(id)arg1 didChangeState:(long long)arg2;
-- (void)accessibilityObserver:(id)arg1 didChangeVibrationDisabledPreference:(_Bool)arg2;
-- (void)accessibilityObserver:(id)arg1 didChangeVoiceOverTouchEnabledPreference:(_Bool)arg2;
+- (void)accessibilityObserver:(id)arg1 stateDidChangeFrom:(id)arg2 to:(id)arg3;
 - (void)audioPowerUpdaterDidUpdate:(id)arg1 averagePower:(float)arg2 peakPower:(float)arg3;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateSpeechRecognizedPartialResult:(id)arg1;
@@ -229,7 +232,7 @@
 - (_Bool)_startInputAudioPowerUpdatesWithXPCWrapper:(id)arg1;
 - (void)_aceConnectionWillRetryOnError:(id)arg1;
 - (void)_setShouldSpeak:(_Bool)arg1;
-- (void)_dispatchCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)_dispatchCommand:(id)arg1 isInterstitial:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_handleCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_startUIRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestDidEnd;

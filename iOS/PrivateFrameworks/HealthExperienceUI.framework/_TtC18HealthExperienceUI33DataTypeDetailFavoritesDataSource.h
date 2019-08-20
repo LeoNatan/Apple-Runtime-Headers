@@ -9,6 +9,8 @@
 @interface _TtC18HealthExperienceUI33DataTypeDetailFavoritesDataSource : _TtC18HealthExperienceUI25DataTypeMutableDataSource
 {
     // Error parsing type: , name: hkType
+    // Error parsing type: , name: favoritesController
+    // Error parsing type: , name: $__lazy_storage_$_favoritesObserver
 }
 
 @end

@@ -20,12 +20,16 @@
     NSMutableDictionary *_cancellableOperations;
     unsigned int _nextCancellationToken;
     _Bool _registeredForStartNote;
+    _Bool _wasAbortedDueToExcessiveConnctions;
     _Bool _hasEverConnected;
     NSXPCConnection *_xpcConnection;
     id <EKDaemonConnectionDelegate> _delegate;
     CADDatabaseInitializationOptions *_initializationOptions;
 }
 
++ (void)_unregisterConnection;
++ (_Bool)_tryRegisterNewConnection;
++ (unsigned long long)maxNumberOfOpenConnections;
 @property(nonatomic) _Bool hasEverConnected; // @synthesize hasEverConnected=_hasEverConnected;
 @property(retain, nonatomic) CADDatabaseInitializationOptions *initializationOptions; // @synthesize initializationOptions=_initializationOptions;
 @property __weak id <EKDaemonConnectionDelegate> delegate; // @synthesize delegate=_delegate;

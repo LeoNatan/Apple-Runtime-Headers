@@ -32,6 +32,7 @@
 - (id)_newGnomonView;
 - (void)setSolarDayMaskPath:(id)arg1;
 - (void)setSolarDayProgress:(double)arg1;
+- (void)setSolarDayAltitude:(CDStruct_869f9c67)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 orbitDiameter:(double)arg2 device:(id)arg3;
 
 @end

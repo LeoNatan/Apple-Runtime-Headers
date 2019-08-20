@@ -12,6 +12,5 @@
 - (void)getPhotoLibraryURLsWithReply:(void (^)(NSURL *, NSURL *, NSError *))arg1;
 - (void)getActivePhotoLibrariesWithReply:(void (^)(NSSet *, NSError *))arg1;
 - (void)setSystemPhotoLibraryURL:(NSURL *)arg1 bookmark:(NSData *)arg2 options:(unsigned short)arg3 reply:(void (^)(NSError *))arg4;
-- (void)isSystemLibraryURLDefined:(void (^)(BOOL))arg1;
 @end
 

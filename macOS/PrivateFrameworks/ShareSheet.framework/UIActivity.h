@@ -15,19 +15,20 @@
     UIImage *_activityImage;
 }
 
++ (id)_activityImageForApplicationBundleIdentifier:(id)arg1;
 + (id)_activityImageForActionRepresentationImage:(id)arg1;
 + (long long)activityCategory;
 @property(readonly, nonatomic) UIImage *activityImage; // @synthesize activityImage=_activityImage;
 @property(readonly, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 - (void).cxx_destruct;
+- (id)_activityImage;
 - (id)applicationExtension;
 - (id)_embeddedActivityViewController;
 - (void)_cleanup;
 - (id)_beforeActivity;
 - (id)_bundleIdentifierForActivityImageCreation;
 - (id)_activitySettingsImage;
-- (id)_activityImage;
 - (void)activityDidFinish:(BOOL)arg1;
 - (void)performActivity;
 @property(readonly, nonatomic) UIViewController *activityViewController;

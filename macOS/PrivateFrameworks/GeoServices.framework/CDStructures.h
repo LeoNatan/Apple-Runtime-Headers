@@ -1723,6 +1723,11 @@ typedef struct {
 } CDStruct_2d9f5d20;
 
 typedef struct {
+    unsigned int has_count:1;
+    unsigned int has_type:1;
+} CDStruct_dd28a305;
+
+typedef struct {
     unsigned int has_height:1;
     unsigned int has_width:1;
 } CDStruct_a1cdbaa7;

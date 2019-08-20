@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_scrollHysteresis) double scrollHysteresis;
 @property(readonly, nonatomic, getter=_touchDelayForScrollDetection) double touchDelayForScrollDetection;
 @property(readonly, nonatomic) _Bool delaysContentTouches;
-- (struct UIEdgeInsets)_concreteDefaultLayoutMargins;
 - (void)didMoveToWindow;
 
 // Remaining properties

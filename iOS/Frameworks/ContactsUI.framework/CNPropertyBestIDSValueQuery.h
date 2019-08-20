@@ -15,13 +15,17 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_validIDSItems;
     id <CNPropertyBestIDSValueQueryDelegate> _delegate;
     NSArray *_propertyItems;
+    NSArray *_idsHandles;
     id <CNCancelable> _idsLookupToken;
+    NSMutableArray *_validIDSHandles;
 }
 
+@property(retain, nonatomic) NSMutableArray *validIDSHandles; // @synthesize validIDSHandles=_validIDSHandles;
 @property(retain, nonatomic) id <CNCancelable> idsLookupToken; // @synthesize idsLookupToken=_idsLookupToken;
+@property(retain, nonatomic) NSArray *idsHandles; // @synthesize idsHandles=_idsHandles;
 @property(retain, nonatomic) NSArray *propertyItems; // @synthesize propertyItems=_propertyItems;
 @property(nonatomic) __weak id <CNPropertyBestIDSValueQueryDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) NSMutableArray *validIDSItems; // @synthesize validIDSItems=_validIDSItems;
+@property(readonly, nonatomic) NSMutableArray *validIDSItems; // @synthesize validIDSItems=_validIDSItems;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CNPropertyGroupItem *bestIDSProperty;
 - (void)cancel;

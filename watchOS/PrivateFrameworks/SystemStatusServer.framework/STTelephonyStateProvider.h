@@ -95,12 +95,15 @@
 - (void)networkReselectionNeeded:(id)arg1;
 - (void)_handleCellChangedForContext:(id)arg1 withCTContext:(id)arg2;
 - (void)cellChanged:(id)arg1 cell:(id)arg2;
+- (void)_cancelFakeCellularRegistrationForContext:(id)arg1;
+- (void)_startFakeCellularRegistrationIfNecessaryForContext:(id)arg1;
+- (void)_setCellRegistrationStatus:(unsigned int)arg1 inSubscriptionContext:(id)arg2;
 - (void)_cancelFakeRegistrationForContext:(id)arg1;
 - (void)_startFakeRegistrationIfNecessaryForContext:(id)arg1;
 - (void)_updateRegistrationNowInSubscriptionContext:(id)arg1;
 - (void)_setRegistrationStatus:(unsigned int)arg1 inSubscriptionContext:(id)arg2;
-- (void)_setCachedCTRegistrationDisplayStatus:(id)arg1 forcedHome:(_Bool)arg2 inSubscriptionContext:(id)arg3;
-- (void)_setDisplayStatus:(id)arg1 forcedHome:(_Bool)arg2 changeCausedBySIMRemoval:(_Bool)arg3 inSubscriptionContext:(id)arg4 withCTContext:(id)arg5;
+- (void)_setCachedCTRegistrationCellStatus:(id)arg1 displayStatus:(id)arg2 forcedHome:(_Bool)arg3 inSubscriptionContext:(id)arg4;
+- (void)_setCellStatus:(id)arg1 displayStatus:(id)arg2 forcedHome:(_Bool)arg3 changeCausedBySIMRemoval:(_Bool)arg4 inSubscriptionContext:(id)arg5 withCTContext:(id)arg6;
 - (void)displayStatusChanged:(id)arg1 status:(id)arg2;
 - (id)_carrierNameForOperatorName:(id)arg1 withContext:(id)arg2;
 - (void)_cancelFakeServiceForContext:(id)arg1;

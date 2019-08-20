@@ -22,6 +22,7 @@
     MPCModelGenericAVItemUserIdentityPropertySet *_identityPropertySet;
 }
 
+@property(retain, nonatomic) MPCModelGenericAVItemUserIdentityPropertySet *identityPropertySet; // @synthesize identityPropertySet=_identityPropertySet;
 @property(readonly, copy, nonatomic) MPSectionedCollection *tracks; // @synthesize tracks=_tracks;
 @property(readonly, copy, nonatomic) MPSectionedCollection *trackModels; // @synthesize trackModels=_trackModels;
 - (void).cxx_destruct;
@@ -32,7 +33,7 @@
 - (id)AVItemAtIndex:(long long)arg1;
 - (void)updateWithPersonalizedResponse:(id)arg1;
 @property(readonly, nonatomic) ICMutableRadioPlaybackHistory *playbackHistory;
-- (id)initWithPlaybackContext:(id)arg1 identityPropertySet:(id)arg2;
+- (id)initWithPlaybackContext:(id)arg1;
 
 @end
 

@@ -10,6 +10,7 @@
 @protocol EMCollectionItemID;
 
 @protocol EMCollectionChangeObserver <NSObject>
+- (void)collection:(EMCollection *)arg1 replacedExistingItemID:(id <EMCollectionItemID>)arg2 withNewItemID:(id <EMCollectionItemID>)arg3;
 - (void)collection:(EMCollection *)arg1 deletedItemIDs:(NSArray *)arg2;
 - (void)collection:(EMCollection *)arg1 changedItemIDs:(NSArray *)arg2;
 - (void)collection:(EMCollection *)arg1 movedItemID:(id <EMCollectionItemID>)arg2 after:(id <EMCollectionItemID>)arg3;

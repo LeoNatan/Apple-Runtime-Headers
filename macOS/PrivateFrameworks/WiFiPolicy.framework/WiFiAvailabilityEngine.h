@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSSet, WiFiLexicon;
+@class NSSet, WiFiLexicon;
 @protocol OS_dispatch_queue, WiFiLocationProvider, WiFiScanProvider;
 
 @interface WiFiAvailabilityEngine : NSObject
 {
+    double _availabilityMatchMaximumAge;
     NSSet *_providers;
     NSSet *_sources;
     NSSet *_availableNetworks;
     CDUnknownBlockType _availabilityChangedCallback;
-    NSMutableSet *_potentialCandidates;
     id <WiFiScanProvider> _scanProvider;
     id <WiFiLocationProvider> _locationProvider;
     NSObject<OS_dispatch_queue> *_queue;
@@ -26,21 +26,23 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <WiFiLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
 @property(nonatomic) __weak id <WiFiScanProvider> scanProvider; // @synthesize scanProvider=_scanProvider;
-@property(retain, nonatomic) NSMutableSet *potentialCandidates; // @synthesize potentialCandidates=_potentialCandidates;
 @property(copy, nonatomic) CDUnknownBlockType availabilityChangedCallback; // @synthesize availabilityChangedCallback=_availabilityChangedCallback;
 @property(retain, nonatomic) NSSet *availableNetworks; // @synthesize availableNetworks=_availableNetworks;
 @property(copy, nonatomic) NSSet *sources; // @synthesize sources=_sources;
 @property(copy, nonatomic) NSSet *providers; // @synthesize providers=_providers;
+@property(nonatomic) double availabilityMatchMaximumAge; // @synthesize availabilityMatchMaximumAge=_availabilityMatchMaximumAge;
 - (void).cxx_destruct;
 - (id)findRecommendationsForScannedNetwork:(id)arg1;
 - (id)findRecommendationForScannedNetwork:(id)arg1;
 - (void)_handle3BarsRelevancyAdded:(id)arg1 removed:(id)arg2;
 - (void)_handleWalletRelevancyAdded:(id)arg1 removed:(id)arg2;
+- (id)_createAvailabilityMatchForCandidate:(id)arg1 scannedNetwork:(id)arg2;
+- (void)_findAvailabilityMatchesInSourcesForBSSIDS:(id)arg1;
+- (id)_findRelevantNetworkMatchForScannedNetwork:(id)arg1;
+- (id)_findExistingAvailabilityMatchForScannedNetwork:(id)arg1;
 - (void)_handleScanResultCallback:(id)arg1 error:(id)arg2;
-- (void)_handlePotentialCandidatesMatches:(id)arg1;
-- (id)_findPotentialCandidatesMatchingScanResultNetwork:(id)arg1 previouslyMatched:(char *)arg2;
-- (void)_removePotentialCandidateNetwork:(id)arg1;
-- (void)_addPotentialCandidateNetwork:(id)arg1;
+- (void)_removeStaleMatches;
+- (void)_handleCandidateMatches:(id)arg1;
 - (void)_setupSourceCallbacks:(id)arg1;
 - (void)_setupProviderCallbacks:(id)arg1;
 - (id)initWithProviders:(id)arg1 sources:(id)arg2;

@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) PKEnterCurrencyAmountPassView *amountPassView; // @synthesize amountPassView=_amountPassView;
 @property(nonatomic) __weak id <PKEnterCurrencyAmountPassViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (double)_bottomPadding;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithCurrenyAmount:(id)arg1 pass:(id)arg2;

@@ -14,6 +14,7 @@
 {
 }
 
+- (id)owners;
 @property(readonly, nonatomic) NSString *localizedName;
 
 // Remaining properties

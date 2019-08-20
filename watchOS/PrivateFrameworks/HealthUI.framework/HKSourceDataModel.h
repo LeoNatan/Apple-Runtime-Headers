@@ -8,15 +8,17 @@
 
 #import <HealthUI/NSCopying-Protocol.h>
 
-@class HKSource, UIImage;
+@class HKSource, NSDictionary, UIImage;
 
 @interface HKSourceDataModel : NSObject <NSCopying>
 {
     _Bool _installed;
     HKSource *_source;
     UIImage *_icon;
+    NSDictionary *_purposeStrings;
 }
 
+@property(copy) NSDictionary *purposeStrings; // @synthesize purposeStrings=_purposeStrings;
 @property(retain) UIImage *icon; // @synthesize icon=_icon;
 @property _Bool installed; // @synthesize installed=_installed;
 @property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;

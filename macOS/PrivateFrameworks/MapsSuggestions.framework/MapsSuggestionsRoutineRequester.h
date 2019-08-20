@@ -16,7 +16,6 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)isHSA2Enabled;
 - (void)clearAllVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopMonitoringVehicleEvents;
 - (BOOL)startMonitoringVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
@@ -25,6 +24,7 @@
 - (BOOL)fetchLocationsOfInterestVisitedSinceDate:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)fetchLocationsOfInterestOfType:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)fetchNextPLOIsFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 handler:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) NSString *uniqueName;
 - (id)init;
 
 // Remaining properties

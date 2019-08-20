@@ -9,7 +9,7 @@
 #import <EmailDaemon/EDMailboxPredictionQueryAdapter-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDConversationPersistence, EDMailboxPersistence, EDPersistenceDatabase, EDVIPManager, NSNumber, NSString;
+@class EDConversationPersistence, EDMailboxPersistence, EDPersistenceDatabase, EDVIPManager, EMBlockedSenderManager, NSNumber, NSString;
 @protocol EDRemoteSearchProvider, OS_dispatch_queue;
 
 @interface EDMessagePersistence : NSObject <EFLoggable, EDMailboxPredictionQueryAdapter>
@@ -18,6 +18,7 @@
     EDMailboxPersistence *_mailboxPersistence;
     EDVIPManager *_vipManager;
     id <EDRemoteSearchProvider> _remoteSearchProvider;
+    EMBlockedSenderManager *_blockedSenderManager;
     EDConversationPersistence *_conversationPersistence;
     NSObject<OS_dispatch_queue> *_cachedMetadataIsolation;
     NSNumber *_cachedMetadataEstimatedRowCount;
@@ -47,12 +48,13 @@
 @property(retain, nonatomic) NSNumber *cachedMetadataEstimatedRowCount; // @synthesize cachedMetadataEstimatedRowCount=_cachedMetadataEstimatedRowCount;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cachedMetadataIsolation; // @synthesize cachedMetadataIsolation=_cachedMetadataIsolation;
 @property(readonly, nonatomic) EDConversationPersistence *conversationPersistence; // @synthesize conversationPersistence=_conversationPersistence;
+@property(readonly, nonatomic) __weak EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly, nonatomic) __weak id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 @property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
 @property(readonly, nonatomic) __weak EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 - (void).cxx_destruct;
 - (id)requestSummaryForMessageObjectID:(id)arg1;
-- (id)requestContentForMessageObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)requestContentForMessageObjectID:(id)arg1 requestID:(unsigned long long)arg2 options:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
 - (id)validMailboxesForPrediction;
 - (void)_checkCachedMetadataRowLimitWithConnection:(id)arg1;
@@ -64,24 +66,26 @@
 - (id)_groupMessageObjectIDsByMailboxScope:(id)arg1;
 - (id)messagesForMessageObjectIDs:(id)arg1 missedMessageObjectIDs:(id *)arg2;
 - (id)messagesForPersistedMessages:(id)arg1 mailboxScope:(id)arg2;
-- (id)persistedMessagesForDatabaseIDs:(id)arg1;
-- (id)persistedMessagesForMessageObjectIDs:(id)arg1;
+- (id)persistedMessagesForDatabaseIDs:(id)arg1 requireProtectedData:(_Bool)arg2 temporarilyUnavailableDatabaseIDs:(id *)arg3;
+- (id)persistedMessagesForMessageObjectIDs:(id)arg1 requireProtectedData:(_Bool)arg2 temporarilyUnavailableMessageObjectIDs:(id *)arg3;
 - (id)_threadQueryForThreadObjectID:(id)arg1;
-- (id)persistedMessagesForObjectIDs:(id)arg1;
-- (id)_databaseIDsForMessageIDHashes:(id)arg1 mailboxScope:(id)arg2;
-- (id)databaseIDsForMessageObjectIDs:(id)arg1;
+- (id)persistedMessagesForObjectIDs:(id)arg1 requireProtectedData:(_Bool)arg2;
+- (id)_databaseIDsDictionaryForMessageIDHashes:(id)arg1 mailboxScope:(id)arg2;
+- (id)databaseIDsDictionaryForMessageObjectIDs:(id)arg1;
 - (id)persistedMessageForOutgoingMessage:(id)arg1 isDraft:(_Bool)arg2;
 - (id)queryWithExpandedMailboxesFromQuery:(id)arg1;
 - (void)iteratePersistedMessagesMatchingQuery:(id)arg1 limit:(long long)arg2 cancelationToken:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)persistedMessagesMatchingQuery:(id)arg1 limit:(long long)arg2;
 - (void)iterateMessagesMatchingQuery:(id)arg1 batchSize:(long long)arg2 firstBatchSize:(long long)arg3 limit:(long long)arg4 cancelationToken:(id)arg5 handler:(CDUnknownBlockType)arg6;
+- (id)messagesMatchingQuery:(id)arg1 limit:(long long)arg2 cancelationToken:(id)arg3;
 - (id)messagesMatchingQuery:(id)arg1 limit:(long long)arg2;
 - (id)messagesMatchingQuery:(id)arg1;
 - (long long)countOfMessagesMatchingQuery:(id)arg1;
 - (long long)countOfMessagesWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
 - (id)messageObjectIDCriterionExpressionForPredicateValue:(id)arg1;
+- (void)performDatabaseReadBlock:(CDUnknownBlockType)arg1;
 - (void)performDatabaseWorkInBlockWithHighPriority:(CDUnknownBlockType)arg1;
-- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5;
+- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5 blockedSenderManager:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

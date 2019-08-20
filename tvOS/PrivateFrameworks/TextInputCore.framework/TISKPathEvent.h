@@ -19,6 +19,7 @@
 - (void)reportInterKeyTiming:(id)arg1 previousEvent:(id)arg2;
 - (void)reportToSession:(id)arg1;
 - (id)init:(id)arg1 candidate:(id)arg2 order:(long long)arg3;
+- (_Bool)isMissingATouch;
 
 @end
 

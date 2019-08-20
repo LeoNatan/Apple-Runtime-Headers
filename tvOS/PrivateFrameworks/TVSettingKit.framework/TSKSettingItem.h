@@ -30,6 +30,7 @@
     NSArray *_availableValues;
     NSFormatter *_localizedValueFormatter;
     NSString *_localizedDescription;
+    long long _badgeValue;
     CDUnknownBlockType _updateBlock;
     SEL _action;
     SEL _playButtonAction;
@@ -84,6 +85,7 @@
 @property(nonatomic) SEL playButtonAction; // @synthesize playButtonAction=_playButtonAction;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
+@property(nonatomic) long long badgeValue; // @synthesize badgeValue=_badgeValue;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(retain, nonatomic) NSFormatter *localizedValueFormatter; // @synthesize localizedValueFormatter=_localizedValueFormatter;
 @property(copy, nonatomic) NSArray *availableValues; // @synthesize availableValues=_availableValues;

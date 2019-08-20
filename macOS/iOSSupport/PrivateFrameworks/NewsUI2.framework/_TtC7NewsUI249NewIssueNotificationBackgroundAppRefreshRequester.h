@@ -9,7 +9,7 @@
 @interface _TtC7NewsUI249NewIssueNotificationBackgroundAppRefreshRequester : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: activityScheduler
-    // Error parsing type: , name: windowStartComponents
+    // Error parsing type: , name: paidBundleConfigManager
 }
 
 @end

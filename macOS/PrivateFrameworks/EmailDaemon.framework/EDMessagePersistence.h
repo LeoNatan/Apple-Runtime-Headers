@@ -75,10 +75,11 @@
 - (void)iteratePersistedMessagesMatchingQuery:(id)arg1 limit:(long long)arg2 cancelationToken:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)persistedMessagesMatchingQuery:(id)arg1 limit:(long long)arg2;
 - (void)iterateMessagesMatchingQuery:(id)arg1 batchSize:(long long)arg2 firstBatchSize:(long long)arg3 limit:(long long)arg4 cancelationToken:(id)arg5 handler:(CDUnknownBlockType)arg6;
+- (id)messagesMatchingQuery:(id)arg1 limit:(long long)arg2 cancelationToken:(id)arg3;
 - (id)messagesMatchingQuery:(id)arg1 limit:(long long)arg2;
 - (id)messagesMatchingQuery:(id)arg1;
 - (long long)countOfMessagesMatchingQuery:(id)arg1;
-- (BOOL)messagesExistWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
+- (long long)countOfMessagesWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
 - (id)messageObjectIDCriterionExpressionForPredicateValue:(id)arg1;
 - (void)performDatabaseWorkInBlockWithHighPriority:(CDUnknownBlockType)arg1;
 - (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5;

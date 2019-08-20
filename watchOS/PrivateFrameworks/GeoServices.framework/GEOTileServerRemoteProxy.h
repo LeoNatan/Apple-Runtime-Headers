@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)generateRequestedFromTileLoaderEndSignpost:(unsigned long long)arg1;
-- (void)generateRequestedFromTileLoaderBeginSignpost:(unsigned long long)arg1;
+- (void)generateRequestedFromTileLoaderBeginSignpost:(unsigned long long)arg1 tileKey:(const struct _GEOTileKey *)arg2 options:(unsigned int)arg3;
 - (_Bool)skipNetworkForKeysWhenPreloading:(id)arg1;
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1 exclusive:(_Bool)arg2;

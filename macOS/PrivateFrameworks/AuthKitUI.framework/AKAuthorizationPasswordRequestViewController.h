@@ -11,7 +11,7 @@
 #import <AuthKitUI/AKAuthorizationSubPaneConfirmButtonDelegate-Protocol.h>
 #import <AuthKitUI/AKAuthorizationSubPaneLoginChoiceDelegate-Protocol.h>
 
-@class AKAuthorizationLoginChoice, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKAuthorizationSubPaneLoginChoice, AKTiburonPasswordUIReport, NSMutableArray, NSString;
+@class AKAuthorizationLoginChoice, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKAuthorizationSubPaneLoginChoice, AKAuthorizationViewController, AKTiburonPasswordUIReport, NSMutableArray, NSString;
 
 @interface AKAuthorizationPasswordRequestViewController : AKAuthorizationPaneViewController <AKAuthorizationSubPaneConfirmButtonDelegate, AKAuthorizationPasswordAuthenticationDelegate, AKAuthorizationSubPaneLoginChoiceDelegate, AKAuthorizationEditableDataSources>
 {
@@ -19,6 +19,7 @@
     BOOL _editableScopeChoicesChanged;
     AKAuthorizationScopeChoices *_editableScopeChoices;
     AKAuthorizationPresentationContext *_presentationContext;
+    AKAuthorizationViewController *_authorizationViewController;
     NSMutableArray *_cellChoices;
     AKAuthorizationSubPaneLoginChoice *_subPaneLoginChoice;
     AKAuthorizationSubPaneConfirmButton *_confirmButton;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) AKAuthorizationSubPaneConfirmButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) AKAuthorizationSubPaneLoginChoice *subPaneLoginChoice; // @synthesize subPaneLoginChoice=_subPaneLoginChoice;
 @property(retain, nonatomic) NSMutableArray *cellChoices; // @synthesize cellChoices=_cellChoices;
+@property(nonatomic) __weak AKAuthorizationViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property BOOL editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
@@ -36,11 +38,17 @@
 - (BOOL)validateReadyForAuthorization;
 - (void)performPasswordAuthentication;
 - (void)performAuthorization;
-- (void)subPaneConfirmButton:(id)arg1 confirmationResult:(id)arg2;
+- (void)subpaneConfirmButtonDidFailBiometry:(id)arg1;
+- (void)subPaneConfirmButtonDidEnterProcessingState:(id)arg1;
+- (void)_paneDelegate_authorizationPaneViewControllerDidRequestAuthorizationWithUserProvidedInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_paneDelegate_authorizationPaneViewControllerDismissWithAuthorization:(id)arg1 error:(id)arg2;
 - (void)_addSeparatorToContext:(id)arg1;
 - (void)loginChoiceChanged:(unsigned long long)arg1;
 - (void)_cancelButtonSelected:(id)arg1;
 - (id)_cancelBarButtonItem;
+- (void)_setCancelButtonEnabled:(BOOL)arg1;
+- (void)_handleAuthorizationError:(id)arg1;
+- (void)_performAuthorizationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_performAuthorization;
 @property(readonly) BOOL _canPerformAuthorization;
 - (void)_addAuthorizationButtonToPaneContext:(id)arg1;

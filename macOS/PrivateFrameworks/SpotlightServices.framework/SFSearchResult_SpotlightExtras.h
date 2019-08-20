@@ -23,6 +23,7 @@
     BOOL _isFolderQuery;
     BOOL _supportsSubView;
     BOOL _isUsed;
+    BOOL _hasUsage;
     float _l2score;
     PRSRankingItem *_rankingItem;
     NSString *_relatedIdentifier;
@@ -46,6 +47,7 @@
 }
 
 + (void)initialize;
+@property BOOL hasUsage; // @synthesize hasUsage=_hasUsage;
 @property(nonatomic) long long feedbackBlockId; // @synthesize feedbackBlockId=_feedbackBlockId;
 @property(retain, nonatomic) NSNumber *groupId; // @synthesize groupId=_groupId;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;

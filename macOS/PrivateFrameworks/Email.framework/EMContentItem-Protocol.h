@@ -10,6 +10,7 @@
 @protocol EMContentItemRequestDelegate;
 
 @protocol EMContentItem <EFPubliclyDescribable>
+@property(readonly, nonatomic) int exchangeEventUID;
 @property(readonly, nonatomic) NSDate *expiryDate;
 @property(readonly, nonatomic) long long storageByteCount;
 @property(readonly, nonatomic) long long dataTransferByteCount;

@@ -121,7 +121,6 @@
 - (BOOL)_matrixIsIdentity;
 - (const void *)ctFontRef;
 - (id)initWithCoder:(id)arg1;
-- (Class)classForKeyedArchiver;
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

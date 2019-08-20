@@ -20,6 +20,7 @@
     unsigned int _signalStrengthBars;
     unsigned int _maxSignalStrengthBars;
     unsigned int _serviceState;
+    unsigned int _cellularServiceState;
     NSString *_serviceDescription;
     NSString *_secondaryServiceDescription;
     unsigned int _dataNetworkType;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) unsigned int dataNetworkType; // @synthesize dataNetworkType=_dataNetworkType;
 @property(readonly, copy, nonatomic) NSString *secondaryServiceDescription; // @synthesize secondaryServiceDescription=_secondaryServiceDescription;
 @property(readonly, copy, nonatomic) NSString *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
+@property(readonly, nonatomic) unsigned int cellularServiceState; // @synthesize cellularServiceState=_cellularServiceState;
 @property(readonly, nonatomic) unsigned int serviceState; // @synthesize serviceState=_serviceState;
 @property(readonly, nonatomic) unsigned int maxSignalStrengthBars; // @synthesize maxSignalStrengthBars=_maxSignalStrengthBars;
 @property(readonly, nonatomic) unsigned int signalStrengthBars; // @synthesize signalStrengthBars=_signalStrengthBars;
@@ -57,7 +59,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithSIMPresent:(_Bool)arg1 label:(id)arg2 shortLabel:(id)arg3 signalStrengthBars:(unsigned int)arg4 maxSignalStrengthBars:(unsigned int)arg5 serviceState:(unsigned int)arg6 serviceDescription:(id)arg7 secondaryServiceDescription:(id)arg8 dataNetworkType:(unsigned int)arg9 providingDataConnection:(_Bool)arg10 preferredForDataConnections:(_Bool)arg11 registeredWithoutCellular:(_Bool)arg12 callForwardingEnabled:(_Bool)arg13;
+- (id)initWithSIMPresent:(_Bool)arg1 label:(id)arg2 shortLabel:(id)arg3 signalStrengthBars:(unsigned int)arg4 maxSignalStrengthBars:(unsigned int)arg5 serviceState:(unsigned int)arg6 cellularServiceState:(unsigned int)arg7 serviceDescription:(id)arg8 secondaryServiceDescription:(id)arg9 dataNetworkType:(unsigned int)arg10 providingDataConnection:(_Bool)arg11 preferredForDataConnections:(_Bool)arg12 registeredWithoutCellular:(_Bool)arg13 callForwardingEnabled:(_Bool)arg14;
 - (id)initWithSIMInfo:(id)arg1;
 - (id)init;
 

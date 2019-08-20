@@ -81,6 +81,8 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_unloadSnapshotContentViews;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)screenWillTurnOn;
+- (void)screenDidTurnOff;
 - (double)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
 - (void)_addOrRemoveChronoViewsIfNecessary;

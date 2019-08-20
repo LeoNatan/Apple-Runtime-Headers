@@ -11,7 +11,7 @@
 #import <SpringBoard/UIDragInteractionDelegate_Private-Protocol.h>
 #import <SpringBoard/UIDropInteractionDelegate-Protocol.h>
 
-@class CADisplayLink, NSMutableArray, NSMutableSet, NSString, NSUUID, SBAppPlatterDragPreview, SBApplicationDropSession, SBApplicationSceneUpdateTransaction, SBDeviceApplicationSceneHandle, SBFluidSwitcherGesture, SBFluidSwitcherViewController, SBLayoutElement, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutViewController, SBMainWorkspaceTransitionRequest, SBMedusaSettings, SBToAppsWorkspaceTransaction, SBTouchHistory, UIViewFloatAnimatableProperty;
+@class CADisplayLink, NSMutableDictionary, NSMutableSet, NSString, NSUUID, SBAppPlatterDragPreview, SBApplicationDropSession, SBApplicationSceneUpdateTransaction, SBDeviceApplicationSceneHandle, SBFluidSwitcherGesture, SBFluidSwitcherViewController, SBLayoutElement, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutViewController, SBMainWorkspaceTransitionRequest, SBMedusaSettings, SBToAppsWorkspaceTransaction, SBTouchHistory, UIViewFloatAnimatableProperty;
 @protocol BSInvalidatable, SBDragAndDropAppActivationWorkspaceTransactionDelegate;
 
 @interface SBDragAndDropAppActivationWorkspaceTransaction : SBMainWorkspaceTransaction <SBWorkspaceApplicationSceneTransitionContextDelegate, SBSceneLayoutWorkspaceTransactionObserver, UIDragInteractionDelegate_Private, UIDropInteractionDelegate>
@@ -30,6 +30,7 @@
     SBMainWorkspaceTransitionRequest *_dropTransitionRequest;
     SBToAppsWorkspaceTransaction *_currentWorkspaceTransaction;
     long long _currentDropAction;
+    SBMainDisplayLayoutState *_currentDropActionProposedLayoutState;
     _Bool _performedDrop;
     _Bool _dropAnimationCompleted;
     _Bool _layoutStateTransitionCompleted;
@@ -51,7 +52,7 @@
     id <BSInvalidatable> _deferOrientationUpdatesForDragAndDropAssertion;
     SBTouchHistory *_touchHistory;
     SBMedusaSettings *_medusaSettings;
-    NSMutableArray *_statusBarAssertions;
+    NSMutableDictionary *_statusBarAssertions;
     NSUUID *_gestureID;
     SBFluidSwitcherGesture *_dragAndDropGesture;
 }
@@ -72,6 +73,7 @@
 - (id)previousLayoutStateForApplicationTransitionContext:(id)arg1;
 - (id)layoutStateForApplicationTransitionContext:(id)arg1;
 - (id)resizeUIAnimationFactory;
+- (void)_updateCurrentDropActionProposedLayoutState;
 - (id)_sideLayoutElementViewController;
 - (id)_sideApplicationLayoutElementViewController;
 - (id)_primaryLayoutElementViewController;
@@ -82,10 +84,10 @@
 - (void)_configurePlatterPreview:(id)arg1 forSceneHandle:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_cleanUpAndCompleteTransactionIfNecessary;
 - (struct CGSize)_sizeForFloatingApplication;
-- (void)_getPrimaryLayoutElementViewFrame:(struct CGRect *)arg1 sideLayoutElementViewFrame:(struct CGRect *)arg2 separatorViewFrame:(struct CGRect *)arg3 forDropAction:(long long)arg4 state:(unsigned long long)arg5 spaceConfiguration:(long long)arg6;
-- (void)_getPrimaryLayoutElementViewFrame:(struct CGRect *)arg1 sideLayoutElementViewFrame:(struct CGRect *)arg2 separatorViewFrame:(struct CGRect *)arg3 forDropAction:(long long)arg4 state:(unsigned long long)arg5;
+- (void)_getPrimaryLayoutElementViewFrame:(struct CGRect *)arg1 sideLayoutElementViewFrame:(struct CGRect *)arg2 separatorViewFrame:(struct CGRect *)arg3 forDropAction:(long long)arg4 proposedDropLayoutState:(id)arg5 state:(unsigned long long)arg6 spaceConfiguration:(long long)arg7;
+- (void)_getPrimaryLayoutElementViewFrame:(struct CGRect *)arg1 sideLayoutElementViewFrame:(struct CGRect *)arg2 separatorViewFrame:(struct CGRect *)arg3 forDropAction:(long long)arg4 proposedDropLayoutState:(id)arg5 state:(unsigned long long)arg6;
 - (id)_transitionRequestForDropAction:(long long)arg1;
-- (_Bool)_areLayoutElementViewControllersCorrectlySizedForDropAction:(long long)arg1;
+- (_Bool)_areLayoutElementViewControllersCorrectlySizedForDropAction:(long long)arg1 proposedDropLayoutState:(id)arg2;
 - (_Bool)_areLayoutElementViewControllersBlurred;
 - (_Bool)_showResizeUI;
 - (_Bool)_shouldPushInSceneLayoutViewControllerForDropAction:(long long)arg1;
@@ -111,15 +113,15 @@
 - (void)_updatePlatterPreviewWithUpdatedSourceView;
 - (void)_updatePlatterPreviewForSetDown:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_getPlatterDiffuseShadowParameters:(struct SBDragPreviewShadowParameters *)arg1 rimShadowParameters:(struct SBDragPreviewShadowParameters *)arg2 diffuseFilters:(id *)arg3 rimFilters:(id *)arg4 forDropAction:(long long)arg5 setDown:(_Bool)arg6 mode:(unsigned long long)arg7 userInterfaceStyle:(long long)arg8;
-- (id)_cornerRadiusConfigurationForDropAction:(long long)arg1 setDown:(_Bool)arg2 mode:(unsigned long long)arg3;
-- (struct CGSize)_platterSizeForDropAction:(long long)arg1 setDown:(_Bool)arg2;
+- (id)_cornerRadiusConfigurationForDropAction:(long long)arg1 proposedDropLayoutState:(id)arg2 setDown:(_Bool)arg3 mode:(unsigned long long)arg4;
+- (struct CGSize)_platterSizeForDropAction:(long long)arg1 proposedDropLayoutState:(id)arg2 setDown:(_Bool)arg3;
 - (double)_platterScale;
 - (void)_fadeOutPreviousLayoutElementViewControllersIfNecessary;
 - (void)_updateLayoutElementViewControllerFrames;
 - (void)_setupResizeAnimatableProperty;
 - (void)_updateLayoutElementViewControllerBlurringWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllerCornerRadiusWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_updateSeparatorNubStyleWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateSeparatorViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllerDarkeningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateLayoutElementViewControllerStatusBars;

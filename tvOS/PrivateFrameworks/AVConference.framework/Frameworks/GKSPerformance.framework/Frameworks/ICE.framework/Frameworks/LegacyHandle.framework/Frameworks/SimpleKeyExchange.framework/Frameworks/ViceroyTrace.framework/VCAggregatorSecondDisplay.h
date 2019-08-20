@@ -6,7 +6,7 @@
 
 #import <ViceroyTrace/VCAggregator.h>
 
-@class NSMutableDictionary, VCHistogram;
+@class NSMutableDictionary, NSString, VCHistogram;
 
 __attribute__((visibility("hidden")))
 @interface VCAggregatorSecondDisplay : VCAggregator
@@ -42,6 +42,10 @@ __attribute__((visibility("hidden")))
     unsigned int _maxJitterQueueSize;
     unsigned int _averageRoundTripTime;
     unsigned int _maxRoundTripTime;
+    unsigned int _averageHIDEventLatencySampleCount;
+    unsigned int _averageHIDEventLatency;
+    unsigned int _maxHIDEventLatency;
+    unsigned int _minHIDEventLatency;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
     unsigned int _videoFrameDisplayedCounter;
@@ -58,9 +62,16 @@ __attribute__((visibility("hidden")))
     VCHistogram *_BWE;
     VCHistogram *_VJS;
     VCHistogram *_RTT;
+    VCHistogram *_HEL;
     NSMutableDictionary *_fecStatsDict;
+    NSString *_channelSequence;
+    CDStruct_f2f7ecfd _channelSequenceStats;
+    NSString *_previousChannelSequence;
+    CDStruct_f2f7ecfd _previousChannelSequenceStats;
 }
 
+@property(retain, nonatomic) NSString *previousChannelSequence; // @synthesize previousChannelSequence=_previousChannelSequence;
+@property(copy, nonatomic) NSString *channelSequence; // @synthesize channelSequence=_channelSequence;
 - (void)processEventWithCategory:(unsigned short)arg1 type:(unsigned short)arg2 payload:(id)arg3;
 - (void)updateReceiverVideoStreamConfiguration:(id)arg1;
 - (void)updateSenderVideoStreamConfiguration:(id)arg1;

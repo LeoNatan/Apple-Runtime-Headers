@@ -31,7 +31,7 @@
 - (id)reuseIdentifier;
 - (id)punchouts;
 - (BOOL)anyInlineCardSectionsHavePunchouts;
-- (id)initWithResult:(id)arg1 cardSection:(id)arg2 isInline:(BOOL)arg3;
+- (id)initWithResult:(id)arg1 cardSection:(id)arg2 isInline:(BOOL)arg3 queryId:(unsigned long long)arg4;
 
 @end
 

@@ -20,6 +20,8 @@
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (void)_updateImageViewDynamicColors;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;

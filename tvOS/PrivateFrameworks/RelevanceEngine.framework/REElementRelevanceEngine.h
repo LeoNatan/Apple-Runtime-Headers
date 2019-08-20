@@ -30,6 +30,7 @@
     REDataSourceManager *_dataSourceManager;
     REFeatureTransmuter *_featureTransmuter;
     REUpNextScheduler *_scheduler;
+    REUpNextScheduler *_predictorUpdatedScheduler;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _deviceIsLocked;
     _Bool _ignoreDeviceLockState;
@@ -61,6 +62,7 @@
 - (void)predictorDidUpdate:(id)arg1;
 - (void)predictor:(id)arg1 didFinishActivity:(id)arg2;
 - (void)predictor:(id)arg1 didBeginActivity:(id)arg2;
+- (void)_updateStateBasedOnPredictor;
 - (void)_checkPreferences;
 - (void)pause;
 - (void)resume;

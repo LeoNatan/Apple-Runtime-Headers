@@ -46,6 +46,7 @@
 - (void)updatePayloadAttributes:(id)arg1 withDecodedAttributes:(id)arg2 forPayloadProperty:(id)arg3;
 - (void)updateEncodableAttributes:(id)arg1 fromPayloadAttributes:(id)arg2 forPayloadProperty:(id)arg3;
 - (_Bool)updatePayloadAttributes:(id)arg1 withManagedObject:(id)arg2 forPayloadProperty:(id)arg3;
+- (id)initWithEditedIPTCAttributes:(id)arg1 changedKeys:(id)arg2;
 - (id)initWithExtendedAttributes:(id)arg1 changedKeys:(id)arg2;
 - (id)initWithCloudMasterMediaMetadata:(id)arg1 payloadID:(id)arg2 changedKeys:(id)arg3 modelProperties:(id)arg4;
 - (id)initWithCloudMaster:(id)arg1 payloadID:(id)arg2 changedKeys:(id)arg3;

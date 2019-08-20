@@ -104,6 +104,7 @@
 - (id)folderIcons;
 - (id)leafIcons;
 - (id)allIcons;
+- (void)addIconsOfClass:(Class)arg1 toSet:(id)arg2;
 - (id)iconsOfClass:(Class)arg1;
 - (void)removeIcon:(id)arg1 options:(unsigned long long)arg2;
 - (id)indexPathForFirstFreeSlotStartingAtList:(id)arg1 avoidingFirstList:(_Bool)arg2;

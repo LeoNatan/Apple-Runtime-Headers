@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)startAccessingSecurityScopedUrl;
 @property(readonly, nonatomic) NSURL *url;
 - (id)initWithURL:(id)arg1 readonly:(BOOL)arg2 extensionClass:(id)arg3;
 

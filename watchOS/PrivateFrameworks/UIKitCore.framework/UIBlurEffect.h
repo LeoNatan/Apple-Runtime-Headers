@@ -15,6 +15,7 @@
 
 + (void)_addBlurToEffectDescriptor:(id)arg1 blurRadius:(float)arg2 scale:(float)arg3 environment:(id)arg4;
 + (_Bool)supportsSecureCoding;
++ (id)_effectWithInfiniteRadiusScale:(float)arg1;
 + (id)_effectWithInfiniteRadius;
 + (id)_effectForLightMaterial:(id)arg1 darkMaterial:(id)arg2 bundle:(id)arg3;
 + (id)_effectWithBlurRadius:(float)arg1 scale:(float)arg2;

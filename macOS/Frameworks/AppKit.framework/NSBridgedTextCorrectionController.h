@@ -14,11 +14,10 @@ __attribute__((visibility("hidden")))
 @interface NSBridgedTextCorrectionController : NSResponder <NSTextCheckingClient>
 {
     BOOL _secureTextEntry;
-    int _grammarCheckingEnabledUserSetting;
-    int _autocorrectionEnabledUserSetting;
+    int grammarCheckingEnabledUserSetting;
     NSTextInputContext *_textInputContext;
-    long long _spellCheckingType;
-    long long _autocorrectionType;
+    long long spellCheckingType;
+    long long autocorrectionType;
     NSMutableAttributedString *_annotationString;
     NSTextCheckingController *_textCheckingController;
     long long smartQuotesType;
@@ -31,10 +30,9 @@ __attribute__((visibility("hidden")))
 @property long long smartQuotesType; // @synthesize smartQuotesType;
 @property(retain) NSTextCheckingController *textCheckingController; // @synthesize textCheckingController=_textCheckingController;
 @property(retain) NSMutableAttributedString *annotationString; // @synthesize annotationString=_annotationString;
-@property long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
-@property long long spellCheckingType; // @synthesize spellCheckingType=_spellCheckingType;
-@property int autocorrectionEnabledUserSetting; // @synthesize autocorrectionEnabledUserSetting=_autocorrectionEnabledUserSetting;
-@property int grammarCheckingEnabledUserSetting; // @synthesize grammarCheckingEnabledUserSetting=_grammarCheckingEnabledUserSetting;
+@property long long autocorrectionType; // @synthesize autocorrectionType;
+@property long long spellCheckingType; // @synthesize spellCheckingType;
+@property int grammarCheckingEnabledUserSetting; // @synthesize grammarCheckingEnabledUserSetting;
 @property BOOL secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property __weak NSTextInputContext *textInputContext; // @synthesize textInputContext=_textInputContext;
 - (void).cxx_destruct;
@@ -63,12 +61,18 @@ __attribute__((visibility("hidden")))
 - (void)doCommandBySelector:(SEL)arg1;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (void)prepareContextMenu:(id)arg1;
-- (void)toggleAutomaticTextReplacement:(id)arg1;
-- (void)toggleAutomaticDashSubstitution:(id)arg1;
 - (void)toggleAutomaticLinkDetection:(id)arg1;
-- (void)toggleAutomaticQuoteSubstitution:(id)arg1;
+- (BOOL)isAutomaticLinkDetectionEnabled;
+- (void)setAutomaticLinkDetectionEnabled:(BOOL)arg1;
+- (void)toggleAutomaticTextReplacement:(id)arg1;
+- (BOOL)isAutomaticTextReplacementEnabled;
+- (void)setAutomaticTextReplacementEnabled:(BOOL)arg1;
+- (void)toggleAutomaticDashSubstitution:(id)arg1;
 @property(readonly, getter=isAutomaticDashSubstitutionEnabled) BOOL automaticDashSubstitutionEnabled;
+- (void)setAutomaticDashSubstitutionEnabled:(BOOL)arg1;
+- (void)toggleAutomaticQuoteSubstitution:(id)arg1;
 @property(readonly, getter=isAutomaticQuoteSubstitutionEnabled) BOOL automaticQuoteSubstitutionEnabled;
+- (void)setAutomaticQuoteSubstitutionEnabled:(BOOL)arg1;
 @property(readonly) long long spellCheckerDocumentTag;
 - (void)toggleAutomaticSpellingCorrection:(id)arg1;
 - (BOOL)isAutomaticSpellingCorrectionEnabled;
@@ -76,7 +80,9 @@ __attribute__((visibility("hidden")))
 - (void)toggleGrammarChecking:(id)arg1;
 - (void)setGrammarCheckingEnabled:(BOOL)arg1;
 - (BOOL)isGrammarCheckingEnabled;
+- (void)toggleContinuousSpellChecking:(id)arg1;
 - (BOOL)isContinuousSpellCheckingEnabled;
+- (void)setContinuousSpellCheckingEnabled:(BOOL)arg1;
 - (void)ignoreSpelling:(id)arg1;
 - (void)changeSpelling:(id)arg1;
 - (void)showGuessPanel:(id)arg1;

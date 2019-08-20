@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet;
+@class NSDate, NSMutableDictionary, NSMutableSet;
 
 @interface NNMKSyncSessionController : NSObject
 {
@@ -15,8 +15,10 @@
     NSMutableDictionary *_syncingAccountIdentityByUsername;
     NSMutableDictionary *_standaloneStateByAccountId;
     double _accountAuthRequestLastRequestTime;
+    NSDate *_lastSyncDueToMailboxesMismatchRequestTime;
 }
 
+@property(retain, nonatomic) NSDate *lastSyncDueToMailboxesMismatchRequestTime; // @synthesize lastSyncDueToMailboxesMismatchRequestTime=_lastSyncDueToMailboxesMismatchRequestTime;
 @property(nonatomic) double accountAuthRequestLastRequestTime; // @synthesize accountAuthRequestLastRequestTime=_accountAuthRequestLastRequestTime;
 @property(retain, nonatomic) NSMutableDictionary *standaloneStateByAccountId; // @synthesize standaloneStateByAccountId=_standaloneStateByAccountId;
 @property(retain, nonatomic) NSMutableDictionary *syncingAccountIdentityByUsername; // @synthesize syncingAccountIdentityByUsername=_syncingAccountIdentityByUsername;

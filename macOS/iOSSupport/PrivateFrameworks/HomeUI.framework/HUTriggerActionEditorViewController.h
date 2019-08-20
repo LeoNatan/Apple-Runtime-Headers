@@ -13,27 +13,27 @@
 
 @interface HUTriggerActionEditorViewController : HUInstructionsTableViewController <WFHomeComposeViewControllerDelegate>
 {
-    BOOL _isPlaceholderTriggerBuilder;
     HUForwardingTriggerActionBuilderDelegate *_forwardingTriggerActionBuilderDelegate;
 }
 
 + (BOOL)adoptsDefaultGridLayoutMargins;
 + (id)createTriggerActionEditorViewControllerForHome:(id)arg1 withTriggerActionSetBuilder:(id)arg2 andTriggerActionBuilderEditorDelegate:(id)arg3;
-@property(nonatomic) BOOL isPlaceholderTriggerBuilder; // @synthesize isPlaceholderTriggerBuilder=_isPlaceholderTriggerBuilder;
 @property(retain, nonatomic) HUForwardingTriggerActionBuilderDelegate *forwardingTriggerActionBuilderDelegate; // @synthesize forwardingTriggerActionBuilderDelegate=_forwardingTriggerActionBuilderDelegate;
 - (void).cxx_destruct;
 - (void)homeComposeViewController:(id)arg1 didFinishWithHomeWorkflow:(id)arg2;
 @property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate;
-@property(readonly, nonatomic) unsigned long long mode;
 @property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder;
 @property(readonly, nonatomic) HUTriggerActionEditorContentViewController *actionEditorContentViewController;
+- (void)_preloadShortcutHomeManager;
 - (void)_showShortcutsEditor;
+- (void)_informUserShortcutsAreNotSupportedInThisHome;
+- (void)_showShortcutsEditorIfPossible;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (BOOL)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(BOOL)arg4;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)viewDidLoad;
-- (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3 placeholderMode:(BOOL)arg4;
+- (id)initWithTriggerBuilder:(id)arg1 flow:(id)arg2 delegate:(id)arg3;
 - (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3;
 - (id)initWithInstructionsItem:(id)arg1 contentViewController:(id)arg2;
 

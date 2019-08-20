@@ -46,6 +46,8 @@
 - (void)currentAttachmentLimitWithHandler:(CDUnknownBlockType)arg1;
 - (id)_addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (id)_addAttachmentWithFileURL:(id)arg1 mimeType:(id)arg2;
+- (id)shareSheetSessionID;
+- (void)setShareSheetSessionID:(id)arg1;
 - (id)contentURLs;
 - (void)setContentURLs:(id)arg1;
 - (id)contentText;

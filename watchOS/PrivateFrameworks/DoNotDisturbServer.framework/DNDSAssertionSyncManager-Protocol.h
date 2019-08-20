@@ -6,7 +6,7 @@
 
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class DNDSModeAssertionUpdateResult;
+@class DNDSModeAssertionUpdateResult, DNDStateUpdate;
 @protocol DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate;
 
 @protocol DNDSAssertionSyncManager <NSObject>
@@ -15,7 +15,7 @@
 - (void)resume;
 
 @optional
-- (void)updateForReason:(unsigned int)arg1;
+- (void)updateForStateUpdate:(DNDStateUpdate *)arg1;
 - (void)updateForModeAssertionUpdateResult:(DNDSModeAssertionUpdateResult *)arg1;
 @end
 

@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     float _nmsThreshold;
     ShotflowNetwork *_network;
-    float _overlap_threshold;
     float _osfsThreshold;
     float _osfsSizeRatio;
     float _olmcsThreshold;
@@ -31,8 +30,8 @@ __attribute__((visibility("hidden")))
 + (id)processingDeviceDetectorWithModelPath:(id)arg1 networkThreshold:(float)arg2 filterThreshold:(id)arg3 preferredDeviceID:(int)arg4 engineID:(int)arg5 storageType:(int)arg6;
 + (id)supportedLabelKeys;
 + (float)inputImageAspectRatio;
-+ (float)inputImageMaxDimention;
-+ (float)inputImageMinDimention;
++ (float)inputImageMaxDimension;
++ (float)inputImageMinDimension;
 + (struct CGSize)inputImageSize;
 + (id)modelName;
 + (id)inputLayerName;
@@ -43,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float osfsSizeRatio; // @synthesize osfsSizeRatio=_osfsSizeRatio;
 @property(nonatomic) float osfsThreshold; // @synthesize osfsThreshold=_osfsThreshold;
 @property(retain, nonatomic) NSArray *filterThreshold; // @synthesize filterThreshold=_filterThreshold;
-@property(nonatomic) float overlap_threshold; // @synthesize overlap_threshold=_overlap_threshold;
 @property(nonatomic) float nmsThreshold; // @synthesize nmsThreshold=_nmsThreshold;
 - (void).cxx_destruct;
 - (id)enforceSquareFaces:(id)arg1 withHeight:(float)arg2 andWidth:(float)arg3;

@@ -16,7 +16,6 @@
     NSData *_mostRecentlyVisitedLocation;
     NSData *_mostRecentEffectiveRootLocation;
     NSNumber *_displayMode;
-    NSNumber *_userSelectedDisplayMode;
     NSDictionary *_sortingMode;
     NSNumber *_browseTabSelected;
     NSDate *_lastUpdatedDate;
@@ -26,7 +25,6 @@
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
 @property(retain, nonatomic) NSNumber *browseTabSelected; // @synthesize browseTabSelected=_browseTabSelected;
 @property(retain, nonatomic) NSDictionary *sortingMode; // @synthesize sortingMode=_sortingMode;
-@property(retain, nonatomic) NSNumber *userSelectedDisplayMode; // @synthesize userSelectedDisplayMode=_userSelectedDisplayMode;
 @property(retain, nonatomic) NSNumber *displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) NSData *mostRecentEffectiveRootLocation; // @synthesize mostRecentEffectiveRootLocation=_mostRecentEffectiveRootLocation;
 @property(retain, nonatomic) NSData *mostRecentlyVisitedLocation; // @synthesize mostRecentlyVisitedLocation=_mostRecentlyVisitedLocation;

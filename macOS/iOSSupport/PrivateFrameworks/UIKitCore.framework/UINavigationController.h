@@ -448,6 +448,7 @@
 - (void)_navigationBarDidEndAnimation:(id)arg1;
 - (void)_navigationBarDidChangeStyle:(id)arg1;
 - (id)childViewControllerForUserInterfaceStyle;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
 - (id)childViewControllerForWhitePointAdaptivityStyle;
 - (id)childViewControllerForStatusBarHidden;

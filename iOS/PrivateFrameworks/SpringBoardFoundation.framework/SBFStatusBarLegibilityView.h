@@ -12,6 +12,7 @@
 
 @interface SBFStatusBarLegibilityView : UIView <SBUILegibility>
 {
+    _Bool _forceLegibilityGradientHidden;
     _UILegibilitySettings *_legibilitySettings;
     UIView *_statusBarGradientView;
     UIView *_overallGradientView;
@@ -26,12 +27,13 @@
 @property(retain, nonatomic) UIImageView *leftCornerView; // @synthesize leftCornerView=_leftCornerView;
 @property(retain, nonatomic) UIView *overallGradientView; // @synthesize overallGradientView=_overallGradientView;
 @property(retain, nonatomic) UIView *statusBarGradientView; // @synthesize statusBarGradientView=_statusBarGradientView;
+@property(nonatomic) _Bool forceLegibilityGradientHidden; // @synthesize forceLegibilityGradientHidden=_forceLegibilityGradientHidden;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_configureAsPad;
 - (void)_configureAsPhone;
-- (void)_configureWithLegibilitySettings:(id)arg1;
+- (void)_configureWithLegibilitySettings:(id)arg1 forceLegibilityGradientHidden:(_Bool)arg2;
 @property(nonatomic) double strength; // @dynamic strength;
 
 // Remaining properties

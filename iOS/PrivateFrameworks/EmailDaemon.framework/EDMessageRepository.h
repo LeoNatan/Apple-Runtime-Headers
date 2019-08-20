@@ -9,7 +9,7 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 #import <EmailDaemon/EMMessageRepositoryInterface-Protocol.h>
 
-@class EDFetchController, EDMailboxPersistence, EDMailboxPredictionController, EDMessageChangeManager, EDMessagePersistence, EDPersistenceHookRegistry, EDThreadPersistence, NSConditionLock, NSHashTable, NSMutableDictionary, NSString;
+@class EDFetchController, EDMailboxPersistence, EDMailboxPredictionController, EDMessageChangeManager, EDMessagePersistence, EDPersistenceHookRegistry, EDThreadPersistence, EMBlockedSenderManager, NSConditionLock, NSHashTable, NSMutableDictionary, NSString;
 @protocol EMUserProfileProvider, OS_dispatch_queue;
 
 @interface EDMessageRepository : NSObject <EFLoggable, EMMessageRepositoryInterface>
@@ -30,9 +30,12 @@
     EDMailboxPersistence *_mailboxPersistence;
     id <EMUserProfileProvider> _userProfileProvider;
     EDFetchController *_fetchController;
+    EMBlockedSenderManager *_blockedSenderManager;
 }
 
++ (id)signpostLog;
 + (id)log;
+@property(readonly, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 @property(readonly, nonatomic) EDFetchController *fetchController; // @synthesize fetchController=_fetchController;
 @property(readonly, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
 @property(readonly, nonatomic) EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
@@ -47,13 +50,14 @@
 @property(retain, nonatomic) NSMutableDictionary *messageQueryHandlers; // @synthesize messageQueryHandlers=_messageQueryHandlers;
 @property(retain, nonatomic) NSMutableDictionary *queryHandlers; // @synthesize queryHandlers=_queryHandlers;
 - (void).cxx_destruct;
+- (void)_resetUpdateThrottlersWithLogMessage:(id)arg1;
 - (void)loadOlderMessagesForMailboxes:(id)arg1;
 - (id)mailboxPredictionController;
 - (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getCachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;
 - (void)resetPrecomputedThreadScopesForMailboxScope:(id)arg1;
-- (id)requestRepresentationForMessageWithID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)requestRepresentationForMessageWithID:(id)arg1 requestID:(unsigned long long)arg2 options:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_persistedMessagesForObjectIDs:(id)arg1;
 - (id)_persistedMessagesForMessageChangeAction:(id)arg1;
 - (void)_performMessageConversationFlagChangeAction:(id)arg1;
@@ -68,8 +72,8 @@
 - (void)_performMessageDeleteAllAction:(id)arg1;
 - (void)_performMessageFlagChangeAllAction:(id)arg1;
 - (id)_performMessageFlagChangeAction:(id)arg1 returnUndoAction:(_Bool)arg2;
-- (void)performMessageChangeAction:(id)arg1 returnUndoAction:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)messageListItemsForObjectIDs:(id)arg1 observationIdentifier:(id)arg2 loadSummaryForAdditionalObjectIDs:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)performMessageChangeAction:(id)arg1 requestID:(unsigned long long)arg2 returnUndoAction:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)messageListItemsForObjectIDs:(id)arg1 requestID:(unsigned long long)arg2 observationIdentifier:(id)arg3 loadSummaryForAdditionalObjectIDs:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_threadsByThreadObjectIDsByScope:(id)arg1 resultBlock:(CDUnknownBlockType)arg2;
 - (id)_partitionObjectIDs:(id)arg1;
 - (void)cancelAllHandlers;
@@ -80,6 +84,7 @@
 - (void)performQuery:(id)arg1 limit:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithMessagePersistence:(id)arg1 threadPersistence:(id)arg2 messageChangeManager:(id)arg3 hookRegistry:(id)arg4 mailboxPersistence:(id)arg5 userProfileProvider:(id)arg6 fetchController:(id)arg7;
+- (unsigned long long)signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

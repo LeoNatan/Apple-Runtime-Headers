@@ -34,7 +34,7 @@
 - (void)toggleAddToUpNextWithFeedbackDelegate:(id)arg1;
 - (void)updateWithText:(id)arg1 buttonState:(long long)arg2 image:(id)arg3 punchout:(id)arg4;
 - (void)updateWithText:(id)arg1 buttonState:(long long)arg2;
-- (id)initWithResult:(id)arg1 cardSection:(id)arg2 asyncRowManager:(id)arg3;
+- (id)initWithResult:(id)arg1 cardSection:(id)arg2 asyncRowManager:(id)arg3 queryId:(unsigned long long)arg4;
 
 // Remaining properties
 @property(retain, nonatomic) SFWatchListCardSection *cardSection; // @dynamic cardSection;

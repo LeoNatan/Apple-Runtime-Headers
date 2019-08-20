@@ -50,7 +50,7 @@
 - (void)setOpaque:(_Bool)arg1;
 @property(retain, nonatomic) NUScene *scene;
 - (id)_fallbackImageForVista:(unsigned int)arg1;
-- (void)finalizeForSnapshotting:(CDUnknownBlockType)arg1;
+- (id)snapshotImage;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 

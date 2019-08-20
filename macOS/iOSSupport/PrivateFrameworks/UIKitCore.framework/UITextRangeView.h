@@ -122,6 +122,7 @@ __attribute__((visibility("hidden")))
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 @property(readonly, nonatomic) struct CGPoint activeTouchPoint;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)_gestureRecognizerShouldReceiveTouch:(id)arg1;
 - (void)_createGestureTuningIfNecessary;
 - (void)setMagnifierOrientation;
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

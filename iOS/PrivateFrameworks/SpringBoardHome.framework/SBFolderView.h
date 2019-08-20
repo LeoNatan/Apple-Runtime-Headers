@@ -12,7 +12,7 @@
 #import <SpringBoardHome/SBIconScrollViewDelegate-Protocol.h>
 #import <SpringBoardHome/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableSet, NSString, SBFolder, SBFolderIconImageCache, SBFolderTitleTextField, SBHIconImageCache, SBIconLayoutOverrideStrategy, SBIconListPageControl, SBIconListView, SBIconPageIndicatorImageSetCache, SBIconScrollView, UIScrollView, _UILegibilitySettings;
+@class NSArray, NSMutableArray, NSMutableSet, NSString, SBFolder, SBFolderIconImageCache, SBFolderTitleTextField, SBHIconImageCache, SBIconLayoutOverrideStrategy, SBIconListPageControl, SBIconListView, SBIconPageIndicatorImageSetCache, SBIconScrollView, UIPanGestureRecognizer, UIScrollView, _UILegibilitySettings;
 @protocol SBFolderViewDelegate, SBIconListLayoutProvider, SBIconViewProviding;
 
 @interface SBFolderView : UIView <SBIconListPageControlDelegate, UITextFieldDelegate, SBIconScrollViewDelegate, BSDescriptionProviding, SBIconListViewDragDelegate>
@@ -28,10 +28,12 @@
     UIView *_scalingView;
     long long _disableUpdatingCurrentIconListCount;
     struct SBVisibleColumnRange _visibleColumnRange;
+    struct SBFolderPredictedVisibleColumn _predictedVisibleColumn;
     _Bool _isScalingViewBorrowed;
     _Bool _wasScrolling;
     NSMutableArray *_scrollFrames;
     unsigned long long _scrollFrameCount;
+    double _scrollStartContentOffset;
     unsigned long long _ignoreScrollingDidEndNotificationsCount;
     NSMutableArray *_scrollCompletionBlocks;
     NSMutableArray *_rotationCompletionBlocks;
@@ -56,14 +58,16 @@
     SBFolderIconImageCache *_folderIconImageCache;
     SBHIconImageCache *_iconImageCache;
     SBIconPageIndicatorImageSetCache *_iconPageIndicatorImageSetCache;
+    UIPanGestureRecognizer *_scrollingDisabledGestureRecognizer;
 }
 
 + (unsigned long long)countOfAdditionalPagesToKeepVisibleInOneDirection;
-+ (unsigned long long)_pageOffsetForOffset:(double)arg1 pageWidth:(double)arg2 pageCount:(unsigned long long)arg3 userInterfaceLayoutDirection:(long long)arg4 fractionOfDistanceThroughPage:(double *)arg5;
++ (unsigned long long)_pageOffsetForOffset:(double)arg1 behavior:(long long)arg2 pageWidth:(double)arg3 pageCount:(unsigned long long)arg4 userInterfaceLayoutDirection:(long long)arg5 fractionOfDistanceThroughPage:(double *)arg6;
 + (id)defaultIconLocation;
 + (Class)defaultIconListViewClass;
 + (Class)_scrollViewClass;
 @property(retain, nonatomic) SBIconListPageControl *pageControl; // @synthesize pageControl=_pageControl;
+@property(retain, nonatomic) UIPanGestureRecognizer *scrollingDisabledGestureRecognizer; // @synthesize scrollingDisabledGestureRecognizer=_scrollingDisabledGestureRecognizer;
 @property(nonatomic) _Bool hasEverBeenInAWindow; // @synthesize hasEverBeenInAWindow=_hasEverBeenInAWindow;
 @property(retain, nonatomic) SBIconPageIndicatorImageSetCache *iconPageIndicatorImageSetCache; // @synthesize iconPageIndicatorImageSetCache=_iconPageIndicatorImageSetCache;
 @property(retain, nonatomic) SBHIconImageCache *iconImageCache; // @synthesize iconImageCache=_iconImageCache;
@@ -132,6 +136,8 @@
 - (void)cleanUpAfterTransition;
 - (void)prepareForTransition;
 - (void)prepareToOpen;
+- (unsigned int)userInterfaceLayoutDirectionAwareScrollingDirection;
+- (unsigned int)scrollingDirection;
 - (void)_updateScrollingState:(_Bool)arg1;
 - (void)_checkIfScrollStateChanged;
 - (void)removeScrollViewIsScrollingOverrideReason:(id)arg1;
@@ -145,11 +151,12 @@
 - (void)clearVisibleColumnRange;
 - (void)updateVisibleColumnRange;
 - (void)updateVisibleColumnRangeWithTotalLists:(unsigned long long)arg1 columnsPerList:(unsigned long long)arg2 iconVisibilityHandling:(long long)arg3;
+@property(readonly, nonatomic) _Bool updatesPredictedVisibleColumnWhileScrolling;
 @property(readonly, nonatomic) long long iconVisibilityHandling;
 - (void)updateIconListIndexAndVisibility:(_Bool)arg1;
 - (void)updateIconListIndexAndVisibility;
 @property(readonly, nonatomic) double additionalScrollWidthToKeepVisibleInOneDirection;
-- (struct SBVisibleColumnRange)visibleColumnRangeWithTotalLists:(unsigned long long)arg1 columnsPerList:(unsigned long long)arg2 iconVisibilityHandling:(long long)arg3;
+- (struct SBVisibleColumnRange)visibleColumnRangeWithTotalLists:(unsigned long long)arg1 columnsPerList:(unsigned long long)arg2 iconVisibilityHandling:(long long)arg3 predictedVisibleColumn:(struct SBFolderPredictedVisibleColumn *)arg4;
 @property(readonly, nonatomic) double maximumVisibleScrollOffset;
 @property(readonly, nonatomic) double minimumVisibleScrollOffset;
 @property(readonly, nonatomic) double scrollableWidthForVisibleColumnRange;
@@ -167,7 +174,7 @@
 - (id)lastIconListView;
 - (id)firstIconListView;
 - (id)iconListViewAtIndex:(unsigned long long)arg1;
-- (long long)_pageIndexForOffset:(double)arg1 fractionOfDistanceThroughPage:(double *)arg2;
+- (long long)_pageIndexForOffset:(double)arg1 behavior:(long long)arg2 fractionOfDistanceThroughPage:(double *)arg3;
 - (long long)_pageIndexForOffset:(double)arg1;
 - (struct CGRect)_iconListFrameForPageRect:(struct CGRect)arg1 atIndex:(unsigned long long)arg2;
 - (struct CGSize)_scrollViewContentSize;
@@ -263,6 +270,7 @@
 - (void)_currentPageIndexDidChange;
 - (void)_setCurrentPageIndex:(long long)arg1 deferringPageControlUpdate:(_Bool)arg2;
 - (void)_setCurrentPageIndex:(long long)arg1;
+- (void)scrollingDisabledGestureDidUpdate:(id)arg1;
 - (void)_setScrollingDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (void)_setPageControlDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (void)_addScrollingCompletionBlock:(CDUnknownBlockType)arg1;

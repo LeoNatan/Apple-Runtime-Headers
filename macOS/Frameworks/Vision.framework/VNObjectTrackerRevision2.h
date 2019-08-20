@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)serializeRPNTrackingQueue;
 + (id)rpnTrackEspressoResourcesCacheManager;
 + (id)rpnInitEspressoResourcesCacheManager;
 + (id)rpnTrackQueue;

@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (double)minimumRegionMonitoringDistance;
 @property(readonly, nonatomic) NSString *locationUID; // @synthesize locationUID=_locationUID;
 @property(copy, nonatomic) NSData *mapKitHandle; // @synthesize mapKitHandle=_mapKitHandle;
 @property(copy, nonatomic) NSString *contactLabel; // @synthesize contactLabel=_contactLabel;

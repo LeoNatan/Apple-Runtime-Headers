@@ -18,7 +18,7 @@
 
 @property _Bool cancelCalled; // @synthesize cancelCalled=_cancelCalled;
 - (void)sendStatus:(long long)arg1 withDisconnectError:(id)arg2;
-- (void)sendExtensionFailedWithError:(id)arg1;
+- (void)sendExtensionFailed;
 - (void)handleExtensionStartedWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)extension:(id)arg1 didRequestSocket:(_Bool)arg2 interface:(id)arg3 local:(id)arg4 remote:(id)arg5 effectivePID:(int)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)extensionDidDetachIPC:(id)arg1;

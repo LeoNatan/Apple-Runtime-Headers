@@ -6,43 +6,32 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <InAppMessages/UIViewControllerAnimatedTransitioning-Protocol.h>
-#import <InAppMessages/UIViewControllerTransitioningDelegate-Protocol.h>
+#import <InAppMessages/_UISheetPresentationControllerDelegate-Protocol.h>
 
-@class NSArray, NSString, UIView;
+@class NSString, UIView;
 @protocol IAMViewControllerMetricsDelegate;
 
-@interface IAMModalViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface IAMModalViewController : UIViewController <_UISheetPresentationControllerDelegate>
 {
-    NSArray *_defaultLayoutConstraints;
-    NSArray *_fullscreenLayoutConstraints;
-    NSArray *_padLayoutConstraints;
     _Bool _shouldPresentFullscreen;
+    _Bool _shouldUsePadLayout;
     UIViewController *_contentViewController;
     id <IAMViewControllerMetricsDelegate> _metricsDelegate;
     CDUnknownBlockType _viewControllerWillDismissBlock;
-    UIView *_backgroundView;
-    UIView *_modalView;
     UIView *_contentView;
 }
 
+@property(readonly) _Bool shouldUsePadLayout; // @synthesize shouldUsePadLayout=_shouldUsePadLayout;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-@property(retain, nonatomic) UIView *modalView; // @synthesize modalView=_modalView;
-@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool shouldPresentFullscreen; // @synthesize shouldPresentFullscreen=_shouldPresentFullscreen;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerWillDismissBlock; // @synthesize viewControllerWillDismissBlock=_viewControllerWillDismissBlock;
 @property(nonatomic) __weak id <IAMViewControllerMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;
-- (void)_handleBackgroundTapGesture:(id)arg1;
-- (void)animateTransition:(id)arg1;
-- (double)transitionDuration:(id)arg1;
-- (id)animationControllerForDismissedController:(id)arg1;
-- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)presentationControllerDidDismiss:(id)arg1;
+- (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)shouldAutorotate;
-@property(readonly) _Bool shouldUsePadLayout;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (long long)preferredStatusBarStyle;
 - (id)init;

@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_largeTitleLeadingConstraint;
     NSLayoutConstraint *_largeTitleTrailingConstraint;
     NSLayoutConstraint *_regularTitleConstraint;
+    NSLayoutConstraint *_leadingBarWithTitleTrailingConstraint;
+    NSLayoutConstraint *_leadingBarWithNoTitleTrailingConstraint;
     NSLayoutConstraint *_trailingBarWithTitleLeadingConstraint;
     NSLayoutConstraint *_trailingBarWithNoTitleLeadingConstraint;
     UIVisualEffectView *_backgroundView;
@@ -42,6 +44,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSLayoutConstraint *trailingBarWithNoTitleLeadingConstraint; // @synthesize trailingBarWithNoTitleLeadingConstraint=_trailingBarWithNoTitleLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *trailingBarWithTitleLeadingConstraint; // @synthesize trailingBarWithTitleLeadingConstraint=_trailingBarWithTitleLeadingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *leadingBarWithNoTitleTrailingConstraint; // @synthesize leadingBarWithNoTitleTrailingConstraint=_leadingBarWithNoTitleTrailingConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *leadingBarWithTitleTrailingConstraint; // @synthesize leadingBarWithTitleTrailingConstraint=_leadingBarWithTitleTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *regularTitleConstraint; // @synthesize regularTitleConstraint=_regularTitleConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *largeTitleTrailingConstraint; // @synthesize largeTitleTrailingConstraint=_largeTitleTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *largeTitleLeadingConstraint; // @synthesize largeTitleLeadingConstraint=_largeTitleLeadingConstraint;
@@ -79,7 +83,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isRTL;
 - (void)navigationItemUpdatedLargeTitleDisplayMode:(id)arg1;
 - (void)navigationItemUpdatedLargeTitleContent:(id)arg1;
-- (void)navigationItemUpdatedAppearance:(id)arg1;
+- (void)navigationItem:(id)arg1 appearance:(id)arg2 categoriesChanged:(long long)arg3;
 - (void)navigationItemUpdatedScrollEdgeProgress:(id)arg1;
 - (void)navigationItemUpdatedSearchController:(id)arg1 oldSearchController:(id)arg2;
 - (void)navigationItemUpdatedPromptContent:(id)arg1;

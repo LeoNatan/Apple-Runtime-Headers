@@ -21,7 +21,6 @@
 
 + (id)_supportedComplicationSlots;
 - (void).cxx_destruct;
-- (_Bool)_timeViewBehindContentForEditMode:(int)arg1;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
 - (void)_setStatusBarIconShadowNeeded:(_Bool)arg1;
 - (_Bool)_wantsStatusBarIconShadow;

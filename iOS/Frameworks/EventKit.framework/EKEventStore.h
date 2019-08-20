@@ -20,6 +20,7 @@
     EKObjectID *_defaultCalendarForNewRemindersID;
     EKObjectID *_suggestedEventCalendarID;
     EKObjectID *_naturalLanguageSuggestedEventCalendarID;
+    EKObjectID *_subscribedCalendarsSourceID;
     NSMutableDictionary *_calendars;
     NSMutableDictionary *_sources;
     NSMutableDictionary *_cachedValidatedAddresses;
@@ -125,6 +126,7 @@
 - (id)predicateForMasterEventsWithExternalTrackingStatusInCalendar:(id)arg1;
 - (id)predicateForCalendarItemsOfType:(unsigned long long)arg1 inCalendar:(id)arg2;
 - (id)predicateForEventsWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3 matchingContacts:(id)arg4;
+- (id)predicateForEventsCreatedFromSuggestionWithExtractionGroupIdentifier:(id)arg1;
 - (id)predicateForEventCreatedFromSuggestionWithOpaqueKey:(id)arg1;
 - (id)predicateForNaturalLanguageSuggestedEventsWithSearchString:(id)arg1;
 - (id)predicateForEventsWithStartDate:(id)arg1 title:(id)arg2 source:(id)arg3;
@@ -171,6 +173,7 @@
 - (id)_addFetchedObjectWithID:(id)arg1;
 - (void)_forgetRegisteredObjects;
 - (void)_reregisterObject:(id)arg1 oldID:(id)arg2;
+- (void)_detachObject:(id)arg1;
 - (void)_unregisterObject:(id)arg1;
 - (void)_registerObject:(id)arg1;
 - (void)_registerObjectImmediate:(id)arg1;
@@ -336,6 +339,7 @@
 - (void)fetchGrantedDelegatesForSource:(id)arg1 results:(CDUnknownBlockType)arg2;
 - (id)delegateSourcesForSource:(id)arg1;
 @property(readonly, nonatomic) NSArray *delegateSources;
+- (id)getSubscribedCalendarsSourceCreateIfNeededWithError:(id *)arg1;
 - (id)_deletableSources;
 - (id)reminderSources;
 - (id)eventSources;

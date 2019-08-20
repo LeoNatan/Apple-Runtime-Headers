@@ -9,28 +9,30 @@
 #import <QTKit/QTHUDTimelineCellDelegate-Protocol.h>
 
 @class NSString;
+@protocol QTHUDTimelineDelegate;
 
 @interface QTHUDTimeline : QTHUDSlider <QTHUDTimelineCellDelegate>
 {
+    id <QTHUDTimelineDelegate> _delegate;
 }
 
 + (void)initialize;
-- (CDStruct_7cbd8c8b)timeRange;
-- (void)setTimeRange:(CDStruct_7cbd8c8b)arg1;
-- (CDStruct_2ec95fd7)timelineCell:(id)arg1 willChangeTimeValue:(CDStruct_2ec95fd7)arg2;
-- (void)takeQTTimeValueFrom:(id)arg1;
-- (void)setQTTimeValue:(CDStruct_2ec95fd7)arg1;
-- (void)setHighlightedTimeRanges:(id)arg1;
-- (id)highlightedTimeRanges;
-- (CDStruct_2ec95fd7)QTTimeValue;
-- (id)exposedBindings;
-- (void)setCell:(id)arg1;
-- (void)setBordered:(BOOL)arg1;
-- (BOOL)isBordered;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)takeQTTimeValueFrom:(id)arg1;
+- (void)setQTTimeValue:(CDStruct_2ec95fd7)arg1;
+- (CDStruct_2ec95fd7)QTTimeValue;
+- (void)setTimeRange:(CDStruct_7cbd8c8b)arg1;
+- (CDStruct_7cbd8c8b)timeRange;
+- (void)setHighlightedTimeRanges:(id)arg1;
+- (id)highlightedTimeRanges;
+- (void)setBordered:(BOOL)arg1;
+- (BOOL)isBordered;
+- (void)setCell:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)exposedBindings;
+- (CDStruct_2ec95fd7)timelineCell:(id)arg1 willChangeTimeValue:(CDStruct_2ec95fd7)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

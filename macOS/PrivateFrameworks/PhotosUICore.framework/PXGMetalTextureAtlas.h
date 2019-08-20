@@ -70,7 +70,7 @@
 @property(readonly, nonatomic) long long estimatedByteSize;
 - (void)removeSpriteIndex:(unsigned int)arg1;
 - (void)processPendingTextureRequestIDsWithHandler:(CDUnknownBlockType)arg1;
-- (void)addSpriteWithTextureRequestID:(int)arg1;
+- (void)addSpriteWithTextureRequestID:(int)arg1 deliveryOrder:(unsigned int)arg2;
 - (BOOL)containsSpriteIndex:(unsigned int)arg1;
 - (void)getTextureInfos:(CDStruct_183601bc *)arg1 forSpriteIndexes:(unsigned int *)arg2 geometries:(const CDStruct_ac168a83 *)arg3 spriteStyles:(const CDStruct_506f5052 *)arg4 spriteInfos:(const CDStruct_9d1ebe49 *)arg5 screenScale:(double)arg6 count:(unsigned int)arg7;
 - (void)getSpriteIndexes:(unsigned int *)arg1 maxSpriteCount:(unsigned int)arg2;

@@ -8,6 +8,7 @@
 
 @class CIColor;
 
+__attribute__((visibility("hidden")))
 @interface ISColor : NSObject
 {
     struct CGColor *_cgColor;

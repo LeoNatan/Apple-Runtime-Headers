@@ -11,10 +11,11 @@
 #import <UIKitCore/_UIBasicAnimationFactory-Protocol.h>
 #import <UIKitCore/_UIHostedFocusSystemDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIColor, UILongPressGestureRecognizer, UISegment, UIView, _UIHostedFocusSystem;
+@class NSMutableArray, NSString, UIColor, UIImageView, UILongPressGestureRecognizer, UISegment, UIView, _UIHostedFocusSystem;
 
 @interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, UIPopoverPresentationControllerDelegate, _UIHostedFocusSystemDelegate, NSCoding>
 {
+    UIImageView *_selectionImageView;
     NSMutableArray *_segments;
     long long _selectedSegment;
     long long _highlightedSegment;
@@ -37,6 +38,7 @@
         unsigned int useProportionalWidthSegments:1;
         unsigned int translucentBackground:1;
         unsigned int appearanceNeedsUpdate:1;
+        unsigned int selectionIndicatorDragged:1;
     } _segmentedControlFlags;
     _UIHostedFocusSystem *_internalFocusSystem;
     UILongPressGestureRecognizer *_axLongPressGestureRecognizer;
@@ -55,15 +57,15 @@
 + (double)_dividerWidthForTraitCollection:(id)arg1 size:(int)arg2;
 + (double)_lineWidthForTraitCollection:(id)arg1 size:(int)arg2;
 + (double)_sectionIndicatorOverflowForTraitCollection:(id)arg1 size:(int)arg2;
-+ (void)_updateLowerBackgroundFilter:(id)arg1 upperBackgroundFilter:(id)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
-+ (void)_updateBackgroundFilter:(id)arg1 traitCollection:(id)arg2 tintColor:(id)arg3 lowerBackground:(BOOL)arg4;
-+ (id)_backgroundFilterForTraitCollection:(id)arg1 tintColor:(id)arg2 lowerBackground:(BOOL)arg3;
-+ (id)_backgroundFilterTypeForTraitCollection:(id)arg1 tintColor:(id)arg2 lowerBackground:(BOOL)arg3;
-+ (id)_modernDividerImageSelected:(BOOL)arg1 lowerBackground:(BOOL)arg2 traitCollection:(id)arg3 tintColor:(id)arg4 size:(int)arg5;
-+ (struct CGColor *)_dividerSeparatorColorSelected:(BOOL)arg1 lowerBackground:(BOOL)arg2 traitCollection:(id)arg3;
-+ (struct CGColor *)_dividerPrimaryColorSelected:(BOOL)arg1 lowerBackground:(BOOL)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
-+ (id)_modernBackgroundSelected:(BOOL)arg1 lowerBackground:(BOOL)arg2 highlighted:(BOOL)arg3 traitCollection:(id)arg4 tintColor:(id)arg5 size:(int)arg6;
-+ (struct CGColor *)_backgroundPrimaryColorSelected:(BOOL)arg1 lowerBackground:(BOOL)arg2 highlighted:(BOOL)arg3 traitCollection:(id)arg4 tintColor:(id)arg5;
++ (id)_modernDividerImageBackground:(BOOL)arg1 traitCollection:(id)arg2 tintColor:(id)arg3 size:(int)arg4;
++ (struct CGColor *)_dividerPrimaryColorBackground:(BOOL)arg1 traitCollection:(id)arg2 tintColor:(id)arg3;
++ (id)_modernBackgroundSelected:(BOOL)arg1 disableShadow:(BOOL)arg2 highlighted:(BOOL)arg3 traitCollection:(id)arg4 tintColor:(id)arg5 size:(int)arg6;
++ (struct CGColor *)_backgroundPrimaryColorSelected:(BOOL)arg1 highlighted:(BOOL)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
++ (id)_selectionOpacityAnimationFromValue:(float)arg1 toValue:(float)arg2;
++ (id)_selectionPopAnimationForKey:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
++ (struct CATransform3D)_highlightSelectionTransform;
++ (struct CATransform3D)_hiddenSelectionTransform;
++ (struct CGRect)_selectionFrameForBounds:(struct CGRect)arg1 size:(int)arg2 traitCollection:(id)arg3 accessibilityView:(BOOL)arg4;
 + (double)defaultHeightForStyle:(long long)arg1;
 + (double)defaultHeightForStyle:(long long)arg1 size:(int)arg2;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -96,7 +98,6 @@
 - (id)backgroundImageForState:(unsigned long long)arg1 barMetrics:(long long)arg2;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
-- (void)setTintColor:(id)arg1;
 - (id)_focusMapContainerForFocusSystem:(id)arg1;
 - (void)_focusSystem:(id)arg1 didFinishUpdatingFocusInContext:(id)arg2;
 - (id)_preferredFocusEnvironmentsForFocusSystem:(id)arg1;
@@ -138,6 +139,11 @@
 - (void)_setHighlightedSegmentHighlighted:(BOOL)arg1;
 - (BOOL)shouldTrack;
 - (void)layoutSubviews;
+- (void)_updateSelectionIndicator;
+- (void)_updateSelectionToSegment:(id)arg1 highlight:(BOOL)arg2 shouldAnimate:(BOOL)arg3;
+- (void)_insertSelectionViewForSegment:(id)arg1;
+- (id)_segmentToHighlight:(char *)arg1;
+- (BOOL)_disableSlidingControl;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;

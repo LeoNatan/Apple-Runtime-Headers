@@ -38,7 +38,7 @@
     UIEventFetcher *_eventFetcher;
     UIEventDispatcher *_eventDispatcher;
     struct {
-        unsigned int deactivatingReasonFlags:16;
+        unsigned int deactivatingReasonFlags:17;
         unsigned int isLaunchedSuspended:1;
         unsigned int calledNonSuspendedLaunchDelegate:1;
         unsigned int calledSuspendedLaunchDelegate:1;
@@ -697,6 +697,7 @@
 - (id)statusBarWindow;
 - (id)statusBar;
 - (void)_setupStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(_Bool)arg3;
+- (_Bool)_shouldCreateStatusBarAtLaunch;
 - (void)_createStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(_Bool)arg3;
 - (void)_createStatusBarIfNeededWithOrientation:(long long)arg1;
 @property(readonly, nonatomic, getter=_hostsSystemStatusBar) _Bool hostsSystemStatusBar;

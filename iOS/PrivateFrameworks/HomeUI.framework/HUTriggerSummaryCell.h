@@ -8,13 +8,15 @@
 
 #import <HomeUI/HUCellProtocol-Protocol.h>
 #import <HomeUI/HUDisableableCellProtocol-Protocol.h>
+#import <HomeUI/HUSelectableCellProtocol-Protocol.h>
 
 @class HFItem, HUIconListView, NSArray, NSString, UIColor, UIFont, UIImage, UIImageView, UILabel, UIView;
 @protocol HUResizableCellDelegate;
 
-@interface HUTriggerSummaryCell : UITableViewCell <HUCellProtocol, HUDisableableCellProtocol>
+@interface HUTriggerSummaryCell : UITableViewCell <HUCellProtocol, HUDisableableCellProtocol, HUSelectableCellProtocol>
 {
     _Bool _disabled;
+    _Bool _canBeSelected;
     _Bool _hideTitle;
     _Bool _hideDescription;
     _Bool _hideDescriptionIcon;
@@ -22,7 +24,7 @@
     NSString *_titleText;
     NSString *_descriptionText;
     UIImage *_descriptionIcon;
-    NSArray *_iconNames;
+    NSArray *_iconDescriptors;
     UIColor *_cellColor;
     NSArray *_verticalLabelConstraints;
     NSArray *_horizontalLabelConstraints;
@@ -47,7 +49,7 @@
 @property(retain, nonatomic) NSArray *horizontalLabelConstraints; // @synthesize horizontalLabelConstraints=_horizontalLabelConstraints;
 @property(retain, nonatomic) NSArray *verticalLabelConstraints; // @synthesize verticalLabelConstraints=_verticalLabelConstraints;
 @property(retain, nonatomic) UIColor *cellColor; // @synthesize cellColor=_cellColor;
-@property(retain, nonatomic) NSArray *iconNames; // @synthesize iconNames=_iconNames;
+@property(retain, nonatomic) NSArray *iconDescriptors; // @synthesize iconDescriptors=_iconDescriptors;
 @property(nonatomic) _Bool hideDescriptionIcon; // @synthesize hideDescriptionIcon=_hideDescriptionIcon;
 @property(retain, nonatomic) UIImage *descriptionIcon; // @synthesize descriptionIcon=_descriptionIcon;
 @property(nonatomic) _Bool hideDescription; // @synthesize hideDescription=_hideDescription;
@@ -57,6 +59,7 @@
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (void)updateSelectionUI;
 - (void)updateTitle;
 - (void)_addDescriptionIconView;
 - (void)_addDescriptionLabel;
@@ -69,6 +72,7 @@
 - (void)setUpTextContainerViewConstraints;
 - (void)setUpIconContainerViewConstraints;
 - (void)updateConstraints;
+@property(nonatomic) _Bool canBeSelected; // @synthesize canBeSelected=_canBeSelected;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

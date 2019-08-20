@@ -44,6 +44,7 @@
     CDStruct_1e2b2e48 _renderScale;
 }
 
++ (void)flushCache;
 + (void)initialize;
 @property(retain, nonatomic) AVAudioMix *outputAudioMix; // @synthesize outputAudioMix=_outputAudioMix;
 @property(retain, nonatomic) AVVideoComposition *outputVideoComposition; // @synthesize outputVideoComposition=_outputVideoComposition;
@@ -143,6 +144,7 @@
 @property(readonly) CDStruct_912cb5d2 imageSize;
 - (long long)resolvedSampleMode:(long long)arg1;
 - (id)newRenderPipelineStateForEvaluationMode:(long long)arg1;
+- (void)runToPrepareSynchronous;
 - (void)runSynchronous;
 - (id)initWithRequest:(id)arg1;
 - (id)init;

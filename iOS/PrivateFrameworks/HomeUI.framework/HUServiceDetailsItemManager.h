@@ -141,6 +141,7 @@
 - (void)_setupDeviceOptionsAdapterForMediaAccessoryItem:(id)arg1;
 - (id)hf_MediaAccessoryItem;
 - (_Bool)shouldShowDeviceOptionsForAccessoryItem:(id)arg1;
+- (_Bool)_isRestartSupportedForGroupedHomePod:(id)arg1;
 - (_Bool)_isGroupedHomePod:(id)arg1;
 - (_Bool)_shouldShowLinkedApplicationSection;
 - (_Bool)_shouldShowFirmwareUpdateSection;
@@ -171,6 +172,7 @@
 @property(readonly, nonatomic) NSArray *orderedRoomSectionItems;
 - (_Bool)sourceItemIsService;
 - (_Bool)sourceItemIsMultiServiceAccessory;
+- (_Bool)sourceItemIsSingleServiceAccessory;
 - (_Bool)isAccessory;
 @property(readonly, nonatomic) _Bool isItemGroup;
 - (void)_unregisterForExternalUpdates;

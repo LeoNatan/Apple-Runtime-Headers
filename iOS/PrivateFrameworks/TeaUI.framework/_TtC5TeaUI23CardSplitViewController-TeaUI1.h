@@ -6,10 +6,11 @@
 
 #import <TeaUI/_TtC5TeaUI23CardSplitViewController.h>
 
-@class NSArray;
-
 @interface _TtC5TeaUI23CardSplitViewController (TeaUI1)
-- (void)toggleResponderPane;
-@property(nonatomic, readonly) NSArray *keyCommands;
+- (id)splitViewController:(id)arg1 separateSecondaryViewControllerFromPrimaryViewController:(id)arg2;
+- (_Bool)splitViewController:(id)arg1 collapseSecondaryViewController:(id)arg2 ontoPrimaryViewController:(id)arg3;
+- (void)splitViewController:(id)arg1 willChangeToDisplayMode:(long long)arg2;
+- (_Bool)splitViewController:(id)arg1 showDetailViewController:(id)arg2 sender:(id)arg3;
+- (_Bool)splitViewController:(id)arg1 showViewController:(id)arg2 sender:(id)arg3;
 @end
 

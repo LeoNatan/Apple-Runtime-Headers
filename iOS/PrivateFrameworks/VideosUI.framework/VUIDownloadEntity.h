@@ -10,13 +10,14 @@
 #import <VideosUI/VUIMediaEntityAssetControllerDelegate-Protocol.h>
 
 @class NSArray, NSNumber, NSString;
-@protocol VUIDownloadEntityDelegate;
+@protocol VUIDownloadEntityDelegate, VUIMediaEntityIdentifier;
 
 __attribute__((visibility("hidden")))
 @interface VUIDownloadEntity : NSObject <VUIMediaEntityAssetControllerDelegate, NSCopying>
 {
     id <VUIDownloadEntityDelegate> _delegate;
     long long _downloadType;
+    NSObject<VUIMediaEntityIdentifier> *_showIdentifier;
     NSArray *_mediaEntities;
     NSString *_title;
     NSNumber *_releaseYear;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *releaseYear; // @synthesize releaseYear=_releaseYear;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
+@property(retain, nonatomic) NSObject<VUIMediaEntityIdentifier> *showIdentifier; // @synthesize showIdentifier=_showIdentifier;
 @property(nonatomic) long long downloadType; // @synthesize downloadType=_downloadType;
 @property(nonatomic) __weak id <VUIDownloadEntityDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

@@ -17,6 +17,9 @@
     float _pointerX;
     float _pointerY;
     float _pointerZ;
+    float _pointerAccelX;
+    float _pointerAccelY;
+    float _pointerAccelZ;
     float _pointerButtonMask;
     float _pointerButtonNumber;
     float _pointerButtonClickCount;
@@ -28,6 +31,9 @@
 @property(nonatomic) float pointerButtonClickCount; // @synthesize pointerButtonClickCount=_pointerButtonClickCount;
 @property(nonatomic) float pointerButtonNumber; // @synthesize pointerButtonNumber=_pointerButtonNumber;
 @property(nonatomic) float pointerButtonMask; // @synthesize pointerButtonMask=_pointerButtonMask;
+@property(nonatomic) float pointerAccelZ; // @synthesize pointerAccelZ=_pointerAccelZ;
+@property(nonatomic) float pointerAccelY; // @synthesize pointerAccelY=_pointerAccelY;
+@property(nonatomic) float pointerAccelX; // @synthesize pointerAccelX=_pointerAccelX;
 @property(nonatomic) float pointerZ; // @synthesize pointerZ=_pointerZ;
 @property(nonatomic) float pointerY; // @synthesize pointerY=_pointerY;
 @property(nonatomic) float pointerX; // @synthesize pointerX=_pointerX;

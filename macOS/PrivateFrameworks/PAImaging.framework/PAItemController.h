@@ -40,8 +40,8 @@
 @property(readonly, getter=isAvailableForEditing) BOOL availableForEditing;
 - (BOOL)isEditing;
 - (BOOL)_isEditing;
-- (void)resetEditing;
-- (void)asyncResetEditing;
+- (void)resetEditingMainThread:(CDUnknownBlockType)arg1;
+- (void)resetEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_resetEditing;
 - (void)_didResetEditing;
 - (void)flushEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;

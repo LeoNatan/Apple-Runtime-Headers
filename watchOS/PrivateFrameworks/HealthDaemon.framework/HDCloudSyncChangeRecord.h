@@ -41,6 +41,7 @@
 @property(readonly, copy, nonatomic) NSNumber *changeSize;
 @property(readonly, copy, nonatomic) CKRecordID *sequenceRecordID;
 - (id)initWithSyncAnchorRangeMapData:(id)arg1 changeIndex:(unsigned long long)arg2 changesetAsset:(id)arg3 changeSize:(id)arg4 protocolVersion:(int)arg5 options:(id)arg6 sequenceRecordID:(id)arg7 record:(id)arg8 schemaVersion:(int)arg9;
+- (id)initWithSyncAnchorRangeMap:(id)arg1 finalForSequence:(_Bool)arg2 changesetArchiveFileHandle:(id)arg3 sequenceRecord:(id)arg4 protocolVersion:(int)arg5;
 - (id)initWithSyncAnchorRangeMap:(id)arg1 finalForSequence:(_Bool)arg2 changesetArchiveFileHandle:(id)arg3 sequenceRecord:(id)arg4;
 
 @end

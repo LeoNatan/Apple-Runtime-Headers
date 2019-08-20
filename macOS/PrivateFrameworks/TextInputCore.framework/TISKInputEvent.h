@@ -28,6 +28,7 @@
 - (void)_computeErrorDistance;
 - (double)downUpTimeDelta;
 - (id)upTouchEvent;
+- (BOOL)isMissingATouch;
 - (id)init:(id)arg1 type:(int)arg2 order:(long long)arg3;
 
 @end

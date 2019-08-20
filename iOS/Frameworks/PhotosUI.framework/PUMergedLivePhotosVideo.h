@@ -16,8 +16,10 @@
     AVAsset *_mergedVideoAsset;
     AVVideoComposition *_mergedVideoComposition;
     double _videoAspectRatio;
+    unsigned long long _options;
 }
 
+@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) double videoAspectRatio; // @synthesize videoAspectRatio=_videoAspectRatio;
 @property(readonly, nonatomic) AVVideoComposition *mergedVideoComposition; // @synthesize mergedVideoComposition=_mergedVideoComposition;
 @property(readonly, nonatomic) AVAsset *mergedVideoAsset; // @synthesize mergedVideoAsset=_mergedVideoAsset;
@@ -28,7 +30,7 @@
 - (id)debugDescription;
 - (long long)_assetIndexAtTime:(CDStruct_1b6d18a9)arg1;
 - (id)assetAtTime:(CDStruct_1b6d18a9)arg1 progress:(out double *)arg2;
-- (id)initWithAssets:(id)arg1 startTimes:(id)arg2 keyTimes:(id)arg3 videoAsset:(id)arg4 videoComposition:(id)arg5 videoAspectRatio:(double)arg6;
+- (id)initWithAssets:(id)arg1 startTimes:(id)arg2 keyTimes:(id)arg3 videoAsset:(id)arg4 videoComposition:(id)arg5 videoAspectRatio:(double)arg6 options:(unsigned long long)arg7;
 
 @end
 

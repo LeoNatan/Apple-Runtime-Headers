@@ -74,6 +74,7 @@
 @property(readonly) unsigned long long arrayLength;
 @property(readonly) BOOL allowGPUOptimizedContents;
 @property(readonly) unsigned long long allocatedSize;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

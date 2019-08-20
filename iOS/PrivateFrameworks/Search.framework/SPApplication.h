@@ -30,13 +30,13 @@
 @property(retain, nonatomic) NSString *displayIdentifier; // @synthesize displayIdentifier=_displayIdentifier;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSString *longDisplayName;
-- (void)copySearchFoundationResult:(id)arg1;
 @property(retain, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) _Bool displayNameLoaded;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)copySearchFoundationResult:(id)arg1;
 
 @end
 

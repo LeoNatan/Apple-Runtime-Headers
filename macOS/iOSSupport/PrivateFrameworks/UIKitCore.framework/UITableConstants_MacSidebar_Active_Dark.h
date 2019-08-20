@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedConstants;
+- (id)defaultHighlightTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultTextColorForCell:(id)arg1 inTableView:(id)arg2;
 
 @end

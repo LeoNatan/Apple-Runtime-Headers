@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property struct CGSize margin; // @synthesize margin=_margin;
-@property(retain) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
+@property(copy) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(retain) NSToolTip *toolTipObject; // @synthesize toolTipObject=_toolTipObject;
 - (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) double screenScale; // @synthesize screenScale=_screenScale;
 @property(readonly) unsigned long long deviceSubtype; // @synthesize deviceSubtype=_deviceSubtype;
 @property(readonly) struct CGSize messagesLauncherIconSize;
+@property(readonly) struct CGSize largeHomeScreenIconSize;
 @property(readonly) struct CGSize homeScreenIconSize;
 @property(readonly) unsigned long long ideom;
 - (id)init;

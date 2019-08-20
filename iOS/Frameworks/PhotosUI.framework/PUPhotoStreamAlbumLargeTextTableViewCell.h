@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *albumImageView; // @synthesize albumImageView=_albumImageView;
 - (void).cxx_destruct;
+- (void)didMoveToWindow;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (void)_commonPhotoStreamAlbumLargeTextTableViewCellInit;

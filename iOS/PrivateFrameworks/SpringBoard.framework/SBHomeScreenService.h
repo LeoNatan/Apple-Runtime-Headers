@@ -18,18 +18,21 @@
     FBServiceClientAuthenticator *_resetHomeScreenLayoutAuthenticator;
     FBServiceClientAuthenticator *_requestSuggestedAppAuthenticator;
     FBServiceClientAuthenticator *_iconFolderPathLookupAuthenticator;
+    FBServiceClientAuthenticator *_addWidgetToTodayViewAuthenticator;
     NSMutableSet *_activeConnections;
     BSServiceConnectionListener *_connectionListener;
 }
 
 @property(readonly, nonatomic) BSServiceConnectionListener *connectionListener; // @synthesize connectionListener=_connectionListener;
 @property(readonly, nonatomic) NSMutableSet *activeConnections; // @synthesize activeConnections=_activeConnections;
+@property(readonly, nonatomic) FBServiceClientAuthenticator *addWidgetToTodayViewAuthenticator; // @synthesize addWidgetToTodayViewAuthenticator=_addWidgetToTodayViewAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *iconFolderPathLookupAuthenticator; // @synthesize iconFolderPathLookupAuthenticator=_iconFolderPathLookupAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *requestSuggestedAppAuthenticator; // @synthesize requestSuggestedAppAuthenticator=_requestSuggestedAppAuthenticator;
 @property(readonly, nonatomic) FBServiceClientAuthenticator *resetHomeScreenLayoutAuthenticator; // @synthesize resetHomeScreenLayoutAuthenticator=_resetHomeScreenLayoutAuthenticator;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
 - (void).cxx_destruct;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+- (void)addWidgetToTodayViewWithBundleIdentifier:(id)arg1;
 - (id)folderPathToIconWithBundleIdentifier:(id)arg1;
 - (oneway void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 assertionPort:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (oneway void)resetHomeScreenLayoutWithCompletion:(CDUnknownBlockType)arg1;

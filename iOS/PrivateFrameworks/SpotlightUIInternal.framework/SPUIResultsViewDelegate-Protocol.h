@@ -7,6 +7,6 @@
 #import <SpotlightUIInternal/SearchUIResultsViewDelegate-Protocol.h>
 
 @protocol SPUIResultsViewDelegate <SearchUIResultsViewDelegate>
-- (void)didUpdateFromResults;
+- (void)willUpdateFromResults;
 @end
 

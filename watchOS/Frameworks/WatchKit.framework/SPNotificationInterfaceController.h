@@ -46,8 +46,8 @@
 - (id)interfaceControllerForViewController:(id)arg1;
 - (void)viewControllerDidDisappearAfterModalPresentation:(id)arg1;
 - (void)viewControllerDidAppearAfterModalDismissal:(id)arg1;
-- (id)timerSupportViewControllerForHostingViewController:(id)arg1;
-- (id)timerSupportActionItemsForHostingViewController:(id)arg1;
+- (id)underlyingUIHostingControllerForHostingViewController:(id)arg1;
+- (id)actionItemsForHostingViewController:(id)arg1;
 - (void)viewControllerDidUpdateFullScreen:(id)arg1;
 - (void)viewController:(id)arg1 crownData:(id)arg2;
 - (void)xpcInterfaceViewController:(id)arg1 gestureData:(id)arg2;
@@ -65,7 +65,7 @@
 - (void)viewControllerWillActivate:(id)arg1;
 - (void)viewControllerDidRelease:(id)arg1;
 - (void)viewController:(id)arg1 createWKInterfaceControllerClass:(id)arg2 properties:(id)arg3 contextID:(id)arg4 creationCompletion:(CDUnknownBlockType)arg5;
-- (void)setupToVendInterface:(id)arg1 isTimerSupport:(_Bool)arg2;
+- (void)setupToVendInterface:(id)arg1 isHostingController:(_Bool)arg2;
 @property(readonly) NSString *bulletinUniqueID;
 - (id)initWithBundle:(id)arg1 host:(id)arg2 hostID:(id)arg3 linkedOnOrAfterGlory:(_Bool)arg4;
 

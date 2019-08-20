@@ -81,6 +81,7 @@
 - (int)hasCryptoUserForVolume:(struct __DADisk *)arg1 user:(id)arg2 hasUser:(char *)arg3;
 - (int)credentialRequirementsForVolume:(struct __DADisk *)arg1 details:(id *)arg2;
 - (int)updatePrebootForVolume:(struct __DADisk *)arg1 options:(id)arg2;
+- (int)syncCryptoUserDataRecordsForVolumeGroupSystemToDataRoleVolumes:(struct __DADisk *)arg1 options:(id)arg2;
 - (int)updatePrebootForVolumeFire:(struct __DADisk *)arg1 completion:(CDUnknownBlockType)arg2 options:(id)arg3;
 - (int)startMigrationToDecryptedVolume:(struct __DADisk *)arg1 options:(id)arg2;
 - (int)startMigrationToEncryptedVolume:(struct __DADisk *)arg1 user:(id)arg2 passdata:(id)arg3 newUserRecords:(id)arg4 options:(id)arg5;

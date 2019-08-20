@@ -16,6 +16,8 @@
     NSObject<OS_dispatch_semaphore> *_concurrentRequestSemaphore;
 }
 
++ (void)setMaxConcurrentDecodeCount:(long long)arg1;
++ (long long)maxConcurrentDecodeCount;
 + (id)sharedDecoder;
 - (void).cxx_destruct;
 - (void)cancelInFlightAsyncDecodeForRequestHandle:(id)arg1;

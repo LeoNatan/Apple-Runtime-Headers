@@ -14,23 +14,27 @@ __attribute__((visibility("hidden")))
     BOOL _isIOSMac;
     NSNumber *_launchCount;
     NSNumber *_sharedItemsCount;
-    NSString *_serviceTitle;
+    NSString *_serviceIdentifier;
     SHKLatencyMeasurement *_beginExtensionRequestMeasurement;
+    SHKLatencyMeasurement *_convertToExtensionItemMeasurement;
     SHKLatencyMeasurement *_sendOptionsRequestMeasurement;
     SHKLatencyMeasurement *_remoteViewControllerRequestMeasurement;
+    SHKLatencyMeasurement *_totalLatencyMeasurement;
 }
 
+@property(retain) SHKLatencyMeasurement *totalLatencyMeasurement; // @synthesize totalLatencyMeasurement=_totalLatencyMeasurement;
 @property(retain) SHKLatencyMeasurement *remoteViewControllerRequestMeasurement; // @synthesize remoteViewControllerRequestMeasurement=_remoteViewControllerRequestMeasurement;
 @property(retain) SHKLatencyMeasurement *sendOptionsRequestMeasurement; // @synthesize sendOptionsRequestMeasurement=_sendOptionsRequestMeasurement;
+@property(retain) SHKLatencyMeasurement *convertToExtensionItemMeasurement; // @synthesize convertToExtensionItemMeasurement=_convertToExtensionItemMeasurement;
 @property(retain) SHKLatencyMeasurement *beginExtensionRequestMeasurement; // @synthesize beginExtensionRequestMeasurement=_beginExtensionRequestMeasurement;
 @property BOOL isIOSMac; // @synthesize isIOSMac=_isIOSMac;
-@property(retain) NSString *serviceTitle; // @synthesize serviceTitle=_serviceTitle;
+@property(retain) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(retain) NSNumber *sharedItemsCount; // @synthesize sharedItemsCount=_sharedItemsCount;
 @property(retain) NSNumber *launchCount; // @synthesize launchCount=_launchCount;
 - (void).cxx_destruct;
 - (void)report;
 - (BOOL)shouldReport;
-- (id)initWithServiceTitle:(id)arg1;
+- (id)initWithServiceIdentifier:(id)arg1;
 
 @end
 

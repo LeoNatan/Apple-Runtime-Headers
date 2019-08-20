@@ -29,6 +29,7 @@
 - (void)chatController:(id)arg1 forwardComposition:(id)arg2;
 - (void)__updateAppSnapshot;
 - (void)_updateAppSnapshot;
+- (void)_handleRegistryWillUnregisterChatNotification:(id)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)scene:(id)arg1 continueUserActivity:(id)arg2;
 - (id)stateRestorationActivityForScene:(id)arg1;

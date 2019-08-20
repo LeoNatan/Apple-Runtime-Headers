@@ -12,6 +12,7 @@
 
 + (id)sharedInstance;
 - (_Bool)isPresent;
+- (void)handleSpeechDetectionVADPresentChange:(id)arg1;
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (id)init;

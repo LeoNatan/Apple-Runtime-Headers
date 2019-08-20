@@ -19,6 +19,7 @@
     unsigned int _truthSource;
     unsigned int _truthType;
     unsigned int _type;
+    _Bool _isRotted;
     struct {
         unsigned int addressComponentMatches:1;
         unsigned int distanceFromTruth:1;
@@ -29,9 +30,11 @@
         unsigned int truthSource:1;
         unsigned int truthType:1;
         unsigned int type:1;
+        unsigned int isRotted:1;
     } _has;
 }
 
+@property(nonatomic) _Bool isRotted; // @synthesize isRotted=_isRotted;
 @property(nonatomic) unsigned int truthSource; // @synthesize truthSource=_truthSource;
 @property(nonatomic) unsigned int truthType; // @synthesize truthType=_truthType;
 @property(nonatomic) unsigned int previousType; // @synthesize previousType=_previousType;
@@ -50,6 +53,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsRotted;
 @property(nonatomic) _Bool hasTruthSource;
 @property(nonatomic) _Bool hasTruthType;
 @property(nonatomic) _Bool hasPreviousType;

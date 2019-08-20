@@ -9,12 +9,13 @@
 #import <SpringBoardServices/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardServices/SBSStatusBarStyleOverridesAssertionClient-Protocol.h>
 
-@class NSMapTable, NSString, NSXPCConnection, SBSStatusBarStyleOverridesCoordinator;
+@class NSMapTable, NSMutableDictionary, NSString, NSXPCConnection, SBSStatusBarStyleOverridesCoordinator;
 @protocol OS_dispatch_queue;
 
 @interface SBSStatusBarStyleOverridesAssertionManager : NSObject <BSDescriptionProviding, SBSStatusBarStyleOverridesAssertionClient>
 {
     NSMapTable *_assertionsByIdentifier;
+    NSMutableDictionary *_acquisitionHandlerEntriesByIdentifier;
     NSXPCConnection *_sbXPCConnection;
     NSObject<OS_dispatch_queue> *_internalQueue;
     SBSStatusBarStyleOverridesCoordinator *_internalQueue_styleOverrideCoordinator;
@@ -26,10 +27,11 @@
 @property(nonatomic) __weak SBSStatusBarStyleOverridesCoordinator *internalQueue_styleOverrideCoordinator; // @synthesize internalQueue_styleOverrideCoordinator=_internalQueue_styleOverrideCoordinator;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSXPCConnection *sbXPCConnection; // @synthesize sbXPCConnection=_sbXPCConnection;
+@property(retain, nonatomic) NSMutableDictionary *acquisitionHandlerEntriesByIdentifier; // @synthesize acquisitionHandlerEntriesByIdentifier=_acquisitionHandlerEntriesByIdentifier;
 @property(retain, nonatomic) NSMapTable *assertionsByIdentifier; // @synthesize assertionsByIdentifier=_assertionsByIdentifier;
 - (void).cxx_destruct;
 - (void)_reactivateAssertions;
-- (void)_tearDownXPCConnection;
+- (void)_handleXPCConnectionInvalidation;
 - (void)unregisterCoordinator;
 - (void)_registerStyleOverrideCoordinatorAfterInterruption;
 - (void)_internalQueue_updateRegistrationForCoordinator:(id)arg1 reply:(CDUnknownBlockType)arg2;

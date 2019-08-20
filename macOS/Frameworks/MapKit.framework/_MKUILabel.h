@@ -21,6 +21,7 @@
 + (id)keyPathsForValuesAffectingAlignment;
 + (id)keyPathsForValuesAffectingAttributedText;
 + (id)keyPathsForValuesAffectingText;
++ (Class)cellClass;
 @property(copy, nonatomic) CDUnknownBlockType _mapkit_themeColorProvider; // @synthesize _mapkit_themeColorProvider=__mapkit_themeColorProvider;
 @property(nonatomic) BOOL collapsesWhenEmpty; // @synthesize collapsesWhenEmpty=_collapsesWhenEmpty;
 - (void).cxx_destruct;

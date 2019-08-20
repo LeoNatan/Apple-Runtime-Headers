@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString, NSURL, NSUUID, SFClientGetDeviceAssetsParams, SFContactInfo, SFDevice;
+@class NSDictionary, NSString, NSURL, NSUUID, SFClientGetDeviceAssetsParams, SFContactInfo, SFDevice, SFPeopleSuggesterParams;
 
 @protocol SDXPCClientInterface
 - (void)wifiPasswordSharingAvailabilityWithCompletion:(void (^)(unsigned int, NSError *))arg1;
@@ -19,6 +19,7 @@
 - (void)preventExitForLocaleReason:(NSString *)arg1;
 - (void)preheatXPCConnection;
 - (void)openSetupURL:(NSURL *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)getPeopleSuggestions:(SFPeopleSuggesterParams *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)getDeviceAssets:(SFClientGetDeviceAssetsParams *)arg1 completion:(void (^)(SFClientGetDeviceAssetsResults *, NSError *))arg2;
 - (void)findContact:(SFContactInfo *)arg1 completion:(void (^)(SFContactInfo *, NSError *))arg2;
 - (void)displayStringForContactIdentifier:(NSString *)arg1 deviceIdentifier:(NSUUID *)arg2 completion:(void (^)(NSString *, _Bool, NSError *))arg3;

@@ -21,6 +21,7 @@
     // Error parsing type: {MPSAutoBuffer="_buffer"{atomic<void *>="__a_"A^v}"_requestedSize"Q"_device"@"<MTLDevice>""_cache"@"MPSCommandBufferImageCache""_resourceSize"{?="size"Q"align"Q}}, name: _buffer
 }
 
+@property(readonly, nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) unsigned int dataType; // @synthesize dataType=_dataType;
 @property(readonly, nonatomic) unsigned long long matrixBytes; // @synthesize matrixBytes=_matrixBytes;
 @property(readonly, nonatomic) unsigned long long rowBytes; // @synthesize rowBytes=_rowBytes;

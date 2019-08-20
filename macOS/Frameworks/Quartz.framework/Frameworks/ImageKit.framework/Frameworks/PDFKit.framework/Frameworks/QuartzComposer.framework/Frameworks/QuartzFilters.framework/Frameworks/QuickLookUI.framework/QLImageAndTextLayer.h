@@ -60,6 +60,7 @@
 @property(retain) NSAttributedString *text;
 - (void)setContentsScale:(double)arg1;
 - (void)set_QLLayerAppearance:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

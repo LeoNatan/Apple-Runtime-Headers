@@ -59,6 +59,7 @@
 @property(readonly, nonatomic) struct CGRect titleViewFrame;
 - (_Bool)hasTitle;
 - (void)setAvatarPickerActive:(_Bool)arg1;
+- (void)updateContentsForConversation:(id)arg1;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithConversation:(id)arg1;

@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)rampingRequestForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 restrictToPlayable:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 handler:(CDUnknownBlockType)arg7;
+- (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 intent:(unsigned long long)arg3 networkAccessAllowed:(BOOL)arg4 streamingAllowed:(BOOL)arg5 restrictToPlayable:(BOOL)arg6 trackCPLDownload:(BOOL)arg7 handler:(CDUnknownBlockType)arg8;
 - (void)getLibrarySizesFromDB:(BOOL)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)getLibrarySizes:(CDUnknownBlockType)arg1;
 

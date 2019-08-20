@@ -10,14 +10,13 @@
 #import <PlatterKit/MTVisualStylingRequiring-Protocol.h>
 #import <PlatterKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
-@class BSUIFontProvider, MTVisualStylingProvider, NSArray, NSDate, NSString, NSTimeZone, PLPlatterHeaderContentViewLayoutManager, UIButton, UIFont, UIImageView, UILabel;
+@class BSUIFontProvider, MTVisualStylingProvider, NSArray, NSDate, NSString, NSTimeZone, PLPlatterHeaderContentViewLayoutManager, UIButton, UIFont, UILabel;
 @protocol BSUIDateLabel;
 
 @interface PLPlatterHeaderContentView : UIView <BSUIDateLabelDelegate, MTVisualStylingRequiring, PLContentSizeCategoryAdjusting>
 {
     UILabel<BSUIDateLabel> *_dateLabel;
     NSArray *_iconButtons;
-    UIImageView *_iconButtonShadow;
     UIButton *_utilityButton;
     PLPlatterHeaderContentViewLayoutManager *_layoutManager;
     _Bool _hasUpdatedContent;
@@ -36,6 +35,8 @@
     double _utilityButtonHorizontalLayoutReference;
 }
 
++ (id)_titleLabelFontFromFontProvider:(id)arg1;
++ (double)contentBaselineToBoundsBottomWithWidth:(double)arg1 scale:(double)arg2;
 @property(nonatomic, getter=_utilityButtonHorizontalLayoutReference, setter=_setUtilityButtonHorizontalLayoutReference:) double utilityButtonHorizontalLayoutReference; // @synthesize utilityButtonHorizontalLayoutReference=_utilityButtonHorizontalLayoutReference;
 @property(nonatomic, getter=_usesLargeTextLayout, setter=_setUsesLargeTextLayout:) _Bool usesLargeTextLayout; // @synthesize usesLargeTextLayout=_usesLargeTextLayout;
 @property(retain, nonatomic, getter=_titleLabel, setter=_setTitleLabel:) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

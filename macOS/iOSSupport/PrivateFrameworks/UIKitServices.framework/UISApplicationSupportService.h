@@ -9,29 +9,45 @@
 #import <UIKitServices/BSServiceConnectionListenerDelegate-Protocol.h>
 #import <UIKitServices/UISApplicationSupportXPCServerInterface-Protocol.h>
 
-@class BSServiceConnectionListener, FBSSerialQueue, NSString;
+@class BSServiceConnectionListener, FBSSerialQueue, NSMutableArray, NSString, UISApplicationInitializationContext;
 @protocol UISApplicationSupportServiceDelegate;
 
 @interface UISApplicationSupportService : NSObject <BSServiceConnectionListenerDelegate, UISApplicationSupportXPCServerInterface>
 {
+    struct os_unfair_lock_s _lock;
     BSServiceConnectionListener *_listener;
-    id <UISApplicationSupportServiceDelegate> _delegate;
-    FBSSerialQueue *_calloutQueue;
+    FBSSerialQueue *_targetQueue;
+    id <UISApplicationSupportServiceDelegate> _lock_delegate;
+    UISApplicationInitializationContext *_lock_defaultContext;
+    NSMutableArray *_lock_launchPendedRequests;
+    BOOL _lock_started;
+    BOOL _lock_finishedLaunching;
     struct {
-        unsigned int delegateRequestPasscodeUnlockUI:1;
-        unsigned int delegateApplicationInitializationContextForClient:1;
-        unsigned int destroyScenesWithPersistentIdentifiers_animationType_destroySessions_forClient_completion:1;
-        unsigned int delegateInitialDisplayContextForClient:1;
-    } _delegateFlags;
+        unsigned int defaultContext:1;
+        unsigned int overrideInitialize:1;
+        unsigned int initializeClientSync:1;
+        unsigned int initializeClientAsync:1;
+        unsigned int initializeClientLegacy:1;
+        unsigned int requestPasscodeUnlockUI:1;
+        unsigned int destroyScenes:1;
+    } _lock_delegateFlags;
 }
 
-@property(nonatomic) __weak id <UISApplicationSupportServiceDelegate> delegate; // @synthesize delegate=_delegate;
++ (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)destroyScenesPersistentIdentifiers:(id)arg1 animationType:(id)arg2 destroySessions:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)applicationInitializationContextWithCompletion:(CDUnknownBlockType)arg1;
 - (oneway void)requestPasscodeUnlockUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)initializeClientWithCompletion:(CDUnknownBlockType)arg1;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+- (void)_pendRequestUntilLaunch:(CDUnknownBlockType)arg1;
+- (void)_setDelegate:(id)arg1;
+- (id)_delegate;
+@property(readonly) BOOL hasFinishedLaunching;
+@property(copy) UISApplicationInitializationContext *defaultContext; // @synthesize defaultContext=_lock_defaultContext;
+@property(retain) id <UISApplicationSupportServiceDelegate> delegate; // @synthesize delegate=_lock_delegate;
+- (void)start;
 - (void)dealloc;
+- (id)_initWithDelegate:(id)arg1 targetQueue:(id)arg2;
 - (id)initWithCalloutQueue:(id)arg1;
 - (id)init;
 

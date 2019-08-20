@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UILabel;
+@class NSString, UIColor, UILabel;
 
 @interface CAMZoomFactorLabel : UIView
 {
+    _Bool _showZoomFactorSymbol;
+    _Bool _useLeadingZero;
     double _zoomFactor;
     NSString *_contentSizeCategory;
     UILabel *__label;
@@ -17,11 +19,15 @@
 
 @property(readonly, nonatomic) UILabel *_label; // @synthesize _label=__label;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
+@property(nonatomic) _Bool useLeadingZero; // @synthesize useLeadingZero=_useLeadingZero;
+@property(nonatomic) _Bool showZoomFactorSymbol; // @synthesize showZoomFactorSymbol=_showZoomFactorSymbol;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 - (void).cxx_destruct;
+- (void)_updateLabelText;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)_labelInsets;
 - (struct CGSize)intrinsicContentSize;
+@property(retain, nonatomic) UIColor *textColor;
 - (id)description;
 - (void)_updateFont;
 - (id)initWithFrame:(struct CGRect)arg1;

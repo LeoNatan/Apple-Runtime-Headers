@@ -9,14 +9,13 @@
 #import <HomeKitBackingStore/APSConnectionDelegate-Protocol.h>
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class APSConnection, CKContainer, CKContainerID, CKDatabase, CKOperationConfiguration, HMBCloudDatabaseStateModel, HMBLocalDatabase, HMBLocalZone, HMFUnfairLock, NAFuture, NSMutableDictionary, NSSet, NSString;
+@class APSConnection, CKContainer, CKContainerID, CKDatabase, HMBCloudDatabaseConfiguration, HMBCloudDatabaseStateModel, HMBLocalDatabase, HMBLocalZone, HMFUnfairLock, NAFuture, NSMutableDictionary, NSSet, NSString;
 @protocol HMBCloudDatabaseDelegate;
 
 @interface HMBCloudDatabase : HMFObject <APSConnectionDelegate, HMFLogging>
 {
-    _Bool _manateeContainer;
     id <HMBCloudDatabaseDelegate> _delegate;
-    CKOperationConfiguration *_defaultOperationConfiguration;
+    HMBCloudDatabaseConfiguration *_configuration;
     NAFuture *_initialCloudSyncFuture;
     HMBLocalDatabase *_localDatabase;
     HMBLocalZone *_stateZone;
@@ -49,10 +48,9 @@
 @property(retain, nonatomic) HMBCloudDatabaseStateModel *privateDatabaseState; // @synthesize privateDatabaseState=_privateDatabaseState;
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, nonatomic) HMBLocalZone *stateZone; // @synthesize stateZone=_stateZone;
-@property(readonly, nonatomic, getter=isManateeContainer) _Bool manateeContainer; // @synthesize manateeContainer=_manateeContainer;
 @property(readonly, nonatomic) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
 @property(retain, nonatomic) NAFuture *initialCloudSyncFuture; // @synthesize initialCloudSyncFuture=_initialCloudSyncFuture;
-@property(readonly, nonatomic) CKOperationConfiguration *defaultOperationConfiguration; // @synthesize defaultOperationConfiguration=_defaultOperationConfiguration;
+@property(readonly, copy, nonatomic) HMBCloudDatabaseConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <HMBCloudDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)attributeDescriptions;
@@ -77,8 +75,8 @@
 - (_Bool)updateServerChangeToken:(id)arg1 forDatabaseWithScope:(long long)arg2 error:(id *)arg3;
 - (id)performInitialCloudSync;
 @property(readonly, nonatomic) CKContainerID *containerID;
-- (id)initWithLocalDatabase:(id)arg1 containerID:(id)arg2 defaultOperationConfiguration:(id)arg3 isManateeContainer:(_Bool)arg4;
-- (id)initWithLocalDatabase:(id)arg1 stateZone:(id)arg2 container:(id)arg3 defaultOperationConfiguration:(id)arg4 isManateeContainer:(_Bool)arg5 databaseStateModelsByScope:(id)arg6 zoneStateModels:(id)arg7;
+- (id)initWithLocalDatabase:(id)arg1 configuration:(id)arg2;
+- (id)initWithLocalDatabase:(id)arg1 stateZone:(id)arg2 container:(id)arg3 configuration:(id)arg4 databaseStateModelsByScope:(id)arg5 zoneStateModels:(id)arg6;
 - (id)declineInvitation:(id)arg1;
 - (id)acceptInvitation:(id)arg1;
 - (id)removeZoneWithID:(id)arg1;

@@ -25,9 +25,11 @@
     UILabel *_primaryErrorLabel;
     UILabel *_secondaryErrorLabel;
     UIVisualEffectView *_blurView;
+    unsigned long long _currentAccessMode;
 }
 
 + (id)_newLabel;
+@property(nonatomic) unsigned long long currentAccessMode; // @synthesize currentAccessMode=_currentAccessMode;
 @property(nonatomic) _Bool showingBlur; // @synthesize showingBlur=_showingBlur;
 @property(nonatomic) _Bool showingLoadingIndicator; // @synthesize showingLoadingIndicator=_showingLoadingIndicator;
 @property(nonatomic) _Bool showingError; // @synthesize showingError=_showingError;
@@ -42,6 +44,7 @@
 @property(nonatomic) _Bool shouldShowLoadingIndicatorForClipPlayback; // @synthesize shouldShowLoadingIndicatorForClipPlayback=_shouldShowLoadingIndicatorForClipPlayback;
 @property(nonatomic) _Bool canShowOverlayContent; // @synthesize canShowOverlayContent=_canShowOverlayContent;
 - (void).cxx_destruct;
+- (_Bool)_shouldShortCircuitLoadingIndicator;
 - (id)_errorStringDetailsForError:(id)arg1;
 - (void)_updateStateAnimated:(_Bool)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_updateBlurVisibilityAnimated:(_Bool)arg1;
@@ -52,6 +55,7 @@
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
+- (void)hu_reloadData;
 - (void)viewDidLoad;
 - (id)initWithPlaybackEngine:(id)arg1;
 

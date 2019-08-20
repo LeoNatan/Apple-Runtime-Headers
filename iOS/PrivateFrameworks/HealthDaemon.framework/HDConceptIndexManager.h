@@ -13,7 +13,6 @@
 
 @interface HDConceptIndexManager : NSObject <HDDataObserver>
 {
-    HDConceptIndexer *_conceptIndexer;
     id <HDBlockDispatcher> _dispatcher;
     unsigned long long _batchSize;
     HDProfile *_profile;
@@ -22,26 +21,25 @@
     NSMutableArray *_completionBlocks;
     struct os_unfair_lock_s _executionStateLock;
     unsigned long long _executionState;
+    HDConceptIndexer *_conceptIndexer;
 }
 
 + (void)_updateConceptIndexWithBlockDispatcher:(id)arg1 conceptIndexer:(id)arg2 batchSize:(long long)arg3 initialCount:(long long)arg4 completion:(CDUnknownBlockType)arg5;
+@property(readonly, nonatomic) HDConceptIndexer *conceptIndexer; // @synthesize conceptIndexer=_conceptIndexer;
 - (void).cxx_destruct;
-- (void)_badgeForNewHealthRecordsFromTask:(id)arg1;
-- (void)badgeForNewHealthRecords;
-- (void)_notifyForNewHealthRecordsFromTask:(id)arg1;
-- (void)notifyForNewHealthRecords;
 - (void)stopWithDescription:(id)arg1;
 - (void)startWithDescription:(id)arg1;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly) unsigned long long currentExecutionState;
 - (void)invalidateAndWait;
 - (void)setEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetWithReindex:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateConceptIndexWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateWithDescription:(id)arg1;
-- (id)initWithConceptIndexer:(id)arg1 blockDispatcher:(id)arg2 batchSize:(unsigned long long)arg3 profile:(id)arg4;
+- (id)initWithBlockDispatcher:(id)arg1 batchSize:(unsigned long long)arg2 profile:(id)arg3;
 - (id)init;
 
 // Remaining properties

@@ -33,6 +33,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL showsBackgroundViewHighlight; // @synthesize showsBackgroundViewHighlight=_showsBackgroundViewHighlight;
 @property(nonatomic) BOOL showsBackgroundComponentHighlights; // @synthesize showsBackgroundComponentHighlights=_showsBackgroundComponentHighlights;
 - (void).cxx_destruct;
+- (void)_performBlockCheckingDefinesTintColor:(CDUnknownBlockType)arg1;
+- (BOOL)_definesTintColor;
+- (id)_normalInheritedTintColor;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)prepareForAnimatedTransitioningWithCoordinator:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -13,6 +13,8 @@
 + (id)_nameLocalizationKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
 + (id)_snapshotKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
 + (id)_orderedValuesForDevice:(id)arg1;
++ (_Bool)_valueIsValid:(unsigned long long)arg1 forDevice:(id)arg2;
++ (unsigned long long)resolvedAutomaticStyleForCurrentLocale;
 + (id)optionWithStyle:(unsigned long long)arg1 forDevice:(id)arg2;
 - (id)_valueToFaceBundleStringDict;
 @property(readonly, nonatomic) unsigned long long style;

@@ -31,6 +31,7 @@
 + (long long)type;
 @property(readonly, nonatomic) PHContentEditingInputRequestOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+- (id)_errorFromAssetMediaResult:(id)arg1;
 - (void)processMediaResult:(id)arg1 forRequest:(id)arg2;
 - (void)_finishIfAllCompleteWithRequest:(id)arg1;
 - (id)progresses;

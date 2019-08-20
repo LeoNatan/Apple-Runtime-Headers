@@ -9,6 +9,7 @@
 @class FBSOrientationObserverClient, FBSOrientationUpdate;
 
 @protocol FBSOrientationObserverClientDelegate <NSObject>
+- (void)handleOrientationResetForClient:(FBSOrientationObserverClient *)arg1;
 - (void)client:(FBSOrientationObserverClient *)arg1 handleOrientationUpdate:(FBSOrientationUpdate *)arg2;
 @end
 

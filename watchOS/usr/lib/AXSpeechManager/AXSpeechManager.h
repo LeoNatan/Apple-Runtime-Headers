@@ -23,6 +23,7 @@
     _Bool _isInAudioInterruption;
     _Bool _supportsAccurateWordCallbacks;
     _Bool _showControlCenterControls;
+    _Bool _usesAuxiliarySession;
     _Bool _wasSpeakingBeforeAudioInterruption;
     _Bool _didRequestStartSpeakingDuringAudioInterruption;
     _Bool _didRequestPauseSpeakingDuringAudioInterruption;
@@ -64,6 +65,7 @@
 @property(retain, nonatomic) AXDispatchTimer *audioDeactivatorTimer; // @synthesize audioDeactivatorTimer=_audioDeactivatorTimer;
 @property(retain, nonatomic) NSNumber *originalSpeechRateForJobOverride; // @synthesize originalSpeechRateForJobOverride=_originalSpeechRateForJobOverride;
 @property(copy, nonatomic) CDUnknownBlockType requestWillStart; // @synthesize requestWillStart=_requestWillStart;
+@property(nonatomic) _Bool usesAuxiliarySession; // @synthesize usesAuxiliarySession=_usesAuxiliarySession;
 @property(readonly, nonatomic) _Bool showControlCenterControls; // @synthesize showControlCenterControls=_showControlCenterControls;
 @property(retain, nonatomic) AXSpeechAction *requestedActionDuringAudioInterruption; // @synthesize requestedActionDuringAudioInterruption=_requestedActionDuringAudioInterruption;
 @property(nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
@@ -114,6 +116,7 @@
 - (void)_tearDown;
 - (void)tearDown;
 - (void)dealloc;
+- (void)_updateAuxiliarySession;
 - (id)init;
 
 // Remaining properties

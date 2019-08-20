@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (void)performedSuccessfulCDPStateMachineRun:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)performedFailureCDPStateMachineRun:(id)arg1 error:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (BOOL)waitForOctagonUpgrade:(id *)arg1;
 - (void)performedCDPStateMachineRun:(id)arg1 success:(BOOL)arg2 error:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)performedCoreFollowUp:(id)arg1 error:(id)arg2;
 - (void)fetchEscrowContents:(CDUnknownBlockType)arg1;

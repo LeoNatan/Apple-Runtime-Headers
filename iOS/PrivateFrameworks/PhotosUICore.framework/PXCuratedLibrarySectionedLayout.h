@@ -10,12 +10,13 @@
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryBodyLayout-Protocol.h>
 #import <PhotosUICore/PXCuratedLibraryViewModelPresenter-Protocol.h>
+#import <PhotosUICore/PXGSublayoutFaultingDelegate-Protocol.h>
 #import <PhotosUICore/PXGSublayoutProvider-Protocol.h>
 #import <PhotosUICore/PXMonthsSublayoutProvider-Protocol.h>
 
-@class NSMutableIndexSet, NSString, PXAssetsDataSource, PXAssetsSectionLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibraryViewModel, PXGSpriteReference;
+@class NSIndexSet, NSMutableIndexSet, NSString, PXAssetsDataSource, PXAssetsSectionLayout, PXCuratedLibraryLayoutSpec, PXCuratedLibraryViewModel, PXGSpriteReference;
 
-@interface PXCuratedLibrarySectionedLayout : PXGCompositeLayout <PXAssetsDataSourceManagerObserver, PXChangeObserver, PXGSublayoutProvider, PXMonthsSublayoutProvider, PXCuratedLibraryViewModelPresenter, PXCuratedLibraryBodyLayout>
+@interface PXCuratedLibrarySectionedLayout : PXGCompositeLayout <PXAssetsDataSourceManagerObserver, PXChangeObserver, PXGSublayoutProvider, PXGSublayoutFaultingDelegate, PXMonthsSublayoutProvider, PXCuratedLibraryViewModelPresenter, PXCuratedLibraryBodyLayout>
 {
     CDStruct_d97c9657 _updateFlags;
     PXAssetsDataSource *_currentDataSource;
@@ -24,6 +25,8 @@
     long long *_accumulatedSectionItems;
     long long _accumulatedSectionItemsCount;
     _Bool _isUpdatingSublayouts;
+    unsigned long long _dataSourceIdentifierOfCachedSectionsWithSelectedItems;
+    NSIndexSet *_cachedSectionsWithSelectedItems;
     _Bool _isInitialLoad;
     _Bool _performedInitialLoad;
     PXCuratedLibraryLayoutSpec *_spec;
@@ -59,6 +62,7 @@
 - (void)enumerateAssetsSectionSublayoutsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateAssetsSectionSublayoutsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)layout:(id)arg1 collectIndexesOfChapterHeaderSublayouts:(id)arg2 heroSublayouts:(id)arg3 inRange:(struct _NSRange)arg4;
+- (_Bool)layout:(id)arg1 shouldPreventFaultOutOfSublayout:(id)arg2;
 - (void)_configureSectionLayout:(id)arg1 atIndex:(long long)arg2;
 - (id)layout:(id)arg1 createSublayoutAtIndex:(long long)arg2;
 - (struct CGSize)layout:(id)arg1 estimatedContentSizeForSublayoutAtIndex:(long long)arg2 referenceSize:(struct CGSize)arg3;

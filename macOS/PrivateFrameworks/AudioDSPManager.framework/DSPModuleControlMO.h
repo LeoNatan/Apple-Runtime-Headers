@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class DSPModuleMO, NSSet, NSString;
+@class ContentDSPMO, DSPModuleMO, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface DSPModuleControlMO : NSManagedObject
@@ -16,10 +16,13 @@ __attribute__((visibility("hidden")))
 + (id)fetchRequest;
 
 // Remaining properties
-@property(nonatomic) int channelCount; // @dynamic channelCount;
-@property(retain, nonatomic) NSSet *contentDSP; // @dynamic contentDSP;
+@property(retain, nonatomic) NSSet *aggregation; // @dynamic aggregation;
+@property(retain, nonatomic) ContentDSPMO *contentDSP; // @dynamic contentDSP;
+@property(nonatomic) BOOL isDefault; // @dynamic isDefault;
 @property(retain, nonatomic) DSPModuleMO *module; // @dynamic module;
-@property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSString *type; // @dynamic type;
+@property(copy, nonatomic) NSString *value; // @dynamic value;
+@property(nonatomic) int virtualChannelCount; // @dynamic virtualChannelCount;
 
 @end
 

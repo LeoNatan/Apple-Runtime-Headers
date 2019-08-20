@@ -6,26 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSMutableSet, UIWindow;
+@class NSHashTable, NSMutableArray, NSMutableSet;
 
 @interface SBHIconViewContextMenuStateController : NSObject
 {
     NSHashTable *_iconViews;
     NSMutableSet *_presentedWidgetsBundleIdentifiers;
     NSHashTable *_iconViewsPresentingContextMenues;
-    UIWindow *_contextMenuWindow;
-    UIWindow *_secureContextMenuWindow;
+    NSHashTable *_iconViewsAnimatingContextMenues;
+    NSMutableArray *_pendingIconAnimationCompletionBlocks;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)_windows;
-- (id)newWindowWithClass:(Class)arg1;
-- (id)secureContextMenuWindow;
-- (id)contextMenuWindow;
-- (_Bool)_isPeekingOrShowing;
-- (void)_dismissAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)_isWidgetVisible:(id)arg1;
+- (void)noteFolderControllerWillClose:(id)arg1;
+- (void)earlyTerminateAnyContextMenuAnimations;
+- (void)performAfterContextMenuAnimationsHaveCompleted:(CDUnknownBlockType)arg1;
+- (_Bool)areAnyIconViewContextMenusAnimating;
+- (_Bool)areAnyIconViewContextMenusShowing;
+- (void)dismissAppIconForceTouchControllers:(CDUnknownBlockType)arg1;
+- (void)floatyFolderViewDidScrollHiddenIconViewAway:(id)arg1;
+- (void)iconViewDidAnimateContextMenu:(id)arg1;
+- (void)iconViewWillAnimateContextMenu:(id)arg1;
 - (void)iconViewDidDismissContextMenu:(id)arg1;
 - (void)iconViewWillPresentContextMenu:(id)arg1;
 - (void)unregisterIconView:(id)arg1;

@@ -8,10 +8,11 @@
 
 #import <ContentKit/WFContentItemClass-Protocol.h>
 
-@class PHAsset;
+@class PHAsset, WFFileType;
 
 @interface WFPhotoMediaContentItem : WFGenericFileContentItem <WFContentItemClass>
 {
+    WFFileType *_preferredFileType;
 }
 
 + (_Bool)isAvailableOnPlatform:(long long)arg1;
@@ -31,15 +32,18 @@
 + (void)runQuery:(id)arg1 withItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
 + (id)itemsWithBurstIdentifier:(id)arg1;
-+ (id)itemWithAssetIdentifier:(id)arg1 nameIfKnown:(id)arg2;
++ (id)itemWithAssetIdentifier:(id)arg1 assetFile:(id)arg2 nameIfKnown:(id)arg3;
++ (id)itemWithAssetIdentifier:(id)arg1 assetFile:(id)arg2;
 + (id)itemWithAssetIdentifier:(id)arg1;
+@property(retain, nonatomic) WFFileType *preferredFileType; // @synthesize preferredFileType=_preferredFileType;
+- (void).cxx_destruct;
 - (id)outputTypes;
 - (id)assetRepresentationTypes;
-- (id)fullSizeAssetResourceInResources:(id)arg1;
-- (id)preferredFileType;
+- (id)fullSizeAssetResourcesInResources:(id)arg1;
 - (_Bool)canGenerateRepresentationForType:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)copyWithName:(id)arg1 zone:(struct _NSZone *)arg2;
 - (id)generateObjectRepresentationForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)generateObjectRepresentation:(CDUnknownBlockType)arg1 options:(id)arg2 forClass:(Class)arg3;
 - (void)generateAVAsset:(CDUnknownBlockType)arg1 networkAccessAllowed:(_Bool)arg2;

@@ -6,7 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class NSArray, PKMetalRendererController, PKRendererTileProperties;
+@class NSArray, NSUUID, PKRendererTileProperties;
 
 @interface PKRendererTile : CALayer
 {
@@ -14,7 +14,7 @@
     // Error parsing type: Aq, name: _renderCount
     // Error parsing type: Ad, name: _lastUsedTimestamp
     BOOL _outOfDate;
-    PKMetalRendererController *_rendererController;
+    NSUUID *_identifier;
     long long _level;
     NSArray *_renderedStrokes;
     long long _currentlyRenderingCount;
@@ -29,7 +29,7 @@
 @property(copy, nonatomic) NSArray *renderedStrokes; // @synthesize renderedStrokes=_renderedStrokes;
 @property(readonly, nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
-@property __weak PKMetalRendererController *rendererController; // @synthesize rendererController=_rendererController;
+@property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) struct CGRect drawingFrame; // @synthesize drawingFrame=_drawingFrame;
 - (void).cxx_destruct;
 - (void)updateLastUsedTimestamp;

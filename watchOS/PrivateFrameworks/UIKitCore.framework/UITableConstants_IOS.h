@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (id)defaultDetailTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultTextLabelFontSizeForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultTextLabelFontForCell:(id)arg1 inTableView:(id)arg2;
+- (id)defaultHighlightTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultPlainHeaderLabelYPositionForTableView:(id)arg1 headerBounds:(struct CGRect)arg2 textRect:(struct CGRect)arg3 isHeader:(_Bool)arg4;
 - (float)defaultPlainFirstSectionHeaderHeightForTableView:(id)arg1;
@@ -65,7 +66,7 @@ __attribute__((visibility("hidden")))
 - (float)defaultPaddingBetweenHeaderAndRowsForTableView:(id)arg1;
 - (float)defaultPaddingBetweenRowsForTableView:(id)arg1;
 - (float)interspaceBetweenInnerAccessoryIdentifier:(id)arg1 outerAccessoryIdentifier:(id)arg2 forCell:(id)arg3 inTableView:(id)arg4 trailingAccessoryGroup:(_Bool)arg5;
-- (float)minimumImageViewAndAccessoryLayoutWidth;
+- (float)minimumImageViewAndAccessoryLayoutWidthForTraitCollection:(id)arg1;
 - (float)defaultTrailingContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultLeadingContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
@@ -89,7 +90,7 @@ __attribute__((visibility("hidden")))
 - (id)defaultBackgroundEffectsForTableViewStyle:(int)arg1;
 - (id)defaultBackgroundColorForTableViewStyle:(int)arg1;
 - (_Bool)supportsUserInterfaceStyles;
-- (id)variantForActive:(_Bool)arg1 dark:(_Bool)arg2;
+- (id)variantForActive:(_Bool)arg1 dark:(_Bool)arg2 focused:(_Bool)arg3;
 - (id)sidebarVariant;
 
 // Remaining properties

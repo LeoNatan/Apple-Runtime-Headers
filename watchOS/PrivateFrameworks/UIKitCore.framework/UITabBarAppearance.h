@@ -21,6 +21,7 @@
 @property(copy, nonatomic) UITabBarItemAppearance *inlineLayoutAppearance; // @synthesize inlineLayoutAppearance=_inlineLayoutAppearance;
 @property(copy, nonatomic) UITabBarItemAppearance *stackedLayoutAppearance; // @synthesize stackedLayoutAppearance=_stackedLayoutAppearance;
 - (void).cxx_destruct;
+- (void)_tabBarItemDataChanged:(id)arg1;
 @property(nonatomic) float stackedItemSpacing;
 @property(nonatomic) float stackedItemWidth;
 @property(nonatomic) int stackedItemPositioning;

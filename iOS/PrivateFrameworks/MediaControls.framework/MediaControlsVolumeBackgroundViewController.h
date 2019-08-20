@@ -16,13 +16,11 @@
     _MediaControlsRouteView *_secondaryRouteView;
     MediaControlsExpandableButton *_primaryExpandableButton;
     MediaControlsExpandableButton *_secondaryExpandableButton;
-    _Bool _isSplitRoute;
     MediaControlsVolumeController *_volumeController;
 }
 
 @property(retain, nonatomic) MediaControlsVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 - (void).cxx_destruct;
-- (id)_localizedStringForBluetoothListeningMode:(id)arg1;
 - (id)expandableButtonOptionsForAvailableBluetoothListeningMode:(id)arg1;
 - (void)configureOptionsButtion:(id)arg1 forRouteType:(unsigned long long)arg2;
 - (void)_performLayoutWithAnimation:(CDUnknownBlockType)arg1;

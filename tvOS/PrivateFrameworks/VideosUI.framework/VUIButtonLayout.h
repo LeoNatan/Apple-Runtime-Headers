@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface VUIButtonLayout : TVViewLayout
 {
+    _Bool _blurEnabled;
     unsigned long long _type;
     unsigned long long _titleStyle;
     double _cornerRadius;
@@ -23,12 +24,14 @@ __attribute__((visibility("hidden")))
 + (id)standardTitleLayoutWithStyle:(unsigned long long)arg1;
 @property(readonly, nonatomic) struct CGPoint contentMotionTranslation; // @synthesize contentMotionTranslation=_contentMotionTranslation;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
+@property(nonatomic, getter=isBlurEnabled) _Bool blurEnabled; // @synthesize blurEnabled=_blurEnabled;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) unsigned long long titleStyle; // @synthesize titleStyle=_titleStyle;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (void)_configureTextualButton;
 - (void)_configurePrimaryButton;
 - (id)initWithType:(unsigned long long)arg1 titleStyle:(unsigned long long)arg2;
 - (id)initWithType:(unsigned long long)arg1;

@@ -17,7 +17,7 @@
 #import <PencilKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSArray, NSString, PKColorPicker, UICollectionView, UIColor;
+@class NSArray, NSString, PKColorPicker, UICollectionView, UIColor, UILongPressGestureRecognizer;
 @protocol PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate;
 
 @interface PKPaletteColorPickerView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, PKColorPickerDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate, PKEdgeLocatable, PKPaletteQuickColorPicking, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
@@ -29,13 +29,13 @@
     UICollectionView *_collectionView;
     NSArray *_swatches;
     NSArray *_swatchColors;
-    UIColor *_lastSelectedColor;
+    UILongPressGestureRecognizer *_longPressGestureRecognizer;
     PKColorPicker *_colorPickerPopover;
 }
 
 + (id)collectionViewFlowLayoutWithItemSize:(struct CGSize)arg1 minimumLineSpacing:(double)arg2 minimumInteritemSpacing:(double)arg3;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
-@property(retain, nonatomic) UIColor *lastSelectedColor; // @synthesize lastSelectedColor=_lastSelectedColor;
+@property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) NSArray *swatchColors; // @synthesize swatchColors=_swatchColors;
 @property(retain, nonatomic) NSArray *swatches; // @synthesize swatches=_swatches;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -50,6 +50,8 @@
 - (void)_reloadSwatchColorsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
+- (id)popoverPresentingSourceview;
+- (struct CGRect)popoverPresentingSourceRect;
 - (void)_showColorSelectionPopover;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
@@ -70,6 +72,9 @@
 - (void)_swatchLongPressHandler:(id)arg1;
 - (struct CGSize)swatchSize;
 - (id)_swatchColorsForTraitCollection:(id)arg1 userInterfaceStyle:(long long)arg2;
+- (void)_enableOrDisableLongPressGesture;
+- (void)didChangePreferredContentSize:(id)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

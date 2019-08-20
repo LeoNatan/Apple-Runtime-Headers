@@ -31,7 +31,8 @@
 - (id)createTempRowIdTableForRecordsSourcedFromBundleId:(id)arg1 txnWitness:(id)arg2;
 - (id)createTempRowIdTableForRecordsSourcedFromBundleId:(id)arg1 groupIds:(id)arg2 txnWitness:(id)arg3;
 - (id)createTempRowIdTableForRecordsSourcedFromBundleId:(id)arg1 documentIds:(id)arg2 txnWitness:(id)arg3;
-- (void)deleteAllRemotelyGeneratedRecordsMissingInDuetWithTxnWitness:(id)arg1;
+- (void)_deleteAllRemotelyGeneratedRecordsMissingInDuetFromDatabase:(id)arg1 withClient:(unsigned char)arg2 tempTableName:(id)arg3;
+- (void)deleteAllRemotelyGeneratedRecordsMissingInDuetFromDatabase:(id)arg1 withClient:(unsigned char)arg2;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 groupId:(id)arg2 olderThanDate:(id)arg3 algorithm:(unsigned int)arg4 txnWitness:(id)arg5 atLeastOneRecordClusterRemoved:(char *)arg6 deletedCount:(unsigned long long *)arg7 error:(id *)arg8;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 groupId:(id)arg2 olderThanDate:(id)arg3 txnWitness:(id)arg4 atLeastOneRecordClusterRemoved:(char *)arg5 deletedCount:(unsigned long long *)arg6 error:(id *)arg7;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 algorithm:(unsigned int)arg2 txnWitness:(id)arg3 atLeastOneRecordClusterRemoved:(char *)arg4 deletedCount:(unsigned long long *)arg5 error:(id *)arg6;
@@ -40,6 +41,7 @@
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 groupIds:(id)arg2 txnWitness:(id)arg3 atLeastOneRecordClusterRemoved:(char *)arg4 deletedCount:(unsigned long long *)arg5 error:(id *)arg6;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 documentIds:(id)arg2 algorithm:(unsigned int)arg3 txnWitness:(id)arg4 atLeastOneRecordClusterRemoved:(char *)arg5 deletedCount:(unsigned long long *)arg6 error:(id *)arg7;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 documentIds:(id)arg2 txnWitness:(id)arg3 atLeastOneRecordClusterRemoved:(char *)arg4 deletedCount:(unsigned long long *)arg5 error:(id *)arg6;
+- (BOOL)deleteAllRecordsWithClusterIdentifier:(id)arg1 algorithm:(unsigned int)arg2 txnWitness:(id)arg3 atLeastOneRecordClusterRemoved:(char *)arg4 deletedCount:(unsigned long long *)arg5 error:(id *)arg6;
 - (BOOL)deleteAllRecordsWithClusterIdentifier:(id)arg1 txnWitness:(id)arg2 atLeastOneRecordClusterRemoved:(char *)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
 - (void)disableSyncForBundleIds:(id)arg1 txnWitness:(id)arg2;
 - (id)_importDuetEventBatch:(id)arg1 lastDKImportDate:(id)arg2 isComplete:(char *)arg3 eventImportBlock:(CDUnknownBlockType)arg4 txnWitness:(id)arg5;

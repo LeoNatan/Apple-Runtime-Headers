@@ -9,12 +9,14 @@
 @protocol SASPresentationServerInterface
 - (oneway void)bulletinManagerDidChangeBulletins;
 - (oneway void)updateCurrentLockState:(AFUISiriLockStateTransport *)arg1;
-- (oneway void)handleButtonLongPressFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1;
+- (oneway void)handleButtonLongPressFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 timestamp:(SASTimeIntervalTransport *)arg2;
 - (oneway void)handleButtonTapFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1;
 - (oneway void)handleButtonUpFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 timestamp:(SASTimeIntervalTransport *)arg2;
 - (oneway void)handleButtonDownFromButtonIdentifier:(SASButtonIdentifierTransport *)arg1 timestamp:(SASTimeIntervalTransport *)arg2;
 - (_Bool)handleTestingActivation:(SASActivationRequest *)arg1;
+- (oneway void)turnOnScreenAfterPocketStateFetch;
 - (oneway void)cancelPendingActivationEventWithReason:(SiriPresentationActivationCancelReasonTransport *)arg1;
+- (oneway void)cancelPreheat;
 - (oneway void)preheat;
 - (oneway void)cancelTTS;
 - (_Bool)presentationisIdleAndQuiet;

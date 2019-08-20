@@ -55,6 +55,7 @@
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)_diagnosticProviders;
+- (void)handleMigrationFinish;
 - (void)handleF5Reset;
 - (void)_setupSecondaryListeners;
 - (void)restoreDidFinish;

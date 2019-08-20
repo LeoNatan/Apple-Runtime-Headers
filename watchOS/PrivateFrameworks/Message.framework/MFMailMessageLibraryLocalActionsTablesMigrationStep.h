@@ -13,6 +13,7 @@
     EDPersistenceDatabaseConnection *_connection;
 }
 
++ (id)log;
 @property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (id)_actionFlagsActionIndexDefinition;

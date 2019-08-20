@@ -36,7 +36,7 @@
 - (void)_capVisibleTextForBucket:(id)arg1;
 - (BOOL)_inputIsInvalid;
 - (void)_initializeFirstGridStripe;
-- (void)stampOccurrenceFrames;
+- (void)_stampOccurrenceFrames;
 - (void)_reclaimSpaceFromStackedOccurrences;
 - (void)_putCollidingOccurrencesIntoBuckets;
 - (void)_findCollidingOccurrences;

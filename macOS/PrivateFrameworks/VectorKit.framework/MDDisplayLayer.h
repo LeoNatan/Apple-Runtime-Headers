@@ -54,7 +54,6 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _depthStencil;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _msaaTexture;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _colorTextures[3];
-    struct unique_ptr<ggl::RenderFrame, std::__1::default_delete<ggl::RenderFrame>> _renderFrame;
     BOOL _useMultisampling;
     BOOL _requiresMultisampling;
     struct CGContext *_snapshotContext;
@@ -103,7 +102,6 @@ __attribute__((visibility("hidden")))
 - (void)willUpdateFrameTexture;
 - (void)drawToTexture:(struct Texture *)arg1 withRenderQueue:(struct RenderQueue *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)drawToTexture:(struct Texture *)arg1 withRenderQueue:(struct RenderQueue *)arg2;
-- (void)newRenderFrame;
 - (struct RenderQueue *)_renderQueueForTimestamp:(double)arg1 prepareHandler:(CDUnknownBlockType)arg2;
 - (struct RenderQueue *)renderQueueForTimestamp:(double)arg1;
 - (BOOL)isDelayedRenderQueueConsumptionSupported;

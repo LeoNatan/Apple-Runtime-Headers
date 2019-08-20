@@ -40,7 +40,7 @@
 - (long long)previousSyncAnchorForDailyExport;
 @property(readonly, nonatomic) _Bool hasSubscribedConversations;
 - (void)_postChangeNotificationForConversationID:(long long)arg1 flags:(unsigned long long)arg2 oldFlags:(unsigned long long)arg3 reason:(long long)arg4;
-- (void)_notifyOfFlagChangeForConversationID:(long long)arg1 oldFlags:(unsigned long long)arg2 newFlags:(unsigned long long)arg3 reason:(long long)arg4;
+- (void)_notifyOfFlagChangeForConversationID:(long long)arg1 oldFlags:(unsigned long long)arg2 newFlags:(unsigned long long)arg3 reason:(long long)arg4 generationWindow:(id)arg5;
 - (void)clearConversationFlagsAndSyncKeyForConversationIDs:(id)arg1;
 - (void)pruneConversationTables:(double)arg1;
 - (void)updateAssociationTableForMessageID:(id)arg1 dateSent:(id)arg2 conversationID:(long long)arg3;

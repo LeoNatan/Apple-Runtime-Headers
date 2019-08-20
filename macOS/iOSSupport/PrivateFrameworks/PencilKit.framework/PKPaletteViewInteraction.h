@@ -15,21 +15,27 @@
 
 @interface PKPaletteViewInteraction : NSObject <UIEditingOverlayInteractionWithView, PKPaletteHostingWindowScene, UIInteraction>
 {
-    NSLayoutConstraint *_leftConstraint;
-    NSLayoutConstraint *_topAnchor;
-    NSLayoutConstraint *_bottomAnchor;
-    NSLayoutConstraint *_widthConstraint;
     BOOL _paletteDidHideForCanvasState;
     id <PKPaletteViewDelegate> _delegate;
     PKPaletteHostView *_paletteHostView;
     UIWindowScene *_windowScene;
     UIView *_view;
+    NSLayoutConstraint *_paletteHostViewWidthConstraint;
+    NSLayoutConstraint *_paletteHostViewHeightConstraint;
+    NSLayoutConstraint *_paletteHostViewTopConstraint;
+    NSLayoutConstraint *_paletteHostViewLeftConstraint;
     struct CGRect _sceneBounds;
+    struct CGRect _textEffectsWindowFrame;
 }
 
 + (BOOL)isHostedWindow:(id)arg1;
 + (id)paletteViewInteractionForWindow:(id)arg1 windowScene:(id)arg2;
 + (id)paletteViewInteractionForCanvas:(id)arg1;
+@property(nonatomic) struct CGRect textEffectsWindowFrame; // @synthesize textEffectsWindowFrame=_textEffectsWindowFrame;
+@property(retain, nonatomic) NSLayoutConstraint *paletteHostViewLeftConstraint; // @synthesize paletteHostViewLeftConstraint=_paletteHostViewLeftConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *paletteHostViewTopConstraint; // @synthesize paletteHostViewTopConstraint=_paletteHostViewTopConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *paletteHostViewHeightConstraint; // @synthesize paletteHostViewHeightConstraint=_paletteHostViewHeightConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *paletteHostViewWidthConstraint; // @synthesize paletteHostViewWidthConstraint=_paletteHostViewWidthConstraint;
 @property(nonatomic) struct CGRect sceneBounds; // @synthesize sceneBounds=_sceneBounds;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) BOOL paletteDidHideForCanvasState; // @synthesize paletteDidHideForCanvasState=_paletteDidHideForCanvasState;
@@ -40,12 +46,13 @@
 - (struct CGRect)paletteHostingWindowSceneBounds;
 - (id)hostingWindow;
 - (void)_updatePaletteTraitCollection:(id)arg1;
+- (id)_traitCollectionForHostingWindow;
 - (void)_updatePaletteViewConstraints;
 - (void)_updatePaletteViewSize;
 - (void)editingOverlayContainerDidChangeToSceneBounds:(struct CGRect)arg1;
 - (id)_viewControllerForPalette;
-- (BOOL)_isScreenshots;
 - (void)_updateForRotation:(id)arg1;
+- (void)_updateForWillRotate:(id)arg1;
 - (void)_hidePaletteForInactiveWindowScene:(id)arg1;
 - (void)_showPaletteForActiveWindowScene:(id)arg1;
 - (void)hidePaletteViewWithCompletion:(CDUnknownBlockType)arg1;

@@ -9,7 +9,7 @@
 #import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARBody2D, ARCamera, ARFaceData, ARFrameTimingData, ARLightEstimate, ARPointCloud, ARRawSceneUnderstandingData, ARWorldTrackingErrorData, ARWorldTrackingState, AVDepthData, NSArray, NSDate, NSDictionary;
+@class ARBody2D, ARCamera, ARFaceData, ARFrameTimingData, ARLightEstimate, ARPointCloud, ARRawSceneUnderstandingData, ARVideoFormat, ARWorldTrackingErrorData, ARWorldTrackingState, AVDepthData, NSArray, NSDate, NSDictionary;
 @protocol MTLTexture;
 
 @interface ARFrame : NSObject <NSSecureCoding, NSCopying>
@@ -46,6 +46,7 @@
     struct __CVBuffer *_mattingScaleImagePixelBuffer;
     NSArray *_detectedBodies;
     ARFaceData *_faceData;
+    ARVideoFormat *_currentlyActiveVideoFormat;
     id <MTLTexture> _imageNoiseTexture;
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginTransform
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginDelta
@@ -56,6 +57,7 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) float imageNoiseIntensity; // @synthesize imageNoiseIntensity=_imageNoiseIntensity;
 @property(retain, nonatomic) id <MTLTexture> imageNoiseTexture; // @synthesize imageNoiseTexture=_imageNoiseTexture;
+@property(retain, nonatomic) ARVideoFormat *currentlyActiveVideoFormat; // @synthesize currentlyActiveVideoFormat=_currentlyActiveVideoFormat;
 @property(retain, nonatomic) ARFaceData *faceData; // @synthesize faceData=_faceData;
 @property(copy, nonatomic) NSArray *detectedBodies; // @synthesize detectedBodies=_detectedBodies;
 @property(nonatomic) struct __CVBuffer *mattingScaleImagePixelBuffer; // @synthesize mattingScaleImagePixelBuffer=_mattingScaleImagePixelBuffer;

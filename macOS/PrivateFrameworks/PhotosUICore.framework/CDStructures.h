@@ -273,6 +273,7 @@ struct _PXGEngineScrollState {
     struct CGSize referenceSize;
     struct NSEdgeInsets contentInsets;
     struct CGRect visibleRect;
+    struct CGRect constrainedVisibleRect;
     struct CGPoint lastScrollDirection;
 };
 

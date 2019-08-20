@@ -40,6 +40,7 @@
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)fetchContentsForItemWithIdentifier:(id)arg1 version:(id)arg2 usingExistingContentsAtURL:(id)arg3 existingVersion:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)fetchContentsForItemWithIdentifier:(id)arg1 version:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)changeItem:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 options:(unsigned long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)itemChanged:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)evictItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)itemForIdentifier:(id)arg1 error:(id *)arg2;

@@ -141,11 +141,14 @@ struct __CFArray;
 
 struct __CFDictionary;
 
+struct __CFString;
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
     id _field1;
-    id _field2;
-    CDUnknownBlockType _field3;
-} CDStruct_5723b468;
+    struct __CFString *_field2;
+    id _field3;
+    CDUnknownBlockType _field4;
+} CDStruct_82af879e;
 

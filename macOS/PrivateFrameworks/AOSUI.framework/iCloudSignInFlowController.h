@@ -74,6 +74,7 @@
 - (void)loginWithAuthResults:(id)arg1;
 - (void)showLoginUI;
 - (void)signInWithIDMSAuthenticationResults:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)callCompletionWithResult:(BOOL)arg1 account:(id)arg2 error:(id)arg3;
 - (void)dealloc;
 - (id)init;
 

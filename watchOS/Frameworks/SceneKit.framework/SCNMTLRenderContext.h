@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     unsigned int _isOpaque:1;
     unsigned int _disableLinearRendering:1;
     unsigned int _enableARMode:1;
+    unsigned int _shouldDelegateARCompositing:1;
     unsigned int _useFunctionConstants:1;
     unsigned int _reverseZ:1;
     id <MTLCommandQueue> _ownedCommandQueue;
@@ -165,6 +166,7 @@ __attribute__((visibility("hidden")))
 - (void)writeBytes:(const void *)arg1 length:(unsigned int)arg2;
 - (void)endRenderCommandEncoding;
 - (void)renderSKSceneWithRenderer:(id)arg1 overlay:(_Bool)arg2 atTime:(double)arg3;
+-     // Error parsing type: 8@0:4, name: renderSize
 - (float)renderTime;
 - (void)_drawFullScreenTexture:(id)arg1 over:(_Bool)arg2;
 - (void)_drawShadowMaps;
@@ -234,6 +236,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isOpaque;
 @property(nonatomic) int sampleCount;
 @property(nonatomic) _Bool reverseZ;
+@property(nonatomic) _Bool shouldDelegateARCompositing;
 @property(nonatomic) _Bool enableARMode;
 @property(nonatomic) _Bool disableLinearRendering;
 @property(readonly, nonatomic) int pendingGPUFrameCount;

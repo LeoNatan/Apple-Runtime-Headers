@@ -10,6 +10,14 @@
 {
 }
 
++ (unsigned int)toPKPaymentSetupFieldType:(int)arg1;
++ (id)toPKPaymentSetupField:(id)arg1;
++ (int)toNPKProtoStandaloneReaderModeIngestionState:(unsigned int)arg1;
++ (id)toJsonString:(id)arg1;
++ (id)toNPKProtoStandalonePaymentSetupProductImageAssetURLs:(id)arg1;
++ (id)toNPKProtoStandalonePaymentSetupProductPaymentOption:(id)arg1;
++ (id)toNPKProtoStandalonePaymentDigitalIssuanceMetadata:(id)arg1;
++ (id)toNPKProtoStandalonePaymentProvisioningMethodMetadata:(id)arg1;
 + (id)toNPKProtoStandalonePaymentSetupProduct:(id)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowPickerItem:(id)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowPickerSection:(id)arg1;
@@ -25,7 +33,9 @@
 + (id)toNPKProtoStandalonePass:(id)arg1;
 + (int)toNPKProtoStandalonePaymentPassActivationState:(unsigned int)arg1;
 + (int)toNPKProtoStandalonePassType:(unsigned int)arg1;
++ (id)toNPKProtoStandalonePaymentSetupMoreInfoItem:(id)arg1;
 + (void)_convertIssuerVerificationCodeStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertMoreInformationStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertIssuerVerificationFieldsStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertIssuerVerificationChannelsStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertProvisioningResultStepContext:(id)arg1 protoContext:(id)arg2;
@@ -37,10 +47,15 @@
 + (id)toNPKProtoStandalonePaymentSetupField:(id)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowManualEntryStepContext:(id)arg1;
 + (void)_convertManualEntryStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertReaderModeIngestionStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertReaderModeEntryStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertDigitalIssuancePaymentStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertDigitalIssuanceAmountStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertChooseCredentialsStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertChooseProductStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertChooseFlowStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertWelcomeStepContext:(id)arg1 protoContext:(id)arg2;
++ (id)toStringValue:(id)arg1;
 + (id)toNPKProtoStandaloneError:(id)arg1;
 + (int)toNPKProtoStandalonePaymentSetupFieldType:(unsigned int)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowStepContext:(id)arg1 fromStep:(int)arg2 toStep:(int)arg3;

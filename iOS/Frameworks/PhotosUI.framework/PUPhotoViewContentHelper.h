@@ -47,6 +47,7 @@
     long long _fillMode;
     UIImage *_photoImage;
     UIImage *_placeHolderImage;
+    UIView *_transitionSnapshotView;
     PUPhotoDecoration *_photoDecoration;
     double _cornerRadius;
     unsigned long long _cornersToRound;
@@ -126,6 +127,7 @@
 @property(nonatomic) _Bool flattensBadgeView; // @synthesize flattensBadgeView=_flattensBadgeView;
 @property(nonatomic) _Bool avoidsImageViewIfPossible; // @synthesize avoidsImageViewIfPossible=_avoidsImageViewIfPossible;
 @property(copy, nonatomic) PUPhotoDecoration *photoDecoration; // @synthesize photoDecoration=_photoDecoration;
+@property(retain, nonatomic) UIView *transitionSnapshotView; // @synthesize transitionSnapshotView=_transitionSnapshotView;
 @property(retain, nonatomic) UIImage *placeHolderImage; // @synthesize placeHolderImage=_placeHolderImage;
 @property(retain, nonatomic) UIImage *photoImage; // @synthesize photoImage=_photoImage;
 @property(nonatomic) struct CGSize photoSize; // @synthesize photoSize=_photoSize;

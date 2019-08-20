@@ -25,6 +25,7 @@
 
 + (_Bool)isFixedValueProperty:(id)arg1;
 + (_Bool)isMultiValueProperty:(id)arg1;
++ (id)allImageProperties;
 + (id)optionalCardProperties;
 + (id)defaultCardProperties;
 + (id)allCardProperties;

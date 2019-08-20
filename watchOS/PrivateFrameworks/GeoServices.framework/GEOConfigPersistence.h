@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class GEODefaultsDBDict, GEOSQLiteDB;
+@class GEODefaultsDBDict, GEOSQLiteDB, geo_isolater;
 
 @interface GEOConfigPersistence : NSObject
 {
     GEOSQLiteDB *_db;
     GEODefaultsDBDict *_cache;
+    geo_isolater *_cacheIsolator;
     GEODefaultsDBDict *_companionCache;
+    geo_isolater *_companionCacheIsolator;
 }
 
 + (_Bool)_setup:(id)arg1;

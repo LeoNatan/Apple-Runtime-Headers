@@ -31,6 +31,7 @@
     CDUnknownBlockType _beginLyricsEventCallback;
     CDUnknownBlockType _endLyricsEventCallback;
     CDUnknownBlockType _playbackSessionCallback;
+    CDUnknownBlockType _playbackSessionMigrateRequestCallback;
     NSMutableArray *_nowPlayingClients;
     unsigned int _hardwareRemoteBehavior;
     _MRNowPlayingClientProtobuf *_activeNowPlayingClient;
@@ -59,6 +60,7 @@
 @property(copy, nonatomic) NSArray *applicationPickedRoutes;
 @property(copy, nonatomic) CDUnknownBlockType endLyricsEventCallback;
 @property(copy, nonatomic) CDUnknownBlockType beginLyricsEventCallback;
+@property(copy, nonatomic) CDUnknownBlockType playbackSessionMigrateRequestCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackSessionCallback;
 @property(copy, nonatomic) CDUnknownBlockType commandCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueTransactionCallback;

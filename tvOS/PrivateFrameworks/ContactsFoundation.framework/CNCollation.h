@@ -21,6 +21,7 @@
 
 + (id)languageHeaderSectionsFromPropertyList:(id)arg1 collator:(struct UCollator *)arg2;
 + (id)indexSectionsFromPropertyList:(id)arg1;
++ (id)defaultSortCollatorIdentifier;
 + (id)sectionURL;
 @property(readonly) _Bool indexExtraTokenizations; // @synthesize indexExtraTokenizations=_indexExtraTokenizations;
 @property(readonly) NSString *sortCollatorIdentifier; // @synthesize sortCollatorIdentifier=_sortCollatorIdentifier;

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: identifier
     // Error parsing type: , name: gridModel
+    // Error parsing type: , name: delegate
 }
 
 @end

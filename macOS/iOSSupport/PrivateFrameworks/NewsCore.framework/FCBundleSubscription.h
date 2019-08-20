@@ -9,13 +9,13 @@
 #import <NewsCore/NSCopying-Protocol.h>
 #import <NewsCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class NSSet, NSString;
 
 @interface FCBundleSubscription : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _isPurchaser;
     NSString *_bundlePurchaseID;
-    NSArray *_bundleChannelIDs;
+    NSSet *_bundleChannelIDs;
     unsigned long long _unprotectedSubscriptionState;
 }
 
@@ -23,7 +23,7 @@
 + (id)subscriptionWithSubscriptionState:(unsigned long long)arg1 bundleChannelIDs:(id)arg2;
 @property(nonatomic) unsigned long long unprotectedSubscriptionState; // @synthesize unprotectedSubscriptionState=_unprotectedSubscriptionState;
 @property(nonatomic) BOOL isPurchaser; // @synthesize isPurchaser=_isPurchaser;
-@property(copy, nonatomic) NSArray *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
+@property(copy, nonatomic) NSSet *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
 @property(copy, nonatomic) NSString *bundlePurchaseID; // @synthesize bundlePurchaseID=_bundlePurchaseID;
 - (void).cxx_destruct;
 - (unsigned long long)hash;

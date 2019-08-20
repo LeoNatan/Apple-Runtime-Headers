@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class DSPFlavorMO, IOControllerSemanticMO, NSSet, NSString;
+@class DSPFlavorMO, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface DSPModuleMO : NSManagedObject
@@ -16,10 +16,13 @@ __attribute__((visibility("hidden")))
 + (id)fetchRequest;
 
 // Remaining properties
-@property(retain, nonatomic) NSSet *control; // @dynamic control;
+@property(retain, nonatomic) NSSet *aggregatedControl; // @dynamic aggregatedControl;
+@property(retain, nonatomic) NSSet *controls; // @dynamic controls;
 @property(retain, nonatomic) DSPFlavorMO *dspFlavor; // @dynamic dspFlavor;
+@property(nonatomic) BOOL hasAggregatedControl; // @dynamic hasAggregatedControl;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
-@property(retain, nonatomic) IOControllerSemanticMO *semantic; // @dynamic semantic;
+@property(retain, nonatomic) NSSet *port; // @dynamic port;
+@property(retain, nonatomic) NSSet *semantic; // @dynamic semantic;
 
 @end
 

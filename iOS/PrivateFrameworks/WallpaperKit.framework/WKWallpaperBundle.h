@@ -11,28 +11,35 @@
 @interface WKWallpaperBundle : NSObject
 {
     _Bool _appearanceAware;
-    unsigned long long _versionNumber;
+    _Bool _distintWallpapersForLocations;
+    _Bool _dynamicWallpaperBundle;
+    unsigned long long _version;
     unsigned long long _identifier;
     NSString *_name;
     NSString *_family;
     NSURL *_thumbnailImageURL;
     NSURL *__bundleURL;
     NSMutableDictionary *__defaultAppearanceWallpapers;
-    NSMutableDictionary *__coronaAppearanceWallpapers;
+    NSMutableDictionary *__darkAppearanceWallpapers;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *_coronaAppearanceWallpapers; // @synthesize _coronaAppearanceWallpapers=__coronaAppearanceWallpapers;
++ (_Bool)shouldLoadWallpaperBundleAtURL:(id)arg1;
+@property(retain, nonatomic) NSMutableDictionary *_darkAppearanceWallpapers; // @synthesize _darkAppearanceWallpapers=__darkAppearanceWallpapers;
 @property(retain, nonatomic) NSMutableDictionary *_defaultAppearanceWallpapers; // @synthesize _defaultAppearanceWallpapers=__defaultAppearanceWallpapers;
 @property(retain, nonatomic) NSURL *_bundleURL; // @synthesize _bundleURL=__bundleURL;
+@property(readonly, nonatomic, getter=isDynamicWallpaperBundle) _Bool dynamicWallpaperBundle; // @synthesize dynamicWallpaperBundle=_dynamicWallpaperBundle;
+@property(readonly, nonatomic, getter=hasDistintWallpapersForLocations) _Bool distintWallpapersForLocations; // @synthesize distintWallpapersForLocations=_distintWallpapersForLocations;
 @property(readonly, nonatomic, getter=isAppearanceAware) _Bool appearanceAware; // @synthesize appearanceAware=_appearanceAware;
 @property(readonly, copy, nonatomic) NSURL *thumbnailImageURL; // @synthesize thumbnailImageURL=_thumbnailImageURL;
 @property(readonly, copy, nonatomic) NSString *family; // @synthesize family=_family;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) unsigned long long versionNumber; // @synthesize versionNumber=_versionNumber;
+@property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (id)_stillWallpaperWithMetadataDictionary:(id)arg1;
-- (void)_raiseInvalidMetadataExceptionForMetadataKey:(id)arg1;
+- (id)_liveWallpaperWithMetadataDictionary:(id)arg1 wallpaperAppearance:(id)arg2;
+- (id)_stillWallpaperWithMetadataDictionary:(id)arg1 wallpaperAppearance:(id)arg2;
+- (id)_processCommonFileBackedWallpaperMetadataWithDictionary:(id)arg1 wallpaperAppearance:(id)arg2;
+- (void)_raiseInvalidMetadataExceptionForMetadataKeypath:(id)arg1;
 - (id)valueBasedWallpaperForLocation:(id)arg1 andAppearance:(id)arg2;
 - (id)valueBasedWallpaperForLocation:(id)arg1;
 - (id)fileBasedWallpaperForLocation:(id)arg1 andAppearance:(id)arg2;
@@ -40,6 +47,8 @@
 - (unsigned long long)wallpaperBackingTypeForLocation:(id)arg1;
 - (void)_processAssetDictionary:(id)arg1 forLocation:(id)arg2;
 - (void)_loadBundle;
+- (void)_loadDynamicWallpaper:(id)arg1;
+- (id)initWithDynamicDictionary:(id)arg1 identifier:(unsigned long long)arg2;
 - (id)initWithURL:(id)arg1;
 
 @end

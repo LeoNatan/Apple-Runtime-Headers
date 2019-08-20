@@ -9,6 +9,7 @@
 @class NSArray, NSError, NSString;
 
 @protocol CNFavoritesLogger <NSObject>
+- (void)reportFavoritesAccessedBeforeFirstUnlock;
 - (void)failedToWriteFavoritesToPath:(NSString *)arg1 error:(NSError *)arg2 simulateCrashReport:(_Bool)arg3;
 - (void)failedToVerifyWrittenFavoritesExistsAtPath:(NSString *)arg1;
 - (void)failedToWriteRemoteFavorites:(NSError *)arg1;

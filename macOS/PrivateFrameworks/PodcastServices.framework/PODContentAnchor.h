@@ -15,13 +15,16 @@
 {
     NSString *_domain;
     long long _revision;
+    NSString *_libraryPath;
     NSString *_sourceIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)userDefaultsKeyForSavedAnchorInDomain:(id)arg1;
++ (id)nullAnchorForDomain:(id)arg1 libraryPath:(id)arg2;
 + (id)nullAnchorForDomain:(id)arg1;
 @property(retain, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
+@property(retain, nonatomic) NSString *libraryPath; // @synthesize libraryPath=_libraryPath;
 @property(nonatomic) long long revision; // @synthesize revision=_revision;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
@@ -30,6 +33,7 @@
 - (BOOL)isEqualToEquatable:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNull;
+- (id)initWithDomain:(id)arg1 revision:(long long)arg2 sourceIdentifier:(id)arg3 libraryPath:(id)arg4;
 - (id)initWithDomain:(id)arg1 revision:(long long)arg2 sourceIdentifier:(id)arg3;
 @property(readonly, copy) NSString *description;
 

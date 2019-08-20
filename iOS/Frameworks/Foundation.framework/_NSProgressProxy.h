@@ -26,6 +26,16 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)unpublish;
 - (void)publish;
+- (id)byteCompletedCount;
+- (id)byteTotalCount;
+- (id)fileCompletedCount;
+- (id)fileTotalCount;
+- (id)fileURL;
+- (id)fileOperationKind;
+- (id)throughput;
+- (id)estimatedTimeRemaining;
+- (void)setByteCompletedCount:(id)arg1;
+- (void)setByteTotalCount:(id)arg1;
 - (void)setFileCompletedCount:(id)arg1;
 - (void)setFileTotalCount:(id)arg1;
 - (void)setFileURL:(id)arg1;

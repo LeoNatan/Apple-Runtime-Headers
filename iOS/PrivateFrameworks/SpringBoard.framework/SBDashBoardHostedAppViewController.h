@@ -9,15 +9,15 @@
 #import <SpringBoard/BSInvalidatable-Protocol.h>
 #import <SpringBoard/SBAppViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBApplicationHosting-Protocol.h>
-#import <SpringBoard/SBApplicationSceneStatusBarDescribing-Protocol.h>
 #import <SpringBoard/SBApplicationSceneViewControllingStatusBarDelegate-Protocol.h>
+#import <SpringBoard/SBDeviceApplicationSceneStatusBarStateObserver-Protocol.h>
 #import <SpringBoard/SBMainDisplaySceneLayoutStatusBarViewDataSource-Protocol.h>
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 
-@class NSSet, NSString, SBAppViewController, SBApplicationSceneHandle, SBApplicationSceneView, SBDeviceApplicationSceneHandle, SBFAuthenticationAssertion, SBMainDisplaySceneLayoutStatusBarView, UIApplicationSceneClientSettingsDiffInspector, UIApplicationSceneDeactivationAssertion, UIApplicationSceneSettingsDiffInspector;
-@protocol BSInvalidatable, SBApplicationSceneStatusBarDescribingDelegate, SBDashBoardHostedAppViewControllerDelegate, SBScenePlaceholderContentContext;
+@class NSSet, NSString, SBAppViewController, SBApplicationSceneHandle, SBApplicationSceneView, SBFAuthenticationAssertion, SBMainDisplaySceneLayoutStatusBarView, UIApplicationSceneClientSettingsDiffInspector, UIApplicationSceneDeactivationAssertion, _SBDashBoardHostedAppStatusBarStateProxy;
+@protocol BSInvalidatable, SBApplicationSceneStatusBarDescribing, SBDashBoardHostedAppViewControllerDelegate, SBScenePlaceholderContentContext;
 
-@interface SBDashBoardHostedAppViewController : SBDashBoardViewExternalControllerBase <SBAppViewControllerDelegate, SBSceneHandleObserver, SBMainDisplaySceneLayoutStatusBarViewDataSource, SBApplicationSceneStatusBarDescribing, SBApplicationSceneViewControllingStatusBarDelegate, SBApplicationHosting, BSInvalidatable>
+@interface SBDashBoardHostedAppViewController : SBDashBoardViewExternalControllerBase <SBAppViewControllerDelegate, SBSceneHandleObserver, SBMainDisplaySceneLayoutStatusBarViewDataSource, SBDeviceApplicationSceneStatusBarStateObserver, SBApplicationSceneViewControllingStatusBarDelegate, SBApplicationHosting, BSInvalidatable>
 {
     id <SBDashBoardHostedAppViewControllerDelegate> _delegate;
     SBAppViewController *_appViewController;
@@ -28,45 +28,33 @@
     _Bool _invalidated;
     _Bool _wantsIdleTimerDisabled;
     SBMainDisplaySceneLayoutStatusBarView *_statusBarView;
-    CDStruct_418fc906 _statusBarDelegateFlags;
+    _SBDashBoardHostedAppStatusBarStateProxy *_statusBarObserverProxy;
     UIApplicationSceneClientSettingsDiffInspector *_appClientSettingsDiffInspector;
-    UIApplicationSceneSettingsDiffInspector *_appSceneSettingsDiffInspector;
     _Bool _intentToTransitionFromSecureAppToFull;
     _Bool _interfaceOrientationLocked;
-    id <SBApplicationSceneStatusBarDescribingDelegate> _statusBarDelegate;
 }
 
-@property(nonatomic) __weak id <SBApplicationSceneStatusBarDescribingDelegate> statusBarDelegate; // @synthesize statusBarDelegate=_statusBarDelegate;
 @property(nonatomic) _Bool interfaceOrientationLocked; // @synthesize interfaceOrientationLocked=_interfaceOrientationLocked;
 @property(nonatomic) _Bool intentToTransitionFromSecureAppToFull; // @synthesize intentToTransitionFromSecureAppToFull=_intentToTransitionFromSecureAppToFull;
+@property(readonly, nonatomic) id <SBApplicationSceneStatusBarDescribing> statusBarDescriber; // @synthesize statusBarDescriber=_statusBarObserverProxy;
 @property(nonatomic) __weak id <SBDashBoardHostedAppViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (long long)statusBarOrientation;
 - (_Bool)allowsConfiguringIndividualStatusBarParts;
 - (id)statusBarDescriberForStatusBarPart:(id)arg1;
 - (id)statusBarDescribers;
+- (id)_appViewController;
 - (void)_endShowingStatusBarView;
 - (void)_beginShowingStatusBarView;
 - (void)_updateStatusBarContainerOrientation;
 - (void)_addStatusBarViewIfNeeded;
 - (long long)contentInterfaceOrientation;
 - (long long)containerInterfaceOrientation;
-- (void)applicationSceneViewController:(id)arg1 didUpdateStatusBarSettings:(id)arg2;
-@property(readonly, nonatomic) NSString *statusBarSceneIdentifier;
-@property(readonly, nonatomic) SBDeviceApplicationSceneHandle *statusBarControllingSceneHandle;
-- (_Bool)_statusBarAppearsOutsideOfAJailedClassicApp;
-@property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
-@property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
-@property(readonly, nonatomic) long long statusBarOrientation;
-@property(readonly, nonatomic) _Bool statusBarHidden;
-@property(readonly, nonatomic) double statusBarAlpha;
-- (long long)statusBarStyleForPartWithIdentifier:(id)arg1;
-- (id)statusBarPartStyles;
-@property(readonly, nonatomic) long long statusBarStyle;
 - (id)_deviceApplicationSceneHandle;
-- (void)_performUpdateWith:(id)arg1 actions:(CDUnknownBlockType)arg2;
+- (void)sceneWithIdentifier:(id)arg1 didChangeSceneInterfaceOrientationTo:(long long)arg2;
+- (void)applicationSceneViewController:(id)arg1 didUpdateStatusBarSettings:(id)arg2;
 - (void)_setResignActiveAssertionEnabled:(_Bool)arg1;
 - (void)_setMode:(long long)arg1 fromClient:(_Bool)arg2 forReason:(id)arg3;
-- (void)sceneHandle:(id)arg1 didUpdateSettingsWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
 - (_Bool)appViewControllerShouldBackgroundApplicationOnDeactivate:(id)arg1;
 - (void)appViewController:(id)arg1 didTransitionFromMode:(long long)arg2 toMode:(long long)arg3;
@@ -74,6 +62,7 @@
 - (void)appViewControllerWillActivateApplication:(id)arg1;
 - (_Bool)handleEvent:(id)arg1;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;
 - (_Bool)isHostingAnApp;
 - (_Bool)canHostAnApp;

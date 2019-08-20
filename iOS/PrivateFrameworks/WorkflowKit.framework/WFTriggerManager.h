@@ -13,6 +13,7 @@
     WFDatabase *_database;
 }
 
++ (_Bool)automationsAreEnabled;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (id)configuredTriggerWithID:(id)arg1;

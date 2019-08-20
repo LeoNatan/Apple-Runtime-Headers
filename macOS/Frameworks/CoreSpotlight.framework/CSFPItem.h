@@ -13,6 +13,7 @@
     FPItem *_internal;
 }
 
++ (id)itemWithFileURL:(id)arg1 forEUID:(unsigned int)arg2;
 + (id)itemWithFileURL:(id)arg1;
 + (void)initialize;
 - (void).cxx_destruct;

@@ -22,7 +22,6 @@
 + (unsigned long long)_mailDropLimit;
 + (unsigned long long)mailDropThreshold;
 + (_Bool)_isMailDropDevice;
-+ (_Bool)_limitMailDropOverCellular;
 + (unsigned long long)currentUploadLimitForAccount:(id)arg1;
 + (unsigned long long)currentUploadLimit;
 + (unsigned long long)currentDownloadLimit;

@@ -58,10 +58,12 @@
     CoreDAVErrorItem *_forbiddenErrorItem;
     NSString *_uniqueID;
     _Bool _ignoresGuardianRestrictions;
+    _Bool _totalBytesWasProcessedAsAbnormallyLarge;
 }
 
 + (id)stringFromDepth:(int)arg1;
 + (unsigned int)uniqueQueryID;
+@property _Bool totalBytesWasProcessedAsAbnormallyLarge; // @synthesize totalBytesWasProcessedAsAbnormallyLarge=_totalBytesWasProcessedAsAbnormallyLarge;
 @property(nonatomic) _Bool ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) NSDictionary *requestProperties; // @synthesize requestProperties=_requestProperties;
 @property(nonatomic) _Bool allowAutomaticRedirects; // @synthesize allowAutomaticRedirects=_allowAutomaticRedirects;

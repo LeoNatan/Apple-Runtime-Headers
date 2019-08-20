@@ -61,7 +61,6 @@
 - (void)applyToProcessState:(id)arg1 withAttributeContext:(id)arg2;
 - (id)updateProcessStateWithAttributeContext:(id)arg1;
 - (_Bool)resolveStateWithContext:(id)arg1;
-- (void)releasePlugInHold;
 @property(readonly, nonatomic, getter=isPersistent) _Bool persistent; // @synthesize persistent=_persistent;
 @property(readonly, nonatomic) _Bool suspendsOnOriginatorSuspension;
 @property(readonly, nonatomic) NSSet *sourceEnvironments;

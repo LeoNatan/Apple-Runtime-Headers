@@ -52,7 +52,6 @@
 @property(nonatomic, getter=isNubViewHidden) _Bool nubViewHidden;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 nubViewHidden:(long long)arg2 atLevel:(unsigned long long)arg3;
 - (id)statusBarAssertionWithStatusBarHidden:(_Bool)arg1 atLevel:(unsigned long long)arg2;
-- (long long)statusBarOrientation;
 - (void)sceneHandle:(id)arg1 didChangeEffectiveForegroundness:(_Bool)arg2;
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
 - (void)_configureViewController:(id)arg1;
@@ -64,6 +63,7 @@
 - (unsigned long long)supportedContentInterfaceOrientations;
 - (void)prepareForReuse;
 - (id)_relinquishInlineAppExposeContainerViewController;
+- (long long)_overrideStatusBarOrientation;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 @property(nonatomic) long long homeGrabberDisplayMode;
 - (void)setMaskDisplayCorners:(_Bool)arg1 forReason:(id)arg2;

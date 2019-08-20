@@ -10,7 +10,8 @@
 {
 }
 
-+ (void)createDataVaultAtPath:(id)arg1 withStorageClass:(id)arg2 error:(id *)arg3;
++ (id)errorWithDescription:(id)arg1;
++ (void)createDataVaultDirectoryAtPath:(id)arg1 withStorageClass:(id)arg2 error:(id *)arg3;
 
 @end
 

@@ -42,6 +42,7 @@
     BOOL _suspendedForDisposition;
     BOOL _didCheckMixedReplace;
     BOOL _isMixedReplace;
+    BOOL _sentDidFinishCollectingMetrics;
 }
 
 @property BOOL didIssueDidFinish; // @synthesize didIssueDidFinish=_didIssueDidFinish;
@@ -82,6 +83,8 @@
 - (void)set_timeoutIntervalForResource:(double)arg1;
 - (void)_onqueue_startResourceTimer:(double)arg1;
 - (void)_onqueue_startTimer:(id)arg1 withTimeoutInNanos:(long long)arg2 streamErrorCode:(int)arg3;
+- (void)_didSendMetrics;
+- (BOOL)_needSendingMetrics;
 - (void)startResourceTimer;
 - (void)setConnection:(id)arg1;
 - (id)startTimeoutError;

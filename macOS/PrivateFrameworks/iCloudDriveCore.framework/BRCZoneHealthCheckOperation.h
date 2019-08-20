@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)completedZoneHealthSyncDownWithRequestID:(unsigned long long)arg1 error:(id)arg2;
 - (void)receivedUpdatedServerChangeToken:(id)arg1 requestID:(unsigned long long)arg2;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithSession:(id)arg1 changeToken:(id)arg2;
 

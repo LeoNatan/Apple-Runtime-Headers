@@ -19,6 +19,7 @@
 - (_Bool)_isIndexSlideOverAppLayout:(unsigned long long)arg1;
 - (_Bool)_shouldApplySlideOverLayoutToIndex:(unsigned long long)arg1;
 - (id)layoutSettings;
+- (double)homeScreenAlpha;
 - (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
 - (_Bool)isSwitcherWindowUserInteractionEnabled;
 - (_Bool)isSwitcherWindowVisible;

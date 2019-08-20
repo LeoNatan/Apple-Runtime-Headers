@@ -8,7 +8,7 @@
 
 #import <CoreSuggestionsInternals/SGReverseTemplateJS-Protocol.h>
 
-@class JSContext, JSVirtualMachine, NSMutableArray, NSString, NSURL, SGReverseTemplatesJSDataDetectors, _PASNotificationToken;
+@class JSContext, JSVirtualMachine, NSISO8601DateFormatter, NSMutableArray, NSString, NSURL, SGReverseTemplatesJSDataDetectors, _PASNotificationToken;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SGReverseTemplateJS : NSObject <SGReverseTemplateJS>
@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_memoryPressureQueue;
     NSObject<OS_dispatch_source> *_memoryPressureSource;
+    NSISO8601DateFormatter *_dateFormatter;
 }
 
 + (id)fakeFlightInformationWithAirlineCode:(id)arg1 flightNumber:(id)arg2 flightDate:(id)arg3;

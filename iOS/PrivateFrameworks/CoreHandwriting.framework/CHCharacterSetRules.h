@@ -16,7 +16,8 @@
     NSCharacterSet *_digitCharSet;
     NSCharacterSet *_startPunctuationCharSet;
     NSCharacterSet *_middlePunctuationCharSet;
-    NSCharacterSet *_endPunctuationCharSet;
+    NSCharacterSet *_endOfWordPunctuationCharSet;
+    NSCharacterSet *_endOfSentencePunctuationCharSet;
     NSCharacterSet *_digitStartPunctuationCharSet;
     NSCharacterSet *_digitEndPunctuationCharSet;
     NSCharacterSet *_arithmeticOperatorCharSet;
@@ -40,6 +41,7 @@
     map_fc1db4e5 _signatureUniChar;
 }
 
++ (unsigned long long)characterTypeFromString:(id)arg1;
 + (unsigned long long)characterType:(unsigned int)arg1;
 + (unsigned long long)expectedMaxDotCount:(unsigned int)arg1;
 + (unsigned long long)expectedMinStrokeCount:(unsigned int)arg1;
@@ -66,7 +68,8 @@
 @property(retain, nonatomic) NSCharacterSet *arithmeticOperatorCharSet; // @synthesize arithmeticOperatorCharSet=_arithmeticOperatorCharSet;
 @property(retain, nonatomic) NSCharacterSet *digitEndPunctuationCharSet; // @synthesize digitEndPunctuationCharSet=_digitEndPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *digitStartPunctuationCharSet; // @synthesize digitStartPunctuationCharSet=_digitStartPunctuationCharSet;
-@property(retain, nonatomic) NSCharacterSet *endPunctuationCharSet; // @synthesize endPunctuationCharSet=_endPunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *endOfSentencePunctuationCharSet; // @synthesize endOfSentencePunctuationCharSet=_endOfSentencePunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *endOfWordPunctuationCharSet; // @synthesize endOfWordPunctuationCharSet=_endOfWordPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *middlePunctuationCharSet; // @synthesize middlePunctuationCharSet=_middlePunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *startPunctuationCharSet; // @synthesize startPunctuationCharSet=_startPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *digitCharSet; // @synthesize digitCharSet=_digitCharSet;

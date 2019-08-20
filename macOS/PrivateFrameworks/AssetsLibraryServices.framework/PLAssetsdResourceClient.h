@@ -17,6 +17,7 @@
 - (BOOL)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4 outFileLength:(long long *)arg5 error:(id *)arg6;
 - (void)adjustmentDataForAsset:(id)arg1 withDataBlob:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 trackCPLDownload:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)videoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 restrictToPlayable:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)videoURLForAsset:(id)arg1 format:(int)arg2 intent:(unsigned long long)arg3 networkAccessAllowed:(BOOL)arg4 streamingAllowed:(BOOL)arg5 restrictToPlayable:(BOOL)arg6 trackCPLDownload:(BOOL)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (BOOL)sandboxExtensionForFileSystemBookmark:(id)arg1 bookmarkURL:(id *)arg2 sandboxExtensionToken:(id *)arg3 error:(id *)arg4;
 - (BOOL)sandboxExtensionForAssetResourcePath:(id)arg1 sandboxExtensionToken:(id *)arg2 error:(id *)arg3;
 - (void)imageDataForAsset:(id)arg1 format:(int)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 networkAccessAllowed:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;

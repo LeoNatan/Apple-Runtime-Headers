@@ -10,7 +10,6 @@
 {
 }
 
-+ (BOOL)isUtteranceCorrupted:(id)arg1;
 + (id)recordedTimeStampOfFile:(id)arg1;
 + (id)getUtteranceEnrollmentType:(id)arg1;
 + (BOOL)isUtteranceImplicitlyTrained:(id)arg1;

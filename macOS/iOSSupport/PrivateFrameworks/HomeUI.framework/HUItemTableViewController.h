@@ -136,7 +136,6 @@
 - (BOOL)alwaysUseDeltaTableViewUpdatesAfterViewHasAppeared;
 - (BOOL)bypassInitialItemUpdateReload;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

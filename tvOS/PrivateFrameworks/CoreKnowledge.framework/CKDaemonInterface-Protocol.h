@@ -6,9 +6,10 @@
 
 #import <CoreKnowledge/NSObject-Protocol.h>
 
-@class CKGenericCondition, CKTripleCondition, INIntent, INInteraction, NSArray, NSData, NSDictionary, NSString, NSUUID;
+@class CKGenericCondition, CKTripleCondition, INIntent, INInteraction, NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID;
 
 @protocol CKDaemonInterface <NSObject>
+- (void)setSiriRemembersDBURL:(NSURL *)arg1;
 - (void)relativeAppUsageProbabilitiesForBundleIDs:(NSArray *)arg1 overDays:(long long)arg2 completionHandler:(void (^)(NSDictionary *))arg3;
 - (void)appMatchesForJSONIntent:(NSData *)arg1 candidateBundleIDs:(NSArray *)arg2 completionHandler:(void (^)(SRAppMatches *))arg3;
 - (void)appMatchesForIntent:(INIntent *)arg1 candidateBundleIDs:(NSArray *)arg2 completionHandler:(void (^)(SRAppMatches *))arg3;

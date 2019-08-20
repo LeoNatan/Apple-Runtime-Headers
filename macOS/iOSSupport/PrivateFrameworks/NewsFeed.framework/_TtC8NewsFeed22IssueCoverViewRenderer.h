@@ -14,7 +14,6 @@
     // Error parsing type: , name: layeredCoverViewProvider
     // Error parsing type: , name: layeredCoverLayerProviderFactory
     // Error parsing type: , name: layeredCoverViewRenderer
-    // Error parsing type: , name: layeredCoverReuseProtector
 }
 
 @end

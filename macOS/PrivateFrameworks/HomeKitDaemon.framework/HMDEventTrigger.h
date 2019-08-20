@@ -83,6 +83,7 @@
 - (void)_handleRemoveEventModel:(id)arg1 message:(id)arg2;
 - (void)_removeEventsFromEventTrigger:(id)arg1;
 - (void)_handleRemoveEventsFromEventTrigger:(id)arg1;
+- (void)_handleRemoveEventsFromEventTrigger:(id)arg1 relay:(BOOL)arg2;
 - (void)_handleAddEventModel:(id)arg1 message:(id)arg2;
 - (id)createEventModel:(id)arg1 endEvent:(BOOL)arg2 message:(id)arg3 checkForSupport:(BOOL)arg4 error:(id *)arg5;
 - (void)_addEventToEventTrigger:(id)arg1;

@@ -28,7 +28,7 @@
 - (id)attachmentsForContext:(id)arg1;
 - (void)_fetchInvocationCallUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_callProgressBlockForAttachmentURL:(id)arg1 withBytes:(long long)arg2 expectedSize:(long long)arg3;
-- (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 request:(id)arg3 progress:(id)arg4 syncLock:(id *)arg5;
+- (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 request:(id)arg3 syncLock:(id *)arg4;
 - (id)_queueForAttachment:(id)arg1;
 - (id)init;
 

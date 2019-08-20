@@ -52,6 +52,7 @@
 - (id)initWithUniqueIdentifier:(id)arg1 domainIdentifier:(id)arg2 attributeSet:(id)arg3;
 - (id)init;
 - (id)filePath;
+- (void)markAsUsed;
 - (void)_updateWithSearchableItem:(id)arg1;
 - (id)filteredSpotlightAttributes;
 - (void)_standardizeSiriShortcuts:(id)arg1;

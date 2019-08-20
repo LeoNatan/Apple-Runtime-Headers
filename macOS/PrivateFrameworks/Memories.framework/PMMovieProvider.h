@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class PMMovieProviderAnalyticsEvent, PMSaveProvider, VEKProduction, VEKResult;
+@class PMMovieProviderAnalyticsEvent, VEKProduction, VEKResult;
 @protocol PMMovieProviderDelegate;
 
 @interface PMMovieProvider : NSObject
@@ -17,13 +17,11 @@
     VEKResult *_lastResult;
     PMMovieProviderAnalyticsEvent *_analyticsEvent;
     VEKProduction *_lastEditingProduction;
-    PMSaveProvider *_saveProvider;
     unsigned long long _currentEditID;
 }
 
 + (unsigned long long)movieClipCountWithProduction:(id)arg1 result:(id)arg2;
 @property(nonatomic) unsigned long long currentEditID; // @synthesize currentEditID=_currentEditID;
-@property(retain, nonatomic) PMSaveProvider *saveProvider; // @synthesize saveProvider=_saveProvider;
 @property(retain, nonatomic) VEKProduction *lastEditingProduction; // @synthesize lastEditingProduction=_lastEditingProduction;
 @property(retain, nonatomic) PMMovieProviderAnalyticsEvent *analyticsEvent; // @synthesize analyticsEvent=_analyticsEvent;
 @property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;

@@ -11,7 +11,7 @@
 #import <MapKit/VKMapViewCameraDelegate-Protocol.h>
 #import <MapKit/VKMapViewDelegate-Protocol.h>
 
-@class GEOMuninViewState, GEOStorefrontView, MKMapItem, MKMuninGestureController, NSArray, NSDate, NSLayoutConstraint, NSString, NSURL, UIImageView, UITapGestureRecognizer, VKLabelMarker, VKMapView, VKMuninMarker, _MKCustomFeatureStore, _MKMuninLayerHostingView;
+@class GEOMuninViewState, GEOStorefrontView, MKHapticEngine, MKMapItem, MKMuninBumpFlash, MKMuninGestureController, NSArray, NSDate, NSLayoutConstraint, NSString, NSURL, UIImageView, UITapGestureRecognizer, VKLabelMarker, VKMapView, VKMuninMarker, _MKCustomFeatureStore, _MKMuninLayerHostingView;
 @protocol MKMapServiceTicket, MKMuninViewDelegate;
 
 @interface MKMuninView : UIView <MKMuninGestureControllerDelegate, VKMapViewCameraDelegate, VKMapViewDelegate, NSCoding>
@@ -20,6 +20,7 @@
     _Bool _changingViewSize;
     UIImageView *_transitionStartImageview;
     UIImageView *_transitionEndImageview;
+    UIImageView *_transitionGridImageview;
     UIImageView *_compassView;
     NSLayoutConstraint *_compassTopConstraint;
     NSLayoutConstraint *_compassTrailingConstraint;
@@ -43,6 +44,8 @@
     _MKCustomFeatureStore *_customFeatureStore;
     NSDate *_startTime;
     int _triggerAction;
+    MKHapticEngine *_hapticEngine;
+    MKMuninBumpFlash *_bumpFlashView;
     _Bool _hasEnteredMunin;
     _Bool _navigatingEnabled;
     _Bool _panningEnabled;
@@ -52,6 +55,7 @@
     struct UIEdgeInsets _compassInsets;
 }
 
+@property(readonly, nonatomic) MKHapticEngine *hapticEngine; // @synthesize hapticEngine=_hapticEngine;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(nonatomic) __weak id <MKMuninViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -62,6 +66,7 @@
 @property(nonatomic) struct UIEdgeInsets compassInsets; // @synthesize compassInsets=_compassInsets;
 @property(retain, nonatomic) VKMapView *muninView; // @synthesize muninView=_muninView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *imageResources;
 @property(readonly, nonatomic) NSArray *visibleRoadLabels;
 @property(readonly, nonatomic) NSArray *visiblePlaceMUIDs;
 - (void)_updateLocationInfoForCoordinate:(struct CLLocationCoordinate2D)arg1 allowReverseGeocodeIfNeeded:(_Bool)arg2;

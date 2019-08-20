@@ -28,7 +28,7 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)_dayIndexFromMean:(double)arg1 standardDeviation:(double)arg2 coefficient:(double)arg3;
-- (CDStruct_ef5fcbe6)startDaysWithCoefficient:(double)arg1;
+- (CDStruct_ef5fcbe6)startDayRange;
 - (long long)dayIndexFromEndWithCoefficient:(double)arg1;
 - (long long)dayIndexFromStartWithCoefficient:(double)arg1;
 @property(readonly, nonatomic) CDStruct_ef5fcbe6 mostLikelyDays;

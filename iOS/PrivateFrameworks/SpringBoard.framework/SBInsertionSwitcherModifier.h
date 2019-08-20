@@ -17,6 +17,7 @@
     unsigned long long _phase;
 }
 
+@property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 - (void).cxx_destruct;
 - (id)appLayoutsForInsertionOrRemoval;
 - (double)opacityForIndex:(unsigned long long)arg1;

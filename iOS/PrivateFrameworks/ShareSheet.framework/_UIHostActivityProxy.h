@@ -13,6 +13,7 @@
 @interface _UIHostActivityProxy : NSObject <NSSecureCoding>
 {
     _Bool _disabled;
+    _Bool _favorite;
     _Bool _restricted;
     NSUUID *_proxyIdentifier;
     NSNumber *_imageSlot;
@@ -22,6 +23,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic, getter=isRestricted) _Bool restricted; // @synthesize restricted=_restricted;
+@property(nonatomic, getter=isFavorite) _Bool favorite; // @synthesize favorite=_favorite;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) double platterTextHeight; // @synthesize platterTextHeight=_platterTextHeight;
 @property(retain, nonatomic) NSNumber *labelSlot; // @synthesize labelSlot=_labelSlot;

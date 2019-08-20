@@ -11,7 +11,6 @@
 @interface SPModalViewController : UIViewController
 {
     _Bool _descriptionOnlyContainsTableView;
-    _Bool _clipContentViewToBounds;
     _Bool _classicMode;
     UIViewController *_contentViewController;
     PUICButton *_cancelButton;
@@ -21,7 +20,6 @@
 @property(nonatomic) _Bool classicMode; // @synthesize classicMode=_classicMode;
 @property(retain, nonatomic) PUICNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(retain, nonatomic) PUICButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-@property(nonatomic) _Bool clipContentViewToBounds; // @synthesize clipContentViewToBounds=_clipContentViewToBounds;
 @property(nonatomic) _Bool descriptionOnlyContainsTableView; // @synthesize descriptionOnlyContainsTableView=_descriptionOnlyContainsTableView;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;

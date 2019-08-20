@@ -13,6 +13,7 @@
 
 + (id)_bezelRenderingButton;
 @property double colorWellHeight; // @synthesize colorWellHeight=_colorWellHeight;
+- (id)makeBackingLayer;
 - (void)mouseDown:(id)arg1;
 - (void)drawColor;
 - (id)initWithCoder:(id)arg1;

@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) NSXPCListenerEndpoint *auxiliaryListenerEndpoint; // @synthesize auxiliaryListenerEndpoint=_auxiliaryListenerEndpoint;
 @property(nonatomic) NSXPCConnection *auxiliaryServiceConnection; // @synthesize auxiliaryServiceConnection=_auxiliaryServiceConnection;
-- (void)addFreeWindow:(CDStruct_5d2c0651)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) NSXPCInterface *auxiliaryInterfaceIncoming;
 @property(readonly, nonatomic) NSXPCInterface *auxiliaryInterfaceOutgoing;
 @property(readonly) BOOL isValid;

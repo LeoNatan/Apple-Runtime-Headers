@@ -21,6 +21,7 @@
 - (id)componentsMatchingPredicate:(id)arg1;
 @property(readonly, nonatomic) NSArray *standardLocalizedTagNames;
 @property(readonly, nonatomic) NSArray *tagNames;
+- (void)registrationsChanged:(id)arg1;
 - (void)localeChanged:(id)arg1;
 - (id)init;
 - (id)autorelease;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class TFAppLockupView, TFBetaAppLaunchScreenViewSpecification, UIButton, UIImageView, UILabel, UIScrollView, UIVisualEffectView;
+@class TFAppLockupView, TFBetaAppLaunchScreenViewSpecification, TFDeviceInstructionView, UIButton, UILabel, UIScrollView, UIVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface TFBetaAppLaunchScreenView : UIView
@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     UILabel *_subtitleLabel;
     UILabel *_bodyTitleLabel;
     UILabel *_bodyTextLabel;
-    UIImageView *_bodyImageView;
+    TFDeviceInstructionView *_instructionView;
     UIButton *_primaryButton;
     UIButton *_secondaryButton;
     UIVisualEffectView *_buttonBackgroundEffectView;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIVisualEffectView *buttonBackgroundEffectView; // @synthesize buttonBackgroundEffectView=_buttonBackgroundEffectView;
 @property(readonly, nonatomic) UIButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
 @property(readonly, nonatomic) UIButton *primaryButton; // @synthesize primaryButton=_primaryButton;
-@property(readonly, nonatomic) UIImageView *bodyImageView; // @synthesize bodyImageView=_bodyImageView;
+@property(readonly, nonatomic) TFDeviceInstructionView *instructionView; // @synthesize instructionView=_instructionView;
 @property(readonly, nonatomic) UILabel *bodyTextLabel; // @synthesize bodyTextLabel=_bodyTextLabel;
 @property(readonly, nonatomic) UILabel *bodyTitleLabel; // @synthesize bodyTitleLabel=_bodyTitleLabel;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -45,7 +45,9 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setSecondaryButtonTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)setPrimaryButtonTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-- (void)setBodyImage:(id)arg1;
+- (void)setDeviceImageOrientation:(long long)arg1;
+- (void)setDeviceImageVisibility:(_Bool)arg1;
+- (void)setDeviceImage:(id)arg1 withOrientation:(long long)arg2;
 - (void)setBodyTitle:(id)arg1 bodyText:(id)arg2;
 - (void)setLockup:(id)arg1;
 - (void)setSubtitle:(id)arg1;

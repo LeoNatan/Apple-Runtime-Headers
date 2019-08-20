@@ -20,6 +20,7 @@
 - (void)obliterateGizmoPreservingeSIM:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)getAboutInfo:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)deleteDiagnosticLogFile:(NSString *)arg1 withResult:(void (^)(NSError *))arg2;
+- (void)cancelActiveLogFileTranfers;
 - (void)getDiagnosticLogsInfo:(void (^)(NSArray *, NSError *))arg1;
 - (void)getDiagnosticLogFileFromGizmo:(NSString *)arg1 withResults:(void (^)(NSURL *, NSError *))arg2;
 - (void)purgeUsageBundle:(NSString *)arg1 replyHandler:(void (^)(NSError *))arg2;

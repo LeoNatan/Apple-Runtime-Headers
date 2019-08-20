@@ -70,6 +70,7 @@
 - (void)enumerateChildModifiersWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)containsChildModifier:(id)arg1;
 - (unsigned long long)childModifierCount;
+- (void)dealloc;
 - (id)init;
 - (id)_createAndConfigureDynamicModifierWithName:(id)arg1;
 - (id)_previousDynamicContextModifier;

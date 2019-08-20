@@ -30,6 +30,8 @@
     NSString *_tokenizedPhoneticDisplayName;
 }
 
++ (unsigned long long)UMUserPasscodeTypeFromLKPasswordType:(unsigned long long)arg1;
++ (unsigned long long)LKPasswordTypeFromUMUserPasscodeType:(unsigned long long)arg1;
 + (unsigned long long)passwordTypeFromPasswordTypeString:(id)arg1;
 + (id)fullNameWithFamilyName:(id)arg1 givenName:(id)arg2;
 + (id)userFromDictionary:(id)arg1;

@@ -34,7 +34,6 @@
 - (BOOL)isPhotosClient;
 @property(readonly, nonatomic) BOOL directDatabaseWriteAuthorized;
 - (BOOL)isClientAuthorizedForLibraryUpgrade;
-- (BOOL)isClientAuthorizedForLithiumSystemPhotoLibraryURL;
 - (BOOL)isClientAuthorizedForTCCServicePhotosAdd;
 - (BOOL)isClientAuthorizedForTCCServicePhotos;
 @property(readonly, copy) NSString *description;

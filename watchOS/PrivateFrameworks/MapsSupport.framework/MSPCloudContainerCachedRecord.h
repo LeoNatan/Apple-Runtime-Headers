@@ -8,19 +8,19 @@
 
 #import <MapsSupport/NSSecureCoding-Protocol.h>
 
-@class CKRecord, NSNumber;
+@class CKRecord, NSData;
 
 __attribute__((visibility("hidden")))
 @interface MSPCloudContainerCachedRecord : NSObject <NSSecureCoding>
 {
     CKRecord *_record;
-    NSNumber *_contentsHash;
-    NSNumber *_positionHash;
+    NSData *_contentsHash;
+    NSData *_positionHash;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSNumber *positionHash; // @synthesize positionHash=_positionHash;
-@property(retain, nonatomic) NSNumber *contentsHash; // @synthesize contentsHash=_contentsHash;
+@property(retain, nonatomic) NSData *positionHash; // @synthesize positionHash=_positionHash;
+@property(retain, nonatomic) NSData *contentsHash; // @synthesize contentsHash=_contentsHash;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

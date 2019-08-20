@@ -15,6 +15,7 @@
     BOOL _waitingForIdentityUpdate;
     BOOL _waitingForHSA2;
     BOOL _useUniqueActivityIdentifiers;
+    BOOL _skipRetryOnOperationError;
     BOOL _automaticSyncingDisabled;
     id <CKSyncEngineDataSource> _dataSource;
     CKDatabase *_database;
@@ -33,9 +34,15 @@
 }
 
 + (BOOL)shouldDeferAfterError:(id)arg1;
++ (void)unregisterActivitiesWithDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
 + (id)earliestStartDateAfterError:(id)arg1;
++ (id)saveSubscriptionActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
++ (id)modifyPendingChangesActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
++ (id)fetchChangesActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(BOOL)arg2;
++ (id)activityIdentifierWithName:(id)arg1 database:(id)arg2 ignoringSystemConditions:(BOOL)arg3 uniquenessPointer:(id)arg4;
 + (id)supportedDatabaseScopes;
 @property(nonatomic, getter=isAutomaticSyncingDisabled) BOOL automaticSyncingDisabled; // @synthesize automaticSyncingDisabled=_automaticSyncingDisabled;
+@property(nonatomic) BOOL skipRetryOnOperationError; // @synthesize skipRetryOnOperationError=_skipRetryOnOperationError;
 @property(nonatomic) long long priorityForModifications; // @synthesize priorityForModifications=_priorityForModifications;
 @property(nonatomic) long long priorityForFetches; // @synthesize priorityForFetches=_priorityForFetches;
 @property(nonatomic) BOOL useUniqueActivityIdentifiers; // @synthesize useUniqueActivityIdentifiers=_useUniqueActivityIdentifiers;
@@ -75,6 +82,7 @@
 - (void)performSaveSubscriptionActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performModifyPendingChangesActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performFetchChangesActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)unregisterActivities;
 - (void)registerSchedulerActivities;
 - (void)_saveSubscriptionIfNecessaryWithOperationGroup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveSubscriptionIfNecessaryWithOperationGroup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

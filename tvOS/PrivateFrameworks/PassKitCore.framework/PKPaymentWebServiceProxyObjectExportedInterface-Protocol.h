@@ -21,6 +21,7 @@
 - (void)deviceMetadataWithFields:(unsigned long long)arg1 completion:(void (^)(PKPaymentDeviceMetadata *))arg2;
 - (void)featureApplicationsForProvisioningWithCompletion:(void (^)(NSArray *))arg1;
 - (void)updatedAccountsForProvisioningWithCompletion:(void (^)(NSArray *, NSArray *))arg1;
+- (void)supportedFeatureIdentifiersForAccountProvisioningWithCompletion:(void (^)(NSSet *))arg1;
 - (void)supportedFeatureIdentifiersWithCompletion:(void (^)(NSSet *))arg1;
 - (void)supportsAccountsWithCompletion:(void (^)(_Bool))arg1;
 - (void)updateAccountWithIdentifier:(NSString *)arg1 completion:(void (^)(PKAccount *, NSError *))arg2;

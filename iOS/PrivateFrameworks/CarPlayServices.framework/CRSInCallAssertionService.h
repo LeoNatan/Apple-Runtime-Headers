@@ -19,9 +19,11 @@
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSMutableDictionary *_connections;
     NSHashTable *_activatedConnections;
+    NSHashTable *_bannersAllowedConnections;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSHashTable *bannersAllowedConnections; // @synthesize bannersAllowedConnections=_bannersAllowedConnections;
 @property(retain, nonatomic) NSHashTable *activatedConnections; // @synthesize activatedConnections=_activatedConnections;
 @property(retain, nonatomic) NSMutableDictionary *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
@@ -30,6 +32,7 @@
 - (void).cxx_destruct;
 - (void)_connectionQueue_removeConnection:(id)arg1;
 - (void)_connectionQueue_addConnection:(id)arg1;
+- (oneway void)setAllowsBanners:(id)arg1;
 - (oneway void)presentInCallService;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
 - (void)removeObserver:(id)arg1;

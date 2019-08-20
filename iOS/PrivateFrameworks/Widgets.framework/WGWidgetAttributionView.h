@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_configureAttributedString;
+- (id)_paragraphStyle;
 - (id)_attributionBackgroundColor;
 - (id)_attributionFont;
 - (id)initWithWidgetAttributedString:(id)arg1;

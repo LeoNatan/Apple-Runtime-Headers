@@ -9,7 +9,6 @@
 @interface _TtC19HealthVisualization12Localization : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: localizationBundleTable
-    // Error parsing type: , name: defaultLocalizationBundle
     // Error parsing type: , name: defaultLocalizationFile
 }
 

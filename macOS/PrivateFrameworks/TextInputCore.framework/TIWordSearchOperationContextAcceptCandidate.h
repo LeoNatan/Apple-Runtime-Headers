@@ -12,16 +12,18 @@
 {
     void *_mecabraCandidate;
     BOOL _partialCandidate;
+    BOOL _prediction;
     TIMecabraEnvironment *_mecabraEnvironment;
 }
 
+@property(nonatomic, getter=isPrediction) BOOL prediction; // @synthesize prediction=_prediction;
 @property(nonatomic, getter=isPartialCandidate) BOOL partialCandidate; // @synthesize partialCandidate=_partialCandidate;
 @property(retain, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 - (void).cxx_destruct;
 - (void)perform;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithWordSearch:(id)arg1 mecabraCandidate:(void *)arg2 isPartial:(BOOL)arg3;
+- (id)initWithWordSearch:(id)arg1 mecabraCandidate:(void *)arg2 isPartial:(BOOL)arg3 isPrediction:(BOOL)arg4;
 
 @end
 

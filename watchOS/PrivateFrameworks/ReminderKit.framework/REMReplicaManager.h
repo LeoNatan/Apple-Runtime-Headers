@@ -27,7 +27,7 @@
 + (id)unsavedReplicaManagersForAccountIDs:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (_Bool)shouldUseNewInMemoryOnlyReplicaManager;
-+ (id)replicaManagerForAccountID:(id)arg1;
++ (id)replicaManagerForAccountID:(id)arg1 store:(id)arg2;
 @property(nonatomic) _Bool exceededMaxSerializedSize; // @synthesize exceededMaxSerializedSize=_exceededMaxSerializedSize;
 @property(nonatomic) unsigned long long maxLastSavedVersion; // @synthesize maxLastSavedVersion=_maxLastSavedVersion;
 @property(nonatomic) unsigned long long currentVersion; // @synthesize currentVersion=_currentVersion;

@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDictionary *mediaEntitiesByCategoryType; // @synthesize mediaEntitiesByCategoryType=_mediaEntitiesByCategoryType;
 @property(nonatomic) __weak id <VUILibraryCategoryMenuViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_generatePurchaseHistoryIDArrayFromFetchedMediaEntitiesByCategoryType:(id)arg1;
 - (void)_populateViewModel:(id)arg1;
 - (void)_loadImageUrls:(id)arg1;
 - (id)_constructCategoryList;

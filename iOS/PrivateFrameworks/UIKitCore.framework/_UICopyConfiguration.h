@@ -8,26 +8,25 @@
 
 #import <UIKitCore/_UICopyConfigurationReading-Protocol.h>
 
-@class NSArray, NSPointerArray, NSString;
-@protocol _UICopyConfigurationActivityDelegate;
+@class NSArray, NSString;
 
 @interface _UICopyConfiguration : NSObject <_UICopyConfigurationReading>
 {
     NSArray *_itemProviders;
     _Bool _allowsSharing;
     id _localObject;
-    id <_UICopyConfigurationActivityDelegate> _activityDelegate;
     CDUnknownBlockType _metadataProvider;
     CDUnknownBlockType _previewProvider;
-    NSPointerArray *__changeObservers;
+    CDUnknownBlockType _activityItemsProvider;
+    CDUnknownBlockType _applicationActivitiesProvider;
 }
 
 + (id)copyConfigurationWithItemProviders:(id)arg1;
 + (id)copyConfigurationWithSharedObjects:(id)arg1;
-@property(retain, nonatomic) NSPointerArray *_changeObservers; // @synthesize _changeObservers=__changeObservers;
+@property(copy, nonatomic) CDUnknownBlockType applicationActivitiesProvider; // @synthesize applicationActivitiesProvider=_applicationActivitiesProvider;
+@property(copy, nonatomic) CDUnknownBlockType activityItemsProvider; // @synthesize activityItemsProvider=_activityItemsProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) CDUnknownBlockType metadataProvider; // @synthesize metadataProvider=_metadataProvider;
-@property(nonatomic) __weak id <_UICopyConfigurationActivityDelegate> activityDelegate; // @synthesize activityDelegate=_activityDelegate;
 @property(nonatomic) _Bool allowsSharing; // @synthesize allowsSharing=_allowsSharing;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
 - (void).cxx_destruct;
@@ -41,9 +40,11 @@
 - (id)initWithSharedObjects:(id)arg1;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *applicationActivitiesForActivityItemsConfiguration;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSArray *itemProvidersForActivityItemsConfiguration;
 @property(readonly) Class superclass;
 
 @end

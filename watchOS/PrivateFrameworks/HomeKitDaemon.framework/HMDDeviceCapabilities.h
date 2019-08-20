@@ -52,6 +52,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) _Bool supportsMediaActions;
+@property(readonly, nonatomic) _Bool supportsShortcutActions;
 @property(readonly, nonatomic) _Bool supportsRouterManagement;
 @property(readonly, nonatomic) _Bool supportsCameraRecording;
 @property(readonly, nonatomic) _Bool supportsMultiUser;

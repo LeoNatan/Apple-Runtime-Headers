@@ -24,7 +24,7 @@
     NSString *_productType;
     NSString *_marketingName;
     NSString *_productVersion;
-    NSString *_serialNumber;
+    NSString *_userSerialNumber;
     NSString *_uniqueIdentifier;
     NSNumber *_ecid;
     unsigned long long _deviceType;
@@ -56,7 +56,7 @@
 @property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSNumber *ecid; // @synthesize ecid=_ecid;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-@property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(retain, nonatomic) NSString *userSerialNumber; // @synthesize userSerialNumber=_userSerialNumber;
 @property(retain, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(retain, nonatomic) NSString *marketingName; // @synthesize marketingName=_marketingName;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;

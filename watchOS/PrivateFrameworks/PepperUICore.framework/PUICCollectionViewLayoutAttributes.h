@@ -18,7 +18,9 @@
 @property(nonatomic) int notchStrength; // @synthesize notchStrength=_notchStrength;
 @property(nonatomic) unsigned int notchBehavior; // @synthesize notchBehavior=_notchBehavior;
 @property(nonatomic) float notchOffset;
+- (_Bool)isSizeEqualForPreferredFittingAttributes:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;
 

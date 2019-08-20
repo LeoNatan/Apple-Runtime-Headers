@@ -7,6 +7,7 @@
 @class NSArray, _DUIPotentialDrop;
 
 @protocol _DUIServerSessionDestination
+- (oneway void)requestVisibleItemsWithReply:(void (^)(NSArray *))arg1;
 - (oneway void)enableKeyboardIfNeeded;
 - (oneway void)sawDragEndEvent;
 - (oneway void)requestDropWithOperation:(unsigned long long)arg1;

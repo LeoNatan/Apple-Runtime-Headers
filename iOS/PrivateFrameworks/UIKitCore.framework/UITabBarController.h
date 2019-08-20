@@ -13,7 +13,7 @@
 #import <UIKitCore/_UIScrollViewScrollObserver-Protocol.h>
 #import <UIKitCore/_UITVScrollViewManagerDelegate-Protocol.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, UIFocusContainerGuide, UIGestureRecognizer, UILayoutContainerView, UILongPressGestureRecognizer, UIMoreNavigationController, UINavigationController, UIScrollView, UITabBar, UITapGestureRecognizer, UIView, _UITVScrollViewManager;
+@class NSArray, NSMapTable, NSMutableArray, NSString, UIFocusContainerGuide, UIFocusGuide, UIGestureRecognizer, UILayoutContainerView, UILongPressGestureRecognizer, UIMoreNavigationController, UINavigationController, UIScrollView, UITabBar, UITapGestureRecognizer, UIView, _UITVScrollViewManager;
 @protocol UITabBarControllerDelegate, UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning;
 
 @interface UITabBarController : UIViewController <UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, _UIScrollViewScrollObserver, _UITVScrollViewManagerDelegate, UITabBarDelegate, NSCoding>
@@ -40,6 +40,7 @@
     UIScrollView *_observingScrollView;
     UIView *_tabBarContainerView;
     _UITVScrollViewManager *_scrollViewManager;
+    UIFocusGuide *_tabBarOffscreenFocusGuide;
     struct {
         unsigned int isShowingMoreItem:1;
         unsigned int needsToRebuildItems:1;
@@ -173,7 +174,8 @@
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)_adjustTVTabBarForContentScrollView:(id)arg1;
 - (void)_updateViewController:(id)arg1 forTabbarObservedScrollView:(id)arg2;
-- (_Bool)_isLegacy;
+- (_Bool)_isLegacyTabBar;
+- (_Bool)_isModernTVTabBar;
 - (_Bool)_isFocusedTabVisible;
 - (id)_recallRememberedFocusedItemForViewController:(id)arg1;
 - (void)_forgetFocusedItemForViewController:(id)arg1;

@@ -8,7 +8,7 @@
 
 @protocol FontProviderProtocol
 - (void)registeredFontsInfo:(_Bool)arg1 completionHandler:(void (^)(NSArray *))arg2;
-- (void)unregisterFonts:(NSArray *)arg1 completionHandler:(void (^)(NSArray *))arg2;
-- (void)registerFonts:(NSArray *)arg1 enabled:(_Bool)arg2 completionHandler:(void (^)(NSArray *))arg3;
+- (void)unregisterFonts:(NSArray *)arg1 completionHandler:(void (^)(NSArray *, NSDictionary *))arg2;
+- (void)registerFonts:(NSArray *)arg1 enabled:(_Bool)arg2 completionHandler:(void (^)(NSArray *, NSDictionary *))arg3;
 @end
 

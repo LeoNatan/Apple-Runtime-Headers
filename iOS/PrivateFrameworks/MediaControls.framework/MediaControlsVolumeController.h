@@ -12,6 +12,7 @@
 
 @interface MediaControlsVolumeController : NSObject <MPVolumeControllerDelegate>
 {
+    _Bool _isSplitRoute;
     NSString *_volumeAudioCategory;
     MPAVEndpointRoute *_systemRoute;
     NSHashTable *_observers;
@@ -32,8 +33,10 @@
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MPAVEndpointRoute *systemRoute; // @synthesize systemRoute=_systemRoute;
 @property(copy, nonatomic) NSString *volumeAudioCategory; // @synthesize volumeAudioCategory=_volumeAudioCategory;
+@property(readonly, nonatomic) _Bool isSplitRoute; // @synthesize isSplitRoute=_isSplitRoute;
 - (void).cxx_destruct;
-- (void)_setupOutputDevicesAndVolumeControllers;
+- (void)_resetRouteType:(unsigned long long)arg1;
+- (_Bool)_setupOutputDevicesAndVolumeControllersIfNeeded;
 - (unsigned long long)_routeForVolumeController:(id)arg1;
 - (void)_notifyVolumeChangedForVolumeController:(id)arg1 volumeControlAvailable:(_Bool)arg2 effectiveVolume:(float)arg3;
 - (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(_Bool)arg2;

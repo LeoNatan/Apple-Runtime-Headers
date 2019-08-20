@@ -9,7 +9,6 @@
 - (void)willUpdateFrameTexture;
 - (void)didPresent;
 - (void)willPresent;
-- (void)newRenderFrame;
 - (void)drawToTexture:(struct Texture *)arg1 withRenderQueue:(struct RenderQueue *)arg2;
 - (struct RenderQueue *)renderQueueForTimestamp:(double)arg1;
 - (void)prepareTexture:(struct Texture *)arg1;

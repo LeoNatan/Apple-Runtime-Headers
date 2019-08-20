@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_processIngestBatch:(id)arg1 minRowID:(unsigned long long)arg2;
 - (void)_propagateFieldsToNextChildBatch:(id)arg1 persistedState:(id)arg2 minRowID:(unsigned long long)arg3 batchSize:(int)arg4;
 - (void)_markNextChildBatchDead:(id)arg1 persistedState:(id)arg2 batchSize:(int)arg3;
-- (BOOL)itemChanged:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 newValues:(id)arg4 contents:(id)arg5 extension:(id)arg6 error:(id *)arg7;
+- (BOOL)changeItem:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 newValues:(id)arg4 contents:(id)arg5 options:(unsigned long long)arg6 extension:(id)arg7 clearCKInfoOnSyncUp:(BOOL)arg8 error:(id *)arg9;
 - (id)findCollidingItemWithParentZone:(id)arg1 parentItemID:(id)arg2 filename:(id)arg3 excludingItemID:(id)arg4;
 - (BOOL)_untrashItem:(id)arg1 toParentIdentifier:(id)arg2 error:(id *)arg3;
 - (BOOL)_trashItem:(id)arg1 extension:(id)arg2 error:(id *)arg3;

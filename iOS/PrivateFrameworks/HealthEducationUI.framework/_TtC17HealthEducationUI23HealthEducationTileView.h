@@ -8,15 +8,16 @@
 
 @interface _TtC17HealthEducationUI23HealthEducationTileView : UIView
 {
-    // Error parsing type: , name: delegate
-    // Error parsing type: , name: $__lazy_storage_$_titleLabel
+    // Error parsing type: , name: highlightedDuration
+    // Error parsing type: , name: highlightedOverlayAlpha
+    // Error parsing type: , name: highlightedUnderlayAlpha
     // Error parsing type: , name: $__lazy_storage_$_backgroundImageView
+    // Error parsing type: , name: $__lazy_storage_$_selectedImageOverlay
+    // Error parsing type: , name: $__lazy_storage_$_selectedSashUnderlay
     // Error parsing type: , name: $__lazy_storage_$_sashView
 }
 
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

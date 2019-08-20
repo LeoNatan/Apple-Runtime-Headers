@@ -11,13 +11,14 @@
 #import <PhotosUI/PUBrowsingViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class ISWrappedAVPlayer, NSArray, NSString, PHLivePhotoView, PUBrowsingViewModel, PUMergedLivePhotosVideo, PUModelTileTransform, PUOneUpMergedVideoProvider, PXImageLayerModulator, PXImageModulationManager, UIImpactFeedbackGenerator, UIView;
+@class ISWrappedAVPlayer, NSArray, NSString, PHLivePhotoView, PUAssetReference, PUBrowsingViewModel, PUMergedLivePhotosVideo, PUModelTileTransform, PUOneUpMergedVideoProvider, PXImageLayerModulator, PXImageModulationManager, UIImpactFeedbackGenerator, UIView;
 @protocol PULivePhotoVideoOverlayTileViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PULivePhotoVideoOverlayTileViewController : PUTileViewController <PUBrowsingViewModelChangeObserver, PXChangeObserver, PHLivePhotoViewDelegate, ISChangeObserver>
 {
     _Bool _isPresentedForSecondScreen;
+    _Bool _willEndCurrentPlayback;
     PUBrowsingViewModel *_browsingViewModel;
     PUOneUpMergedVideoProvider *_mergedVideoProvider;
     id <PULivePhotoVideoOverlayTileViewControllerDelegate> _delegate;
@@ -31,8 +32,11 @@ __attribute__((visibility("hidden")))
     id _videoPlayerTimeObserver;
     PUModelTileTransform *_modelTileTransform;
     PXImageLayerModulator *_imageLayerModulator;
+    PUAssetReference *_playbackAssetReference;
 }
 
+@property(nonatomic) _Bool willEndCurrentPlayback; // @synthesize willEndCurrentPlayback=_willEndCurrentPlayback;
+@property(retain, nonatomic) PUAssetReference *playbackAssetReference; // @synthesize playbackAssetReference=_playbackAssetReference;
 @property(retain, nonatomic) PXImageLayerModulator *imageLayerModulator; // @synthesize imageLayerModulator=_imageLayerModulator;
 @property(retain, nonatomic) PUModelTileTransform *modelTileTransform; // @synthesize modelTileTransform=_modelTileTransform;
 @property(retain, nonatomic) id videoPlayerTimeObserver; // @synthesize videoPlayerTimeObserver=_videoPlayerTimeObserver;

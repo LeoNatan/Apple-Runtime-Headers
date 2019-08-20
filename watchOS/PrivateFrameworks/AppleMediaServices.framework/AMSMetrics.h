@@ -25,7 +25,7 @@
     NSObject<OS_dispatch_queue> *_completionQueue;
     id <AMSMetricsFlushStrategy> _currentFlushStrategy;
     AMSMetricsDatabaseDataSource *_databaseSource;
-    CDUnknownBlockType _flushTimerBlock;
+    CDUnknownBlockType _flushIntervalBlock;
     int _destination;
     NSObject<OS_dispatch_queue> *_flushQueue;
 }
@@ -39,13 +39,15 @@
 + (id)serverTimeFromTimeInterval:(double)arg1;
 + (id)serverTimeFromDate:(id)arg1;
 + (void)setFlushTimerEnabled:(_Bool)arg1;
++ (void)setFlushDelayEnabled:(_Bool)arg1;
 + (void)setDisableBackgroundMetrics:(_Bool)arg1;
 + (_Bool)flushTimerEnabled;
++ (_Bool)flushDelayEnabled;
 + (_Bool)disableBackgroundMetrics;
 + (id)_sharedInstanceUsingBag:(id)arg1;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *flushQueue; // @synthesize flushQueue=_flushQueue;
 @property(nonatomic) int destination; // @synthesize destination=_destination;
-@property(copy, nonatomic) CDUnknownBlockType flushTimerBlock; // @synthesize flushTimerBlock=_flushTimerBlock;
+@property(copy, nonatomic) CDUnknownBlockType flushIntervalBlock; // @synthesize flushIntervalBlock=_flushIntervalBlock;
 @property(nonatomic) _Bool flushOnForeground; // @synthesize flushOnForeground=_flushOnForeground;
 @property(retain, nonatomic) AMSMetricsDatabaseDataSource *databaseSource; // @synthesize databaseSource=_databaseSource;
 @property(retain, nonatomic) id <AMSMetricsFlushStrategy> currentFlushStrategy; // @synthesize currentFlushStrategy=_currentFlushStrategy;
@@ -57,12 +59,11 @@
 - (void).cxx_destruct;
 @property(retain, nonatomic) id <AMSMetricsBagContract> bagContract;
 - (id)initWithContainerId:(id)arg1 bagContract:(id)arg2;
-- (void)_handleFlushTimer;
-- (void)_flushTimerUpdated;
-- (void)_flushTimerStart;
-- (void)_flushTimerInvalidate;
-- (_Bool)_flushTimerEnabled;
+- (void)_handleFlushIntervalWithStyle:(int)arg1;
+- (void)_flushIntervalInvalidate;
+- (_Bool)_flushIntervalEnabledForStyle:(int)arg1;
 - (double)_flushInterval;
+- (void)_beginFlushIntervalWithStyle:(int)arg1;
 - (id)_flushDataSource:(id)arg1 topic:(id)arg2;
 - (id)_determineFlushStrategyWithDataSource:(id)arg1 topic:(id)arg2;
 - (void)_applicationWillEnterForeground;

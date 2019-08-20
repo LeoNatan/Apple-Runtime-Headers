@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: issueModelFactory
     // Error parsing type: , name: paidAccessChecker
+    // Error parsing type: , name: offlineIssueManager
 }
 
 @end

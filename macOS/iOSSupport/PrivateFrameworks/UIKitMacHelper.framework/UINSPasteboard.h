@@ -11,8 +11,8 @@
 }
 
 + (id)fontAttributeNames;
-+ (BOOL)writeFontAttributes:(id)arg1;
-+ (id)readFontAttributes;
++ (BOOL)writeFontAttributes:(id)arg1 options:(id)arg2;
++ (id)readFontAttributesWithOptions:(id)arg1;
 
 @end
 

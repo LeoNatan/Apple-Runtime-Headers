@@ -22,7 +22,6 @@
     NSError *_signatureError;
     BOOL _useAbsinthe;
     BOOL _forceHTTPv2;
-    NSURL *_absintheServer;
     NSString *_clientTraceId;
     CDUnknownBlockType _connectionMetricsHandler;
 }
@@ -31,7 +30,6 @@
 @property(copy, nonatomic) CDUnknownBlockType connectionMetricsHandler; // @synthesize connectionMetricsHandler=_connectionMetricsHandler;
 @property(copy, nonatomic) NSString *clientTraceId; // @synthesize clientTraceId=_clientTraceId;
 @property(nonatomic) BOOL forceHTTPv2; // @synthesize forceHTTPv2=_forceHTTPv2;
-@property(copy, nonatomic) NSURL *absintheServer; // @synthesize absintheServer=_absintheServer;
 @property(nonatomic) BOOL useAbsinthe; // @synthesize useAbsinthe=_useAbsinthe;
 - (void).cxx_destruct;
 - (void)initializeAbsintheSessionWithCompletion:(CDUnknownBlockType)arg1;
@@ -44,6 +42,7 @@
 - (void)performRequest:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performCallForMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_on_queue_getChannelWithHandler:(CDUnknownBlockType)arg1;
+@property(copy, nonatomic) NSURL *absintheServer;
 - (CDUnknownBlockType)getConnectionMetricsHandler;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2 useCache:(BOOL)arg3;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2;

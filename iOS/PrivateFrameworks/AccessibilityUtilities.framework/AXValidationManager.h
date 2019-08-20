@@ -60,6 +60,7 @@
 - (void)sendExceptionForSafeBlock:(id)arg1 overrideProcessName:(id)arg2;
 - (void)sendExceptionForSafeIVarKey:(id)arg1 onTarget:(id)arg2 overrideProcessName:(id)arg3;
 - (void)sendExceptionForSafeValueKey:(id)arg1 onTarget:(id)arg2 overrideProcessName:(id)arg3;
+- (void)sendExceptionForSafeCategoryOnWrongTarget:(id)arg1 targetBundle:(id)arg2 expectedBundle:(id)arg3 overrideProcessName:(id)arg4;
 - (void)sendExceptionForInstallingSafeCategory:(id)arg1 onTarget:(id)arg2 overrideProcessName:(id)arg3;
 - (_Bool)installSafeCategory:(id)arg1 canInteractWithTargetClass:(_Bool)arg2;
 - (_Bool)installSafeCategory:(id)arg1;

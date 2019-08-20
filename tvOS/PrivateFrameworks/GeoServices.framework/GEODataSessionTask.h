@@ -41,6 +41,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sessionIsolation; // @synthesize sessionIsolation=_sessionIsolation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool receivedRNFNotification;
 @property(readonly, nonatomic) _Bool mptcpNegotiated;
 @property(readonly, nonatomic) unsigned long long requestedMultipathServiceType;
 @property(readonly, nonatomic) id <GEORequestCounterTicket> requestCounterTicket;

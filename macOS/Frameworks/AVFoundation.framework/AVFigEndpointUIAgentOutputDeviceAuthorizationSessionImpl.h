@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     AVFigEndpointUIAgentOutputDeviceAuthorizationRequestImpl *_currentRequestImpl;
 }
 
-+ (void)initialize;
 @property __weak AVOutputDeviceAuthorizationSession *parentAuthorizationSession; // @synthesize parentAuthorizationSession=_parentSession;
 - (void).cxx_destruct;
 - (void)outputDeviceAuthorizationRequestImplDidCancel:(id)arg1;

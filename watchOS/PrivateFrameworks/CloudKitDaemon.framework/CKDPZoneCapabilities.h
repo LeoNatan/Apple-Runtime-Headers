@@ -15,16 +15,22 @@ __attribute__((visibility("hidden")))
     _Bool _atomicSaves;
     _Bool _ckql;
     _Bool _fetchChanges;
+    _Bool _hierarchicalSharing;
     _Bool _sharing;
+    _Bool _zoneSharing;
     struct {
         unsigned int sharingType:1;
         unsigned int atomicSaves:1;
         unsigned int ckql:1;
         unsigned int fetchChanges:1;
+        unsigned int hierarchicalSharing:1;
         unsigned int sharing:1;
+        unsigned int zoneSharing:1;
     } _has;
 }
 
+@property(nonatomic) _Bool hierarchicalSharing; // @synthesize hierarchicalSharing=_hierarchicalSharing;
+@property(nonatomic) _Bool zoneSharing; // @synthesize zoneSharing=_zoneSharing;
 @property(nonatomic) _Bool ckql; // @synthesize ckql=_ckql;
 @property(nonatomic) _Bool sharing; // @synthesize sharing=_sharing;
 @property(nonatomic) _Bool fetchChanges; // @synthesize fetchChanges=_fetchChanges;
@@ -38,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasHierarchicalSharing;
+@property(nonatomic) _Bool hasZoneSharing;
 - (int)StringAsSharingType:(id)arg1;
 - (id)sharingTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSharingType;

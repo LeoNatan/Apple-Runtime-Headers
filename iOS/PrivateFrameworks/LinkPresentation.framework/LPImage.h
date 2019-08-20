@@ -15,6 +15,7 @@
 @interface LPImage : NSObject <LPAsynchronousResource, NSSecureCoding>
 {
     UIImage *_originalPlatformImage;
+    UIImage *_decodedPlatformImage;
     NSData *_data;
     NSString *_MIMEType;
     LPImageProperties *_properties;
@@ -55,6 +56,7 @@
 @property(readonly, copy, nonatomic) NSString *MIMEType;
 @property(readonly, copy, nonatomic) NSData *data;
 - (void)_preparePlatformImageWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_synchronouslyDecodePlatformImageWithMaximumSize:(struct CGSize)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_waitForAsynchronouslyLoadedImageIfNeeded;

@@ -6,7 +6,7 @@
 
 #import <AudioDSPManager/DSPConfigurationMO.h>
 
-@class DSPFlavorMO, NSObject, NSString, PortMO;
+@class DSPFlavorMO, NSObject, NSSet, NSString, PortMO;
 
 __attribute__((visibility("hidden")))
 @interface HWDSPMO : DSPConfigurationMO
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PortMO *port; // @dynamic port;
 @property(copy, nonatomic) NSString *presetBoxName; // @dynamic presetBoxName;
 @property(copy, nonatomic) NSString *presetName; // @dynamic presetName;
+@property(retain, nonatomic) NSSet *semantic; // @dynamic semantic;
 
 @end
 

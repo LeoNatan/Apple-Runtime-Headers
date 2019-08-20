@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)reportFavoritesAccessedBeforeFirstUnlock;
 - (void)failedToWriteFavoritesToPath:(id)arg1 error:(id)arg2 simulateCrashReport:(_Bool)arg3;
 - (void)failedToVerifyWrittenFavoritesExistsAtPath:(id)arg1;
 - (void)failedToWriteRemoteFavorites:(id)arg1;

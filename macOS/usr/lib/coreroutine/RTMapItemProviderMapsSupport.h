@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (double)confidenceFromMapItemSource:(unsigned long long)arg1;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
-- (id)initWithDistanceCalculator:(id)arg1 mapsSupportManager:(id)arg2 parameters:(id)arg3;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapsSupportManager:(id)arg3 parameters:(id)arg4;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapsSupportManager:(id)arg3;
 - (id)init;
 

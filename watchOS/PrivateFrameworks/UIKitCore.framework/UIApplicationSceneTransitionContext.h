@@ -16,6 +16,7 @@
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 @property(nonatomic, getter=_lifecycleActionType, setter=_setLifecycleActionType:) unsigned int lifecycleActionType;
+@property(nonatomic) _Bool disableTouchCancellationOnRotation;
 @property(nonatomic) int statusBarAnimation;
 @property(nonatomic) _Bool waitForBackgroundTaskCompletion;
 @property(nonatomic) _Bool shouldTakeKeyboardFocus;

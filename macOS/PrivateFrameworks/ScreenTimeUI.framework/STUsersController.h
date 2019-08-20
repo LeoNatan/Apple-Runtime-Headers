@@ -6,33 +6,45 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSImage, NSManagedObjectContext, STCoreUser;
+#import <ScreenTimeUI/NSFetchedResultsControllerDelegate-Protocol.h>
 
-@interface STUsersController : NSObject
+@class NSArray, NSFetchedResultsController, NSImage, NSManagedObjectContext, NSString, STCoreUser;
+
+@interface STUsersController : NSObject <NSFetchedResultsControllerDelegate>
 {
-    NSArray *_users;
     unsigned long long _selectedIndex;
     NSImage *_selectedUserImage;
     NSManagedObjectContext *_managedObjectContext;
+    NSFetchedResultsController *_localUserController;
+    NSFetchedResultsController *_childUserController;
+    NSFetchedResultsController *_settingsController;
 }
 
 + (id)keyPathsForValuesAffectingSelectedUser;
++ (id)keyPathsForValuesAffectingUsers;
++ (id)keyPathsForValuesAffectingLocalUser;
+@property(retain) NSFetchedResultsController *settingsController; // @synthesize settingsController=_settingsController;
+@property(retain, nonatomic) NSFetchedResultsController *childUserController; // @synthesize childUserController=_childUserController;
+@property(retain, nonatomic) NSFetchedResultsController *localUserController; // @synthesize localUserController=_localUserController;
 @property(readonly) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(copy) NSImage *selectedUserImage; // @synthesize selectedUserImage=_selectedUserImage;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
-@property(copy, nonatomic) NSArray *users; // @synthesize users=_users;
 - (void).cxx_destruct;
+- (void)controllerDidChangeContent:(id)arg1;
+- (void)controllerWillChangeContent:(id)arg1;
 - (void)notifyServerOfScreenTimeEnabled:(BOOL)arg1 forUser:(id)arg2;
+- (void)refresh;
 - (void)refreshSelectedUserImage;
-@property(readonly, nonatomic) STCoreUser *selectedUser;
+@property(readonly) STCoreUser *selectedUser;
+@property(readonly, copy) NSArray *users;
 @property(readonly) STCoreUser *localUser;
-- (void)_updateUsersWithLocalUser:(id)arg1;
-- (void)_familySettingsDidChangeFrom:(id)arg1 to:(id)arg2 localUser:(id)arg3;
-- (void)_isFamilyOrganizerDidChangeFrom:(id)arg1 to:(id)arg2 localUser:(id)arg3;
-- (void)_isParentDidChangeFrom:(id)arg1 to:(id)arg2 localUser:(id)arg3;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
-- (id)initWithManagedObjectContext:(id)arg1 error:(id *)arg2;
+- (id)initWithManagedObjectContext:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

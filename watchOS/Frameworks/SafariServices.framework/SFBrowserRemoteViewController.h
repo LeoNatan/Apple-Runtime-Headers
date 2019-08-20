@@ -9,7 +9,7 @@
 #import <SafariServices/MPVolumeDisplaying-Protocol.h>
 #import <SafariServices/SFRemoteViewControllerProtocol-Protocol.h>
 
-@class NSString;
+@class NSString, UIWindowScene;
 @protocol SFBrowserRemoteViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic, getter=isOnScreen) _Bool onScreen;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) UIWindowScene *windowSceneForVolumeDisplay;
 
 @end
 

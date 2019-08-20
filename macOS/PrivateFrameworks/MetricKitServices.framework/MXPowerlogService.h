@@ -23,6 +23,7 @@
 @property(retain) MXSourceXPCPayload *unarchivedPowerlogData; // @synthesize unarchivedPowerlogData=_unarchivedPowerlogData;
 @property(retain) NSMutableArray *powerlogDataPaths; // @synthesize powerlogDataPaths=_powerlogDataPaths;
 - (void).cxx_destruct;
+- (BOOL)metricsAvailableForDate:(id)arg1;
 - (id)getMetricsForClient:(id)arg1 dateString:(id)arg2;
 - (BOOL)_updateMetrics;
 - (BOOL)stopService;

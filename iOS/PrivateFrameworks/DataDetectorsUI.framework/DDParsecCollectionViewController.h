@@ -43,6 +43,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (_Bool)_allowsStylingSheetsAsCards;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;

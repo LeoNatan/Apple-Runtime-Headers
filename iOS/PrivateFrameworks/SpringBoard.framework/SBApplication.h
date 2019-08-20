@@ -55,6 +55,7 @@
 
 + (id)_appStateKeysToPrefetch;
 + (id)restrictedClassicModeDisplayConfigurationForDisplayConfiguration:(id)arg1 classicMode:(long long)arg2;
++ (long long)_classicModeForLaunchingSize:(struct CGSize)arg1;
 + (struct CGSize)_defaultLaunchingSizeForDisplayConfiguration:(id)arg1 classicMode:(long long)arg2;
 + (id)snapshotSortDescriptorForUIUserInterfaceStyle:(long long)arg1;
 + (id)snapshotSortDescriptorForCreationDate;
@@ -126,6 +127,7 @@
 - (int)_applicationRestorationCheckState;
 - (void)_terminationAssertionEfficacyChangedTo:(unsigned long long)arg1;
 - (id)_snapshotManifest;
+- (void)_clearSceneTitles;
 - (id)_sceneIdentifierForStoredPersistenceIdentifier:(id)arg1;
 - (id)_dataStore;
 - (id)_baseSceneIdentifier;
@@ -182,6 +184,7 @@
 @property(readonly, nonatomic) _Bool isClassic;
 @property(readonly, nonatomic) _Bool isMedusaCapable;
 @property(readonly, nonatomic) _Bool mainSceneWantsFullscreen;
+- (long long)_classicModeForHostingExtenstionContainedInApplication:(id)arg1;
 - (void)_recalculateApplicationSupportedTypes;
 - (_Bool)_canLaunchInClassicMode:(long long)arg1;
 - (_Bool)_exposeRealDisplayCornerRadii;
@@ -190,11 +193,13 @@
 - (void)_setCurrentClassicMode:(long long)arg1;
 - (void)_setDefaultClassicModeOverride:(long long)arg1;
 - (long long)_classicModeFromSupportedTypes;
+- (void)_calculateSupportedTypesForSplashBoard;
+- (_Bool)_useSupportedTypesForSplashBoard;
 - (long long)_classicModeFromSplashBoard;
 - (long long)_phone_classicModeFromSplashBoard;
 - (long long)_phoneOnPad_classicModeFromSplashBoard;
 - (long long)_pad_classicModeFromSplashBoard;
-- (_Bool)_isNewEnoughToKnowAboutSafeAreaInsets;
+- (_Bool)_isNewEnoughToKnowAboutRoundPads;
 - (_Bool)_isClassicViaOverride;
 - (_Bool)_bypassesClassicMode;
 - (int)_supportedTypeForClassicModeNone;
@@ -237,7 +242,6 @@
 - (void)_purgeAndResetStaticDefaultImagesInSnapshotManifest;
 - (void)_resetLaunchImageIngestionStatus;
 - (void)refreshLaunchImagesInSnapshotManifestIfNeeded;
-@property(readonly, nonatomic) _Bool supportsDirectToAirplay;
 @property(readonly, nonatomic) _Bool isFaceTime;
 @property(readonly, nonatomic) _Bool isMobilePhone;
 @property(readonly, nonatomic) _Bool isSetup;

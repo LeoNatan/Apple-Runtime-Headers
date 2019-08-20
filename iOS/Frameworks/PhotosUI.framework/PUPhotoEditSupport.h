@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)photoWasTakenWithoutFlashWithImageProperties:(id)arg1;
-+ (_Bool)canLoadAssetAsRawWithImageProperties:(id)arg1;
 + (_Bool)currentDeviceShouldAllowRawDecode;
 
 @end

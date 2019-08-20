@@ -15,6 +15,7 @@
 
 @interface SBFluidSwitcherRootSwitcherModifier : SBSwitcherModifier <SBFluidSwitcherScrollProvidingDelegate, SBFluidSwitcherModifierProviding, SBFluidSwitcherScrollProviding>
 {
+    _Bool _shouldVerifyModifierStackCoherencyCheckAfterHandlingEvent;
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
 }
 
@@ -27,11 +28,12 @@
 - (void)_updateReduceMotionModifierWithReduceMotionChangedEvent:(id)arg1;
 - (void)_updateMultitaskingModifierWithEvent:(id)arg1;
 - (void)_updateFloorModifierWithTransitionEvent:(id)arg1;
-- (void)_performModifierStackCoherencyCheckAfterHandlingEvent:(id)arg1;
+- (void)_performModifierStackCoherencyCheckIfNeededAfterHandlingEvent:(id)arg1;
 - (id)multitaskingModifier;
 - (id)floorModifier;
 - (id)newMultitaskingModifierFromMultitaskingModifier:(id)arg1;
 - (id)lowEndHardwareModifier;
+- (id)insertionModifierForInsertionEvent:(id)arg1;
 - (id)appExposeModifierForAppExposeEvent:(id)arg1;
 - (id)reduceMotionModifierForReduceMotionChangedEvent:(id)arg1;
 - (id)transitionModifierForInlineTransitionEvent:(id)arg1;
@@ -42,6 +44,7 @@
 - (struct CGPoint)scrollProvidingModifier:(id)arg1 contentOffsetVelocityConsideringNextContentOffset:(struct CGPoint)arg2;
 - (struct CGPoint)scrollProvidingModifier:(id)arg1 convertScrollViewPointToContainerViewCoordinateSpace:(struct CGPoint)arg2;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)handleTetheredInsertionEvent:(id)arg1;
 - (id)handleTetheredRemovalEvent:(id)arg1;
 - (id)handleAppExposeEvent:(id)arg1;
 - (id)handleRemovalEvent:(id)arg1;
@@ -54,6 +57,7 @@
 - (id)handleEvent:(id)arg1;
 - (void)_setup;
 - (void)setDelegate:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

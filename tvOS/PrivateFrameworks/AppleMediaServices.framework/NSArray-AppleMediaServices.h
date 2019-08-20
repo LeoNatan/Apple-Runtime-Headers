@@ -11,6 +11,7 @@
 - (id)ams_nonEmptyComponentsJoinedByString:(id)arg1;
 - (id)ams_mapWithTransform:(CDUnknownBlockType)arg1;
 - (id)ams_mapWithTransformIgnoresNil:(CDUnknownBlockType)arg1;
+- (id)ams_invertedDictionaryUsingTransformIgnoresNil:(CDUnknownBlockType)arg1;
 - (id)ams_invertedDictionaryUsingTransform:(CDUnknownBlockType)arg1;
 - (id)ams_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)ams_filterUsingTest:(CDUnknownBlockType)arg1;

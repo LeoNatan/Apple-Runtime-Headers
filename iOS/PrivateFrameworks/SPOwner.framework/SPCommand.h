@@ -26,6 +26,7 @@
 
 + (id)stopNotifyWhenFound:(id)arg1;
 + (id)startNotifyWhenFound:(id)arg1;
++ (id)locate:(id)arg1;
 + (id)disableNotifyWhenFound:(id)arg1;
 + (id)enableNotifyWhenFound:(id)arg1;
 + (id)declineShareWithBeaconUUID:(id)arg1;

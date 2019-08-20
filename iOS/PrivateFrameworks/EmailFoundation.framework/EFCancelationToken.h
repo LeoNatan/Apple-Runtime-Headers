@@ -16,6 +16,7 @@
 
 + (id)_descriptionString;
 + (id)tokenWithCancelationBlock:(CDUnknownBlockType)arg1;
++ (id)tokenWithLabel:(id)arg1 cancelationBlock:(CDUnknownBlockType)arg2;
 - (void)removeAllCancelationBlocks;
 - (void)addCancelable:(id)arg1;
 - (void)addCancelationBlock:(CDUnknownBlockType)arg1;

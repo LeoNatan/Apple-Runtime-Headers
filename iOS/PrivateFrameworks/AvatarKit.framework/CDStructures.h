@@ -51,10 +51,10 @@ struct SCNVector3 {
 };
 
 struct SCNVector4 {
-    float x;
-    float y;
-    float z;
-    float w;
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
 };
 
 struct UIColor {

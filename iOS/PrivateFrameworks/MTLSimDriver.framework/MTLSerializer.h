@@ -77,6 +77,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)newTextureViewWithPixelFormat:(unsigned long long)arg1 baseTexture:(id)arg2 allocator:(id)arg3;
 - (void)replaceRegion:(CDStruct_caaed6bc)arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6 texture:(id)arg7 allocator:(id)arg8;
 - (id)getBytesFromRegion:(CDStruct_caaed6bc)arg1 bytesPerRow:(unsigned long long)arg2 bytesPerImage:(unsigned long long)arg3 mipmapLevel:(unsigned long long)arg4 slice:(unsigned long long)arg5 texture:(id)arg6 outDataSize:(unsigned long long *)arg7;
+- (void)copyImageBytesFromSource:(char *)arg1 toDestination:(char *)arg2 dataSize:(unsigned long long)arg3 region:(CDStruct_caaed6bc)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6 mipmapLevel:(unsigned long long)arg7 slice:(unsigned long long)arg8 texture:(id)arg9;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
 - (id)newSamplerStateWithDescriptor:(id)arg1;
 - (id)newTextureWithDescriptor:(id)arg1;

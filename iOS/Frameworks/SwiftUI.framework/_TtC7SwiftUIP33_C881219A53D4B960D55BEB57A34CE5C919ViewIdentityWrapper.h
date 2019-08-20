@@ -8,12 +8,16 @@
 
 #import <SwiftUI/NSCopying-Protocol.h>
 
+@class NSString;
+
 @interface _TtC7SwiftUIP33_C881219A53D4B960D55BEB57A34CE5C919ViewIdentityWrapper : NSObject <NSCopying>
 {
     // Error parsing type: , name: id
 }
 
 - (id)init;
+@property(nonatomic, readonly) NSString *description;
+@property(nonatomic, readonly) long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(void *)arg1;
 

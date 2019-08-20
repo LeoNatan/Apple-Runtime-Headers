@@ -35,7 +35,7 @@
 - (void)setCustomHighlightColor:(id)arg1;
 - (void)copy:(id)arg1;
 - (id)menuForEvent:(id)arg1;
-- (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)keyDown:(id)arg1;

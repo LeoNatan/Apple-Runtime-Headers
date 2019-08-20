@@ -82,6 +82,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (BOOL)canBecomeFirstResponder;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidAppear:(BOOL)arg1;

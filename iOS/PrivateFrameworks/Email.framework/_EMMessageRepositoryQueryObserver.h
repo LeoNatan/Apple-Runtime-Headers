@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)observer:(id)arg1 matchedOldestItemsUpdatedForMailboxes:(id)arg2;
 - (void)observerWillRestart:(id)arg1;
-- (void)observer:(id)arg1 matchedAlternateIDChangedForObjectID:(id)arg2 alternateID:(id)arg3;
+- (void)observer:(id)arg1 replacedExistingObjectID:(id)arg2 withNewObjectID:(id)arg3;
 - (void)observerDidFinishRemoteSearch:(id)arg1;
 - (void)observerDidFinishInitialLoad:(id)arg1;
 - (void)observer:(id)arg1 matchedDeletedObjectIDs:(id)arg2;
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)observer:(id)arg1 matchedMovedObjectIDs:(id)arg2 before:(id)arg3;
 - (void)observer:(id)arg1 matchedAddedObjectIDs:(id)arg2 after:(id)arg3 extraInfo:(id)arg4;
 - (void)observer:(id)arg1 matchedAddedObjectIDs:(id)arg2 before:(id)arg3 extraInfo:(id)arg4;
+- (void)observer:(id)arg1 wasUpdated:(id)arg2;
 - (void)_performQueryWithRemoteConnection:(id)arg1 forRecovery:(_Bool)arg2;
 - (void)recoverQueryWithRemoteConnection:(id)arg1;
 - (void)performQueryWithRemoteConnection:(id)arg1;

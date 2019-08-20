@@ -23,7 +23,7 @@
 - (void)_doneButtonTapped;
 - (void)_cancelButtonTapped;
 - (void)viewDidLoad;
-- (id)initShowAddPlan:(_Bool)arg1 allowDismiss:(_Bool)arg2;
+- (id)initWithType:(unsigned long long)arg1 allowDismiss:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

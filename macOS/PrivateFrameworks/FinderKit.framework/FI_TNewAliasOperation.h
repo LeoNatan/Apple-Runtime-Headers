@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     _Bool _addAliasSuffix;
     _Bool _creatingAliasInPBF;
     _Bool _isRenaming;
+    _Bool _redirectedToDesktop;
 }
 
-+ (id)operationWithNodes:(const struct TFENodeVector *)arg1 properties:(const vector_d50fdf79 *)arg2 destinationNode:(const struct TFENode *)arg3 allowInteraction:(_Bool)arg4 addAliasSuffix:(_Bool)arg5 delegate:(id)arg6;
++ (id)operationWithNodes:(const struct TFENodeVector *)arg1 properties:(const vector_d50fdf79 *)arg2 destinationNode:(const struct TFENode *)arg3 allowInteraction:(_Bool)arg4 addAliasSuffix:(_Bool)arg5 allowRedirection:(_Bool)arg6 delegate:(id)arg7;
+@property(readonly, nonatomic, getter=isRedirectedToDesktop) _Bool redirectedToDesktop; // @synthesize redirectedToDesktop=_redirectedToDesktop;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (int)handleSuboperationCompleted:(unsigned int)arg1 targetNode:(const struct TFENode *)arg2;

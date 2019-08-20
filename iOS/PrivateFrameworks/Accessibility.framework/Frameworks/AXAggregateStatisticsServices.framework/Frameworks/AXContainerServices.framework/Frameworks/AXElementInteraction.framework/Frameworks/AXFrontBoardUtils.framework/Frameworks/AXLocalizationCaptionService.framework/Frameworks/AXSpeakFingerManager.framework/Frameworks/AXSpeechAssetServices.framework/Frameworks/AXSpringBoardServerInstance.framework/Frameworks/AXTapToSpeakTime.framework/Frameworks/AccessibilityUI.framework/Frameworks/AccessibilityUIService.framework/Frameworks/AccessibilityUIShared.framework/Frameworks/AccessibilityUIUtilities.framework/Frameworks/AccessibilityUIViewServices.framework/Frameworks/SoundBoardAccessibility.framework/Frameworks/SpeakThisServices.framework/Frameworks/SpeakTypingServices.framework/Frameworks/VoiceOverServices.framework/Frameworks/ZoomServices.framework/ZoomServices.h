@@ -78,6 +78,7 @@
 - (_Bool)_isPrimaryZoomWindowClient;
 - (_Bool)_isAllowedMagnifierClient;
 - (void)_zoomChanged:(id)arg1;
+- (void)_checkSpringBoardStarted;
 - (void)dealloc;
 - (id)init;
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;

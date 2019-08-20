@@ -11,7 +11,7 @@
 #import <UIKitCore/_UINavigationBarTitleViewDataSource-Protocol.h>
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, UIBarButtonItem, UIColor, UIImage, UIView, _UIBarButtonItemData, _UINavBackButtonAppearanceData, _UINavigationBarContentViewLayout, _UINavigationBarTransitionContext;
+@class NSArray, NSDictionary, NSMutableArray, NSString, UIBarButtonItem, UIColor, UIImage, UIView, _UIBarButtonItemData, _UINavigationBarContentViewLayout, _UINavigationBarTransitionContext;
 @protocol _UINavigationBarContentViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -91,12 +91,9 @@ __attribute__((visibility("hidden")))
 - (void)titleView:(id)arg1 needsUpdatedContentOverlayRects:(id)arg2;
 - (id)_layoutForAugmentedTitleView:(id)arg1;
 - (struct CGRect)_overlayRectForView:(id)arg1 inTargetView:(id)arg2;
-- (void)backButtonAppearanceChanged;
-@property(retain, nonatomic) _UINavBackButtonAppearanceData *backButtonAppearance;
-- (void)doneItemAppearanceChanged;
-@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance;
-- (void)plainItemAppearanceChanged;
-@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *backButtonAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *doneItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *plainItemAppearance;
 - (void)_appearanceChanged;
 - (void)backButtonTitleDidChange;
 @property(nonatomic, setter=_setBackButtonMaximumWidth:) double backButtonMaximumWidth;

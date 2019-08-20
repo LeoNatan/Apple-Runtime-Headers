@@ -7,10 +7,11 @@
 #import <HomeUI/HUQuickControlViewController.h>
 
 #import <HomeUI/HUQuickControlInteractionCoordinatorDelegate-Protocol.h>
+#import <HomeUI/HUQuickControlTouchContinuing-Protocol.h>
 
 @class HFControlItem, HUQuickControlInteractionCoordinator, HUQuickControlViewProfile, NAValueThrottler, NSString, _HUQuickControlSingleControlHostView;
 
-@interface HUQuickControlSingleControlViewController : HUQuickControlViewController <HUQuickControlInteractionCoordinatorDelegate>
+@interface HUQuickControlSingleControlViewController : HUQuickControlViewController <HUQuickControlInteractionCoordinatorDelegate, HUQuickControlTouchContinuing>
 {
     _Bool _writesInProgressOrPossible;
     _Bool _hasWrittenAnyNewValues;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) id modelValue; // @synthesize modelValue=_modelValue;
 @property(retain, nonatomic) HUQuickControlInteractionCoordinator *interactionCoordinator; // @synthesize interactionCoordinator=_interactionCoordinator;
 - (void).cxx_destruct;
+- (id)viewForTouchContinuation;
 - (void)interactionCoordinator:(id)arg1 updateControlVerticalStretchFactor:(double)arg2;
 - (void)interactionCoordinator:(id)arg1 updateControlHorizontalCompressionFactor:(double)arg2;
 - (void)hideAuxiliaryViewForInteractionCoordinator:(id)arg1;
@@ -64,6 +66,7 @@
 - (void)invalidateViewProfile;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (_Bool)isUserInteractionEnabled;
+- (id)viewControllerForTouchContinuation;
 - (void)setPreferredControl:(unsigned long long)arg1;
 - (void)setControlOrientation:(unsigned long long)arg1;
 - (void)setControlSize:(unsigned long long)arg1;

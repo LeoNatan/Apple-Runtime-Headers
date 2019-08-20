@@ -6,10 +6,15 @@
 
 #import <UIKit/UIViewController.h>
 
-@class MPAVClippingTableView, MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingViewControllerUpdate, MPSectionedCollection, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, UIColor, UITableView;
+#import <MediaPlayer/MPAVRoutingControllerDelegate-Protocol.h>
+#import <MediaPlayer/MPAVRoutingTableViewCellDelegate-Protocol.h>
+#import <MediaPlayer/UITableViewDataSource-Protocol.h>
+#import <MediaPlayer/UITableViewDelegate-Protocol.h>
+
+@class MPAVClippingTableView, MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingViewControllerUpdate, MPSectionedCollection, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, NSString, UIColor, UITableView;
 @protocol MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate;
 
-@interface MPAVRoutingViewController : UIViewController
+@interface MPAVRoutingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate>
 {
     MPAVClippingTableView *_tableView;
     MPAVRoutingViewControllerUpdate *_pendingUpdate;
@@ -83,11 +88,14 @@
 - (void)_endRouteDiscovery;
 - (void)_beginRouteDiscovery;
 - (void)_unregisterNotifications;
+- (void)_registerCarPlayObserver;
 - (void)_registerNotifications;
 - (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (double)_tableViewHeightAccordingToDataSource;
+- (void)_diplayShareAudioDisabledAlertForReason:(id)arg1;
+- (BOOL)_wouldShareAudioForPickedRoute:(id)arg1 operation:(long long)arg2 pickedRoutes:(id)arg3;
 @property(nonatomic, setter=_setShouldPickRouteOnSelection:) BOOL _shouldPickRouteOnSelection;
 @property(nonatomic, setter=_setShouldAutomaticallyUpdateRoutesList:) BOOL _shouldAutomaticallyUpdateRoutesList;
 @property(retain, nonatomic, setter=_setTableCellsContentColor:) UIColor *_tableCellsContentColor;
@@ -112,6 +120,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (struct CGSize)preferredContentSize;
+- (BOOL)shouldOverrideContentSizeCategory:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
@@ -120,6 +129,7 @@
 - (void)viewDidLoad;
 - (void)resetScrollPosition;
 - (void)resetDisplayedRoutes;
+- (BOOL)isInCarPlay;
 @property(nonatomic) BOOL allowMirroring;
 - (void)dealloc;
 - (id)initWithStyle:(unsigned long long)arg1 routingController:(id)arg2;
@@ -130,6 +140,12 @@
 - (id)_alertControllerForUpdateDisplayedRoutesCrashWithLogFileURL:(id)arg1 exception:(id)arg2;
 - (id)_writeToDiskWithUpdateDisplayedRoutesStatePropertyList:(id)arg1 error:(id *)arg2;
 - (id)_generatePropertyListFromUpdateDisplayedRoutesState:(id)arg1 exception:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

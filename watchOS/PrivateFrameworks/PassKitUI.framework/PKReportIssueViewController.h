@@ -68,6 +68,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
+- (id)_statementName;
 - (void)_updateFooterPlacement;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewDidLayoutSubviews;

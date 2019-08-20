@@ -9,8 +9,10 @@
 @interface PXGSplitLayout : PXGLayout
 {
     CDStruct_d97c9657 _updateFlags;
+    CDStruct_d97c9657 _additionalUpdateFlags;
     _Bool _settingSublayouts;
     _Bool _isUpdatingSublayouts;
+    _Bool _isPerformingAdditionalUpdate;
     _Bool _shouldExcludeTopAndBottomPaddingFromReferenceSize;
     PXGLayout *_firstSublayout;
     PXGLayout *_secondSublayout;
@@ -37,6 +39,7 @@
 - (void)userInterfaceDirectionDidChange;
 - (void)screenScaleDidChange;
 - (void)safeAreaInsetsDidChange;
+- (void)containingScrollViewDidScroll:(struct CGPoint)arg1;
 - (void)visibleRectDidChange;
 - (void)referenceSizeDidChange;
 - (void)viewEnvironmentDidChange;

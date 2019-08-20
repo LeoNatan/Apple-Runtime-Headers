@@ -27,6 +27,7 @@
 - (long long)presentationPriority;
 - (long long)presentationTransition;
 - (long long)presentationStyle;
+- (void)willTransitionToPresented:(_Bool)arg1;
 - (id)displayLayoutElementIdentifier;
 - (void)updateForPresentation:(id)arg1;
 - (void)aggregateBehavior:(id)arg1;

@@ -18,20 +18,22 @@
     struct Results _results;
     RLMRealm *_realm;
     struct RLMClassInfo *_info;
+    _Bool _optional;
 }
 
 + (id)objectWithThreadSafeReference:(unique_ptr_d0e912ad)arg1 metadata:(id)arg2 realm:(id)arg3;
 + (id)emptyDetachedResults;
-+ (id)resultsWithObjectInfo:(struct RLMClassInfo *)arg1 results:(struct Results)arg2;
++ (id)resultsWithObjectInfo:(struct RLMClassInfo *)arg1 results:(struct Results *)arg2;
 @property(readonly, nonatomic) RLMRealm *realm; // @synthesize realm=_realm;
+@property(nonatomic, getter=isOptional) _Bool optional; // @synthesize optional=_optional;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) id objectiveCMetadata;
 - (unique_ptr_d0e912ad)makeThreadSafeReference;
 @property(readonly, nonatomic, getter=isAttached) _Bool attached;
 - (id)addNotificationBlock:(CDUnknownBlockType)arg1;
+- (id)fastEnumerator;
 - (struct TableView)tableView;
-- (unsigned long long)indexInSource:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
 - (void)deleteObjectsFromRealm;
 - (id)averageOfProperty:(id)arg1;
@@ -40,8 +42,8 @@
 - (id)minOfProperty:(id)arg1;
 - (id)aggregate:(id)arg1 method:(id)arg2 methodName:(_Bool)arg3 returnNilForEmpty: /* Error: Ran out of types for this method. */;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (id)distinctResultsUsingKeyPaths:(id)arg1;
 - (id)sortedResultsUsingDescriptors:(id)arg1;
-- (id)sortedResultsUsingProperty:(id)arg1 ascending:(_Bool)arg2;
 - (id)sortedResultsUsingKeyPath:(id)arg1 ascending:(_Bool)arg2;
 - (id)objectsWithPredicate:(id)arg1;
 - (id)objectsWhere:(id)arg1 args:(struct __va_list_tag [1])arg2;
@@ -68,8 +70,12 @@
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 @property(readonly, nonatomic) struct RLMClassInfo *objectInfo;
 @property(readonly, copy, nonatomic) NSString *objectClassName;
+@property(readonly, nonatomic) int type;
 @property(readonly, nonatomic) unsigned long long count;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated;
+- (id)subresultsWithResults:(struct Results)arg1;
+- (id)initWithObjectInfo:(struct RLMClassInfo *)arg1 results:(struct Results *)arg2;
+- (id)initWithResults:(struct Results)arg1;
 - (id)initPrivate;
 
 // Remaining properties

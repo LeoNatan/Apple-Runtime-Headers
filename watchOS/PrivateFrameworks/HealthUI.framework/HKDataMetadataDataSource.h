@@ -8,17 +8,18 @@
 
 #import <HealthUI/HKDataMetadataProvider-Protocol.h>
 
-@class HKSample;
+@class HKSample, HKUnitPreferenceController;
 
 @interface HKDataMetadataDataSource : NSObject <HKDataMetadataProvider>
 {
     HKSample *_sample;
+    HKUnitPreferenceController *_unitPreferenceController;
 }
 
 - (void).cxx_destruct;
 - (id)_mediaSourceDisplayNamesForSample:(id)arg1;
 - (void)addDetailValuesToSection:(id)arg1;
-- (id)initWithSample:(id)arg1;
+- (id)initWithSample:(id)arg1 unitPreferenceController:(id)arg2;
 
 @end
 

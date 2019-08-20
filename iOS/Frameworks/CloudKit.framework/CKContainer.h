@@ -108,6 +108,7 @@
 - (void)dumpDaemonStatusReportToFileHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpAllClientsStatusReportToFileHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)CKStatusReportArray;
+- (void)fetchFrameworkCachesDirectoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deviceCountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_submitEventMetric:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)submitEventMetric:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -13,6 +13,7 @@
 @interface _UXNavigationItemContainerView : UXView <_UXBarItemsContainer>
 {
     UXImageView *_snaphotView;
+    BOOL _hidesGlobalTrailingView;
     UXNavigationItem *_item;
     UXNavigationBar *_navigationBar;
     unsigned long long _state;
@@ -64,6 +65,7 @@
 - (void)_updateItemViews;
 - (void)_updateItemsSortedByPriority;
 - (void)_updateTitleView;
+@property(readonly, nonatomic) BOOL hidesGlobalTrailingView; // @synthesize hidesGlobalTrailingView=_hidesGlobalTrailingView;
 - (void)cancelTransistion;
 - (void)prepareForTransition;
 - (void)dealloc;

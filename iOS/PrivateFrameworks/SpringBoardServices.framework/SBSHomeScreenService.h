@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)addWidgetToTodayViewWithBundleIdentifier:(id)arg1;
 - (id)folderPathToIconWithBundleIdentifier:(id)arg1;
 - (void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetHomeScreenLayoutWithCompletion:(CDUnknownBlockType)arg1;

@@ -33,7 +33,12 @@
 }
 
 + (_Bool)shouldDeferAfterError:(id)arg1;
++ (void)unregisterActivitiesWithDatabase:(id)arg1 ignoringSystemConditions:(_Bool)arg2;
 + (id)earliestStartDateAfterError:(id)arg1;
++ (id)saveSubscriptionActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(_Bool)arg2;
++ (id)modifyPendingChangesActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(_Bool)arg2;
++ (id)fetchChangesActivityIdentifierInDatabase:(id)arg1 ignoringSystemConditions:(_Bool)arg2;
++ (id)activityIdentifierWithName:(id)arg1 database:(id)arg2 ignoringSystemConditions:(_Bool)arg3 uniquenessPointer:(id)arg4;
 + (id)supportedDatabaseScopes;
 @property(nonatomic, getter=isAutomaticSyncingDisabled) _Bool automaticSyncingDisabled; // @synthesize automaticSyncingDisabled=_automaticSyncingDisabled;
 @property(nonatomic) int priorityForModifications; // @synthesize priorityForModifications=_priorityForModifications;
@@ -75,6 +80,7 @@
 - (void)performSaveSubscriptionActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performModifyPendingChangesActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performFetchChangesActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)unregisterActivities;
 - (void)registerSchedulerActivities;
 - (void)_saveSubscriptionIfNecessaryWithOperationGroup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveSubscriptionIfNecessaryWithOperationGroup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

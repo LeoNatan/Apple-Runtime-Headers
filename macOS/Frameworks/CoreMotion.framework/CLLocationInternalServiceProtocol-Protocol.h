@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSDictionary, NSString, NSUUID;
+@class NSArray, NSData, NSDictionary, NSString, NSUUID;
 
 @protocol CLLocationInternalServiceProtocol
+- (void)notifyWeatherForecast:(NSDictionary *)arg1 airQualityConditions:(NSDictionary *)arg2 hourlyForecasts:(NSArray *)arg3 dailyForecasts:(NSArray *)arg4 latitude:(double)arg5 longitude:(double)arg6;
 - (void)notifyPassKitPayment:(NSString *)arg1 transaction:(NSString *)arg2 info:(NSDictionary *)arg3;
 - (void)getLocationServicesCapableWithReplyBlock:(void (^)(NSError *, _Bool))arg1;
 - (void)getPipelinedCacheWithReply:(void (^)(NSError *, NSArray *))arg1;

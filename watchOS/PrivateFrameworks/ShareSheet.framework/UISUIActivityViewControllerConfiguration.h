@@ -8,7 +8,7 @@
 
 #import <ShareSheet/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, UIColor, UISUISecurityContext, UITraitCollection;
+@class NSArray, NSLocale, NSString, UIColor, UISUISecurityContext, UITraitCollection;
 
 @interface UISUIActivityViewControllerConfiguration : NSObject <NSSecureCoding>
 {
@@ -17,7 +17,7 @@
     _Bool _shouldMatchOnlyUserElectedExtensions;
     _Bool _shouldExcludeiCloudAddToDriveActivity;
     _Bool _shouldExcludeiCloudSharingActivity;
-    _Bool _shouldPresentAirDropSection;
+    _Bool _shouldSkipPeopleSuggestions;
     _Bool _canExcludeExtensionActivities;
     _Bool _canShowShareSheetPlugIns;
     _Bool _whitelistActionActivitiesOnly;
@@ -36,6 +36,7 @@
     NSArray *_initialPhotosAssetDetails;
     NSString *_sessionID;
     UITraitCollection *_hostTraitCollection;
+    NSLocale *_hostLocale;
     NSArray *_includedActivityTypes;
     NSArray *_excludedActivityTypes;
     NSArray *_activityTypeOrder;
@@ -56,12 +57,13 @@
 @property(nonatomic) _Bool whitelistActionActivitiesOnly; // @synthesize whitelistActionActivitiesOnly=_whitelistActionActivitiesOnly;
 @property(nonatomic) _Bool canShowShareSheetPlugIns; // @synthesize canShowShareSheetPlugIns=_canShowShareSheetPlugIns;
 @property(nonatomic) _Bool canExcludeExtensionActivities; // @synthesize canExcludeExtensionActivities=_canExcludeExtensionActivities;
-@property(nonatomic) _Bool shouldPresentAirDropSection; // @synthesize shouldPresentAirDropSection=_shouldPresentAirDropSection;
+@property(nonatomic) _Bool shouldSkipPeopleSuggestions; // @synthesize shouldSkipPeopleSuggestions=_shouldSkipPeopleSuggestions;
 @property(nonatomic) _Bool shouldExcludeiCloudSharingActivity; // @synthesize shouldExcludeiCloudSharingActivity=_shouldExcludeiCloudSharingActivity;
 @property(nonatomic) _Bool shouldExcludeiCloudAddToDriveActivity; // @synthesize shouldExcludeiCloudAddToDriveActivity=_shouldExcludeiCloudAddToDriveActivity;
 @property(nonatomic) _Bool shouldMatchOnlyUserElectedExtensions; // @synthesize shouldMatchOnlyUserElectedExtensions=_shouldMatchOnlyUserElectedExtensions;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(nonatomic) _Bool allowsEmbedding; // @synthesize allowsEmbedding=_allowsEmbedding;
+@property(retain, nonatomic) NSLocale *hostLocale; // @synthesize hostLocale=_hostLocale;
 @property(nonatomic) struct NSDirectionalEdgeInsets hostLayoutMargins; // @synthesize hostLayoutMargins=_hostLayoutMargins;
 @property(retain, nonatomic) UITraitCollection *hostTraitCollection; // @synthesize hostTraitCollection=_hostTraitCollection;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;

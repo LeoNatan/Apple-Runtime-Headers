@@ -27,14 +27,15 @@
 - (void).cxx_destruct;
 - (void)_queue_updateGizmoAssertionSyncWithModeAssertionUpdateContext:(id)arg1;
 - (void)_queue_updateCompanionAssertionMirroringForState:(id)arg1;
-- (void)_queue_updateCompanionToggleSyncForGizmoUpdateDate:(id)arg1 modeAssertionUpdateContext:(id)arg2;
+- (_Bool)_queue_updateCompanionToggleSyncForGizmoUpdateDate:(id)arg1 modeAssertionUpdateContext:(id)arg2;
 - (void)_queue_updateGizmoToggleSyncForState:(id)arg1 companionUpdateDate:(id)arg2 reason:(unsigned int)arg3;
 - (id)_queue_gizmoUpdateDate;
 - (void)_queue_updateToggleSyncForReason:(unsigned int)arg1;
 - (void)_endMonitoringForChanges;
 - (void)_beginMonitoringForChanges;
 - (void)_updateGizmoAssertionSync;
-- (void)updateForReason:(unsigned int)arg1;
+- (void)_updateForReason:(unsigned int)arg1;
+- (void)updateForStateUpdate:(id)arg1;
 - (void)resume;
 - (void)dealloc;
 - (id)initWithClientDetailsProvider:(id)arg1;

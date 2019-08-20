@@ -6,12 +6,12 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class NCNotificationRequest, NSSet;
+@class NCNotificationRequest, NSSet, NSString;
 
 @protocol NCAlertingController <NSObject>
 - (void)resetAutomaticLockStateForNotificationRequest:(NCNotificationRequest *)arg1;
 - (void)killAlertsForNotificationRequest:(NCNotificationRequest *)arg1;
-- (void)alertOnPresentationForNotificationRequest:(NCNotificationRequest *)arg1;
+- (void)alertOnPresentationForNotificationRequest:(NCNotificationRequest *)arg1 presentingDestination:(NSString *)arg2;
 - (void)alertOnPostForNotificationRequest:(NCNotificationRequest *)arg1 forRequestDestinations:(NSSet *)arg2;
 @end
 

@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, UILabel, UIView, _UINavigationBarLargeTitleView, _UINavigationControllerRefreshControlHost;
+@class NSMutableDictionary, UILabel, UIView, _UINavigationBarLargeTitleView;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarLargeTitleViewLayout : NSObject
 {
-    UIView *_refreshHostContainerView;
     NSMutableDictionary *_titleHeightCache;
     NSMutableDictionary *_restingHeightCache;
     double _cachedRestingHeight;
@@ -24,13 +23,9 @@ __attribute__((visibility("hidden")))
     double _titleRestingHeight;
     UIView *_accessoryView;
     unsigned long long _accessoryViewHorizontalAlignment;
-    _UINavigationControllerRefreshControlHost *_refreshControlHost;
-    double _restingHeightOfRefreshControl;
     struct NSDirectionalEdgeInsets _layoutMargins;
 }
 
-@property(nonatomic) double restingHeightOfRefreshControl; // @synthesize restingHeightOfRefreshControl=_restingHeightOfRefreshControl;
-@property(readonly, nonatomic) _UINavigationControllerRefreshControlHost *refreshControlHost; // @synthesize refreshControlHost=_refreshControlHost;
 @property(nonatomic) struct NSDirectionalEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) unsigned long long accessoryViewHorizontalAlignment; // @synthesize accessoryViewHorizontalAlignment=_accessoryViewHorizontalAlignment;
 @property(nonatomic) _Bool providesExtraSpaceForExcessiveLineHeights; // @synthesize providesExtraSpaceForExcessiveLineHeights=_providesExtraSpaceForExcessiveLineHeights;
@@ -50,11 +45,9 @@ __attribute__((visibility("hidden")))
 - (void)setContentHidden:(_Bool)arg1;
 - (void)setContentAlpha:(double)arg1;
 - (void)cleanupAfterLayoutTransitionCompleted;
-- (double)_unobstructedHeightOfRefreshControlWithFrame:(struct CGRect)arg1;
 - (void)layoutViewsWithOffset:(struct UIOffset)arg1 useRestingTitleHeight:(_Bool)arg2;
 - (void)layoutViews;
 - (void)_enforceLayoutOrdering;
-- (void)configureRefreshControlUsingHost:(id)arg1;
 - (void)updateRestingTitleHeight;
 - (struct CGRect)_contentLayoutBounds;
 - (struct CGRect)_contentLayoutBoundsUsingRestingTitleHeight:(_Bool)arg1;

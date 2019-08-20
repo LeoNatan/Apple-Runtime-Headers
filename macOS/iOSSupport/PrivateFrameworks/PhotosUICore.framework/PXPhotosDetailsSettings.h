@@ -42,6 +42,7 @@
     long long _editorialLayoutTargetRowsForChunk;
     long long _editorialLayoutActivityFeedItemCountThreshold;
     double _assetsWidgetPlaceholderAspectRatio;
+    long long _debugBadgeInfoType;
     long long _peopleWidgetMaximumNumberOfPeople;
     double _addToTabOpacity;
     double _addToTabDuration;
@@ -50,9 +51,9 @@
     double _addToTabRotationDelay;
     double _addToTabFadeOutDelay;
     double _addToTabEndRotation;
-    struct PXAssetBadgeInfo _debugBadgeInfo;
 }
 
++ (id)transientProperties;
 + (id)sharedInstance;
 @property(nonatomic) double addToTabEndRotation; // @synthesize addToTabEndRotation=_addToTabEndRotation;
 @property(nonatomic) double addToTabFadeOutDelay; // @synthesize addToTabFadeOutDelay=_addToTabFadeOutDelay;
@@ -65,7 +66,7 @@
 @property(nonatomic) long long peopleWidgetMaximumNumberOfPeople; // @synthesize peopleWidgetMaximumNumberOfPeople=_peopleWidgetMaximumNumberOfPeople;
 @property(nonatomic) BOOL peopleWidgetDisableSocialGroup; // @synthesize peopleWidgetDisableSocialGroup=_peopleWidgetDisableSocialGroup;
 @property(nonatomic) BOOL placesWidgetShowOnlyPlaceholder; // @synthesize placesWidgetShowOnlyPlaceholder=_placesWidgetShowOnlyPlaceholder;
-@property(nonatomic) struct PXAssetBadgeInfo debugBadgeInfo; // @synthesize debugBadgeInfo=_debugBadgeInfo;
+@property(nonatomic) long long debugBadgeInfoType; // @synthesize debugBadgeInfoType=_debugBadgeInfoType;
 @property(nonatomic) BOOL enableDebugCurationBadge; // @synthesize enableDebugCurationBadge=_enableDebugCurationBadge;
 @property(nonatomic) BOOL allowEditorialLayoutStressTest; // @synthesize allowEditorialLayoutStressTest=_allowEditorialLayoutStressTest;
 @property(nonatomic) double assetsWidgetPlaceholderAspectRatio; // @synthesize assetsWidgetPlaceholderAspectRatio=_assetsWidgetPlaceholderAspectRatio;
@@ -97,6 +98,7 @@
 @property(nonatomic) BOOL showDemoTilingViewWidget; // @synthesize showDemoTilingViewWidget=_showDemoTilingViewWidget;
 @property(nonatomic) BOOL showAssetsWidget; // @synthesize showAssetsWidget=_showAssetsWidget;
 @property(nonatomic) BOOL showHeaderWidget; // @synthesize showHeaderWidget=_showHeaderWidget;
+- (struct PXAssetBadgeInfo)debugBadgeInfo;
 - (void)setDefaultValues;
 - (id)parentSettings;
 

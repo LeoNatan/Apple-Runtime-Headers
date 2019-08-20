@@ -8,30 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOSharedNavSenderInfo : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
+    NSString *_fromDisplayName;
+    NSString *_fromIdentifier;
     NSString *_localContactIdentifier;
     NSString *_localName;
-    NSMutableArray *_remoteAccountIdentifiers;
     struct {
         unsigned int read_unknownFields:1;
+        unsigned int read_fromDisplayName:1;
+        unsigned int read_fromIdentifier:1;
         unsigned int read_localContactIdentifier:1;
         unsigned int read_localName:1;
-        unsigned int read_remoteAccountIdentifiers:1;
         unsigned int wrote_unknownFields:1;
+        unsigned int wrote_fromDisplayName:1;
+        unsigned int wrote_fromIdentifier:1;
         unsigned int wrote_localContactIdentifier:1;
         unsigned int wrote_localName:1;
-        unsigned int wrote_remoteAccountIdentifiers:1;
     } _flags;
 }
 
 + (_Bool)isValid:(id)arg1;
-+ (Class)remoteAccountIdentifierType;
 - (void).cxx_destruct;
 - (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
@@ -45,19 +47,18 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *fromDisplayName;
+@property(readonly, nonatomic) _Bool hasFromDisplayName;
+- (void)_readFromDisplayName;
+@property(retain, nonatomic) NSString *fromIdentifier;
+@property(readonly, nonatomic) _Bool hasFromIdentifier;
+- (void)_readFromIdentifier;
 @property(retain, nonatomic) NSString *localContactIdentifier;
 @property(readonly, nonatomic) _Bool hasLocalContactIdentifier;
 - (void)_readLocalContactIdentifier;
 @property(retain, nonatomic) NSString *localName;
 @property(readonly, nonatomic) _Bool hasLocalName;
 - (void)_readLocalName;
-- (id)remoteAccountIdentifierAtIndex:(unsigned long long)arg1;
-- (unsigned long long)remoteAccountIdentifiersCount;
-- (void)_addNoFlagsRemoteAccountIdentifier:(id)arg1;
-- (void)addRemoteAccountIdentifier:(id)arg1;
-- (void)clearRemoteAccountIdentifiers;
-@property(retain, nonatomic) NSMutableArray *remoteAccountIdentifiers;
-- (void)_readRemoteAccountIdentifiers;
 
 @end
 

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     UIWindow *_baseWindow;
     UIWindow *_ourWindow;
     id _interactionDelegate;
-    long long _startOrientation;
 }
 
 - (void).cxx_destruct;

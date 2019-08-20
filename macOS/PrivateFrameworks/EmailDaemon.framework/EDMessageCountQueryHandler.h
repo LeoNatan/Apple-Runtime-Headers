@@ -23,8 +23,11 @@
     struct os_unfair_lock_s _seenMessageIDsLock;
     NSMutableSet *_unacknowledgedCallbacks;
     struct os_unfair_lock_s _callbacksLock;
+    // Error parsing type: {EFAtomicObject="cfObject"Aq}, name: _atomicQueryDescription
+    // Error parsing type: {EFAtomicObject="cfObject"Aq}, name: _atomicMailboxScopeDescription
     BOOL _hasChangesSinceLastCallback;
     EFQuery *_query;
+    EFQuery *_expandedQuery;
     NSPredicate *_predicateIgnoringFlags;
     EMMailboxScope *_serverCountMailboxScope;
     EDMessageQueryEvaluator *_queryEvaluator;
@@ -50,17 +53,21 @@
 @property(retain, nonatomic) EDMessageQueryEvaluator *queryEvaluator; // @synthesize queryEvaluator=_queryEvaluator;
 @property(readonly, nonatomic) EMMailboxScope *serverCountMailboxScope; // @synthesize serverCountMailboxScope=_serverCountMailboxScope;
 @property(retain, nonatomic) NSPredicate *predicateIgnoringFlags; // @synthesize predicateIgnoringFlags=_predicateIgnoringFlags;
+@property(retain, nonatomic) EFQuery *expandedQuery; // @synthesize expandedQuery=_expandedQuery;
 @property(retain, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(long long)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateMostRecentStatusCount:(long long)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceDidUpdateServerCount:(long long)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceIsAddingMailboxWithDatabaseID:(long long)arg1 objectID:(id)arg2;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
 - (void)persistenceDidDeleteMessages:(id)arg1;
+- (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
 - (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceDidAddMessages:(id)arg1;
 - (void)persistenceWillAddMessage:(id)arg1 fromExistingMessage:(BOOL)arg2;
+- (BOOL)_moreThan:(long long)arg1 messagesExistWithMessageIDHeaderHash:(id)arg2;
 - (id)_filterMessages:(id)arg1 potentiallyMatchingMessages:(id *)arg2;
 - (void)_processChangedMessages:(id)arg1 changeKey:(id)arg2;
 - (void)_prepareForChangeWithMessages:(id)arg1 changeKey:(id)arg2;
@@ -68,8 +75,8 @@
 - (void)didSyncMailbox:(id)arg1;
 - (void)willSyncMailbox:(id)arg1;
 - (void)_notifyObserverWithLogMessage:(id)arg1;
-- (void)_decrementLocalCount:(long long)arg1;
-- (void)_incrementLocalCount:(long long)arg1;
+- (void)_decrementLocalCount:(long long)arg1 logMessage:(id)arg2;
+- (void)_incrementLocalCount:(long long)arg1 logMessage:(id)arg2;
 - (void)_scheduleCountCalculation;
 - (void)cancel;
 - (void)dealloc;

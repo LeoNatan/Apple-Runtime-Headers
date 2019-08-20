@@ -56,6 +56,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (double)containerStatusBarAnimationDuration;
 - (_Bool)isContainerStatusBarVisible;
+- (unsigned long long)insertionStyle;
 - (double)baseHysteresisForStartingKillGesture;
 - (_Bool)isTetheredScrollingEnabled;
 - (_Bool)isScrollEnabled;
@@ -84,8 +85,9 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
+- (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
-- (id)appExposeAccessoryButtonBundleID;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 
 @end

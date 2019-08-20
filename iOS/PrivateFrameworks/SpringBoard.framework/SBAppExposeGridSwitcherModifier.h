@@ -40,6 +40,7 @@
 - (_Bool)respondsToSelector:(SEL)arg1;
 @property(readonly, nonatomic) double effectiveHorizontalSpacing;
 @property(readonly, nonatomic) unsigned long long numberOfRows;
+- (unsigned long long)insertionStyle;
 - (struct _NSRange)fullSizeSnapshotsRange;
 - (_Bool)wantsDockBehaviorAssertion;
 - (long long)backdropBlurType;
@@ -47,6 +48,8 @@
 - (double)backdropBlurProgress;
 - (_Bool)isScrollEnabled;
 - (_Bool)isTetheredScrollingEnabled;
+- (id)handleTetheredInsertionEvent:(id)arg1;
+- (id)handleInsertionEvent:(id)arg1;
 - (id)handleTetheredRemovalEvent:(id)arg1;
 - (id)handleMainTransitionEvent:(id)arg1;
 - (id)handleRemovalEvent:(id)arg1;

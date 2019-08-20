@@ -51,6 +51,8 @@
 @property(copy, nonatomic) NSString *secondaryText;
 @property(copy, nonatomic) NSString *primarySubtitleText;
 @property(copy, nonatomic) NSString *primaryText;
+- (void)_updateTopMargin;
+@property(nonatomic) struct CGSize customContentSize;
 @property(readonly, nonatomic) UITapGestureRecognizer *lookViewTapGestureRecognizer;
 
 // Remaining properties
@@ -59,7 +61,6 @@
 @property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred;
 @property(nonatomic) _Bool clipsVisibleContentToBounds;
 @property(nonatomic) double contentBottomInset;
-@property(nonatomic) struct CGSize customContentSize;
 @property(readonly, nonatomic) UIView *customContentView;
 @property(copy, nonatomic) NSDate *date;
 @property(nonatomic, getter=isDateAllDay) _Bool dateAllDay;

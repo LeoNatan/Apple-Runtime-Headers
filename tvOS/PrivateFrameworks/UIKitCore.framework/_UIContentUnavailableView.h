@@ -38,6 +38,9 @@
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (id)_actionButton;
+- (id)_messageLabel;
+- (id)_titleLabel;
 - (_Bool)_hasVibrantButton;
 - (_Bool)_hasVibrantText;
 - (double)_buttonVerticalSpacing;

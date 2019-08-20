@@ -18,6 +18,7 @@
     unsigned int _generatedImage:1;
 }
 
+- (void).cxx_destruct;
 - (_Bool)generatedImage;
 @property(nonatomic) double fontMatchingScaleFactor;
 - (struct CGImage *)rasterizeImageUsingScaleFactor:(double)arg1 forTargetSize:(struct CGSize)arg2;

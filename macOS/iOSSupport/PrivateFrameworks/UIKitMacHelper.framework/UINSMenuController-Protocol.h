@@ -5,16 +5,15 @@
 //
 
 @class NSWindow, UIWindow;
-@protocol UINSCopyConfiguration, UINSMenu;
+@protocol UINSActivityItemsConfiguration, UINSMenu;
 
 @protocol UINSMenuController
 @property(readonly, nonatomic) id currentContextMenu;
 @property(copy, nonatomic) CDUnknownBlockType contextMenuDidClose;
 @property(copy, nonatomic) CDUnknownBlockType performItemAction;
 @property(copy, nonatomic) CDUnknownBlockType validateItem;
-- (void)showSharingMenuInNSWindow:(NSWindow *)arg1 atLocationInWindow:(struct CGPoint)arg2 copyConfiguration:(id <UINSCopyConfiguration>)arg3;
-- (void)showContextMenu:(id <UINSMenu>)arg1 inNSWindow:(NSWindow *)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id <UINSCopyConfiguration>)arg4;
-- (void)showContextMenu:(id <UINSMenu>)arg1 inWindow:(UIWindow *)arg2 atLocationInWindow:(struct CGPoint)arg3 copyConfiguration:(id <UINSCopyConfiguration>)arg4;
+- (void)showSharingMenuInNSWindow:(NSWindow *)arg1 atLocationInWindow:(struct CGPoint)arg2 activityItemsConfiguration:(id <UINSActivityItemsConfiguration>)arg3;
+- (void)showContextMenu:(id <UINSMenu>)arg1 inWindow:(UIWindow *)arg2 atLocationInWindow:(struct CGPoint)arg3 activityItemsConfiguration:(id <UINSActivityItemsConfiguration>)arg4;
 - (void)rebuildMenu:(id <UINSMenu>)arg1;
 - (void)setMainMenuBar:(id <UINSMenu>)arg1;
 @end

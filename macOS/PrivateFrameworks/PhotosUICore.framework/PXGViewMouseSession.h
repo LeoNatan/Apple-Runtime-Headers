@@ -23,6 +23,7 @@
     struct PXSimpleIndexPath _indexPathToDeselectOnMouseUpIfNoDrag;
     BOOL _unmodifiedMouseDownInAlreadySelectedItem;
     BOOL _dragSelectShouldModifyExistingSelection;
+    BOOL _allowsSelectionModification;
     BOOL _allowsEmptySelection;
     BOOL _allowsMultipleSelection;
     PXGView *_gridView;
@@ -34,6 +35,7 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property(readonly, nonatomic) BOOL allowsEmptySelection; // @synthesize allowsEmptySelection=_allowsEmptySelection;
+@property(nonatomic) BOOL allowsSelectionModification; // @synthesize allowsSelectionModification=_allowsSelectionModification;
 @property(nonatomic) __weak id <PXGViewMouseSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;

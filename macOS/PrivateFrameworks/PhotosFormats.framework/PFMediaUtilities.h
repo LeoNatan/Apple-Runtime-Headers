@@ -10,6 +10,9 @@
 {
 }
 
++ (long long)rawSourceMaximumPixelCount;
++ (BOOL)canLoadAssetAsRawWithImageProperties:(id)arg1;
++ (struct CGSize)maximumImageSizeFromProperties:(id)arg1;
 + (id)mainVideoTrackForAsset:(id)arg1;
 + (BOOL)isPdfUTI:(id)arg1;
 + (BOOL)isPsdUTI:(id)arg1;

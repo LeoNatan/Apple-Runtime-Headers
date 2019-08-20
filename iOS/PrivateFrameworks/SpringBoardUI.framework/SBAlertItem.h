@@ -51,6 +51,8 @@
 @property(nonatomic) _Bool allowInSetup; // @synthesize allowInSetup=_allowInSetup;
 @property(nonatomic) _Bool ignoreIfAlreadyDisplaying; // @synthesize ignoreIfAlreadyDisplaying=_ignoreIfAlreadyDisplaying;
 - (void).cxx_destruct;
+- (_Bool)unlocksScreen;
+- (_Bool)undimsScreen;
 - (_Bool)dismissOnLock;
 - (void)buttonDismissed;
 - (void)dismiss:(int)arg1;
@@ -93,8 +95,7 @@
 - (_Bool)didPlayPresentationSound;
 - (_Bool)reappearsAfterUnlock;
 - (_Bool)reappearsAfterLock;
-- (_Bool)unlocksScreen;
-- (_Bool)undimsScreen;
+- (_Bool)wakeDisplay;
 - (_Bool)shouldShowInEmergencyCall;
 - (_Bool)shouldShowInLockScreen;
 - (_Bool)allowLockScreenDismissal;

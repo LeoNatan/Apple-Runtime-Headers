@@ -10,10 +10,13 @@
 {
 }
 
++ (id)_sharedAAFollowUpController;
+- (void)_dismissFamilyFollowUpsForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_userInfoForPrefPaneWithAction:(id)arg1 userInfo:(id)arg2;
 - (void)_postFollowUpForAccount:(id)arg1 userInfo:(id)arg2 isInvite:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)synchronizeFollowUp:(id)arg1;
-- (id)_followUpItemForInvite:(id)arg1 isInvite:(BOOL)arg2;
+- (id)_followUpItemForUserInfo:(id)arg1 isInvite:(BOOL)arg2;
+- (id)_getTempTransferTitle:(id)arg1;
 - (id)_getTempInviteTitle:(id)arg1;
 - (id)_newFollowUpController;
 

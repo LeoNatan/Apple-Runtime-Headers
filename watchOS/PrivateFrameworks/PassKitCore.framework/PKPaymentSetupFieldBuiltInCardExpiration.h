@@ -10,8 +10,6 @@
 {
 }
 
-- (id)_calendar;
-- (id)_locale;
 - (_Bool)isBuiltIn;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
 

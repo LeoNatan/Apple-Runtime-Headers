@@ -99,6 +99,7 @@
 - (void)givenNameDidChange:(id)arg1;
 - (void)saveDraftContact;
 - (void)updateAvatarCarouselContactName;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithContactStore:(id)arg1 contact:(id)arg2 nameProvider:(id)arg3 avatarRecord:(id)arg4;

@@ -11,8 +11,10 @@
     unsigned long long _numberOfSections;
     CDStruct_826e8cf1 _currentMap;
     CDStruct_826e8cf1 _bufferedMap;
+    _Bool _skipSetupForReadableContentGuide;
 }
 
+@property(nonatomic) _Bool skipSetupForReadableContentGuide; // @synthesize skipSetupForReadableContentGuide=_skipSetupForReadableContentGuide;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (_Bool)shouldMapSection:(unsigned long long)arg1;
 - (long long)rowAnimationForDeletingSection:(unsigned long long)arg1;

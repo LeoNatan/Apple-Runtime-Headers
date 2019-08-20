@@ -27,7 +27,7 @@
 @property(nonatomic) __weak id <SXLayouterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)childColumnLayoutForRowLayout:(id)arg1 display:(id)arg2 collectionContainerBlueprint:(id)arg3 childContainerComponentBlueprint:(id)arg4 documentColumnLayout:(id)arg5 unitConverter:(id)arg6;
-- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 shouldContinue:(char *)arg3;
+- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 description:(id)arg3 shouldContinue:(char *)arg4;
 - (id)initWithContainerComponent:(id)arg1 layouterFactory:(id)arg2 columnCalculator:(id)arg3 unitConverterFactory:(id)arg4;
 
 // Remaining properties

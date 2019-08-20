@@ -95,6 +95,7 @@
 - (void)updateProbes:(id)arg1 atTime:(double)arg2;
 - (void)_updateProbes:(id)arg1 withProgress:(id)arg2;
 - (id)snapshotRendererWithSize:(struct CGSize)arg1;
+- (struct CGImage *)_createSnapshotAtTime:(double)arg1 withSize:(struct CGSize)arg2 antialiasingMode:(unsigned long long)arg3;
 - (id)snapshotAtTime:(double)arg1 withSize:(struct CGSize)arg2 antialiasingMode:(unsigned long long)arg3;
 - (id)snapshotAtTime:(double)arg1;
 - (struct CGImage *)createSnapshot:(double)arg1;
@@ -136,6 +137,8 @@
 - (id)_compilationErrors;
 - (void)set_collectCompilationErrors:(BOOL)arg1;
 - (BOOL)_collectCompilationErrors;
+- (void)set_shouldDelegateARCompositing:(BOOL)arg1;
+- (BOOL)_shouldDelegateARCompositing;
 - (void)set_enableARMode:(BOOL)arg1;
 - (BOOL)_enableARMode;
 - (void)set_disableLinearRendering:(BOOL)arg1;

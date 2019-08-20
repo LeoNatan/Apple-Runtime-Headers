@@ -24,7 +24,7 @@
 - (void)activateAlias:(id)arg1;
 - (id)activeAliases;
 - (id)aliases;
-- (id)connectionForUnicastParameter:(id)arg1 error:(id *)arg2;
+- (void)requestConnectionForUnicastParameter:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)datagramChannelForSocketDescriptor:(int)arg1 error:(id *)arg2;
 - (id)datagramChannelForSessionDestination:(id)arg1 error:(id *)arg2;
 - (id)streamConnectionForSocketDescriptor:(int)arg1 error:(id *)arg2;

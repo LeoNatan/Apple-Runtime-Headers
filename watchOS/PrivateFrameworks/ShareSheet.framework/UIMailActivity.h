@@ -48,7 +48,8 @@
 - (id)activityViewController;
 - (void)_setSessionID:(id)arg1;
 - (void)_setMailSubject:(id)arg1;
-- (void)prepareWithActivityItems:(id)arg1 recipients:(id)arg2;
+- (void)setRecipients:(id)arg1;
+- (void)_prepareWithActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (void)autosaveWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_restoreDraft;

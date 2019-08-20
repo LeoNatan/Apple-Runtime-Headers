@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: skipNotifyForAttachmentChanged
     // Error parsing type: , name: attachmentsStorage
     // Error parsing type: , name: cachedCombinedAttachment
-    // Error parsing type: , name: inViewContainer
+    // Error parsing type: , name: focusableAncestor
 }
 
 - (void).cxx_destruct;

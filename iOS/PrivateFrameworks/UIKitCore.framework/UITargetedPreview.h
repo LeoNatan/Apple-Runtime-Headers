@@ -21,9 +21,11 @@
     UIPreviewParameters *_parameters;
     UIView *_viewToSnapshot;
     id <_UIPreviewProvider> __PreviewProvider;
+    UIView *_overridePositionTrackingView;
 }
 
 + (id)new;
+@property(retain, nonatomic, setter=_setOverridePositionTrackingView:) UIView *overridePositionTrackingView; // @synthesize overridePositionTrackingView=_overridePositionTrackingView;
 @property(readonly, nonatomic) _Bool hasCustomTarget; // @synthesize hasCustomTarget=_hasCustomTarget;
 @property(readonly, nonatomic) _Bool sourceViewIsInViewHierarchy; // @synthesize sourceViewIsInViewHierarchy=_sourceViewIsInViewHierarchy;
 @property(readonly, nonatomic) id <_UIPreviewProvider> _PreviewProvider; // @synthesize _PreviewProvider=__PreviewProvider;

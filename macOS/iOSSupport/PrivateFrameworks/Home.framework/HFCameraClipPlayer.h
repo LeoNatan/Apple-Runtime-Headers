@@ -9,7 +9,7 @@
 #import <Home/HFCameraClipPlaying-Protocol.h>
 #import <Home/HFCameraClipQueueing-Protocol.h>
 
-@class AVPlayer, HFCameraClipPlayerItem, HFCameraClipPosition, HFCameraClipQueuePlayer, NSArray, NSError, NSString;
+@class AVPlayer, HFCameraClipPlayerItem, HFCameraClipPosition, HFCameraClipQueuePlayer, HMCameraProfile, NSArray, NSError, NSString;
 @protocol HFCameraClipPlayerDelegate, HFCameraClipScrubbing;
 
 @interface HFCameraClipPlayer : NSObject <HFCameraClipQueueing, HFCameraClipPlaying>
@@ -18,6 +18,7 @@
     BOOL _mutatingQueue;
     id <HFCameraClipPlayerDelegate> _delegate;
     id <HFCameraClipScrubbing> _scrubber;
+    HMCameraProfile *_cameraProfile;
     NSArray *_clips;
     NSError *_error;
     HFCameraClipPlayerItem *_lastPlayerItem;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic, getter=isMutatingQueue) BOOL mutatingQueue; // @synthesize mutatingQueue=_mutatingQueue;
 @property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
+@property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(nonatomic, getter=isScrubbing) BOOL scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber; // @synthesize scrubber=_scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,7 +38,7 @@
 - (void)seekToOffset:(double)arg1 inItem:(id)arg2;
 - (void)removeQueueableItem:(id)arg1;
 - (void)insertQueueableItem:(id)arg1 afterItem:(id)arg2;
-- (id)createQueueableItemForClip:(id)arg1;
+- (id)createQueueableItemForClipManager:(id)arg1 clip:(id)arg2;
 @property(readonly, nonatomic) NSArray *queuableItems;
 - (void)playerItemDidPlayToEndTime:(id)arg1;
 - (void)_rebuildPlayerQueueForPosition:(id)arg1;
@@ -54,8 +56,8 @@
 @property(copy, nonatomic) HFCameraClipPosition *currentPosition;
 @property(readonly, nonatomic) AVPlayer *player;
 - (void)dealloc;
-- (id)initWithClips:(id)arg1 queuePlayer:(id)arg2;
-- (id)initWithClips:(id)arg1;
+- (id)initWithCameraProfile:(id)arg1 clips:(id)arg2 queuePlayer:(id)arg3;
+- (id)initWithCameraProfile:(id)arg1 clips:(id)arg2;
 - (id)init;
 
 // Remaining properties

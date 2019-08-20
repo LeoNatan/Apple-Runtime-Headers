@@ -14,6 +14,7 @@
 
 - (id)message;
 @property(readonly, copy, nonatomic) NSString *locationText;
+- (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 - (void)configureBalloonView:(id)arg1;
 - (id)sender;
 - (id)time;

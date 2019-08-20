@@ -17,7 +17,7 @@
 }
 
 @property(copy, nonatomic) NSArray *itemEffects; // @synthesize itemEffects=_itemEffects;
-@property(retain, nonatomic) _UITabBarItemData *data; // @synthesize data=_data;
+@property(retain, nonatomic, setter=_setData:) _UITabBarItemData *_data; // @synthesize _data;
 - (void).cxx_destruct;
 @property(nonatomic) struct UIOffset badgePositionAdjustment;
 @property(copy, nonatomic) UIColor *badgeBackgroundColor;

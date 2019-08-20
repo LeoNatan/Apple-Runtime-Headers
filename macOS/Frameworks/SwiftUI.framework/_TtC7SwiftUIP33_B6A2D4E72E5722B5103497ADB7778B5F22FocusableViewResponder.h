@@ -8,9 +8,11 @@
 
 @interface _TtC7SwiftUIP33_B6A2D4E72E5722B5103497ADB7778B5F22FocusableViewResponder : _TtC7SwiftUI26DefaultLayoutViewResponder
 {
+    // Error parsing type: , name: focusAccessibilityNode
     // Error parsing type: , name: baseItem
     // Error parsing type: , name: transform
     // Error parsing type: , name: size
+    // Error parsing type: , name: _focusRingView
 }
 
 @end

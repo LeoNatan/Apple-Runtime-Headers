@@ -13,6 +13,7 @@
 + (id)_bagCreationLock;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)sharedInstance;
+- (unsigned long long)_bagDomain;
 - (id)init;
 - (id)_bagDefaultsDomain;
 

@@ -39,6 +39,7 @@
 - (_Bool)shouldArchiveValueForKey:(id)arg1;
 @property double drawableTimeoutSeconds;
 @property double inputTime;
+@property _Bool exclusiveMode;
 @property _Bool lowLatency;
 @property _Bool serverSyncEnabled;
 @property _Bool fenceEnabled;

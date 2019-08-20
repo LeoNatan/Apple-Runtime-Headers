@@ -25,7 +25,7 @@
     NSObject<OS_dispatch_queue> *_completionQueue;
     id <AMSMetricsFlushStrategy> _currentFlushStrategy;
     AMSMetricsDatabaseDataSource *_databaseSource;
-    CDUnknownBlockType _flushTimerBlock;
+    CDUnknownBlockType _flushIntervalBlock;
     long long _destination;
     NSObject<OS_dispatch_queue> *_flushQueue;
 }
@@ -39,13 +39,15 @@
 + (id)serverTimeFromTimeInterval:(double)arg1;
 + (id)serverTimeFromDate:(id)arg1;
 + (void)setFlushTimerEnabled:(BOOL)arg1;
++ (void)setFlushDelayEnabled:(BOOL)arg1;
 + (void)setDisableBackgroundMetrics:(BOOL)arg1;
 + (BOOL)flushTimerEnabled;
++ (BOOL)flushDelayEnabled;
 + (BOOL)disableBackgroundMetrics;
 + (id)_sharedInstanceUsingBag:(id)arg1;
 @property(retain) NSObject<OS_dispatch_queue> *flushQueue; // @synthesize flushQueue=_flushQueue;
 @property long long destination; // @synthesize destination=_destination;
-@property(copy) CDUnknownBlockType flushTimerBlock; // @synthesize flushTimerBlock=_flushTimerBlock;
+@property(copy) CDUnknownBlockType flushIntervalBlock; // @synthesize flushIntervalBlock=_flushIntervalBlock;
 @property BOOL flushOnForeground; // @synthesize flushOnForeground=_flushOnForeground;
 @property(retain) AMSMetricsDatabaseDataSource *databaseSource; // @synthesize databaseSource=_databaseSource;
 @property(retain) id <AMSMetricsFlushStrategy> currentFlushStrategy; // @synthesize currentFlushStrategy=_currentFlushStrategy;
@@ -57,12 +59,11 @@
 - (void).cxx_destruct;
 @property(retain) id <AMSMetricsBagContract> bagContract;
 - (id)initWithContainerId:(id)arg1 bagContract:(id)arg2;
-- (void)_handleFlushTimer;
-- (void)_flushTimerUpdated;
-- (void)_flushTimerStart;
-- (void)_flushTimerInvalidate;
-- (BOOL)_flushTimerEnabled;
+- (void)_handleFlushIntervalWithStyle:(long long)arg1;
+- (void)_flushIntervalInvalidate;
+- (BOOL)_flushIntervalEnabledForStyle:(long long)arg1;
 - (double)_flushInterval;
+- (void)_beginFlushIntervalWithStyle:(long long)arg1;
 - (id)_flushDataSource:(id)arg1 topic:(id)arg2;
 - (id)_determineFlushStrategyWithDataSource:(id)arg1 topic:(id)arg2;
 - (void)_applicationWillEnterForeground;

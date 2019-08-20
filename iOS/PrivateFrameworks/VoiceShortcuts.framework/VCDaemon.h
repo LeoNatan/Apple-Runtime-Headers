@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class VCCKNotificationCenter, VCCoreDuetListener, VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, VCDaemonXPCEventHandler, VCSpotlightSyncService, VCWatchSyncCoordinator, VCXPCServer;
+@class VCCKNotificationCenter, VCCoreDuetListener, VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, VCDaemonXPCEventHandler, VCShareSheetWorkflowStatusUpdater, VCSpotlightSyncService, VCWatchSyncCoordinator, VCXPCServer;
 
 @interface VCDaemon : NSObject
 {
@@ -18,9 +18,11 @@
     VCWatchSyncCoordinator *_watchSyncCoordinator;
     VCSpotlightSyncService *_spotlightLibrarySyncService;
     VCCKNotificationCenter *_cloudKitNotificationCenter;
+    VCShareSheetWorkflowStatusUpdater *_shareSheetStatusUpdater;
 }
 
 + (id)sharedDaemon;
+@property(retain, nonatomic) VCShareSheetWorkflowStatusUpdater *shareSheetStatusUpdater; // @synthesize shareSheetStatusUpdater=_shareSheetStatusUpdater;
 @property(retain, nonatomic) VCCKNotificationCenter *cloudKitNotificationCenter; // @synthesize cloudKitNotificationCenter=_cloudKitNotificationCenter;
 @property(readonly, nonatomic) VCSpotlightSyncService *spotlightLibrarySyncService; // @synthesize spotlightLibrarySyncService=_spotlightLibrarySyncService;
 @property(readonly, nonatomic) VCWatchSyncCoordinator *watchSyncCoordinator; // @synthesize watchSyncCoordinator=_watchSyncCoordinator;

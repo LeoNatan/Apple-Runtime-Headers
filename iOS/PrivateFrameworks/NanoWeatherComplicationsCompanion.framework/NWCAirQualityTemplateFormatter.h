@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)_localizedIndexForConditions:(id)arg1;
 - (id)switcherTemplateWithFamily:(long long)arg1;
-- (_Bool)acceptsComplicationFamily:(long long)arg1;
+- (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 - (id)init;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)utilitarianLargeTemplateForLocation:(id)arg1 conditions:(id)arg2;

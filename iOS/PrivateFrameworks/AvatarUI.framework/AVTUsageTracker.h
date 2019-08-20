@@ -10,6 +10,8 @@
 {
 }
 
++ (void)trackStickerSentFromHostBundleIdentifier:(id)arg1 withAggDClient:(id)arg2;
++ (void)trackStickerSentFromHostBundleIdentifier:(id)arg1;
 + (id)currentSession;
 
 @end

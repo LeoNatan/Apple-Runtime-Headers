@@ -45,6 +45,8 @@
 - (void)_bluetoothPairingPINResultFailed:(id)arg1;
 - (void)_bluetoothPairingPINResultSuccess:(id)arg1;
 - (void)_bluetoothPairingPINRequest:(id)arg1;
+- (void)_requestPINRequest:(id)arg1;
+- (void)_presentPINRequest:(id)arg1;
 - (void)_bluetoothDidUnpair:(id)arg1;
 - (void)_bluetoothDisconnectFailed:(id)arg1;
 - (void)_bluetoothDisconnectSuccess:(id)arg1;
@@ -60,6 +62,7 @@
 - (void)unpairDevice:(id)arg1;
 - (void)disconnectDevice:(id)arg1;
 - (void)connectDevice:(id)arg1;
+- (void)enteredPIN:(id)arg1 forDevice:(id)arg2;
 - (void)removeScanObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addScanObserver:(id)arg1;

@@ -6,15 +6,17 @@
 
 #import <AuthKitUI/NSObject-Protocol.h>
 
-@class AKAuthorizationPaneViewController, AKAuthorizationPresentationContext, AKAuthorizationUserResponse, NSDictionary, NSError, NSString;
+@class AKAuthorization, AKAuthorizationPaneViewController, AKAuthorizationPresentationContext, AKAuthorizationUserResponse, NSDictionary, NSError, NSString;
 @protocol AKAuthorizationEditableDataSources, AKAuthorizationPasswordAuthenticationDelegate;
 
 @protocol AKAuthorizationPaneViewControllerDelegate <NSObject>
+- (void)authorizationPaneViewController:(AKAuthorizationPaneViewController *)arg1 didRequestAuthorizationWithUserProvidedInformation:(AKAuthorizationUserResponse *)arg2 completion:(void (^)(AKAuthorization *, NSError *))arg3;
+- (void)authorizationPaneViewController:(AKAuthorizationPaneViewController *)arg1 dismissWithAuthorization:(AKAuthorization *)arg2 error:(NSError *)arg3;
 
 @optional
 - (void)performPasswordAuthenticationForPaneViewController:(AKAuthorizationPaneViewController<AKAuthorizationPasswordAuthenticationDelegate> *)arg1;
+- (void)performAppleIDAuthorizationForPaneViewController:(AKAuthorizationPaneViewController *)arg1;
 - (void)authorizationPaneViewController:(AKAuthorizationPaneViewController<AKAuthorizationEditableDataSources> *)arg1 pushEditScope:(NSString *)arg2 presentationContext:(AKAuthorizationPresentationContext *)arg3 options:(NSDictionary *)arg4;
-- (void)authorizationPaneViewController:(AKAuthorizationPaneViewController *)arg1 didRequestAuthorizationWithUserProvidedInformation:(AKAuthorizationUserResponse *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)authorizationPaneViewController:(AKAuthorizationPaneViewController *)arg1 didDismissAuthorizationWithError:(NSError *)arg2;
+- (void)authorizationPaneViewController:(AKAuthorizationPaneViewController *)arg1 didRequestIconWithCompletion:(void (^)(AKIconContext *, NSError *))arg2;
 @end
 

@@ -277,6 +277,7 @@
 - (void)setDimmingBaseMap:(_Bool)arg1 animated:(_Bool)arg2 duration:(double)arg3;
 - (void)setDimmingBaseMap:(_Bool)arg1;
 - (float)worldSpaceWidthOfView;
+@property(nonatomic) _Bool loadMuninAvailability;
 - (void)setLoadMuninMetadata:(_Bool)arg1;
 - (_Bool)isLoadingMuninMetadata;
 @property(nonatomic) _Bool showsVenues;
@@ -372,6 +373,7 @@
 - (void)exitARMode;
 - (void)enterARModeAtCoordinate:(CDStruct_c3b9c2ee)arg1;
 @property(nonatomic) _Bool virtualParallaxEnabled;
+- (id)onscreenImageResources;
 - (id)currentMarker;
 - (_Bool)cancelPendingMove;
 - (_Bool)moveToMarker:(id)arg1 withHeading:(double)arg2 animated:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;

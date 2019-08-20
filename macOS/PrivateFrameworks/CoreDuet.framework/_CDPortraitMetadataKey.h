@@ -12,6 +12,7 @@
 
 + (id)assetVersion;
 + (id)osBuild;
++ (id)sentimentScore;
 + (id)score;
 + (id)decayRate;
 + (id)algorithm;

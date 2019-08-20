@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: offlineAlertControllerFactory
     // Error parsing type: , name: isBeingUsedAsPlugin
     // Error parsing type: , name: pluggableDelegate
-    // Error parsing type: , name: config
 }
 
 - (void).cxx_destruct;

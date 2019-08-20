@@ -8,5 +8,6 @@
 
 @interface AVAsset (_QLUtilities)
 + (void)assetIsAutoloopMedia:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)ql_canBeRotated;
 @end
 

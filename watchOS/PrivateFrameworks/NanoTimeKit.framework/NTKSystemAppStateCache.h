@@ -16,14 +16,17 @@
 {
     NSMutableSet *_restrictedSystemApps;
     NSMutableSet *_removedSystemApps;
+    NSMutableSet *_cachedAppStateBundleId;
     NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (id)_queue_restrictedSystemApps;
+- (id)_queue_cachedAppStateBundleId;
 - (id)_queue_removedSystemApps;
 - (void)_queue_applicationsDidChange:(id)arg1 state:(unsigned int)arg2;
+- (void)_queue_verifyStateForAppBundleId:(id)arg1;
 - (void)_queue_initializeRemovedSystemApps;
 - (void)_queue_initializeRestrictedSystemApps;
 - (void)applicationsDidUninstall:(id)arg1;

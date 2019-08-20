@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIViewController.h>
 
-@class LPLinkMetadata, NSArray, NSDictionary, UIActivity;
+@class LPLinkMetadata, NSArray, NSDictionary, NSSet, UIActivity;
 @protocol UIActivityViewControllerAirDropDelegate, UIActivityViewControllerObjectManipulationDelegate, UIActivityViewControllerPhotosDelegate;
 
 @interface UIActivityViewController : UIViewController
@@ -42,12 +42,14 @@
     id <UIActivityViewControllerPhotosDelegate> _photosDelegate;
     NSDictionary *_initialPhotosAssetDetails;
     NSArray *_selectedAssetIdentifiers;
+    NSSet *_photosAssetIdentifiers;
 }
 
 + (double)_asyncPresentationTimeout;
 + (id)_macActivityItemsForiOSActivityItems:(id)arg1 activityViewController:(id)arg2;
 @property(nonatomic) BOOL configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) BOOL configureForPhotosEdit; // @synthesize configureForPhotosEdit=_configureForPhotosEdit;
+@property(copy, nonatomic, getter=_photosAssetIdentifiers, setter=_setPhotosAssetIdentifiers:) NSSet *photosAssetIdentifiers; // @synthesize photosAssetIdentifiers=_photosAssetIdentifiers;
 @property(copy, nonatomic, getter=_selectedAssetIdentifiers, setter=_setSelectedAssetIdentifiers:) NSArray *selectedAssetIdentifiers; // @synthesize selectedAssetIdentifiers=_selectedAssetIdentifiers;
 @property(copy, nonatomic, getter=_initialPhotosAssetDetails, setter=_setInitialPhotosAssetDetails:) NSDictionary *initialPhotosAssetDetails; // @synthesize initialPhotosAssetDetails=_initialPhotosAssetDetails;
 @property(nonatomic) BOOL enableNewDesignInPhotos; // @synthesize enableNewDesignInPhotos=_enableNewDesignInPhotos;

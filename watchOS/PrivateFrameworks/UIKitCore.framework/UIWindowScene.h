@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIFallbackEnvironment-Protocol.h>
 #import <UIKitCore/_UISceneUIWindowHosting-Protocol.h>
 
-@class FBSDisplayConfigurationRequest, FBSScene, NSArray, NSPointerArray, NSString, UIAlertControllerStackManager, UIInputResponderController, UIScreen, UIScreenshotService, UIStatusBarManager, UITraitCollection, UIWindow, _UIBannerManager, _UICanvasDefinition, _UIContextBinder, _UISystemAppearanceManager;
+@class FBSDisplayConfigurationRequest, FBSScene, NSArray, NSPointerArray, NSString, UIAlertControllerStackManager, UIInputResponderController, UISceneSizeRestrictions, UIScreen, UIScreenshotService, UIStatusBarManager, UITraitCollection, UIWindow, _UIBannerManager, _UICanvasDefinition, _UIContextBinder, _UISystemAppearanceManager;
 @protocol UICoordinateSpace, _UIDisplayInfoProviding, _UISceneMetricsCalculating;
 
 @interface UIWindowScene : UIScene <_UIFallbackEnvironment, _UISceneUIWindowHosting, _UIContextBinderContextCreationPolicyHolding>
@@ -22,6 +22,8 @@
     _Bool _isPerformingSystemSnapshot;
     id <_UIDisplayInfoProviding> _displayEdgeInfoProvider;
     id <UICoordinateSpace> _coordinateSpace;
+    _Bool _shouldDisableTouchCancellationOnRotation;
+    _Bool _windowWasInitializedWithDefaultStoryboard;
     id <_UISceneMetricsCalculating> _metricsCalculator;
     _Bool __isKeyWindowScene;
     int _screenRequestedOverscanCompensation;
@@ -39,7 +41,6 @@
 + (id)_canvasForScene:(id)arg1;
 @property(nonatomic) _Bool _isKeyWindowScene; // @synthesize _isKeyWindowScene=__isKeyWindowScene;
 @property(nonatomic, getter=_avkitRequestedOverscanCompensation, setter=_setAVKitRequestedOverscanCompensation:) int _avkitRequestedOverscanCompensation; // @synthesize _avkitRequestedOverscanCompensation;
-@property(nonatomic, getter=_screenRequestedOverscanCompensation, setter=_setScreenRequestedOverscanCompensation:) int _screenRequestedOverscanCompensation; // @synthesize _screenRequestedOverscanCompensation;
 @property(readonly, nonatomic) _Bool _isPerformingSystemSnapshot; // @synthesize _isPerformingSystemSnapshot;
 - (void).cxx_destruct;
 - (void)_showProgressWhenFetchingUserActivityForTypes:(id)arg1;
@@ -51,13 +52,14 @@
 - (void)_invalidateScreen;
 @property(retain, nonatomic, getter=_displayConfigurationRequest, setter=_setDisplayConfigurationRequest:) FBSDisplayConfigurationRequest *_displayConfigurationRequest; // @dynamic _displayConfigurationRequest;
 - (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(int)arg2 overscanCompensation:(int)arg3;
-- (void)setScreenRequestedOverscanCompensation:(int)arg1;
+@property(nonatomic, getter=_screenRequestedOverscanCompensation, setter=_setScreenRequestedOverscanCompensation:) int _screenRequestedOverscanCompensation; // @synthesize _screenRequestedOverscanCompensation;
 - (int)_resolvedOverscanCompensation;
-- (int)screenRequestedOverscanCompensation;
 @property(nonatomic, getter=_screenRequestedDisplayNativePixelSize, setter=_setScreenRequestedDisplayNativePixelSize:) struct CGSize _screenRequestedDisplayNativePixelSize; // @dynamic _screenRequestedDisplayNativePixelSize;
-- (void)_setCoordinateSpace:(id)arg1;
+@property(readonly, nonatomic) UISceneSizeRestrictions *sizeRestrictions;
 - (_Bool)_windowsIgnoreSceneClientOrientation;
 - (void)_updateClientSettingsToInterfaceOrientation:(int)arg1 withAnimationDuration:(double)arg2;
+- (id)_disableTouchCancellationOnRotation;
+- (void)_setShouldDisableTouchCancellationOnRotation:(_Bool)arg1;
 - (unsigned int)_currentlySupportedInterfaceOrientations;
 @property(readonly, nonatomic) id <_UIDisplayInfoProviding> _displayInfoProvider;
 - (float)_systemMinimumMargin;
@@ -80,6 +82,7 @@
 - (id)_topVisibleWindowPassingTest:(CDUnknownBlockType)arg1;
 - (_Bool)_windowIsFront:(id)arg1;
 @property(readonly, nonatomic) _UIContextBinder *_contextBinder;
+- (void)_makeKeyAndVisibleIfNeeded;
 - (void)_loadWindowWithStoryboardIfNeeded:(id)arg1;
 - (void)_readySceneForConnection;
 - (id)_allWindowsIncludingInternalWindows:(_Bool)arg1 onlyVisibleWindows:(_Bool)arg2;

@@ -21,10 +21,8 @@ __attribute__((visibility("hidden")))
     double _minObjectCovered;
     unsigned long long _maxAttempts;
     double _minEjectCoverage;
-    CDUnknownBlockType _random;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType random; // @synthesize random=_random;
 @property(nonatomic) double minEjectCoverage; // @synthesize minEjectCoverage=_minEjectCoverage;
 @property(nonatomic) unsigned long long maxAttempts; // @synthesize maxAttempts=_maxAttempts;
 @property(nonatomic) double minObjectCovered; // @synthesize minObjectCovered=_minObjectCovered;
@@ -33,10 +31,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double maxAspectRatio; // @synthesize maxAspectRatio=_maxAspectRatio;
 @property(nonatomic) double minAspectRatio; // @synthesize minAspectRatio=_minAspectRatio;
 @property(nonatomic) double skipProbability; // @synthesize skipProbability=_skipProbability;
-- (void).cxx_destruct;
 - (id)applyCrop:(struct CGRect)arg1 toAnnotations:(id)arg2;
-- (id)imageAugmentedFromImage:(id)arg1;
-- (id)initWithRNG:(CDUnknownBlockType)arg1;
+- (id)imageAugmentedFromImage:(id)arg1 generator:(CDUnknownBlockType)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

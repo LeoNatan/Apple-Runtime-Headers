@@ -89,7 +89,7 @@
 @property(nonatomic, setter=_setDefaultPushTransition:) unsigned long long _defaultPushTransition; // @synthesize _defaultPushTransition=__defaultPushTransition;
 @property(readonly, nonatomic) long long _subtoolbarPosition; // @synthesize _subtoolbarPosition=__subtoolbarPosition;
 @property(readonly, nonatomic) long long _toolbarPosition; // @synthesize _toolbarPosition=__toolbarPosition;
-@property(nonatomic, setter=_setLeadingContentInset:) double _leadingContentInset; // @synthesize _leadingContentInset=__leadingContentInset;
+@property(readonly, nonatomic) double _leadingContentInset; // @synthesize _leadingContentInset=__leadingContentInset;
 @property(nonatomic, getter=_isLocked, setter=_setLocked:) BOOL _locked; // @synthesize _locked=__locked;
 @property(nonatomic, getter=_isFullScreenMode, setter=_setFullScreenMode:) BOOL _fullScreenMode; // @synthesize _fullScreenMode=__fullScreenMode;
 @property(retain, nonatomic) NSVisualEffectView *subtoolbarVisualEffectsView; // @synthesize subtoolbarVisualEffectsView=_subtoolbarVisualEffectsView;
@@ -181,6 +181,7 @@
 - (BOOL)_toolbarsNeedUpdate;
 - (void)performToolbarsChanges:(CDUnknownBlockType)arg1;
 - (double)_leftContentInset;
+- (void)_setLeadingContentInset:(double)arg1 forViewController:(id)arg2;
 - (double)_visibleToolbarOffset;
 - (double)_hiddenToolbarOffset;
 - (void)_setToolbarHidden:(BOOL)arg1 subtoolbarHidden:(BOOL)arg2 animated:(BOOL)arg3 duration:(double)arg4 animateSubtree:(BOOL)arg5;

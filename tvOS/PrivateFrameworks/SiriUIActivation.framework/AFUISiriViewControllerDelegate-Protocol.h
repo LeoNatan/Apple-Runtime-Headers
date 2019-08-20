@@ -6,7 +6,7 @@
 
 #import <SiriUIActivation/NSObject-Protocol.h>
 
-@class AFUISiriSession, AFUISiriViewController, NSError, NSString, NSURL, SASRequestOptions;
+@class AFUISiriSession, AFUISiriViewController, NSArray, NSError, NSString, NSURL, SASRequestOptions;
 
 @protocol AFUISiriViewControllerDelegate <NSObject>
 - (_Bool)siriViewControllerShouldSupportTextInput:(AFUISiriViewController *)arg1;
@@ -27,6 +27,7 @@
 - (void)siriViewController:(AFUISiriViewController *)arg1 didEncounterUnexpectedError:(NSError *)arg2;
 
 @optional
+- (void)extendCurrentTTSRequested;
 - (void)siriViewController:(AFUISiriViewController *)arg1 failTest:(NSString *)arg2 withReason:(NSString *)arg3;
 - (void)siriViewController:(AFUISiriViewController *)arg1 didFinishTest:(NSString *)arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 willStartTest:(NSString *)arg2;
@@ -38,5 +39,7 @@
 - (void)siriViewController:(AFUISiriViewController *)arg1 requestsDismissal:(void (^)(_Bool))arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 requestsPresentation:(void (^)(_Bool))arg2;
 - (void)siriViewController:(AFUISiriViewController *)arg1 presentedIntentWithBundleId:(NSString *)arg2;
+- (void)siriViewControllerDidFinishDismissing:(AFUISiriViewController *)arg1;
+- (void)siriViewController:(AFUISiriViewController *)arg1 didUpdateAudioCategoriesDisablingVolumeHUD:(NSArray *)arg2;
 @end
 

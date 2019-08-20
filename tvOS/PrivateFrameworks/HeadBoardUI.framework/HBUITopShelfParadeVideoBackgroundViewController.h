@@ -8,7 +8,7 @@
 
 #import <HeadBoardUI/HBUITopShelfParadeBackgroundViewController-Protocol.h>
 
-@class AVPlayer, HBUIPlayerView, NSString, NSTimer, TVImageProxy, TVSStateMachine, UIImageView;
+@class AVPlayer, HBUIPlayerView, HBUIPlayerVolumeAnimator, NSString, NSTimer, TVImageProxy, TVSStateMachine, UIImageView;
 @protocol HBUITopShelfParadeBackgroundViewControllerDelegate, HBUITopShelfParadeItem;
 
 __attribute__((visibility("hidden")))
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     HBUIPlayerView *_previewVideoView;
     AVPlayer *_bumperCinemagraphPlayer;
     AVPlayer *_previewVideoPlayer;
+    HBUIPlayerVolumeAnimator *_previewVideoVolumeAnimator;
     TVImageProxy *_bumperImageProxy;
     NSTimer *_beforePreviewVideoTimer;
     NSTimer *_previewVideoTimeoutTimer;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, getter=_previewVideoTimeoutTimer, setter=_setPreviewVideoTimeoutTimer:) NSTimer *previewVideoTimeoutTimer; // @synthesize previewVideoTimeoutTimer=_previewVideoTimeoutTimer;
 @property(retain, nonatomic, getter=_beforePreviewVideoTimer, setter=_setBeforePreviewVideoTimer:) NSTimer *beforePreviewVideoTimer; // @synthesize beforePreviewVideoTimer=_beforePreviewVideoTimer;
 @property(retain, nonatomic, getter=_bumperImageProxy, setter=_setBumperImageProxy:) TVImageProxy *bumperImageProxy; // @synthesize bumperImageProxy=_bumperImageProxy;
+@property(readonly, nonatomic) HBUIPlayerVolumeAnimator *previewVideoVolumeAnimator; // @synthesize previewVideoVolumeAnimator=_previewVideoVolumeAnimator;
 @property(readonly, nonatomic, getter=_previewVideoPlayer) AVPlayer *previewVideoPlayer; // @synthesize previewVideoPlayer=_previewVideoPlayer;
 @property(readonly, nonatomic, getter=_bumperCinemagraphPlayer) AVPlayer *bumperCinemagraphPlayer; // @synthesize bumperCinemagraphPlayer=_bumperCinemagraphPlayer;
 @property(readonly, nonatomic, getter=_previewVideoView) HBUIPlayerView *previewVideoView; // @synthesize previewVideoView=_previewVideoView;
@@ -49,12 +51,15 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long contentState;
 - (void)prepareForReuse;
+- (void)_updatePreviewVideoPlayerVolume:(_Bool)arg1;
+- (void)_secondaryAudioHintDidChange:(id)arg1;
+- (void)_notifyDelegateDidFinish;
+- (void)_notifyDelegateContentStateDidChange;
 - (void)_reset:(_Bool)arg1;
 - (void)_scheduleAfterPreviewVideoTimer;
 - (void)_schedulePreviewVideoTimeoutTimer;
 - (void)_scheduleBeforePreviewVideoTimer;
 - (void)_setBumperContentViewsHidden:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_previewVideoDidFinish;
 - (void)_createStateMachine;
 - (void)_playerItemDidPlayToEndTime:(id)arg1;
 - (void)viewDidLoad;

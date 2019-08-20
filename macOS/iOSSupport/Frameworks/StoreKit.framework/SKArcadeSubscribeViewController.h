@@ -39,6 +39,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (BOOL)prefersStatusBarHidden;
+- (void)finishExtension;
 - (void)dealloc;
 - (id)initWithItemID:(id)arg1 bundleID:(id)arg2;
 

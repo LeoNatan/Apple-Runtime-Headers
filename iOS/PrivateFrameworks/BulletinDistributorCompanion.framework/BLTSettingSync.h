@@ -40,7 +40,7 @@
 - (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 fromRemote:(_Bool)arg4;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (void)setSectionInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_willSectionIDAlert:(id)arg1;
+- (id)settingsDescriptionForSectionIDs:(id)arg1;
 - (id)overriddenSettings;
 - (id)originalSettings;
 - (id)settingOverrides;
@@ -51,7 +51,7 @@
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
 - (void)sendOverrideOnly:(id)arg1 sectionID:(id)arg2 spoolToFile:(_Bool)arg3;
 - (void)_updateAllBBSectionsWithCompletion:(CDUnknownBlockType)arg1 withProgress:(CDUnknownBlockType)arg2 spoolToFile:(_Bool)arg3;
-- (id)_alertingSectionIDs;
+- (id)_filteredAlertingSectionIDs:(id)arg1;
 - (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(_Bool)arg3 spoolToFile:(_Bool)arg4 andCompletion:(CDUnknownBlockType)arg5;
 - (void)clearSectionInfoSentCache;
 - (_Bool)isSectionInfoSentCacheEmpty;
@@ -62,7 +62,7 @@
 - (void)_sendSpooledSyncWithCompletion:(CDUnknownBlockType)arg1 withProgress:(CDUnknownBlockType)arg2;
 - (void)_logNotificationSettings;
 - (void)_spoolInitialSync;
-- (void)performSyncIfNeededForSectionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performSyncIfNeededForSectionID:(id)arg1 gizmoSectionInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)performInitialSyncWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setupSectionInfoListWithCompletion:(CDUnknownBlockType)arg1;
 - (id)universalSectionIDForSectionID:(id)arg1;

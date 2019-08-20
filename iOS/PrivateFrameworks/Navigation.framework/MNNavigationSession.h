@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <Navigation/GEOMotionContextDelegate-Protocol.h>
 #import <Navigation/MNGuidanceManagerDelegate-Protocol.h>
 #import <Navigation/MNLocationManagerHeadingObserver-Protocol.h>
 #import <Navigation/MNLocationManagerObserver-Protocol.h>
@@ -19,7 +20,7 @@
 @class GEOApplicationAuditToken, GEOComposedWaypoint, GEOMotionContext, GEONavigationGuidanceState, GEOResourceManifestUpdateAssertion, MNClassicGuidanceManager, MNGuidanceEventManager, MNGuidanceSignInfo, MNLocation, MNLocationTracker, MNNavigationSessionLogger, MNNavigationTraceManager, MNObserverHashTable, MNRouteManager, MNTimeAndDistanceUpdater, MNTraceNavigationEventRecorder, MNTrafficIncidentAlert, NSString, NSUUID;
 @protocol MNAudioSession, MNGuidanceManager;
 
-@interface MNNavigationSession : NSObject <MNGuidanceManagerDelegate, MNLocationManagerHeadingObserver, MNLocationManagerObserver, MNLocationTrackerDelegate, MNNavigationAudioSessionDelegate, MNTimeAndDistanceUpdaterDelegate, MNTracePlayerObserver, MNVoiceControllerObserver, MNSessionUpdateManagerDelegate>
+@interface MNNavigationSession : NSObject <GEOMotionContextDelegate, MNGuidanceManagerDelegate, MNLocationManagerHeadingObserver, MNLocationManagerObserver, MNLocationTrackerDelegate, MNNavigationAudioSessionDelegate, MNTimeAndDistanceUpdaterDelegate, MNTracePlayerObserver, MNVoiceControllerObserver, MNSessionUpdateManagerDelegate>
 {
     int _navigationType;
     MNRouteManager *_routeManager;
@@ -143,6 +144,7 @@
 - (void)locationTrackerDidArrive:(id)arg1;
 - (void)locationTrackerDidEnterPreArrivalState:(id)arg1;
 - (void)locationTracker:(id)arg1 didChangeState:(int)arg2;
+- (void)motionContextDidUpdateMotion:(id)arg1;
 - (void)_stopTravelTimeUpdates;
 - (void)_startTravelTimeUpdates;
 - (void)_stopGuidance;

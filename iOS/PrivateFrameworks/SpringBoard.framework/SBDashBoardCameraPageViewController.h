@@ -74,6 +74,7 @@
 - (void)homeGestureParticipantOwningHomeGestureDidChange:(id)arg1;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (id)hostedAppSceneHandles;
 - (id)hostedAppSceneHandle;
 - (_Bool)isHostingAnApp;
 - (_Bool)canHostAnApp;

@@ -17,6 +17,8 @@
 @property(readonly, nonatomic) _Bool canAuthWithCloudKit;
 @property(readonly, nonatomic) _Bool canAccessProtectionData;
 @property(readonly, nonatomic) _Bool bypassPCSEncryption;
+@property(readonly, nonatomic) NSString *applicationPackageStagingDirectory;
+@property(readonly, nonatomic) NSString *applicationFrameworkCachesDirectory;
 @property(readonly, nonatomic) NSString *applicationVersion;
 @property(readonly, nonatomic) NSString *regionCode;
 @property(readonly, nonatomic) NSString *languageCode;
@@ -34,12 +36,12 @@
 @property(readonly, nonatomic) CKDFlowControlManager *flowControlManager;
 @property(readonly, nonatomic) CKDServerConfiguration *config;
 @property(readonly, nonatomic) int contextType;
-- (void)fetchDeviceIDForOperation:(CKDOperation *)arg1 withCompletionHandler:(void (^)(NSString *, NSError *))arg2;
 - (void)fetchServerEnvironmentForOperation:(CKDOperation *)arg1 withCompletionHandler:(void (^)(int, NSError *))arg2;
 - (void)fetchImportantUserIDsForOperation:(CKDOperation *)arg1 withCompletionHandler:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)fetchPrivateURLForServerType:(int)arg1 operation:(CKDOperation *)arg2 completionHandler:(void (^)(NSURL *, NSError *))arg3;
 - (void)fetchPublicURLForServerType:(int)arg1 operation:(CKDOperation *)arg2 completionHandler:(void (^)(NSURL *, NSError *))arg3;
 - (void)fetchConfigurationForOperation:(CKDOperation *)arg1 withCompletionHandler:(void (^)(CKDServerConfiguration *, NSError *))arg2;
+- (NSString *)deviceIDForOperation:(CKDOperation *)arg1;
 - (NSURL *)baseURLForServerType:(int)arg1 partitionType:(int)arg2;
 - (void)performRequest:(CKDURLRequest *)arg1;
 @end

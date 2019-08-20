@@ -26,6 +26,7 @@
     BOOL _concatenateUtterances;
     BOOL _recognizeEagerCandidates;
     BOOL _farField;
+    BOOL _highPriority;
     NSData *_userProfileData;
     NSData *_jitProfileData;
     double _endpointStart;
@@ -55,6 +56,7 @@
 @property(copy, nonatomic) NSDictionary *recognitionConfidenceSubtraction; // @synthesize recognitionConfidenceSubtraction=_recognitionConfidenceSubtraction;
 @property(copy, nonatomic) NSDictionary *recognitionReplacements; // @synthesize recognitionReplacements=_recognitionReplacements;
 @property(nonatomic) double maximumRecognitionDuration; // @synthesize maximumRecognitionDuration=_maximumRecognitionDuration;
+@property(nonatomic) BOOL highPriority; // @synthesize highPriority=_highPriority;
 @property(nonatomic) BOOL farField; // @synthesize farField=_farField;
 @property(nonatomic) BOOL recognizeEagerCandidates; // @synthesize recognizeEagerCandidates=_recognizeEagerCandidates;
 @property(nonatomic) double endpointStart; // @synthesize endpointStart=_endpointStart;

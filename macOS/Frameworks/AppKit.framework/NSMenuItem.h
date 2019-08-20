@@ -126,6 +126,8 @@
 @property(getter=isAlternate) BOOL alternate;
 - (BOOL)_isEnabled;
 @property(readonly, getter=isHighlighted) BOOL highlighted;
+- (BOOL)_submenuParentItemChoosable;
+- (BOOL)_shouldBeDisabledForLimitedAppMode;
 - (BOOL)_canBeHighlighted;
 @property(getter=isEnabled) BOOL enabled;
 @property(retain) NSImage *mixedStateImage;

@@ -42,6 +42,10 @@ __attribute__((visibility("hidden")))
     unsigned int _maxJitterQueueSize;
     unsigned int _averageRoundTripTime;
     unsigned int _maxRoundTripTime;
+    unsigned int _averageHIDEventLatencyReportCount;
+    unsigned int _averageHIDEventLatency;
+    unsigned int _maxHIDEventLatency;
+    unsigned int _minHIDEventLatency;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
     unsigned int _videoFrameDisplayedCounter;
@@ -58,6 +62,7 @@ __attribute__((visibility("hidden")))
     VCHistogram *_BWE;
     VCHistogram *_VJS;
     VCHistogram *_RTT;
+    VCHistogram *_HEL;
     NSMutableDictionary *_fecStatsDict;
 }
 

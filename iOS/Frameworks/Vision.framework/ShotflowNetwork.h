@@ -17,16 +17,17 @@ __attribute__((visibility("hidden")))
     struct vector<std::__1::shared_ptr<espresso_buffer_t>, std::__1::allocator<std::__1::shared_ptr<espresso_buffer_t>>> _logitsPosOutputs;
     struct vector<std::__1::shared_ptr<espresso_buffer_t>, std::__1::allocator<std::__1::shared_ptr<espresso_buffer_t>>> _logitsNegOutputs;
     struct vector<std::__1::shared_ptr<espresso_buffer_t>, std::__1::allocator<std::__1::shared_ptr<espresso_buffer_t>>> _offsetsOutputs;
+    struct vector<std::__1::shared_ptr<espresso_buffer_t>, std::__1::allocator<std::__1::shared_ptr<espresso_buffer_t>>> _objectnessOutputs;
     struct vector<std::__1::shared_ptr<espresso_buffer_t>, std::__1::allocator<std::__1::shared_ptr<espresso_buffer_t>>> _rollOutputs;
     struct vector<std::__1::shared_ptr<espresso_buffer_t>, std::__1::allocator<std::__1::shared_ptr<espresso_buffer_t>>> _yawOutputs;
     unsigned long long _currentNetworkWidth;
     unsigned long long _currentNetworkHeight;
     _Bool _releaseEspressoContext;
     _Bool _releaseEspressoPlan;
+    _Bool isAnchorSquare[10];
     NSArray *_filterThreshold;
-    float _defaultBoxSizes[6][20][2];
+    float _defaultBoxSizes[6][10][2];
     float _threshold;
-    int _version;
     unsigned long long _preferredSmallSide;
 }
 
@@ -42,10 +43,9 @@ __attribute__((visibility("hidden")))
 + (float)nonSquareYawDefault;
 + (float)nonSquareRollDefault;
 + (float)inputImageAspectRatio;
-+ (float)inputImageMaxDimention;
-+ (float)inputImageMinDimention;
++ (float)inputImageMaxDimension;
++ (float)inputImageMinDimension;
 + (id)inputLayerName;
-@property(nonatomic) int version; // @synthesize version=_version;
 @property(readonly, nonatomic) unsigned long long preferredSmallSide; // @synthesize preferredSmallSide=_preferredSmallSide;
 @property(nonatomic) float threshold; // @synthesize threshold=_threshold;
 - (id).cxx_construct;

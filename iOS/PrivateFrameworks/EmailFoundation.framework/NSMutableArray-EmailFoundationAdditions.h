@@ -7,6 +7,7 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (EmailFoundationAdditions)
+- (void)ef_trimToCount:(unsigned long long)arg1 fromStart:(_Bool)arg2;
 - (void)ef_addOptionalObject:(id)arg1;
 - (unsigned long long)ef_removeObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
 - (unsigned long long)ef_removeObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;

@@ -6,10 +6,11 @@
 
 #import <PineBoardServices/NSObject-Protocol.h>
 
-@class NSArray, NSSet, NSString, PBSDisplayMode;
+@class NSArray, NSDictionary, NSNumber, NSSet, NSString, PBSDisplayMode;
 @protocol PBSDisplayStateObserver;
 
 @protocol PBSDisplayState <NSObject>
+@property(readonly, nonatomic) NSDictionary *audioLatencies;
 @property(readonly, nonatomic) _Bool deemed4KCapable;
 @property(readonly, nonatomic) _Bool detectedPoorCableConnection;
 @property(readonly, nonatomic) long long displayConnection;
@@ -30,5 +31,6 @@
 - (void)addStateObserver:(id <PBSDisplayStateObserver>)arg1;
 - (_Bool)isAdvertisingHDMI2;
 - (NSSet *)promotedVirtualDisplayModes;
+- (NSNumber *)audioLatencyForDisplayMode:(PBSDisplayMode *)arg1;
 @end
 

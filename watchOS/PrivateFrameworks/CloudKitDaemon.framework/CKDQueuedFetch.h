@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface CKDQueuedFetch : NSObject
 {
     _Bool _isFinished;
+    _Bool _isCancelled;
     NSDate *_queuedDate;
     CDUnknownBlockType _completionHandler;
     CKDQueuedFetch *_equivalentRunningFetch;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak CKDQueuedFetch *equivalentRunningFetch; // @synthesize equivalentRunningFetch=_equivalentRunningFetch;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSDate *queuedDate; // @synthesize queuedDate=_queuedDate;
-@property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 - (void).cxx_destruct;
 - (void)start;
 - (void)createFetchOperationForItemIDs:(id)arg1 operationQueue:(id)arg2 operationConfigurationBlock:(CDUnknownBlockType)arg3;
@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBeUsedForOperation:(id)arg1;
 - (id)description;
 - (id)CKPropertiesDescription;
+- (void)cancelFetchOperation;
 - (void)finishFetchOperationWithError:(id)arg1;
 - (void)performCallbacksForItemWithID:(id)arg1 withItem:(id)arg2 error:(id)arg3;
 - (id)allItemIDs;
@@ -66,6 +67,8 @@ __attribute__((visibility("hidden")))
 - (void)removeCallbacksForItemWithID:(id)arg1;
 - (void)addCallbackForItemWithID:(id)arg1 operation:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (int)numberOfCallbacks;
+@property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
+@property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 - (id)initWithOperation:(id)arg1 context:(id)arg2 operationQueue:(id)arg3;
 - (id)init;
 

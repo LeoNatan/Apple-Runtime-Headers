@@ -184,7 +184,7 @@
 @property(readonly) BOOL delegatesControls;
 - (id)categoryForScreentime;
 - (id)bundleIDForScreentime;
-- (void)presentScreenTimeLockout:(BOOL)arg1 withScreentimeID:(id)arg2;
+- (void)presentScreenTimeLockout:(BOOL)arg1;
 - (void)checkScreenTimePolicy;
 - (void)endWatchingScreenTimePolicy;
 - (void)startWatchingScreenTimePolicy;

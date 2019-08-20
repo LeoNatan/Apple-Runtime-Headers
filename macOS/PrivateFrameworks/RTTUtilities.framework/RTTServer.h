@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)primeRTTServer;
 - (void)setTTYDictionaryAvailability:(BOOL)arg1;
+- (void)_takeStackshot;
 - (id)valueForTTYSetting:(id)arg1;
 - (BOOL)contactIsTTYContact:(id)arg1;
 - (BOOL)deleteConversationWithCallUID:(id)arg1;
@@ -29,6 +30,7 @@
 - (void)registerForRemoteUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
 - (void)registerForUpdates:(CDUnknownBlockType)arg1 forCallUID:(id)arg2;
 - (void)sendString:(id)arg1 forCallUID:(id)arg2;
+- (void)setSystemOutputAudioMuted:(BOOL)arg1 withCallID:(id)arg2;
 - (void)findConversationForCallUID:(id)arg1 andResult:(CDUnknownBlockType)arg2;
 - (void)registerResponseBlock:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
 - (void)setShouldSuppressIncomingNotification:(BOOL)arg1;
@@ -38,6 +40,7 @@
 - (void)handleMessageWithPayload:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)_managerAXPIDState:(BOOL)arg1;
 - (void)resetConnection;
+- (void)_registerForServerSettingsUpdates;
 - (void)dealloc;
 - (id)init;
 

@@ -15,19 +15,25 @@
     FCFlintResourceManager *_flintResourceManager;
     NSArray *_resourceIDs;
     NSMutableDictionary *_fetchedResourceIDs;
-    FCAsyncOnceOperation *_asyncOnceOperation;
+    FCAsyncOnceOperation *_assetURLsOperation;
+    FCAsyncOnceOperation *_assetsOperation;
 }
 
-@property(retain, nonatomic) FCAsyncOnceOperation *asyncOnceOperation; // @synthesize asyncOnceOperation=_asyncOnceOperation;
+@property(readonly, nonatomic) FCAsyncOnceOperation *assetsOperation; // @synthesize assetsOperation=_assetsOperation;
+@property(retain, nonatomic) FCAsyncOnceOperation *assetURLsOperation; // @synthesize assetURLsOperation=_assetURLsOperation;
 @property(retain, nonatomic) NSMutableDictionary *fetchedResourceIDs; // @synthesize fetchedResourceIDs=_fetchedResourceIDs;
 @property(retain, nonatomic) NSArray *resourceIDs; // @synthesize resourceIDs=_resourceIDs;
 @property(retain, nonatomic) FCFlintResourceManager *flintResourceManager; // @synthesize flintResourceManager=_flintResourceManager;
 @property(retain, nonatomic) SXContext *context; // @synthesize context=_context;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
 - (void).cxx_destruct;
-- (id)asyncLoadAssertURLsOnceWithCompletion:(CDUnknownBlockType)arg1;
+- (id)assetDownloadOperationForResource:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)asyncLoadAssetsOnceWithCompletion:(CDUnknownBlockType)arg1;
+- (id)asyncLoadAssetURLsOnceWithCompletion:(CDUnknownBlockType)arg1;
 - (id)resourceForID:(id)arg1;
 - (id)resourceIDForResourceURL:(id)arg1;
+- (id)loadAssetWithURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)loadAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)loadAssetURLsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithContext:(id)arg1 flintResourceManager:(id)arg2;
 

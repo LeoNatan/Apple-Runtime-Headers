@@ -31,7 +31,7 @@
 - (void)_recordSceneCreateEnd;
 - (void)_recordSceneCreateBegin;
 - (id)_currentConfiguration;
-- (void)deactiveScene;
+- (void)deactiveSceneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cancelSceneLoadingTimeOut;
 - (void)startSceneLoadingTimeOutTimerWithDuration:(double)arg1;
 - (void)sceneLoadingTimeOutDidOccur;

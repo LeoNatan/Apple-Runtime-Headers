@@ -34,6 +34,7 @@
     _Bool _displayAsNativeAd;
     _Bool _issueOnly;
     _Bool _showBundleSoftPaywall;
+    _Bool _useTransparentNavigationBar;
     _Bool _bundlePaid;
     FCHeadlineThumbnail *_thumbnailLQ;
     FCHeadlineThumbnail *_thumbnail;
@@ -117,6 +118,7 @@
 @property(copy, nonatomic) NSString *titleCompact; // @synthesize titleCompact=_titleCompact;
 @property(copy, nonatomic) NSURL *headlineURL; // @synthesize headlineURL=_headlineURL;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) _Bool useTransparentNavigationBar; // @synthesize useTransparentNavigationBar=_useTransparentNavigationBar;
 @property(readonly, nonatomic) long long bodyTextLength; // @synthesize bodyTextLength=_bodyTextLength;
 @property(readonly, nonatomic) _Bool showBundleSoftPaywall; // @synthesize showBundleSoftPaywall=_showBundleSoftPaywall;
 @property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly; // @synthesize issueOnly=_issueOnly;
@@ -245,7 +247,6 @@
 @property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
 @property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool useTransparentNavigationBar;
 
 @end
 

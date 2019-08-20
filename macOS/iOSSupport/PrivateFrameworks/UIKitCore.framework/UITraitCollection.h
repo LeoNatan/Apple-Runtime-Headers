@@ -15,7 +15,7 @@
 
 @interface UITraitCollection : NSObject <_UIFallbackEnvironment, NSCopying, NSSecureCoding>
 {
-    CDStruct_3a910e36 _builtinTraits;
+    CDStruct_9b1704d8 _builtinTraits;
     NSDictionary *_clientDefinedTraits;
     NSObject *_environmentWrapper;
 }
@@ -29,6 +29,7 @@
 + (id)currentTraitCollection;
 + (id)_backgroundThreadFallbackTraitCollection;
 + (void)_setBackgroundThreadFallbackTraitCollection:(id)arg1;
++ (id)_threadSafeFallbackTraitCollection;
 + (id)_fallbackTraitCollection;
 + (id)_defaultTraitCollection;
 + (id)_emptyTraitCollection;
@@ -107,6 +108,8 @@
 - (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_traitNamesForUnspecifiedBuiltInTraits;
 - (BOOL)containsTraitsInCollection:(id)arg1;
+@property(readonly, nonatomic, getter=_isFallback) BOOL isFallback;
+- (id)_fallbackCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -119,8 +122,8 @@
 @property(readonly) unsigned long long hash;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_3a910e36 *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_3a910e36 *)arg1 clientDefinedTraits:(id)arg2;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_9b1704d8 *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_9b1704d8 *)arg1 clientDefinedTraits:(id)arg2;
 @property(readonly, nonatomic) id <UINSAppearance> _effectiveAppearance;
 - (id)_fallbackTraitCollection;
 - (id)_namedImageDescription;

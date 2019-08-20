@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, NSTimer, RVItem, UITextInteractionAssistant, UITextRangeView, UITextSelection, UITextSelectionWindowAveragedValue;
+@class NSArray, NSTimer, RVItem, UITextInteractionAssistant, UITextRangeView, UITextSelection;
 
 __attribute__((visibility("hidden")))
 @interface UITextSelectionView : UIView
@@ -34,14 +34,15 @@ __attribute__((visibility("hidden")))
     BOOL m_isSuspended;
     BOOL m_wasBlinking;
     int m_showingCommandsCounterForRotate;
-    UITextSelectionWindowAveragedValue *m_velocityWindow;
     BOOL m_forceRangeView;
     BOOL _isIndirectFloatingCaret;
     RVItem *_rvItem;
     struct CGRect _stashedCaretRect;
+    struct CGRect _previousGhostCaretRect;
 }
 
 @property(retain, nonatomic) RVItem *rvItem; // @synthesize rvItem=_rvItem;
+@property(nonatomic) struct CGRect previousGhostCaretRect; // @synthesize previousGhostCaretRect=_previousGhostCaretRect;
 @property(nonatomic) BOOL isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
 @property(nonatomic) struct CGRect stashedCaretRect; // @synthesize stashedCaretRect=_stashedCaretRect;
 @property(retain, nonatomic) NSArray *replacements; // @synthesize replacements=m_replacements;

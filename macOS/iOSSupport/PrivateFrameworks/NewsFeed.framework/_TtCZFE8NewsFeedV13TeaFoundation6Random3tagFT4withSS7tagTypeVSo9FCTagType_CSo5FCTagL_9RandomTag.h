@@ -13,7 +13,7 @@
 }
 
 - (id)init;
-- (id)initChannelFromNotificationWithIdentifier:(id)arg1 name:(id)arg2 nameImageAssetHandle:(id)arg3;
+- (id)initChannelFromNotificationWithIdentifier:(id)arg1 name:(id)arg2 nameImageAssetHandle:(id)arg3 nameImageMaskAssetHandle:(id)arg4;
 - (id)initWithTagType:(unsigned long long)arg1 identifier:(id)arg2 name:(id)arg3;
 - (id)initWithData:(id)arg1 context:(id)arg2;
 - (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 publisherPaidBundlePurchaseIDs:(id)arg3;

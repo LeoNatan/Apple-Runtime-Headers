@@ -44,6 +44,7 @@
     NSMutableArray *_environmentProbeNodesToRemove;
     _Bool _lastRendersMotionBlur;
     _Bool _renderThreadFixed;
+    _Bool _attemptRenderSynchronisationARFrame;
     ARSCNCompositor *_compositor;
     struct os_unfair_lock_s _occlusionLock;
     // Error parsing type: {?="columns"[4]}, name: _currentReferenceTransform

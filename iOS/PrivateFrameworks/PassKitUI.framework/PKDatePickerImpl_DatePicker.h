@@ -17,7 +17,7 @@
 - (void)prepareToDie;
 - (void)setDateValueChangedTarget:(id)arg1 action:(SEL)arg2;
 @property(retain, nonatomic) NSDate *date;
-- (id)initShowingDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 useDarkAppearance:(_Bool)arg4;
+- (id)initShowingDay:(_Bool)arg1 month:(_Bool)arg2 year:(_Bool)arg3 useDarkAppearance:(_Bool)arg4 locale:(id)arg5 calendar:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

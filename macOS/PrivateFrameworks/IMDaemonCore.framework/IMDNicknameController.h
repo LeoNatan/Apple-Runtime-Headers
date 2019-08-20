@@ -60,6 +60,8 @@
 - (void)loadHandledNicknamesAndPendingUpdates;
 - (void)loadPersonalNicknameIfNeeded;
 - (void)_loadAllInfoFromDiskIfAble;
+- (void)_setUnderScrutiny:(BOOL)arg1;
+- (BOOL)_isUnderScrutiny;
 - (BOOL)_deviceUnderFirstUnlock;
 - (void)cleanUpNicknameForID:(id)arg1;
 - (void)_deleteHandleIDFromHandledMap:(id)arg1;
@@ -72,6 +74,7 @@
 - (BOOL)replacedNicknameForHandleIDInHandledMapIfNeeded:(id)arg1 nickname:(id)arg2;
 - (void)addNicknameToPendingUpdates:(id)arg1;
 - (void)_broadcastPendingMapChanged;
+- (void)ignorePendingNicknameForHandleID:(id)arg1;
 - (void)clearPendingNicknameForHandleID:(id)arg1;
 - (void)saveNicknameForRecordID:(id)arg1 handleID:(id)arg2 userNickname:(id)arg3;
 - (void)_updatePendingNicknameVersion;
@@ -116,7 +119,6 @@
 - (void)setPersonalNickname:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)_endNicknameUpload;
 - (void)_beginNicknameUpload;
-- (void)_incrementMeCardVersion;
 - (void)verifyTruncatedRecordIDMatchesPersonalNickname:(id)arg1 forChat:(id)arg2;
 - (void)deviceSignedOutOfiMessage;
 - (void)_newDeviceDidSignIntoiMessageWithRetryCount:(unsigned long long)arg1;

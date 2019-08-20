@@ -20,7 +20,6 @@
 @property(readonly, nonatomic) EMMailboxScope *mailboxScope; // @synthesize mailboxScope=_mailboxScope;
 @property(readonly, nonatomic) EMMessageCollectionItemID *collectionItemID; // @synthesize collectionItemID=_collectionItemID;
 - (void).cxx_destruct;
-@property(retain, nonatomic) ECAngleBracketIDHash *alternateIDHeaderHash;
 @property(readonly, nonatomic) ECAngleBracketIDHash *messageIDHeaderHash;
 @property(readonly, nonatomic) long long databaseID;
 @property(readonly, nonatomic) NSData *serializedRepresentation;

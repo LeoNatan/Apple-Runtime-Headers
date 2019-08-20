@@ -30,6 +30,7 @@
 - (unsigned long long)serializeTo:(void *)arg1 maxSize:(unsigned long long)arg2;
 - (unsigned long long)sizeWhenSerialized;
 - (_Bool)setData:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithKey:(id)arg1 data:(id)arg2 error:(id *)arg3;
 
 @end

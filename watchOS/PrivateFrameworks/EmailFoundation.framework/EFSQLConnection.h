@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSURL;
+#import <EmailFoundation/EFLoggable-Protocol.h>
 
-@interface EFSQLConnection : NSObject
+@class NSHashTable, NSString, NSURL;
+
+@interface EFSQLConnection : NSObject <EFLoggable>
 {
     NSHashTable *_preparedStatements;
     struct sqlite3 *_sqlDB;
@@ -16,6 +18,8 @@
 }
 
 + (_Bool)isSuccessResultCode:(int)arg1 forStep:(_Bool)arg2 error:(id *)arg3;
++ (_Bool)setFileProtection:(id)arg1 forDatabaseAtURL:(id)arg2 error:(id *)arg3;
++ (id)log;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) struct sqlite3 *sqlDB; // @synthesize sqlDB=_sqlDB;
 - (void).cxx_destruct;
@@ -30,12 +34,18 @@
 @property(readonly, nonatomic) _Bool isOpen;
 - (void)close;
 - (_Bool)finalizeStatementsWithError:(id *)arg1;
+- (_Bool)openWithFlags:(int)arg1 error:(id *)arg2;
 - (_Bool)openWithError:(id *)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithSQLDB:(struct sqlite3 *)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithInMemoryDatabase;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

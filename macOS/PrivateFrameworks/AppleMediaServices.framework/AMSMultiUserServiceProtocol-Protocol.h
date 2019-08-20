@@ -6,17 +6,12 @@
 
 #import <AppleMediaServices/NSObject-Protocol.h>
 
-@class ACAccount, NSString, NSUUID;
+@class ACAccount, NSUUID;
 
 @protocol AMSMultiUserServiceProtocol <NSObject>
-- (void)startDaemon;
 - (void)setiTunesAccount:(ACAccount *)arg1 forHomeWithIdentifier:(NSUUID *)arg2 completion:(void (^)(BOOL, NSError *))arg3;
-- (void)refresh;
+- (void)refreshAfterTimeInterval:(double)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)iTunesAccountForHomeWithIdentifier:(NSUUID *)arg1 completion:(void (^)(ACAccount *, NSError *))arg2;
-- (void)fetchRecordsWithHomeID:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
-- (void)fetchHomeUsersWithCompletion:(void (^)(NSArray *, NSError *))arg1;
-- (void)fetchHomesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
-- (void)deleteRecordZoneShareForHomeID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
-- (void)createRecordZoneShareForHomeID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (void)generateInfoWithCompletion:(void (^)(NSString *, NSError *))arg1;
 @end
 

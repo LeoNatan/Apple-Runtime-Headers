@@ -10,7 +10,7 @@
 #import <Mail/EDLibraryMessage-Protocol.h>
 #import <Mail/IMAPPersistedMessage-Protocol.h>
 
-@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFLibraryCalendarEvent, MFLibraryStore, MFMailAccount, MFMailbox, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFLibraryCalendarEvent, MFLibraryStore, MFMailAccount, MFMailbox, NSArray, NSDate, NSDictionary, NSSet, NSString, NSUUID;
 @protocol ECMessageHeaders, ECMimePart, IMAPMessageDataSource;
 
 @interface MFLibraryMessage : MCMessage <IMAPPersistedMessage, EDIndexableMessage, EDLibraryMessage>
@@ -23,7 +23,6 @@
     BOOL _hasSetReferences;
     BOOL _isCompacted;
     BOOL _isBeingChanged;
-    int _conversationPosition;
     unsigned int _primitiveOptions;
     long long _conversationID;
     unsigned long long _messageSize;
@@ -46,7 +45,6 @@
 @property BOOL isBeingChanged; // @synthesize isBeingChanged=_isBeingChanged;
 @property BOOL isCompacted; // @synthesize isCompacted=_isCompacted;
 @property long long mailboxID; // @synthesize mailboxID=_mailboxID;
-@property int conversationPosition; // @synthesize conversationPosition=_conversationPosition;
 @property unsigned long long messageSize; // @synthesize messageSize=_messageSize;
 @property long long conversationID; // @synthesize conversationID=_conversationID;
 - (void).cxx_destruct;
@@ -57,7 +55,7 @@
 - (void)setData:(id)arg1 isPartial:(BOOL)arg2;
 - (void)setAttachmentMetadata:(id)arg1;
 - (id)messageDataFetchIfNotAvailable:(BOOL)arg1 newDocumentID:(id)arg2;
-- (void)setRemoteID:(const char *)arg1 documentID:(id)arg2 flags:(long long)arg3 size:(unsigned long long)arg4 mailboxID:(long long)arg5 color:(CDStruct_f4b747e6)arg6 conversationID:(long long)arg7 conversationPosition:(int)arg8 conversationFlags:(unsigned long long)arg9;
+- (void)setRemoteID:(const char *)arg1 documentID:(id)arg2 flags:(long long)arg3 size:(unsigned long long)arg4 mailboxID:(long long)arg5 color:(CDStruct_f4b747e6)arg6 conversationID:(long long)arg7 conversationFlags:(unsigned long long)arg8;
 @property(readonly, nonatomic) MFMailAccount *account;
 - (id)path;
 @property(readonly, copy) NSString *description;
@@ -103,7 +101,7 @@
 - (void)setReferencesHashes:(id)arg1;
 - (id)referencesHashes;
 - (BOOL)type;
-- (id)documentID;
+@property(readonly, copy) NSUUID *documentID;
 @property(readonly, nonatomic) long long libraryID;
 @property(readonly, copy, nonatomic) NSString *persistentID;
 @property(readonly, copy, nonatomic) NSString *messageID;

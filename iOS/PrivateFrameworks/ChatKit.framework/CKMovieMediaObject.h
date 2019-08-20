@@ -54,6 +54,7 @@
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)generatePreviewFromThumbnail:(id)arg1 width:(double)arg2 orientation:(BOOL)arg3;
 - (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
+- (Class)balloonViewClassForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (Class)previewBalloonViewClass;
 - (id)previewCacheKeyWithOrientation:(BOOL)arg1;
 - (_Bool)_assetContainsMetadataKey:(id)arg1;

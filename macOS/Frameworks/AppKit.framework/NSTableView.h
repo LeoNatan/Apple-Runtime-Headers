@@ -1044,7 +1044,6 @@
 - (BOOL)_showGradientBackgroundBehindGroups;
 - (void)applyPermutationsFromArray:(id)arg1 toArray:(id)arg2 insertionAnimation:(unsigned long long)arg3 removalAnimation:(unsigned long long)arg4;
 - (void)applyPermutationsFromArray:(id)arg1 toArray:(id)arg2 insertAnimation:(unsigned long long)arg3 removeAnimation:(unsigned long long)arg4;
-- (BOOL)_needsDisplayOnClipPathChange;
 - (void)_clipViewWillDisplayOverHang;
 - (void)_adjustFieldEditorAnimated:(BOOL)arg1;
 - (id)_groupViewSeparatorColor;

@@ -13,6 +13,7 @@
 
 @interface HUFeatureOnboarder : NSObject <HUFeatureOnboardingConfiguratorDelegate>
 {
+    BOOL _restart;
     BOOL _hasPerformedPostProcessing;
     NSMutableDictionary *_userInputResults;
     NAFuture *_completionFuture;
@@ -28,8 +29,10 @@
 @property(retain, nonatomic) NSMutableArray *allRemainingFlowGroups; // @synthesize allRemainingFlowGroups=_allRemainingFlowGroups;
 @property(retain, nonatomic) HUFeatureOnboardingConfigurator *configurator; // @synthesize configurator=_configurator;
 @property(retain, nonatomic) NAFuture *completionFuture; // @synthesize completionFuture=_completionFuture;
+@property(nonatomic) BOOL restart; // @synthesize restart=_restart;
 @property(retain, nonatomic) NSMutableDictionary *userInputResults; // @synthesize userInputResults=_userInputResults;
 - (void).cxx_destruct;
+- (void)restartCurrentOnboarding;
 - (id)getNextViewControllerForOnboardingInput:(id)arg1;
 - (void)configuratorDidFinish:(id)arg1;
 - (void)configuratorDidUpdateViewController:(id)arg1;

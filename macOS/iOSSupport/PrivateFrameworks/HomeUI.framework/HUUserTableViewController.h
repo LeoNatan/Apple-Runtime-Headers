@@ -6,26 +6,41 @@
 
 #import <HomeUI/HUItemTableViewController.h>
 
-@class HFItemManager, NSAttributedString, _HUUserAvatarHeaderView;
+#import <HomeUI/HUSplitAccountDelegate-Protocol.h>
+
+@class HFItemManager, HMHome, NSAttributedString, NSString, _HUUserAvatarHeaderView;
 @protocol HUUserItemManager;
 
-@interface HUUserTableViewController : HUItemTableViewController
+@interface HUUserTableViewController : HUItemTableViewController <HUSplitAccountDelegate>
 {
     HFItemManager<HUUserItemManager> *_userItemManager;
     NSAttributedString *_headerMessage;
     _HUUserAvatarHeaderView *_userAvatarHeaderView;
+    HMHome *_home;
 }
 
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) _HUUserAvatarHeaderView *userAvatarHeaderView; // @synthesize userAvatarHeaderView=_userAvatarHeaderView;
 @property(retain, nonatomic) NSAttributedString *headerMessage; // @synthesize headerMessage=_headerMessage;
 @property(readonly, nonatomic) HFItemManager<HUUserItemManager> *userItemManager; // @synthesize userItemManager=_userItemManager;
 - (void).cxx_destruct;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
+- (void)setAMSiTunesAccount:(id)arg1 forHome:(id)arg2;
+- (id)_fetchAccountsForHome:(id)arg1;
+- (void)_refreshSplitAccountsHeaderViewIfNeeded;
 - (void)performRemovalAction:(id)arg1;
 - (id)userHandle;
 - (id)itemTableHeaderView;
-- (id)initWithUserItemManager:(id)arg1;
+- (void)applicationWillEnterForeground;
+- (void)dealloc;
+- (id)initWithUserItemManager:(id)arg1 home:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

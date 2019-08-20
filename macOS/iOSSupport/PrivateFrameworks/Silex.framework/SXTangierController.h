@@ -70,7 +70,6 @@
 @property(readonly, retain, nonatomic) TSKDocumentRoot *documentRoot;
 - (id)layoutDescriptionForComponent:(id)arg1;
 - (void)endSelection;
-- (BOOL)interactiveCanvasController:(id)arg1 configureHardPressGesture:(id)arg2;
 @property(readonly, nonatomic) BOOL shouldClipToScrollViewBoundsInVisibleBounds;
 - (id)interactiveCanvasController:(id)arg1 delegateConformingToProtocol:(id)arg2 forRep:(id)arg3;
 - (BOOL)interactiveCanvasControllerIsRelatedCanvasScrolling:(id)arg1;
@@ -94,16 +93,14 @@
 - (void)interactiveCanvasControllerDidScroll:(id)arg1;
 - (void)interactiveCanvasController:(id)arg1 interactedWithHyperlink:(id)arg2 info:(id)arg3 range:(struct _NSRange)arg4 touchPoint:(struct CGPoint)arg5 touchAndHold:(BOOL)arg6;
 - (struct CGRect)visibleBounds;
-- (id)stringForLookupItemForInteractiveCanvasController:(id)arg1;
 - (id)topLevelLayersForInteractiveCanvasController:(id)arg1;
 - (id)topLevelRepsForInteractiveCanvasController:(id)arg1;
-- (void)updateHUD;
-- (void)willTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGPoint)pointForCharacterAtIndex:(unsigned long long)arg1 inComponentWithIndetifier:(id)arg2;
 - (id)scrollPositionForVisibleRectWithComponentRect:(struct CGRect)arg1;
 - (void)setUnscaledCanvasRect:(struct CGRect)arg1;
 - (void)updateCanvasSize:(struct CGSize)arg1 forComponentViews:(id)arg2;
 - (void)clearSelection;
+@property(nonatomic) BOOL selectionEnabled;
 - (void)didStopPresentingTextView:(id)arg1;
 - (void)didStartPresentingTextView:(id)arg1;
 - (void)dealloc;

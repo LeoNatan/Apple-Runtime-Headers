@@ -13,7 +13,7 @@
 #import <Email/EMMessageListItem-Protocol.h>
 #import <Email/EMMutableMessageListItem-Protocol.h>
 
-@class ECMessageFlags, ECSubject, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString;
+@class ECMessageFlags, ECSubject, EMMessageRepository, EMObjectID, NSArray, NSDate, NSIndexSet, NSString, NSUUID;
 @protocol ECEmailAddressConvertible, EMCollectionItemID;
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
@@ -28,6 +28,7 @@
     BOOL _isToMe;
     BOOL _isCCMe;
     BOOL _isAvailableLocally;
+    int _exchangeEventUID;
     NSDate *_date;
     ECSubject *_subject;
     NSString *_summary;
@@ -42,6 +43,7 @@
     CDUnknownBlockType _loaderBlock;
     id <ECEmailAddressConvertible> _senderAddress;
     NSArray *_bccList;
+    NSUUID *_documentID;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -51,16 +53,19 @@
 + (id)log;
 + (id)externalDataTypeIdentifiers;
 + (id)UTType;
-+ (id)predicateMessageWithMessageID:(id)arg1;
++ (id)predicateForMessageWithMIMEMessageIDHeader:(id)arg1;
 + (id)_predicateForMessagesWithObjectIDConstantValue:(id)arg1 operatorType:(unsigned long long)arg2;
 + (id)predicateForExcludingMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForExcludingMessageWithObjectID:(id)arg1;
 + (id)predicateForMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
+@property(copy, nonatomic) NSUUID *documentID; // @synthesize documentID=_documentID;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
+- (void)setExchangeEventUID:(int)arg1;
+@property(readonly, nonatomic) int exchangeEventUID;
 - (void)setExpiryDate:(id)arg1;
 @property(readonly, nonatomic) NSDate *expiryDate;
 - (void)setStorageByteCount:(long long)arg1;

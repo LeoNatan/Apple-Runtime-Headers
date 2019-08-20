@@ -12,7 +12,7 @@
 - (void)avkit_setPreferredRefreshRate:(double)arg1 HDRMode:(long long)arg2;
 - (void)avkit_resetPreferredModeSwitchRequest;
 - (BOOL)avkit_screenHasWindowsExcludingWindow:(id)arg1;
-- (BOOL)avkit_isUnattachedOrInactive;
+- (BOOL)avkit_isForeground;
 - (long long)avkit_screenType;
 - (id)avkit_asWindowScene;
 @end

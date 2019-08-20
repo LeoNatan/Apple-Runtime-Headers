@@ -33,6 +33,7 @@
     WFDateSubstitutableState *_anotherDateValue;
 }
 
++ (Class)processingValueClass;
 @property(readonly, nonatomic) WFDateSubstitutableState *anotherDateValue; // @synthesize anotherDateValue=_anotherDateValue;
 @property(readonly, nonatomic) WFDateSubstitutableState *dateValue; // @synthesize dateValue=_dateValue;
 @property(readonly, nonatomic) WFByteCountUnitSubstitutableState *byteCountUnitValue; // @synthesize byteCountUnitValue=_byteCountUnitValue;

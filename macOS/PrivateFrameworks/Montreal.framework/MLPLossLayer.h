@@ -31,9 +31,9 @@
 - (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
 - (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
 - (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
-- (id)seqInferenceForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3;
-- (id)seqTrainingForward:(id)arg1 subMatrix:(id)arg2 reductionSumResults:(id)arg3 alphaVec:(id)arg4 labels:(id)arg5 rowOffset:(unsigned long long)arg6 computeNRows:(unsigned long long)arg7;
-- (id)seqTrainingForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3;
+- (id)seqInferenceForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3;
+- (id)seqTrainingForward:(id)arg1 subMatrix:(id)arg2 reductionSumResults:(id)arg3 alphaVec:(id)arg4 labels:(id)arg5 rowOffset:(unsigned long long)arg6 computeNRows:(unsigned long long)arg7 computeLossGradient:(BOOL)arg8;
+- (id)seqTrainingForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3 computeLossGradient:(BOOL)arg4;
 - (id)seqForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (struct NSArray *)imageInferenceForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;
 - (struct NSArray *)imageTrainingForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;

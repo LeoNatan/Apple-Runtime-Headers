@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSHashTable *_clients;
     NSMutableArray *_interruptionDates;
     _Bool _isReconnecting;
+    CDUnknownBlockType _predictionHandler;
     long long _sandboxHandle;
     id <MNNavigationServiceClientInterface> _delegate;
 }
@@ -69,6 +70,9 @@ __attribute__((visibility("hidden")))
 - (id)_remoteObjectProxy;
 - (void)_closeConnection;
 - (_Bool)_shouldReconnectWithInterruptionOnDate:(id)arg1;
+- (void)_restoreIdleConnection;
+- (void)_restoreNavigationSession;
+- (void)_restorePredictionSession;
 - (void)_handleInterruption;
 - (void)_openConnection;
 - (void)_updateConnection;

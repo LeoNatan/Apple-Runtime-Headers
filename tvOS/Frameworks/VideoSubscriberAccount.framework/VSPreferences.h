@@ -21,6 +21,9 @@
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (void).cxx_destruct;
+- (id)metricUserIDLastGenerated;
+- (void)setMetricUserID:(id)arg1;
+- (id)metricUserID;
 - (_Bool)ignoreSetTopBoxProfile;
 - (void)setIgnoreSetTopBoxProfile:(_Bool)arg1;
 - (id)setTopBoxInfoBundleIdentifierOverride;

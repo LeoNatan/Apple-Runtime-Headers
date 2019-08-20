@@ -20,6 +20,7 @@
 @property(retain, nonatomic) NSMapTable *editedFileURLsByPreviewItem; // @synthesize editedFileURLsByPreviewItem=_editedFileURLsByPreviewItem;
 @property(retain, nonatomic) NSArray *previewItems; // @synthesize previewItems=_previewItems;
 - (void).cxx_destruct;
+- (id)subcategoryForCategory:(id)arg1;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewController:(id)arg1 didSaveEditedCopyOfPreviewItem:(id)arg2 atURL:(id)arg3;
 - (long long)previewController:(id)arg1 editingModeForPreviewItem:(id)arg2;

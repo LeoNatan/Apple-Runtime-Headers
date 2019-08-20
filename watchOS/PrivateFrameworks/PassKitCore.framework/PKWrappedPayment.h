@@ -16,6 +16,7 @@
     NSData *_transactionData;
     NSData *_transactionInstructionsSignature;
     PKSecureElementCertificateSet *_certificates;
+    NSString *_merchantCountryCode;
     NSString *_kextBlacklistVersion;
     NSData *_enrollmentSignature;
 }
@@ -23,6 +24,7 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSData *enrollmentSignature; // @synthesize enrollmentSignature=_enrollmentSignature;
 @property(copy, nonatomic) NSString *kextBlacklistVersion; // @synthesize kextBlacklistVersion=_kextBlacklistVersion;
+@property(copy, nonatomic) NSString *merchantCountryCode; // @synthesize merchantCountryCode=_merchantCountryCode;
 @property(copy, nonatomic) PKSecureElementCertificateSet *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSData *transactionInstructionsSignature; // @synthesize transactionInstructionsSignature=_transactionInstructionsSignature;
 @property(copy, nonatomic) NSData *transactionData; // @synthesize transactionData=_transactionData;

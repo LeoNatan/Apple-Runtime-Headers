@@ -65,8 +65,9 @@
 - (void)visibleRectDidChange;
 @property(readonly, nonatomic) struct CGSize subtitleSize; // @synthesize subtitleSize=_subtitleSize;
 @property(readonly, nonatomic) struct CGSize titleSize; // @synthesize titleSize=_titleSize;
-- (void)_handleAsyncTitle:(id)arg1 generation:(long long)arg2;
+- (void)_handleAsyncTitle:(id)arg1 subtitle:(id)arg2 generation:(long long)arg3;
 - (void)_updateTitleAndSubtitle;
+- (BOOL)shouldSwapTitleAndSubtitle;
 - (void)_invalidateAttributedSubtitle;
 - (void)_invalidateAttributedTitle;
 - (void)_updateSprites;

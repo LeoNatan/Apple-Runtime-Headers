@@ -33,11 +33,12 @@
 - (void).cxx_destruct;
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodePreviewActionForContext:URL:result:contact:ics:
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodeActionsForContext:URL:result:contact:ics:
-- (BOOL)_phoneNumberIsABusinessNumber:(id)arg1;
+- (BOOL)_phoneNumberIsABusinessNumber:(id)arg1 messageable:(char *)arg2;
 -     // Error parsing type: @24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _phoneNumberFromResult:
--     // Error parsing type: c24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyLaunchDefaultActionForPhoneNumberResult:
-- (BOOL)_shouldImmediatelyLaunchDefaultActionForPhoneNumberURL:(id)arg1;
+-     // Error parsing type: c32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16^c24, name: _checkIfBusinessWithResult:messageable:
+- (BOOL)_checkIfBusinessWithURL:(id)arg1 messageable:(char *)arg2;
 - (BOOL)_shouldImmediatelyShowActionSheetForURL:(id)arg1;
+- (id)_ensureURLIsURL:(id)arg1;
 -     // Error parsing type: c24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyShowActionSheetForCoreResult:
 - (void)_cacheBusinessPhoneNumber:(id)arg1;
 -     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _interactionDidStartForResult:
@@ -46,6 +47,7 @@
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40@0:8@16@24^@32, name: _resultForIdentifier:forContainer:context:
 -     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: interactionDidStartForResult:
 - (void)interactionDidStartForURL:(id)arg1;
+- (BOOL)shouldIgnoreMessageActionForURL:(id)arg1;
 -     // Error parsing type: c24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: shouldImmediatelyLaunchDefaultActionForResult:
 - (BOOL)shouldImmediatelyLaunchDefaultActionForURL:(id)arg1;
 - (void)cancelAction;
@@ -72,31 +74,6 @@
 - (void)setResults:(struct __CFArray *)arg1 forContainer:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned long long)arg2;
-- (id)defaultActionForDOMNode:(id)arg1 forFrame:(id)arg2;
-- (id)defaultActionForAnchor:(id)arg1 url:(id)arg2 forFrame:(id)arg3;
-- (struct __DDResult *)resultForNode:(id)arg1 url:(id)arg2 frame:(id)arg3 contextRef:(id *)arg4;
-- (id)actionsForDOMNode:(id)arg1 forFrame:(id)arg2;
-- (id)attributedTitleForResult:(struct __DDResult *)arg1 updaterBlock:(CDUnknownBlockType)arg2;
-- (id)attributedTitleForURL:(id)arg1 updaterBlock:(CDUnknownBlockType)arg2;
-- (id)titleForURL:(id)arg1 results:(id)arg2 context:(id)arg3;
-- (id)defaultActionForURL:(id)arg1 results:(id)arg2 context:(id)arg3;
-- (id)actionsForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 context:(id)arg5;
-- (struct __DDResult *)resultForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 context:(id)arg5 extendedContext:(id *)arg6;
-- (struct __DDResult *)_resultForURL:(id)arg1 withResults:(id)arg2 context:(id *)arg3;
-- (struct __DDResult *)_resultForIdentifier:(id)arg1 withResults:(id)arg2 context:(id *)arg3;
-- (id)actionsForAnchor:(id)arg1 url:(id)arg2 forFrame:(id)arg3;
-- (id)actionsForURL:(id)arg1;
-- (struct __DDResult *)resultForDOMNode:(id)arg1 forFrame:(id)arg2;
-- (struct __DDResult *)_resultForAnchor:(id)arg1 forFrame:(id)arg2 context:(id *)arg3;
-- (id)_plainTextAugmentedContext:(id)arg1 withFrame:(id)arg2;
-- (BOOL)shouldImmediatelyShowActionSheetForURL:(id)arg1 forFrame:(id)arg2;
-- (void)frameWillBeRemoved:(id)arg1;
-- (void)cancelURLificationForFrame:(id)arg1;
-- (void)resetResultsForFrame:(id)arg1;
-- (void)setContext:(id)arg1 forFrame:(id)arg2;
-- (void)setResults:(struct __CFArray *)arg1 forFrame:(id)arg2;
-- (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned long long)arg2 options:(int)arg3;
 - (id)preferredTextAttributesForLinkAtCharacterIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
 - (BOOL)shouldUseLightStyleAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2 moreHighlight:(char *)arg3;
 - (void)interactionDidStartAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2;

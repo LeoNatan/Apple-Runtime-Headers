@@ -176,6 +176,7 @@
 + (id)MoveToFirstElement;
 + (id)MoveToNextElement;
 + (id)MoveToPreviousElement;
++ (id)PerformLongPress;
 + (id)SecondaryActivate;
 + (id)PrimaryActivate;
 + (id)commandWithSiriShortcut:(id)arg1;

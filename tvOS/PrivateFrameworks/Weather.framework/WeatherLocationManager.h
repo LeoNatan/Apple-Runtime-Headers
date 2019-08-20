@@ -77,6 +77,7 @@
 - (void)setLocationTrackingReady:(_Bool)arg1 activelyTracking:(_Bool)arg2 watchKitExtension:(_Bool)arg3 shouldRequestAuthorization:(_Bool)arg4;
 - (void)setLocationTrackingReady:(_Bool)arg1 activelyTracking:(_Bool)arg2 watchKitExtension:(_Bool)arg3;
 - (int)forceLoadingAuthorizationStatus;
+- (void)forceLocationManagerAuthorization;
 - (void)askForLocationManagerAuthorization;
 - (_Bool)localWeatherAuthorized;
 @property(readonly, nonatomic) double distanceFilter;

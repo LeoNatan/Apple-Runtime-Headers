@@ -8,6 +8,7 @@
 
 #import <IconServices/ISImage-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface _ISImage : NSObject <ISImage>
 {
     unsigned int _scale;

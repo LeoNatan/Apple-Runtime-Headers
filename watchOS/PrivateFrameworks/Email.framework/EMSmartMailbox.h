@@ -15,6 +15,7 @@
     int _smartMailboxType;
 }
 
++ (id)unifiedMailboxOfType:(int)arg1 name:(id)arg2 additionalPredicate:(id)arg3;
 + (id)unifiedMailboxOfType:(int)arg1 name:(id)arg2;
 + (id)includesMeMailboxWithMailboxScope:(id)arg1;
 + (id)muteThreadsMailboxWithMailboxScope:(id)arg1;

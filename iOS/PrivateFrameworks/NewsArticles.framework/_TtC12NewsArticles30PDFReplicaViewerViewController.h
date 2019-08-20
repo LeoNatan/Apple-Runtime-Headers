@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: subscriptionController
     // Error parsing type: , name: nextButton
     // Error parsing type: , name: barVisibilityAnimator
+    // Error parsing type: , name: pageSheetPresentationObserver
 }
 
 - (void).cxx_destruct;

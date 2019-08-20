@@ -22,6 +22,9 @@
 - (unsigned int)getParameter:(unsigned int)arg1 to:(int *)arg2;
 - (unsigned int)setParameter:(unsigned int)arg1 to:(int *)arg2;
 - (_Bool)setBlockFence:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
+- (_Bool)texImageIOSurface:(struct __IOSurface *)arg1 target:(unsigned int)arg2 internalFormat:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 format:(unsigned int)arg6 type:(unsigned int)arg7 plane:(unsigned int)arg8 invert:(_Bool)arg9;
+- (_Bool)texImageIOSurface:(struct __IOSurface *)arg1 target:(unsigned int)arg2 internalFormat:(unsigned int)arg3 width:(unsigned int)arg4 height:(unsigned int)arg5 format:(unsigned int)arg6 type:(unsigned int)arg7 plane:(unsigned int)arg8;
+- (_Bool)attachImage:(unsigned int)arg1 toCoreSurface:(struct __IOSurface *)arg2 invertedRender:(_Bool)arg3;
 - (_Bool)presentRenderbuffer:(unsigned int)arg1 afterMinimumDuration:(double)arg2;
 - (_Bool)presentRenderbuffer:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)presentRenderbuffer:(unsigned int)arg1;

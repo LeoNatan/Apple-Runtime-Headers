@@ -6,29 +6,32 @@
 
 #import <AppKit/NSPopUpButtonCell.h>
 
+@class QTHUDPopUpButtonCellButtonCell;
+
 @interface QTHUDPopUpButtonCell : NSPopUpButtonCell
 {
+    QTHUDPopUpButtonCellButtonCell *_buttonCell;
 }
 
 + (void)initialize;
-- (void)setArrowPosition:(unsigned long long)arg1;
-- (void)setMenuItem:(id)arg1;
-- (void)setShowsFirstResponder:(BOOL)arg1;
-- (void)setBezeled:(BOOL)arg1;
-- (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (BOOL)isOpaque;
-- (void)setBordered:(BOOL)arg1;
-- (void)setControlView:(id)arg1;
 - (void)setImageScaling:(unsigned long long)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setState:(long long)arg1;
 - (void)setImagePosition:(unsigned long long)arg1;
+- (void)setArrowPosition:(unsigned long long)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setBezeled:(BOOL)arg1;
+- (void)setBordered:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isOpaque;
+- (void)setState:(long long)arg1;
+- (void)setMenuItem:(id)arg1;
+- (void)setControlView:(id)arg1;
+- (void)setShowsFirstResponder:(BOOL)arg1;
+- (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)dealloc;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initImageCell:(id)arg1;
 - (id)initTextCell:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)init;
 
 @end

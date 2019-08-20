@@ -14,13 +14,14 @@ __attribute__((visibility("hidden")))
     UIColor *resolvedTintColor;
     NSString *appearanceName;
     struct CGSize _size;
+    unsigned int _drawMode;
     struct {
         unsigned int bold:1;
         unsigned int letterpress:1;
     } _flags;
 }
 
-+ (id)keyWithSize:(struct CGSize)arg1 unresolvedTintColor:(id)arg2 traitCollection:(id)arg3 bold:(_Bool)arg4 letterpress:(_Bool)arg5;
++ (id)keyWithSize:(struct CGSize)arg1 unresolvedTintColor:(id)arg2 traitCollection:(id)arg3 bold:(_Bool)arg4 letterpress:(_Bool)arg5 drawMode:(unsigned int)arg6;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

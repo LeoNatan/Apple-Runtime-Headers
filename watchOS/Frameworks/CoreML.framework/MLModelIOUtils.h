@@ -11,6 +11,7 @@
 }
 
 + (id)orderedFeatureNamesFromInterface:(struct _MLModelDescriptionSpecification *)arg1 forInput:(_Bool)arg2;
++ (id)trainingInputDescriptionFromInterface:(struct _MLModelDescriptionSpecification *)arg1;
 + (id)outputDescriptionFromInterface:(struct _MLModelDescriptionSpecification *)arg1;
 + (id)inputDescriptionFromInterface:(struct _MLModelDescriptionSpecification *)arg1;
 + (id)deserializeMetadataAndInterfaceFromArchive:(struct _MLModelInputArchiver *)arg1 error:(id *)arg2;

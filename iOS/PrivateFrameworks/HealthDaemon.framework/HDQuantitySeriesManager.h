@@ -22,8 +22,6 @@
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesJournaled:(id)arg1 type:(id)arg2;
 - (void)samplesAdded:(id)arg1 type:(id)arg2 anchor:(id)arg3;
-- (void)didJournalObjects:(id)arg1;
-- (void)willInsertObjects:(id)arg1 transaction:(id)arg2;
 - (_Bool)discardSeries:(id)arg1 error:(id *)arg2;
 - (id)freezeSeries:(id)arg1 metadata:(id)arg2 endDate:(id)arg3 error:(id *)arg4;
 - (_Bool)insertValues:(id)arg1 series:(id)arg2 error:(id *)arg3;

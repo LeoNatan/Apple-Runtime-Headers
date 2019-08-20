@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface VUIUpNextRequestManager : NSObject
 {
     NSMutableDictionary *_ongoingCanonicalIDOperationDictionary;

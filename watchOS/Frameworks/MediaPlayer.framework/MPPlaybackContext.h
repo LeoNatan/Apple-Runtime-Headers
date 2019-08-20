@@ -37,6 +37,7 @@
 @property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSupported) _Bool supported;
+@property(readonly, nonatomic) _Bool containsRestorableContent;
 - (id)description;
 - (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;

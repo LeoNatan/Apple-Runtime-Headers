@@ -15,10 +15,12 @@
     NSDate *_earliestCreationDate;
     NSDate *_latestCreationDate;
     NSDate *_latestTombstoneDate;
+    long long _version;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)baseBookmark;
++ (id)baseBookmarkWithVersion:(long long)arg1;
+@property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSDate *latestTombstoneDate; // @synthesize latestTombstoneDate=_latestTombstoneDate;
 @property(readonly, copy, nonatomic) NSDate *latestCreationDate; // @synthesize latestCreationDate=_latestCreationDate;
 @property(readonly, copy, nonatomic) NSDate *earliestCreationDate; // @synthesize earliestCreationDate=_earliestCreationDate;
@@ -31,7 +33,7 @@
 - (id)updatedBookmarkWithLatestTombstoneDate:(id)arg1;
 - (id)updatedBookmarkWithLatestCreationDate:(id)arg1;
 - (id)updatedBookmarkWithEarliestCreationDate:(id)arg1;
-- (id)initWithEarliestCreationDate:(id)arg1 latestCreationDate:(id)arg2 latestTombstoneDate:(id)arg3;
+- (id)initWithEarliestCreationDate:(id)arg1 latestCreationDate:(id)arg2 latestTombstoneDate:(id)arg3 version:(long long)arg4;
 
 @end
 

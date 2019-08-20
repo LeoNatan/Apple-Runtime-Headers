@@ -9,6 +9,8 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
+@class NSError;
+
 @interface PKPaymentHardwareStatus : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _hasSecureElement;
@@ -25,12 +27,14 @@
     BOOL _canMakeRemotePayments;
     BOOL _canDecryptBAAEncryptedData;
     unsigned long long _ownershipState;
+    NSError *_policyError;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL canDecryptBAAEncryptedData; // @synthesize canDecryptBAAEncryptedData=_canDecryptBAAEncryptedData;
+@property(retain, nonatomic) NSError *policyError; // @synthesize policyError=_policyError;
 @property(nonatomic) BOOL canMakeRemotePayments; // @synthesize canMakeRemotePayments=_canMakeRemotePayments;
-@property(nonatomic) BOOL canEvaluatePolicy; // @synthesize canEvaluatePolicy=_canEvaluatePolicy;
+@property(readonly, nonatomic) BOOL canEvaluatePolicy; // @synthesize canEvaluatePolicy=_canEvaluatePolicy;
 @property(nonatomic) BOOL automaticallyInstallConfigDataAndSecurityUpdates; // @synthesize automaticallyInstallConfigDataAndSecurityUpdates=_automaticallyInstallConfigDataAndSecurityUpdates;
 @property(nonatomic) BOOL automaticallyCheckForUpdates; // @synthesize automaticallyCheckForUpdates=_automaticallyCheckForUpdates;
 @property(nonatomic) BOOL hasTouchBar; // @synthesize hasTouchBar=_hasTouchBar;
@@ -42,6 +46,7 @@
 @property(nonatomic) unsigned long long ownershipState; // @synthesize ownershipState=_ownershipState;
 @property(nonatomic) BOOL hasRemoteDevices; // @synthesize hasRemoteDevices=_hasRemoteDevices;
 @property(nonatomic) BOOL hasSecureElement; // @synthesize hasSecureElement=_hasSecureElement;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isDemoModeActive) BOOL _isDemoModeActive;
 - (BOOL)canAddCardWithError:(id *)arg1;
 @property(readonly, nonatomic) BOOL canMakeLocalPayments;

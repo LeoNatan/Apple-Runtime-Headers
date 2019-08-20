@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)transitDeparturesDataSource:(id)arg1 didSelectAttributionController:(id)arg2;
 - (void)transitDeparturesDataSource:(id)arg1 didUpdateHeightsForRows:(id)arg2;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectConnectionInformation:(id)arg2;
+- (BOOL)transitDeparturesDataSource:(id)arg1 canSelectDepartureSequence:(id)arg2 transitStationMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectDepartureSequence:(id)arg2 transitStationMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
 - (void)transitDeparturesDataSource:(id)arg1 showIncidents:(id)arg2;

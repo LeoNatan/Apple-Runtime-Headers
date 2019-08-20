@@ -10,7 +10,7 @@
 #import <AuthKitUI/AKAuthorizationPasswordAuthenticationDelegate-Protocol.h>
 #import <AuthKitUI/AKNumericCodeEntryControllerDelegate-Protocol.h>
 
-@class AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, NSString;
+@class AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationViewController, NSString;
 
 @interface AKAuthorizationPasswordRequestViewController : AKAuthorizationPaneViewController <AKNumericCodeEntryControllerDelegate, AKAuthorizationPasswordAuthenticationDelegate, AKAuthorizationEditableDataSources>
 {
@@ -18,9 +18,11 @@
     _Bool _needsAccountPassword;
     AKAuthorizationScopeChoices *_editableScopeChoices;
     AKAuthorizationPresentationContext *_presentationContext;
+    AKAuthorizationViewController *_authorizationViewController;
 }
 
 @property(nonatomic) _Bool needsAccountPassword; // @synthesize needsAccountPassword=_needsAccountPassword;
+@property(nonatomic) __weak AKAuthorizationViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) _Bool editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;

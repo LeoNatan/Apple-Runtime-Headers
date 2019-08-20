@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)fetchLocationOfInterestByType:(long long)arg1 name:(id)arg2;
 - (id)storageLocationFromDueLocation:(id)arg1;
-- (id)_reminderEnrichmentWithTitle:(id)arg1 dueDateComponents:(id)arg2 dueLocationType:(unsigned char)arg3 dueLocation:(id)arg4 dueLocationTrigger:(unsigned char)arg5 sourceURL:(id)arg6 reminderStatus:(unsigned char)arg7 parentEntity:(id)arg8;
+- (id)_reminderEnrichmentWithTitle:(id)arg1 dueDateComponents:(id)arg2 dueLocationType:(unsigned char)arg3 dueLocation:(id)arg4 dueLocationTrigger:(unsigned char)arg5 sourceURL:(id)arg6 reminderStatus:(unsigned char)arg7 parentEntity:(id)arg8 allDay:(BOOL)arg9;
 - (id)_testReminder:(id)arg1 entity:(id)arg2;
 - (BOOL)_isTestMessage:(id)arg1;
 - (id)conversations;

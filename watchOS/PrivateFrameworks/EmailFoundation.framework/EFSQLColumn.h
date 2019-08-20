@@ -17,9 +17,6 @@
 @property(readonly, nonatomic) struct sqlite3_stmt *statement; // @synthesize statement=_statement;
 @property(readonly, nonatomic) int index; // @synthesize index=_index;
 - (id)debugDescription;
-- (void)_checkValue:(id)arg1 matchesClass:(Class)arg2;
-- (void)_checkColumnType:(int)arg1 matchesType:(int)arg2;
-- (void)_throwMismatchedTypeExpected:(id)arg1 got:(id)arg2;
 @property(readonly, nonatomic) NSDate *dateValue;
 @property(readonly, nonatomic) double doubleValue;
 @property(readonly, nonatomic) long long int64Value;

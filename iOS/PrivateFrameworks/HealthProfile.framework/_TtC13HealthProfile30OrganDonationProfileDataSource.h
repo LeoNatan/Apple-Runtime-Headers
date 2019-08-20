@@ -9,6 +9,7 @@
 @interface _TtC13HealthProfile30OrganDonationProfileDataSource : NSObject
 {
     // Error parsing type: , name: reuseIdentifier
+    // Error parsing type: , name: title
 }
 
 - (void).cxx_destruct;

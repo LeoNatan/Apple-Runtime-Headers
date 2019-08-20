@@ -89,7 +89,6 @@
 @property(readonly) long long storeSheetTypeAskToBuy;
 @property(readonly) long long storeSheetTypeDefault;
 @property(readonly) NSString *safariViewControllerIdentifierQueryParameterName;
-@property(readonly, getter=isWalletAvailable) id walletAvailable;
 @property(readonly) NSString *userAgent;
 @property(readonly) NSString *tidState;
 @property(readonly) SUScriptDictionary *tidHeaders;
@@ -124,6 +123,8 @@
 - (id)makeXMLHTTPStoreRequest;
 - (id)makeXMLHTTPRequest;
 @property(readonly) id loggingEnabled;
+@property(readonly, getter=isWalletAvailable) id walletAvailable;
+@property(readonly, getter=isApplePayAvailable) id applePayAvailable;
 @property(readonly) NSString *gsToken;
 @property(readonly) id globalRootObject;
 @property(readonly) NSString *deviceSerialNumber;

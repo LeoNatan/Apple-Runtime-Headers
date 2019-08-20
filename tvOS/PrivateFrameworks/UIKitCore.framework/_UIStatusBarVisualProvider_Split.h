@@ -29,8 +29,6 @@
 
 + (double)condensedPointSizeForCellularType:(long long)arg1 defaultPointSize:(double)arg2 baselineOffset:(double *)arg3;
 + (struct CGSize)intrinsicContentSizeForOrientation:(long long)arg1;
-+ (id)expandedFont;
-+ (id)normalFont;
 + (struct NSDirectionalEdgeInsets)expandedEdgeInsets;
 + (struct NSDirectionalEdgeInsets)trailingEdgeInsets;
 + (struct NSDirectionalEdgeInsets)leadingEdgeInsets;
@@ -42,6 +40,10 @@
 + (double)baselineBottomInset;
 + (id)pillSmallFont;
 + (id)pillFont;
++ (id)smallFont;
++ (id)emphasizedFont;
++ (id)expandedFont;
++ (id)normalFont;
 + (struct CGSize)smallPillSize;
 + (struct CGSize)pillSize;
 + (double)pillCenteringEdgeInset;

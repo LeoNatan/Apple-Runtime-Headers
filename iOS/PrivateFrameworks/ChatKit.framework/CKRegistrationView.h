@@ -8,7 +8,6 @@
 
 @class UIActivityIndicatorView, UIButton, UIImageView, UILabel, UIView;
 
-__attribute__((visibility("hidden")))
 @interface CKRegistrationView : UIScrollView
 {
     UIImageView *_iconImageView;

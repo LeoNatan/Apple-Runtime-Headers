@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSBulkPointerArray, NSMutableIndexSet;
+@class NSBulkPointerArray, NSIndexSet, NSMutableIndexSet;
 
 __attribute__((visibility("hidden")))
 @interface _NSCollectionViewCachedSectionInfo : NSObject
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)replaceItemPointersFromArray:(id)arg1 range:(struct _NSRange)arg2;
 - (void)appendItemPointersTo:(id)arg1;
 - (void)deleteQueuedItems;
+@property(readonly) NSIndexSet *itemIndexesQueuedForDeletion;
 - (void)queueDeleteItemsAtIndexes:(id)arg1;
 - (void)reloadItemsAtIndexes:(id)arg1;
 - (void)moveItemFromIndex:(long long)arg1 toIndex:(long long)arg2;

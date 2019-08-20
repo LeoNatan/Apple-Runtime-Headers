@@ -11,10 +11,7 @@
 
 @interface MPCloudController : NSObject
 {
-    _Bool _isCloudEnabled;
-    _Bool _jaliscoGeniusEnabled;
     _MPCloudControllerImplementation *_implementation;
-    ICUserIdentity *_userIdentity;
     ICCloudClient *_cloudClient;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
@@ -30,10 +27,7 @@
 + (id)controllers;
 + (id)globalSerialQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-@property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) _Bool jaliscoGeniusEnabled; // @synthesize jaliscoGeniusEnabled=_jaliscoGeniusEnabled;
 @property(readonly, nonatomic) ICCloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
-@property(readonly, nonatomic) _Bool isCloudEnabled; // @synthesize isCloudEnabled=_isCloudEnabled;
-@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 @property(retain, nonatomic) _MPCloudControllerImplementation *implementation; // @synthesize implementation=_implementation;
 - (void)setLikedState:(int)arg1 forPlaylistWithGlobalID:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -44,6 +38,7 @@
 - (void)setLikedState:(int)arg1 forEntityWithStoreID:(long long)arg2 withMediaType:(unsigned int)arg3;
 - (void)fetchRecommendedContentWithSeedTrackID:(long long)arg1 seedTrackIDType:(int)arg2 count:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) _Bool enablingJaliscoGeniusRequiresTerms;
+@property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) _Bool jaliscoGeniusEnabled;
 - (void)updateJaliscoMediaLibraryWithReason:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)hideItemsWithPurchaseHistoryIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -65,8 +60,6 @@
 @property(readonly, nonatomic) _Bool isCloudLibraryInitialImport;
 @property(readonly, nonatomic) _Bool isInitialImport;
 @property(readonly, nonatomic) _Bool isGeniusEnabled;
-@property(readonly, nonatomic) _Bool hasCloudLockerAccount;
-@property(readonly, nonatomic) _Bool hasPurchaseHistoryAccount;
 - (void)becomeActiveAndWaitUntilDone:(_Bool)arg1;
 - (void)becomeActive;
 - (void)deprioritizeArtworkRequestForEntityPersistentID:(long long)arg1 entityType:(int)arg2 artworkType:(int)arg3 artworkSourceType:(int)arg4;
@@ -93,6 +86,9 @@
 - (void)sdk_createPlaylistWithPersistenID:(unsigned long long)arg1 properties:(id)arg2 tracklist:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)createPlaylistWithPersistentID:(unsigned long long)arg1 properties:(id)arg2 trackList:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateSubscribedPlaylistWithSagaID:(unsigned long long)arg1 ignoreMinRefreshInterval:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) _Bool hasPurchaseHistoryAccount;
+@property(readonly, nonatomic) _Bool hasCloudLockerAccount;
+@property(readonly, nonatomic) _Bool isCloudEnabled;
 @property(readonly, nonatomic) _Bool canShowCloudVideo;
 @property(readonly, nonatomic) _Bool canShowCloudMusic;
 @property(readonly, nonatomic) _Bool canDefaultMediaLibraryShowCloudContent;
@@ -107,8 +103,10 @@
 - (_Bool)isCellularDataRestrictedForMusic;
 - (_Bool)hasProperNetworkConditionsToShowCloudMedia;
 - (_Bool)hasProperNetworkConditionsToPlayMedia;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity;
+- (id)description;
 - (void)_receivedImplementationNotification:(id)arg1;
-- (void)_libraryPathDidChangeForSharedCloudController:(id)arg1;
+- (void)_activeUserDidChangeForSharedCloudController:(id)arg1;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 

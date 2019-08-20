@@ -20,6 +20,7 @@
     NSImage *_noButtonImageTinted;
     NSUserDefaults *_defaults;
     NSURL *_prefsURL;
+    BOOL _touchbarAllowed;
 }
 
 + (id)sharedController;

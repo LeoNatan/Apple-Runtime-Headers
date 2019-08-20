@@ -12,9 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedConstants;
-- (id)defaultTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultSelectionTintColorForCell:(id)arg1 inTableView:(id)arg2;
-- (id)defaultBackgroundColorForTableViewStyle:(long long)arg1;
 
 @end
 

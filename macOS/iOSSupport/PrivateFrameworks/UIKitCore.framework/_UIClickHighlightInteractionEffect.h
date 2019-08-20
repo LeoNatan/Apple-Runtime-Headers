@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 @property(retain, nonatomic) _UIClickHighlightEffectPlatter *highlightPlatter; // @synthesize highlightPlatter=_highlightPlatter;
 - (void).cxx_destruct;
-- (void)_createHighlightPlatterIfNeeded;
+- (void)_createHighlightPlatter;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 @property(readonly, nonatomic) UITargetedPreview *targetedPreviewForEffectContinuation;
 - (id)initWithTargetedPreview:(id)arg1;

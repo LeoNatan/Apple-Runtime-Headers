@@ -12,8 +12,8 @@
 #import <AssistantServices/AFInterstitialProviderDelegate-Protocol.h>
 #import <AssistantServices/NSXPCListenerDelegate-Protocol.h>
 
-@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
-@protocol AFAssistantUIService, AFSpeechDelegate, OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
+@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, AFWatchdogTimer, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
+@protocol AFAssistantUIService, AFSpeechDelegate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface AFConnection : NSObject <NSXPCListenerDelegate, AFAudioPowerUpdaterDelegate, AFAccessibilityListening, AFDeviceRingerSwitchListening, AFInterstitialProviderDelegate>
 {
@@ -27,7 +27,7 @@
     NSUUID *_activeRequestUUID;
     int _activeRequestType;
     int _activeRequestUsefulUserResultType;
-    NSObject<OS_dispatch_source> *_requestTimeoutTimer;
+    AFWatchdogTimer *_requestTimeoutTimer;
     AFOneArgumentSafetyBlock *_requestCompletion;
     int _activeRequestSpeechEvent;
     _Bool _activeRequestHasSpeechRecognition;
@@ -117,6 +117,7 @@
 - (void)stopSpeech;
 - (void)reportIssueForError:(id)arg1 type:(int)arg2 context:(id)arg3;
 - (void)failRequestWithError:(id)arg1;
+- (void)cancelRequestForReason:(int)arg1;
 - (void)cancelRequest;
 - (void)cancelSpeech;
 - (void)startAcousticIDRequestWithOptions:(id)arg1;
@@ -147,6 +148,7 @@
 - (void)resumeInterruptedAudioPlaybackIfNeeded;
 - (void)forceAudioSessionInactiveWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceAudioSessionInactive;
+- (void)forceAudioSessionActiveWithOptions:(unsigned int)arg1 reason:(int)arg2 speechRequestOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)forceAudioSessionActiveWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)forceAudioSessionActiveWithOptions:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceAudioSessionActive;
@@ -172,6 +174,8 @@
 - (void)_extendExistingRequestTimeoutForReason:(id)arg1;
 - (void)_extendRequestTimeoutForReason:(id)arg1;
 - (void)_cancelRequestTimeoutForReason:(id)arg1;
+- (void)_resumeRequestTimeoutForReason:(id)arg1;
+- (void)_pauseRequestTimeoutForReason:(id)arg1;
 - (void)_invokeRequestTimeoutForReason:(id)arg1;
 - (void)_scheduleRequestTimeoutForReason:(id)arg1;
 - (id)_connection;
@@ -227,7 +231,7 @@
 - (_Bool)_startInputAudioPowerUpdatesWithXPCWrapper:(id)arg1;
 - (void)_aceConnectionWillRetryOnError:(id)arg1;
 - (void)_setShouldSpeak:(_Bool)arg1;
-- (void)_dispatchCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)_dispatchCommand:(id)arg1 isInterstitial:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_handleCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_startUIRequestWithText:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestDidEnd;

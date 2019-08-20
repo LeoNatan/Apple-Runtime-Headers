@@ -8,12 +8,13 @@
 
 #import <DistributedEvaluation/NSURLSessionDelegate-Protocol.h>
 
-@class DESRecordSet, NSString, NSURL, NSURLSession;
+@class DESRecordSet, DESServiceConnection, NSString, NSURL, NSURLSession;
 @protocol DESRecipeEvaluation, OS_dispatch_queue;
 
 @interface DESEvaluationSession : NSObject <NSURLSessionDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    DESServiceConnection *_serviceConnection;
     DESRecordSet *_recordSet;
     NSString *_recipeType;
     NSString *_localeIdentifier;
@@ -45,8 +46,8 @@
 - (void)_handleRecipeResponse:(id)arg1 recipeId:(id)arg2 matchingRecordSet:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchRecipe:(id)arg1 matchingRecordSet:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_attemptRecipeMatchWithRecipes:(id)arg1 keepGoing:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)isPFLPlugin;
-- (void)_handleTelemetry:(id)arg1;
+@property(readonly, nonatomic) _Bool isPFLPlugin;
+- (void)_handleTelemetry:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)telemetryResponse;
 - (void)_fetchPolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_runJSONPOSTRequest:(id)arg1 URL:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -56,9 +57,9 @@
 - (void)_runJSONGETRequestWithPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_parsecReturnRouteEnabled;
 - (_Bool)_originReturnRouteEnabled;
-- (id)initWithBaseURL:(id)arg1 recordSet:(id)arg2 recipeType:(id)arg3 localeIdentifier:(id)arg4 deviceIdentifier:(id)arg5 evaluatorOverride:(id)arg6 protocolClass:(Class)arg7;
-- (id)initWithBaseURL:(id)arg1 recordSet:(id)arg2 recipeType:(id)arg3 localeIdentifier:(id)arg4 evaluatorOverride:(id)arg5 protocolClass:(Class)arg6;
-- (id)initWithBaseURL:(id)arg1 recordSet:(id)arg2 recipeType:(id)arg3 localeIdentifier:(id)arg4 evaluatorOverride:(id)arg5;
+- (id)initWithServiceConnection:(id)arg1 baseURL:(id)arg2 recordSet:(id)arg3 recipeType:(id)arg4 localeIdentifier:(id)arg5 deviceIdentifier:(id)arg6 evaluatorOverride:(id)arg7 protocolClass:(Class)arg8;
+- (id)initWithServiceConnection:(id)arg1 baseURL:(id)arg2 recordSet:(id)arg3 recipeType:(id)arg4 localeIdentifier:(id)arg5 evaluatorOverride:(id)arg6 protocolClass:(Class)arg7;
+- (id)initWithServiceConnection:(id)arg1 baseURL:(id)arg2 recordSet:(id)arg3 recipeType:(id)arg4 localeIdentifier:(id)arg5 evaluatorOverride:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

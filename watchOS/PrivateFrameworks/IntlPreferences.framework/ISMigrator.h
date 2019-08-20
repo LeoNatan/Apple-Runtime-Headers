@@ -13,11 +13,14 @@
     unsigned int _platform;
     NSString *_previousVersion;
     NSString *_currentVersion;
+    unsigned int _previousSchemaVersion;
 }
 
++ (id)migratorFromSchemaVersion:(unsigned int)arg1;
 + (id)migratorFromVersion:(id)arg1 toVersion:(id)arg2 platform:(unsigned int)arg3;
 + (id)migratorFromVersion:(id)arg1 toVersion:(id)arg2;
 + (unsigned int)currentPlatform;
+@property(nonatomic) unsigned int previousSchemaVersion; // @synthesize previousSchemaVersion=_previousSchemaVersion;
 @property(copy, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(copy, nonatomic) NSString *previousVersion; // @synthesize previousVersion=_previousVersion;
 @property(nonatomic) unsigned int platform; // @synthesize platform=_platform;

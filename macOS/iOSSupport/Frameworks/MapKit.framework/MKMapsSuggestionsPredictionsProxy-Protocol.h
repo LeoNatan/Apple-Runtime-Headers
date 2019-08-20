@@ -9,7 +9,7 @@
 @class NSData;
 
 @protocol MKMapsSuggestionsPredictionsProxy <NSObject>
-- (void)predictedTransportModeForDestinationEntryData:(NSData *)arg1 originCoordinateData:(NSData *)arg2 handler:(void (^)(NSData *, NSError *))arg3;
-- (void)predictedTransportModeForDestinationMapItemData:(NSData *)arg1 originCoordinateData:(NSData *)arg2 handler:(void (^)(NSData *, NSError *))arg3;
+- (void)predictedTransportModeForDestinationEntryData:(NSData *)arg1 originCoordinateData:(NSData *)arg2 handler:(void (^)(NSData *, NSData *, NSError *))arg3;
+- (void)predictedTransportModeForDestinationMapItemData:(NSData *)arg1 originCoordinateData:(NSData *)arg2 handler:(void (^)(NSData *, NSData *, NSError *))arg3;
 @end
 

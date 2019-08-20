@@ -24,7 +24,6 @@
 - (void)clearSignature;
 - (void)setSignature:(id)arg1;
 - (id)signature;
-- (void)_setValue:(id)arg1 value:(void *)arg2;
 - (id)_getValue:(id)arg1;
 - (id)defaultSignature;
 - (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1;

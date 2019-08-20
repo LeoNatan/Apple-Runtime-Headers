@@ -7,6 +7,6 @@
 @class NSString;
 
 @protocol CKXPCDiscretionaryClient
-- (void)cancelOperationID:(NSString *)arg1;
+- (void)discretionarySuspensionForOperationID:(NSString *)arg1;
 @end
 

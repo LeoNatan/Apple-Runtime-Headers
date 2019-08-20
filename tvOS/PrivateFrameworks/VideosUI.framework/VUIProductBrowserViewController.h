@@ -6,18 +6,29 @@
 
 #import <TVMLKit/_TVMLBrowserViewController.h>
 
+#import <VideosUI/TVBrowserViewControllerPrivateDelegate-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface VUIProductBrowserViewController : _TVMLBrowserViewController
+@interface VUIProductBrowserViewController : _TVMLBrowserViewController <TVBrowserViewControllerPrivateDelegate>
 {
     _Bool _transitionAnimationEnabled;
 }
 
 + (Class)browserCellClass;
 @property(nonatomic, getter=isTransitionAnimationEnabled) _Bool transitionAnimationEnabled; // @synthesize transitionAnimationEnabled=_transitionAnimationEnabled;
+- (_Bool)browserViewController:(id)arg1 shouldShowElement:(id)arg2;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 - (id)documentControllerForElement:(id)arg1;
 - (id)mediaInfoForElement:(id)arg1;
 - (id)initPrivate;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

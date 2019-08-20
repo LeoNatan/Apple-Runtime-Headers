@@ -8,7 +8,7 @@
 
 #import <VoiceMemos/RCMutableRecording-Protocol.h>
 
-@class AVAsset, CLLocation, NSDate, NSString, NSURL;
+@class AVAsset, CLLocation, NSData, NSDate, NSNumber, NSString, NSURL;
 @protocol _NSFileBackedFuture;
 
 @interface RCCloudRecording : NSManagedObject <RCMutableRecording>
@@ -18,6 +18,9 @@
 
 + (id)cacheDeletedOnWatchPredicate;
 + (id)playablePredicate;
++ (BOOL)setPurgeable:(BOOL)arg1 recordingURL:(id)arg2 error:(id *)arg3;
++ (BOOL)isRecordingPurgeable:(id)arg1;
++ (void)initialize;
 + (id)searchableItemIdentifierForSavedRecordingURI:(id)arg1;
 + (id)savedRecordingURIForSearchableItemIdentifier:(id)arg1;
 @property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
@@ -51,7 +54,10 @@
 @property(nonatomic) BOOL evicted;
 @property(nonatomic) BOOL pendingRestore;
 @property(nonatomic) BOOL synced;
+- (id)purgeAudioFuture:(id *)arg1;
+@property(readonly, nonatomic) NSNumber *purgeableAudioFutureSize;
 - (BOOL)synchronizeWithExistingAudioFuture:(id *)arg1;
+- (void)_updateAudioFuture:(id)arg1;
 - (void)setLocation:(id)arg1;
 @property(readonly, copy, nonatomic) CLLocation *location;
 @property(copy, nonatomic) NSDate *evictionDate; // @dynamic evictionDate;
@@ -63,6 +69,7 @@
 - (id)searchableItem;
 
 // Remaining properties
+@property(retain, nonatomic) NSData *audioDigest; // @dynamic audioDigest;
 @property(retain, nonatomic) id <_NSFileBackedFuture> audioFuture; // @dynamic audioFuture;
 @property(copy, nonatomic) NSString *customLabel; // @dynamic customLabel;
 @property(copy, nonatomic) NSDate *date; // @dynamic date;

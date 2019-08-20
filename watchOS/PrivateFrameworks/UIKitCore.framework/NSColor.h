@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (_Bool)supportsSecureCoding;
 - (id)initWithCoder:(id)arg1;
+- (Class)classForCoder;
 
 @end
 

@@ -19,6 +19,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic) BSServiceConnectionEndpoint *openServiceEndpoint;
 @property(nonatomic) unsigned long long suspensionReasons;
+@property(nonatomic, getter=isGeoSupported) _Bool geoSupported;
 @property(nonatomic, getter=isConnectedWirelessly) _Bool connectedWirelessly;
 
 // Remaining properties

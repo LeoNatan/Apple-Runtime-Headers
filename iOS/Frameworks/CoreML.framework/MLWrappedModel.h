@@ -17,11 +17,13 @@
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain) MLModel *innerModel; // @synthesize innerModel=_innerModel;
 - (void).cxx_destruct;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionsFromBatch:(id)arg1 error:(id *)arg2;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionFromFeatures:(id)arg1 error:(id *)arg2;
 - (void)clearInnerModelWithReason:(id)arg1;
+- (id)initWithInnerModel:(id)arg1;
 
 @end
 

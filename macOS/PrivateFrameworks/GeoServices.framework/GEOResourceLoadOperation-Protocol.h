@@ -12,6 +12,7 @@
 
 @protocol GEOResourceLoadOperation <NSObject, NSProgressReporting>
 @property(readonly, nonatomic) NSData *data;
+@property(nonatomic) BOOL preferDirectNetworking;
 @property(nonatomic) BOOL requiresWiFi;
 - (void)cancel;
 - (void)startWithCompletionHandler:(void (^)(NSData *, NSError *))arg1 callbackQueue:(NSObject<OS_dispatch_queue> *)arg2;

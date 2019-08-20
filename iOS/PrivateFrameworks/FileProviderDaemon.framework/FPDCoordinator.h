@@ -30,7 +30,9 @@ __attribute__((visibility("hidden")))
 - (void)resolveItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resolveItem:(id)arg1 recursively:(_Bool)arg2 andCoordinateWithHandler:(CDUnknownBlockType)arg3;
 - (void)stopAccessingAllURLs;
+- (void)stopAccessingURL:(id)arg1;
 - (void)startAccessingURLForAtomDuration:(id)arg1;
+- (void)dealloc;
 - (void)cancel;
 - (id)initWithExtensionManager:(id)arg1 callbackQueue:(id)arg2;
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) _Bool cardUIEnabled; // @synthesize cardUIEnabled=_cardUIEnabled;
 @property(nonatomic) double cardInsets; // @synthesize cardInsets=_cardInsets;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)tv_setShowcaseFactor:(double)arg1;
 
 @end

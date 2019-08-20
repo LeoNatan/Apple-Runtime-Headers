@@ -53,7 +53,8 @@
 - (void)populateEvents:(id)arg1 forAccountIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)uploadTransaction:(id)arg1 forPassWithUniqueIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)passWithUniqueIdentifierDidDisappear:(id)arg1;
+- (void)syncOriginatingTransactionsToCloudStore;
+- (void)passDidDisappear:(id)arg1;
 - (BOOL)canSyncTransactionToCloudKitWithBackingData:(BOOL)arg1 passUniqueIdentifier:(id)arg2 serviceIdentifier:(id)arg3;
 - (BOOL)canSyncTransactionFromCloudKitForPassUniqueIdentifier:(id)arg1;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -73,6 +74,7 @@
 - (BOOL)canInitializeContainer;
 - (id)allRecordNamesAssociatedWithRecordName:(id)arg1 inZone:(id)arg2;
 - (id)recordTypeForRecordID:(id)arg1;
+- (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;
 - (void)accountManager:(id)arg1 didRemoveAccount:(id)arg2;
 - (void)accountManager:(id)arg1 didAddAccount:(id)arg2;
 - (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1;

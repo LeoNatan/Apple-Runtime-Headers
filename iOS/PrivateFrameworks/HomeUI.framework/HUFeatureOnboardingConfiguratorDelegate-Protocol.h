@@ -10,6 +10,7 @@
 @protocol HUConfigurationViewController;
 
 @protocol HUFeatureOnboardingConfiguratorDelegate <HUConfiguratorDelegate>
+- (void)restartCurrentOnboarding;
 - (UIViewController<HUConfigurationViewController> *)getNextViewControllerForOnboardingInput:(NSDictionary *)arg1;
 @end
 

@@ -22,6 +22,7 @@
     unsigned int _backgroundStyle;
     _Bool _preferExtendedColorResources;
     NSString *_preferedResourceName;
+    unsigned int _languageDirection;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -30,6 +31,7 @@
 @property _Bool preferExtendedColorResources; // @synthesize preferExtendedColorResources=_preferExtendedColorResources;
 @property(nonatomic) unsigned int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) unsigned int badgeOptions; // @synthesize badgeOptions=_badgeOptions;
+@property unsigned int languageDirection; // @synthesize languageDirection=_languageDirection;
 @property(retain) NSString *preferedResourceName; // @synthesize preferedResourceName=_preferedResourceName;
 @property(nonatomic) unsigned int variantOptions; // @synthesize variantOptions=_variantOptions;
 @property(nonatomic) float scale; // @synthesize scale=_scale;

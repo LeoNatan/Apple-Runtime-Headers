@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class HBUITopShelfParadeActionsView, HBUITopShelfParadeButton, UIImageView, UILabel, _TVContentRatingTextBadgeView;
+@class HBUITopShelfParadeActionsView, HBUITopShelfParadeButton, UIImageView, UILabel, _HBUITopShelfTextContentRatingWrapperView;
 
 __attribute__((visibility("hidden")))
 @interface HBUITopShelfParadeItemDetailsView : UIView
@@ -16,8 +16,7 @@ __attribute__((visibility("hidden")))
     UILabel *_genreLabel;
     UILabel *_yearLabel;
     UILabel *_durationLabel;
-    UIImageView *_contentRatingBadgeImageView;
-    _TVContentRatingTextBadgeView *_contentRatingTextBadgeView;
+    UILabel *_gameControllerLabel;
     UILabel *_rottenTomatoesRatingLabel;
     UILabel *_commonSenseRatingLabel;
     UIView *_videoResolutionHDBadgeView;
@@ -28,10 +27,16 @@ __attribute__((visibility("hidden")))
     UIView *_audioTranscriptionClosedCaptioningBadgeView;
     UIView *_audioTranscriptionSDHBadgeView;
     UIView *_audioDescriptionBadgeView;
+    UILabel *_termsAndConditionsLabel;
     HBUITopShelfParadeActionsView *_actionsView;
+    UIImageView *_contentRatingBadgeImageView;
+    _HBUITopShelfTextContentRatingWrapperView *_contentRatingTextWrapperView;
 }
 
+@property(readonly, nonatomic) _HBUITopShelfTextContentRatingWrapperView *contentRatingTextWrapperView; // @synthesize contentRatingTextWrapperView=_contentRatingTextWrapperView;
+@property(readonly, nonatomic) UIImageView *contentRatingBadgeImageView; // @synthesize contentRatingBadgeImageView=_contentRatingBadgeImageView;
 @property(readonly, nonatomic) HBUITopShelfParadeActionsView *actionsView; // @synthesize actionsView=_actionsView;
+@property(readonly, nonatomic) UILabel *termsAndConditionsLabel; // @synthesize termsAndConditionsLabel=_termsAndConditionsLabel;
 @property(readonly, nonatomic) UIView *audioDescriptionBadgeView; // @synthesize audioDescriptionBadgeView=_audioDescriptionBadgeView;
 @property(readonly, nonatomic) UIView *audioTranscriptionSDHBadgeView; // @synthesize audioTranscriptionSDHBadgeView=_audioTranscriptionSDHBadgeView;
 @property(readonly, nonatomic) UIView *audioTranscriptionClosedCaptioningBadgeView; // @synthesize audioTranscriptionClosedCaptioningBadgeView=_audioTranscriptionClosedCaptioningBadgeView;
@@ -42,16 +47,17 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *videoResolutionHDBadgeView; // @synthesize videoResolutionHDBadgeView=_videoResolutionHDBadgeView;
 @property(readonly, nonatomic) UILabel *commonSenseRatingLabel; // @synthesize commonSenseRatingLabel=_commonSenseRatingLabel;
 @property(readonly, nonatomic) UILabel *rottenTomatoesRatingLabel; // @synthesize rottenTomatoesRatingLabel=_rottenTomatoesRatingLabel;
-@property(readonly, nonatomic) _TVContentRatingTextBadgeView *contentRatingTextBadgeView; // @synthesize contentRatingTextBadgeView=_contentRatingTextBadgeView;
-@property(readonly, nonatomic) UIImageView *contentRatingBadgeImageView; // @synthesize contentRatingBadgeImageView=_contentRatingBadgeImageView;
+@property(readonly, nonatomic) UILabel *gameControllerLabel; // @synthesize gameControllerLabel=_gameControllerLabel;
 @property(readonly, nonatomic) UILabel *durationLabel; // @synthesize durationLabel=_durationLabel;
 @property(readonly, nonatomic) UILabel *yearLabel; // @synthesize yearLabel=_yearLabel;
 @property(readonly, nonatomic) UILabel *genreLabel; // @synthesize genreLabel=_genreLabel;
 @property(readonly, nonatomic) UILabel *namedAttributesLabel; // @synthesize namedAttributesLabel=_namedAttributesLabel;
 @property(readonly, nonatomic) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 - (void).cxx_destruct;
+- (_Bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
+- (void)updateContentRating:(id)arg1;
 @property(readonly, nonatomic) HBUITopShelfParadeButton *secondaryActionButton;
 @property(readonly, nonatomic) HBUITopShelfParadeButton *primaryActionButton;
 - (id)initWithFrame:(struct CGRect)arg1;

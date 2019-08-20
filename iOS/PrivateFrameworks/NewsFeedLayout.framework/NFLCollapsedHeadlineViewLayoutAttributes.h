@@ -29,7 +29,7 @@
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1 feedSettings:(id)arg2;
 @property(nonatomic) double titleFontSize; // @synthesize titleFontSize=_titleFontSize;
 @property(retain, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
-@property(retain, nonatomic) NSParagraphStyle *publisherTextParagraphStyle; // @synthesize publisherTextParagraphStyle=_publisherTextParagraphStyle;
+@property(readonly, nonatomic) NSParagraphStyle *publisherTextParagraphStyle; // @synthesize publisherTextParagraphStyle=_publisherTextParagraphStyle;
 @property(nonatomic) long long publisherTextNumberOfLines; // @synthesize publisherTextNumberOfLines=_publisherTextNumberOfLines;
 @property(copy, nonatomic) UIColor *publisherTextColor; // @synthesize publisherTextColor=_publisherTextColor;
 @property(retain, nonatomic) UIFont *publisherTextFont; // @synthesize publisherTextFont=_publisherTextFont;
@@ -37,7 +37,7 @@
 @property(nonatomic) struct CGRect publisherLogoFrame; // @synthesize publisherLogoFrame=_publisherLogoFrame;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(nonatomic) long long titleNumberOfLines; // @synthesize titleNumberOfLines=_titleNumberOfLines;
-@property(retain, nonatomic) NSParagraphStyle *titleParagraphStyle; // @synthesize titleParagraphStyle=_titleParagraphStyle;
+@property(readonly, nonatomic) NSParagraphStyle *titleParagraphStyle; // @synthesize titleParagraphStyle=_titleParagraphStyle;
 @property(nonatomic) struct CGRect titleFrame; // @synthesize titleFrame=_titleFrame;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

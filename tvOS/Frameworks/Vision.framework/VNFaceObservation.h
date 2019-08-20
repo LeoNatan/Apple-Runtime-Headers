@@ -11,8 +11,11 @@
 @interface VNFaceObservation : VNDetectedObjectObservation
 {
     VNFaceLandmarks2D *_cachedLandmarks;
+    struct os_unfair_lock_s _cachedLandmarksLock;
     VNFaceLandmarks2D *_cachedLandmarks65;
+    struct os_unfair_lock_s _cachedLandmarks65Lock;
     VNFaceLandmarks3D *_cachedLandmarks3d;
+    struct os_unfair_lock_s _cachedLandmarks3dLock;
     VNFaceRegionMap *_faceRegionMap;
     VNFaceAttributes *_faceAttributes;
     VNFaceprint *_faceprint;
@@ -120,6 +123,8 @@
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_initLocks;
+- (id)initWithRequestRevision:(unsigned long long)arg1;
 - (id)VNPersonsModelFaceprintWithRequestRevision:(unsigned long long)arg1 error:(id *)arg2;
 
 @end

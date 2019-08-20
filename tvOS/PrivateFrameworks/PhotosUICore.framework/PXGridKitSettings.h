@@ -17,6 +17,8 @@
     _Bool _enableColorMatching;
     _Bool _debugExtendedColorRange;
     _Bool _debugOpaque;
+    _Bool _debugResolution;
+    _Bool _debugColorTransform;
     _Bool _colorCopiedImages;
     _Bool _requestThumbnailsOnly;
     _Bool _requestMasterThumbsOnly;
@@ -38,6 +40,8 @@
     _Bool _enableRectDiagnosticsForDecorationSprites;
     _Bool _enableRectDiagnosticsForViewSprites;
     _Bool _wantsPerspectiveDebug;
+    _Bool _shouldShowBoundariesOfTextTextures;
+    _Bool _shouldIncludeSpecialCharactersInTextTextures;
     long long _sampleCount;
     long long _blockOnMissingThumbnailsAtSpeedRegime;
     long long _videoAllowedAtOrBelowSpeed;
@@ -51,6 +55,8 @@
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) _Bool shouldIncludeSpecialCharactersInTextTextures; // @synthesize shouldIncludeSpecialCharactersInTextTextures=_shouldIncludeSpecialCharactersInTextTextures;
+@property(nonatomic) _Bool shouldShowBoundariesOfTextTextures; // @synthesize shouldShowBoundariesOfTextTextures=_shouldShowBoundariesOfTextTextures;
 @property(nonatomic) double perspectiveAngle; // @synthesize perspectiveAngle=_perspectiveAngle;
 @property(nonatomic) _Bool wantsPerspectiveDebug; // @synthesize wantsPerspectiveDebug=_wantsPerspectiveDebug;
 @property(nonatomic) _Bool enableRectDiagnosticsForViewSprites; // @synthesize enableRectDiagnosticsForViewSprites=_enableRectDiagnosticsForViewSprites;
@@ -80,6 +86,8 @@
 @property(nonatomic) _Bool requestMasterThumbsOnly; // @synthesize requestMasterThumbsOnly=_requestMasterThumbsOnly;
 @property(nonatomic) _Bool requestThumbnailsOnly; // @synthesize requestThumbnailsOnly=_requestThumbnailsOnly;
 @property(nonatomic) _Bool colorCopiedImages; // @synthesize colorCopiedImages=_colorCopiedImages;
+@property(nonatomic) _Bool debugColorTransform; // @synthesize debugColorTransform=_debugColorTransform;
+@property(nonatomic) _Bool debugResolution; // @synthesize debugResolution=_debugResolution;
 @property(nonatomic) _Bool debugOpaque; // @synthesize debugOpaque=_debugOpaque;
 @property(nonatomic) _Bool debugExtendedColorRange; // @synthesize debugExtendedColorRange=_debugExtendedColorRange;
 @property(nonatomic) long long sampleCount; // @synthesize sampleCount=_sampleCount;

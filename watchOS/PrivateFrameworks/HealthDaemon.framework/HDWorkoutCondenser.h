@@ -27,11 +27,11 @@
 + (id)_seriesSyncIdentifierForWorkout:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 count:(long long)arg4;
 + (_Bool)_updateCondenserVersionForWorkout:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (id)_dataOriginProvenanceForQuantitySampleEntity:(id)arg1 configuration:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
-+ (_Bool)_deleteSamplesWithUUIDS:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
++ (_Bool)_deleteSamplesWithUUIDData:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (id)_requiredMetadataForEntity:(id)arg1 quantityType:(id)arg2 workout:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
-+ (_Bool)_finishSeries:(id)arg1 quantityType:(id)arg2 workout:(id)arg3 sampleUUIDsToDelete:(id)arg4 configuration:(id)arg5 transaction:(id)arg6 error:(id *)arg7;
++ (_Bool)_finishSeries:(id)arg1 quantityType:(id)arg2 workout:(id)arg3 UUIDDataToDelete:(id)arg4 configuration:(id)arg5 transaction:(id)arg6 error:(id *)arg7;
 + (id)_insertValuesForSeries:(id)arg1 quantityType:(id)arg2 startTime:(double)arg3 values:(id)arg4 provenance:(id)arg5 configuration:(id)arg6 transaction:(id)arg7 countOut:(int *)arg8 error:(id *)arg9;
-+ (_Bool)_createSeriesForIdentifier:(id)arg1 workout:(id)arg2 quantityType:(id)arg3 startTime:(double)arg4 values:(id)arg5 sampleUUIDsToDelete:(id)arg6 provenance:(id)arg7 configuration:(id)arg8 transaction:(id)arg9 error:(id *)arg10;
++ (_Bool)_createSeriesForIdentifier:(id)arg1 workout:(id)arg2 quantityType:(id)arg3 startTime:(double)arg4 values:(id)arg5 UUIDDataToDelete:(id)arg6 provenance:(id)arg7 configuration:(id)arg8 transaction:(id)arg9 error:(id *)arg10;
 + (void)_addDatumToBuffer:(id)arg1 buffer:(id)arg2;
 + (_Bool)_processSamplesWithQuantityType:(id)arg1 workout:(id)arg2 predicate:(id)arg3 configuration:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
 + (int)_hasMoreThanMinimumNumberOfSingleValueSamplesWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;

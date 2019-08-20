@@ -43,7 +43,7 @@
 - (void)registerOperationAndSetResult:(id)arg1 forOperationInfo:(id)arg2 appContainerTuple:(id)arg3 accountID:(id)arg4;
 - (void)unregisterDelegate:(id)arg1 forOperationWithID:(id)arg2;
 - (void)registerDelegate:(id)arg1 forOperationWithID:(id)arg2;
-- (id)init;
+- (id)_initWithCacheDir:(id)arg1;
 
 @end
 

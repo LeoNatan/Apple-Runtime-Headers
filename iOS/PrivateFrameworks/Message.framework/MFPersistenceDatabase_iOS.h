@@ -6,22 +6,38 @@
 
 #import <EmailDaemon/EDPersistenceDatabase.h>
 
-@interface MFPersistenceDatabase_iOS : EDPersistenceDatabase
+#import <Message/EFLoggable-Protocol.h>
+#import <Message/MFMailMessageLibraryMigratorDelegate-Protocol.h>
+
+@class NSString;
+
+@interface MFPersistenceDatabase_iOS : EDPersistenceDatabase <EFLoggable, MFMailMessageLibraryMigratorDelegate>
 {
     _Bool _migrationHasRun;
     _Bool _createdTempTable;
     id _migrationLock;
 }
 
++ (id)log;
 @property(nonatomic) _Bool createdTempTable; // @synthesize createdTempTable=_createdTempTable;
 @property(nonatomic) _Bool migrationHasRun; // @synthesize migrationHasRun=_migrationHasRun;
 @property(readonly, nonatomic) id migrationLock; // @synthesize migrationLock=_migrationLock;
 - (void).cxx_destruct;
+- (void)mailMessageLibraryMigratorScheduleSpotlightReindex:(id)arg1;
+- (void)mailMessageLibraryMigrator:(id)arg1 isInitializingDatabaseWithConnection:(id)arg2;
+- (void)mailMessageLibraryMigrator:(id)arg1 detachProtectedDatabaseWithConnection:(id)arg2;
+- (_Bool)mailMessageLibraryMigrator:(id)arg1 attachProtectedDatabaseWithName:(id)arg2 connection:(id)arg3 error:(id *)arg4;
 - (_Bool)enforceDataProtection;
 - (id)openConnectionIsWriter:(_Bool)arg1;
 - (void)checkInConnection:(id)arg1;
 - (id)checkOutConnectionIsWriter:(_Bool)arg1;
 - (id)initWithBasePath:(id)arg1 databaseName:(id)arg2 maxConcurrentReaders:(unsigned long long)arg3 schema:(id)arg4 protectedSchema:(id)arg5 propertyMapper:(id)arg6 protectedDatabasePersistence:(id)arg7;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

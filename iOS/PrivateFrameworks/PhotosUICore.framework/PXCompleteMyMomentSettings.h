@@ -14,8 +14,6 @@
 {
     _Bool _cmmFeatureEnabled;
     _Bool _showCMMSettingsAtTopLevel;
-    _Bool _automaticallyStartWithCMMIfLinkThresholdIsMet;
-    _Bool _suggestCMMLinkForCertainActivitiesIfOverThreshold;
     _Bool _alwaysSortAfterAddMore;
     _Bool _preventNilTitles;
     _Bool _enableLightCuration;
@@ -63,6 +61,7 @@
     _Bool _shouldBakeInIfTimelineTrimmed;
     _Bool _shouldBakeInIfPortraitDepthEffectEnabled;
     _Bool _shouldBakeInIfContainsPenultimateResources;
+    long long _cmmShareSheetBehavior;
     long long _shareSheetLinkAssetCountThreshold;
     unsigned long long _shareSheetLinkTotalFileSizeThresholdMB;
     long long _invitationsDataSourceType;
@@ -83,6 +82,7 @@
 }
 
 + (id)sharedInstance;
++ (id)transientProperties;
 + (id)settingsControllerModule;
 @property(nonatomic) _Bool shouldBakeInIfContainsPenultimateResources; // @synthesize shouldBakeInIfContainsPenultimateResources=_shouldBakeInIfContainsPenultimateResources;
 @property(nonatomic) _Bool shouldBakeInIfPortraitDepthEffectEnabled; // @synthesize shouldBakeInIfPortraitDepthEffectEnabled=_shouldBakeInIfPortraitDepthEffectEnabled;
@@ -148,8 +148,7 @@
 @property(nonatomic) _Bool alwaysSortAfterAddMore; // @synthesize alwaysSortAfterAddMore=_alwaysSortAfterAddMore;
 @property(nonatomic) unsigned long long shareSheetLinkTotalFileSizeThresholdMB; // @synthesize shareSheetLinkTotalFileSizeThresholdMB=_shareSheetLinkTotalFileSizeThresholdMB;
 @property(nonatomic) long long shareSheetLinkAssetCountThreshold; // @synthesize shareSheetLinkAssetCountThreshold=_shareSheetLinkAssetCountThreshold;
-@property(nonatomic) _Bool suggestCMMLinkForCertainActivitiesIfOverThreshold; // @synthesize suggestCMMLinkForCertainActivitiesIfOverThreshold=_suggestCMMLinkForCertainActivitiesIfOverThreshold;
-@property(nonatomic) _Bool automaticallyStartWithCMMIfLinkThresholdIsMet; // @synthesize automaticallyStartWithCMMIfLinkThresholdIsMet=_automaticallyStartWithCMMIfLinkThresholdIsMet;
+@property(nonatomic) long long cmmShareSheetBehavior; // @synthesize cmmShareSheetBehavior=_cmmShareSheetBehavior;
 @property(nonatomic) _Bool showCMMSettingsAtTopLevel; // @synthesize showCMMSettingsAtTopLevel=_showCMMSettingsAtTopLevel;
 @property(nonatomic) _Bool cmmFeatureEnabled; // @synthesize cmmFeatureEnabled=_cmmFeatureEnabled;
 - (void)setDefaultValues;

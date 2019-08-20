@@ -14,6 +14,7 @@
     _Bool _backdropIsDark;
     unsigned int _tintStyle;
     UIColor *_controlsTintColor;
+    UIColor *_preferredProgressBarTintColor;
     UIColor *_preferredBarTintColor;
     _UIBackdropViewSettings *_backdropInputSettings;
 }
@@ -23,6 +24,7 @@
 + (id)themeWithTheme:(id)arg1;
 @property(readonly, nonatomic) _UIBackdropViewSettings *backdropInputSettings; // @synthesize backdropInputSettings=_backdropInputSettings;
 @property(readonly, nonatomic) UIColor *preferredBarTintColor; // @synthesize preferredBarTintColor=_preferredBarTintColor;
+@property(readonly, nonatomic) UIColor *preferredProgressBarTintColor; // @synthesize preferredProgressBarTintColor=_preferredProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *controlsTintColor; // @synthesize controlsTintColor=_controlsTintColor;
 @property(readonly, nonatomic) unsigned int tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(readonly, nonatomic) _Bool backdropIsDark; // @synthesize backdropIsDark=_backdropIsDark;

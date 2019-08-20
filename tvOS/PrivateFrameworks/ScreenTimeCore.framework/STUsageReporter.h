@@ -29,6 +29,7 @@
 - (id)pickupsPerCalendarUnit:(unsigned long long)arg1;
 - (id)ratiosForWebDomain:(id)arg1 perCalendarUnit:(unsigned long long)arg2;
 - (id)ratiosForApplication:(id)arg1 perCalendarUnit:(unsigned long long)arg2;
+- (id)_ratiosForCategory:(id)arg1 perCalendarUnit:(unsigned long long)arg2 useTotalScreenTime:(_Bool)arg3;
 - (id)ratiosForCategory:(id)arg1 perCalendarUnit:(unsigned long long)arg2;
 - (id)categoryRatiosPerCalendarUnit:(unsigned long long)arg1 numberOfCategories:(unsigned long long)arg2;
 - (id)screenTimeUsagePerCalendarUnit:(unsigned long long)arg1;

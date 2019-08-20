@@ -15,10 +15,12 @@
     NSMutableDictionary *_commandCallbacks;
     NSMutableDictionary *_completionCallbacks;
     NSMutableDictionary *_checkpointCallbacks;
+    NSMutableDictionary *_discretionarySuspensionCallbacks;
     NSMapTable *_operationsByID;
 }
 
 @property(retain) NSMapTable *operationsByID; // @synthesize operationsByID=_operationsByID;
+@property(retain) NSMutableDictionary *discretionarySuspensionCallbacks; // @synthesize discretionarySuspensionCallbacks=_discretionarySuspensionCallbacks;
 @property(retain) NSMutableDictionary *checkpointCallbacks; // @synthesize checkpointCallbacks=_checkpointCallbacks;
 @property(retain) NSMutableDictionary *completionCallbacks; // @synthesize completionCallbacks=_completionCallbacks;
 @property(retain) NSMutableDictionary *commandCallbacks; // @synthesize commandCallbacks=_commandCallbacks;
@@ -30,9 +32,10 @@
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationStatistics:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)handleCancelForOperationWithID:(id)arg1;
+- (void)handleDiscretionarySuspensionForOperationWithID:(id)arg1;
 - (void)_performCallbackForOperation:(id)arg1 callback:(CDUnknownBlockType)arg2 errorCallback:(CDUnknownBlockType)arg3;
 - (void)unregisterAllCallbacksForOperation:(id)arg1;
+- (void)registerSuspensionCallback:(CDUnknownBlockType)arg1 forDiscretionaryOperation:(id)arg2;
 - (void)registerCheckpointCallback:(CDUnknownBlockType)arg1 forOperation:(id)arg2;
 - (void)registerCompletionCallback:(CDUnknownBlockType)arg1 forOperation:(id)arg2;
 - (void)registerCommandCallback:(CDUnknownBlockType)arg1 forOperation:(id)arg2;

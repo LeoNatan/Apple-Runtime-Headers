@@ -179,7 +179,7 @@
 - (id)initForRawDatabaseAccessWithEntityPath:(id)arg1 snippetsPath:(id)arg2 error:(id *)arg3;
 - (void)_postChangeNotification;
 - (_Bool)deleteURLsFromBundleIdentifier:(id)arg1 documentIdentifiers:(id)arg2;
-- (_Bool)deleteURLsFromBundleIdentifier:(id)arg1 groupIdentifierBlobs:(id)arg2;
+- (_Bool)deleteURLsFromBundleIdentifier:(id)arg1 groupIdentifierGlobs:(id)arg2;
 - (_Bool)deleteURLsFromBundleIdentifier:(id)arg1;
 - (_Bool)deleteURLsOlderThanDate:(id)arg1;
 - (_Bool)trimURLTableDownToLimit:(long long)arg1;

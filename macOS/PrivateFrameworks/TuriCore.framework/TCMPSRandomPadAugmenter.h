@@ -19,19 +19,16 @@ __attribute__((visibility("hidden")))
     double _minAreaFraction;
     double _maxAreaFraction;
     unsigned long long _maxAttempts;
-    CDUnknownBlockType _random;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType random; // @synthesize random=_random;
 @property(nonatomic) unsigned long long maxAttempts; // @synthesize maxAttempts=_maxAttempts;
 @property(nonatomic) double maxAreaFraction; // @synthesize maxAreaFraction=_maxAreaFraction;
 @property(nonatomic) double minAreaFraction; // @synthesize minAreaFraction=_minAreaFraction;
 @property(nonatomic) double maxAspectRatio; // @synthesize maxAspectRatio=_maxAspectRatio;
 @property(nonatomic) double minAspectRatio; // @synthesize minAspectRatio=_minAspectRatio;
 @property(nonatomic) double skipProbability; // @synthesize skipProbability=_skipProbability;
-- (void).cxx_destruct;
-- (id)imageAugmentedFromImage:(id)arg1;
-- (id)initWithRNG:(CDUnknownBlockType)arg1;
+- (id)imageAugmentedFromImage:(id)arg1 generator:(CDUnknownBlockType)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

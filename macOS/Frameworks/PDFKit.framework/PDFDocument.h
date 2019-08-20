@@ -104,6 +104,8 @@
 @property(readonly, nonatomic) BOOL allowsDocumentChanges;
 @property(readonly, nonatomic) BOOL allowsCopying;
 @property(readonly, nonatomic) BOOL allowsPrinting;
+- (_Bool)_canSaveWithEncryption;
+- (void)requirePasswordsIfNeeded:(CDUnknownBlockType)arg1;
 - (id)passwordUsedForUnlocking;
 - (BOOL)unlockWithPassword:(id)arg1;
 @property(readonly, nonatomic) BOOL isLocked;
@@ -132,6 +134,7 @@
 - (BOOL)canSaveWithAppendModeUsingOptions:(id)arg1;
 - (BOOL)writeToConsumer:(struct CGDataConsumer *)arg1 withOptions:(id)arg2;
 - (id)_convertWriteOptions:(id)arg1;
+- (id)_addEncryptionFromOptions:(id)arg1;
 - (void)setRenderingProperties:(id)arg1;
 - (id)renderingProperties;
 - (id)_dataFromXMP:(struct __CFData *)arg1 withRootPath:(id)arg2 keys:(id)arg3;

@@ -28,6 +28,8 @@
     _Bool _hasInitialWorldMap;
     _Bool _relocalizingToInitialWorldMap;
     unsigned long long _raycastCount;
+    _Bool _didRunPlaneDetection;
+    long long _highestThermalState;
 }
 
 - (void).cxx_destruct;
@@ -40,6 +42,7 @@
 - (void)sessionStopped;
 - (void)recordRaycast:(id)arg1 tracked:(_Bool)arg2;
 - (void)saveMapWithFrame:(id)arg1;
+- (void)sessionUpdateThermalState:(long long)arg1;
 - (void)sessionDidUpdateFrame:(id)arg1;
 - (void)sessionStarted:(id)arg1 withConfiguration:(id)arg2;
 - (int)_checkRenderEngine:(id)arg1 withConfiguration:(id)arg2;

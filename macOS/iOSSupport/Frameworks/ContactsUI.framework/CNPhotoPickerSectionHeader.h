@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class UIButton, UILabel;
+@class UIButton, UILabel, UIStackView;
 
 __attribute__((visibility("hidden")))
 @interface CNPhotoPickerSectionHeader : UICollectionReusableView
@@ -14,15 +14,22 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
     UIButton *_actionButton;
     CDUnknownBlockType _actionBlock;
+    UIStackView *_stackView;
 }
 
++ (double)heightNeededForAccessibilityLayoutIncludingActionButton:(BOOL)arg1;
 + (id)reusableIdentifier;
++ (id)actionButtonFont;
++ (id)titleLabelFont;
+@property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property(readonly, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForReuse;
 - (void)actionButtonPressed:(id)arg1;
+- (void)updateDynamicStackViewProperties;
 - (void)setupConstraints;
 - (void)updateStyle:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

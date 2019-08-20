@@ -39,7 +39,6 @@
 + (id)mailingListId:(id)arg1;
 + (id)url:(id)arg1;
 + (id)tagForLabel:(id)arg1 value:(id)arg2;
-+ (id)nonUserFacingUpdate;
 + (id)fullyDissected;
 + (id)isPartiallyDownloaded;
 + (id)fromReply;

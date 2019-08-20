@@ -6,22 +6,22 @@
 
 #import <WorkflowKit/WFGalleryBanner.h>
 
-@class NSString, WFGalleryPage;
+@class CKRecordID, NSString;
 
 @interface WFMutableGalleryBanner : WFGalleryBanner
 {
-    NSString *identifier;
+    CKRecordID *identifier;
     NSString *name;
-    WFGalleryPage *detailPage;
+    CKRecordID *detailPage;
     NSString *language;
-    WFGalleryBanner *base;
+    CKRecordID *base;
 }
 
-@property(retain, nonatomic) WFGalleryBanner *base; // @synthesize base;
+@property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
-@property(retain, nonatomic) WFGalleryPage *detailPage; // @synthesize detailPage;
+@property(retain, nonatomic) CKRecordID *detailPage; // @synthesize detailPage;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier;
+@property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
 - (void).cxx_destruct;
 
 @end

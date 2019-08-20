@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) BOOL peerSupportsAdjustmentBaseResources;
 @property(readonly, nonatomic) BOOL peerSupportsTranscodeChoice;
 - (void)invalidate;
+- (BOOL)generatePosterFrameExportForVideoURL:(id)arg1 outputData:(id *)arg2 maximumSize:(struct CGSize)arg3 error:(id *)arg4;
 - (id)convertedAssetLivePhotoPairingIdentifierForOriginalIdentifier:(id)arg1;
 - (id)sourceForPath:(id)arg1 isVideo:(BOOL)arg2 imageDimensions:(struct CGSize)arg3;
 - (id)requestForPath:(id)arg1 isVideo:(BOOL)arg2 imageDimensions:(struct CGSize)arg3;

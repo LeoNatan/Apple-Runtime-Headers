@@ -228,7 +228,6 @@
 - (unsigned long long)viewMap:(id)arg1 maxRecycledViewsOfClass:(Class)arg2;
 - (void)iconViewWasRecycled:(id)arg1;
 - (id)parallaxSettingsForShortcutsPresentationWithIconView:(id)arg1;
-- (_Bool)shouldUseSecureWindowForShortcutsPresentationWithIconView:(id)arg1;
 - (_Bool)iconView:(id)arg1 shouldActivateApplicationShortcutItem:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)iconView:(id)arg1 applicationShortcutItemsWithProposedItems:(id)arg2;
 - (id)applicationShortcutWidgetBundleIdentifierForShortcutsWithIconView:(id)arg1;
@@ -238,6 +237,7 @@
 - (void)_setupApplicationShortcutItemsForPresentation:(id)arg1;
 - (_Bool)iconViewShouldBeginShortcutsPresentation:(id)arg1;
 - (id)accessibilityTintColorForIconView:(id)arg1;
+- (_Bool)iconView:(id)arg1 shouldContinueToUseBackgroundViewForComponents:(id)arg2;
 - (id)backgroundViewForComponentsOfIconView:(id)arg1;
 - (_Bool)iconAllowsBadging:(id)arg1;
 - (long long)closeBoxTypeForIconView:(id)arg1;
@@ -251,6 +251,8 @@
 - (id)iconView:(id)arg1 iconAccessoryViewOfClass:(Class)arg2;
 - (void)iconView:(id)arg1 willRemoveIconImageView:(id)arg2;
 - (id)imageViewForIconView:(id)arg1;
+- (void)iconView:(id)arg1 willUseContextMenuStyle:(id)arg2;
+- (id)containerViewForPresentingContextMenuForIconView:(id)arg1;
 - (id)launchURLForIconView:(id)arg1;
 - (id)launchActionsForIconView:(id)arg1;
 - (void)iconView:(id)arg1 item:(id)arg2 willAnimateDragCancelWithAnimator:(id)arg3;
@@ -260,7 +262,6 @@
 - (void)iconView:(id)arg1 session:(id)arg2 willEndWithOperation:(unsigned long long)arg3;
 - (void)iconView:(id)arg1 willAddDragItems:(id)arg2 toSession:(id)arg3;
 - (_Bool)iconView:(id)arg1 canAddDragItemsToSession:(id)arg2;
-- (id)requiredContextIDsForDragSessionInIconView:(id)arg1;
 - (void)iconViewWillBeginDrag:(id)arg1 session:(id)arg2;
 - (void)iconView:(id)arg1 dragLiftAnimationDidChangeDirection:(long long)arg2;
 - (void)iconView:(id)arg1 willAnimateDragLiftWithAnimator:(id)arg2 session:(id)arg3;
@@ -273,6 +274,7 @@
 - (_Bool)iconShouldAllowCloseBoxTap:(id)arg1;
 - (_Bool)icon:(id)arg1 canReceiveGrabbedIcon:(id)arg2;
 - (void)iconTapped:(id)arg1;
+- (id)reasonToDisallowInteractionOnIconView:(id)arg1;
 - (id)reasonToDisallowTapOnIconView:(id)arg1;
 - (_Bool)iconShouldAllowTap:(id)arg1;
 - (void)icon:(id)arg1 touchEnded:(_Bool)arg2;

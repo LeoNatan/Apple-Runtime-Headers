@@ -55,11 +55,10 @@
 - (void)action:(id)arg1 didChangeVariableName:(id)arg2 to:(id)arg3;
 - (void)updateVariablesForAction:(id)arg1 includingImportedVariables:(BOOL)arg2;
 @property(readonly, nonatomic) WFVariableAvailability *variableAvailability; // @synthesize variableAvailability=_variableAvailability;
-- (void)actionOutputContentClassesDidChange:(id)arg1;
+- (void)actionOutputDetailsDidChange:(id)arg1;
 - (void)actionNameDidChange:(id)arg1;
 - (void)action:(id)arg1 supplementalParameterValueDidChangeForKey:(id)arg2;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
-- (void)actionDidUpdateOutputContentClasses:(id)arg1;
 - (id)actionForSuggestionsDrawer;
 - (id)actionsGroupedWithAction:(id)arg1;
 @property(readonly, nonatomic) WFActionGroupingCache *groupingCache; // @synthesize groupingCache=_groupingCache;
@@ -87,6 +86,7 @@
 - (Class)classForKeyedArchiver;
 - (id)workflowByClearingPrivateImportQuestionData;
 - (id)validImportQuestions;
+@property(nonatomic) long long remoteQuarantineStatus;
 @property(nonatomic) BOOL hiddenFromLibraryAndSync;
 @property(nonatomic) BOOL hiddenInComplication;
 @property(copy, nonatomic) NSArray *workflowTypes;

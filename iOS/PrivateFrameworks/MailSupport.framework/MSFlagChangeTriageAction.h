@@ -19,10 +19,10 @@
 @property(readonly, nonatomic) ECMessageFlags *messageFlags;
 @property(readonly, nonatomic) _Bool flagState;
 - (void)_toggleFlagWithBuilder:(id)arg1;
-- (id)initWithMessageListSelection:(id)arg1 reason:(long long)arg2;
+- (id)initWithMessageListSelection:(id)arg1 delegate:(id)arg2 reason:(long long)arg3;
 
 // Remaining properties
-@property(nonatomic) __weak id <MSFlagChangeTriageActionDelegate> delegate; // @dynamic delegate;
+@property(readonly, nonatomic) __weak id <MSFlagChangeTriageActionDelegate> delegate; // @dynamic delegate;
 
 @end
 

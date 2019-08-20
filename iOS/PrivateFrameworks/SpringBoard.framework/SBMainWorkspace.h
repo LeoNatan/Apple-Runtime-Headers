@@ -78,6 +78,8 @@
 - (void)_unregisterHandler:(id)arg1 forExtensionPoint:(id)arg2;
 - (void)_registerHandler:(id)arg1 forExtensionPoint:(id)arg2;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (_Bool)transientOverlayPresentationManager:(id)arg1 shouldRestoreFirstResponderForKeyWindow:(id)arg2;
+- (_Bool)transientOverlayPresentationManager:(id)arg1 shouldResignFirstResponderForKeyWindow:(id)arg2;
 - (void)transientOverlayPresentationManager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)transientOverlayPresentationManager:(id)arg1 willChangeTopmostViewControllerInterfaceOrientationToOrientation:(long long)arg2;
 - (void)transientOverlayPresentationManager:(id)arg1 unregisterCoverSheetExternalBehaviorProvider:(id)arg2;
@@ -131,7 +133,8 @@
 - (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;
 - (void)processManager:(id)arg1 didAddProcess:(id)arg2;
 - (void)_removeApplicationEntities:(id)arg1 withDestroyalIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_applicationEntityWasRemoved:(id)arg1;
+- (void)_applicationEntityWasRemovedFromAppSwitcher:(id)arg1;
+- (void)_destroyApplicationSceneEntity:(id)arg1;
 - (void)_coversheetDidDismiss;
 - (void)_coversheetDidPresent;
 - (void)_noteDidWakeFromSleep;

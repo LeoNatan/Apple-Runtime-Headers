@@ -16,8 +16,6 @@
 + (id)activityBundleHelperForExtension:(id)arg1;
 @property(retain, nonatomic) LSBundleProxy *bundleProxy; // @synthesize bundleProxy=_bundleProxy;
 - (void).cxx_destruct;
-- (float)preferredImageScale;
-- (id)activityImageForApplicationBundleURL:(id)arg1 applicationIconFormat:(int)arg2 activityCategory:(int)arg3;
 - (id)imageForApplicationIconFormat:(int)arg1 activityCategory:(int)arg2;
 - (id)debugDescription;
 - (id)initWithBundleProxy:(id)arg1;

@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     id <AWSchedulerObserver> _observer;
 }
 
-+ (id)unitTestScheduler;
++ (id)sharedUnitTestScheduler;
 + (id)sharedScheduler;
 @property(readonly, nonatomic) AWAttentionSampler *attentionSampler; // @synthesize attentionSampler=_attentionSampler;
 @property(nonatomic) __weak id <AWSchedulerObserver> observer; // @synthesize observer=_observer;

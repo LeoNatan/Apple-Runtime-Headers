@@ -127,6 +127,7 @@
 - (_Bool)_isUsingOnlyItemModules;
 - (id)_allSuppressedCharacteristics;
 - (_Bool)_shouldHideServiceItem:(id)arg1 containedInServiceGroupItem:(id)arg2;
+- (id)_accessoryItemsToHideInSet:(id)arg1;
 - (id)_serviceItemsToHideInSet:(id)arg1 allServiceGroupItems:(id)arg2;
 - (id)_itemsToHideInSet:(id)arg1;
 - (void)_notifyDelegateOfItemOperations:(id)arg1 logger:(id)arg2;
@@ -226,6 +227,7 @@
 - (void)home:(id)arg1 willWriteValuesForCharacteristics:(id)arg2;
 - (void)home:(id)arg1 willReadValuesForCharacteristics:(id)arg2;
 - (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
+- (void)homeDidUpdateNetworkRouterSupport:(id)arg1;
 - (void)homeDidUpdateProtectionMode:(id)arg1;
 - (void)profileDidUpdateSatellites:(id)arg1;
 - (void)profileDidUpdateNetworkStatus:(id)arg1;

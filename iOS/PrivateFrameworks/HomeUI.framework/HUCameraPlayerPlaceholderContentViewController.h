@@ -22,10 +22,12 @@
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(nonatomic) _Bool cameraPlayerHasContentToShow; // @synthesize cameraPlayerHasContentToShow=_cameraPlayerHasContentToShow;
 - (void).cxx_destruct;
-- (void)manager:(id)arg1 didUpdateImage:(id)arg2 withPosterFrame:(id)arg3 fromClip:(id)arg4;
+- (void)manager:(id)arg1 didUpdateImage:(id)arg2 withTimeOffset:(double)arg3 fromClip:(id)arg4;
+- (_Bool)_shouldHidePlaceholderContentForCurrentAccessMode;
 - (void)_animateState:(_Bool)arg1 placeholderImage:(id)arg2;
 - (void)_updateStateAnimated:(_Bool)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_updatePlaceholderContentAnimated:(_Bool)arg1;
+- (void)hu_reloadData;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;

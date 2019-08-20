@@ -11,6 +11,8 @@
 @interface PUICButton : UIButton
 {
     UIColor *_disabledTitleColor;
+    _Bool _updatingImplicitImage;
+    _Bool _hasExplicitImage;
     float _backgroundCornerRadius;
 }
 
@@ -21,6 +23,7 @@
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateBackgroundImage;
+- (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)tintColorDidChange;
 - (void)setTitleColor:(id)arg1 forState:(unsigned int)arg2;

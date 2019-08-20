@@ -14,6 +14,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)isSupportedForHome:(id)arg1;
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
 @property(readonly) WFHomeWorkflow *shortcut; // @synthesize shortcut=_shortcut;
 - (void).cxx_destruct;

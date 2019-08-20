@@ -16,6 +16,7 @@
 @interface AVTAvatarEditorViewController : UIViewController <AVTSplashScreenViewControllerDelegate, AVTAvatarAttributeEditorViewControllerDelegate, UIAdaptivePresentationControllerDelegate>
 {
     _Bool _isCreating;
+    _Bool _hasChanges;
     id <AVTAvatarEditorViewControllerDelegate> _delegate;
     AVTAvatarRecord *_initialAvatarRecord;
     id <AVTAvatarStoreInternal> _store;
@@ -36,6 +37,7 @@
 + (_Bool)shouldShowSplashScreen;
 @property(readonly, nonatomic) AVTAvatarAttributeEditorViewController *attributeEditorViewController; // @synthesize attributeEditorViewController=_attributeEditorViewController;
 @property(readonly, nonatomic) AVTSplashScreenViewController *splashScreenViewController; // @synthesize splashScreenViewController=_splashScreenViewController;
+@property(nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(retain, nonatomic) UIBarButtonItem *doneButtonItem; // @synthesize doneButtonItem=_doneButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(readonly, nonatomic) _Bool isCreating; // @synthesize isCreating=_isCreating;
@@ -62,6 +64,8 @@
 - (id)visibleLayout;
 - (void)applyLayout:(id)arg1;
 - (void)prepareForAnimatedTransitionWithLayout:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (_Bool)disableAvatarSnapshotting;
+- (void)setDisableAvatarSnapshotting:(_Bool)arg1;
 - (_Bool)isModalInPresentation;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

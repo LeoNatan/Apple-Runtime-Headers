@@ -26,6 +26,7 @@
 + (id)_formattedDisplayStringForAddress:(id)arg1 countryCode:(id)arg2;
 + (id)_countryCodeForHandle:(struct _IMDHandleRecordStruct *)arg1;
 + (id)_addressForHandle:(struct _IMDHandleRecordStruct *)arg1;
++ (id)_uncanonicalizedAddressForHandle:(struct _IMDHandleRecordStruct *)arg1;
 + (id)_addressBookNameForAddress:(id)arg1 orContact:(id)arg2;
 + (id)_truncateNameIfNeeded:(id)arg1;
 + (id)_contactKeysForMe;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) UNNotificationCategory *incomingFilesNotificationCategory; // @synthesize incomingFilesNotificationCategory=_incomingFilesNotificationCategory;
 @property(retain, nonatomic) UNNotificationCategory *incomingMessageNotificationCategory; // @synthesize incomingMessageNotificationCategory=_incomingMessageNotificationCategory;
 @property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
+- (id)_groupHashForHandles:(id)arg1 lastAddressedHandle:(id)arg2;
 - (void)_setContactInMessageDictionary:(struct _IMDHandleRecordStruct *)arg1 messageDictionary:(id)arg2;
 - (_Bool)_chatHasDNDSetBasedOnDNDIdentifier:(id)arg1;
 -     // Error parsing type: @12@0:4^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}8, name: _chatDictionaryForMessageRecord:
@@ -69,7 +71,6 @@
 - (_Bool)_shouldUseOriginalURLForUTIType:(id)arg1;
 - (id)_previewFileURLForTransferURL:(id)arg1;
 - (void)_isMostActiveDeviceWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_populateIgnoreDownTime:(id)arg1 messageDictionary:(id)arg2 downtimeEnabled:(_Bool)arg3;
 - (_Bool)_messageShouldBeSpoken:(id)arg1 chatDictionary:(id)arg2 isMostActive:(_Bool)arg3;
 -     // Error parsing type: v20@0:4@8@12^{_IMDMessageRecordStruct={__CFRuntimeBase=IAI}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _populateAttachmentsForNotificationContent:messageDictionary:messageRecord:
 - (void)_populateNotificationCategoryContent:(id)arg1 messageDictionary:(id)arg2;

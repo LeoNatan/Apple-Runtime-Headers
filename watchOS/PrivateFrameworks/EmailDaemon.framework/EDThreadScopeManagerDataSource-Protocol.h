@@ -7,7 +7,7 @@
 @class EDThreadScopeManager, EMMailboxObjectID, EMMailboxScope, NSArray;
 
 @protocol EDThreadScopeManagerDataSource
-- (_Bool)threadScopeManager:(EDThreadScopeManager *)arg1 evictThreadScopesWithDatabaseIDs:(NSArray *)arg2;
+- (_Bool)threadScopeManager:(EDThreadScopeManager *)arg1 evictThreadScopesWithDatabaseIDs:(NSArray *)arg2 completionBlock:(void (^)(_Bool))arg3;
 - (void)threadScopeManager:(EDThreadScopeManager *)arg1 gatherStatisticsForThreadScopes:(NSArray *)arg2 block:(void (^)(long long, NSDate *, unsigned int))arg3;
 - (void)threadScopeManager:(EDThreadScopeManager *)arg1 populateThreadScopesWithBlock:(void (^)(long long, NSString *, NSNumber *, NSData *, _Bool, NSDate *))arg2;
 - (_Bool)threadScopeManager:(EDThreadScopeManager *)arg1 isValidMailboxObjectID:(EMMailboxObjectID *)arg2;

@@ -97,7 +97,6 @@
 - (void)_presentVerifyPassAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentActivatingPassAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentPaymentAuthorization;
-- (void)_presentAmpEnrollmentAuthorization;
 - (_Bool)_peerPaymentIdentityVerificationRequired;
 - (void)_presentPeerPaymentIdentityVerification;
 - (void)_presentPaymentSetup;

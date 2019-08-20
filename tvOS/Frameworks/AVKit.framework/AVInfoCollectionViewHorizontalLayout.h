@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)collectionViewContentSize;
 - (struct CGSize)_contentSizeUsedByCells;
 - (void)_lazilyLoadAllCellSizes;
-- (_Bool)flipsHorizontallyInOppositeLayoutDirection;
 - (id)init;
 
 @end

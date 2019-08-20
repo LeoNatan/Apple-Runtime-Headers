@@ -83,6 +83,7 @@
 - (void)cancelPendingInviteToPlayer:(id)arg1;
 - (void)cancelPendingInvitesAndMarkInviteComplete:(_Bool)arg1;
 - (void)doneMatchmaking;
+@property(readonly, nonatomic) _Bool allInviteesDidRespond;
 - (void)findRematchForMatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addPlayersForHostedMatchRequest:(id)arg1 existingPlayerCount:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addPlayersToMatch:(id)arg1 matchRequest:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -131,6 +132,7 @@
 - (void)cancelSentNearbyInvites;
 - (void)cancelNearbyInvitesToPlayers:(id)arg1;
 - (void)inviteAnyNearbyPlayersWithRequest:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)reduceRecipientsForMatchRequest:(id)arg1 toPlayersWithPlayerIDs:(id)arg2;
 - (id)nearbyDevicesForPlayer:(id)arg1 withState:(int)arg2;
 - (void)setNearbyDevice:(id)arg1 reachable:(_Bool)arg2;
 - (int)numberOfNearbyDevicesForPlayer:(id)arg1 withState:(int)arg2;

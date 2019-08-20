@@ -13,10 +13,8 @@
     HFMediaPlaybackActionBuilder *_mediaActionBuilder;
     int _originalHMNonPausePlaybackState;
     HFPlaybackArchive *_playbackArchive;
-    int _targetOptions;
 }
 
-@property(nonatomic) int targetOptions; // @synthesize targetOptions=_targetOptions;
 @property(retain, nonatomic) HFPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(nonatomic) int originalHMNonPausePlaybackState; // @synthesize originalHMNonPausePlaybackState=_originalHMNonPausePlaybackState;
 @property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaActionBuilder; // @synthesize mediaActionBuilder=_mediaActionBuilder;

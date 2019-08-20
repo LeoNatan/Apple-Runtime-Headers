@@ -91,6 +91,7 @@
 @property(readonly, nonatomic) int contentTypeForNoSpaceRecognition;
 - (_Bool)shouldPerformNoSpaceRecognition;
 - (_Bool)shouldPerformRegularSpaceRecognition;
+- (_Bool)shouldRefineChineseCharacterCandidates;
 - (_Bool)shouldApplyChinesePostProcessing;
 - (_Bool)shouldApplyRomanPostProcessing;
 - (unsigned long long)supportedSegmentationStrategy;

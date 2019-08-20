@@ -15,7 +15,6 @@
 - (BOOL)overrideSystemPhotoLibraryURL:(id)arg1 error:(id *)arg2;
 - (BOOL)removePhotoLibraryURL:(id)arg1 error:(id *)arg2;
 - (BOOL)setSystemPhotoLibraryURL:(id)arg1 error:(id *)arg2;
-- (BOOL)isSystemLibraryURLDefinedWithError:(id *)arg1;
 
 @end
 

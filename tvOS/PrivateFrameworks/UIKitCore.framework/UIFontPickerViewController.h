@@ -10,8 +10,8 @@
 #import <UIKitCore/_UIFontPickerRemoteViewControllerHost-Protocol.h>
 #import <UIKitCore/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class NSString, UIFontDescriptor, UIFontPickerViewControllerConfiguration, _UIFontPickerRemoteViewController, _UIRemoteViewController;
-@protocol UIFontPickerViewControllerDelegate;
+@class NSExtension, NSString, UIFontDescriptor, UIFontPickerViewControllerConfiguration, _UIFontPickerRemoteViewController, _UIRemoteViewController;
+@protocol NSCopying, UIFontPickerViewControllerDelegate;
 
 @interface UIFontPickerViewController : UIViewController <_UIFontPickerRemoteViewControllerHost, _UIRemoteViewControllerContaining, UIFontPicker>
 {
@@ -20,8 +20,12 @@
     UIFontPickerViewControllerConfiguration *_configuration;
     id <UIFontPickerViewControllerDelegate> _delegate;
     UIFontDescriptor *_selectedFontDescriptor;
+    NSExtension *_extension;
+    id <NSCopying> _extensionRequestIdentifier;
 }
 
+@property(copy, nonatomic) id <NSCopying> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
+@property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, copy, nonatomic) UIFontPickerViewControllerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) UIFontDescriptor *selectedFontDescriptor; // @synthesize selectedFontDescriptor=_selectedFontDescriptor;
 @property(nonatomic) __weak id <UIFontPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -34,6 +38,8 @@
 - (void)_setChildViewController:(id)arg1;
 - (void)_pickerDidCancel;
 - (void)_pickerDidSelectFont:(id)arg1;
+- (void)invalidate;
+- (void)dealloc;
 - (void)_commonInitWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_initWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_initWithMode:(unsigned long long)arg1 hideSearchBar:(_Bool)arg2 tintColor:(id)arg3;

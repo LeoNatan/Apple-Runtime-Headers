@@ -87,7 +87,7 @@
 - (void)wallpaperServer:(id)arg1 restoreDefaultWallpaperWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)wallpaperServer:(id)arg1 setWallpaperGradient:(id)arg2 forVariants:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)wallpaperServer:(id)arg1 setWallpaperColorName:(id)arg2 forVariants:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)wallpaperServer:(id)arg1 setWallpaperVideo:(id)arg2 cropRect:(struct CGRect)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)wallpaperServer:(id)arg1 setWallpaperVideoWithWallpaperMode:(id)arg2 cropRect:(struct CGRect)arg3 wallpaperMode:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)wallpaperServer:(id)arg1 fetchThumbnailDataForVariant:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateWallpaper:(id)arg1 forWallpaperDimming:(_Bool)arg2;
 - (void)updateWallpaper:(id)arg1 forWallpaperMode:(long long)arg2;
@@ -156,6 +156,7 @@
 - (void)_clearWallpaperEffectView:(id)arg1;
 - (void)_clearWallpaperView:(id)arg1;
 - (id)_makeWallpaperViewWithConfiguration:(id)arg1 forVariant:(long long)arg2 shared:(_Bool)arg3 options:(unsigned long long)arg4;
+- (void)cleanupOldSharedWallpaper:(id)arg1 lockSreenWallpaper:(id)arg2 homeScreenWallpaper:(id)arg3;
 - (void)_updateSeparateWallpaperForVariants:(long long)arg1 options:(unsigned long long)arg2 wallpaperMode:(long long)arg3;
 - (void)_precacheStyles:(id)arg1 usingTraitCollection:(id)arg2;
 - (void)_updateSharedWallpaperWithOptions:(unsigned long long)arg1 wallpaperMode:(long long)arg2;

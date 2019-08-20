@@ -84,6 +84,7 @@
 @property(readonly, nonatomic) unsigned long long icsDisplayOrder; // @dynamic icsDisplayOrder;
 @property(readonly, nonatomic) NSData *importedICSData; // @dynamic importedICSData;
 @property(readonly, nonatomic) BOOL isOverdue; // @dynamic isOverdue;
+@property(readonly, nonatomic) BOOL isRecurrent; // @dynamic isRecurrent;
 @property(readonly, nonatomic) NSDate *lastBannerPresentationDate; // @dynamic lastBannerPresentationDate;
 @property(readonly, copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
 @property(readonly, copy, nonatomic) NSString *legacyNotificationIdentifier; // @dynamic legacyNotificationIdentifier;

@@ -17,6 +17,7 @@
     NSMutableDictionary *_accountErrorAnalyticsState;
     NSArray *_delegateSources;
     _Bool _showDelegateCalendarsCell;
+    NSSet *_currentKnownCalendarIds;
     _Bool _canShowIdentityChooser;
     _Bool _disableCalendarEditing;
     _Bool _showsDeclinedEventsSetting;
@@ -131,6 +132,7 @@
 - (id)_calendarsForSelectedSource;
 - (void)_ensureWritableCalendarExists;
 - (id)_filterCalendars:(id)arg1;
+- (void)_updateCurrentKnownCalendarIds;
 - (id)_currentKnownCalendarIds;
 - (id)_calendarSetToCalendarIdSet:(id)arg1;
 - (void)_ignoredErrorsChanged;

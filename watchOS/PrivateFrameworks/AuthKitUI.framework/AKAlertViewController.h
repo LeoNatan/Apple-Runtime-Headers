@@ -60,8 +60,10 @@
 - (void).cxx_destruct;
 - (void)_main_dismissAndExit;
 - (void)_dismissAndExit;
+- (void)_didCompleteWithError:(id)arg1;
+- (void)_callCompletionWithAuthorization:(id)arg1 error:(id)arg2;
 - (void)authorizationViewController:(id)arg1 didRequestAuthorizationWithUserProvidedInformation:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)authorizationViewController:(id)arg1 didCompleteWithError:(id)arg2;
+- (void)authorizationViewController:(id)arg1 didCompleteWithAuthorization:(id)arg2 error:(id)arg3;
 - (void)receivedNumericEntry:(id)arg1;
 - (void)canceledNumericEntry;
 - (void)_sendTextFieldResponse:(id)arg1;

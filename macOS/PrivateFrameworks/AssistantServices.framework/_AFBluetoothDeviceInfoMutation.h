@@ -21,6 +21,8 @@
     BOOL _supportsInEarDetection;
     BOOL _supportsVoiceTrigger;
     BOOL _supportsSpokenNotification;
+    BOOL _supportsListeningModeANC;
+    BOOL _supportsListeningModeTransparency;
     struct _mutationFlags {
         unsigned int isDirty:1;
         unsigned int hasAddress:1;
@@ -31,11 +33,15 @@
         unsigned int hasSupportsInEarDetection:1;
         unsigned int hasSupportsVoiceTrigger:1;
         unsigned int hasSupportsSpokenNotification:1;
+        unsigned int hasSupportsListeningModeANC:1;
+        unsigned int hasSupportsListeningModeTransparency:1;
     } _mutationFlags;
 }
 
 - (void).cxx_destruct;
 - (id)generate;
+- (void)setSupportsListeningModeTransparency:(BOOL)arg1;
+- (void)setSupportsListeningModeANC:(BOOL)arg1;
 - (void)setSupportsSpokenNotification:(BOOL)arg1;
 - (void)setSupportsVoiceTrigger:(BOOL)arg1;
 - (void)setSupportsInEarDetection:(BOOL)arg1;

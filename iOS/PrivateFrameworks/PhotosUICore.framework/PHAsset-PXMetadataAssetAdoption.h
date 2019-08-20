@@ -31,6 +31,7 @@
 - (id)_sceneClassificationStringWithClassifications:(id)arg1;
 - (id)stringMinutesTimeRangeFromTimeRange:(CDStruct_e83c9415)arg1;
 @property(readonly, nonatomic) PXDebugValueList *px_curationDebugValues;
+- (id)px_detailedDebugDescriptionInLibrary:(id)arg1;
 @property(readonly, nonatomic) NSAttributedString *px_curationDebugString;
 @property(readonly, nonatomic) long long px_currentVariationType;
 - (id)px_singleLineMailingAddress;
@@ -70,7 +71,7 @@
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) double hdrGain;
+@property(readonly, nonatomic) float hdrGain;
 @property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;

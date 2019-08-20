@@ -35,9 +35,9 @@
 @property(retain, nonatomic) UIButton *prevWeekButton; // @synthesize prevWeekButton=_prevWeekButton;
 @property(retain, nonatomic) HUCalendarScrubberViewController *calendarScrubber; // @synthesize calendarScrubber=_calendarScrubber;
 - (void).cxx_destruct;
-- (void)playbackEngine:(id)arg1 clipCollection:(id)arg2 addedClips:(id)arg3 removedClips:(id)arg4 updatedClips:(id)arg5;
+- (void)playbackEngineDidUpdateClips:(id)arg1;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
-- (void)playbackEngine:(id)arg1 didUpdateClipCollection:(id)arg2;
+- (void)playbackEngine:(id)arg1 didUpdateClipManager:(id)arg2;
 - (void)scrubberViewController:(id)arg1 didSelectItemAtIndex:(id)arg2;
 - (void)scrubberViewController:(id)arg1 didMoveToSection:(unsigned long long)arg2;
 - (void)_updateNextPreviousButtonState;

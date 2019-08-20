@@ -11,15 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface PrintSheetConfigurationInfo : NSObject
 {
-    BOOL _waitUntilDone;
     _WKFrameHandle *_frameHandle;
 }
 
 @property(readonly, nonatomic) _WKFrameHandle *frameHandle; // @synthesize frameHandle=_frameHandle;
-@property(readonly, nonatomic, getter=shouldWaitUntilDone) BOOL waitUntilDone; // @synthesize waitUntilDone=_waitUntilDone;
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithFrameHandle:(id)arg1 shouldWaitUntilDone:(BOOL)arg2;
+- (id)initWithFrameHandle:(id)arg1;
 
 @end
 

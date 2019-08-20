@@ -18,6 +18,7 @@
 {
     _Bool _containsCJK;
     _Bool _tracksMaximumContentLength;
+    _Bool _allowsAttachments;
     _Bool _updatedTitleRange;
     id <NoteContentLayerDelegate> _delegate;
     id <NotesTextureScrolling> _textureScrollingDelegate;
@@ -29,6 +30,7 @@
 @property(nonatomic) _Bool updatedTitleRange; // @synthesize updatedTitleRange=_updatedTitleRange;
 @property(retain, nonatomic) NoteDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) NSArray *horizontalConstraints; // @synthesize horizontalConstraints=_horizontalConstraints;
+@property(nonatomic) _Bool allowsAttachments; // @synthesize allowsAttachments=_allowsAttachments;
 @property(retain, nonatomic) NoteHTMLEditorView *noteHTMLEditorView; // @synthesize noteHTMLEditorView=_noteHTMLEditorView;
 @property(nonatomic) _Bool tracksMaximumContentLength; // @synthesize tracksMaximumContentLength=_tracksMaximumContentLength;
 @property(nonatomic) __weak id <NotesTextureScrolling> textureScrollingDelegate; // @synthesize textureScrollingDelegate=_textureScrollingDelegate;
@@ -40,14 +42,16 @@
 - (void)chosenUTI:(id *)arg1 andChosenMIMEType:(id *)arg2 forItemProvider:(id)arg3;
 - (_Bool)isNoteHTMLEditorViewVisible:(id)arg1;
 - (_Bool)noteHTMLEditorViewShouldPaste:(id)arg1;
+- (void)noteHTMLEditorView:(id)arg1 showShareSheetForAttachment:(id)arg2 atPoint:(struct CGPoint)arg3;
+- (_Bool)shouldRenderAsAttachment:(id)arg1;
 - (id)readerDelegateInNoteHTMLEditorView:(id)arg1;
 - (_Bool)noteHTMLEditorView:(id)arg1 acceptContentsFromPasteboard:(id)arg2;
-- (void)noteHTMLEditorView:(id)arg1 handleLongPressOnElement:(id)arg2 atPoint:(struct CGPoint)arg3;
-- (_Bool)noteHTMLEditorView:(id)arg1 canHandleLongPressOnElement:(id)arg2;
 - (void)noteHTMLEditorViewNeedsContentReload:(id)arg1;
 - (void)insertImageInNoteHTMLEditorView:(id)arg1;
 - (_Bool)canInsertImagesInNoteHTMLEditorView:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
+- (void)noteHTMLEditorView:(id)arg1 webScrollViewDidScroll:(id)arg2;
+- (id)noteHTMLEditorView:(id)arg1 updateAttachments:(id)arg2;
 - (void)noteHTMLEditorView:(id)arg1 didInvokeStyleFormattingOption:(long long)arg2;
 - (void)noteHTMLEditorView:(id)arg1 didInvokeFormattingCalloutOption:(long long)arg2;
 - (_Bool)isNoteManagedForNoteHTMLEditorView:(id)arg1;
@@ -62,6 +66,7 @@
 - (void)noteHTMLEditorView:(id)arg1 didAddAttachmentForMimeType:(id)arg2 filename:(id)arg3 data:(id)arg4;
 - (void)noteHTMLEditorView:(id)arg1 addAttachmentItemProviders:(id)arg2;
 - (_Bool)noteHTMLEditorView:(id)arg1 canAddAttachmentItemProviders:(id)arg2;
+- (_Bool)allowsAttachmentsInNoteHTMLEditorView:(id)arg1;
 - (id)keyCommands;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)scrollSelectionToVisible:(_Bool)arg1;
@@ -79,7 +84,6 @@
 - (_Bool)becomeFirstResponder;
 - (_Bool)canResignFirstResponder;
 - (_Bool)canBecomeFirstResponder;
-- (void)scrollViewDidScroll:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutMarginsDidChange;
 - (void)didChangeFullSizeClass;

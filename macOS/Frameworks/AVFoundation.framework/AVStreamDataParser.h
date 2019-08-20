@@ -17,6 +17,7 @@
     AVStreamDataParserInternal *_parser;
 }
 
++ (BOOL)canParseExtendedMIMEType:(id)arg1;
 + (id)audiovisualMIMETypes;
 + (id)outputMIMECodecParameterForInputMIMECodecParameter:(id)arg1;
 + (id)_createNSDataWithBlockBuffer:(struct OpaqueCMBlockBuffer *)arg1;

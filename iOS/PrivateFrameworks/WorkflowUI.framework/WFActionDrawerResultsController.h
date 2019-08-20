@@ -28,9 +28,9 @@
 - (void)getSiriSuggestedResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)resultsForFavorites;
 - (id)resultsForSuggestionsWithWorkflow:(id)arg1;
-- (id)resultsForAppWithIdentifier:(id)arg1;
+- (id)resultsForAppWithIdentifier:(id)arg1 shouldFilterForAppsViewController:(_Bool)arg2;
 - (id)resultsForCategory:(id)arg1;
-- (void)getResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getResultsForAppIdentifier:(id)arg1 shouldFilterForAppsViewController:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)resultsForSearchQuery:(id)arg1 includingSiriSuggestedResults:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithActionRegistry:(id)arg1;
 

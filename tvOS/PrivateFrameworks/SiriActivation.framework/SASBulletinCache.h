@@ -17,7 +17,6 @@
 
 - (void).cxx_destruct;
 - (_Bool)_isFeedRelevant:(unsigned long long)arg1;
-- (_Bool)_isBulletinFromRequiredDomain:(id)arg1;
 - (void)_purgeOldestNodes;
 - (void)_deleteNode:(id)arg1;
 - (id)_findNodeForBulletinID:(id)arg1;

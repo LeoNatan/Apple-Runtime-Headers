@@ -754,7 +754,6 @@ struct _CAMetalDrawablePrivate {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
-    unsigned int :1;
 };
 
 struct _CAMetalLayerPrivate {
@@ -789,6 +788,7 @@ struct _CAMetalLayerPrivate {
     unsigned long long _field29;
     struct CGColorSpace *_field30;
     unsigned long long _field31;
+    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

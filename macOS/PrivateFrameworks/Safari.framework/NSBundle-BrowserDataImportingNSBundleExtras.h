@@ -7,6 +7,8 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (BrowserDataImportingNSBundleExtras)
++ (unsigned long long)safari_firefoxSupportedImportingDataTypes;
++ (unsigned long long)safari_chromeSupportedImportingDataTypes;
 + (void)safari_fetchDefaultBrowserBundleWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)safari_safariTechnologyPreviewBundleURL;
 + (BOOL)safari_handlerIsSafariFamilyApplication:(id)arg1;
@@ -24,8 +26,11 @@
 + (id)_safari_defaultApplicationNameForUserAgentFromBundle:(id)arg1;
 + (id)safari_defaultApplicationNameForUserAgent;
 + (id)test_safari_defaultApplicationNameForUserAgentUsingBundle:(id)arg1;
-- (unsigned long long)safari_supportedTestDriveImportingDataTypes;
-- (unsigned long long)safari_supportedImportingDataTypes;
+@property(readonly, nonatomic) BOOL safari_isDataImportingInstallPathDependent;
+@property(readonly, nonatomic) unsigned long long safari_supportedTestDriveImportingDataTypes;
+@property(readonly, nonatomic) unsigned long long safari_supportedImportingDataTypes;
+@property(readonly, nonatomic) BOOL safari_isFirefoxBrowser;
+@property(readonly, nonatomic) BOOL safari_isChromeBrowser;
 - (id)safari_localizedStringsForKey:(id)arg1;
 - (BOOL)safari_isSafariQuickLookPreviewBundle;
 - (BOOL)safari_isSafariPlatformSupportHelperBundle;

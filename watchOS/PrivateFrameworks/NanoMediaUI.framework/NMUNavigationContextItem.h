@@ -12,6 +12,7 @@
 
 @interface NMUNavigationContextItem : NSObject <NMUActionSheetItemProvider>
 {
+    unsigned int _type;
     MPModelObject *_modelObject;
     NMROrigin *_origin;
     PUICActionSheetController *_actionSheetController;
@@ -20,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)_performAction;
 - (id)actionSheetItem;
-- (id)initWithModelObject:(id)arg1 origin:(id)arg2 actionSheetController:(id)arg3;
+- (id)initWithType:(unsigned int)arg1 modelObject:(id)arg2 origin:(id)arg3 actionSheetController:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

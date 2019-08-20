@@ -23,16 +23,21 @@
     NSString *_buildVersion;
     NSNumber *_screenWidth;
     NSNumber *_screenHeight;
+    NSArray *_keyboards;
+    NSNumber *_scale;
     NSString *_locality;
     NSString *_administrativeArea;
     NSString *_subAdministrativeArea;
     NSString *_ISOcountryCode;
     NSString *_postalCode;
-    NSArray *_keyboards;
-    NSNumber *_scale;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
+@property(copy, nonatomic) NSString *ISOcountryCode; // @synthesize ISOcountryCode=_ISOcountryCode;
+@property(copy, nonatomic) NSString *subAdministrativeArea; // @synthesize subAdministrativeArea=_subAdministrativeArea;
+@property(copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
+@property(copy, nonatomic) NSString *locality; // @synthesize locality=_locality;
 @property(nonatomic) _Bool voiceOverRunning; // @synthesize voiceOverRunning=_voiceOverRunning;
 @property(retain, nonatomic) NSNumber *scale; // @synthesize scale=_scale;
 @property(nonatomic) _Bool carKitConnected; // @synthesize carKitConnected=_carKitConnected;
@@ -40,17 +45,13 @@
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) _Bool batteryDischarging; // @synthesize batteryDischarging=_batteryDischarging;
 @property(copy, nonatomic) NSArray *keyboards; // @synthesize keyboards=_keyboards;
-@property(copy, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
-@property(copy, nonatomic) NSString *ISOcountryCode; // @synthesize ISOcountryCode=_ISOcountryCode;
-@property(copy, nonatomic) NSString *subAdministrativeArea; // @synthesize subAdministrativeArea=_subAdministrativeArea;
-@property(copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
-@property(copy, nonatomic) NSString *locality; // @synthesize locality=_locality;
 @property(retain, nonatomic) NSNumber *screenHeight; // @synthesize screenHeight=_screenHeight;
 @property(retain, nonatomic) NSNumber *screenWidth; // @synthesize screenWidth=_screenWidth;
 @property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(retain, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(retain, nonatomic) NSString *systemName; // @synthesize systemName=_systemName;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
+- (void)updateLocality:(id)arg1 adminArea:(id)arg2 subAdmin:(id)arg3 isoCountryCode:(id)arg4 postalCode:(id)arg5;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

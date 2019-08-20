@@ -20,6 +20,7 @@
 @property(nonatomic) AVTUILogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) id <AVTAvatarStoreInternal> store; // @synthesize store=_store;
 - (void).cxx_destruct;
+- (void)setNeedsMigrationOnNextLaunch;
 - (void)performMigrationIfNeeded;
 - (id)initWithStore:(id)arg1 environment:(id)arg2;
 

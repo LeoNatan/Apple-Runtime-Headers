@@ -9,6 +9,7 @@
 @interface _TtC18HealthExperienceUI25DismissibleTileHeaderView : UIView
 {
     // Error parsing type: , name: chromeHostView
+    // Error parsing type: , name: heightConstraint
     // Error parsing type: , name: dataSource
     // Error parsing type: , name: detailLabel
     // Error parsing type: , name: titleLabel

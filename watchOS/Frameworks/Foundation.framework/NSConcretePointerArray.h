@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (unsigned int)hash;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
-- (Class)classForCoder;
 - (id)initWithPointerFunctions:(id)arg1;
 - (id)initWithOptions:(unsigned int)arg1;
 - (id)init;

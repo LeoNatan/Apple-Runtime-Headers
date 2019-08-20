@@ -20,6 +20,7 @@
     FBSSceneIdentityToken *_defaultSceneToken;
 }
 
++ (id)defaultContext;
 @property(readonly, nonatomic) FBSSceneIdentityToken *defaultSceneToken; // @synthesize defaultSceneToken=_defaultSceneToken;
 @property(readonly, nonatomic) NSSet *persistedSceneIdentifiers; // @synthesize persistedSceneIdentifiers=_persistedSceneIdentifiers;
 @property(readonly, nonatomic) UISDeviceContext *deviceContext; // @synthesize deviceContext=_deviceContext;

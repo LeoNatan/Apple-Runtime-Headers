@@ -4,26 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewHeaderFooterView.h>
+#import <ContactsUI/CNContactTableViewHeaderFooterView.h>
 
-@class NSString, UILabel;
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNWarningHeaderFooterView : UITableViewHeaderFooterView
+@interface CNWarningHeaderFooterView : CNContactTableViewHeaderFooterView
 {
     BOOL _shouldDisplayWarningIcon;
     NSString *_warningText;
-    UILabel *_warningLabel;
 }
 
 + (id)exclamationMark;
-@property(readonly, nonatomic) UILabel *warningLabel; // @synthesize warningLabel=_warningLabel;
 @property(retain, nonatomic) NSString *warningText; // @synthesize warningText=_warningText;
 @property(nonatomic) BOOL shouldDisplayWarningIcon; // @synthesize shouldDisplayWarningIcon=_shouldDisplayWarningIcon;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)warningAttributedText;
-- (id)initWithReuseIdentifier:(id)arg1;
 
 @end
 

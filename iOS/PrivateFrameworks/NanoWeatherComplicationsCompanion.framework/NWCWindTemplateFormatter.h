@@ -17,10 +17,11 @@
 + (id)sharedFormatter;
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 hourlyForecastedConditions:(id)arg2 timeZone:(id)arg3;
 - (id)_windUnit;
+- (id)_windSpeedWithUnitFromConditions:(id)arg1;
 - (id)_windSpeedFromConditions:(id)arg1;
 - (id)_windDirectionAbbreviationFromConditions:(id)arg1;
 - (id)switcherTemplateWithFamily:(long long)arg1;
-- (_Bool)acceptsComplicationFamily:(long long)arg1;
+- (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)utilitarianLargeTemplateForConditions:(id)arg1;
 - (id)modularSmallTemplateForConditions:(id)arg1;

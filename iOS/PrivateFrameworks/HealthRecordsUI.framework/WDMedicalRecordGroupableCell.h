@@ -21,15 +21,11 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_separatorTrailingConstraint;
     NSLayoutConstraint *_topConstraint;
     NSLayoutConstraint *_bottomConstraint;
-    NSLayoutConstraint *_leadingConstraint;
-    NSLayoutConstraint *_trailingConstraint;
     struct UIEdgeInsets _separatorInsets;
 }
 
 + (double)defaultGap;
 + (id)defaultReuseIdentifier;
-@property(retain, nonatomic) NSLayoutConstraint *trailingConstraint; // @synthesize trailingConstraint=_trailingConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *leadingConstraint; // @synthesize leadingConstraint=_leadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *separatorTrailingConstraint; // @synthesize separatorTrailingConstraint=_separatorTrailingConstraint;

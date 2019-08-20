@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIScrollViewDelegate-Protocol.h>
 
-@class NSHashTable, NSIndexSet, NSMapTable, NSString, UICollectionView;
+@class NSHashTable, NSIndexSet, NSMapTable, NSString, UICollectionView, UIScrollView;
 
 __attribute__((visibility("hidden")))
 @interface _UICollectionViewOrthogonalScrollerSectionController : NSObject <UIScrollViewDelegate>
@@ -18,8 +18,10 @@ __attribute__((visibility("hidden")))
     NSMapTable *_scrollViewToSectionMap;
     NSHashTable *_frontMostElements;
     NSIndexSet *_currentOrthogonalSectionIndexes;
+    UIScrollView *_scrollViewCurrentlyBeingConfigured;
 }
 
+@property(retain, nonatomic) UIScrollView *scrollViewCurrentlyBeingConfigured; // @synthesize scrollViewCurrentlyBeingConfigured=_scrollViewCurrentlyBeingConfigured;
 @property(retain, nonatomic) NSIndexSet *currentOrthogonalSectionIndexes; // @synthesize currentOrthogonalSectionIndexes=_currentOrthogonalSectionIndexes;
 @property(retain, nonatomic) NSHashTable *frontMostElements; // @synthesize frontMostElements=_frontMostElements;
 @property(retain, nonatomic) NSMapTable *scrollViewToSectionMap; // @synthesize scrollViewToSectionMap=_scrollViewToSectionMap;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (id)_addSectionScrollViewForIndexPath:(id)arg1;
 - (id)_sectionScrollViewForSection:(long long)arg1;
 - (id)_sectionScrollViewForIndexPath:(id)arg1;
+- (void)restoreLayoutContentOffsetsFromEmbeddedScrollViews;
 - (void)adjustElementHierarchyOrderingForOrthogonalElementIfNeeded:(id)arg1 layoutAttributes:(id)arg2;
 - (void)reconfigureOrthogonalSectionsForUpdate:(id)arg1;
 - (void)performLayout;

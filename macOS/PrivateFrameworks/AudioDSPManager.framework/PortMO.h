@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class DeviceConfigurationMO, HWDSPMO, NSSet, NSString, VolumePolicyMO;
+@class DeviceConfigurationMO, NSSet, NSString, VolumePolicyMO;
 
 __attribute__((visibility("hidden")))
 @interface PortMO : NSManagedObject
@@ -18,7 +18,8 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(retain, nonatomic) DeviceConfigurationMO *configuration; // @dynamic configuration;
 @property(retain, nonatomic) NSSet *contentDSP; // @dynamic contentDSP;
-@property(retain, nonatomic) HWDSPMO *hwDSP; // @dynamic hwDSP;
+@property(retain, nonatomic) NSSet *dspModule; // @dynamic dspModule;
+@property(retain, nonatomic) NSSet *hwDSP; // @dynamic hwDSP;
 @property(retain, nonatomic) NSSet *ioStreamFormat; // @dynamic ioStreamFormat;
 @property(retain, nonatomic) NSSet *micConfiguration; // @dynamic micConfiguration;
 @property(copy, nonatomic) NSString *portType; // @dynamic portType;

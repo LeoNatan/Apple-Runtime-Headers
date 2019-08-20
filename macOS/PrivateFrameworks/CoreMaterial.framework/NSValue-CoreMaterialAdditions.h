@@ -6,10 +6,21 @@
 
 #import <Foundation/NSValue.h>
 
-@interface NSValue (CoreMaterialAdditions)
+#import <CoreMaterial/MTFilterIdentityValueProviding-Protocol.h>
+#import <CoreMaterial/MTMaterialSettingsPropertyIdentityValueProviding-Protocol.h>
+
+@class NSString;
+
+@interface NSValue (CoreMaterialAdditions) <MTFilterIdentityValueProviding, MTMaterialSettingsPropertyIdentityValueProviding>
 + (id)mt_identityValueForMaterialSettingsProperty:(id)arg1;
 + (id)mt_identityValueForFilter:(id)arg1;
 - (BOOL)mt_isIdentityValueForMaterialSettingsProperty:(id)arg1;
 - (BOOL)mt_isIdentityValueForFilter:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -125,6 +125,7 @@
     id <MPAVQueueCoordinating> _queueCoordinator;
     id <MPAVQueueController> _queueController;
     NSString *_identifier;
+    long long _stateBeforeInterruption;
     AVPictureInPictureController *_pictureInPictureController;
 }
 
@@ -139,6 +140,7 @@
 @property(readonly, nonatomic) AVPictureInPictureController *pictureInPictureController; // @synthesize pictureInPictureController=_pictureInPictureController;
 @property(nonatomic) BOOL wantsPictureInPicture; // @synthesize wantsPictureInPicture=_wantsPictureInPicture;
 @property(nonatomic) BOOL automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds; // @synthesize automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds=_automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds;
+@property(readonly, nonatomic) long long stateBeforeInterruption; // @synthesize stateBeforeInterruption=_stateBeforeInterruption;
 @property(readonly, nonatomic) BOOL shouldConnectToAVPlayer; // @synthesize shouldConnectToAVPlayer=_shouldConnectToAVPlayer;
 @property(nonatomic) BOOL managesAirPlayBehaviors; // @synthesize managesAirPlayBehaviors=_managesAirPlayBehaviors;
 @property(nonatomic) BOOL useAirPlayMusicMode; // @synthesize useAirPlayMusicMode=_useAirPlayMusicMode;
@@ -215,10 +217,7 @@
 - (void)_prepareToPlayItem:(id)arg1;
 - (void)_endSeekAndChangeRate:(BOOL)arg1;
 - (void)setPlaylistManager:(id)arg1;
-- (BOOL)_isVideosOrTVApp;
-- (void)_unregisterForPlaylistManager:(id)arg1;
 - (void)_unregisterForPlayer:(id)arg1;
-- (void)_registerForPlaylistManager:(id)arg1;
 - (BOOL)_shouldProvideAudiblePlaybackPerformance;
 - (double)_currentTimeWithPreloadedPlayerTime:(BOOL)arg1 value:(CDStruct_1b6d18a9)arg2;
 - (void)_clearVideoLayer:(BOOL)arg1;

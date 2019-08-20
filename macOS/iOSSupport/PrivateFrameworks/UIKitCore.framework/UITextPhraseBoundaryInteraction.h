@@ -6,17 +6,22 @@
 
 #import <UIKitCore/UITextInteraction.h>
 
-@class UIResponder;
-@protocol UITextInput;
+@class UITextGestureTuning;
 
 __attribute__((visibility("hidden")))
 @interface UITextPhraseBoundaryInteraction : UITextInteraction
 {
-    UIResponder<UITextInput> *_textInput;
+    UITextGestureTuning *_gestureTuning;
 }
 
 - (void).cxx_destruct;
-- (void)willMoveToView:(id)arg1;
+- (void)_phraseBoundaryGesture:(id)arg1;
+- (id)_phraseBoundaryGestureRecognizer;
+- (void)updateVisibilityOffsetForGesture:(id)arg1;
+- (void)_createGestureTuningIfNecessary;
+- (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
+- (struct CGPoint)pointIfPlacedCarefully:(struct CGPoint)arg1;
+- (void)didMoveToView:(id)arg1;
 - (id)initWithTextInput:(id)arg1;
 
 @end

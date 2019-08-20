@@ -20,6 +20,7 @@
     id <EDMessageChangeHookResponder> _hookResponder;
 }
 
++ (id)signpostLog;
 + (id)log;
 @property(readonly, nonatomic) __weak id <EDMessageChangeHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *markAllWorkQueue; // @synthesize markAllWorkQueue=_markAllWorkQueue;
@@ -28,14 +29,15 @@
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (_Bool)_hookResponderRespondsToRequiredMethods:(id)arg1;
-- (void)_invokeHookResponderForDeletedMessages:(id)arg1;
+- (void)_invokeHookResponderForDeletedMessages:(id)arg1 generationWindow:(id)arg2;
 - (id)accountForMailboxURL:(id)arg1;
-- (_Bool)_mailboxURL:(id)arg1 isInSameAccountAsMailboxURL:(id)arg2;
+- (_Bool)mailboxURL:(id)arg1 isInSameAccountAsMailboxURL:(id)arg2;
 - (_Bool)_needToStoreServerMessagesForMailboxURL:(id)arg1;
-- (_Bool)_mailboxURLIsInRemoteAccount:(id)arg1;
-- (void)_storeServerMessages:(id)arg1 mailboxURL:(id)arg2;
-- (void)_handleFailedCopyItems:(id)arg1 transferAction:(id)arg2;
-- (void)_handleFailedDownload:(id)arg1;
+- (_Bool)mailboxURLIsInRemoteAccount:(id)arg1;
+- (id)_handleDuplicateServerMessage:(id)arg1 serverMessagePersistence:(id)arg2;
+- (void)_storeServerMessages:(id)arg1 mailboxURL:(id)arg2 generationWindow:(id)arg3;
+- (void)_handleFailedCopyItems:(id)arg1 transferAction:(id)arg2 generationWindow:(id)arg3;
+- (void)_handleFailedDownload:(id)arg1 generationWindow:(id)arg2;
 - (_Bool)_persistResults:(id)arg1 forTransferAction:(id)arg2;
 - (void)_resetLocalFlagsToServerFlagsForMessagesWithRemoteIDs:(id)arg1 mailboxURL:(id)arg2;
 - (_Bool)_persistResults:(id)arg1 forFlagChangeAction:(id)arg2;
@@ -66,6 +68,7 @@
 - (id)moveMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(_Bool)arg3;
 - (id)init;
 - (id)initWithDatabase:(id)arg1 localActionPersistence:(id)arg2 serverMessagePersistenceFactory:(id)arg3 hookResponder:(id)arg4;
+- (unsigned long long)signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

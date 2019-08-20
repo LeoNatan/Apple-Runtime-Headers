@@ -18,6 +18,7 @@
     UIImage *_cachedImage;
     SBFallbackSnapshotDataProvider *_fallbackSnapshotDataProvider;
     IOSurface *_processedSurface;
+    _Bool _hasProtectedContent;
 }
 
 @property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;

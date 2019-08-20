@@ -14,6 +14,7 @@
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (double)touchUpTimestamp;
 - (double)touchDownTimestamp;
+- (_Bool)isMissingATouch;
 - (id)init:(int)arg1 timestamp:(double)arg2 order:(long long)arg3;
 
 @end

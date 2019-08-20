@@ -42,6 +42,7 @@
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isSupported;
 - (_Bool)containsTransportableContent;
+- (_Bool)containsRestorableContent;
 - (id)descriptionComponents;
 - (id)init;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;

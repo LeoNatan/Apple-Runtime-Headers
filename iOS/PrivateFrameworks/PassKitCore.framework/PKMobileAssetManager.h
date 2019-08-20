@@ -26,7 +26,7 @@
 - (id)sortDescriptorsForCityCode;
 - (id)sortDescriptorsForMarkets;
 - (void)fetchCityStationProviderAssetForBaseProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fetchAssetsForMarketWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchAssetsForMarketWithIdentifier:(id)arg1 userInitiated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_sortDescriptorWithPreferredFeatureKey:(id)arg1 isFeaturePreferred:(_Bool)arg2 keyPath:(id)arg3;
 - (id)sortDescriptorsForEducationVideoWithPreferredFeatures:(unsigned long long)arg1;
 - (void)fetchEducationVideoWithPreferredFeatures:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

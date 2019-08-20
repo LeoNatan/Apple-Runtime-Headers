@@ -24,11 +24,13 @@
 @property(retain) NSArray *modelNames; // @synthesize modelNames=_modelNames;
 @property(retain) NSArray *models; // @synthesize models=_models;
 - (void).cxx_destruct;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (void)replaceModelAtIndex:(unsigned long long)arg1 with:(id)arg2;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initModelFromMetadataAndArchive:(struct _MLModelInputArchiver *)arg1 versionInfo:(id)arg2 interface:(id)arg3 metadata:(id)arg4 configuration:(id)arg5 error:(id *)arg6;
+- (void)updateParameterDescriptionsByKeyBasedOnSubModel;
 - (id)extractModelNamesFromArchive:(struct _MLModelInputArchiver *)arg1 numModels:(unsigned long long)arg2;
 
 @end

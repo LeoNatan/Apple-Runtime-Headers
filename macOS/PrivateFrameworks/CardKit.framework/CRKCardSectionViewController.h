@@ -54,6 +54,7 @@
 - (void)cardSectionViewDidInvalidateSize:(id)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(BOOL)arg2;
 - (void)didEngageCardSection:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

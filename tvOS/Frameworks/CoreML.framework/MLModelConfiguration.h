@@ -36,8 +36,6 @@
 @property long long computeUnits; // @synthesize computeUnits=_computeUnits;
 - (void).cxx_destruct;
 - (id)description;
-- (void)setModelParameters:(id)arg1;
-- (void)setUpdateParameters:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

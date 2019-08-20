@@ -4,10 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <CoreUtils/NSObject-Protocol.h>
+
 @class NSArray, NSError, PRSharingSession;
 
-@protocol PRSharingSessionDelegate
+@protocol PRSharingSessionDelegate <NSObject>
 - (void)session:(PRSharingSession *)arg1 didFailwithError:(NSError *)arg2;
 - (void)session:(PRSharingSession *)arg1 didEstimateScores:(NSArray *)arg2;
+
+@optional
+- (void)session:(PRSharingSession *)arg1 didChangeProximitySensorState:(unsigned long long)arg2;
 @end
 

@@ -27,6 +27,7 @@
     double _routePickerButtonImageVerticalInset;
     BOOL _routeListAlwaysHasDarkAppearance;
     BOOL _enabled;
+    BOOL _prioritizesVideoDevices;
     NSString *_outputContextID;
     BOOL _routePickerButtonBordered;
     AVPlayer *_player;
@@ -45,9 +46,12 @@
 - (void)_updateAirPlayActive;
 - (void)_updatePickerButtonAppearance;
 - (void)_pickerButtonPressed:(id)arg1;
+- (void)_createOrUpdatePickerButton;
 - (void)routePickerRemoteViewController:(id)arg1 viewBridgeConnectionDidFailWithError:(id)arg2;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillShow:(id)arg1;
+- (void)setPrioritizesVideoDevices:(BOOL)arg1;
+- (BOOL)prioritizesVideoDevices;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)setOutputContextID:(id)arg1;

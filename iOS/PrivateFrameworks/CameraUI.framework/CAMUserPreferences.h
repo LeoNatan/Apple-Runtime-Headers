@@ -14,7 +14,6 @@
     _Bool _shouldShowGridView;
     _Bool _QRBannersEnabledInSettings;
     _Bool _forceEnableQRBanners;
-    _Bool _didAcknowledgeQRCodeDescription;
     _Bool _shouldCaptureHDREV0;
     _Bool _shouldUseModernHDRBehavior;
     _Bool _didAcknowledgePortraitModeDescription;
@@ -74,7 +73,6 @@
 @property(nonatomic) _Bool didAcknowledgePortraitModeDescription; // @synthesize didAcknowledgePortraitModeDescription=_didAcknowledgePortraitModeDescription;
 @property(readonly, nonatomic) _Bool shouldUseModernHDRBehavior; // @synthesize shouldUseModernHDRBehavior=_shouldUseModernHDRBehavior;
 @property(readonly, nonatomic) _Bool shouldCaptureHDREV0; // @synthesize shouldCaptureHDREV0=_shouldCaptureHDREV0;
-@property(nonatomic) _Bool didAcknowledgeQRCodeDescription; // @synthesize didAcknowledgeQRCodeDescription=_didAcknowledgeQRCodeDescription;
 @property(nonatomic) _Bool forceEnableQRBanners; // @synthesize forceEnableQRBanners=_forceEnableQRBanners;
 @property(readonly, nonatomic) _Bool QRBannersEnabledInSettings; // @synthesize QRBannersEnabledInSettings=_QRBannersEnabledInSettings;
 @property(readonly, nonatomic) _Bool shouldShowGridView; // @synthesize shouldShowGridView=_shouldShowGridView;

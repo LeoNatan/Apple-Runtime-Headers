@@ -10,7 +10,7 @@
 #import <UIKitCore/_UISheetInteractionDelegate-Protocol.h>
 #import <UIKitCore/_UISheetLayoutInfoDelegate-Protocol.h>
 
-@class NSArray, NSString, NSUserActivity, UIDimmingView, UIDragInteraction, UIDropShadowView, UIPercentDrivenInteractiveTransition, UIView, _UIRemoteViewController, _UISheetAnimationController, _UISheetInteraction, _UISheetLayoutInfo, _UISheetPresentationControllerConfiguration;
+@class NSArray, NSString, NSUserActivity, UIDimmingView, UIDragInteraction, UIDropShadowView, UIPercentDrivenInteractiveTransition, UIView, UIViewPropertyAnimator, _UIRemoteViewController, _UISheetAnimationController, _UISheetInteraction, _UISheetLayoutInfo, _UISheetPresentationControllerConfiguration;
 @protocol _UISheetPresentationControllerDelegate;
 
 @interface _UISheetPresentationController : UIPresentationController <_UISheetLayoutInfoDelegate, _UISheetInteractionDelegate, UIDragInteractionDelegate>
@@ -31,6 +31,7 @@
     UIDragInteraction *__tearOffInteraction;
     NSUserActivity *__tearOffActivity;
     _UIRemoteViewController *__connectedRemoteViewController;
+    UIViewPropertyAnimator *__remoteDismissalPropertyAnimator;
     UIDropShadowView *_dropShadowView;
     UIDimmingView *_dimmingView;
     struct CGPoint __initialTearOffPoint;
@@ -44,6 +45,7 @@
 @property(readonly, nonatomic) UIDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
 @property(readonly, nonatomic) UIDropShadowView *dropShadowView; // @synthesize dropShadowView=_dropShadowView;
 @property(nonatomic) BOOL _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
+@property(retain, nonatomic) UIViewPropertyAnimator *_remoteDismissalPropertyAnimator; // @synthesize _remoteDismissalPropertyAnimator=__remoteDismissalPropertyAnimator;
 @property(nonatomic) BOOL _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
 @property(readonly, nonatomic) _UIRemoteViewController *_connectedRemoteViewController; // @synthesize _connectedRemoteViewController=__connectedRemoteViewController;
 @property(retain, nonatomic, setter=_setTearOffActivity:) NSUserActivity *_tearOffActivity; // @synthesize _tearOffActivity=__tearOffActivity;
@@ -64,9 +66,9 @@
 - (BOOL)dragInteraction:(id)arg1 prefersFullSizePreviewsForSession:(id)arg2;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (BOOL)sheetInteraction:(id)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
-- (void)_completeInteractiveTransitionFromRemote:(BOOL)arg1 immediately:(BOOL)arg2 duration:(double)arg3 timingCurve:(id)arg4;
-- (void)_updateInteractiveTransitionFromRemoteWithProgress:(double)arg1;
-- (void)_startInteractiveTransitionFromRemoteWithProgress:(double)arg1;
+- (void)_completeInteractiveTransitionFromRemote:(BOOL)arg1 immediately:(BOOL)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)_updateInteractiveTransitionFromRemoteWithProgress:(double)arg1 offset:(double)arg2;
+- (void)_startInteractiveTransitionFromRemoteWithProgress:(double)arg1 offset:(double)arg2;
 - (struct CGPoint)offsetForInterruptedAnimationInSheetInteraction:(id)arg1;
 - (void)sheetInteraction:(id)arg1 didChangeOffset:(struct CGPoint)arg2;
 - (void)_completeInteractiveTransition:(BOOL)arg1 immediately:(BOOL)arg2 duration:(double)arg3 timingCurve:(id)arg4;
@@ -75,6 +77,7 @@
 - (void)_updateAnimationController;
 - (id)_preferredInteractionControllerForDismissal:(id)arg1;
 - (id)_preferredAnimationControllerForDismissal;
+- (id)_preferredAnimationControllerForPresentation;
 - (id)_viewToIgnoreLayerTransformForViewFrameInWindowContentOverlayInsetsCalculation;
 - (void)containerViewDidLayoutSubviews;
 - (void)_updatePresentedViewFrame;
@@ -93,15 +96,18 @@
 - (void)_keyboardAboutToShow:(id)arg1;
 - (void)_layoutPresentedViewAndContainerViewIfNeeded;
 - (void)_avoidKeyboardAndAnimateSheetForNotification:(id)arg1;
+- (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 @property(readonly, nonatomic) _UISheetPresentationController *_childSheetPresentationController;
 @property(readonly, nonatomic) _UISheetPresentationController *_parentSheetPresentationController;
-@property(readonly, nonatomic) BOOL _isHosting;
+@property(readonly, nonatomic, getter=_isHosting) BOOL _hosting;
 @property(readonly, nonatomic) BOOL _isRootPresentation;
 - (long long)presentationStyle;
 - (void)_sheetLayoutInfoLayout:(id)arg1;
 - (void)_sheetLayoutInfoDidInvalidateOutput:(id)arg1;
+- (void)_updateLayoutInfoContainerTraitCollection;
 - (void)_containerViewTraitCollectionDidChange;
+- (void)_updateLayoutInfoContainerSafeAreaInsets;
 - (void)_containerViewSafeAreaInsetsDidChange;
 - (void)_containerViewBoundsDidChange;
 - (void)_tryToConnectToRemoteViewController:(id)arg1;

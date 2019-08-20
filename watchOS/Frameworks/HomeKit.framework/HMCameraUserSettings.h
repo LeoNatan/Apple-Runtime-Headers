@@ -15,8 +15,6 @@
 @interface HMCameraUserSettings : NSObject <HMFLogging, HMFMessageReceiver>
 {
     HMFUnfairLock *_lock;
-    _Bool _cameraDisabledByThirdParty;
-    _Bool _cameraEnabledForThirdParty;
     _HMCameraUserSettings *_cameraUserSettings;
     id <HMCameraUserSettingsDelegate> _delegate;
     _HMContext *_context;
@@ -27,11 +25,10 @@
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <HMCameraUserSettingsDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, getter=isCameraEnabledForThirdParty) _Bool cameraEnabledForThirdParty; // @synthesize cameraEnabledForThirdParty=_cameraEnabledForThirdParty;
-@property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty; // @synthesize cameraDisabledByThirdParty=_cameraDisabledByThirdParty;
 - (void).cxx_destruct;
 - (void)_mergeNewSettings:(id)arg1 operations:(id)arg2;
 - (void)_callSettingsDidUpdateDelegate;
+@property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty;
 @property(readonly) HMCameraBulletinBoardSmartNotification *smartNotificationBulletin;
 @property(readonly, getter=isNightVisionModeEnabled) _Bool nightVisionModeEnabled;
 @property(readonly, getter=areSnapshotsAllowed) _Bool snapshotsAllowed;

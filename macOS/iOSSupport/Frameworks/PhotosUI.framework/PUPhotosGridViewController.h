@@ -176,9 +176,9 @@
 - (void)multiSelectInteraction:(id)arg1 toggleSelectionStateUpToPoint:(struct CGPoint)arg2;
 - (void)willBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)shouldBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
+- (BOOL)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (BOOL)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
 - (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(BOOL)arg1;
-- (void)automaticallyTransitionToMultiSelectMode;
 - (BOOL)isInMultiSelectMode;
 - (BOOL)supportsMultiSelectInteraction:(id)arg1;
 - (BOOL)_shouldBeginMultiSelectAtLocation:(struct CGPoint)arg1;

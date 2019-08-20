@@ -57,7 +57,7 @@
 - (void)_tearDownState;
 - (void)updateShareParticipants;
 - (id)remove;
-- (id)start;
+- (void)start;
 - (void)configure;
 - (id)initWithDatabase:(id)arg1 zoneName:(id)arg2 home:(id)arg3 shareMessenger:(id)arg4 zoneDelegate:(id)arg5 workQueue:(id)arg6;
 

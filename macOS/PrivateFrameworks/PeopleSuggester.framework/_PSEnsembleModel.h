@@ -8,7 +8,7 @@
 
 #import <PeopleSuggester/_PSModel-Protocol.h>
 
-@class CNContactStore, NSArray, NSUserDefaults, _CDInteractionCache, _CDInteractionStore, _PSHeuristics, _PSKNNModel, _PSRuleMiningModel;
+@class CNContactStore, NSArray, NSSet, NSUserDefaults, _CDInteractionCache, _CDInteractionStore, _PSHeuristics, _PSInteractionAndContactMonitor, _PSKNNModel, _PSRuleMiningModel;
 @protocol _DKKnowledgeQuerying><_DKKnowledgeSaving;
 
 @interface _PSEnsembleModel : NSObject <_PSModel>
@@ -24,12 +24,16 @@
     _PSRuleMiningModel *_ruleMiningModel;
     _PSKNNModel *_knnModel;
     _PSKNNModel *_knnZkwModel;
-    _PSKNNModel *_knnNameRankerModel;
+    _PSKNNModel *_knnNameOrContactRankerModel;
     _PSHeuristics *_heuristics;
+    _PSInteractionAndContactMonitor *_contactMonitor;
+    NSSet *_cachedSupportedBundleIDs;
 }
 
+@property(retain, nonatomic) NSSet *cachedSupportedBundleIDs; // @synthesize cachedSupportedBundleIDs=_cachedSupportedBundleIDs;
+@property(retain, nonatomic) _PSInteractionAndContactMonitor *contactMonitor; // @synthesize contactMonitor=_contactMonitor;
 @property(retain, nonatomic) _PSHeuristics *heuristics; // @synthesize heuristics=_heuristics;
-@property(retain, nonatomic) _PSKNNModel *knnNameRankerModel; // @synthesize knnNameRankerModel=_knnNameRankerModel;
+@property(retain, nonatomic) _PSKNNModel *knnNameOrContactRankerModel; // @synthesize knnNameOrContactRankerModel=_knnNameOrContactRankerModel;
 @property(retain, nonatomic) _PSKNNModel *knnZkwModel; // @synthesize knnZkwModel=_knnZkwModel;
 @property(retain, nonatomic) _PSKNNModel *knnModel; // @synthesize knnModel=_knnModel;
 @property(retain, nonatomic) _PSRuleMiningModel *ruleMiningModel; // @synthesize ruleMiningModel=_ruleMiningModel;
@@ -42,11 +46,13 @@
 @property(retain, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
 - (void).cxx_destruct;
 - (id)appExtensionSuggestionsFromContext:(id)arg1;
+- (id)rankedAutocompleteSuggestionsFromContext:(id)arg1 candidates:(id)arg2;
 - (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 name:(id)arg2;
+- (id)rankedContactSuggestionsWithPredictionContext:(id)arg1 contactsOnly:(BOOL)arg2 maxSuggestions:(unsigned long long)arg3;
 - (id)suggestZKWMessagesSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
-- (id)mapsSuggestionArrayWithArray:(id)arg1 appendingUniqueElementsFromArray:(id)arg2 contactResolver:(id)arg3;
+- (id)mapsSuggestionArrayWithArray:(id)arg1 appendingUniqueElementsFromArray:(id)arg2 contactResolver:(id)arg3 meContactId:(id)arg4;
 - (id)predictWithMapsPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
-- (id)suggestionsFromSuggestionProxies:(id)arg1;
+- (id)suggestionsFromSuggestionProxies:(id)arg1 supportedBundleIDs:(id)arg2;
 - (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
 - (void)populateCachesWithSupportedBundleIDs:(id)arg1;
 - (void)populateCaches;

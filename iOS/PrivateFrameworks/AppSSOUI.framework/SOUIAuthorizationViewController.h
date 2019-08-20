@@ -15,6 +15,7 @@
 {
     UIViewController *_extensionViewController;
     NSDictionary *_hints;
+    double _sheetHeight;
     id <SOUIAuthorizationViewControllerDelegate> _delegate;
     UINavigationBar *_navigationBar;
     UIView *_extensionViewContainer;

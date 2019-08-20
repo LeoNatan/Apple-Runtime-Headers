@@ -13,6 +13,7 @@
     // Error parsing type: , name: largeMarginWidth
     // Error parsing type: , name: smallHeaderImageHeight
     // Error parsing type: , name: largeHeaderImageHeight
+    // Error parsing type: , name: maxHeaderImageViewWidth
     // Error parsing type: , name: compactBadgeImageWidth
     // Error parsing type: , name: regularBadgeImageWidth
     // Error parsing type: , name: compactBadgeImageHeight

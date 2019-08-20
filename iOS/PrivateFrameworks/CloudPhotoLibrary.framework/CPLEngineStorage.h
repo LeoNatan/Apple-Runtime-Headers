@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) unsigned long long scopeType;
 - (_Bool)closeWithError:(id *)arg1;
 - (_Bool)openWithError:(id *)arg1;
+- (id)redactedDescription;
 @property(readonly, copy) NSString *description;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 

@@ -15,13 +15,15 @@
 @interface _MPCQueueControllerDataSourceState : NSObject <MPShuffleableSectionedIdentifierListDataSource, NSSecureCoding>
 {
     _Bool _frozen;
+    _Bool _supportsCustomPlaceholder;
+    MPPlaceholderAVItem *_placeholderItem;
     id <MPCQueueControllerDataSource><MPCQueueControllerDataSourceStateRestoring> _dataSource;
     MPPlaybackContext *_playbackContext;
     MPPlaybackContext *_originalPlaybackContext;
     int _state;
     NSString *_sectionIdentifier;
     NSString *_preferredStartItemIdentifier;
-    MPPlaceholderAVItem *_placeholderItem;
+    struct os_unfair_lock_s _stateLock;
     int _supplementalPlaybackContextBehavior;
     MPPlaybackContext *_supplementalPlaybackContext;
 }
@@ -29,7 +31,8 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) MPPlaybackContext *supplementalPlaybackContext; // @synthesize supplementalPlaybackContext=_supplementalPlaybackContext;
 @property(readonly, nonatomic) int supplementalPlaybackContextBehavior; // @synthesize supplementalPlaybackContextBehavior=_supplementalPlaybackContextBehavior;
-@property(retain, nonatomic) MPPlaceholderAVItem *placeholderItem; // @synthesize placeholderItem=_placeholderItem;
+@property(readonly, nonatomic) _Bool supportsCustomPlaceholder; // @synthesize supportsCustomPlaceholder=_supportsCustomPlaceholder;
+@property(readonly, nonatomic) struct os_unfair_lock_s stateLock; // @synthesize stateLock=_stateLock;
 @property(readonly, nonatomic) NSString *preferredStartItemIdentifier; // @synthesize preferredStartItemIdentifier=_preferredStartItemIdentifier;
 @property(readonly, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
@@ -38,10 +41,12 @@
 @property(readonly, nonatomic) MPPlaybackContext *playbackContext; // @synthesize playbackContext=_playbackContext;
 @property(readonly, nonatomic) id <MPCQueueControllerDataSource><MPCQueueControllerDataSourceStateRestoring> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)_inLock_buildPlaceholder;
 - (void)_buildPlaceholder;
 - (_Bool)section:(id)arg1 shouldShuffleExcludeItem:(id)arg2;
 - (_Bool)section:(id)arg1 supportsShuffleType:(int)arg2;
 - (void)reloadSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) MPPlaceholderAVItem *placeholderItem; // @synthesize placeholderItem=_placeholderItem;
 - (void)loadAdditionalItemsIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)shouldShowPlaceholderAtTail;
 - (_Bool)shouldRequestAdditionalItemsAtTail;

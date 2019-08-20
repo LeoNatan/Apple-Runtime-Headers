@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (oneway void)invalidate;
 - (void)cancel;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithSession:(id)arg1 forSyncBubble:(BOOL)arg2;
 

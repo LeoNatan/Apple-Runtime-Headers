@@ -4,14 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSAttributedString, NSString, UIColor, UIFont, UIPhraseBoundaryGestureRecognizer, UIResponder, UITextInputArrowKeyHistory, UITextPosition, UITextRange, UIView;
+@class NSAttributedString, NSString, UIColor, UIFont, UIResponder, UITextInputArrowKeyHistory, UITextPosition, UITextRange, UIView;
 @protocol UITextInput, UITextInputPrivate;
 
 @protocol UITextInput_Internal
 @property(readonly, nonatomic, getter=_proxyTextInput) UIResponder<UITextInput> *__content;
 - (_Bool)_usesAsynchronousProtocol;
-- (void)_phraseBoundaryGesture:(UIPhraseBoundaryGestureRecognizer *)arg1;
-- (UIPhraseBoundaryGestureRecognizer *)_newPhraseBoundaryGestureRecognizer;
 - (_Bool)_hasMarkedText;
 - (void)_unmarkText;
 - (void)_setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange)arg2;

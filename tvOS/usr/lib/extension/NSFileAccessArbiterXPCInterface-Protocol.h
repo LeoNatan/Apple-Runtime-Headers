@@ -22,6 +22,6 @@
 - (oneway void)removePresenterWithID:(id)arg1;
 - (void)addPresenter:(id <NSFilePresenterXPCInterface>)arg1 withID:(id)arg2 fileURL:(NSURL *)arg3 lastPresentedItemEventIdentifier:(NSNumber *)arg4 ubiquityAttributes:(NSSet *)arg5 options:(unsigned long long)arg6 responses:(unsigned long long)arg7;
 - (oneway void)revokeAccessClaimForID:(id)arg1;
-- (void)grantAccessClaim:(NSFileAccessClaim *)arg1 withReply:(void (^)(NSArray *, NSArray *, NSArray *, NSError *))arg2;
+- (void)grantAccessClaim:(NSFileAccessClaim *)arg1 withReply:(void (^)(NSArray *, NSArray *, NSArray *, _Bool, NSError *))arg2;
 @end
 

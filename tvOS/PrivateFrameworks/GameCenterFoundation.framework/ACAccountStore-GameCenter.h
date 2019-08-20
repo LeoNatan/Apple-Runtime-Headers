@@ -9,6 +9,7 @@
 @interface ACAccountStore (GameCenter)
 - (void)_gkDeleteCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_gkSaveCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_getAltDSIDFromIDMSForCredential:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_gkAccountForAppleID:(id)arg1;
 - (id)_gkPrimaryCredentialForEnvironment:(long long)arg1;
 - (id)_gkAllCredentialsForEnvironment:(long long)arg1;

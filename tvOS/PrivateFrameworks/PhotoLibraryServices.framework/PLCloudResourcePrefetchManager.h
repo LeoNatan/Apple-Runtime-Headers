@@ -34,6 +34,7 @@
 - (void)_incrementPrefetchCountForPLCloudResources:(id)arg1;
 - (void)_prefetchResources:(id)arg1 shouldAutoPefetchNextBatch:(_Bool)arg2 prefetchSignpostId:(unsigned long long)arg3;
 - (void)_startPrefetchNextBatch;
+- (void)_clearPrefetchState;
 - (void)_writeDownloadFinishedMarkerIfNeeded;
 - (_Bool)_canPrefetch;
 - (void)_inflightResourcesRemoveIdentifier:(id)arg1 cplResource:(id)arg2;
@@ -48,6 +49,7 @@
 - (void)_cleanupInflightResources;
 - (void)_enqueueCheckCPLBGDownloadFromNow:(id)arg1 withReason:(id)arg2;
 - (void)_checkCPLBackgroundDownloadOperations;
+- (void)handleOptimizeModeChange;
 - (void)startAutomaticPrefetch;
 - (void)dealloc;
 - (id)initWithCPLManager:(id)arg1 pruneManager:(id)arg2 library:(id)arg3;

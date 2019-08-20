@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (id)hostAppEndpointForProcessIdentifier:(int)arg1;
 - (BOOL)trustedToAddFreeWindowToArbitraryHostApp;
 - (void)windowForContextID:(unsigned int)arg1 fromViewService:(int)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)forApp:(CDStruct_6ad76789)arg1 retrievePreviewEndpoint:(CDUnknownBlockType)arg2;
+- (BOOL)trustedToPreviewArbitraryApps;
 - (void)hostApp:(int)arg1 description:(CDUnknownBlockType)arg2;
 - (id)hostAppDescription:(int)arg1;
 - (void)hostAppStartingWith:(id)arg1 endpoint:(id)arg2 reply:(CDUnknownBlockType)arg3;

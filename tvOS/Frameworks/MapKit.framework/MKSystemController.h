@@ -20,6 +20,7 @@
 - (_Bool)overrideBlurStyle;
 - (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 requireOptionKeyPromptUnlockDevice:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)openURL:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_transformURLIfNecessary:(id)arg1;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)openURL:(id)arg1;
 - (_Bool)_isRunningInLockScreen;

@@ -20,8 +20,8 @@
 - (void)migrationPluginResults:(CDUnknownBlockType)arg1;
 - (void)migrationPhaseDescription:(CDUnknownBlockType)arg1;
 - (void)reportMigrationFailure;
-- (void)forceMigrationOnNextRebootWithUserDataDisposition:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)testMigrationUIWithProgress:(_Bool)arg1 forceInvert:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)forceMigrationOnNextRebootWithUserDataDisposition:(unsigned int)arg1;
+- (void)testMigrationUIWithProgress:(_Bool)arg1 forceInvert:(_Bool)arg2;
 - (void)changeVisibility:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)orderedPluginIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)migrateCheckingNecessity:(_Bool)arg1 lastRelevantPlugin:(id)arg2 testMigrationInfrastructureOnly:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

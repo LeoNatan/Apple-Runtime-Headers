@@ -4,14 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/NSObject-Protocol.h>
+#import <UIKitCore/UIContextMenuInteractionAnimating-Protocol.h>
 
-@class UIViewController;
-
-@protocol UIContextMenuInteractionCommitAnimating <NSObject>
-@property(readonly, nonatomic) UIViewController *previewViewController;
+@protocol UIContextMenuInteractionCommitAnimating <UIContextMenuInteractionAnimating>
 @property(nonatomic) long long preferredCommitStyle;
-- (void)addCompletion:(void (^)(void))arg1;
-- (void)addAnimations:(void (^)(void))arg1;
 @end
 

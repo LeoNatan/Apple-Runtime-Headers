@@ -41,6 +41,7 @@
     double m_fadedTime;
     NSDictionary *m_currentAppearOrFadeContext;
     id m_responderTarget;
+    CDUnknownBlockType m_responderTargetCompletionHandler;
     NSArray *m_replacements;
     NSArray *m_extraItems;
     NSString *m_untruncatedString;
@@ -102,6 +103,8 @@
 - (void)hideFromTargetView:(id)arg1;
 - (void)fade;
 - (void)fadeFromTargetView:(id)arg1;
+- (void)setResponderTarget:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_clearResponderTarget;
 - (_Bool)_isOwnedByView:(id)arg1;
 - (void)_fadeAfterCommand:(SEL)arg1;
 - (void)_endOngoingAppearOrFadeAnimations;

@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (long long)_compare:(id)arg1;
 - (void)_setIsUnique:(BOOL)arg1;
 - (BOOL)_isUnique;
 - (id)_compoundIndexRepresentation;

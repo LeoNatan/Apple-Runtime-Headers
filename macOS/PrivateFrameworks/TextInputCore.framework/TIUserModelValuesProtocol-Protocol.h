@@ -10,6 +10,7 @@
 @protocol TIUserModeling;
 
 @protocol TIUserModelValuesProtocol <NSObject>
+- (BOOL)settingsBoolValue:(NSString *)arg1;
 - (NSString *)stringValue:(NSString *)arg1;
 - (NSArray *)counterValueWithWordLength:(NSString *)arg1;
 - (NSNumber *)counterValue:(NSString *)arg1;

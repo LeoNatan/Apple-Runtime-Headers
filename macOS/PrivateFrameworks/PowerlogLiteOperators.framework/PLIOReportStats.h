@@ -37,9 +37,11 @@
 - (id)getDeltaStats;
 - (id)getCurrentStats;
 - (void)clearSubscription;
+- (BOOL)subscribeToGroup:(id)arg1 andSubGroup:(id)arg2 withChannelIDs:(id)arg3 manualChannelOnly:(BOOL)arg4;
 - (BOOL)subscribeToGroup:(id)arg1 andSubGroup:(id)arg2 withChannelIDs:(id)arg3;
 - (BOOL)subscribeToGroup:(id)arg1 andSubGroup:(id)arg2;
 - (void)dealloc;
+- (id)initWithGroup:(id)arg1 andSubGroup:(id)arg2 withChannelIDs:(id)arg3 manualChannelOnly:(BOOL)arg4;
 - (id)initWithGroup:(id)arg1 andSubGroup:(id)arg2 withChannelIDs:(id)arg3;
 - (id)initWithGroup:(id)arg1 andSubGroup:(id)arg2;
 - (id)initWithDriverName:(id)arg1 withGroup:(id)arg2;

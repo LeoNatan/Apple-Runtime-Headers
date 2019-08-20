@@ -74,6 +74,7 @@
 - (void)isProfileInstalledWithIdentifier:(NSString *)arg1 completion:(void (^)(NSError *, _Bool))arg2;
 - (void)defaultAppBundleIDForCommunicationServiceType:(NSString *)arg1 forAccountWithIdentifier:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)notifyDeviceUnlockedWithCompletion:(void (^)(NSError *))arg1;
+- (void)notifyDeviceUnlockedAndPasscodeRequiredWithCompletion:(void (^)(NSError *))arg1;
 - (void)waitForMigrationIncludingPostRestoreMigration:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (void)addBookmark:(NSDictionary *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)addAllowedURLString:(NSString *)arg1 completion:(void (^)(NSError *))arg2;

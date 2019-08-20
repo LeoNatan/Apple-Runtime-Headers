@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) WDClinicalOnboardingOAuthNavigationViewController *inFlightLoginViewController; // @synthesize inFlightLoginViewController=_inFlightLoginViewController;
+@property(nonatomic) __weak WDClinicalOnboardingOAuthNavigationViewController *inFlightLoginViewController; // @synthesize inFlightLoginViewController=_inFlightLoginViewController;
 @property(retain, nonatomic) WDClinicalGatewayProxy *pendingOnboardingGateway; // @synthesize pendingOnboardingGateway=_pendingOnboardingGateway;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (void)_startOrReplaceLoginWithLoginViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)_onboardAsNewGateway:(id)arg1 presentingViewController:(id)arg2;
 - (void)_createOnboardingViewControllerForGatewayProxy:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)dismissInflightOnboardingViewController;
 - (void)createOnboardingViewControllerForPendingOnboardingGatewayWithCompletion:(CDUnknownBlockType)arg1;
 - (void)registerInflightOnboardingViewController:(id)arg1;
 - (void)onboardWithActivity:(id)arg1 presentingViewController:(id)arg2;

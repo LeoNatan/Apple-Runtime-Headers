@@ -6,11 +6,9 @@
 
 #import <ARKit/ARMLImageProcessingTechnique.h>
 
-#import <ARKit/ARTechniqueBusyState-Protocol.h>
+@class ARImageRotationTechnique;
 
-@class ARImageRotationTechnique, NSString;
-
-@interface ARSegmentationTechnique : ARMLImageProcessingTechnique <ARTechniqueBusyState>
+@interface ARSegmentationTechnique : ARMLImageProcessingTechnique
 {
     struct __CVPixelBufferPool *_outputSegmentationPixelBufferPool;
     struct __CVPixelBufferPool *_scaledSegmentationOutputPixelBufferPool;
@@ -37,13 +35,6 @@
 - (double)requiredTimeInterval;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) _Bool isBusy;
-@property(readonly) Class superclass;
 
 @end
 

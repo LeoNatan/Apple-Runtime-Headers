@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)checkCurrentLanguageVoiceProfileAvailabiltyIniCloud;
++ (id)checkVoiceProfileAvailabiltyForLanguage:(id)arg1;
 + (id)processLanguageAndMediaProfileInfo:(id)arg1;
 + (id)createPersonalIdentityDeviceLanguageMismatchList:(id)arg1;
 + (id)createMultiUserLanguageToHomePodsMapping:(id)arg1;
@@ -26,6 +26,7 @@
 + (id)processHomeFeatureOnboarderResults:(id)arg1;
 + (BOOL)canShowIdentifyVoiceOnboardingWithUsageOptions:(id)arg1;
 + (BOOL)currentUserHasUnfinishedFeatureOnboarding;
++ (BOOL)voiceRecognitionIsSupportedForCurrentUserOnHomePod:(id)arg1;
 + (void)presentAlertConfirmingTurningOffPersonalRequestsFrom:(id)arg1;
 + (void)presentAlertConfirmingTurningOfVoiceRecognitionFrom:(id)arg1;
 + (id)fetchSupportedMultiUserLanguages:(id *)arg1;

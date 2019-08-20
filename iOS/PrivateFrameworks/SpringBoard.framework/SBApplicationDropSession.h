@@ -33,7 +33,7 @@
 + (_Bool)_dragItemRepresentsAcceptableFileDrag:(id)arg1;
 + (id)_applicationForIconLeafIdentifier:(id)arg1;
 + (void)_getUserNotificationDropSessionWithUIDragDropSession:(id)arg1 systemSession:(id)arg2 dragItem:(id)arg3 completion:(CDUnknownBlockType)arg4;
-+ (void)_getLocalAppDropSessionWithUIDragDropSession:(id)arg1 dragItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)_getLocalAppDropSessionWithUIDragDropSession:(id)arg1 dragItem:(id)arg2 systemSession:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)getDropSessionWithUIDropSession:(id)arg1 sceneProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)dropSessionWithWindowUIDragSession:(id)arg1;
 + (_Bool)canHandleUIDragDropSession:(id)arg1;

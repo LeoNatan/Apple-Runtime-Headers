@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (double)_totalSubviewsWidth;
 - (void)_removeSeparatorsFromGroupsIfNeeded:(_Bool)arg1;
 - (void)_updateAppearance;
-- (_Bool)_shouldPutTextOnSeaparateLines;
+- (_Bool)_shouldPutTextOnSeparateLines;
 - (id)_newRentalExpirationlabel:(id)arg1 exisitingLabel:(id)arg2;
 - (id)_newImageViewAsSubview;
 - (id)_newLabelAsSubview:(id)arg1;

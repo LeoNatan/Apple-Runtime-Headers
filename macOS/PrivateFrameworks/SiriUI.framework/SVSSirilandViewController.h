@@ -166,7 +166,6 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)loadView;
-- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

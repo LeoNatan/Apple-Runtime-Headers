@@ -92,6 +92,7 @@
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_updateNavigationBarButtons;
 - (void)_updatePreferredContentSize;
+- (_Bool)_shouldUpdatePreferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

@@ -15,7 +15,6 @@
     // Error parsing type: , name: pageViewController
     // Error parsing type: , name: pageBlueprintProvider
     // Error parsing type: , name: blueprintProvider
-    // Error parsing type: , name: currentPage
     // Error parsing type: , name: coverViewManager
     // Error parsing type: , name: eventManager
     // Error parsing type: , name: prewarm
@@ -25,6 +24,7 @@
     // Error parsing type: , name: featureManager
     // Error parsing type: , name: paidAccessChecker
     // Error parsing type: , name: currentPageContext
+    // Error parsing type: , name: pageSheetPresentationObserver
 }
 
 - (void).cxx_destruct;

@@ -36,7 +36,7 @@
 - (id)allBulletins;
 - (oneway void)failedToPresentSiriWithError:(id)arg1;
 - (oneway void)didPresentSiri;
-- (oneway void)didDismissWithOptions:(id)arg1;
+- (oneway void)didDismiss;
 - (oneway void)unregisterPresentationIdentifier:(id)arg1;
 - (oneway void)registerPresentationIdentifier:(id)arg1;
 - (void)_setConnection:(id)arg1;

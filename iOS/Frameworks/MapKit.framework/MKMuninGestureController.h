@@ -8,7 +8,7 @@
 
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MKHapticEngine, MKMuninView, NSDate, NSString, UIPanGestureRecognizer, UIPinchGestureRecognizer, UITapGestureRecognizer, VKCompoundAnimation;
+@class MKMuninView, NSDate, NSString, UIPanGestureRecognizer, UIPinchGestureRecognizer, UITapGestureRecognizer, VKCompoundAnimation;
 @protocol MKMuninGestureControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -29,10 +29,8 @@ __attribute__((visibility("hidden")))
     _Bool _pinchingEnabled;
     id <MKMuninGestureControllerDelegate> _delegate;
     MKMuninView *_muninView;
-    MKHapticEngine *_hapticEngine;
 }
 
-@property(retain, nonatomic) MKHapticEngine *hapticEngine; // @synthesize hapticEngine=_hapticEngine;
 @property(nonatomic) __weak MKMuninView *muninView; // @synthesize muninView=_muninView;
 @property(nonatomic) _Bool pinchingEnabled; // @synthesize pinchingEnabled=_pinchingEnabled;
 @property(nonatomic) _Bool panningEnabled; // @synthesize panningEnabled=_panningEnabled;

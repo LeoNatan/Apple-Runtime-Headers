@@ -142,6 +142,7 @@
 - (void)_ensurePlaceholderItems;
 - (void)_ensurePaymentContentItems;
 - (void)_ensureItemForClass:(Class)arg1;
+- (void)_didSetItemForClass:(Class)arg1;
 - (void)_updatePeerPaymentPromotionAvailability;
 - (void)_ensureItems;
 @property(readonly, nonatomic) NSString *defaultPaymentPassUniqueIdentifier;

@@ -122,7 +122,6 @@
 @property(nonatomic, getter=_width, setter=_setWidth:) float _width; // @dynamic _width;
 @property(nonatomic) float width;
 - (void)setLargeContentSizeImageInsets:(struct UIEdgeInsets)arg1;
-- (id)_internalLargeContentSizeImage;
 - (struct UIEdgeInsets)largeContentSizeImageInsets;
 - (void)setLargeContentSizeImage:(id)arg1;
 - (id)largeContentSizeImage;

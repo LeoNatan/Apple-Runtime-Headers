@@ -10,6 +10,7 @@
 {
 }
 
++ (id)numberOfNeighbors;
 + (id)seed;
 + (id)shuffle;
 + (id)epochs;
@@ -21,6 +22,8 @@
 + (id)learningRate;
 + (id)linkedModelSearchPath;
 + (id)linkedModelFileName;
++ (id)biases;
++ (id)weights;
 - (id)initWithKeyName:(id)arg1;
 - (id)deletingPrefixingScope:(id)arg1;
 - (id)scopedTo:(id)arg1;

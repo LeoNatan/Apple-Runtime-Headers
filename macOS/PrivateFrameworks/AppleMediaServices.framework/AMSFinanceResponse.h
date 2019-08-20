@@ -14,15 +14,16 @@ __attribute__((visibility("hidden")))
     AMSFinanceDialogResponse *_dialogResponse;
     AMSFinanceAuthenticateResponse *_authenticateResponse;
     AMSFinancePaymentSheetResponse *_paymentSheetResponse;
-    AMSURLTaskInfo *_taskInfo;
+    long long _dialogKind;
     NSDictionary *_responseDictionary;
+    AMSURLTaskInfo *_taskInfo;
 }
 
-@property(retain) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(retain) AMSURLTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;
+@property(retain) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
+@property(readonly) long long dialogKind; // @synthesize dialogKind=_dialogKind;
 - (void).cxx_destruct;
 - (id)_valueForProtocolKey:(id)arg1;
-- (long long)_dialogKind;
 @property(readonly) NSURL *versionMismatchURL;
 @property(readonly) BOOL supportedProtocolVersion;
 @property(readonly) NSError *serverError;

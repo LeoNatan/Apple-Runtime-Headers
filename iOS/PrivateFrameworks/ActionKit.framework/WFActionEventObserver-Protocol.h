@@ -14,7 +14,7 @@
 - (void)action:(WFAction *)arg1 supplementalParameterValueDidChangeForKey:(NSString *)arg2;
 - (void)action:(WFAction *)arg1 parameterStateDidChangeForKey:(NSString *)arg2;
 - (void)actionRunningStateDidChange:(WFAction *)arg1;
-- (void)actionOutputContentClassesDidChange:(WFAction *)arg1;
+- (void)actionOutputDetailsDidChange:(WFAction *)arg1;
 - (void)actionNameDidChange:(WFAction *)arg1;
 @end
 

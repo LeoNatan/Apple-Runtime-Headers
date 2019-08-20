@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)isKernelExtensionMDMAllowed:(id)arg1 bundleID:(id)arg2 error:(id *)arg3;
 - (BOOL)removeMDMPayload:(id)arg1 error:(id *)arg2;
 - (BOOL)installMDMPayload:(id)arg1 withTeams:(id)arg2 andExtensions:(id)arg3 error:(id *)arg4;
 - (BOOL)setUserApprovalAllowed:(BOOL)arg1 error:(id *)arg2;

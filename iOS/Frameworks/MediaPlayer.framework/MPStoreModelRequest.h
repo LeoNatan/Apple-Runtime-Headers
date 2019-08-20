@@ -18,6 +18,7 @@
     unsigned long long _authenticationOptions;
 }
 
++ (_Bool)requiresNetwork;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned long long authenticationOptions; // @synthesize authenticationOptions=_authenticationOptions;
 @property(copy, nonatomic) NSString *clientPlatformIdentifier; // @synthesize clientPlatformIdentifier=_clientPlatformIdentifier;

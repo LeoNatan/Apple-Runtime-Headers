@@ -46,6 +46,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithMask:(unsigned long long)arg1;
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)shouldSample:(_Bool)arg1 withDeadline:(unsigned long long)arg2;
+- (unsigned long long)minimumAttentionSamplerErrorRetryTime;
+- (unsigned long long)nextSampleTimeForSamplingInterval:(unsigned long long)arg1;
 - (void)finishDeadlineComputation;
 - (void)updateSamplingDeadline:(unsigned long long)arg1 forClient:(id)arg2;
 - (void)startDeadlineComputation;

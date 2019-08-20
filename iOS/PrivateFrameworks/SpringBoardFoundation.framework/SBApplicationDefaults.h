@@ -15,7 +15,6 @@
 - (void)_bindAndRegisterDefaults;
 
 // Remaining properties
-@property(readonly, nonatomic) double backgroundMultitaskingWatchdogTimeout; // @dynamic backgroundMultitaskingWatchdogTimeout;
 @property(nonatomic) NSString *bundleIdentifierToForceHomeAffordanceInset; // @dynamic bundleIdentifierToForceHomeAffordanceInset;
 @property(readonly, nonatomic) _Bool forcesMedusaAdoption; // @dynamic forcesMedusaAdoption;
 @property(readonly, nonatomic) _Bool ignoresDeclaredNetworkUsage; // @dynamic ignoresDeclaredNetworkUsage;

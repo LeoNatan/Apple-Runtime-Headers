@@ -115,6 +115,7 @@
 - (void)resetVisibleCellStylesForEndReveal;
 - (void)didFinishAnimatingReveal;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)runWorkflowFromSource:(id)arg1;
 @property(nonatomic) _Bool scrollsToTop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <AvatarKit/AVTPhysicsControllerDelegate-Protocol.h>
 #import <AvatarKit/NSCopying-Protocol.h>
 
-@class AVTEyeSkinningDescriptor, AVTMemoji, AVTPhysicsController, AVTPupilReflectionCorrectionDescriptor, CAAnimation, NSMutableArray, NSMutableDictionary, SCNAnimationPlayer, SCNNode;
+@class AVTEyeSkinningDescriptor, AVTPhysicsController, AVTPupilReflectionCorrectionDescriptor, CAAnimation, NSMutableArray, NSMutableDictionary, NSString, SCNAnimationPlayer, SCNNode, SCNPhysicsWorld;
 
-@interface AVTAvatar : NSObject <NSCopying>
+@interface AVTAvatar : NSObject <AVTPhysicsControllerDelegate, NSCopying>
 {
-    AVTMemoji *_avatar;
     SCNNode *_avatarNode;
     SCNNode *_skeleton;
     SCNNode *_headNode;
@@ -26,6 +26,7 @@
     int _transitionCount;
     _Bool _arMode;
     _Bool _optimizedForSnapshot;
+    SCNPhysicsWorld *_physicsWorld;
     AVTPhysicsController *_physicsController;
     NSMutableArray *_clipsPlaying;
     struct SCNVector3 _lookAt;
@@ -53,6 +54,10 @@
 + (void)preloadAvatar:(id)arg1;
 + (struct SCNVector4)applyGazeCorrectionWithInputAngle:translation: /* Error: Ran out of types for this method. */;
 - (void).cxx_destruct;
+- (id)stickerPhysicsStateIdentifier;
+- (double)physicsController:(id)arg1 downforceForNodeNamed:(id)arg2;
+- (id)physicsWorldForPhysicsController:(id)arg1;
+- (id)avatarNodeForPhysicsController:(id)arg1;
 - (id)arTechniqueName;
 - (_Bool)hasCustomARTechnique;
 - (void)update;
@@ -135,7 +140,11 @@
 - (id)cameraNode;
 - (id)lightingNode;
 - (void)setAvatarNode:(id)arg1;
-- (void)reinitPhysicsRig;
+- (void)resetToPhysicsState:(id)arg1;
+- (id)physicsState;
+- (void)setupPhysicsIfNeeded;
+- (void)physicsSpecializationSettingsDidChange;
+- (double)physicsDownforceForNodeNamed:(id)arg1;
 - (float)arScale;
 -     // Error parsing type: 16@0:8, name: arOffset
 - (void)dealloc;
@@ -143,6 +152,12 @@
 - (void)avatarCommonInit;
 - (void)setOptimizeForSnapshot:(_Bool)arg1;
 - (_Bool)optimizeForSnapshot;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

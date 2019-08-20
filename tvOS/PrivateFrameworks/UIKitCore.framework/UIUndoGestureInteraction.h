@@ -10,7 +10,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIInteractiveUndoHUDActionDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, UIDelayedAction, UIKBUndoInteractionHUD, UIKBUndoStateHUD, UILayoutGuide, UILongPressGestureRecognizer, UITapGestureRecognizer, UIUndoGestureObserver, UIUndoGestureRecognizer, UIUndoPinchGestureRecognizer, UIView;
+@class NSLayoutConstraint, NSString, UIDelayedAction, UIKBTextEditingTraits, UIKBUndoInteractionHUD, UIKBUndoStateHUD, UILayoutGuide, UILongPressGestureRecognizer, UITapGestureRecognizer, UIUndoGestureObserver, UIUndoGestureRecognizer, UIUndoPinchGestureRecognizer, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIUndoGestureInteraction : NSObject <UIInteractiveUndoHUDActionDelegate, UIGestureRecognizerDelegate, UIEditingOverlayInteractionWithView>
@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     double _initPinchableDistance;
     double _previousPinchPerimeter;
     long long _potentialPinchDirection;
+    UIKBTextEditingTraits *_editingTraits;
     struct CGPoint _previousPanLocation;
     struct CGPoint _beginPanLocation;
     struct CGRect _currentActuallSceneBounds;
@@ -50,6 +51,8 @@ __attribute__((visibility("hidden")))
 
 + (void)presentProductivityGestureTutorialInlineWithCompletion:(CDUnknownBlockType)arg1;
 + (void)presentProductivityGestureTutorialIfNeededWithCompletion:(CDUnknownBlockType)arg1;
++ (id)iWorkFamily;
+@property(retain, nonatomic) UIKBTextEditingTraits *editingTraits; // @synthesize editingTraits=_editingTraits;
 @property(nonatomic) long long potentialPinchDirection; // @synthesize potentialPinchDirection=_potentialPinchDirection;
 @property(nonatomic) double previousPinchPerimeter; // @synthesize previousPinchPerimeter=_previousPinchPerimeter;
 @property(nonatomic) double initPinchableDistance; // @synthesize initPinchableDistance=_initPinchableDistance;
@@ -88,12 +91,14 @@ __attribute__((visibility("hidden")))
 - (_Bool)canPaste;
 - (_Bool)canCopy;
 - (_Bool)canCut;
+- (id)responderForOperation:(SEL)arg1;
+- (id)currentResponder;
 - (void)redo:(_Bool)arg1;
 - (void)undo:(_Bool)arg1;
 - (_Bool)canRedo;
 - (_Bool)canUndo;
 - (void)animateSpringCoverWithSuccess:(_Bool)arg1 direction:(long long)arg2 remainingDistanceToTravel:(double)arg3;
-- (void)fullyCloseCoverWithBeginDirection:(long long)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)fullyCloseCoverWithComplete:(CDUnknownBlockType)arg1;
 - (void)fullyOpenAndCloseCoverWithBeginDirection:(long long)arg1;
 - (_Bool)performActionWithDirection:(long long)arg1;
 - (long long)undoControlTypeWithDirection:(long long)arg1;
@@ -125,6 +130,7 @@ __attribute__((visibility("hidden")))
 - (void)touchMultiPansTimer;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)bundleIniWorkFamily:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)textEditingOperationsAvailableWithGestureRecognizer:(id)arg1;
 - (_Bool)undoManagerOperationsCutCopyPasteAvailable;

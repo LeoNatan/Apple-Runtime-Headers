@@ -118,7 +118,7 @@
 - (void)_performXPCActivity:(id)arg1 name:(id)arg2;
 - (id)_indexPath;
 - (void)dirty;
-- (void)_cancelIdleTimer;
+- (id)_cancelIdleTimer;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1 protectionClass:(id)arg2 cancelPtr:(int *)arg3;
 - (void)performQueryForCountOfItemsInCategory:(id)arg1 completion:(CDUnknownBlockType)arg2;

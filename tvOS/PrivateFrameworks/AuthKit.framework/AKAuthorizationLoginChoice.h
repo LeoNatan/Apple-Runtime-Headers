@@ -13,11 +13,13 @@
 @interface AKAuthorizationLoginChoice : NSObject <NSSecureCoding>
 {
     _Bool _appleIDAuth;
+    _Bool _createAppleID;
     NSString *_user;
     NSString *_site;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool createAppleID; // @synthesize createAppleID=_createAppleID;
 @property(nonatomic) _Bool appleIDAuth; // @synthesize appleIDAuth=_appleIDAuth;
 @property(copy, nonatomic) NSString *site; // @synthesize site=_site;
 @property(copy, nonatomic) NSString *user; // @synthesize user=_user;

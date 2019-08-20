@@ -53,6 +53,7 @@
 - (void)_processAlbumInserts:(id)arg1 albumChanges:(id)arg2 withBatchManager:(id)arg3;
 - (void)handleUploadBatchesFromLocalEvent:(id)arg1 outInsertedPhotoCount:(unsigned int *)arg2 outInsertedVideoCount:(unsigned int *)arg3 shouldTriggerPrefetch:(_Bool *)arg4 withUploadTracker:(id)arg5;
 - (id)_fetchChangesFromLocalEvent:(id)arg1 shouldTriggerPrefetch:(_Bool *)arg2;
+- (void)_promptForNilAssetUUID:(id)arg1 isInsert:(_Bool)arg2;
 - (void)_handleInvalidAsset:(id)arg1;
 - (void)_addAsset:(id)arg1 toAssetChanges:(id)arg2 isInsert:(_Bool)arg3 seenAssetUuid:(id)arg4;
 - (id)_syncDescriptionForObject:(id)arg1;

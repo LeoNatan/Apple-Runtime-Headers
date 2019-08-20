@@ -104,6 +104,7 @@
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_peerPaymentAccountDidChangeNotification:(id)arg1;
+- (void)_peerPaymentWebServiceDidChangeNotification:(id)arg1;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (id)_displayableStringForLabeledValue:(id)arg1;
@@ -125,8 +126,8 @@
 - (id)_currentDefaultPaymentPass;
 - (id)_defaultsGroupSpecifiers;
 - (void)_showCardDetails:(id)arg1;
-- (id)_lockscreenSwitchSettingForSpecifier:(id)arg1;
-- (void)_setLockscreenSwitchSetting:(id)arg1 forSpecifier:(id)arg2;
+- (id)_doubleClickSwitchSettingForSpecifier:(id)arg1;
+- (void)_setDoubleClickSwitchSetting:(id)arg1 forSpecifier:(id)arg2;
 - (id)_lockscreenSwitchGroupSpecifiers;
 - (id)_handoffSwitchSettingForSpecifier:(id)arg1;
 - (void)_setHandoffSwitchSetting:(id)arg1 forSpecifier:(id)arg2;

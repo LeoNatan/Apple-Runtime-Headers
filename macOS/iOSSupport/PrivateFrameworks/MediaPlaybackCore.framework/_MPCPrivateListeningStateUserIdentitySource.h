@@ -6,17 +6,16 @@
 
 #import <MediaPlaybackCore/MPCPrivateListeningStateSource.h>
 
-@class ICUserIdentity, NSNumber, NSObject;
-@protocol OS_dispatch_queue;
+@class ICUserIdentity, NSNumber;
 
 @interface _MPCPrivateListeningStateUserIdentitySource : MPCPrivateListeningStateSource
 {
     ICUserIdentity *_userIdentity;
     NSNumber *_cachedValue;
-    NSObject<OS_dispatch_queue> *_accessQueue;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)sharedAccessQueue;
 - (void).cxx_destruct;
 - (void)_handleUserIdentityStoreDidChangeNotification:(id)arg1;
 - (void)_loadCurrentValueFromIdentityProperties;

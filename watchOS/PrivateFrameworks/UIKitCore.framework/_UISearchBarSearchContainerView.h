@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsLayout;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (_Bool)_isKnownUISearchBarComponentContainer;
 
 @end
 

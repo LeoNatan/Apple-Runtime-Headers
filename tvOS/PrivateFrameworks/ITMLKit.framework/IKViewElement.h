@@ -92,6 +92,7 @@
 - (void)appDocumentDidMarkStylesDirty;
 - (void)adoptElement:(id)arg1;
 - (void)resetImplicitUpdates;
+- (void)performImplicitUpdates:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) __weak id <IKStyleableElement> parentStyleableElement; // @synthesize parentStyleableElement=_parentStyleableElement;
 - (void)resetUpdates;
 - (void)disperseUpdateType:(unsigned long long)arg1;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property unsigned int frameRate; // @synthesize frameRate=_frameRate;
 @property BOOL imageQueueProtected;
 - (BOOL)enqueueFrame:(struct __CVBuffer *)arg1 atTime:(CDStruct_1b6d18a9)arg2;
+- (void)createAndCopyLatencyStatsDictionary:(const struct __CFDictionary **)arg1;
 - (void)copyPerformanceDictionary:(const struct __CFDictionary **)arg1;
 - (void)pause;
 - (void)stop;

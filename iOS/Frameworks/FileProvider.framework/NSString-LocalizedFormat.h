@@ -10,6 +10,7 @@
 + (struct __CFStringTokenizer *)fp_wordTokenizer;
 + (id)fp_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(_Bool)arg4;
 + (unsigned long long)fp_maximumBounceLevel;
++ (id)fp_commonParentPathForItemURLs:(id)arg1;
 + (id)fp_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)_fpd_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)fp_providerDomainIDFromProviderID:(id)arg1 domainIdentifier:(id)arg2;

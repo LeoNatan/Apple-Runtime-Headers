@@ -26,7 +26,8 @@
 - (id)publicKeyOfType:(id)arg1 withIdentifier:(id)arg2;
 - (void)setGlobalConfiguration:(id)arg1;
 - (id)globalConfiguration;
-- (void)removeKnownApplicationBundleID:(id)arg1;
+- (void)removeKnownApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2;
+- (id)knownContainerizedApplicationBundleIDs;
 - (id)knownApplicationBundleIDs;
 - (void)setApplicationMetadata:(id)arg1 forApplicationBundleID:(id)arg2 sourceApplicationBundleID:(id)arg3;
 - (id)applicationMetadataForApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2;
@@ -42,7 +43,7 @@
 - (id)pushTokenForAppContainerAccountTuple:(id)arg1 filterOldTokens:(BOOL)arg2;
 - (void)expungeStaleAccountIDs;
 - (void)expungeWithDeletedAccountID:(id)arg1 forceRemove:(BOOL)arg2;
-- (id)init;
+- (id)_initWithCacheDir:(id)arg1;
 
 @end
 

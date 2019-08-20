@@ -19,8 +19,9 @@
         unsigned int _useTintColor:1;
         unsigned int _needsSeparator:1;
         unsigned int _subclassOverridesTextAttributes:2;
-        unsigned int _cachedStyleExpectsToDrawToken;
-        unsigned int _reserved:19;
+        unsigned int _cachedStyleExpectsToDrawToken:1;
+        unsigned int _cachedStyleExpectsEmphasizedBackground:1;
+        unsigned int _reserved:18;
     } _tacFlags;
 }
 

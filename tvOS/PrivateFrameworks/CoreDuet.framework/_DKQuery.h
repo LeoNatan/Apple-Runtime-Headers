@@ -10,6 +10,7 @@
 
 @interface _DKQuery : NSObject <NSSecureCoding>
 {
+    _Bool _executeConcurrently;
 }
 
 + (id)queryNotExecutableError;
@@ -72,6 +73,7 @@
 + (id)predicateForSpotlightEventsWithItemIdentifiers:(id)arg1 bundleID:(id)arg2;
 + (id)predicateForSpotlightEventsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2;
 + (id)predicateForSpotlightEventsWithBundleID:(id)arg1;
+@property(nonatomic) _Bool executeConcurrently; // @synthesize executeConcurrently=_executeConcurrently;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

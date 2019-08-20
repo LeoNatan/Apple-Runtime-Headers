@@ -49,6 +49,7 @@
 - (BOOL)isShutdown;
 - (id)shutdown;
 - (id)removeAllModelsOfTypes:(id)arg1 options:(id)arg2;
+- (id)removeModelsAndChildModelsWithIDs:(id)arg1 options:(id)arg2;
 - (id)remove:(id)arg1 options:(id)arg2;
 - (id)update:(id)arg1 options:(id)arg2;
 - (id)update:(id)arg1 remove:(id)arg2 options:(id)arg3;
@@ -61,13 +62,6 @@
 - (id)externalIDForModelID:(id)arg1 error:(id *)arg2;
 - (id)externalDataForExternalID:(id)arg1 error:(id *)arg2;
 - (id)externalDataForModelID:(id)arg1 error:(id *)arg2;
-- (BOOL)fetchModelsOfType:(Class)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
-- (id)fetchModelsOfType:(Class)arg1 error:(id *)arg2;
-- (id)fetchAllModelsWithError:(id *)arg1;
-- (id)fetchModelsWithParentModelID:(id)arg1 error:(id *)arg2;
-- (id)fetchModelsWithParentModelID:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
-- (id)fetchModelWithModelID:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
-- (id)fetchModelWithModelID:(id)arg1 error:(id *)arg2;
 - (void)removeObserver:(id)arg1 forModelWithID:(id)arg2;
 - (void)removeObserverForAllModels:(id)arg1;
 - (void)addObserver:(id)arg1 forModelWithID:(id)arg2;
@@ -81,7 +75,6 @@
 - (id)queueIncompleteProcesses;
 - (id)observersForModelWithID:(id)arg1;
 - (id)inputContext:(id *)arg1;
-- (id)markTupleAsSent:(id)arg1;
 - (id)markGroupAsSentWithOutputBlock:(unsigned long long)arg1 tuples:(id)arg2;
 - (id)fetchRecordsForOutputBlock:(unsigned long long)arg1 error:(id *)arg2;
 - (id)fetchOptionsForOutputBlock:(unsigned long long)arg1 error:(id *)arg2;
@@ -89,6 +82,7 @@
 - (id)fetchItemsInBlock:(id)arg1 after:(id)arg2 limit:(unsigned long long)arg3 error:(id *)arg4;
 - (id)fetchItemsInBlock:(id)arg1 error:(id *)arg2;
 - (id)fetchReadyBlocksWithType:(unsigned long long)arg1 error:(id *)arg2;
+- (unsigned long long)insertBlockToRemoveAllModelsAndChildModelsWithType:(unsigned long long)arg1 modelIDs:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (unsigned long long)insertBlockToRemoveAllModelsWithType:(unsigned long long)arg1 modelTypes:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (unsigned long long)insertBlockWithType:(unsigned long long)arg1 options:(id)arg2 items:(id)arg3 error:(id *)arg4;
 - (id)createInputBlockWithType:(unsigned long long)arg1 error:(id *)arg2;
@@ -96,11 +90,25 @@
 - (id)remove:(id)arg1;
 - (id)update:(id)arg1;
 - (id)update:(id)arg1 remove:(id)arg2;
-- (id)objectFromData:(id)arg1 encoding:(unsigned long long)arg2 recordRowID:(unsigned long long)arg3 error:(id *)arg4;
+- (id)objectFromData:(id)arg1 encoding:(unsigned long long)arg2 storageLocation:(unsigned long long)arg3 recordRowID:(unsigned long long)arg4 error:(id *)arg5;
 - (id)fetchRecordRowsWithModelIDs:(id)arg1 error:(id *)arg2;
 - (id)fetchRecordRowWithExternalID:(id)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;
 - (id)fetchRecordRowWithModelID:(id)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;
 - (id)fetchModelWithModelID:(id)arg1 recordRow:(unsigned long long *)arg2 error:(id *)arg3;
+- (id)fetchModelWithRecordRow:(unsigned long long)arg1 error:(id *)arg2;
+- (id)queryModelsOfType:(Class)arg1 properties:(id)arg2 filter:(CDUnknownBlockType)arg3;
+- (id)queryModelsOfType:(Class)arg1 filter:(CDUnknownBlockType)arg2;
+- (id)queryModelsOfType:(Class)arg1 predicate:(id)arg2;
+- (BOOL)fetchModelsAndChildModelsOfType:(Class)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
+- (BOOL)fetchModelsOfType:(Class)arg1 withLimit:(unsigned long long)arg2 error:(id *)arg3 handler:(CDUnknownBlockType)arg4;
+- (id)fetchModelsOfType:(Class)arg1 withLimit:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)fetchModelsOfType:(Class)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)fetchModelsOfType:(Class)arg1 error:(id *)arg2;
+- (id)fetchAllModelsWithError:(id *)arg1;
+- (id)fetchModelsWithParentModelID:(id)arg1 error:(id *)arg2;
+- (id)fetchModelsWithParentModelID:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
+- (id)fetchModelWithModelID:(id)arg1 ofType:(Class)arg2 error:(id *)arg3;
+- (id)fetchModelWithModelID:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

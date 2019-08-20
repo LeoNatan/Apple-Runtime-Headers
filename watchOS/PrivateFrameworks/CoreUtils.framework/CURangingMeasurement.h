@@ -8,12 +8,13 @@
 
 #import <CoreUtils/NSSecureCoding-Protocol.h>
 
-@class NSError;
+@class NSError, NSString;
 
 @interface CURangingMeasurement : NSObject <NSSecureCoding>
 {
     NSError *_error;
     unsigned int _flags;
+    NSString *_identifier;
     double _distanceMeters;
     double _distanceError;
     double _horizontalAngle;
@@ -29,6 +30,7 @@
 @property(nonatomic) double ptsScore; // @synthesize ptsScore=_ptsScore;
 @property(nonatomic) double verticalError; // @synthesize verticalError=_verticalError;
 @property(nonatomic) double verticalAngle; // @synthesize verticalAngle=_verticalAngle;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) double horizontalError; // @synthesize horizontalError=_horizontalError;
 @property(nonatomic) double horizontalAngle; // @synthesize horizontalAngle=_horizontalAngle;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;

@@ -57,7 +57,6 @@
 - (void)_viewSnapshottingWillBegin;
 - (void)_updateScreenIfChanged;
 - (void)_resumeByNotification:(id)arg1;
-- (void)_purgeByNotification:(id)arg1;
 - (void)_pauseByNotification:(id)arg1;
 - (void)_update;
 - (void)_displayLinkFired;

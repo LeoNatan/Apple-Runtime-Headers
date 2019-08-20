@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface VUIPlaybackInfo : NSObject
 {
     _Bool _requiresLinearPlayback;
+    _Bool _ignorePlayerStop;
     TVPPlayer *_player;
     AVPlayerViewController *_avPlayerViewController;
     VUINowPlayingFeatureMonitor *_featureMonitor;
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
     UIImage *_advisoryImage;
 }
 
+@property(nonatomic, getter=shouldIgnorePlayerStop) _Bool ignorePlayerStop; // @synthesize ignorePlayerStop=_ignorePlayerStop;
 @property(retain, nonatomic) UIImage *advisoryImage; // @synthesize advisoryImage=_advisoryImage;
 @property(retain, nonatomic) VUINowPlayingViewController *nowPlayingViewController; // @synthesize nowPlayingViewController=_nowPlayingViewController;
 @property(readonly, nonatomic) VUIMediaInfo *mediaInfo; // @synthesize mediaInfo=_mediaInfo;

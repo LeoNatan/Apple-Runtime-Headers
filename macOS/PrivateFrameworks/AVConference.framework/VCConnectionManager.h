@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface VCConnectionManager : NSObject <VCConnectionHealthMonitorDelegate, VCWifiAssistManagerDelegate>
 {
     unsigned int _callID;
+    int _connectionSelectionVersion;
     int _relayServerProvider;
     struct _opaque_pthread_rwlock_t _stateRWlock;
     id <VCConnectionProtocol> _primaryConnection;
@@ -73,11 +74,13 @@ __attribute__((visibility("hidden")))
     BOOL _fastMediaDuplicationEnabled;
     BOOL _cellPrimaryInterfaceChangeEnabled;
     BOOL _duplicateImportantPktsEnabled;
+    BOOL _lowNetworkModeEnabled;
     double _noRemoteDuplicationThresholdFast;
 }
 
 @property(readonly) unsigned int budgetConsumingCellularRxBytes; // @synthesize budgetConsumingCellularRxBytes=_budgetConsumingCellularRxBytes;
 @property(readonly) unsigned int budgetConsumingCellularTxBytes; // @synthesize budgetConsumingCellularTxBytes=_budgetConsumingCellularTxBytes;
+@property BOOL lowNetworkModeEnabled; // @synthesize lowNetworkModeEnabled=_lowNetworkModeEnabled;
 @property double noRemoteDuplicationThresholdFast; // @synthesize noRemoteDuplicationThresholdFast=_noRemoteDuplicationThresholdFast;
 @property BOOL duplicateImportantPktsEnabled; // @synthesize duplicateImportantPktsEnabled=_duplicateImportantPktsEnabled;
 @property BOOL cellPrimaryInterfaceChangeEnabled; // @synthesize cellPrimaryInterfaceChangeEnabled=_cellPrimaryInterfaceChangeEnabled;
@@ -114,6 +117,7 @@ __attribute__((visibility("hidden")))
 - (void)connectionHealthDidUpdate:(int)arg1 isLocalConnection:(BOOL)arg2;
 - (void)useCellPrimayInterface:(BOOL)arg1;
 - (void)setDuplicationFlag:(BOOL)arg1 withPreferredLocalLinkTypeForDuplication:(int)arg2;
+- (void)updateConnectionForDuplication;
 - (BOOL)shouldAcceptDataFromSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
 - (id)copyConnectionWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 isPrimary:(char *)arg2;
 - (void)sourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1 isSourceOnCellular:(char *)arg2 isSourceIPv6:(char *)arg3;
@@ -144,6 +148,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isOptimalConnection:(id)arg1 asPrimary:(BOOL)arg2 interfaceMask:(int)arg3;
 - (BOOL)isBetterConnection:(id)arg1 asPrimary:(BOOL)arg2;
 - (void)promoteSecondaryConnectionToPrimary:(id)arg1;
+- (int)getConnectionSelectionVersionFromFrameworkVersion:(id)arg1;
+- (void)disableRemotePreferredInterfaceInference:(BOOL)arg1;
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
 - (void)checkpointPrimaryConnection:(id)arg1;
 - (void)updateSessionStats:(unsigned short)arg1;
@@ -170,6 +176,7 @@ __attribute__((visibility("hidden")))
 - (void)setDuplicationEnabledInternal:(BOOL)arg1;
 - (void)setConnectionPause:(BOOL)arg1 isLocalConnection:(BOOL)arg2;
 - (void)setDuplicationCallback:(CDUnknownFunctionPointerType)arg1 withContext:(void *)arg2;
+- (void)setConnectionSelectionVersionWithLocalFrameworkVersion:(id)arg1 remoteFrameworkVersion:(id)arg2;
 - (void)setReportingAgent:(struct opaqueRTCReporting *)arg1;
 @property id <VCConnectionManagerDelegate> delegate;
 - (void)stop;

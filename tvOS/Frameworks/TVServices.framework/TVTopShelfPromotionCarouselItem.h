@@ -14,17 +14,16 @@
 {
     NSString *_promotionImageName;
     NSString *_promotionText;
-    NSString *_termsAndConditionsText;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *termsAndConditionsText; // @synthesize termsAndConditionsText=_termsAndConditionsText;
 @property(copy, nonatomic) NSString *promotionText; // @synthesize promotionText=_promotionText;
 @property(copy, nonatomic) NSString *promotionImageName; // @synthesize promotionImageName=_promotionImageName;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+@property(copy, nonatomic) NSString *termsAndConditionsText;
 - (_Bool)isEqual:(id)arg1;
 
 @end

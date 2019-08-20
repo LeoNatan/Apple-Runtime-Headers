@@ -226,6 +226,7 @@
 - (void)home:(id)arg1 willWriteValuesForCharacteristics:(id)arg2;
 - (void)home:(id)arg1 willReadValuesForCharacteristics:(id)arg2;
 - (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
+- (void)homeDidUpdateNetworkRouterSupport:(id)arg1;
 - (void)homeDidUpdateProtectionMode:(id)arg1;
 - (void)profileDidUpdateSatellites:(id)arg1;
 - (void)profileDidUpdateNetworkStatus:(id)arg1;
@@ -283,6 +284,7 @@
 - (void)accessory:(id)arg1 didUpdateApplicationDataForService:(id)arg2;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
 - (void)accessory:(id)arg1 service:(id)arg2 didUpdateValueForCharacteristic:(id)arg3;
+- (void)accessoryDidUpdateReachableTransports:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
 - (void)accessoryDidUpdateServices:(id)arg1;
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;

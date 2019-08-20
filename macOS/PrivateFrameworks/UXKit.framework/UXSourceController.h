@@ -9,7 +9,7 @@
 #import <UXKit/UXNavigationControllerDelegate-Protocol.h>
 #import <UXKit/_UXSourceSplitViewDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSMapTable, NSOperationQueue, NSPopUpButton, NSSegmentedControl, NSString, NSView, UXNavigationController, UXTransitionController, UXView, _UXSourceSplitView, _UXViewControllerOneToOneTransitionContext;
+@class NSArray, NSLayoutConstraint, NSMapTable, NSOperationQueue, NSPopUpButton, NSSegmentedControl, NSString, NSView, NSWindow, UXNavigationController, UXTransitionController, UXView, _UXSourceSplitView, _UXViewControllerOneToOneTransitionContext;
 @protocol UXNavigationControllerDelegate, UXNavigationDestination, UXSourceList;
 
 @interface UXSourceController : UXViewController <UXNavigationControllerDelegate, _UXSourceSplitViewDelegate>
@@ -42,10 +42,12 @@
     UXViewController *_selectedViewController;
     NSSegmentedControl *_segmentedControl;
     NSPopUpButton *_popUpButton;
+    NSWindow *_observedWindow;
 }
 
 + (Class)_defaultTransitionControllerClass;
 + (id)_widthDefaultsKeyForAutosaveName:(id)arg1;
+@property(nonatomic) __weak NSWindow *observedWindow; // @synthesize observedWindow=_observedWindow;
 @property(readonly, nonatomic) NSPopUpButton *popUpButton; // @synthesize popUpButton=_popUpButton;
 @property(readonly, nonatomic) NSSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) UXViewController *selectedViewController; // @synthesize selectedViewController=_selectedViewController;
@@ -110,8 +112,6 @@
 - (void)_setWantsSourceListCollapsed:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL alternateTitleEnabled;
 - (id)tabBarView;
-- (void)_stopObservingFirstResponderForWindow:(id)arg1;
-- (void)_startObservingFirstResponderForWindow:(id)arg1;
 - (BOOL)_reduceMotionEnabled;
 - (BOOL)_wantsSourceListCollapsedForViewController:(id)arg1;
 - (long long)_effectiveStyleForViewController:(id)arg1;

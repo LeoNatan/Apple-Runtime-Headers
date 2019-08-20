@@ -6,17 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CLSNowPlayingStreamConverter;
-
 @interface CLSNowPlayingStreamReader : NSObject
 {
-    CLSNowPlayingStreamConverter *_converter;
     unsigned long long _conversionOptions;
 }
 
 @property(nonatomic) unsigned long long conversionOptions; // @synthesize conversionOptions=_conversionOptions;
-@property(readonly, nonatomic) CLSNowPlayingStreamConverter *converter; // @synthesize converter=_converter;
-- (void).cxx_destruct;
 - (void)enumerateSessionsWithBlock:(CDUnknownBlockType)arg1;
 - (id)init;
 

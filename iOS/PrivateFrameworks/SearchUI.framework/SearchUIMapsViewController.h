@@ -14,12 +14,14 @@
 @interface SearchUIMapsViewController : _MKPlaceViewController <_MKPlaceViewControllerFeedbackDelegate>
 {
     id <SFFeedbackListener> _feedbackListener;
+    unsigned long long _queryId;
 }
 
+@property(readonly) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
 - (void).cxx_destruct;
 - (void)placeViewController:(id)arg1 shouldLogFeedbackOfType:(int)arg2;
-- (id)initWithMapsData:(id)arg1 feedbackListener:(id)arg2;
+- (id)initWithMapsData:(id)arg1 feedbackListener:(id)arg2 queryId:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,7 +17,7 @@
 - (id)_changeAction;
 - (id)messageFlags;
 @property(readonly, nonatomic) EMMessage *referenceMessage;
-- (id)initWithReferenceMessage:(id)arg1 reason:(long long)arg2;
+- (id)initWithReferenceMessage:(id)arg1 delegate:(id)arg2 reason:(long long)arg3;
 
 @end
 

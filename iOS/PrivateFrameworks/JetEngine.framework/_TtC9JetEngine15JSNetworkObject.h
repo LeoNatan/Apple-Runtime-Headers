@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC9JetEngine15JSNetworkObject : NSObject <_TtP9JetEngineP33_8D9D8DBD8902EB05CCE54AC5FB68DC0A22JSNetworkObjectExports_>
 {
     // Error parsing type: , name: urlSession
-    // Error parsing type: , name: accountStore
+    // Error parsing type: , name: accounts
     // Error parsing type: , name: requestEncoder
     // Error parsing type: , name: requestInterceptor
 }

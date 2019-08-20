@@ -29,7 +29,9 @@
 - (void)checkForNewActionsInMailboxID:(long long)arg1;
 - (void)setData:(id)arg1 onMessage:(id)arg2;
 - (void)setRemoteID:(id)arg1 onMessageWithDatabaseID:(long long)arg2;
-- (id)remoteMessageForDatabaseID:(long long)arg1;
+- (BOOL)mailboxPartOfAllMail:(id)arg1;
+- (BOOL)mailboxIsAllMail:(id)arg1;
+- (id)messageForDatabaseID:(long long)arg1;
 - (long long)mailboxDatabaseIDForURL:(id)arg1;
 - (BOOL)haveCompleteMIMEForMessage:(id)arg1;
 - (void)deletePersistedMessages:(id)arg1;

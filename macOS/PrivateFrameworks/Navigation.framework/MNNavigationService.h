@@ -61,6 +61,7 @@
 - (void)navigationServiceProxy:(id)arg1 didRerouteWithRoute:(id)arg2 withLocationDetails:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationServiceProxyWillReroute:(id)arg1;
 - (void)navigationServiceProxy:(id)arg1 didUpdatePreviewRoutes:(id)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
+- (void)navigationServiceProxy:(id)arg1 didUpdateMotionType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
@@ -108,7 +109,6 @@
 @property(readonly, nonatomic) NSArray *traceBookmarks;
 @property(readonly, nonatomic) double traceDuration;
 @property(readonly, nonatomic) NSString *tracePath;
-- (id)predictedETARoute;
 - (id)predictedRoute;
 - (id)predictedDestination;
 - (id)predictedDestinationName;

@@ -137,6 +137,7 @@
 - (BOOL)isEqualToPaymentRequest:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (id)disbursementPaymentRequest;

@@ -39,7 +39,7 @@
     UIEventFetcher *_eventFetcher;
     UIEventDispatcher *_eventDispatcher;
     struct {
-        unsigned int deactivatingReasonFlags:16;
+        unsigned int deactivatingReasonFlags:17;
         unsigned int isLaunchedSuspended:1;
         unsigned int calledNonSuspendedLaunchDelegate:1;
         unsigned int calledSuspendedLaunchDelegate:1;
@@ -694,6 +694,7 @@
 - (id)statusBarWindow;
 - (id)statusBar;
 - (void)_setupStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(BOOL)arg3;
+- (BOOL)_shouldCreateStatusBarAtLaunch;
 - (void)_createStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(BOOL)arg3;
 - (void)_createStatusBarIfNeededWithOrientation:(long long)arg1;
 @property(readonly, nonatomic, getter=_hostsSystemStatusBar) BOOL hostsSystemStatusBar;
@@ -934,6 +935,7 @@
 - (void)_monitoredView:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_monitoredView:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (BOOL)_monitorsView:(id)arg1;
+- (void)_updateSceneViewSizeRestrictionsForScene:(id)arg1;
 - (void)_handleApplicationShortcutItem:(id)arg1;
 - (void)_loadStaticApplicationShortcutItems;
 - (void)_emitMacApplicationLaunchEndSignpostsExtended;
@@ -947,13 +949,13 @@
 - (void)requestNewScene:(id)arg1;
 - (BOOL)_isFullKeyboardAccessEnabled;
 - (void)_performPPTTestWithURL:(id)arg1;
-- (void)_workspaceQueue_reportAppLaunchComplete;
 - (BOOL)_sendKeyEvent:(id)arg1 unmodified:(id)arg2 shiftModified:(id)arg3 commandModified:(id)arg4 keyCode:(long long)arg5 modifierFlags:(long long)arg6 isDown:(BOOL)arg7 timestampMachAbs:(unsigned long long)arg8;
 - (void)_sendFlagsChangedEvent:(long long)arg1 timestampMachAbs:(unsigned long long)arg2;
 - (void)_synthesizeNavKeystrokesWithInput:(id)arg1 modifierFlags:(long long)arg2;
 - (void)setShortcutItems:(id)arg1;
 - (id)shortcutItems;
 - (void)_initiateIOSMacConnections;
+- (void)handleKeyboardNavigationEventWithShift:(BOOL)arg1;
 - (void)_handleKeyboardNavigationResetEventWithShift:(BOOL)arg1;
 - (void)_installDisplayCycleCompletionBlock:(CDUnknownBlockType)arg1;
 

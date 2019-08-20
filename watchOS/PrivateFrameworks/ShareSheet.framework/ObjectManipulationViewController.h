@@ -9,7 +9,7 @@
 #import <ShareSheet/UITableViewDataSource-Protocol.h>
 #import <ShareSheet/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, UITableView;
+@class NSArray, NSMutableDictionary, NSString, UITableView, UIVisualEffectView;
 @protocol ObjectManipulationDelegate;
 
 @interface ObjectManipulationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
@@ -20,8 +20,10 @@
     NSArray *_customizationGroups;
     NSArray *_customizations;
     NSMutableDictionary *_sectionHeaders;
+    UIVisualEffectView *_backgroundView;
 }
 
+@property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) NSMutableDictionary *sectionHeaders; // @synthesize sectionHeaders=_sectionHeaders;
 @property(retain, nonatomic) NSArray *customizations; // @synthesize customizations=_customizations;
 @property(retain, nonatomic) NSArray *customizationGroups; // @synthesize customizationGroups=_customizationGroups;
@@ -29,6 +31,7 @@
 @property(retain, nonatomic) UIViewController *itemPreviewViewController; // @synthesize itemPreviewViewController=_itemPreviewViewController;
 @property(nonatomic) __weak id <ObjectManipulationDelegate> refreshDelegate; // @synthesize refreshDelegate=_refreshDelegate;
 - (void).cxx_destruct;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)_reloadCustomizations;
 - (void)didToggleSwitch:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;

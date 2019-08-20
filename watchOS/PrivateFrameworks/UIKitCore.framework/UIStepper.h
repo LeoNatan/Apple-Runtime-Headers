@@ -49,7 +49,6 @@
 - (void)setDividerImage:(id)arg1 forLeftSegmentState:(unsigned int)arg2 rightSegmentState:(unsigned int)arg3;
 - (id)backgroundImageForState:(unsigned int)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)layoutSubviews;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (unsigned int)_controlEventsForActionTriggered;
 - (void)_emitValueChanged;

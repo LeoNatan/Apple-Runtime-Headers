@@ -120,6 +120,7 @@
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
 - (void).cxx_destruct;
 - (unsigned int)statusToHeadsetStatus:(unsigned char)arg1;
+- (void)parseStatus3:(unsigned char)arg1 productID:(unsigned int)arg2 caseLEDColor:(char *)arg3 caseLEDStatus:(char *)arg4;
 - (id)modelWithProductID:(unsigned short)arg1;
 - (BOOL)pairingUpdatePairedInfo:(id)arg1 fields:(id)arg2 bleDevice:(id)arg3;
 - (id)pairingParsePayload:(id)arg1 identifier:(id)arg2 bleDevice:(id)arg3;

@@ -6,12 +6,18 @@
 
 #import <UIKit/UIImageView.h>
 
+@class UIImage;
+
 __attribute__((visibility("hidden")))
 @interface OBTintInheritingImageView : UIImageView
 {
+    UIImage *_originalImage;
 }
 
+@property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
+- (void).cxx_destruct;
 - (void)tintColorDidChange;
+- (void)setImage:(id)arg1;
 - (id)initWithImage:(id)arg1 highlightedImage:(id)arg2;
 
 @end

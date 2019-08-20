@@ -39,6 +39,7 @@
 - (id)pairingCollaboratorWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (id)_initWithQueue:(id)arg1 isSync:(_Bool)arg2;
 - (id)initSyncControllerWithQueue:(id)arg1;
 - (id)initWithQueue:(id)arg1;
 

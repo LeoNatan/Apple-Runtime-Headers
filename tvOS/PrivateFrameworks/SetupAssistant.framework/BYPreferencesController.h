@@ -14,12 +14,14 @@
     NSMutableDictionary *_preferences;
 }
 
++ (void)flushEverything;
 + (void)persistEverything;
 + (id)buddyPreferencesExcludedFromBackup;
 + (id)buddyPreferences;
 @property(retain, nonatomic) NSMutableDictionary *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+- (void)flush;
 - (void)persist;
 - (void)reset;
 - (void)removeObjectForKey:(id)arg1 onlyFromMemory:(_Bool)arg2;

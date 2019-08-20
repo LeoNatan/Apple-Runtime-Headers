@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EFSignpostable-Protocol.h>
 
 @class EDPersistenceDatabase, EDPersistenceDatabaseJournalManager, EDPersistenceHookRegistry, NSString;
 @protocol OS_dispatch_queue;
 
-@interface EDProtectedDatabasePersistence : NSObject <EFLoggable>
+@interface EDProtectedDatabasePersistence : NSObject <EFLoggable, EFSignpostable>
 {
     struct os_unfair_lock_s _initializationLock;
     struct os_unfair_lock_s _reconciliationLock;
@@ -25,6 +26,7 @@
 
 + (id)journalDatabaseName;
 + (id)protectedDatabaseName;
++ (id)signpostLog;
 + (id)log;
 @property(nonatomic) _Bool isReconciling; // @synthesize isReconciling=_isReconciling;
 @property(nonatomic) _Bool isInitialized; // @synthesize isInitialized=_isInitialized;
@@ -40,17 +42,17 @@
 - (unsigned long long)_resultForConnection:(id)arg1 success:(_Bool)arg2 error:(id)arg3 errorMessage:(id)arg4;
 - (unsigned long long)_executeStatementString:(id)arg1 onConnection:(id)arg2 errorMessage:(id)arg3;
 - (unsigned long long)_executeUpdateStatement:(id)arg1 onConnection:(id)arg2 errorMessage:(id)arg3;
-- (unsigned long long)_executeDeleteStatement:(id)arg1 onConnection:(id)arg2 errorMessage:(id)arg3;
 - (_Bool)_isJournalMalformedForSchema:(id)arg1 connection:(id)arg2;
 - (_Bool)_isRecoverableError:(id)arg1;
 - (_Bool)_removeExistingDatabaseIDs:(id)arg1 withColumn:(id)arg2 connection:(id)arg3;
 - (void)_deleteDatabaseIDs:(id)arg1 fromTable:(id)arg2;
 - (id)_databaseIDsToDeleteForTable:(id)arg1;
 - (void)scheduleRecurringActivity;
+- (unsigned long long)_deleteRowIDs:(id)arg1 fromJournal:(id)arg2 withConnection:(id)arg3;
 - (unsigned long long)_mergeTable:(id)arg1 connection:(id)arg2;
 - (unsigned long long)_mergeSchema:(id)arg1 connection:(id)arg2;
+- (unsigned long long)_runReconciliationWithSchema:(id)arg1 connection:(id)arg2;
 - (unsigned long long)_reconcileJournalsWithSchema:(id)arg1 connection:(id)arg2;
-- (unsigned long long)_reconcileJournalsWithSchema:(id)arg1 connection:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)reconcileJournalsWithSchema:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_performOnDemandReconciliationForConnection:(id)arg1 withSchema:(id)arg2;
 - (long long)_maxRowIDForColumn:(id)arg1 withConnection:(id)arg2;
@@ -68,6 +70,7 @@
 - (id)database;
 - (id)initWithJournalManager:(id)arg1 hookRegistry:(id)arg2;
 - (id)initWithBasePath:(id)arg1 hookRegistry:(id)arg2;
+@property(readonly) unsigned long long signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

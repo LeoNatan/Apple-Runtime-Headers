@@ -42,6 +42,7 @@
 + (id)dockIconLocation;
 + (id)iconLocation;
 + (Class)_contentViewClass;
++ (_Bool)_shouldForwardViewWillTransitionToSize;
 + (Class)configurationClass;
 @property(readonly, nonatomic) UIViewController *portraitHeaderViewController; // @synthesize portraitHeaderViewController=_portraitHeaderViewController;
 @property(retain, nonatomic) id <SBRootFolderPageTransition> implicitScrollTransition; // @synthesize implicitScrollTransition=_implicitScrollTransition;
@@ -176,6 +177,7 @@
 - (void)prepareToClose;
 - (void)prepareToOpen;
 - (_Bool)_listIndexIsVisible:(unsigned long long)arg1;
+- (_Bool)isDockVisible;
 @property(readonly, copy, nonatomic) NSSet *nonDockPresentedIconLocations;
 @property(readonly, nonatomic, getter=isDockPinnedForRotation) _Bool dockPinnedForRotation;
 @property(readonly, nonatomic, getter=isDockExternal) _Bool dockExternal;

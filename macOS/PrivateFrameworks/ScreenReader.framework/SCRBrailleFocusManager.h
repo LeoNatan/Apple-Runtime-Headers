@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)clearStoredBrailleLine;
 - (struct _NSRange)_selectionLineRange;
 - (BOOL)_moveSelectionToLineRange:(struct _NSRange)arg1;
+- (void)_postKeyThreadMoveSelectionToLineRange:(struct _NSRange)arg1;
 - (void)replaceTextRange:(struct _NSRange)arg1 withString:(id)arg2 insertCursor:(unsigned long long)arg3 request:(id)arg4;
 - (BOOL)sendEditableTextLine;
 - (BOOL)routeToTextLineIndex:(unsigned long long)arg1 request:(id)arg2;

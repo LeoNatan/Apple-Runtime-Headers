@@ -28,6 +28,8 @@
     NSAnimation *_fadeInHourglassAnimation;
     NSAnimation *_fadeOutTextAndButtonsAnimation;
     NSAnimation *_fadeInTextAndButtonsAnimation;
+    BOOL _okButtonAlwaysHidden;
+    BOOL _mainButtonAlwaysHidden;
     BOOL _forSnapshot;
     BOOL _didFinishDismissing;
     STLockoutPolicyController *_policyController;
@@ -43,6 +45,7 @@
 
 + (id)messageForWebsiteURL:(id)arg1;
 + (id)messageForBundleIdentifier:(id)arg1 style:(long long)arg2;
++ (id)_messageForCategoryIdentifier:(id)arg1;
 + (id)messageForApplicationName:(id)arg1 style:(long long)arg2;
 + (id)_applicationNameForWebsiteURL:(id)arg1;
 + (id)_bundleIdentifierForWebsiteURL:(id)arg1;
@@ -52,6 +55,7 @@
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
 + (id)lockoutViewControllerWithWebsiteURL:(id)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
++ (id)lockoutViewControllerWithCategoryIdentifier:(id)arg1;
 @property(nonatomic) __weak id <STLockoutViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
 @property long long okButtonAction; // @synthesize okButtonAction=_okButtonAction;
 @property(readonly, nonatomic) BOOL didFinishDismissing; // @synthesize didFinishDismissing=_didFinishDismissing;
@@ -63,6 +67,8 @@
 @property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
 @property __weak STBlockingBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
+@property(nonatomic) BOOL mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
+@property(nonatomic) BOOL okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
 - (void).cxx_destruct;
 - (void)preferredContentSizeDidChangeForViewController:(id)arg1;
 - (void)stateDidChange:(unsigned long long)arg1;
@@ -112,7 +118,6 @@
 - (void)setDidFinishDismissing:(BOOL)arg1;
 @property(copy, nonatomic) NSString *bundleIdentifier;
 - (void)_setupCommon;
-- (void)dealloc;
 @property(retain) NSBox *view;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;

@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 hourlyForecastedConditions:(id)arg2 timeZone:(id)arg3;
 - (id)switcherTemplateWithFamily:(long long)arg1;
-- (_Bool)acceptsComplicationFamily:(long long)arg1;
+- (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)modularSmallTemplateForConditions:(id)arg1;
 - (id)graphicRectangularTemplateForLocalLocation:(_Bool)arg1 timeZone:(id)arg2 conditions:(id)arg3 dailyForecastedConditions:(id)arg4 hourlyForecastedConditions:(id)arg5;

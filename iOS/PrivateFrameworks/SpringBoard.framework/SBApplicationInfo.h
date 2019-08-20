@@ -25,6 +25,7 @@
     NSURL *_dataContainerURLOverride;
     NSUserDefaults *_lazy_userDefaults;
     NSString *_installInstanceID;
+    unsigned long long _applicationSizeInBytes;
     unsigned long long _dynamicApplicationShortcutItemsVersion;
     unsigned long long _visibilityOverride;
     long long _defaultStatusBarStyle;
@@ -66,7 +67,7 @@
     _Bool _isNewsstand;
     _Bool _canChangeBackgroundStyle;
     _Bool _allowNonDefaultBackgroundStyle;
-    unsigned long long _applicationSizeInBytes;
+    _Bool _supportsDirectToAirplay;
     _Bool _ocelotApplication;
     _Bool _shouldLaunchWithLiveContentASAP;
     _Bool _cloudDemoted;
@@ -83,6 +84,7 @@
 @property(readonly, nonatomic) _Bool shouldLaunchWithLiveContentASAP; // @synthesize shouldLaunchWithLiveContentASAP=_shouldLaunchWithLiveContentASAP;
 @property(readonly, nonatomic) unsigned long long applicationSizeInBytes; // @synthesize applicationSizeInBytes=_applicationSizeInBytes;
 @property(readonly, nonatomic, getter=isOcelotApplication) _Bool ocelotApplication; // @synthesize ocelotApplication=_ocelotApplication;
+@property(readonly, nonatomic) _Bool supportsDirectToAirplay; // @synthesize supportsDirectToAirplay=_supportsDirectToAirplay;
 @property(readonly, nonatomic, getter=isNewsstand) _Bool newsstand; // @synthesize newsstand=_isNewsstand;
 @property(readonly, nonatomic) _Bool supports64Bit; // @synthesize supports64Bit=_supports64Bit;
 @property(readonly, nonatomic) _Bool shouldSkipCrossfadeToLive; // @synthesize shouldSkipCrossfadeToLive=_shouldSkipCrossfadeToLive;
@@ -152,6 +154,7 @@
 @property(readonly, nonatomic, getter=isAppleApplication) _Bool appleApplication;
 @property(readonly, nonatomic, getter=isInternalApplication) _Bool internalApplication;
 @property(readonly, nonatomic, getter=isSystemApplication) _Bool systemApplication;
+@property(readonly, nonatomic) _Bool supportsDirectToAirplayOrIsWhitelisted;
 
 @end
 

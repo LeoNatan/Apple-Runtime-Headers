@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface VCConnectionManager : NSObject <VCConnectionHealthMonitorDelegate, VCWifiAssistManagerDelegate>
 {
     unsigned long _callID;
+    int _connectionSelectionVersion;
     int _relayServerProvider;
     struct _opaque_pthread_rwlock_t _stateRWlock;
     id <VCConnectionProtocol> _primaryConnection;
@@ -144,6 +145,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isOptimalConnection:(id)arg1 asPrimary:(_Bool)arg2 interfaceMask:(int)arg3;
 - (_Bool)isBetterConnection:(id)arg1 asPrimary:(_Bool)arg2;
 - (void)promoteSecondaryConnectionToPrimary:(id)arg1;
+- (int)getConnectionSelectionVersionFromFrameworkVersion:(id)arg1;
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
 - (void)checkpointPrimaryConnection:(id)arg1;
 - (void)updateSessionStats:(unsigned short)arg1;
@@ -170,6 +172,7 @@ __attribute__((visibility("hidden")))
 - (void)setDuplicationEnabledInternal:(_Bool)arg1;
 - (void)setConnectionPause:(_Bool)arg1 isLocalConnection:(_Bool)arg2;
 - (void)setDuplicationCallback:(CDUnknownFunctionPointerType)arg1 withContext:(void *)arg2;
+- (void)setConnectionSelectionVersionWithLocalFrameworkVersion:(id)arg1 remoteFrameworkVersion:(id)arg2;
 - (void)setReportingAgent:(struct opaqueRTCReporting *)arg1;
 @property id <VCConnectionManagerDelegate> delegate;
 - (void)stop;

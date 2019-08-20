@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, PUPhotoViewContentHelper, UIImage;
+@class NSArray, PUPhotoViewContentHelper, UIImage, UIView;
 @protocol PUDisplayAsset;
 
 @interface PUAssetTransitionInfo : NSObject
 {
+    UIView *_snapshotView;
     UIImage *_image;
     NSArray *_filters;
     double _cornerRadius;
@@ -25,6 +26,7 @@
 + (id)assetTransitionInfoWithImage:(id)arg1 andSeekTime:(CDStruct_1b6d18a9)arg2;
 + (id)assetTransitionInfoWithImage:(id)arg1 filters:(id)arg2;
 + (id)assetTransitionInfoWithImage:(id)arg1;
++ (id)assetTransitionInfoWithSnapshotView:(id)arg1;
 @property(retain, nonatomic) PUPhotoViewContentHelper *contentHelper; // @synthesize contentHelper=_contentHelper;
 @property(copy, nonatomic) NSArray *badgeTransitionInfos; // @synthesize badgeTransitionInfos=_badgeTransitionInfos;
 @property(retain, nonatomic) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
@@ -33,6 +35,7 @@
 @property(nonatomic, setter=_setSeekTime:) CDStruct_1b6d18a9 seekTime; // @synthesize seekTime=_seekTime;
 @property(copy, nonatomic, setter=_setFilters:) NSArray *filters; // @synthesize filters=_filters;
 @property(retain, nonatomic, setter=_setImage:) UIImage *image; // @synthesize image=_image;
+@property(retain, nonatomic, setter=_setSnapshotView:) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 - (void).cxx_destruct;
 - (id)init;
 

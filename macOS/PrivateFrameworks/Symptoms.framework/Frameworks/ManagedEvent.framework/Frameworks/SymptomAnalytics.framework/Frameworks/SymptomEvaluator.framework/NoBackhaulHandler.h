@@ -14,6 +14,7 @@
 {
     BOOL _systemForeground;
     BOOL _callInForeground;
+    BOOL _dndWhileDriving;
     unsigned int _activationIdentifier;
     unsigned long long _stepper;
 }
@@ -23,6 +24,7 @@
 + (id)sharedInstance;
 @property(nonatomic) unsigned long long stepper; // @synthesize stepper=_stepper;
 @property(nonatomic) unsigned int activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
+@property(nonatomic) BOOL dndWhileDriving; // @synthesize dndWhileDriving=_dndWhileDriving;
 @property(nonatomic) BOOL callInForeground; // @synthesize callInForeground=_callInForeground;
 @property(nonatomic) BOOL systemForeground; // @synthesize systemForeground=_systemForeground;
 - (_Bool)noteSymptom:(id)arg1;

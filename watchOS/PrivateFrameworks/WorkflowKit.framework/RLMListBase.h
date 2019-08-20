@@ -22,6 +22,7 @@
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void *)arg4;
 - (id)objectsAtIndexes:(id)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
+- (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (id)initWithArray:(id)arg1;
 

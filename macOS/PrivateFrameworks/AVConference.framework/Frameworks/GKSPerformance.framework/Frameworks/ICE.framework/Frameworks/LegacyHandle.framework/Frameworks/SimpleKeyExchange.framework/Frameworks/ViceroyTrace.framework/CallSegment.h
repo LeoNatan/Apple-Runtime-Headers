@@ -99,6 +99,9 @@
     unsigned int _totalUsedCellBudgetTxDataBytes;
     unsigned int _totalUsedCellBudgetRxDataBytes;
     unsigned char _duplicationType;
+    unsigned int _negotiatedSwitches;
+    unsigned int _remoteSwitches;
+    BOOL _remoteFaceTimeSwitchesAvailable;
     unsigned long long _totalCellTxDataBytes;
     unsigned long long _totalCellRxDataBytes;
     unsigned long long _totalWifiTxDataBytes;
@@ -219,7 +222,7 @@
 - (void)merge:(id)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 mode:(unsigned short)arg3 deviceRole:(unsigned short)arg4 transportType:(unsigned short)arg5 relayServer:(id)arg6 relayType:(unsigned short)arg7 accessToken:(id)arg8 duplicationType:(unsigned char)arg9 delegate:(id)arg10;
+- (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 mode:(unsigned short)arg3 deviceRole:(unsigned short)arg4 transportType:(unsigned short)arg5 relayServer:(id)arg6 relayType:(unsigned short)arg7 accessToken:(id)arg8 duplicationType:(unsigned char)arg9 switchConfig:(id)arg10 delegate:(id)arg11;
 
 @end
 

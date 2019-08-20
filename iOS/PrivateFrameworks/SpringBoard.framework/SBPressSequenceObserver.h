@@ -29,6 +29,7 @@
 - (void)metricDidPost:(id)arg1 data:(id)arg2;
 - (void)pressCollector:(id)arg1 didCollectSequence:(id)arg2;
 - (void)noteDidBeginSOSWithUUID:(id)arg1;
+- (void)dealloc;
 - (id)initWithPressName:(id)arg1;
 - (id)init;
 

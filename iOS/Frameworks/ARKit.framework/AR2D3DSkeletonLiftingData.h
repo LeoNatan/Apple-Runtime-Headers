@@ -6,9 +6,10 @@
 
 #import <objc/NSObject.h>
 
+#import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@interface AR2D3DSkeletonLiftingData : NSObject <NSSecureCoding>
+@interface AR2D3DSkeletonLiftingData : NSObject <NSSecureCoding, NSCopying>
 {
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rawJointsUsedForLifting;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))>> _rotatedJointsUsedForLifting;
@@ -28,6 +29,7 @@
 // Error parsing type for property joints:
 // Property attributes: Tr^,R,N
 
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)_rotateAndUndoCroppingFromRect:(struct CGRect)arg1;
 - (id)initWithHumanForLifting:(const struct Human *)arg1 imageSize:(struct CGSize)arg2 rotation:(long long)arg3 croppedRect:(struct CGRect)arg4;

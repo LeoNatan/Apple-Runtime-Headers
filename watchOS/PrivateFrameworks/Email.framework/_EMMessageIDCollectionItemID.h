@@ -13,13 +13,10 @@
 @interface _EMMessageIDCollectionItemID : EMMessageCollectionItemID <EFCacheable>
 {
     // Error parsing type: Aq, name: _messageIDHeaderHashValue
-    // Error parsing type: Aq, name: _alternateIDHeaderHashValue
     ECAngleBracketIDHash *_messageIDHeaderHash;
-    ECAngleBracketIDHash *_alternateIDHeaderHash;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) ECAngleBracketIDHash *alternateIDHeaderHash; // @synthesize alternateIDHeaderHash=_alternateIDHeaderHash;
 @property(readonly, nonatomic) ECAngleBracketIDHash *messageIDHeaderHash; // @synthesize messageIDHeaderHash=_messageIDHeaderHash;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

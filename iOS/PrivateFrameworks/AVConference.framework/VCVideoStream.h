@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     unsigned int _customWidth;
     unsigned int _customHeight;
     unsigned int _tilesPerFrame;
+    struct OpaqueFigCFWeakReference *_weakStream;
     AVCRateController *_vcrcRateController;
     VCRedundancyControllerVideo *_redundancyController;
     int _lastDisplayedFromImageQueueCount;
@@ -96,6 +97,7 @@ __attribute__((visibility("hidden")))
 - (struct __CFDictionary *)getClientSpecificUserInfo;
 - (struct __CFString *)getReportingClientName;
 - (int)getReportingClientType;
+- (void)handleVTPSendFailedWithData:(void *)arg1;
 @property(nonatomic) unsigned int targetMediaBitrate;
 @property unsigned int lastSentAudioSampleTime;
 @property double lastSentAudioHostTime;
@@ -132,7 +134,7 @@ __attribute__((visibility("hidden")))
 - (double)lastReceivedRTCPPacketTime;
 - (double)lastReceivedRTPPacketTime;
 - (_Bool)setRTPPayloads:(int *)arg1 numPayloads:(int)arg2 withError:(id *)arg3;
-- (void)handleNWConnectionPacketEvent:(struct packet_id *)arg1;
+- (void)handleNWConnectionPacketEvent:(struct packet_id *)arg1 eventType:(int)arg2;
 - (void)handleNWConnectionNotification:(struct ifnet_interface_advisory *)arg1;
 - (void)stopVCRC;
 - (void)startVCRCWithStreamConfig:(id)arg1;

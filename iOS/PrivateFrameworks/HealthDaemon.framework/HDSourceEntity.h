@@ -34,7 +34,7 @@
 - (_Bool)deleteSourceWithDatabase:(id)arg1 error:(id *)arg2;
 - (id)sourceBundleIdentifierInDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)_updateValues:(id)arg1 forProperties:(id)arg2 profile:(id)arg3 didUpdate:(_Bool *)arg4 error:(id *)arg5;
-- (_Bool)setBundleIdentifier:(id)arg1 UUID:(id)arg2 profile:(id)arg3 error:(id *)arg4;
+- (_Bool)adoptAsLocalSourceWithBundleIdentifier:(id)arg1 UUID:(id)arg2 name:(id)arg3 productType:(id)arg4 profile:(id)arg5 error:(id *)arg6;
 - (_Bool)setOptions:(unsigned long long)arg1 profile:(id)arg2 didUpdate:(_Bool *)arg3 error:(id *)arg4;
 - (_Bool)setName:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 - (id)sourceUUIDWithProfile:(id)arg1 error:(id *)arg2;

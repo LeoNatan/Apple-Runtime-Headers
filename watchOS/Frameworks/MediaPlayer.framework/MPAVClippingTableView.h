@@ -10,14 +10,14 @@
 
 @interface MPAVClippingTableView : UITableView
 {
+    UIView *_headerBackgroundView;
+    UIView *_footerBackgroundView;
     NSMutableDictionary *_sectionBackgroundViews;
-    UIView *_topBackgroundView;
-    UIView *_bottomBackgroundView;
 }
 
-@property(retain, nonatomic) UIView *bottomBackgroundView; // @synthesize bottomBackgroundView=_bottomBackgroundView;
-@property(retain, nonatomic) UIView *topBackgroundView; // @synthesize topBackgroundView=_topBackgroundView;
 @property(retain, nonatomic) NSMutableDictionary *sectionBackgroundViews; // @synthesize sectionBackgroundViews=_sectionBackgroundViews;
+@property(retain, nonatomic) UIView *footerBackgroundView; // @synthesize footerBackgroundView=_footerBackgroundView;
+@property(retain, nonatomic) UIView *headerBackgroundView; // @synthesize headerBackgroundView=_headerBackgroundView;
 - (void).cxx_destruct;
 - (id)_createBackgroundView;
 - (id)backgroundViewForSection:(unsigned int)arg1;

@@ -114,7 +114,7 @@
 + (void)_postNotificationName:(id)arg1 library:(id)arg2 userInfo:(id)arg3;
 + (void)_postNotificationName:(id)arg1 library:(id)arg2;
 + (BOOL)supportsSecureCoding;
-+ (id)_deviceMediaLibraryWithUserIdentity:(id)arg1 isSingletonLibrary:(BOOL)arg2;
++ (id)_deviceMediaLibraryWithUserIdentity:(id)arg1 isSingletonLibrary:(BOOL)arg2 createIfRequired:(BOOL)arg3;
 + (id)deviceMediaLibraryWithUserIdentity:(id)arg1;
 + (id)deviceMediaLibrary;
 + (void)setDefaultMediaLibrary:(id)arg1;

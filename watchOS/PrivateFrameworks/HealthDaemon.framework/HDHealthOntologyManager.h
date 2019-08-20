@@ -25,9 +25,12 @@
     _Bool _unitTest_useEmbeddedOntologyAsset;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
+    NSURL *_ontologyURL;
     HDSimpleGraphDatabase *_graphDatabase;
 }
 
++ (void)obliterateWithProfile:(id)arg1 reason:(id)arg2;
++ (id)_ontologyURLForProfile:(id)arg1;
 + (id)supportedLocales;
 + (id)_primaryCodingKeyPathForSampleTypeIdentifier:(id)arg1;
 + (id)_unknownConceptName;
@@ -36,6 +39,7 @@
 @property(readonly, nonatomic) _Bool unitTest_useEmbeddedOntologyAsset; // @synthesize unitTest_useEmbeddedOntologyAsset=_unitTest_useEmbeddedOntologyAsset;
 @property(readonly, nonatomic) _Bool unitTest_useEmbeddedOntology; // @synthesize unitTest_useEmbeddedOntology=_unitTest_useEmbeddedOntology;
 @property(retain, nonatomic) HDSimpleGraphDatabase *graphDatabase; // @synthesize graphDatabase=_graphDatabase;
+@property(readonly, copy, nonatomic) NSURL *ontologyURL; // @synthesize ontologyURL=_ontologyURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
@@ -103,7 +107,6 @@
 @property(readonly, nonatomic) _Bool ignoresVersionCheckDuringReferenceOntologyImport;
 - (id)_referenceOntologyFileURL;
 - (id)_ontologyAssetManager;
-@property(readonly, copy, nonatomic) NSURL *ontologyURL;
 - (id)_queue_graphDatabase;
 - (void)invalidateAndWait;
 @property(nonatomic, getter=isEnabled) _Bool enabled;

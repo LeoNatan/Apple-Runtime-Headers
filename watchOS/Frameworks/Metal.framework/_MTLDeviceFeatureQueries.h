@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
         NSString *name;
         int requirement;
         _Bool supported;
-    } _featureInfo[95];
+    } _featureInfo[96];
     id <MTLDeviceSPI> _device;
 }
 
@@ -106,6 +106,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsNonPrivateMSAATextures;
 - (_Bool)supportsNonPrivateDepthStencilTextures;
 - (_Bool)supportsLimitedYUVFormats;
+- (_Bool)supportsOpenCLTextureWriteSwizzles;
 - (_Bool)supportsPlacementHeaps;
 - (_Bool)supports32bpcMSAATextures;
 - (_Bool)supportsSamplerAddressModeClampToHalfBorder;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSCloudKitMirroringImportRequest, NSMutableArray, PFCloudKitImporterOptions;
+@class CKServerChangeToken, NSArray, NSCloudKitMirroringImportRequest, NSMutableArray, PFCloudKitImporterOptions;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitImporter : NSObject
@@ -15,8 +15,12 @@ __attribute__((visibility("hidden")))
     NSCloudKitMirroringImportRequest *_request;
     NSArray *_workItems;
     NSMutableArray *_workItemResults;
+    CKServerChangeToken *_updatedDatabaseChangeToken;
+    unsigned long long _totalImportedBytes;
 }
 
+@property(readonly, nonatomic) unsigned long long totalImportedBytes; // @synthesize totalImportedBytes=_totalImportedBytes;
+@property(readonly, nonatomic) CKServerChangeToken *updatedDatabaseChangeToken; // @synthesize updatedDatabaseChangeToken=_updatedDatabaseChangeToken;
 @property(readonly, nonatomic) NSArray *workItems; // @synthesize workItems=_workItems;
 @property(readonly, nonatomic) NSArray *workItemResults; // @synthesize workItemResults=_workItemResults;
 @property(readonly, nonatomic) NSCloudKitMirroringImportRequest *request; // @synthesize request=_request;

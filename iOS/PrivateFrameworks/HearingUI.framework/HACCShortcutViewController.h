@@ -17,11 +17,9 @@
     double _dismissalGestureYOffset;
     struct CGPoint _backgroundViewDismissalOrigin;
     AXDispatchTimer *_bluetoothAvailabilityTimer;
-    _Bool _expanded;
     _Bool _bluetoothAvailable;
     _Bool _listeningForUpdates;
     id <AXHAShortcutUpdateProtocol> _delegate;
-    HACCContentViewController *_expandedController;
     CCUIContentModuleContext *_contentModuleContext;
     NSMutableDictionary *_moduleToViewControllerMap;
     NSMutableDictionary *_gridToModuleMap;
@@ -33,7 +31,6 @@
 
 @property(nonatomic) _Bool listeningForUpdates; // @synthesize listeningForUpdates=_listeningForUpdates;
 @property(nonatomic) _Bool bluetoothAvailable; // @synthesize bluetoothAvailable=_bluetoothAvailable;
-@property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) AXRemoteHearingAidDevice *currentHearingDevice; // @synthesize currentHearingDevice=_currentHearingDevice;
 @property(retain, nonatomic) NSMutableArray *separatorViews; // @synthesize separatorViews=_separatorViews;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -41,13 +38,14 @@
 @property(retain, nonatomic) NSMutableDictionary *gridToModuleMap; // @synthesize gridToModuleMap=_gridToModuleMap;
 @property(retain, nonatomic) NSMutableDictionary *moduleToViewControllerMap; // @synthesize moduleToViewControllerMap=_moduleToViewControllerMap;
 @property(retain, nonatomic) CCUIContentModuleContext *contentModuleContext; // @synthesize contentModuleContext=_contentModuleContext;
-@property(nonatomic) __weak HACCContentViewController *expandedController; // @synthesize expandedController=_expandedController;
 @property(nonatomic) __weak id <AXHAShortcutUpdateProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)setAlpha:(double)arg1 forAllModulesExcept:(id)arg2;
 - (void)controlDidActivate:(id)arg1;
 - (void)updateViewForProperties:(id)arg1;
 - (void)updateView;
+- (_Bool)isExpanded;
+@property(readonly, nonatomic) __weak HACCContentViewController *expandedController;
 - (double)preferredContentWidth;
 - (double)preferredExpandedContentHeight;
 - (double)_separatorHeight;

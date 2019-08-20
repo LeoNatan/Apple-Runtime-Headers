@@ -58,11 +58,14 @@
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+- (BOOL)_removeAllSharedAssetDCIMFilesInStore:(id)arg1;
+- (BOOL)_removeCloudSharedFileAtPath:(id)arg1 withFileManager:(id)arg2 error:(id *)arg3;
 - (BOOL)relocateOriginalUBFPaths:(id)arg1;
 - (BOOL)_removeContactMatchingDictionaryOnTombstonedPeople:(id)arg1;
 - (BOOL)_cleanupLegacyFiles;
 - (BOOL)_removeLegacyLocationForLibraryAtURL:(id)arg1 relativePath:(id)arg2 checkPath:(id)arg3 error:(id *)arg4;
 - (BOOL)_relocateCPLMarkerFiles;
+- (BOOL)_verifyAndFixBrokenLocalAvailabilityForResourceWithFileIDsInStore:(id)arg1;
 - (BOOL)_move1kResourcesOutOfMastersDir:(id)arg1;
 - (BOOL)_requestAvailabilityChangeForAssetsMissing1kResourcesInStore:(id)arg1;
 - (BOOL)_regenerateReferenceKeyDataInStore:(id)arg1;

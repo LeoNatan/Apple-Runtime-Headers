@@ -41,6 +41,7 @@
 - (void)sendString:(id)arg1;
 - (void)stop;
 - (void)start;
+- (void)toggleSystemOutputMute:(BOOL)arg1;
 - (void)recreateTTYDevice:(id)arg1;
 - (BOOL)isLocallyHosted;
 @property(readonly, copy) NSString *description;

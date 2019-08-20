@@ -16,7 +16,7 @@
 + (id)titleWithLineBreakForTitle:(id)arg1;
 + (id)titleWithLineBreakForTitle:(id)arg1 andUsedNames:(id)arg2;
 + (id)titleWithNoLineBreakSpaceForTitle:(id)arg1 andUsedNames:(id)arg2;
-+ (id)_closestSpaceMatchFromMatches:(id)arg1 withUsedNameRange:(struct _NSRange)arg2 searchForward:(BOOL)arg3;
++ (struct _NSRange)_closestSpaceMatchFromMatches:(id)arg1 withUsedNameRange:(struct _NSRange)arg2 searchForward:(BOOL)arg3;
 + (void)startAndEndDateNodeFromDateNodes:(id)arg1 startDateNode:(id *)arg2 endDateNode:(id *)arg3;
 + (id)bestAddressNodeForMomentNodes:(id)arg1;
 + (id)dateNodesFromMomentNodes:(id)arg1;

@@ -30,7 +30,7 @@
 + (id)os_log;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(nonatomic) __weak id <CNComposeDropTargetDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
+@property(nonatomic) __weak UIView *targetView; // @synthesize targetView=_targetView;
 @property(copy, nonatomic) NSSet *acceptableUTIs; // @synthesize acceptableUTIs=_acceptableUTIs;
 - (void).cxx_destruct;
 - (void)_dropSessionEnded;

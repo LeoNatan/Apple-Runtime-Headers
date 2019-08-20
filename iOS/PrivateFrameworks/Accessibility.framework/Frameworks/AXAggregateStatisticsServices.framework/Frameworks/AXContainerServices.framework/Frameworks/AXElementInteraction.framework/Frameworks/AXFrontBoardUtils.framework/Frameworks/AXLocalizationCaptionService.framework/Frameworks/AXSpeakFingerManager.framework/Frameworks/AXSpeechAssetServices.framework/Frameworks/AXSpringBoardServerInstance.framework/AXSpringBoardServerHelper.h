@@ -127,6 +127,9 @@
 - (void)reactivateInCallServiceWithServerInstance:(id)arg1;
 - (void)forceLoadGAXBundleWithServerInstance:(id)arg1;
 - (_Bool)isSpotlightVisibleWithServerInstance:(id)arg1;
+- (_Bool)isDarkModeActiveWithServiceInstance:(id)arg1;
+- (_Bool)_isDarkModeActive;
+- (_Bool)toggleDarkModeWithServerInstance:(id)arg1;
 - (_Bool)isGuidedAccessActiveWithServerInstance:(id)arg1;
 - (void)revealSpotlightWithServerInstance:(id)arg1;
 - (void)toggleSpotlightWithServerInstance:(id)arg1;

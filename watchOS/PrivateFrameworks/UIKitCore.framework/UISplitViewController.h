@@ -88,8 +88,8 @@
 - (void)_enumerateAncestorViewControllersUntilStop:(_Bool *)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_layoutPrimaryOnRight;
 - (_Bool)_iPhoneShouldUseOverlayInCurrentEnvironment;
-- (void)_didEndSnapshotSession;
-- (void)_willBeginSnapshotSession;
+- (void)_didEndSnapshotSession:(id)arg1;
+- (void)_willBeginSnapshotSession:(id)arg1;
 - (void)_willShowCollapsedDetailViewController:(id)arg1 inTargetController:(id)arg2;
 - (void)_descendantWillPresentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animated:(_Bool)arg4;
 - (void)_popoverController:(id)arg1 didChangeFromVisible:(_Bool)arg2;

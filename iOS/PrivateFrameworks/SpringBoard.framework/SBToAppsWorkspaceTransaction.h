@@ -28,6 +28,7 @@
     _Bool _applicationStateNeedsCapture;
     _Bool _dismissedOverlays;
     _Bool _shouldDismissOverlays;
+    _Bool _touchCancellationDisabled;
     SBSceneLayoutWorkspaceTransaction *_layoutTransaction;
     SBFloatingDockBehaviorAssertion *_floatingDockBehaviorAssertion;
 }

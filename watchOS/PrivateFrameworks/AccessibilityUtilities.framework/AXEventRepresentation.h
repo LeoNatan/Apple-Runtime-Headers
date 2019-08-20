@@ -51,6 +51,7 @@
     unsigned long long _senderID;
     unsigned long long _HIDTime;
     long long _scrollAmount;
+    long long _scrollAccelAmount;
     unsigned long long _additionalFlags;
 }
 
@@ -94,6 +95,7 @@
 @property(nonatomic) unsigned int displayId; // @synthesize displayId=_displayId;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 @property(nonatomic) unsigned long long additionalFlags; // @synthesize additionalFlags=_additionalFlags;
+@property(nonatomic) long long scrollAccelAmount; // @synthesize scrollAccelAmount=_scrollAccelAmount;
 @property(nonatomic) long long scrollAmount; // @synthesize scrollAmount=_scrollAmount;
 @property(retain, nonatomic) NSData *HIDAttributeData; // @synthesize HIDAttributeData=_HIDAttributeData;
 @property(nonatomic) unsigned long long HIDTime; // @synthesize HIDTime=_HIDTime;

@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface VCScreenCapture : VCVideoCapture <VideoCaptureProtocol>
 {
+    id _weakCapture;
     NSDictionary *_options;
     struct OpaqueFigVirtualDisplaySession *_session;
     struct OpaqueVTImageRotationSession *_rotationSession;

@@ -16,6 +16,8 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)scanMessage:(id)arg1 waitUntilDone:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (_Bool)_scanAttributedStringWithMessage:(id)arg1 attributedString:(id)arg2 plainText:(id)arg3;
+- (void)_processLinkInAttributedString:(id)arg1;
 - (_Bool)_scanMessageUsingScanner:(id)arg1 attributedString:(id)arg2;
 - (void)scanMessage:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)scannerQueue;

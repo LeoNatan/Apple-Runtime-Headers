@@ -8,18 +8,45 @@
 
 #import <QTKit/NSCoding-Protocol.h>
 
+@class NSView, QTHUDGroupView;
+
 @interface QTHUDGroupViewItem : NSObject <NSCoding>
 {
+    NSView *_view;
+    QTHUDGroupView *_groupView;
+    struct CGSize _minSize;
+    struct CGSize _maxSize;
+    void *_observationInfo;
+    struct {
+        unsigned int hidden:1;
+        unsigned int reserved:31;
+    } _flags;
+    double _margins[4];
 }
 
 + (BOOL)automaticallyNotifiesObserversOfHidden;
 + (BOOL)automaticallyNotifiesObserversOfGroupView;
++ (BOOL)automaticallyNotifiesObserversOfView;
 + (BOOL)automaticallyNotifiesObserversOfMaxSize;
 + (BOOL)automaticallyNotifiesObserversOfMinSize;
-+ (BOOL)automaticallyNotifiesObserversOfView;
 + (void)initialize;
+- (void).cxx_destruct;
+- (void)setHidden:(BOOL)arg1;
+- (BOOL)isHidden;
+- (void)setGroupView:(id)arg1;
+- (id)groupView;
+- (void)setView:(id)arg1;
+- (id)view;
+- (void)setMaxSize:(struct CGSize)arg1;
+- (struct CGSize)maxSize;
+- (void)setMinSize:(struct CGSize)arg1;
+- (struct CGSize)minSize;
+- (id)description;
+- (void *)observationInfo;
+- (void)setObservationInfo:(void *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

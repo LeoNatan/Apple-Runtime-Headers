@@ -7,18 +7,21 @@
 #import <objc/NSObject.h>
 
 #import <SpringBoard/BSDescriptionProviding-Protocol.h>
+#import <SpringBoard/SBHardwareButtonServiceObserver-Protocol.h>
 
 @class NSMutableArray, NSString, SBHomeGestureParticipant;
 @protocol BSInvalidatable;
 
-@interface SBHomeGestureArbiter : NSObject <BSDescriptionProviding>
+@interface SBHomeGestureArbiter : NSObject <BSDescriptionProviding, SBHardwareButtonServiceObserver>
 {
     id <BSInvalidatable> _stateCaptureHandle;
     NSMutableArray *_participants;
     SBHomeGestureParticipant *_owningParticipant;
     SBHomeGestureParticipant *_hardwareButtonServiceParticipant;
+    id <BSInvalidatable> _hardwareButtonObserverAssertion;
 }
 
+@property(retain, nonatomic) id <BSInvalidatable> hardwareButtonObserverAssertion; // @synthesize hardwareButtonObserverAssertion=_hardwareButtonObserverAssertion;
 @property(retain, nonatomic) SBHomeGestureParticipant *hardwareButtonServiceParticipant; // @synthesize hardwareButtonServiceParticipant=_hardwareButtonServiceParticipant;
 @property(retain, nonatomic) SBHomeGestureParticipant *owningParticipant; // @synthesize owningParticipant=_owningParticipant;
 @property(retain, nonatomic) NSMutableArray *participants; // @synthesize participants=_participants;
@@ -30,6 +33,7 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (void)_updateHardwareButtonServiceParticipant;
+- (void)buttonService:(id)arg1 buttonKind:(long long)arg2 eventsConsumedDidChange:(unsigned long long)arg3;
 - (void)_updateOwningParticipant;
 - (void)_unregisterParticipant:(id)arg1;
 - (void)_registerParticipant:(id)arg1;

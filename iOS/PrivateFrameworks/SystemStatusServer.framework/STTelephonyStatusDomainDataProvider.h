@@ -21,12 +21,12 @@
 @property(readonly, nonatomic) STTelephonyStateProvider *telephonyStateProvider; // @synthesize telephonyStateProvider=_telephonyStateProvider;
 - (void).cxx_destruct;
 - (unsigned long long)_dataNetworkTypeForDataConnectionType:(unsigned long long)arg1;
-- (_Bool)_shouldShowEmergencyOnlyStatusForStateProvider:(id)arg1 subscriptionInfo:(id)arg2;
+- (_Bool)_shouldShowEmergencyOnlyStatusForStateProvider:(id)arg1 registrationStatus:(unsigned long long)arg2 countryCode:(id)arg3;
 - (id)_displayStringForRegistrationStatus:(unsigned long long)arg1;
 - (id)_displayStringForSIMStatus:(id)arg1;
 - (_Bool)_simStatusMeansLocked:(id)arg1;
 - (id)_serviceDescriptionForStateProvider:(id)arg1 subscriptionInfo:(id)arg2 outSecondaryServiceDescription:(id *)arg3;
-- (unsigned long long)_serviceStateForStateProvider:(id)arg1 subscriptionInfo:(id)arg2;
+- (unsigned long long)_serviceStateForStateProvider:(id)arg1 registrationStatus:(unsigned long long)arg2 countryCode:(id)arg3;
 - (void)_populateSIMInfo:(id)arg1 forStateProvider:(id)arg2 subscriptionInfo:(id)arg3 slot:(long long)arg4;
 - (void)_updateDataForSlot:(long long)arg1;
 - (void)mobileEquipmentInfoDidChangeForStateProvider:(id)arg1 slot:(long long)arg2;

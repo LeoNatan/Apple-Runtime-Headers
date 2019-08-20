@@ -175,6 +175,7 @@
 - (void)_updateDefaultAccessoryViewForFocus:(BOOL)arg1;
 - (void)_updateDefaultLabelsForFocus:(BOOL)arg1;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)_viewToAddFocusLayer;
 - (id)preferredFocusedView;
 - (BOOL)canBecomeFocused;
 - (void)_removeFocusedFloatingContentView;
@@ -527,9 +528,8 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)_menuDismissed:(id)arg1;
 - (void)_updateContentClip;
-- (void)_setContentClipCorners:(unsigned long long)arg1;
+- (void)_setContentClipCorners:(unsigned long long)arg1 updateCorners:(BOOL)arg2;
 - (void)_showMenuFromLongPressGesture;
 - (void)_longPressGestureRecognized:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;

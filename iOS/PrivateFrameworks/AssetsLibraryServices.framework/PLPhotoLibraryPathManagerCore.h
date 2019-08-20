@@ -29,7 +29,7 @@
 
 + (_Bool)isSystemLibraryURLDefined;
 + (_Bool)setSystemLibraryURL:(id)arg1 options:(unsigned short)arg2 error:(id *)arg3;
-+ (id)systemLibraryURLAllowingLithiumLookup:(_Bool)arg1;
++ (id)systemLibraryURLIfResolvable;
 + (id)systemLibraryURL;
 + (id)_legacySystemLibraryPath;
 + (id)_legacySystemLibraryBookmarkData;
@@ -48,6 +48,7 @@
 @property(copy) NSString *baseDirectory; // @synthesize baseDirectory=_baseDirectory;
 @property(copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (void).cxx_destruct;
+- (id)pathsGroupedByAssetBasePathFromFilePaths:(id)arg1;
 - (id)assetBaseFilenameForAdjustmentFilePath:(id)arg1;
 - (id)photoMetadataDirectoryForMediaInMainDirectory:(id)arg1;
 - (id)persistedAlbumDataDirectoryCreateIfNeeded:(_Bool)arg1 error:(id *)arg2;

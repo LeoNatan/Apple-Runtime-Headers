@@ -6,10 +6,10 @@
 
 #import <SystemExtensions/NSObject-Protocol.h>
 
-@class NSString, OSSystemExtensionProperties;
+@class NSData, NSString, OSSystemExtensionProperties;
 
 @protocol _OSSystemExtensionClientToServerInterface <NSObject>
-- (void)deactivateExtensionWithIdentifier:(NSString *)arg1 replyHandler:(void (^)(long long, NSError *))arg2;
+- (void)deactivateExtensionWithIdentifier:(NSString *)arg1 authorization:(NSData *)arg2 replyHandler:(void (^)(long long, NSError *))arg3;
 - (void)continueActivatingExtensionWithExistingProperties:(OSSystemExtensionProperties *)arg1;
 - (void)activateExtensionWithIdentifer:(NSString *)arg1;
 @end

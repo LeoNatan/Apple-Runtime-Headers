@@ -14,7 +14,7 @@
 @interface HKHealthRecordsStore : NSObject <HKHealthRecordsStoreInterface, _HKXPCExportable>
 {
     HKPluginProxyProvider *_proxyProvider;
-    long long _ingestionState;
+    long long _lastKnownIngestionState;
     HKObserverSet *_ingestionStateChangeObservers;
     HKObserverSet *_accountStateChangeObservers;
 }

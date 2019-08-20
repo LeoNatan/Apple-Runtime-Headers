@@ -14,6 +14,7 @@
 - (id)_gatherOwnedVmObjects;
 - (void)_gatherIdleExitStatus;
 - (BOOL)_populateTask;
+- (void)addLedgerData:(unsigned long long *)arg1 count:(unsigned long long)arg2;
 - (id)initWithCorpse:(unsigned int)arg1 pid:(int)arg2 name:(id)arg3 dirtyFlags:(unsigned int)arg4 procFlags:(unsigned int)arg5;
 
 @end

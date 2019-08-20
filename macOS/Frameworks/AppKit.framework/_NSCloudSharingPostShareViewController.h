@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType disconnectionHandler; // @synthesize disconnectionHandler=_disconnectionHandler;
 - (void)dealloc;
 - (void)viewDidInvalidate:(id)arg1;
+- (id)serviceViewControllerInterface;
 
 // Remaining properties
 @property(readonly) BOOL shouldRetainExportedObject;

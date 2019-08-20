@@ -6,15 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class DDAction, NSArray, NSString, UIView, UIViewController;
+@class NSAttributedString, NSURL;
 
 @interface DDContextMenuAction : NSObject
 {
-    DDAction *_defaultAction;
-    UIViewController *_viewController;
-    NSArray *_menuActions;
-    NSString *_menuTitle;
-    UIView *_view;
+    NSURL *_url;
+    // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}, name: _result
+    NSAttributedString *_menuTitle;
 }
 
 + (id)contextMenuConfigurationWithURL:(id)arg1 inView:(id)arg2 context:(id)arg3 menuIdentifier:(id)arg4;
@@ -22,20 +20,16 @@
 + (id)contextMenuConfigurationForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 inView:(id)arg5 context:(id)arg6 menuIdentifier:(id)arg7;
 + (id)contextMenuConfigurationAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 inView:(id)arg3 context:(id)arg4 menuIdentifier:(id)arg5;
 + (id)updateContext:(id)arg1 withSourceRect:(struct CGRect)arg2;
-@property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-@property(readonly, nonatomic) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
-@property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
--     // Error parsing type: @40@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32, name: previewViewControllerForResult:URL:context:
 -     // Error parsing type: @40@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32, name: previewActionForResult:URL:context:
--     // Error parsing type: @40@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32, name: menuActionsForResult:URL:context:
-@property(readonly, nonatomic) CDUnknownBlockType previewHandler;
-@property(readonly, nonatomic) NSArray *menuActionItems;
--     // Error parsing type: @56@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32@40@48, name: initWithMenuTitle:result:URL:inView:context:
--     // Error parsing type: @48@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24@32@40, name: initWithResult:URL:inView:context:
-- (id)initForURL:(id)arg1 inView:(id)arg2 identifier:(id)arg3 selectedText:(id)arg4 results:(id)arg5 context:(id)arg6;
-- (id)initAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 inView:(id)arg3 context:(id)arg4;
-- (id)contextMenuConfigurationWithIdentifier:(id)arg1;
+-     // Error parsing type: v64@0:8@16@24@32^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40@48@56, name: _updateMenuElementItems:withActionClasses:view:result:URL:context:
+- (void)_updateMenuElementItems:(id)arg1 withActions:(id)arg2 view:(id)arg3;
+- (void)dealloc;
+-     // Error parsing type: v32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24, name: commonInitWithResult:URL:
+-     // Error parsing type: @32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24, name: initWithResult:URL:
+- (id)initForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 context:(id)arg5;
+- (id)initAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
+- (id)contextMenuConfigurationWithIdentifier:(id)arg1 inView:(id)arg2 context:(id)arg3;
 
 @end
 

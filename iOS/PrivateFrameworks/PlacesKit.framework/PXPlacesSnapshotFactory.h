@@ -18,7 +18,6 @@
     UIImage *_cachedSnapshotImageLight;
     UIImage *_cachedSnapshotImageDark;
     NSString *_cachedSnapshotImageIdentifier;
-    long long currentUserInterfaceStyle;
     UIImage *_placeholderImage;
     long long _cachedCount;
     NSMutableArray *_requestedCompletionBlocks;
@@ -26,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_concurentQueue;
     _Bool _isRegisteredForPhotoLibraryChanges;
     _Bool _countCacheInvalidated;
+    long long _currentUserInterfaceStyle;
     id <PXPlacesSnapshotFactoryDelegate> _delegate;
     PHAssetCollection *_placesCollection;
     PHAsset *_snapshottedAsset;
@@ -63,6 +63,7 @@
 - (void)_handleAsyncPlacesLibraryAlbumSnapshotWithSnapshotOptions:(id)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)requestPlacesLibraryAlbumSnapshotWithSnapshotOptions:(id)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)requestPlacesSnapshotWithSnapshotOptions:(id)arg1 assets:(id)arg2 andCompletion:(CDUnknownBlockType)arg3;
+@property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 - (void)dealloc;
 - (id)init;
 

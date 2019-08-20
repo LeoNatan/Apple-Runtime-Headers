@@ -57,6 +57,7 @@
 - (void)_increaseContrastDidChange:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)prepareForReuse;
+@property(readonly, nonatomic) CKLabel *fromLabel;
 @property(readonly, nonatomic) CKAvatarView *avatarView;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

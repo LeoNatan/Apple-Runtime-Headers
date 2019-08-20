@@ -7,18 +7,20 @@
 #import <UIKit/UIViewController.h>
 
 #import <SpringBoard/PTSettingsKeyObserver-Protocol.h>
+#import <SpringBoard/SBAppSwitcherModelDelegate-Protocol.h>
 #import <SpringBoard/SBFluidSwitcherGestureManagerDelegate-Protocol.h>
 #import <SpringBoard/SBLayoutStateTransitionObserver-Protocol.h>
 #import <SpringBoard/SBLayoutStateTransitionSceneEntityFrameProvider-Protocol.h>
+#import <SpringBoard/SBMainDisplayWorkspaceAppInteractionEventSourceObserving-Protocol.h>
 #import <SpringBoard/SBSwitcherContentViewControllerDataSource-Protocol.h>
 #import <SpringBoard/SBSwitcherContentViewControllerDelegate-Protocol.h>
 #import <SpringBoard/SBSwitcherDemoFilteringControllerObserver-Protocol.h>
 #import <SpringBoard/SBWorkspaceKeyboardFocusControllerObserver-Protocol.h>
 
-@class BSAnimationSettings, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SBAppLayout, SBAppStatusBarSettingsAssertion, SBAppSwitcherModel, SBAppSwitcherServiceSet, SBAppSwitcherSettings, SBApplicationUserQuitMonitorServer, SBFluidSwitcherGestureManager, SBHomeScreenBackdropViewBase, SBMainDisplaySceneLayoutViewController, SBOrientationTransformWrapperView, SBSwitcherDemoCommandsServer, SBSwitcherDemoFilteringController, SBWindow, SBWorkspaceKeyboardFocusController, SiriContinuitySource, UIApplicationSceneDeactivationAssertion, UIPanGestureRecognizer, UIView;
+@class BSAnimationSettings, BSSimpleAssertion, BSTimer, FBDisplayLayoutElement, NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SBAppLayout, SBAppStatusBarSettingsAssertion, SBAppSwitcherModel, SBAppSwitcherServiceSet, SBAppSwitcherSettings, SBApplicationUserQuitMonitorServer, SBFluidSwitcherGestureManager, SBHomeScreenBackdropViewBase, SBMainDisplaySceneLayoutViewController, SBOrientationTransformWrapperView, SBSwitcherDemoCommandsServer, SBSwitcherDemoFilteringController, SBWindow, SBWorkspaceKeyboardFocusController, SiriContinuitySource, UIApplicationSceneDeactivationAssertion, UIPanGestureRecognizer, UIView;
 @protocol BSInvalidatable, SBSwitcherContentViewControlling;
 
-@interface SBMainSwitcherViewController : UIViewController <SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate, SBSwitcherDemoFilteringControllerObserver, PTSettingsKeyObserver, SBLayoutStateTransitionObserver, SBLayoutStateTransitionSceneEntityFrameProvider, SBFluidSwitcherGestureManagerDelegate, SBWorkspaceKeyboardFocusControllerObserver>
+@interface SBMainSwitcherViewController : UIViewController <SBSwitcherContentViewControllerDataSource, SBSwitcherContentViewControllerDelegate, SBSwitcherDemoFilteringControllerObserver, PTSettingsKeyObserver, SBLayoutStateTransitionObserver, SBLayoutStateTransitionSceneEntityFrameProvider, SBFluidSwitcherGestureManagerDelegate, SBWorkspaceKeyboardFocusControllerObserver, SBAppSwitcherModelDelegate, SBMainDisplayWorkspaceAppInteractionEventSourceObserving>
 {
     NSArray *_mainAppLayouts;
     NSArray *_floatingAppLayouts;
@@ -58,8 +60,12 @@
     UIPanGestureRecognizer *_mainContentBorrowedScrollViewPanGestureRecognizer;
     SBAppStatusBarSettingsAssertion *_mainStatusBarAssertion;
     SBAppStatusBarSettingsAssertion *_floatingStatusBarAssertion;
+    BSSimpleAssertion *_preventAdditionalMedusaSnapshotsAssertion;
+    BSTimer *_preventAdditionalMedusaSnapshotsInvalidationTimer;
     NSMutableSet *_asynchronousRenderingAssertions;
     NSHashTable *_asynchronousRenderingCachedSurfacesReasons;
+    BSTimer *_disableCachingAsynchronousRenderingSurfacesTimer;
+    NSMutableDictionary *_recentSwipeUpToKillTimestampsForAppLayouts;
     NSHashTable *__hideStatusBarAssertions;
 }
 
@@ -77,13 +83,17 @@
 - (void)_insertCardForDisplayIdentifier:(id)arg1 atIndex:(unsigned long long)arg2;
 - (long long)_overrideWindowActiveInterfaceOrientation;
 - (long long)_overrideInterfaceOrientationMechanics;
+- (void)appSwitcherModel:(id)arg1 didRemoveAppLayoutForFallingOffList:(id)arg2;
 - (void)keyboardFocusController:(id)arg1 didUpdateFocusToPID:(int)arg2 sceneID:(id)arg3;
+- (void)_purgeHiddenAppLayoutsForUILock;
+- (void)_noteUIWillLock;
 - (id)_persistenceIdentifiersForBundleIdentifier:(id)arg1;
+- (_Bool)_hasAppLayoutBeenUserKilledWithinThresholdToCreateNewScene:(id)arg1;
 - (id)_recentAppLayoutsController;
-- (void)_destroyApplicationSceneEntity:(id)arg1;
 - (void)_deleteAppLayout:(id)arg1 forReason:(long long)arg2;
 - (void)removedDisplayItems:(id)arg1 withDestructionIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_removeAppLayout:(id)arg1 forReason:(long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_insertMainAppLayouts:(id)arg1 atIndexes:(id)arg2 floatingAppLayouts:(id)arg3 atIndexes:(id)arg4 modelMutationBlock:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_insertAppLayout:(id)arg1 atIndex:(unsigned long long)arg2 modelMutationBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_rebuildFloatingAppListCache;
 - (void)_destroyFloatingAppListCache;
@@ -98,6 +108,7 @@
 - (void)_switcherServiceRemoved:(id)arg1;
 - (void)_switcherServiceAdded:(id)arg1;
 - (id)_transientOverlayPesentationManager;
+- (void)_addAppLayoutToFront:(id)arg1 removeAppLayout:(id)arg2;
 - (void)_addAppLayoutToFront:(id)arg1;
 - (_Bool)_shouldAddAppLayoutToFront:(id)arg1;
 - (id)_currentVisibleFloatingItem;
@@ -129,6 +140,7 @@
 - (void)switcherContentController:(id)arg1 setDimmingAlpha:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)switcherContentController:(id)arg1 setHomeScreenAlpha:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)switcherContentController:(id)arg1 setHomeScreenScale:(double)arg2 withAnimationMode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)switcherContentController:(id)arg1 reopenHiddenAppLayoutsWithBundleIdentifier:(id)arg2;
 - (void)cancelActiveGestureForSwitcherContentController:(id)arg1;
 - (void)switcherContentController:(id)arg1 setCacheAsynchronousRenderingSurfaces:(_Bool)arg2;
 - (_Bool)switcherContentController:(id)arg1 shouldResignActiveForStartOfTransition:(id)arg2;
@@ -143,6 +155,8 @@
 - (void)switcherContentController:(id)arg1 activatedBestAppSuggestion:(id)arg2;
 - (void)switcherContentController:(id)arg1 deletedAppLayout:(id)arg2 forReason:(long long)arg3;
 - (void)switcherContentController:(id)arg1 performTransitionWithRequest:(id)arg2 gestureInitiated:(_Bool)arg3;
+- (_Bool)switcherContentController:(id)arg1 isAppLayoutHigherPriorityInTetheredSwitcher:(id)arg2;
+- (id)switcherContentController:(id)arg1 hiddenAppLayoutsForBundleIdentifier:(id)arg2;
 - (_Bool)isInAppStatusBarRequestedHiddenForSwitcherContentController:(id)arg1;
 - (long long)sbActiveInterfaceOrientation;
 - (long long)homeScreenInterfaceOrientation;
@@ -206,6 +220,7 @@
 - (void)_setContentOrientation:(long long)arg1 forContentViewController:(id)arg2;
 - (void)_updateContentViewInterfaceOrientation:(long long)arg1;
 - (id)animationControllerForTransitionRequest:(id)arg1;
+- (void)eventSource:(id)arg1 userTouchedApplication:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
 - (unsigned long long)supportedInterfaceOrientations;

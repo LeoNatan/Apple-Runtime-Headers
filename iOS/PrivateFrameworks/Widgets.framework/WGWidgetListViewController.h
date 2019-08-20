@@ -20,6 +20,7 @@
 {
     WGWidgetDiscoveryController *_discoveryController;
     MTMaterialView *_captureOnlyMaterialView;
+    NSMutableDictionary *_userInterfaceStylesToCaptureOnlyMaterialViews;
     UIScrollView *_scrollView;
     UIStackView *_stackView;
     NSMutableDictionary *_cancelTouchesAssertionsByWidgetID;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool shouldBlurContent; // @synthesize shouldBlurContent=_shouldBlurContent;
 @property(nonatomic) __weak id <WGWidgetListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_persistentStateControllerReloadedState:(id)arg1;
 - (_Bool)isWidgetExtensionVisible:(id)arg1;
 - (id)widgetListItemViewController:(id)arg1 widgetHostWithIdentifier:(id)arg2;
 - (struct CGRect)visibleFrameForWidget:(id)arg1;
@@ -50,6 +50,7 @@
 - (void)remoteViewControllerViewDidHideForWidget:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidget:(id)arg1;
 - (void)widget:(id)arg1 didChangeLargestSupportedDisplayMode:(long long)arg2;
+- (struct UIEdgeInsets)layoutMarginForWidget:(id)arg1;
 - (struct UIEdgeInsets)marginInsetsForWidget:(id)arg1;
 - (void)unregisterWidgetForRefreshEvents:(id)arg1;
 - (void)registerWidgetForRefreshEvents:(id)arg1;
@@ -97,7 +98,12 @@
 - (id)_scrollViewIfLoaded;
 - (id)_scrollViewLoadingIfNecessary:(_Bool)arg1;
 - (void)_configureScrollView;
+- (void)_invalidateAllAlternateCaptureOnlyMaterialViews;
+- (void)_invalidateAlternateCaptureOnlyMaterialViewWithUserInterfaceStyle:(long long)arg1;
+- (void)_configureAlternateCaptureOnlyMaterialViewWithUserInterfaceStyle:(long long)arg1;
 - (void)_configureCaptureOnlyMaterialView;
+- (id)_newCaptureOnlyMaterialView;
+- (void)_pruneAlternateCaptureOnlyMaterialViews;
 - (CDUnknownBlockType)_insert:(_Bool)arg1 listItem:(id)arg2 withOrderedIdentifiers:(id)arg3 animated:(_Bool)arg4;
 - (void)_didUpdateStackViewArrangedSubviews;
 - (CDUnknownBlockType)_beginInsertion:(_Bool)arg1 ofListItem:(id)arg2 withOrderedIdentifiers:(id)arg3 removingViewIfPossible:(_Bool)arg4;

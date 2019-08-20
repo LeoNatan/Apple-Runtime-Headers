@@ -35,9 +35,7 @@
 - (void)enableWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disable;
 @property(readonly, copy) NSString *description;
-- (id)initWithComponents:(unsigned int)arg1 usingPrivateAudioSession:(_Bool)arg2;
-- (id)initUsingPrivateAudioSession:(_Bool)arg1;
-- (id)init;
+- (id)initWithComponents:(unsigned int)arg1 options:(unsigned int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,6 +20,7 @@
 @property(readonly, copy) NSString *description;
 - (void)stripInternalHeaders;
 - (void)setReferences:(id)arg1;
+- (void)setAddressListForReplyTo:(id)arg1;
 - (void)setAddressListForBcc:(id)arg1;
 - (void)setAddressListForCc:(id)arg1;
 - (void)setAddressListForTo:(id)arg1;

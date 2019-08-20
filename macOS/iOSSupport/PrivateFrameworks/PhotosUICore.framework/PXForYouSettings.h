@@ -32,7 +32,6 @@
     BOOL _showFeaturedPhotosBadges;
     BOOL _delayEditRenders;
     BOOL _useCachedEditRenders;
-    BOOL _allowSharingEditSuggestions;
     unsigned long long _maxSimultaneousVideoCount;
     double _minimumVisibilityForVideoPlayback;
     unsigned long long _maxMemoriesToFetch;
@@ -41,7 +40,6 @@
 + (id)keyPathsAffectingGadgetVisibility;
 + (id)sharedInstance;
 @property(nonatomic) unsigned long long maxMemoriesToFetch; // @synthesize maxMemoriesToFetch=_maxMemoriesToFetch;
-@property(nonatomic) BOOL allowSharingEditSuggestions; // @synthesize allowSharingEditSuggestions=_allowSharingEditSuggestions;
 @property(nonatomic) BOOL useCachedEditRenders; // @synthesize useCachedEditRenders=_useCachedEditRenders;
 @property(nonatomic) BOOL delayEditRenders; // @synthesize delayEditRenders=_delayEditRenders;
 @property(nonatomic) BOOL showFeaturedPhotosBadges; // @synthesize showFeaturedPhotosBadges=_showFeaturedPhotosBadges;

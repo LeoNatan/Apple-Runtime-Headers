@@ -41,11 +41,13 @@
     unsigned long long _markedIndex;
     unsigned long long _tickMarkCountBetweenIndexes;
     double _tickMarksHeight;
+    unsigned long long _colorHighlight;
     NSString *_titleText;
     CDStruct_ae5a35ae _gradientInsets;
 }
 
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(nonatomic) unsigned long long colorHighlight; // @synthesize colorHighlight=_colorHighlight;
 @property(nonatomic) double tickMarksHeight; // @synthesize tickMarksHeight=_tickMarksHeight;
 @property(nonatomic) unsigned long long tickMarkCountBetweenIndexes; // @synthesize tickMarkCountBetweenIndexes=_tickMarkCountBetweenIndexes;
 @property(nonatomic) unsigned long long markedIndex; // @synthesize markedIndex=_markedIndex;
@@ -96,12 +98,14 @@
 - (void)_updateMarkedIndexViewAnimated:(_Bool)arg1;
 - (void)_updateScrollViewContentOffset;
 - (void)_updateColorsAnimated:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool _shouldUseHighlightColor;
 @property(readonly, nonatomic, getter=_isScrollActive) _Bool _scrollActive;
 - (void)_updateAppearanceForActiveScrolling;
 - (double)horizontalValueLabelOffset;
 - (void)_layoutSliderContentAtY:(double)arg1 withHorizontalPadding:(double)arg2;
 - (void)_layoutSubviewsWithLabelRotation:(double)arg1;
 - (void)_layoutSubviewsWithNoRotation;
+- (void)setColorHighlight:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)setTickMarksHeight:(double)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) id <CEKTickMarksConfiguration> tickMarksConfiguration;
 - (void)updateValueLabel;

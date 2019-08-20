@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     VCAudioIOControllerClient *_client;
     struct opaqueVCAudioBufferList *_renderBuffer;
     struct opaqueVCAudioBufferList *_tempBuffer;
+    double _currentTempBufferSampleTime;
 }
 
 + (void)instantiate:(CDUnknownBlockType)arg1;

@@ -23,6 +23,7 @@
 - (void)dealloc;
 @property(readonly, nonatomic) unsigned long long textureWidth;
 @property(readonly, nonatomic) unsigned long long textureHeight;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

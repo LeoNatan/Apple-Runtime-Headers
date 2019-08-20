@@ -12,7 +12,7 @@
 
 + (_Bool)hasNonJunkMessagesInSelection:(id)arg1;
 @property(readonly, nonatomic) _Bool hasNonJunkMessages;
-- (id)initWithMessageListSelection:(id)arg1;
+- (id)initWithMessageListSelection:(id)arg1 delegate:(id)arg2;
 
 @end
 

@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCoding-Protocol.h>
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSString, UIBarButtonItem, UIImageView, UINavigationBar, UINavigationBarAppearance, UISearchController, UIView, _UINavigationBarItemStackEntry, _UINavigationBarPalette;
 @protocol _UINavigationItemChangeObserver;
 
-@interface UINavigationItem : NSObject <NSCoding>
+@interface UINavigationItem : NSObject <_UIBarAppearanceChangeObserver, NSCoding>
 {
     NSString *_title;
     NSString *_backButtonTitle;
@@ -102,6 +103,7 @@
 @property(retain, nonatomic, setter=_setBottomPalette:) _UINavigationBarPalette *_bottomPalette; // @synthesize _bottomPalette;
 @property(nonatomic, setter=_setFontScaleAdjustment:) float _fontScaleAdjustment; // @synthesize _fontScaleAdjustment;
 - (void).cxx_destruct;
+- (void)appearance:(id)arg1 categoriesChanged:(int)arg2;
 - (id)_independentShadowImage;
 - (id)_independentBackgroundImageForBarMetrics:(int)arg1;
 - (void)_setIndependentBackgroundImage:(id)arg1 shadowImage:(id)arg2 forBarMetrics:(int)arg3;
@@ -212,7 +214,7 @@
 - (id)_addDefaultTitleViewToNavigationBarIfNecessary:(id)arg1;
 - (void)_cleanupFrozenTitleView;
 - (void)_freezeCurrentTitleView;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -220,6 +222,11 @@
 - (id)init;
 - (void)_setBackButtonPressed:(_Bool)arg1;
 @property(copy, nonatomic, setter=_setAbbreviatedBackButtonTitles:) NSArray *_abbreviatedBackButtonTitles;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapsSuggestions/NSObject-Protocol.h>
+#import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
 @class CLLocation, NSDate, NSUUID;
 
-@protocol MapsSuggestionsRoutineRequester <NSObject>
-- (BOOL)isHSA2Enabled;
+@protocol MapsSuggestionsRoutineRequester <MapsSuggestionsObject>
 - (void)clearAllVehicleEventsWithHandler:(void (^)(void))arg1;
 - (void)stopMonitoringVehicleEvents;
 - (BOOL)startMonitoringVehicleEventsWithHandler:(void (^)(NSArray *, NSError *))arg1;

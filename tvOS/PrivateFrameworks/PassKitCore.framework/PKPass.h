@@ -105,6 +105,7 @@
 @property(readonly, nonatomic) struct CGRect logoRect;
 @property(readonly, nonatomic) PKLiveRenderedShaderSet *liveRenderedShaderSet;
 @property(readonly, nonatomic) PKPassLiveRenderedImageSet *liveRenderedImageSet;
+@property(readonly, nonatomic) _Bool isValid;
 @property(readonly, nonatomic) NSString *businessChatIdentifier;
 - (id)thumbnailImage;
 - (id)stripImage;
@@ -118,6 +119,7 @@
 @property(readonly, nonatomic) PKImage *frontFaceShadowImage;
 @property(readonly, nonatomic) PKImage *frontFaceImage;
 @property(readonly, nonatomic) PKImage *notificationIconImage;
+@property(readonly, nonatomic) PKImage *rawIcon;
 @property(readonly, nonatomic) PKImage *iconImage;
 - (id)allSemantics;
 - (id)semantics;

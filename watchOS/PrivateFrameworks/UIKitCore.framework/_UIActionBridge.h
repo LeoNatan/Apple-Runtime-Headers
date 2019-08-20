@@ -11,6 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)actionMenuForMenu:(id)arg1 firstTarget:(id)arg2 includeHidden:(_Bool)arg3;
++ (id)actionMenuForMenu:(id)arg1 firstTarget:(id)arg2 includeHidden:(_Bool)arg3 validation:(id)arg4;
 + (id)_elementBasedUIActionsFromSPIUIActions:(id)arg1;
 + (id)_SPIUIActionsFromElementBasedUIActions:(id)arg1;
 

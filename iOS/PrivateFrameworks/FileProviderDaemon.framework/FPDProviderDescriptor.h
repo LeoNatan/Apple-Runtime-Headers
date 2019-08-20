@@ -22,6 +22,7 @@
     _Bool _usesUniqueItemIdentifiersAcrossDevices;
     _Bool _supportsUnzippedPackages;
     _Bool _hasExplicitExtensionStorageURLs;
+    _Bool _supportsPickingFolders;
     NSString *_identifier;
     NSString *_localizedName;
     NSString *_topLevelBundleIdentifier;
@@ -42,6 +43,7 @@
 @property(retain, nonatomic) NSArray *supportedFileTypes; // @synthesize supportedFileTypes=_supportedFileTypes;
 @property(retain, nonatomic) NSURL *extensionBundleURL; // @synthesize extensionBundleURL=_extensionBundleURL;
 @property(retain, nonatomic) NSString *purposeIdentifier; // @synthesize purposeIdentifier=_purposeIdentifier;
+@property(nonatomic) _Bool supportsPickingFolders; // @synthesize supportsPickingFolders=_supportsPickingFolders;
 @property(nonatomic) _Bool hasExplicitExtensionStorageURLs; // @synthesize hasExplicitExtensionStorageURLs=_hasExplicitExtensionStorageURLs;
 @property(nonatomic) _Bool supportsUnzippedPackages; // @synthesize supportsUnzippedPackages=_supportsUnzippedPackages;
 @property(nonatomic) _Bool usesUniqueItemIdentifiersAcrossDevices; // @synthesize usesUniqueItemIdentifiersAcrossDevices=_usesUniqueItemIdentifiersAcrossDevices;

@@ -27,6 +27,8 @@
 @property(readonly, nonatomic) NSArray *trafficIncidents; // @synthesize trafficIncidents=_trafficIncidents;
 @property(readonly, nonatomic) NSUUID *routeID; // @synthesize routeID=_routeID;
 - (void).cxx_destruct;
+- (id)_colorStringForIndex:(unsigned int)arg1;
+- (id)description;
 - (id)enrouteNoticeWithIdentifier:(id)arg1;
 - (void)createTrafficIncidentsForRoute:(id)arg1 initializerData:(id)arg2;
 - (void)setEnrouteNotices:(id)arg1;

@@ -6,10 +6,10 @@
 
 #import <SceneKit/NSObject-Protocol.h>
 
-@protocol MTLCommandQueue, MTLDevice, MTLTexture, SCNMaterialPropertyTextureProviderHelper;
+@protocol MTLDevice, MTLTexture, SCNMaterialPropertyTextureProviderHelper;
 
 @protocol SCNMaterialPropertyTextureProvider <NSObject>
-- (void)renderToTexture:(id <MTLTexture>)arg1 commandQueue:(id <MTLCommandQueue>)arg2 helper:(id <SCNMaterialPropertyTextureProviderHelper>)arg3;
+- (void)renderToTexture:(id <MTLTexture>)arg1 computeCommandHandler:(void (^)(void (^)(id <MTLComputeCommandEncoder>)))arg2 blitCommandHandler:(void (^)(void (^)(id <MTLBlitCommandEncoder>)))arg3 helper:(id <SCNMaterialPropertyTextureProviderHelper>)arg4;
 - (id <MTLTexture>)newTextureForDevice:(id <MTLDevice>)arg1;
 @end
 

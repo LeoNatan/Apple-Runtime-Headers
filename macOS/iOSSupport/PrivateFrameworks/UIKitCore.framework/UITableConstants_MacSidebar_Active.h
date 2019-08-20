@@ -12,13 +12,15 @@ __attribute__((visibility("hidden")))
 @interface UITableConstants_MacSidebar_Active : UITableConstants_MacSidebar
 {
     NSArray *_selectionEffects;
+    BOOL _focused;
 }
 
 + (id)sharedConstants;
 - (void).cxx_destruct;
+- (id)defaultHighlightTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultSelectionEffectsForCell:(id)arg1 inTableView:(id)arg2;
-- (id)defaultBackgroundColorForTableViewStyle:(long long)arg1;
+- (id)initFocused:(BOOL)arg1;
 
 @end
 

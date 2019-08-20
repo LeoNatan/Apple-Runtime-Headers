@@ -11,7 +11,7 @@
 #import <AVKit/PBSPictureInPicturePlaybackDelegate-Protocol.h>
 #import <AVKit/_AVFocusContainerDelegate-Protocol.h>
 
-@class AVBehaviorStorage, AVContentProposalViewController, AVContentRestrictionsViewController, AVControlItem, AVDelegateManager, AVDigitizerTouchGestureRecognizer, AVGestureRecognizerDelegate, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVNonDigitizerTapRecognizer, AVNowPlayingPlaybackControlsViewController, AVPermissiveSwipeGestureRecognizer, AVPictureInPictureController, AVPlayer, AVPlayerController, AVPlayerLayerView, AVPlayerViewControllerTransition, AVTransportBarViewController, AVxCustomOverlayHostViewController, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, NSURL, UIAlertController, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, UIWindow;
+@class AVBehaviorStorage, AVContentProposalViewController, AVContentRestrictionsViewController, AVControlItem, AVDelegateManager, AVDigitizerTouchGestureRecognizer, AVGestureRecognizerDelegate, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVNonDigitizerTapRecognizer, AVNowPlayingPlaybackControlsViewController, AVPermissiveSwipeGestureRecognizer, AVPictureInPictureController, AVPlayer, AVPlayerController, AVPlayerLayerView, AVPlayerViewControllerTransition, AVScrubbingPanGestureRecognizer, AVTransportBarViewController, AVxCustomOverlayHostViewController, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, NSURL, UIAlertController, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILayoutGuide, UITapGestureRecognizer, UIView, UIWindow;
 @protocol AVPlayerViewControllerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface AVPlayerViewController : UIViewController <AVPictureInPictureContentSource, AVPictureInPictureControllerDelegate, PBSPictureInPicturePlaybackDelegate, _AVFocusContainerDelegate>
@@ -42,7 +42,6 @@
     UIView *_HDCPObscuringView;
     NSArray *_playerLayerViewConstraints;
     NSArray *_constraintsForContentProposal;
-    AVNowPlayingPlaybackControlsViewController *_playbackControlsViewController;
     AVInternalPlaybackOptions *_playbackOptions;
     AVControlItem *_customOverlayControlItem;
     AVxCustomOverlayHostViewController *_customOverlayHostViewController;
@@ -63,7 +62,7 @@
     AVPlayerController *_playerController;
     AVGestureRecognizerDelegate *_gestureRecognizerDelegate;
     AVDigitizerTouchGestureRecognizer *_panGestureRecognizer;
-    UIPanGestureRecognizer *_scrubGestureRecognizer;
+    AVScrubbingPanGestureRecognizer *_scrubGestureRecognizer;
     AVNonDigitizerTapRecognizer *_b39ArrowGestureRecognizer;
     AVNonDigitizerTapRecognizer *_b39SelectGestureRecognizer;
     AVPermissiveSwipeGestureRecognizer *_swipeDownGestureRecognizer;
@@ -91,10 +90,12 @@
     UIAlertController *_HDCPAlertController;
     NSDictionary *_pixelBufferAttributes;
     _Bool _presentingContentProposal;
+    _Bool _shouldObscureOutputDueToInsufficientExternalProtection;
     AVPictureInPictureController *_pictureInPictureController;
     UIView *__placeholderViewDuringPresentation;
     AVBehaviorStorage *__behaviorStorage;
     AVPlayerLayerView *_playerLayerView;
+    AVNowPlayingPlaybackControlsViewController *_playbackControlsViewController;
 }
 
 + (id)keyPathsForValuesAffectingVideoBounds;
@@ -104,6 +105,8 @@
 + (void)setActivePictureInPictureController:(id)arg1;
 + (id)activePictureInPictureController;
 + (id)keyPathsForValuesAffectingAlternateThumbnailStreamURL;
+@property(retain, nonatomic, getter=_playbackControlsViewController, setter=_setPlaybackControlsViewController:) AVNowPlayingPlaybackControlsViewController *playbackControlsViewController; // @synthesize playbackControlsViewController=_playbackControlsViewController;
+@property(nonatomic) _Bool shouldObscureOutputDueToInsufficientExternalProtection; // @synthesize shouldObscureOutputDueToInsufficientExternalProtection=_shouldObscureOutputDueToInsufficientExternalProtection;
 @property(retain, nonatomic) AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
 @property(readonly, nonatomic) AVBehaviorStorage *_behaviorStorage; // @synthesize _behaviorStorage=__behaviorStorage;
 @property(nonatomic, getter=isPresentingContentProposal, setter=_setPresentingContentProposal:) _Bool presentingContentProposal; // @synthesize presentingContentProposal=_presentingContentProposal;

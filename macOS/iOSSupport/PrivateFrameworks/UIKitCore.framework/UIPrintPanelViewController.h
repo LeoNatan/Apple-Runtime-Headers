@@ -92,7 +92,7 @@ __attribute__((visibility("hidden")))
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)presentPrintPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)presentPrintPanelFromRect:(struct CGRect)arg1 inView:(id)arg2 animated:(BOOL)arg3;
-- (void)presentPrintPanelAnimated:(BOOL)arg1;
+- (void)presentPrintPanelAnimated:(BOOL)arg1 hostingScene:(id)arg2;
 - (id)initWithPrintInterationController:(id)arg1 inParentController:(id)arg2;
 
 // Remaining properties

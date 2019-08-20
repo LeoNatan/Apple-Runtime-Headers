@@ -13,6 +13,7 @@
 
 + (id)viewForShelf:(id)arg1 discoveryCardViewDelegate:(id)arg2;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

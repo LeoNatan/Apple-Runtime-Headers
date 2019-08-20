@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (_QLUtilities)
++ (id)_QLCreateTemporaryReplacementURLForOriginalFileAtURL:(id)arg1 withExtension:(id)arg2 temporaryDirectoryURL:(id *)arg3;
 + (id)_QLTemporaryURLWithExtension:(id)arg1 openingFileHandle:(int *)arg2 inDirectoryAtURL:(id)arg3;
 - (id)_QLIssueFileExtensionWithSandboxType:(const char *)arg1;
 - (id)_QLUrlFileSize;

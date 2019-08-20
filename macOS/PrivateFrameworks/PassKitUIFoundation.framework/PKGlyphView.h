@@ -39,6 +39,8 @@
     double _phoneAspectRatio;
     CALayer *_customImageLayer;
     struct NSColor *_secondaryColor;
+    struct NSColor *_primaryHighlightColor;
+    struct NSColor *_secondaryHighlightColor;
     unsigned int _userIntentEdge;
     long long _colorMode;
     NSColor *_primaryColor;
@@ -71,7 +73,9 @@
 - (struct NSColor *)_secondaryColorForStyle:(long long)arg1 mode:(long long)arg2;
 - (struct NSColor *)_primaryColorForStyle:(long long)arg1 mode:(long long)arg2;
 - (void)_setSecondaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
+- (void)_applyEffectivePrimaryColorToLayersAnimated:(BOOL)arg1;
 - (void)_setPrimaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
+- (void)_applyEffectiveHighlightColorsToLayersAnimated:(BOOL)arg1;
 - (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateCheckViewStateAnimated:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_updateCustomImageLayerOpacityAnimated:(BOOL)arg1;

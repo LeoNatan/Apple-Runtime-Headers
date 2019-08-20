@@ -7,6 +7,7 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (HUAdditions)
++ (id)hu_cameraErrorImage;
 + (id)hu_smallQRBadgeTemplateImage;
 + (id)hu_largeQRBadgeTemplateImage;
 + (id)hu_navigationBarGlyphList;

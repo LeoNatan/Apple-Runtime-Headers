@@ -6,13 +6,18 @@
 
 #import <WorkflowKit/WFAppInstalledResource.h>
 
+@class INCIntentExecutionInfo;
+
 @interface WFCustomIntentAvailableResource : WFAppInstalledResource
 {
+    INCIntentExecutionInfo *_executionInfo;
 }
 
+- (void).cxx_destruct;
 - (void)updateAvailabilityWithUpdatedVersionRequirementError:(id)arg1;
-- (void)updateAvailabilityWithAppInstallationRequiredError:(id)arg1;
 - (void)refreshAvailability;
+- (id)appIdentifier;
+@property(readonly, nonatomic) INCIntentExecutionInfo *executionInfo; // @synthesize executionInfo=_executionInfo;
 
 @end
 

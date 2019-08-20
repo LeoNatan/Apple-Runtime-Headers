@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class UIButton, UIImageView, UILabel, _UIGrabber;
+@class NSString, UIButton, UIImageView, UILabel, _UIGrabber;
 @protocol CKAppGrabberViewDelegate;
 
 @interface CKAppGrabberView : UIView
@@ -18,6 +18,7 @@
     UIView *_headerView;
     UIView *_grayLine;
     _UIGrabber *_chevronView;
+    NSString *_appIdentifier;
     _Bool _showsAppTitle;
     _Bool _roundsTopCorners;
     id <CKAppGrabberViewDelegate> _delegate;
@@ -30,10 +31,11 @@
 @property(nonatomic) _Bool showsAppTitle; // @synthesize showsAppTitle=_showsAppTitle;
 @property(nonatomic) __weak id <CKAppGrabberViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)iconImageView;
 - (id)headerView;
 - (void)updateHeaderFrame:(_Bool)arg1;
 - (void)closeButtonTapped:(id)arg1;
-- (void)updateAppTitle:(id)arg1 icon:(id)arg2;
+- (void)updateAppTitle:(id)arg1 icon:(id)arg2 appIdentifier:(id)arg3;
 - (double)chevronMaxYInView:(id)arg1;
 - (double)visualOriginYInView:(id)arg1;
 @property(readonly, nonatomic) double chevronMaxYOffset;

@@ -26,11 +26,12 @@
 - (struct CGRect)_textRectForRange:(struct _NSRange)arg1 inView:(id)arg2;
 - (struct CGPoint)_textOriginOffsetForRange:(struct _NSRange)arg1 inView:(id)arg2;
 - (void)_renderTextInRange:(struct _NSRange)arg1 image:(out id *)arg2 boundingRectangles:(out id *)arg3 forLifting:(BOOL)arg4;
-- (BOOL)_isUsableLink:(id)arg1;
+- (BOOL)_isActualLink:(id)arg1;
 - (id)_textStorage;
 - (CDUnknownBlockType)_previewProviderForTextInRange:(struct _NSRange)arg1;
 - (CDUnknownBlockType)_targetedPreviewProviderForTextInRange:(struct _NSRange)arg1 overrideLifting:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)_targetedPreviewProviderForTextInRange:(struct _NSRange)arg1;
+- (CDUnknownBlockType)targetedPreviewProviderForTextInRange:(struct _NSRange)arg1;
 - (CDUnknownBlockType)_targetedPreviewProviderForImage:(id)arg1 inRange:(struct _NSRange)arg2;
 - (id)_draggableTextInRange:(id)arg1;
 - (id)performSameViewDropOperation:(id)arg1;

@@ -17,7 +17,6 @@
 + (id)controlItemPredicate;
 @property(retain, nonatomic) HUQuickControlIconView *quickControlIconView; // @synthesize quickControlIconView=_quickControlIconView;
 - (void).cxx_destruct;
-- (double)_horizontalShiftValue;
 - (id)createViewProfile;
 - (id)createInteractionCoordinator;
 

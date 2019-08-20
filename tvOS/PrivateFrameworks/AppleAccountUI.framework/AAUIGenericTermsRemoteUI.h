@@ -37,6 +37,7 @@
 - (void)_cleanUpAndDismissWithSuccess:(_Bool)arg1 agreeURL:(id)arg2;
 - (void)_agreeToTermsWithURLString:(id)arg1 preferPassword:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_cancelButtonTapped:(id)arg1;
+- (id)viewControllerForAlertPresentation;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)objectModelPressedBack:(id)arg1;

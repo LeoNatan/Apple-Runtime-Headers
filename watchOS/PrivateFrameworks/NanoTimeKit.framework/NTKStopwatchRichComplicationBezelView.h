@@ -20,6 +20,7 @@
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)_applyPausedUpdate;
 - (id)_createLabelViewWithFont:(id)arg1;
+- (id)init;
 
 @end
 

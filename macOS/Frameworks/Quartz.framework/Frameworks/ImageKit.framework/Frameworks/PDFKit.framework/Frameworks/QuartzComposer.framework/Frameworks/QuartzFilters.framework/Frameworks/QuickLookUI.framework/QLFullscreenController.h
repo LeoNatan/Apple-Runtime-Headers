@@ -9,7 +9,7 @@
 #import <QuickLookUI/QLControlsDelegate-Protocol.h>
 #import <QuickLookUI/QLIndexSheetDelegate-Protocol.h>
 
-@class NSString, NSTimer, NSTrackingArea, NSView, NSWindow, QLControlsController, QLFadeWindowEffect, QLFullscreenControlsPanel, QLPreviewPageNavigationView, QLPreviewPanelController, QLPreviewScroller, QLScaleWindowEffect, QLTimeSlider;
+@class NSMutableArray, NSString, NSTimer, NSTrackingArea, NSView, NSWindow, QLControlsController, QLFadeWindowEffect, QLFullscreenControlsPanel, QLPreviewPageNavigationView, QLPreviewPanelController, QLPreviewScroller, QLScaleWindowEffect, QLTimeSlider;
 
 __attribute__((visibility("hidden")))
 @interface QLFullscreenController : NSResponder <QLIndexSheetDelegate, QLControlsDelegate>
@@ -41,8 +41,12 @@ __attribute__((visibility("hidden")))
     unsigned int _displaySleepAssertionID;
     BOOL _displaySleepDisabled;
     NSView *_screenshotView;
+    BOOL _observingPlaying;
+    NSMutableArray *_timeSliderConstraints;
 }
 
+@property(retain) NSMutableArray *timeSliderConstraints; // @synthesize timeSliderConstraints=_timeSliderConstraints;
+@property BOOL observingPlaying; // @synthesize observingPlaying=_observingPlaying;
 @property(retain) NSView *screenshotView; // @synthesize screenshotView=_screenshotView;
 @property struct CGPoint controlsOrigin; // @synthesize controlsOrigin=_controlsOrigin;
 @property struct CGPoint controlsCenterPosition; // @synthesize controlsCenterPosition=_controlsCenterPosition;
@@ -91,6 +95,8 @@ __attribute__((visibility("hidden")))
 - (void)_pauseDisableDisplaySleep;
 - (void)_enableDisplaySleep;
 - (void)_disableDisplaySleep;
+- (void)_stopObservingPlaying;
+- (void)_startObservingPlaying;
 - (id)_screenshotViewForFullscreenView:(id)arg1 entering:(BOOL)arg2;
 - (struct CGImage *)_newCGSContentScreenshot:(BOOL)arg1;
 - (void)_exitedFullscreen;

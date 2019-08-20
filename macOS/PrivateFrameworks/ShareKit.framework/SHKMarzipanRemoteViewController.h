@@ -6,15 +6,17 @@
 
 #import <ViewBridge/NSRemoteViewController.h>
 
-@class SHKRemoteWindowController;
+@class NSArray, SHKRemoteWindowController;
 
 __attribute__((visibility("hidden")))
 @interface SHKMarzipanRemoteViewController : NSRemoteViewController
 {
     SHKRemoteWindowController *_remoteWindowController;
+    NSArray *_layoutConstraints;
 }
 
 + (void)requestMarzipanViewControllerForExtensionWithIdentifier:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
+@property(retain) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property __weak SHKRemoteWindowController *remoteWindowController; // @synthesize remoteWindowController=_remoteWindowController;
 - (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

@@ -16,8 +16,8 @@
     NSArray *_enrichedTaggedCharacterRanges;
 }
 
++ (id)allDayDateComponentsFromDate:(id)arg1;
 + (id)regexFromJoinedArray:(id)arg1;
-+ (id)reminderOverrides;
 + (id)triggerOptionalTokens;
 + (_Bool)enrichedTaggedCharacterRangesContainsProfanity:(id)arg1;
 + (id)_labelTokenIndexesForOutputName:(id)arg1 label:(id)arg2 modelOutput:(id)arg3;

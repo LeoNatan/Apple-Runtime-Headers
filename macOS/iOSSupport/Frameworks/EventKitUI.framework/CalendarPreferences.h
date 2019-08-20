@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CalPreferences, NSArray, NSDate, NSDictionary, NSNumber, NSString;
+@class CalPreferences, NSArray, NSDate, NSNumber, NSString;
 
 @interface CalendarPreferences : NSObject
 {
@@ -17,7 +17,7 @@
 + (id)sharedPreferences;
 @property(nonatomic) BOOL drawDebugViewColors; // @synthesize drawDebugViewColors=_drawDebugViewColors;
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSDictionary *contentOffsetsBySceneIdentifier;
+@property(retain, nonatomic) NSNumber *dayViewFirstVisibleSecond;
 @property(nonatomic) BOOL highColorCarplayEnabled;
 @property(retain, nonatomic) NSString *upNextColor;
 @property(retain, nonatomic) NSString *upNextLocation;

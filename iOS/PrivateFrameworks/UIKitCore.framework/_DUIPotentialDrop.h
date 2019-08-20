@@ -15,9 +15,11 @@
     _Bool _precise;
     _Bool _prefersFullSizePreview;
     unsigned long long _operation;
+    long long _preferredBadgeStyle;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) long long preferredBadgeStyle; // @synthesize preferredBadgeStyle=_preferredBadgeStyle;
 @property(nonatomic) _Bool prefersFullSizePreview; // @synthesize prefersFullSizePreview=_prefersFullSizePreview;
 @property(nonatomic) _Bool precise; // @synthesize precise=_precise;
 @property(nonatomic) _Bool forbidden; // @synthesize forbidden=_forbidden;

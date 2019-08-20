@@ -65,6 +65,7 @@
 - (void)sleepDisplay:(CDUnknownBlockType)arg1;
 - (void)updateDisplayManagerWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)updateDisplayManagerWithRequest:(id)arg1 errror:(id *)arg2;
+- (id)audioLatencyForDisplayMode:(id)arg1;
 - (id)findMatchingLocaleMode:(id)arg1 enforceVirtualCheck:(_Bool)arg2;
 - (id)findFirstMode:(CDUnknownBlockType)arg1;
 - (id)filterModes:(CDUnknownBlockType)arg1;
@@ -72,7 +73,6 @@
 - (void)dealloc;
 - (id)_init;
 - (id)init;
-- (id)audioLatencyForDisplayMode:(id)arg1;
 - (void)setAudioLatency:(double)arg1 forDisplayMode:(id)arg2;
 - (void)presentDisplayAssistantForInvocation:(long long)arg1 destinationDisplayMode:(id)arg2 dismissHandler:(CDUnknownBlockType)arg3;
 - (void)displayAssistantDidCompleteForKind:(id)arg1;

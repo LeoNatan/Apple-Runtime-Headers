@@ -7,10 +7,11 @@
 #import <Email/EMMutableContentItem-Protocol.h>
 #import <Email/EMMutableMessageListItem-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSUUID;
 @protocol ECEmailAddressConvertible;
 
 @protocol EMMessageBuilder <EMMutableContentItem, EMMutableMessageListItem>
+@property(copy, nonatomic) NSUUID *documentID;
 @property(copy, nonatomic) NSArray *bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress;
 @end

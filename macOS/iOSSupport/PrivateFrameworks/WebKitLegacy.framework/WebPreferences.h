@@ -384,6 +384,8 @@
 - (void)_setTelephoneNumberParsingEnabled:(BOOL)arg1;
 - (void)_setStandalone:(BOOL)arg1;
 - (BOOL)_standalone;
+- (void)_setMediaRecorderEnabled:(BOOL)arg1;
+- (BOOL)_mediaRecorderEnabled;
 - (double)_backForwardCacheExpirationInterval;
 - (void)setNeedsStorageAccessFromFileURLsQuirk:(BOOL)arg1;
 - (BOOL)needsStorageAccessFromFileURLsQuirk;

@@ -17,10 +17,9 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)predicateFormat;
-@property(readonly) _Bool requiresPostFiltering;
-@property(readonly) _Bool matchesEverything;
 - (_Bool)evaluateWithObject:(id)arg1;
-- (id)predicateDescriptorWithReminderStore:(id)arg1;
+- (id)fetchMatchingRemindersInStore:(id)arg1 allLists:(id)arg2 error:(id *)arg3;
+- (id)remListIDsWithAllLists:(id)arg1;
 - (id)initWithCalendars:(id)arg1;
 
 @end

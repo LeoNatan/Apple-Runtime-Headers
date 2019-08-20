@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (BOOL)isAsynchronous;
+- (void)markSongAsUsed;
 
 @end
 

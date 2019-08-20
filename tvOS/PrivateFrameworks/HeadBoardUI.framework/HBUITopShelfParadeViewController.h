@@ -10,7 +10,7 @@
 #import <HeadBoardUI/TVCollectionViewDelegateFullScreenLayout-Protocol.h>
 #import <HeadBoardUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class HBUITopShelfParadePageControlsView, NSIndexPath, NSMapTable, NSString, NSTimer, UITapGestureRecognizer, __UIDiffableDataSource;
+@class HBUITopShelfParadePageControlsView, NSIndexPath, NSMapTable, NSString, NSTimer, UITapGestureRecognizer, UIView, __UIDiffableDataSource;
 @protocol HBUITopShelfParadeContent, HBUITopShelfParadeViewControllerDelegate;
 
 @interface HBUITopShelfParadeViewController : UICollectionViewController <TVCollectionViewDelegateFullScreenLayout, UIGestureRecognizerDelegate, HBUITopShelfParadeContentCoordinatorDelegate>
@@ -23,22 +23,28 @@
     NSMapTable *_contentCoordinators;
     __UIDiffableDataSource *_diffableDataSource;
     HBUITopShelfParadePageControlsView *_pageControlsView;
+    NSTimer *_hidePageControlsViewTimer;
     UITapGestureRecognizer *_showContentViewsPressGestureRecognizer;
     UITapGestureRecognizer *_showContentViewsTapGestureRecognizer;
     UITapGestureRecognizer *_hideContentViewsGestureRecognizer;
-    NSTimer *_pageControlViewFadeTimer;
     NSIndexPath *_centerItemIndexPath;
+    NSString *_focusedItemIdentifier;
     NSTimer *_autoAdvanceTimer;
+    UIView *_loopScrollSnapshotView;
+    NSIndexPath *_loopScrollSnapshotIndexPath;
 }
 
+@property(readonly, nonatomic) NSIndexPath *loopScrollSnapshotIndexPath; // @synthesize loopScrollSnapshotIndexPath=_loopScrollSnapshotIndexPath;
+@property(readonly, nonatomic) UIView *loopScrollSnapshotView; // @synthesize loopScrollSnapshotView=_loopScrollSnapshotView;
 @property(readonly, nonatomic) NSTimer *autoAdvanceTimer; // @synthesize autoAdvanceTimer=_autoAdvanceTimer;
 @property(readonly, nonatomic) _Bool didFinishFirstLoop; // @synthesize didFinishFirstLoop=_didFinishFirstLoop;
+@property(readonly, nonatomic) NSString *focusedItemIdentifier; // @synthesize focusedItemIdentifier=_focusedItemIdentifier;
 @property(readonly, nonatomic) NSIndexPath *centerItemIndexPath; // @synthesize centerItemIndexPath=_centerItemIndexPath;
-@property(retain, nonatomic, getter=_pageControlViewFadeTimer, setter=_setHidePageControlsViewTimer:) NSTimer *pageControlViewFadeTimer; // @synthesize pageControlViewFadeTimer=_pageControlViewFadeTimer;
 @property(readonly, nonatomic) UITapGestureRecognizer *hideContentViewsGestureRecognizer; // @synthesize hideContentViewsGestureRecognizer=_hideContentViewsGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *showContentViewsTapGestureRecognizer; // @synthesize showContentViewsTapGestureRecognizer=_showContentViewsTapGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *showContentViewsPressGestureRecognizer; // @synthesize showContentViewsPressGestureRecognizer=_showContentViewsPressGestureRecognizer;
-@property(readonly, nonatomic, getter=_pageControlsView) HBUITopShelfParadePageControlsView *pageControlsView; // @synthesize pageControlsView=_pageControlsView;
+@property(readonly, nonatomic) NSTimer *hidePageControlsViewTimer; // @synthesize hidePageControlsViewTimer=_hidePageControlsViewTimer;
+@property(readonly, nonatomic) HBUITopShelfParadePageControlsView *pageControlsView; // @synthesize pageControlsView=_pageControlsView;
 @property(readonly, nonatomic) __UIDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(readonly, nonatomic) NSMapTable *contentCoordinators; // @synthesize contentCoordinators=_contentCoordinators;
 @property(readonly, nonatomic) long long contentStyle; // @synthesize contentStyle=_contentStyle;
@@ -48,22 +54,23 @@
 - (void).cxx_destruct;
 - (void)paradeBackgroundViewControllerDidFinish:(id)arg1;
 - (void)paradeContentViewController:(id)arg1 didSelectAction:(id)arg2 forItem:(id)arg3;
-- (void)_setPageControlsViewHidden:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
-- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)collectionView:(id)arg1 layout:(id)arg2 didCenterCellAtIndexPath:(id)arg3;
+- (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (_Bool)collectionView:(id)arg1 shouldUpdateFocusInContext:(id)arg2;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
+- (_Bool)_containsFocus;
+- (_Bool)_canScheduleHidePageControlsViewTimer;
+- (id)_paradeCollectionView;
 - (void)_centerItemIndexPathDidChange;
 - (void)_updateParadeMediaPlayerState;
-- (id)_collectionViewCenterItemIndexPath;
-- (void)_paradeContentDidChange:(_Bool)arg1;
-- (void)_updateCollectionViewLayoutWithStandardHideShowAnimator;
+- (void)_setPageControlsViewHidden:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_paradeContentDidChange:(id)arg1 animated:(_Bool)arg2;
 - (id)_paradeItemAtIndexPath:(id)arg1;
 - (id)_currentContentViewController;
 - (id)_currentBackgroundViewController;
@@ -72,15 +79,12 @@
 - (id)_existingBackgroundViewControllerForItemAtIndexPath:(id)arg1;
 - (id)_existingContentCoordinatorForItemAtIndexPath:(id)arg1;
 - (CDUnknownBlockType)_diffableDataSourceCollectionViewCellProvider;
-- (void)_hidePageControlsViewTimerDidFire;
-- (void)_scheduleHidePageControlsViewTimer;
-- (id)_paradeLayout;
+- (void)_scheduleHidePageControlsViewTimerIfNeeded;
 - (void)_hideContentViews:(id)arg1;
 - (void)_showContentViews:(id)arg1;
 - (id)_contentCoordinatorForCell:(id)arg1 withContentOptions:(unsigned long long)arg2;
 - (id)_newCollectionViewWithFrame:(struct CGRect)arg1 collectionViewLayout:(id)arg2;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;

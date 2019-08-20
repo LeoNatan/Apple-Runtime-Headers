@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class DNDSPairedDevice;
+#import <DoNotDisturbServer/DNDSSysdiagnoseDataProvider-Protocol.h>
+
+@class DNDSPairedDevice, NSString;
 @protocol DNDSPairedDeviceStateMonitorDelegate, OS_dispatch_queue;
 
-@interface DNDSPairedDeviceStateMonitor : NSObject
+@interface DNDSPairedDeviceStateMonitor : NSObject <DNDSSysdiagnoseDataProvider>
 {
     NSObject<OS_dispatch_queue> *_queue;
     int _pairedDeviceDidChangeNotificationToken;
@@ -20,6 +22,8 @@
 @property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) DNDSPairedDevice *pairedDevice; // @synthesize pairedDevice=_pairedDevice;
 - (void).cxx_destruct;
+- (id)sysdiagnoseDataForDate:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *sysdiagnoseDataIdentifier; // @dynamic sysdiagnoseDataIdentifier;
 - (void)_pairedDeviceStateChanged:(id)arg1;
 - (void)_endMonitoringForChanges;
 - (void)_beginMonitoringForChanges;
@@ -28,6 +32,12 @@
 - (void)resume;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

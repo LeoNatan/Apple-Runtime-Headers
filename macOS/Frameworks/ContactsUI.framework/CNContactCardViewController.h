@@ -11,13 +11,14 @@
 #import <ContactsUI/CNAvatarViewDelegate-Protocol.h>
 #import <ContactsUI/CNContactDetailsViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNContactNameViewControllerDelegate-Protocol.h>
+#import <ContactsUI/CNContactSharingEnabledWarningViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNEditAutorizationViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNUIShareKitTransitionProvider-Protocol.h>
 
 @class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContainer, CNUIEnvironment, CNUIMeContactMonitor, CNUIUserActionListDataSource, NSArray, NSColor, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
 @protocol CNCancelable, CNContactCardViewControllerDelegate, CNContactCardViewControllerLogger, CNContactCardViewRefreshStrategy, CNInhibitor, CNSchedulerProvider;
 
-@interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNEditAutorizationViewControllerDelegate, CNUIShareKitTransitionProvider>
+@interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNEditAutorizationViewControllerDelegate, CNContactSharingEnabledWarningViewControllerDelegate, CNUIShareKitTransitionProvider>
 {
     BOOL _editable;
     BOOL _selectable;
@@ -69,7 +70,6 @@
     NSColor *_backgroundColor;
 }
 
-+ (id)contactFromPerson:(id)arg1;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
@@ -182,6 +182,7 @@
 @property(readonly, nonatomic) ABPerson *person;
 @property(readonly, nonatomic) double desiredHeight;
 - (void)informDelegateOfDeisredHeightChange;
+- (void)forceEndOfEditingSession:(id)arg1;
 - (void)reloadData;
 - (void)reloadPreservingNoteInsertionPoint;
 - (void)updateWidgets;

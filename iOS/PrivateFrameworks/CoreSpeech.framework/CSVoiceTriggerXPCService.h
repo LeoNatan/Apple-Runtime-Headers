@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSCoreSpeechDaemonStateMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerXPCClientDelegate-Protocol.h>
 
 @class CSVoiceTriggerXPCClient, NSMutableSet, NSString;
 @protocol CSVoiceTriggerXPCServiceDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerXPCService : NSObject <CSCoreSpeechDaemonStateMonitorDelegate>
+@interface CSVoiceTriggerXPCService : NSObject <CSVoiceTriggerXPCClientDelegate>
 {
     _Bool _isPhraseSpotterBypassed;
     NSObject<OS_dispatch_queue> *_queue;
@@ -29,7 +29,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)_teardownXPCClientIfNeeded;
-- (void)coreSpeechDaemonStateMonitor:(id)arg1 didReceiveStateChanged:(unsigned long long)arg2;
+- (void)voiceTriggerXPCClient:(id)arg1 didDisconnect:(_Bool)arg2;
 - (id)_createXPCClientConnectionIfNeeded;
 - (void)notifyServiceConnectionLostForCoreSpeechDaemon;
 - (void)notifyVoiceTriggeredSiriSessionCancelledForCoreSpeechDaemon;

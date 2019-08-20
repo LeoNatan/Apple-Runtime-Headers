@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ISEmbossedEffect : NSObject <ISEffect>
 {
     double _range;

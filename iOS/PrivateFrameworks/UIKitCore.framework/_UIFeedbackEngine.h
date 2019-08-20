@@ -62,8 +62,8 @@
 - (void)_internal_cooldown;
 - (void)_cooldown;
 - (void)_internal_prewarmEngine;
-- (void)_internal_prewarmWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_prewarmWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_internal_prewarm:(_Bool)arg1 andPerformWhenPrewarmed:(CDUnknownBlockType)arg2;
+- (void)_prewarm:(_Bool)arg1 andPerformWhenPrewarmed:(CDUnknownBlockType)arg2;
 - (void)_internal_stopWarmingFeedbacks:(id)arg1;
 - (void)_stopWarmingFeedbacks:(id)arg1;
 - (void)_internal_startWarmingFeedbacks:(id)arg1;
@@ -74,8 +74,8 @@
 - (void)_internal_deactivate;
 - (void)_deactivate;
 - (void)_internal_activateEngine;
-- (void)_internal_activateWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_activateWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_internal_activate:(_Bool)arg1 andPerformWhenRunning:(CDUnknownBlockType)arg2;
+- (void)_activate:(_Bool)arg1 andPerformWhenRunning:(CDUnknownBlockType)arg2;
 - (void)_internal_serviceBlocksForState:(long long)arg1 withSuccess:(_Bool)arg2;
 - (void)_internal_performAtState:(long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_internal_updateSuspension;

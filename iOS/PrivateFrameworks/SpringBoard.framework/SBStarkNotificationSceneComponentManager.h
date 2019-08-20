@@ -25,6 +25,7 @@
 - (id)activeConfigurationForScreen:(id)arg1;
 @property(readonly, nonatomic) id <SBStarkNotificationsConfiguring> activeConfiguration;
 - (void)didDismissNotificationRequest:(id)arg1;
+- (void)willPresentNotificationRequest:(id)arg1;
 - (void)executeAction:(id)arg1 forNotificationRequest:(id)arg2;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
 @property(readonly, nonatomic) SBStarkNotificationSceneComponent *activeComponent;

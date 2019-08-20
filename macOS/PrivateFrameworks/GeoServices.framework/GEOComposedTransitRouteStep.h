@@ -6,7 +6,7 @@
 
 #import <GeoServices/GEOComposedRouteStep.h>
 
-@class GEOPBTransitHall, GEOPBTransitStop, GEOTransitStep, NSArray, NSString;
+@class GEOPBTransitHall, GEOPBTransitStop, GEOTransitScheduleInfo, GEOTransitStep, NSArray, NSString;
 @protocol GEOTransitArtworkDataSource, GEOTransitRoutingIncidentMessage, GEOTransitVehicleEntries;
 
 @interface GEOComposedTransitRouteStep : GEOComposedRouteStep
@@ -62,6 +62,7 @@
 - (id)startingStop;
 @property(readonly, nonatomic) GEOComposedTransitRouteStep *nextTransitStep;
 @property(readonly, nonatomic) GEOComposedTransitRouteStep *previousTransitStep;
+@property(readonly, nonatomic) GEOTransitScheduleInfo *scheduleInfo;
 @property(readonly, nonatomic) id <GEOTransitVehicleEntries> vehicleEntries;
 - (id)instructions;
 @property(readonly, nonatomic) GEOTransitStep *transitStep; // @synthesize transitStep=_transitStep;

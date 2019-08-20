@@ -12,13 +12,11 @@ __attribute__((visibility("hidden")))
 @interface WDHeartRhythmSectionHeaderView : UITableViewHeaderFooterView
 {
     UILabel *_titleLabel;
-    NSLayoutConstraint *_titleFirstBaselineToTopConstraint;
     NSLayoutConstraint *_bottomToTitleLastBaselineConstraint;
 }
 
 + (id)defaultReuseIdentifier;
 @property(retain, nonatomic) NSLayoutConstraint *bottomToTitleLastBaselineConstraint; // @synthesize bottomToTitleLastBaselineConstraint=_bottomToTitleLastBaselineConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *titleFirstBaselineToTopConstraint; // @synthesize titleFirstBaselineToTopConstraint=_titleFirstBaselineToTopConstraint;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titleText;

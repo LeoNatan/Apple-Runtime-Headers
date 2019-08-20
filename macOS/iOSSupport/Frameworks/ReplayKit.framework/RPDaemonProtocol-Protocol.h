@@ -9,6 +9,7 @@
 @class NSArray, NSData, NSDictionary, NSString, NSURL, NSXPCListenerEndpoint;
 
 @protocol RPDaemonProtocol <NSObject>
+- (oneway void)consumeSandboxExtension:(NSString *)arg1;
 - (oneway void)appAudioCaptureOutputHandler:(NSDictionary *)arg1;
 - (oneway void)reportCameraUsage:(long long)arg1;
 - (oneway void)setBroadcastURL:(NSString *)arg1;

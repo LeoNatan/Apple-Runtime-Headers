@@ -84,6 +84,7 @@
 - (_Bool)isPaired;
 - (_Bool)isPartiallyConnected;
 - (void)checkPartiallyPairedWithCompletion:(CDUnknownBlockType)arg1;
+- (void)shouldRelinquishForPartialConnection:(CDUnknownBlockType)arg1;
 - (_Bool)isScanning;
 - (void)stopSearching;
 - (_Bool)isBluetoothAvailable;

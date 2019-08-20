@@ -6,14 +6,9 @@
 
 #import <MobileAsset/MAAsset.h>
 
-@class NSData;
-
 @interface MAAsset (HDHealthDaemonAdditions)
-+ (id)hd_assetWithAttributesData:(id)arg1;
 @property(readonly, nonatomic) int hd_compatibilityVersion;
 @property(readonly, nonatomic) long long hd_contentVersion;
 @property(readonly, nonatomic) int hd_availability;
-- (id)hd_storableAttributes;
-@property(readonly, copy, nonatomic) NSData *hd_storableAttributesData;
 @end
 

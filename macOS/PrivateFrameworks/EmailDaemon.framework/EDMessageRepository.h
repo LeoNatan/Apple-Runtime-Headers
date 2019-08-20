@@ -32,6 +32,7 @@
     EDFetchController *_fetchController;
 }
 
++ (id)signpostLog;
 + (id)log;
 @property(readonly, nonatomic) EDFetchController *fetchController; // @synthesize fetchController=_fetchController;
 @property(readonly, nonatomic) id <EMUserProfileProvider> userProfileProvider; // @synthesize userProfileProvider=_userProfileProvider;
@@ -80,6 +81,7 @@
 - (void)performQuery:(id)arg1 limit:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithMessagePersistence:(id)arg1 threadPersistence:(id)arg2 messageChangeManager:(id)arg3 hookRegistry:(id)arg4 mailboxPersistence:(id)arg5 userProfileProvider:(id)arg6 fetchController:(id)arg7;
+- (unsigned long long)signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

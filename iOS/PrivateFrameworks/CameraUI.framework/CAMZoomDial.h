@@ -6,72 +6,99 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMZoomDialDotsView, NSArray, NSString, UIImageView;
+@class CAMZoomDialDotsView, NSArray, NSObject, NSString, UIImageView;
+@protocol OS_dispatch_queue;
 
 @interface CAMZoomDial : UIView
 {
     _Bool _expanded;
+    _Bool _hideLabels;
     _Bool __backgroundViewUpdateNeeded;
-    _Bool __labelAndDotUpdateNeeded;
-    double _minimumZoomFactor;
-    double _maximumZoomFactor;
+    _Bool __labelsUpdateNeeded;
+    _Bool __dotsUpdateNeeded;
+    NSArray *_zoomFactors;
     double _minAvailableZoomFactor;
+    double _maxAvailableZoomFactor;
     double _zoomFactor;
+    double _contentMaskingHeight;
     double _contractionDistance;
     long long _orientation;
     NSString *_contentSizeCategory;
     UIImageView *__backgroundView;
-    UIView *__dotAndLabelContainerView;
+    UIView *__contentContainerView;
+    UIView *__labelContainerView;
     NSArray *__labels;
     CAMZoomDialDotsView *__activeDots;
     CAMZoomDialDotsView *__inactiveDots;
+    NSObject<OS_dispatch_queue> *__imageGenerationQueue;
+    long long __backgroundImageJobIdentifier;
 }
 
-@property(nonatomic, getter=_isLabelAndDotUpdateNeeded, setter=_setLabelAndDotUpdateNeeded:) _Bool _labelAndDotUpdateNeeded; // @synthesize _labelAndDotUpdateNeeded=__labelAndDotUpdateNeeded;
++ (id)_createBackgroundImageForBounds:(struct CGRect)arg1 dialCenter:(struct CGPoint)arg2 radius:(double)arg3 backgroundAlpha:(double)arg4 borderStrokeWidth:(double)arg5;
++ (struct CGPoint)_pointForOffsetAngle:(double)arg1 dialCenter:(struct CGPoint)arg2 radius:(double)arg3;
++ (double)_offsetAngleForZoomFactor:(double)arg1 relativeToCurrentZoomFactor:(_Bool)arg2 currentZoomFactor:(double)arg3 min:(double)arg4 max:(double)arg5 signedAngleDeltaForZoomRange:(double)arg6;
++ (double)_normalizedValueForZoomFactor:(double)arg1 min:(double)arg2 max:(double)arg3;
+@property(nonatomic, setter=_setBackgroundImageJobIdentifier:) long long _backgroundImageJobIdentifier; // @synthesize _backgroundImageJobIdentifier=__backgroundImageJobIdentifier;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_imageGenerationQueue; // @synthesize _imageGenerationQueue=__imageGenerationQueue;
+@property(nonatomic, getter=_isDotsUpdateNeeded, setter=_setDotsUpdateNeeded:) _Bool _dotsUpdateNeeded; // @synthesize _dotsUpdateNeeded=__dotsUpdateNeeded;
+@property(nonatomic, getter=_isLabelsUpdateNeeded, setter=_setLabelsUpdateNeeded:) _Bool _labelsUpdateNeeded; // @synthesize _labelsUpdateNeeded=__labelsUpdateNeeded;
 @property(nonatomic, getter=_isBackgroundViewUpdateNeeded, setter=_setBackgroundViewUpdateNeeded:) _Bool _backgroundViewUpdateNeeded; // @synthesize _backgroundViewUpdateNeeded=__backgroundViewUpdateNeeded;
 @property(readonly, nonatomic) CAMZoomDialDotsView *_inactiveDots; // @synthesize _inactiveDots=__inactiveDots;
 @property(readonly, nonatomic) CAMZoomDialDotsView *_activeDots; // @synthesize _activeDots=__activeDots;
 @property(retain, nonatomic, setter=_setLabels:) NSArray *_labels; // @synthesize _labels=__labels;
-@property(readonly, nonatomic) UIView *_dotAndLabelContainerView; // @synthesize _dotAndLabelContainerView=__dotAndLabelContainerView;
+@property(readonly, nonatomic) UIView *_labelContainerView; // @synthesize _labelContainerView=__labelContainerView;
+@property(readonly, nonatomic) UIView *_contentContainerView; // @synthesize _contentContainerView=__contentContainerView;
 @property(readonly, nonatomic) UIImageView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
+@property(nonatomic) _Bool hideLabels; // @synthesize hideLabels=_hideLabels;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) double contractionDistance; // @synthesize contractionDistance=_contractionDistance;
+@property(nonatomic) double contentMaskingHeight; // @synthesize contentMaskingHeight=_contentMaskingHeight;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
+@property(nonatomic) double maxAvailableZoomFactor; // @synthesize maxAvailableZoomFactor=_maxAvailableZoomFactor;
 @property(nonatomic) double minAvailableZoomFactor; // @synthesize minAvailableZoomFactor=_minAvailableZoomFactor;
-@property(nonatomic) double maximumZoomFactor; // @synthesize maximumZoomFactor=_maximumZoomFactor;
-@property(nonatomic) double minimumZoomFactor; // @synthesize minimumZoomFactor=_minimumZoomFactor;
+@property(retain, nonatomic) NSArray *zoomFactors; // @synthesize zoomFactors=_zoomFactors;
 - (void).cxx_destruct;
 - (double)_labelRotationAngleForOrientation;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (id)_createDotImage;
-- (id)_createBackgroundImage;
 - (void)_updateBackroundImageViewIfNeeded;
 - (void)removeInternalAnimationsAndSetToCurrentPresentationValues:(_Bool)arg1;
+- (void)_layoutSubviewsWithDots;
+- (void)_layoutBackgroundAndContainerWithContentInset:(double)arg1;
 - (void)layoutSubviews;
+- (void)_invalidateImagesForViewSize;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
+- (struct CGPoint)_textCenterForOffsetAngle:(double)arg1 assumeExpanded:(_Bool)arg2;
+- (struct CGPoint)textCenterForZoomFactor:(double)arg1 assumeExpanded:(_Bool)arg2;
 - (struct CGPoint)_dotCenterForOffsetAngle:(double)arg1 assumeExpanded:(_Bool)arg2;
 - (struct CGPoint)_dotCenterForZoomFactor:(double)arg1 assumeExpanded:(_Bool)arg2 relativeToCurrentZoomFactor:(_Bool)arg3;
-- (struct CGPoint)dotCenterForZoomFactor:(double)arg1 assumeExpanded:(_Bool)arg2;
+- (struct CGPoint)_pointForOffsetAngle:(double)arg1 radialInset:(double)arg2 assumeExpanded:(_Bool)arg3;
 - (double)offsetAngleForPoint:(struct CGPoint)arg1;
 - (double)zoomFactorForOffsetAngle:(double)arg1;
 - (double)_offsetAngleForZoomFactor:(double)arg1 relativeToCurrentZoomFactor:(_Bool)arg2;
 - (double)offsetAngleForZoomFactor:(double)arg1;
 - (double)_signedAngleDeltaForZoomRange;
-- (double)_borderStrokeWidth;
+@property(readonly, nonatomic) double angleDeltaForZoomRange;
+@property(readonly, nonatomic) double _backgroundAlpha;
+@property(readonly, nonatomic) double _borderStrokeWidth;
 @property(readonly, nonatomic) double dialBorderWidth;
 @property(readonly, nonatomic) double dotCenterInset;
 @property(readonly, nonatomic) struct CGPoint dialCenter;
-- (double)_fullRadiusInset;
-- (double)_fullRadius;
+@property(readonly, nonatomic) double _fullRadiusInset;
+@property(readonly, nonatomic) double _fullRadius;
 - (void)_updateDots;
 - (void)_updateLabels;
-- (void)_updateLabelsAndDotsIfNeeded;
+- (void)_updateContentIfNeeded;
 @property(readonly, nonatomic) double _radiusDelta;
 - (double)zoomFactorForNormalizedValue:(double)arg1;
 - (double)normalizedValueForZoomFactor:(double)arg1;
+@property(readonly, nonatomic) double maximumZoomFactor;
+@property(readonly, nonatomic) double minimumZoomFactor;
+@property(readonly, nonatomic) _Bool _useDots;
+- (void)_commonCAMZoomDialInitialization;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -6,9 +6,10 @@
 
 #import <AssetsLibraryServices/NSObject-Protocol.h>
 
-@class NSString;
+@class NSArray, NSDictionary, NSString;
 
 @protocol PLPhotoLibraryPathManagerDCIM <NSObject>
+- (NSDictionary *)pathsGroupedByAssetBasePathFromFilePaths:(NSArray *)arg1;
 - (NSString *)assetBaseFilenameForAdjustmentFilePath:(NSString *)arg1;
 - (NSString *)persistedAlbumDataDirectoryCreateIfNeeded:(BOOL)arg1 error:(id *)arg2;
 - (NSString *)iTunesPhotosSyncCurrentLibraryUUIDPath;

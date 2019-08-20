@@ -27,6 +27,7 @@
 {
     _Bool _shouldPreemptSTAR;
     _Bool _userInteractionInProgress;
+    _Bool _bannerPresentationPending;
     id <NCNotificationAlertDestinationDelegate> _delegate;
     SBAssistantController *_assistantController;
     SBLockScreenManager *_lockScreenManager;
@@ -38,7 +39,6 @@
     NSObject<OS_dispatch_source> *_replaceTimer;
     NSObject<OS_dispatch_source> *_dismissTimer;
     NSObject<OS_dispatch_queue> *_bannerPresentationQueue;
-    NSObject<OS_dispatch_semaphore> *_bannerPresentationSemaphore;
     NSObject<OS_dispatch_semaphore> *_pendingTransitionSemaphore;
     UIApplicationSceneDeactivationAssertion *_resignActiveAssertion;
     SBAppStatusBarSettingsAssertion *_systemStatusBarAssertion;
@@ -68,7 +68,7 @@
 @property(retain, nonatomic) SBAppStatusBarSettingsAssertion *systemStatusBarAssertion; // @synthesize systemStatusBarAssertion=_systemStatusBarAssertion;
 @property(retain, nonatomic) UIApplicationSceneDeactivationAssertion *resignActiveAssertion; // @synthesize resignActiveAssertion=_resignActiveAssertion;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *pendingTransitionSemaphore; // @synthesize pendingTransitionSemaphore=_pendingTransitionSemaphore;
-@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *bannerPresentationSemaphore; // @synthesize bannerPresentationSemaphore=_bannerPresentationSemaphore;
+@property(nonatomic, getter=_isBannerPresentationPending, setter=_setBannerPresentationPending:) _Bool bannerPresentationPending; // @synthesize bannerPresentationPending=_bannerPresentationPending;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *bannerPresentationQueue; // @synthesize bannerPresentationQueue=_bannerPresentationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *dismissTimer; // @synthesize dismissTimer=_dismissTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *replaceTimer; // @synthesize replaceTimer=_replaceTimer;
@@ -130,7 +130,6 @@
 - (_Bool)_shouldScreenTimeSuppressNotificationsForBundleIdentifier:(id)arg1;
 - (_Bool)_shouldScreenTimeSuppressNotificationRequest:(id)arg1;
 - (_Bool)_isInSetupMode;
-- (_Bool)_isPendingBannerPresentation;
 - (_Bool)_isPresentingBannerPreemptingSTAR;
 - (_Bool)_isPresentingBannerPreventingAutomaticLock;
 - (_Bool)_isPresentingBannerWithHiddenPreview;
@@ -166,6 +165,7 @@
 - (void)notificationViewControllerDidEndUserInteraction:(id)arg1;
 - (void)notificationViewControllerDidDismiss:(id)arg1;
 - (void)notificationViewControllerWillDismiss:(id)arg1;
+- (void)notificationViewControllerDidPresent:(id)arg1;
 - (void)notificationViewControllerWillPresent:(id)arg1;
 - (void)longLookDidDismissForNotificationViewController:(id)arg1;
 - (void)longLookWillDismissForNotificationViewController:(id)arg1;
@@ -176,7 +176,6 @@
 - (id)hideHomeAffordanceAnimationSettingsForNotificationViewController:(id)arg1;
 - (id)notificationViewController:(id)arg1 keyboardAssertionForGestureWindow:(id)arg2;
 - (id)notificationViewController:(id)arg1 auxiliaryOptionsContentProviderForNotificationRequest:(id)arg2 withLongLook:(_Bool)arg3;
-- (void)notificationViewControllerIsReadyToBePresented:(id)arg1;
 - (void)notificationViewController:(id)arg1 shouldFinishLongLookTransitionForTrigger:(long long)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (id)notificationViewController:(id)arg1 staticContentProviderForNotificationRequest:(id)arg2;
 - (_Bool)notificationViewControllerShouldAllowDragInteraction:(id)arg1;

@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)wallpaperCache;
 + (id)systemAppPersistenteCache;
 - (void)warmupImageForKey:(id)arg1;
 - (id)imageForKey:(id)arg1 cacheOptions:(unsigned long long)arg2 generateImageWithBlockIfNecessary:(CDUnknownBlockType)arg3;

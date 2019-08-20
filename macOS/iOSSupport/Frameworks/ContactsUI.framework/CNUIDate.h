@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)dateByNormalizingToGMT:(id)arg1;
 + (id)dateFromComponents:(id)arg1 destinationCalendar:(id)arg2;
 + (id)yearlessComponentsFromDate:(id)arg1 calendar:(id)arg2;
-+ (id)yearlessComponentsFromGMTDate:(id)arg1;
++ (id)yearlessGregorianComponentsFromGMTDate:(id)arg1;
 + (id)componentsFromDate:(id)arg1 sourceCalendar:(id)arg2 destinationCalendar:(id)arg3;
 + (id)GMTComponentsFromDate:(id)arg1 sourceCalendar:(id)arg2;
 + (id)gregorianCalendarGMT;

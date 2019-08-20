@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIWindow.h>
 
-@class CAContext, NSUUID, UIColor, UITraitCollection, _UIHostedWindowHostingHandle;
+@class CAContext, NSUUID, UIColor, UITraitCollection, _UIHostedWindowHostingHandle, _UIHostedWindowMacComponent;
 @protocol _UIHostedWindowDelegate;
 
 @interface _UIHostedWindow : UIWindow
@@ -16,6 +16,7 @@
     long long _hostTintAdjustmentMode;
     UIColor *__hostTintColor;
     UITraitCollection *_hostTraitCollection;
+    _UIHostedWindowMacComponent *_macComponent;
     NSUUID *_extensionIdentifier;
     CDUnknownBlockType _frameChangeHandler;
     id <_UIHostedWindowDelegate> __hostedWindowDelegate;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic, setter=_setHostTintColor:) UIColor *_hostTintColor; // @synthesize _hostTintColor=__hostTintColor;
 @property(nonatomic, setter=_setHostTintAdjustmentMode:) long long _hostTintAdjustmentMode; // @synthesize _hostTintAdjustmentMode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _UIHostedWindowMacComponent *_macComponent; // @synthesize _macComponent;
 @property(readonly, nonatomic) __weak CAContext *layerContext;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2;

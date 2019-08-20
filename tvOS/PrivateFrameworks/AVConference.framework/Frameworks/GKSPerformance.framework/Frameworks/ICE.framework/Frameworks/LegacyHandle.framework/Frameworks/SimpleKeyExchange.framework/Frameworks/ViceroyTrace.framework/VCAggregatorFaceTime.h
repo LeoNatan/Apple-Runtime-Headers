@@ -98,6 +98,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _callTotalWifiTxDataBytes;
     unsigned long long _callTotalWifiRxDataBytes;
     unsigned int _callTotalDuplicationDuration;
+    unsigned int _wifiToCellHandoverCount;
+    unsigned int _cellToWifiHandoverCount;
     _Bool _isDuplicationEnabled;
     _Bool _remoteFaceTimeSwitchesAvailable;
     VCHistogram *_callVideoSwitchPeriodHistogram;
@@ -137,8 +139,7 @@ __attribute__((visibility("hidden")))
 - (void)startNewSegment;
 - (_Bool)isDuplicationEnabledForSegment:(id)arg1;
 - (id)duplicationIndicator;
-- (id)connectionTypeIndicator;
-- (id)interfaceTypeIndicator:(_Bool)arg1;
+- (_Bool)isLocalInterfaceTypeForSegment:(id)arg1 equalTo:(id)arg2;
 - (void)reset;
 - (void)flushCurrentSegment;
 - (id)aggregatedSessionReport;

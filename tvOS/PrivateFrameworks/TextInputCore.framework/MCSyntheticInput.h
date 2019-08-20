@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) NSArray *syllables; // @synthesize syllables=_syllables;
 @property(readonly, nonatomic) NSString *committedText; // @synthesize committedText=_committedText;
 - (void).cxx_destruct;
+- (id)externalSuffix;
 - (int)syllableIndex:(int *)arg1;
 @property(readonly, nonatomic) NSString *text;
 @property(readonly, nonatomic) NSString *uncommittedText;

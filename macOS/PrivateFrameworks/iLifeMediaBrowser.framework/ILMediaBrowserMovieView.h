@@ -19,10 +19,10 @@
     NSWindow *_flagWindow;
 }
 
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)draggedImage:(id)arg1 beganAt:(struct CGPoint)arg2;
 - (void)draggedImage:(id)arg1 movedTo:(struct CGPoint)arg2;
 - (void)draggedImage:(id)arg1 endedAt:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
-- (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
 - (void)_dragSelectionWithEvent:(id)arg1;
 - (id)menuForEvent:(id)arg1;
 - (void)keyDown:(id)arg1;

@@ -33,6 +33,7 @@
     _Bool _continuousColorSamplingEnabled;
     _Bool _wallpaperAnimationEnabled;
     _Bool _rotating;
+    _Bool _hasVideo;
     _Bool _sharesContentsAcrossVariants;
     id <SBFLegibilitySettingsProviderDelegate> _delegate;
     UIView *_contentView;
@@ -56,6 +57,7 @@
 @property(nonatomic) long long logicalContentOrientation; // @synthesize logicalContentOrientation=_logicalContentOrientation;
 @property(nonatomic) unsigned long long transformOptions; // @synthesize transformOptions=_transformOptions;
 @property(nonatomic) _Bool sharesContentsAcrossVariants; // @synthesize sharesContentsAcrossVariants=_sharesContentsAcrossVariants;
+@property(readonly, nonatomic) _Bool hasVideo; // @synthesize hasVideo=_hasVideo;
 @property(readonly, copy, nonatomic) NSString *wallpaperName; // @synthesize wallpaperName=_wallpaperName;
 @property(nonatomic, getter=isRotating) _Bool rotating; // @synthesize rotating=_rotating;
 @property(nonatomic) _Bool wallpaperAnimationEnabled; // @synthesize wallpaperAnimationEnabled=_wallpaperAnimationEnabled;
@@ -126,6 +128,7 @@
 - (void)resetLegibilitySettingsForAverageColor:(id)arg1;
 - (void)updateLegibilitySettingsForAverageColor:(id)arg1;
 - (void)_setLegibilitySettings:(id)arg1 notify:(_Bool)arg2;
+- (_Bool)_dontUseShadow;
 - (id)_primaryColorOverride;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setVariant:(long long)arg1 withAnimationFactory:(id)arg2;

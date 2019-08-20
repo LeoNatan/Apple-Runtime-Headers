@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_auxiliaryServiceConnection;
     NSXPCConnection *_remoteViewMarshalConnection;
     unsigned char _bridgePhase;
+    unsigned long long _advanceBeyondRunPhaseCount;
     unsigned long long _reportControllerWindow;
     CDUnknownBlockType _hostWindowKeynessReactionPending;
     CDUnknownBlockType _remoteViewFirstResponderReactionPending;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _retainReleaseLock;
     unsigned int _accessoryViewContainsFirstResponder:1;
     unsigned int _didConfigForRemoteViewControllerInterface:1;
+    unsigned int _deferResizeRequestsUntilAfterRunPhase:1;
     unsigned int _didSetView:1;
     unsigned int _hadAccessibilityParent:1;
     unsigned int _hasActivatedTSM:1;
@@ -215,9 +217,9 @@ __attribute__((visibility("hidden")))
 - (void)wrap:(id)arg1 sendEvent:(id)arg2;
 - (void)cancelActionHitRemoteView:(CDUnknownBlockType)arg1;
 - (BOOL)cancelActionHitRemoteView;
-- (void)bootstrap:(CDStruct_278a5119)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)bootstrap:(CDStruct_4172db96)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)concretizedWindowBackgroundColor;
-- (void)_bootstrap:(const CDStruct_278a5119 *)arg1 replyData:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_bootstrap:(const CDStruct_4172db96 *)arg1 replyData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)connectToAuxiliaryService:(id)arg1 window:(unsigned int)arg2;
 @property(readonly) struct CGSize sizeHint;
 - (void)didSetView;
@@ -228,7 +230,7 @@ __attribute__((visibility("hidden")))
 - (void)remoteViewResignedFirstResponderInActiveApp:(BOOL)arg1 inFavorOf:(unsigned char)arg2;
 - (void)remoteViewChangedFirstResponder:(CDUnknownBlockType)arg1;
 - (void)remoteViewResignedFirstResponderInFavorOfAccessoryView:(BOOL)arg1;
-- (unsigned char)remoteViewBecameFirstResponder:(unsigned long long)arg1 ignoreDirection:(BOOL)arg2 forWindowWithKey:(BOOL)arg3 inVisibleWindow:(BOOL)arg4;
+- (unsigned char)remoteViewBecameFirstResponder:(unsigned long long)arg1 forWindowWithKey:(BOOL)arg2 inVisibleWindow:(BOOL)arg3;
 - (void)remoteViewBecameFirstResponder:(unsigned long long)arg1 forWindowWithKey:(BOOL)arg2 inActiveApp:(BOOL)arg3 inVisibleWindow:(BOOL)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)obtainFirstResponderState:(CDUnknownBlockType)arg1;
 - (unsigned char)setFirstResponderForRemoteView:(unsigned long long)arg1;

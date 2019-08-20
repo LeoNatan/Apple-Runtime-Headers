@@ -6,17 +6,10 @@
 
 #import <SiriActivation/SiriActivationSource.h>
 
-@class BSServiceConnection;
-
 @interface SiriTestingSource : SiriActivationSource
 {
-    struct os_unfair_lock_s _lock;
-    BSServiceConnection *_connection;
 }
 
-@property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
-@property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)activateWithContext:(id)arg1;
 - (void)configureConnection;
 - (id)init;

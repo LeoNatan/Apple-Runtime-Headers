@@ -16,6 +16,7 @@
 @property(nonatomic) struct CGRect normalizedCropRect; // @synthesize normalizedCropRect=_normalizedCropRect;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(nonatomic) int contentMode; // @synthesize contentMode=_contentMode;
+- (_Bool)isTargetingMaximumSizeWithFullSizedWidth:(int)arg1 height:(int)arg2;
 - (struct CGSize)requestSizeFromFullSizedWidth:(int)arg1 height:(int)arg2;
 - (id)description;
 - (id)shortDescription;

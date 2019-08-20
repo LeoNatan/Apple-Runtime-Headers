@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 {
     struct TriStateBool fLoggedIntoICloud;
     struct TriStateBool fICloudDriveEnabled;
-    struct TriStateBool fUserHasDeclinedUpgrade;
     struct TriStateBool fFirstSyncComplete;
     struct TriStateBool fSynchingDesktop;
     struct TriStateBool fSynchingDocuments;
@@ -42,7 +41,6 @@ __attribute__((visibility("hidden")))
 + (_Bool)iCloudAccountManagementAvailable;
 + (_Bool)showICloudDriveContent;
 + (_Bool)firstSyncCompleted;
-+ (_Bool)userHasDeclinedUpgrade;
 + (_Bool)userIsSynchingDocuments;
 + (id)singleton;
 + (void)postOverQuotaChange;
@@ -55,10 +53,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)desktopInTheCloud;
 - (_Bool)isOverQuota;
 - (_Bool)firstSyncHasCompleted;
-- (_Bool)hasDeclinedUpgrade;
 - (_Bool)isSignedIntoICloud;
 - (_Bool)isSynchingDocuments;
-- (pair_5f6a4f40)updateLoginState:(_Bool)arg1 userHasDeclinedUpgrade:(_Bool)arg2 firstSyncDownComplete:(_Bool)arg3 syncDesktop:(_Bool)arg4 syncDocuments:(_Bool)arg5 loggedIntoIcloud:(_Bool)arg6;
+- (pair_5f6a4f40)updateLoginState:(_Bool)arg1 firstSyncDownComplete:(_Bool)arg2 syncDesktop:(_Bool)arg3 syncDocuments:(_Bool)arg4 loggedIntoIcloud:(_Bool)arg5;
 - (void)computeLoginState;
 - (void)computeIsOverQuota;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;

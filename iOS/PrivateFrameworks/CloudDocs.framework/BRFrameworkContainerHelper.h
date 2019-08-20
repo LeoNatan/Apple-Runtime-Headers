@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)sharedFolderForURL:(id)arg1 error:(id *)arg2;
 - (id)itemIDForURL:(id)arg1 error:(id *)arg2;
 - (unsigned short)br_capabilityToMoveFromURL:(id)arg1 toNewParent:(id)arg2 error:(id *)arg3;
 - (id)fetchContainerForURL:(id)arg1;

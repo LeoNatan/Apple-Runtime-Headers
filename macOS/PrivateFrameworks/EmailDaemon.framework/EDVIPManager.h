@@ -37,6 +37,7 @@
 - (id)_cloudKeyForIdentifier:(id)arg1;
 - (void)_mergeVIPs;
 - (void)_updateLocalWithCloud:(id)arg1 refresh:(BOOL)arg2;
+- (void)_synchronizeKVStore;
 - (void)_keyValueStoreChanged:(id)arg1;
 - (void)_updateCloudWithLocal;
 - (id)_serializedData;

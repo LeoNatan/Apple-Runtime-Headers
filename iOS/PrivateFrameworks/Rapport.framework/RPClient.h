@@ -35,6 +35,7 @@
 - (void)diagnosticShow:(id)arg1 level:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)diagnosticLogControl:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)diagnosticCommand:(id)arg1 params:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addOrUpdateIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)activateAssertionWithIdentifier:(id)arg1;
 - (void)_invalidated;
 - (void)invalidate;

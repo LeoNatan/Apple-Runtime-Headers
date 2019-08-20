@@ -14,10 +14,12 @@
 
 @interface SBSRemoteAlertPresentationTarget : NSObject <BSDescriptionProviding, BSXPCCoding, NSSecureCoding>
 {
+    _Bool _shouldDismissOnUILock;
     BSProcessHandle *_targetProcess;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool shouldDismissOnUILock; // @synthesize shouldDismissOnUILock=_shouldDismissOnUILock;
 @property(readonly, nonatomic) BSProcessHandle *targetProcess; // @synthesize targetProcess=_targetProcess;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

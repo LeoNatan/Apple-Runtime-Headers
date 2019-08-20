@@ -17,7 +17,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @dynamic playbackArchive;
 @property(retain, nonatomic) NSNumber *volume; // @dynamic volume;
-@property(nonatomic) long long options; // @dynamic options;
 @property(nonatomic) long long state; // @dynamic state;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @dynamic mediaProfiles;
 

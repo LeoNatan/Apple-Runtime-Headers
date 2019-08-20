@@ -43,8 +43,10 @@ __attribute__((visibility("hidden")))
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)scrollToItemAtIndex:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 @property(readonly, nonatomic) CNMeCardSharingOnboardingAvatarCarouselItem *selectedItem;
+- (void)notifyDelegateOfUpdateToCenterMostItem;
 - (id)monogramImageItemWithContact:(id)arg1;
 - (id)contactImageItemWithContact:(id)arg1;
 - (void)reloadForUpdatedMonogram;

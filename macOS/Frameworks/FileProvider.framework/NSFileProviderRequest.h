@@ -13,13 +13,13 @@
 @interface NSFileProviderRequest : NSObject <NSSecureCoding>
 {
     NSUUID *_requestingApplicationIdentifier;
-    NSURL *_requestingExecutable;
     NSUUID *_requestIdentifier;
+    NSURL *_requestingExecutable;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(copy, nonatomic) NSURL *requestingExecutable; // @synthesize requestingExecutable=_requestingExecutable;
+@property(retain, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSUUID *requestingApplicationIdentifier; // @synthesize requestingApplicationIdentifier=_requestingApplicationIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

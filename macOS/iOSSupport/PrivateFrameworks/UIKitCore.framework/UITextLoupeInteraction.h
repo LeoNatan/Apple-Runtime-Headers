@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)setupDelayedLoupeActionWithInitialPoint:(struct CGPoint)arg1;
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)updateVisibilityOffsetForGesture:(id)arg1;
+@property(nonatomic) BOOL strongerBiasAgainstUp;
 @property(nonatomic) BOOL shouldUseLineThreshold;
 - (void)assertInitialVerticalOffset:(double)arg1 fromTopOfCaret:(double)arg2;
 - (void)_createGestureTuningIfNecessary;
@@ -52,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 @property(readonly, nonatomic) UIResponder *responder;
 - (void)didMoveToView:(id)arg1;
+- (void)willMoveToView:(id)arg1;
 - (id)initWithConfigurator:(Class)arg1;
 
 @end

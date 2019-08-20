@@ -15,11 +15,8 @@
 
 @property(nonatomic) __weak id <BKSecurePreferencesDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (BOOL)_parentalPreferenceBoolForKey:(id)arg1 iTunesKey:(id)arg2;
 - (BOOL)_parentalPreferenceIsForcedForKey:(id)arg1;
 - (void)_systemProfilePreferencesDidChange:(id)arg1;
-@property(readonly, nonatomic) BOOL explicitContentRestrictedForced;
-@property(readonly, nonatomic) BOOL bookstoreDisabledForced;
 @property(readonly, nonatomic) BOOL explicitContentRestricted;
 @property(readonly, nonatomic) BOOL bookstoreDisabled;
 - (void)dealloc;

@@ -11,6 +11,8 @@
     double _defaultUserInterfaceTimeoutDuration;
 }
 
++ (id)timeoutTitles;
++ (id)timeoutPossibleValues;
 + (id)sharedInstance;
 @property(nonatomic) double defaultUserInterfaceTimeoutDuration; // @synthesize defaultUserInterfaceTimeoutDuration=_defaultUserInterfaceTimeoutDuration;
 - (void)setDefaultValues;

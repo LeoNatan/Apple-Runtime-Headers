@@ -13,6 +13,7 @@
 - (NSProgress *)copyItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchFileSharingItemsForApp:(NSString *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchFileSharingAppsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
+- (void)fetchIPodVoiceOverKitStatusForDevice:(AMPDevice *)arg1 WithReply:(void (^)(BOOL, BOOL, NSError *))arg2;
 - (void)ejectDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)revealDeviceInFinder:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)resetWarningsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
@@ -61,9 +62,9 @@
 - (void)isSyncInProgressForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)isSyncAllowedForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)fetchTotalsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSDictionary *, NSError *))arg2;
-- (void)setAccessibilityPrefs:(AMPDeviceAccessibilityPrefs *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)setAccessibilityPrefs:(AMPDeviceAccessibilityPrefs *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *, BOOL))arg3;
 - (void)fetchAccessibilityPrefsForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceAccessibilityPrefs *, NSError *))arg2;
-- (void)setSyncPrefs:(AMPDeviceSyncPrefs *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)setSyncPrefs:(AMPDeviceSyncPrefs *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *, BOOL))arg3;
 - (void)fetchSettingsForDevice:(AMPDevice *)arg1 withReply:(void (^)(AMPDeviceInfo *, AMPDeviceSyncPrefs *, NSError *))arg2;
 - (void)configureNewDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 @end

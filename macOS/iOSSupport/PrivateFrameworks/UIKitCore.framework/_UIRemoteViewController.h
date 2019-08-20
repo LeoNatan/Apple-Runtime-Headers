@@ -24,6 +24,8 @@
     unsigned int _serviceAccessibilityServerPort;
     unsigned long long _serviceRegisteredScrollToTopViewCount;
     int _applicationDeactivationReason;
+    BOOL _systemAppIsLocked;
+    BOOL _observesLockNotifications;
     id _viewControllerOperatorProxy;
     _UIAsyncInvocation *_viewControllerOperatorHalfDisconnectionInvocation;
     id _textEffectsOperatorProxy;
@@ -64,6 +66,7 @@
     long long _proxiedEditAlertToken;
     long long _preferredAdaptivityStyle;
     unsigned long long _preferredScreenEdgesDeferringSystemGestures;
+    BOOL _prefersHomeIndicatorAutoHidden;
     BOOL _isUnderlappingStatusBar;
     BOOL __shouldUpdateRemoteTextEffectsWindow;
     long long _preferredUserInterfaceStyle;
@@ -109,9 +112,9 @@
 - (void)_appearanceInvocationsDidChange:(id)arg1;
 - (BOOL)shouldPropagateAppearanceCustomizations;
 - (id)_appearanceSource;
-- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(BOOL)arg1 immediately:(BOOL)arg2 duration:(double)arg3 timingCurve:(id)arg4;
-- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
-- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(BOOL)arg1 immediately:(BOOL)arg2 offset:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5;
+- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
+- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1 offset:(double)arg2;
 - (void)_setSheetConfiguration:(id)arg1;
 - (id)_sheetPresentationController;
 - (void)viewDidInvalidateIntrinsicContentSize;
@@ -128,6 +131,8 @@
 - (void)_traitCollectionDidChange:(id)arg1;
 - (void)__viewServiceDidUpdatePreferredUserInterfaceStyle:(long long)arg1;
 - (long long)preferredUserInterfaceStyle;
+- (void)__viewServiceDidUpdatePrefersHomeIndicatorAutoHidden:(BOOL)arg1;
+- (BOOL)prefersHomeIndicatorAutoHidden;
 - (void)__viewServiceDidUpdatePreferredScreenEdgesDeferringSystemGestures:(long long)arg1;
 - (unsigned long long)preferredScreenEdgesDeferringSystemGestures;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(long long)arg1 animationSettings:(id)arg2;
@@ -175,7 +180,12 @@
 - (void)_updateTouchGrabbingView;
 - (void)_uirvc_windowBecameKey:(id)arg1;
 - (void)_uirvc_windowResignedKey:(id)arg1;
-- (void)_applicationDidAddDeactivationReason:(id)arg1;
+- (void)_updateLockStatusHostingVisibility;
+- (void)setObservesLockNotifications:(BOOL)arg1;
+- (BOOL)observesLockNotifications;
+- (void)_systemApplicationDidUnlock:(id)arg1;
+- (void)_systemApplicationWillLock:(id)arg1;
+- (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_applicationWillDeactivate:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_snapshotAndRemoveTextEffectsRemoteView;

@@ -21,9 +21,8 @@
 - (id)eventDictionary;
 - (void)dealloc;
 - (id)initWithDefinition:(id)arg1;
-@property(readonly, nonatomic) NSString *utilizedScheme;
-@property(readonly, nonatomic) __weak ICApp *app;
-- (id)appIdentifier;
+@property(readonly, nonatomic) ICApp *app;
+@property(readonly, nonatomic) NSString *appIdentifier;
 
 @end
 

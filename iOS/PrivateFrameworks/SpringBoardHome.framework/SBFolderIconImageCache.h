@@ -48,6 +48,7 @@
 @property(readonly, nonatomic) unsigned long long numberOfCachedImages;
 - (void)updateCachedImagesForFolderIcon:(id)arg1 afterChangeToContainedImageForIcon:(id)arg2 treatmentsOnly:(_Bool)arg3;
 - (id)genericMiniGridImage;
+- (void)informObserversOfUpdateForFolderIcon:(id)arg1;
 - (void)rebuildImagesForFolderIcon:(id)arg1;
 - (id)gridCellImageForIcon:(id)arg1;
 - (id)imageForPageAtIndex:(unsigned long long)arg1 inFolderIcon:(id)arg2;

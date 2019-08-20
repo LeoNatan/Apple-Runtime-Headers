@@ -8,21 +8,20 @@
 
 #import <WorkflowKit/WFCloudKitItem-Protocol.h>
 
-@class NSArray, NSString;
+@class CKRecordID, NSArray, NSString;
 
 @interface WFWorkflowOrdering : NSObject <WFCloudKitItem>
 {
+    CKRecordID *_identifier;
     NSArray *_orderedWorkflowIDs;
 }
 
-+ (struct NSDictionary *)keyMap;
-+ (id)ignoredKeys;
-+ (struct NSDictionary *)references;
++ (id)properties;
 + (id)recordType;
 @property(copy, nonatomic) NSArray *orderedWorkflowIDs; // @synthesize orderedWorkflowIDs=_orderedWorkflowIDs;
+@property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)setIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSString *identifier;
+- (id)initWithZoneID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

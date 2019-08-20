@@ -27,8 +27,9 @@
     CDUnknownBlockType _collectionViewCellConfigurationHandler;
     _UIDiffableDataSourceViewUpdater *_viewUpdater;
     NSUUID *_dataSourceGeneration;
-    NSObject<OS_dispatch_queue> *_updateQueue;
-    int _outstandingEnqueuedUpdateCount;
+    NSObject<OS_dispatch_queue> *_applyQueue;
+    int _outstandingApplyCount;
+    NSObject<OS_dispatch_queue> *_snapshotQueue;
     unsigned int _mutationQueueSource;
     NSOrderedSet *_identifiers;
     NSOrderedSet *_sections;
@@ -42,8 +43,9 @@
 @property(retain, nonatomic) NSOrderedSet *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSOrderedSet *identifiers; // @synthesize identifiers=_identifiers;
 @property unsigned int mutationQueueSource; // @synthesize mutationQueueSource=_mutationQueueSource;
-@property(readonly, nonatomic) int outstandingEnqueuedUpdateCount; // @synthesize outstandingEnqueuedUpdateCount=_outstandingEnqueuedUpdateCount;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *snapshotQueue; // @synthesize snapshotQueue=_snapshotQueue;
+@property(readonly, nonatomic) int outstandingApplyCount; // @synthesize outstandingApplyCount=_outstandingApplyCount;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *applyQueue; // @synthesize applyQueue=_applyQueue;
 @property(retain, nonatomic) NSUUID *dataSourceGeneration; // @synthesize dataSourceGeneration=_dataSourceGeneration;
 @property(retain, nonatomic) _UIDiffableDataSourceViewUpdater *viewUpdater; // @synthesize viewUpdater=_viewUpdater;
 @property(copy, nonatomic) CDUnknownBlockType collectionViewCellConfigurationHandler; // @synthesize collectionViewCellConfigurationHandler=_collectionViewCellConfigurationHandler;
@@ -76,6 +78,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)_commitStateAtomicallyWithIdentifiers:(id)arg1 sections:(id)arg2 dataSourceSnapshot:(id)arg3 shouldAdvanceGenerationalUUID:(_Bool)arg4 shouldCopy:(_Bool)arg5;
 - (id)_snapshotWithHandlerAtomic:(CDUnknownBlockType)arg1;
 - (_Bool)_canApplySnapshotUpdateWithoutDiffing:(id)arg1;
 - (void)_commitNewDataSource:(id)arg1 withViewUpdates:(id)arg2 completion:(CDUnknownBlockType)arg3;

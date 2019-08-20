@@ -8,13 +8,16 @@
 
 #import <Navigation/MNCommuteDestinationObserver-Protocol.h>
 #import <Navigation/MNCommuteDestinationUpdaterDelegate-Protocol.h>
+#import <Navigation/MNLocationManagerObserver-Protocol.h>
+#import <Navigation/MNSuggestionsManagerObserver-Protocol.h>
 
 @class MNCommuteDestinationUpdater, MNLocation, MNLocationHistory, MNNavigationTraceManager, MNObserverHashTable, MNSuggestionsManager, NSArray, NSMutableDictionary, NSString, NSTimer;
 @protocol MNCommuteSessionObserver;
 
-@interface MNCommuteSession : NSObject <MNCommuteDestinationUpdaterDelegate, MNCommuteDestinationObserver>
+@interface MNCommuteSession : NSObject <MNCommuteDestinationUpdaterDelegate, MNCommuteDestinationObserver, MNLocationManagerObserver, MNSuggestionsManagerObserver>
 {
     MNObserverHashTable<MNCommuteSessionObserver> *_observers;
+    MNSuggestionsManager *_suggestionsManager;
     NSMutableDictionary *_suggestions;
     NSArray *_rankedDestinations;
     id _rankedDestinationsSync;
@@ -23,7 +26,6 @@
     unsigned long long _currentSuggestionID;
     MNLocation *_lastLocation;
     MNLocationHistory *_locationHistory;
-    MNSuggestionsManager *_suggestionsManager;
     unsigned long long _commuteSessionState;
     MNCommuteDestinationUpdater *_comparisonDestinationStartTime;
     unsigned long long _requestedCommuteSessionState;
@@ -33,8 +35,14 @@
 @property(nonatomic) __weak MNCommuteDestinationUpdater *comparisonDestinationStartTime; // @synthesize comparisonDestinationStartTime=_comparisonDestinationStartTime;
 @property(readonly, nonatomic) MNNavigationTraceManager *traceManager; // @synthesize traceManager=_traceManager;
 @property(nonatomic) unsigned long long commuteSessionState; // @synthesize commuteSessionState=_commuteSessionState;
-@property(nonatomic) __weak MNSuggestionsManager *suggestionsManager; // @synthesize suggestionsManager=_suggestionsManager;
 - (void).cxx_destruct;
+- (void)suggestionsManager:(id)arg1 didAddSuggestion:(id)arg2;
+- (void)locationManagerDidResumeLocationUpdates:(id)arg1;
+- (void)locationManagerDidPauseLocationUpdates:(id)arg1;
+- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (void)locationManagerDidReset:(id)arg1;
+- (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
+- (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)commuteDestination:(id)arg1 didChangeInvalid:(BOOL)arg2;
 - (void)destinationUpdaterDidArrive:(id)arg1;
 - (void)destinationUpdater:(id)arg1 didUpdateDestination:(id)arg2;
@@ -46,6 +54,7 @@
 - (void)stopETAUpdates;
 - (void)startETAUpdatesWithInterval:(double)arg1;
 - (void)stop;
+- (void)start;
 @property(readonly) NSString *suggestionsDescription;
 @property(readonly, nonatomic) NSArray *rankedDestinations;
 - (void)_updateSuggestionsManagerState;

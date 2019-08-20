@@ -20,7 +20,8 @@
 - (void)_addInsertedRange:(struct _NSRange)arg1;
 - (void)_addRemovedIndexes:(id)arg1;
 - (void)_addRemovedIndex:(unsigned long long)arg1;
-- (void)_addAdditionalRemovedIndex:(unsigned long long)arg1;
+- (void)_addAdditionalRemovedIndexSet:(id)arg1 afterChangesIndex:(id)arg2;
+- (void)_addAdditionalRemovedIndex:(unsigned long long)arg1 afterChangesIndex:(unsigned long long)arg2;
 - (void)_removeInsertForRemovedIndexAfterChanges:(unsigned long long)arg1;
 - (void)_becomeNonIncremental;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -36,12 +36,13 @@
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
 - (id)_transactionBlockForAccessoriesWithStaleClientIdentifier;
+- (void)_unregisterInterestForFirewallRulesForProductData:(id)arg1 firmwareVersion:(id)arg2;
 - (void)_unregisterInterestForFirewallRulesForAccessory:(id)arg1;
 - (void)_registerInterestForFirewallRulesForAccessory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_deregisterForTargetNetworkProtectionChangesToAccessory:(id)arg1;
 - (void)_registerForTargetNetworkProtectionChangesToAccessory:(id)arg1;
-- (void)_deregisterForReachabilityChangesToAccessory:(id)arg1;
-- (void)_registerForReachabilityChangesToAccessory:(id)arg1;
+- (void)_deregisterForChangesToManagedAccessory:(id)arg1;
+- (void)_registerForChangesToManagedAccessory:(id)arg1;
 - (void)_fetchFirewallRulesForAccessory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_getNetworkConfigurationForAccessory:(id)arg1 targetProtectionMode:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateClientConfigurationForAccessory:(id)arg1 protectionMode:(int)arg2 clientIdentifier:(id)arg3;
@@ -62,6 +63,7 @@
 - (void)handleHomeNetworkProtectionChanged:(id)arg1;
 - (void)handleAccessoryTargetNetworkProtectionChanged:(id)arg1;
 - (void)handleAccessoryLocallyReachable:(id)arg1;
+- (void)handleAccessoryFirmwareVersionUpdated:(id)arg1;
 - (void)handleAccessoryRemoved:(id)arg1;
 - (void)handleAccessoryAdded:(id)arg1;
 - (void)_handleRouterAccessoryReachable:(id)arg1;

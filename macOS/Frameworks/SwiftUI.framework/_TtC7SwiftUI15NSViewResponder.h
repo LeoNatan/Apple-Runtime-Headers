@@ -9,6 +9,7 @@
 @interface _TtC7SwiftUI15NSViewResponder : _TtC7SwiftUI13ViewResponder
 {
     // Error parsing type: , name: hostView
+    // Error parsing type: , name: focusAccessibilityNode
 }
 
 @end

@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (void)_dismissPicker;
 - (id)_pickerResponseForPerson:(id)arg1;
 - (void)showPicker:(id)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

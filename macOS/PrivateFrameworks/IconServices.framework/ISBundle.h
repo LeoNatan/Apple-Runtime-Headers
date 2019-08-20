@@ -8,6 +8,7 @@
 
 @class NSURL;
 
+__attribute__((visibility("hidden")))
 @interface ISBundle : NSObject
 {
     struct __CFBundle *_bundle;

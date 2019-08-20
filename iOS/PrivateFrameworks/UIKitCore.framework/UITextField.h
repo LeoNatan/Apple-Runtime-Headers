@@ -111,6 +111,7 @@
         unsigned int overridePasscodeStyle:1;
         unsigned int shouldResignWithoutUpdate:1;
         unsigned int blurEnabled:1;
+        unsigned int visualEffectViewEnabled:1;
         unsigned int disableFocus:1;
         unsigned int disableRemoteTextEditing:1;
         unsigned int allowsAttachments:1;
@@ -387,6 +388,8 @@
 - (void)setSelectionRange:(struct _NSRange)arg1;
 - (struct _NSRange)selectionRange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_setVisualEffectViewEnabled:(_Bool)arg1 backgroundColor:(id)arg2;
+- (_Bool)_visualEffectViewEnabled;
 - (void)_setBlurEnabled:(_Bool)arg1;
 - (_Bool)_blurEnabled;
 - (void)_forceObscureAllText;

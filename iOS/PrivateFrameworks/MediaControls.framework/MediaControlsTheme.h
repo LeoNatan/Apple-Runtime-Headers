@@ -11,5 +11,21 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)appleTVRemote;
++ (id)airplayVideoImage;
++ (id)volumeMaxImage;
++ (id)volumeMinImage;
++ (id)hamburgerImage;
++ (id)starFillImage;
++ (id)starImage;
++ (id)captionsImage;
++ (id)goForwardImageForTimeInterval:(double)arg1;
++ (id)goBackwardImageForTimeInterval:(double)arg1;
++ (id)backwardImage;
++ (id)forwardImage;
++ (id)stopImage;
++ (id)pauseImage;
++ (id)playImage;
+
 @end
 

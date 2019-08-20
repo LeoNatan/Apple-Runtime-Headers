@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     double _lastSignalTimestamp;
     double _estimatedDisplayLinkDrift;
     long long _lastSignalType;
+    unsigned long long _lastSignalReason;
     _Bool _needsSignalOnDisplayLink;
     id <UIEventFetcherSink> _eventFetcherSink;
     double _commitTimeForTouchEvents;

@@ -17,6 +17,7 @@
     id _splitViewControllerPrivateData;
 }
 
+- (BOOL)validateToolbarItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)toggleSidebar:(id)arg1;

@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) _Bool hf_isProgrammableSwitch;
 @property(readonly, nonatomic) _Bool hf_isNotificationSupportedCamera;
 @property(readonly, nonatomic) _Bool hf_isNetworkRouter;
+@property(readonly, nonatomic) _Bool hf_isTelevision;
 @property(readonly, nonatomic) _Bool hf_isCamera;
 @property(readonly, nonatomic) _Bool hf_isVisibleAsBridge;
 @property(readonly, nonatomic) _Bool hf_isBridge;

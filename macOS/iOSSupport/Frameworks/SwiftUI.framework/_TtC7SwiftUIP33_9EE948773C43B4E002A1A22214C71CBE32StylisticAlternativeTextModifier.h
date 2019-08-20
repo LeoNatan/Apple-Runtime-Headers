@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SwiftUI/_TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE15AnyTextModifier.h>
+#import <SwiftUI/_TtC7SwiftUI15AnyTextModifier.h>
 
-@interface _TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE32StylisticAlternativeTextModifier : _TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE15AnyTextModifier
+@interface _TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE32StylisticAlternativeTextModifier : _TtC7SwiftUI15AnyTextModifier
 {
     // Error parsing type: , name: value
 }

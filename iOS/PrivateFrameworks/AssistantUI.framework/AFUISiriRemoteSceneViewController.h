@@ -55,6 +55,7 @@
 - (void)siriDidActivateFromSource:(long long)arg1;
 - (void)siriWillActivateFromSource:(long long)arg1;
 - (void)updateToPresentationWithIdentifier:(id)arg1 presentationProperties:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)extendCurrentTTSRequested;
 - (void)servicePresentedIntentWithBundleId:(id)arg1;
 - (void)serviceViewControllerRequestsDismissal:(CDUnknownBlockType)arg1;
 - (void)serviceViewControllerRequestsPresentation:(CDUnknownBlockType)arg1;
@@ -74,6 +75,7 @@
 - (void)serviceWillStartTest:(id)arg1;
 - (void)serviceDidEndTaptoEdit;
 - (void)serviceWillBeginTapToEdit;
+- (void)serviceViewControllerRequestKeyboardForTapToEditWithCompletion:(CDUnknownBlockType)arg1;
 - (void)serviceDidResetTextInput;
 - (void)serviceDidRequestKeyboard:(_Bool)arg1 minimized:(_Bool)arg2;
 - (void)serviceDidRequestKeyboard:(_Bool)arg1;
@@ -108,7 +110,6 @@
 - (id)sessionDelegate;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_noteSceneDidInvalidate;
 - (void)startHostingSceneForConfiguration:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

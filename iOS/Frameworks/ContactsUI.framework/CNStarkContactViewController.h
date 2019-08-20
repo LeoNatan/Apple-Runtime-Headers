@@ -37,7 +37,7 @@
 - (id)displayHeaderView;
 - (void)updateFontColors;
 - (_Bool)hasTableViewHeaderFirstSection;
-- (void)setupTableHeaderView;
+- (struct CGSize)setupTableHeaderView;
 - (_Bool)shouldDisplayAvatarHeaderView;
 - (void)initializeTableViewsForHeaderHeight;
 - (_Bool)isGeminiAvailable;

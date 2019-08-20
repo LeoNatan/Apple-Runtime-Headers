@@ -9,7 +9,7 @@
 #import <iCloudQuotaUI/UIScrollViewDelegate-Protocol.h>
 #import <iCloudQuotaUI/UITextViewDelegate-Protocol.h>
 
-@class ICQLink, NSArray, NSString, UIActivityIndicatorView, UIButton, UIColor, UIFont, UIImageView, UILabel, UILayoutGuide, UIScrollView, UIView, _ICQTextView, _ICQUpgradeOfferPageSpecification, _UIBackdropView;
+@class ICQLink, NSArray, NSString, UIActivityIndicatorView, UIButton, UIColor, UIFont, UIImageView, UILabel, UILayoutGuide, UIScrollView, UIView, UIVisualEffectView, _ICQTextView, _ICQUpgradeOfferPageSpecification;
 @protocol ICQPageDelegate;
 
 @interface ICQUpgradeOfferView : ICQPageView <UITextViewDelegate, UIScrollViewDelegate>
@@ -34,8 +34,7 @@
     UIView *_headerView;
     UIView *_footerView;
     UIView *_trayView;
-    _UIBackdropView *_lightTrayBackdrop;
-    _UIBackdropView *_ultraLightTrayBackdrop;
+    UIVisualEffectView *_blurBackdrop;
     UILayoutGuide *_scrollVisibleLayoutGuide;
     UILayoutGuide *_aboveSpinnerLayoutGuide;
     UILayoutGuide *_belowSpinnerLayoutGuide;
@@ -46,8 +45,7 @@
 @property(readonly, nonatomic) UILayoutGuide *belowSpinnerLayoutGuide; // @synthesize belowSpinnerLayoutGuide=_belowSpinnerLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *aboveSpinnerLayoutGuide; // @synthesize aboveSpinnerLayoutGuide=_aboveSpinnerLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *scrollVisibleLayoutGuide; // @synthesize scrollVisibleLayoutGuide=_scrollVisibleLayoutGuide;
-@property(readonly, nonatomic) _UIBackdropView *ultraLightTrayBackdrop; // @synthesize ultraLightTrayBackdrop=_ultraLightTrayBackdrop;
-@property(readonly, nonatomic) _UIBackdropView *lightTrayBackdrop; // @synthesize lightTrayBackdrop=_lightTrayBackdrop;
+@property(readonly, nonatomic) UIVisualEffectView *blurBackdrop; // @synthesize blurBackdrop=_blurBackdrop;
 @property(readonly, nonatomic) UIView *trayView; // @synthesize trayView=_trayView;
 @property(readonly, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;

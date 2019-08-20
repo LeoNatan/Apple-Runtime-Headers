@@ -11,6 +11,8 @@
 @protocol _CPImagesUsagePropensity <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(nonatomic) int totalEngagements;
+@property(nonatomic) float image;
+@property(nonatomic) float querySuggestion;
 @property(nonatomic) float other;
 @property(nonatomic) float recentResult;
 @property(nonatomic) float zkw;

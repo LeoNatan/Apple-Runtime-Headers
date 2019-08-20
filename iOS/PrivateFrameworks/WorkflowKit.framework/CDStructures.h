@@ -131,10 +131,6 @@ struct ListNotifier;
 
 struct Move;
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct NotificationToken {
     struct AtomicSharedPtr<realm::_impl::CollectionNotifier, true> m_notifier;
     unsigned long long m_token;

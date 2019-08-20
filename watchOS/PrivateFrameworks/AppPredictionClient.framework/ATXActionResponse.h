@@ -17,7 +17,6 @@
     NSArray *_shownActionsCache;
     _Bool _containsRouteInternal;
     unsigned char _consumerSubType;
-    _Bool _containsExternalRoute;
     NSUUID *_uuid;
     NSArray *_scoredActions;
     NSDate *_predictionDate;
@@ -35,7 +34,6 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSData *cacheFileData; // @synthesize cacheFileData=_cacheFileData;
-@property(readonly, nonatomic) _Bool containsExternalRoute; // @synthesize containsExternalRoute=_containsExternalRoute;
 @property(readonly, nonatomic) NSString *engagedAppString; // @synthesize engagedAppString=_engagedAppString;
 @property(readonly, nonatomic) unsigned int searchedActionType; // @synthesize searchedActionType=_searchedActionType;
 @property(readonly, nonatomic) NSDate *donatedIntentDate; // @synthesize donatedIntentDate=_donatedIntentDate;
@@ -64,8 +62,9 @@
 - (void)updateWithMatchingIntentDonatedAction:(id)arg1 intentDonationDate:(id)arg2;
 - (void)updateConsumerSubType:(unsigned char)arg1 engagedAction:(id)arg2 shownActions:(id)arg3 feedbackStage:(unsigned int)arg4 explicitlyDismissedActions:(id)arg5 searchedActionType:(unsigned int)arg6 engagedAppString:(id)arg7;
 - (id)initWithScoredActions:(id)arg1 cacheFileData:(id)arg2 consumerSubType:(unsigned char)arg3 error:(id)arg4;
+- (_Bool)containsExternalRoute;
 - (id)routeDestinationTypeString;
-- (void)setRoutableState:(_Bool)arg1;
+- (void)setContainsExternalRoute:(_Bool)arg1;
 
 @end
 

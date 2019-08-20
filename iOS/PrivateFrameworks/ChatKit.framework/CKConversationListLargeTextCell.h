@@ -8,7 +8,6 @@
 
 @class NSArray, NSLayoutConstraint, NSTextAttachment, UIColor, UILayoutGuide;
 
-__attribute__((visibility("hidden")))
 @interface CKConversationListLargeTextCell : CKConversationListCell
 {
     UILayoutGuide *_firstLineLayoutGuide;

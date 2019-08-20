@@ -29,6 +29,7 @@
 - (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
 - (id)newSharedEventWithHandle:(id)arg1;
 - (id)newSharedEventWithMachPort:(unsigned int)arg1;
+- (id)_newSharedEventWithParent:(id)arg1;
 - (id)newSharedEvent;
 - (id)newEvent;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;

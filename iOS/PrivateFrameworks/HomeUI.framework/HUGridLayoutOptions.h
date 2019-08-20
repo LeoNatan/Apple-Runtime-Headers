@@ -103,7 +103,7 @@
 - (double)preferredSectionHeightForNumberOfSceneRows:(unsigned long long)arg1;
 @property(readonly, nonatomic) double largeTitleCellTopMargin;
 @property(readonly, nonatomic) double statusListCellBottomMargin;
-- (double)statusListCellTopMargin:(_Bool)arg1 contentSizeCategory:(id)arg2;
+- (double)statusListCellTopMargin:(_Bool)arg1 forStatusBannerWidth:(double)arg2 havingTitleAndDescription:(id)arg3 contentSizeCategory:(id)arg4;
 @property(readonly, nonatomic) double sectionHeaderCellHeight;
 @property(readonly, nonatomic) double statusListCellHeight;
 @property(readonly, nonatomic) double headlineCellHeight;

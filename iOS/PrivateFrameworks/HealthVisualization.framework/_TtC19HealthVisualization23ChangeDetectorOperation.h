@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: anchor
     // Error parsing type: , name: healthStore
     // Error parsing type: , name: waitForChanges
+    // Error parsing type: , name: includeChangeDetails
     // Error parsing type: , name: query
     // Error parsing type: , name: result
 }

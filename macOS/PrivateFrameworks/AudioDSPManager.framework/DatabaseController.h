@@ -8,7 +8,7 @@
 
 #import <AudioDSPManager/NSSecureCoding-Protocol.h>
 
-@class ADMPersistentContainer, DSPFlavorMOFetchUtil, DeviceConfigurationMOFetchUtil, DeviceFormatMOFetchUtil, HWDSPMOFetchUtil, IOControllerConfigurationMOFetchUtil, IOControllerSemanticMOFetchUtil, IOStreamFormatMOFetchUtil, MediaContentDSPMOFetchUtil, MicrophoneConfigurationMOFetchUtil, NSManagedObjectContext, NSString, PolarPatternMOFetchUtil, PortMOFetchUtil, VPContentDSPMOFetchUtil, VoiceProcessorInfoMOFetchUtil, VolumePolicyMOFetchUtil;
+@class ADMPersistentContainer, DSPFlavorMOFetchUtil, DSPModuleAggregatedControlMOFetchUtil, DSPModuleControlMOFetchUtil, DSPModuleMOFetchUtil, DeviceConfigurationMOFetchUtil, DeviceFormatMOFetchUtil, HWDSPMOFetchUtil, IOControllerConfigurationMOFetchUtil, IOControllerSemanticMOFetchUtil, IOStreamFormatMOFetchUtil, MediaContentDSPMOFetchUtil, MicrophoneConfigurationMOFetchUtil, NSManagedObjectContext, NSString, PolarPatternMOFetchUtil, PortMOFetchUtil, VPContentDSPMOFetchUtil, VoiceProcessorInfoMOFetchUtil, VolumePolicyMOFetchUtil;
 
 __attribute__((visibility("hidden")))
 @interface DatabaseController : NSObject <NSSecureCoding>
@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-@property(retain, nonatomic) ADMPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -37,6 +36,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) IOControllerSemanticMOFetchUtil *ioControllerSemanticMOFetchUtil; // @dynamic ioControllerSemanticMOFetchUtil;
 @property(readonly, nonatomic) IOControllerConfigurationMOFetchUtil *ioControllerConfigurationMOFetchUtil; // @dynamic ioControllerConfigurationMOFetchUtil;
 @property(readonly, nonatomic) HWDSPMOFetchUtil *hwDSPMOFetchUtil; // @dynamic hwDSPMOFetchUtil;
+@property(readonly, nonatomic) DSPModuleControlMOFetchUtil *dspModuleControlMOFetchUtil; // @dynamic dspModuleControlMOFetchUtil;
+@property(readonly, nonatomic) DSPModuleAggregatedControlMOFetchUtil *dspModuleAggregatedControlMOFetchUtil; // @dynamic dspModuleAggregatedControlMOFetchUtil;
+@property(readonly, nonatomic) DSPModuleMOFetchUtil *dspModuleMOFetchUtil; // @dynamic dspModuleMOFetchUtil;
 @property(readonly, nonatomic) DSPFlavorMOFetchUtil *dspFlavorMOFetchUtil; // @dynamic dspFlavorMOFetchUtil;
 @property(readonly, nonatomic) DeviceConfigurationMOFetchUtil *deviceConfigurationMOFetchUtil; // @dynamic deviceConfigurationMOFetchUtil;
 

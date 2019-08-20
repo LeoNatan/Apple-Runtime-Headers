@@ -10,6 +10,6 @@
 
 @protocol DNDSModeAssertionStoreRecordDictionaryEncoding <NSObject>
 + (id)recordForDictionary:(NSDictionary *)arg1 keys:(const CDStruct_0a6492a9 *)arg2;
-- (NSDictionary *)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1;
+- (NSDictionary *)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned int)arg2;
 @end
 

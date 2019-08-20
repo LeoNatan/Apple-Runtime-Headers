@@ -17,6 +17,7 @@
 }
 
 + (Class)layerClass;
++ (float)defaultCornerRadius;
 + (id)buttonWithType:(int)arg1 style:(int)arg2;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;

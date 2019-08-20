@@ -22,7 +22,6 @@
 - (double)offScreenContentScrollDistance;
 - (void)setShouldUseInsetRoundedSections:(_Bool)arg1;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(_Bool)arg2;
-- (unsigned long long)queryIDForIndexPath:(id)arg1;
 - (void)setTableModel:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (id)init;

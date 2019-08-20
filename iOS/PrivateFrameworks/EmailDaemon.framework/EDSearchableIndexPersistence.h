@@ -31,7 +31,7 @@
 - (void).cxx_destruct;
 - (id)_assignIndexedAttachmentItems:(id)arg1 transaction:(long long)arg2 connection:(id)arg3;
 - (id)_identifiersForDeletedAttachmentsUsingConnection:(id)arg1;
-- (id)_attachmentItemsFromAttachmentData:(id)arg1;
+- (id)_attachmentItemsFromAttachmentData:(id)arg1 limit:(unsigned long long)arg2 excludedAttachmentPersistentIDs:(id)arg3;
 - (id)_attachmentDataForItemsRequiringIndexingExcludingIdentifiers:(id)arg1 limit:(unsigned long long)arg2 connection:(id)arg3;
 - (id)_messageIDTransactionIDDictionaryToVerifyUsingConnection:(id)arg1;
 - (id)_identifiersForDeletedMessagesUsingConnection:(id)arg1;

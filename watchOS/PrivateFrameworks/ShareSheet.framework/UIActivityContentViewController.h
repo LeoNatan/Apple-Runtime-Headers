@@ -8,7 +8,7 @@
 
 #import <ShareSheet/UICollectionViewDelegate-Protocol.h>
 
-@class LPLinkMetadata, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSUUID, UICollectionView, UIVisualEffectView, _UICollectionViewDiffableDataSource;
+@class LPLinkMetadata, NSArray, NSDictionary, NSDiffableDataSourceSnapshot, NSMutableDictionary, NSNumber, NSString, NSUUID, UICollectionViewDiffableDataSource, UIVisualEffectView, _UIActivityContentCollectionView;
 @protocol UIActivityContentDelegate;
 
 @interface UIActivityContentViewController : UIViewController <UICollectionViewDelegate>
@@ -21,12 +21,14 @@
     _Bool _contentInstalled;
     id <UIActivityContentDelegate> _delegate;
     UIViewController *_photosCarouselViewController;
+    NSArray *_applicationActivities;
     NSDictionary *_activitiesByUUID;
     NSMutableDictionary *_identifierToProgress;
     NSMutableDictionary *_identifierToPulse;
     NSMutableDictionary *_identifierToSubtitle;
-    UICollectionView *_activityCollectionView;
-    _UICollectionViewDiffableDataSource *_dataSource;
+    _UIActivityContentCollectionView *_activityCollectionView;
+    UICollectionViewDiffableDataSource *_dataSource;
+    NSDiffableDataSourceSnapshot *_currentSnapshot;
     NSUUID *_photosCarouselUUID;
     NSArray *_airDropSlots;
     NSArray *_shareProxies;
@@ -47,12 +49,14 @@
 @property(retain, nonatomic) NSArray *airDropSlots; // @synthesize airDropSlots=_airDropSlots;
 @property(nonatomic) _Bool photosLandscapeMode; // @synthesize photosLandscapeMode=_photosLandscapeMode;
 @property(retain, nonatomic) NSUUID *photosCarouselUUID; // @synthesize photosCarouselUUID=_photosCarouselUUID;
-@property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
-@property(retain, nonatomic) UICollectionView *activityCollectionView; // @synthesize activityCollectionView=_activityCollectionView;
+@property(retain, nonatomic) NSDiffableDataSourceSnapshot *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) _UIActivityContentCollectionView *activityCollectionView; // @synthesize activityCollectionView=_activityCollectionView;
 @property(retain, nonatomic) NSMutableDictionary *identifierToSubtitle; // @synthesize identifierToSubtitle=_identifierToSubtitle;
 @property(retain, nonatomic) NSMutableDictionary *identifierToPulse; // @synthesize identifierToPulse=_identifierToPulse;
 @property(retain, nonatomic) NSMutableDictionary *identifierToProgress; // @synthesize identifierToProgress=_identifierToProgress;
 @property(retain, nonatomic) NSDictionary *activitiesByUUID; // @synthesize activitiesByUUID=_activitiesByUUID;
+@property(retain, nonatomic) NSArray *applicationActivities; // @synthesize applicationActivities=_applicationActivities;
 @property(retain, nonatomic) UIViewController *photosCarouselViewController; // @synthesize photosCarouselViewController=_photosCarouselViewController;
 @property(nonatomic) _Bool sharingCollapsed; // @synthesize sharingCollapsed=_sharingCollapsed;
 @property(nonatomic) _Bool wantsObjectManipulation; // @synthesize wantsObjectManipulation=_wantsObjectManipulation;
@@ -60,19 +64,23 @@
 @property(nonatomic) _Bool configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
 @property(nonatomic) __weak id <UIActivityContentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)isPhotosOrCamera;
+- (_Bool)_presentedInFormSheet;
 - (void)updateProgress:(float)arg1 withTopText:(id)arg2 bottomText:(id)arg3 forNodeWithIdentifier:(id)arg4 shouldPulse:(_Bool)arg5 animated:(_Bool)arg6;
+- (void)_editActionsTapped;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)nextButtonTapped;
 - (void)closeButtonTapped;
 - (void)cancelButtonTapped;
 - (id)_activityWithActivityUUID:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)refreshContent;
 - (void)layoutContentCollectionView:(_Bool)arg1;
-- (void)updateContentWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 activitiesByUUID:(id)arg4 nearbyCountSlotID:(id)arg5;
+- (void)updateContentWithPeopleProxies:(id)arg1 shareProxies:(id)arg2 actionProxies:(id)arg3 activitiesByUUID:(id)arg4 nearbyCountSlotID:(id)arg5 animated:(_Bool)arg6;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureCollectionViewIfNeeded;
 - (id)activityCollectionViewLayout;
 @property(readonly, nonatomic) LPLinkMetadata *headerMetadata;
+- (void)updateHeaderSize;
 - (void)updateHeaderMetadata;
 - (void)configureHeaderViewIfNeeded;
 - (void)viewDidLoad;

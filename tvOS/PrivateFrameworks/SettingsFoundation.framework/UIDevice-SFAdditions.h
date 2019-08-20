@@ -18,6 +18,7 @@
 - (id)sf_deviceSubTypeString;
 - (id)sf_colorCodedSerialNumber;
 - (id)sf_configString;
+- (id)sf_monthAndYearOfManufacture;
 - (unsigned long long)sf_weekOfManufacture;
 - (unsigned long long)sf_yearOfManufacture;
 - (id)sf_serialNumber;

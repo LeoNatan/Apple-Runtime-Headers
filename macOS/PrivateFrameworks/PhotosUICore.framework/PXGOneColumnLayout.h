@@ -69,6 +69,8 @@
 - (void)update;
 @property(readonly, copy) NSString *description;
 - (id)init;
+- (struct CGRect)frameForItem:(long long)arg1 usingInterItemSpacing:(double)arg2;
+@property(nonatomic) BOOL loadItemsOutsideAnchorViewport;
 @property(readonly, nonatomic) struct CGRect loadedItemsRect;
 @property(nonatomic) BOOL hideIncompleteLastRow;
 @property(readonly, nonatomic) long long visualItemShift;

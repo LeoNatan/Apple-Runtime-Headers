@@ -17,7 +17,6 @@
 - (void)handleLearningHint:(int)arg1 forTokenString:(id)arg2 inContext:(id)arg3;
 - (id)generateCandidatesFor:(id)arg1;
 - (void)generateCandidatesFor:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
-- (id)_candidateQueue;
 - (id)init;
 
 @end

@@ -19,6 +19,9 @@
 + (BOOL)_userDefaultEnabledForKey:(id)arg1 defaultValue:(BOOL)arg2;
 + (id)defaultForFeature:(unsigned long long)arg1;
 + (void)setFeature:(unsigned long long)arg1 enabled:(BOOL)arg2;
++ (BOOL)_featureEnabled:(unsigned long long)arg1;
++ (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
++ (void)_registerForDefaultChanges;
 + (BOOL)featureEnabled:(unsigned long long)arg1;
 + (id)log;
 

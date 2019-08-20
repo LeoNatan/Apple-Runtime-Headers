@@ -10,6 +10,7 @@
 {
 }
 
+- (id)subcategoryForCategory:(id)arg1;
 - (id)errorUserInfoForRoutePickerErrorCode:(int)arg1;
 - (id)errorFromRoutePickerError:(id)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;

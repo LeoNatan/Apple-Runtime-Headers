@@ -25,6 +25,7 @@
 @property(nonatomic) _Bool switchState; // @synthesize switchState=_switchState;
 @property(nonatomic) _Bool underlyingCalendarState; // @synthesize underlyingCalendarState=_underlyingCalendarState;
 - (void).cxx_destruct;
+- (_Bool)cellWrapsLongText;
 - (id)descriptionLabelText;
 - (id)cellText;
 - (_Bool)saveStateToCalendar:(id)arg1;

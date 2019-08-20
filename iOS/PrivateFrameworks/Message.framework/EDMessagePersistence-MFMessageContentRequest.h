@@ -8,6 +8,6 @@
 
 @interface EDMessagePersistence (MFMessageContentRequest)
 - (void)setIsMailDropAttachmentPresent:(_Bool)arg1 forMessage:(id)arg2;
-- (_Bool)isMailDropAttachmentPresentForMessage:(id)arg1;
+- (_Bool)isMessageKnownToHaveNoMailDropAttachment:(id)arg1;
 @end
 

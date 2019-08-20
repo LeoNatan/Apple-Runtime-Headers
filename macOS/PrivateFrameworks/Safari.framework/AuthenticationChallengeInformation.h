@@ -11,14 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface AuthenticationChallengeInformation : NSObject
 {
-    NSURLAuthenticationChallenge *_challenge;
     CDUnknownBlockType _completionHandler;
+    NSURLAuthenticationChallenge *_challenge;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSURLAuthenticationChallenge *challenge; // @synthesize challenge=_challenge;
 - (void).cxx_destruct;
+- (void)callCompletionHandlerWithDisposition:(long long)arg1 credential:(id)arg2;
 - (id)initWithAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

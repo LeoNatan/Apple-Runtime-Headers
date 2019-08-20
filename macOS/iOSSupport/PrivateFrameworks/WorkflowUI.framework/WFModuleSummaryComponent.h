@@ -27,7 +27,7 @@
     long long _textAlignment;
 }
 
-+ (id)newWithSummaryFormatString:(id)arg1 parameters:(id)arg2 editableParameters:(id)arg3 states:(id)arg4 processing:(BOOL)arg5 stateWriter:(id)arg6 variableProvider:(id)arg7 variableUIDelegate:(id)arg8 navigationContext:(id)arg9 firstResponderParameterKey:(id)arg10 horizontalPadding:(double)arg11 textAlignment:(long long)arg12 extendSlotBackgroundOffEdges:(BOOL)arg13;
++ (id)newWithSummaryFormatString:(id)arg1 parameters:(id)arg2 editableParameters:(id)arg3 parameterStates:(id)arg4 processing:(BOOL)arg5 stateWriter:(id)arg6 variableProvider:(id)arg7 variableUIDelegate:(id)arg8 navigationContext:(id)arg9 firstResponderParameterKey:(id)arg10 horizontalPadding:(double)arg11 textAlignment:(long long)arg12 extendSlotBackgroundOffEdges:(BOOL)arg13;
 @property(readonly, nonatomic) BOOL extendSlotBackgroundOffEdges; // @synthesize extendSlotBackgroundOffEdges=_extendSlotBackgroundOffEdges;
 @property(readonly, nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(readonly, nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;

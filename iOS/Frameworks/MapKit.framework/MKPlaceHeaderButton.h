@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)setPrimaryButtonTitle:(id)arg1;
 - (id)_primaryButtonColor;
 - (id)_primaryButtonTextColor;
+- (_Bool)_isTintColorWhite;
 - (void)buttonSelected:(id)arg1;
 - (void)applyButtonDefaultConfiguration;
 - (void)infoCardThemeChanged;

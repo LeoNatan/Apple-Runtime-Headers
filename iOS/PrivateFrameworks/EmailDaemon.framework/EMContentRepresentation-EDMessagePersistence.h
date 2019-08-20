@@ -12,7 +12,7 @@
 
 @interface EMContentRepresentation (EDMessagePersistence) <_EMDistantContentRepresentation>
 - (id)requestUpdatedRepresentationWithCompletion:(CDUnknownBlockType)arg1;
-- (id)requestRepresentationForItemWithObjectID:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)requestRepresentationForItemWithObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -122,7 +122,7 @@
 - (void)_updateStyleAttributes;
 - (id)styleAttributesForStyle:(int)arg1;
 - (int)_effectiveStyleFromStyle:(int)arg1;
-- (void)_performWithMatchingCAAnimations:(CDUnknownBlockType)arg1;
+- (void)_performWithInheritedAnimation:(CDUnknownBlockType)arg1;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

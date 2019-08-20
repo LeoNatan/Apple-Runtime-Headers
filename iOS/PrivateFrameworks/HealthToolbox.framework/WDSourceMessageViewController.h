@@ -6,12 +6,13 @@
 
 #import <HealthUI/HKViewController.h>
 
-@class UILabel;
+@class HKSource, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface WDSourceMessageViewController : HKViewController
 {
     UILabel *_messageLabel;
+    HKSource *_source;
     long long _style;
 }
 
@@ -20,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)_updateFont;
-- (id)initWithStyle:(long long)arg1;
+- (id)initWithStyle:(long long)arg1 source:(id)arg2;
 
 @end
 

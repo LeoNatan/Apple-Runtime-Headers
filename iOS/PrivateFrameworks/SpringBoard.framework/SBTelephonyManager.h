@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CoreTelephonyClient, NWSystemPathMonitor, SBAlertItem, SBBluetoothController, STTelephonyStateProvider, STWifiStatusDomain, TUCall;
+#import <SpringBoard/STTelephonyStateObserver-Protocol.h>
+
+@class CoreTelephonyClient, NSString, NWSystemPathMonitor, SBAlertItem, SBBluetoothController, STTelephonyStateProvider, STWifiStatusDomain, TUCall;
 @protocol OS_dispatch_queue;
 
-@interface SBTelephonyManager : NSObject
+@interface SBTelephonyManager : NSObject <STTelephonyStateObserver>
 {
     struct __CTServerConnection *_serverConnection;
     _Bool _containsCellularRadio;
@@ -36,11 +38,19 @@
     STTelephonyStateProvider *_telephonyStateProvider;
     STWifiStatusDomain *_wifiDomain;
     SBBluetoothController *_bluetoothController;
+    NSString *_cachedSlot1CountryCode;
+    NSString *_cachedSlot2CountryCode;
+    NSString *_cachedSlot1SIMStatus;
+    NSString *_cachedSlot2SIMStatus;
 }
 
 + (id)sharedTelephonyManagerCreatingIfNecessary:(_Bool)arg1;
 + (id)sharedTelephonyManager;
 + (struct __CTServerConnection *)defaultTelephonyCenter;
+@property(copy, nonatomic) NSString *cachedSlot2SIMStatus; // @synthesize cachedSlot2SIMStatus=_cachedSlot2SIMStatus;
+@property(copy, nonatomic) NSString *cachedSlot1SIMStatus; // @synthesize cachedSlot1SIMStatus=_cachedSlot1SIMStatus;
+@property(copy, nonatomic) NSString *cachedSlot2CountryCode; // @synthesize cachedSlot2CountryCode=_cachedSlot2CountryCode;
+@property(copy, nonatomic) NSString *cachedSlot1CountryCode; // @synthesize cachedSlot1CountryCode=_cachedSlot1CountryCode;
 @property(readonly, nonatomic) SBBluetoothController *bluetoothController; // @synthesize bluetoothController=_bluetoothController;
 @property(readonly, nonatomic) STWifiStatusDomain *wifiDomain; // @synthesize wifiDomain=_wifiDomain;
 @property(readonly, nonatomic) STTelephonyStateProvider *telephonyStateProvider; // @synthesize telephonyStateProvider=_telephonyStateProvider;
@@ -55,6 +65,8 @@
 - (int)numberOfNetworkTetheredDevices;
 - (_Bool)isNetworkTethering;
 - (id)carrierDisabledApplicationIDs;
+- (void)carrierBundleInfoDidChangeForStateProvider:(id)arg1 slot:(long long)arg2;
+- (void)subscriptionInfoDidChangeForStateProvider:(id)arg1 slot:(long long)arg2;
 - (long long)_subscriptionSlotIfSIMPresent:(long long)arg1;
 - (long long)_anySubscriptionSlotWithSIMPresent;
 - (long long)_dataConnectedSubscriptionSlot;
@@ -127,6 +139,12 @@
 - (id)_backgroundQueryQueue;
 - (id)initWithStateProvider:(id)arg1 wifiDomain:(id)arg2 bluetoothController:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

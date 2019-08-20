@@ -11,15 +11,18 @@
 @interface RLMMigration : NSObject
 {
     struct Schema *_schema;
+    struct unordered_map<NSString *, realm::IndexSet, std::__1::hash<NSString *>, std::__1::equal_to<NSString *>, std::__1::allocator<std::__1::pair<NSString *const, realm::IndexSet>>> _deletedObjectIndices;
     RLMRealm *_oldRealm;
     RLMRealm *_realm;
 }
 
 @property(retain, nonatomic) RLMRealm *realm; // @synthesize realm=_realm;
 @property(retain, nonatomic) RLMRealm *oldRealm; // @synthesize oldRealm=_oldRealm;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)renamePropertyForClass:(id)arg1 oldName:(id)arg2 newName:(id)arg3;
 - (_Bool)deleteDataForClassName:(id)arg1;
+- (void)deleteObjectsMarkedForDeletion;
 - (void)deleteObject:(id)arg1;
 - (id)createObject:(id)arg1 withObject:(id)arg2;
 - (id)createObject:(id)arg1 withValue:(id)arg2;

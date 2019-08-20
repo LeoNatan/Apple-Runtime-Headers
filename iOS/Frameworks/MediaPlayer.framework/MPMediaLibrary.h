@@ -273,6 +273,7 @@
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
 - (void)_canShowCloudTracksDidChangeNotification:(id)arg1;
+- (void)_activeUserDidChangeForDeviceMediaLibrary:(id)arg1;
 - (void)_reloadLibraryForPathChange;
 - (void)_reloadLibraryForInvisiblePropertyChangeWithNotificationInfo:(id)arg1;
 - (void)_reloadLibraryForDynamicPropertyChangeWithNotificationInfo:(id)arg1;

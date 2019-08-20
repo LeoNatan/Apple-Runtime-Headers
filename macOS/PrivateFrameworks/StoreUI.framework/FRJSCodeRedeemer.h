@@ -21,6 +21,7 @@
 @property(retain) AMSUICodeRedeemerViewController *codeRedeemer; // @synthesize codeRedeemer=_codeRedeemer;
 @property(readonly) __weak FRWKView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+- (void)codeRedeemerDidDismiss:(id)arg1;
 - (void)codeRedeemerWillFadeStatus:(id)arg1;
 - (void)codeRedeemerDidStart:(id)arg1;
 - (void)codeRedeemerDidFindBox:(id)arg1;

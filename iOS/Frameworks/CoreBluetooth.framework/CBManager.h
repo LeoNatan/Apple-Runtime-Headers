@@ -30,6 +30,9 @@
 @property(nonatomic) long long authorization; // @synthesize authorization=_authorization;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (unsigned int)getAppSDKVersion;
+- (void)performTCCCheck:(id)arg1;
+- (void)doneWithTCC;
 - (id)peerWithInfo:(id)arg1;
 - (void)triggerBTErrorReport:(long long)arg1;
 - (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2;
@@ -41,7 +44,6 @@
 - (_Bool)isMsgAllowedWhenOff:(unsigned short)arg1;
 - (void)handlePairingAgentMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)handleStateUpdatedMsg:(id)arg1;
-- (void)doneWithTCC;
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)_handleAdvertisingAddressChanged:(id)arg1;
 - (void)closeL2CAPChannelForPeerUUID:(id)arg1 withPsm:(unsigned short)arg2;

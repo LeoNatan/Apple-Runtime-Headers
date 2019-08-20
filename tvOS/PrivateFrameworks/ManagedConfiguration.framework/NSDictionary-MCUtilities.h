@@ -11,6 +11,7 @@
 + (id)MCShortenedArray:(id)arg1;
 + (id)MCShortenedData:(id)arg1;
 + (id)MCShortenedObject:(id)arg1;
++ (id)MCDictionaryFromFile:(id)arg1;
 - (id)MCShortenedPlistDescription;
 - (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(long long)arg3 invalidDataErrorString:(id)arg4 outError:(id *)arg5;
 - (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(long long)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(long long)arg5 invalidDataErrorString:(id)arg6 outError:(id *)arg7;
@@ -20,6 +21,6 @@
 - (id)MCDeepCopyWithZone:(struct _NSZone *)arg1;
 - (id)MCMutableDeepCopy;
 - (id)MCMutableDeepCopyWithZone:(struct _NSZone *)arg1;
-- (_Bool)writeToBinaryFile:(id)arg1 atomically:(_Bool)arg2;
+- (_Bool)MCWriteToBinaryFile:(id)arg1 atomically:(_Bool)arg2;
 @end
 

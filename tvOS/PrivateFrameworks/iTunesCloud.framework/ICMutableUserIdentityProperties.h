@@ -6,7 +6,7 @@
 
 #import <iTunesCloud/ICUserIdentityProperties.h>
 
-@class ICDelegateToken, NSArray, NSDate, NSDictionary, NSNumber, NSString;
+@class ICDelegateToken, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface ICMutableUserIdentityProperties : ICUserIdentityProperties
 {
@@ -14,9 +14,10 @@
 
 - (void)setICloudPersonID:(id)arg1;
 - (void)setCloudBackupEnabled:(_Bool)arg1;
+- (void)setPrivateListeningEnabledForHomeUsers:(id)arg1;
 @property(copy, nonatomic) NSNumber *privateListeningEnabled; // @dynamic privateListeningEnabled;
 @property(copy, nonatomic) NSDictionary *cloudLibraryStateReason; // @dynamic cloudLibraryStateReason;
-@property(copy, nonatomic) NSArray *homeUserIdentifiers; // @dynamic homeUserIdentifiers;
+- (void)setHomeUserIdentifiers:(id)arg1;
 @property(copy, nonatomic) NSNumber *mergeToCloudLibraryPreference; // @dynamic mergeToCloudLibraryPreference;
 @property(copy, nonatomic) NSDate *ageVerificationExpirationDate; // @dynamic ageVerificationExpirationDate;
 @property(copy, nonatomic) NSString *username; // @dynamic username;

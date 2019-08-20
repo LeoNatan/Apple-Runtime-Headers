@@ -6,15 +6,15 @@
 
 #import <ChatKit/CKAcknowledgmentGlyphView.h>
 
-@class UIImageView;
+@class CKAcknowledgmentGlyphImageView;
 
 __attribute__((visibility("hidden")))
 @interface CKSimpleAcknowledgementGlyphView : CKAcknowledgmentGlyphView
 {
-    UIImageView *_glyph;
+    CKAcknowledgmentGlyphImageView *_glyph;
 }
 
-@property(retain, nonatomic) UIImageView *glyph; // @synthesize glyph=_glyph;
+@property(retain, nonatomic) CKAcknowledgmentGlyphImageView *glyph; // @synthesize glyph=_glyph;
 - (void).cxx_destruct;
 - (void)setGlyphColor:(id)arg1;
 - (void)layoutSubviews;

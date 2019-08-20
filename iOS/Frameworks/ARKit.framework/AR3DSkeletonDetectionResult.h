@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
 @class AR2DSkeletonDetectionResult;
 
-@interface AR3DSkeletonDetectionResult : NSObject <NSSecureCoding>
+@interface AR3DSkeletonDetectionResult : NSObject <NSSecureCoding, NSCopying>
 {
     vector_1cb3ea33 _jointsVector;
     AR2DSkeletonDetectionResult *_skeletonDetectionResult2D;
@@ -25,6 +26,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)createResultScaledByFactor:(float)arg1;
 - (_Bool)isJointTracked:(long long)arg1;

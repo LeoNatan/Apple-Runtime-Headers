@@ -8,12 +8,13 @@
 
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/WFParameterEventObserver-Protocol.h>
+#import <WorkflowKit/WFUUIDProvider-Protocol.h>
 #import <WorkflowKit/WFVariableProvider-Protocol.h>
 
-@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, UIImage, WFActionParameterSummary, WFContentCollection, WFParameter, WFResourceManager, WFWorkflow;
+@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, NSUnit, UIImage, WFActionParameterSummary, WFContentCollection, WFParameter, WFResourceManager, WFWorkflow;
 @protocol WFActionParameterInputProvider, WFUserInterface, WFVariableDataSource;
 
-@interface WFAction : NSObject <WFParameterEventObserver, NSCopying, WFVariableProvider>
+@interface WFAction : NSObject <WFUUIDProvider, WFParameterEventObserver, NSCopying, WFVariableProvider>
 {
     _Bool _running;
     _Bool _inputParameterUnlocked;
@@ -67,7 +68,6 @@
 - (void)setDefaultCoercionOptionsOnContentCollection:(id)arg1;
 - (void)configureRuntimeResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)minimumSupportedClientVersion;
-@property(readonly, nonatomic) _Bool shouldBeIncludedByAppsViewController;
 @property(readonly, nonatomic) _Bool isRelevantToUser;
 - (_Bool)requiresUserInteractionWhenRunWithInput:(id)arg1;
 - (_Bool)showsImplicitChooseFromListWhenRunWithInput:(id)arg1;
@@ -85,7 +85,7 @@
 - (id)inheritedOutputContentClassesInWorkflow:(id)arg1;
 - (id)inheritedInputVariableInWorkflow:(id)arg1;
 - (id)inputSourceInWorkflow:(id)arg1;
-- (id)outputVariableWithVariableProvider:(id)arg1;
+- (id)outputVariableWithVariableProvider:(id)arg1 UUIDProvider:(id)arg2;
 - (_Bool)canHandleInputOfContentClasses:(id)arg1 withSupportedClasses:(id)arg2 includingCoercedTypes:(_Bool)arg3;
 - (_Bool)canHandleInputOfContentClasses:(id)arg1 withSupportedClasses:(id)arg2;
 - (_Bool)shouldBeConnectedToPreviousActionInWorkflow:(id)arg1 withOutputsConsumedByFollowingActions:(id)arg2;
@@ -104,8 +104,8 @@
 - (void)initializeParameters;
 @property(copy, nonatomic) NSString *groupingIdentifier;
 @property(copy, nonatomic) NSString *outputName;
-- (id)generateUUIDIfNecessary;
-@property(readonly, nonatomic) NSString *UUID;
+- (id)generateUUIDIfNecessaryWithUUIDProvider:(id)arg1;
+@property(copy, nonatomic) NSString *UUID;
 - (void)didChangeVariableName:(id)arg1 to:(id)arg2;
 - (id)providedVariableNames;
 - (void)removeVariableObserver:(id)arg1;
@@ -120,10 +120,11 @@
 - (_Bool)hasAvailableVariables;
 @property(readonly, nonatomic) NSArray *availableOutputActions;
 @property(readonly, nonatomic) NSArray *availableVariableNames;
+- (id)generateOutputUUIDForAction:(id)arg1;
 - (id)createAccompanyingActions;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
-- (void)outputContentClassesUpdated;
+- (void)outputDetailsUpdated;
 - (void)nameUpdated;
 @property(readonly, nonatomic) NSArray *keyCommands;
 - (void)setOutput:(id)arg1 onVariableSource:(id)arg2;
@@ -156,7 +157,7 @@
 @property(readonly, nonatomic) WFResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
 - (void)parameterDefaultSerializedRepresentationDidChange:(id)arg1;
 - (void)parameterStateValidityCriteriaDidChange:(id)arg1;
-- (void)grantAccessToLocationAccessResourceIfNeededForParameterState:(id)arg1;
+- (id)accessResourcesToBeAuthorizedImplicitlyForUpdatedParameterState:(id)arg1 forParameter:(id)arg2;
 - (id)supplementalParameterValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (void)setSupplementalParameterValue:(id)arg1 forKey:(id)arg2;
 - (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(_Bool)arg2;
@@ -191,6 +192,7 @@
 @property(readonly, nonatomic) _Bool neverSuggested;
 @property(readonly, nonatomic) _Bool outputsMultipleItems;
 @property(readonly, nonatomic) _Bool inputsMultipleItems;
+@property(readonly, nonatomic) NSUnit *outputMeasurementUnit;
 @property(readonly, nonatomic) NSArray *outputTypes;
 @property(readonly, nonatomic) NSArray *inputTypes;
 @property(readonly, nonatomic) NSString *inputParameterKey;
@@ -199,6 +201,7 @@
 @property(readonly, nonatomic) _Bool blocksSnapping;
 @property(readonly, nonatomic) _Bool inputPassthrough;
 @property(readonly, nonatomic) _Bool inputRequired;
+@property(readonly, nonatomic) _Bool shouldBeIncludedInAppsList;
 - (id)localizedSubcategoryForCategory:(id)arg1;
 - (id)subcategoryForCategory:(id)arg1;
 @property(readonly, nonatomic) NSString *appSection;
@@ -211,7 +214,6 @@
 @property(readonly, nonatomic) NSDictionary *settingsUIDefinition;
 @property(readonly, nonatomic) NSArray *requiredResources;
 @property(readonly, nonatomic) NSArray *userInterfaceTypes;
-@property(readonly, nonatomic, getter=isBuiltInAction) _Bool builtInAction;
 @property(readonly, nonatomic, getter=isConstructorAction) _Bool constructorAction;
 @property(readonly, nonatomic, getter=isWatchCompatible) _Bool watchCompatible;
 @property(readonly, nonatomic, getter=isResidentCompatible) _Bool residentCompatible;
@@ -250,6 +252,7 @@
 @property(readonly, nonatomic) NSString *iconName;
 @property(readonly, nonatomic) NSArray *localizedCategories;
 @property(readonly, nonatomic) NSArray *categories;
+@property(readonly, nonatomic) NSString *localizedFooter;
 @property(readonly, nonatomic) NSString *localizedAttribution;
 @property(readonly, nonatomic) NSString *attribution;
 @property(readonly, nonatomic) NSString *accessibilityName;

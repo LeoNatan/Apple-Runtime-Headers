@@ -10,6 +10,7 @@
 {
 }
 
++ (void)appendParameterDescriptions:(id)arg1 toModelDescription:(id)arg2;
 + (id)deScopeParameters:(id)arg1 byDeletingPrefixingScope:(id)arg2;
 + (id)numberForKey:(id)arg1 inDictionary:(id)arg2;
 + (id)stringForKey:(id)arg1 inDictionary:(id)arg2;

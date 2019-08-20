@@ -6,37 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class UIView;
+@class UITargetedPreview, UIView;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterLayoutArbiter : NSObject
 {
-    unsigned long long _attachmentEdge;
-    unsigned long long _alignmentEdge;
+    UITargetedPreview *_sourcePreview;
     UIView *_containerView;
     unsigned long long _currentLayout;
+    CDStruct_6f807b77 _menuAnchor;
     struct CGSize _preferredPreviewSize;
     struct CGSize _preferredActionsSize;
-    struct CGPoint _sourcePoint;
     struct UIEdgeInsets _preferredEdgeInsets;
 }
 
 @property(nonatomic) unsigned long long currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
-@property(nonatomic) struct CGPoint sourcePoint; // @synthesize sourcePoint=_sourcePoint;
+@property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 @property(nonatomic) struct UIEdgeInsets preferredEdgeInsets; // @synthesize preferredEdgeInsets=_preferredEdgeInsets;
 @property(nonatomic) struct CGSize preferredActionsSize; // @synthesize preferredActionsSize=_preferredActionsSize;
 @property(nonatomic) struct CGSize preferredPreviewSize; // @synthesize preferredPreviewSize=_preferredPreviewSize;
-@property(readonly, nonatomic) unsigned long long alignmentEdge; // @synthesize alignmentEdge=_alignmentEdge;
 - (void).cxx_destruct;
 - (void)_drawContentBoundsDebugUI:(struct CGRect)arg1;
 - (struct CGRect)_computedActionsBoundsForContentBounds:(struct CGRect)arg1 predictedPlatterFrame:(struct CGRect)arg2;
 - (struct CGRect)_computedPlatterBoundsForContentBounds:(struct CGRect)arg1;
 - (void)_positionPlatterFrame:(inout struct CGRect *)arg1 andActionViewFrame:(inout struct CGRect *)arg2 inBounds:(struct CGRect)arg3 aboutSourcePoint:(struct CGPoint)arg4;
-@property(readonly, nonatomic) unsigned long long attachmentEdge; // @synthesize attachmentEdge=_attachmentEdge;
-@property(readonly, nonatomic) double contentMargin;
+- (unsigned long long)_updatedAttachmentEdge;
+- (double)contentMargin;
 @property(readonly, nonatomic) struct CGRect contentBounds;
-- (void)computePlatterFrame:(inout struct CGRect *)arg1 actionsViewFrame:(inout struct CGRect *)arg2;
+- (void)computePlatterFrame:(inout struct CGRect *)arg1 actionsViewFrame:(inout struct CGRect *)arg2 updateAttachment:(BOOL)arg3;
+@property(readonly, nonatomic) CDStruct_6f807b77 menuAnchor; // @synthesize menuAnchor=_menuAnchor;
 - (id)initWithContainerView:(id)arg1 layout:(unsigned long long)arg2;
 
 @end

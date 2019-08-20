@@ -26,7 +26,7 @@
 
 + (BOOL)isSystemLibraryURLDefined;
 + (BOOL)setSystemLibraryURL:(id)arg1 options:(unsigned short)arg2 error:(id *)arg3;
-+ (id)systemLibraryURLAllowingLithiumLookup:(BOOL)arg1;
++ (id)systemLibraryURLIfResolvable;
 + (id)systemLibraryURL;
 + (id)_legacySystemLibraryPath;
 + (id)_legacySystemLibraryBookmarkData;

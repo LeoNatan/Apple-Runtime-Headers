@@ -9,22 +9,23 @@
 #import <MediaControls/MPRequestResponseControllerDelegate-Protocol.h>
 #import <MediaControls/UITableViewDataSource-Protocol.h>
 #import <MediaControls/UITableViewDelegate-Protocol.h>
+#import <MediaControls/UITableViewDelegatePrivate-Protocol.h>
 
-@class MPRequestResponseController, MTVisualStylingProvider, NSArray, NSString, UITableView, UIView;
+@class MPAVClippingTableView, MPRequestResponseController, MTVisualStylingProvider, NSArray, NSString, UIView;
 @protocol MediaControlsLanguageOptionsViewControllerDelegate;
 
-@interface MediaControlsLanguageOptionsViewController : UIViewController <MPRequestResponseControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface MediaControlsLanguageOptionsViewController : UIViewController <MPRequestResponseControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate>
 {
     NSArray *_languageOptionGroups;
     id <MediaControlsLanguageOptionsViewControllerDelegate> _delegate;
     MPRequestResponseController *_requestResponseController;
     UIView *_materialView;
-    UITableView *_tableView;
+    MPAVClippingTableView *_tableView;
     MTVisualStylingProvider *_visualStylingProvider;
 }
 
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(retain, nonatomic) MPAVClippingTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *materialView; // @synthesize materialView=_materialView;
 @property(retain, nonatomic) MPRequestResponseController *requestResponseController; // @synthesize requestResponseController=_requestResponseController;
 @property(nonatomic) __weak id <MediaControlsLanguageOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -32,7 +33,9 @@
 - (void).cxx_destruct;
 - (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
+- (_Bool)tableView:(id)arg1 shouldHaveFullLengthBottomSeparatorForSection:(long long)arg2;
+- (_Bool)tableView:(id)arg1 shouldHaveFullLengthTopSeparatorForSection:(long long)arg2;
+- (_Bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

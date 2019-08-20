@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IMNickname, NSDictionary, NSMutableArray, NSMutableDictionary, NSSet;
+@class IMNickname, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet;
 
 @interface IMNicknameController : NSObject
 {
@@ -18,12 +18,14 @@
     NSDictionary *_pendingNicknameUpdates;
     NSSet *_whitelistedHandlesForSharing;
     NSSet *_blacklistedHandlesForSharing;
+    NSMutableSet *_scrutinyNicknameHandles;
 }
 
 + (BOOL)multiplePhoneNumbersTiedToAppleID;
 + (BOOL)accountsMatchUpToUseNicknames;
 + (id)sharedInstance;
 @property(nonatomic) BOOL isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
+@property(retain, nonatomic) NSMutableSet *scrutinyNicknameHandles; // @synthesize scrutinyNicknameHandles=_scrutinyNicknameHandles;
 @property(retain, nonatomic) NSSet *blacklistedHandlesForSharing; // @synthesize blacklistedHandlesForSharing=_blacklistedHandlesForSharing;
 @property(retain, nonatomic) NSSet *whitelistedHandlesForSharing; // @synthesize whitelistedHandlesForSharing=_whitelistedHandlesForSharing;
 @property(retain, nonatomic) NSDictionary *pendingNicknameUpdates; // @synthesize pendingNicknameUpdates=_pendingNicknameUpdates;
@@ -43,6 +45,11 @@
 - (void)updateSharingWhitelist:(id)arg1 blacklist:(id)arg2;
 - (void)updatePendingNicknames:(id)arg1 handledNicknames:(id)arg2;
 - (void)_updateLocalNicknameStore;
+- (void)clearHandleFromScrutiny:(id)arg1;
+- (void)markHandleUnderScrutiny:(id)arg1;
+- (id)handlesForNicknamesUnderScrutiny;
+- (void)setNicknameHandlesUnderScrutiny;
+- (id)getNicknameHandlesUnderScrutiny;
 - (BOOL)shouldOfferNicknameSharingForChat:(id)arg1;
 - (void)updatePersonalNickname:(id)arg1;
 - (void)fetchPersonalNicknameWithCompletion:(CDUnknownBlockType)arg1;
@@ -50,6 +57,7 @@
 - (void)whitelistHandlesForNicknameSharing:(id)arg1 forChat:(id)arg2;
 - (BOOL)handleIsBlacklistedForSharing:(id)arg1;
 - (BOOL)handleIsWhitelistedForSharing:(id)arg1;
+- (void)ignorePendingNicknameUpdatesForHandle:(id)arg1;
 - (void)clearPendingNicknameUpdatesForHandle:(id)arg1;
 - (id)IMSharedHelperMD5Helper:(id)arg1;
 - (unsigned long long)nicknameUpdateForHandle:(id)arg1 nicknameIfAvailable:(id *)arg2;

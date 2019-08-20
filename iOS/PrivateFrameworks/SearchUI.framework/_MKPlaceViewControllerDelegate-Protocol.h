@@ -19,7 +19,7 @@
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectParent:(MKMapItem *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectSearchCategory:(GEOSearchCategory *)arg2;
 - (void)placeViewControllerDidSelectRemoveMarker:(_MKPlaceViewController *)arg1;
-- (void)placeViewController:(_MKPlaceViewController *)arg1 showRelatedMapItems:(NSArray *)arg2 originalMapItem:(MKMapItem *)arg3 analyticsDelegate:(id <_MKInfoCardAnalyticsDelegate>)arg4;
+- (void)placeViewController:(_MKPlaceViewController *)arg1 showRelatedMapItems:(NSArray *)arg2 withTitle:(NSString *)arg3 originalMapItem:(MKMapItem *)arg4 analyticsDelegate:(id <_MKInfoCardAnalyticsDelegate>)arg5;
 - (NSArray *)placeViewController:(_MKPlaceViewController *)arg1 viewsForMapItems:(NSArray *)arg2 prefersAddressOverCategory:(_Bool)arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 selectCollectionIdentifier:(NSString *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 addPlaceItemToCollection:(id <_MKPlaceItem>)arg2 sourceView:(UIView *)arg3 result:(void (^)(NSError *))arg4;

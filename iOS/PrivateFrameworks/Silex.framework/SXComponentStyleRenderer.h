@@ -9,7 +9,7 @@
 #import <Silex/SXComponentStyleRenderer-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class CALayer, CAShapeLayer, NSString, SXComponentView, SXGradientFillView, SXImageFillView, SXRepeatableImageFillView, SXVideoFillView, SXViewport;
+@class NSString, SXComponentView, SXGradientFillView, SXImageFillView, SXLayer, SXRepeatableImageFillView, SXShapeLayer, SXVideoFillView, SXViewport;
 @protocol SXComponentStyle, SXGradientFactory, SXImageFillViewFactory, SXRepeatableImageFillViewFactory, SXVideoFillViewFactory;
 
 @interface SXComponentStyleRenderer : NSObject <SXViewportChangeListener, SXComponentStyleRenderer>
@@ -26,20 +26,20 @@
     SXImageFillView *_imageFillView;
     SXVideoFillView *_videoFillView;
     SXRepeatableImageFillView *_repeatableImageFillView;
-    CALayer *_shadowLayer;
-    CAShapeLayer *_borderLayer;
-    CAShapeLayer *_topBorderLayer;
-    CAShapeLayer *_rightBorderLayer;
-    CAShapeLayer *_bottomBorderLayer;
-    CAShapeLayer *_leftBorderLayer;
+    SXLayer *_shadowLayer;
+    SXShapeLayer *_borderLayer;
+    SXShapeLayer *_topBorderLayer;
+    SXShapeLayer *_rightBorderLayer;
+    SXShapeLayer *_bottomBorderLayer;
+    SXShapeLayer *_leftBorderLayer;
 }
 
-@property(retain, nonatomic) CAShapeLayer *leftBorderLayer; // @synthesize leftBorderLayer=_leftBorderLayer;
-@property(retain, nonatomic) CAShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
-@property(retain, nonatomic) CAShapeLayer *rightBorderLayer; // @synthesize rightBorderLayer=_rightBorderLayer;
-@property(retain, nonatomic) CAShapeLayer *topBorderLayer; // @synthesize topBorderLayer=_topBorderLayer;
-@property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
-@property(retain, nonatomic) CALayer *shadowLayer; // @synthesize shadowLayer=_shadowLayer;
+@property(retain, nonatomic) SXShapeLayer *leftBorderLayer; // @synthesize leftBorderLayer=_leftBorderLayer;
+@property(retain, nonatomic) SXShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
+@property(retain, nonatomic) SXShapeLayer *rightBorderLayer; // @synthesize rightBorderLayer=_rightBorderLayer;
+@property(retain, nonatomic) SXShapeLayer *topBorderLayer; // @synthesize topBorderLayer=_topBorderLayer;
+@property(retain, nonatomic) SXShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
+@property(retain, nonatomic) SXLayer *shadowLayer; // @synthesize shadowLayer=_shadowLayer;
 @property(nonatomic) _Bool didRegisterForDynamicBounds; // @synthesize didRegisterForDynamicBounds=_didRegisterForDynamicBounds;
 @property(retain, nonatomic) SXRepeatableImageFillView *repeatableImageFillView; // @synthesize repeatableImageFillView=_repeatableImageFillView;
 @property(retain, nonatomic) SXVideoFillView *videoFillView; // @synthesize videoFillView=_videoFillView;

@@ -119,6 +119,7 @@ __attribute__((visibility("hidden")))
 - (void)_invalidateAttributes:(id)arg1;
 - (struct CGRect)_attributesQueryRectForRect:(struct CGRect)arg1;
 - (struct CGPoint)_attributesOffsetFromContainer;
+- (struct CGPoint)_globalSupplementaryFrameOffset;
 - (void)_layoutAttributesForElementsInRect:(struct CGRect)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_setCachedDecorationAttributesForElementKind:(id)arg1 indexPath:(id)arg2 attributes:(id)arg3;
 - (id)_cachedDecorationAttributesForElementKind:(id)arg1 indexPath:(id)arg2;

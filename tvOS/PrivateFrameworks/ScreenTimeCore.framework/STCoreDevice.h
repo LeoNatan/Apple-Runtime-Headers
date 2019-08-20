@@ -27,6 +27,7 @@
 @property(copy, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(retain, nonatomic) STUserDeviceState *localUserDeviceState; // @dynamic localUserDeviceState;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(nonatomic) short platform; // @dynamic platform;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSSet *usages; // @dynamic usages;
 @property(retain, nonatomic) NSSet *userDeviceAddresses; // @dynamic userDeviceAddresses;

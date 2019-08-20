@@ -8,21 +8,19 @@
 
 #import <UIKitCore/UISpringLoadedInteractionSupporting-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, UIColor, UIImage, UIImageView, UITabBar, UITabBarButtonLabel, UITabBarSwappableImageView, UIView, UIVisualEffectView, _UIBadgeView, _UITabBarItemData;
+@class NSArray, NSMutableDictionary, NSString, UIColor, UIImage, UIImageView, UITabBar, UITabBarButtonLabel, UITabBarSwappableImageView, UIVibrancyEffect, UIView, UIVisualEffectView, _UIBadgeView, _UITabBarItemData;
 
 __attribute__((visibility("hidden")))
 @interface UITabBarButton : UIControl <UISpringLoadedInteractionSupporting>
 {
     struct CGRect _hitRect;
-    UITabBarSwappableImageView *_info;
+    UITabBarSwappableImageView *_imageView;
     UIVisualEffectView *_vibrancyEffectView;
     UITabBarButtonLabel *_label;
     _UIBadgeView *_badge;
     UIImageView *_selectedIndicator;
-    struct UIEdgeInsets _infoInsets;
-    struct UIEdgeInsets _infoLandscapeInsets;
-    struct UIOffset _selectedInfoOffset;
-    struct UIOffset _infoOffset;
+    struct UIEdgeInsets _imageInsets;
+    struct UIEdgeInsets _imageLandscapeInsets;
     UIImage *_customSelectedIndicatorImage;
     struct UIOffset _labelOffset;
     NSMutableDictionary *_buttonTintColorsForState;
@@ -31,14 +29,14 @@ __attribute__((visibility("hidden")))
     UIColor *_badgeColor;
     NSMutableDictionary *_badgeTextAttributesForState;
     struct UIOffset _badgeOffset;
-    struct UIOffset _landscapePhoneBadgeOffset;
     UIView *_highContrastFocusIndicator;
     BOOL _selected;
     BOOL _showsHighlightedState;
-    long long _iOSLayoutStyle;
     UIView *_focusView;
     Class _appearanceGuideClass;
-    _UITabBarItemData *__itemAppearanceData;
+    long long _layoutStyle;
+    _UITabBarItemData *_itemAppearanceData;
+    UIVibrancyEffect *_itemVibrantEffect;
     UITabBar *_tabBar;
     NSArray *_carplayConstraints;
 }
@@ -46,11 +44,14 @@ __attribute__((visibility("hidden")))
 + (id)_defaultLabelColor;
 @property(retain, nonatomic) NSArray *carplayConstraints; // @synthesize carplayConstraints=_carplayConstraints;
 @property(readonly, nonatomic) __weak UITabBar *tabBar; // @synthesize tabBar=_tabBar;
-@property(retain, nonatomic, setter=_setItemAppearanceData:) _UITabBarItemData *_itemAppearanceData; // @synthesize _itemAppearanceData=__itemAppearanceData;
+@property(retain, nonatomic) UIVibrancyEffect *itemVibrantEffect; // @synthesize itemVibrantEffect=_itemVibrantEffect;
+@property(retain, nonatomic) _UITabBarItemData *itemAppearanceData; // @synthesize itemAppearanceData=_itemAppearanceData;
+@property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(retain, nonatomic, setter=_setAppearanceGuideClass:) Class _appearanceGuideClass; // @synthesize _appearanceGuideClass;
-@property(nonatomic, setter=_setiOSLayoutStyle:) long long _iOSLayoutStyle; // @synthesize _iOSLayoutStyle;
 @property(nonatomic, setter=_setShowsHighlightedState:) BOOL _showsHighlightedState; // @synthesize _showsHighlightedState;
 - (void).cxx_destruct;
+- (void)set_info:(id)arg1;
+- (id)_info;
 @property(readonly, nonatomic) UIColor *_defaultUnselectedLabelTintColor;
 - (id)_contentTintColorForState:(unsigned long long)arg1;
 - (void)_setContentTintColor:(id)arg1 forState:(unsigned long long)arg2;
@@ -66,6 +67,17 @@ __attribute__((visibility("hidden")))
 - (void)_UIAppearance_setBadgeTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_setBadgeColor:(id)arg1;
 - (void)_UIAppearance_setBadgeColor:(id)arg1;
+- (BOOL)labelShouldUseVibrancyForState:(long long)arg1;
+- (BOOL)iconShouldUseVibrancyForState:(long long)arg1;
+- (struct UIOffset)badgeTitlePositionAdjustmentForState:(long long)arg1;
+- (id)badgeTextAttributesForState:(long long)arg1;
+- (id)badgeBackgroundColorForState:(long long)arg1;
+- (struct UIOffset)badgePositionAdjustmentForState:(long long)arg1;
+- (id)iconColorForState:(long long)arg1;
+- (id)defaultColorForState:(long long)arg1;
+- (struct UIOffset)titlePositionAdjustmentForState:(long long)arg1;
+- (id)titleTextAttributesForState:(long long)arg1;
+- (long long)_currentItemState;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (long long)_focusTouchSensitivityStyle;
 - (struct CGRect)_responderSelectionRect;
@@ -77,7 +89,6 @@ __attribute__((visibility("hidden")))
 - (void)_sendFocusAction;
 - (BOOL)_isEligibleForFocusInteraction;
 - (BOOL)canBecomeFocused;
-- (void)_setLabelHidden:(BOOL)arg1;
 - (void)_setCustomSelectedIndicatorImage:(id)arg1;
 - (void)layoutSubviews;
 - (void)_ios_layoutSubviews;
@@ -95,17 +106,13 @@ __attribute__((visibility("hidden")))
 - (void)setEnabled:(BOOL)arg1;
 - (void)_updateBadgeAppearanceAndLayoutNow:(BOOL)arg1;
 - (void)_setBadgeValue:(id)arg1;
-- (void)_setBadgeOffset:(struct UIOffset)arg1 landscapeBadgeOffset:(struct UIOffset)arg2;
+- (void)_setBadgeOffset:(struct UIOffset)arg1;
 - (void)_positionBadgeAfterChangesIfNecessary:(CDUnknownBlockType)arg1;
 - (void)_positionBadge;
-- (void)_setImage:(id)arg1 selected:(BOOL)arg2 offset:(struct UIOffset)arg3;
-- (void)_setInfoOffset:(struct UIOffset)arg1;
-- (void)_setSelectedInfoOffset:(struct UIOffset)arg1;
 @property(nonatomic, getter=_isSelected, setter=_setSelected:) BOOL _selected;
 @property(retain, nonatomic, getter=_unselectedTintColor, setter=_setUnselectedTintColor:) UIColor *unselectedTintColor;
 - (void)_updateToMatchCurrentState;
 - (void)setHighlighted:(BOOL)arg1;
-- (struct CGRect)_offsetImageFrame:(struct CGRect)arg1;
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 - (void)_updateSelectedIndicatorFrame;
 - (void)_updateSelectedIndicatorView;

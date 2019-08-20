@@ -10,7 +10,7 @@
 #import <CoreSpeech/CSVTUIAudioSessionDelegate-Protocol.h>
 #import <CoreSpeech/CSVTUITrainingSessionDelegate-Protocol.h>
 
-@class CSNNVADEndpointAnalyzer, CSVTUIKeywordDetector, CSVTUITrainingSession, NSMutableArray, NSString, SFSpeechRecognizer;
+@class CSAsset, CSNNVADEndpointAnalyzer, CSVTUIKeywordDetector, CSVTUITrainingSession, NSMutableArray, NSString, SFSpeechRecognizer;
 @protocol CSVTUIAudioSession, CSVTUITrainingManagerDelegate, OS_dispatch_queue;
 
 @interface CSVTUITrainingManager : NSObject <CSVTUITrainingSessionDelegate, CSVTUIAudioSessionDelegate, CSEndpointAnalyzerDelegate>
@@ -27,6 +27,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     CDUnknownBlockType _cleanupCompletion;
     SFSpeechRecognizer *_speechRecognizer;
+    CSAsset *_currentAsset;
     _Bool _speechRecognizerAvailable;
     float _rms;
     id <CSVTUITrainingManagerDelegate> _delegate;

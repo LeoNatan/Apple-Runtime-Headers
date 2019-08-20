@@ -73,7 +73,7 @@ __attribute__((visibility("hidden")))
 - (double)defaultPaddingBetweenHeaderAndRowsForTableView:(id)arg1;
 - (double)defaultPaddingBetweenRowsForTableView:(id)arg1;
 - (double)interspaceBetweenInnerAccessoryIdentifier:(id)arg1 outerAccessoryIdentifier:(id)arg2 forCell:(id)arg3 inTableView:(id)arg4 trailingAccessoryGroup:(BOOL)arg5;
-- (double)minimumImageViewAndAccessoryLayoutWidth;
+- (double)minimumImageViewAndAccessoryLayoutWidthForTraitCollection:(id)arg1;
 - (double)defaultTrailingContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (double)defaultLeadingContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (double)defaultContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
@@ -98,7 +98,7 @@ __attribute__((visibility("hidden")))
 - (id)defaultBackgroundEffectsForTableViewStyle:(long long)arg1;
 - (id)defaultBackgroundColorForTableViewStyle:(long long)arg1;
 - (BOOL)supportsUserInterfaceStyles;
-- (id)variantForActive:(BOOL)arg1 dark:(BOOL)arg2;
+- (id)variantForActive:(BOOL)arg1 dark:(BOOL)arg2 focused:(BOOL)arg3;
 - (id)sidebarVariant;
 
 // Remaining properties

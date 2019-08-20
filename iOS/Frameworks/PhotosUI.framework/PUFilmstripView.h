@@ -11,14 +11,18 @@
 #import <PhotosUI/PXLivePhotoTrimScrubberFilmStripView-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
-@class AVAsset, AVVideoComposition, NSArray, NSString, PUFilmstripDataSource, PUFilmstripMediaProvider, PUTileViewAnimator, PUTilingView, UIImage;
+@class AVAsset, AVVideoComposition, NSArray, NSObject, NSString, PUFilmstripDataSource, PUFilmstripMediaProvider, PUTileViewAnimator, PUTilingView, UIImage;
+@protocol OS_dispatch_queue;
 
 @interface PUFilmstripView : UIView <PXLivePhotoTrimScrubberFilmStripView, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, UIScrollViewDelegate>
 {
     _Bool _needsUpdateThumbnailAspectRatio;
     _Bool _needsUpdateDataSource;
     _Bool _needsUpdateLayout;
+    _Bool _needsUpdateGeneratedPlaceholder;
+    NSObject<OS_dispatch_queue> *_placeholderGenerationQueue;
     PUTileViewAnimator *_animator;
+    _Bool _generatesPlaceholderImage;
     _Bool _useContentAspectRatio;
     AVAsset *_asset;
     AVVideoComposition *_videoComposition;
@@ -28,9 +32,11 @@
     PUFilmstripMediaProvider *__mediaProvider;
     PUFilmstripDataSource *__dataSource;
     double __thumbnailAspectRatio;
+    UIImage *_generatedPlaceholderImage;
     struct CGRect _visibleRect;
 }
 
+@property(retain, nonatomic) UIImage *generatedPlaceholderImage; // @synthesize generatedPlaceholderImage=_generatedPlaceholderImage;
 @property(nonatomic, setter=_setThumbnailAspectRatio:) double _thumbnailAspectRatio; // @synthesize _thumbnailAspectRatio=__thumbnailAspectRatio;
 @property(retain, nonatomic, setter=_setDataSource:) PUFilmstripDataSource *_dataSource; // @synthesize _dataSource=__dataSource;
 @property(retain, nonatomic, setter=_setMediaProvider:) PUFilmstripMediaProvider *_mediaProvider; // @synthesize _mediaProvider=__mediaProvider;
@@ -38,6 +44,7 @@
 @property(nonatomic) _Bool useContentAspectRatio; // @synthesize useContentAspectRatio=_useContentAspectRatio;
 @property(copy, nonatomic) NSArray *indicatorInfos; // @synthesize indicatorInfos=_indicatorInfos;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
+@property(nonatomic) _Bool generatesPlaceholderImage; // @synthesize generatesPlaceholderImage=_generatesPlaceholderImage;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(copy, nonatomic) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(copy, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
@@ -47,6 +54,9 @@
 - (id)tilingView:(id)arg1 tileTransitionCoordinatorForTransitionFromLayout:(id)arg2 toLayout:(id)arg3 withContext:(id)arg4;
 - (id)tilingView:(id)arg1 tileControllerWithIndexPath:(id)arg2 kind:(id)arg3 dataSource:(id)arg4;
 - (id)_filmstripLayout;
+- (void)_updateGeneratedPlaceholderImageIfNeeded;
+- (void)_invalidateGeneratedPlaceholderImage;
+- (void)_updateMediaProviderPlaceholderImage;
 - (void)_updateLayoutIfNeeded;
 - (void)_updateDataSourceIfNeeded;
 - (void)_updateIfNeeded;
@@ -58,6 +68,7 @@
 - (void)_invalidateThumbnailAspectRatio;
 - (void)_setNeedsUpdate;
 - (void)layoutSubviews;
+- (void)_releaseAVObjects;
 - (void)reloadThumbnails;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)setLivePhotoTrimScrubberThumbnail:(id)arg1;

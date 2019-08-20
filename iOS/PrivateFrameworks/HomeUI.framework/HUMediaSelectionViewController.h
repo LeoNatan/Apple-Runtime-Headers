@@ -17,8 +17,10 @@
 {
     id <HUMediaSelectionViewControllerDelegate> _delegate;
     HUMediaSelectionItemManager *_mediaSelectionItemManager;
+    unsigned long long _lastTargetOptions;
 }
 
+@property(nonatomic) unsigned long long lastTargetOptions; // @synthesize lastTargetOptions=_lastTargetOptions;
 @property(retain, nonatomic) HUMediaSelectionItemManager *mediaSelectionItemManager; // @synthesize mediaSelectionItemManager=_mediaSelectionItemManager;
 @property(nonatomic) __weak id <HUMediaSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -27,7 +29,6 @@
 - (void)switchCell:(id)arg1 didTurnOn:(_Bool)arg2;
 - (void)mediaPickerDidCancel:(id)arg1;
 - (void)mediaPicker:(id)arg1 didPickPlaybackArchive:(id)arg2;
-- (void)_updateMediaCell;
 - (id)_musicAppURL;
 - (void)_presentMediaPickerUnavailablePromptWithReason:(long long)arg1 storeKitErrorObject:(id)arg2;
 - (void)_presentMediaPicker;

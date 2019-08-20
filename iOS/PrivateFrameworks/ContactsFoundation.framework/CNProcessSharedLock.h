@@ -24,6 +24,7 @@
 + (id)semaphoreSharedLockWithLockFilePath:(id)arg1;
 + (id)recursiveSharedLockWithLockFilePath:(id)arg1;
 + (id)sharedLockWithLockFilePath:(id)arg1;
++ (id)os_log;
 @property(readonly, copy) NSString *lockFilePath; // @synthesize lockFilePath=_lockFilePath;
 @property(copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

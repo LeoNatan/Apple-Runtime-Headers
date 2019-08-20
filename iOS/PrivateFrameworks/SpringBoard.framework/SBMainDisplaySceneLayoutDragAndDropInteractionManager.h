@@ -9,7 +9,6 @@
 #import <SpringBoard/BSTransactionObserver-Protocol.h>
 #import <SpringBoard/SBApplicationDropSessionSceneProviding-Protocol.h>
 #import <SpringBoard/SBDragAndDropAppActivationWorkspaceTransactionDelegate-Protocol.h>
-#import <SpringBoard/SBDraggingSystemManagerDelegate-Protocol.h>
 #import <SpringBoard/UIDragInteractionDelegate_ForWebKitOnly-Protocol.h>
 #import <SpringBoard/UIDragInteractionDelegate_Private-Protocol.h>
 #import <SpringBoard/UIDropInteractionDelegate-Protocol.h>
@@ -17,7 +16,7 @@
 @class NSMapTable, NSString, SBDragAndDropAppActivationWorkspaceTransaction, SBFluidSwitcherViewController, SBMainDisplaySceneLayoutViewController, SBWindowDragInteraction, UIDropInteraction;
 @protocol SBMainDisplaySceneLayoutDragAndDropInteractionManagerDelegate, UIDragSession;
 
-@interface SBMainDisplaySceneLayoutDragAndDropInteractionManager : NSObject <BSTransactionObserver, SBApplicationDropSessionSceneProviding, UIDropInteractionDelegate, SBDraggingSystemManagerDelegate, UIDragInteractionDelegate_Private, UIDragInteractionDelegate_ForWebKitOnly, SBDragAndDropAppActivationWorkspaceTransactionDelegate>
+@interface SBMainDisplaySceneLayoutDragAndDropInteractionManager : NSObject <BSTransactionObserver, SBApplicationDropSessionSceneProviding, UIDropInteractionDelegate, UIDragInteractionDelegate_Private, UIDragInteractionDelegate_ForWebKitOnly, SBDragAndDropAppActivationWorkspaceTransactionDelegate>
 {
     _Bool _windowDragHandledByDruid;
     SBFluidSwitcherViewController *_mainSwitcherContentController;
@@ -75,7 +74,6 @@
 - (void)_dragInteractionDidCancelLiftWithoutDragging:(id)arg1;
 - (id)_requiredContextIDsForDragSessionInView:(id)arg1;
 - (void)_dragInteraction:(id)arg1 prepareForSession:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)touchRoutingPolicyForBeginningDragSessionWithInfo:(id)arg1;
 - (id)preferredSceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2 preferNewScene:(_Bool)arg3;
 - (id)mostRecentSceneIdentityExcludingLiveScenesForApplication:(id)arg1;
 - (id)newSceneIdentityForApplication:(id)arg1;

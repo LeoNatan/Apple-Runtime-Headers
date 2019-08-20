@@ -9,7 +9,7 @@
 #import <PineBoardServices/NSCopying-Protocol.h>
 #import <PineBoardServices/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, PBSDisplayMode;
+@class NSDictionary, NSString, PBSDisplayMode;
 
 @interface PBSDisplayManagerUpdateRequest : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,6 +18,7 @@
     _Bool _treatDisplayModeAsFallback;
     _Bool _useDisplayModeAsDefaultForNextWake;
     PBSDisplayMode *_displayMode;
+    NSString *_reason;
     NSDictionary *_userInfo;
 }
 
@@ -27,6 +28,7 @@
 @property(nonatomic) _Bool treatDisplayModeAsFallback; // @synthesize treatDisplayModeAsFallback=_treatDisplayModeAsFallback;
 @property(nonatomic) _Bool upgradeDisplayModeToNonVirtual; // @synthesize upgradeDisplayModeToNonVirtual=_upgradeDisplayModeToNonVirtual;
 @property(nonatomic) _Bool writeDisplayModeToDisk; // @synthesize writeDisplayModeToDisk=_writeDisplayModeToDisk;
+@property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) PBSDisplayMode *displayMode; // @synthesize displayMode=_displayMode;
 - (void).cxx_destruct;
 - (id)description;
@@ -35,6 +37,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDisplayMode:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
+- (id)initWithDisplayMode:(id)arg1 reason:(id)arg2;
 - (id)initWithDisplayMode:(id)arg1 userInfo:(id)arg2;
 - (id)initWithDisplayMode:(id)arg1;
 - (id)init;

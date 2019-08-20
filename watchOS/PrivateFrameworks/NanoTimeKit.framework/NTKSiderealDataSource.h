@@ -49,12 +49,13 @@
 - (void)startLocationUpdates;
 - (id)_placeholderSolarEvents;
 - (id)_allAvailableSolarEvents;
-- (void)_notifyDidUpdate;
+- (void)_notifyDataDidUpdate;
 - (void)_updateData;
 - (void)_updateWaypoints;
 - (void)_updateSolarSectors;
 - (void)_updateDayEvents;
 - (void)_updateSolarEvents;
+- (void)updateForSignificantTimeChange;
 - (void)updateForTimeZoneChange;
 - (void)updateModelWithDate:(id)arg1;
 - (CDStruct_c3b9c2ee)_geoLocationForReferenceLocation;

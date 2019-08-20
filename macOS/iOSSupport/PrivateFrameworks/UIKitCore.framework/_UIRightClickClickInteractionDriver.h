@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _UIContextualClickDriverGestureRecognizer *_gestureRecognizer;
 }
 
++ (BOOL)requiresForceCapability;
 @property(retain) _UIContextualClickDriverGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
@@ -38,9 +39,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
 @property(readonly, nonatomic) double touchDuration;
+@property(readonly, nonatomic) double maximumEffectProgress;
 - (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) BOOL clicksUpAutomaticallyAfterTimeout;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

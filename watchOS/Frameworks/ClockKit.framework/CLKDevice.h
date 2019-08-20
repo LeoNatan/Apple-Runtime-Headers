@@ -8,25 +8,28 @@
 
 @interface CLKDevice : NSObject
 {
+    _Bool _runningGraceOrLater;
     _Bool _isLuxo;
     _Bool _isExplorer;
     _Bool _hasRichMediaComplications;
-    _Bool _runningGraceOrLater;
     unsigned int _sizeClass;
     float _screenScale;
     float _screenCornerRadius;
     unsigned int _collectionType;
     unsigned int _materialType;
+    int _pairedDeviceCapabilitiesChangeNotificationToken;
+    struct os_unfair_lock_s _capabilitiesLock;
     struct CGRect _screenBounds;
 }
 
 + (void)setCurrentDevice:(id)arg1;
 + (id)currentDevice;
-@property(nonatomic) unsigned int materialType; // @synthesize materialType=_materialType;
-@property(nonatomic) unsigned int collectionType; // @synthesize collectionType=_collectionType;
-@property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
+@property(readonly, nonatomic) struct os_unfair_lock_s capabilitiesLock; // @synthesize capabilitiesLock=_capabilitiesLock;
+@property(readonly, nonatomic) int pairedDeviceCapabilitiesChangeNotificationToken; // @synthesize pairedDeviceCapabilitiesChangeNotificationToken=_pairedDeviceCapabilitiesChangeNotificationToken;
+@property(nonatomic) unsigned int materialType; // @synthesize materialType=_materialType;
+@property(nonatomic) unsigned int collectionType; // @synthesize collectionType=_collectionType;
 @property(nonatomic) _Bool isLuxo; // @synthesize isLuxo=_isLuxo;
 @property(nonatomic) float screenCornerRadius; // @synthesize screenCornerRadius=_screenCornerRadius;
 @property(nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
@@ -34,6 +37,8 @@
 @property(nonatomic) unsigned int sizeClass; // @synthesize sizeClass=_sizeClass;
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
+- (_Bool)_queryAndCacheNanoRegistryDeviceCapabilities;
+@property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 - (void)_loadDeviceInfo;
 - (id)_init;
 

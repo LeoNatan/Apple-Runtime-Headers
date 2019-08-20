@@ -28,8 +28,6 @@
 }
 
 + (id)lossDescriptorWithSpatialPositionLossType:(int)arg1 spatialSizeLossType:(int)arg2 confidenceLossType:(int)arg3 classesLossType:(int)arg4 reduceType:(int)arg5 numberOfAnchorBoxes:(unsigned long long)arg6 anchorBoxes:(id)arg7;
-@property(retain, nonatomic) NSData *anchorBoxes; // @synthesize anchorBoxes=_anchorBoxes;
-@property(nonatomic) unsigned long long numberOfAnchorBoxes; // @synthesize numberOfAnchorBoxes=_numberOfAnchorBoxes;
 @property(nonatomic) float maximumIOUForObjectAbsence; // @synthesize maximumIOUForObjectAbsence=_maximumIOUForObjectAbsence;
 @property(nonatomic) float minimumIOUForObjectPresence; // @synthesize minimumIOUForObjectPresence=_minimumIOUForObjectPresence;
 @property(nonatomic) float scaleClassLoss; // @synthesize scaleClassLoss=_scaleClassLoss;
@@ -38,11 +36,13 @@
 @property(nonatomic) float scaleSpatialSizeLoss; // @synthesize scaleSpatialSizeLoss=_scaleSpatialSizeLoss;
 @property(nonatomic) float scaleSpatialPositionLoss; // @synthesize scaleSpatialPositionLoss=_scaleSpatialPositionLoss;
 @property(nonatomic) BOOL rescore; // @synthesize rescore=_rescore;
-@property(nonatomic) int reductionType; // @synthesize reductionType=_reductionType;
-@property(retain) MLFoundationLossDescriptor *classesLossDescriptor; // @synthesize classesLossDescriptor=_classesLossDescriptor;
-@property(retain) MLFoundationLossDescriptor *confidenceLossDescriptor; // @synthesize confidenceLossDescriptor=_confidenceLossDescriptor;
-@property(retain) MLFoundationLossDescriptor *spatialSizeLossDescriptor; // @synthesize spatialSizeLossDescriptor=_spatialSizeLossDescriptor;
-@property(retain) MLFoundationLossDescriptor *spatialPositionLossDescriptor; // @synthesize spatialPositionLossDescriptor=_spatialPositionLossDescriptor;
+@property(readonly, retain, nonatomic) NSData *anchorBoxes; // @synthesize anchorBoxes=_anchorBoxes;
+@property(readonly, nonatomic) unsigned long long numberOfAnchorBoxes; // @synthesize numberOfAnchorBoxes=_numberOfAnchorBoxes;
+@property(readonly, nonatomic) int reductionType; // @synthesize reductionType=_reductionType;
+@property(readonly, retain) MLFoundationLossDescriptor *classesLossDescriptor; // @synthesize classesLossDescriptor=_classesLossDescriptor;
+@property(readonly, retain) MLFoundationLossDescriptor *confidenceLossDescriptor; // @synthesize confidenceLossDescriptor=_confidenceLossDescriptor;
+@property(readonly, retain) MLFoundationLossDescriptor *spatialSizeLossDescriptor; // @synthesize spatialSizeLossDescriptor=_spatialSizeLossDescriptor;
+@property(readonly, retain) MLFoundationLossDescriptor *spatialPositionLossDescriptor; // @synthesize spatialPositionLossDescriptor=_spatialPositionLossDescriptor;
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithLossDescriptorWithSpatialPositionLossType:(int)arg1 spatialSizeLossType:(int)arg2 confidenceLossType:(int)arg3 classesLossType:(int)arg4 reduceType:(int)arg5 numberOfAnchorBoxes:(unsigned long long)arg6 anchorBoxes:(id)arg7;

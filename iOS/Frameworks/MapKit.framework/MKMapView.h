@@ -351,6 +351,7 @@
 @property(nonatomic, getter=_displayedSearchResultsType, setter=_setDisplayedSearchResultsType:) long long displayedSearchResultsType;
 @property(nonatomic, getter=_applicationState, setter=_setApplicationState:) int applicationState;
 @property(nonatomic, getter=_userTrackingZoomStyle, setter=_setUserTrackingZoomStyle:) long long userTrackingZoomStyle;
+@property(nonatomic, getter=_loadMuninAvailability, setter=_setLoadMuninAvailability:) _Bool loadMuninAvailability;
 @property(readonly, nonatomic, getter=_muninAvailability) long long muninAvailability;
 @property(readonly, nonatomic, getter=_canEnterNightMode) _Bool canEnterNightMode;
 @property(readonly, nonatomic, getter=_canEnter3DModeFlyover) _Bool canEnter3DModeFlyover;

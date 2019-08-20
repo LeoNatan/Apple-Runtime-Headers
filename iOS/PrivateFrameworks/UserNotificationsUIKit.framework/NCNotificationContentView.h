@@ -117,6 +117,8 @@
 - (double)_summaryTextBaselineOffsetForCurrentStyle;
 - (double)_secondaryTextBaselineOffsetForCurrentStyle;
 - (double)_primarySubtitleTextBaselineOffsetForCurrentStyle;
+- (double)_primaryTextBaselineOffsetForCurrentStyle;
+- (double)topMarginToPrimaryLabelForCurrentStyle;
 - (struct UIEdgeInsets)_contentInsetsForStyle:(long long)arg1;
 - (struct UIEdgeInsets)_contentInsetsForLongLook;
 - (struct UIEdgeInsets)_contentInsetsForShortLook;

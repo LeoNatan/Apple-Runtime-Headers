@@ -21,6 +21,7 @@
 - (void)layoutMarginsDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)nextResponder;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

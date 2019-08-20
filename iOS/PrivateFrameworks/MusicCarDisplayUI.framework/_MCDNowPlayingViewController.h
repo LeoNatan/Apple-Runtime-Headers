@@ -6,14 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
-@class MCDLabelButton, MCDPlayModeControlView, MCDProgressView, MCDShadowImageView, MCDTitleView, MCDTransportControlView, NSArray, NSMutableDictionary, NSString, UIColor, UIFocusContainerGuide, UIImageView, UILayoutGuide, UILongPressGestureRecognizer, UINavigationBar, UITapGestureRecognizer;
+@class MCDPlayModeControlView, MCDProgressView, MCDShadowImageView, MCDSongDetailsView, MCDTransportControlView, NSArray, NSMutableDictionary, NSString, UIColor, UIFocusContainerGuide, UIImageView, UILayoutGuide, UILongPressGestureRecognizer, UINavigationBar, UITapGestureRecognizer;
 @protocol MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate;
 
 @interface _MCDNowPlayingViewController : UIViewController
 {
     long long _heldAction;
     UINavigationBar *_navigationBar;
-    MCDLabelButton *_albumArtistLabelButton;
     UIColor *_navbarColor;
     double _scale;
     double _contentAspectRatio;
@@ -26,7 +25,7 @@
     _Bool _albumArtAllowed;
     MCDTransportControlView *_transportControlView;
     MCDPlayModeControlView *_playModeControlView;
-    MCDTitleView *_titleView;
+    MCDSongDetailsView *_songDetailsView;
     id <MCDNowPlayingViewControllerDelegate> _delegate;
     id <MCDNowPlayingViewControllerDataSource> _dataSource;
     MCDProgressView *_progressView;
@@ -74,7 +73,7 @@
 @property(nonatomic, getter=isAlbumArtAllowed) _Bool albumArtAllowed; // @synthesize albumArtAllowed=_albumArtAllowed;
 @property(nonatomic) __weak id <MCDNowPlayingViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <MCDNowPlayingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) MCDTitleView *titleView; // @synthesize titleView=_titleView;
+@property(readonly, nonatomic) MCDSongDetailsView *songDetailsView; // @synthesize songDetailsView=_songDetailsView;
 @property(readonly, nonatomic) MCDPlayModeControlView *playModeControlView; // @synthesize playModeControlView=_playModeControlView;
 @property(readonly, nonatomic) MCDTransportControlView *transportControlView; // @synthesize transportControlView=_transportControlView;
 - (void).cxx_destruct;
@@ -82,12 +81,13 @@
 - (void)_recalculateLayout:(_Bool)arg1;
 - (void)_invalidateConstraintCache;
 - (void)layoutStyleDidChange;
-- (void)setNowPlayingLayout:(long long)arg1;
+- (void)setNowPlayingLayout:(long long)arg1 forceChange:(_Bool)arg2;
 - (double)innerSpacing;
 - (double)topPadding;
 - (double)bottomPadding;
 - (_Bool)isCompactHeight;
 - (_Bool)isCompactWidth;
+- (void)updateLayoutStyle:(_Bool)arg1;
 - (void)updateLayoutStyle;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
@@ -131,7 +131,6 @@
 - (void)updateViewConstraints;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
-@property(readonly, nonatomic) MCDLabelButton *albumArtistLabelButton;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

@@ -9,6 +9,7 @@
 @class ACAccount, NSString;
 
 @protocol EDAccount <ECMailAccount>
+@property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly, copy, nonatomic) ACAccount *systemAccount;
 @property(readonly, copy, nonatomic) NSString *identifier;
 - (void)savePersistentAccount;

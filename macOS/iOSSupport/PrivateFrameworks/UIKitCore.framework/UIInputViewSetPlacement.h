@@ -41,9 +41,11 @@ __attribute__((visibility("hidden")))
 - (id)widthConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
+@property(readonly, nonatomic) BOOL requiresWindowBasedSafeAreaInsets;
 @property(readonly, nonatomic) BOOL isInteractive;
 @property(readonly, nonatomic) BOOL showsKeyboard;
 @property(readonly, nonatomic) BOOL showsInputViews;
+@property(readonly, nonatomic) BOOL isFloating;
 @property(readonly, nonatomic) BOOL isUndocked;
 - (BOOL)isEqual:(id)arg1;
 - (struct CGAffineTransform)transform;

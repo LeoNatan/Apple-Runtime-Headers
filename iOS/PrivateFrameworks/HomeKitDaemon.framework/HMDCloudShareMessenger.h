@@ -31,7 +31,7 @@
 - (void)handleRequestInviteMessage:(id)arg1;
 - (void)handleInviteMessage:(id)arg1;
 - (void)requestShareInvitationDataFromUser:(id)arg1;
-- (void)sendShareInvitationData:(id)arg1 toUser:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)sendShareInvitationData:(id)arg1 toUser:(id)arg2 minimumHomeKitVersion:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)unconfigure;
 - (void)configureWithHome:(id)arg1;
 - (id)initWithMessageTargetUUID:(id)arg1 workQueue:(id)arg2 messageDispatcher:(id)arg3;

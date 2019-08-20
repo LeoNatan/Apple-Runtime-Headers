@@ -11,6 +11,7 @@
 
 @protocol AVTransitionDriver <UIInteraction>
 @property(nonatomic) __weak UIPanGestureRecognizer *contentTransitioningViewGestureRecognizer;
+@property(readonly, nonatomic) _Bool lastNonZeroVelocityWasDownward;
 @property(readonly, nonatomic) double pinchVelocity;
 @property(readonly, nonatomic) double pinchScale;
 @property(readonly, nonatomic) double rotationVelocity;
@@ -19,6 +20,7 @@
 @property(nonatomic) __weak id <AVTransitionDriverDelegate> transitionDriverDelegate;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled;
 - (_Bool)transitionDriver:(id <AVTransitionDriver>)arg1 shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)arg2;
+- (double)angleOfVelocityInWindow;
 - (struct CGPoint)velocityInWindow;
 - (struct CGPoint)translationInWindow;
 - (struct CGPoint)locationInWindow;

@@ -12,7 +12,7 @@
 
 + (_Bool)isSystemResource;
 + (unsigned long long)entityType;
-- (id)localizedAccessPermissionPromptMessage;
+- (id)localizedWorkflowLevelMessageTemplate;
 - (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
 - (id)protectedResourceDescription;

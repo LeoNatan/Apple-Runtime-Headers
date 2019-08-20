@@ -106,8 +106,7 @@
 - (void)removeViewAtIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)insertViewAtIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)_layoutHiddenViewsForGroupingLayoutIfNecessaryWithLeadingViewHeight:(double)arg1;
-- (void)_setOverlayAlphaForGroupedView:(id)arg1 transform:(struct CGAffineTransform)arg2;
-- (void)_setStackingShadowForGroupedView:(id)arg1 hasShadow:(_Bool)arg2;
+- (void)_configureStackDimmingForGroupedView:(id)arg1 transform:(struct CGAffineTransform)arg2;
 - (void)revealNotificationContentBelowGroupedViewIfNecessary:(id)arg1;
 - (void)_setContentHiddenForGroupedView:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_layoutGroupedViewForGroupingLayout:(id)arg1 atIndex:(unsigned long long)arg2 isExistingView:(_Bool)arg3 leadingViewHeight:(double)arg4;

@@ -29,6 +29,7 @@
 + (_Bool)isAutoPictureInPictureSupported;
 + (_Bool)isPictureInPictureSupported;
 - (void).cxx_destruct;
+- (_Bool)pictureInPictureController:(id)arg1 shouldDenyNewConnection:(id)arg2;
 - (void)pictureInPictureController:(id)arg1 didHidePictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureController:(id)arg1 willHidePictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureController:(id)arg1 willDestroyPictureInPictureViewController:(id)arg2;

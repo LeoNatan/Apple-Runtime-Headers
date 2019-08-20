@@ -61,6 +61,7 @@
 - (void)_purgeAllSnapshots;
 - (void)_purgeAllSnapshotRequests;
 - (_Bool)_isValidAppLayout:(id)arg1 withSnapshot:(id)arg2 givenCachableAppLayouts:(id)arg3;
+- (void)_setSnapshotNeedsUpdateForDisplayItem:(id)arg1;
 - (void)_purgeLowPriorityFullSizeSnapshots;
 - (void)_purgeLowPriorityFullSizeSnapshotRequests;
 - (void)_purgeLowPrioritySnapshots;

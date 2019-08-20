@@ -317,7 +317,8 @@ __attribute__((visibility("hidden")))
 - (void)setSuspendAudio;
 - (BOOL)isCallOngoing;
 - (void)processRemoteIPChange:(id)arg1 callID:(unsigned int)arg2;
-@property BOOL isGKVoiceChat;
+- (BOOL)isGKVoiceChat;
+- (void)setIsGKVoiceChat:(BOOL)arg1;
 @property(readonly) unsigned int lastSentAudioSampleTime;
 @property unsigned char inputMeter;
 @property(readonly) int bundledPackets;
@@ -360,9 +361,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)isSIPEnabled;
 - (void)dealloc;
 - (BOOL)handshakeComplete:(struct SSLContext *)arg1 withError:(struct __CFError **)arg2;
-- (void)updateLastReceivedPacket:(BOOL)arg1;
+- (void)updateLastReceivedPacket:(BOOL)arg1 packetType:(int)arg2;
 - (void)updateLastReceivedAudioTime;
-- (void)updateLastReceivedPacketWithTimestamp:(double)arg1;
+- (void)updateLastReceivedPacketWithTimestamp:(double)arg1 packetType:(int)arg2;
 - (void)updateRemoteMediaStallStateReporting:(double)arg1;
 - (void)updateRemoteMediaStallState:(double)arg1;
 @property(readonly) double networkQuality;
@@ -391,7 +392,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL useCompressedConnectionData;
 @property(nonatomic) BOOL requiresWifi;
 @property(readonly) BOOL isCurrentPayloadTypeValid;
-- (id)initWithDeviceRole:(int)arg1 transportType:(unsigned int)arg2;
+- (id)initWithDeviceRole:(int)arg1 transportType:(unsigned int)arg2 isGKVoiceChat:(BOOL)arg3;
 - (id)init;
 @property(readonly, copy) NSString *description;
 - (void)vcSecureDataChannel:(id)arg1 messageType:(unsigned int)arg2 receivedData:(id)arg3;

@@ -17,6 +17,7 @@
 - (void)SPIUsageLackingEntitlementRejectedForPID:(int)arg1;
 - (void)SPIUsageLackingEntitlementGrantedForPID:(int)arg1;
 - (void)serviceError:(NSError *)arg1;
+- (void)deleteImageRecentsMetadataRequestFailed:(NSError *)arg1;
 - (void)setContactImageDataZeroCropRect:(NSData *)arg1 format:(const char *)arg2;
 - (void)setContactImageData:(NSData *)arg1 format:(const char *)arg2 cropRect:(struct CGRect)arg3;
 - (void)removeContactImageData;

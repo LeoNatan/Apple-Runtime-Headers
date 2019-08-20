@@ -23,7 +23,7 @@
 - (unsigned long long)coalescedMapItemSourceForPlace:(id)arg1;
 - (id)learnedPlaceForInferredMapItem:(id)arg1 error:(id *)arg2;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
-- (id)initWithDistanceCalculator:(id)arg1 learnedLocationStore:(id)arg2 parameters:(id)arg3;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 learnedLocationStore:(id)arg3 parameters:(id)arg4;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 learnedLocationStore:(id)arg3;
 - (id)init;
 

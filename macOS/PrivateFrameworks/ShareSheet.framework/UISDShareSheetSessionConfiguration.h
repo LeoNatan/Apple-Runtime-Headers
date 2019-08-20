@@ -12,6 +12,7 @@
 
 @interface UISDShareSheetSessionConfiguration : NSObject <NSSecureCoding>
 {
+    BOOL _wantsAnimation;
     NSNumber *_nearbyCountSlotID;
     NSArray *_peopleProxies;
     NSArray *_shareProxies;
@@ -19,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL wantsAnimation; // @synthesize wantsAnimation=_wantsAnimation;
 @property(retain, nonatomic) NSArray *actionProxies; // @synthesize actionProxies=_actionProxies;
 @property(retain, nonatomic) NSArray *shareProxies; // @synthesize shareProxies=_shareProxies;
 @property(retain, nonatomic) NSArray *peopleProxies; // @synthesize peopleProxies=_peopleProxies;

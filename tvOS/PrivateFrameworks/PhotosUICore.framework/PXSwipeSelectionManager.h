@@ -23,6 +23,7 @@
         _Bool respondsToShouldBeginSelectionAtLocation;
         _Bool respondsToShouldAutomaticallyTransitionToMultiSelectModeAtPoint;
         _Bool respondsToAutomaticallyTransitionToMultiSelectMode;
+        _Bool respondsToIndexPathSetFromIndexPathToIndexPath;
     } _delegateFlags;
     id <PXSwipeSelectionManagerDelegate> _delegate;
     unsigned long long _state;

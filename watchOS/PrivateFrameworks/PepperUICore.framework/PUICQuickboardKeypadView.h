@@ -40,12 +40,13 @@
 - (void)numberPadView:(id)arg1 didUnhighlightNumberPadCharacter:(int)arg2;
 - (void)numberPadView:(id)arg1 didHighlightNumberPadCharacter:(int)arg2;
 - (_Bool)_isTemperatureMode;
-- (void)_updateAuxiliaryButtonsVisibility;
+- (void)_updateAuxiliaryButtonsVisibilityAnimated:(_Bool)arg1;
 - (void)backspace;
 - (void)addDialedString:(id)arg1;
 - (void)resetDialedString;
 - (void)_deleteButtonTapped:(id)arg1;
 - (void)_installConstraints;
+- (id)initWithFrame:(struct CGRect)arg1 mode:(int)arg2 initialNumbers:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 mode:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

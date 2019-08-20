@@ -12,12 +12,17 @@
 
 +     // Error parsing type: @40@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32, name: previewActionForURL:result:context:
 - (struct CGSize)suggestedContentSize;
+- (id)additionalMenuActions;
 - (id)menuActionClasses;
 - (id)menuActions;
+- (_Bool)showMenuTitle;
 - (id)platterSubtitle;
 - (id)platterTitle;
 - (void)setPreviewMode:(_Bool)arg1;
 - (_Bool)requiresEmbeddingNavigationController;
+- (_Bool)prefersActionMenuStyle;
+- (id)expandViewController;
+- (_Bool)wantsCustomViewControllerCommit;
 - (_Bool)wantsSeamlessCommit;
 - (id)commitURL;
 - (id)viewController;

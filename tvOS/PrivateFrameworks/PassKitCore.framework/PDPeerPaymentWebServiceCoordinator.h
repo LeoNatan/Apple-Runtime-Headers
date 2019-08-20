@@ -77,8 +77,10 @@
 - (void)updateAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unregisterDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_registerWithPeerPaymentWebService:(id)arg1 registerURL:(id)arg2 pushToken:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 forceReregister:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
+- (void)registerDeviceWithForceReregister:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleCompanionSerialNumberChanged;
 - (void)registrationStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)identityVerificationResponseWithCompletion:(CDUnknownBlockType)arg1;

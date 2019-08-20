@@ -14,12 +14,14 @@
 @interface DOCItemCollectionObserver : NSObject <FPItemCollectionIndexPathBasedDelegate>
 {
     FPItemCollection *_itemCollection;
-    id <FPItemCollectionIndexPathBasedDelegate> _delegate;
     NSMutableArray *_subscribers;
+    NSMutableArray *_delegates;
+    id <FPItemCollectionIndexPathBasedDelegate> _soleUpdatableDelegate;
 }
 
+@property(retain) id <FPItemCollectionIndexPathBasedDelegate> soleUpdatableDelegate; // @synthesize soleUpdatableDelegate=_soleUpdatableDelegate;
+@property(retain) NSMutableArray *delegates; // @synthesize delegates=_delegates;
 @property(retain) NSMutableArray *subscribers; // @synthesize subscribers=_subscribers;
-@property __weak id <FPItemCollectionIndexPathBasedDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) FPItemCollection *itemCollection; // @synthesize itemCollection=_itemCollection;
 - (void).cxx_destruct;
 - (void)collection:(id)arg1 didPerformBatchUpdateWithReplayBlock:(CDUnknownBlockType)arg2;
@@ -28,12 +30,17 @@
 - (void)collection:(id)arg1 didDeleteItemsAtIndexPaths:(id)arg2;
 - (void)collection:(id)arg1 didMoveItemsFromIndexPaths:(id)arg2 toIndexPaths:(id)arg3;
 - (void)collection:(id)arg1 didInsertItemsAtIndexPaths:(id)arg2;
+- (void)_enumerateItemCollectionIndexPathBasedDelegatesWithBlock:(CDUnknownBlockType)arg1;
+- (void)_purgeOrphanedContainers;
+- (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1;
 - (void)removeSubscriber:(id)arg1;
 - (id)addSubscriber:(CDUnknownBlockType)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)notifySubscribers;
 - (void)dealloc;
 - (id)initWithItemCollection:(id)arg1;
+- (id)__delegates;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -66,6 +66,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (void)closeSession:(id)arg1 withError:(id)arg2;
+- (void)_resetCurrentRecordingSession:(id)arg1;
 - (void)_closeCurrentSessionsWithReason:(unsigned short)arg1;
 - (unsigned short)_closeEventReasonForRecordingSessionError:(id)arg1;
 - (void)_handleDataReceived:(id)arg1;

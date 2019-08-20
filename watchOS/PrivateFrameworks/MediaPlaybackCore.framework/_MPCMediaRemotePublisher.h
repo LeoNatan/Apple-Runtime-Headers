@@ -15,7 +15,8 @@
 {
     MPLibraryAddStatusObserver *_libraryAddStatusObserver;
     NSString *_lastContextID;
-    _Bool _isLastKnownSubscriptionStatusTypeEnabled;
+    _Bool _allowsSubscriptionPlayback;
+    _Bool _isSubscriptionEnabled;
     NSString *_hashedDSID;
     _Bool _initializedSupportedCommands;
     _Bool _engineRestoringState;

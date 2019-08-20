@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, NSOperationQueue, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
+#import <MediaPlayer/ICEnvironmentMonitorObserver-Protocol.h>
+
+@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, ICUserIdentity, NSOperationQueue, NSString, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
 @protocol OS_dispatch_queue;
 
-@interface _MPCloudServiceStatusControllerImplementation : NSObject
+@interface _MPCloudServiceStatusControllerImplementation : NSObject <ICEnvironmentMonitorObserver>
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned long long _accountStoreChangeObservationCount;
@@ -37,6 +39,7 @@
     NSOperationQueue *_subscriptionOperationQueue;
     unsigned long long _subscriptionStatusObservationCount;
     unsigned long long _URLBagObservationCount;
+    ICUserIdentity *_userIdentity;
     ICMusicSubscriptionFairPlayKeyStatus *_lastKnownSubscriptionFairPlayKeyStatus;
 }
 
@@ -44,8 +47,9 @@
 + (id)implementations;
 + (id)globalSerialQueue;
 @property(readonly, nonatomic) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus; // @synthesize lastKnownSubscriptionFairPlayKeyStatus=_lastKnownSubscriptionFairPlayKeyStatus;
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
-- (void)_updateSubscriptionStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateSubscriptionStatusWithIgnoreCachePolicy:(_Bool)arg1;
 - (void)_updateSubscriptionAvailability;
 - (void)_updateMatchStatus;
 - (void)_updateForNetworkReachabilityObserversCountChange;
@@ -83,6 +87,12 @@
 - (void)dealloc;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

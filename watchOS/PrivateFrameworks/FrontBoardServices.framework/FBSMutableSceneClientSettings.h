@@ -6,9 +6,12 @@
 
 #import <FrontBoardServices/FBSSceneClientSettings.h>
 
-@class NSSet, NSString;
+#import <FrontBoardServices/BSDebugDescriptionProviding-Protocol.h>
+#import <FrontBoardServices/BSXPCSecureCoding-Protocol.h>
 
-@interface FBSMutableSceneClientSettings : FBSSceneClientSettings
+@class NSOrderedSet, NSSet, NSString;
+
+@interface FBSMutableSceneClientSettings : FBSSceneClientSettings <BSDebugDescriptionProviding, BSXPCSecureCoding>
 {
 }
 
@@ -20,7 +23,13 @@
 @property(copy, nonatomic) NSSet *occlusions; // @dynamic occlusions;
 @property(nonatomic) int preferredInterfaceOrientation; // @dynamic preferredInterfaceOrientation;
 @property(nonatomic) float preferredLevel; // @dynamic preferredLevel;
-- (void)setLayers:(id)arg1;
+@property(copy, nonatomic, setter=_setLayers:) NSOrderedSet *layers; // @dynamic layers;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

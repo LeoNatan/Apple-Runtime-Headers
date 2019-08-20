@@ -23,6 +23,8 @@
 @property(readonly, nonatomic) long long numberOfItemsPerColumn; // @synthesize numberOfItemsPerColumn=_numberOfItemsPerColumn;
 @property(readonly, nonatomic) long long numberOfItemsPerRow; // @synthesize numberOfItemsPerRow=_numberOfItemsPerRow;
 @property(readonly, nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithNumberOfItemsPerRow:(long long)arg1 numberOfItemsPerColumn:(long long)arg2 interitemPadding:(double)arg3 appButtonIndex:(long long)arg4 laysOutVertically:(_Bool)arg5;
 
 @end

@@ -22,7 +22,6 @@
     BOOL _useRouteConfigUpdatedNotification;
 }
 
-+ (void)initialize;
 @property(readonly, nonatomic) struct __CFDictionary *routeDescriptor; // @synthesize routeDescriptor=_routeDescriptor;
 @property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
 - (void).cxx_destruct;

@@ -79,8 +79,8 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)_setGestureRecognizers:(id)arg1;
-- (void)_updateGestureRecognizers;
+- (void)scn_setGestureRecognizers:(id)arg1;
+- (void)scn_updateGestureRecognizers;
 - (_Bool)_controlsOwnScaleFactor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)displayLayer:(id)arg1;
@@ -107,6 +107,8 @@
 - (_Bool)_showsAuthoringEnvironment;
 @property(nonatomic) unsigned long long debugOptions;
 - (void)_updateProbes:(id)arg1 withProgress:(id)arg2;
+- (void)set_shouldDelegateARCompositing:(_Bool)arg1;
+- (_Bool)_shouldDelegateARCompositing;
 - (void)set_enableARMode:(_Bool)arg1;
 - (_Bool)_enableARMode;
 - (void)set_disableLinearRendering:(_Bool)arg1;

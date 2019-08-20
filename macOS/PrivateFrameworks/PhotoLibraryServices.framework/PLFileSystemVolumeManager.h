@@ -21,8 +21,9 @@
 
 + (id)sharedFileSystemVolumeManager;
 - (void).cxx_destruct;
-- (void)_diskDisappeared:(struct __DADisk *)arg1;
-- (void)_diskAppeared:(struct __DADisk *)arg1;
+- (void)_diskDisappeared:(id)arg1;
+- (void)_diskAppeared:(id)arg1;
+- (void)_updateMountedVolumeURLs;
 - (void)_updateOfflineStates;
 - (void)unregisterPLFileSystemVolume:(id)arg1;
 - (void)registerPLFileSystemVolume:(id)arg1;

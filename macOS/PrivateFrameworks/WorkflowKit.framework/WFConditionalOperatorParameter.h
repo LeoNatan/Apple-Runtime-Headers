@@ -10,12 +10,14 @@
 
 @interface WFConditionalOperatorParameter : WFEnumerationParameter
 {
+    BOOL _usingLegacyOperatorBehavior;
     NSArray *_possibleStates;
     NSArray *_possibleContentOperators;
     long long _contentType;
     unsigned long long _displayableTimeUnits;
 }
 
+@property(readonly, nonatomic) BOOL usingLegacyOperatorBehavior; // @synthesize usingLegacyOperatorBehavior=_usingLegacyOperatorBehavior;
 @property(readonly, nonatomic) unsigned long long displayableTimeUnits; // @synthesize displayableTimeUnits=_displayableTimeUnits;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) NSArray *possibleContentOperators; // @synthesize possibleContentOperators=_possibleContentOperators;
@@ -24,7 +26,7 @@
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;
 - (void)possibleStatesDidChange;
-- (void)setPossibleContentOperators:(id)arg1 withContentType:(long long)arg2 displayableTimeUnits:(unsigned long long)arg3;
+- (void)setPossibleContentOperators:(id)arg1 withContentType:(long long)arg2 displayableTimeUnits:(unsigned long long)arg3 usingLegacyOperatorBehavior:(BOOL)arg4;
 - (id)defaultSupportedVariableTypes;
 - (BOOL)supportsImportQuestions;
 - (BOOL)allowsMultipleValues;

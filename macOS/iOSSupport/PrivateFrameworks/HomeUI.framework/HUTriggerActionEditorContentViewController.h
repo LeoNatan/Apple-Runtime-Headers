@@ -8,20 +8,20 @@
 
 #import <HomeUI/HUServiceGridItemManagerDelegate-Protocol.h>
 
-@class HFTriggerBuilder, NSString, UINavigationItem;
+@class HFTriggerBuilder, HUTriggerActionFlow, NSString, UINavigationItem;
 @protocol HUTriggerEditorDelegate;
 
 @interface HUTriggerActionEditorContentViewController : HUSelectableServiceGridViewController <HUServiceGridItemManagerDelegate>
 {
     HFTriggerBuilder *_triggerBuilder;
-    unsigned long long _mode;
+    HUTriggerActionFlow *_flow;
     UINavigationItem *_effectiveNavigationItem;
     unsigned long long _forceDisableReasonsForSecureCharacteristicControl;
 }
 
 @property(nonatomic) unsigned long long forceDisableReasonsForSecureCharacteristicControl; // @synthesize forceDisableReasonsForSecureCharacteristicControl=_forceDisableReasonsForSecureCharacteristicControl;
 @property(readonly, nonatomic) UINavigationItem *effectiveNavigationItem; // @synthesize effectiveNavigationItem=_effectiveNavigationItem;
-@property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
+@property(retain, nonatomic) HUTriggerActionFlow *flow; // @synthesize flow=_flow;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
 - (unsigned long long)_triggerForceDisableReasonsForActionItem:(id)arg1;
@@ -46,6 +46,7 @@
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
 - (BOOL)canSelectItem:(id)arg1 indexPath:(id)arg2;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
+- (void)_goToSummaryScreen:(id)arg1;
 - (void)goToSummaryScreen;
 - (void)_next:(id)arg1;
 - (void)_cancel:(id)arg1;
@@ -53,7 +54,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithServiceGridItemManager:(id)arg1;
-- (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 effectiveNavigationItem:(id)arg3 delegate:(id)arg4;
+- (id)initWithTriggerBuilder:(id)arg1 flow:(id)arg2 effectiveNavigationItem:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

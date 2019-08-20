@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)setStyleProvider:(id)arg1 primaryStyle:(BOOL)arg2;
 - (void)setText:(id)arg1;
 - (void)mouseUp:(id)arg1;
+- (void)mouseDown:(id)arg1;
 - (id)_downscaleFont;
 - (id)_originalFont;
 - (void)setUppercase:(BOOL)arg1 usingCurrentLocale:(BOOL)arg2;

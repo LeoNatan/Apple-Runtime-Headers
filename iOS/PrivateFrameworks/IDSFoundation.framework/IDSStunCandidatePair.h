@@ -80,6 +80,7 @@
     double _testStartTime;
     unsigned int _testOptions;
     _Bool _isDisconnecting;
+    double _triggeredCheckTime;
 }
 
 + (id)candidatePairWithLocalCandidate:(id)arg1 remoteCandidate:(id)arg2 sessionID:(id)arg3 delegate:(id)arg4 sendMsgBlock:(CDUnknownBlockType)arg5;
@@ -110,6 +111,7 @@
 @property(nonatomic) unsigned int totalPacketsSentOnLink; // @synthesize totalPacketsSentOnLink=_totalPacketsSentOnLink;
 @property(nonatomic) double lastOutgoingPacketTime; // @synthesize lastOutgoingPacketTime=_lastOutgoingPacketTime;
 @property(nonatomic) double lastIncomingPacketTime; // @synthesize lastIncomingPacketTime=_lastIncomingPacketTime;
+@property(nonatomic) double triggeredCheckTime; // @synthesize triggeredCheckTime=_triggeredCheckTime;
 @property(readonly, nonatomic) unsigned int testOptions; // @synthesize testOptions=_testOptions;
 @property(nonatomic) _Bool pendingNoSessionStateAllocbind; // @synthesize pendingNoSessionStateAllocbind=_pendingNoSessionStateAllocbind;
 @property(nonatomic) _Bool isDisconnecting; // @synthesize isDisconnecting=_isDisconnecting;

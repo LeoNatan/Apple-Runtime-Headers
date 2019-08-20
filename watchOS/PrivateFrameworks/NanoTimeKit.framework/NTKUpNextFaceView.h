@@ -16,7 +16,7 @@
 #import <NanoTimeKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableSet, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICClientSideAnimation, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView, _UICollectionViewDiffableDataSource;
+@class NSArray, NSMutableArray, NSMutableSet, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICClientSideAnimation, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UICollectionViewDiffableDataSource, UIImage, UITapGestureRecognizer, UIView;
 
 @interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
 {
@@ -25,7 +25,7 @@
     NTKDigitalTimeLabelStyle *_timeLabelSmallInUpperRightCornerStyle;
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
     NTKUpNextCollectionView *_collectionView;
-    _UICollectionViewDiffableDataSource *_collectionViewDataSource;
+    UICollectionViewDiffableDataSource *_collectionViewDataSource;
     NTKUpNextCollectionViewFlowLayout *_layout;
     REUIRelevanceEngineController *_engineController;
     UITapGestureRecognizer *_viewModeTapGesture;
@@ -165,8 +165,10 @@
 - (int)_numberOfSectionsInCollectionView;
 - (void)_configureVisibleCell:(id)arg1;
 - (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (id)_configureCellForItemAtIndexPath:(id)arg1;
-- (void)_loadCollectionViewDataAnimated:(_Bool)arg1;
+- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2;
+- (void)_removeUnmanagedCollectionViewCells;
+- (void)_loadCollectionViewDataAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_reloadCollectionViewData;
 - (void)_configureCollectionViewDataSource;
 - (_Bool)_dismissPresentedViewControllerIfNecessary:(_Bool)arg1;
 - (void)_stopViewResetTimer;

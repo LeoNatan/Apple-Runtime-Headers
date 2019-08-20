@@ -15,6 +15,8 @@
     BOOL _mayOpenFromUnmanagedToManaged;
     BOOL _isManagedAppsCloudSyncDisallowed;
     BOOL _hasOpenInRestrictions;
+    BOOL _isUSBAccessAllowed;
+    BOOL _isNetworkDriveAccessInFilesAllowed;
     BOOL _didLoadSharedConnectionValues;
     NSString *_hostIdentifier;
     unsigned long long _hostAccountDataOwnerState;
@@ -47,6 +49,8 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)hasAnyEffectiveRestrictions;
+@property(readonly, nonatomic) BOOL isNetworkDriveAllowed;
+@property(readonly, nonatomic) BOOL isUSBAccessAllowed;
 @property(readonly, nonatomic) BOOL hasOpenInRestrictions;
 - (BOOL)isManagedAppsCloudSyncAllowed;
 - (BOOL)isManagedAppsCloudSyncDisallowed;

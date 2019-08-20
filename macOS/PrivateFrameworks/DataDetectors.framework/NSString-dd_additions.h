@@ -9,6 +9,5 @@
 @interface NSString (dd_additions)
 - (id)dd_stringByAppendingURLParameter:(id)arg1 value:(id)arg2 first:(BOOL)arg3 keepEmpty:(BOOL)arg4;
 - (id)dd_stringByCleaningWhitespace;
-- (BOOL)dd_hasDiacriticPrefix:(id)arg1;
 @end
 

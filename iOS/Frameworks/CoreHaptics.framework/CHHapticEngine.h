@@ -54,7 +54,7 @@
 - (void)dealloc;
 @property(nonatomic) _Bool highPriority;
 @property(nonatomic) _Bool muteAudioOnRingerOff;
-@property(nonatomic) _Bool stopPlaybackOnAudioSessionInterruption;
+@property(nonatomic) _Bool activateAudioSessionOnStart;
 @property(nonatomic) _Bool followAudioRoute;
 @property(nonatomic) _Bool hapticsIsMuted;
 @property(nonatomic) _Bool audioIsMuted;

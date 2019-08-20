@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) SXWebContentContainerViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
 @property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 - (void).cxx_destruct;
+- (BOOL)useLightForegroundColor;
 - (void)reachabilityChanged:(BOOL)arg1;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 - (void)layoutErrorView;

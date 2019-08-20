@@ -30,7 +30,7 @@
 - (_Bool)containsNodeIdentifier:(id)arg1;
 - (void)enumerateAllIconsWithBaseIndexPath:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)sort;
-- (id)iconsOfClass:(Class)arg1;
+- (void)addIconsOfClass:(Class)arg1 toSet:(id)arg2;
 - (void)markIconStateClean;
 - (_Bool)isIconStateDirty;
 - (_Bool)isValidPageIndex:(unsigned long long)arg1;

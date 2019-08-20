@@ -9,7 +9,7 @@
 @class CNContact, NSArray, NSData, NSDate, NSSet, NSString, PKAccount, PKAccountAction, PKAccountPreferences, PKAccountWebServicePhysicalCardActionRequest, PKAccountWebServiceRequestPhysicalCardRequest, PKApplePayTrustSignature, PKPaymentDeviceMetadata, PKPhysicalCardAction, PKPhysicalCardOrder, PKVirtualCard;
 
 @protocol PDAccountServiceExportedInterface <PDXPCServiceExportedInterface>
-- (void)scheduledPaymentsWithAccountIdentifier:(NSString *)arg1 includeFailedRecurringPayments:(_Bool)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (void)scheduledPaymentsWithAccountIdentifier:(NSString *)arg1 includeFailedRecurringPayments:(_Bool)arg2 allowFetchFromServer:(_Bool)arg3 completion:(void (^)(NSArray *, NSError *))arg4;
 - (void)updateScheduledPaymentsWithAccount:(PKAccount *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)billPaymentSelectedSuggestedAmountDataEventsForAccountIdentifier:(NSString *)arg1 withStartDate:(NSDate *)arg2 endDate:(NSDate *)arg3 completion:(void (^)(NSArray *, NSError *))arg4;
 - (void)billPaymentSelectedSuggestedAmountDataEventsForAccountIdentifier:(NSString *)arg1 withStatementIdentifier:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;

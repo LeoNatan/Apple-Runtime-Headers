@@ -25,7 +25,8 @@ __attribute__((visibility("hidden")))
     unsigned int direct_prohibited:1;
     unsigned int synthesized_url:1;
     unsigned int overrode_to_https:1;
-    unsigned int __pad_bits:6;
+    unsigned int transport_finished:1;
+    unsigned int __pad_bits:5;
 }
 
 - (void).cxx_destruct;

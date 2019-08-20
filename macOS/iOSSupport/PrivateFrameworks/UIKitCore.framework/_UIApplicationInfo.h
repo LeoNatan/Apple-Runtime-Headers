@@ -50,6 +50,8 @@
 - (void)_lock_loadFolderNamesIfNecessary;
 - (BOOL)statusBarForcedHiddenForInterfaceOrientation:(long long)arg1 onDisplay:(id)arg2;
 - (BOOL)statusBarHiddenForInterfaceOrientation:(long long)arg1 onDisplay:(id)arg2;
+- (BOOL)statusBarForcedHiddenForInterfaceOrientation:(long long)arg1 onDisplay:(id)arg2 withUserInterfaceIdiom:(long long)arg3;
+- (BOOL)statusBarHiddenForInterfaceOrientation:(long long)arg1 onDisplay:(id)arg2 withUserInterfaceIdiom:(long long)arg3;
 @property(readonly, nonatomic) NSString *fallbackFolderName;
 @property(readonly, nonatomic) NSArray *folderNames;
 - (void)_loadFromProxy:(id)arg1;

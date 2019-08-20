@@ -71,7 +71,8 @@
 - (void)_clearTransitionStateForStyle:(unsigned int)arg1;
 - (struct CATransform3D)_intermediateTransformForBigNumberAtIndex:(unsigned int)arg1 fraction:(float)arg2;
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3 fromPalette:(id)arg4 toPalette:(id)arg5;
-- (id)activeRingLayers;
+- (id)_activeRingObjects;
+- (id)_activeRingLayers;
 - (void)applyTransitionFraction:(float)arg1 fromDialShape:(unsigned int)arg2 toDialShape:(unsigned int)arg3;
 - (_Bool)isCircularDial;
 - (void)setInTimeTravel:(_Bool)arg1 animated:(_Bool)arg2;

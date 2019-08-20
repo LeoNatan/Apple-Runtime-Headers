@@ -12,6 +12,7 @@
 
 @interface _HKDatabaseChangesQuery : HKQuery <HKDatabaseChangesQueryClientInterface>
 {
+    _Bool _includeChangeDetails;
     CDUnknownBlockType _resultsHandler;
     NSArray *_sampleTypes;
     HKQueryAnchor *_anchor;
@@ -24,6 +25,7 @@
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, copy, nonatomic) NSArray *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
 @property(readonly, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
+@property(nonatomic) _Bool includeChangeDetails; // @synthesize includeChangeDetails=_includeChangeDetails;
 - (void).cxx_destruct;
 - (void)client_deliverQueryAnchor:(id)arg1 sampleTypeChanges:(id)arg2 queryUUID:(id)arg3;
 - (void)queue_queryDidDeactivate:(id)arg1;

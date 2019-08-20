@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     PDFAKDocumentAdaptorPrivate *_private;
 }
 
++ (_Bool)requirePasswordsUIEnabledForThisThread;
++ (void)setRequirePasswordsUIEnabledForThisThread:(_Bool)arg1;
 - (void).cxx_destruct;
 - (void)_delayedModelBaseScaleFactorCalculation;
 - (void)_scheduleDelayedModelBaseScaleFactorCalculation;

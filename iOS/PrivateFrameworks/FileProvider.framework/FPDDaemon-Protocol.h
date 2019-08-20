@@ -35,9 +35,10 @@
 - (void)reindexAllSearchableItemsForBundleIDs:(NSArray *)arg1 acknowledgementHandler:(void (^)(void))arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(void (^)(void))arg1;
 - (void)providerDomainForURL:(NSURL *)arg1 completionHandler:(void (^)(FPProviderDomain *, NSError *))arg2;
-- (void)writeCheckReportTo:(NSFileHandle *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)dumpStateTo:(NSFileHandle *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)writeCheckReportTo:(NSFileHandle *)arg1 limitNumberOfItems:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)dumpStateTo:(NSFileHandle *)arg1 limitNumberOfItems:(_Bool)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)getURLForContainerWithItemID:(NSString *)arg1 inDataScopeDomainWithIdentifier:(NSString *)arg2 documentsScopeDomainIdentifier:(NSString *)arg3 documentsFolderItemIdentifier:(NSString *)arg4 completionHandler:(void (^)(FPSandboxingURLWrapper *, FPSandboxingURLWrapper *, NSError *))arg5;
+- (void)makeTopologicallySortedItemsOnDisk:(NSArray *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)noteURLBecameFrontmost:(NSURL *)arg1 inWindow:(NSNumber *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)fetchDaemonOperationWithID:(NSString *)arg1 completionHandler:(void (^)(id <FPDaemonActionOperation>, FPActionOperationInfo *, NSError *))arg2;
 - (void)fetchDaemonOperationIDsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;

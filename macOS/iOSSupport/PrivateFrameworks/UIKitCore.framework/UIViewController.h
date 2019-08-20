@@ -323,6 +323,10 @@
 - (id)defaultPNGName;
 - (BOOL)_canShowWhileLocked;
 - (id)_screen;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
+- (void)setNeedsUpdateOfHomeIndicatorAutoHidden;
+- (id)_effectiveHomeIndicatorAutoHiddenViewController;
+- (BOOL)prefersHomeIndicatorAutoHidden;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
 - (void)setNeedsUpdateOfScreenEdgesDeferringSystemGestures;
 - (id)_effectiveScreenEdgesDeferringSystemGesturesViewController;
@@ -871,6 +875,7 @@
 - (void)_setUseTelephonyUI:(BOOL)arg1;
 - (struct CGSize)_resolvedPreferredContentSize;
 @property(readonly, nonatomic) UIMultiColumnViewController *_multiColumnViewController;
+@property(readonly, nonatomic) BOOL performsActionsWhilePresentingModally;
 - (id)moreListTableCell;
 - (id)moreListSelectedImage;
 - (id)moreListImage;

@@ -51,6 +51,7 @@
 - (void)availabilitySearcherChangedState:(int)arg1;
 - (_Bool)injectNewRowsBeforeLastExistingRow;
 - (void)clearCheckmark;
+- (id)actionsForRow:(id)arg1;
 - (void)cancelOutstandingOperations;
 - (float)estimatedHeightForRow:(id)arg1;
 - (void)commitEditingStyle:(int)arg1 forRow:(id)arg2;

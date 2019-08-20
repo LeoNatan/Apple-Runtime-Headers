@@ -8,7 +8,6 @@
 
 @interface _TtC13CoreKnowledge14SRJobScheduler : NSObject
 {
-    // Error parsing type: , name: queue
 }
 
 + (void)scheduleAllJobs;

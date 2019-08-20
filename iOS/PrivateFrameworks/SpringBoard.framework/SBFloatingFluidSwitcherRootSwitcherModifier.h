@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (Class)_defaultMultitaskingModifierClass;
 - (id)lowEndHardwareModifier;
+- (id)insertionModifierForInsertionEvent:(id)arg1;
 - (id)entityRemovalModifierForEvent:(id)arg1;
 - (id)multitaskingModifierForEvent:(id)arg1;
 - (id)floorModifierForTransitionEvent:(id)arg1;
@@ -32,7 +33,7 @@
 - (id)transitionModifierForMainTransitionEvent:(id)arg1;
 - (id)gestureModifierForGestureEvent:(id)arg1;
 - (id)newMultitaskingModifierFromMultitaskingModifier:(id)arg1;
-- (id)appExposeAccessoryButtonBundleID;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
 - (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 - (id)handleEvent:(id)arg1;
 - (void)setDelegate:(id)arg1;

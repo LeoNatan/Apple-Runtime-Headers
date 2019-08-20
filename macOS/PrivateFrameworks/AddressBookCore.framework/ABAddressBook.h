@@ -376,6 +376,7 @@
 - (void)setSyncCount:(long long)arg1;
 - (BOOL)isSharedInstanceOrClone;
 - (BOOL)isSharedInstance;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (BOOL)isProvisional;
 - (void)nts_DoInitialImports;
@@ -415,6 +416,8 @@
 - (id)storeKeyForDatabaseDataType:(int)arg1;
 - (void)abDidRevertFromBackupCompleteResetContextAndUnlock:(id)arg1;
 - (BOOL)isMemoryBacked;
+- (id)persistentStoreURLs;
+- (unsigned long long)countOfPersistentStores;
 - (id)nts_managedObjectContextWithStoreDescription:(id)arg1 databasePath:(id)arg2 loadFailure:(char *)arg3;
 - (id)makeManagedObjectContext;
 - (id)subscriptionsWithAddressBook:(id)arg1;
@@ -454,7 +457,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

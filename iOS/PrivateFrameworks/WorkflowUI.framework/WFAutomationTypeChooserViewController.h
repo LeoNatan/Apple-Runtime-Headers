@@ -4,27 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <UIKit/UITableViewController.h>
 
-@class WFAutomationTypeExplanationPlatterView;
+@class WFHomeManager;
 @protocol WFAutomationTypeChooserViewControllerDelegate;
 
-@interface WFAutomationTypeChooserViewController : UIViewController
+@interface WFAutomationTypeChooserViewController : UITableViewController
 {
     id <WFAutomationTypeChooserViewControllerDelegate> _delegate;
-    WFAutomationTypeExplanationPlatterView *_personalAutomationView;
-    WFAutomationTypeExplanationPlatterView *_homeAutomationView;
+    WFHomeManager *_homeManager;
 }
 
-@property(readonly, nonatomic) WFAutomationTypeExplanationPlatterView *homeAutomationView; // @synthesize homeAutomationView=_homeAutomationView;
-@property(readonly, nonatomic) WFAutomationTypeExplanationPlatterView *personalAutomationView; // @synthesize personalAutomationView=_personalAutomationView;
+@property(readonly, nonatomic) WFHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(nonatomic) __weak id <WFAutomationTypeChooserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)chooseHomeAutomation:(id)arg1;
 - (void)choosePersonalAutomation:(id)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (_Bool)isModalInPresentation;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithHomeManager:(id)arg1;
 
 @end
 

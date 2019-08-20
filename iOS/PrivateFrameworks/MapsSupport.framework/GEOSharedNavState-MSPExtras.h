@@ -15,5 +15,6 @@
 - (id)mspDescription;
 - (void)merge:(id)arg1;
 - (id)senderName;
+- (id)destinationName;
 @end
 

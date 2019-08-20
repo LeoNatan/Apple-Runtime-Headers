@@ -16,6 +16,7 @@
 @property(copy, nonatomic) CDUnknownBlockType dragPreviewProviderBlock;
 @property(copy, nonatomic) CDUnknownBlockType connectionBlock;
 @property(readonly, nonatomic) unsigned int sessionIdentifier;
+- (void)requestVisibleItems:(void (^)(NSArray *))arg1;
 - (void)enableKeyboardIfNeeded;
 - (void)requestDropWithOperation:(unsigned long long)arg1;
 - (void)takePotentialDrop:(_DUIPotentialDrop *)arg1;

@@ -45,10 +45,10 @@
 @property(readonly, copy, nonatomic) NSArray *currentRecords;
 - (_Bool)_hasAnyPlaybackRecords;
 - (_Bool)_isDisplayAssetEligibleForAutoPlayback:(id)arg1;
-- (void)_prepareForInactiveWithRecords:(id)arg1;
 - (void)_stopPlaybackForRecords:(id)arg1;
 - (void)_startPlaybackForRecords:(id)arg1;
 - (void)_updatePlayingRecords;
+- (void)_updateVisibilityOfRecords;
 - (void)_updatePlaybackEnabled;
 - (void)_updateCanCreateRecords;
 - (void)_updateLowPowerModeEnabled;

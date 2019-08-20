@@ -15,14 +15,10 @@
     NSString *_selectedMediaGroupID;
     BOOL _iLifeLockedAndLoaded;
     BOOL _photoStreamDetected;
-    ILMediaManager *_iPhotoMediaManager;
-    ILMediaManager *_apertureMediaManager;
     ILMediaManager *_folderMediaManager;
     ILMediaManager *_photosMediaManager;
     NSArray *_latestPhotosProjects;
     NSArray *_latestPhotosEvents;
-    NSArray *_latestiPhotoEvents;
-    NSArray *_latestApertureProjects;
     NSArray *_defaultCollections;
     NSArray *_mediaBrowserViewTLOArray;
     NSWindow *_mediaChooserWindow;

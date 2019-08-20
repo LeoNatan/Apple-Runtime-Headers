@@ -6,12 +6,13 @@
 
 #import <HMFoundation/HMFObject.h>
 
+#import <HomeKitBackingStore/HMBModelObjectStorage-Protocol.h>
 #import <HomeKitBackingStore/NSCopying-Protocol.h>
 #import <HomeKitBackingStore/NSSecureCoding-Protocol.h>
 
 @class CKContainerID, NSString, NSUUID;
 
-@interface HMBCloudID : HMFObject <NSSecureCoding, NSCopying>
+@interface HMBCloudID : HMFObject <HMBModelObjectStorage, NSSecureCoding, NSCopying>
 {
     CKContainerID *_containerID;
     int _scope;
@@ -20,12 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned int)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSUUID *modelID; // @synthesize modelID=_modelID;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) int scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 - (void).cxx_destruct;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -33,6 +35,12 @@
 - (id)attributeDescriptions;
 - (id)initWithContainerID:(id)arg1 scope:(int)arg2 name:(id)arg3 modelID:(id)arg4;
 - (id)initWithContainerID:(id)arg1 scope:(int)arg2;
+- (id)hmbEncodeForStorageLocation:(unsigned int)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

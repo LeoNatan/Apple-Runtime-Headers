@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableSet;
+@class FPPacer, NSDictionary, NSMutableSet;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_notifyQueue;
     int _notifyToken;
     int _settingsChangedToken;
-    _Bool _isFetchingDomains;
+    FPPacer *_pacer;
 }
 
 + (id)sharedChangesReceiver;
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)providerDomainsHaveChanged:(id)arg1 error:(id)arg2;
 - (void)callChangesHandlersWithProviderDomains:(id)arg1 error:(id)arg2;
 - (void)updateProviderDomainsWithAttemptCount:(unsigned long long)arg1;
+- (void)signalChange;
 - (void)removeChangesHandlerToken:(id)arg1;
 - (id)addChangesHandler:(CDUnknownBlockType)arg1;
 - (id)_init;

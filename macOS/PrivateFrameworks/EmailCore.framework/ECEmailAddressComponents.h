@@ -40,6 +40,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithEmailAddress:(id)arg1;
@@ -49,7 +50,6 @@
 @property(readonly, copy) NSString *idnaAddress;
 
 // Remaining properties
-@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

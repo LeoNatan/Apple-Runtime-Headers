@@ -28,7 +28,7 @@
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
-@class CEKBadgeTextView, CEKLightingControl, CEKLightingNameBadge, NSArray, NSObject, NSString, NSURL, NUBufferRenderClient, NUComposition, NUMediaView, PHContentEditingInput, PICompositionController, PLEditSource, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUEditableMediaProvider, PUEnterEditPerformanceEventBuilder, PUExitEditPerformanceEventBuilder, PUFilterToolController, PULivePhotoEffectsToolController, PUMediaDestination, PUPhotoEditAggregateSession, PUPhotoEditButtonCenteredToolbar, PUPhotoEditIrisModel, PUPhotoEditLivePhotoVideoToolController, PUPhotoEditPerfHUD, PUPhotoEditPortraitToolController, PUPhotoEditResourceLoader, PUPhotoEditSnapshot, PUPhotoEditToolController, PUPhotoEditToolPickerController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUTimeInterval, PUTouchingGestureRecognizer, PXImageLayerModulator, PXUIAssetBadgeView, UIAlertController, UIButton, UIImageView, UIPencilInteraction, UITapGestureRecognizer, UIView, UIViewController, _PPTState;
+@class CEKBadgeTextView, CEKLightingControl, CEKLightingNameBadge, NSArray, NSObject, NSString, NSTimer, NSURL, NUBufferRenderClient, NUComposition, NUMediaView, PHContentEditingInput, PICompositionController, PLEditSource, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUEditableMediaProvider, PUEnterEditPerformanceEventBuilder, PUExitEditPerformanceEventBuilder, PUFilterToolController, PULivePhotoEffectsToolController, PUMediaDestination, PUPhotoEditAggregateSession, PUPhotoEditButtonCenteredToolbar, PUPhotoEditIrisModel, PUPhotoEditLivePhotoVideoToolController, PUPhotoEditPerfHUD, PUPhotoEditPortraitToolController, PUPhotoEditResourceLoader, PUPhotoEditSnapshot, PUPhotoEditToolController, PUPhotoEditToolPickerController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUTimeInterval, PUTouchingGestureRecognizer, PXImageLayerModulator, PXUIAssetBadgeView, UIAlertController, UIButton, UIImageView, UIPencilInteraction, UITapGestureRecognizer, UIView, UIViewController, _PPTState;
 @protocol NUImageProperties, OS_dispatch_source, PUEditableAsset, PUPhotoEditViewControllerPresentationDelegate, PUPhotoEditViewControllerSessionDelegate;
 
 @interface PUPhotoEditViewController : PUEditViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIPencilInteractionDelegate, PUPhotoEditToolControllerDelegate, PUVideoEditPluginSessionDataSource, PUImageEditPluginSessionDataSource, PUEditPluginSessionDelegate, PXPhotoLibraryUIChangeObserver, PUOneUpAssetTransitionViewController, PXForcedDismissableViewController, PUPhotoEditIrisModelChangeObserver, PHLivePhotoViewDelegate, PUPhotoEditResourceLoaderDelegate, PUViewControllerSpecChangeObserver, NUMediaViewDelegatePrivate, PUPhotoEditToolbarDelegate, PXChangeObserver, PICompositionControllerDelegate, PXTrimToolPlayerWrapperNUMediaViewPlayerItemSource, PUPhotoEditLayoutSource>
@@ -147,6 +147,7 @@
     long long __originalExifOrientation;
     long long __assetChangeDismissalState;
     long long __saveCompetionDismissalState;
+    NSTimer *_assetChangeTimeoutTimer;
     long long __previewRenderType;
     PLPhotoEditRenderer *__previewingOriginalRenderer;
     UIAlertController *__cancelConfirmationAlert;
@@ -206,6 +207,7 @@
 @property(nonatomic, setter=_setShouldBePreviewingOriginal:) _Bool _shouldBePreviewingOriginal; // @synthesize _shouldBePreviewingOriginal=__shouldBePreviewingOriginal;
 @property(nonatomic, setter=_setLayoutReferenceSize:) struct CGSize _layoutReferenceSize; // @synthesize _layoutReferenceSize=__layoutReferenceSize;
 @property(nonatomic, setter=_setPreviewRenderType:) long long _previewRenderType; // @synthesize _previewRenderType=__previewRenderType;
+@property(retain, nonatomic) NSTimer *assetChangeTimeoutTimer; // @synthesize assetChangeTimeoutTimer=_assetChangeTimeoutTimer;
 @property(nonatomic, setter=_setSaveCompletionDismissalState:) long long _saveCompetionDismissalState; // @synthesize _saveCompetionDismissalState=__saveCompetionDismissalState;
 @property(nonatomic, setter=_setAssetChangeDismissalState:) long long _assetChangeDismissalState; // @synthesize _assetChangeDismissalState=__assetChangeDismissalState;
 @property(nonatomic, getter=_isRevertingToOriginal, setter=_setRevertingToOriginal:) _Bool _revertingToOriginal; // @synthesize _revertingToOriginal=__revertingToOriginal;
@@ -400,6 +402,7 @@
 - (void)pencilInteractionDidTap:(id)arg1;
 - (void)_startMarkupSession;
 - (void)_createPencilInteractionIfNeeded;
+- (void)photoLibraryChangesPausedDidChange;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
@@ -421,18 +424,22 @@
 - (void)_startWaitingForSaveRequestID:(int)arg1;
 - (_Bool)_isWaitingForAssetChange;
 - (void)_stopWaitingForAssetChangeWithAsset:(id)arg1 success:(_Bool)arg2;
+- (void)_timeoutWaitingForAssetChange;
+- (void)_startTimeoutTimerForAssetChange;
 - (void)_startWaitingForAssetChange;
 - (void)_presentErrorAndDismissEditorWithTitle:(id)arg1 message:(id)arg2;
 - (void)_presentErrorAndDismissEditorWithTitle:(id)arg1 message:(id)arg2 additionalAction:(id)arg3;
 - (void)_performDiscardAction;
 - (void)_handleRevertResult:(id)arg1 error:(id)arg2;
 - (void)_performRevertAction;
+- (void)resourcesForRevertAllowingDownload:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (int)_revertToEmptyCompositionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (int)_saveRevertedComposition:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_handleRevertButton:(id)arg1;
 - (void)_handleDoneButton:(id)arg1;
 - (void)_handleMainActionButton:(id)arg1;
 - (void)_showJpegPreviewForRawRevertAlert;
+- (void)_resignCurrentTool;
 - (void)_showCancelAndRevertOptionsAllowResetTool:(_Bool)arg1;
 - (void)_handleCancelButton:(id)arg1;
 - (void)_handleTTRButton:(id)arg1;
@@ -454,6 +461,7 @@
 - (_Bool)_shouldDisplayDepthButtonInToolbar;
 - (void)_updatePluginButtonAnimated:(_Bool)arg1;
 - (void)_updateAutoEnhanceButtonAnimated:(_Bool)arg1;
+- (void)_updateCancelButtonAnimated:(_Bool)arg1;
 - (void)_updateMainActionButtonAnimated:(_Bool)arg1;
 - (_Bool)_hasAdjustedSlowMotion;
 - (void)_updateModelDependentControlsAnimated:(_Bool)arg1;

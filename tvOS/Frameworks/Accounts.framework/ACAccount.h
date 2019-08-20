@@ -60,6 +60,9 @@
 @property(readonly, nonatomic) _Bool wasProvisionedDataclassesReset; // @synthesize wasProvisionedDataclassesReset=_wasProvisionedDataclassesReset;
 @property(copy, nonatomic) ACTrackedSet *trackedProvisionedDataclasses; // @synthesize trackedProvisionedDataclasses=_trackedProvisionedDataclasses;
 - (void).cxx_destruct;
+- (_Bool)correctPersonaScopedForAccount;
+- (id)personaIdentifier;
+- (_Bool)isDataSeparatedAccount;
 - (id)secCertificates;
 - (void)setSecCertificates:(id)arg1;
 - (struct __SecIdentity *)copySecIdentity;

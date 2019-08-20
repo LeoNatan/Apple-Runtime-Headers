@@ -26,6 +26,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (id)worldTrackingOptions;
+- (id)imageSensorSettings;
 - (id)init;
 
 @end

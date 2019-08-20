@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSBitmapImageRep.h>
+#import <AppKit/NSCGImageRep.h>
 
 @class NSDictionary;
 
 __attribute__((visibility("hidden")))
-@interface FI_TThumbnailImageRep : NSBitmapImageRep
+@interface FI_TThumbnailImageRep : NSCGImageRep
 {
     struct TNSRef<FI_TInlinePreviewData, void> _inlinePreviewData;
 }

@@ -15,6 +15,7 @@
     NSXPCConnection *_clientConnection;
 }
 
++ (_Bool)_shouldCopyTitleDescriptionAndKeywordsForMetadataCopyOptions:(id)arg1;
 + (_Bool)_shouldBakeInAdjustmentsAndFlattenLivePhoto:(_Bool *)arg1 forSourceAsset:(id)arg2 adjustmentBakeInOptions:(id)arg3;
 @property(readonly, nonatomic) __weak NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 - (void).cxx_destruct;

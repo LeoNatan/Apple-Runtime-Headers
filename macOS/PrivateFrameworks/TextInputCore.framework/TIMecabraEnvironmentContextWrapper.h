@@ -40,6 +40,7 @@
 - (void)setGeometryModel:(void *)arg1 modelData:(struct __CFArray *)arg2;
 - (void)completelyCommitInlineCandidate:(void *)arg1;
 - (void)partiallyCommitInlineCandidate:(void *)arg1;
+- (void)commitPredictionCandidate:(void *)arg1;
 - (BOOL)predictionCandidatesWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
 - (BOOL)analyzeInput:(id)arg1 options:(unsigned long long)arg2;
 - (BOOL)analyzeString:(id)arg1 options:(unsigned long long)arg2;

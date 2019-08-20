@@ -19,9 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)cursorByAdvancingWithSymbol:(id)arg1 fromCursor:(id)arg2 inNetwork:(id)arg3;
 + (id)cursorByAdvancingWithString:(id)arg1 fromCursor:(id)arg2 inNetwork:(id)arg3;
-+ (id)rootCursorForContentType:(int)arg1 inNetwork:(id)arg2;
++ (id)rootCursorForContentType:(int)arg1 inNetwork:(id)arg2 forFirstSegmentGroup:(_Bool)arg3;
 + (id)patternToSymbolMap;
-+ (int)contentTypeFromString:(id)arg1;
 + (id)contentTypesToPatternsMapping;
 - (void)dealloc;
 - (id)initWithFile:(id)arg1;

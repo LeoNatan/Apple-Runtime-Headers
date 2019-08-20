@@ -88,6 +88,7 @@
 - (void)avatarPosePickerManager:(id)arg1 didFinishWithProviderItem:(id)arg2;
 - (void)showAvatarPosePickerFromItem:(id)arg1;
 - (void)notifyDelegateWithContactImage:(id)arg1 didSaveToMeContact:(BOOL)arg2;
+- (void)presentErrorAlertForEmptyPhotoIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)finishOnboardingWithDidSaveToMeContact:(BOOL)arg1;
 - (long long)contactImageSourceForType:(unsigned long long)arg1;
 - (void)promptForSavingToMeCard;
@@ -99,6 +100,7 @@
 - (void)givenNameDidChange:(id)arg1;
 - (void)saveDraftContact;
 - (void)updateAvatarCarouselContactName;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithContactStore:(id)arg1 contact:(id)arg2 nameProvider:(id)arg3 avatarRecord:(id)arg4;

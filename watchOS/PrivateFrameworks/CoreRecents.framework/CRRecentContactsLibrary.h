@@ -15,6 +15,7 @@
     NSXPCConnection *_connection;
 }
 
++ (id)apiLogDescriptionOfEvent:(id)arg1;
 + (CDUnknownBlockType)frecencyComparatorForSearch:(id)arg1 preferredKinds:(id)arg2 sendingAddress:(id)arg3 queryOptions:(unsigned int)arg4;
 + (CDUnknownBlockType)rankedFrecencyComparatorWithPreferredSources:(id)arg1;
 + (CDUnknownBlockType)frecencyComparatorForSearch:(id)arg1 preferredKinds:(id)arg2 sendingAddress:(id)arg3;

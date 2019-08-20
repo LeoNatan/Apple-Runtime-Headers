@@ -516,7 +516,7 @@ struct Document {
     struct MonotonicTime _field157;
     struct MonotonicTime _field158;
     struct RefPtr<WebCore::ScriptedAnimationController, WTF::DumbPtrTraits<WebCore::ScriptedAnimationController>> _field159;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field160;
+    struct GenericTaskQueue<WebCore::Timer> _field160;
     struct Timer _field161;
     struct Vector<WebCore::ScriptExecutionContext::Task, 0, WTF::CrashOnOverflow, 16> _field162;
     struct unique_ptr<WebCore::TextAutoSizing, std::__1::default_delete<WebCore::TextAutoSizing>> _field163;
@@ -829,7 +829,7 @@ struct FullscreenManager {
     RefPtr_a6a86820 _field2;
     struct Vector<WTF::RefPtr<WebCore::Element, WTF::DumbPtrTraits<WebCore::Element>>, 0, WTF::CrashOnOverflow, 16> _field3;
     struct WeakPtr<WebCore::RenderFullScreen> _field4;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field5;
+    struct GenericTaskQueue<WebCore::Timer> _field5;
     struct Deque<WTF::RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>>, 0> _field6;
     struct Deque<WTF::RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node>>, 0> _field7;
     struct LayoutRect _field8;
@@ -849,14 +849,14 @@ struct Function<void (WebCore::PolicyAction, WebCore::PolicyCheckIdentifier)> {
 
 struct GenericEventQueue {
     struct EventTarget *_field1;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field2;
+    struct GenericTaskQueue<WebCore::Timer> _field2;
     struct Deque<WTF::RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event>>, 0> _field3;
     _Bool _field4;
     _Bool _field5;
 };
 
-struct GenericTaskQueue<WebCore::Timer, unsigned int> {
-    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> _field1;
+struct GenericTaskQueue<WebCore::Timer> {
+    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> _field1;
     struct TaskDispatcher<WebCore::Timer> _field2;
     unsigned int _field3;
     _Bool _field4;
@@ -963,12 +963,12 @@ struct HTMLMediaElement {
     struct DeferrableTask<WebCore::Timer> _field42;
     struct DeferrableTask<WebCore::Timer> _field43;
     struct DeferrableTask<WebCore::Timer> _field44;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field45;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field46;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field47;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field48;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field49;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field50;
+    struct GenericTaskQueue<WebCore::Timer> _field45;
+    struct GenericTaskQueue<WebCore::Timer> _field46;
+    struct GenericTaskQueue<WebCore::Timer> _field47;
+    struct GenericTaskQueue<WebCore::Timer> _field48;
+    struct GenericTaskQueue<WebCore::Timer> _field49;
+    struct GenericTaskQueue<WebCore::Timer> _field50;
     struct RefPtr<WebCore::TimeRanges, WTF::DumbPtrTraits<WebCore::TimeRanges>> _field51;
     struct GenericEventQueue _field52;
     struct Vector<WebCore::DOMPromiseDeferred<void>, 0, WTF::CrashOnOverflow, 16> _field53;
@@ -1075,7 +1075,7 @@ struct HTMLMediaElement {
     struct RefPtr<WebCore::MediaKeys, WTF::DumbPtrTraits<WebCore::MediaKeys>> _field119;
     _Bool _field120;
     _Bool _field121;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field122;
+    struct GenericTaskQueue<WebCore::Timer> _field122;
     struct unique_ptr<WebCore::MediaElementSession, std::__1::default_delete<WebCore::MediaElementSession>> _field123;
     unsigned long long _field124;
     struct RefPtr<WTF::Logger, WTF::DumbPtrTraits<WTF::Logger>> _field125;
@@ -1166,12 +1166,12 @@ struct HTMLVideoElement {
     struct DeferrableTask<WebCore::Timer> _field42;
     struct DeferrableTask<WebCore::Timer> _field43;
     struct DeferrableTask<WebCore::Timer> _field44;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field45;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field46;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field47;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field48;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field49;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field50;
+    struct GenericTaskQueue<WebCore::Timer> _field45;
+    struct GenericTaskQueue<WebCore::Timer> _field46;
+    struct GenericTaskQueue<WebCore::Timer> _field47;
+    struct GenericTaskQueue<WebCore::Timer> _field48;
+    struct GenericTaskQueue<WebCore::Timer> _field49;
+    struct GenericTaskQueue<WebCore::Timer> _field50;
     struct RefPtr<WebCore::TimeRanges, WTF::DumbPtrTraits<WebCore::TimeRanges>> _field51;
     struct GenericEventQueue _field52;
     struct Vector<WebCore::DOMPromiseDeferred<void>, 0, WTF::CrashOnOverflow, 16> _field53;
@@ -1278,7 +1278,7 @@ struct HTMLVideoElement {
     struct RefPtr<WebCore::MediaKeys, WTF::DumbPtrTraits<WebCore::MediaKeys>> _field119;
     _Bool _field120;
     _Bool _field121;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field122;
+    struct GenericTaskQueue<WebCore::Timer> _field122;
     struct unique_ptr<WebCore::MediaElementSession, std::__1::default_delete<WebCore::MediaElementSession>> _field123;
     unsigned long long _field124;
     struct RefPtr<WTF::Logger, WTF::DumbPtrTraits<WTF::Logger>> _field125;
@@ -2859,6 +2859,7 @@ struct Page {
     _Bool _field138;
     _Bool _field139;
     _Bool _field140;
+    _Bool _field141;
 };
 
 struct PageConsoleClient;
@@ -4421,7 +4422,7 @@ struct WeakPtrFactory<WebCore::DeferrableTask<WebCore::Timer>> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
-struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
+struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 

@@ -8,14 +8,17 @@
 
 @class ISImageCache, NSArray, NSData;
 
+__attribute__((visibility("hidden")))
 @interface ISIconMacOS : ISIcon
 {
     struct _LSBinding *_binding;
     NSArray *_decorations;
+    struct os_unfair_lock_s _iconValidationTokenLock;
     ISImageCache *_imageCache;
     struct NSData *_iconValidationToken;
 }
 
+@property struct os_unfair_lock_s iconValidationTokenLock; // @synthesize iconValidationTokenLock=_iconValidationTokenLock;
 @property(readonly) ISImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(readonly, copy, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
 @property struct _LSBinding *binding; // @synthesize binding=_binding;

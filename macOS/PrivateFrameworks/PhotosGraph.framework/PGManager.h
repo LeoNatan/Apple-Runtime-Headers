@@ -269,8 +269,6 @@
 - (id)_memoryFetchOptions;
 - (BOOL)memoriesOfTheDayAreWorthNotifying;
 - (id)lastTriggeredNotificationDate;
-- (id)notificationSubtitleForMemory:(id)arg1;
-- (id)notificationTitleForMemory:(id)arg1;
 - (id)nextPossibleNotificationDate;
 - (BOOL)swapInGraph:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (id)performLibraryAnalysisWithGraphURL:(id)arg1 graphUpdate:(id)arg2 withRecipe:(id)arg3 processedGraphUpdate:(id *)arg4 progressBlock:(CDUnknownBlockType)arg5;

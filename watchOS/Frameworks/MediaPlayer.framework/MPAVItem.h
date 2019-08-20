@@ -196,7 +196,9 @@
 @property(readonly, nonatomic) unsigned long long albumPersistentID;
 @property(readonly, nonatomic) NSString *cloudAlbumID;
 @property(readonly, nonatomic) NSString *cloudUniversalLibraryID;
+@property(readonly, nonatomic) NSString *personID;
 @property(readonly, nonatomic) unsigned long long cloudID;
+@property(readonly, nonatomic) NSString *databaseID;
 @property(readonly, nonatomic) unsigned long long persistentID;
 @property(readonly, nonatomic) unsigned int mediaType;
 @property(readonly, nonatomic) float userRating;

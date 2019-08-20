@@ -23,7 +23,6 @@
     int _mediaType;
     int _reference;
     int _sortOrder;
-    NSArray *_activityNames;
     _INPBString *_albumName;
     _INPBString *_artistName;
     NSArray *_genreNames;
@@ -36,7 +35,6 @@
 + (_Bool)supportsSecureCoding;
 + (Class)moodNamesType;
 + (Class)genreNamesType;
-+ (Class)activityNamesType;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(retain, nonatomic) _INPBDateTimeRange *releaseDate; // @synthesize releaseDate=_releaseDate;
@@ -48,7 +46,6 @@
 @property(copy, nonatomic) NSArray *genreNames; // @synthesize genreNames=_genreNames;
 @property(retain, nonatomic) _INPBString *artistName; // @synthesize artistName=_artistName;
 @property(retain, nonatomic) _INPBString *albumName; // @synthesize albumName=_albumName;
-@property(copy, nonatomic) NSArray *activityNames; // @synthesize activityNames=_activityNames;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
@@ -80,10 +77,6 @@
 - (void)clearGenreNames;
 @property(readonly, nonatomic) _Bool hasArtistName;
 @property(readonly, nonatomic) _Bool hasAlbumName;
-- (id)activityNamesAtIndex:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long activityNamesCount;
-- (void)addActivityNames:(id)arg1;
-- (void)clearActivityNames;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

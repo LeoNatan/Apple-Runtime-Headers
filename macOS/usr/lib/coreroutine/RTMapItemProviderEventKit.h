@@ -22,7 +22,7 @@
 @property(retain, nonatomic) RTEventManager *eventManager; // @synthesize eventManager=_eventManager;
 - (void).cxx_destruct;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
-- (id)initWithDistanceCalculator:(id)arg1 eventManager:(id)arg2 mapServiceManager:(id)arg3 parameters:(id)arg4;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 eventManager:(id)arg3 mapServiceManager:(id)arg4 parameters:(id)arg5;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 eventManager:(id)arg3 mapServiceManager:(id)arg4;
 - (id)init;
 

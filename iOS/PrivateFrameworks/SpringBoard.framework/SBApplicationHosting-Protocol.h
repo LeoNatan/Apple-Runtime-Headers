@@ -6,10 +6,11 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class SBDeviceApplicationSceneHandle;
+@class NSArray, SBDeviceApplicationSceneHandle;
 
 @protocol SBApplicationHosting <NSObject>
 - (void)hostedAppWillRotateToInterfaceOrientation:(long long)arg1;
+- (NSArray *)hostedAppSceneHandles;
 - (SBDeviceApplicationSceneHandle *)hostedAppSceneHandle;
 - (_Bool)isHostingAnApp;
 - (_Bool)canHostAnApp;

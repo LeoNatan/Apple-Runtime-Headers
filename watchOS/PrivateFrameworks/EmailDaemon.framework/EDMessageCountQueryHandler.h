@@ -11,7 +11,7 @@
 #import <EmailDaemon/EFCancelable-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EFCancelationToken, EFQuery, EMMailboxScope, NSDate, NSMutableDictionary, NSMutableSet, NSPredicate, NSString;
+@class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EDUpdateThrottler, EFCancelationToken, EFQuery, EMMailboxScope, NSMutableDictionary, NSMutableSet, NSPredicate, NSString;
 @protocol EMMessageRepositoryCountQueryObserver_xpc;
 
 @interface EDMessageCountQueryHandler : NSObject <EFLoggable, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EFCancelable>
@@ -21,10 +21,10 @@
     NSMutableSet *_seenMessageIDs;
     NSMutableSet *_newMessageIDs;
     struct os_unfair_lock_s _seenMessageIDsLock;
-    NSMutableSet *_unacknowledgedCallbacks;
-    struct os_unfair_lock_s _callbacksLock;
-    _Bool _hasChangesSinceLastCallback;
+    // Error parsing type: {EFAtomicObject="cfObject"Al}, name: _atomicQueryDescription
+    // Error parsing type: {EFAtomicObject="cfObject"Al}, name: _atomicMailboxScopeDescription
     EFQuery *_query;
+    EFQuery *_expandedQuery;
     NSPredicate *_predicateIgnoringFlags;
     EMMailboxScope *_serverCountMailboxScope;
     EDMessageQueryEvaluator *_queryEvaluator;
@@ -32,17 +32,16 @@
     EDMessagePersistence *_messagePersistence;
     EDPersistenceHookRegistry *_hookRegistry;
     EFCancelationToken *_cancelationToken;
+    EDUpdateThrottler *_updateThrottler;
     NSString *_pendingFlagChangesKey;
     int _localCount;
-    NSDate *_lastCallbackDate;
 }
 
 + (id)defaultScheduler;
 + (id)log;
-@property(retain, nonatomic) NSDate *lastCallbackDate; // @synthesize lastCallbackDate=_lastCallbackDate;
-@property(nonatomic) _Bool hasChangesSinceLastCallback; // @synthesize hasChangesSinceLastCallback=_hasChangesSinceLastCallback;
 @property(nonatomic) int localCount; // @synthesize localCount=_localCount;
 @property(readonly) NSString *pendingFlagChangesKey; // @synthesize pendingFlagChangesKey=_pendingFlagChangesKey;
+@property(retain, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
 @property(retain, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(retain, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(retain, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
@@ -50,6 +49,7 @@
 @property(retain, nonatomic) EDMessageQueryEvaluator *queryEvaluator; // @synthesize queryEvaluator=_queryEvaluator;
 @property(readonly, nonatomic) EMMailboxScope *serverCountMailboxScope; // @synthesize serverCountMailboxScope=_serverCountMailboxScope;
 @property(retain, nonatomic) NSPredicate *predicateIgnoringFlags; // @synthesize predicateIgnoringFlags=_predicateIgnoringFlags;
+@property(retain, nonatomic) EFQuery *expandedQuery; // @synthesize expandedQuery=_expandedQuery;
 @property(retain, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(int)arg1 forMailboxWithObjectID:(id)arg2;
@@ -57,7 +57,9 @@
 - (void)persistenceDidUpdateServerCount:(int)arg1 forMailboxWithObjectID:(id)arg2;
 - (void)persistenceIsAddingMailboxWithDatabaseID:(long long)arg1 objectID:(id)arg2;
 - (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
+- (void)_persistenceDidDeleteMessages:(id)arg1 includeMessagesWithDeletedFlag:(_Bool)arg2;
 - (void)persistenceDidDeleteMessages:(id)arg1;
+- (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
 - (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceDidAddMessages:(id)arg1;
@@ -70,8 +72,8 @@
 - (void)didSyncMailbox:(id)arg1;
 - (void)willSyncMailbox:(id)arg1;
 - (void)_notifyObserverWithLogMessage:(id)arg1;
-- (void)_decrementLocalCount:(int)arg1;
-- (void)_incrementLocalCount:(int)arg1;
+- (void)_decrementLocalCount:(int)arg1 logMessage:(id)arg2;
+- (void)_incrementLocalCount:(int)arg1 logMessage:(id)arg2;
 - (void)_scheduleCountCalculation;
 - (void)cancel;
 - (void)dealloc;

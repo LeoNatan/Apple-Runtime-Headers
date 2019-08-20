@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
 + (id)viewControllerProviderClass;
 - (void)setPreviewMode:(_Bool)arg1;
 - (id)menuActionClasses;
+- (id)expandViewController;
+- (_Bool)wantsCustomViewControllerCommit;
 - (id)previewActions;
 
 @end

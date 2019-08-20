@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
     BOOL _wasInitiallyInteractive;
     BOOL _hasAVKitAnimator;
+    BOOL _wasCancelledWithInactiveScene;
     unsigned long long _presenterSupportedOrientations;
     long long _initialInterfaceOrientation;
     long long _finalInterfaceOrientation;
@@ -19,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long finalInterfaceOrientation; // @synthesize finalInterfaceOrientation=_finalInterfaceOrientation;
 @property(nonatomic) long long initialInterfaceOrientation; // @synthesize initialInterfaceOrientation=_initialInterfaceOrientation;
 @property(nonatomic) unsigned long long presenterSupportedOrientations; // @synthesize presenterSupportedOrientations=_presenterSupportedOrientations;
+@property(nonatomic) BOOL wasCancelledWithInactiveScene; // @synthesize wasCancelledWithInactiveScene=_wasCancelledWithInactiveScene;
 @property(nonatomic) BOOL hasAVKitAnimator; // @synthesize hasAVKitAnimator=_hasAVKitAnimator;
 @property(nonatomic) BOOL wasInitiallyInteractive; // @synthesize wasInitiallyInteractive=_wasInitiallyInteractive;
 - (BOOL)presenterSupportsOrientation:(long long)arg1;

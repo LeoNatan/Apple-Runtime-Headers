@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class EFSQLPreparedStatement, NSMutableDictionary;
+@class EFSQLPreparedStatement, NSDictionary;
 
 @interface EFSQLRow : NSObject
 {
     BOOL _namedColumnsInitialized;
     struct sqlite3_stmt *_statement;
     EFSQLPreparedStatement *_preparedStatement;
-    NSMutableDictionary *_columns;
+    NSDictionary *_columns;
     unsigned long long _columnCount;
 }
 
 @property(nonatomic) unsigned long long columnCount; // @synthesize columnCount=_columnCount;
 @property(nonatomic) BOOL namedColumnsInitialized; // @synthesize namedColumnsInitialized=_namedColumnsInitialized;
-@property(readonly, nonatomic) NSMutableDictionary *columns; // @synthesize columns=_columns;
+@property(readonly, nonatomic) NSDictionary *columns; // @synthesize columns=_columns;
 @property(retain, nonatomic) EFSQLPreparedStatement *preparedStatement; // @synthesize preparedStatement=_preparedStatement;
 @property(readonly, nonatomic) struct sqlite3_stmt *statement; // @synthesize statement=_statement;
 - (void).cxx_destruct;

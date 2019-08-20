@@ -32,6 +32,7 @@
     long long _buttonMode;
 }
 
++ (double)contentBaselineToBoundsBottomWithWidth:(double)arg1;
 @property(nonatomic, getter=isShowingMoreContent) _Bool showingMoreContent; // @synthesize showingMoreContent=_showingMoreContent;
 @property(nonatomic) long long buttonMode; // @synthesize buttonMode=_buttonMode;
 @property(nonatomic) double topMarginForLayout; // @synthesize topMarginForLayout=_topMarginForLayout;

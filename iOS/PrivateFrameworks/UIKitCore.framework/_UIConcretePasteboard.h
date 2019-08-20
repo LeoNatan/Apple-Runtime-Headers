@@ -78,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (void)setItemProviders:(id)arg1 localOnly:(_Bool)arg2 expirationDate:(id)arg3;
 - (void)setItemProviders:(id)arg1 options:(id)arg2;
 - (void)setItemProviders:(id)arg1;
+- (long long)_changeCountIgnoringPinningActivity;
 - (long long)changeCount;
 - (void)_setPersistent:(_Bool)arg1;
 - (_Bool)_pasteboardCacheQueue_setPersistent:(_Bool)arg1 currentNotificationState:(unsigned long long)arg2 outNewNotificationState:(unsigned long long *)arg3;

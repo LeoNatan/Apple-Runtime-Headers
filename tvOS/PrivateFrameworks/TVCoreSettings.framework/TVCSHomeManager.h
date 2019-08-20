@@ -68,7 +68,7 @@
 - (void)stopBrowsingForLocalAccessory;
 - (void)startBrowsingForLocalAccessory;
 - (void)stopAdvertisingForProximityKeyTransfer;
-- (void)startAdvertisingForProximityKeyTransfer;
+- (void)startAdvertisingForProximityKeyTransferWithType:(long long)arg1;
 - (void)forgetHomeConfiguration:(CDUnknownBlockType)arg1;
 - (void)reloadHomeConfiguration;
 - (id)_init;

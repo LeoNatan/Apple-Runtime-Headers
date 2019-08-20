@@ -64,6 +64,7 @@
 - (void)_updateScrollViewInsets;
 - (void)_updateScrollContentViewLayoutMargins;
 - (void)_updateButtonTrayBackdrop;
+- (BOOL)_scrollViewContentIsUnderTray;
 - (double)_headerTopOffset;
 - (void)_updateHeaderTopOffsetConstraint;
 - (double)_contentViewHeight;

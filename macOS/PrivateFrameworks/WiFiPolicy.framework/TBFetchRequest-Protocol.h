@@ -12,6 +12,7 @@
 
 @protocol TBFetchRequest <NSObject, NSCopying>
 @property(readonly, nonatomic) BOOL cacheable;
+@property(copy, nonatomic) CDUnknownBlockType preferLocalHandler;
 @property(copy, nonatomic) CDUnknownBlockType resultsHandler;
 @property(nonatomic) unsigned long long sourcePolicy;
 @property(readonly, nonatomic) id <TBFetchRequestDescriptor> descriptor;

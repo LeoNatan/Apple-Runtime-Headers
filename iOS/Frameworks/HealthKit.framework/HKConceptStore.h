@@ -15,7 +15,7 @@
 {
     HKObserverSet *_conceptObservers;
     struct os_unfair_lock_s _conceptIndexManagerStateLock;
-    unsigned long long _conceptIndexManagerState;
+    unsigned long long _lastKnownConceptIndexManagerState;
     HKHealthStore *_healthStore;
     NSUUID *_identifier;
     HKTaskServerProxyProvider *_proxyProvider;
@@ -52,6 +52,7 @@
 - (id)conceptForIdentifier:(id)arg1;
 - (id)conceptsWithAttribute:(long long)arg1 matchingValue:(id)arg2;
 - (void)_startTaskServerIfNeeded;
+- (id)resolveDisplayNamesForCodingContexts:(id)arg1;
 - (id)resolveConceptForContext:(id)arg1;
 - (id)ontologyVersionWithError:(id *)arg1;
 - (id)initWithHealthStore:(id)arg1;

@@ -58,6 +58,7 @@
 + (void)unregisterPXImportControllerNotificationsReceiver:(struct NSObject *)arg1;
 + (void)registerPXImportControllerNotificationsReceiver:(struct NSObject *)arg1;
 + (id)importFilesAtURLs:(id)arg1 photoLibrary:(id)arg2 collection:(id)arg3 checkDuplicates:(BOOL)arg4 referenced:(BOOL)arg5 delegate:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
++ (void)favoriteAssetsFromImportResults:(id)arg1 photoLibrary:(id)arg2;
 + (id)itemsConstrainedByAvailableDiskSpaceFromItems:(id)arg1 additionalBytesRequired:(inout long long *)arg2;
 + (id)assetsForModels:(id)arg1;
 + (id)importOperationQueue;

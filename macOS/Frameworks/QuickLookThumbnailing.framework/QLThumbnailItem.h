@@ -20,9 +20,11 @@
     NSString *_overriddenContentType;
     NSString *_computedContentType;
     unsigned long long _downloadStatus;
+    BOOL _needsAccessToExternalResources;
 }
 
 + (BOOL)supportsSecureCoding;
+@property BOOL needsAccessToExternalResources; // @synthesize needsAccessToExternalResources=_needsAccessToExternalResources;
 @property unsigned long long downloadStatus; // @synthesize downloadStatus=_downloadStatus;
 @property(copy) NSString *computedContentType; // @synthesize computedContentType=_computedContentType;
 @property(copy, nonatomic) NSString *overriddenContentType; // @synthesize overriddenContentType=_overriddenContentType;

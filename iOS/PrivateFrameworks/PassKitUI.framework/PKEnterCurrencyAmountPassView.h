@@ -12,19 +12,19 @@
 @interface PKEnterCurrencyAmountPassView : UIView
 {
     UIImageView *_passView;
-    PKPass *_pass;
     _Bool _loadingSnapshot;
     id <PKEnterCurrencyAmountPassViewDelegate> _delegate;
     PKEnterCurrencyAmountView *_enterCurrencyAmountView;
     PKEnterValueNewBalanceView *_balanceView;
+    PKPass *_pass;
 }
 
+@property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKEnterValueNewBalanceView *balanceView; // @synthesize balanceView=_balanceView;
 @property(readonly, nonatomic) PKEnterCurrencyAmountView *enterCurrencyAmountView; // @synthesize enterCurrencyAmountView=_enterCurrencyAmountView;
 @property(nonatomic) __weak id <PKEnterCurrencyAmountPassViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (struct CGSize)_passViewSize;
-- (double)_bottomPadding;
 - (double)_topPadding;
 - (void)shakePassView;
 - (void)layoutSubviews;

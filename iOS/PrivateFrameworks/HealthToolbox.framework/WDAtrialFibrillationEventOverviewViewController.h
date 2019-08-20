@@ -8,7 +8,6 @@
 
 #import <HealthToolbox/HKHeartRhythmAvailabilityObserver-Protocol.h>
 #import <HealthToolbox/HKOnboardingSetupViewDelegate-Protocol.h>
-#import <HealthToolbox/HKSwitchTableViewCellDelegate-Protocol.h>
 #import <HealthToolbox/HRFeatureRegulatoryReenableFeatureActionDelegate-Protocol.h>
 #import <HealthToolbox/HROnboardingManagerDelegate-Protocol.h>
 #import <HealthToolbox/UITextViewDelegate-Protocol.h>
@@ -16,7 +15,7 @@
 @class HKDisplayType, HKHeartRhythmAvailability, HKKeyValueDomain, HROnboardingManager, NSArray, NSDate, NSString, UITapGestureRecognizer, WDProfile;
 @protocol HKDataMetadataSectionProtocol, WDDataListViewControllerDataProvider;
 
-@interface WDAtrialFibrillationEventOverviewViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, UITextViewDelegate, HKOnboardingSetupViewDelegate, HKHeartRhythmAvailabilityObserver>
+@interface WDAtrialFibrillationEventOverviewViewController : HKTableViewController <HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, UITextViewDelegate, HKOnboardingSetupViewDelegate, HKHeartRhythmAvailabilityObserver>
 {
     _Bool _previousAtrialFibrillationDetectionDisabledCacheValue;
     HKDisplayType *_displayType;
@@ -52,7 +51,6 @@
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 - (void).cxx_destruct;
 - (void)isFavorited:(_Bool)arg1;
-- (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
 - (void)didDismissOnboarding;
 - (void)didCompleteOnboarding;
 - (void)didEnableAtrialFibrillationNotifications;
@@ -62,7 +60,6 @@
 - (void)_reloadAtrialFibrillationSetupTableHeaderView;
 - (_Bool)_shouldShowAtrialFibrillationSetupTableHeaderView;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
@@ -82,7 +79,7 @@
 - (id)_cellForShowAll;
 - (_Bool)_isDisplayTypeFavorited;
 - (id)_cellForDataSourcesAndAccess;
-- (id)_cellForFavoriteSwitch;
+- (id)_cellForFavorites;
 - (void)_getLatestAnalyzedSampleDate;
 - (void)_recomputeTotalSampleCount;
 - (void)_reloadAllData;

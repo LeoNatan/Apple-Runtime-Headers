@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *sortedStates; // @synthesize sortedStates=_sortedStates;
 @property(readonly, nonatomic) NSDictionary *objectIDToState; // @synthesize objectIDToState=_objectIDToState;
 @property(readonly, nonatomic) NSDictionary *entityNameToObjectIDs; // @synthesize entityNameToObjectIDs=_entityNameToObjectIDs;
+@property(readonly, nonatomic) PFHistoryAnalyzerOptions *options; // @synthesize options=_options;
 - (void)processFinalState:(id)arg1;
 - (BOOL)shouldPruneAnalyzerState:(id)arg1;
 - (void)finishProcessing;

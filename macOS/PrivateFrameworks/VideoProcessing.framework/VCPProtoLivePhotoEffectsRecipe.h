@@ -70,7 +70,7 @@
 @property(nonatomic) BOOL hasFlags;
 @property(nonatomic) BOOL hasEpoch;
 - (id)exportToLegacyDictionaryFromParam:(id)arg1 withLoopFlavor:(id)arg2;
-- (id)exportToLegacyDictionaryFromFrameInstruction:(id)arg1 withTimeParam:(CDStruct_1b6d18a9)arg2;
+- (id)exportToLegacyDictionaryFromFrameInstruction:(id)arg1;
 - (id)exportToLegacyDictionary;
 
 @end

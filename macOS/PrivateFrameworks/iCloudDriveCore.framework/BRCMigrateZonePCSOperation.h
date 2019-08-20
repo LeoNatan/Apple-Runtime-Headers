@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_fetchZonesNeedingMigration:(CDUnknownBlockType)arg1;
 - (void)_createCloudDocsZone:(CDUnknownBlockType)arg1;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithSession:(id)arg1;
 

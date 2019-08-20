@@ -6,12 +6,11 @@
 
 #import <Home/HFItemManager.h>
 
-#import <HomeUI/HULocationDeviceManagerObserver-Protocol.h>
 #import <HomeUI/HUUserItemManager-Protocol.h>
 
-@class HFItem, HFUserItem, HMHome, HMUser, HUAccessorySettingsItemModule, HULocationDeviceManager, NSArray, NSString;
+@class HFItem, HFUserItem, HMHome, HMUser, HUAccessorySettingsItemModule, NSArray, NSString;
 
-@interface HUEditUserItemManager : HFItemManager <HULocationDeviceManagerObserver, HUUserItemManager>
+@interface HUEditUserItemManager : HFItemManager <HUUserItemManager>
 {
     HFItem *_localAccessItem;
     HFItem *_remoteAccessItem;
@@ -24,19 +23,17 @@
     HUAccessorySettingsItemModule *_userSettingsItemModule;
     HMHome *_homeForUser;
     HFItem *_removeItem;
-    HULocationDeviceManager *_locationDeviceManager;
     NSArray *_sectionOrderArrayWhenViewingSelf;
     NSArray *_sectionOrderArrayWhenViewingOther;
 }
 
 @property(retain, nonatomic) NSArray *sectionOrderArrayWhenViewingOther; // @synthesize sectionOrderArrayWhenViewingOther=_sectionOrderArrayWhenViewingOther;
 @property(retain, nonatomic) NSArray *sectionOrderArrayWhenViewingSelf; // @synthesize sectionOrderArrayWhenViewingSelf=_sectionOrderArrayWhenViewingSelf;
-@property(retain, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
 @property(retain, nonatomic) HFItem *removeItem; // @synthesize removeItem=_removeItem;
 @property(retain, nonatomic) HMHome *homeForUser; // @synthesize homeForUser=_homeForUser;
 @property(retain, nonatomic) HUAccessorySettingsItemModule *userSettingsItemModule; // @synthesize userSettingsItemModule=_userSettingsItemModule;
 @property(retain, nonatomic) HFItem *tvViewingProfilesItem; // @synthesize tvViewingProfilesItem=_tvViewingProfilesItem;
-@property(retain, nonatomic) HFItem *personalRequestsFooterItem; // @synthesize personalRequestsFooterItem=_personalRequestsFooterItem;
+@property(readonly, nonatomic) HFItem *personalRequestsFooterItem; // @synthesize personalRequestsFooterItem=_personalRequestsFooterItem;
 @property(retain, nonatomic) HFItem *personalRequestsItem; // @synthesize personalRequestsItem=_personalRequestsItem;
 @property(retain, nonatomic) HFItem *pendingAccessoriesItem; // @synthesize pendingAccessoriesItem=_pendingAccessoriesItem;
 @property(retain, nonatomic) HFItem *camerasItem; // @synthesize camerasItem=_camerasItem;
@@ -44,7 +41,6 @@
 @property(retain, nonatomic) HFItem *remoteAccessItem; // @synthesize remoteAccessItem=_remoteAccessItem;
 @property(retain, nonatomic) HFItem *localAccessItem; // @synthesize localAccessItem=_localAccessItem;
 - (void).cxx_destruct;
-- (void)locationDeviceManager:(id)arg1 didUpdateActiveLocationDevice:(id)arg2;
 - (_Bool)_isVoiceIDEnabled:(id)arg1;
 - (_Bool)_isTVViewingProfilesEnabledForUser;
 - (_Bool)_isPersonalRequestsEnabledForUser;
@@ -65,8 +61,6 @@
 - (id)_homeFuture;
 - (id)reuseIdentifierForFooterViewInSection:(unsigned long long)arg1;
 @property(readonly, nonatomic) HMUser *userBeingEdited;
-- (void)_unregisterForExternalUpdates;
-- (void)_registerForExternalUpdates;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)initWithHome:(id)arg1 userItem:(id)arg2 delegate:(id)arg3;
 

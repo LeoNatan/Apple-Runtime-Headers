@@ -125,6 +125,7 @@
     id <MPAVQueueCoordinating> _queueCoordinator;
     id <MPAVQueueController> _queueController;
     NSString *_identifier;
+    long long _stateBeforeInterruption;
 }
 
 + (_Bool)automaticallyNotifiesObserversOfPlaylistManager;
@@ -136,6 +137,7 @@
 + (_Bool)isNetworkSupportedPath:(id)arg1;
 + (void)initialize;
 @property(nonatomic) _Bool automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds; // @synthesize automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds=_automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds;
+@property(readonly, nonatomic) long long stateBeforeInterruption; // @synthesize stateBeforeInterruption=_stateBeforeInterruption;
 @property(readonly, nonatomic) _Bool shouldConnectToAVPlayer; // @synthesize shouldConnectToAVPlayer=_shouldConnectToAVPlayer;
 @property(nonatomic) _Bool managesAirPlayBehaviors; // @synthesize managesAirPlayBehaviors=_managesAirPlayBehaviors;
 @property(nonatomic) _Bool useAirPlayMusicMode; // @synthesize useAirPlayMusicMode=_useAirPlayMusicMode;
@@ -212,10 +214,7 @@
 - (void)_prepareToPlayItem:(id)arg1;
 - (void)_endSeekAndChangeRate:(_Bool)arg1;
 - (void)setPlaylistManager:(id)arg1;
-- (_Bool)_isVideosOrTVApp;
-- (void)_unregisterForPlaylistManager:(id)arg1;
 - (void)_unregisterForPlayer:(id)arg1;
-- (void)_registerForPlaylistManager:(id)arg1;
 - (_Bool)_shouldProvideAudiblePlaybackPerformance;
 - (double)_currentTimeWithPreloadedPlayerTime:(_Bool)arg1 value:(CDStruct_1b6d18a9)arg2;
 - (void)_clearVideoLayer:(_Bool)arg1;

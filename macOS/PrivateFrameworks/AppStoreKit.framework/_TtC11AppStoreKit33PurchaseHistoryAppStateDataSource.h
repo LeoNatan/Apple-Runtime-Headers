@@ -17,12 +17,11 @@
     // Error parsing type: , name: purchaseHistory
     // Error parsing type: , name: hasRequestedPurchaseHistoryUpdate
     // Error parsing type: , name: purchaseHistoryContext
-    // Error parsing type: , name: commerceAccountChangeNotifier
 }
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)accountDidChange:(id)arg1;
+- (void)accountsDidChange;
 - (void)purchaseHistoryUpdated:(id)arg1;
 - (void)dealloc;
 

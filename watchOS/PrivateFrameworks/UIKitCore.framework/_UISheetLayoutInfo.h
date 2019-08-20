@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
         unsigned int percentDimmed:1;
         unsigned int shadowOpacity:1;
         unsigned int alpha:1;
+        unsigned int interactionEnabled:1;
         unsigned int shouldPresentedViewControllerControlStatusBarAppearance:1;
         unsigned int shouldDimmingIgnoreTouches:1;
         unsigned int dimmedPassthroughViews:1;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
     } _clean;
     _Bool __bottomAttached;
     _Bool __anyDescendantDragging;
+    _Bool __interactionEnabled;
     _Bool __shouldPresentedViewControllerControlStatusBarAppearance;
     _Bool __shouldDimmingIgnoreTouches;
     _Bool __wantsFullScreen;
@@ -87,7 +89,6 @@ __attribute__((visibility("hidden")))
     NSArray *__passthroughViews;
     float __latestUserChosenOffset;
     float __tearOffset;
-    float __remoteDismissProgress;
     float __dismissCornerRadius;
     _UISheetLayoutInfo *__parentLayoutInfo;
     _UISheetLayoutInfo *__childLayoutInfo;
@@ -120,7 +121,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setParentSheetLayoutInfo:) _UISheetLayoutInfo *_parentLayoutInfo; // @synthesize _parentLayoutInfo=__parentLayoutInfo;
 @property(nonatomic, setter=_setDismissCornerRadius:) float _dismissCornerRadius; // @synthesize _dismissCornerRadius=__dismissCornerRadius;
 @property(nonatomic, setter=_setDismissSourceFrame:) struct CGRect _dismissSourceFrame; // @synthesize _dismissSourceFrame=__dismissSourceFrame;
-@property(nonatomic, setter=_setRemoteDismissProgress:) float _remoteDismissProgress; // @synthesize _remoteDismissProgress=__remoteDismissProgress;
 @property(nonatomic, getter=_isDraggingAndDismissing, setter=_setDraggingAndDismissing:) _Bool _draggingAndDismissing; // @synthesize _draggingAndDismissing=__draggingAndDismissing;
 @property(nonatomic, setter=_setWantsGrabber:) _Bool _wantsGrabber; // @synthesize _wantsGrabber=__wantsGrabber;
 @property(nonatomic, getter=_isDragging, setter=_setDragging:) _Bool _dragging; // @synthesize _dragging=__dragging;
@@ -152,6 +152,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *_dimmedPassthroughViews; // @synthesize _dimmedPassthroughViews=__dimmedPassthroughViews;
 @property(readonly, nonatomic) _Bool _shouldDimmingIgnoreTouches; // @synthesize _shouldDimmingIgnoreTouches=__shouldDimmingIgnoreTouches;
 @property(readonly, nonatomic) _Bool _shouldPresentedViewControllerControlStatusBarAppearance; // @synthesize _shouldPresentedViewControllerControlStatusBarAppearance=__shouldPresentedViewControllerControlStatusBarAppearance;
+@property(readonly, nonatomic, getter=_isInteractionEnabled) _Bool _interactionEnabled; // @synthesize _interactionEnabled=__interactionEnabled;
 @property(readonly, nonatomic) float _grabberAlpha; // @synthesize _grabberAlpha=__grabberAlpha;
 @property(readonly, nonatomic) float _alpha; // @synthesize _alpha=__alpha;
 @property(readonly, nonatomic) float _shadowOpacity; // @synthesize _shadowOpacity=__shadowOpacity;

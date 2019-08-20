@@ -64,14 +64,12 @@
 + (id)imageWithSize:(struct CGSize)arg1 drawHandler:(CDUnknownBlockType)arg2;
 + (id)imageWithSize:(struct CGSize)arg1 drawingIsFlipped:(BOOL)arg2 drawHandler:(CDUnknownBlockType)arg3;
 + (id)imageWithSize:(struct CGSize)arg1 flipped:(BOOL)arg2 drawingHandler:(CDUnknownBlockType)arg3;
-+ (id)_catalogImageWithName:(id)arg1 bundle:(id)arg2;
-+ (id)_catalogIconImageWithName:(id)arg1 bundle:(id)arg2;
-+ (id)_searchForSystemImageNamed:(id)arg1;
-+ (id)_searchForImageNamed:(id)arg1;
++ (id)_kitBundleImageNamed:(id)arg1;
++ (id)_mainBundleImageNamed:(id)arg1;
++ (id)_systemImageNamed:(id)arg1;
 + (id)imageNamed:(id)arg1;
-+ (id)_coreUIImageWithName:(id)arg1;
-+ (id)_systemIconImageWithName:(id)arg1;
-+ (id)_touchBarSiriCompositeImage;
++ (id)_coreUIImageNamed:(id)arg1;
++ (id)_systemIconImageNamed:(id)arg1;
 + (id)_allNames;
 + (id)_imageNamed:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -79,6 +77,8 @@
 + (BOOL)_canInitWithPasteboard:(id)arg1 allowMultipleFiles:(BOOL)arg2;
 + (id)imageWithImageRep:(id)arg1;
 + (void)initialize;
++ (id)_catalogImageWithName:(id)arg1 bundle:(id)arg2;
++ (id)_catalogIconImageWithName:(id)arg1 bundle:(id)arg2;
 + (id)_templateImageWithImage:(id)arg1;
 + (id)_emblemForCount:(long long)arg1;
 @property(retain, setter=_setReps:) id _reps; // @synthesize _reps;
@@ -145,8 +145,7 @@
 - (void)_setAccessibilityDescriptionBacking:(id)arg1;
 - (id)_accessibilityDescriptionBacking;
 - (void)_applyAsContentsToLayer:(id)arg1;
-- (id)_defaultAccessibilityDescription;
-- (void)_setDefaultAccessibilityDescription:(id)arg1;
+@property(retain, setter=_setDefaultAccessibilityDescription:) NSString *_defaultAccessibilityDescription;
 @property unsigned long long imageInterpolation;
 @property(setter=_setImageInterpolation:) unsigned long long _imageInterpolation;
 @property long long resizingMode;
@@ -179,7 +178,7 @@
 - (id)initWithISIcon:(id)arg1;
 - (id)_initWithIconRef:(struct OpaqueIconRef *)arg1 includeThumbnail:(BOOL)arg2;
 - (id)initWithIconRef:(struct OpaqueIconRef *)arg1;
-- (id)_initWithIconRef:(void *)arg1;
+- (id)_initWithIconRef:(struct OpaqueIconRef *)arg1;
 - (id)_initWithData:(id)arg1 fileType:(id)arg2 hfsType:(id)arg3;
 - (id)initWithPasteboard:(id)arg1;
 - (id)initFromImage:(id)arg1 rect:(struct CGRect)arg2;

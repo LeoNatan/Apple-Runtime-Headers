@@ -9,7 +9,7 @@
 @class NSDictionary, NSError, NSString, NSURL, QLPreview;
 
 @protocol QLUIServiceHostViewControllerProtocol <QLUIServiceBaseHostViewControllerProtocol>
-- (void)didShowScreentimeLockout:(BOOL)arg1;
+- (void)didShowScreentimeLockout:(BOOL)arg1 withPolicy:(long long)arg2;
 - (void)closePanel:(long long)arg1;
 - (void)didSaveEdit:(BOOL)arg1 toURL:(NSURL *)arg2;
 - (void)pageUpdatedContent:(long long)arg1;

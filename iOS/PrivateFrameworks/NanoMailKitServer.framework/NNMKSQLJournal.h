@@ -25,10 +25,13 @@
 - (id)_sortedJournalFiles;
 - (id)_nextFilePath;
 - (void)_flush;
+- (id)_journalFilesEnumerator;
 - (unsigned long long)_currentFilesCount;
+- (_Bool)isJournalOverflow;
+- (void)deleteJournalFiles;
 - (void)mergeUsingBlock:(CDUnknownBlockType)arg1;
 - (void)flushIfNeeded;
-- (void)appendSQLStatement:(id)arg1;
+- (_Bool)appendSQLStatement:(id)arg1;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 

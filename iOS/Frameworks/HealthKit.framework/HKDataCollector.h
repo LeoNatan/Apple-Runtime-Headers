@@ -64,6 +64,7 @@
 - (void)_queue_taskServer_insertDatums:(id)arg1 device:(id)arg2 metadata:(id)arg3 batchUUID:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_queue_updateReconsiderationTimer;
 - (void)_queue_sendBatch:(id)arg1;
+- (void)_requestRegistration;
 - (void)_queue_requestRegistration;
 - (void)_queue_considerCompletingFlushRequests;
 - (void)_queue_considerSendingBatches;

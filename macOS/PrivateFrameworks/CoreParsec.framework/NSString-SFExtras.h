@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SFExtras)
++ (void)_parsec_reverseEnumerateComponents:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)parsec_stringByBase64EncodingData:(id)arg1;
 - (int)sf_asColumnAlignment;
 - (int)sf_asImageAlignment;
@@ -14,6 +15,9 @@
 - (int)sf_asTextAlignment;
 - (int)sf_asResultPlacement;
 - (int)sf_cardSectionType;
+- (id)_parsec_topLevelDomainUsingCFFromComponents:(id)arg1;
+- (id)_parsec_highLevelDomainFromHost;
+- (id)parsec_readableURLStringAfterRemovingSubdomains;
 - (BOOL)parsec_caseInsensitiveContainsString:(id)arg1;
 - (id)parsec_base64DecodedData;
 - (BOOL)parsec_hasLocalizedCaseInsensitivePrefix:(id)arg1;

@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewFlowLayout.h>
+#import <UIKit/UICollectionViewLayout.h>
 
 @class NSDictionary;
 
 __attribute__((visibility("hidden")))
-@interface _TVCarouselCollectionViewLayout : UICollectionViewFlowLayout
+@interface _TVCarouselCollectionViewLayout : UICollectionViewLayout
 {
     NSDictionary *_layoutAttributesByIndexPath;
+    double _minimumInteritemSpacing;
+    struct CGSize _itemSize;
 }
 
+@property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
+@property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 - (void).cxx_destruct;
 - (long long)_expectedNumberOfCells;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;

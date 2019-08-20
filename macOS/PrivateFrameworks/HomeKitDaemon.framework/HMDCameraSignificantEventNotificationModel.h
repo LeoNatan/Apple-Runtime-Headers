@@ -13,11 +13,12 @@
 }
 
 + (id)hmbExternalRecordType;
-+ (id)sentinelParentUUID;
 + (id)hmbProperties;
+- (id)createSignificantEvent;
 
 // Remaining properties
 @property(retain) HMBModelCloudReference *associatedClip; // @dynamic associatedClip;
+@property(retain) NSNumber *confidenceLevel; // @dynamic confidenceLevel;
 @property(retain) NSDate *dateOfOccurrence; // @dynamic dateOfOccurrence;
 @property(retain) CKAsset *heroFrameAsset; // @dynamic heroFrameAsset;
 @property(retain) NSDictionary *homePresenceByPairingIdentity; // @dynamic homePresenceByPairingIdentity;

@@ -13,7 +13,8 @@ __attribute__((visibility("hidden")))
 {
     NSURL *_seedModelPath;
     struct CFScopedPtr<void *> _model;
-    NSString *_modelMetadata;
+    NSNumber *_initialLoss;
+    NSNumber *_trainingLoss;
     unsigned long long _batchSize;
     NSNumber *_learningRate;
     NSNumber *_gradientClipMin;
@@ -23,16 +24,18 @@ __attribute__((visibility("hidden")))
     NSString *_privacyIdentifier;
 }
 
++ (id)reportingStringForModelUpdates:(float *)arg1 count:(unsigned long long)arg2;
 + (struct __CFData *)copyToFlatBuffer:(void *)arg1;
 + (void)initialize;
 @property(readonly, nonatomic) NSString *privacyIdentifier; // @synthesize privacyIdentifier=_privacyIdentifier;
+@property(readonly, nonatomic) NSNumber *trainingLoss; // @synthesize trainingLoss=_trainingLoss;
+@property(readonly, nonatomic) NSNumber *initialLoss; // @synthesize initialLoss=_initialLoss;
 @property(nonatomic) unsigned long long normBinCount; // @synthesize normBinCount=_normBinCount;
 @property(retain, nonatomic) NSNumber *clippingNorm; // @synthesize clippingNorm=_clippingNorm;
 @property(retain, nonatomic) NSNumber *gradientClipMax; // @synthesize gradientClipMax=_gradientClipMax;
 @property(retain, nonatomic) NSNumber *gradientClipMin; // @synthesize gradientClipMin=_gradientClipMin;
 @property(retain, nonatomic) NSNumber *learningRate; // @synthesize learningRate=_learningRate;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
-@property(copy, nonatomic) NSString *modelMetadata; // @synthesize modelMetadata=_modelMetadata;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)writeModelToURL:(id)arg1;

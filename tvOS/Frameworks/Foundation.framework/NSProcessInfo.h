@@ -59,6 +59,7 @@
 - (id)beginSuspensionOfSystemBehaviors:(unsigned long long)arg1 reason:(id)arg2;
 - (_Bool)isLowPowerModeEnabled;
 - (long long)thermalState;
+@property(readonly, getter=isMacCatalystApp) _Bool macCatalystApp;
 
 // Remaining properties
 @property(readonly, copy) NSString *fullUserName;

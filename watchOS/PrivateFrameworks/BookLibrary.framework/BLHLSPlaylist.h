@@ -8,7 +8,7 @@
 
 #import <BookLibrary/BLM3U8ParserDelegate-Protocol.h>
 
-@class BLHLSKey, BLHLSPlaylistState, NSArray, NSString;
+@class BLHLSPlaylistState, NSArray, NSMutableSet, NSSet, NSString;
 
 @interface BLHLSPlaylist : NSObject <BLM3U8ParserDelegate>
 {
@@ -16,8 +16,8 @@
     NSArray *_groups;
     NSArray *_streamInfs;
     NSArray *_segments;
-    BLHLSKey *_key;
     BLHLSPlaylistState *_state;
+    NSMutableSet *_uniqueKeys;
     NSArray *_requestedBitrates;
 }
 
@@ -28,8 +28,8 @@
 + (_Bool)rewritePlaylistURL:(id)arg1 toURL:(id)arg2 requestedBitrates:(id)arg3 error:(id *)arg4;
 + (_Bool)rewritePlaylistData:(id)arg1 toURL:(id)arg2 requestedBitrates:(id)arg3 error:(id *)arg4;
 @property(retain, nonatomic) NSArray *requestedBitrates; // @synthesize requestedBitrates=_requestedBitrates;
+@property(retain, nonatomic) NSMutableSet *uniqueKeys; // @synthesize uniqueKeys=_uniqueKeys;
 @property(retain, nonatomic) BLHLSPlaylistState *state; // @synthesize state=_state;
-@property(retain, nonatomic) BLHLSKey *key; // @synthesize key=_key;
 @property(retain, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(nonatomic) _Bool independentSegments; // @synthesize independentSegments=_independentSegments;
 @property(retain, nonatomic) NSArray *streamInfs; // @synthesize streamInfs=_streamInfs;
@@ -40,6 +40,7 @@
 - (void)parser:(id)arg1 lineIsURL:(id)arg2;
 - (void)parser:(id)arg1 lineIsComment:(id)arg2;
 - (_Bool)_parseUsingParser:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) NSSet *keys;
 @property(readonly, copy) NSString *description;
 - (id)initWithRequestedBitrates:(id)arg1;
 

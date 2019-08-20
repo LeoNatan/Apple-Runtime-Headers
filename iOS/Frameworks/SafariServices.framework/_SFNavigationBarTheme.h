@@ -15,6 +15,8 @@
     _Bool _backdropIsGreen;
     _Bool _platterBackdropIsDark;
     long long _platterOverrideUserInterfaceStyle;
+    long long _platterTextFieldOverrideUserInterfaceStyle;
+    long long _platterKeyboardOverrideAppearance;
     UIColor *_textColor;
     UIColor *_secureTextColor;
     UIColor *_warningTextColor;
@@ -41,6 +43,8 @@
 @property(readonly, nonatomic) _Bool backdropIsGreen; // @synthesize backdropIsGreen=_backdropIsGreen;
 @property(readonly, nonatomic) _Bool backdropIsRed; // @synthesize backdropIsRed=_backdropIsRed;
 @property(readonly, nonatomic) _Bool backdropIsExtreme; // @synthesize backdropIsExtreme=_backdropIsExtreme;
+@property(readonly, nonatomic) long long platterKeyboardOverrideAppearance; // @synthesize platterKeyboardOverrideAppearance=_platterKeyboardOverrideAppearance;
+@property(readonly, nonatomic) long long platterTextFieldOverrideUserInterfaceStyle; // @synthesize platterTextFieldOverrideUserInterfaceStyle=_platterTextFieldOverrideUserInterfaceStyle;
 @property(readonly, nonatomic) long long platterOverrideUserInterfaceStyle; // @synthesize platterOverrideUserInterfaceStyle=_platterOverrideUserInterfaceStyle;
 - (void).cxx_destruct;
 - (id)_colorForPlatterTextColor:(id)arg1 regularColor:(id)arg2 withPlatterAlpha:(double)arg3;

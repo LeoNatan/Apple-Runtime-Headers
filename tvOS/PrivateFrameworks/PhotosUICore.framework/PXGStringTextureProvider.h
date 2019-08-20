@@ -10,7 +10,7 @@
 {
 }
 
-- (void)_requestTextureForString:(id)arg1 withAttributes:(id)arg2 targetSize:(struct CGSize)arg3 verticalAlignment:(long long)arg4 screenScale:(double)arg5 textureRequestID:(int)arg6;
+- (void)_requestTextureForString:(id)arg1 withAttributes:(id)arg2 targetSize:(struct CGSize)arg3 userInterfaceDirection:(unsigned long long)arg4 verticalAlignment:(long long)arg5 screenScale:(double)arg6 textureRequestID:(int)arg7;
 - (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
 
 @end

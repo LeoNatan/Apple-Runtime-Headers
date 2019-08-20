@@ -28,8 +28,8 @@
     unsigned char _osVersion;
     BOOL _paired;
     unsigned int _deviceFlags;
-    unsigned int _systemPairState;
     unsigned int _hotspotInfo;
+    unsigned int _systemPairState;
     NSString *_accountID;
     NSArray *_batteryInfo;
     SFBLEDevice *_bleDevice;
@@ -50,7 +50,6 @@
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL paired; // @synthesize paired=_paired;
 @property(nonatomic) unsigned char osVersion; // @synthesize osVersion=_osVersion;
-@property(nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
 @property(readonly, nonatomic) BOOL wifiP2P; // @synthesize wifiP2P=_wifiP2P;
 @property(nonatomic) BOOL watchLocked; // @synthesize watchLocked=_watchLocked;
 @property(nonatomic) BOOL wakeDevice; // @synthesize wakeDevice=_wakeDevice;
@@ -67,6 +66,7 @@
 @property(readonly, copy, nonatomic) NSString *mediaRemoteID; // @synthesize mediaRemoteID=_mediaRemoteID;
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) unsigned int hotspotInfo; // @synthesize hotspotInfo=_hotspotInfo;
 @property(nonatomic) BOOL hasProblem; // @synthesize hasProblem=_hasProblem;
 @property(readonly, nonatomic) BOOL duetSync; // @synthesize duetSync=_duetSync;
 @property(nonatomic) long long distance; // @synthesize distance=_distance;

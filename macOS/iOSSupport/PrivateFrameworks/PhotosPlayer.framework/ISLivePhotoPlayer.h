@@ -22,6 +22,7 @@
     double _lastAppliedScale;
     BOOL _playingVitality;
     BOOL _hinting;
+    BOOL _isAttemptingToPlayback;
     BOOL _immediatelyShowsPhotoWhenPlaybackEnds;
     BOOL _playbackAllowed;
     BOOL __settleAutomaticallyWhenReady;
@@ -48,6 +49,7 @@
 @property(nonatomic) long long targetReadiness; // @synthesize targetReadiness=_targetReadiness;
 @property(nonatomic, getter=isPlaybackAllowed) BOOL playbackAllowed; // @synthesize playbackAllowed=_playbackAllowed;
 @property(nonatomic) BOOL immediatelyShowsPhotoWhenPlaybackEnds; // @synthesize immediatelyShowsPhotoWhenPlaybackEnds=_immediatelyShowsPhotoWhenPlaybackEnds;
+@property(nonatomic, setter=_setIsAttemptingToPlayback:) BOOL isAttemptingToPlayback; // @synthesize isAttemptingToPlayback=_isAttemptingToPlayback;
 @property(nonatomic, setter=_setCurrentPlaybackStyle:) long long currentPlaybackStyle; // @synthesize currentPlaybackStyle=_currentPlaybackStyle;
 @property(retain, nonatomic) ISLivePhotoVitalityFilter *vitalityFilter; // @synthesize vitalityFilter=_vitalityFilter;
 @property(nonatomic, getter=isHinting, setter=_setHinting:) BOOL hinting; // @synthesize hinting=_hinting;
@@ -69,6 +71,7 @@
 - (long long)_coalescedPlaybackFilterState;
 - (void)_resetPlaybackFilters;
 - (void)_configurePlaybackFilters;
+- (void)setIsAttemptingToPlayback:(BOOL)arg1;
 - (void)_updateScaleIfNeeded;
 - (void)_invalidateScale;
 - (void)_updateApertureModeIfNeeded;

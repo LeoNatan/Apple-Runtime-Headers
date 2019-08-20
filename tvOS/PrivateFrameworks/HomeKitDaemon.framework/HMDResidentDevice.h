@@ -55,7 +55,8 @@
 - (void)__deviceAdded:(id)arg1;
 - (void)__accountAdded:(id)arg1;
 - (id)runtimeState;
-@property(readonly, nonatomic) _Bool supportsMediaActionExecution;
+@property(readonly, nonatomic) _Bool supportsShortcutActions;
+@property(readonly, nonatomic) _Bool supportsMediaActions;
 @property(readonly, nonatomic) _Bool supportsMediaSystem;
 @property(readonly, nonatomic) _Bool supportsSharedEventTriggerActivation;
 @property(readonly, nonatomic) unsigned long long status;

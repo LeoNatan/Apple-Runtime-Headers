@@ -20,12 +20,14 @@ __attribute__((visibility("hidden")))
     struct UIOffset _badgePositionAdjustment[5];
     struct UIOffset _badgeTitlePositionAdjustment[5];
     struct {
-        unsigned int hasUserTitleTextAttributes:1;
+        unsigned int hasUserTitleFont:1;
+        unsigned int hasUserTitleColor:1;
         unsigned int hasUserTitlePosition:1;
         unsigned int hasUserIconColor:1;
         unsigned int hasUserBadgePosition:1;
         unsigned int hasUserBadgeBackgroundColor:1;
-        unsigned int hasUserBadgeTextAttributes:1;
+        unsigned int hasUserBadgeTitleFont:1;
+        unsigned int hasUserBadgeTitleColor:1;
         unsigned int hasUserBadgeTitlePosition:1;
     } _stateFlags[5];
 }
@@ -33,13 +35,6 @@ __attribute__((visibility("hidden")))
 + (id)decodeFromCoder:(id)arg1 prefix:(id)arg2;
 + (id)standardItemDataForStyle:(int)arg1;
 - (void).cxx_destruct;
-- (struct UIOffset)resolvedBadgePositionAdjustmentForState:(int)arg1;
-- (id)resolvedBadgeBackgroundColorForState:(int)arg1;
-- (struct UIOffset)resolvedBadgeTitlePositionAdjustmentForState:(int)arg1;
-- (id)resolvedBadgeTextAttributesForState:(int)arg1;
-- (id)resolvedIconColorForState:(int)arg1;
-- (struct UIOffset)resolvedTitlePositionAdjustmentForState:(int)arg1;
-- (id)resolvedTitleTextAttributesForState:(int)arg1;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
 - (void)setBadgeTitlePositionAdjustment:(struct UIOffset)arg1 forState:(int)arg2;
 - (struct UIOffset)badgeTitlePositionAdjustmentForState:(int)arg1;
@@ -53,8 +48,13 @@ __attribute__((visibility("hidden")))
 - (id)iconColorForState:(int)arg1;
 - (void)setTitlePositionAdjustment:(struct UIOffset)arg1 forState:(int)arg2;
 - (struct UIOffset)titlePositionAdjustmentForState:(int)arg1;
+- (_Bool)titleTextAttributesSpecifyColorForState:(int)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(int)arg2;
 - (id)titleTextAttributesForState:(int)arg1;
+- (id)_fallbackBadgeTitleColorForState:(int)arg1;
+- (id)_fallbackBadgeTitleFontForState:(int)arg1;
+- (id)_fallbackTitleColorForState:(int)arg1;
+- (id)_fallbackTitleFontForState:(int)arg1;
 - (id)replicate;
 - (_Bool)checkEqualTo:(id)arg1;
 - (int)hashInto:(int)arg1;

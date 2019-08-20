@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_age;
     NSNumber *_biologicalSex;
     NSNumber *_numberOfCyclesSinceLastDayOfLogging;
+    NSNumber *_numberOfCyclesSinceLastDayOfLoggingInCycleTracking;
     NSNumber *_cycleLengthVariationLowerPercentile;
     NSNumber *_cycleLengthVariationUpperPercentile;
     NSNumber *_periodPredictionEnabled;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *periodPredictionEnabled; // @synthesize periodPredictionEnabled=_periodPredictionEnabled;
 @property(retain, nonatomic) NSNumber *cycleLengthVariationUpperPercentile; // @synthesize cycleLengthVariationUpperPercentile=_cycleLengthVariationUpperPercentile;
 @property(retain, nonatomic) NSNumber *cycleLengthVariationLowerPercentile; // @synthesize cycleLengthVariationLowerPercentile=_cycleLengthVariationLowerPercentile;
+@property(retain, nonatomic) NSNumber *numberOfCyclesSinceLastDayOfLoggingInCycleTracking; // @synthesize numberOfCyclesSinceLastDayOfLoggingInCycleTracking=_numberOfCyclesSinceLastDayOfLoggingInCycleTracking;
 @property(retain, nonatomic) NSNumber *numberOfCyclesSinceLastDayOfLogging; // @synthesize numberOfCyclesSinceLastDayOfLogging=_numberOfCyclesSinceLastDayOfLogging;
 @property(retain, nonatomic) NSNumber *biologicalSex; // @synthesize biologicalSex=_biologicalSex;
 @property(retain, nonatomic) NSNumber *age; // @synthesize age=_age;

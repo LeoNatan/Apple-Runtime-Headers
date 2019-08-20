@@ -170,6 +170,8 @@
     CDUnknownBlockType _deferredUpdateTask;
     UIContinuousPathIntroductionView *_continuousPathIntroductionView;
     UIKBEditingGesturesIntroduction *_editingGestureIntroductionView;
+    _Bool m_editingTraitsMarkedDirty;
+    _Bool m_selectionIsEmpty;
     _Bool m_showsCandidateBar;
     _Bool m_showsCandidateInline;
     _Bool committingCandidate;
@@ -523,6 +525,7 @@
 - (id)acceptCurrentCandidateForInput:(id)arg1;
 - (id)acceptInlineCandidate;
 - (id)acceptCurrentCandidate;
+- (void)acceptHandwritingCandidate;
 - (void)handleDeletionForCandidate:(id)arg1;
 - (void)acceptCandidate:(id)arg1 forInput:(id)arg2;
 - (void)acceptCandidate:(id)arg1;
@@ -543,7 +546,6 @@
 - (void)deleteFromInputWithFlags:(unsigned int)arg1 executionContext:(id)arg2;
 - (void)deleteFromInputWithFlags:(unsigned int)arg1;
 - (void)deleteFromInput;
-- (void)didHandleWebKeyEvent;
 - (void)completeDeleteOnceFromInputWithCharacterBefore:(unsigned long)arg1;
 - (void)scheduleReplacementsAfterDeletionToEndOfWord;
 - (void)moveSelectionToEndOfWord;
@@ -572,9 +574,10 @@
 - (id)acceptAutocorrectionForWordTerminator:(id)arg1;
 - (void)addInputEvent:(id)arg1 executionContext:(id)arg2;
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2 withInputManagerHint:(id)arg3 executionContext:(id)arg4;
-- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2 withInputManagerHint:(id)arg3;
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2 executionContext:(id)arg3;
+- (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2 withInputManagerHint:(id)arg3;
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
+- (void)_scheduleInputAdditionOrDeletion:(CDUnknownBlockType)arg1;
 - (void)removeSpaceAfterEmojiForInputString:(id)arg1;
 - (_Bool)shouldAcceptCandidate:(id)arg1 beforeInputString:(id)arg2;
 - (id)handleReplacement:(id)arg1 forSpaceAndInput:(id)arg2;
@@ -657,9 +660,8 @@
 - (void)pasteOperation;
 - (void)copyOperation;
 - (void)cutOperation;
-- (_Bool)canPaste;
-- (_Bool)canCopy;
-- (_Bool)canCut;
+- (void)setEditingTraitsMarkedDirty:(_Bool)arg1;
+- (_Bool)editingTraitsMarkedDirty;
 - (void)updateStylingTraitsIfNeeded;
 - (id)responderStylingTraitsForceEditingMask:(_Bool)arg1;
 - (void)updateShiftState;
@@ -744,6 +746,7 @@
 - (void)updateLayout;
 - (void)finishLayoutChangeWithArguments:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldShowCandidateBar;
+- (_Bool)shouldShowLongPredictionList;
 - (_Bool)shouldShowCandidateBarIfReceivedCandidatesInCurrentInputMode:(_Bool)arg1 ignoreHidePredictionTrait:(_Bool)arg2;
 - (_Bool)currentKeyboardTraitsAllowCandidateBarWhileIgnoringHidePredictionTrait:(_Bool)arg1;
 - (struct CGRect)subtractKeyboardFrameFromRect:(struct CGRect)arg1 inView:(id)arg2;
@@ -942,6 +945,7 @@
 - (id)_contentsOfUsernameField;
 - (int)needAutofill;
 - (_Bool)needOneTimeCodeAutofill;
+- (_Bool)textInputTraitsNeedOneTimeCode;
 - (_Bool)needAutofillLogin;
 - (_Bool)textInputTraitsNeedAutofill;
 - (_Bool)textInputTraitsNeedAutofillExcludeOneTimeCode;
@@ -1019,7 +1023,6 @@
 - (void)finishSplitTransitionWithProgress:(float)arg1;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (void)traitCollectionDidChange;
-- (void)traitsDidChangeFromTraits:(id)arg1;
 - (void)setSplit:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)showSelectionCommands;
 - (id)textInteractionAssistant;

@@ -67,8 +67,8 @@
 @property(copy, nonatomic) NSArray *mailboxObjectIDs;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)_changeDescriptionsForDebug:(BOOL)arg1;
-- (id)_descriptionForDebug:(BOOL)arg1;
+- (id)_changeDescriptionsForInternal:(BOOL)arg1 useDebugDescriptions:(BOOL)arg2;
+- (id)_descriptionForInternal:(BOOL)arg1 useDebugDescriptions:(BOOL)arg2;
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

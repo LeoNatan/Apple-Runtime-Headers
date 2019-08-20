@@ -38,6 +38,7 @@
 - (BOOL)isCellularStunCandidate;
 - (BOOL)isRelayStunCandidate;
 - (BOOL)isServerReflexiveStunCandidate;
+- (BOOL)isSameNetworkType:(id)arg1;
 - (BOOL)isCompatibleWithStunCandidate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic) CDStruct_330c469e *prefix;

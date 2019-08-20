@@ -51,6 +51,7 @@
         unsigned int isProcessingUpdateResponseBlocks:1;
         unsigned int readyForSuspend:1;
         unsigned int isMediaParticipant:1;
+        unsigned int isInDetachDeferringAction:1;
     } _sceneFlags;
     NSDate *_suspensionTimeMark;
     BOOL _respondingToLifecycleEvent;
@@ -93,6 +94,7 @@
 @property(readonly, nonatomic, getter=_isUIKitManaged) BOOL _isUIKitManaged;
 @property(readonly, nonatomic, getter=_isInternal) BOOL _internal;
 - (id)_shortDescription;
+- (BOOL)_connected;
 @property(readonly, nonatomic, getter=_suspendedUnderLock) BOOL _suspendedUnderLock;
 @property(readonly, nonatomic, getter=_runningInTaskSwitcher) BOOL _runningInTaskSwitcher;
 @property(readonly, nonatomic, getter=_suspendedEventsOnly) BOOL _suspendedEventsOnly;
@@ -107,6 +109,7 @@
 @property(readonly, nonatomic) FBSSceneSettings *_synthesizedSettings;
 @property(readonly, nonatomic) FBSSceneSettings *_effectiveSettings;
 - (id)_fixupEffectiveSettings:(id)arg1;
+- (id)_fixupInheritedClientSettings:(id)arg1;
 - (id)_fixupInheritedSettings:(id)arg1;
 - (void)_emitSceneSettingsUpdateResponseForCompletion:(CDUnknownBlockType)arg1 afterSceneUpdateWork:(CDUnknownBlockType)arg2;
 - (void)_enqueuePostSettingsUpdateResponseBlock:(CDUnknownBlockType)arg1 inPhase:(id)arg2;
@@ -116,11 +119,13 @@
 @property(readonly, nonatomic) BOOL _readyForSuspend;
 - (void)_prepareForSuspend;
 - (void)_prepareForResume;
+- (void)_performBlockAfterCACommitPhaseDelayingBackgroundDetach:(CDUnknownBlockType)arg1;
 - (void)_performBackgroundSceneDetach:(id)arg1;
 - (void)_cancelBackgroundSceneDetach;
 - (void)_scheduleBackgroundSceneDetach;
 @property(nonatomic, setter=_setInvolvedInMediaPlayback:) BOOL _involvedInMediaPlayback;
 - (void)_initializeSceneComponents;
+- (void)_makeKeyAndVisibleIfNeeded;
 - (void)_readySceneForConnection;
 - (void)__releaseWindow:(id)arg1;
 - (void)__captureWindow:(id)arg1;

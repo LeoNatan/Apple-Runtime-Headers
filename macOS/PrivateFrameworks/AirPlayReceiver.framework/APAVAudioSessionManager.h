@@ -6,22 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioSession, NSString;
+@class AVAudioSession;
 
 __attribute__((visibility("hidden")))
 @interface APAVAudioSessionManager : NSObject
 {
     struct OpaqueFigSimpleMutex *_mutex;
     AVAudioSession *_session;
-    NSString *_name;
+    unsigned long long _type;
+    BOOL _isSetUp;
 }
 
 + (id)ambientSessionManager;
 + (id)mediaSessionManager;
 @property(readonly, nonatomic) AVAudioSession *session; // @synthesize session=_session;
+- (BOOL)setActive:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)setSessionMode:(id)arg1 error:(id *)arg2;
+- (void)setUpSession;
 - (void)dealloc;
-- (id)initWithSession:(id)arg1 name:(id)arg2;
+- (id)initWithSession:(id)arg1 type:(unsigned long long)arg2;
 
 @end
 

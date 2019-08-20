@@ -98,6 +98,7 @@
 @property(readonly, nonatomic) HDDatabase *database;
 @property(readonly, nonatomic) __weak id <HDHealthDaemon> healthDaemon;
 - (id)initWithDirectoryPath:(id)arg1 medicalIDDirectoryPath:(id)arg2 daemon:(id)arg3 profileType:(int)arg4 profileIdentifier:(id)arg5;
+@property(readonly, nonatomic) _Bool hasHealthRecordsAccounts;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

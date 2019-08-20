@@ -87,7 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)bulkItemChanges:(id)arg1 changedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_singleItemChange:(id)arg1 changedFields:(unsigned long long)arg2 bounce:(_Bool)arg3 bounceIndex:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)singleItemChange:(id)arg1 changedFields:(unsigned long long)arg2 bounce:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)itemChanged:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)changeItem:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 options:(unsigned long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)updateExistingContents:(id)arg1 ofItemWithIdentifier:(id)arg2 existingVersion:(id)arg3 toVersion:(id)arg4 request:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)contentsForItemWithIdentifier:(id)arg1 version:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)acknowledgeUserVisibleRootDidChangeForDomain:(id)arg1 urlWrapper:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

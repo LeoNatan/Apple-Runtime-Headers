@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString, UIToolbar, UIView;
+@protocol _UIBarAppearanceChangeObserver;
 
 __attribute__((visibility("hidden")))
 @interface _UIToolbarVisualProvider : NSObject
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)updateBarBackgroundSize;
 - (void)updateBarBackground;
 - (void)updateAppearance;
+@property(readonly, nonatomic) id <_UIBarAppearanceChangeObserver> appearanceObserver;
 @property(nonatomic) BOOL useModernAppearance;
 - (void)updateBackgroundGroupName;
 - (void)updateBarForStyle:(long long)arg1;

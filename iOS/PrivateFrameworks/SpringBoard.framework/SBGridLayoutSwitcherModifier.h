@@ -40,7 +40,6 @@
 - (struct CGSize)_cardSize;
 - (unsigned long long)_numberOfRows;
 - (unsigned long long)_numberOfColumns;
-- (struct CGRect)_scaleTransformedFrameWithUntransformedFrame:(struct CGRect)arg1 scale:(double)arg2;
 - (struct CGRect)_frameWithScaleAppliedForIndex:(unsigned long long)arg1 ignoringScrollOffset:(_Bool)arg2;
 - (double)_gridSwitcherPageScale;
 - (double)_cardHeaderHeight;

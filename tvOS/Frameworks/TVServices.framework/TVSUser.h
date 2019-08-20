@@ -13,6 +13,7 @@
 
 @interface TVSUser : NSObject <NSCopying, NSSecureCoding>
 {
+    NSString *_localAlias;
     _Bool _isHomeUserSharingSameiTunesAccount;
     _Bool _allowsAccess;
     NSString *_iTunesAltDSID;
@@ -23,18 +24,20 @@
     NSString *_firstName;
     NSString *_lastName;
     NSString *_pseudonymID;
-    NSString *_localAlias;
+    NSString *_iTunesUsername;
 }
 
 + (id)accountPropertyKeyForGameCenterWithUserIdentifier:(id)arg1;
 + (void)setActiveUsers:(id)arg1;
++ (void)fetchActiveUsersWithCompletion:(CDUnknownBlockType)arg1;
 + (id)activeUsers;
++ (void)fetchAllUsersWithCompletion:(CDUnknownBlockType)arg1;
 + (id)allUsers;
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+@property(copy, nonatomic) NSString *iTunesUsername; // @synthesize iTunesUsername=_iTunesUsername;
 @property(nonatomic) _Bool allowsAccess; // @synthesize allowsAccess=_allowsAccess;
 @property(readonly, nonatomic) _Bool isHomeUserSharingSameiTunesAccount; // @synthesize isHomeUserSharingSameiTunesAccount=_isHomeUserSharingSameiTunesAccount;
-@property(retain, nonatomic) NSString *localAlias; // @synthesize localAlias=_localAlias;
 @property(copy, nonatomic) NSString *pseudonymID; // @synthesize pseudonymID=_pseudonymID;
 @property(readonly, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
@@ -51,6 +54,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(retain, nonatomic) NSString *localAlias;
 @property(readonly, nonatomic) NSString *effectiveIdentifier;
 - (void)_writeAccountProperty:(id)arg1 forKeyPrefix:(id)arg2;
 - (void)_finishInitFromAccount:(id)arg1;

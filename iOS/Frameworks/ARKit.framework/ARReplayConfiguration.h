@@ -34,6 +34,7 @@
 - (void)play;
 - (id)initPrivate;
 - (id)initWithBaseConfiguration:(id)arg1 replaySensor:(id)arg2 replayingResultDataClasses:(id)arg3;
+- (id)initWithBaseConfiguration:(id)arg1 fileURL:(id)arg2 outError:(id *)arg3 manualMode:(_Bool)arg4 synchronousMode:(_Bool)arg5;
 - (id)initWithBaseConfiguration:(id)arg1 fileURL:(id)arg2 outError:(id *)arg3;
 
 // Remaining properties

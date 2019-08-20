@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)carouselSharingViewController:(id)arg1 setAssetItems:(id)arg2;
 - (void)carouselSharingViewController:(id)arg1 removeAssetItem:(id)arg2;
 - (void)carouselSharingViewController:(id)arg1 addAssetItem:(id)arg2;
+- (void)_updateSelectedAssetIdentifiers;
 - (void)_updateActionSheetPresentationStyleIfNeeded;
 - (void)activityViewControllerWillDisappear:(id)arg1;
 - (_Bool)activityViewControllerShouldCancelAfterPreparationCanceled:(id)arg1;

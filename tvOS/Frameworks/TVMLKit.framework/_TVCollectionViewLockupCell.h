@@ -17,7 +17,11 @@ __attribute__((visibility("hidden")))
     _Bool _pressIsAnimating;
     UIView<TVAuxiliaryViewSelecting> *__selectingView;
     _Bool _unpressOnEndAnimating;
-    _Bool _isFocusWithinCell;
+    struct {
+        _Bool respondsToDidUnfocus;
+        _Bool respondsToDidSelect;
+        _Bool respondsToLayeredImageContainerLayerWithinCollectionViewCell;
+    } _delegateFlags;
     id <TVCollectionViewLockupCellDelegate> _delegate;
 }
 

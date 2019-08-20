@@ -17,6 +17,7 @@
 @property(nonatomic) unsigned int recipeID; // @synthesize recipeID=_recipeID;
 - (id)description;
 - (id)expectedSizeFromWidth:(long long)arg1 height:(long long)arg2;
+- (void)generateAndStoreForAssetWithPriority:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 isHighPriority:(BOOL)arg4 progress:(id *)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)generateAndStoreForAsset:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 progress:(id *)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)expectedFileURLForVersion:(unsigned int)arg1 asset:(id)arg2;
 - (id)chooseIngredientsFrom:(id)arg1 version:(unsigned int)arg2;
@@ -27,8 +28,8 @@
 - (BOOL)colorSpaceIsNativeForDisplay;
 - (id)utiInContext:(id)arg1;
 - (id)initWithRecipeID:(unsigned int)arg1;
-- (void)_generateAndStoreUsingMediaConversionServicesForAsset:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 progress:(id *)arg4 completion:(CDUnknownBlockType)arg5;
-- (id)_mediaConversionServiceOptionsForAsset:(id)arg1 adjustmentData:(id)arg2;
+- (void)_generateAndStoreUsingMediaConversionServicesForAsset:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 isHighPriority:(BOOL)arg4 progress:(id *)arg5 completion:(CDUnknownBlockType)arg6;
+- (id)_mediaConversionServiceOptionsForAsset:(id)arg1 adjustmentData:(id)arg2 largeAdjustmentData:(id)arg3 isHighPriority:(BOOL)arg4;
 - (id)_resourceGenerationAffectsRecipesForLibraryID:(id)arg1;
 
 @end

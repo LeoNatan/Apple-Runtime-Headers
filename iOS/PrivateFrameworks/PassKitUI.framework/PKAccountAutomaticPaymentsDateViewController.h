@@ -45,11 +45,13 @@
 - (void)monthDaySelectionViewController:(id)arg1 didSelectDate:(id)arg2 day:(long long)arg3;
 - (id)_footerText;
 - (void)_updateNextButtonEnabledIfNecessary;
+- (void)_performPresentPayment;
 - (void)_handlePresentPayment;
 - (_Bool)_shouldShowCollectionView;
 - (long long)_frequency;
 - (void)_handleNext:(id)arg1;
 - (id)tableHeaderView;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithController:(id)arg1;
 

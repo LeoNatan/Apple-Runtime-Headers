@@ -6,11 +6,15 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSString, UINSSceneView;
+@class NSLayoutConstraint, NSString, UINSSceneView;
 
 __attribute__((visibility("hidden")))
 @interface UINSSceneViewController : NSViewController
 {
+    NSLayoutConstraint *_minWidthConstraint;
+    NSLayoutConstraint *_minHeightConstraint;
+    NSLayoutConstraint *_maxWidthConstraint;
+    NSLayoutConstraint *_maxHeightConstraint;
     NSString *_sceneIdentifier;
     UINSSceneView *_sceneView;
 }
@@ -20,6 +24,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UINSSceneView *sceneView; // @synthesize sceneView=_sceneView;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 - (void).cxx_destruct;
+- (void)setNeedsSizeRestrictionsUpdate;
+- (void)_setMinimumSizeForScreenInUIKit;
+- (void)updateViewConstraints;
 - (void)loadView;
 - (BOOL)acceptKeyViewHandoff:(BOOL)arg1;
 - (void)noteFocusRingMaskChanged;

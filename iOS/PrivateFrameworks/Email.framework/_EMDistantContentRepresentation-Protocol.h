@@ -7,10 +7,11 @@
 #import <Email/NSObject-Protocol.h>
 
 @class EMContentRequestOptions, EMObjectID, NSProgress;
+@protocol EMContentItemRequestDelegate;
 
 @protocol _EMDistantContentRepresentation <NSObject>
 - (void)invalidate;
 - (NSProgress *)requestUpdatedRepresentationWithCompletion:(void (^)(EMContentRepresentation *, NSError *))arg1;
-- (NSProgress *)requestRepresentationForItemWithObjectID:(EMObjectID *)arg1 options:(EMContentRequestOptions *)arg2 completionHandler:(void (^)(id <_EMDistantContentRepresentation>, EMContentRepresentation *, NSError *))arg3;
+- (NSProgress *)requestRepresentationForItemWithObjectID:(EMObjectID *)arg1 options:(EMContentRequestOptions *)arg2 delegate:(id <EMContentItemRequestDelegate>)arg3 completionHandler:(void (^)(id <_EMDistantContentRepresentation>, EMContentRepresentation *, NSError *))arg4;
 @end
 

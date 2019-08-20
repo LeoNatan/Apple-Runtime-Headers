@@ -52,6 +52,7 @@
 - (void)enqueueForWriteAsync:(CDUnknownBlockType)arg1;
 - (void)enqueueForReadAsync:(CDUnknownBlockType)arg1;
 - (void)enqueueForRead:(CDUnknownBlockType)arg1;
+- (_Bool)enqueueForReadUnlessSuspended:(CDUnknownBlockType)arg1;
 - (_Bool)supportsWatch;
 @property(retain, nonatomic) NRSecureDevicePropertyStore *secureProperties; // @synthesize secureProperties=_secureProperties;
 - (void)_startQueue;

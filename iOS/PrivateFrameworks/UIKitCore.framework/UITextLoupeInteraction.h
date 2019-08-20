@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) _UITextLoupeResponderProxy *responderProxy; // @synthesize responderProxy=_responderProxy;
 - (void).cxx_destruct;
-- (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
+- (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)canBeginDragCursor:(id)arg1;
 - (void)delayedDisplayLoupe:(id)arg1;
 - (void)delayedSelectionAction:(id)arg1;
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)setupDelayedLoupeActionWithInitialPoint:(struct CGPoint)arg1;
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)updateVisibilityOffsetForGesture:(id)arg1;
+@property(nonatomic) _Bool strongerBiasAgainstUp;
 @property(nonatomic) _Bool shouldUseLineThreshold;
 - (void)assertInitialVerticalOffset:(double)arg1 fromTopOfCaret:(double)arg2;
 - (void)_createGestureTuningIfNecessary;
@@ -45,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)loupeGestureWithState:(long long)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(long long)arg5 shouldCancel:(_Bool *)arg6;
 - (void)_processGestureForCustomHighlighter:(id)arg1;
 - (void)loupeGesture:(id)arg1;
+- (_Bool)interaction_gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)finishSetup;
 - (void)selectToHere:(id)arg1;
@@ -52,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 @property(readonly, nonatomic) UIResponder *responder;
 - (void)didMoveToView:(id)arg1;
+- (void)willMoveToView:(id)arg1;
 - (id)initWithConfigurator:(Class)arg1;
 
 @end

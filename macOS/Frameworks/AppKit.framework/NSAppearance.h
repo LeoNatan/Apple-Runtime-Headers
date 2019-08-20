@@ -62,6 +62,7 @@
 + (void)_setSystemAppearanceTestingOverrides:(unsigned long long)arg1;
 + (void)_setSystemAppearanceTestingOverride:(long long)arg1;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(readonly) BOOL _allowsScrollers;
 - (BOOL)isEqual:(id)arg1;
 - (id)bestMatchFromAppearancesWithNames:(id)arg1;
 - (BOOL)_resolvesToFunctionRowAppearanceForWidget:(id)arg1;
@@ -69,14 +70,14 @@
 - (BOOL)_allowsCustomControlTintColors;
 - (BOOL)_allowsSystemControlTintColors;
 - (BOOL)_isTintedWithLightColor;
-- (struct CGSize)_minimumSizeForSmallToolbarButton;
-- (struct CGSize)_minimumSizeForToolbarButton;
-- (struct CGSize)_minimumSizeForStandardButton;
-- (BOOL)_prefersSliderAccessoryStepBehavior;
-- (BOOL)_prefersButtonTitleNaturalBaseline;
-- (BOOL)_prefersMoreHorizontalContentIndicators;
-- (unsigned long long)_textGlyphColorTemperature;
-- (double)_textGlyphBrightnessMultiplier;
+@property(readonly) struct CGSize _minimumSizeForSmallToolbarButton;
+@property(readonly) struct CGSize _minimumSizeForToolbarButton;
+@property(readonly) struct CGSize _minimumSizeForStandardButton;
+@property(readonly) BOOL _prefersSliderAccessoryStepBehavior;
+@property(readonly) BOOL _prefersButtonTitleNaturalBaseline;
+@property(readonly) BOOL _prefersMoreHorizontalContentIndicators;
+@property(readonly) unsigned long long _textGlyphColorTemperature;
+@property(readonly) double _textGlyphBrightnessMultiplier;
 - (id)imageNamed:(id)arg1;
 - (BOOL)_allowsVibrancyForColor:(id)arg1;
 @property(readonly) BOOL allowsVibrancy;
@@ -122,7 +123,7 @@
 - (id)_flattenedAppearanceNamesList;
 - (double)_defaultBezelBrightness;
 - (BOOL)_optionsMustContainTintColor;
-- (BOOL)_backstoppedByFullAppearance;
+@property(readonly) BOOL _backstoppedByFullAppearance;
 - (id)_appearanceForNonVibrantContent;
 - (id)_appearanceForVibrantContent;
 - (id)_coreUICatalog;
@@ -131,7 +132,7 @@
 - (id)_initForArchivingOnlyWithAppearanceNamed:(id)arg1 bundle:(id)arg2;
 - (id)_initWithContentsOfURL:(id)arg1;
 - (id)initWithAppearanceNamed:(id)arg1 bundle:(id)arg2;
-- (id)tintColor;
+@property(readonly) NSColor *tintColor;
 - (void)_setTintColor:(id)arg1;
 - (id)appearanceByApplyingTintColor:(id)arg1;
 - (id)systemFontForControlSize:(unsigned long long)arg1 weight:(double)arg2;

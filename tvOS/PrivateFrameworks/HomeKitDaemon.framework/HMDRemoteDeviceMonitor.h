@@ -52,7 +52,7 @@
 - (void)handleRemovedDeviceInformation:(id)arg1;
 - (void)stopMonitoringDevice:(id)arg1;
 - (void)handleAddedDeviceInformation:(id)arg1;
-- (void)_startMonitoringDevice:(id)arg1;
+- (id)_startMonitoringDevice:(id)arg1;
 - (void)startMonitoringDevice:(id)arg1;
 - (id)_deviceInformationForDevice:(id)arg1;
 @property(readonly) NSArray *unreachableDevices;

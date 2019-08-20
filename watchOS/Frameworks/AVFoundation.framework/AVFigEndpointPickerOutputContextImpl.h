@@ -34,7 +34,6 @@ __attribute__((visibility("hidden")))
 + (id)platformDependentScreenOrVideoContext;
 + (id)auxiliaryOutputContext;
 + (id)sharedAudioPresentationOutputContext;
-+ (void)initialize;
 @property __weak AVOutputContext *parentOutputContext; // @synthesize parentOutputContext=_parentContext;
 - (void).cxx_destruct;
 - (id)openCommunicationChannelWithOptions:(id)arg1 error:(id *)arg2;

@@ -65,7 +65,7 @@
 - (id)contactIdentifiers;
 - (void)fillOutPropertiesForCardSection:(id)arg1;
 - (id)richTextFromText:(id)arg1;
-- (id)initWithResult:(id)arg1 cardSection:(id)arg2 isInline:(_Bool)arg3;
+- (id)initWithResult:(id)arg1 cardSection:(id)arg2 isInline:(_Bool)arg3 queryId:(unsigned long long)arg4;
 
 @end
 

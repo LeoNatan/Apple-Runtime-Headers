@@ -108,6 +108,9 @@
 - (BOOL)_isNonForcedSubtitleDisplayEnabled;
 - (void)_updateNonForcedSubtitleDisplayEnabledOnFigPlaybackItem;
 - (id)currentMediaSelection;
+- (void)_setCurrentMediaSelection:(id)arg1;
+- (id)_currentMediaSelectionFromFigSelectedMediaArray:(id)arg1;
+- (id)_figSelectedMediaArray;
 - (id)selectedMediaOptionInMediaSelectionGroup:(id)arg1;
 - (BOOL)playerAppliesAutomaticMediaSelectionToGroup:(id)arg1;
 - (void)selectMediaOptionAutomaticallyInMediaSelectionGroup:(id)arg1;
@@ -132,6 +135,7 @@
 - (void)_quietlySetVariantIndex:(long long)arg1;
 - (double)liveUpdateInterval;
 - (long long)variantIndex;
+- (id)configurationGroup;
 - (void)setGaplessInfo:(id)arg1;
 - (void)_updatePlaybackPropertiesOnFigPlaybackItem;
 - (id)_playbackProperties;
@@ -344,6 +348,7 @@
 - (void)_changeStatusToFailedWithError:(id)arg1;
 @property(readonly) NSError *error;
 @property(readonly) long long status;
+- (void)_informObserversAboutAvailabilityOfCurrentMediaSelection;
 - (void)_informObserversAboutAvailabilityOfDuration:(CDStruct_1b6d18a9)arg1;
 - (void)_informObserversAboutAvailabilityOfPresentationSize;
 - (void)_informObserversAboutAvailabilityOfTracks;

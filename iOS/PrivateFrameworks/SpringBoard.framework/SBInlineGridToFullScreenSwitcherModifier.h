@@ -34,8 +34,9 @@
 - (double)darkeningAlphaForIndex:(unsigned long long)arg1;
 - (double)titleOpacityForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
+- (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
-- (id)appExposeAccessoryButtonBundleID;
+- (id)appExposeAccessoryButtonsBundleIdentifier;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;

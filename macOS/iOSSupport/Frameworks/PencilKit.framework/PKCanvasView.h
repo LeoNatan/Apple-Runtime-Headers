@@ -8,12 +8,11 @@
 
 #import <PencilKit/PKRulerHostingDelegate-Protocol.h>
 #import <PencilKit/PKTiledViewDelegate-Protocol.h>
-#import <PencilKit/PKToolPickerObserver-Protocol.h>
 
 @class NSString, PKCanvasAttachmentView, PKDrawing, PKInk, PKTiledView, PKTool, UIGestureRecognizer, UIView;
 @protocol PKCanvasViewDelegate, PKRulerHostingDelegate;
 
-@interface PKCanvasView : UIScrollView <PKTiledViewDelegate, PKRulerHostingDelegate, PKToolPickerObserver>
+@interface PKCanvasView : UIScrollView <PKTiledViewDelegate, PKRulerHostingDelegate>
 {
     PKTiledView *_tiledView;
     PKCanvasAttachmentView *_pageView;
@@ -66,6 +65,7 @@
 - (struct CGSize)_metalViewDrawableSize;
 - (void)_flushCaches;
 - (id)_selectionController;
+- (void)_setSelectedStrokesColor:(id)arg1;
 - (void)commitSelectionIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)_hasSelection;
 @property(readonly, nonatomic) UIView *selectionView;
@@ -76,9 +76,6 @@
 - (void)_setDrawing:(id)arg1 alreadyRenderedDrawing:(id)arg2 imageForAlreadyRenderedDrawing:(id)arg3 fullyRenderedCompletionBlock:(CDUnknownBlockType)arg4;
 - (void)_setDrawing:(id)arg1 fullyRenderedCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 fixedPixelSize:(struct CGSize)arg2 drawingScale:(double)arg3 layerFixedPixelSize:(BOOL)arg4;
-- (void)toolPickerIsRulerActiveDidChange:(id)arg1;
-- (void)toolPickerSelectedToolDidChange:(id)arg1;
-- (BOOL)shouldToolPickerBecomeVisibleWhenFirstResponder:(id)arg1;
 - (void)paste:(id)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canBecomeFirstResponder;

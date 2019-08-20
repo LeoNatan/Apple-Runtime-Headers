@@ -14,6 +14,7 @@
     long long _categoryID;
     NSString *_categoryName;
     NSString *_displayName;
+    NSString *_largeListIconName;
     NSString *_listIconName;
     NSString *_healthDataIconName;
     NSString *_shareIconName;
@@ -23,6 +24,7 @@
 @property(readonly, nonatomic) NSString *shareIconName; // @synthesize shareIconName=_shareIconName;
 @property(readonly, nonatomic) NSString *healthDataIconName; // @synthesize healthDataIconName=_healthDataIconName;
 @property(readonly, nonatomic) NSString *listIconName; // @synthesize listIconName=_listIconName;
+@property(readonly, nonatomic) NSString *largeListIconName; // @synthesize largeListIconName=_largeListIconName;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(readonly, nonatomic) long long categoryID; // @synthesize categoryID=_categoryID;
@@ -33,6 +35,7 @@
 @property(readonly, nonatomic) UIImage *shareIcon;
 @property(readonly, nonatomic) UIImage *healthDataIcon;
 @property(readonly, nonatomic) UIImage *listIcon;
+@property(readonly, nonatomic) UIImage *largeListIcon;
 @property(readonly, nonatomic) HKFillStyle *fillStyle;
 @property(readonly, nonatomic) UIColor *color;
 - (id)init;

@@ -8,6 +8,6 @@
 
 @protocol VNRequestProgressProviding <NSObject>
 @property(readonly) _Bool indeterminate;
-@property(nonatomic) CDUnknownBlockType progressHandler;
+@property(copy, nonatomic) CDUnknownBlockType progressHandler;
 @end
 

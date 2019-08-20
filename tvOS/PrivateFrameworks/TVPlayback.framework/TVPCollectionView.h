@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <TVPCollectionViewDelegate> delegate; // @dynamic delegate;
 - (void)_notifyDidScroll;
 - (id)tvp_layoutAttributesForItemAtIndexPath:(id)arg1;
+- (_Bool)_shouldReverseLayoutDirection;
 - (void)reloadData;
 - (_Bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

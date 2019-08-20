@@ -15,6 +15,11 @@
 
 @property(retain, nonatomic) MPPlaybackArchive *mediaPlayerPlaybackArchive; // @synthesize mediaPlayerPlaybackArchive=_mediaPlayerPlaybackArchive;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isRepeatEnabled) BOOL repeatEnabled;
+@property(readonly, nonatomic) BOOL isRepeatSupported;
+@property(nonatomic, getter=isShuffleEnabled) BOOL shuffleEnabled;
+@property(readonly, nonatomic) BOOL isShuffleSupported;
+@property(nonatomic) unsigned long long targetOptions;
 - (id)initWithMediaPlayerPlaybackArchive:(id)arg1;
 
 @end

@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableDictionary, NSMutableSet;
+@class NSDate, NSLock, NSMutableDictionary, NSMutableSet;
 
 @interface HUNoiseSettings : NSObject
 {
+    NSLock *_synchronizeDomainsLock;
     NSMutableSet *_registeredNotifications;
     NSMutableSet *_synchronizePreferences;
     NSMutableDictionary *_updateBlocks;

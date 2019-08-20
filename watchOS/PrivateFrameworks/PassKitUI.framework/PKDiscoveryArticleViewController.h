@@ -13,7 +13,7 @@
 #import <PassKitUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PassKitUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSObject, NSString, PKContinuousButton, PKDiscoveryArticleAnimatedTransitioningHandler, PKDiscoveryArticleLayout, PKDiscoveryCardView, UIActivityIndicatorView, UICollectionView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer;
+@class NSMutableDictionary, NSObject, NSString, PKDiscoveryArticleAnimatedTransitioningHandler, PKDiscoveryArticleLayout, PKDiscoveryCardView, PKDiscoveryDismissButton, UIActivityIndicatorView, UICollectionView, UILabel, UIPanGestureRecognizer, UIScreenEdgePanGestureRecognizer;
 @protocol OS_dispatch_queue;
 
 @interface PKDiscoveryArticleViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate, PKDiscoveryCardViewDelegate, PKPaymentSetupDelegate>
@@ -21,7 +21,7 @@
     PKDiscoveryArticleAnimatedTransitioningHandler *_transitioningHandler;
     PKDiscoveryArticleLayout *_articleLayout;
     struct UIEdgeInsets _contentInsets;
-    PKContinuousButton *_dismissButton;
+    PKDiscoveryDismissButton *_dismissButton;
     _Bool _isDownloading;
     UIActivityIndicatorView *_activityIndicator;
     UILabel *_downloadingLabel;
@@ -55,6 +55,8 @@
 - (void)_handlePanGesture:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (int)_dismissButtonStyleForCard;
+- (void)_updateDismissButtonIfNecessary;
 - (void)_loadMedia:(id)arg1 forShelfViewAtIndexPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_configureCallToActionShelfView:(id)arg1 forCallToActionShelf:(id)arg2 atIndexPath:(id)arg3;
 - (void)_configureInlineMediaShelfView:(id)arg1 forInlineMediaShelf:(id)arg2 atIndexPath:(id)arg3;

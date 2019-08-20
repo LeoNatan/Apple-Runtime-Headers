@@ -62,6 +62,7 @@
 @property(nonatomic, getter=getStatOptions) unsigned long long StatOptions;
 @property(nonatomic, getter=getStatLocations) unsigned long long StatLocations;
 @property(nonatomic, getter=isStatEnabled) BOOL StatEnabled;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

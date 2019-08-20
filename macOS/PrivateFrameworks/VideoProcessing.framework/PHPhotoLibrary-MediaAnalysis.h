@@ -13,9 +13,9 @@
 - (long long)vcp_isCPLDownloadComplete;
 - (long long)vcp_isCPLSyncComplete;
 - (long long)vcp_isCPLEnabled;
-- (unsigned long long)vcp_assetCountWithInternalPredicate:(id)arg1;
-- (unsigned long long)vcp_assetCountWithMediaType:(long long)arg1;
-- (unsigned long long)vcp_assetCount;
+- (unsigned long long)vcp_assetCountWithInternalPredicate:(id)arg1 forTaskID:(unsigned long long)arg2;
+- (unsigned long long)vcp_assetCountWithMediaType:(long long)arg1 forTaskID:(unsigned long long)arg2;
+- (unsigned long long)vcp_assetCountForTaskID:(unsigned long long)arg1;
 - (id)vcp_mediaAnalysisDatabaseFilepath;
 - (id)vcp_mediaAnalysisDirectory;
 - (id)vcp_url;

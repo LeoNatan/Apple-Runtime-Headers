@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IMConnectionMonitor, IMRemoteURLConnection, NSArray, NSData, NSDate, NSDictionary, NSMutableURLRequest, NSNumber, NSString, NSURL;
+@class IDSRateLimiter, IMConnectionMonitor, IMRemoteURLConnection, NSArray, NSData, NSDate, NSDictionary, NSMutableURLRequest, NSNumber, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface IDSServerBag : NSObject
@@ -35,6 +35,7 @@
     NSData *_serverGivenBag;
     CDUnknownBlockType _remoteURLCreationBlock;
     CDUnknownBlockType _connectionMonitorCreationBlock;
+    IDSRateLimiter *_rateLimiter;
 }
 
 + (id)_bagCreationLock;
@@ -43,6 +44,7 @@
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)sharedInstance;
+@property(retain, nonatomic) IDSRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
 @property(copy) CDUnknownBlockType connectionMonitorCreationBlock; // @synthesize connectionMonitorCreationBlock=_connectionMonitorCreationBlock;
 @property(copy) CDUnknownBlockType remoteURLCreationBlock; // @synthesize remoteURLCreationBlock=_remoteURLCreationBlock;
 @property BOOL hashAlgorithm; // @synthesize hashAlgorithm=_hashAlgorithm;
@@ -81,7 +83,7 @@
 - (void)_cancelCurrentLoad;
 - (void)_processBagResultData:(id)arg1 response:(id)arg2 inBackground:(_Bool)arg3;
 - (_Bool)_loadFromSignedDictionary:(id)arg1 returningError:(id *)arg2;
-- (_Bool)trustRefFromCertificates:(id)arg1 trustRef:(struct __SecTrust **)arg2;
+- (_Bool)trustRefFromCertificates:(id)arg1 canReportFailure:(_Bool)arg2 trustRef:(struct __SecTrust **)arg3;
 - (_Bool)_allowInvalid;
 - (void)_invalidate;
 - (_Bool)_loadFromDictionary:(id)arg1 returningError:(id *)arg2;
@@ -96,6 +98,7 @@
 - (void)_loadFromCache;
 - (void)_clearCache;
 - (id)_bagDefaultsDomain;
+- (unsigned long long)_bagDomain;
 
 @end
 

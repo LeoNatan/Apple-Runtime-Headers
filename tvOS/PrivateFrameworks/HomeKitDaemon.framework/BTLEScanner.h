@@ -9,30 +9,31 @@
 #import <HomeKitDaemon/HAPBTLECentralManagerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class CUBLEScanner, HAPBTLECentralManager, HMDHAPAccessory, HMFTimer, NSArray, NSObject, NSString;
+@class CUBLEScanner, HAPBTLECentralManager, HMDAccessoryQueues, HMFTimer, NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface BTLEScanner : HMFObject <HMFTimerDelegate, HAPBTLECentralManagerDelegate>
 {
     NSObject<OS_dispatch_queue> *workQueue;
     HMFTimer *scanTimer;
-    HMDHAPAccessory *accessory;
     CUBLEScanner *cubleScanner;
     HAPBTLECentralManager *centralManager;
+    HMDAccessoryQueues *scanQueue;
 }
 
 + (id)sharedScanLock;
+@property(retain, nonatomic) HMDAccessoryQueues *scanQueue; // @synthesize scanQueue;
 @property(retain, nonatomic) HAPBTLECentralManager *centralManager; // @synthesize centralManager;
 @property(retain, nonatomic) CUBLEScanner *cubleScanner; // @synthesize cubleScanner;
-@property(retain, nonatomic) HMDHAPAccessory *accessory; // @synthesize accessory;
 @property(retain, nonatomic) HMFTimer *scanTimer; // @synthesize scanTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue;
 - (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
-- (void)stopScan;
-- (void)_stopScanWithAccessoryFound:(_Bool)arg1 suspended:(_Bool)arg2;
+- (void)_stopScan;
 - (_Bool)startScan:(id)arg1 timeout:(double)arg2;
+- (void)_checkCanScan;
 - (void)_stopTimer;
+- (void)_flushQueue;
 - (id)init;
 - (void)didUpdateBTLEState:(long long)arg1;
 

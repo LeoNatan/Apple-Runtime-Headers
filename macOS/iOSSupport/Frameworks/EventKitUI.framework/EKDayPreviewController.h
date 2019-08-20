@@ -62,6 +62,7 @@
 - (void)_setupAutoLayout;
 - (void)_setupDayView;
 - (void)reload;
+- (void)reloadWithNewDate:(id)arg1 overriddenEventStartDate:(id)arg2 overriddenEventEndDate:(id)arg3;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(BOOL)arg1;

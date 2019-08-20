@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)requiresNetwork;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 
 @end

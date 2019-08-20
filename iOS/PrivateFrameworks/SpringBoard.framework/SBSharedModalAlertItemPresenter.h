@@ -37,7 +37,7 @@
 - (void)alertControllerDidDisappear:(id)arg1;
 - (void)_performActionForAlertController:(id)arg1 invokeActionBlock:(CDUnknownBlockType)arg2 dismissControllerBlock:(CDUnknownBlockType)arg3;
 - (void)modalViewControllerStack:(id)arg1 didDismissViewController:(id)arg2;
-- (void)modalViewControllerStack:(id)arg1 willDismissViewController:(id)arg2;
+- (void)modalViewControllerStack:(id)arg1 willDismissViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)modalViewControllerStack:(id)arg1 didPresentViewController:(id)arg2;
 - (void)modalViewControllerStack:(id)arg1 willPresentViewController:(id)arg2;
 - (void)dismissAlertItem:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

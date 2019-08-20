@@ -56,6 +56,9 @@
 - (id)nts_ringtone;
 - (id)ringtone;
 - (BOOL)isTransient;
+- (void)nts_setDowntimeWhitelist:(id)arg1;
+@property(copy) NSString *downtimeWhitelist;
+- (id)nts_downtimeWhitelist;
 - (void)nts_setPhonemeData:(id)arg1;
 @property(copy) NSString *phonemeData;
 - (id)nts_phonemeData;

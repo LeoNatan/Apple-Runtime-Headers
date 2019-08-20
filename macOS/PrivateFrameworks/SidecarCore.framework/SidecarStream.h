@@ -31,6 +31,7 @@
 @property(readonly) unsigned long long flags;
 @property(readonly) long long type;
 @property(readonly, nonatomic) long long transport;
+@property(readonly) SidecarSession *session;
 @property(readonly) NSString *identifier;
 @property(readonly) long long fileDescriptor;
 @property(readonly) RPStreamSession *rapportStream;

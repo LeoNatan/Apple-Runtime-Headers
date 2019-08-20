@@ -18,6 +18,7 @@
 + (_Bool)supportsQuicklook;
 - (id)layoutGroupWithEnvironment:(id)arg1;
 - (id)cellForItemInCollectionView:(id)arg1 atIndex:(long long)arg2 withIdentifier:(id)arg3;
+- (struct NSDirectionalEdgeInsets)additionalGroupInsets;
 - (_Bool)applyLayoutMarginsToLayoutGroup;
 - (unsigned long long)maxResultsForMode:(unsigned long long)arg1;
 - (void)searchWithText:(id)arg1 mode:(unsigned long long)arg2;

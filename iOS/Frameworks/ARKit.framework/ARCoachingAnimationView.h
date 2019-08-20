@@ -22,6 +22,8 @@
     float _cubeAngle;
     _Bool _isRotating;
     _Bool _wasRotating;
+    double _nextStateTime;
+    long long _lastUpdateState;
     long long _animationState;
 }
 
@@ -33,14 +35,14 @@
 - (void)drawInDrawable:(id)arg1 withCommandBuffer:(id)arg2 timeDelta:(double)arg3;
 - (void)updateForCurrentTime:(double)arg1 timeDelta:(double)arg2;
 - (void)resizeForDrawable:(id)arg1;
-- (void)startAlternatingPlanes;
-- (void)loopAlternatingPlanesWithInitialDelay:(double)arg1;
-- (void)killAlternatingPlanesLoop;
+- (void)updateVerticalClamp:(double)arg1;
+- (void)updateAlternatingPlanes:(double)arg1;
+- (double)calcNextAnimationSwitchTime:(double)arg1 forState:(unsigned long long)arg2;
 - (void)clampCubeToQuarterRotation;
 - (void)updateCubeRotation:(id)arg1 motionTracker:(id)arg2;
 - (void)updateWithFrame:(id)arg1 motionTracker:(id)arg2;
 - (void)killCoachingAnimation;
-- (void)startCoachingAnimation;
+- (void)startCoachingAnimation:(long long)arg1;
 - (void)setupView;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

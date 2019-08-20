@@ -12,8 +12,9 @@
 - (void)deleteCanceledSuggestedEventWithSourceClientIdentifier:(NSString *)arg1;
 - (void)ignoreSuggestedEventWithSourceClientIdentifier:(NSString *)arg1;
 - (void)confirmSuggestedEventWithSourceClientIdentifier:(NSString *)arg1;
-- (CALNSuggestedEventNotificationInfo *)fetchSuggestedEventNotificationWithSourceClientIdentifier:(NSString *)arg1;
-- (NSArray *)fetchSuggestedEventNotificationSourceClientIdentifiers;
+- (CALNSuggestedEventNotificationInfo *)fetchSuggestedEventNotificationWithObjectID:(NSString *)arg1;
+- (NSArray *)fetchSuggestedEventNotificationsWithSourceClientIdentifier:(NSString *)arg1;
+- (NSArray *)fetchSuggestedEventNotificationObjectIDs;
 - (NSArray *)fetchSuggestedEventNotifications;
 @end
 

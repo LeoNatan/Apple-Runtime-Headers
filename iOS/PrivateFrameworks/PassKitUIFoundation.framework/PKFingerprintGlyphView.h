@@ -45,7 +45,10 @@
 - (void).cxx_destruct;
 - (id)pathStateForLayer:(id)arg1;
 - (void)setPathState:(id)arg1 forLayer:(id)arg2;
+- (void)_applyColor:(struct UIColor *)arg1 toShapeLayers:(id)arg2 animated:(_Bool)arg3;
+- (void)_applySecondaryColorAnimated:(_Bool)arg1;
 - (void)setSecondaryColor:(struct UIColor *)arg1 animated:(_Bool)arg2;
+- (void)_applyPrimaryColorAnimated:(_Bool)arg1;
 - (void)setPrimaryColor:(struct UIColor *)arg1 animated:(_Bool)arg2;
 - (void)_setProgress:(double)arg1 withDuration:(double)arg2 forShapeLayerAtIndex:(unsigned long long)arg3;
 - (void)setProgress:(double)arg1 withDuration:(double)arg2;
@@ -70,6 +73,7 @@
 - (double)pointScaleToMatchBoundsSize:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)dealloc;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

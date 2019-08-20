@@ -8,7 +8,6 @@
 
 #import <HealthToolbox/HKHeartRhythmAvailabilityObserver-Protocol.h>
 #import <HealthToolbox/HKOnboardingSetupViewDelegate-Protocol.h>
-#import <HealthToolbox/HKSwitchTableViewCellDelegate-Protocol.h>
 #import <HealthToolbox/HRFeatureRegulatoryReenableFeatureActionDelegate-Protocol.h>
 #import <HealthToolbox/HROnboardingManagerDelegate-Protocol.h>
 #import <HealthToolbox/WDElectrocardiogramFilterDataProviderDelegate-Protocol.h>
@@ -16,7 +15,7 @@
 @class HKDisplayType, HKHeartRhythmAvailability, HROnboardingManager, NSString, UITapGestureRecognizer, WDElectrocardiogramFilterDataProvider, WDElectrocardiogramListDataProvider, WDProfile;
 @protocol HKDataMetadataSectionProtocol;
 
-@interface WDElectrocardiogramOverviewViewController : HKTableViewController <HKSwitchTableViewCellDelegate, HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, WDElectrocardiogramFilterDataProviderDelegate, HKOnboardingSetupViewDelegate, HKHeartRhythmAvailabilityObserver>
+@interface WDElectrocardiogramOverviewViewController : HKTableViewController <HRFeatureRegulatoryReenableFeatureActionDelegate, HROnboardingManagerDelegate, WDElectrocardiogramFilterDataProviderDelegate, HKOnboardingSetupViewDelegate, HKHeartRhythmAvailabilityObserver>
 {
     _Bool _previousElectrocardiogramDisabledCacheValue;
     long long _placeholderCellCount;
@@ -54,7 +53,6 @@
 - (void)beginOnboardingForOnboardingSetupView:(id)arg1;
 - (void)electrocardiogramFilterDataProvider:(id)arg1 didUpdateCount:(long long)arg2 type:(long long)arg3;
 - (void)isFavorited:(_Bool)arg1;
-- (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
 - (_Bool)_isPrimaryProfile;
 - (long long)_filterTypeForDataSectionRow:(long long)arg1;
 - (id)_cellWithDisclosureIndicatorAndText:(id)arg1 value:(id)arg2;
@@ -62,7 +60,7 @@
 - (_Bool)_isDisplayTypeFavorited;
 - (id)_cellForRegulatoryPane;
 - (id)_cellForDataSourcesAndAccess;
-- (id)_cellForFavoriteSwitch;
+- (id)_cellForFavorites;
 - (id)_showAllResultsCellForType:(long long)arg1;
 - (id)_cellForSampleAtIndex:(long long)arg1 section:(long long)arg2;
 - (id)_electrocardiogramSetupContainerView;
@@ -71,7 +69,6 @@
 - (id)_recordingDisabledHeaderView;
 - (id)_sectionHeaderViewWithTitle:(id)arg1;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

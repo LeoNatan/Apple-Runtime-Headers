@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_restorePasteResultForSession:(id)arg1;
 - (void)_executePasteForSession:(id)arg1;
 - (void)coordinator:(id)arg1 endPastingItems:(id)arg2;
-- (id)beginPastingItems:(id)arg1 toRange:(id)arg2 delegate:(id)arg3;
+- (id)beginPastingItems:(id)arg1 toRange:(id)arg2 delegate:(id)arg3 matchesTextStyles:(BOOL)arg4;
 - (id)beginPastingItems:(id)arg1 toRange:(id)arg2;
 - (id)beginDroppingItems:(id)arg1 toSelectedRange:(id)arg2 progressSupport:(id)arg3 animated:(BOOL)arg4 delegate:(id)arg5;
 - (id)beginDroppingItems:(id)arg1 toSelectedRange:(id)arg2 progressSupport:(id)arg3 animated:(BOOL)arg4;

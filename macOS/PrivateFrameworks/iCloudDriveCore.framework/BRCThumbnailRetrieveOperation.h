@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithDocument:(id)arg1;
 

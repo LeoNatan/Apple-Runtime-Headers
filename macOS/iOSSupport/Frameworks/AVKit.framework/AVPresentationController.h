@@ -6,16 +6,21 @@
 
 #import <UIKit/UIPresentationController.h>
 
-@class AVPresentationContext;
+@class AVObservationController, AVPresentationContext, UIWindow;
 
 __attribute__((visibility("hidden")))
 @interface AVPresentationController : UIPresentationController
 {
     AVPresentationContext *_context;
+    AVObservationController *_observationController;
+    UIWindow *_presentationWindowForDisablingAutorotation;
 }
 
+@property(nonatomic) __weak UIWindow *presentationWindowForDisablingAutorotation; // @synthesize presentationWindowForDisablingAutorotation=_presentationWindowForDisablingAutorotation;
+@property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(readonly, nonatomic) AVPresentationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (void)_observeSceneDidBecomeActiveForRestoringRotatability;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)_prepareDismissingTransitionContext;
 - (void)dismissalTransitionWillBegin;

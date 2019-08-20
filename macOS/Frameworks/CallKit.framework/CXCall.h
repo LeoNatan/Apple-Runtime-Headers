@@ -20,11 +20,13 @@
     BOOL _endpointOnCurrentDevice;
     BOOL _hostedOnCurrentDevice;
     NSUUID *_UUID;
+    NSString *_providerIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic, getter=isHostedOnCurrentDevice) BOOL hostedOnCurrentDevice; // @synthesize hostedOnCurrentDevice=_hostedOnCurrentDevice;
 @property(nonatomic, getter=isEndpointOnCurrentDevice) BOOL endpointOnCurrentDevice; // @synthesize endpointOnCurrentDevice=_endpointOnCurrentDevice;
+@property(retain, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
 @property(nonatomic) BOOL hasEnded; // @synthesize hasEnded=_hasEnded;
 @property(nonatomic) BOOL hasConnected; // @synthesize hasConnected=_hasConnected;
 @property(nonatomic, getter=isOnHold) BOOL onHold; // @synthesize onHold=_onHold;

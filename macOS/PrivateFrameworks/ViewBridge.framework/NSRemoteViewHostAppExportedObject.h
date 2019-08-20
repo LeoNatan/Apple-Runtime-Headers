@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)addFreeWindow:(CDStruct_5d2c0651)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)retrievePreviewEndpoint:(CDUnknownBlockType)arg1;
 
 @end
 

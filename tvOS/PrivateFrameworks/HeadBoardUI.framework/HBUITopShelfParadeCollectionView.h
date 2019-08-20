@@ -6,15 +6,22 @@
 
 #import <UIKit/UICollectionView.h>
 
+@class CABasicAnimation, HBUITopShelfParadeCollectionViewLayout;
+
 __attribute__((visibility("hidden")))
 @interface HBUITopShelfParadeCollectionView : UICollectionView
 {
-    _Bool _useCustomAnimation;
+    CABasicAnimation *_scrollAnimation;
 }
 
-@property(readonly, nonatomic) _Bool useCustomAnimation; // @synthesize useCustomAnimation=_useCustomAnimation;
+@property(readonly, nonatomic) CABasicAnimation *scrollAnimation; // @synthesize scrollAnimation=_scrollAnimation;
+- (void).cxx_destruct;
 - (id)_customScrollAnimation;
-- (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(_Bool)arg3;
+- (id)centerItemIndexPath;
+- (_Bool)itemAtIndexPathIsCloseToCenter:(id)arg1;
+@property(readonly, nonatomic) HBUITopShelfParadeCollectionViewLayout *paradeLayout;
+- (void)setParadeContentHidden:(_Bool)arg1 forVisibleItemsInSection:(long long)arg2;
+- (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animation:(id)arg3;
 
 @end
 

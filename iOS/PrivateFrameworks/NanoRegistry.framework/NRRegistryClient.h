@@ -45,6 +45,7 @@
 - (void)_wipeRegistryWith:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_queryDataAsyncForce:(_Bool)arg1 ifNeededWithBlock:(CDUnknownBlockType)arg2;
 - (void)_queryDataAsyncIfNeededWithBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_shouldWaitForData;
 - (void)_notifyDiffIndexObserversWithDiff:(id)arg1 deviceCollection:(id)arg2 secureProperties:(id)arg3 index:(unsigned long long)arg4;
 - (void)removeDiffIndexObserver:(id)arg1;
 - (id)addDiffIndexObserverWithWriteBlock:(CDUnknownBlockType)arg1;
@@ -53,6 +54,7 @@
 - (void)grabRegistryWithReadBlockAsync:(CDUnknownBlockType)arg1;
 - (void)_grabRegistryWithReadBlock:(CDUnknownBlockType)arg1;
 - (void)grabRegistryWithReadBlock:(CDUnknownBlockType)arg1;
+- (void)syncGrabRegistryWithReadBlock:(CDUnknownBlockType)arg1;
 - (void)_connectToDaemon;
 @property(readonly, retain, nonatomic) id <NRNSXPCConnectionProtocol> rawConnection;
 - (_Bool)daemonIdle;

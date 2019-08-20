@@ -7,11 +7,12 @@
 #import <TVMLKit/_TVStackCommonTemplateController.h>
 
 #import <TVMLKit/TVShowcasing-Protocol.h>
+#import <TVMLKit/TVTabBarAdjusting-Protocol.h>
 #import <TVMLKit/_TVStackViewDelegateFlowLayout-Protocol.h>
 
 @class IKChangeSet, NSArray, NSIndexPath, NSMutableArray, NSString, UIView, UIViewController, _TVNeedsMoreContentEvaluator;
 
-@interface _TVStackTemplateController : _TVStackCommonTemplateController <_TVStackViewDelegateFlowLayout, TVShowcasing>
+@interface _TVStackTemplateController : _TVStackCommonTemplateController <_TVStackViewDelegateFlowLayout, TVTabBarAdjusting, TVShowcasing>
 {
     NSArray *_unfilteredViewControllers;
     IKChangeSet *_filteredChangeSet;

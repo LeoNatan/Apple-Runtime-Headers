@@ -22,6 +22,7 @@
     BOOL _supportsEncryption;
     BOOL _supportsAdvertisingUnlocked;
     BOOL _supportsConnectionCache;
+    BOOL _supportsHEIC;
     NSString *_modelDescription;
     NSUUID *_bluetoothID;
     NSUUID *_proxyBluetoothID;
@@ -33,6 +34,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) long long majorOSVersion; // @synthesize majorOSVersion=_majorOSVersion;
+@property(nonatomic) BOOL supportsHEIC; // @synthesize supportsHEIC=_supportsHEIC;
 @property(nonatomic) BOOL supportsConnectionCache; // @synthesize supportsConnectionCache=_supportsConnectionCache;
 @property(nonatomic) BOOL supportsAdvertisingUnlocked; // @synthesize supportsAdvertisingUnlocked=_supportsAdvertisingUnlocked;
 @property(nonatomic) BOOL supportsEncryption; // @synthesize supportsEncryption=_supportsEncryption;

@@ -17,7 +17,6 @@
     NSNumber *_volume;
     MPPlaybackArchive *_playbackArchive;
     int _state;
-    int _options;
     HMDHome *_home;
     NSMutableSet *_profileUUIDs;
 }
@@ -28,7 +27,6 @@
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
 @property(retain, nonatomic) NSMutableSet *profileUUIDs; // @synthesize profileUUIDs=_profileUUIDs;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-@property(nonatomic) int options; // @synthesize options=_options;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
@@ -47,7 +45,7 @@
 - (id)stateDump;
 - (unsigned int)type;
 - (_Bool)configureWithHome:(id)arg1;
-- (id)initWithUUID:(id)arg1 mediaProfiles:(id)arg2 playbackState:(int)arg3 volume:(id)arg4 options:(int)arg5 playbackArchive:(id)arg6 actionSet:(id)arg7;
+- (id)initWithUUID:(id)arg1 mediaProfiles:(id)arg2 playbackState:(int)arg3 volume:(id)arg4 playbackArchive:(id)arg5 actionSet:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,7 +10,7 @@
 #import <WorkflowUI/WFDailyRoutineShortcutSetupTriggerViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFLocationPickerViewControllerDelegate-Protocol.h>
 
-@class CLCircularRegion, NSMutableDictionary, NSString, UINavigationController, WFDailyRoutineShortcutSetupFlow;
+@class CLCircularRegion, NSMutableArray, NSMutableDictionary, NSString, UINavigationController, WFDailyRoutineShortcutSetupFlow;
 @protocol WFDailyRoutineShortcutSetupViewControllerDelegate;
 
 @interface WFDailyRoutineShortcutSetupViewController : UIViewController <WFDailyRoutineShortcutSetupQuestionViewControllerDelegate, WFDailyRoutineShortcutSetupTriggerViewControllerDelegate, WFLocationPickerViewControllerDelegate>
@@ -20,14 +20,18 @@
     UINavigationController *_setupNavigationController;
     NSMutableDictionary *_actionsPerQuestionIndex;
     CLCircularRegion *_selectedRegion;
+    NSMutableArray *_setupStepEvents;
 }
 
+@property(retain, nonatomic) NSMutableArray *setupStepEvents; // @synthesize setupStepEvents=_setupStepEvents;
 @property(retain, nonatomic) CLCircularRegion *selectedRegion; // @synthesize selectedRegion=_selectedRegion;
 @property(retain, nonatomic) NSMutableDictionary *actionsPerQuestionIndex; // @synthesize actionsPerQuestionIndex=_actionsPerQuestionIndex;
 @property(retain, nonatomic) UINavigationController *setupNavigationController; // @synthesize setupNavigationController=_setupNavigationController;
 @property(readonly, nonatomic) WFDailyRoutineShortcutSetupFlow *flow; // @synthesize flow=_flow;
 @property(nonatomic) __weak id <WFDailyRoutineShortcutSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)submitMetrics:(BOOL)arg1;
+- (id)currentStepEvent;
 - (void)dailyRoutineShortcutSetupTriggerViewControllerDidSkip:(id)arg1;
 - (void)dailyRoutineShortcutSetupTriggerViewControllerDidAddTrigger:(id)arg1;
 - (void)dailyRoutineShortcutSetupQuestionViewControllerDidSkip:(id)arg1;

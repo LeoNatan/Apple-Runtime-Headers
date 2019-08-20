@@ -6,9 +6,19 @@
 
 #import <CloudKit/CKReference.h>
 
+#import <HomeKitBackingStore/HMBModelObjectStorage-Protocol.h>
+
 @class NSString;
 
-@interface CKReference (HMB)
+@interface CKReference (HMB) <HMBModelObjectStorage>
++ (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned int)arg2 error:(id *)arg3;
 @property(readonly, copy) NSString *hmbDescription;
+- (id)hmbEncodeForStorageLocation:(unsigned int)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @end
 

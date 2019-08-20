@@ -8,21 +8,22 @@
 
 @interface QTHUDSlider : NSControl
 {
+    struct QTHUDSliderInternal *_QTHUDSliderInternal;
 }
 
 + (void)initialize;
-- (void)setMaxValue:(double)arg1;
-- (void)setMinValue:(double)arg1;
-- (void)pageUp:(id)arg1;
 - (void)pageDown:(id)arg1;
+- (void)pageUp:(id)arg1;
 - (void)moveUp:(id)arg1;
-- (void)moveDown:(id)arg1;
 - (void)moveLeft:(id)arg1;
+- (void)moveDown:(id)arg1;
 - (void)moveRight:(id)arg1;
 - (void)setBordered:(BOOL)arg1;
 - (BOOL)isBordered;
-- (double)minValue;
+- (void)setMaxValue:(double)arg1;
 - (double)maxValue;
+- (void)setMinValue:(double)arg1;
+- (double)minValue;
 
 @end
 

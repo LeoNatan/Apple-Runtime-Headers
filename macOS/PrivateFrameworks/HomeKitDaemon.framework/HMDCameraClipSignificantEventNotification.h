@@ -6,19 +6,19 @@
 
 #import <HomeKitDaemon/HMDCameraSignificantEventNotification.h>
 
-@class _HMCameraClip;
+@class NSUUID;
 
 @interface HMDCameraClipSignificantEventNotification : HMDCameraSignificantEventNotification
 {
-    _HMCameraClip *_clip;
+    NSUUID *_clipUUID;
     double _timeOffsetWithinClip;
 }
 
 @property(readonly) double timeOffsetWithinClip; // @synthesize timeOffsetWithinClip=_timeOffsetWithinClip;
-@property(readonly) _HMCameraClip *clip; // @synthesize clip=_clip;
+@property(readonly) NSUUID *clipUUID; // @synthesize clipUUID=_clipUUID;
 - (void).cxx_destruct;
-- (id)initWithModel:(id)arg1 heroFrameURL:(id)arg2 camera:(id)arg3 clip:(id)arg4;
-- (id)initWithUUID:(id)arg1 dateOfOccurrence:(id)arg2 significantEvent:(unsigned long long)arg3 heroFrameURL:(id)arg4 camera:(id)arg5 clip:(id)arg6 timeOffsetWithinClip:(double)arg7 homePresence:(id)arg8;
+- (id)initWithModel:(id)arg1 heroFrameURL:(id)arg2 camera:(id)arg3 clipUUID:(id)arg4;
+- (id)initWithUUID:(id)arg1 dateOfOccurrence:(id)arg2 reason:(unsigned long long)arg3 confidenceLevel:(unsigned long long)arg4 heroFrameURL:(id)arg5 camera:(id)arg6 clipUUID:(id)arg7 timeOffsetWithinClip:(double)arg8 homePresence:(id)arg9;
 
 @end
 

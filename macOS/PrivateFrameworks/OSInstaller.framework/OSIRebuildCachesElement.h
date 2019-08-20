@@ -8,15 +8,18 @@
 
 @interface OSIRebuildCachesElement : OSIInstallQueueElement
 {
+    unsigned long long operatingMode;
 }
 
 - (double)estimatedTimeToComplete;
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)_migrateMasterBOMReturningError:(id *)arg1;
+- (BOOL)_triggerRebuildOfKernelCache:(id *)arg1;
 - (BOOL)_triggerRebuildOfXPCServiceCacheOnNextRebootReturningError:(id *)arg1;
 - (BOOL)_triggerRebuildOfDYLDSharedCacheReturningError:(id *)arg1;
 - (BOOL)runReturningError:(id *)arg1;
+- (id)initWithOptions:(id)arg1 withMode:(unsigned long long)arg2;
 
 @end
 

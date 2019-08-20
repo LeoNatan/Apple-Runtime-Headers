@@ -14,6 +14,7 @@
 {
     NSString *_title;
     NSString *_informativeText;
+    NSDate *_creationDate;
     FLFollowUpAction *_activateAction;
     FLFollowUpAction *_clearAction;
     NSString *_unlockActionLabel;
@@ -23,12 +24,10 @@
     unsigned long long _sqlID;
     NSDate *_previousNotificationActionDate;
     FLFollowUpAction *_dismissAction;
-    NSDate *_creationDate;
 }
 
 + (id)defaultOptions;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) FLFollowUpAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(retain, nonatomic) NSDate *previousNotificationActionDate; // @synthesize previousNotificationActionDate=_previousNotificationActionDate;
 @property(nonatomic) unsigned long long sqlID; // @synthesize sqlID=_sqlID;
@@ -38,6 +37,7 @@
 @property(copy, nonatomic) NSString *unlockActionLabel; // @synthesize unlockActionLabel=_unlockActionLabel;
 @property(retain, nonatomic) FLFollowUpAction *clearAction; // @synthesize clearAction=_clearAction;
 @property(retain, nonatomic) FLFollowUpAction *activateAction; // @synthesize activateAction=_activateAction;
+@property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;

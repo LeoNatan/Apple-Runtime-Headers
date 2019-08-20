@@ -21,12 +21,15 @@
     PXGSpriteDataStore *_layoutSpriteDataStore;
     PXGChangeDetails *_layoutChangeDetails;
     struct CGPoint _viewportShift;
+    struct CGPoint _previousVisibleOrigin;
     PXGSpriteDataStore *_animationPresentationSpriteDataStore;
     PXGSpriteDataStore *_animationTargetSpriteDataStore;
     PXGLayout *_animationLayout;
     PXGChangeDetails *_animationChangeDetails;
     PXGSpriteMetadataStore *_presentationSpriteMetadaStore;
     CDStruct_5f1286c4 _updateFlags;
+    unsigned long long _previousUpdateEntities;
+    CDStruct_73ead4b7 _previousInteractionState;
     unsigned long long _pendingUpdateEntities;
     BOOL _keepDisplayLinkAlive;
     BOOL _didRenderThisFrame;
@@ -111,7 +114,6 @@
 - (void)_invalidateOrDefer:(unsigned long long)arg1;
 - (void)_updateDisplayLink;
 - (void)handleDisplayLink:(id)arg1;
-- (void)_applicationAccessibilityTriggered:(id)arg1;
 @property(readonly, nonatomic) PXGAnimator *ppt_animator;
 @property(readonly, nonatomic) long long currentFrameTime;
 - (void)test_installRenderSnapshotHandler:(CDUnknownBlockType)arg1;

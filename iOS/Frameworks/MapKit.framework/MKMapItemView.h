@@ -8,12 +8,10 @@
 
 #import <MapKit/MKInfoCardThemeListener-Protocol.h>
 
-@class MKMapItem, MKMapSnapshotView, MKMuninContainerView, NSError, NSLayoutConstraint, NSMutableArray, NSObject, NSString, NSTimer;
-@protocol OS_dispatch_group;
+@class MKMapItem, MKMapSnapshotView, MKMuninContainerView, NSError, NSLayoutConstraint, NSMutableArray, NSString, NSTimer;
 
 @interface MKMapItemView : UIView <MKInfoCardThemeListener>
 {
-    NSObject<OS_dispatch_group> *_renderDispatchGroup;
     MKMuninContainerView *_muninContainerView;
     NSMutableArray *_muninConstraints;
     MKMapSnapshotView *_snapshotView;
@@ -41,16 +39,12 @@
 - (void)_resetMuninContainerViewState;
 - (void)_resetState;
 - (void)cancel;
-- (void)cancelSnapshot;
 - (void)_cropImage;
 - (void)_callCompletionHandler;
 - (void)_renderMapItem;
-- (void)_resetTimer;
-- (void)_dispatchGroupDidNotify;
+- (void)_takeSnapshotCompleted;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_reloadSnapshot;
-- (void)_loadTimeoutTimerDidFire:(id)arg1;
-- (void)_setupTimer;
 - (void)_setupSnapshotConstraints;
 - (void)_setupMuninConstraints;
 - (void)_receivedFullyDrawnNotification:(id)arg1;
@@ -58,9 +52,9 @@
 - (void)_handleTapOnMuninView:(id)arg1;
 - (void)_handleTapOnSnapshot:(id)arg1;
 - (id)_annotationView;
-- (id)_deriveSnapshotOptions;
+- (id)_deriveSnapshotOptions:(_Bool)arg1 isReload:(_Bool)arg2;
 - (void)layoutSubviews;
-- (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(_Bool)arg2;
 - (void)_fetchMuninViewforMapItem:(id)arg1;
 - (void)_getParentItem;
 - (CDStruct_c3b9c2ee)_clampCoordinateSpan:(CDStruct_c3b9c2ee)arg1;

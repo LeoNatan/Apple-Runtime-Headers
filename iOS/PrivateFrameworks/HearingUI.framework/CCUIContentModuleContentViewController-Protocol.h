@@ -18,6 +18,8 @@
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
+- (void)willResignActive;
+- (void)willBecomeActive;
 - (void)displayWillTurnOff;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
 - (_Bool)canDismissPresentedContent;
@@ -25,7 +27,5 @@
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 - (_Bool)shouldFinishTransitionToExpandedContentModule;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
-- (void)willResignActive;
-- (void)willBecomeActive;
 @end
 

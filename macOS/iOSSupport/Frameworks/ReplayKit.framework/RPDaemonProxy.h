@@ -40,6 +40,7 @@
 - (oneway void)recordingShouldResume;
 - (oneway void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)updateScreenRecordingStateWithCurrentState:(id)arg1;
+- (oneway void)consumeSandboxExtension:(id)arg1;
 - (oneway void)appAudioCaptureOutputHandler:(id)arg1;
 - (oneway void)reportCameraUsage:(long long)arg1;
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
@@ -53,6 +54,7 @@
 - (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(CDUnknownBlockType)arg3;
 - (oneway void)stopRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (oneway void)startRecordingWindowLayerContextIDs:(id)arg1 windowSize:(struct CGSize)arg2 microphoneEnabled:(BOOL)arg3 cameraEnabled:(BOOL)arg4 broadcast:(BOOL)arg5 systemRecording:(BOOL)arg6 captureEnabled:(BOOL)arg7 listenerEndpoint:(id)arg8 withHandler:(CDUnknownBlockType)arg9;
+- (void)issueSandboxExtension;
 - (id)init;
 
 // Remaining properties

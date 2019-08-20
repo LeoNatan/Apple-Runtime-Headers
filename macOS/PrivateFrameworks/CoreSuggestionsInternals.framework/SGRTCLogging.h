@@ -27,6 +27,7 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)_createEmptyFileAtPath:(id)arg1;
 + (id)defaultLogger;
++ (id)dateByAppendingDaysToCurrentDate:(double)arg1;
 + (id)locationTypeForRealtimeEvent:(id)arg1;
 + (id)locationTypeForEntity:(id)arg1;
 + (id)locationTypeForHandle:(id)arg1 latitude:(double)arg2 longitude:(double)arg3 airportCode:(id)arg4 address:(id)arg5 label:(id)arg6;
@@ -57,6 +58,7 @@
 - (id)_createRTCReporting;
 - (id)logsToSend;
 - (id)whitelistedLogFromLog:(id)arg1;
+- (void)logAggregateSummaryForInteraction:(id)arg1;
 - (void)logEventInteractionForRealtimeEvent:(id)arg1 parentEntity:(id)arg2 interface:(unsigned short)arg3 actionType:(unsigned short)arg4;
 - (void)logEventInteractionForRealtimeEventSync:(id)arg1 parentEntity:(id)arg2 interface:(unsigned short)arg3 actionType:(unsigned short)arg4;
 - (void)logEventInteractionForEntitySync:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
@@ -72,6 +74,7 @@
 - (void)_enrichLogWithAppsUsage:(id)arg1;
 - (void)enrichInteractionSummaryLog:(id)arg1;
 - (id)launchCountMessageAfterDate:(id)arg1;
+- (void)enrichAggregateSummaryLog:(id)arg1;
 - (void)enrichReminderInteractionSummaryLog:(id)arg1;
 - (id)createInteractionSummaryForEventKey:(id)arg1 expirationDate:(id)arg2 interactionKey:(id)arg3 interactionAttributes:(id)arg4 rtcCategory:(unsigned short)arg5;
 - (id)_createInteractionForEventWithStartTime:(id)arg1 interactionKey:(id)arg2 interactionAttributes:(id)arg3;
@@ -90,12 +93,12 @@
 - (id)initWithFilename:(id)arg1;
 - (id)init;
 - (id)_interactionDictionaryForDueLocation:(id)arg1 dueDateComponents:(id)arg2;
-- (id)_baseInteractionAttributesForStorageReminder:(id)arg1;
-- (id)_interactionSummaryForStorageReminder:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
+- (id)_baseInteractionAttributesForReminder:(id)arg1;
+- (id)_interactionSummaryForReminder:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (id)_eventKeyforReminder:(id)arg1;
 - (void)logReminderExtractionFromEntity:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3 dueLocation:(id)arg4 dueDateComponents:(id)arg5 extractionStatus:(unsigned char)arg6 timingProcessing:(double)arg7;
-- (void)_logReminderInteractionSummaryForStorageReminder:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
-- (void)logReminderInteractionFromStorageReminder:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
+- (void)_logReminderInteractionSummaryForReminder:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
+- (void)logReminderInteractionFromReminder:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logReminderInteractionFromEntity:(id)arg1 usingStore:(id)arg2 interface:(unsigned short)arg3 actionType:(unsigned short)arg4;
 
 @end

@@ -12,6 +12,7 @@
 
 + (id)defaultBag;
 + (id)_bagCreationLock;
+- (unsigned long long)_bagDomain;
 - (_Bool)isInDebilitatedMode;
 - (id)init;
 - (id)_bagDefaultsDomain;

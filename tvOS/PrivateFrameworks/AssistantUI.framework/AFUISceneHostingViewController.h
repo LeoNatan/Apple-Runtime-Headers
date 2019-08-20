@@ -13,7 +13,8 @@
 
 @interface AFUISceneHostingViewController : UIViewController <AFUISceneControllerDelegate>
 {
-    _Bool _shouldDeferHIDEventsToWindowScene;
+    _Bool _pauseDeferrals;
+    long long _deferralMode;
     AFUISceneConfiguration *_configuration;
     AFUISceneController *_sceneController;
     UIView *_windowSceneHostingView;
@@ -24,6 +25,7 @@
     id <BSInvalidatable> _predicateInvalidationHandler;
 }
 
+@property(nonatomic) _Bool pauseDeferrals; // @synthesize pauseDeferrals=_pauseDeferrals;
 @property(retain, nonatomic) id <BSInvalidatable> predicateInvalidationHandler; // @synthesize predicateInvalidationHandler=_predicateInvalidationHandler;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(nonatomic) id <FBSceneHost> sceneHost; // @synthesize sceneHost=_sceneHost;
@@ -32,7 +34,7 @@
 @property(retain, nonatomic) UIView *windowSceneHostingView; // @synthesize windowSceneHostingView=_windowSceneHostingView;
 @property(retain, nonatomic) AFUISceneController *sceneController; // @synthesize sceneController=_sceneController;
 @property(readonly, nonatomic) AFUISceneConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(readonly, nonatomic) _Bool shouldDeferHIDEventsToWindowScene; // @synthesize shouldDeferHIDEventsToWindowScene=_shouldDeferHIDEventsToWindowScene;
+@property(readonly, nonatomic) long long deferralMode; // @synthesize deferralMode=_deferralMode;
 - (void).cxx_destruct;
 - (_Bool)_hasScene;
 - (void)sceneController:(id)arg1 sceneDidUpdateClientSettings:(id)arg2;
@@ -40,15 +42,20 @@
 - (void)sceneController:(id)arg1 sceneContentStateDidChange:(id)arg2;
 - (id)sceneConfigurationForDelegate;
 - (void)_updateDeferralChainWithWindow:(id)arg1;
+- (_Bool)_shouldDeferHIDEventsForMode;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
+- (void)_audioCategoriesDisablingVolumeHUDDidChangeTo:(id)arg1;
 - (void)_noteSceneDidInvalidate;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_transitionContentsWithView:(id)arg1 forContentState:(long long)arg2;
 - (void)updateSceneWithConfiguration:(id)arg1;
+- (void)invalidateAndPauseDeferringHIDEvents;
+- (void)startDeferringHIDEventsIfNeeded;
+- (_Bool)isDeferringHIDEvents;
 - (_Bool)isHostingScene;
-- (void)deactiveScene;
+- (void)deactiveSceneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopHostingScene;
 - (void)startHostingSceneForConfiguration:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_commonInit;

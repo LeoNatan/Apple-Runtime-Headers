@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)hideAnimated:(_Bool)arg1 allowDelay:(_Bool)arg2;
 - (void)showAnimated:(_Bool)arg1 allowDelay:(_Bool)arg2;
 - (id)_newProgressContainerView;
+@property(readonly, nonatomic) _Bool isCancelled;
 - (void)setFractionCompleted:(double)arg1;
 - (void)_updateFractionCompletedFromProgress;
 - (void)dealloc;

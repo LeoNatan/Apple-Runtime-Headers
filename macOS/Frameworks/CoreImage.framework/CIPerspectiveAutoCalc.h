@@ -17,12 +17,16 @@ __attribute__((visibility("hidden")))
     float pitch;
     float yaw;
     float roll;
+    long long pitchFailureReason;
+    long long yawFailureReason;
     float confidence;
     CIImage *debugImage;
 }
 
 @property(readonly) CIImage *debugImage; // @synthesize debugImage;
 @property(readonly) float confidence; // @synthesize confidence;
+@property(readonly) long long yawFailureReason; // @synthesize yawFailureReason;
+@property(readonly) long long pitchFailureReason; // @synthesize pitchFailureReason;
 @property(readonly) float roll; // @synthesize roll;
 @property(readonly) float yaw; // @synthesize yaw;
 @property(readonly) float pitch; // @synthesize pitch;

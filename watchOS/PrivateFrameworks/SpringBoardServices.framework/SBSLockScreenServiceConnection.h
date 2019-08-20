@@ -13,9 +13,11 @@
     BSServiceConnection *_connection;
     struct os_unfair_lock_s _lock;
     NSCountedSet *_lock_preventPasscodeLockReasons;
+    NSCountedSet *_lock_preventSpuriousScreenUndimReasons;
 }
 
 - (void).cxx_destruct;
+- (id)preventSpuriousScreenUndimWithReason:(id)arg1;
 - (id)preventPasscodeLockWithReason:(id)arg1;
 - (void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)launchEmergencyDialerWithCompletion:(CDUnknownBlockType)arg1;

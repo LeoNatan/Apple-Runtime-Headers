@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityHint;
 - (id)accessibilityValue;
 - (id)gestureRecognizers;
-- (void)menuDidHide:(id)arg1;
 - (void)showMenu;
 - (void)handleTap:(id)arg1;
 - (void)handleLongPress:(id)arg1;

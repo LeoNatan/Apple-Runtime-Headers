@@ -35,6 +35,7 @@
     _Bool _wantsAudioForCapture;
     _Bool _wantsSquareCrop;
     _Bool _wantsHighResolutionStills;
+    _Bool _stillDuringVideo;
     struct CGSize _desiredPreviewSize;
     NSString *_burstIdentifier;
     NSString *_irisIdentifier;
@@ -66,6 +67,7 @@
 @property(readonly, copy, nonatomic) NSString *irisIdentifier; // @synthesize irisIdentifier=_irisIdentifier;
 @property(readonly, copy, nonatomic) NSString *burstIdentifier; // @synthesize burstIdentifier=_burstIdentifier;
 @property(readonly, nonatomic) struct CGSize desiredPreviewSize; // @synthesize desiredPreviewSize=_desiredPreviewSize;
+@property(readonly, nonatomic) _Bool stillDuringVideo; // @synthesize stillDuringVideo=_stillDuringVideo;
 @property(readonly, nonatomic) _Bool wantsHighResolutionStills; // @synthesize wantsHighResolutionStills=_wantsHighResolutionStills;
 @property(readonly, nonatomic) _Bool wantsSquareCrop; // @synthesize wantsSquareCrop=_wantsSquareCrop;
 @property(readonly, nonatomic) _Bool wantsAudioForCapture; // @synthesize wantsAudioForCapture=_wantsAudioForCapture;

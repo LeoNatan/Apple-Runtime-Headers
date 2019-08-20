@@ -63,6 +63,7 @@
     _Bool _bluetoothValueIsClean;
     NSArray *_originalSpecifiers;
     NSSet *_originalDisplayIdentifiers;
+    PSSpecifier *_selectedSpecifier;
     ACAccountStore *_accountStore;
     PSSpecifier *_specifierToSelect;
     NSObject<OS_dispatch_queue> *_loadAllSpecifiersQueue;
@@ -198,7 +199,7 @@
 - (void)displayIdentifiersChanged;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (void)refresh3rdPartyBundles;
-- (void)removeAndReload3rdPartyBundles;
+- (void)iconChangedForBundleID:(id)arg1;
 - (void)popToRoot;
 - (void)insertMovedThirdPartySpecifiersAnimated:(_Bool)arg1;
 - (id)_specifierDictionaryForDeveloperBundlePath:(id)arg1 identifier:(id)arg2;
@@ -211,6 +212,8 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (void)configureTopLevelSpecifier:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)testSpecifierCountAfterBlock:(CDUnknownBlockType)arg1;

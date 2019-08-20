@@ -85,7 +85,6 @@
 - (void)replaceSourceWithUid:(id)arg1;
 - (void)invalidateAllSources;
 - (void)addSourceWithUidIfAbsent:(id)arg1;
-- (void)applicationWillTerminate:(id)arg1;
 - (void)runWithLock:(CDUnknownBlockType)arg1;
 - (void)refreshEnabledAccounts;
 - (id)makeAddressBookWithOptions:(id)arg1;

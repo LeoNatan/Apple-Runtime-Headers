@@ -12,15 +12,17 @@
 
 @interface HUShortcutItem : HFItem <NSCopying>
 {
+    BOOL _selectable;
     HFTriggerBuilder *_triggerBuilder;
 }
 
+@property(readonly, nonatomic) BOOL selectable; // @synthesize selectable=_selectable;
 @property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
-- (id)initWithTriggerBuilder:(id)arg1;
+- (id)initWithTriggerBuilder:(id)arg1 selectable:(BOOL)arg2;
 
 @end
 

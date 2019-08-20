@@ -10,6 +10,7 @@
 {
 }
 
++ (id)onScheduler:(id)arg1 performWithObject:(id)arg2;
 + (id)operationQueueSchedulerWithMaxConcurrentOperationCount:(long long)arg1;
 + (id)dispatchQueueSchedulerWithQueue:(id)arg1;
 + (id)serialDispatchQueueSchedulerWithName:(id)arg1 qualityOfService:(long long)arg2;

@@ -23,6 +23,8 @@
     BOOL _connectOnly;
     BOOL _disconnectOnly;
     BOOL _guestMode;
+    BOOL _userNotInContacts;
+    unsigned int _deviceVersion;
     CDUnknownBlockType _completionHandler;
     NSString *_deviceAddress;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -31,12 +33,14 @@
     NSString *_name;
 }
 
+@property(nonatomic) BOOL userNotInContacts; // @synthesize userNotInContacts=_userNotInContacts;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) BOOL guestMode; // @synthesize guestMode=_guestMode;
 @property(copy, nonatomic) NSData *guestKey; // @synthesize guestKey=_guestKey;
 @property(copy, nonatomic) NSString *guestAddress; // @synthesize guestAddress=_guestAddress;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) BOOL disconnectOnly; // @synthesize disconnectOnly=_disconnectOnly;
+@property(readonly, nonatomic) unsigned int deviceVersion; // @synthesize deviceVersion=_deviceVersion;
 @property(copy, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
 @property(nonatomic) BOOL connectOnly; // @synthesize connectOnly=_connectOnly;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;

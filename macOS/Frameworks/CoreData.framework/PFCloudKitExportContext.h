@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_currentRecordIDs;
     PFCloudKitSerializer *_currentSerializer;
     unsigned long long _currentBytes;
+    unsigned long long _totalBytes;
     NSMutableArray *_operations;
     NSArray *_writtenAssetURLs;
     NSString *_exportMetadataIdentifier;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
     PFCloudKitMetadataCache *_metadataCache;
 }
 
+@property(readonly, nonatomic) unsigned long long totalBytes; // @synthesize totalBytes=_totalBytes;
 @property(readonly, nonatomic) NSString *exportMetadataIdentifier; // @synthesize exportMetadataIdentifier=_exportMetadataIdentifier;
 @property(readonly, nonatomic) NSArray *writtenAssetURLs; // @synthesize writtenAssetURLs=_writtenAssetURLs;
 @property(readonly, nonatomic) NSPersistentHistoryToken *finalHistoryToken; // @synthesize finalHistoryToken=_finalHistoryToken;

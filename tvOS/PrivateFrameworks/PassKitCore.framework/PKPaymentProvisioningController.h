@@ -14,6 +14,7 @@
 
 @interface PKPaymentProvisioningController : NSObject <CLLocationManagerDelegate, PKPaymentWebServiceDelegate>
 {
+    _Bool _preflightCompleted;
     NSMutableSet *_tasks;
     NSTimer *_descriptionTimer;
     NSMutableArray *_associatedCredentials;
@@ -24,6 +25,7 @@
     NSHashTable *_delegates;
     NSLock *_delegateLock;
     NSSet *_supportedFeatureIdentifierStrings;
+    NSSet *_supportedFeatureIdentifierStringsForAccountProvisioning;
     unsigned long long _targetDeviceSupportsTypeF;
     PKPaymentSetupMoreInfoItem *_marketExpressInfoItem;
     CLLocationManager *_locationManager;
@@ -82,6 +84,7 @@
 - (void)_startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
 - (void)passcodeUpgradeCompleted:(_Bool)arg1;
 - (void)preflightPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic, getter=isPasscodeUpgradeRequired) _Bool passcodeUpgradeRequired;
 @property(readonly, copy, nonatomic) NSArray *allCredentials;
 - (id)associatedCredentialsForDefaultBehaviour;
 - (void)removeDelegate:(id)arg1;
@@ -144,8 +147,10 @@
 - (void)_addAccountToProductMatchingFeatureIdentifier:(unsigned long long)arg1;
 - (id)_fetchOrCreateProductsForIdentifier:(unsigned long long)arg1;
 - (void)retrieveAccountCredentials:(CDUnknownBlockType)arg1;
-- (id)supportedFeatureIdentifierStrings;
+- (id)_supportedFeatureIdentifierStringsForAccountProvisioning;
+- (id)_supportedFeatureIdentifierStrings;
 - (void)retrieveRemoteCredentials:(CDUnknownBlockType)arg1;
+- (void)performDeviceCheckInIfNeeded:(CDUnknownBlockType)arg1;
 - (id)_doesDisplayableErrorConstitutePreflightFailure:(id)arg1;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)validatePreconditionsRegisterAndAssociateRemoteCredentials:(CDUnknownBlockType)arg1;

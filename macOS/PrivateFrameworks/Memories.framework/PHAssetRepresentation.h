@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface PHAssetRepresentation : NSObject
 {
+    BOOL _isAvailable;
     BOOL _adjustedVersion;
     unsigned long long _lastKnownPersistenceState;
     PHAssetResource *_mostUsefulResource;

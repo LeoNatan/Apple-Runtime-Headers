@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)progressEnded:(id)arg1;
 - (void)fractionCompletedChanged:(id)arg1;
 - (void)progressStarting:(id)arg1;
+- (id)progresses;
 @property(readonly, nonatomic) __weak FI_TICloudProgressObserver *observer; // @dynamic observer;
 - (void)aboutToTearDown;
 - (id)initWithObserver:(id)arg1;

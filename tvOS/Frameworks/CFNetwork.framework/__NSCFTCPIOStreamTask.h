@@ -32,6 +32,7 @@
     _Bool _writeInProgress;
     _Bool _writeClosed;
     _Bool _receivedServerTrustChallenge;
+    _Bool _receivedEof;
     CFNetworkTimer *_writeTimer;
     CFNetworkTimer *_readTimer;
     __NSCFURLLocalStreamTaskWorkWrite *_currentWriteTask;

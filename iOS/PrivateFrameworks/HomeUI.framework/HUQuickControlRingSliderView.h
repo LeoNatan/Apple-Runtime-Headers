@@ -83,6 +83,8 @@
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlRingSliderViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (double)_getMaximumMarkingValue;
+- (double)_getMinimumMarkingValue;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handlePanGestureRecognizer:(id)arg1;
 - (unsigned long long)_getRingSliderAreaForAngleFrom12Oclock:(double)arg1;
@@ -104,6 +106,7 @@
 - (struct CGPoint)_getHandleCenterOnRingForValue:(double)arg1;
 - (double)_getAngleFrom12OClockForValue:(double)arg1;
 - (double)_getSliderValueForPoint:(struct CGPoint)arg1;
+- (double)_getSliderValueForAngleFrom12OClock:(double)arg1;
 - (void)_actuateImpactTapticFeedbackIfAvailable;
 - (void)_actuateSelectionTapticFeedbackIfAvailable;
 - (void)_prepareForTapticFeedbackIfAvailable;
@@ -116,15 +119,13 @@
 - (double)_getClosestMarkingValueToValue:(double)arg1;
 - (void)_updateSelectedRangeImageView;
 - (double)_getOneMarkerValueDifference;
-- (double)_getRadiusShiftForEdge;
 - (double)_getStartAngleEdgeLocationShiftForBackgroundRing:(_Bool)arg1;
 - (struct CGSize)_getEdgeRectSize;
 - (void)_animateToEnlargeHandleView:(id)arg1;
 - (void)_updateUIForThresholdModeForSecondaryHandleViewWithTouchPoint:(struct CGPoint)arg1 didTouchBegin:(_Bool)arg2;
 - (void)_updateUIForThresholdModeForPrimaryHandleViewWithTouchPoint:(struct CGPoint)arg1 didTouchBegin:(_Bool)arg2;
 - (_Bool)_isIncreasingOrDecreasing:(unsigned long long)arg1;
-- (void)_updateUIForTouchPoint:(struct CGPoint)arg1 didTouchBegin:(_Bool)arg2 forHandleView:(id)arg3 minAngle:(double)arg4 maxAngle:(double)arg5;
-- (void)_updateUIForTouch:(id)arg1 didTouchBegin:(_Bool)arg2 forHandleView:(id)arg3 minAngle:(double)arg4 maxAngle:(double)arg5;
+- (void)_updateUIForTouchPoint:(struct CGPoint)arg1 didTouchBegin:(_Bool)arg2 forHandleView:(id)arg3 minValue:(double)arg4 maxValue:(double)arg5;
 - (void)_updateUIWithTouchAtPoint:(struct CGPoint)arg1 didTouchBegin:(_Bool)arg2;
 - (void)_maskBackgroundImageViewToRingShape;
 - (void)_updateSecondaryHandleViewPositionToSliderValue;

@@ -109,6 +109,7 @@
 - (id)activeAssetReferences;
 @property(readonly, nonatomic) BOOL isVideoContentAllowed;
 - (void)_setVideoContentAllowed:(BOOL)arg1;
+- (void)setVideoContentAllowedForAllReasons;
 - (void)setVideoContentAllowed:(BOOL)arg1 forReason:(id)arg2;
 - (void)setChromeVisible:(BOOL)arg1 changeReason:(long long)arg2 context:(id)arg3;
 - (void)setChromeVisible:(BOOL)arg1 changeReason:(long long)arg2;

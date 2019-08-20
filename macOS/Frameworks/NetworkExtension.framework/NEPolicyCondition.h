@@ -42,6 +42,7 @@
 + (id)fallbackTraffic;
 + (id)clientFlags:(unsigned int)arg1;
 + (id)requiredAgentDomain:(id)arg1 agentType:(id)arg2;
++ (id)platformBinary;
 + (id)customEntitlement:(id)arg1;
 + (id)entitlement;
 + (id)flowRemoteAddressStart:(id)arg1 end:(id)arg2;

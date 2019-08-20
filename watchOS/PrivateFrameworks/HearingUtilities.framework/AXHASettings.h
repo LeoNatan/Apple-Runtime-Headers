@@ -40,6 +40,7 @@
 - (id)_valueForPreferenceKey:(id)arg1;
 - (void)_synchronizeIfNecessary:(id)arg1;
 - (void)_setValue:(id)arg1 forPreferenceKey:(id)arg2;
+- (struct __CFString *)domainNameForPreferenceKey:(id)arg1;
 - (void)registerUpdateBlock:(CDUnknownBlockType)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (void)_registerForNotification:(id)arg1;
 - (id)_preferenceKeyForSelector:(SEL)arg1;

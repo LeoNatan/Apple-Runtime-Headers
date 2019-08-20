@@ -20,6 +20,7 @@
     Class _cellViewClass;
     SFCard *_nextCard;
     double _leadingSeparatorImageInset;
+    unsigned long long _queryId;
     NSString *_dragTitle;
     NSString *_dragSubtitle;
     NSString *_dragText;
@@ -33,6 +34,7 @@
 @property(readonly, nonatomic) NSString *dragSubtitle; // @synthesize dragSubtitle=_dragSubtitle;
 @property(readonly, nonatomic) NSString *dragTitle; // @synthesize dragTitle=_dragTitle;
 @property(readonly, nonatomic) BOOL isDraggable; // @synthesize isDraggable=_isDraggable;
+@property(readonly, nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(readonly, nonatomic) double leadingSeparatorImageInset; // @synthesize leadingSeparatorImageInset=_leadingSeparatorImageInset;
 @property(readonly, nonatomic) BOOL isTappable; // @synthesize isTappable=_isTappable;
 @property(readonly, nonatomic) SFCard *nextCard; // @synthesize nextCard=_nextCard;
@@ -46,9 +48,10 @@
 @property(readonly, nonatomic) BOOL isQuerySuggestion;
 @property(readonly, nonatomic) NSString *reuseIdentifier;
 @property(readonly, nonatomic) int separatorStyle;
-- (id)initWithResults:(id)arg1 cardSection:(id)arg2;
+- (id)initWithResults:(id)arg1 cardSection:(id)arg2 queryId:(unsigned long long)arg3;
 - (id)initWithResults:(id)arg1;
-- (id)initWithResult:(id)arg1 cardSection:(id)arg2;
+- (id)initWithCardSection:(id)arg1 queryId:(unsigned long long)arg2;
+- (id)initWithResult:(id)arg1 cardSection:(id)arg2 queryId:(unsigned long long)arg3;
 - (id)initWithResult:(id)arg1;
 
 @end

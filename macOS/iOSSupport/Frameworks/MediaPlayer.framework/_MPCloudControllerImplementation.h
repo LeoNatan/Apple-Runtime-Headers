@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class ICCloudClient, MSVDistributedNotificationObserver;
+@class ICCloudClient, ICUserIdentity, MSVDistributedNotificationObserver;
 @protocol OS_dispatch_queue;
 
 @interface _MPCloudControllerImplementation : NSObject
 {
+    BOOL _active;
     BOOL _cloudEnabled;
     BOOL _jaliscoGeniusEnabled;
     BOOL _preferencesChangedNotifyTokenIsValid;
@@ -27,6 +28,7 @@
     BOOL _jaliscoUpdateInProgress;
     BOOL _jaliscoInitialImport;
     int _preferencesChangedNotifyToken;
+    ICUserIdentity *_userIdentity;
     ICCloudClient *_cloudClient;
     long long _activeCount;
     NSObject<OS_dispatch_queue> *_queue;
@@ -35,7 +37,8 @@
     MSVDistributedNotificationObserver *_addToPlaylistBehaviorChangedObserver;
 }
 
-+ (id)controllerWithUserIdentity:(id)arg1 entitledApplication:(BOOL)arg2;
++ (BOOL)isMediaApplication;
++ (id)controllerWithUserIdentity:(id)arg1;
 + (id)implementations;
 + (id)globalSerialQueue;
 @property(nonatomic, getter=isJaliscoInitialImport) BOOL jaliscoInitialImport; // @synthesize jaliscoInitialImport=_jaliscoInitialImport;
@@ -59,6 +62,7 @@
 @property(nonatomic) long long activeCount; // @synthesize activeCount=_activeCount;
 @property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) BOOL jaliscoGeniusEnabled; // @synthesize jaliscoGeniusEnabled=_jaliscoGeniusEnabled;
 @property(readonly, nonatomic) ICCloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(nonatomic, getter=isCloudEnabled) BOOL cloudEnabled; // @synthesize cloudEnabled=_cloudEnabled;
 - (void).cxx_destruct;
 - (void)_initializeUpdateInProgressState;
@@ -87,6 +91,7 @@
 - (void)loadUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) BOOL isGeniusEnabled;
+@property(readonly, nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void)becomeActiveAndWaitUntilDone:(BOOL)arg1;
 - (void)becomeActive;
 - (void)deprioritizeArtworkRequestForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkType:(long long)arg3 artworkSourceType:(long long)arg4;
@@ -129,7 +134,7 @@
 - (void)canShowCloudTracksDidChangeNotification:(id)arg1;
 - (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (id)initWithUserIdentity:(id)arg1 entitledApplication:(BOOL)arg2;
+- (id)initWithUserIdentity:(id)arg1;
 
 @end
 

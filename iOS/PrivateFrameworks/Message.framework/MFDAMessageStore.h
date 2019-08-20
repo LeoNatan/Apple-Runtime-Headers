@@ -39,7 +39,6 @@
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (_Bool)wantsLineEndingConversionForMIMEPart:(id)arg1;
 - (_Bool)shouldDownloadBodyDataForMessage:(id)arg1;
-- (_Bool)shouldSetSummaryForMessage:(id)arg1;
 - (id)copyOfAllMessagesForBodyLoadingFromRowID:(long long)arg1 limit:(unsigned int)arg2;
 - (void)purgeMessagesBeyondLimit:(unsigned long long)arg1 keepingMessage:(id)arg2;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(_Bool)arg2;

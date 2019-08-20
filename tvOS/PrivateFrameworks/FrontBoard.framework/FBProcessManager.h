@@ -44,7 +44,6 @@
 - (void)noteProcessDidExit:(id)arg1;
 - (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 - (id)_serviceClientAddedWithProcessHandle:(id)arg1;
-- (id)_processForHandle:(id)arg1;
 - (oneway void)launchProcessWithContext:(id)arg1;
 - (id)registerProcessForHandle:(id)arg1;
 - (id)registerProcessForAuditToken:(CDStruct_6ad76789)arg1;

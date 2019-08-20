@@ -14,7 +14,6 @@
 @interface MPCloudServiceStatusController : NSObject <ICEnvironmentMonitorObserver>
 {
     _MPCloudServiceStatusControllerImplementation *_implementation;
-    ICUserIdentity *_userIdentity;
     ICMusicSubscriptionFairPlayKeyStatus *_lastKnownSubscriptionFairPlayKeyStatus;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
@@ -29,7 +28,6 @@
 + (id)globalSerialQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, nonatomic) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus; // @synthesize lastKnownSubscriptionFairPlayKeyStatus=_lastKnownSubscriptionFairPlayKeyStatus;
-@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (void)setImplementation:(id)arg1;
 @property(readonly, nonatomic) _MPCloudServiceStatusControllerImplementation *implementation; // @synthesize implementation=_implementation;
@@ -54,14 +52,15 @@
 @property(readonly, nonatomic, getter=isSubscriptionAvailable) _Bool subscriptionAvailable;
 @property(readonly, nonatomic, getter=isPurchaseHistoryEnabled) _Bool purchaseHistoryEnabled;
 @property(readonly, nonatomic, getter=isCloudLibraryEnabled) _Bool cloudLibraryEnabled;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity;
 - (void)_receivedImplementationNotification:(id)arg1;
-- (void)_libraryPathDidChangeForSharedCloudController:(id)arg1;
+- (void)_activeUserDidChangeForSharedController:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

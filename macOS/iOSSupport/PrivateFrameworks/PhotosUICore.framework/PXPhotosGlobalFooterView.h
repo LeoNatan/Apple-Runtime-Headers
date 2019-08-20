@@ -9,12 +9,15 @@
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/UITextViewDelegate-Protocol.h>
 
-@class NSString, PXFooterViewModel, UILabel, UIProgressView, UITextView, UIView;
+@class NSString, PXFooterAnimatedIconView, PXFooterViewModel, PXGradientView, UILabel, UIProgressView, UITextView, UIView;
 @protocol PXPhotosGlobalFooterViewDelegate, PXPhotosGlobalFooterViewLayoutDelegate;
 
 @interface PXPhotosGlobalFooterView : UICollectionReusableView <UITextViewDelegate, PXChangeObserver>
 {
     UIView *_accessoryView;
+    BOOL _hasAnimatedIconView;
+    PXFooterAnimatedIconView *_animatedIconView;
+    PXGradientView *_backgroundView;
     UILabel *_titleLabel;
     UITextView *_subtitle1TextView;
     UILabel *_subtitle2Label;
@@ -56,6 +59,9 @@
 - (void)_updateSubtitle2;
 - (void)_updateSubtitle1;
 - (void)_updateTitle;
+- (void)_animatedIconCrossedGridCycleBoundary;
+- (void)_updateAnimatedIcon;
+- (void)setHidden:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

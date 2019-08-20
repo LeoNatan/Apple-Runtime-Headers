@@ -54,6 +54,7 @@
 - (BOOL)containsMailboxes;
 - (id)primaryMailbox;
 - (id)mailboxPathExtension;
+- (BOOL)_setChildren:(id)arg1 forMailbox:(id)arg2;
 - (Class)storeClassForMailbox:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresAuthentication;
 @property(readonly, copy, nonatomic) NSString *saslProfileName;

@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
 - (void)showLoadingAnimated:(_Bool)arg1;
 - (void)_updateForContainmentInHostEnvironment:(id)arg1;
 - (void)launchScreenHost:(id)arg1 traitCollectionDidChange:(id)arg2;
+- (long long)_currentInterfaceOrientation;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidDisappear:(_Bool)arg1;

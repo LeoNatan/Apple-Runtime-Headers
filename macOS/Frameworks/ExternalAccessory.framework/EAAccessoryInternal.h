@@ -46,6 +46,7 @@
     unsigned int _eqIndex;
     NSMutableArray *_enqueuedNMEASentences;
     unsigned long long _destinationSharingOptions;
+    NSDictionary *_protocolDetails;
     NSString *_coreAccessoryPrimaryUUID;
     NSString *_bonjourName;
     CDUnknownBlockType _pairingCompletionBlock;
@@ -60,6 +61,7 @@
 @property(copy, nonatomic) NSString *bonjourName; // @synthesize bonjourName=_bonjourName;
 @property(nonatomic) int locationSentenceTypesMask; // @synthesize locationSentenceTypesMask=_locationSentenceTypesMask;
 @property(copy, nonatomic) NSString *coreAccessoryPrimaryUUID; // @synthesize coreAccessoryPrimaryUUID=_coreAccessoryPrimaryUUID;
+@property(copy, nonatomic) NSDictionary *protocolDetails; // @synthesize protocolDetails=_protocolDetails;
 @property(copy, nonatomic) NSString *ppid; // @synthesize ppid=_ppid;
 @property unsigned long long destinationSharingOptions; // @synthesize destinationSharingOptions=_destinationSharingOptions;
 @property(retain, nonatomic) NSMutableArray *enqueuedNMEASentences; // @synthesize enqueuedNMEASentences=_enqueuedNMEASentences;

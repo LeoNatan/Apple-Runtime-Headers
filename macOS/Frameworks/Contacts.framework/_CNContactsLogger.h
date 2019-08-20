@@ -18,6 +18,7 @@
 
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+- (void)deleteImageRecentsMetadataRequestFailed:(id)arg1;
 - (void)setContactImageDataZeroCropRect:(id)arg1 format:(const char *)arg2;
 - (void)setContactImageData:(id)arg1 format:(const char *)arg2 cropRect:(struct CGRect)arg3;
 - (void)removeContactImageData;

@@ -10,6 +10,7 @@
 
 @interface MPAVClippingTableViewCell : UITableViewCell
 {
+    BOOL _shouldHideSectionBottomSeparator;
     UIView *_topSeparatorView;
     UIView *_bottomSeparatorView;
     UIView *_clippingContentView;
@@ -20,6 +21,7 @@
 @property(nonatomic) struct UIEdgeInsets clippingInsets; // @synthesize clippingInsets=_clippingInsets;
 @property(retain, nonatomic) UIView *clippingMaskView; // @synthesize clippingMaskView=_clippingMaskView;
 @property(retain, nonatomic) UIView *clippingContentView; // @synthesize clippingContentView=_clippingContentView;
+@property(nonatomic) BOOL shouldHideSectionBottomSeparator; // @synthesize shouldHideSectionBottomSeparator=_shouldHideSectionBottomSeparator;
 @property(readonly, nonatomic) UIView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(readonly, nonatomic) UIView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 - (void).cxx_destruct;

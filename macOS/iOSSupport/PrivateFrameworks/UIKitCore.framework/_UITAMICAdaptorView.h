@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateForAvailableSize;
-- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (void)didMoveToWindow;
 - (id)initWithView:(id)arg1;
 
 // Remaining properties

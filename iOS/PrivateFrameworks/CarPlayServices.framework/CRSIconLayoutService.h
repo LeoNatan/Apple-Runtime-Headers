@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <CarPlayServices/BSInvalidatable-Protocol.h>
 #import <CarPlayServices/BSServiceConnectionListenerDelegate-Protocol.h>
 #import <CarPlayServices/CRSIconLayoutClientToServerInterface-Protocol.h>
 
 @class BSServiceConnectionListener, NSHashTable, NSString;
 @protocol CRSIconLayoutServiceDelegate, OS_dispatch_queue;
 
-@interface CRSIconLayoutService : NSObject <BSServiceConnectionListenerDelegate, CRSIconLayoutClientToServerInterface>
+@interface CRSIconLayoutService : NSObject <BSServiceConnectionListenerDelegate, CRSIconLayoutClientToServerInterface, BSInvalidatable>
 {
     id <CRSIconLayoutServiceDelegate> _delegate;
     BSServiceConnectionListener *_listener;
@@ -32,6 +33,7 @@
 - (void)setIconState:(id)arg1 hiddenIcons:(id)arg2 forVehicleID:(id)arg3;
 - (void)fetchIconStateForVehicleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+- (void)invalidate;
 - (id)initWithDelegate:(id)arg1;
 
 // Remaining properties

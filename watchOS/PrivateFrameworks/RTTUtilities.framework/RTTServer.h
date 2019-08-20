@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)primeRTTServer;
 - (void)setTTYDictionaryAvailability:(_Bool)arg1;
+- (void)_takeStackshot;
 - (id)valueForTTYSetting:(id)arg1;
 - (_Bool)contactIsTTYContact:(id)arg1;
 - (_Bool)deleteConversationWithCallUID:(id)arg1;
@@ -38,6 +39,7 @@
 - (void)handleMessageWithPayload:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)_managerAXPIDState:(_Bool)arg1;
 - (void)resetConnection;
+- (void)_registerForServerSettingsUpdates;
 - (void)dealloc;
 - (id)init;
 

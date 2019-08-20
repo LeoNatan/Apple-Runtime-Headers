@@ -64,7 +64,6 @@
     struct CGAffineTransform _paperTransform;
 }
 
-+ (id)tileQueue;
 + (BOOL)disableClearOriginalBackbufferWorkaround;
 + (BOOL)useBlitEncoder;
 @property(nonatomic) BOOL invertColors; // @synthesize invertColors=_invertColors;
@@ -97,11 +96,10 @@
 - (void)clearAndRenderTiles:(id)arg1 tileTransform:(struct CGAffineTransform)arg2 waitUntilCompleted:(BOOL)arg3;
 - (void)setShouldClearOriginalFramebuffer;
 - (void)clearTile:(id)arg1 waitUntilCompleted:(BOOL)arg2;
+- (id)framebufferForTile:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (void)renderTiles:(id)arg1 intoTile:(id)arg2 waitUntilCompleted:(BOOL)arg3;
 - (void)renderTile:(id)arg1 tileTransform:(struct CGAffineTransform)arg2 renderState:(id)arg3;
 - (void)copyIntoTile:(id)arg1 tileTransform:(struct CGAffineTransform)arg2 waitUntilCompleted:(BOOL)arg3;
-- (id)framebufferForTile:(id)arg1 createIfNeeded:(BOOL)arg2;
-- (void)didTeardownTile;
 - (void)purgeOriginalBackFramebuffer;
 - (void)clearFramebuffer:(id)arg1 waitUntilCompleted:(BOOL)arg2;
 - (void)addBufferForRenderCache:(id)arg1 strokeVertices:(struct StrokeVertex *)arg2 numVertices:(unsigned long long)arg3;

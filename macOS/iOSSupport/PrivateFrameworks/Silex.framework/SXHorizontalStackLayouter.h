@@ -31,9 +31,9 @@
 - (double)factorForAnchorAlingment:(long long)arg1;
 - (id)childColumnLayoutForContainerComponentWidth:(double)arg1 componentWidth:(double)arg2 componentBlueprint:(id)arg3 columnLayout:(id)arg4 unitConverter:(id)arg5;
 - (struct CGPoint)calculatePositionForComponentWithBlueprint:(id)arg1 layout:(id)arg2 unitConverter:(id)arg3 margin:(id)arg4 maximumY:(double)arg5 layoutBlueprint:(id)arg6;
-- (struct CGSize)calculateSizeForContainerComponentWithBlueprint:(id)arg1 width:(double)arg2 layoutContext:(id)arg3 shouldContinue:(char *)arg4;
+- (struct CGSize)calculateSizeForContainerComponentWithBlueprint:(id)arg1 width:(double)arg2 layoutContext:(id)arg3 layoutDescription:(id)arg4 shouldContinue:(char *)arg5;
 - (struct CGSize)calculateSizeForComponentWithBlueprint:(id)arg1 width:(double)arg2 layoutContext:(id)arg3;
-- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 shouldContinue:(char *)arg3;
+- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 description:(id)arg3 shouldContinue:(char *)arg4;
 - (id)initWithContainerComponent:(id)arg1 layouterFactory:(id)arg2 columnCalculator:(id)arg3 layoutContextFactory:(id)arg4 unitConverterFactory:(id)arg5;
 
 // Remaining properties

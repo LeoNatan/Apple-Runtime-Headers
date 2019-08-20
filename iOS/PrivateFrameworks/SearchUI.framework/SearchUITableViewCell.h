@@ -52,6 +52,9 @@
 - (_Bool)supportsRecycling;
 - (void)updateExpanded:(_Bool)arg1;
 - (void)updateWithResults:(id)arg1;
+- (void)_updateHighlightColorsForView:(id)arg1 highlighted:(_Bool)arg2;
+- (void)_setSeparatorDrawsInVibrantLightMode:(_Bool)arg1;
+- (void)_setSeparatorBackdropOverlayBlendMode:(long long)arg1;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;
 - (void)_dynamicUserInterfaceTraitDidChange;

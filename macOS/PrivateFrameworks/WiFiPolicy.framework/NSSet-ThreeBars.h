@@ -9,5 +9,6 @@
 @interface NSSet (ThreeBars)
 - (id)tilePredicate;
 - (id)bssidPredicate;
+- (id)reformatBSSIDs;
 @end
 

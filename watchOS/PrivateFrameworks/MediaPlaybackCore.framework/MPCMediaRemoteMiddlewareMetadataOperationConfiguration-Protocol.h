@@ -6,13 +6,14 @@
 
 #import <MediaPlaybackCore/NSObject-Protocol.h>
 
-@class MPPropertySet, NSString;
+@class MPCPlayerPath, MPPropertySet, NSString;
 
 @protocol MPCMediaRemoteMiddlewareMetadataOperationConfiguration <NSObject>
 @property(readonly, nonatomic) MPPropertySet *queueSectionProperties;
 @property(readonly, nonatomic) MPPropertySet *queueItemProperties;
 @property(readonly, nonatomic) MPPropertySet *playingItemProperties;
 @property(readonly) CDStruct_b9e39389 tracklistRange;
+@property(readonly, nonatomic) MPCPlayerPath *playerPath;
 
 @optional
 @property(readonly, nonatomic) NSString *preferredFallbackItemRelationship;

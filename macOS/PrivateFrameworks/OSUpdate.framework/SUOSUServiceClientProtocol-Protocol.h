@@ -13,6 +13,7 @@
 - (void)postDoItLaterOtherUsersLoggedInNotification;
 - (void)postDoItLaterUpdatesFailedNotificationRestartRequired:(BOOL)arg1 offerLater:(BOOL)arg2;
 - (void)postMajorOSUpdateMDMRequestedNotification;
+- (void)queueAutoUpdatesForLater;
 - (void)startInstallingDoItLaterUpdates;
 @end
 

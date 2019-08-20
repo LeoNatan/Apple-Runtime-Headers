@@ -22,12 +22,9 @@
     unsigned int _calledAddLocationOfInterest;
     unsigned int _calledUpdateLocationOfInterest;
     unsigned int _calledStartMonitoringVehicleEvents;
-    _Bool _isHSA2Enabled;
 }
 
 - (void).cxx_destruct;
-- (_Bool)isHSA2Enabled;
-- (void)configureHSA2Enabled:(_Bool)arg1;
 - (_Bool)fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)clearAllVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopMonitoringVehicleEvents;
@@ -36,7 +33,7 @@
 - (_Bool)fetchLocationsOfInterestVisitedSinceDate:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)fetchLocationsOfInterestOfType:(int)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)fetchNextPLOIsFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 handler:(CDUnknownBlockType)arg4;
-- (struct NSString *)uniqueName;
+@property(readonly, nonatomic) NSString *uniqueName;
 - (unsigned int)calledStartMonitoringVehicleEvents;
 - (unsigned int)calledUpdateLocationOfInterest;
 - (unsigned int)calledAddLocationOfInterest;

@@ -17,6 +17,7 @@
     UIColor *_textColor;
     NSParagraphStyle *_paragraphStyle;
     NSArray *_contents;
+    long long _contentsTextAlignment;
     NSTextStorage *_textStorage;
     NSMutableSet *_mutableHighlightedSlots;
     NSMutableSet *_mutableSelectedSlots;
@@ -29,6 +30,7 @@
 @property(readonly, nonatomic) NSMutableSet *mutableSelectedSlots; // @synthesize mutableSelectedSlots=_mutableSelectedSlots;
 @property(readonly, nonatomic) NSMutableSet *mutableHighlightedSlots; // @synthesize mutableHighlightedSlots=_mutableHighlightedSlots;
 @property(readonly, nonatomic) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
+@property(readonly, nonatomic) long long contentsTextAlignment; // @synthesize contentsTextAlignment=_contentsTextAlignment;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;

@@ -17,6 +17,7 @@
     PAItemViewConfiguration *_currentViewConfiguration;
     BOOL _isActive;
     int _ignoreGeometryUpdates;
+    BOOL _failedToLoad;
     NSSet *_clientKeys;
     NSDictionary *_assetTypes;
     NSDictionary *_assetClients;

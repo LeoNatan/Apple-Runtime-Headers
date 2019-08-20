@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     struct __CVMetalTextureCache *_textureCache;
     struct __CVBuffer *_pixelBuffer;
     id <MTLTexture> _mtlTexture;
+    _Bool _containsAlpha;
     _Bool _isFront;
     unsigned long long _width;
     unsigned long long _height;
@@ -29,6 +30,9 @@ __attribute__((visibility("hidden")))
 - (void)connectToProxy:(struct __C3DImageProxy *)arg1;
 - (void)dealloc;
 - (void)discardVideoData;
+- (_Bool)containsAlpha;
+- (id)initWithOptions:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

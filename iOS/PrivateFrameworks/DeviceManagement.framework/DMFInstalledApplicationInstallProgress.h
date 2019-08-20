@@ -10,5 +10,7 @@
 {
 }
 
+- (Class)classForCoder;
+
 @end
 

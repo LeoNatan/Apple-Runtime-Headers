@@ -20,6 +20,7 @@
     NSBundle *_recipeBundle;
     NSHashTable *_observers;
     UIView *_highlightView;
+    _Bool _needsLayoutOnMoveToWindow;
     _Bool _highlighted;
     NSString *_groupNameBase;
     long long _recipe;
@@ -55,6 +56,7 @@
 - (_Bool)isManagingCustomOpacityTransitionForMaterialLayer:(id)arg1;
 - (_Bool)isManagingOpacityForMaterialLayer:(id)arg1;
 - (_Bool)managesWeightingForMaterialLayer:(id)arg1;
+- (void)didMoveToWindow;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)layoutSubviews;
 - (void)_updateRecipeNameIfNeeded;

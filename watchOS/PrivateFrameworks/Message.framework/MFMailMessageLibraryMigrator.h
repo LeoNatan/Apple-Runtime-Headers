@@ -10,14 +10,15 @@
 #import <Message/EFLoggable-Protocol.h>
 
 @class NSConditionLock, NSMutableArray, NSString;
-@protocol OS_dispatch_queue;
+@protocol MFMailMessageLibraryMigratorDelegate, OS_dispatch_queue;
 
 @interface MFMailMessageLibraryMigrator : NSObject <EFContentProtectionObserver, EFLoggable>
 {
-    int _needsSpotlightReindex;
+    _Bool _needsSpotlightReindex;
     _Bool _needsRebuildTriggers;
     _Bool _needsRebuildMessageInfoIndex;
     NSMutableArray *_postMigrationBlocks;
+    id <MFMailMessageLibraryMigratorDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     NSConditionLock *_migrationState;
 }
@@ -26,21 +27,25 @@
 + (id)log;
 @property(readonly, nonatomic) NSConditionLock *migrationState; // @synthesize migrationState=_migrationState;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
+@property(readonly, nonatomic) __weak id <MFMailMessageLibraryMigratorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (void)detachProtectedDatabaseWithConnection:(id)arg1;
+- (int)attachProtectedDatabaseWithConnection:(id)arg1;
 - (void)runPostMigrationBlocksWithConnection:(id)arg1;
 - (void)addPostMigrationBlock:(CDUnknownBlockType)arg1;
-- (void)performSpotlightReindexIfNeededWithHandler:(CDUnknownBlockType)arg1;
+- (_Bool)needsSpotlightReindex;
 - (void)noteNeedsSpotlightReindex;
 - (void)resetTTRPromptAndForceReindex;
 - (_Bool)needsRebuildMessageInfoIndex;
 - (void)noteRebuildMessageInfoIndex;
 - (_Bool)needsRebuildTriggers;
 - (void)noteNeedsRebuildTriggers;
+- (_Bool)_checkForeignKeysWithConnection:(id)arg1;
 - (int)_checkContentProtectionState;
-- (int)_runMigrationStepsFromVersion:(int)arg1 connection:(id)arg2 schema:(id)arg3 hookResponder:(id)arg4;
-- (_Bool)migrateWithDatabaseConnection:(id)arg1 schema:(id)arg2 hookResponder:(id)arg3;
-- (id)init;
+- (int)_runMigrationStepsFromVersion:(int)arg1 connection:(id)arg2 schema:(id)arg3;
+- (_Bool)migrateWithDatabaseConnection:(id)arg1 schema:(id)arg2;
+- (id)initWithDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

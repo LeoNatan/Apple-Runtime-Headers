@@ -8,25 +8,24 @@
 
 #import <UIKitCore/UIContentSizeCategoryAdjusting-Protocol.h>
 #import <UIKitCore/UIKeyboardInput-Protocol.h>
-#import <UIKitCore/UIPreviewItemDelegate-Protocol.h>
 #import <UIKitCore/UITextAutoscrolling-Protocol.h>
 #import <UIKitCore/UITextInput-Protocol.h>
 #import <UIKitCore/UITextInputControllerDelegate-Protocol.h>
 #import <UIKitCore/UITextInputTraits_Private-Protocol.h>
-#import <UIKitCore/UITextLinkInteraction-Protocol.h>
 #import <UIKitCore/UIViewGhostedRangeSupporting-Protocol.h>
 #import <UIKitCore/_UILayoutBaselineUpdating-Protocol.h>
 #import <UIKitCore/_UIMultilineTextContentSizing-Protocol.h>
 #import <UIKitCore/_UITextContainerViewDelegate-Protocol.h>
 #import <UIKitCore/_UITextContent-Protocol.h>
 #import <UIKitCore/_UITextItemDiscoverable-Protocol.h>
+#import <UIKitCore/_UITextItemInteracting-Protocol.h>
 #import <UIKitCore/_UITextViewContentPaddingDelegate-Protocol.h>
 #import <UIKitCore/_UIViewBaselineSpacing-Protocol.h>
 
 @class CUICatalog, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIAutoscroll, UIColor, UIFont, UIImage, UIInputContextHistory, UILabel, UITextInputController, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UICharacterStreamingManager, _UITextContainerView, _UITextItemDiscoverer, _UITextSizeCache, _UITextViewContentPadding, _UITextViewRestorableScrollPosition, _UITextViewVisualStyle;
 @protocol UICoordinateSpace, UITextInputDelegate, UITextInputTokenizer, UITextViewDelegate;
 
-@interface UITextView : UIScrollView <UITextLinkInteraction, UIPreviewItemDelegate, _UIViewBaselineSpacing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UIViewGhostedRangeSupporting, _UITextContent, _UITextItemDiscoverable, UITextInput, UIContentSizeCategoryAdjusting>
+@interface UITextView : UIScrollView <_UIViewBaselineSpacing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, UITextInputControllerDelegate, UITextAutoscrolling, UIKeyboardInput, UITextInputTraits_Private, _UIMultilineTextContentSizing, _UILayoutBaselineUpdating, UIViewGhostedRangeSupporting, _UITextItemInteracting, _UITextContent, _UITextItemDiscoverable, UITextInput, UIContentSizeCategoryAdjusting>
 {
     NSTextStorage *_textStorage;
     NSTextContainer *_textContainer;
@@ -40,9 +39,6 @@
     UIAutoscroll *_autoscroll;
     struct {
         unsigned int needsScrollToSelectionAfterLayout:1;
-        unsigned int isInteractingWithLink:1;
-        unsigned int linkInteractionIsLongPress:1;
-        unsigned int linkInteractionIsPreview:1;
         unsigned int editable:1;
         unsigned int reentrancyGuard:1;
         unsigned int usesExplicitPreferredMaxLayoutWidth:1;
@@ -59,7 +55,6 @@
     unsigned int _scrollPositionDontRecordCount;
     _UITextViewRestorableScrollPosition *_scrollPosition;
     float _offsetFromScrollPosition;
-    id _linkInteractionItem;
     unsigned int _dataDetectorTypes;
     float _preferredMaxLayoutWidth;
     UILabel *_placeholderLabel;
@@ -89,8 +84,6 @@
 
 + (id)_defaultTextColor;
 + (_Bool)_isCompatibilityTextView;
-+ (void)_removeHighlight;
-+ (id)_sharedHighlightView;
 @property(retain, nonatomic) _UITextViewVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(readonly, nonatomic) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(readonly, nonatomic) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
@@ -103,6 +96,15 @@
 - (id)_getDelegateZoomView;
 - (_Bool)isTextDropActive;
 - (_Bool)isTextDragActive;
+- (_Bool)_allowHighlightForTextInteractableItem:(id)arg1;
+- (id)_textInteractableItemAtPoint:(struct CGPoint)arg1;
+- (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (void)startInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
+- (_Bool)_presentActionsForTextInteractableItem:(id)arg1;
+- (_Bool)_mightHaveInteractableItems;
+- (_Bool)_allowInteraction:(int)arg1 forTextInteractableItem:(id)arg2;
 - (void)_updateSelectionGestures;
 - (void)_resetDataDetectorsResults;
 - (void)_startDataDetectors;
@@ -432,27 +434,6 @@
 @property(nonatomic, setter=_setDrawsDebugBaselines:) _Bool _drawsDebugBaselines;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
-- (void)_finishHandlingInteraction:(id)arg1;
-- (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
-- (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
-- (void)startLongInteractionWithLinkAtPoint:(struct CGPoint)arg1;
-- (void)cancelInteractionWithLink;
-- (void)_resetLinkInteraction;
-- (void)interactionDidStartWithLinkAtPoint:(struct CGPoint)arg1;
-- (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
-- (void)startInteractionWithLinkAtPoint:(struct CGPoint)arg1;
-- (void)_highlightLinkAtPoint:(struct CGPoint)arg1;
-- (id)_presentationRectsForLinkAtRange:(struct _NSRange)arg1 withMargin:(float)arg2;
-- (struct CGRect)_presentationRectForLinkAtRange:(struct _NSRange)arg1;
-- (_Bool)isInteractingWithLink;
-- (void)tapLinkAtPoint:(struct CGPoint)arg1;
-- (_Bool)mightHaveLinks;
-- (id)_interactableItemAtPoint:(struct CGPoint)arg1;
-- (void)_interactionStoppedFromPreviewItemController:(id)arg1;
-- (void)_interactionStartedFromPreviewItemController:(id)arg1;
-- (_Bool)_interactionShouldBeginFromPreviewItemController:(id)arg1 forPosition:(struct CGPoint)arg2;
-- (id)_presentationRectsForPreviewItemController:(id)arg1;
-- (id)_dataForPreviewItemController:(id)arg1 atPosition:(struct CGPoint)arg2 type:(int *)arg3;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(int)arg5 multiplier:(float)arg6;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
 - (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;

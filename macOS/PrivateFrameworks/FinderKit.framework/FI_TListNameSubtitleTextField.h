@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateTextColor;
+- (void)setStringSet:(const unordered_set_66d0470b *)arg1 extraContentInsets:(const struct NSEdgeInsets *)arg2;
 - (void)stringSelector:(struct FI_TBestFitStringSelector *)arg1 didChangeMinStringWidth:(double)arg2 maxStringWidth:(double)arg3;
 - (void)initCommon;
 

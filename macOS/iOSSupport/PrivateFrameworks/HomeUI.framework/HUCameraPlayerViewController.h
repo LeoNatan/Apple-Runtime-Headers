@@ -10,7 +10,6 @@
 #import <HomeUI/AVPlayerViewControllerDelegatePrivate-Protocol.h>
 #import <HomeUI/HFCameraPlaybackEngineObserver-Protocol.h>
 #import <HomeUI/HFItemManagerDelegate-Protocol.h>
-#import <HomeUI/HMCameraClipCollectionObserver-Protocol.h>
 #import <HomeUI/HUCameraPlayerAVBehaviorDelegate-Protocol.h>
 #import <HomeUI/HUItemPresentationContainer-Protocol.h>
 #import <HomeUI/HUPresentationDelegate-Protocol.h>
@@ -19,13 +18,12 @@
 @class AVControlItem, AVHomeLoadingButtonControlItem, AVPlayerLooper, AVQueuePlayer, HFCameraItem, HFCameraPlaybackEngine, HFItem, HFItemManager, HMCameraProfile, HMHome, HUCalendarScrubberContainerViewController, HUCameraDemoPlayerView, HUCameraMiniScrubberViewController, HUCameraPlayerAVBehavior, HUCameraPlayerAccessoryViewController, HUCameraPlayerConfiguration, HUCameraPlayerFooterViewController, HUCameraPlayerLiveContentViewController, HUCameraPlayerPlaceholderContentViewController, HUCameraStatusOverlayView, HUClipScrubberViewController, NAUILayoutConstraintSet, NSArray, NSLayoutConstraint, NSString, UIAlertController, UIViewController;
 @protocol HUCameraPlayerScrubbing, HUCameraPlayerViewControllerDelegate, HUPresentationDelegate;
 
-@interface HUCameraPlayerViewController : AVPlayerViewController <AVPlayerViewControllerDelegate, AVPlayerViewControllerDelegatePrivate, HMCameraClipCollectionObserver, HFCameraPlaybackEngineObserver, HFItemManagerDelegate, HUCameraPlayerAVBehaviorDelegate, HUPresentationDelegate, HUItemPresentationContainer, HUPresentationDelegateHost>
+@interface HUCameraPlayerViewController : AVPlayerViewController <AVPlayerViewControllerDelegate, AVPlayerViewControllerDelegatePrivate, HFCameraPlaybackEngineObserver, HFItemManagerDelegate, HUCameraPlayerAVBehaviorDelegate, HUPresentationDelegate, HUItemPresentationContainer, HUPresentationDelegateHost>
 {
     BOOL _recordedClipInterfaceAvailable;
     BOOL _enteringFullScreen;
     BOOL _viewVisible;
     BOOL _observingReadyForDisplay;
-    BOOL _currentlyDisplayingInPictureInPictureMode;
     BOOL _shouldResumePlaying;
     id <HUPresentationDelegate> presentationDelegate;
     id <HUCameraPlayerViewControllerDelegate> _cameraDelegate;
@@ -58,7 +56,6 @@
 }
 
 @property(nonatomic) BOOL shouldResumePlaying; // @synthesize shouldResumePlaying=_shouldResumePlaying;
-@property(nonatomic, getter=isCurrentlyDisplayingInPictureInPictureMode) BOOL currentlyDisplayingInPictureInPictureMode; // @synthesize currentlyDisplayingInPictureInPictureMode=_currentlyDisplayingInPictureInPictureMode;
 @property(nonatomic) __weak UIAlertController *airplaneAlertController; // @synthesize airplaneAlertController=_airplaneAlertController;
 @property(nonatomic) __weak AVQueuePlayer *demoModeQueuePlayer; // @synthesize demoModeQueuePlayer=_demoModeQueuePlayer;
 @property(retain, nonatomic) AVPlayerLooper *looper; // @synthesize looper=_looper;
@@ -93,12 +90,14 @@
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (void)_cleanUpIdleTimerState;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
 - (id)finishPresentation:(id)arg1 animated:(BOOL)arg2;
+- (void)pictureInPictureDidToggleMicrophone;
 - (void)playbackControlsDidUpdateVisibilityOfLoadingIndicator:(BOOL)arg1;
 - (void)playbackControlsDidToggleMuted:(BOOL)arg1;
 - (double)currentScrubberResolutionForBehavior:(id)arg1;
-- (void)playbackEngine:(id)arg1 clipCollection:(id)arg2 addedClips:(id)arg3 removedClips:(id)arg4 updatedClips:(id)arg5;
+- (void)playbackEngineDidUpdateClips:(id)arg1;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackError:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateLiveCameraSource:(id)arg2;
@@ -133,16 +132,19 @@
 - (void)pauseEngineIfNeeded;
 - (void)_addFooterConstraints;
 - (void)_configureFooterViewController;
+- (void)_dismissEditInterface;
+- (void)_removeClipScrubberIfNorecordingsAvailable;
 - (void)_configureClipScrubberViewController;
 - (void)_displayAudioControlsIfAvailable;
 - (void)_updatePlaceholderContent;
 - (void)_updateMicrophoneButtonState;
+- (BOOL)_shouldDisableLiveStreamAfterCameraStatusChange;
 - (void)_updateCameraStatus;
 - (void)_updateLivePreviewAspectRatio;
 - (void)_updateStateForScrubbingStatus:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateStateForPlaybackPosition:(id)arg1 animated:(BOOL)arg2;
 - (void)_setupPlaybackEngine;
-- (void)_reloadClipCollectionWithUpdate:(BOOL)arg1;
+- (void)_reloadClipsWithUpdate:(BOOL)arg1;
 @property(readonly, nonatomic) UIViewController<HUCameraPlayerScrubbing> *activeScrubberViewController;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateViewConstraints;

@@ -13,6 +13,7 @@
     // Error parsing type: , name: paidAccessChecker
     // Error parsing type: , name: subscriptionService
     // Error parsing type: , name: tagService
+    // Error parsing type: , name: offlineIssueManager
 }
 
 @end

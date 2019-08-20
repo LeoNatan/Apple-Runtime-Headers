@@ -25,6 +25,7 @@
 + (id)defaultsForMangledID:(id)arg1;
 + (id)_userDefaultsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL useFailIfOutdatedForResets;
 @property(readonly, nonatomic) BOOL fetchShareRecordsInline;
 @property(readonly, nonatomic) BOOL fetchContentRecordsInline;
 @property(readonly, nonatomic) BOOL isBlacklistedFromFolderSharing;

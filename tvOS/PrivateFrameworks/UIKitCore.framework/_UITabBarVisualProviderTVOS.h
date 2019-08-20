@@ -7,14 +7,16 @@
 #import <UIKitCore/_UITabBarVisualProvider.h>
 
 #import <UIKitCore/UIScrollViewDelegate-Protocol.h>
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
 
-@class CABackdropLayer, CAGradientLayer, NSString, UIFocusAnimationCoordinator, UIFocusUpdateContext, UIInterpolatingMotionEffect, UIScrollView, UITabBarButton, UIView, _UIBarBackground, _UIBarBackgroundLayoutLegacy;
+@class CABackdropLayer, CAGradientLayer, NSString, UIFocusAnimationCoordinator, UIFocusUpdateContext, UIInterpolatingMotionEffect, UIScrollView, UITabBarButton, UIView, _UIBarBackground, _UIBarBackgroundLayout;
 
 __attribute__((visibility("hidden")))
-@interface _UITabBarVisualProviderTVOS : _UITabBarVisualProvider <UIScrollViewDelegate>
+@interface _UITabBarVisualProviderTVOS : _UITabBarVisualProvider <UIScrollViewDelegate, _UIBarAppearanceChangeObserver>
 {
+    _Bool _useModernAppearance;
     _UIBarBackground *_backgroundView;
-    _UIBarBackgroundLayoutLegacy *_backgroundViewLayout;
+    _UIBarBackgroundLayout *_backgroundViewLayout;
     UIView *_customBackgroundView;
     UIScrollView *_itemsScrollView;
     UIView *_backgroundContainerView;
@@ -36,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool focused; // @synthesize focused=_focused;
 @property(nonatomic) __weak UITabBarButton *selectedButton; // @synthesize selectedButton=_selectedButton;
 - (void).cxx_destruct;
+- (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
 - (struct CGRect)__getRectForPlatterForView:(id)arg1 withFocus:(_Bool)arg2 finalSize:(_Bool)arg3;
 - (struct CGRect)_getRectForFocusedSelectionPlatterForView:(id)arg1 finalSize:(_Bool)arg2;
 - (struct CGRect)_getRectForUnfocusedSelectionPlatterForView:(id)arg1;
@@ -48,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateColors;
 - (void)_updateViews;
 - (void)_updateBackground;
+- (void)_updateBackgroundModern;
 - (void)_updateBackgroundLegacy;
 - (void)_updateAccessoryViews;
 - (void)_layoutTabBarItems;
@@ -64,12 +68,15 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusedView;
+- (id)defaultTintColor;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSizeGivenSize:(struct CGSize)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
+- (id)appearanceObserver;
 - (void)setUseModernAppearance:(_Bool)arg1;
+- (_Bool)useModernAppearance;
 - (void)updateBackgroundGroupName;
 - (void)changeLayout;
 - (void)changeAppearance;
@@ -77,6 +84,7 @@ __attribute__((visibility("hidden")))
 - (id)exchangeItem:(id)arg1 withItem:(id)arg2;
 - (void)_applyAppearanceCustomizationsToItem:(id)arg1;
 - (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 oldSelectedItem:(id)arg4 animate:(_Bool)arg5;
+- (void)_updateAppearanceForTransitionFromItem:(id)arg1 toItem:(id)arg2;
 - (void)teardown;
 - (void)prepare;
 

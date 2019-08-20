@@ -47,6 +47,8 @@
 - (_Bool)_canOperationProceed:(unsigned long long)arg1;
 - (void)_updateDateAttributesAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateDateAttributesAnimated:(_Bool)arg1;
+- (void)_resetTapAnimationState;
+- (void)handleScreenBlanked;
 - (void)_handleSingleTap:(id)arg1;
 - (void)_animationStart;
 - (void)_animationFinished:(_Bool)arg1;

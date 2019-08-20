@@ -100,7 +100,9 @@
 - (void)onClientEventRegionState:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
 - (void)onClientEventError:(id)arg1;
-- (void)onClientEventPlaceInference:(id)arg1;
+- (void)callPlaceInferenceHandlerWithResult:(id)arg1 error:(id)arg2;
+- (void)onClientEventPlaceInferenceError:(id)arg1;
+- (void)onClientEventPlaceInferenceResult:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;

@@ -22,6 +22,7 @@
 - (_Bool)_shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)applicationWindowRotated:(id)arg1;
 - (id)_topMostWindow;
+- (id)initWithWindowScene:(id)arg1;
 - (id)_initWithFrame:(struct CGRect)arg1 attached:(_Bool)arg2;
 - (id)init;
 - (void)_commonApplicationRotationFollowingWindowInit;

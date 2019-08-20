@@ -14,6 +14,7 @@
 
 + (_Bool)sb_autorotates;
 + (struct CGRect)constrainFrameToScreen:(struct CGRect)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)_canBecomeKeyWindow;
 @property(readonly, nonatomic) SBHomeScreenViewController *homeScreenViewController;
 - (id)_initWithScreen:(id)arg1 layoutStrategy:(id)arg2 debugName:(id)arg3 rootViewController:(id)arg4 scene:(id)arg5;

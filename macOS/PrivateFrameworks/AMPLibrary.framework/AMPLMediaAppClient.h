@@ -15,6 +15,7 @@
 - (void)synchronousAddToCloudMusicLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousRefreshSubscribedPlaylist:(unsigned long long)arg1 withCloudID:(unsigned long long)arg2 withReason:(unsigned char)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)synchronousCloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(CDUnknownBlockType)arg4;
+- (void)cloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)sendDBChangesToLibrary:(id)arg1 fromRevision:(unsigned int)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)addTrackToLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousLibraryCommand:(unsigned int)arg1 commandData:(id)arg2 withReply:(CDUnknownBlockType)arg3;

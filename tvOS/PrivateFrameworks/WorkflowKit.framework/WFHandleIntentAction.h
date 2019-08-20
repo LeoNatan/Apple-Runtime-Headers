@@ -57,7 +57,7 @@
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) long long intentCategory;
-- (_Bool)allowsInteractiveSlotResolution;
+- (unsigned long long)allowsInteractiveSlotResolution;
 - (_Bool)opensInApp;
 - (_Bool)showsWhenRun;
 - (_Bool)requiresShowsWhenRun;

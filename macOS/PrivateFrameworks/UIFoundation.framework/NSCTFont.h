@@ -10,6 +10,7 @@
 {
 }
 
++ (id)fontWithDescriptor:(id)arg1 size:(double)arg2;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 - (unsigned long long)retainCount;
 - (BOOL)retainWeakReference;

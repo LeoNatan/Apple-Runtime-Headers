@@ -23,6 +23,7 @@
 @property(retain, nonatomic) OBTrayButton *usePRButton; // @synthesize usePRButton=_usePRButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)_setupTVViewingProfiles:(id)arg1;
 - (void)_dontSetupTVViewingProfiles:(id)arg1;

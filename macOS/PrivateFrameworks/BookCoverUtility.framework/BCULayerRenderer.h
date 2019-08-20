@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CARenderer, NSHashTable;
-@protocol MTLDevice, OS_dispatch_queue;
+@protocol MTLCommandQueue, MTLDevice, OS_dispatch_queue;
 
 @interface BCULayerRenderer : NSObject
 {
@@ -17,6 +17,7 @@
     NSHashTable *_operations;
     CARenderer *_renderer;
     id <MTLDevice> _device;
+    id <MTLCommandQueue> _queue;
     BOOL _suspended;
 }
 
@@ -25,6 +26,7 @@
 - (void)_processOperations;
 - (void)_startOperation:(id)arg1;
 - (id)newOperationWithPriority:(float)arg1 renderLayer:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)newOperationWithPriority:(float)arg1 waitForCPUSynchronization:(BOOL)arg2 renderLayer:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)resume;
 - (void)suspend;
 - (id)initWithSuspended:(BOOL)arg1;

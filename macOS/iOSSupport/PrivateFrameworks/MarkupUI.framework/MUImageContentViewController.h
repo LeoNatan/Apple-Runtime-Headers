@@ -20,6 +20,7 @@
     BOOL _usePlaceholderAsDisplayImageIfPossible;
     BOOL _inDoubleTapZoom;
     BOOL _didSetup;
+    BOOL _firstLoadZoomToFit;
     UIImage *_tentativePlaceholderImage;
     double _maxImageDimension;
     unsigned long long _inkStyle;
@@ -36,6 +37,7 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+@property(nonatomic) BOOL firstLoadZoomToFit; // @synthesize firstLoadZoomToFit=_firstLoadZoomToFit;
 @property(nonatomic) __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 @property(nonatomic) __weak AKRectAnnotation *editingAnnotaiton; // @synthesize editingAnnotaiton=_editingAnnotaiton;
 @property BOOL didSetup; // @synthesize didSetup=_didSetup;

@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIGestureRecognizer.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface UIUndoPinchGestureRecognizer : UIGestureRecognizer
@@ -15,15 +15,19 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _transform;
     id _transformAnalyzer;
     _Bool _hasFailedOnOtherDominantMotion;
+    _Bool _tooMuchSingleMovement;
     double _beginPinchTimestamp;
     double _beforeReductionTimeInterval;
     double _beginPerimeter;
     NSMutableArray *_activeTouches;
     long long _pinchDirection;
     double _avgTouchesToCentroidDistance;
+    NSMutableDictionary *_beginTouchLocations;
     struct CGPoint _beginCentroid;
 }
 
+@property(nonatomic) _Bool tooMuchSingleMovement; // @synthesize tooMuchSingleMovement=_tooMuchSingleMovement;
+@property(retain, nonatomic) NSMutableDictionary *beginTouchLocations; // @synthesize beginTouchLocations=_beginTouchLocations;
 @property(readonly, nonatomic) double avgTouchesToCentroidDistance; // @synthesize avgTouchesToCentroidDistance=_avgTouchesToCentroidDistance;
 @property(readonly, nonatomic) long long pinchDirection; // @synthesize pinchDirection=_pinchDirection;
 @property(retain, nonatomic) NSMutableArray *activeTouches; // @synthesize activeTouches=_activeTouches;

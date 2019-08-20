@@ -18,9 +18,11 @@
     TICAnalyticsMetricsKey *_context;
     NSMutableDictionary *_featureDescriptors;
     NSMutableDictionary *_numericValueDescriptors;
+    NSMutableDictionary *_settingsValueDescriptors;
     NSMutableDictionary *_durableCounters;
     NSMutableDictionary *_transientCounters;
     NSMutableDictionary *_stringValues;
+    NSMutableDictionary *_settingsDictionary;
 }
 
 - (void).cxx_destruct;
@@ -32,6 +34,7 @@
 - (id)counterValueWithWordLength:(id)arg1;
 - (int)calculateReportingIndexFromInternalIndex:(int)arg1;
 - (id)counterValue:(id)arg1;
+- (BOOL)settingsBoolValue:(id)arg1;
 - (id)stringValue:(id)arg1;
 - (id)calcTypingSpeed;
 - (id)featureStateFromFeatureDescriptor:(id)arg1 andValue:(double)arg2;
@@ -41,7 +44,7 @@
 - (id)floatingKeyboardUsage:(id)arg1;
 - (id)featureUsage:(id)arg1 userModel:(id)arg2;
 - (void)updateCounterValue:(id)arg1 index:(int)arg2 forKey:(id)arg3;
-- (id)initWithInputMode:(id)arg1 context:(id)arg2 userModelDataStore:(id)arg3 durableCounters:(id)arg4;
+- (id)initWithInputMode:(id)arg1 context:(id)arg2 userModelDataStore:(id)arg3 durableCounters:(id)arg4 settingsDictionary:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

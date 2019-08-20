@@ -16,7 +16,6 @@
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_systemImageName;
-- (id)_actionImage;
 - (id)activityTitle;
 - (id)activityType;
 - (int)_defaultSortGroup;

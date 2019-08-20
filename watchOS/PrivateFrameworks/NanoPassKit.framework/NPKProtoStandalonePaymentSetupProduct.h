@@ -8,20 +8,49 @@
 
 #import <NanoPassKit/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NPKProtoStandalonePaymentSetupProductImageAssetURLs, NSMutableArray, NSString;
 
 @interface NPKProtoStandalonePaymentSetupProduct : PBCodable <NSCopying>
 {
+    long long _flags;
+    long long _hsa2Requirement;
+    long long _supportedProvisioningMethods;
     NSString *_displayName;
+    NPKProtoStandalonePaymentSetupProductImageAssetURLs *_imageAssetURLs;
     NSString *_partnerIdentifier;
     NSString *_partnerName;
+    NSMutableArray *_paymentOptions;
     NSString *_productIdentifier;
+    NSString *_readerModeMetadataJson;
     NSMutableArray *_regions;
+    NSMutableArray *_requestedProvisioningMethods;
     NSMutableArray *_requiredFields;
+    NSMutableArray *_supportedProtocols;
+    NSString *_termsURL;
+    _Bool _suppressPendingPurchases;
+    struct {
+        unsigned int flags:1;
+        unsigned int hsa2Requirement:1;
+        unsigned int supportedProvisioningMethods:1;
+        unsigned int suppressPendingPurchases:1;
+    } _has;
 }
 
++ (Class)requestedProvisioningMethodsType;
++ (Class)paymentOptionsType;
++ (Class)supportedProtocolsType;
 + (Class)requiredFieldsType;
 + (Class)regionsType;
+@property(retain, nonatomic) NSMutableArray *requestedProvisioningMethods; // @synthesize requestedProvisioningMethods=_requestedProvisioningMethods;
+@property(retain, nonatomic) NSMutableArray *paymentOptions; // @synthesize paymentOptions=_paymentOptions;
+@property(nonatomic) _Bool suppressPendingPurchases; // @synthesize suppressPendingPurchases=_suppressPendingPurchases;
+@property(retain, nonatomic) NPKProtoStandalonePaymentSetupProductImageAssetURLs *imageAssetURLs; // @synthesize imageAssetURLs=_imageAssetURLs;
+@property(nonatomic) long long hsa2Requirement; // @synthesize hsa2Requirement=_hsa2Requirement;
+@property(nonatomic) long long flags; // @synthesize flags=_flags;
+@property(retain, nonatomic) NSString *readerModeMetadataJson; // @synthesize readerModeMetadataJson=_readerModeMetadataJson;
+@property(nonatomic) long long supportedProvisioningMethods; // @synthesize supportedProvisioningMethods=_supportedProvisioningMethods;
+@property(retain, nonatomic) NSString *termsURL; // @synthesize termsURL=_termsURL;
+@property(retain, nonatomic) NSMutableArray *supportedProtocols; // @synthesize supportedProtocols=_supportedProtocols;
 @property(retain, nonatomic) NSMutableArray *requiredFields; // @synthesize requiredFields=_requiredFields;
 @property(retain, nonatomic) NSString *partnerName; // @synthesize partnerName=_partnerName;
 @property(retain, nonatomic) NSString *partnerIdentifier; // @synthesize partnerIdentifier=_partnerIdentifier;
@@ -38,6 +67,25 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)requestedProvisioningMethodsAtIndex:(unsigned int)arg1;
+- (unsigned int)requestedProvisioningMethodsCount;
+- (void)addRequestedProvisioningMethods:(id)arg1;
+- (void)clearRequestedProvisioningMethods;
+- (id)paymentOptionsAtIndex:(unsigned int)arg1;
+- (unsigned int)paymentOptionsCount;
+- (void)addPaymentOptions:(id)arg1;
+- (void)clearPaymentOptions;
+@property(nonatomic) _Bool hasSuppressPendingPurchases;
+@property(readonly, nonatomic) _Bool hasImageAssetURLs;
+@property(nonatomic) _Bool hasHsa2Requirement;
+@property(nonatomic) _Bool hasFlags;
+@property(readonly, nonatomic) _Bool hasReaderModeMetadataJson;
+@property(nonatomic) _Bool hasSupportedProvisioningMethods;
+@property(readonly, nonatomic) _Bool hasTermsURL;
+- (id)supportedProtocolsAtIndex:(unsigned int)arg1;
+- (unsigned int)supportedProtocolsCount;
+- (void)addSupportedProtocols:(id)arg1;
+- (void)clearSupportedProtocols;
 - (id)requiredFieldsAtIndex:(unsigned int)arg1;
 - (unsigned int)requiredFieldsCount;
 - (void)addRequiredFields:(id)arg1;

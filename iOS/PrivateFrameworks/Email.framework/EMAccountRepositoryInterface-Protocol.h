@@ -6,12 +6,9 @@
 
 #import <Email/NSObject-Protocol.h>
 
-@class EMObjectID;
 @protocol EMAccountRepositoryObserver;
 
 @protocol EMAccountRepositoryInterface <NSObject>
-- (void)cancelObservation:(EMObjectID *)arg1;
-- (void)startObservingWithResultsObserver:(id <EMAccountRepositoryObserver>)arg1 observationIdentifier:(EMObjectID *)arg2;
-- (void)allAccountsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)registerObserver:(id <EMAccountRepositoryObserver>)arg1 completionHandler:(void (^)(NSArray *, id <EFCancelable>, NSError *))arg2;
 @end
 

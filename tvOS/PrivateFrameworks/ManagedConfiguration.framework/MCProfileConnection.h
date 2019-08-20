@@ -50,10 +50,10 @@
 - (void)dealloc;
 - (id)init;
 - (void)_queueCreateAndResumePublicXPCConnection;
-- (void)_destroyPublicXPCConnection;
+- (void)_destroyPublicXPCConnectionAndInvalidate:(_Bool)arg1;
 - (void)_createAndResumePublicXPCConnection;
 - (void)_queueCreateAndResumeXPCConnection;
-- (void)_destroyXPCConnection;
+- (void)_destroyXPCConnectionAndInvalidate:(_Bool)arg1;
 - (void)_createAndResumeXPCConnection;
 @property(readonly, nonatomic) NSXPCConnection *publicXPCConnection; // @synthesize publicXPCConnection=_publicXPCConnection;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -382,12 +382,14 @@
 - (_Bool)isScreenShotAllowed;
 - (_Bool)isWallpaperModificationAllowed;
 - (_Bool)isDeviceNameModificationAllowed;
+- (_Bool)isNetworkDriveAccessInFilesAllowed;
 - (_Bool)isUSBDriveAccessInFilesAllowed;
 - (_Bool)isESIMModificationAllowed;
 - (_Bool)isWiFiPowerModificationAllowed;
 - (_Bool)isPersonalHotspotModificationAllowed;
 - (_Bool)isBluetoothModificationAllowed;
 - (_Bool)isInAppPaymentAllowed;
+- (_Bool)isBiometricAuthForSignInWithAppleAllowed;
 - (_Bool)isFingerprintForContactlessPaymentAllowed;
 - (_Bool)isContactlessPaymentAllowed;
 - (_Bool)isUninstalledAppNearMeSuggestionsAllowed;
@@ -499,6 +501,7 @@
 - (void)storeCertificateData:(id)arg1 forHostIdentifier:(id)arg2;
 - (void)removeExpiredProfiles;
 - (void)notifyKeybagUpdated;
+- (void)notifyDeviceUnlockedAndPasscodeRequired;
 - (void)notifyDeviceUnlocked;
 - (void)checkCarrierProfileForceInstallation:(_Bool)arg1;
 - (void)checkCarrierProfile;

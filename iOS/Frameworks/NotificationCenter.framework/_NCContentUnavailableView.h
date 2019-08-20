@@ -11,7 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_updateVisualStyling;
+- (id)_visualStylingProvider;
+- (double)_labelAlpha;
 - (id)_titleFont;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 
 @end
 

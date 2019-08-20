@@ -6,11 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@interface CSAVVoiceTriggerClientManager : NSObject
+#import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
+
+@class NSMutableArray, NSString;
+@protocol OS_dispatch_queue;
+
+@interface CSAVVoiceTriggerClientManager : NSObject <CSAudioServerCrashMonitorDelegate>
 {
+    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray *_pendingBargeInClients;
+    NSMutableArray *_pendingDisableBargeInClients;
+    NSMutableArray *_bargeInClients;
 }
 
++ (id)sharedInstance;
 + (id)sharedVoiceTriggerClient;
+@property(retain, nonatomic) NSMutableArray *bargeInClients; // @synthesize bargeInClients=_bargeInClients;
+@property(retain, nonatomic) NSMutableArray *pendingDisableBargeInClients; // @synthesize pendingDisableBargeInClients=_pendingDisableBargeInClients;
+@property(retain, nonatomic) NSMutableArray *pendingBargeInClients; // @synthesize pendingBargeInClients=_pendingBargeInClients;
+- (void).cxx_destruct;
+- (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
+- (void)_disableBargeInModeWithClientName:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_enableBargeInModeWithClientName:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)enableBargeInMode:(_Bool)arg1 clientName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_willDisableBargeInWithClientName:(id)arg1;
+- (void)_willEnableBargeInWithClientName:(id)arg1;
+- (void)willEnableBargeInMode:(_Bool)arg1 clientName:(id)arg2;
+- (void)_reset;
+- (void)reset;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

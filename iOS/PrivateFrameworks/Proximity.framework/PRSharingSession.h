@@ -8,7 +8,7 @@
 
 #import <Proximity/PRProximityEstimatorDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSSet, NSSortDescriptor, NSString, PRProximityEstimator;
+@class NSArray, NSMutableDictionary, NSSet, NSSortDescriptor, NSString, PRProximityEstimator;
 @protocol OS_dispatch_queue, OS_os_log, PRSharingSessionDelegate;
 
 @interface PRSharingSession : NSObject <PRProximityEstimatorDelegate>
@@ -22,12 +22,12 @@
     PRProximityEstimator *_btProxEstimator;
     _Bool _needToRestart;
     NSMutableDictionary *_scores;
+    double _lastScoreReportMachContinuousTime;
+    NSArray *_lastReportedScores;
     struct SharingImportanceMeasurements _measurements;
-    struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> _estimator;
-    _Bool _useFullEstimator;
+    _Bool _useRegionBasedEstimator;
     NSSortDescriptor *_scoreSortDescriptor;
-    double _lastUpdateTime;
-    double _updateInterval;
+    CDUnknownBlockType _reportWatchdog;
     id <PRSharingSessionDelegate> _delegate;
 }
 
@@ -50,12 +50,16 @@
 - (void)estimator:(id)arg1 didEstimateProximity:(long long)arg2 toPeer:(id)arg3;
 - (void)logScores:(id)arg1;
 - (void)updateScoresWithNewMeasurement:(const struct NeighborMeasurements *)arg1;
+- (void)updateScoresForTime:(double)arg1;
+- (void)reportScoresToClientAlways:(_Bool)arg1;
 - (void)stopProx;
 - (_Bool)trackNewBTPeer:(id)arg1 withDviceModel:(id)arg2 error:(id *)arg3;
 - (_Bool)addRssiSample:(double)arg1 channel:(unsigned int)arg2 forPeer:(id)arg3 peerDeviceModel:(id)arg4 withError:(id *)arg5;
 - (void)stopInitiating;
 - (void)startInitiating;
 - (id)initWithDelegate:(id)arg1 delegateQueue:(id)arg2;
+- (void)startWatchDogWithDuration:(long long)arg1;
+- (void)watchDogTimedOut;
 - (id)init;
 
 // Remaining properties

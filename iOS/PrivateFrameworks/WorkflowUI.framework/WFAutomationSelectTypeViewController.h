@@ -20,13 +20,17 @@
 }
 
 + (id)buildTableContent;
++ (id)allKnownTriggersSortedAsInUI;
++ (id)allTriggersByGroupIdentifier;
++ (id)triggerGroupTitleForIdentifier:(id)arg1;
++ (id)sortedTriggerGroupIdentifiers;
 @property(readonly, nonatomic) NSArray *tableContent; // @synthesize tableContent=_tableContent;
 @property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(nonatomic) __weak id <WFAutomationSelectTypeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (Class)triggerSourceClassForIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

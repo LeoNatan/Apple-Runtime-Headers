@@ -7,8 +7,6 @@
 @class CKShare, CKShareMetadata, NSArray, NSData, NSDictionary, NSString, REMFetchRequest, REMObjectID, REMStoreInvocation, REMStoreSwiftInvocation;
 
 @protocol REMXPCStorePerformer
-- (void)setObjectInDaemonDefaults:(id)arg1 forKey:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
-- (void)objectInDaemonDefaultsForKey:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
 - (void)requestToDeleteLocalDataWithCompletion:(void (^)(NSError *))arg1;
 - (void)requestToDeleteSyncDataWithAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)requestToMergeLocalDataIntoSyncDataWithAccountIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;

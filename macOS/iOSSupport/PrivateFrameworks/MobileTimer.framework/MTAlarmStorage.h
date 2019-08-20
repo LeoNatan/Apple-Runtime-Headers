@@ -42,6 +42,7 @@
 - (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (void)timeListener:(id)arg1 didDetectSignificantTimeChangeWithCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)handleMigrationFinish;
 - (void)handleF5Reset;
 - (void)_queue_persistAlarms;
 - (BOOL)_queue_hasMatchingAlarm:(id)arg1;

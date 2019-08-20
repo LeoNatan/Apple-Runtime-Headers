@@ -18,9 +18,10 @@
 + (id)persistentIdentifierFromBundleIdentifier:(id)arg1;
 - (id)associatedAppIdentifier;
 - (void).cxx_destruct;
-- (id)localizedAccessPermissionPromptMessage;
-- (id)localizedAccessPermissionPromptTitle;
-- (id)localizedInsufficientPermissionsMessage;
+- (id)localizedWorkflowLevelMessageTemplate;
+- (id)localizedWorkflowLevelPromptTemplate;
+- (id)localizedWorkflowLevelDeniedStatusMessage;
+- (id)localizedWorkflowLevelNotDeterminedStatusMessage;
 - (unsigned long long)globalLevelStatus;
 - (id)initWithBundleIdentifierForDisplay:(id)arg1;
 - (id)initWithDefinition:(id)arg1 persistentIdentifier:(id)arg2;

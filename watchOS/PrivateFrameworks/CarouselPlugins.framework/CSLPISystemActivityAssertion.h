@@ -6,25 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class CSLPIDispatchTimer, NSString;
-@protocol OS_dispatch_queue;
+#import <CarouselPlugins/CSLPISystemSleepGlobalObserverObserver-Protocol.h>
 
-@interface CSLPISystemActivityAssertion : NSObject
+@class CSLPIDispatchTimer, NSString;
+
+@interface CSLPISystemActivityAssertion : NSObject <CSLPISystemSleepGlobalObserverObserver>
 {
     NSString *_identifier;
-    NSObject<OS_dispatch_queue> *_queue;
     CSLPIDispatchTimer *_timeoutTimer;
-    unsigned int _assertionID;
+    struct os_unfair_lock_s _lock;
+    unsigned int _state;
+    CDUnknownBlockType _completion;
 }
 
++ (id)takeWithIdentifier:(id)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void).cxx_destruct;
+- (void)_checkIfCompleteForAction:(id)arg1;
+- (void)systemWake;
+- (void)willNotSleep;
 - (void)_timeoutAssertion;
 - (void)relinquish;
-- (void)take;
+- (void)takeWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isAsserted) _Bool asserted;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithIdentifier:(id)arg1 timeout:(double)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)_addSectionScrollViewForIndexPath:(id)arg1;
 - (id)_sectionScrollViewForSection:(long long)arg1;
 - (id)_sectionScrollViewForIndexPath:(id)arg1;
+- (void)restoreLayoutContentOffsetsFromEmbeddedScrollViews;
 - (void)adjustElementHierarchyOrderingForOrthogonalElementIfNeeded:(id)arg1 layoutAttributes:(id)arg2;
 - (void)reconfigureOrthogonalSectionsForUpdate:(id)arg1;
 - (void)performLayout;

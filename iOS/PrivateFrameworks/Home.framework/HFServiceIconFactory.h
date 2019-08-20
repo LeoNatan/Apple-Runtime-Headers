@@ -12,13 +12,18 @@
 
 + (id)iconDescriptorForAccessoryCategoryType:(id)arg1;
 + (id)iconDescriptorForAccessoryCategory:(id)arg1;
++ (id)shiftedIconDescriptorWithIdentifier:(id)arg1 forServiceType:(id)arg2 serviceSubtype:(id)arg3;
++ (id)allIconDescriptorsForServiceType:(id)arg1 serviceSubtype:(id)arg2 isCentered:(_Bool)arg3;
 + (id)allIconDescriptorsForServiceType:(id)arg1 serviceSubtype:(id)arg2;
 + (id)allIconDescriptorsForService:(id)arg1;
 + (id)iconDescriptorWithIdentifier:(id)arg1 forServiceType:(id)arg2 serviceSubtype:(id)arg3;
++ (id)shiftedIconDescriptorWithIdentifier:(id)arg1 forService:(id)arg2;
 + (id)iconDescriptorWithIdentifier:(id)arg1 forService:(id)arg2;
++ (id)shiftedIconDescriptorForServiceType:(id)arg1 serviceSubtype:(id)arg2;
++ (id)shiftedIconDescriptorForService:(id)arg1;
 + (id)defaultIconDescriptorForServiceType:(id)arg1 serviceSubtype:(id)arg2;
 + (id)defaultIconDescriptorForService:(id)arg1;
-+ (id)_iconSetForServiceType:(id)arg1 serviceSubtype:(id)arg2;
++ (id)_iconSetForServiceType:(id)arg1 serviceSubtype:(id)arg2 isCentered:(_Bool)arg3;
 + (id)_multiSubtypeIconSetForServiceType:(id)arg1 serviceSubtype:(id)arg2;
 
 @end

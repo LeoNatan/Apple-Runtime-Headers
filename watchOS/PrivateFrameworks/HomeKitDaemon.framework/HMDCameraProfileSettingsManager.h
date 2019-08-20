@@ -34,6 +34,7 @@
 }
 
 + (id)logCategory;
++ (id)clientIdentifier;
 + (id)zoneNameForHome:(id)arg1;
 @property(readonly) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, getter=isAnyUserAtHome) NSNumber *anyUserAtHome; // @synthesize anyUserAtHome=_anyUserAtHome;
@@ -53,6 +54,7 @@
 - (void)zoneManagerDidStart:(id)arg1;
 - (_Bool)manager:(id)arg1 shouldShareWithUser:(id)arg2;
 - (void)_handleUpdatedSettings:(id)arg1 previousSettings:(id)arg2;
+- (void)_updateSettingsWithDerivedProperties:(id)arg1;
 - (void)_handleUpdatedDerivedProperties:(id)arg1 previousProperties:(id)arg2;
 - (void)_handleModelUpdate:(id)arg1 previousModel:(id)arg2;
 - (id)localZone:(id)arg1 didProcessModelDeletion:(id)arg2;
@@ -73,17 +75,21 @@
 - (void)_handleCharacteristicWriteRequests:(id)arg1;
 - (void)_updateClientsOfChangedSettings:(id)arg1;
 - (id)_payloadForSettings:(id)arg1;
-- (id)_derivedPropertiesModelForUpdate;
 @property(readonly) NSUUID *derivedPropertiesModelID;
 - (id)_settingsModelForUpdate;
 - (void)_synchronizeAllSettingsToCamera;
 - (void)_populateCurrentAccessModeFieldForDerivedProperties:(id)arg1 currentSettings:(id)arg2 didUpdateField:(_Bool *)arg3;
+@property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty;
+- (id)thirdPartyCameraActiveCharacteristic;
 - (void)_populateNotificationFieldForSettings:(id)arg1 didUpdateField:(_Bool *)arg2;
 - (CDUnknownBlockType)_localZoneUpdateCompletionForMessage:(id)arg1;
 @property(readonly) HMDCameraProfileSettingsDerivedPropertiesModel *derivedPropertiesModel;
+- (void)_handleAccessoryDidBecomeReachable;
 - (void)handleAccessoryServiceAddedNotification:(id)arg1;
+- (void)handleCharacteristicsValueUpdated:(id)arg1;
 - (void)handleRecordingManagementServiceDidUpdateNotification:(id)arg1;
 - (void)handleAccessoryIsReachableNotification:(id)arg1;
+- (void)_updateCurrentAccessModeForSettings:(id)arg1 withDescription:(id)arg2;
 - (void)handleHomePresenceUpdateNotification:(id)arg1;
 - (void)_handleBulletinBoardNotificationCommit:(id)arg1;
 - (void)_handleUpdateNightVisionModeEnabled:(id)arg1;
@@ -93,10 +99,12 @@
 - (void)_handleUpdateAccessMode:(id)arg1;
 - (void)disableRecordingAccessModes;
 @property(readonly) unsigned int supportedFeatures;
+@property(readonly) HMDCameraProfileSettingsModel *defaultSettingsModel;
 @property(readonly) HMDCameraProfileSettingsModel *currentSettingsModel;
 - (void)remove;
 - (void)start;
 - (void)configureWithMessageDispatcher:(id)arg1 adminMessageDispatcher:(id)arg2 deviceIsResidentCapable:(_Bool)arg3;
+- (void)dealloc;
 - (id)initWithHAPAccessory:(id)arg1 workQueue:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 hapAccessory:(id)arg2 workQueue:(id)arg3 zoneManager:(id)arg4 notificationCenter:(id)arg5 bulletinBoard:(id)arg6;
 

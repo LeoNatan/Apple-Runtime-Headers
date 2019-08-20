@@ -41,7 +41,8 @@ __attribute__((visibility("hidden")))
         unsigned int postRemoteNotify:1;
         unsigned int hasFileBackedFutures:1;
         unsigned int isInMemory:1;
-        unsigned int _RESERVED:17;
+        unsigned int _debugRequestsHandling:1;
+        unsigned int _RESERVED:16;
     } _sqlCoreFlags;
     NSSQLiteConnection *_queryGenerationTrackingConnection;
     NSDictionary *_ancillaryModels;
@@ -87,6 +88,8 @@ __attribute__((visibility("hidden")))
 - (id)ancillarySQLModels;
 @property(readonly, nonatomic) NSDictionary *ancillaryModels; // @synthesize ancillaryModels=_ancillaryModels;
 - (id)currentChangeToken;
+- (BOOL)_rebuildDerivedAttributeTriggerSchemaUsingConnection:(id)arg1 recomputeValues:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)_rebuildRTreeTriggerSchemaUsingConnection:(id)arg1 recomputeValues:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)_rebuildTriggerSchemaUsingConnection:(id)arg1 recomputeValues:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)_refreshTriggerValues:(id *)arg1;
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id *)arg3;

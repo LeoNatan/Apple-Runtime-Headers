@@ -15,7 +15,9 @@
 }
 
 - (_Bool)wantsColorBulletVisible;
+- (_Bool)wantsBackgroundViewColor;
 - (id)newColorBackgroundView;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -18,7 +18,7 @@
 #import <ChatKit/UINavigationControllerDelegate-Protocol.h>
 #import <ChatKit/UISplitViewControllerDelegate-Protocol.h>
 
-@class CKAlertUtilities, CKConversation, CKConversationListController, CKCoreChatController, CKNavigationController, CKOnboardingController, CKViewController, NSMutableArray, NSSet, NSString, NSURL, UIViewController;
+@class CKAlertUtilities, CKConversation, CKConversationListController, CKCoreChatController, CKNavigationController, CKOnboardingController, CKViewController, NSMutableArray, NSSet, NSString, UIViewController;
 @protocol CKBrowserViewControllerProtocol, CKMessagesControllerDelegate;
 
 @interface CKMessagesController : UISplitViewController <UISplitViewControllerDelegate, UIActionSheetDelegate, CKCoreChatControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, CKChatControllerDelegate, CKComposeChatControllerDelegate, CKBrowserViewControllerStoreSendDelegate, CKOnboardingControllerDelegate, CKAlertUtilitiesProtocol, CKAlertSuppressionContextsProviding>
@@ -35,9 +35,7 @@
     CKNavigationController *_conversationListNavigationController;
     CKNavigationController *_chatNavigationController;
     CKNavigationController *_composeChatNavigationController;
-    NSURL *_deferredMessagesStoreLaunchURL;
     CDUnknownBlockType _deferredHandleURLBlock;
-    NSString *_deferredMessagesStoreLaunchURLSourceApplication;
     CKOnboardingController *_onboardingController;
     CKViewController *_blankViewController;
     UIViewController *_statusBarStyleViewController;
@@ -52,9 +50,7 @@
 @property(copy, nonatomic) CDUnknownBlockType alertViewHandler; // @synthesize alertViewHandler=_alertViewHandler;
 @property(retain, nonatomic) CKViewController *blankViewController; // @synthesize blankViewController=_blankViewController;
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
-@property(copy, nonatomic) NSString *deferredMessagesStoreLaunchURLSourceApplication; // @synthesize deferredMessagesStoreLaunchURLSourceApplication=_deferredMessagesStoreLaunchURLSourceApplication;
 @property(copy, nonatomic) CDUnknownBlockType deferredHandleURLBlock; // @synthesize deferredHandleURLBlock=_deferredHandleURLBlock;
-@property(copy, nonatomic) NSURL *deferredMessagesStoreLaunchURL; // @synthesize deferredMessagesStoreLaunchURL=_deferredMessagesStoreLaunchURL;
 @property(retain, nonatomic) CKConversation *currentConversation; // @synthesize currentConversation=_currentConversation;
 @property(retain, nonatomic) CKNavigationController *composeChatNavigationController; // @synthesize composeChatNavigationController=_composeChatNavigationController;
 @property(retain, nonatomic) CKNavigationController *chatNavigationController; // @synthesize chatNavigationController=_chatNavigationController;
@@ -90,7 +86,6 @@
 - (void)_presentAppStoreWithLaunchURL:(id)arg1 fromSourceApplication:(id)arg2;
 - (void)showSurfAppForCurrentConversationWithAmount:(double)arg1 currency:(id)arg2;
 - (void)showStoreForURL:(id)arg1 fromSourceApplication:(id)arg2;
-- (void)_showStoreForDeferredLaunchURL;
 - (void)notifyThatKeepMessagesSettingWasResetIfNeeded;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (_Bool)isShowingChatControllerWithUnsentText;

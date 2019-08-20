@@ -155,8 +155,8 @@
 - (void)_releaseActivityAssertion;
 - (void)_endHandleActivityAssertion;
 - (void)_beginHandleActivityAssertion:(_Bool)arg1;
-- (id)timerSupportViewControllerForHostingViewController:(id)arg1;
-- (id)timerSupportActionItemsForHostingViewController:(id)arg1;
+- (id)underlyingUIHostingControllerForHostingViewController:(id)arg1;
+- (id)actionItemsForHostingViewController:(id)arg1;
 - (void)fireAudioRecorderViewControllerBacklightAssertionTimer:(id)arg1;
 - (void)audioRecorderViewControllerRequestsBacklightAssertionRelease:(id)arg1;
 - (void)audioRecorderViewControllerRequestsBacklightAssertionCreate:(id)arg1;
@@ -217,7 +217,7 @@
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewControllers:(id)arg3 initializationContextIDs:(id)arg4;
 - (void)addPassesViewControllerDidFinish:(id)arg1 withAddPassData:(id)arg2;
 - (_Bool)_interfaceDescriptionContainsOnlyTable:(id)arg1;
-- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentTimerSupportInterfaceWithControllerClass:(Class)arg3 presentCompletion:(CDUnknownBlockType)arg4 dismissCompletion:(CDUnknownBlockType)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentInterfaceControllerClass:(Class)arg3 willPresent:(CDUnknownBlockType)arg4 didDismiss:(CDUnknownBlockType)arg5;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewController:(id)arg3 info:(id)arg4 initializationContextID:(id)arg5;
 - (void)extensionConnection:(id)arg1 removeRootInterfaceViewControllerAtIndexes:(id)arg2;
 - (void)extensionConnection:(id)arg1 moveRootInterfaceViewControllerAtIndex:(int)arg2 toIndex:(int)arg3;
@@ -228,10 +228,10 @@
 - (void)extensionConnection:(id)arg1 interfaceViewControllerPopToRootViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewControllerPopViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(id)arg4 rowNamesAndContextIDs:(id)arg5;
-- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setTimerSupportVC:(id)arg3;
-- (void)_extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushTimerSupportViewController:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushTimerSupportInterfaceWithControllerClass:(Class)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushTimerSupportInterfaceWithName:(id)arg3 initializationContextID:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setUnderlyingUIHostingController:(id)arg3;
+- (void)_extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushViewController:(id)arg3 willPush:(CDUnknownBlockType)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushInterfaceControllerClass:(Class)arg3 willPush:(CDUnknownBlockType)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushInterfaceController:(id)arg3 initializationContextID:(id)arg4 willPush:(CDUnknownBlockType)arg5;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushViewController:(id)arg3 initializationContextID:(id)arg4;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setValue:(id)arg3 forKey:(id)arg4 property:(id)arg5;
 - (void)application:(id)arg1 didReceiveRemoteNotification:(id)arg2 fetchCompletionHandler:(CDUnknownBlockType)arg3;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     int _sessionRequestNotifyToken;
     BKSProcessAssertion *_serviceProcessAssertion;
     NSXPCConnection *_serviceSessionConnection;
+    _Bool _serviceSessionConnectionResumed;
     int __automatic_invalidation_retainCount;
     _Bool __automatic_invalidation_invalidated;
 }

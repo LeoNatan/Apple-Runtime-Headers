@@ -6,11 +6,12 @@
 
 #import <NanoPreferences/NPRFBaseTableViewController.h>
 
+#import <NanoPreferences/CUISPasscodeViewControllerDelegate-Protocol.h>
 #import <NanoPreferences/_NPRFPreferenceListControllerOptionalMethods-Protocol.h>
 
 @class NPRFSpecifierSet, NSBundle, NSString, PSSpecifier, PUICDictationViewController, UIViewController;
 
-@interface NPRFPreferenceListController : NPRFBaseTableViewController <_NPRFPreferenceListControllerOptionalMethods>
+@interface NPRFPreferenceListController : NPRFBaseTableViewController <CUISPasscodeViewControllerDelegate, _NPRFPreferenceListControllerOptionalMethods>
 {
     PUICDictationViewController *_dictationController;
     _Bool _updatingCellUIForSpecifierSetModification;
@@ -21,18 +22,23 @@
     NPRFSpecifierSet *_specifierSet;
     NSString *_specifierPlistName;
     NSString *_localizedStringTableName;
+    PSSpecifier *_specifierForEnteredPasscode;
+    CDUnknownBlockType _passcodeEnteredCompletionBlock;
     UIViewController *_specifierTargetIfNotSelf;
 }
 
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 @property(retain, nonatomic) UIViewController *specifierTargetIfNotSelf; // @synthesize specifierTargetIfNotSelf=_specifierTargetIfNotSelf;
+@property(copy, nonatomic) CDUnknownBlockType passcodeEnteredCompletionBlock; // @synthesize passcodeEnteredCompletionBlock=_passcodeEnteredCompletionBlock;
+@property(nonatomic) __weak PSSpecifier *specifierForEnteredPasscode; // @synthesize specifierForEnteredPasscode=_specifierForEnteredPasscode;
 @property(retain, nonatomic) NSString *localizedStringTableName; // @synthesize localizedStringTableName=_localizedStringTableName;
 @property __weak PSSpecifier *activeSpecifier; // @synthesize activeSpecifier=_activeSpecifier;
 - (void).cxx_destruct;
 - (void)navigateToSpecifierWithID:(id)arg1;
 - (id)localizedStringForKey:(id)arg1 inBundle:(id)arg2;
 - (id)localizedStringForKey:(id)arg1;
+- (void)passcodeViewController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)_handleValueChangedNotificationForSpecifier:(id)arg1;
 - (void)_unsubscribeFromNotificationsForSpecifiers:(id)arg1;
 - (void)_subscribeToNotificationsForSpecifiers:(id)arg1;
@@ -49,6 +55,7 @@
 - (void)_showErrorAlertWithMessage:(id)arg1;
 - (void)_showAlertWithIdentifier:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButtonName:(id)arg4 alternateButtonName:(id)arg5 otherButtonName:(id)arg6 responseHandler:(CDUnknownBlockType)arg7;
 - (void)_setValue:(id)arg1 forSpecifier:(id)arg2;
+- (void)_requestPasscodeConfirmationForSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performEditTextActionForSpecifier:(id)arg1 text:(id)arg2;
 - (void)performRadioButtonActionForSpecifier:(id)arg1 groupSpecifier:(id)arg2;
 - (void)performLinkListActionForSpecifier:(id)arg1 value:(id)arg2;

@@ -14,6 +14,7 @@
 {
     NSString *_identifier;
     double _scale;
+    long long _gamut;
     BKSAnimationFenceHandle *_fence;
     struct CGSize _size;
     struct NSEdgeInsets _insets;
@@ -21,8 +22,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 insets:(struct NSEdgeInsets)arg4 fence:(id)arg5;
++ (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 gamut:(long long)arg4 insets:(struct NSEdgeInsets)arg5 fence:(id)arg6;
 @property(retain, nonatomic) BKSAnimationFenceHandle *fence; // @synthesize fence=_fence;
 @property(nonatomic) struct NSEdgeInsets insets; // @synthesize insets=_insets;
+@property(nonatomic) long long gamut; // @synthesize gamut=_gamut;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

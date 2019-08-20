@@ -39,10 +39,12 @@
 - (void)addHistogram:(id)arg1;
 - (void)_addPropertiesFrom:(id)arg1;
 - (void)subtractValue:(id)arg1;
+- (void)addValue:(id)arg1 withCount:(double)arg2;
 - (void)addValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)countDictionary;
 - (double)relativeFrequencyForValue:(id)arg1;
+- (double)countForValueDouble:(id)arg1;
 - (unsigned long long)countForValue:(id)arg1;
 - (id)initWithHistogram:(id)arg1;
 - (id)initWithValues:(id)arg1;

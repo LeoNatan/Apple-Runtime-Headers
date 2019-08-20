@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, NSMutableArray, NSMutableDictionary, NSProgress, NSString, NSURL, PLAssetsdCrashRecoverySupport, PLBackgroundJobService, PLClientServerTransaction, PLCloudPhotoLibraryManager, PLDatabaseContext, PLDupeManager, PLImageWriter, PLJournalManager, PLKeywordManager, PLLazyObject, PLLibraryServicesStateNode, PLModelMigrator, PLMomentGenerationDataManager, PLPhotoLibrary, PLPhotoLibraryBundle, PLPhotoLibraryPathManager, PLQuickActionManager, PLRelationshipOrderKeyManager, PLSearchIndexManager;
+@class NSError, NSMutableArray, NSMutableDictionary, NSProgress, NSString, NSURL, PLAssetsdCrashRecoverySupport, PLBackgroundJobService, PLClientServerTransaction, PLCloudPhotoLibraryManager, PLDatabaseContext, PLDupeManager, PLImageWriter, PLJournalManager, PLKeywordManager, PLLazyObject, PLLibraryServicesStateNode, PLModelMigrator, PLMomentGenerationDataManager, PLPairing, PLPhotoLibrary, PLPhotoLibraryBundle, PLPhotoLibraryPathManager, PLQuickActionManager, PLRelationshipOrderKeyManager, PLSearchIndexManager;
 @protocol OS_dispatch_queue, PLLibraryServicesDelegate;
 
 @interface PLLibraryServicesManager : NSObject
@@ -27,6 +27,7 @@
     PLLazyObject *_lazyAlbumCountCoalescer;
     PLLazyObject *_lazyCloudPhotoLibraryManager;
     PLLazyObject *_lazyCrashRecoverySupport;
+    PLLazyObject *_lazyPairingManager;
     PLClientServerTransaction *_serverTransaction;
     NSObject<OS_dispatch_queue> *_albumCountQueue;
     NSMutableDictionary *_externalWaiterCompletionBlocksByState;
@@ -106,6 +107,7 @@
 - (id)_libraryServicesStateNodeWithState:(int)arg1;
 - (void)initializeConstraintsDirector;
 - (void)initializeChangeHandling;
+@property(readonly) PLPairing *pairingManager;
 @property(readonly) PLKeywordManager *keywordManager;
 @property(readonly) PLQuickActionManager *quickActionManager;
 - (id)newJournalManager;
@@ -120,6 +122,7 @@
 - (void)_invalidateQuickActionManager;
 - (void)_invalidateRelationshipOrderKeyManager;
 - (void)_invalidateDupeManager;
+- (void)_invalidatePairingManager;
 - (void)_invalidateKeywordManager;
 - (void)_invalidateImageWriter;
 - (void)_invalidateAlbumCountCoalescer;

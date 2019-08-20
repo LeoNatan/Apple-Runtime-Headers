@@ -13,6 +13,7 @@
 + (double)getNoRemoteDuplicationThresholdFast;
 + (double)getRemoteMediaStallTimeout;
 + (id)getTestGroupPermutations:(unsigned char)arg1;
++ (unsigned char)getAbTestingState;
 + (unsigned int)getAbTestMasterLocalSwitches;
 + (double)getThresholdForSwitch:(unsigned int)arg1;
 + (double)getLongTermValueWeightC;

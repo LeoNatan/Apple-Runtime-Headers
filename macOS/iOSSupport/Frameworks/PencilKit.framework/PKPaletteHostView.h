@@ -6,21 +6,22 @@
 
 #import <UIKit/UIView.h>
 
+#import <PencilKit/PKPalettePencilInteractionFeedbackHostViewDelegate-Protocol.h>
+#import <PencilKit/PKPaletteTransitionDelegate-Protocol.h>
 #import <PencilKit/PKPaletteViewInternalDelegate-Protocol.h>
 #import <PencilKit/PKPaletteWindowSceneListening-Protocol.h>
 #import <PencilKit/UIGestureRecognizerDelegate-Protocol.h>
+#import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, PKPaletteView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer, UIViewFloatAnimatableProperty;
+@class NSLayoutConstraint, NSString, PKColorPicker, PKPalettePencilInteractionFeedbackHostView, PKPaletteTransition, PKPaletteView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer;
 @protocol PKPaletteHostViewDelegate, PKPaletteHostingWindowScene;
 
-@interface PKPaletteHostView : UIView <UIGestureRecognizerDelegate, PKPaletteViewInternalDelegate, PKPaletteWindowSceneListening>
+@interface PKPaletteHostView : UIView <UIGestureRecognizerDelegate, PKPaletteViewInternalDelegate, UIPopoverPresentationControllerDelegate, PKPalettePencilInteractionFeedbackHostViewDelegate, PKPaletteTransitionDelegate, PKPaletteWindowSceneListening>
 {
     BOOL paletteDragging;
     BOOL paletteMinimized;
     BOOL _paletteVisible;
     BOOL _effectivePaletteVisible;
-    BOOL _waitingForPaletteToMinimize;
-    BOOL _waitingForPaletteToRotate;
     PKPaletteView *_paletteView;
     id <PKPaletteHostViewDelegate> _delegate;
     NSLayoutConstraint *_paletteWidthConstraint;
@@ -33,36 +34,34 @@
     NSLayoutConstraint *_paletteCenterYConstraint;
     UIPanGestureRecognizer *_panGestureRecognizer;
     UITapGestureRecognizer *_tapToExpandPaletteFromMinimizedGestureRecognizer;
-    UILongPressGestureRecognizer *_feedbackGestureRecognizer;
+    UILongPressGestureRecognizer *_touchDownFeedbackGestureRecognizer;
     long long _dockingAppearance;
     long long _paletteDraggingBehavior;
     long long _paletteVisualState;
-    long long _lastAnimatedPaletteVisualState;
-    long long _lastNonMinimizedPaletteVisualState;
+    long long _draggingPendingPaletteVisualState;
     unsigned long long _paletteCornerLocation;
     unsigned long long _paletteEdgeLocation;
     double _paletteSizeScaleFactor;
-    UIViewFloatAnimatableProperty *_regularToMinimizedAnimatableProperty;
-    UIViewFloatAnimatableProperty *_staticToRotatingAnimatableProperty;
+    PKPaletteTransition *_paletteTransition;
+    PKPalettePencilInteractionFeedbackHostView *_pencilInteractionFeedbackHostView;
+    PKColorPicker *_colorPickerPopover;
     id <PKPaletteHostingWindowScene> _hostingWindowScene;
-    struct CGPoint _lastPaletteCenterInSelf;
+    struct CGPoint _draggingInitialPaletteCenterInSelf;
 }
 
 @property(readonly, nonatomic) __weak id <PKPaletteHostingWindowScene> hostingWindowScene; // @synthesize hostingWindowScene=_hostingWindowScene;
-@property(nonatomic) BOOL waitingForPaletteToRotate; // @synthesize waitingForPaletteToRotate=_waitingForPaletteToRotate;
-@property(retain, nonatomic) UIViewFloatAnimatableProperty *staticToRotatingAnimatableProperty; // @synthesize staticToRotatingAnimatableProperty=_staticToRotatingAnimatableProperty;
-@property(nonatomic) BOOL waitingForPaletteToMinimize; // @synthesize waitingForPaletteToMinimize=_waitingForPaletteToMinimize;
-@property(retain, nonatomic) UIViewFloatAnimatableProperty *regularToMinimizedAnimatableProperty; // @synthesize regularToMinimizedAnimatableProperty=_regularToMinimizedAnimatableProperty;
+@property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
+@property(retain, nonatomic) PKPalettePencilInteractionFeedbackHostView *pencilInteractionFeedbackHostView; // @synthesize pencilInteractionFeedbackHostView=_pencilInteractionFeedbackHostView;
+@property(retain, nonatomic) PKPaletteTransition *paletteTransition; // @synthesize paletteTransition=_paletteTransition;
 @property(nonatomic) double paletteSizeScaleFactor; // @synthesize paletteSizeScaleFactor=_paletteSizeScaleFactor;
 @property(nonatomic) unsigned long long paletteEdgeLocation; // @synthesize paletteEdgeLocation=_paletteEdgeLocation;
 @property(nonatomic) unsigned long long paletteCornerLocation; // @synthesize paletteCornerLocation=_paletteCornerLocation;
-@property(nonatomic) struct CGPoint lastPaletteCenterInSelf; // @synthesize lastPaletteCenterInSelf=_lastPaletteCenterInSelf;
-@property(nonatomic) long long lastNonMinimizedPaletteVisualState; // @synthesize lastNonMinimizedPaletteVisualState=_lastNonMinimizedPaletteVisualState;
-@property(nonatomic) long long lastAnimatedPaletteVisualState; // @synthesize lastAnimatedPaletteVisualState=_lastAnimatedPaletteVisualState;
-@property(nonatomic) long long paletteVisualState; // @synthesize paletteVisualState=_paletteVisualState;
+@property(nonatomic) struct CGPoint draggingInitialPaletteCenterInSelf; // @synthesize draggingInitialPaletteCenterInSelf=_draggingInitialPaletteCenterInSelf;
+@property(nonatomic) long long draggingPendingPaletteVisualState; // @synthesize draggingPendingPaletteVisualState=_draggingPendingPaletteVisualState;
+@property(nonatomic, setter=_setPaletteVisualState:) long long paletteVisualState; // @synthesize paletteVisualState=_paletteVisualState;
 @property(nonatomic) long long paletteDraggingBehavior; // @synthesize paletteDraggingBehavior=_paletteDraggingBehavior;
 @property(nonatomic) long long dockingAppearance; // @synthesize dockingAppearance=_dockingAppearance;
-@property(retain, nonatomic) UILongPressGestureRecognizer *feedbackGestureRecognizer; // @synthesize feedbackGestureRecognizer=_feedbackGestureRecognizer;
+@property(retain, nonatomic) UILongPressGestureRecognizer *touchDownFeedbackGestureRecognizer; // @synthesize touchDownFeedbackGestureRecognizer=_touchDownFeedbackGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapToExpandPaletteFromMinimizedGestureRecognizer; // @synthesize tapToExpandPaletteFromMinimizedGestureRecognizer=_tapToExpandPaletteFromMinimizedGestureRecognizer;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) NSLayoutConstraint *paletteCenterYConstraint; // @synthesize paletteCenterYConstraint=_paletteCenterYConstraint;
@@ -78,26 +77,40 @@
 @property(nonatomic, getter=isPaletteVisible) BOOL paletteVisible; // @synthesize paletteVisible=_paletteVisible;
 @property(readonly, nonatomic) PKPaletteView *paletteView; // @synthesize paletteView=_paletteView;
 - (void).cxx_destruct;
+- (double)paletteEdgeSpacingForMinimized;
+- (double)paletteEdgeSpacing;
+- (double)paletteSpringAnimationResponse;
+- (double)paletteSpringAnimationDampingRatio;
+- (double)paletteBorderWidth;
+- (double)paletteShadowRadius;
+- (double)paletteShadowOpacity;
+- (struct CGSize)paletteShadowOffset;
+- (id)paletteBorderColor;
+- (id)paletteShadowColor;
+- (struct CGSize)regularPaletteSize;
+- (struct CGSize)minimizedPaletteSize;
+- (double)paletteScaleFactor;
+- (double)_currentWindowSceneScaleFactor;
+- (void)paletteViewShowFeedbackForToolChange:(id)arg1;
 - (void)paletteView:(id)arg1 didChangeAnnotationSupport:(BOOL)arg2;
 - (struct CGSize)paletteSizeForEdge:(unsigned long long)arg1;
 - (void)paletteView:(id)arg1 didToggleAutoHideOption:(BOOL)arg2;
 @property(readonly, nonatomic) UIView *hostingView;
 - (BOOL)_shouldBeCompact;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)_paletteDidSettle;
-- (void)_paletteDidChangeSizeForVisualState:(long long)arg1;
-- (void)_paletteWillChangeSizeForVisualState:(long long)arg1;
-- (BOOL)_isPaletteAlmostFinishedRotating;
-- (BOOL)_isPaletteRotating;
-- (BOOL)_isPaletteAlmostFinishedMinimizing;
-- (BOOL)_isPaletteAlmostMinimized;
-- (BOOL)_isPaletteAnimatingToMinimized;
-- (BOOL)_isPaletteAnimatingToRegular;
 - (BOOL)_isPaletteAnimating;
 - (struct CGSize)_paletteSizeForVisualState:(long long)arg1;
 - (struct CGSize)_minimizedPaletteSize;
-- (void)_animatePaletteSizeForVisualState:(long long)arg1;
+- (void)_updatePaletteSizeAnimated:(BOOL)arg1;
+- (void)_updateToolPreviewRotationAnimated:(BOOL)arg1;
+- (void)_updateToolPreviewMinimizedStateAnimated:(BOOL)arg1;
 - (void)_performAnimated:(BOOL)arg1 tracking:(BOOL)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)transitionExpandedToCollapsedRatioDidChange:(id)arg1;
+- (void)transitionPointingDirectionDidChange:(id)arg1;
+- (void)transitionIntermediateVisualStateDidChange:(id)arg1;
+- (struct CGPoint)_projectedLandingPointForGestureRecognizerEnd:(id)arg1;
+- (void)_processPendingDraggingTransition;
+- (void)_scheduleDraggingTransitionToVisualState:(long long)arg1;
 - (void)_panGestureHandler:(id)arg1;
 - (void)_deactivatePaletteEdgeConstraints;
 - (void)_activatePaletteCenterConstraints;
@@ -106,22 +119,24 @@
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (unsigned long long)edgeToDockPaletteFromCurrentPaletteCorner;
 - (void)_tapToExpandPaletteFromMinimizedGestureHandler:(id)arg1;
-- (void)_feedbackGestureHandler:(id)arg1;
+- (void)_touchDownFeedbackGestureHandler:(id)arg1;
 - (void)_paletteDidDockToCorner:(unsigned long long)arg1;
 - (void)_paletteWillDockToCorner:(unsigned long long)arg1;
 - (void)_updateConstraintsToDockPaletteToCorner:(unsigned long long)arg1;
 - (void)_dockPaletteToCorner:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)_paletteDidDockToEdge:(unsigned long long)arg1;
-- (void)_paletteWillDockToEdge:(unsigned long long)arg1;
+- (void)_paletteWillDockToEdge:(unsigned long long)arg1 prepareForExpansion:(BOOL)arg2;
 - (void)_updateConstraintsToDockPaletteToEdge:(unsigned long long)arg1;
 - (void)_dockPaletteToEdge:(unsigned long long)arg1 animated:(BOOL)arg2;
+- (void)_updatePaletteHeightConstraint;
 - (void)_updateConstraintsToFixToBottomEdge;
-- (void)fixToEdge:(unsigned long long)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fixToBottomEdge;
 - (void)safeAreaInsetsDidChange;
-- (void)updateConstraints;
 - (void)layoutSubviews;
-- (void)_upatePaletteViewSizeConstraints;
+- (void)_updatePaletteContentAlpha;
+- (void)_updatePaletteViewSizeConstraints;
 - (void)setCommonPaletteViewProperties;
 - (void)adaptAppearanceToExpandFromAnyCorner;
 - (void)adaptAppearanceToDockToAnyCorner;
@@ -129,10 +144,12 @@
 - (void)adaptAppearanceToHorizontalCompactSize;
 @property(readonly, nonatomic, getter=isPaletteDragging) BOOL paletteDragging; // @synthesize paletteDragging;
 @property(readonly, nonatomic, getter=isPaletteMinimized) BOOL paletteMinimized; // @synthesize paletteMinimized;
+- (void)_setPaletteVisualState:(long long)arg1 usingTransition:(BOOL)arg2;
 - (void)_updatePaletteScaleFactor;
 - (void)windowSceneDidChangeBounds:(id)arg1;
 - (void)animatePaletteToVisible:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_cancelPanGestureIfNecessary;
+- (void)_installPencilInteractionFeedbackHostViewIfNeeded;
 - (void)didMoveToWindow;
 - (id)initWithHostingWindowScene:(id)arg1;
 

@@ -17,7 +17,7 @@
 }
 
 @property(readonly, nonatomic) __weak MPCPlayerResponse *response; // @synthesize response=_response;
-@property(retain, nonatomic) NSArray *options; // @synthesize options=_options;
+@property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (id)changeRequestForOptionAtIndex:(unsigned long long)arg1;
 - (id)localizedTitleForOptionAtIndex:(unsigned long long)arg1;

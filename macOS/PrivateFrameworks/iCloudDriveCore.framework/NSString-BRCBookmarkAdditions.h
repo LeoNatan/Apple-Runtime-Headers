@@ -9,6 +9,7 @@
 @interface NSString (BRCBookmarkAdditions)
 + (id)bookmarkDataWithItemResolutionString:(id)arg1 serverZoneName:(id)arg2 ownerName:(id)arg3 accountID:(id)arg4 salted:(BOOL)arg5;
 + (id)brc_hexadecimalStringWithBytes:(const char *)arg1 length:(unsigned long long)arg2;
++ (id)icd_locateUbiquityTokenSaltInOldAccountPath:(id)arg1;
 + (id)ubiquityTokenSaltFilename;
 + (id)brc_dbAccountIDForPath:(id)arg1;
 + (id)brc_accountIDPathForAccountPath:(id)arg1;

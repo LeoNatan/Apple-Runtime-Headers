@@ -8,10 +8,11 @@
 
 #import <AXSpringBoardServerInstance/AVSpeechSynthesizerDelegate-Protocol.h>
 #import <AXSpringBoardServerInstance/AXSBVoiceOverSwipeDetectorDelegate-Protocol.h>
+#import <AXSpringBoardServerInstance/AXUIClientDelegate-Protocol.h>
 
 @class AXAccessQueueTimer, AXDispatchTimer, NSString, UIWindow;
 
-@interface AXSpringBoardSettingsLoader : NSObject <AXSBVoiceOverSwipeDetectorDelegate, AVSpeechSynthesizerDelegate>
+@interface AXSpringBoardSettingsLoader : NSObject <AXSBVoiceOverSwipeDetectorDelegate, AVSpeechSynthesizerDelegate, AXUIClientDelegate>
 {
     UIWindow *_voiceOverVibrateWindow;
     AXAccessQueueTimer *_voiceOverActivationCanceler;

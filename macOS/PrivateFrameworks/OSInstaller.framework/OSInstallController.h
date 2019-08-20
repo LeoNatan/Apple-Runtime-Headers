@@ -23,6 +23,7 @@
     BOOL _showingStuckUI;
     BOOL _shouldProcessTimeRemaining;
     BOOL _shouldShowPowerButtonWarningText;
+    BOOL _targetEvaluationStarted;
     BOOL _hasPickedATarget;
     int _numOfCPIOExtractionRetries;
     NSError *_installCheckFailureReason;
@@ -62,7 +63,9 @@
 }
 
 + (id)failureReasonForError:(id)arg1;
++ (id)getPriorOSBuildOnSystemTarget:(id)arg1 withRecoveredItems:(id)arg2;
 @property BOOL hasPickedATarget; // @synthesize hasPickedATarget=_hasPickedATarget;
+@property BOOL targetEvaluationStarted; // @synthesize targetEvaluationStarted=_targetEvaluationStarted;
 @property(retain) NSObject<OS_dispatch_queue> *targetEvaluationQueue; // @synthesize targetEvaluationQueue=_targetEvaluationQueue;
 @property(retain, nonatomic) NSMutableArray *customizationOptions; // @synthesize customizationOptions=_customizationOptions;
 @property int numOfCPIOExtractionRetries; // @synthesize numOfCPIOExtractionRetries=_numOfCPIOExtractionRetries;
@@ -99,7 +102,7 @@
 @property(retain) NSString *currentStatus; // @synthesize currentStatus=_currentStatus;
 @property BOOL needAPFSConvert; // @synthesize needAPFSConvert=_needAPFSConvert;
 @property(retain) NSString *distPath; // @synthesize distPath=_distPath;
-@property NSObject<OSInstallControllerDelegate> *delegate; // @synthesize delegate=_delegate;
+@property __weak NSObject<OSInstallControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property BOOL installationCompletedSuccessfully; // @synthesize installationCompletedSuccessfully=_installationCompletedSuccessfully;
 @property BOOL didReblessSuccessfully; // @synthesize didReblessSuccessfully=_didReblessSuccessfully;
 @property(retain) OSInstallOptions *options; // @synthesize options=_options;
@@ -145,6 +148,7 @@
 - (void)prepareForReboot;
 - (BOOL)_setupInstallWithError:(id *)arg1;
 - (BOOL)_setupLegacyConversionInstallWithError:(id *)arg1;
+- (void)installFinishedWithFatalError:(id)arg1 withFailedQueueElement:(id)arg2;
 - (BOOL)startInstall;
 - (void)determineROSVAndEnableROSVPathsIfNecessary;
 - (BOOL)_flushDMLogToTarget;

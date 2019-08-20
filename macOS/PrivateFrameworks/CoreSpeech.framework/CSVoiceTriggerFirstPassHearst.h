@@ -23,8 +23,10 @@
     CSAsset *_currentAsset;
     CSAudioStreamHolding *_triggeredAudioStreamHolding;
     CSAudioProvider *_triggeredAudioProvider;
+    unsigned long long _secondChanceHotTillMachTime;
 }
 
+@property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(retain, nonatomic) CSAudioProvider *triggeredAudioProvider; // @synthesize triggeredAudioProvider=_triggeredAudioProvider;
 @property(retain, nonatomic) CSAudioStreamHolding *triggeredAudioStreamHolding; // @synthesize triggeredAudioStreamHolding=_triggeredAudioStreamHolding;
 @property(nonatomic) float minimumPhraseLengthForVADGating; // @synthesize minimumPhraseLengthForVADGating=_minimumPhraseLengthForVADGating;
@@ -37,7 +39,7 @@
 - (void).cxx_destruct;
 - (void)_cancelAllAudioStreamHoldings;
 - (void)_requestStartAudioStreamWitContext:(id)arg1 secondPassRequest:(id)arg2 startStreamOption:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_handleSecondPassResult:(unsigned long long)arg1 secondPassRequest:(id)arg2 voiceTriggerInfo:(id)arg3 deviceId:(id)arg4 error:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)_handleSecondPassResult:(unsigned long long)arg1 secondPassRequest:(id)arg2 voiceTriggerInfo:(id)arg3 deviceId:(id)arg4 secondChanceCandidate:(BOOL)arg5 error:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_handleRemoteMicVoiceTriggerEvent:(id)arg1 secondPassRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleRemoteMicVADEventWithSecondPassRequest:(id)arg1;
 - (void)siriClientBehaviorMonitor:(id)arg1 willStopStream:(id)arg2;

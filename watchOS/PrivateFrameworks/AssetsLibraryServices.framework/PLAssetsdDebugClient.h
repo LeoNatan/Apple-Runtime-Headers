@@ -42,7 +42,6 @@
 - (id)momentGenerationStatus;
 - (void)recoverAssetsInInconsistentCloudState;
 - (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)getSandboxExtensionForPath:(id)arg1 sandboxExtensionToken:(id *)arg2 error:(id *)arg3;
 - (id)getStatus;
 
 @end

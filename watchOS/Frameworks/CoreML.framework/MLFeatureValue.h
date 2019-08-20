@@ -29,6 +29,10 @@
 + (id)featureValueWithDouble:(double)arg1;
 + (id)featureValueWithInt64:(long long)arg1;
 + (id)undefinedFeatureValueWithType:(int)arg1;
++ (id)featureValueWithCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 constraint:(id)arg3 options:(id)arg4 error:(id *)arg5;
++ (id)featureValueWithCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 pixelsWide:(int)arg3 pixelsHigh:(int)arg4 pixelFormatType:(unsigned long)arg5 options:(id)arg6 error:(id *)arg7;
++ (id)featureValueWithImageAtURL:(id)arg1 orientation:(unsigned int)arg2 constraint:(id)arg3 options:(id)arg4 error:(id *)arg5;
++ (id)featureValueWithImageAtURL:(id)arg1 orientation:(unsigned int)arg2 pixelsWide:(int)arg3 pixelsHigh:(int)arg4 pixelFormatType:(unsigned long)arg5 options:(id)arg6 error:(id *)arg7;
 + (id)featureValueWithCGImage:(struct CGImage *)arg1 constraint:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (id)featureValueWithCGImage:(struct CGImage *)arg1 pixelsWide:(int)arg2 pixelsHigh:(int)arg3 pixelFormatType:(unsigned long)arg4 options:(id)arg5 error:(id *)arg6;
 + (id)featureValueWithImageAtURL:(id)arg1 constraint:(id)arg2 options:(id)arg3 error:(id *)arg4;

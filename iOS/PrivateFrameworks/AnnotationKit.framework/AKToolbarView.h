@@ -70,6 +70,7 @@
 @property(nonatomic) _Bool undoRedoButtonsHidden; // @synthesize undoRedoButtonsHidden=_undoRedoButtonsHidden;
 @property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (struct CGRect)frameObscuredInView:(id)arg1;
 - (id)inkPicker;
 - (void)setShadowImage:(id)arg1 forToolbarPosition:(long long)arg2;
@@ -167,7 +168,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

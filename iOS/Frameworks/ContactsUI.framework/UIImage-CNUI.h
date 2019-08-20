@@ -14,7 +14,6 @@
 + (id)cnui_userActionSymbolImageForActionType:(id)arg1 scale:(long long)arg2 withColor:(id)arg3;
 + (id)cnui_actionTypeForTransportType:(long long)arg1;
 + (id)cnui_symbolImageForTransportType:(long long)arg1 withColor:(id)arg2;
-+ (id)cnui_symbolImageForPayActionTypeWithColor:(id)arg1;
 + (id)cnui_symbolImageForNavigationListChevron;
 + (id)cnui_symbolImageForContactCardChevron;
 + (id)cnui_imageWithDataPreservingScale:(id)arg1;

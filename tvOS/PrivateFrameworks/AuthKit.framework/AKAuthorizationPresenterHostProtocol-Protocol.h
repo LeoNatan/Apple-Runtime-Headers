@@ -6,12 +6,11 @@
 
 #import <AuthKit/NSObject-Protocol.h>
 
-@class AKAuthorizationUserResponse, NSError;
+@class AKAuthorization, AKAuthorizationUserResponse, NSError;
 
 @protocol AKAuthorizationPresenterHostProtocol <NSObject>
+- (void)continueFetchingIconWithCompletion:(void (^)(NSData *, NSError *))arg1;
+- (void)authorizationRequestFinishedWithAuthorization:(AKAuthorization *)arg1 error:(NSError *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)authorizationRequestInitiatedWithUserProvidedInformation:(AKAuthorizationUserResponse *)arg1 completion:(void (^)(AKAuthorization *, NSError *))arg2;
-
-@optional
-- (void)authorizationRequestFinishedWithError:(NSError *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 @end
 

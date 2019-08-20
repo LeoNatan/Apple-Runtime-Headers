@@ -10,6 +10,7 @@
 
 @interface SearchUITableModel : NSObject
 {
+    unsigned long long _queryId;
     NSArray *_tableRowModel;
     NSArray *_sections;
 }
@@ -18,16 +19,17 @@
 + (id)resultsForMultiResultRowInSection:(id)arg1 startingAtIndex:(unsigned long long)arg2;
 + (id)gridLayoutsForCardSections:(id)arg1;
 + (id)asyncRowManagersForCardSections:(id)arg1;
-+ (id)rowModelsForCardSections:(id)arg1 result:(id)arg2 isInline:(_Bool)arg3;
++ (id)rowModelsForCardSections:(id)arg1 result:(id)arg2 isInline:(_Bool)arg3 queryId:(unsigned long long)arg4;
 + (id)rowModelForCardSection:(id)arg1 result:(id)arg2;
 + (id)combinedRowModelsForRowModels:(id)arg1 result:(id)arg2;
 + (id)tableModelWithResults:(id)arg1;
 + (id)tableModelWithResult:(id)arg1;
-+ (id)tableModelWithCardSections:(id)arg1 isInline:(_Bool)arg2;
++ (id)tableModelWithCardSections:(id)arg1 isInline:(_Bool)arg2 queryId:(unsigned long long)arg3;
 + (_Bool)resultHasHorizontallyScrollingCardSections:(id)arg1;
-+ (id)tableModelWithSections:(id)arg1 expandedSections:(id)arg2;
++ (id)tableModelWithSections:(id)arg1 expandedSections:(id)arg2 queryId:(unsigned long long)arg3;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSArray *tableRowModel; // @synthesize tableRowModel=_tableRowModel;
+@property(readonly) unsigned long long queryId; // @synthesize queryId=_queryId;
 - (void).cxx_destruct;
 - (id)description;
 - (id)indexPathForResult:(id)arg1;
@@ -43,6 +45,7 @@
 - (void)replaceResult:(id)arg1 withResult:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned long long)numberOfSections;
 - (id)updatedTableModelWithExpandedSections:(id)arg1;
+- (id)initWithQueryId:(unsigned long long)arg1;
 
 @end
 

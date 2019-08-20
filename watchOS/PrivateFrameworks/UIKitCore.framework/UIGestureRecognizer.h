@@ -58,6 +58,8 @@
         unsigned int isDynamicGesture:1;
         unsigned int canExcludeWithActiveRequirements:1;
         unsigned int isObservingGesture:1;
+        unsigned int didCheckForcePressShouldBegin:1;
+        unsigned int canSendForcePressAction:1;
     } _gestureFlags;
     NSMutableArray *_targets;
     NSMutableArray *_delayedTouches;
@@ -164,6 +166,7 @@
 - (_Bool)_shouldReceivePress:(id)arg1;
 - (_Bool)_delegateShouldReceivePress:(id)arg1;
 - (_Bool)_delegateShouldReceiveTouch:(id)arg1;
+- (id)_gatherViewsToQueryForDelegateCall;
 - (_Bool)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 @property(readonly, nonatomic, getter=_modifierFlags) int modifierFlags;
 - (_Bool)_shouldReceiveTouch:(id)arg1 withEvent:(id)arg2;

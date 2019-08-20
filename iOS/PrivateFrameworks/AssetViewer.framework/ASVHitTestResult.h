@@ -13,7 +13,11 @@
     // Error parsing type: , name: _worldPosition
     // Error parsing type: , name: _assetPosition
     // Error parsing type: , name: _cameraPosition
+    // Error parsing type: , name: _synthesizedPlaneNormal
 }
+
+// Error parsing type for property synthesizedPlaneNormal:
+// Property attributes: T,N,V_synthesizedPlaneNormal
 
 // Error parsing type for property imagePoint:
 // Property attributes: T,R,N,V_imagePoint
@@ -28,6 +32,7 @@
 // Property attributes: T,R,N,V_worldPosition
 
 @property(nonatomic) long long type; // @synthesize type=_type;
+@property(readonly, nonatomic) _Bool isSynthesizedVeritcalPlane;
 @property(readonly, nonatomic) _Bool isRealPlane;
 -     // Error parsing type: 16@0:8, name: cameraToPosition
 @property(readonly, nonatomic) float distanceFromCamera;

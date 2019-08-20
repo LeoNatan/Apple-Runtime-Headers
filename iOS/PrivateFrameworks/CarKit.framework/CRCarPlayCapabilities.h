@@ -10,6 +10,8 @@
 
 @interface CRCarPlayCapabilities : NSObject
 {
+    _Bool _persisted;
+    unsigned long long _disabledFeature;
     long long _nowPlayingAlbumArtMode;
     NSValue *_viewAreaInsets;
     NSValue *_dashboardRoundedCorners;
@@ -18,10 +20,14 @@
 
 + (id)newCapabilitiesFromGlobalDomain;
 + (id)fetchCarCapabilities;
++ (void)setCapabilitiesIdentifier:(id)arg1;
++ (id)capabilitiesIdentifier;
+@property(nonatomic) _Bool persisted; // @synthesize persisted=_persisted;
 @property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(retain, nonatomic) NSValue *dashboardRoundedCorners; // @synthesize dashboardRoundedCorners=_dashboardRoundedCorners;
 @property(retain, nonatomic) NSValue *viewAreaInsets; // @synthesize viewAreaInsets=_viewAreaInsets;
 @property(nonatomic) long long nowPlayingAlbumArtMode; // @synthesize nowPlayingAlbumArtMode=_nowPlayingAlbumArtMode;
+@property(nonatomic) unsigned long long disabledFeature; // @synthesize disabledFeature=_disabledFeature;
 - (void).cxx_destruct;
 - (void)persistCapabilitiesToGlobalDomain;
 - (id)dictionaryRepresentation;

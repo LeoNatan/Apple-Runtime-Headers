@@ -11,39 +11,25 @@
 
 @interface SBAppResizeGestureWorkspaceTransaction : SBSystemGestureWorkspaceTransaction
 {
-    NSMutableArray *_transactionCompletionBlocks;
-    NSMutableArray *_finalActionCompletionBlocks;
     double _previousSlideOffPercent;
     NSSet *_fromApplicationSceneEntities;
     NSSet *_toApplicationSceneEntitiesSuspendPrimary;
     NSSet *_toApplicationSceneEntitiesSuspendSide;
-    double _absoluteDistanceTraveled;
-    struct CGPoint _previousLocation;
     _Bool _isSceneLayoutViewControllerPushedIn;
     id <BSInvalidatable> _deferOrientationUpdatesForResizeAssertion;
     NSMutableArray *_statusBarAssertions;
-    _Bool _resizingSpeculatively;
-    _Bool _hasResizedSpeculatively;
-    _Bool _performingFinalAction;
     SBMainDisplaySceneLayoutViewController *_layoutViewController;
     SBLayoutElementViewController *_primaryLayoutElementController;
     SBLayoutElementViewController *_sideLayoutElementController;
     UIApplicationSceneDeactivationAssertion *_appDeactivationAssertion;
     SBBlurViewCoordinator *_blurCoordinator;
-    long long _lastResizeGestureRegion;
     SBMainWorkspaceTransaction *_currentWorkspaceTransaction;
-    unsigned long long _pendingFinalActionCount;
     unsigned long long _currentGestureIdentifier;
 }
 
 + (double)_rubberbandingStartScreenEdgeMarginInOrientation:(long long)arg1;
 @property(nonatomic) unsigned long long currentGestureIdentifier; // @synthesize currentGestureIdentifier=_currentGestureIdentifier;
-@property(nonatomic) unsigned long long pendingFinalActionCount; // @synthesize pendingFinalActionCount=_pendingFinalActionCount;
-@property(nonatomic, getter=isPerformingFinalAction) _Bool performingFinalAction; // @synthesize performingFinalAction=_performingFinalAction;
-@property(nonatomic) _Bool hasResizedSpeculatively; // @synthesize hasResizedSpeculatively=_hasResizedSpeculatively;
-@property(nonatomic, getter=isResizingSpeculatively) _Bool resizingSpeculatively; // @synthesize resizingSpeculatively=_resizingSpeculatively;
 @property(retain, nonatomic) SBMainWorkspaceTransaction *currentWorkspaceTransaction; // @synthesize currentWorkspaceTransaction=_currentWorkspaceTransaction;
-@property(nonatomic) long long lastResizeGestureRegion; // @synthesize lastResizeGestureRegion=_lastResizeGestureRegion;
 @property(retain, nonatomic) SBBlurViewCoordinator *blurCoordinator; // @synthesize blurCoordinator=_blurCoordinator;
 @property(readonly, nonatomic) UIApplicationSceneDeactivationAssertion *appDeactivationAssertion; // @synthesize appDeactivationAssertion=_appDeactivationAssertion;
 @property(readonly, nonatomic) SBLayoutElementViewController *sideLayoutElementController; // @synthesize sideLayoutElementController=_sideLayoutElementController;
@@ -57,20 +43,18 @@
 - (void)_childTransactionDidComplete:(id)arg1;
 - (void)_didComplete;
 - (void)_begin;
-- (void)_performWhenCurrentFinalActionCompletesUsingBlock:(CDUnknownBlockType)arg1;
-- (void)_performWhenCurrentWorkspaceTransactionCompletesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_addChildWorkspaceTransaction:(id)arg1;
 - (id)_transactionForExecutingApplicationTransitionContext:(id)arg1 eventLabel:(id)arg2;
-- (void)_updateElementViewsAlphaAndGrabberForGestureRegion:(long long)arg1;
+- (void)_updateElementViewsAlphaAndGrabberForFinalAction:(long long)arg1;
 - (struct CGRect)_appFrameForElementWithRole:(long long)arg1 inLayoutState:(id)arg2 spaceConfiguration:(long long)arg3 inCoordinateSpace:(id)arg4;
 - (void)_animateElementViewsForFinalAction:(long long)arg1 forLayoutState:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_transitionContextForFinalAction:(long long)arg1;
 - (long long)_finalActionForGestureRegion:(long long)arg1;
-- (void)_performFinalAction:(long long)arg1;
 - (void)_resizeGestureFinishedWithFinalAction:(long long)arg1;
-- (void)_resizeGestureFinishedWithState:(long long)arg1 gestureDividerPosition:(double)arg2 gestureVelocity:(double)arg3;
+- (void)_resizeGestureFinishedWithState:(long long)arg1 gestureDividerPosition:(double)arg2 normalizedVelocity:(double)arg3;
 - (void)_updateResizeUIFromGestureRecognizer:(id)arg1;
 - (void)_restartResizeUI;
+- (double)_normalizedVelocityFromPanGestureRecognizer:(id)arg1;
 - (double)_dividerPositionFromPanGestureRecognizer:(id)arg1;
 - (void)_resizeGestureDidUpdate:(id)arg1;
 - (struct CGRect)_convertRectFromReferenceCoordinateSpaceToContentViewCoordinateSpace:(struct CGRect)arg1;
@@ -80,7 +64,7 @@
 - (double)_maxRubberBandOffset;
 - (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(_Bool *)arg5;
 - (_Bool)_canResizeToHalfHalf;
-- (long long)_resizeGestureRegionForLocation:(double)arg1;
+- (long long)_resizeGestureRegionForLocation:(double)arg1 velocity:(double)arg2;
 - (void)_unhideLayoutElementViewControllerStatusBars;
 - (void)_hideLayoutElementViewControllerStatusBars;
 - (void)_popOutSceneLayoutViewController;

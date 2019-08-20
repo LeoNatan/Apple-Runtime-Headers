@@ -62,6 +62,8 @@
         unsigned int isDynamicGesture:1;
         unsigned int canExcludeWithActiveRequirements:1;
         unsigned int isObservingGesture:1;
+        unsigned int didCheckForcePressShouldBegin:1;
+        unsigned int canSendForcePressAction:1;
     } _gestureFlags;
     NSMutableArray *_targets;
     NSMutableArray *_delayedTouches;
@@ -166,6 +168,7 @@
 - (BOOL)_shouldReceivePress:(id)arg1;
 - (BOOL)_delegateShouldReceivePress:(id)arg1;
 - (BOOL)_delegateShouldReceiveTouch:(id)arg1;
+- (id)_gatherViewsToQueryForDelegateCall;
 - (void)_hoverCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverExited:(id)arg1 withEvent:(id)arg2;
 - (void)_hoverMoved:(id)arg1 withEvent:(id)arg2;

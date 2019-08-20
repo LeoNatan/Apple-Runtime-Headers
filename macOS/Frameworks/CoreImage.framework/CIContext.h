@@ -15,6 +15,8 @@
 + (struct CGColorSpace *)defaultRGBColorSpace;
 + (struct CGColorSpace *)defaultWorkingColorSpace;
 + (int)_crashed_because_nonaddressable_memory_was_passed_to_render:(id)arg1 toBitmap:(void *)arg2 rowBytes:(long long)arg3 bounds:(struct CGRect)arg4 format:(int)arg5 colorSpace:(struct CGColorSpace *)arg6;
++ (id)contextWithMTLCommandQueue:(id)arg1 options:(id)arg2;
++ (id)contextWithMTLCommandQueue:(id)arg1;
 + (id)contextWithMTLDevice:(id)arg1 options:(id)arg2;
 + (id)contextWithMTLDevice:(id)arg1;
 + (id)contextWithCGLContext:(struct _CGLContextObject *)arg1 pixelFormat:(struct _CGLPixelFormatObject *)arg2 options:(id)arg3;
@@ -25,6 +27,7 @@
 + (id)_singletonContext;
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q}24@0:8@16, name: internalCLContextWithOptions:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q}32@0:8@16^v24, name: internalCLContextWithOptions:glContext:
++     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q}32@0:8@16@24, name: internalContextWithMTLCommandQueue:options:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q}32@0:8@16@24, name: internalContextWithMTLDevice:options:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q}40@0:8^{_CGLContextObject=}16^{_CGLPixelFormatObject=}24@32, name: internalContextWithCGLContext:pixelFormat:options:
 +     // Error parsing type: ^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=dd}{CGSize=dd}}{CGAffineTransform=dddddd}IQQi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}i{atomic<bool>=AB}i^{Context}Q}24@0:8@16, name: internalGLContextWithOptions:
@@ -67,6 +70,7 @@
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer *)arg2 bounds:(struct CGRect)arg3 colorSpace:(struct CGColorSpace *)arg4;
 - (void)render:(id)arg1 toCVPixelBuffer:(struct __CVBuffer *)arg2;
 - (void)render:(id)arg1 toBitmap:(void *)arg2 rowBytes:(long long)arg3 bounds:(struct CGRect)arg4 format:(int)arg5 colorSpace:(struct CGColorSpace *)arg6;
+- (id)initWithMTLCommandQueue:(id)arg1 options:(id)arg2;
 - (id)initWithMTLDevice:(id)arg1 options:(id)arg2;
 - (id)initWithCGLContext:(struct _CGLContextObject *)arg1 pixelFormat:(struct _CGLPixelFormatObject *)arg2 colorSpace:(struct CGColorSpace *)arg3 options:(id)arg4;
 - (id)initWithCGLContext:(struct _CGLContextObject *)arg1 pixelFormat:(struct _CGLPixelFormatObject *)arg2 options:(id)arg3;
@@ -111,7 +115,7 @@
 - (id)startTaskToClear:(id)arg1 error:(id *)arg2;
 - (BOOL)prepareRender:(id)arg1 fromRect:(struct CGRect)arg2 toDestination:(id)arg3 atPoint:(struct CGPoint)arg4 error:(id *)arg5;
 - (id)startTaskToRender:(id)arg1 toDestination:(id)arg2 error:(id *)arg3;
-- (id)_startTaskToRender:(id)arg1 toDestination:(id)arg2 forPrepareRender:(BOOL)arg3 error:(id *)arg4;
+- (id)_startTaskToRender:(id)arg1 toDestination:(id)arg2 forPrepareRender:(BOOL)arg3 forClear:(BOOL)arg4 error:(id *)arg5;
 - (id)startTaskToRender:(id)arg1 fromRect:(struct CGRect)arg2 toDestination:(id)arg3 atPoint:(struct CGPoint)arg4 error:(id *)arg5;
 
 @end

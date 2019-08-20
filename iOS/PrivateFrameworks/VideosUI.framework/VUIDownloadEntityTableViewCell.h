@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     VUIDownloadEntity *_downloadEntity;
 }
 
++ (id)_generateMetaDataHeaderFirstLabelForDownloadEntity:(id)arg1;
 + (id)_entityPlaceholderImageForDownloadEntity:(id)arg1;
 + (void)configureVUIDownloadEntityTableViewCell:(id)arg1 withDownloadEntity:(id)arg2;
 @property(retain, nonatomic) VUIDownloadEntity *downloadEntity; // @synthesize downloadEntity=_downloadEntity;

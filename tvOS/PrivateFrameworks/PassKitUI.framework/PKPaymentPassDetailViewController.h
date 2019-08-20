@@ -241,6 +241,7 @@
 - (_Bool)_shouldShowTransferCell;
 - (void)_updatePeerPaymentPreferencesSectionVisibilityAndReloadIfNecessary;
 - (_Bool)_showsTransactionHistorySwitch;
+- (_Bool)_shouldShowTransactions;
 - (id)_createTabBarWithSelectedIndex:(long long)arg1;
 - (double)_offscreenHeaderHeight;
 - (_Bool)_updateHeaderHeightDeterminingLayout:(_Bool)arg1;
@@ -271,11 +272,15 @@
 - (void)_didSelectFixPeerPaymentAtIndexPath:(id)arg1;
 - (void)_showSpinner:(_Bool)arg1 inCell:(id)arg2;
 - (void)_showSpinner:(_Bool)arg1 inCell:(id)arg2 detailText:(id)arg3;
+- (void)presentBillPayment;
+- (void)showStatementDetailsWithIdentifier:(id)arg1;
 - (void)presentBankAccounts;
 - (void)presentBalanceDetails;
 - (void)presentSchedulePayments;
 - (void)_didSelectMakePayment;
 - (void)_didSelectTransferToBank;
+- (void)presentTermsAcceptance;
+- (void)presentIdentityVerification;
 - (void)presentTopUp;
 - (void)_doneLoadingPeerPaymentAccountAction;
 - (void)authAndDecryptWithVirtualCard:(id)arg1;
@@ -347,6 +352,7 @@
 - (id)_contactKeysToFetch;
 - (id)_transactionCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_transactionsSwitchCellForIndexPath:(id)arg1 tableView:(id)arg2;
+- (id)_accountServiceNotificationsSwitchCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_peerPaymentNotificationsSwitchCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (id)_messagesSwitchCellForTableView:(id)arg1;
 - (id)_expressAccessCellForTableView:(id)arg1;
@@ -363,9 +369,13 @@
 - (unsigned long long)_cardInfoSectionGenerateCellWithOutput:(id *)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (_Bool)_showExpressDetails;
 - (void)_didSelectPassOperationsSectionAtIndexPath:(id)arg1;
-- (void)presentTermsAndConditionsWithRow:(unsigned long long)arg1;
+- (void)_presentTermsAndConditionsWithRow:(unsigned long long)arg1;
+- (void)presentTermsAndConditions;
 - (void)_didSelectPrivacySectionAtRow:(long long)arg1;
-- (unsigned long long)_privacyTermsSectionGenerateCellWithOutput:(id *)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
+- (unsigned long long)_rowIndexForPrivacyTermsInfoRowType:(unsigned long long)arg1;
+- (unsigned long long)_privacyTermsInfoRowTypeForRowIndex:(long long)arg1;
+- (unsigned long long)_numberOfPrivacyTermsInfoRows;
+- (id)_privacyTermsSectionCellForRowIndex:(long long)arg1 tableView:(id)arg2;
 - (void)_didSelectBillingAddress;
 - (id)_billingAddressCellWithLabel:(_Bool)arg1 forTableView:(id)arg2;
 - (id)_moreTransactionsCellForTableView:(id)arg1;

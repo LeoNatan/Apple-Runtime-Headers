@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)prepareForReuse;
+- (void)layoutMarginsDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

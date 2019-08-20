@@ -33,7 +33,6 @@
 - (double)_titleLastBaselineToBodyFirstBaseline;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;
-- (double)_assetImageBottomToTitleFirstBaseline;
 - (id)_titleFont;
 - (id)_titleFontTextStyle;
 - (void)stackedButtonView:(id)arg1 didTapButtonAtIndex:(long long)arg2;

@@ -22,11 +22,9 @@
     NSString *_typeName;
     NSDictionary *_attributes;
     NSOrderedSet *_displayOrderedAttributes;
-    NSArray *_referencedCodableDescriptions;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic, setter=_setReferencedCodableDescriptions:) NSArray *referencedCodableDescriptions; // @synthesize referencedCodableDescriptions=_referencedCodableDescriptions;
 @property(copy, nonatomic) NSOrderedSet *displayOrderedAttributes; // @synthesize displayOrderedAttributes=_displayOrderedAttributes;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;

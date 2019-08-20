@@ -14,7 +14,7 @@
 #import <ContactsUI/CNContactViewControllerDelegate-Protocol.h>
 
 @class CNAccountsAndGroupsDataSource, CNAccountsAndGroupsViewController, CNContactListStyleApplier, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, CNUIUserActivityManager, NSArray, NSString, UIAlertController, UIKeyCommand;
-@protocol CNContactDataSource, CNContactNavigationControllerDelegate, CNScheduler, NSObject;
+@protocol CNContactDataSource, CNContactNavigationControllerDelegate, CNScheduler;
 
 @interface CNContactNavigationController : UINavigationController <CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerDelegate, CNContactContentViewControllerDelegate, CNAccountsAndGroupsViewControllerDelegate, CNContactViewControllerAddContactPresenter>
 {
@@ -39,9 +39,9 @@
     UIKeyCommand *_addKeyCommand;
     UIAlertController *_facebookContactsAlertController;
     id <CNScheduler> _backgroundScheduler;
+    id <CNScheduler> _mainThreadScheduler;
     CNUIUserActivityManager *_activityManager;
     CNContactListStyleApplier *_contactListStyleApplier;
-    id <NSObject> _currentStyleDidChangeNotificationToken;
     NSArray *_prohibitedPropertyKeys;
 }
 
@@ -49,11 +49,11 @@
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(nonatomic) BOOL hideGroupsButton; // @synthesize hideGroupsButton=_hideGroupsButton;
 @property(nonatomic) BOOL ignoresMapsData; // @synthesize ignoresMapsData=_ignoresMapsData;
-@property(retain, nonatomic) id <NSObject> currentStyleDidChangeNotificationToken; // @synthesize currentStyleDidChangeNotificationToken=_currentStyleDidChangeNotificationToken;
 @property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
 @property(retain, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
 @property(nonatomic) BOOL hasPendingShowCard; // @synthesize hasPendingShowCard=_hasPendingShowCard;
-@property(retain, nonatomic) id <CNScheduler> backgroundScheduler; // @synthesize backgroundScheduler=_backgroundScheduler;
+@property(readonly, nonatomic) id <CNScheduler> mainThreadScheduler; // @synthesize mainThreadScheduler=_mainThreadScheduler;
+@property(readonly, nonatomic) id <CNScheduler> backgroundScheduler; // @synthesize backgroundScheduler=_backgroundScheduler;
 @property(nonatomic) __weak UIAlertController *facebookContactsAlertController; // @synthesize facebookContactsAlertController=_facebookContactsAlertController;
 @property(retain, nonatomic) UIKeyCommand *addKeyCommand; // @synthesize addKeyCommand=_addKeyCommand;
 @property(nonatomic) __weak CNContactViewController *presentedContactViewController; // @synthesize presentedContactViewController=_presentedContactViewController;
@@ -127,6 +127,7 @@
 - (void)setShouldDisplayMeContactBanner:(BOOL)arg1;
 - (id)contactListViewController;
 @property(readonly, nonatomic) id <CNContactDataSource> dataSource;
+- (void)updateContactStyle:(id)arg1;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 contactFormatter:(id)arg2 applyGroupFilterFromPreferences:(BOOL)arg3 environment:(id)arg4 allowsLargeTitles:(BOOL)arg5;
 - (id)initWithDataSource:(id)arg1 environment:(id)arg2 allowsLargeTitles:(BOOL)arg3;

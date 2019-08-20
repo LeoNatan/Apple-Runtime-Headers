@@ -18,6 +18,7 @@
 - (void)removeCommands:(id)arg1 forContextProvider:(id)arg2;
 - (void)removeContextProvider:(id)arg1;
 - (void)addContextProvider:(id)arg1 forCommand:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)tabBarSplitViewFocusable;
 - (id)tabBarSplitViewFousable;
 @end
 

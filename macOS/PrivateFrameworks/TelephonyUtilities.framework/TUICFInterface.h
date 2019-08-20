@@ -11,7 +11,7 @@
 }
 
 + (void)allowCallForDestinationID:(id)arg1 providerIdentifier:(id)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-+ (BOOL)allowCallForDestinationID:(id)arg1 providerIdentifier:(id)arg2 isFromBlockList:(char *)arg3;
++ (id)allowCallForDestinationID:(id)arg1 providerIdentifier:(id)arg2;
 
 @end
 

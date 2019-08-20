@@ -7,6 +7,7 @@
 #import <HomeUI/NSObject-Protocol.h>
 
 @protocol HUOnboardingWarningPresenter <NSObject>
+- (void)userTappedCancelFromWarning;
 - (void)userTappedContinueFromWarning;
 @end
 

@@ -60,6 +60,7 @@
 - (void)_setCachedUniqueIDs:(id)arg1;
 - (id)_cachedUniqueIDs;
 - (CDUnknownBlockType)_errorHandlerWithCompletion:(CDUnknownBlockType)arg1;
+- (id)_remoteObjectProxySynchronize:(_Bool)arg1 withFailureHandler:(CDUnknownBlockType)arg2;
 - (id)_remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;
 - (void)_sharedPaymentWebServiceContextForDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(id)arg1 sessionData:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -98,6 +99,8 @@
 - (void)savePaymentPass:(id)arg1 forDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)paymentPassWithDeviceAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)paymentPassWithUniqueID:(id)arg1 synchronous:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)paymentPassUniqueIDsSynchronous:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)paymentPassWithUniqueID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)paymentPassUniqueIDs:(CDUnknownBlockType)arg1;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(_Bool)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;

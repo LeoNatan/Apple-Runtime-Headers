@@ -31,6 +31,8 @@
 @property(retain, nonatomic) NSString *cachedHost; // @synthesize cachedHost=_cachedHost;
 @property(retain, nonatomic) NSDate *timeOfLastExternalIdentificationCache; // @synthesize timeOfLastExternalIdentificationCache=_timeOfLastExternalIdentificationCache;
 - (void).cxx_destruct;
+- (_Bool)_reset;
+- (_Bool)refresh;
 - (int)managedConfigurationAccountAccess;
 @property(readonly, nonatomic) _Bool isWritable;
 @property(readonly, nonatomic) NSSet *ownerAddresses;

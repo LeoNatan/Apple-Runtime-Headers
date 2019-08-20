@@ -140,6 +140,7 @@
 - (double)todayViewPageScrollOffsetUsingPageWidth:(double)arg1;
 @property(readonly, nonatomic) double todayViewPageScrollOffset;
 - (double)_pageWidth;
+- (void)_cleanupAfterSidebarSlideGestureCompleted;
 - (double)scrollableWidthForVisibleColumnRange;
 - (void)_enableUserInteractionAfterSignificantAnimation;
 - (void)_disableUserInteractionBeforeSignificantAnimation;
@@ -204,6 +205,7 @@
 - (unsigned long long)_leadingCustomPageCount;
 - (void)getMetrics:(struct SBRootFolderViewMetrics *)arg1 dockEdge:(unsigned long long)arg2;
 - (void)getMetrics:(struct SBRootFolderViewMetrics *)arg1;
+@property(readonly, nonatomic, getter=isDockVisible) _Bool dockVisible;
 @property(readonly, nonatomic) double dockHeight;
 - (double)maxDockHeight;
 - (double)effectiveStatusBarHeight;

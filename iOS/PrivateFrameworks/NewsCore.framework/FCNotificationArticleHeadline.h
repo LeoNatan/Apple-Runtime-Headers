@@ -28,6 +28,7 @@
     _Bool _bundlePaid;
     _Bool _issueOnly;
     _Bool _showBundleSoftPaywall;
+    _Bool _useTransparentNavigationBar;
     NSString *_versionIdentifier;
     NSString *_identifier;
     NSString *_articleID;
@@ -83,6 +84,7 @@
 @property(retain, nonatomic) NSString *flintDocumentUrlString; // @synthesize flintDocumentUrlString=_flintDocumentUrlString;
 @property(retain, nonatomic) NSDictionary *articlePayload; // @synthesize articlePayload=_articlePayload;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
+- (_Bool)useTransparentNavigationBar;
 - (_Bool)showBundleSoftPaywall;
 - (long long)bodyTextLength;
 - (_Bool)isIssueOnly;

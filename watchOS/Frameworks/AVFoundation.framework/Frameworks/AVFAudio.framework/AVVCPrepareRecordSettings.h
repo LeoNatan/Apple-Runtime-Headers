@@ -20,6 +20,7 @@
 @property(nonatomic) double recordBufferDuration; // @synthesize recordBufferDuration=_recordBufferDuration;
 @property(retain, nonatomic) NSDictionary *avAudioSettings; // @synthesize avAudioSettings=_avAudioSettings;
 @property(nonatomic) unsigned int streamID; // @synthesize streamID=_streamID;
+- (void)dealloc;
 - (id)initWithStreamID:(unsigned int)arg1 settings:(id)arg2 bufferDuration:(double)arg3;
 
 @end

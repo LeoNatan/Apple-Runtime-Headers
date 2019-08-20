@@ -101,6 +101,7 @@
 - (void)_tappedSmallRingView:(id)arg1;
 - (void)_showKeyboardButtonTapped:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
+- (void)_updateLayoutForKeyboardAction:(CDUnknownBlockType)arg1;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillChange:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;

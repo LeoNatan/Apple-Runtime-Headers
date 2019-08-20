@@ -56,6 +56,9 @@
 - (void)dailyCoreAnalyticsMetrics:(id)arg1;
 - (id)coreAnalyticsKeyFilter:(id)arg1;
 - (id)init;
+- (id)numberPropertyForKey:(id)arg1;
+- (void)setNumberProperty:(id)arg1 forKey:(id)arg2;
+- (void)incrementIntegerPropertyForKey:(id)arg1;
 - (id)datePropertyForKey:(id)arg1;
 - (void)setDateProperty:(id)arg1 forKey:(id)arg2;
 - (void)removeState;

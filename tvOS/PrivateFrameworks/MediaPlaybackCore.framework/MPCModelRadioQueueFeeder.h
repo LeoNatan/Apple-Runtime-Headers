@@ -10,13 +10,14 @@
 #import <MediaPlaybackCore/MPCQueueControllerDataSource-Protocol.h>
 #import <MediaPlaybackCore/MPRTCReportingItemSessionContaining-Protocol.h>
 
-@class ICStoreRequestContext, ICUserIdentity, ICUserIdentityStore, MPAVItem, MPCModelRadioPersonalizationResponse, MPCModelRadioPlaybackQueue, MPCPlaybackRequestEnvironment, NSDictionary, NSOperationQueue, NSString, SSVPlayActivityController;
-@protocol MPMutableIdentifierListSection;
+@class ICStoreRequestContext, ICUserIdentity, ICUserIdentityStore, MPAVItem, MPCModelRadioPersonalizationResponse, MPCModelRadioPlaybackQueue, MPCPlaybackRequestEnvironment, NSDictionary, NSObject, NSString, SSVPlayActivityController;
+@protocol MPMutableIdentifierListSection, OS_dispatch_queue;
 
 @interface MPCModelRadioQueueFeeder : MPQueueFeeder <MPRTCReportingItemSessionContaining, MPAVItemObserver, MPCQueueControllerDataSource>
 {
     id <MPMutableIdentifierListSection> _section;
     MPCModelRadioPlaybackQueue *_playbackQueue;
+    NSObject<OS_dispatch_queue> *_diffQueue;
     unsigned long long _backgroundTaskIdentifier;
     unsigned long long _backgroundTasks;
     MPAVItem *_currentItem;
@@ -24,7 +25,6 @@
     NSString *_lastCleanPlayedIdentifier;
     NSString *_lastPlayedIdentifier;
     MPCModelRadioPersonalizationResponse *_lastResponse;
-    NSOperationQueue *_loadingOperationQueue;
     _Bool _mayHaveRestrictedContent;
     MPCPlaybackRequestEnvironment *_playbackRequestEnvironment;
     long long _queueGeneration;
@@ -36,6 +36,7 @@
     CDUnknownBlockType _finalTracklistLoadingCompletionHandler;
 }
 
++ (id)sharedQueue;
 - (void).cxx_destruct;
 - (void)_updateProactiveCaching;
 - (id)_startPlaybackRequestWithPlaybackContext:(id)arg1;

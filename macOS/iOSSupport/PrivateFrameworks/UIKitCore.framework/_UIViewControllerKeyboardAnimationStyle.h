@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)animationStyleWithContext:(id)arg1 useCustomTransition:(BOOL)arg2;
-+ (id)animationStyleWithContext:(id)arg1;
 @property(nonatomic) BOOL allowCustomTransition; // @synthesize allowCustomTransition=_allowCustomTransition;
 @property(readonly, nonatomic) _UIViewControllerKeyboardAnimationStyleInfo *info; // @synthesize info=_info;
 @property(nonatomic) BOOL disableAlongsideView; // @synthesize disableAlongsideView=_disableAlongsideView;
@@ -27,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)canDismissWithScrollView;
+- (void)_launchAnimation:(CDUnknownBlockType)arg1 afterStarted:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (void)launchAnimation:(CDUnknownBlockType)arg1 afterStarted:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;

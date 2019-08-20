@@ -21,15 +21,18 @@
 }
 
 + (id)clientToServiceBookmarkForURL:(id)arg1;
++ (unsigned long long)maxBindAttemptCount;
 @property(readonly, copy) NSURL *photoLibraryURL; // @synthesize photoLibraryURL=_photoLibraryURL;
 @property(readonly) id <PLXPCProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
 - (void).cxx_destruct;
 - (void)_connectionInterrupted:(id)arg1;
+- (BOOL)_isResultAnInterruptionError:(id)arg1;
+- (id)_attemptBindToPhotoLibrary;
 - (id)_bindToPhotoLibrary;
 - (id)_lazilyBindToPhotoLibrary;
 - (void)_updateCachedBindResult:(id)arg1;
 - (id)_cachedBindResult;
-- (id)_tryToBindToPhotoLibrary;
+- (id)_bindToPhotoLibraryAndCacheResult;
 - (id)_bindToPhotoLibraryIfNecessary;
 - (BOOL)_bindToPhotoLibraryIfNecessaryWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)addBarrierBlock:(CDUnknownBlockType)arg1;

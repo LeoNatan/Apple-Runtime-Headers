@@ -21,6 +21,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (Class)equalityClass;
 + (id)passPropertiesForPass:(id)arg1;
 @property(copy, nonatomic) NSArray *enrouteTransitTypes; // @synthesize enrouteTransitTypes=_enrouteTransitTypes;
 @property(copy, nonatomic) PKCurrencyAmount *balance; // @synthesize balance=_balance;
@@ -38,6 +39,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithTransitAppletState:(id)arg1 paymentApplication:(id)arg2;
 @property(readonly, nonatomic) PKFelicaPassProperties *felicaProperties;
 

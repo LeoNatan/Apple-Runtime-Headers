@@ -68,7 +68,6 @@
 - (void)resultsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)actionDrawerViewController:(id)arg1 didSelectSection:(id)arg2;
 - (void)actionDrawerViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2;
-- (void)actionDrawerViewController:(id)arg1 didSelectCategoryForAppWithBundleIdentifier:(id)arg2 shouldLoadSuggestions:(BOOL)arg3;
 - (void)actionDrawerViewControllerDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;
 - (void)actionDrawerViewControllerDidSelectCategoryApps:(id)arg1 title:(id)arg2;

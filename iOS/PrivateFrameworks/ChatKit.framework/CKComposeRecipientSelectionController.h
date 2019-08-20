@@ -41,6 +41,7 @@
 @property(readonly, nonatomic) NSArray *proposedRecipients;
 @property(readonly, nonatomic) NSArray *expandedRecipients;
 - (void)_updatePillViewIfNeededIfIsNewConversation:(_Bool)arg1;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)deviceHasMultipleSubscriptions;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)dealloc;

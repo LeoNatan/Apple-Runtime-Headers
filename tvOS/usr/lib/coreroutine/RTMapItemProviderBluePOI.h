@@ -53,7 +53,7 @@
 - (id)locationsForAccessPoints:(id)arg1 error:(id *)arg2;
 - (id)accessPointsForFingerprint:(id)arg1 endDate:(id)arg2 error:(id *)arg3;
 - (id)fingerprintsBetweenStartDate:(id)arg1 endDate:(id)arg2 error:(id *)arg3;
-- (id)initWithDistanceCalculator:(id)arg1 fingerprintManager:(id)arg2 locationManager:(id)arg3 mapServiceManager:(id)arg4 motionActivityManager:(id)arg5 parameters:(id)arg6 platform:(id)arg7;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 fingerprintManager:(id)arg3 locationManager:(id)arg4 mapServiceManager:(id)arg5 motionActivityManager:(id)arg6 parameters:(id)arg7 platform:(id)arg8;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 fingerprintManager:(id)arg3 locationManager:(id)arg4 mapServiceManager:(id)arg5 motionActivityManager:(id)arg6 platform:(id)arg7;
 - (id)init;
 

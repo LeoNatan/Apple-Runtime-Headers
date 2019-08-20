@@ -11,6 +11,7 @@
 @interface AVTAvatarPoseAnimation : NSObject
 {
     AVTAvatarPose *_staticPose;
+    NSDictionary *_staticPhysicsStates;
     NSDictionary *_blendshapeAnimations;
     NSDictionary *_perNodeAnimations;
 }
@@ -25,8 +26,8 @@
 - (id)animationForAvatar:(id)arg1;
 - (id)animatedPoseRepresentation;
 - (id)staticPoseRepresentation;
-- (id)initWithStaticPoseRepresentation:(id)arg1 animatedPoseRepresentation:(id)arg2;
-- (id)initWithStaticPose:(id)arg1;
+- (id)initWithStaticPoseRepresentation:(id)arg1 animatedPoseRepresentation:(id)arg2 staticPhysicsStatesRepresentation:(id)arg3;
+- (id)initWithStaticPose:(id)arg1 staticPhysicsStates:(id)arg2;
 - (id)initWithScene:(id)arg1;
 - (id)initWithSceneAtURL:(id)arg1;
 

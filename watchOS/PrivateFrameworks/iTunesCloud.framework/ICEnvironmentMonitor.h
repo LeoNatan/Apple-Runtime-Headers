@@ -29,6 +29,7 @@
     NSString *_telephonyStatusIndicator;
     int _networkType;
     int _lastKnownNetworkType;
+    double _currentBatteryLevel;
     unsigned long long _currentThermalLevel;
 }
 
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic) unsigned long long currentThermalLevel; // @synthesize currentThermalLevel=_currentThermalLevel;
 @property(readonly, nonatomic) int lastKnownNetworkType; // @synthesize lastKnownNetworkType=_lastKnownNetworkType;
 @property(readonly, nonatomic) int networkType; // @synthesize networkType=_networkType;
+@property(readonly, nonatomic) double currentBatteryLevel; // @synthesize currentBatteryLevel=_currentBatteryLevel;
 @property(readonly, nonatomic, getter=isEthernetWired) _Bool ethernetWired; // @synthesize ethernetWired=_ethernetWired;
 @property(readonly, nonatomic, getter=isNetworkConstrained) _Bool networkConstrained; // @synthesize networkConstrained=_networkConstrained;
 @property(readonly, nonatomic, getter=isWiFiAssociated) _Bool wifiAssociated; // @synthesize wifiAssociated=_wifiAssociated;

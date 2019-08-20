@@ -15,7 +15,6 @@
 + (long long)repeatTypeForRecurrenceRules:(id)arg1 recurrenceDate:(id)arg2 recurrenceTimeZone:(id)arg3 getRepeatEnd:(out id *)arg4;
 + (id)_localizedOfMonthStringForMonth:(id)arg1;
 + (id)_stringForByDayOfWeek:(id)arg1 setPositions:(id)arg2;
-+ (id)_stringForByDayOfWeek:(id)arg1;
 + (id)_customByDayItemFormatLocalizedString;
 + (id)_byDayOfWeekOrdinalStrings;
 + (id)_stringForMonthNumber:(long long)arg1;

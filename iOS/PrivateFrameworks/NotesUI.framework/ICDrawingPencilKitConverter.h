@@ -46,7 +46,7 @@
 - (_Bool)compareDrawingAttachment:(id)arg1 withConvertedDrawing:(id)arg2;
 - (id)updateInlineDrawingAttachment:(id)arg1;
 - (id)convertSketch:(id)arg1;
-- (id)convertSketchAttachment:(id)arg1 toInlineDrawingAtRange:(struct _NSRange)arg2 inNote:(id)arg3 indexHandwriting:(_Bool)arg4;
+- (id)convertSketchAttachment:(id)arg1 toInlineDrawingAtRange:(struct _NSRange)arg2 inNote:(id)arg3;
 - (unsigned long long)convertAllSketchesInNote:(id)arg1;
 - (void)convertAllSketchesWithProgress:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)convertAllSketchesWithProgress:(id)arg1;

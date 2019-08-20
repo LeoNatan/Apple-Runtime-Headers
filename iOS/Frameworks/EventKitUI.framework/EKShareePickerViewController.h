@@ -33,7 +33,7 @@
 - (void)cancel;
 - (void)viewDidLoad;
 - (void)setSearchAccountID:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 calendar:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

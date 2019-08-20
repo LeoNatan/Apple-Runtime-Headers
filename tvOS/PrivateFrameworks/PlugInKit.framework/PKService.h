@@ -14,6 +14,7 @@
 @interface PKService : NSObject <NSXPCListenerDelegate>
 {
     _Bool _shared;
+    _Bool _isSystemService;
     PKServicePersonality *_solePersonality;
     id <PKServiceDelegate> _delegate;
     NSXPCListener *_serviceListener;
@@ -29,6 +30,7 @@
 + (void)main;
 @property(retain) NSObject<OS_dispatch_source> *firstHostRequestTimer; // @synthesize firstHostRequestTimer=_firstHostRequestTimer;
 @property(retain) NSObject<OS_dispatch_source> *terminationTimer; // @synthesize terminationTimer=_terminationTimer;
+@property _Bool isSystemService; // @synthesize isSystemService=_isSystemService;
 @property _Bool shared; // @synthesize shared=_shared;
 @property(retain) NSArray *subsystems; // @synthesize subsystems=_subsystems;
 @property(retain) NSObject<OS_dispatch_queue> *_sync; // @synthesize _sync=__sync;

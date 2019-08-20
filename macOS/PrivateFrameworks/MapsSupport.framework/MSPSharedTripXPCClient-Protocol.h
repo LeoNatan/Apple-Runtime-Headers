@@ -18,6 +18,7 @@
 - (void)sharedTripDidBecomeAvailable:(GEOSharedNavState *)arg1;
 - (void)sendMessage:(NSString *)arg1 toGroup:(NSString *)arg2;
 - (void)sendMessage:(NSString *)arg1 toParticipant:(NSString *)arg2;
+- (void)invalidateActiveHandles;
 - (void)sharedTripInvalidatedWithError:(NSError *)arg1;
 @end
 

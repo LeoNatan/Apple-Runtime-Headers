@@ -176,7 +176,7 @@
     unsigned int _descendantCount:20;
     unsigned int _zOrder:20;
     unsigned int _enumeratingSubviewsCount:6;
-    unsigned int _needsGeometryInWindowDidChangeNotificationCount:28;
+    unsigned int _needsGeometryInWindowDidChangeNotificationCount:8;
     unsigned int _hasCachedEffectiveContentStyle:1;
     unsigned int _horizontalContentSizeConstraintActive:1;
     unsigned int _verticalContentSizeConstraintActive:1;
@@ -216,6 +216,7 @@
     _NSViewLayerSurface *_layerSurface;
     unsigned long long _antialiasThresholdChangedNotificationToken;
     NSArray *_drawingCalloutDependencyContexts;
+    struct os_unfair_lock_s _atomicPropertiesLock;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
@@ -433,7 +434,6 @@
 - (void)setNextResponder:(id)arg1;
 - (void)translateRectsNeedingDisplayInRect:(struct CGRect)arg1 by:(struct CGSize)arg2;
 - (void)scrollRect:(struct CGRect)arg1 by:(struct CGSize)arg2;
-- (void)invalidate:(struct CGRect)arg1;
 - (struct CGRect)adjustScroll:(struct CGRect)arg1;
 - (BOOL)autoscroll:(id)arg1;
 - (BOOL)scrollRectToVisible:(struct CGRect)arg1;
@@ -782,10 +782,10 @@
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)sortSubviewsUsingBlock:(CDUnknownBlockType)arg1;
+@property(retain) NSView *maskView;
 - (void)sortSubviewsUsingFunction:(CDUnknownFunctionPointerType)arg1 context:(void *)arg2;
 @property(copy) NSArray *subviews;
 - (void)addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
-- (void)_copySubviewsArray;
 - (void)addSubview:(id)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
@@ -1047,7 +1047,6 @@
 - (void)_setDrawsWithTintWhenHidden:(BOOL)arg1;
 - (BOOL)_drawsWithTintWhenHidden;
 @property(copy, setter=_setClipPath:) NSBezierPath *_clipPath;
-- (BOOL)_needsDisplayOnClipPathChange;
 - (void)hideActiveFirstResponderIndication;
 - (void)showActiveFirstResponderIndication;
 - (id)designatedFocusRingView;

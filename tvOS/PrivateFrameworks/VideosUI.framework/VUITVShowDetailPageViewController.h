@@ -29,6 +29,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
 @property(readonly, nonatomic) VUIMediaCollection *mediaCollection; // @synthesize mediaCollection=_mediaCollection;
 - (void).cxx_destruct;
+- (id)_episodesChangeSetMapWithEpisodeGroups:(id)arg1 changeSet:(id)arg2;
+- (id)_seasonIdentifiersWithSeasons:(id)arg1;
+- (void)_updateTvShowDetailPageViewModelWithSeasonIdentifiers:(id)arg1;
 - (void)_buildTvShowDetailPageViewModel;
 - (id)_episodesBySeasonIdentifier;
 - (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;

@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
 - (void)enableNWLogDump:(void *)arg1;
 - (void)sendCongestionEventWithTimestamp:(unsigned int)arg1;
-- (_Bool)processNWConnectionPacketEvent:(struct packet_id *)arg1;
+- (_Bool)processNWConnectionPacketEvent:(struct packet_id *)arg1 eventType:(int)arg2;
 - (_Bool)processNWConnectionNotification:(struct ifnet_interface_advisory *)arg1;
 - (void)dealloc;
 

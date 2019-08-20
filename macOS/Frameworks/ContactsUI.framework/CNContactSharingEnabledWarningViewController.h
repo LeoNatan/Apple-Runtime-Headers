@@ -7,24 +7,42 @@
 #import <AppKit/NSViewController.h>
 
 #import <ContactsUI/CNContactCardWidget-Protocol.h>
+#import <ContactsUI/CNContactDowntimeTogglesViewControllerDelegate-Protocol.h>
 
-@class ABCardViewStyleProvider, NSString, NSTextField;
+@class ABCardViewStyleProvider, CNContact, CNContainer, NSButton, NSPopover, NSString, NSTextField;
+@protocol CNContactSharingEnabledWarningViewControllerDelegate;
 
-@interface CNContactSharingEnabledWarningViewController : NSViewController <CNContactCardWidget>
+@interface CNContactSharingEnabledWarningViewController : NSViewController <CNContactDowntimeTogglesViewControllerDelegate, CNContactCardWidget>
 {
     ABCardViewStyleProvider *_styleProvider;
+    id <CNContactSharingEnabledWarningViewControllerDelegate> _delegate;
+    CNContainer *_container;
     NSTextField *_warningLabel;
+    NSButton *_discosureButton;
+    NSPopover *_discosurePopover;
+    CNContact *_contact;
 }
 
++ (id)labelWithText:(id)arg1;
+@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
+@property(retain, nonatomic) NSPopover *discosurePopover; // @synthesize discosurePopover=_discosurePopover;
+@property(readonly, nonatomic) NSButton *discosureButton; // @synthesize discosureButton=_discosureButton;
 @property(readonly, nonatomic) NSTextField *warningLabel; // @synthesize warningLabel=_warningLabel;
+@property(retain, nonatomic) CNContainer *container; // @synthesize container=_container;
+@property(nonatomic) __weak id <CNContactSharingEnabledWarningViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 - (void).cxx_destruct;
+- (void)allowContactEditing:(id)arg1;
+- (void)removeSelectedContactFromDowntime:(id)arg1;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
+- (void)setContact:(id)arg1;
 - (double)desiredHeight;
 - (void)commitEditing;
-- (void)setContact:(id)arg1;
+- (void)discosurePressed:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)setupDisclosureButton;
+- (void)setupWarningLabel;
 - (id)init;
 
 // Remaining properties

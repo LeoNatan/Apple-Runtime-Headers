@@ -23,11 +23,9 @@
     RPCompanionLinkClient *_client;
     AXRemoteHearingAidDevice *_localDevice;
     NSObject<OS_dispatch_queue> *_mediaQueue;
-    unsigned long long _lastPublishedConnectionState;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) unsigned long long lastPublishedConnectionState; // @synthesize lastPublishedConnectionState=_lastPublishedConnectionState;
 @property(nonatomic) _Bool holdingPhoneForConnection; // @synthesize holdingPhoneForConnection=_holdingPhoneForConnection;
 @property(nonatomic) _Bool holdingMediaForConnection; // @synthesize holdingMediaForConnection=_holdingMediaForConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mediaQueue; // @synthesize mediaQueue=_mediaQueue;

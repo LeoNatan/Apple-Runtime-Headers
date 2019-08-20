@@ -16,9 +16,6 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)logMsgEventForBatchTrafficProbes:(id)arg1;
-- (id)logMsgEventForRealtimeTrafficProbes:(id)arg1;
-- (id)logMsgEventForTelemetricWithEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;
 - (id)bookedTableWithBookedUsingMaps:(_Bool)arg1 cancelled:(_Bool)arg2 viewedInProactiveTray:(_Bool)arg3 tappedProactiveTrayItem:(_Bool)arg4 viewedInPlacecard:(_Bool)arg5 viewedDetailsInPlacecard:(_Bool)arg6 isAsync:(_Bool)arg7 bookedAppId:(id)arg8 muid:(unsigned long long)arg9 called:(_Bool)arg10 routed:(_Bool)arg11 tappedChangeReservation:(_Bool)arg12 tappedCancelReservation:(_Bool)arg13;
 - (id)logMsgEventForTablebookedSessionWithSessionID:(id)arg1 bookedTables:(id)arg2;
 - (id)logMsgEventForTablebookingWithSessionID:(id)arg1 endState:(int)arg2 endView:(int)arg3 bookTableAppId:(id)arg4 muid:(unsigned long long)arg5 blurredReservationTimestamp:(long long)arg6 blurredBookingTimestamp:(long long)arg7 durationOfSessionInSeconds:(double)arg8 installNeeded:(_Bool)arg9 installNeededTappedAppId:(id)arg10 installCompleted:(_Bool)arg11 tableSize:(unsigned int)arg12 addedSpecialRequest:(_Bool)arg13 swipedAvailableTimes:(_Bool)arg14 tappedDatePicker:(_Bool)arg15 errorMessages:(id)arg16;

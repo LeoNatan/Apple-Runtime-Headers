@@ -11,7 +11,7 @@
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKSiderealWaypointsView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
+@class CALayer, CAShapeLayer, CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKSiderealWaypointsView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
 
 @interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider, PUICCrownInputSequencerDelegate>
 {
@@ -36,7 +36,9 @@
     NTKSiderealAuxiliaryDialLabels *_auxiliaryDialLabels;
     NTKSiderealTimeView *_siderealTimeView;
     UILabel *_offsetLabel;
-    UIView *_dialDarkeningView;
+    UIView *_darkeningContainerView;
+    CAShapeLayer *_dialDarkeningLayer;
+    CALayer *_timeViewDarkeningLayer;
     NSDateFormatter *_interactiveModeDateFormatter;
     NTKFaceViewTapControl *_viewModeTapButton;
     unsigned int _viewMode;
@@ -56,11 +58,13 @@
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
+- (struct CGPath *)newTimeViewPathForDarkeningView;
 - (float)_idealizedSolarDayProgress;
 - (float)_solarDayProgressForCurrentTime;
+- (struct CGAffineTransform)_timeViewScaleTransform;
 - (struct CGImage *)newImageRefFromView:(id)arg1;
-- (struct CGImage *)newWaypointViewAsImageRef;
-- (struct CGImage *)newDialViewAsImageRef;
+- (struct CGImage *)_waypointViewImageRef;
+- (struct CGImage *)_dialViewImageRef;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
 - (id)_pickerMaskForSlot:(id)arg1;
 - (int)_complicationPickerStyleForSlot:(id)arg1;
@@ -69,6 +73,7 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (struct CGRect)_timeViewKeylineFrameForEditing;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -77,9 +82,11 @@
 - (id)_keylineViewForComplicationSlot:(id)arg1;
 - (void)tearDownDarkeningView;
 - (void)setupDarkeningViewIfNeeded;
+- (float)_timeDarkeningViewAlphaForEditMode:(int)arg1;
 - (float)_darkeningViewAlphaForEditMode:(int)arg1;
 - (float)_complicationAlphaForEditMode:(int)arg1;
 - (float)_timeViewAlphaForEditMode:(int)arg1;
+- (float)_dialAlphaForEditMode:(int)arg1;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_applyScaleToTimeView;
@@ -137,9 +144,12 @@
 - (void)_enableCrown;
 - (void)_performWristRaiseAnimation;
 - (void)_prepareWristRaiseAnimation;
+- (void)_updateFramerate;
+- (void)screenWillTurnOn;
+- (void)screenDidTurnOff;
+@property(nonatomic, getter=isFrozen) _Bool frozen;
 - (void)_applyDataMode;
 - (void)setDataMode:(int)arg1;
-- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (_Bool)_supportsTimeScrubbing;
 - (_Bool)_wantsMinorDetents;
@@ -149,9 +159,13 @@
 - (void)layoutSubviews;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
+- (void)_unloadTimeView;
 - (void)_loadTimeView;
+- (void)_unloadSolarViews;
 - (void)_loadSolarViews;
+- (void)_unloadSolarOrbit;
 - (void)_loadSolarOrbit;
+- (void)_unloadDial;
 - (void)_loadDial;
 - (void)_unloadUI;
 - (void)_loadUI;
@@ -161,7 +175,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(nonatomic, getter=isFrozen) _Bool frozen;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

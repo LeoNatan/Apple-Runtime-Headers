@@ -32,7 +32,7 @@
 - (void)extensionConnection:(SPExtensionConnection *)arg1 didReceiveUserActivityDict:(NSDictionary *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 didReceiveUserActivity:(NSUserActivity *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 setupDynamicInterfaceObject:(NSDictionary *)arg3 completion:(void (^)(UIView *))arg4;
-- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 setTimerSupportVC:(UIViewController *)arg3;
+- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 setUnderlyingUIHostingController:(UIViewController *)arg3;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerDismissViewController:(NSString *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 presentViewControllers:(NSArray *)arg3 initializationContextIDs:(NSArray *)arg4;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 presentViewController:(NSString *)arg3 info:(NSDictionary *)arg4 initializationContextID:(NSNumber *)arg5;
@@ -45,9 +45,9 @@
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerPopToRootViewController:(NSString *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewControllerPopViewController:(NSString *)arg2;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(NSDictionary *)arg4 rowNamesAndContextIDs:(NSArray *)arg5;
-- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 presentTimerSupportInterfaceWithControllerClass:(Class)arg3 presentCompletion:(void (^)(NSString *))arg4 dismissCompletion:(void (^)(void))arg5;
-- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushTimerSupportInterfaceWithName:(NSString *)arg3 initializationContextID:(NSNumber *)arg4 completion:(void (^)(NSString *))arg5;
-- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushTimerSupportInterfaceWithControllerClass:(Class)arg3 completion:(void (^)(NSString *))arg4;
+- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 presentInterfaceControllerClass:(Class)arg3 willPresent:(void (^)(NSString *))arg4 didDismiss:(void (^)(void))arg5;
+- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushInterfaceController:(NSString *)arg3 initializationContextID:(NSNumber *)arg4 willPush:(void (^)(NSString *))arg5;
+- (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushInterfaceControllerClass:(Class)arg3 willPush:(void (^)(NSString *))arg4;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 pushViewController:(NSString *)arg3 initializationContextID:(NSNumber *)arg4;
 - (void)extensionConnection:(SPExtensionConnection *)arg1 interfaceViewController:(NSString *)arg2 setValue:(id)arg3 forKey:(NSString *)arg4 property:(NSString *)arg5;
 - (void)extensionGotUnknownControllerID:(NSString *)arg1;

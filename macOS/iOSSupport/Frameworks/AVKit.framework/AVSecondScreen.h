@@ -30,9 +30,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(readonly, nonatomic, getter=isTVOutScreen) BOOL TVOutScreen; // @synthesize TVOutScreen=_TVOutScreen;
 - (void).cxx_destruct;
-- (BOOL)_isScreenAvailable;
+- (BOOL)_isWindowSceneAvailable;
 - (void)_updatePreferredDisplayCriteria;
-- (void)_makeWindowVisibleIfNeeded;
 - (BOOL)isAvailable;
 - (void)setState:(long long)arg1;
 - (void)connectWithSecondScreenConnection:(id)arg1;

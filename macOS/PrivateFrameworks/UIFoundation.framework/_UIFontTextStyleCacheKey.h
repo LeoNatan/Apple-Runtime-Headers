@@ -10,10 +10,12 @@
 
 @interface _UIFontTextStyleCacheKey : _UIFontCacheKey
 {
+    BOOL _textLegibility;
     NSString *_textStyle;
     NSString *_contentSizeCategory;
 }
 
+@property(nonatomic) BOOL textLegibility; // @synthesize textLegibility=_textLegibility;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
 - (id)description;

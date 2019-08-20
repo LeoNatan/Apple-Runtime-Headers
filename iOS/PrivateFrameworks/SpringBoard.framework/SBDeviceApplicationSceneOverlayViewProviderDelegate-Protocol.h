@@ -7,6 +7,7 @@
 @class SBDeviceApplicationSceneOverlayViewProvider;
 
 @protocol SBDeviceApplicationSceneOverlayViewProviderDelegate
+- (_Bool)overlayViewProviderRendersWhileLocked:(SBDeviceApplicationSceneOverlayViewProvider *)arg1;
 - (void)deactivateOverlayForViewProvider:(SBDeviceApplicationSceneOverlayViewProvider *)arg1;
 - (void)activateOverlayForViewProvider:(SBDeviceApplicationSceneOverlayViewProvider *)arg1;
 @end

@@ -24,6 +24,7 @@
     id <PKPassLibraryDelegate> _delegate;
 }
 
++ (BOOL)contactlessInterfaceCanBePresentedFromSource:(long long)arg1 deviceUILocked:(BOOL)arg2;
 + (BOOL)contactlessInterfaceCanBePresentedFromSource:(long long)arg1;
 + (id)sharedInstance;
 + (id)sharedInstanceWithRemoteLibrary;
@@ -78,6 +79,7 @@
 - (long long)_currentNotificationCountForIdentifier:(id)arg1;
 - (void)transitMessageDidDisplay:(id)arg1;
 - (void)transitMessageForRouteInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)supportsDisbursements;
 - (id)_defaultPaymentPassForPaymentRequest:(id)arg1;
 - (void)supportedTransitPartnersForDigitalIssuance:(CDUnknownBlockType)arg1;
 - (id)_sortedPaymentPassesForPaymentRequest:(id)arg1;
@@ -148,6 +150,7 @@
 - (BOOL)canAddPaymentPassWithPrimaryAccountIdentifier:(id)arg1;
 - (BOOL)canAddPassOfType:(unsigned long long)arg1;
 - (unsigned long long)countPassesOfType:(unsigned long long)arg1;
+- (unsigned long long)countOfPasses;
 - (id)peerPaymentPassUniqueID;
 - (id)paymentPassesWithLocallyStoredValue;
 - (BOOL)hasPassesOfType:(unsigned long long)arg1;

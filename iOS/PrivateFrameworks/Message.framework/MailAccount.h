@@ -8,11 +8,12 @@
 
 #import <Message/EDIndexableAccount-Protocol.h>
 #import <Message/EDReceivingAccount-Protocol.h>
+#import <Message/EFLoggable-Protocol.h>
 
 @class ACAccount, MFError, MFLocalActionReplayHandler, MFLock, MFMailMessageLibrary, MFMailboxUid, MFWeakObjectCache, NSArray, NSMutableDictionary, NSString;
 @protocol EFScheduler;
 
-@interface MailAccount : MFAccount <EDReceivingAccount, EDIndexableAccount>
+@interface MailAccount : MFAccount <EFLoggable, EDReceivingAccount, EDIndexableAccount>
 {
     NSString *_path;
     NSString *_nonPersistentPath;
@@ -121,6 +122,7 @@
 + (_Bool)mailboxListingNotificationAreEnabled;
 + (struct os_unfair_recursive_lock_s *)lock;
 + (void)initialize;
++ (id)log;
 @property(readonly, nonatomic) MFLocalActionReplayHandler *replayHandler; // @synthesize replayHandler=_replayHandler;
 @property(retain, nonatomic) id <EFScheduler> mailboxCacheWriteScheduler; // @synthesize mailboxCacheWriteScheduler=_mailboxCacheWriteScheduler;
 @property(readonly, nonatomic) _Bool supportsFastRemoteBodySearch; // @synthesize supportsFastRemoteBodySearch=_supportsFastRemoteBodySearch;
@@ -225,7 +227,7 @@
 @property(readonly) _Bool moveSupported;
 - (id)loggingIdentifier;
 @property(readonly, nonatomic) _Bool needsRemoteSearchResultsVerification;
-- (id)statisticsKind;
+@property(readonly, copy, nonatomic) NSString *statisticsKind;
 - (id)persistentNameForMailbox:(id)arg1;
 - (id)displayNameUsingSpecialNamesForMailboxUid:(id)arg1;
 - (_Bool)deleteInPlaceForMailbox:(id)arg1;

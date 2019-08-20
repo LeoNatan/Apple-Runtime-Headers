@@ -7,6 +7,8 @@
 #import <Intents/INCodableAttributeMetadata.h>
 
 @interface INCodableAttributeMetadata (Workflow)
+- (void)wf_updateWithParameterValue:(id)arg1;
+- (void)wf_updateWithParameterState:(id)arg1;
 - (id)wf_contentItemForValue:(id)arg1;
 - (id)wf_parameterStateForIntentValue:(id)arg1 parameterDefinition:(id)arg2;
 - (_Bool)wf_processParameterValue:(id)arg1 forParameter:(id)arg2 codableAttribute:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

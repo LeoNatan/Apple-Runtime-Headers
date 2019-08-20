@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CSSearchableIndex, CSTopHitSearchQuery, NSDate, NSMutableArray;
+@class CSSearchQuery, CSSearchableIndex, CSTopHitSearchQuery, NSDate, NSMutableArray;
 @protocol OS_dispatch_queue;
 
 @interface PSCoreSpotlightIndexer : NSObject
@@ -15,6 +15,7 @@
     CSSearchableIndex *_prefsSearchableIndex;
     NSObject<OS_dispatch_queue> *_spotlightIndexQueue;
     CSTopHitSearchQuery *_searchQuery;
+    CSSearchQuery *_hasItemsQuery;
     NSMutableArray *_indexFromControllerLog;
 }
 
@@ -22,11 +23,13 @@
 + (char *)spotlightIndexQueueIdentifier;
 + (id)searchIndexIdentifier;
 @property(retain, nonatomic) NSMutableArray *indexFromControllerLog; // @synthesize indexFromControllerLog=_indexFromControllerLog;
+@property(retain, nonatomic) CSSearchQuery *hasItemsQuery; // @synthesize hasItemsQuery=_hasItemsQuery;
 @property(retain, nonatomic) CSTopHitSearchQuery *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *spotlightIndexQueue; // @synthesize spotlightIndexQueue=_spotlightIndexQueue;
 @property(retain, nonatomic) CSSearchableIndex *prefsSearchableIndex; // @synthesize prefsSearchableIndex=_prefsSearchableIndex;
 @property(nonatomic) _Bool skipManifests; // @synthesize skipManifests=_skipManifests;
 - (void).cxx_destruct;
+- (void)performYukonManifestMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)indexThirdPartyAppsWithPrefix:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_urlsFromManifestForSpecifier:(id)arg1 bundle:(id)arg2;
 - (id)_urlForSpecifier:(id)arg1 identifier:(id)arg2 category:(id)arg3 childCategory:(id *)arg4 prefix:(id)arg5 path:(id *)arg6 baseURL:(id)arg7 shouldLinkToRow:(_Bool)arg8;
@@ -56,6 +59,7 @@
 - (void)topHitSearchForString:(id)arg1 keyboardLanguage:(id)arg2 foundItemsHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)indexManifestBundlesAtURL:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)indexManifestBundlesAtURLs:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)hasfirstPartyIndexItems:(CDUnknownBlockType)arg1;
 - (id)searchableFirstPartyItemClassIdentifier;
 - (id)searchableThirdPartyItemClassIdentifier;
 - (id)searchableItemClassIdentifier;

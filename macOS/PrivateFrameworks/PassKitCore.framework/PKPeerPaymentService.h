@@ -28,6 +28,7 @@
 - (void)cloudStoreStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(CDUnknownBlockType)arg1;
 - (void)unregisterDeviceWithCompletion:(CDUnknownBlockType)arg1;
+- (void)registerDeviceWithForceReregister:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)downloadPassIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (id)lastUsedAlternateFundingSourcePassUniqueIdentifier;

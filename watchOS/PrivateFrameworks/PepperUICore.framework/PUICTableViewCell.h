@@ -6,8 +6,7 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class PUICTableView, PUICTableViewCellActionBar, PUICTableViewCellBackgroundView, UIColor, UIView;
-@protocol PUICEllipticScrollingProvider;
+@class PUICTableViewCellActionBar, PUICTableViewCellBackgroundView, UIColor, UIView;
 
 @interface PUICTableViewCell : UITableViewCell
 {
@@ -21,11 +20,9 @@
     _Bool _usesCustomHighlightAlpha;
     float _preferredImageViewMaxWidth;
     _Bool _requestingLayout;
-    id <PUICEllipticScrollingProvider> _ellipticScrollingProvider;
     _Bool _radioSectionCell;
     UIView *_swipingContentWrapperView;
     PUICTableViewCellActionBar *_actionBar;
-    PUICTableView *_tableView;
     int _sectionID;
 }
 
@@ -41,7 +38,6 @@
 + (id)_transparentBackgroundPillColor;
 + (id)_backgroundPillColor;
 @property(nonatomic) int sectionID; // @synthesize sectionID=_sectionID;
-@property(nonatomic) __weak PUICTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) PUICTableViewCellActionBar *actionBar; // @synthesize actionBar=_actionBar;
 @property(readonly, nonatomic) UIView *swipingContentWrapperView; // @synthesize swipingContentWrapperView=_swipingContentWrapperView;
 @property(nonatomic, getter=isRadioSectionCell) _Bool radioSectionCell; // @synthesize radioSectionCell=_radioSectionCell;
@@ -68,7 +64,6 @@
 - (void)_removeSubviewsForReuse;
 - (void)prepareForReuse;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (void)setFrame:(struct CGRect)arg1;
 - (void)_systemTextSizeChanged;
 @property(nonatomic) _Bool usesCustomHighlightAlpha;
 @property(nonatomic) _Bool usesDynamicType;
@@ -82,7 +77,6 @@
 @property(nonatomic, getter=isInteractive) _Bool interactive;
 - (struct CGSize)cellSizeForContentSize:(struct CGSize)arg1;
 - (void)_usesConstraintsChanged;
-- (id)_puicTableView;
 - (void)_setSwipeToDeleteViewObject:(id)arg1;
 - (id)_swipeToDeleteViewObject;
 - (void)_setSwipeCancellationRecognizerObject:(id)arg1;

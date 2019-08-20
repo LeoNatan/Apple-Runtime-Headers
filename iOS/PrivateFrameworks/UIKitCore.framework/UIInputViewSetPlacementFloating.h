@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double floatingWidth; // @synthesize floatingWidth=_floatingWidth;
 @property(nonatomic) UIResponder *responderToFollow; // @synthesize responderToFollow=_responderToFollow;
 - (void).cxx_destruct;
+- (_Bool)isFloating;
 - (struct CGRect)adjustBoundsForNotificationsWithOwner:(id)arg1;
 - (id)expiringPlacement;
 - (unsigned long long)indexForPurpose:(unsigned long long)arg1;

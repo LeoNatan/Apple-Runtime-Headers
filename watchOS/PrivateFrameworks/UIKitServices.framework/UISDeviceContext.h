@@ -19,6 +19,7 @@
 
 + (id)_allKeys;
 + (id)_keysToValueTypes;
++ (id)defaultContext;
 - (void).cxx_destruct;
 - (id)_dictionaryWithOnlyValidKeysFromDictionary:(id)arg1;
 - (id)_rawDeviceInfoKeysToValues;

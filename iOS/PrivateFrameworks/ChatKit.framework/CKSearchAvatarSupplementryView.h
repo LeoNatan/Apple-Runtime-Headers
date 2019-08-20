@@ -8,11 +8,12 @@
 
 #import <ChatKit/CKSearchResultSupplementryCell-Protocol.h>
 
-@class CKAvatarView, CNContact, NSString;
+@class CKAvatarView, CKSpotlightQueryResult, CNContact, NSString;
 
 @interface CKSearchAvatarSupplementryView : UICollectionReusableView <CKSearchResultSupplementryCell>
 {
-    NSString *_associatedItemIdentifier;
+    unsigned long long _parentContentType;
+    CKSpotlightQueryResult *_associatedResult;
     CNContact *_contact;
     CKAvatarView *_avatarView;
     struct UIEdgeInsets marginInsets;
@@ -23,11 +24,14 @@
 + (id)supplementaryViewType;
 @property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-@property(retain, nonatomic) NSString *associatedItemIdentifier; // @synthesize associatedItemIdentifier=_associatedItemIdentifier;
+@property(retain, nonatomic) CKSpotlightQueryResult *associatedResult; // @synthesize associatedResult=_associatedResult;
+@property(nonatomic) unsigned long long parentContentType; // @synthesize parentContentType=_parentContentType;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
+- (void)_updateVisibilityIfNeeded;
+- (void)_parentPreviewDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

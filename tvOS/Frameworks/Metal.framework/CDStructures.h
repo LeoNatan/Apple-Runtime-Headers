@@ -413,6 +413,7 @@ struct MTLTextureDescriptorPrivate {
     _Bool framebufferOnly;
     _Bool isDrawable;
     unsigned int swizzle;
+    _Bool writeSwizzleEnabled;
     unsigned long long compressionMode;
     union {
         unsigned long long textureUsage;

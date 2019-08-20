@@ -17,8 +17,12 @@
     long long _pendingShowOperation;
     UIColor *_backgroundColor;
     _Bool _animating;
+    _Bool _pushWithoutDeferringTransitionsWhileInBackground;
+    _Bool _inBackground;
 }
 
+@property(nonatomic, getter=isInBackground) _Bool inBackground; // @synthesize inBackground=_inBackground;
+@property(nonatomic) _Bool pushWithoutDeferringTransitionsWhileInBackground; // @synthesize pushWithoutDeferringTransitionsWhileInBackground=_pushWithoutDeferringTransitionsWhileInBackground;
 @property(readonly, nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 - (void).cxx_destruct;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;

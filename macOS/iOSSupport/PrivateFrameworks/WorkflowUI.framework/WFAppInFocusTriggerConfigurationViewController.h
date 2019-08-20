@@ -8,29 +8,26 @@
 
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
-#import <WorkflowUI/WFTriggerTableViewControllerDelegate-Protocol.h>
+#import <WorkflowUI/WFAppSearchViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableOrderedSet, NSString, UITableView;
+@class NSArray, NSMutableArray, NSMutableOrderedSet, NSString, UITableView;
 
-@interface WFAppInFocusTriggerConfigurationViewController : WFTriggerConfigurationViewController <WFTriggerTableViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface WFAppInFocusTriggerConfigurationViewController : WFTriggerConfigurationViewController <WFAppSearchViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableOrderedSet *_selectedApps;
-    NSMutableOrderedSet *_displayNameOfSelectedApps;
-    NSArray *_installedApps;
-    NSMutableOrderedSet *_displayNameOfInstalledApps;
+    NSMutableArray *_displayNameOfSelectedApps;
     UITableView *_tableView;
     NSArray *_sections;
 }
 
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(retain, nonatomic) NSMutableOrderedSet *displayNameOfInstalledApps; // @synthesize displayNameOfInstalledApps=_displayNameOfInstalledApps;
-@property(retain, nonatomic) NSArray *installedApps; // @synthesize installedApps=_installedApps;
-@property(retain, nonatomic) NSMutableOrderedSet *displayNameOfSelectedApps; // @synthesize displayNameOfSelectedApps=_displayNameOfSelectedApps;
+@property(retain, nonatomic) NSMutableArray *displayNameOfSelectedApps; // @synthesize displayNameOfSelectedApps=_displayNameOfSelectedApps;
 @property(retain, nonatomic) NSMutableOrderedSet *selectedApps; // @synthesize selectedApps=_selectedApps;
 - (void).cxx_destruct;
-- (void)triggerTableViewControllerDidCancel:(id)arg1;
-- (void)triggerTableViewController:(id)arg1 didSelectOptions:(id)arg2;
+- (void)appSearchViewController:(id)arg1 didFinishWithApps:(id)arg2;
+- (void)appSearchViewControllerDidCancel:(id)arg1;
+- (void)updateDisplayNameOfSelectedApps;
 - (void)presentNavControllerWithRootViewController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

@@ -31,7 +31,7 @@
 - (void)resolveRecipients:(id)arg1 forIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recipientDisambiguationResultsFromMultipleRelevantChats:(id)arg1;
 - (id)resolveMessageContentWithString:(id)arg1;
-- (long long)sendMessageWithText:(id)arg1 currentLocation:(BOOL)arg2 expressiveSendStyleID:(id)arg3 idsIdentifier:(id)arg4 executionContext:(long long)arg5 toChat:(id)arg6;
+- (id)sendMessageWithText:(id)arg1 currentLocation:(BOOL)arg2 expressiveSendStyleID:(id)arg3 idsIdentifier:(id)arg4 executionContext:(long long)arg5 toChat:(id)arg6;
 - (BOOL)canSendLocationMessageWithLocationManager:(id)arg1 withError:(long long *)arg2;
 - (BOOL)isMemberOfChat:(id)arg1;
 - (void)resolveSpeakableGroupNameForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

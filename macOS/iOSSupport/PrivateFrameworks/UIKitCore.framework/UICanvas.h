@@ -10,16 +10,13 @@
 
 @interface UICanvas : UIWindowScene
 {
-    struct CGSize _contentMinSize;
 }
 
-@property(nonatomic) struct CGSize contentMinSize; // @synthesize contentMinSize=_contentMinSize;
 
 // Remaining properties
 @property(readonly, nonatomic) _UICanvasDefinition *_definition; // @dynamic _definition;
 @property(readonly, nonatomic, getter=isKeyCanvas) BOOL keyCanvas; // @dynamic keyCanvas;
 @property(readonly, nonatomic, getter=_scene) FBSScene *scene; // @dynamic scene;
 @property(readonly, nonatomic) long long state; // @dynamic state;
-
 @end
 

@@ -18,6 +18,7 @@
     NSMutableSet *_finishedDownloadIdentifiers;
     long long _progressState;
     double _progressPercent;
+    struct __CFRunLoopObserver *_updateIconRunLoopObserver;
     SBFolder *_folder;
 }
 
@@ -71,7 +72,10 @@
 - (id)genericIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)generateIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)rootFolder;
+- (void)dealloc;
+- (void)invalidateUpdateIconRunLoopObserver;
 - (id)initWithFolder:(id)arg1;
+- (Class)iconImageViewClassForLocation:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

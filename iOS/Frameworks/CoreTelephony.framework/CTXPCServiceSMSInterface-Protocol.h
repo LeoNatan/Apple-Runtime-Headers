@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CTSMSDataType, CTXPCServiceSubscriptionContext;
+@class CTXPCServiceSubscriptionContext;
 
 @protocol CTXPCServiceSMSInterface
-- (void)injectMTsms:(CTXPCServiceSubscriptionContext *)arg1 smsData:(CTSMSDataType *)arg2 completion:(void (^)(id *))arg3;
 - (void)getEmergencyTextNumbers:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)getSmscAddress:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (void)getSmsReadyState:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

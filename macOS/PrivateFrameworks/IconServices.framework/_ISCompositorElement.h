@@ -12,6 +12,7 @@
 @class NSMutableDictionary, NSString;
 @protocol ISCompositorRecipe, ISCompositorResourceProvider;
 
+__attribute__((visibility("hidden")))
 @interface _ISCompositorElement : NSObject <ISCompositorElement, ISCompositorResourceProvider>
 {
     id <ISCompositorRecipe> _recipe;

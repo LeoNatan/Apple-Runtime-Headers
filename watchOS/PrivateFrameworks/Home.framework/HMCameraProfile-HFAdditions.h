@@ -15,7 +15,6 @@
 + (unsigned int)hf_cameraNotificationMotionDetectionSettingsForCameraProfiles:(id)arg1;
 + (unsigned int)hf_cameraMotionDetectionSettingsForCameraProfiles:(id)arg1;
 + (unsigned int)hf_cameraAccessModeSelectedOptionForCameraProfiles:(id)arg1 presenceType:(unsigned int)arg2;
-+ (unsigned int)hf_cameraRecordingSelectedIntervalForCameraProfiles:(id)arg1;
 @property(readonly, nonatomic) _Bool hf_cameraIsNotSetToRecord;
 @property(readonly, nonatomic) _Bool hf_shouldDisableLiveStream;
 @property(readonly, nonatomic) _Bool hf_cameraSupportsRecording;

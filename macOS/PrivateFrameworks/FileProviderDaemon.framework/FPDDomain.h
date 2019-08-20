@@ -23,6 +23,7 @@
     BOOL _isObservingRoot;
     BOOL _indexerStarted;
     BOOL _isUsingFPFS;
+    BOOL _invalidated;
     NSObject<OS_dispatch_source> *_timer;
     NSURL *_previouslyAccessedSecurityScopedURL;
     FPPacer *_rootCreationPacer;
@@ -30,6 +31,7 @@
     BOOL _userEnabled;
     BOOL _ejectable;
     BOOL _unableToStartup;
+    BOOL _forceNoFPFSForTesting;
     id <FPDDomainIndexChangeDelegate> _indexChangeDelegate;
     NSString *_identifier;
     NSFileProviderDomain *_nsDomainOrNilForDefault;
@@ -48,6 +50,7 @@
     NSData *_fpfsRootBookmarkData;
 }
 
+@property(nonatomic) BOOL forceNoFPFSForTesting; // @synthesize forceNoFPFSForTesting=_forceNoFPFSForTesting;
 @property(retain, nonatomic) NSData *fpfsRootBookmarkData; // @synthesize fpfsRootBookmarkData=_fpfsRootBookmarkData;
 @property(retain, nonatomic) FPDDomainIndexer *indexer; // @synthesize indexer=_indexer;
 @property(retain, nonatomic) NSMutableDictionary *filePresenters; // @synthesize filePresenters=_filePresenters;
@@ -70,8 +73,8 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <FPDDomainIndexChangeDelegate> indexChangeDelegate; // @synthesize indexChangeDelegate=_indexChangeDelegate;
 - (void).cxx_destruct;
-- (void)writeCheckReportTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dumpStateTo:(id)arg1;
+- (void)writeCheckReportTo:(id)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2;
 - (void)dumpInternalStateTo:(id)arg1 request:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (long long)nonEvictableSpace;
 - (void)downloadItemWithItemID:(id)arg1 request:(id)arg2 progress:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

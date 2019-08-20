@@ -28,7 +28,6 @@
 + (_Bool)enumerateAssociatedObjectsForIdentifier:(long long)arg1 inDatabase:(id)arg2 error:(id *)arg3 associatedObjectHandler:(CDUnknownBlockType)arg4;
 + (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned long long)arg2 deletionContext:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned long long)arg2 generateDeletedObjects:(_Bool)arg3 database:(id)arg4 profile:(id)arg5 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
-+ (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned long long)arg2 generateDeletedObjects:(_Bool)arg3 profile:(id)arg4 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
 + (void)deleteSamplesWithTypes:(id)arg1 sourceEntities:(id)arg2 profile:(id)arg3 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (id)maxAnchorForSamplesWithType:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)oldestSampleWithType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 error:(id *)arg5;
@@ -36,6 +35,7 @@
 + (id)orderingTermForSortDescriptor:(id)arg1;
 + (_Bool)requiresSampleTypePredicate;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
++ (Class)_entityClassForDeletion;
 + (Class)_deletedEntityClass;
 + (id)indices;
 + (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned long long *)arg1;

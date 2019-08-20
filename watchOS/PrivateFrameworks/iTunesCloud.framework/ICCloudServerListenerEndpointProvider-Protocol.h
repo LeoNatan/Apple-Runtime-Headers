@@ -9,6 +9,6 @@
 @class NSXPCListenerEndpoint;
 
 @protocol ICCloudServerListenerEndpointProvider <NSObject>
-- (NSXPCListenerEndpoint *)listenerEndpointForService:(int)arg1;
+- (NSXPCListenerEndpoint *)listenerEndpointForService:(int)arg1 error:(id *)arg2;
 @end
 

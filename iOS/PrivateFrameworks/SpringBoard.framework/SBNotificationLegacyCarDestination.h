@@ -24,6 +24,7 @@
 @property(nonatomic) __weak id <NCNotificationDestinationDelegate> delegate;
 - (void).cxx_destruct;
 - (void)agent:(id)arg1 didDismissNotificationRequest:(id)arg2;
+- (void)agent:(id)arg1 willPresentNotificationRequest:(id)arg2;
 - (void)agent:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3;
 - (void)withdrawNotificationRequest:(id)arg1;
 - (void)modifyNotificationRequest:(id)arg1;

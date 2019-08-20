@@ -13,11 +13,13 @@
     // Error parsing type: {?="vector"}, name: _quaternionTarget
     // Error parsing type: , name: _scaleTarget
     unsigned long long _snapState;
+    _Bool _isVertical;
     id <ARCoachingGlyphStateDelegate> _delegate;
     // Error parsing type: , name: _topPlaneTranslationTarget
     // Error parsing type: , name: _bottomPlaneTranslationTarget
 }
 
+@property(nonatomic) _Bool isVertical; // @synthesize isVertical=_isVertical;
 // Error parsing type for property bottomPlaneTranslationTarget:
 // Property attributes: T,R,N,V_bottomPlaneTranslationTarget
 

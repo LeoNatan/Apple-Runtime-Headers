@@ -21,6 +21,7 @@
 + (void)_maps_setDoesNotTranslateAutoresizingConstraintsForViewsDictionary:(id)arg1;
 - (struct CGRect)_mapkit_doubleFrame;
 - (unsigned long long)_mapkit_countOfSet:(id)arg1 minusSubset:(id)arg2;
+@property(readonly, nonatomic) BOOL _mapkit_isDarkModeEnabled;
 @property(readonly, nonatomic) double _currentScreenScale;
 - (void)_mapkit_insertSubview:(id)arg1 atIndex:(long long)arg2;
 - (struct CGPoint)_mapkit_center;

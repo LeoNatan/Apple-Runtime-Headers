@@ -23,7 +23,7 @@
 
 @property(nonatomic) __weak id <REDonatedActionFilteredCacheDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_refreshAllDonations;
+- (void)_refreshAllDonations:(id)arg1;
 - (void)_queue_incrementPerformedCountForDonation:(id)arg1;
 - (unsigned long long)_queue_performedCountForDonation:(id)arg1;
 - (unsigned long long)_queue_performedTodayCountForBundleIdentifer:(id)arg1 actionIdentifier:(unsigned long long)arg2;

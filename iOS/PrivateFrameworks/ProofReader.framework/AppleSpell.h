@@ -154,6 +154,7 @@
 - (id)localDictionaryArrayForLanguage:(id)arg1;
 - (id)globalDictionaryArray;
 - (id)spellServer:(id)arg1 candidatesForSelectedRange:(struct _NSRange)arg2 inString:(id)arg3 offset:(unsigned long long)arg4 types:(unsigned long long)arg5 options:(id)arg6 orthography:(id)arg7;
+- (_Bool)noSuggestForCompletion:(id)arg1 language:(id)arg2 appIdentifier:(id)arg3;
 - (void)personalizeEmojiArray:(id)arg1;
 - (id)spellServer:(id)arg1 suggestWordWithMinimumLength:(unsigned long long)arg2 maximumLength:(unsigned long long)arg3 language:(id)arg4;
 - (id)spellServer:(id)arg1 suggestNextLetterDictionariesForPartialWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5;
@@ -171,6 +172,7 @@
 - (id)phraseMatching:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (unsigned int)metaFlagsForWord:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateWord:(id)arg1 inLexicon:(id)arg2;
+- (_Bool)validateNoSuggestUntilLearnedWord:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateUntilLearnedWord:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateNoCapAbbreviation:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateVariantWord:(id)arg1 inLexiconForLanguage:(id)arg2;

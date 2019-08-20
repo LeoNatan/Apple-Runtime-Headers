@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <ARKit/ARResultData-Protocol.h>
+#import <ARKit/NSCopying-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface ARCoreRESkeletonResults : NSObject <ARResultData>
+@interface ARCoreRESkeletonResults : NSObject <ARResultData, NSCopying>
 {
     NSArray *_retargetedSkeletons;
     double _timestamp;
@@ -19,6 +20,8 @@
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSArray *retargetedSkeletons; // @synthesize retargetedSkeletons=_retargetedSkeletons;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 -     // Error parsing type: @160@0:8{?=[4]}16{?=[4]}80@144@152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:
 
 // Remaining properties

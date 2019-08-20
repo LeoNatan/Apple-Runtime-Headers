@@ -8,23 +8,20 @@
 
 #import <ScreenTimeUI/STLockoutPinViewDelegate-Protocol.h>
 
-@class NSArray, NSStackView, NSString, STPINController;
+@class NSArray, NSStackView, NSString, STLockoutPolicyController;
 
 __attribute__((visibility("hidden")))
 @interface STLockoutAlertController : NSPopover <STLockoutPinViewDelegate>
 {
     NSStackView *_stackView;
-    NSString *_title;
     NSArray *_actions;
+    STLockoutPolicyController *_policyController;
     long long _style;
-    STPINController *_pinController;
 }
 
-+ (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
-@property(retain) STPINController *pinController; // @synthesize pinController=_pinController;
 @property(nonatomic) long long style; // @synthesize style=_style;
+@property(readonly) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)pinFieldViewTextDidComplete:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
@@ -35,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)addAction:(id)arg1;
 - (id)_newStackView;
 - (void)performClose:(id)arg1;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3;
+- (id)initWithPolicyController:(id)arg1 style:(long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

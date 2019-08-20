@@ -23,6 +23,7 @@
 - (id)savedPreviewFromURL:(id)arg1;
 - (void)savePreview:(id)arg1 toURL:(id)arg2;
 - (id)_generatePlaceholderThumbnailFillToSize:(struct CGSize)arg1;
+- (id)transcriptTraitCollection;
 - (id)_generateThumbnailFillToSize:(struct CGSize)arg1 contentAlignmentInsets:(struct UIEdgeInsets)arg2 withCoordinate:(struct CLLocationCoordinate2D)arg3 forState:(int)arg4;
 - (void)_generateMapPreview;
 - (id)previewURLForWidth:(unsigned int)arg1;

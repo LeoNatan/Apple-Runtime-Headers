@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     IDSService *_sharingService;
     NSString *_clientID;
+    NSString *_displayName;
     MSPSharedTripGroupSession *_sharingETAGroupSession;
     NSMutableDictionary *_sharedTripGroupIDSSessions;
     NSMutableDictionary *_packetBuckets;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)removeSharingWith:(id)arg1;
 - (id)startSharingGroupSessionWithTripIdentifer:(id)arg1;
 - (void)_startService;
+- (void)_fetchDisplayName;
 - (id)init;
 
 // Remaining properties

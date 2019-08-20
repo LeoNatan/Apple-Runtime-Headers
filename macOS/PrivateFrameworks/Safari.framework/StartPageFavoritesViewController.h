@@ -93,6 +93,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateBackButton;
 - (void)_reloadFromNotification;
 - (void)_updateFavoritesWithNotification:(id)arg1;
+- (void)_cleanUp;
 - (void)dealloc;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;

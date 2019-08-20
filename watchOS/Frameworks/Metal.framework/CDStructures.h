@@ -425,6 +425,7 @@ struct MTLTextureDescriptorPrivate {
     _Bool framebufferOnly;
     _Bool isDrawable;
     unsigned int swizzle;
+    _Bool writeSwizzleEnabled;
     unsigned int compressionMode;
     union {
         unsigned int textureUsage;

@@ -13,6 +13,7 @@
 
 @property(nonatomic) _Bool startingInitialSelectionDrag; // @synthesize startingInitialSelectionDrag=_startingInitialSelectionDrag;
 - (id)editorKeyboardLanguage;
+- (int)canPerformEditorAction:(SEL)arg1 withSender:(id)arg2;
 - (id)editingReps;
 - (void)tappedOnKnob:(id)arg1;
 - (_Bool)isParagraphModeWithSelection:(id)arg1 onStorage:(id)arg2;

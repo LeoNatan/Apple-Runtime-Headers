@@ -23,9 +23,12 @@
     NSTimer *_footerAutoScrollMinimumIdleTimer;
     PXCuratedLibraryFooterViewModel *_footerViewModel;
     long long _presentedZoomLevel;
+    PXPhotosGlobalFooterView *_reusableFooterView;
+    _Bool _isUpdatingFooter;
     _Bool _wantsFooterMask;
     _Bool _hasAppeared;
     _Bool _wantsFooter;
+    _Bool _isFooterVisible;
     _Bool _hasAppearedOnce;
     _Bool _footerNeedsReveal;
     int _systemLibraryChangeToken;
@@ -41,13 +44,14 @@
     UIView *_footerMaskView;
 }
 
-+ (long long)_styleForZoomLevel:(long long)arg1;
++ (long long)_modeForZoomLevel:(long long)arg1;
 @property(nonatomic) int systemLibraryChangeToken; // @synthesize systemLibraryChangeToken=_systemLibraryChangeToken;
 @property(retain, nonatomic) UIView *footerMaskView; // @synthesize footerMaskView=_footerMaskView;
 @property(retain, nonatomic) PXPhotosGlobalFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) PXCuratedLibraryFooterViewModel *footerViewModelIfLoaded; // @synthesize footerViewModelIfLoaded=_footerViewModelIfLoaded;
 @property(nonatomic) _Bool footerNeedsReveal; // @synthesize footerNeedsReveal=_footerNeedsReveal;
 @property(nonatomic) _Bool hasAppearedOnce; // @synthesize hasAppearedOnce=_hasAppearedOnce;
+@property(nonatomic) _Bool isFooterVisible; // @synthesize isFooterVisible=_isFooterVisible;
 @property(nonatomic) _Bool wantsFooter; // @synthesize wantsFooter=_wantsFooter;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
 @property(readonly, nonatomic) PXCuratedLibraryItemCountsController *itemCountsController; // @synthesize itemCountsController=_itemCountsController;
@@ -72,10 +76,12 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateFooterMaskViewFrame;
 - (void)_invalidateFooterMaskViewFrame;
+- (void)_updateIsFooterVisible;
+- (void)_invalidateIsFooterVisible;
 - (void)_updateFooter;
 - (void)_invalidateFooter;
-- (void)_updateFooterStyle;
-- (void)_invalidateFooterStyle;
+- (void)_updateFooterMode;
+- (void)_invalidateFooterMode;
 - (void)_updateWantsFooter;
 - (void)_invalidateWantsFooter;
 - (void)_footerHasImportantInformationDidChange;

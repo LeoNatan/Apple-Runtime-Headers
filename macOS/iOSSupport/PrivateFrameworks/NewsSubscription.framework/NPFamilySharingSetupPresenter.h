@@ -6,11 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@interface NPFamilySharingSetupPresenter : NSObject
+#import <NewsSubscription/NPFamilySharingSetupPresenterType-Protocol.h>
+
+@protocol NPFamilyEligibilityProviderType;
+
+@interface NPFamilySharingSetupPresenter : NSObject <NPFamilySharingSetupPresenterType>
 {
+    id <NPFamilyEligibilityProviderType> _familyEligibilityProvider;
 }
 
+@property(readonly, nonatomic) id <NPFamilyEligibilityProviderType> familyEligibilityProvider; // @synthesize familyEligibilityProvider=_familyEligibilityProvider;
+- (void).cxx_destruct;
 - (void)presentFamilySharingSetupWith:(id)arg1;
+- (id)initWithFamilyEligibilityProvider:(id)arg1;
 
 @end
 

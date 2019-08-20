@@ -72,8 +72,8 @@
 - (Class)proceduralWallpaperClassForIdentifier:(id)arg1;
 - (void)removeVideoForVariants:(long long)arg1;
 - (void)saveCroppedVideo:(id)arg1 toURL:(id)arg2 cropRect:(struct CGRect)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)setVideoURL:(id)arg1 forVariant:(long long)arg2 shoudCrop:(_Bool)arg3 relativeCropRect:(struct CGRect)arg4;
-- (id)videoURLForVariant:(long long)arg1;
+- (_Bool)setVideoURL:(id)arg1 forVariant:(long long)arg2 shoudCrop:(_Bool)arg3 relativeCropRect:(struct CGRect)arg4 wallpaperMode:(long long)arg5;
+- (id)videoURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (void)regenerateStaticWallpaperThumbnailImages;
 - (void)regenerateThumbnailsIfNecessary;
 - (void)regenerateThumbnailIfNecessaryForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
@@ -106,6 +106,7 @@
 - (double)thumbnailWidth;
 - (id)hashDataForImage:(id)arg1;
 - (id)thumbnailDataForImage:(id)arg1;
+- (id)thumbnailImageForImage:(id)arg1;
 - (id)normalizeImage:(id)arg1;
 - (_Bool)setWallpaperImage:(id)arg1 originalImage:(id)arg2 wallpaperOptions:(id)arg3 forVariants:(long long)arg4 options:(unsigned long long)arg5 wallpaperMode:(long long)arg6 isMigrating:(_Bool)arg7;
 - (_Bool)setWallpaperImage:(id)arg1 originalImage:(id)arg2 forVariants:(long long)arg3 options:(unsigned long long)arg4;
@@ -118,6 +119,7 @@
 - (id)wallpaperThumbnailImageDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (id)wallpaperOriginalImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (id)wallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)hasWallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (id)fallbackWallpaperConfigurationForVarient:(long long)arg1;
 @property(readonly, copy, nonatomic) SBFWallpaperConfiguration *homeScreenWallpaperConfiguration;
 @property(readonly, copy, nonatomic) SBFWallpaperConfiguration *lockScreenWallpaperConfiguration;

@@ -34,6 +34,7 @@
     CNAvatarEditingManager *_posePickerController;
     CNPhotoPickerActionsViewController *_actionsViewController;
     CNContactStyle *_contactStyle;
+    NSString *_assignActionTitleOverride;
 }
 
 + (_Bool)canShowAvatarEditor;
@@ -43,6 +44,7 @@
 + (_Bool)canShowPhotoPickerForView:(id)arg1 withTraitCollection:(id)arg2;
 + (id)descriptorForRequiredKeys;
 + (id)log;
+@property(retain, nonatomic) NSString *assignActionTitleOverride; // @synthesize assignActionTitleOverride=_assignActionTitleOverride;
 @property(nonatomic) _Bool allowRotation; // @synthesize allowRotation=_allowRotation;
 @property(retain, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
 @property(retain, nonatomic) CNPhotoPickerActionsViewController *actionsViewController; // @synthesize actionsViewController=_actionsViewController;

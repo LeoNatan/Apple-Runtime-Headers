@@ -14,12 +14,14 @@
 }
 
 + (id)getFullCachePathWithBaseCachePath:(id)arg1 cacheFileBaseName:(id)arg2 subScoreName:(id)arg3;
-+ (id)sharedInstance;
++ (id)sharedInstanceWithMobileAssets;
++ (id)initWithCachedAssets;
 - (void).cxx_destruct;
 - (id)getAtxToolDescription;
 - (id)getFullCachePathWithBaseCachePath:(id)arg1 consumerSubType:(unsigned char)arg2;
 - (id)getFullDefaultCachePathWithConsumerSubType:(unsigned char)arg1;
 - (id)getAssetFileAndSubscoreForConsumerSubType:(unsigned char)arg1;
+- (id)initWithUseMobileAssets:(_Bool)arg1;
 - (id)init;
 
 @end

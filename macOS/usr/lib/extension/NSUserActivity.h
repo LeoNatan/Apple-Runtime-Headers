@@ -14,9 +14,10 @@
     id _internal;
     id _delegate;
     id _frameworkDelegate;
-    BOOL _eligibleForPrediction;
 }
 
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (BOOL)_supportsUserActivityAppLinks;
 + (BOOL)_currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)_currentUserActivityUUID;
@@ -25,7 +26,6 @@
 + (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)_fetchUserActivityWithUUID:(id)arg1 intervalToWaitForDocumentSynchronizationToComplete:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)_userFacingErrorForLaunchServicesError:(id)arg1 userInfo:(id)arg2;
-@property(getter=isEligibleForPrediction) BOOL eligibleForPrediction; // @synthesize eligibleForPrediction=_eligibleForPrediction;
 @property(readonly, retain) UAUserActivity *_internalUserActivity; // @synthesize _internalUserActivity=_internal;
 - (void).cxx_destruct;
 - (void)setWebPageURL:(id)arg1;
@@ -34,6 +34,8 @@
 - (id)typeIdentifier;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+@property(copy) NSString *persistentIdentifier; // @dynamic persistentIdentifier;
+@property(getter=isEligibleForPrediction) BOOL eligibleForPrediction;
 @property(getter=isEligibleForPublicIndexing) BOOL eligibleForPublicIndexing;
 @property(getter=isEligibleForSearch) BOOL eligibleForSearch;
 @property(getter=isEligibleForHandoff) BOOL eligibleForHandoff;
@@ -105,9 +107,6 @@
 - (id)_initWithTypeIdentifier:(id)arg1 suggestedActionType:(long long)arg2 options:(id)arg3;
 - (void)setContentAttributeSet:(id)arg1;
 - (id)contentAttributeSet;
-
-// Remaining properties
-@property(copy) NSString *persistentIdentifier; // @dynamic persistentIdentifier;
 
 @end
 

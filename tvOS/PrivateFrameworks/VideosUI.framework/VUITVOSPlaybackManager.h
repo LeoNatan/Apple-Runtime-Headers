@@ -17,6 +17,7 @@
 @interface VUITVOSPlaybackManager : NSObject <VUINowPlayingFeatureMonitorDelegate, VUINowPlayingViewControllerDelegate, AVPlayerViewControllerDelegate, AVScanningDelegate, PBSPictureInPictureControllerObserver_Private>
 {
     _Bool _suppressErrorAlerts;
+    _Bool _pictureInPictureActive;
     _Bool _pausedDueToViewDisappeared;
     _Bool _bootstrappingPostPlay;
     _Bool _waitingForBootstrappingToFinishToShowPostPlay;
@@ -26,9 +27,11 @@
     UIAlertController *_errorAlertController;
     TVPStateMachine *_stateMachine;
     NSTimer *_postPlayUIDismissTimer;
+    unsigned long long _fullscreenDisappearanceReason;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long fullscreenDisappearanceReason; // @synthesize fullscreenDisappearanceReason=_fullscreenDisappearanceReason;
 @property(nonatomic) __weak NSTimer *postPlayUIDismissTimer; // @synthesize postPlayUIDismissTimer=_postPlayUIDismissTimer;
 @property(nonatomic) _Bool ignorePictureInPictureStop; // @synthesize ignorePictureInPictureStop=_ignorePictureInPictureStop;
 @property(nonatomic) _Bool waitingForBootstrappingToFinishToShowPostPlay; // @synthesize waitingForBootstrappingToFinishToShowPostPlay=_waitingForBootstrappingToFinishToShowPostPlay;
@@ -38,11 +41,14 @@
 @property(retain, nonatomic) UIAlertController *errorAlertController; // @synthesize errorAlertController=_errorAlertController;
 @property(retain, nonatomic) VUIPlaybackInfo *pipPlaybackInfo; // @synthesize pipPlaybackInfo=_pipPlaybackInfo;
 @property(retain, nonatomic) VUIPlaybackInfo *fullscreenPlaybackInfo; // @synthesize fullscreenPlaybackInfo=_fullscreenPlaybackInfo;
+@property(nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
 @property(nonatomic) _Bool suppressErrorAlerts; // @synthesize suppressErrorAlerts=_suppressErrorAlerts;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_showErrorIfAppropriate:(id)arg1;
 - (void)featureMonitor:(id)arg1 featureDidChangeState:(id)arg2 animated:(_Bool)arg3;
+- (void)_showMoreInfoWithPlaybackInfo:(id)arg1;
+- (void)_startPlaybackFromBeginningWithPlaybackInfo:(id)arg1;
 - (void)skipIntroWithPlaybackInfo:(id)arg1;
 - (void)_bootstrapPostPlayForPlaybackInfo:(id)arg1;
 - (void)_schedulePostPlayDismissTimerWithInterval:(double)arg1;
@@ -64,9 +70,10 @@
 - (void)_playbackErrorDidOccur:(id)arg1;
 - (void)_currentMediaItemDidChange:(id)arg1;
 - (void)_playbackStateDidChange:(id)arg1;
+- (id)disappearanceReasonString:(unsigned long long)arg1;
 - (void)_resetPictureInPictureInset;
 - (void)_applyPictureInPictureInsets:(struct UIEdgeInsets)arg1;
-- (void)_notifyExtrasMainTemplateToStop:(_Bool)arg1;
+- (void)_notifyExtrasBackgroundPlaybackToStop:(_Bool)arg1;
 - (void)_updateAVPlayerViewControllerWithAVPlayerForPlayer:(id)arg1;
 - (_Bool)_supportsDualStreamPlayback;
 - (_Bool)dualStreamPlaybackOverride;
@@ -99,14 +106,16 @@
 - (void)nowPlayingViewControllerUserDidInteract:(id)arg1;
 - (void)nowPlayingController:(id)arg1 safeAreaDidChange:(struct UIEdgeInsets)arg2;
 - (void)nowPlayingViewControllerMenuButtonPressedToDismiss:(id)arg1;
+- (void)nowPlayingControllerDidSelectMoreInfoButton:(id)arg1;
+- (void)nowPlayingControllerDidSelectFromBeginningButton:(id)arg1;
 - (void)nowPlayingControllerDidSelectSkipIntro:(id)arg1;
 - (void)nowPlayingController:(id)arg1 didEnableUIMode:(long long)arg2 enabled:(_Bool)arg3;
 - (void)nowPlayingControllerViewWillDisappear:(id)arg1 withDisappearanceReason:(unsigned long long)arg2;
 - (void)nowPlayingControllerViewDidAppear:(id)arg1;
 - (void)nowPlayingControllerViewWillAppear:(id)arg1;
+@property(readonly, nonatomic, getter=isFullscreenPlaybackUIBeingShown) _Bool fullscreenPlaybackUIBeingShown;
 - (void)stopAllPlayback;
 - (void)mutePictureInPicture:(_Bool)arg1 reason:(id)arg2;
-@property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dismissMediaInfoAnimated:(_Bool)arg1;
 - (void)playMediaInfo:(id)arg1 animated:(_Bool)arg2;

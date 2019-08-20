@@ -6,18 +6,18 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <AppPredictionUI/PLClickPresentationInteractionPresentable-Protocol.h>
 #import <AppPredictionUI/PLExpandedPlatterPresentationViewDelegate-Protocol.h>
-#import <AppPredictionUI/PLPreviewInteractionPresentable-Protocol.h>
 
 @class NSString, PLExpandedPlatterView, SUICProgressEventViewController, UIActivityIndicatorView, UITapGestureRecognizer, UIView;
-@protocol APUILongLookViewControllerDataSource, APUILongLookViewControllerDelegate, PLPreviewInteractionPresenting;
+@protocol APUILongLookViewControllerDataSource, APUILongLookViewControllerDelegate, PLClickPresentationInteractionPresenting;
 
-@interface APUILongLookViewController : UIViewController <PLPreviewInteractionPresentable, PLExpandedPlatterPresentationViewDelegate>
+@interface APUILongLookViewController : UIViewController <PLClickPresentationInteractionPresentable, PLExpandedPlatterPresentationViewDelegate>
 {
     SUICProgressEventViewController *_progressEventViewController;
     UIActivityIndicatorView *_activityIndicatorView;
     _Bool _suppressSpinner;
-    id <PLPreviewInteractionPresenting> _presenter;
+    id <PLClickPresentationInteractionPresenting> _presenter;
     id <APUILongLookViewControllerDataSource> _dataSource;
     id <APUILongLookViewControllerDelegate> _delegate;
     PLExpandedPlatterView *_expandedPlatterView;
@@ -28,7 +28,7 @@
 @property(retain, nonatomic) PLExpandedPlatterView *expandedPlatterView; // @synthesize expandedPlatterView=_expandedPlatterView;
 @property(nonatomic) __weak id <APUILongLookViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <APUILongLookViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(nonatomic) __weak id <PLPreviewInteractionPresenting> presenter; // @synthesize presenter=_presenter;
+@property(nonatomic) __weak id <PLClickPresentationInteractionPresenting> presenter; // @synthesize presenter=_presenter;
 - (void).cxx_destruct;
 - (id)expandedPlatterViewForPresentationView:(id)arg1;
 - (void)_platterUtilityButtonTapped:(id)arg1;

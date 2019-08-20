@@ -9,7 +9,7 @@
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHMomentSharePropertySet-Protocol.h>
 
-@class NSData, NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper, PLManagedAsset;
+@class NSData, NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationMetadataCopyOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper, PLManagedAsset;
 
 @interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest, PHMomentSharePropertySet>
 {
@@ -36,6 +36,7 @@
     PHRelationshipChangeRequestHelper *_momentShareHelper;
     NSString *_duplicateAssetIdentifier;
     PHAssetCreationAdjustmentBakeInOptions *_adjustmentBakeInOptions;
+    PHAssetCreationMetadataCopyOptions *_metadataCopyOptions;
     CDUnknownBlockType _destinationAssetAvailabilityHandler;
     CDStruct_1b6d18a9 _duplicateStillSourceTime;
 }
@@ -55,6 +56,7 @@
 + (id)creationRequestForAsset;
 + (id)_creationRequestForAssetUsingUUID:(id)arg1;
 @property(copy, nonatomic, setter=_setDestinationAssetAvailabilityHandler:) CDUnknownBlockType destinationAssetAvailabilityHandler; // @synthesize destinationAssetAvailabilityHandler=_destinationAssetAvailabilityHandler;
+@property(copy, nonatomic, setter=_setMetadataCopyOptions:) PHAssetCreationMetadataCopyOptions *metadataCopyOptions; // @synthesize metadataCopyOptions=_metadataCopyOptions;
 @property(copy, nonatomic, setter=_setAdjustmentBakeInOptions:) PHAssetCreationAdjustmentBakeInOptions *adjustmentBakeInOptions; // @synthesize adjustmentBakeInOptions=_adjustmentBakeInOptions;
 @property(nonatomic, setter=_setDuplicateSinglePhotoFromBurst:) _Bool duplicateSinglePhotoFromBurst; // @synthesize duplicateSinglePhotoFromBurst=_duplicateSinglePhotoFromBurst;
 @property(nonatomic, setter=_setDuplicateAsOriginal:) _Bool duplicateAsOriginal; // @synthesize duplicateAsOriginal=_duplicateAsOriginal;
@@ -70,7 +72,6 @@
 @property(retain, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 @property(nonatomic) short importedBy; // @synthesize importedBy=_importedBy;
 - (void).cxx_destruct;
-- (unsigned short)_deferredProcessingNeededForResourceBag:(id)arg1 andAsset:(id)arg2;
 @property(nonatomic, getter=_shouldCreateScreenshot, setter=_setShouldCreateScreenshot:) _Bool shouldCreateScreenshot;
 @property(nonatomic, setter=_setDuplicateAllowsPrivateMetadata:) _Bool duplicateAllowsPrivateMetadata;
 - (_Bool)isNew;

@@ -111,6 +111,8 @@
     NSTimer *_scrollIndicatorHideDelayTimer;
     _UIScrollViewScrollIndicator *_verticalScrollIndicator;
     _UIScrollViewScrollIndicator *_horizontalScrollIndicator;
+    double _intervalBetweenPanGestures;
+    double _lastPanGestureEndTime;
     struct {
         unsigned int tracking:1;
         unsigned int dragging:1;
@@ -163,6 +165,7 @@
         unsigned int delegateWasNonNil:1;
         unsigned int preserveCenterDuringRotation:1;
         unsigned int delaysTrackingWhileDecelerating:1;
+        unsigned int avoidJumpOnInterruptedBounceWithDelayedTrackingWhileDecelerating:1;
         unsigned int pinnedZoomMin:1;
         unsigned int pinnedXMin:1;
         unsigned int pinnedYMin:1;
@@ -332,6 +335,7 @@
 - (struct UIEdgeInsets)_effectiveContentInset;
 - (struct UIEdgeInsets)_systemContentInsetIncludingAccessories:(BOOL)arg1;
 - (struct UIEdgeInsets)_systemContentInset;
+- (unsigned long long)_edgesApplyingSafeAreaInsetsToContentInsetForContentSize:(struct CGSize)arg1;
 - (unsigned long long)_edgesApplyingSafeAreaInsetsToContentInset;
 @property(nonatomic, setter=_setApplyVerticalSafeAreaInsetsToNonscrollingContent:) BOOL _applyVerticalSafeAreaInsetsToNonscrollingContent;
 - (void)_setContentScrollInset:(struct UIEdgeInsets)arg1;
@@ -587,6 +591,7 @@
 - (void)_handleAutoScroll:(id)arg1;
 - (void)_stopAutoScrollAssistant;
 - (BOOL)_shouldAutoScroll;
+@property(readonly, nonatomic) double _intervalBetweenPanGestures;
 - (void)_handlePanFailure;
 - (void)handlePan:(id)arg1;
 - (void)handlePinch:(id)arg1;
@@ -603,6 +608,7 @@
 - (id)_getDelegateZoomView;
 - (void)_endPanNormal:(BOOL)arg1;
 - (BOOL)_scrollViewWillEndDraggingWithDeceleration:(BOOL)arg1;
+- (double)_maxTopOffset;
 - (double)_maxTopOffsetAdjustedForRevealableContentPadding:(double)arg1;
 - (struct UIEdgeInsets)_collapsableContentPadding;
 - (struct UIEdgeInsets)_revealableContentPadding;
@@ -637,6 +643,8 @@
 - (unsigned long long)_allowedFocusBounceEdges;
 - (void)_setContentOffsetRoundingEnabled:(BOOL)arg1;
 - (BOOL)_contentOffsetRoundingEnabled;
+- (BOOL)_avoidsJumpOnInterruptedBounce;
+- (void)_setAvoidsJumpOnInterruptedBounce:(BOOL)arg1;
 - (BOOL)tracksImmediatelyWhileDecelerating;
 - (void)setTracksImmediatelyWhileDecelerating:(BOOL)arg1;
 - (BOOL)allowsMultipleFingers;
@@ -722,6 +730,7 @@
 - (BOOL)_isRectFullyVisible:(struct CGRect)arg1;
 @property(readonly, nonatomic, getter=_contentInsetIncludingDecorations) struct UIEdgeInsets _contentInsetIncludingDecorations;
 - (void)adjustedContentInsetDidChange;
+@property(readonly, nonatomic, getter=_delegateImplementsScrollViewDidScroll) BOOL _delegateImplementsScrollViewDidScroll;
 - (struct CGPoint)_roundedProposedContentOffset:(struct CGPoint)arg1;
 - (double)_allowedNavigationOverlapAmount;
 - (void)_setAllowedNavigationOverlapAmount:(double)arg1;
@@ -732,7 +741,8 @@
 @property(nonatomic) long long contentInsetAdjustmentBehavior;
 - (unsigned long long)_edgesScrollingContentIntoSafeArea;
 - (void)_setEdgesScrollingContentIntoSafeArea:(unsigned long long)arg1;
-- (void)_updateForChangedEdgesConvertingSafeAreaToContentInset;
+- (void)_updateForChangedEdgesConvertingSafeAreaToContentInsetWithOldSystemContentInset:(struct UIEdgeInsets)arg1 adjustContentOffsetIfNecessary:(BOOL)arg2;
+- (void)_updateForChangedEdgesConvertingSafeAreaToContentInsetWithOldSystemContentInset:(struct UIEdgeInsets)arg1;
 - (unsigned long long)_edgesPropagatingSafeAreaInsetsToDescendants;
 - (void)setBounds:(struct CGRect)arg1;
 - (double)_adjustedVerticalOffsetPinnedToScrollableBounds:(double)arg1;
@@ -757,6 +767,7 @@
 - (id)_panGestureRecognizer;
 @property(nonatomic, getter=_topScrollIndicatorFollowsContentOffset, setter=_setTopScrollIndicatorFollowsContentOffset:) BOOL topScrollIndicatorFollowsContentOffset;
 @property(nonatomic, getter=_velocityScaleFactor, setter=_setVelocityScaleFactor:) double velocityScaleFactor;
+- (struct CGPoint)_maximumContentOffsetForContentSize:(struct CGSize)arg1;
 @property(readonly, nonatomic, getter=_maximumContentOffset) struct CGPoint maximumContentOffset;
 @property(readonly, nonatomic, getter=_minimumContentOffset) struct CGPoint minimumContentOffset;
 - (void)_updateUsesStaticScrollBar;

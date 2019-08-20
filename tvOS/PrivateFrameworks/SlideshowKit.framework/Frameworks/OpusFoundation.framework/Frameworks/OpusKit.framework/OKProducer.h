@@ -19,7 +19,6 @@
     double _startLiveAuthorTime;
 }
 
-+ (id)guidelinesFromLegacyData:(id)arg1 withMediaURLs:(id)arg2 andMediaLookupDelegate:(id)arg3;
 + (void)setupJavascriptContext:(id)arg1;
 @property(retain, nonatomic) OKPresentation *presentation; // @synthesize presentation=_presentation;
 @property(retain, nonatomic) OKProducerPlugin *plugin; // @synthesize plugin=_plugin;

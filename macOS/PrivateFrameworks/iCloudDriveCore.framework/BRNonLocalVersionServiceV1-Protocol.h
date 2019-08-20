@@ -10,6 +10,6 @@
 
 @protocol BRNonLocalVersionServiceV1 <ICDBRCancellable>
 - (void)resolveConflictWithName:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
-- (void)listNonLocalVersionsWithReply:(void (^)(NSError *))arg1;
+- (void)listNonLocalVersionsIncludingCached:(BOOL)arg1 reply:(void (^)(NSError *))arg2;
 @end
 

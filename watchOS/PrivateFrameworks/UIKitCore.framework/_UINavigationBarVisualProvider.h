@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, UINavigationBar, _UINavigationBarItemStack, _UINavigationControllerRefreshControlHost;
+@class NSString, UINavigationBar, UINavigationItem, _UINavigationBarItemStack, _UINavigationControllerRefreshControlHost;
+@protocol _UIBarAppearanceChangeObserver;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarVisualProvider : NSObject
@@ -14,7 +15,7 @@ __attribute__((visibility("hidden")))
     UINavigationBar *_navigationBar;
     _UINavigationBarItemStack *_stack;
     NSString *_backdropGroupName;
-    NSDictionary *_overrides;
+    UINavigationItem *_itemForMeasuring;
 }
 
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)setBackButtonVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setupTopNavigationItem;
 @property(nonatomic) _Bool forceScrollEdgeAppearance;
+@property(readonly, nonatomic) id <_UIBarAppearanceChangeObserver> appearanceObserver;
 @property(nonatomic) int appearanceAPIVersion;
 - (void)updateBackgroundGroupName;
 @property(nonatomic) float titleAlpha;

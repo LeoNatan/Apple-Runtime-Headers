@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct {
         _Bool hasCenterIndexPathDidChange;
         _Bool hasCenterIndexPathTransitionStateDidChange;
+        _Bool hasShouldShowItemAtIndexPath;
     } _collectionViewDelegateFullScreenBrowserLayoutFlags;
     _Bool _isCenterIndexPathInTransition;
     NSArray *_layoutAttributesBySection;
@@ -50,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (long long)_currentCenterCellIndexWithTransitionState:(_Bool *)arg1;
 - (long long)_cellIndexForIndexPath:(id)arg1;
 - (id)_indexPathForCellIndex:(long long)arg1;
+- (struct CGPoint)_targetContentOffsetForCellIndex:(long long)arg1;
 - (_Bool)flipsHorizontallyInOppositeLayoutDirection;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;

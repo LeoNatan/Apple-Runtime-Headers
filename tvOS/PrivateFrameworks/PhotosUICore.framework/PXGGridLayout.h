@@ -8,10 +8,11 @@
 
 #import <PhotosUICore/PXCuratedLibraryAllPhotosBodyLayout-Protocol.h>
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
+#import <PhotosUICore/PXGItemsGeometry-Protocol.h>
 
 @class NSString;
 
-@interface PXGGridLayout : PXGItemsLayout <PXCuratedLibraryAllPhotosBodyLayout, PXGDiagnosticsProvider>
+@interface PXGGridLayout : PXGItemsLayout <PXCuratedLibraryAllPhotosBodyLayout, PXGItemsGeometry, PXGDiagnosticsProvider>
 {
     CDStruct_d97c9657 _updateFlags;
     _Bool _isUpdating;
@@ -24,6 +25,7 @@
     _Bool _fillSafeAreaTopInset;
     _Bool _hideIncompleteLastRow;
     _Bool _mediaTargetSizeIgnoresSpacing;
+    _Bool _loadItemsOutsideAnchorViewport;
     int _mediaKind;
     int _presentationType;
     long long _style;
@@ -42,6 +44,7 @@
 }
 
 @property(nonatomic) struct CGPoint contentOrigin; // @synthesize contentOrigin=_contentOrigin;
+@property(nonatomic) _Bool loadItemsOutsideAnchorViewport; // @synthesize loadItemsOutsideAnchorViewport=_loadItemsOutsideAnchorViewport;
 @property(nonatomic) struct CGPoint anchorViewportCenter; // @synthesize anchorViewportCenter=_anchorViewportCenter;
 @property(retain, nonatomic) id anchorObjectReference; // @synthesize anchorObjectReference=_anchorObjectReference;
 @property(nonatomic) CDStruct_2bd92d94 edgeCornerRadius; // @synthesize edgeCornerRadius=_edgeCornerRadius;
@@ -64,6 +67,9 @@
 @property(nonatomic) _Bool canHandleVisibleRectRejection; // @synthesize canHandleVisibleRectRejection=_canHandleVisibleRectRejection;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
+- (id)itemsInRect:(struct CGRect)arg1 inLayout:(id)arg2;
+- (id)itemsBetweenItem:(long long)arg1 andItem:(long long)arg2;
+- (long long)itemClosestToItem:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;
 - (void)loadedItemsDidChange;
@@ -72,8 +78,11 @@
 - (void)alphaDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceSizeDidChange;
+- (_Bool)shouldUpdateDecorationMediaTargetSizes;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
+- (id)itemsGeometry;
 - (struct _NSRange)itemsToLoad;
+- (struct CGRect)_pageAlignedRectForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)_itemsToLoadForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)itemRangeForSpriteIndexRange:(struct _PXGSpriteIndexRange)arg1;
 - (struct _NSRange)itemRangeInRect:(struct CGRect)arg1;
@@ -81,6 +90,9 @@
 - (long long)itemClosestTo:(struct CGPoint)arg1;
 - (long long)columnForItem:(long long)arg1;
 - (long long)_rowForItem:(long long)arg1;
+- (void)_getItemSize:(struct CGSize *)arg1 finalInteritemSpacing:(double *)arg2 finalInsets:(struct UIEdgeInsets *)arg3 forDesiredInterItemSpacing:(double)arg4 padding:(struct UIEdgeInsets)arg5;
+- (struct CGRect)_frameForItem:(long long)arg1 usingInterItemSpacing:(double)arg2 itemSize:(struct CGSize)arg3 insets:(struct UIEdgeInsets)arg4;
+- (struct CGRect)frameForItem:(long long)arg1 usingInterItemSpacing:(double)arg2;
 - (struct CGRect)frameForItem:(long long)arg1;
 - (struct _PXGSpriteIndexRange)spriteIndexRangeCoveringRect:(struct CGRect)arg1;
 - (struct CGRect)_contentRectInLayout:(struct CGRect)arg1;

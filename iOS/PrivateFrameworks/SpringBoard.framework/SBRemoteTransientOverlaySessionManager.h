@@ -20,14 +20,14 @@
 
 @property(nonatomic) __weak id <SBRemoteTransientOverlaySessionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)_existingSessionsWithDefinition:(id)arg1;
+- (id)_existingSessionsWithDefinition:(id)arg1 options:(long long)arg2;
 - (id)_createSessionWithDefinition:(id)arg1;
-- (id)sessionsWithDefinition:(id)arg1;
-- (id)sessionWithDefinition:(id)arg1;
-- (_Bool)hasSessionWithServiceProcessIdentifier:(int)arg1;
-- (_Bool)hasSessionWithPendingButtonEvents:(unsigned long long)arg1;
-- (id)existingSessionWithSessionID:(id)arg1;
-- (id)existingSessionsWithDefinition:(id)arg1;
+- (id)sessionsWithDefinition:(id)arg1 options:(long long)arg2;
+- (id)sessionWithDefinition:(id)arg1 options:(long long)arg2;
+- (_Bool)hasSessionWithServiceProcessIdentifier:(int)arg1 options:(long long)arg2;
+- (_Bool)hasSessionWithPendingButtonEvents:(unsigned long long)arg1 options:(long long)arg2;
+- (id)existingSessionWithSessionID:(id)arg1 options:(long long)arg2;
+- (id)existingSessionsWithDefinition:(id)arg1 options:(long long)arg2;
 - (id)createSessionWithDefinition:(id)arg1;
 - (void)remoteTransientOverlaySession:(id)arg1 requestsHandlingForButtonEvents:(unsigned long long)arg2 viewController:(id)arg3;
 - (void)remoteTransientOverlaySession:(id)arg1 didInvalidateWithReason:(long long)arg2 error:(id)arg3;

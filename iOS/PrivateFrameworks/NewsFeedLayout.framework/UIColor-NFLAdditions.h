@@ -11,7 +11,11 @@
 + (id)nfl_saveGlyphCellColor;
 + (id)nfl_likeDislikeGlyphCellColor;
 + (id)nfl_subscriptionGlyphColorForTextColor:(id)arg1 backgroundColor:(id)arg2;
++ (id)nfl_subscriptionGlyphColorForNonDynamicTextColor:(id)arg1 backgroundColor:(id)arg2;
++ (id)nfl_accessoryIconColorForTextColor:(id)arg1 backgroundColor:(id)arg2;
++ (id)nfl_accessoryIconColorForNonDynamicTextColor:(id)arg1 backgroundColor:(id)arg2;
 + (id)nfl_accessoryColorForTextColor:(id)arg1 backgroundColor:(id)arg2;
++ (id)nfl_accessoryColorForNonDynamicTextColor:(id)arg1 backgroundColor:(id)arg2;
 + (id)nfl_plusDEffectWithForegroundColor:(id)arg1 backgroundColor:(id)arg2;
 + (id)nfl_plusLEffectWithForegroundColor:(id)arg1 backgroundColor:(id)arg2;
 + (long long)nfl_binUsingBrightnessForColor:(id)arg1;

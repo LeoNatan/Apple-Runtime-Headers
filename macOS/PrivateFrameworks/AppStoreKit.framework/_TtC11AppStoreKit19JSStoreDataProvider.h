@@ -12,7 +12,7 @@
     // Error parsing type: , name: garbageCollector
     // Error parsing type: , name: appStateController
     // Error parsing type: , name: networkActivity
-    // Error parsing type: , name: accountStore
+    // Error parsing type: , name: accounts
     // Error parsing type: , name: observations
     // Error parsing type: , name: bag
 }

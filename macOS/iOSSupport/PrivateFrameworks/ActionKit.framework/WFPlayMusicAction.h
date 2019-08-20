@@ -12,7 +12,14 @@
 
 - (id)serializedParametersForDonatedIntent:(id)arg1 allowDroppingUnconfigurableValues:(BOOL)arg2;
 - (id)localizedKeyParameterDisplayName;
-- (void)tryRunningWithMusicPlayer:(id)arg1 input:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)finishRunningWithError:(id)arg1;
+- (long long)repeatMode;
+- (long long)shuffleMode;
+- (void)playContent:(id)arg1 withMusicPlayer:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)playContentViaMusicPlayer:(id)arg1;
+- (void)sendPlaybackArchive:(id)arg1 orPlaybackQueue:(id)arg2 toDestination:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)playContentViaMPCAssistant:(id)arg1 routeDescriptor:(id)arg2;
+- (void)getContentFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end

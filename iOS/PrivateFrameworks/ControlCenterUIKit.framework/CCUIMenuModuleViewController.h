@@ -87,6 +87,7 @@
 - (void)_handleActionTapped:(id)arg1;
 - (void)setGlyphPackageDescription:(id)arg1;
 - (void)setGlyphImage:(id)arg1;
+- (id)viewForTouchContinuation;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 - (double)preferredExpandedContentHeightWithWidth:(double)arg1;

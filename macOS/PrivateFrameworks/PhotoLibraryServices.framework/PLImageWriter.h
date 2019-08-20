@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/PLPhotoBakedThumbnailsDelegate-Protocol.h>
 
-@class PLIndicatorFileCoordinator, PLLibraryServicesManager, PLSimpleDCIMDirectory;
+@class PLIndicatorFileCoordinator, PLLibraryServicesManager;
 @protocol OS_dispatch_queue, OS_os_transaction;
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate>
@@ -20,7 +20,6 @@
     struct os_unfair_lock_s _transactionLock;
     unsigned long long _transactionCounter;
     NSObject<OS_os_transaction> *_transaction;
-    PLSimpleDCIMDirectory *_iTunesSyncedAssetsDCIMDirectory;
     PLIndicatorFileCoordinator *_indicatorFileCoordinator;
     PLLibraryServicesManager *_libraryServicesManager;
 }
@@ -30,7 +29,7 @@
 + (BOOL)_hasPrimaryAssetAndAdjustmentsFilesWithType:(short)arg1 inIncomingFilenames:(id)arg2 forAssetUUID:(id)arg3;
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
-+ (BOOL)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 isSubstandardRender:(BOOL)arg6;
++ (BOOL)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 finalAssetSize:(struct CGSize)arg6 isSubstandardRender:(BOOL)arg7;
 + (id)assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
 + (id)assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
@@ -44,7 +43,7 @@
 - (BOOL)imageWriterJob:(id)arg1 hasValidPathsWithConnection:(id)arg2;
 - (void)_processJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 cameraAdjustments:(id)arg3 renderedContentPath:(id)arg4;
+- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 cameraAdjustments:(id)arg3 renderedContentPath:(id)arg4 renderedPosterFramePreviewPath:(id)arg5 finalAssetSize:(struct CGSize)arg6;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(char *)arg3 error:(id *)arg4;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
@@ -78,7 +77,7 @@
 - (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;
 - (id)_pathForNewAssetWithPath:(id)arg1 withExtension:(id)arg2;
 - (id)pathForNewAssetWithDirectoryPath:(id)arg1 fileName:(id)arg2 extension:(id)arg3;
-- (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
+- (id)cameraAssetPathForNewAssetWithExtension:(id)arg1 assetUUID:(id)arg2;
 - (BOOL)enqueueJob:(id)arg1;
 - (void)_decrementJobCount:(id)arg1;
 - (void)_incrementJobCount:(id)arg1;

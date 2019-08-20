@@ -14,7 +14,6 @@
 - (void)invalidate;
 
 @optional
-- (void)didPresentEnumeratorInWindow:(unsigned int)arg1 frontmost:(BOOL)arg2;
 - (void)currentSyncAnchorWithCompletionHandler:(void (^)(NSData *))arg1;
 - (void)enumerateChangesForObserver:(id <NSFileProviderChangeObserver>)arg1 fromSyncAnchor:(NSData *)arg2;
 @end

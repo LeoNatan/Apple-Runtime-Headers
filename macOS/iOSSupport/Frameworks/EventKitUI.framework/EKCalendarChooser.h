@@ -17,10 +17,12 @@
     NSMutableDictionary *_accountErrorAnalyticsState;
     NSArray *_delegateSources;
     BOOL _showDelegateCalendarsCell;
+    NSSet *_currentKnownCalendarIds;
     BOOL _canShowIdentityChooser;
     BOOL _disableCalendarEditing;
     BOOL _showsDeclinedEventsSetting;
     BOOL _showAccountStatus;
+    BOOL _onlyShowUnmanagedAccounts;
     BOOL _showDetailAccessories;
     BOOL _allowsEdit;
     CDStruct_424d6339 _flags;
@@ -52,6 +54,7 @@
 + (id)showAllString;
 @property(nonatomic) BOOL allowsEdit; // @synthesize allowsEdit=_allowsEdit;
 @property(nonatomic) BOOL showDetailAccessories; // @synthesize showDetailAccessories=_showDetailAccessories;
+@property(nonatomic) BOOL onlyShowUnmanagedAccounts; // @synthesize onlyShowUnmanagedAccounts=_onlyShowUnmanagedAccounts;
 @property(nonatomic) BOOL showAccountStatus; // @synthesize showAccountStatus=_showAccountStatus;
 @property(nonatomic) int explanatoryTextMode; // @synthesize explanatoryTextMode=_explanatoryTextMode;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
@@ -131,6 +134,7 @@
 - (id)_calendarsForSelectedSource;
 - (void)_ensureWritableCalendarExists;
 - (id)_filterCalendars:(id)arg1;
+- (void)_updateCurrentKnownCalendarIds;
 - (id)_currentKnownCalendarIds;
 - (id)_calendarSetToCalendarIdSet:(id)arg1;
 - (void)_eventStoreChanged:(id)arg1;

@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <SwiftUI/_TtC7SwiftUI15_NSGraphicsView.h>
 
 __attribute__((visibility("hidden")))
-@interface _TtCOCV7SwiftUI11DisplayList11ViewUpdater8Platform13CGDrawingView : NSView
+@interface _TtCOCV7SwiftUI11DisplayList11ViewUpdater8Platform13CGDrawingView : _TtC7SwiftUI15_NSGraphicsView
 {
     // Error parsing type: , name: renderer
     // Error parsing type: , name: displayListRenderer

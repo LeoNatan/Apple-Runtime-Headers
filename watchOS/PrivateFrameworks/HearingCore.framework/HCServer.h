@@ -29,6 +29,8 @@
 - (void)sendSynchronousMessageWithPayload:(id)arg1 andIdentifier:(unsigned long long)arg2;
 - (id)setupServerIfNecessary;
 - (void)handleReply:(id)arg1;
+@property(readonly, nonatomic) _Bool isConnected;
+- (_Bool)shouldRestartOnInterruption;
 - (void)resetConnection;
 - (void)terminateConnection;
 - (void)startServerWithDelegate:(id)arg1;

@@ -6,13 +6,12 @@
 
 #import <SpringBoard/NSObject-Protocol.h>
 
-@class NSString, SBElasticVolumeViewController;
+@class NSArray, NSString, SBElasticVolumeViewController;
 
 @protocol SBElasticAudioDataSource <NSObject>
 - (_Bool)elasticAudioViewControllerShouldShowVolumeWarningForCurrentVolumeLevel:(SBElasticVolumeViewController *)arg1;
-- (_Bool)elasticAudioViewControllerAreHeadphonesPresent:(SBElasticVolumeViewController *)arg1;
 - (NSString *)elasticAudioViewControllerActiveAudioCategory:(SBElasticVolumeViewController *)arg1;
-- (NSString *)elasticAudioViewControllerActiveAudioRoute:(SBElasticVolumeViewController *)arg1;
+- (NSArray *)elasticAudioViewControllerActiveAudioRouteTypes:(SBElasticVolumeViewController *)arg1;
 - (_Bool)elasticAudioViewController:(SBElasticVolumeViewController *)arg1 updateCurrentVolumeToLevel:(float)arg2;
 - (float)elasticAudioViewControllerCurrentVolume:(SBElasticVolumeViewController *)arg1;
 @end

@@ -8,7 +8,6 @@
 
 @interface _TtC8NewsFeed37IssueCoverViewLayoutAttributesFactory : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: styler
 }
 
 @end

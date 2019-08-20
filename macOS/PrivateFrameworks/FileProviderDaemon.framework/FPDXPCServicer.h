@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
 - (void)scheduleActionOperationWithInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reindexAllSearchableItemsForBundleIDs:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg1;
-- (void)writeCheckReportTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dumpStateTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)writeCheckReportTo:(id)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)didUpdateAlternateContentsDocumentForDocumentAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchAlternateContentsURLForDocumentURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setAlternateContentsURL:(id)arg1 onDocumentURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -54,8 +54,10 @@ __attribute__((visibility("hidden")))
 - (void)restoreUserURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)backUpUserURL:(id)arg1 outputUserURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateBlacklistedProcessNamesForProvider:(id)arg1 processNames:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)updatePresenceAuthorizationWithRequest:(BOOL)arg1 domainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getURLForContainerWithItemID:(id)arg1 inDataScopeDomainWithIdentifier:(id)arg2 documentsScopeDomainIdentifier:(id)arg3 documentsFolderItemIdentifier:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)makeTopologicallySortedItemsOnDisk:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)writeMetadata:(id)arg1 onURL:(id)arg2 error:(id *)arg3;
+- (id)stageLocation;
 - (void)noteURLBecameFrontmost:(id)arg1 inWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)materializeURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startOperation:(id)arg1 toFetchIconsForAppBundleIDs:(id)arg2 requestedSize:(struct CGSize)arg3 scale:(double)arg4 completionHandler:(CDUnknownBlockType)arg5;

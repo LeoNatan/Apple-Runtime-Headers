@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
     int m_suspendSave;
     BOOL _isMiro;
     BOOL _allowsSplits;
+    BOOL _fadeSongForce;
     BOOL _isExportingPlist;
     id <ProjectDelegate> _delegate;
     NSArray *_lastArchiveNameAndDate;
@@ -80,6 +81,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)sizeForMaxPixels:(double)arg1 sourceSize:(struct CGSize)arg2;
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(nonatomic) BOOL isExportingPlist; // @synthesize isExportingPlist=_isExportingPlist;
+@property(nonatomic) BOOL fadeSongForce; // @synthesize fadeSongForce=_fadeSongForce;
 @property(nonatomic) double fadeToBlackDuration; // @synthesize fadeToBlackDuration=_fadeToBlackDuration;
 @property(nonatomic) double fadeToBlackStartTime; // @synthesize fadeToBlackStartTime=_fadeToBlackStartTime;
 @property(retain, nonatomic) NSArray *savedEditList; // @synthesize savedEditList=_savedEditList;

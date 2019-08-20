@@ -11,18 +11,31 @@
 @interface VNFaceLandmarks2D : VNFaceLandmarks
 {
     VNFaceLandmarkRegion2D *_allPoints;
+    struct os_unfair_lock_s _allPointsLock;
     VNFaceLandmarkRegion2D *_faceContour;
+    struct os_unfair_lock_s _faceContourLock;
     VNFaceLandmarkRegion2D *_leftEye;
+    struct os_unfair_lock_s _leftEyeLock;
     VNFaceLandmarkRegion2D *_rightEye;
+    struct os_unfair_lock_s _rightEyeLock;
     VNFaceLandmarkRegion2D *_leftEyebrow;
+    struct os_unfair_lock_s _leftEyebrowLock;
     VNFaceLandmarkRegion2D *_rightEyebrow;
+    struct os_unfair_lock_s _rightEyebrowLock;
     VNFaceLandmarkRegion2D *_nose;
+    struct os_unfair_lock_s _noseLock;
     VNFaceLandmarkRegion2D *_noseCrest;
+    struct os_unfair_lock_s _noseCrestLock;
     VNFaceLandmarkRegion2D *_medianLine;
+    struct os_unfair_lock_s _medianLineLock;
     VNFaceLandmarkRegion2D *_outerLips;
+    struct os_unfair_lock_s _outerLipsLock;
     VNFaceLandmarkRegion2D *_innerLips;
+    struct os_unfair_lock_s _innerLipsLock;
     VNFaceLandmarkRegion2D *_leftPupil;
+    struct os_unfair_lock_s _leftPupilLock;
     VNFaceLandmarkRegion2D *_rightPupil;
+    struct os_unfair_lock_s _rightPupilLock;
     unsigned long long _constellation;
     NSArray *_precisionEstimatesPerPoint;
     NSArray *_occlusionFlagsPerPoint;
@@ -52,6 +65,7 @@
 - (void *)_createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
+- (void)_initLocks;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRequestRevision:(unsigned long long)arg1 pointsData:(id)arg2 pointCount:(unsigned long long)arg3 constellation:(unsigned long long)arg4 precisionEstimatesPerPoint:(id)arg5 occlusionFlagsPerPoint:(id)arg6 userFacingBBox:(struct CGRect)arg7 alignedBBox:(struct _Geometry2D_rect2D_)arg8 landmarkScore:(float)arg9;

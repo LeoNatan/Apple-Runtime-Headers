@@ -7,6 +7,8 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMDBackingStoreObjectProtocol-Protocol.h>
+#import <HomeKitDaemon/HMDCloudShareTrustManagerDataSource-Protocol.h>
+#import <HomeKitDaemon/HMDCloudShareTrustManagerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDHomeMessageReceiver-Protocol.h>
 #import <HomeKitDaemon/HMDSettingsControllerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDUserDataControllerDelegate-Protocol.h>
@@ -15,10 +17,10 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class AVOutputDeviceAuthorizedPeer, HAPPairingIdentity, HMDAccountHandle, HMDAccountIdentifier, HMDAssistantAccessControl, HMDCloudShareMessenger, HMDHome, HMDSettingsControllerDependency, HMDUserDataController, HMDUserSettingsBackingStoreController, HMUserPresenceAuthorization, NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID;
+@class AVOutputDeviceAuthorizedPeer, HAPPairingIdentity, HMBShareUserID, HMDAccountHandle, HMDAccountIdentifier, HMDAssistantAccessControl, HMDCloudShareMessenger, HMDCloudShareTrustManager, HMDHome, HMDSettingsControllerDependency, HMDUserDataController, HMDUserSettingsBackingStoreController, HMUserPresenceAuthorization, NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
-@interface HMDUser : HMFObject <HMFLogging, HMDSettingsControllerDelegate, HMDUserSettingsBackingStoreControllerDelegate, HMDUserDataControllerDelegate, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, NSSecureCoding>
+@interface HMDUser : HMFObject <HMDSettingsControllerDelegate, HMDCloudShareTrustManagerDataSource, HMDCloudShareTrustManagerDelegate, HMDUserDataControllerDelegate, HMDUserSettingsBackingStoreControllerDelegate, HMFLogging, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, NSSecureCoding>
 {
     NSUUID *_uuid;
     _Bool _remoteAccessAllowed;
@@ -34,6 +36,7 @@
     HAPPairingIdentity *_pairingIdentity;
     NSString *_displayName;
     HMDAssistantAccessControl *_assistantAccessControl;
+    HMBShareUserID *_cloudShareID;
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMDSettingsControllerDependency *_sharedSettingsControllerDependency;
@@ -42,6 +45,7 @@
     HMDSettingsControllerDependency *_privateSettingsControllerDependency;
     HMDUserSettingsBackingStoreController *_privateBackingStoreController;
     HMDUserDataController *_userDataController;
+    HMDCloudShareTrustManager *_cloudShareTrustManager;
 }
 
 + (id)userWithDictionary:(id)arg1 forHome:(id)arg2;
@@ -52,6 +56,7 @@
 + (id)userIDForAccountHandle:(id)arg1;
 + (id)ownerWithUserID:(id)arg1 home:(id)arg2 pairingIdentity:(id)arg3 homeManager:(id)arg4;
 + (id)currentUserWithPrivilege:(unsigned long long)arg1 forHome:(id)arg2;
+@property(retain) HMDCloudShareTrustManager *cloudShareTrustManager; // @synthesize cloudShareTrustManager=_cloudShareTrustManager;
 @property(retain) HMDUserDataController *userDataController; // @synthesize userDataController=_userDataController;
 @property(retain) HMDUserSettingsBackingStoreController *privateBackingStoreController; // @synthesize privateBackingStoreController=_privateBackingStoreController;
 @property(retain) HMDSettingsControllerDependency *privateSettingsControllerDependency; // @synthesize privateSettingsControllerDependency=_privateSettingsControllerDependency;
@@ -60,8 +65,18 @@
 @property(retain) HMDSettingsControllerDependency *sharedSettingsControllerDependency; // @synthesize sharedSettingsControllerDependency=_sharedSettingsControllerDependency;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(retain) HMBShareUserID *cloudShareID; // @synthesize cloudShareID=_cloudShareID;
 @property(copy, setter=setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (void)didFinishConfiguringForCloudShareTrustManager:(id)arg1;
+- (void)cloudShareTrustManager:(id)arg1 didFetchOwnerCloudShareID:(id)arg2;
+- (id)homeForCloudShareTrustManager:(id)arg1;
+- (id)ownerForCloudShareTrustManager:(id)arg1;
+- (id)zoneNameForCloudShareTrustManager:(id)arg1;
+- (_Bool)cloudShareTrustManager:(id)arg1 shouldShareTrustWithUser:(id)arg2;
+- (void)configureCloudShareTrustManager;
+- (id)trustTargetUUID;
+- (void)updateCloudShareID:(id)arg1;
 @property(readonly) _Bool isUserSettingsPrefEnabled;
 - (id)privateZoneControllerForUserDataController:(id)arg1;
 - (id)sharedZoneControllerForUserDataController:(id)arg1;

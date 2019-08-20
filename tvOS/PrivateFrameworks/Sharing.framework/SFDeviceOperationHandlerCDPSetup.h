@@ -17,11 +17,13 @@
     CDPStateController *_cdpController;
     _Bool _invalidateCalled;
     CDUnknownBlockType _responseHandler;
+    _Bool _failIfCDPNotEnabled;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SFSession *_sfSession;
 }
 
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
+@property(nonatomic) _Bool failIfCDPNotEnabled; // @synthesize failIfCDPNotEnabled=_failIfCDPNotEnabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(_Bool)arg3 validator:(id)arg4;

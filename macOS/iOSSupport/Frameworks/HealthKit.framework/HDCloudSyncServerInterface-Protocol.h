@@ -11,6 +11,7 @@
 @protocol HDCloudSyncServerInterface <NSObject>
 - (NSProgress *)remote_fetchCloudSyncProgressWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)remote_oldestSampleStartDateInHealthDatabaseWithCompletion:(void (^)(NSDate *, NSError *))arg1;
+- (void)remote_accountConfigurationDidChangeWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)remote_enableCloudSyncWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)remote_disableCloudSyncWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (NSProgress *)remote_disableCloudSyncAndDeleteAllCloudDataWithCompletion:(void (^)(BOOL, NSError *))arg1;

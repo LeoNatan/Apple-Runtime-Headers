@@ -11,7 +11,7 @@
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <HomeUI/UIScrollViewDelegate-Protocol.h>
 
-@class HFItem, HUQuickControlContainerViewController, HUQuickControlSummaryNavigationBarTitleView, HUQuickControlViewControllerCoordinator, NSMutableArray, NSString, UIColor, UILayoutGuide, UIPanGestureRecognizer, UIScrollView;
+@class HFItem, HUQuickControlContainerViewController, HUQuickControlSummaryNavigationBarTitleView, HUQuickControlViewControllerCoordinator, NSMutableArray, NSString, UIButton, UIColor, UILayoutGuide, UIPanGestureRecognizer, UIScrollView;
 @protocol HUCardViewControllerDelegate;
 
 @interface HUCardViewController : UIViewController <HFItemManagerDelegate, UIGestureRecognizerDelegate, HUQuickControlViewControllerCoordinatorDelegate, UIScrollViewDelegate>
@@ -19,6 +19,7 @@
     BOOL _hideControls;
     BOOL _hideSettings;
     BOOL _disablePullToUnlockSettings;
+    BOOL _settingsUnlocked;
     BOOL _reachable;
     HUQuickControlContainerViewController *_quickControlViewController;
     UIViewController *_settingsViewController;
@@ -28,6 +29,7 @@
     UIScrollView *_scrollView;
     HUQuickControlSummaryNavigationBarTitleView *_navigationBarTitleView;
     HUQuickControlViewControllerCoordinator *_viewControllerCoordinator;
+    UIButton *_closeButton;
     NSMutableArray *_constraints;
     UIPanGestureRecognizer *_panGestureRecognizer;
     UILayoutGuide *_quickControlLayoutGuide;
@@ -37,6 +39,8 @@
 @property(retain, nonatomic) UILayoutGuide *quickControlLayoutGuide; // @synthesize quickControlLayoutGuide=_quickControlLayoutGuide;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
+@property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
+@property(nonatomic) BOOL settingsUnlocked; // @synthesize settingsUnlocked=_settingsUnlocked;
 @property(retain, nonatomic) HUQuickControlViewControllerCoordinator *viewControllerCoordinator; // @synthesize viewControllerCoordinator=_viewControllerCoordinator;
 @property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;

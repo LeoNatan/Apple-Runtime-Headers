@@ -8,7 +8,7 @@
 
 #import <iCloudDriveCore/BRCModule-Protocol.h>
 
-@class BRCAccountSession, BRCClientRanksPersistedState, ICDBRNotificationQueue, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class BRCAccountSession, BRCClientRanksPersistedState, BRCMaterializedItemsObserver, ICDBRNotificationQueue, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_source, OS_dispatch_workloop;
 
 __attribute__((visibility("hidden")))
@@ -27,8 +27,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_watchersByFileObjectID;
     NSMapTable *_fileObjectIDByWatcher;
     BOOL _isCancelled;
+    BRCMaterializedItemsObserver *_dataScopeObserver;
+    BRCMaterializedItemsObserver *_docScopeObserver;
 }
 
+@property(readonly, nonatomic) BRCMaterializedItemsObserver *docScopeObserver; // @synthesize docScopeObserver=_docScopeObserver;
+@property(readonly, nonatomic) BRCMaterializedItemsObserver *dataScopeObserver; // @synthesize dataScopeObserver=_dataScopeObserver;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
@@ -38,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)_queueAdditionalUpdates;
 - (void)_dispatchUpdatesToPipesWithRank:(unsigned long long)arg1;
 - (void)fetchLastFlushedRankWithReply:(CDUnknownBlockType)arg1;
+- (void)queueProgressUpdates:(id)arg1;
 - (void)queueUpdateForItemAtRowID:(unsigned long long)arg1;
 - (void)queueUpdate:(id)arg1;
 - (id)pipeWithReceiver:(id)arg1;

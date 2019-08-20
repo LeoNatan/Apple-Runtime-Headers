@@ -35,7 +35,7 @@
 - (void)_updateDataStatus;
 - (BOOL)_updateCellularMTU;
 - (BOOL)_updateRadioAccessTechnology;
-- (BOOL)_updateCellularDataInterface;
+- (BOOL)_updateCellularDataInterface:(BOOL)arg1;
 - (void)_setupCTServerConnection;
 - (void)removeCellularLinkDelegate:(id)arg1;
 - (void)addCellularLinkDelegate:(id)arg1;

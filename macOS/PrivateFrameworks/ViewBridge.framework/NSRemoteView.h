@@ -197,7 +197,7 @@
 - (struct NSObject *)_viewServiceMarshalProxy:(const char *)arg1;
 - (void)_advanceToConfigPhaseLegacy;
 - (void)_signalAndClearLegacyAdvanceSemaphores;
-- (void)_copyFromBootstrapParameters:(const CDStruct_278a5119 *)arg1;
+- (void)_copyFromBootstrapParameters:(const CDStruct_4172db96 *)arg1;
 - (double)_reportScaleFactor;
 - (double)_backingScaleFactorOrZero;
 - (id)auxiliaryClientListenerEndpoint;

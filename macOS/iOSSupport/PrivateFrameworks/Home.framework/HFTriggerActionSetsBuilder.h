@@ -22,6 +22,7 @@
 @property(retain, nonatomic) HFTriggerAnonymousActionSetBuilder *anonymousActionSetBuilder; // @synthesize anonymousActionSetBuilder=_anonymousActionSetBuilder;
 - (void).cxx_destruct;
 - (void)_removeAllNamedActionsSets;
+- (void)convertToHomeWorkflowActionSetIfNeeded;
 - (void)convertToHomeWorkflowActionSet:(id)arg1;
 @property(readonly, nonatomic) NSArray *allActionSets;
 - (void)removeActionSetIfPresent:(id)arg1;
@@ -36,9 +37,10 @@
 - (void)removeActionSetBuilder:(id)arg1;
 - (void)updateActionSetBuilder:(id)arg1;
 - (void)addActionSetBuilder:(id)arg1;
+@property(readonly, nonatomic) NSArray *anonymousActionBuilder;
 @property(readonly, nonatomic) NSArray *namedActionSets;
 @property(readonly, nonatomic) BOOL hasActions;
-@property(readonly, nonatomic) WFHomeWorkflow *homeWorkflow;
+@property(retain, nonatomic) WFHomeWorkflow *homeWorkflow;
 @property(readonly, nonatomic) BOOL isShortcutOwned;
 @property(readonly, nonatomic) HFSetDiff *namedActionSetsDiff;
 - (void)updateFromTriggerActionSetsBuilder:(id)arg1;

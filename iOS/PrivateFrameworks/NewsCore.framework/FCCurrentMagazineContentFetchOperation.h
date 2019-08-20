@@ -6,11 +6,12 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCloudContext, NSArray, NSString;
+@class FCCachePolicy, FCCloudContext, NSArray, NSString;
 @protocol FCFeedTransforming;
 
 @interface FCCurrentMagazineContentFetchOperation : FCOperation
 {
+    FCCachePolicy *_cachedPolicy;
     CDUnknownBlockType _fetchCompletionHandler;
     FCCloudContext *_context;
     NSArray *_configIssueIDs;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) NSArray *configIssueIDs; // @synthesize configIssueIDs=_configIssueIDs;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
+@property(retain, nonatomic) FCCachePolicy *cachedPolicy; // @synthesize cachedPolicy=_cachedPolicy;
 - (void).cxx_destruct;
 - (id)_filterInaccessibleIssues:(id)arg1;
 - (id)_filterInaccessibleHeadlines:(id)arg1;

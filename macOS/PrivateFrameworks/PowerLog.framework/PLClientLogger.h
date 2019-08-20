@@ -59,7 +59,10 @@ __attribute__((visibility("hidden")))
 - (void)batchTasksCacheFlush;
 - (id)getWorkQueueForClientID:(short)arg1;
 - (void)xpcSendMessageWithRateLimitingforClient:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3;
+- (void)logLaterForClientID:(short)arg1 withKey:(id)arg2 withFilterInterval:(double)arg3;
+- (int)shouldLogNowForClientID:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3 withFilterInterval:(double)arg4;
 - (void)logForClientID:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3;
+- (void)logWithCurrentDateForClientID:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3;
 - (short)blockedPermissionForClientID:(short)arg1 withKey:(id)arg2 withType:(id)arg3 withTimeout:(unsigned long long)arg4;
 - (void)permissionForClientID:(short)arg1 withKey:(id)arg2 withType:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)xpcSendMessageWithReply:(id)arg1 withClientID:(short)arg2 withKey:(id)arg3 withPayload:(id)arg4;

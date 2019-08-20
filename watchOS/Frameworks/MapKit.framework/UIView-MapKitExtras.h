@@ -26,6 +26,7 @@
 @property(readonly, retain, nonatomic) CALayer *_mapkit_currentLayer;
 - (struct CGRect)_mapkit_translateRect:(struct CGRect)arg1 ifNeededFromSingleEdge:(unsigned int)arg2;
 - (struct UIEdgeInsets)_mapkit_userInterfaceOnlySafeAreaInsets;
+@property(readonly, nonatomic) _Bool _mapkit_isDarkModeEnabled;
 - (void)_mapkit_insertSubview:(id)arg1 atIndex:(int)arg2;
 - (float)_mapkit_trailingMargin;
 - (float)_mapkit_leadingMargin;

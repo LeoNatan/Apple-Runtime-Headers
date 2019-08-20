@@ -15,20 +15,19 @@
 + (id)_mapkit_imageNamed:(id)arg1;
 + (id)_mapkit_imageFromVKImage:(id)arg1;
 + (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 withWidthPaddingMultiple:(double)arg4;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 nightMode:(_Bool)arg4;
 + (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3;
 - (id)_mapkit_imageWithAlpha:(double)arg1;
 - (id)_mapkit_templateImageWithTintColor:(id)arg1;
 - (id)_mapkit_horizontallyFlippedImage;
 - (id)_mapkit_dimmedImage;
-- (id)badgeImageToDisplayWithScreenScale:(double)arg1;
-- (id)imageToDisplayWithScreenScale:(double)arg1;
+- (id)badgeImageToDisplayWithScreenScale:(double)arg1 nightMode:(_Bool)arg2;
+- (id)imageToDisplayWithScreenScale:(double)arg1 nightMode:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) _Bool primaryImage;
-@property(readonly, nonatomic) _Bool shouldHighlight;
 @property(readonly) Class superclass;
 @end
 

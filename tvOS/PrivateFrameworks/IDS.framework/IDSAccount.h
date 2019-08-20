@@ -46,6 +46,7 @@
 @property(readonly, nonatomic) NSDictionary *regionServerContext;
 @property(readonly, nonatomic) NSData *pushToken;
 @property(readonly, nonatomic) NSData *registrationCertificate;
+@property(readonly, nonatomic) NSArray *accountRegisteredURIs;
 @property(readonly, nonatomic) NSArray *registeredURIs;
 @property(readonly, nonatomic) NSDate *dateRegistered;
 @property(readonly, nonatomic) NSDate *nextRegistrationDate;

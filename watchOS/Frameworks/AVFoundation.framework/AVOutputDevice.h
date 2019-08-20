@@ -76,7 +76,7 @@
 - (void)dealloc;
 - (id)initWithOutputDeviceImpl:(id)arg1;
 - (id)init;
-- (id)figEndpointOutputImpl;
+- (id)figEndpointOutputDeviceImpl;
 
 @end
 

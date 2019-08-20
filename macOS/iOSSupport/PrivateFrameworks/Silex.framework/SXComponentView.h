@@ -11,12 +11,11 @@
 #import <Silex/SXComponentInteractable-Protocol.h>
 #import <Silex/SXTransitionableComponentView-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
-#import <Silex/UIViewControllerPreviewingDelegate-Protocol.h>
 
 @class NSString, SXColumnLayout, SXFillView, SXUnitConverter, SXViewport;
 @protocol SXComponent, SXComponentHosting, SXComponentLayout, SXComponentStyle, SXComponentStyleRenderer, SXComponentStyleRendererFactory, SXDOMObjectProviding, SXPresentationDelegate;
 
-@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionableComponentView, UIViewControllerPreviewingDelegate, SXComponentInteractable>
+@interface SXComponentView : UIView <UIGestureRecognizerDelegate, STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionableComponentView, SXComponentInteractable>
 {
     BOOL _hasRenderedContents;
     BOOL _requiresThoroughFrameCalculations;
@@ -112,8 +111,6 @@
 @property(readonly, nonatomic) struct CGRect transitionVisibleFrame;
 @property(readonly, nonatomic) BOOL transitionViewIsVisible;
 @property(readonly, nonatomic) struct CGRect transitionContentFrame;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (void)invalidateComponentStyle;
 - (void)renderComponentStyle;
 - (void)prepareComponentStyleRendererForStyle:(id)arg1;

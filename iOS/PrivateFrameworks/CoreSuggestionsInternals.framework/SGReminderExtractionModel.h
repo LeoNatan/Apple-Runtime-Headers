@@ -6,26 +6,36 @@
 
 #import <objc/NSObject.h>
 
+@class NSDictionary, NSRegularExpression, _PASNotificationToken;
+
 @interface SGReminderExtractionModel : NSObject
 {
+    _PASNotificationToken *_assetUpdateToken;
+    NSDictionary *_enrichments;
+    NSDictionary *_inputTokenMapping;
+    NSDictionary *_outputConfig;
+    NSDictionary *_reminderOverrides;
+    NSRegularExpression *_whitelistRegex;
 }
 
 + (id)enrichTaggedCharacterRangesWithModelOutput:(id)arg1 usingInputCharacterRanges:(id)arg2;
 + (id)inputFromTaggedCharacterRanges:(id)arg1 usingTokenMapping:(id)arg2;
 + (id)loadLazyPlistWithBasename:(id)arg1;
-+ (_Bool)hasWhitelistedVerbInContent:(id)arg1;
-+ (id)outputConfig;
-+ (id)inputTokenMapping;
-+ (id)enrichments;
 + (id)currentModelURL;
 + (id)compileModelAtPath:(id)arg1 toCompiledPath:(id)arg2;
 + (id)currentModelName;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (id)argMaxForOutputIndex:(id)arg1 index:(int)arg2 shape:(id)arg3;
 - (id)argMaxForLastOutput:(id)arg1;
 - (id)argMaxForSequence:(id)arg1;
+- (_Bool)hasWhitelistedVerbInContent:(id)arg1;
+- (id)reminderOverrides;
+- (id)enrichments;
 - (id)modelInferences:(id)arg1;
 - (id)loadModel;
+- (void)updateAll;
+- (void)dealloc;
 - (id)_init;
 
 @end

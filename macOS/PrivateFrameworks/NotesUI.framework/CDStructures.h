@@ -196,6 +196,14 @@ struct ICDrawingVelocityCalculationFilter {
     _Bool _field5;
 };
 
+struct ICMacBaseTextView {
+    Class _field1;
+};
+
+struct ICMacTextView {
+    Class _field1;
+};
+
 struct ICSmoothingPoint;
 
 struct NSCache {

@@ -8,7 +8,7 @@
 
 #import <Home/NSURLSessionDelegate-Protocol.h>
 
-@class BKSProcessAssertion, HMCameraClipCollection, HMCameraClipFetchVideoAssetContextOperation, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSTimer, NSURLSession, NSURLSessionDataTask;
+@class BKSProcessAssertion, HMCameraClipFetchVideoAssetContextOperation, HMCameraProfile, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSOperationQueue, NSString, NSTimer, NSURLSession, NSURLSessionDataTask;
 @protocol HFCameraClipFeedbackObserving;
 
 @interface HFCameraClipFeedbackManager : NSObject <NSURLSessionDelegate>
@@ -17,7 +17,7 @@
     CDUnknownBlockType _sessionCompletionHandler;
     id <HFCameraClipFeedbackObserving> _delegate;
     NSString *_backgroundURLSessionIdentifier;
-    NSMutableArray *_pendingClipIdentifiers;
+    NSMutableOrderedSet *_pendingClipIdentifiers;
     NSMutableSet *_uploadedClipIdentifiers;
     NSMutableSet *_failedClipIdentifiers;
     NSMutableDictionary *_submittedClipIdentifiers;
@@ -27,9 +27,10 @@
     NSTimer *_networkingTimeout;
     HMCameraClipFetchVideoAssetContextOperation *_videoDownloadOperation;
     BKSProcessAssertion *_uploadsInProgressAssertion;
-    HMCameraClipCollection *_currentClipCollection;
+    HMCameraProfile *_currentCameraProfile;
 }
 
++ (id)_cameraProfileFromKey:(id)arg1;
 + (id)_prefixStringWithoutDate:(id)arg1;
 + (id)_appendDateStringToString:(id)arg1;
 + (id)dateStringFromDate:(id)arg1;
@@ -37,7 +38,7 @@
 + (id)feedbackRequestURLForClipUUIDString:(id)arg1;
 + (id)backgroundURLSessionIdentifier;
 + (id)sharedManager;
-@property(retain, nonatomic) HMCameraClipCollection *currentClipCollection; // @synthesize currentClipCollection=_currentClipCollection;
+@property(retain, nonatomic) HMCameraProfile *currentCameraProfile; // @synthesize currentCameraProfile=_currentCameraProfile;
 @property(retain, nonatomic) BKSProcessAssertion *uploadsInProgressAssertion; // @synthesize uploadsInProgressAssertion=_uploadsInProgressAssertion;
 @property(retain, nonatomic) HMCameraClipFetchVideoAssetContextOperation *videoDownloadOperation; // @synthesize videoDownloadOperation=_videoDownloadOperation;
 @property(retain, nonatomic) NSTimer *networkingTimeout; // @synthesize networkingTimeout=_networkingTimeout;
@@ -48,19 +49,22 @@
 @property(retain, nonatomic) NSMutableDictionary *submittedClipIdentifiers; // @synthesize submittedClipIdentifiers=_submittedClipIdentifiers;
 @property(retain, nonatomic) NSMutableSet *failedClipIdentifiers; // @synthesize failedClipIdentifiers=_failedClipIdentifiers;
 @property(retain, nonatomic) NSMutableSet *uploadedClipIdentifiers; // @synthesize uploadedClipIdentifiers=_uploadedClipIdentifiers;
-@property(retain, nonatomic) NSMutableArray *pendingClipIdentifiers; // @synthesize pendingClipIdentifiers=_pendingClipIdentifiers;
+@property(retain, nonatomic) NSMutableOrderedSet *pendingClipIdentifiers; // @synthesize pendingClipIdentifiers=_pendingClipIdentifiers;
 @property(retain, nonatomic) NSString *backgroundURLSessionIdentifier; // @synthesize backgroundURLSessionIdentifier=_backgroundURLSessionIdentifier;
 @property(nonatomic) __weak id <HFCameraClipFeedbackObserving> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType sessionCompletionHandler; // @synthesize sessionCompletionHandler=_sessionCompletionHandler;
 - (void).cxx_destruct;
 - (void)prepareServiceForActivityWhileBackgrounded;
-- (void)_invalidateAssertionAfterFinishedUploading;
+- (void)_invalidateAssertion;
 - (_Bool)serviceNeedsToContinueInBackground;
+- (id)_cameraProfileKeyFromSubmissionKey:(id)arg1;
+- (id)_cameraClipKeyFromSubmissionKey:(id)arg1;
+- (id)submissionKeyForCameraClip:(id)arg1 fromCameraProfile:(id)arg2;
 - (id)_appendDateStringToString:(id)arg1;
 - (id)_identifierFromString:(id)arg1;
 - (void)_prepareQueuesForResumptionOfService;
 - (void)_reloadFailedIdentifiersToPendingQueue:(id)arg1;
-- (void)restartFeedbackServiceAfterClipCollectionLoad;
+- (void)restartFeedbackServiceIfNeeded;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)invalidateVideoDownloadOperation;
@@ -72,19 +76,20 @@
 - (void)_failAttemptToUploadCurrentIdentifier;
 - (void)_removePendingIdentifier:(id)arg1;
 - (void)_removeFailureIdentifier:(id)arg1;
+- (id)_previousFailureIdentifierForIdentifier:(id)arg1;
 - (void)resumeServiceForURLSessionIdentifier:(id)arg1;
 - (_Bool)didPreviouslySubmitCameraClip:(id)arg1;
-- (void)submitClipCollection:(id)arg1;
+- (void)submitClipsFromCameraProfile:(id)arg1;
 - (void)uploadStrippedAudioMovieFileAtURL:(id)arg1 toLocation:(id)arg2;
 - (void)stripAudioFromFileForCameraClipIdentifier:(id)arg1 sendToUploadLocation:(id)arg2;
-- (void)submitCameraClip:(id)arg1;
+- (void)submitCameraClip:(id)arg1 fromCameraProfile:(id)arg2;
 - (void)_cacheFeedbackService;
-- (void)_addCameraClipToUploadService:(id)arg1;
+- (void)_addSubmissionKeyToUploadService:(id)arg1;
 - (void)_addIdentifierToPendingClipIdentifiers:(id)arg1;
 - (void)submitNextPendingCameraClip;
-- (void)_cleanUpCurrentClipCollectionIfNeeded;
+- (void)_cleanUpCurrentCameraProfileIfNeeded;
 - (void)cancelSignedURLRequest;
-- (id)nextUUIDStringToProcess;
+- (id)nextSubmissionKeyToProcess;
 - (void)addFailedIdentifiersToPendingQueueIfEligible;
 - (void)_updatePreviousClipIdentifiers:(id)arg1 forKey:(id)arg2;
 - (void)updateLastPurgeDate;

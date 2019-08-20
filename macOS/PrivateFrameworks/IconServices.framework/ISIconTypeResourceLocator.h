@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ISIconTypeResourceLocator : ISIconResourceLocator <NSSecureCoding>
 {
     NSString *_type;
@@ -18,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (BOOL)allowLocalizedIcon;
 - (id)preferedResourceName;
 - (id)bundleIdentifier;
 - (id)resourceDirectoryURL;

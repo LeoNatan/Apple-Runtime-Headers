@@ -72,8 +72,6 @@
 - (struct CGRect)_integralCropRect:(struct CGRect)arg1 straightenAngle:(double)arg2 anchorPoint:(struct CGPoint)arg3;
 - (struct CGRect)integralCropRect:(struct CGRect)arg1;
 -     // Error parsing type: {?=[4]}80@0:8d16d24d32d40{CGRect={CGPoint=dd}{CGSize=dd}}48, name: _getBoundingQuadFromPitch:yaw:roll:withExpansionTol:imageRect:
--     // Error parsing type: {?=[4]}40@0:8d16d24d32, name: _imageTransformFromPitch:yaw:roll:
--     // Error parsing type: {?=[4]}16@0:8, name: _imageTransform
 -     // Error parsing type: {?=[4]}48@0:8d16d24d32d40, name: _getBoundingQuadFromPitch:yaw:roll:withExpansionTol:
 - (struct Quad2d)_getBoundingQuadFromPitch:(double)arg1 yaw:(double)arg2 roll:(double)arg3 imageRect:(struct CGRect)arg4;
 - (struct Quad2d)_getBoundingQuadFromPitch:(double)arg1 yaw:(double)arg2 roll:(double)arg3;

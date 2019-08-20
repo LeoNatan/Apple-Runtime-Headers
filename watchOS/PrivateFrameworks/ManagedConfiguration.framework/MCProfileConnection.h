@@ -388,6 +388,7 @@
 - (_Bool)isPersonalHotspotModificationAllowed;
 - (_Bool)isBluetoothModificationAllowed;
 - (_Bool)isInAppPaymentAllowed;
+- (_Bool)isBiometricAuthForSignInWithAppleAllowed;
 - (_Bool)isFingerprintForContactlessPaymentAllowed;
 - (_Bool)isContactlessPaymentAllowed;
 - (_Bool)isUninstalledAppNearMeSuggestionsAllowed;
@@ -499,6 +500,7 @@
 - (void)storeCertificateData:(id)arg1 forHostIdentifier:(id)arg2;
 - (void)removeExpiredProfiles;
 - (void)notifyKeybagUpdated;
+- (void)notifyDeviceUnlockedAndPasscodeRequired;
 - (void)notifyDeviceUnlocked;
 - (void)checkCarrierProfileForceInstallation:(_Bool)arg1;
 - (void)checkCarrierProfile;

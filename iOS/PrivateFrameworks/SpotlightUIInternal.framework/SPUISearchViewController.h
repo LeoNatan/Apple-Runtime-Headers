@@ -63,7 +63,7 @@
 - (void)dictationButtonPressed;
 - (void)didBeginEditing;
 - (_Bool)allowInternet;
-- (void)didUpdateFromResults;
+- (void)willUpdateFromResults;
 - (void)queryContextDidChange:(id)arg1 fromSearchHeader:(id)arg2 allowZKW:(_Bool)arg3;
 - (id)proactiveResultsTestingObject;
 - (id)searchResultsTestingObject;
@@ -102,7 +102,6 @@
 - (void)shortLookViewController:(id)arg1 willDismissLongLookWithReason:(long long)arg2 actionCompleted:(_Bool)arg3 shouldClearAction:(_Bool)arg4;
 - (void)shortLookViewController:(id)arg1 didCompleteActionWithResult:(long long)arg2;
 - (void)shortLookViewController:(id)arg1 willDisplayLongLookWithReason:(long long)arg2;
-- (void)shortLookViewControllerWillBeginUserInteraction:(id)arg1;
 - (id)shortLookViewControllerForResult:(id)arg1;
 - (_Bool)hasShortLookViewControllerForResult:(id)arg1;
 - (id)userActivityFromIntent:(id)arg1;

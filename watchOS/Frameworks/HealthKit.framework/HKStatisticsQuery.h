@@ -34,7 +34,7 @@
 - (void)queue_populateConfiguration:(id)arg1;
 - (id)_filter;
 - (id)_filterForDateInterval:(id)arg1;
-- (id)_initWithSampleType:(id)arg1 samplePredicate:(id)arg2 options:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 options:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties

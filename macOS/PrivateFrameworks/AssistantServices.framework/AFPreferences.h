@@ -167,6 +167,10 @@
 - (id)supplementalLanguages;
 - (id)supplementalLanguagesForProduct:(id)arg1 forBuildVersion:(id)arg2;
 - (id)supplementalLanguageDictionaryForProduct:(id)arg1;
+- (void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
+- (void)getSpokenNotificationShouldAlwaysSpeakNotificationsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setSpokenNotificationShouldAlwaysSpeakNotifications:(BOOL)arg1;
 - (BOOL)spokenNotificationSkipTriggerlessReplyConfirmation;
 - (void)setSpokenNotificationSkipTriggerlessReplyConfirmation:(BOOL)arg1;
 - (void)setSpokenNotificationsProxCardSeen;

@@ -9,15 +9,13 @@
 #import <HomeKitBackingStore/APSConnectionDelegate-Protocol.h>
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class APSConnection, CKContainer, CKContainerID, CKDatabase, CKOperationConfiguration, HMBCloudDatabaseStateModel, HMBLocalDatabase, HMBLocalZone, HMFUnfairLock, NAFuture, NSMutableDictionary, NSSet, NSString;
+@class APSConnection, CKContainer, CKContainerID, CKDatabase, HMBCloudDatabaseConfiguration, HMBCloudDatabaseStateModel, HMBLocalDatabase, HMBLocalZone, HMFUnfairLock, NAFuture, NSMutableDictionary, NSSet, NSString;
 @protocol HMBCloudDatabaseDelegate;
 
 @interface HMBCloudDatabase : HMFObject <APSConnectionDelegate, HMFLogging>
 {
-    BOOL _manateeContainer;
     id <HMBCloudDatabaseDelegate> _delegate;
-    CKOperationConfiguration *_defaultOperationConfiguration;
-    NAFuture *_initialCloudSyncFuture;
+    HMBCloudDatabaseConfiguration *_configuration;
     HMBLocalDatabase *_localDatabase;
     HMBLocalZone *_stateZone;
     HMFUnfairLock *_propertyLock;
@@ -30,14 +28,15 @@
     CKDatabase *_privateDatabase;
     CKDatabase *_publicDatabase;
     APSConnection *_apsConnection;
+    NAFuture *_initialCloudSyncFuture;
     NAFuture *_manateeAvailabilityFuture;
 }
 
 + (id)logCategory;
-+ (BOOL)retryCloudKitOperationAfterError:(id)arg1 retryBlock:(CDUnknownBlockType)arg2;
 + (id)extantDatabasesLock;
 + (id)extantDatabases;
 @property(retain, nonatomic) NAFuture *manateeAvailabilityFuture; // @synthesize manateeAvailabilityFuture=_manateeAvailabilityFuture;
+@property(retain, nonatomic) NAFuture *initialCloudSyncFuture; // @synthesize initialCloudSyncFuture=_initialCloudSyncFuture;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
 @property(readonly, nonatomic) CKDatabase *publicDatabase; // @synthesize publicDatabase=_publicDatabase;
 @property(readonly, nonatomic) CKDatabase *privateDatabase; // @synthesize privateDatabase=_privateDatabase;
@@ -49,16 +48,15 @@
 @property(retain, nonatomic) HMBCloudDatabaseStateModel *privateDatabaseState; // @synthesize privateDatabaseState=_privateDatabaseState;
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, nonatomic) HMBLocalZone *stateZone; // @synthesize stateZone=_stateZone;
-@property(readonly, nonatomic, getter=isManateeContainer) BOOL manateeContainer; // @synthesize manateeContainer=_manateeContainer;
 @property(readonly, nonatomic) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
-@property(retain, nonatomic) NAFuture *initialCloudSyncFuture; // @synthesize initialCloudSyncFuture=_initialCloudSyncFuture;
-@property(readonly, nonatomic) CKOperationConfiguration *defaultOperationConfiguration; // @synthesize defaultOperationConfiguration=_defaultOperationConfiguration;
+@property(readonly, copy, nonatomic) HMBCloudDatabaseConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <HMBCloudDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)attributeDescriptions;
 - (id)logIdentifier;
 - (id)operationConfigurationWithProcessingOptions:(id)arg1;
 - (void)removeStateForZoneID:(id)arg1;
+- (BOOL)retryCloudKitOperationAfterError:(id)arg1 retryBlock:(CDUnknownBlockType)arg2;
 - (id)openExistingSharedZoneWithID:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
 - (id)openExistingPrivateZoneWithID:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
 - (id)openOrCreatePrivateZoneWithID:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
@@ -77,18 +75,22 @@
 - (BOOL)updateServerChangeToken:(id)arg1 forDatabaseWithScope:(long long)arg2 error:(id *)arg3;
 - (id)performInitialCloudSync;
 @property(readonly, nonatomic) CKContainerID *containerID;
-- (id)initWithLocalDatabase:(id)arg1 containerID:(id)arg2 defaultOperationConfiguration:(id)arg3 isManateeContainer:(BOOL)arg4;
-- (id)initWithLocalDatabase:(id)arg1 stateZone:(id)arg2 container:(id)arg3 defaultOperationConfiguration:(id)arg4 isManateeContainer:(BOOL)arg5 databaseStateModelsByScope:(id)arg6 zoneStateModels:(id)arg7;
+- (id)initWithLocalDatabase:(id)arg1 configuration:(id)arg2;
+- (id)initWithLocalDatabase:(id)arg1 stateZone:(id)arg2 container:(id)arg3 configuration:(id)arg4 databaseStateModelsByScope:(id)arg5 zoneStateModels:(id)arg6;
 - (id)declineInvitation:(id)arg1;
 - (id)acceptInvitation:(id)arg1;
 - (id)removeZoneWithID:(id)arg1;
 - (id)createPrivateZoneWithID:(id)arg1;
 - (id)fetchZonesOn:(id)arg1;
 - (void)handleAccountChangedNotification:(id)arg1;
+- (id)waitForManateeAvailabilityAndRecheckIfAlreadyAvailable:(BOOL)arg1;
+- (id)waitForManateeAvailabilityAndRecheckIfAlreadyAvailable;
 - (id)waitForManateeAvailability;
-- (id)subscriptionIDForZoneID:(id)arg1;
-- (id)subscriptionIDForCloudID:(id)arg1;
-- (id)modifySubscriptionsUpdate:(id)arg1 remove:(id)arg2 on:(id)arg3;
+- (id)serverChangeTokenForZoneWithID:(id)arg1;
+- (void)updateServerChangeToken:(id)arg1 forZoneWithID:(id)arg2;
+- (void)updateServerChangeToken:(id)arg1 forDatabaseWithScope:(long long)arg2;
+- (id)subscriptionIDForZoneID:(id)arg1 recordType:(id)arg2;
+- (id)subscriptionIDForCloudID:(id)arg1 recordType:(id)arg2;
 - (id)fetchSubscriptionsOn:(id)arg1;
 - (id)fetchUserRecordOn:(id)arg1;
 - (id)acceptInvitations:(id)arg1;
@@ -101,12 +103,16 @@
 @property(readonly, nonatomic) NSSet *sharedZoneIDs;
 @property(readonly, nonatomic) NSSet *privateZoneIDs;
 - (id)_zonesWithScope:(long long)arg1;
-- (id)setSubscription:(BOOL)arg1 forZoneWithID:(id)arg2 force:(BOOL)arg3;
-- (id)updateSubscriptions:(BOOL)arg1;
-- (id)unregisterSharedSubscription:(BOOL)arg1;
-- (id)unregisterPrivateSubscription:(BOOL)arg1;
-- (id)registerSharedSubscription:(BOOL)arg1;
-- (id)registerPrivateSubscription:(BOOL)arg1;
+- (id)subscriptionsForZoneWithID:(id)arg1;
+- (id)unregisterSubscription:(id)arg1 forZoneWithID:(id)arg2;
+- (id)registerSubscription:(id)arg1 forZoneWithID:(id)arg2;
+- (id)pushSubscriptionsForDatabase:(id)arg1 subscriptionsToSave:(id)arg2 subscriptionIDsToRemove:(id)arg3;
+- (id)unregisterSharedSubscriptionForExternalRecordType:(id)arg1;
+- (id)unregisterPrivateSubscriptionForExternalRecordType:(id)arg1;
+- (id)unregisterSubscriptionForExternalRecordType:(id)arg1 databaseState:(id)arg2;
+- (id)registerSharedSubscriptionForExternalRecordType:(id)arg1;
+- (id)registerPrivateSubscriptionForExternalRecordType:(id)arg1;
+- (id)registerSubscriptionForExternalRecordType:(id)arg1 databaseState:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

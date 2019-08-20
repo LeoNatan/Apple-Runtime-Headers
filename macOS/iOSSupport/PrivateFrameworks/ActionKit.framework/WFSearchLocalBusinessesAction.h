@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) MKLocalSearch *localSearch; // @synthesize localSearch=_localSearch;
 - (void).cxx_destruct;
+- (BOOL)shouldUseMetricSystem;
 - (void)cancel;
 - (void)runSearchWithLocation:(id)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;

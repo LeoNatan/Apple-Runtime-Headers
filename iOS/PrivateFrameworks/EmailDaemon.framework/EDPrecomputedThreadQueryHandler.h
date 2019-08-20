@@ -10,7 +10,7 @@
 #import <EmailDaemon/EDThreadChangeHookResponder-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDThreadPersistence, EFCancelationToken, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class EDThreadPersistence, EDUpdateThrottler, EFCancelationToken, EMThreadScope, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol EFCancelable, EFScheduler;
 
 @interface EDPrecomputedThreadQueryHandler : EDThreadQueryHandler <EDMessageChangeHookResponder, EDThreadChangeHookResponder, EFLoggable>
@@ -22,17 +22,21 @@
     EFCancelationToken *_cancelationToken;
     NSMutableDictionary *_pendingChanges;
     NSMutableArray *_pendingPositionChanges;
+    NSMutableSet *_pendingDeletes;
     NSMutableSet *_unreportedJournaledObjectIDs;
     NSMutableDictionary *_reportedJournaledObjectIDs;
     NSMutableDictionary *_oldestThreadObjectIDsByMailbox;
     id <EFCancelable> _updateOldestThreadsCancelationToken;
+    EDUpdateThrottler *_updateThrottler;
 }
 
 + (id)log;
+@property(readonly, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
 @property(retain, nonatomic) id <EFCancelable> updateOldestThreadsCancelationToken; // @synthesize updateOldestThreadsCancelationToken=_updateOldestThreadsCancelationToken;
 @property(retain, nonatomic) NSMutableDictionary *oldestThreadObjectIDsByMailbox; // @synthesize oldestThreadObjectIDsByMailbox=_oldestThreadObjectIDsByMailbox;
 @property(retain, nonatomic) NSMutableDictionary *reportedJournaledObjectIDs; // @synthesize reportedJournaledObjectIDs=_reportedJournaledObjectIDs;
 @property(retain, nonatomic) NSMutableSet *unreportedJournaledObjectIDs; // @synthesize unreportedJournaledObjectIDs=_unreportedJournaledObjectIDs;
+@property(retain, nonatomic) NSMutableSet *pendingDeletes; // @synthesize pendingDeletes=_pendingDeletes;
 @property(retain, nonatomic) NSMutableArray *pendingPositionChanges; // @synthesize pendingPositionChanges=_pendingPositionChanges;
 @property(retain, nonatomic) NSMutableDictionary *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
 @property(retain, nonatomic) EFCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
@@ -43,18 +47,22 @@
 - (void).cxx_destruct;
 - (void)_oldestThreadsNeedUpdate;
 - (id)_messageForPersistedMessage:(id)arg1;
-- (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
-- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
+- (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
+- (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2 generationWindow:(id)arg3;
+- (void)persistenceCanResetThreadScope:(id)arg1 replyBlock:(CDUnknownBlockType)arg2;
 - (void)persistenceDidFinishThreadUpdates;
-- (void)persistenceIsDeletingThreadWithObjectID:(id)arg1;
+- (void)persistenceIsDeletingThreadWithObjectID:(id)arg1 generationWindow:(id)arg2;
 - (_Bool)_keyPathsAffectSorting:(id)arg1;
-- (void)persistenceDidChangeConversationNotificationLevel:(long long)arg1 conversationID:(long long)arg2;
+- (void)persistenceDidChangeConversationNotificationLevel:(long long)arg1 conversationID:(long long)arg2 generationWindow:(id)arg3;
 - (void)_persistenceIsChangingThreadWithObjectID:(id)arg1 changedKeyPaths:(id)arg2;
-- (void)persistenceIsChangingThreadWithObjectID:(id)arg1 changedKeyPaths:(id)arg2;
-- (void)persistenceIsReconcilingJournaledThreadWithObjectID:(id)arg1;
-- (void)persistenceIsMarkingThreadAsJournaledWithObjectID:(id)arg1;
+- (void)persistenceIsChangingThreadWithObjectID:(id)arg1 changedKeyPaths:(id)arg2 generationWindow:(id)arg3;
+- (void)persistenceIsReconcilingJournaledThreadsWithObjectIDs:(id)arg1 generationWindow:(id)arg2;
+- (void)persistenceIsMarkingThreadAsJournaledWithObjectID:(id)arg1 generationWindow:(id)arg2;
 - (void)_persistenceIsAddingThreadWithObjectID:(id)arg1;
-- (void)persistenceIsAddingThreadWithObjectID:(id)arg1 journaled:(_Bool)arg2;
+- (void)persistenceIsAddingThreadWithObjectID:(id)arg1 journaled:(_Bool)arg2 generationWindow:(id)arg3;
+- (void)_flushUpdatesWithReason:(id)arg1;
+- (_Bool)_isAddingOrDeletingObjectID:(id)arg1;
+- (void)_addChangeToPendingChanges:(id)arg1 forThreadObjectID:(id)arg2;
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
 - (void)_getInitialResults;
 - (void)cancel;

@@ -49,6 +49,7 @@
 - (id)unsafeCombinedSuggestions;
 - (_Bool)_shouldPromptUserToOpenTTR;
 - (void)updateResultsThroughDelegate:(_Bool)arg1 state:(int)arg2 sections:(id)arg3;
+- (void)updateResultsThroughDelegate:(_Bool)arg1 state:(int)arg2 unchanged:(_Bool)arg3 sections:(id)arg4;
 - (_Bool)readyToUpdate;
 - (void)pushAndPostUpdates;
 - (void)postSearchAgentUpdatedResultsToDelegate:(id)arg1;

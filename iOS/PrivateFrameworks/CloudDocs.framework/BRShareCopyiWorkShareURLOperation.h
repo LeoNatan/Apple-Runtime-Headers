@@ -16,7 +16,6 @@
 }
 
 + (id)iWorkShareableExtensions;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType shareCopyURLCompletionBlock; // @synthesize shareCopyURLCompletionBlock=_shareCopyURLCompletionBlock;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;

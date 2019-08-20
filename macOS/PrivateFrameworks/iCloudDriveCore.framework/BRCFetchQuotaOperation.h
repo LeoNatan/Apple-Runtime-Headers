@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)main;
+- (id)createActivity;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithSession:(id)arg1;
 

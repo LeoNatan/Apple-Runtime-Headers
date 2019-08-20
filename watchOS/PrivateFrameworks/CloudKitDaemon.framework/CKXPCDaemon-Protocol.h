@@ -91,6 +91,7 @@
 - (void)performFetchShareParticipantsOperation:(CKFetchShareParticipantsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performDiscoverAllIdentitiesOperation:(CKDiscoverUserIdentitiesOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performDiscoverUserIdentitiesOperation:(CKDiscoverUserIdentitiesOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
+- (void)frameworkCachesDirectoryWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
 - (void)requestApplicationPermission:(unsigned int)arg1 setupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(int, NSError *))arg3;
 - (void)statusForApplicationPermission:(unsigned int)arg1 setupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(int, NSError *))arg3;

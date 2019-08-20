@@ -10,10 +10,12 @@
 
 @interface NTKSiderealSolarEvent : NSObject
 {
+    float _degree;
     NSDate *_time;
     int _type;
 }
 
++ (id)eventWithType:(int)arg1 degree:(float)arg2;
 + (id)eventWithType:(int)arg1 time:(id)arg2;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;

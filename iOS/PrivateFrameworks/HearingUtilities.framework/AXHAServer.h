@@ -54,6 +54,7 @@
 - (void)resetConnection;
 - (void)startServerWithDelegate:(id)arg1;
 @property(copy, nonatomic) NSArray *availableHearingAids; // @synthesize availableHearingAids=_availableHearingAids;
+- (_Bool)shouldRestartOnInterruption;
 - (id)init;
 
 // Remaining properties

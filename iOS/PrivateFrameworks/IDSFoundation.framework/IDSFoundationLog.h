@@ -11,6 +11,7 @@
 }
 
 + (id)SessionMultiplexer;
++ (id)ConnectivityMonitor;
 + (id)interface;
 + (id)IDSUDPLink;
 + (id)CrossLayerLogging;

@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isPlaceholderIcon;
 - (id)genericIconImageWithInfo:(struct SBIconImageInfo)arg1;
 - (id)iconImageWithInfo:(struct SBIconImageInfo)arg1;
 

@@ -14,6 +14,7 @@
     CLLocation *_currentLocation;
     CLLocation *_anyLocation;
     unsigned int _vista;
+    _Bool _listeningForNotifications;
 }
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;

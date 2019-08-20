@@ -11,6 +11,7 @@
 @class NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSString;
 
 @interface UIView (AVAdditions) <AVKitLayoutItem>
+- (struct CGRect)avkit_largestInscribedRectInBoundingPathWithCenter:(struct CGPoint)arg1 aspectRatio:(double)arg2;
 - (_Bool)avkit_hasFullScreenLayoutClass;
 - (void)avkit_makeSubtreeDisallowGroupBlending;
 - (_Bool)avkit_isDescendantOfNonPagingScrollView;

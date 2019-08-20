@@ -23,6 +23,7 @@
 - (_Bool)wantsDockBehaviorAssertion;
 - (_Bool)shouldConfigureInAppDockHiddenAssertion;
 - (NSArray *)appLayoutsForInsertionOrRemoval;
+- (unsigned long long)insertionStyle;
 - (double)baseHysteresisForStartingKillGesture;
 - (unsigned long long)indexToScrollToAfterInsertingAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexToScrollToAfterRemovingIndex:(unsigned long long)arg1;
@@ -48,8 +49,9 @@
 - (unsigned long long)numberOfDefaultAppLayoutsToCacheSnapshots;
 - (_Bool)isSwitcherWindowUserInteractionEnabled;
 - (_Bool)isSwitcherWindowVisible;
+- (double)reopenClosedWindowsButtonAlpha;
 - (double)plusButtonAlpha;
-- (NSString *)appExposeAccessoryButtonBundleID;
+- (NSString *)appExposeAccessoryButtonsBundleIdentifier;
 - (_Bool)isHomeScreenContentRequired;
 - (long long)wallpaperStyle;
 - (_Bool)isWallpaperRequiredForSwitcher;

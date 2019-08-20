@@ -6,18 +6,28 @@
 
 #import <ChatKit/CKConversationListStandardCell.h>
 
-@interface CKConversationListSearchCell : CKConversationListStandardCell
+#import <ChatKit/CKConversationSearchCellProtocol-Protocol.h>
+
+@class NSString;
+
+@interface CKConversationListSearchCell : CKConversationListStandardCell <CKConversationSearchCellProtocol>
 {
-    struct UIEdgeInsets _marginInsets;
+    struct UIEdgeInsets marginInsets;
 }
 
 + (id)annotatedResultStringWithSearchText:(id)arg1 resultText:(id)arg2 primaryTextColor:(id)arg3 primaryFont:(id)arg4 annotatedTextColor:(id)arg5 annotatedFont:(id)arg6;
-@property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets=_marginInsets;
+@property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
 - (double)leadingLayoutMargin;
 - (void)prepareForReuse;
 - (id)fromLabel;
 - (void)layoutSubviews;
 - (void)configureWithQueryResult:(id)arg1 searchText:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

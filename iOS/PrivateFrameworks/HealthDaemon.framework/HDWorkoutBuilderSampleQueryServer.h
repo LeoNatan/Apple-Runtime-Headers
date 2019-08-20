@@ -21,7 +21,7 @@
 
 + (id)requiredEntitlements;
 + (Class)queryClass;
-+ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 client:(id)arg2 error:(id *)arg3;
 - (void).cxx_destruct;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)workoutBuilderServer:(id)arg1 addedSamples:(id)arg2;

@@ -120,6 +120,7 @@ __attribute__((visibility("hidden")))
 - (void)resetSortControlIndexAfterCandidatesChanged;
 - (void)clearCurrentCandidate;
 - (void)panGestureRecognizerAction:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setupPanGestureRecognizerIfNeeded;
 - (id)snapshot;

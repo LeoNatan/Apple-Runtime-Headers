@@ -153,6 +153,7 @@
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id *)arg6;
 - (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned long long)arg2;
+- (id)currentQueryGenerationTokenFromStores:(id)arg1;
 - (BOOL)_validateQueryGeneration:(id)arg1 error:(id *)arg2;
 - (id)_reopenQueryGenerationWithIdentifier:(id)arg1 inStoreWithIdentifier:(id)arg2 error:(id *)arg3;
 - (id)_retainedCurrentQueryGeneration:(id)arg1;

@@ -16,6 +16,7 @@
 @optional
 - (struct CGRect)visibleFrameForWidget:(WGWidgetHostingViewController *)arg1;
 - (_Bool)managingContainerIsVisibleForWidget:(WGWidgetHostingViewController *)arg1;
+- (struct UIEdgeInsets)layoutMarginForWidget:(WGWidgetHostingViewController *)arg1;
 - (struct UIEdgeInsets)marginInsetsForWidget:(WGWidgetHostingViewController *)arg1;
 - (long long)activeLayoutModeForWidget:(WGWidgetHostingViewController *)arg1;
 - (_Bool)shouldRequestWidgetRemoteViewControllers;

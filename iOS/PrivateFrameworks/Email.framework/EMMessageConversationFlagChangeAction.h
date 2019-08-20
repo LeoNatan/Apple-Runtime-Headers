@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) long long conversationNotificationLevel; // @synthesize conversationNotificationLevel=_conversationNotificationLevel;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)signpostType;
 - (id)initWithConversationID:(long long)arg1 conversationNotificationLevel:(long long)arg2 originalConversationNotificationLevel:(long long)arg3;
 - (id)initWithMessage:(id)arg1 conversationNotificationLevel:(long long)arg2;
 

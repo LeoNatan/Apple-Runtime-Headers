@@ -95,6 +95,7 @@
 - (void)contentViewLoadedThumbnail:(id)arg1;
 - (void)setDocumentViewLayersAreSetup:(BOOL)arg1;
 - (BOOL)documentViewLayersAreSetup;
+- (void)loadingFailed;
 - (void)_replaceDocumentView;
 - (void)cancelAndDisposeOfDocumentViewInLoading;
 - (void)_setupDocumentViewForLoading;

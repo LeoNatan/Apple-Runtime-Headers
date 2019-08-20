@@ -32,6 +32,7 @@
     PUSharingHeaderController *_sharingHeaderController;
     struct CGRect _lastSelectedActivityFrame;
     _Bool _readyForInteraction;
+    _Bool _shouldAutomaticallyUseCMMInMessagesIfThresholdMet;
     _Bool _shareAsCMM;
     _Bool _excludeLiveness;
     _Bool _excludeLocation;
@@ -47,6 +48,7 @@
 
 + (_Bool)cmmFileSizeThresholdIsMetForAssetItems:(id)arg1;
 + (_Bool)cmmAssetCountThresholdIsMetForAssetItems:(id)arg1;
++ (_Bool)cmmThresholdIsMetForAssetItems:(id)arg1;
 + (id)preparationErrorFromErrors:(id)arg1;
 + (id)localizedStringKeyForMediaType:(long long)arg1 withPrefix:(id)arg2;
 + (id)new;
@@ -59,6 +61,7 @@
 @property(nonatomic) _Bool excludeLocation; // @synthesize excludeLocation=_excludeLocation;
 @property(nonatomic) _Bool excludeLiveness; // @synthesize excludeLiveness=_excludeLiveness;
 @property(nonatomic) _Bool shareAsCMM; // @synthesize shareAsCMM=_shareAsCMM;
+@property(nonatomic) _Bool shouldAutomaticallyUseCMMInMessagesIfThresholdMet; // @synthesize shouldAutomaticallyUseCMMInMessagesIfThresholdMet=_shouldAutomaticallyUseCMMInMessagesIfThresholdMet;
 @property(retain, nonatomic) PUActivityProgressController *progressController; // @synthesize progressController=_progressController;
 @property(retain, nonatomic) PUActivitySharingController *activitySharingController; // @synthesize activitySharingController=_activitySharingController;
 @property(copy, nonatomic) CDUnknownBlockType ppt_readyToInteractHandler; // @synthesize ppt_readyToInteractHandler=_ppt_readyToInteractHandler;
@@ -73,11 +76,13 @@
 - (void)ppt_performActivityOfType:(id)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (_Bool)_shouldAutomaticallySendAsCMMForActivity:(id)arg1;
 - (_Bool)_shouldSuggestSharingAsCMMForActivity:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)_cancel;
 - (void)_prepareActivity:(id)arg1;
-- (void)_presentCMMSuggestionAlertIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_presentCMMSuggestionAlertForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)_adjustPreparationOptionsIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_presentAlertIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_performActivity:(id)arg1;
 - (_Bool)_shouldPresentAirplayAlertForActivity:(id)arg1;
@@ -99,7 +104,7 @@
 - (void)_updateSharingHeaderIfNeeded;
 - (_Bool)_canShowSendAsOriginalsSwitchInObjectManipulationHeader;
 - (void)_updateSourceControllerSharingPreferencesInAllItems;
-- (void)_updateSourceControllerPreferredPreparationType;
+- (void)_updateSourceControllerPreferredPreparationBehavior;
 - (void)setPhotosCarouselViewController:(id)arg1;
 - (void)_handlePostReadyToInteractUpdatesIfNeeded;
 - (void)updateVisibleShareActionsIfNeeded;
@@ -110,7 +115,7 @@
 - (void)_cleanUpActivityState;
 - (void)_sharingManagerDidBeginPublishing:(id)arg1;
 - (void)mailActivity:(id)arg1 displayVideoRemakerProgressView:(id)arg2;
-- (void)_presentConfidentialityWarningWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_presentConfidentialityWarningIfNeededForActivity:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_prepareAssetsForActivity:(id)arg1 forcePreparationAsMomentShareLink:(_Bool)arg2;
 - (void)_showSharingWasInterruptedForErrors:(id)arg1 withIndividualAssets:(id)arg2 itemSourcesByAssetUUID:(id)arg3 toActivityType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)updateProgressUITitle;

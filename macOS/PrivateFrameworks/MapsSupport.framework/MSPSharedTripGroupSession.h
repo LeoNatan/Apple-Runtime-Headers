@@ -23,10 +23,12 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_identifiers;
     NSObject<OS_os_transaction> *_transaction;
     NSString *_initiatorIdentifier;
+    NSString *_initiatorDisplayName;
     id <MSPSharedTripGroupSessionDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MSPSharedTripGroupSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSString *initiatorDisplayName; // @synthesize initiatorDisplayName=_initiatorDisplayName;
 @property(readonly, nonatomic) NSString *initiatorIdentifier; // @synthesize initiatorIdentifier=_initiatorIdentifier;
 - (void).cxx_destruct;
 - (void)participantDidLeave:(id)arg1;
@@ -38,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_sendChunkMessage:(id)arg1 to:(id)arg2 packet:(id)arg3;
 - (void)_sharingEndedWithError:(id)arg1;
 - (void)_sharingEnded;
-- (BOOL)removeSharingWith:(id)arg1;
+- (BOOL)sessionIsAliveAfterRemovingSharingIdentifiers:(id)arg1;
 - (void)addSharingWith:(id)arg1;
 @property(readonly, nonatomic) BOOL inLiveMode;
 - (void)_leaveLivemode;

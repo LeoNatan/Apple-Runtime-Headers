@@ -19,6 +19,7 @@
 @property(copy, nonatomic) CDUnknownBlockType clientCompletion; // @synthesize clientCompletion=_clientCompletion;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

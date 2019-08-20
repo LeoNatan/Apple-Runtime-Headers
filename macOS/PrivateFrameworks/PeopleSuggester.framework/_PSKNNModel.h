@@ -45,9 +45,8 @@
 - (id)filterShareInteractions:(id)arg1 minimumOccurences:(unsigned long long)arg2;
 - (id)splitShareLabels:(id)arg1 filterOnRecency:(unsigned long long)arg2 suggestionDate:(id)arg3;
 - (id)interactionLabelsForQueryResult:(id)arg1 queryPoint:(id)arg2 rankerType:(long long)arg3 frequencyOnly:(BOOL)arg4 contactsOnly:(BOOL)arg5;
-- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
 - (id)suggestionProxiesWithPredictionContext:(id)arg1;
-- (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 contactsOnly:(BOOL)arg3 interactions:(id)arg4;
+- (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 contactsOnly:(BOOL)arg3 interactions:(id)arg4 contactIdsCurrentlyInStore:(id)arg5;
 - (id)normalizedStringFromString:(id)arg1;
 - (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 forName:(id)arg2;
 - (id)rankedMessagesZkwSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 maxSuggestions:(unsigned long long)arg3 frequencyOnly:(BOOL)arg4 interactions:(id)arg5;

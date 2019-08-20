@@ -24,6 +24,7 @@
 @property(nonatomic) unsigned int dataNetworkType; // @dynamic dataNetworkType;
 @property(copy, nonatomic) NSString *secondaryServiceDescription; // @dynamic secondaryServiceDescription;
 @property(copy, nonatomic) NSString *serviceDescription; // @dynamic serviceDescription;
+@property(nonatomic) unsigned int cellularServiceState; // @dynamic cellularServiceState;
 @property(nonatomic) unsigned int serviceState; // @dynamic serviceState;
 @property(nonatomic) unsigned int maxSignalStrengthBars; // @dynamic maxSignalStrengthBars;
 @property(nonatomic) unsigned int signalStrengthBars; // @dynamic signalStrengthBars;

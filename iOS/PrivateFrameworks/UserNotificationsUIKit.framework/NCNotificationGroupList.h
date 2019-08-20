@@ -76,6 +76,7 @@
 - (void).cxx_destruct;
 - (void)_reloadRecycledNotificationCellForRequest:(id)arg1;
 - (void)_reloadRecycledGroupedNotificationCells;
+- (void)_reloadNotificationCellAtIndex:(unsigned long long)arg1;
 - (_Bool)_isContentRevealedForNotificationRequest:(id)arg1;
 - (long long)_compareNotificationRequest:(id)arg1 withNotificationRequest:(id)arg2;
 - (unsigned long long)_insertionIndexForNotificationRequest:(id)arg1;

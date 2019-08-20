@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, AFWatchdogTimer, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, _DKKnowledgeStore;
+@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, AFWatchdogTimer, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, SFDiagnostics, _DKKnowledgeStore;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface AFMyriadCoordinator : NSObject
@@ -54,6 +54,7 @@
     _Bool _BTLEReady;
     _Bool _inTask;
     _Bool _ducking;
+    _Bool _stateMachineEncounteredError;
     _Bool _supportsExtended;
     _Bool _listenTimerIsRunning;
     _Bool _coordinationEnabled;
@@ -81,6 +82,8 @@
     unsigned short _lastPHash;
     double _lastEmergencyAttempt;
     _Bool _wasEmergency;
+    SFDiagnostics *_sfdiagnostics;
+    AFWatchdogTimer *_sfDiagnosticsTimer;
 }
 
 + (void)clearCurrentCoordinator;
@@ -91,10 +94,14 @@
 - (unsigned short)recentEventBump;
 - (void)logCoreDuetResults:(id)arg1;
 - (id)activityEventStream;
+- (void)_leaveBLEDiagnosticMode;
+- (void)_enterBLEDiagnosticMode;
 - (void)_waitWiProxAndExecute:(CDUnknownBlockType)arg1;
 - (void)_waitWiProx:(long long)arg1 andExecute:(CDUnknownBlockType)arg2;
 - (void)_ageWedgeFilter;
 - (_Bool)_testAndUpdateWedgeFilter:(id)arg1;
+- (void)notifyCurrentDecisionResult;
+- (void)_updateRepliesWith:(id)arg1 id:(id)arg2 data:(id)arg3;
 - (_Bool)_isAlreadyAdvertising;
 - (_Bool)_inTaskTriggerWasTooSoon;
 - (id)_sortedReplies:(id)arg1;
@@ -128,6 +135,7 @@
 - (void)_adjustActionWindowsFromSlowdown:(int)arg1;
 - (void)_resetActionWindows;
 - (void)_setupActionWindows;
+- (void)_handleStateMachineErrorIfNeeded;
 - (void)_unduck;
 - (void)_stopAdvertisingAndListening;
 - (void)stopListening;

@@ -39,6 +39,7 @@
     long long _hostingConnectionState;
     NSDictionary *_dismissalUserInfo;
     _Bool _recordingStartedOnRoute;
+    long long _requestCancellationReason;
     _Bool _visible;
     _Bool _eyesFree;
     _Bool _deviceIsInStarkMode;
@@ -113,6 +114,8 @@
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(CDUnknownBlockType)arg2;
 - (void)siriSession:(id)arg1 didChangeToState:(long long)arg2;
 - (unsigned long long)lockStateForSiriSession:(id)arg1;
+- (id)starkAppBundleIdentifierContextForSiriSession:(id)arg1;
+- (id)currentCarPlaySupportedOEMAppIDListForSiriSession:(id)arg1;
 - (id)contextAppInfosForSiriSession:(id)arg1;
 - (id)bulletinsForSiriSession:(id)arg1;
 - (void)routePickerControllerWillDismiss:(id)arg1;
@@ -165,6 +168,7 @@
 - (id)_uiPresentationIdentifier;
 - (void)_holdToTalkTriggerDidReleaseFromSource:(long long)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillLayoutSubviews;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (id)viewServiceApplicationInfo;
@@ -181,7 +185,7 @@
 - (void)stopRequestWithOptions:(id)arg1;
 - (void)startRequestWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startRequestWithOptions:(id)arg1;
-- (void)setCurrentCarPlaySupportedOEMAppIdList:(id)arg1;
+- (void)setSiriRequestCancellationReason:(long long)arg1;
 - (void)setAlertContext;
 - (void)updateContexts:(long long)arg1;
 - (void)resetContextTypes:(long long)arg1;
@@ -191,8 +195,8 @@
 - (void)siriWillActivateFromSource:(long long)arg1;
 - (void)preheat;
 - (void)defrost;
-- (void)viewWillDisappearFinishedForSiriRemoteViewController:(id)arg1;
 - (void)viewWillAppearFinishedForSiriRemoteViewController:(id)arg1;
+- (void)showPasscodeUnlockScreenThen:(CDUnknownBlockType)arg1;
 - (void)handlePasscodeUnlockAndCancelRequest:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handlePasscodeUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleSiriDidActivateFromSource:(long long)arg1;
@@ -208,11 +212,13 @@
 - (void)_setShowKeyboardIfTextInputEnabled:(_Bool)arg1;
 - (void)_setTypeToSiriViewHidden:(_Bool)arg1;
 - (void)_setStatusViewHidden:(_Bool)arg1;
+- (void)siriRemoteViewController:(id)arg1 didUpdateAudioCategoriesDisablingVolumeHUD:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 presentedIntentWithBundleId:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 requestsDismissal:(CDUnknownBlockType)arg2;
 - (void)siriRemoteViewController:(id)arg1 requestsPresentation:(CDUnknownBlockType)arg2;
 - (void)siriRemoteViewControllerDidEndTapToEdit:(id)arg1;
 - (void)siriRemoteViewControllerWillBeginTapToEdit:(id)arg1;
+- (void)siriRemoteViewController:(id)arg1 requestKeyboardForTapToEditWithCompletion:(CDUnknownBlockType)arg2;
 - (void)siriRemoteViewControllerDidResetTextInput:(id)arg1;
 - (void)siriRemoteViewController:(id)arg1 didRequestKeyboard:(_Bool)arg2 minimized:(_Bool)arg3;
 - (void)siriRemoteViewController:(id)arg1 didRequestKeyboard:(_Bool)arg2;
@@ -253,10 +259,12 @@
 - (void)userRelevantEventDidOccurInSiriRemoteViewController:(id)arg1;
 - (void)siriRemoteViewController:(id)arg1 startRequestWithOptions:(id)arg2;
 - (void)startGuidedAccessForRemoteViewController:(id)arg1;
+- (void)extendCurrentTTSRequested;
 - (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(_Bool)arg2 userInfo:(id)arg3;
 - (void)siriRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (long long)siriRemoteViewControllerRequestsActivationSource:(id)arg1;
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
+- (void)siriRemoteViewControllerDidFinishDismissing:(id)arg1;
 - (unsigned long long)lockStateForSiriRemoteViewController:(id)arg1;
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
 - (void)_enqueueRemoteViewControllerMessageBlock:(CDUnknownBlockType)arg1;
@@ -292,6 +300,7 @@
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (id)_siriView;
 - (void)loadView;
+- (long long)keyboardAppearance;
 @property(retain, nonatomic) UIView *inputAccessoryView;
 - (_Bool)canBecomeFirstResponder;
 - (void)setFluidDismissalState:(id)arg1;
@@ -304,7 +313,7 @@
 - (void)setShowsStatusBar:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)underlyingConnection;
 - (void)dealloc;
-- (id)init;
+- (id)initWithConnection:(id)arg1 configuration:(id)arg2 requestSource:(long long)arg3;
 - (id)initWithConnection:(id)arg1 configuration:(id)arg2;
 
 // Remaining properties

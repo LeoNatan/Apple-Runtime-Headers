@@ -127,7 +127,6 @@
 - (void)startObservingUser:(id)arg1;
 - (void)resetAllPanes;
 - (void)saveDeclaration:(id)arg1;
-- (id)fetchOrCreateDeclarationForType:(id)arg1;
 - (id)fetchBlueprintConfigurationForType:(id)arg1;
 @property(readonly, nonatomic) NSString *localUseriTunesUsername;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

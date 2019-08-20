@@ -9,7 +9,7 @@
 #import <TVMLKit/NSCopying-Protocol.h>
 #import <TVMLKit/UINamedLayerStack-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, _TVImageStack;
 
 @interface _TVUINamedLayerStack : NSObject <UINamedLayerStack, NSCopying>
 {
@@ -19,10 +19,12 @@
     NSArray *_layers;
     double _scale;
     id _radiosityImage;
+    _TVImageStack *_imageStack;
     struct CGSize _size;
     struct CGSize _radiosityImageScale;
 }
 
+@property(retain, nonatomic) _TVImageStack *imageStack; // @synthesize imageStack=_imageStack;
 @property(nonatomic) _Bool flatImageContainsCornerRadius; // @synthesize flatImageContainsCornerRadius=_flatImageContainsCornerRadius;
 @property(nonatomic) struct CGSize radiosityImageScale; // @synthesize radiosityImageScale=_radiosityImageScale;
 @property(retain, nonatomic) id radiosityImage; // @synthesize radiosityImage=_radiosityImage;

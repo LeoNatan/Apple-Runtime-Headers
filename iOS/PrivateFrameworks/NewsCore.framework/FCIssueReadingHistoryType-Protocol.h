@@ -14,10 +14,10 @@
 @property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (void)removeObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (void)addObserver:(id <FCIssueReadingHistoryObserving>)arg1;
+- (NSDate *)lastRemovedFromMyMagazinesDateForIssueWithID:(NSString *)arg1;
 - (NSDate *)lastEngagedDateForIssueWithID:(NSString *)arg1;
 - (NSDate *)lastVisitedDateForIssueWithID:(NSString *)arg1;
 - (FCIssueBookmark *)bookmarkForLastVisitToIssueWithID:(NSString *)arg1;
-- (_Bool)hasIssueWithIDBeenRemovedFromMyMagazines:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenEngaged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenBadged:(NSString *)arg1;
 - (_Bool)hasIssueWithIDBeenVisited:(NSString *)arg1;

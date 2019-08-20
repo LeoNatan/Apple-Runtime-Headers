@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)currentHistoryAnchorInContext:(id)arg1 error:(id *)arg2;
 + (id)deltaSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
 + (id)fullSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
-+ (BOOL)isAnchorValid:(id)arg1;
-+ (id)deltaSyncValidationTaskWithClient:(id)arg1 anchor:(id)arg2;
++ (BOOL)isAnchorValid:(id)arg1 context:(id)arg2;
++ (id)deltaSyncValidationTaskWithClient:(id)arg1 anchor:(id)arg2 context:(id)arg3;
 + (id)taskForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
 + (id)changeHistoryResultForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 sinceAnchor:(id)arg3 context:(id)arg4 error:(id *)arg5;
 + (id)os_log;

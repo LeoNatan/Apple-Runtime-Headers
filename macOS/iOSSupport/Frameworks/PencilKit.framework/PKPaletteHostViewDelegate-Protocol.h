@@ -14,6 +14,6 @@
 - (void)hostView:(UIView *)arg1 didDockPaletteToCorner:(unsigned long long)arg2;
 - (void)hostView:(UIView *)arg1 willDockPaletteToCorner:(unsigned long long)arg2;
 - (void)hostView:(UIView *)arg1 didDockPaletteToEdge:(unsigned long long)arg2;
-- (void)hostView:(UIView *)arg1 willDockPaletteToEdge:(unsigned long long)arg2;
+- (void)hostView:(UIView *)arg1 willDockPaletteToEdge:(unsigned long long)arg2 prepareForExpansion:(BOOL)arg3;
 @end
 

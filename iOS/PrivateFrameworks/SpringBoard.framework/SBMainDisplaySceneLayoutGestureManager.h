@@ -26,7 +26,6 @@
 - (void)_handleResizePanSystemGestureRecognizer:(id)arg1;
 - (_Bool)_hasActiveSystemGestureRecognizerWorkspaceTransaction;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
 - (void)transactionDidComplete:(id)arg1;
 - (id)init;

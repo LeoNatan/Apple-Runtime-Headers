@@ -22,12 +22,14 @@
     GEOLocation *_finalLocation;
     unsigned int _originalEta;
     _Bool _arrivedAtDestination;
+    _Bool _preArrival;
     struct {
         unsigned int has_navigationAudioFeedback:1;
         unsigned int has_navSessionId:1;
         unsigned int has_durationOfTrip:1;
         unsigned int has_originalEta:1;
         unsigned int has_arrivedAtDestination:1;
+        unsigned int has_preArrival:1;
         unsigned int read_directionsFeedbacks:1;
         unsigned int read_durationInNavigationModes:1;
         unsigned int read_finalLocation:1;
@@ -39,6 +41,7 @@
         unsigned int wrote_finalLocation:1;
         unsigned int wrote_originalEta:1;
         unsigned int wrote_arrivedAtDestination:1;
+        unsigned int wrote_preArrival:1;
     } _flags;
 }
 
@@ -56,6 +59,8 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPreArrival;
+@property(nonatomic) _Bool preArrival;
 @property(nonatomic) _Bool hasOriginalEta;
 @property(nonatomic) unsigned int originalEta;
 - (id)durationInNavigationModeAtIndex:(unsigned long long)arg1;

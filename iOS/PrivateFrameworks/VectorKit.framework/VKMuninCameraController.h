@@ -13,11 +13,11 @@
 __attribute__((visibility("hidden")))
 @interface VKMuninCameraController : VKCameraController <VKGesturingCameraController>
 {
-    struct MuninLogic *_muninLogic;
     struct MuninSceneLogic *_muninSceneLogic;
     shared_ptr_e963992e _taskContext;
     struct optional<(anonymous namespace)::PointSegment> _currentPointSegment;
     struct unique_ptr<(anonymous namespace)::PathAnimator, std::__1::default_delete<(anonymous namespace)::PathAnimator>> _pathAnimator;
+    struct unique_ptr<(anonymous namespace)::BumpAnimator, std::__1::default_delete<(anonymous namespace)::BumpAnimator>> _bumpAnimator;
     _Bool _panning;
     _Bool _panStopping;
     Matrix_8746f91e _panTranslation;
@@ -73,10 +73,14 @@ __attribute__((visibility("hidden")))
 - (Unit_3d259e8a)_horizontalFieldOfView:(Unit_3d259e8a)arg1;
 - (void)startPanningAtPoint:(struct CGPoint)arg1 panAtStartPoint:(_Bool)arg2;
 - (_Bool)tapAtPoint:(struct CGPoint)arg1;
+- (void)runBumpAnimation:(const Geocentric_d8fde6f2 *)arg1 targetPoint:(const Geocentric_d8fde6f2 *)arg2;
 - (void)animatePath:(vector_e91c9c3b *)arg1 withTarget:(const Geocentric_d8fde6f2 *)arg2 lookAtTarget:(_Bool)arg3 constantLod:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)isAnimationsRunning;
+- (_Bool)isAnimationsRunningExceptBump;
+- (_Bool)cancelPendingMoveExceptBump;
 - (_Bool)cancelPendingMove;
 - (void)stopAnimations;
+- (void)stopAnimationsExceptBump;
 - (void)setCurrentSegment:(struct PointSegment *)arg1;
 - (_Bool)moveToPoint:(const struct CollectionPoint *)arg1 withHeading:(Unit_3d259e8a)arg2 withPitch:(Unit_3d259e8a)arg3 animated:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)selectLabelMarker:(const shared_ptr_2d33c5e4 *)arg1 completion:(CDUnknownBlockType)arg2;
@@ -93,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (double)heading;
 - (CDStruct_c3b9c2ee)centerCoordinate;
 - (void)updateWithTimestamp:(double)arg1;
-- (id)initWithTaskContext:(shared_ptr_e963992e)arg1 mapDataAccess:(struct MapDataAccess *)arg2 animationRunner:(struct AnimationRunner *)arg3 runLoopController:(struct RunLoopController *)arg4 cameraDelegate:(id)arg5 muninLogic:(struct MuninLogic *)arg6 muninSceneLogic:(struct MuninSceneLogic *)arg7;
+- (id)initWithTaskContext:(shared_ptr_e963992e)arg1 mapDataAccess:(struct MapDataAccess *)arg2 animationRunner:(struct AnimationRunner *)arg3 runLoopController:(struct RunLoopController *)arg4 cameraDelegate:(id)arg5 muninSceneLogic:(struct MuninSceneLogic *)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

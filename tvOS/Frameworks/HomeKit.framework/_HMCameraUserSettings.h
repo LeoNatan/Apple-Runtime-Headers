@@ -16,7 +16,6 @@
     _Bool _snapshotsAllowed;
     _Bool _accessModeIndicatorEnabled;
     _Bool _cameraDisabledByThirdParty;
-    _Bool _cameraEnabledForThirdParty;
     _Bool _nightVisionModeEnabled;
     NSUUID *_uniqueIdentifier;
     unsigned long long _supportedFeatures;
@@ -31,7 +30,6 @@
 + (id)logCategory;
 @property(readonly) HMCameraBulletinBoardSmartNotification *smartNotificationBulletin; // @synthesize smartNotificationBulletin=_smartNotificationBulletin;
 @property(readonly, getter=isNightVisionModeEnabled) _Bool nightVisionModeEnabled; // @synthesize nightVisionModeEnabled=_nightVisionModeEnabled;
-@property(readonly, getter=isCameraEnabledForThirdParty) _Bool cameraEnabledForThirdParty; // @synthesize cameraEnabledForThirdParty=_cameraEnabledForThirdParty;
 @property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty; // @synthesize cameraDisabledByThirdParty=_cameraDisabledByThirdParty;
 @property(readonly, getter=isAccessModeIndicatorEnabled) _Bool accessModeIndicatorEnabled; // @synthesize accessModeIndicatorEnabled=_accessModeIndicatorEnabled;
 @property(readonly, getter=areSnapshotsAllowed) _Bool snapshotsAllowed; // @synthesize snapshotsAllowed=_snapshotsAllowed;
@@ -46,7 +44,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)logIdentifier;
 @property(readonly, copy) NSString *description;
-- (id)initWithUUID:(id)arg1 supportedFeatures:(unsigned long long)arg2 accessModeAtHome:(unsigned long long)arg3 accessModeNotAtHome:(unsigned long long)arg4 currentAccessMode:(unsigned long long)arg5 recordingEventTriggers:(unsigned long long)arg6 snapshotsAllowed:(_Bool)arg7 accessModeIndicatorEnabled:(_Bool)arg8 nightVisionModeEnabled:(_Bool)arg9 smartNotification:(id)arg10;
+- (id)initWithUUID:(id)arg1 supportedFeatures:(unsigned long long)arg2 accessModeAtHome:(unsigned long long)arg3 accessModeNotAtHome:(unsigned long long)arg4 currentAccessMode:(unsigned long long)arg5 recordingEventTriggers:(unsigned long long)arg6 snapshotsAllowed:(_Bool)arg7 accessModeIndicatorEnabled:(_Bool)arg8 nightVisionModeEnabled:(_Bool)arg9 cameraDisabledByThirdParty:(_Bool)arg10 smartNotification:(id)arg11;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

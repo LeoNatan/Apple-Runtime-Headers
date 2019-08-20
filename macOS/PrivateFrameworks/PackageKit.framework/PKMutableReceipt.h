@@ -22,6 +22,7 @@
 - (id)_BOM;
 - (void)dealloc;
 - (id)initWithPackageIdentifier:(id)arg1 packageVersion:(id)arg2 BOMData:(id)arg3;
+- (id)initWithPackageIdentifier:(id)arg1 packageVersion:(id)arg2 BOMData:(id)arg3 additionalInfo:(id)arg4;
 
 @end
 

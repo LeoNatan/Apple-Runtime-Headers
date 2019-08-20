@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     NSString *autosaveName;
     NSValue *delegateValue;
     BOOL isPaneSplitter;
-    int cachedSubviewOpacity;
     NSMutableArray *lastAdjustmentArrangedViewFrames;
     double lastAdjustmentDividerThickness;
     BOOL lastAdjustDividerOrientation;

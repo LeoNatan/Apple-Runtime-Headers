@@ -12,7 +12,7 @@
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 #import <SpringBoard/SBTransientOverlayViewControllerDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableArray, NSNumber, NSString, SBAlertItemsController, SBAppStatusBarSettingsAssertion, SBBannerController, SBHomeGestureArbiter, SBHomeGestureParticipant, SBIdleTimerCoordinatorHelper, SBLockStateAggregator, SBReachabilityManager, SBTransientOverlayViewController, UIScreen, UIStatusBarStyleRequest;
+@class NSMapTable, NSMutableArray, NSNumber, NSString, SBAlertItemsController, SBAppStatusBarSettingsAssertion, SBBannerController, SBHomeGestureArbiter, SBHomeGestureParticipant, SBIdleTimerCoordinatorHelper, SBLockStateAggregator, SBReachabilityManager, SBTransientOverlayViewController, UIScreen, UIStatusBarStyleRequest, UIWindow;
 @protocol BSInvalidatable, CSExternalBehaviorProviding, SBIdleTimerCoordinating, SBTransientOverlayPresentationManagerDelegate;
 
 @interface SBTransientOverlayPresentationManager : NSObject <SBHomeGestureParticipantDelegate, SBIdleTimerCoordinating, SBTransientOverlayViewControllerDelegate, SBIdleTimerProviding, SBButtonEventsHandler>
@@ -28,7 +28,9 @@
     SBHomeGestureArbiter *_homeGestureArbiter;
     SBHomeGestureParticipant *_homeGestureParticipant;
     SBIdleTimerCoordinatorHelper *_idleTimerCoordinatorHelper;
+    UIWindow *_initialPresentationKeyWindow;
     id <BSInvalidatable> _interactiveScreenshotGestureDisabledAssertion;
+    _Bool _isInitiatingEntityPresentation;
     _Bool _isPendingAlertItems;
     _Bool _isReachabilityTemporarilyDisabled;
     SBLockStateAggregator *_lockStateAggregator;

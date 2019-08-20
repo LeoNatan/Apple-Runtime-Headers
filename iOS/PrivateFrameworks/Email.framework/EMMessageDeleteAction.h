@@ -11,6 +11,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (long long)signpostType;
 
 @end
 

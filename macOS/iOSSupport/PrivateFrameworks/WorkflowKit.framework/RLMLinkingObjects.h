@@ -10,5 +10,7 @@
 {
 }
 
+- (id)description;
+
 @end
 

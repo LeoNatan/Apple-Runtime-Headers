@@ -10,8 +10,9 @@
 {
 }
 
-+ (id)redactedStringForString:(id)arg1;
-+ (id)redactedStringForString:(id)arg1 maximumUnredactedLength:(unsigned int)arg2;
++ (id)fullyRedactedStringForString:(id)arg1;
++ (id)partiallyRedactedStringForString:(id)arg1;
++ (id)partiallyRedactedStringForString:(id)arg1 maximumUnredactedLength:(unsigned int)arg2;
 + (int)weeksSinceDate:(id)arg1;
 + (id)dateByRemovingTimeComponentsFromDate:(id)arg1;
 

@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSString *displayBundleID; // @synthesize displayBundleID=_displayBundleID;
 @property(retain, nonatomic) NSArray *supportedTypes; // @synthesize supportedTypes=_supportedTypes;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 location:(id)arg2 displayBundle:(id)arg3 supportedTypes:(id)arg4;
 
 @end

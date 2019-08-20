@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSData, NSString, PKSecureElementCertificateSet;
+@class NSArray, NSData, NSString, PKSecureElementCertificateSet;
 
 @interface PKWrappedPayment : NSObject <NSSecureCoding>
 {
@@ -16,13 +16,21 @@
     NSData *_transactionData;
     NSData *_transactionInstructionsSignature;
     PKSecureElementCertificateSet *_certificates;
+    NSString *_merchantCountryCode;
     NSString *_kextBlacklistVersion;
     NSData *_enrollmentSignature;
+    NSArray *_SEPCertificates;
+    NSData *_confirmationBlobHash;
+    long long _confirmationBlobVersion;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) long long confirmationBlobVersion; // @synthesize confirmationBlobVersion=_confirmationBlobVersion;
+@property(copy, nonatomic) NSData *confirmationBlobHash; // @synthesize confirmationBlobHash=_confirmationBlobHash;
+@property(copy, nonatomic) NSArray *SEPCertificates; // @synthesize SEPCertificates=_SEPCertificates;
 @property(copy, nonatomic) NSData *enrollmentSignature; // @synthesize enrollmentSignature=_enrollmentSignature;
 @property(copy, nonatomic) NSString *kextBlacklistVersion; // @synthesize kextBlacklistVersion=_kextBlacklistVersion;
+@property(copy, nonatomic) NSString *merchantCountryCode; // @synthesize merchantCountryCode=_merchantCountryCode;
 @property(copy, nonatomic) PKSecureElementCertificateSet *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSData *transactionInstructionsSignature; // @synthesize transactionInstructionsSignature=_transactionInstructionsSignature;
 @property(copy, nonatomic) NSData *transactionData; // @synthesize transactionData=_transactionData;

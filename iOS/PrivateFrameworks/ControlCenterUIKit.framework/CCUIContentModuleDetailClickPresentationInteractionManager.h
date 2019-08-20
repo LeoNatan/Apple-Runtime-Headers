@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) __weak id <CCUIContentModuleDetailClickPresentationInteractionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
+- (unsigned long long)activationStyleForClickPresentationInteraction:(id)arg1;
 - (id)clickPresentationInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
 - (void)clickPresentationInteractionEnded:(id)arg1 wasCancelled:(_Bool)arg2;
 - (id)clickPresentationInteraction:(id)arg1 presentationForPresentingViewController:(id)arg2;

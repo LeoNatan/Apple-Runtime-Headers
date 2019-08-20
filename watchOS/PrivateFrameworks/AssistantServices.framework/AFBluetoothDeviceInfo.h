@@ -17,6 +17,8 @@
     _Bool _supportsInEarDetection;
     _Bool _supportsVoiceTrigger;
     _Bool _supportsSpokenNotification;
+    _Bool _supportsListeningModeANC;
+    _Bool _supportsListeningModeTransparency;
     NSString *_address;
     NSUUID *_deviceUID;
     unsigned int _vendorID;
@@ -25,6 +27,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool supportsListeningModeTransparency; // @synthesize supportsListeningModeTransparency=_supportsListeningModeTransparency;
+@property(readonly, nonatomic) _Bool supportsListeningModeANC; // @synthesize supportsListeningModeANC=_supportsListeningModeANC;
 @property(readonly, nonatomic) _Bool supportsSpokenNotification; // @synthesize supportsSpokenNotification=_supportsSpokenNotification;
 @property(readonly, nonatomic) _Bool supportsVoiceTrigger; // @synthesize supportsVoiceTrigger=_supportsVoiceTrigger;
 @property(readonly, nonatomic) _Bool supportsInEarDetection; // @synthesize supportsInEarDetection=_supportsInEarDetection;
@@ -41,7 +45,7 @@
 - (unsigned int)hash;
 - (id)_descriptionWithIndent:(unsigned int)arg1;
 - (id)description;
-- (id)initWithAddress:(id)arg1 deviceUID:(id)arg2 vendorID:(unsigned int)arg3 productID:(unsigned int)arg4 isAdvancedAppleAudioDevice:(_Bool)arg5 supportsInEarDetection:(_Bool)arg6 supportsVoiceTrigger:(_Bool)arg7 supportsSpokenNotification:(_Bool)arg8;
+- (id)initWithAddress:(id)arg1 deviceUID:(id)arg2 vendorID:(unsigned int)arg3 productID:(unsigned int)arg4 isAdvancedAppleAudioDevice:(_Bool)arg5 supportsInEarDetection:(_Bool)arg6 supportsVoiceTrigger:(_Bool)arg7 supportsSpokenNotification:(_Bool)arg8 supportsListeningModeANC:(_Bool)arg9 supportsListeningModeTransparency:(_Bool)arg10;
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 
 @end

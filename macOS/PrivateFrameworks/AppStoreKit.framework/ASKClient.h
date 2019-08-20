@@ -8,15 +8,20 @@
 
 #import <AppStoreKit/ASKClientExports-Protocol.h>
 
-@class NSString;
+@class ACAccount, NSString;
 
 @interface ASKClient : NSObject <ASKClientExports>
 {
+    ACAccount *_activeiTunesAccount;
 }
 
+@property(retain) ACAccount *activeiTunesAccount; // @synthesize activeiTunesAccount=_activeiTunesAccount;
+- (void).cxx_destruct;
+- (BOOL)isActivePairedWatchSystemVersionAtLeastMajorVersion:(id)arg1 minorVersion:(id)arg2 patchVersion:(id)arg3;
 - (BOOL)deviceHasCapabilities:(id)arg1;
 @property(readonly) BOOL supportsHEIF;
 @property(readonly) BOOL isSidepackingEnabled;
+@property(readonly) BOOL isElectrocardiogramInstallationAllowed;
 @property(readonly) BOOL isActivityAvailable;
 @property(readonly) NSString *buildType;
 @property(readonly) NSString *deviceType;
@@ -25,7 +30,11 @@
 @property(readonly, copy) NSString *guid;
 @property(readonly) double screenCornerRadius;
 @property(readonly) struct CGSize screenSize;
+@property(readonly, copy) NSString *activePairedWatchSystemVersion;
 @property(readonly, copy) NSString *thinnedApplicationVariantIdentifier;
+- (void)accountStoreDidChange:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end
 

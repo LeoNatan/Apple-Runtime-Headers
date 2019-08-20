@@ -20,12 +20,14 @@ __attribute__((visibility("hidden")))
     struct UIOffset _badgePositionAdjustment[5];
     struct UIOffset _badgeTitlePositionAdjustment[5];
     struct {
-        unsigned int hasUserTitleTextAttributes:1;
+        unsigned int hasUserTitleFont:1;
+        unsigned int hasUserTitleColor:1;
         unsigned int hasUserTitlePosition:1;
         unsigned int hasUserIconColor:1;
         unsigned int hasUserBadgePosition:1;
         unsigned int hasUserBadgeBackgroundColor:1;
-        unsigned int hasUserBadgeTextAttributes:1;
+        unsigned int hasUserBadgeTitleFont:1;
+        unsigned int hasUserBadgeTitleColor:1;
         unsigned int hasUserBadgeTitlePosition:1;
     } _stateFlags[5];
 }
@@ -33,13 +35,6 @@ __attribute__((visibility("hidden")))
 + (id)decodeFromCoder:(id)arg1 prefix:(id)arg2;
 + (id)standardItemDataForStyle:(long long)arg1;
 - (void).cxx_destruct;
-- (struct UIOffset)resolvedBadgePositionAdjustmentForState:(long long)arg1;
-- (id)resolvedBadgeBackgroundColorForState:(long long)arg1;
-- (struct UIOffset)resolvedBadgeTitlePositionAdjustmentForState:(long long)arg1;
-- (id)resolvedBadgeTextAttributesForState:(long long)arg1;
-- (id)resolvedIconColorForState:(long long)arg1;
-- (struct UIOffset)resolvedTitlePositionAdjustmentForState:(long long)arg1;
-- (id)resolvedTitleTextAttributesForState:(long long)arg1;
 @property(readonly, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
 - (void)setBadgeTitlePositionAdjustment:(struct UIOffset)arg1 forState:(long long)arg2;
 - (struct UIOffset)badgeTitlePositionAdjustmentForState:(long long)arg1;
@@ -53,8 +48,13 @@ __attribute__((visibility("hidden")))
 - (id)iconColorForState:(long long)arg1;
 - (void)setTitlePositionAdjustment:(struct UIOffset)arg1 forState:(long long)arg2;
 - (struct UIOffset)titlePositionAdjustmentForState:(long long)arg1;
+- (BOOL)titleTextAttributesSpecifyColorForState:(long long)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(long long)arg2;
 - (id)titleTextAttributesForState:(long long)arg1;
+- (id)_fallbackBadgeTitleColorForState:(long long)arg1;
+- (id)_fallbackBadgeTitleFontForState:(long long)arg1;
+- (id)_fallbackTitleColorForState:(long long)arg1;
+- (id)_fallbackTitleFontForState:(long long)arg1;
 - (id)replicate;
 - (BOOL)checkEqualTo:(id)arg1;
 - (long long)hashInto:(long long)arg1;

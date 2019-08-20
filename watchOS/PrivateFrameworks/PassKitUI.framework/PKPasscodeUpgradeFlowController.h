@@ -19,9 +19,10 @@
     UINavigationController *_navigationController;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     CDUnknownBlockType _completionHandler;
-    _Bool _passcodeUpgradeFlowStarted;
+    _Bool _upgradeRequiredToAddNewPass;
 }
 
+@property(nonatomic) _Bool upgradeRequiredToAddNewPass; // @synthesize upgradeRequiredToAddNewPass=_upgradeRequiredToAddNewPass;
 - (void).cxx_destruct;
 - (_Bool)_isWatchTarget;
 - (void)_showNewDevicePasscodeViewControllerWithCurrentPasscode:(id)arg1;

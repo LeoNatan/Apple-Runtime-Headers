@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)nearbyDevicesEnabled;
 + (BOOL)isWakeToRemoteOnLockScreenDisabled;
 + (BOOL)rapportEnabled;
 

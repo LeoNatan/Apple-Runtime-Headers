@@ -45,7 +45,10 @@
 - (void).cxx_destruct;
 - (id)pathStateForLayer:(id)arg1;
 - (void)setPathState:(id)arg1 forLayer:(id)arg2;
+- (void)_applyColor:(struct NSColor *)arg1 toShapeLayers:(id)arg2 animated:(BOOL)arg3;
+- (void)_applySecondaryColorAnimated:(BOOL)arg1;
 - (void)setSecondaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
+- (void)_applyPrimaryColorAnimated:(BOOL)arg1;
 - (void)setPrimaryColor:(struct NSColor *)arg1 animated:(BOOL)arg2;
 - (void)_setProgress:(double)arg1 withDuration:(double)arg2 forShapeLayerAtIndex:(unsigned long long)arg3;
 - (void)setProgress:(double)arg1 withDuration:(double)arg2;

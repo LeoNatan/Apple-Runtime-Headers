@@ -19,12 +19,14 @@
 - (unsigned long)supportedRawPixelFormat;
 - (_Bool)isEquivalentToVirtualDeviceFormat:(id)arg1;
 - (int)ispPowerConsumption;
-- (int)sensorPowerConsumption;
+- (int)variableSensorPowerConsumption;
+- (int)baseSensorPowerConsumption;
 - (float)hardwareCost;
 - (_Bool)isStreamingDepthSupported;
 - (_Bool)isStreamingDisparitySupported;
 - (_Bool)isStillImageDepthSupported;
 - (_Bool)isStillImageDisparitySupported;
+- (_Bool)isHDRSupported;
 - (id)optimizedPhotoFilterNames;
 - (id)optimizedVideoPreviewFilterNames;
 - (_Bool)supportsQuadraHighResolutionStillImageOutput;

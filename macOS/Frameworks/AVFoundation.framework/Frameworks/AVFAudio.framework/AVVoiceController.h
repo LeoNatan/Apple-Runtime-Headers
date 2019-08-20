@@ -31,6 +31,7 @@
 - (long long)getCurrentStreamState:(unsigned long long)arg1;
 - (BOOL)stopRecordForStream:(unsigned long long)arg1 error:(id *)arg2;
 - (void)stopRecordOnStream:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)configureAlertBehaviorForStream:(id)arg1 error:(id *)arg2;
 - (BOOL)startRecordForStream:(id)arg1 error:(id *)arg2;
 - (void)startRecordWithSettings:(id)arg1 completion:(CDUnknownBlockType)arg2 alertCompletion:(CDUnknownBlockType)arg3 audioCallback:(CDUnknownBlockType)arg4;
 - (BOOL)prepareRecordForStream:(id)arg1 error:(id *)arg2;

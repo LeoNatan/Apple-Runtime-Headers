@@ -28,6 +28,8 @@
 @property(nonatomic) float largeColor; // @synthesize largeColor=_largeColor;
 @property(nonatomic) float smallColor; // @synthesize smallColor=_smallColor;
 @property(nonatomic) unsigned int ticks; // @synthesize ticks=_ticks;
+- (id)largeTickColor;
+- (id)smallTickColor;
 - (void)colorizeBackground:(id)arg1;
 - (void)colorizeWithTickColor:(id)arg1 alternateTickColor:(id)arg2;
 - (void)createSubNodes;

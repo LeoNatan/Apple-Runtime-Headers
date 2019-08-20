@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)isHardwareKeyboardAttached;
 + (BOOL)hasExtendedColorDisplay;
 + (BOOL)isInternalBuild;
 

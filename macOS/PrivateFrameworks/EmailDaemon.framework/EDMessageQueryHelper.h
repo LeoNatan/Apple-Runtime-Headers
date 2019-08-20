@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 #import <EmailDaemon/EDMessageChangeHookResponder-Protocol.h>
+#import <EmailDaemon/EDMessageQueryHelperMessageSource-Protocol.h>
 #import <EmailDaemon/EDRemoteSearchDelegate-Protocol.h>
 #import <EmailDaemon/EFCancelable-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
@@ -14,7 +15,7 @@
 @class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EFCancelationToken, EFQuery, NSMutableSet, NSString;
 @protocol EDMessageQueryHelperDelegate, EFScheduler;
 
-@interface EDMessageQueryHelper : NSObject <EDMessageChangeHookResponder, EDRemoteSearchDelegate, EFLoggable, EFCancelable>
+@interface EDMessageQueryHelper : NSObject <EDMessageChangeHookResponder, EDRemoteSearchDelegate, EFLoggable, EDMessageQueryHelperMessageSource, EFCancelable>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _didStart
     NSMutableSet *_noLongerMatchingMessages;

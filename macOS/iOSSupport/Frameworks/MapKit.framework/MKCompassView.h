@@ -6,24 +6,31 @@
 
 #import <UIKit/UIView.h>
 
-@class CABackdropLayer, MKCompassLayer;
+#import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@interface MKCompassView : UIView
+@class CABackdropLayer, MKCompassLayer, NSString, UIHoverGestureRecognizer;
+
+@interface MKCompassView : UIView <UIGestureRecognizerDelegate>
 {
     BOOL _enabled;
     double _mapHeading;
     CABackdropLayer *_blurLayer;
     MKCompassLayer *_displayLayer;
     MKCompassLayer *_maskLayer;
+    UIHoverGestureRecognizer *_hoverRecognizer;
 }
 
 + (double)diameter;
 @property(nonatomic) double mapHeading; // @synthesize mapHeading=_mapHeading;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
+- (void)hoverGestureRecognizerChanged:(id)arg1;
+- (BOOL)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)isPointInNorthEastHalf:(struct CGPoint)arg1;
 - (BOOL)isPointInOuterRing:(struct CGPoint)arg1;
 - (BOOL)isPointInInnerPortion:(struct CGPoint)arg1;
+- (BOOL)isPointInCompass:(struct CGPoint)arg1;
 - (void)resetCompassFlatWithMapPitch:(double)arg1 pitchEnabled:(BOOL)arg2 mapType:(int)arg3 changeButtonTextWithPitch:(BOOL)arg4;
 - (void)layoutSubviews;
 - (void)updateBlurVisibility;
@@ -33,6 +40,12 @@
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

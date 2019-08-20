@@ -20,20 +20,20 @@
 @interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate, HUMediaSelectionViewControllerDelegate>
 {
     BOOL _viewHasAppeared;
+    BOOL _isEditingExistingTrigger;
     HUTriggerSummaryActionGridViewController *_actionSetsGridViewController;
     HUTriggerSummaryActionGridViewController *_serviceActionsGridViewController;
     HFTriggerBuilder *_triggerBuilder;
-    unsigned long long _mode;
     id <HUTriggerEditorDelegate> _delegate;
     HUForwardingTriggerActionBuilderDelegate *_forwardingTriggerActionBuilderDelegate;
 }
 
 + (BOOL)adoptsDefaultGridLayoutMargins;
 + (id)createTriggerSummaryViewControllerForHome:(id)arg1 withTriggerActionSetBuilder:(id)arg2 andTriggerActionBuilderEditorDelegate:(id)arg3;
+@property(nonatomic) BOOL isEditingExistingTrigger; // @synthesize isEditingExistingTrigger=_isEditingExistingTrigger;
 @property(retain, nonatomic) HUForwardingTriggerActionBuilderDelegate *forwardingTriggerActionBuilderDelegate; // @synthesize forwardingTriggerActionBuilderDelegate=_forwardingTriggerActionBuilderDelegate;
 @property(nonatomic) BOOL viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
 - (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
@@ -68,6 +68,7 @@
 - (void)_setTriggerEnabled:(BOOL)arg1;
 - (void)_deleteTrigger:(id)arg1;
 - (void)_addAction:(id)arg1;
+- (void)_preloadShortcutHomeManager;
 - (void)_testTrigger;
 - (void)_cancelShortcutEditor:(id)arg1;
 - (void)_showShortcutEditorForTriggerBuilderItem:(id)arg1;
@@ -77,6 +78,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *serviceActionsGridViewController; // @synthesize serviceActionsGridViewController=_serviceActionsGridViewController;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *actionSetsGridViewController; // @synthesize actionSetsGridViewController=_actionSetsGridViewController;
+- (id)initWithTriggerBuilder:(id)arg1 flow:(id)arg2 delegate:(id)arg3;
 - (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 isPresentedModally:(BOOL)arg3 delegate:(id)arg4;
 
 // Remaining properties

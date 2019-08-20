@@ -10,6 +10,7 @@
 {
 }
 
++ (id)reminderAllDayDateFormatter;
 + (id)reminderDateFormatter;
 + (id)mediumDateFormatter;
 + (id)multiDayDateFormatter;

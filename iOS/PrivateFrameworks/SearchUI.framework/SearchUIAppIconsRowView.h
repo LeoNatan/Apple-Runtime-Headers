@@ -31,6 +31,7 @@
 + (struct SBIconImageInfo)appIconImageInfo;
 + (double)numberOfIcons;
 + (id)appLabel;
++ (id)imageCache;
 @property(retain, nonatomic) NSMapTable *iconImageGenerationCountByView; // @synthesize iconImageGenerationCountByView=_iconImageGenerationCountByView;
 @property(retain, nonatomic) SBHIconImageCache *iconImageCache; // @synthesize iconImageCache=_iconImageCache;
 @property(retain, nonatomic) NUIGridArrangement *arrangment; // @synthesize arrangment=_arrangment;
@@ -69,6 +70,8 @@
 - (void)incrementIconImageGenerationCountForIconView:(id)arg1;
 - (unsigned long long)iconImageGenerationCountForIconView:(id)arg1;
 - (void)updateWithResultsForRow:(id)arg1;
+- (void)appIconsChanged:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

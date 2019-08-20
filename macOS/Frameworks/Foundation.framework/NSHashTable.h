@@ -55,6 +55,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithOptions:(unsigned long long)arg1 capacity:(unsigned long long)arg2;
+- (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 
 @end

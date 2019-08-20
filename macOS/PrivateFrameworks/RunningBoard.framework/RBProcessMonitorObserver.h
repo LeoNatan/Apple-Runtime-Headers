@@ -25,6 +25,7 @@
     NSHashTable *_matchedHandles;
     BOOL _extantUpdate;
     BOOL _didClearStateForSuspended;
+    double _lastSend;
 }
 
 - (void).cxx_destruct;

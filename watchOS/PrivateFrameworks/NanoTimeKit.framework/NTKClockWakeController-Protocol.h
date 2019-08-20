@@ -9,6 +9,6 @@
 @protocol NTKClockWakeController
 @property(nonatomic) __weak id <NTKClockWakeControllerProvider> provider;
 - (double)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(void (^)(double))arg3 completion:(void (^)(_Bool))arg4;
-- (double)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(void (^)(double))arg3 completion:(void (^)(_Bool))arg4;
+- (double)handleScreenOnAnimated:(_Bool)arg1 screenWasOn:(_Bool)arg2 flags:(unsigned int)arg3 brightnessRamp:(void (^)(double))arg4 completion:(void (^)(_Bool))arg5 playTouchAnimation:(void (^)(void (^)(void)))arg6;
 @end
 

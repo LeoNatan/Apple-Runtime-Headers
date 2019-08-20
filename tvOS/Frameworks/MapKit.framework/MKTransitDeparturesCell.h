@@ -102,6 +102,7 @@
 - (unsigned long long)_displayableDeparturesCount;
 - (id)_departureDates;
 - (void)setShowNoConnectionEnDash:(_Bool)arg1;
+- (void)setAccessibilityOrder;
 - (void)refreshDeparturesDisplay;
 - (void)setTertiaryText:(id)arg1;
 - (void)setSecondaryText:(id)arg1;

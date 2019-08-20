@@ -18,9 +18,11 @@
     NSString *_identifier;
     NSDictionary *_definition;
     UIImage *_icon;
+    UIImage *_homeScreenIcon;
 }
 
 @property(nonatomic) BOOL checkedInstallStatus; // @synthesize checkedInstallStatus=_checkedInstallStatus;
+@property(retain, nonatomic) UIImage *homeScreenIcon; // @synthesize homeScreenIcon=_homeScreenIcon;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;

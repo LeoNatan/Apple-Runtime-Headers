@@ -15,7 +15,7 @@
 @property(copy, nonatomic) NSString *discoverabilityTitle;
 @property(copy, nonatomic) UIImage *image;
 @property(copy, nonatomic) NSString *title;
-- (id <_UIMenuLeaf>)_validatedLeafWithAlternate:(id <_UIMenuLeafAlternate>)arg1 validation:(_UIMenuLeafValidation *)arg2;
+- (id <_UIMenuLeaf>)_validatedLeafWithAlternate:(id <_UIMenuLeafAlternate>)arg1 target:(id)arg2 validation:(_UIMenuLeafValidation *)arg3;
 - (id)_resolvedTargetFromFirstTarget:(id)arg1;
 - (void)_performWithTarget:(id)arg1;
 - (long long)_leafKeyModifierFlags;

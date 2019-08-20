@@ -27,8 +27,8 @@
     EMMessageList *_unfilteredMessageList;
 }
 
-+ (id)simpleMessageListForMailboxes:(id)arg1 withRepository:(id)arg2;
-+ (id)threadedMessageListForMailboxes:(id)arg1 withRepository:(id)arg2;
++ (id)simpleMessageListForMailboxes:(id)arg1 withRepository:(id)arg2 shouldTrackOldestItems:(BOOL)arg3;
++ (id)threadedMessageListForMailboxes:(id)arg1 withRepository:(id)arg2 shouldTrackOldestItems:(BOOL)arg3;
 + (id)log;
 @property(retain, nonatomic) EMMessageList *unfilteredMessageList; // @synthesize unfilteredMessageList=_unfilteredMessageList;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;

@@ -16,6 +16,7 @@
 }
 
 + (id)_containingBundleIdentifier;
++ (void)_topShelfContentDidChangeForApplicationBundleIdentifier:(id)arg1;
 + (void)topShelfContentDidChange;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)loadTopShelfContentWithCompletionHandler:(CDUnknownBlockType)arg1;

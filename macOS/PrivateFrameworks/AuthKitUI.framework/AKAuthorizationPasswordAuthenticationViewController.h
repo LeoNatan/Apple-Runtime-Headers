@@ -18,6 +18,7 @@
 @property(retain, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) __weak id <AKAuthorizationPasswordAuthenticationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (id)_username;
 - (id)_contextForAuthentication;
 - (void)presentInWindow:(id)arg1;

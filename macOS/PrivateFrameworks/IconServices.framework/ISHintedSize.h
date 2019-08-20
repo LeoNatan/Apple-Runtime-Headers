@@ -6,6 +6,7 @@
 
 #import <IconServices/ISHintedValue.h>
 
+__attribute__((visibility("hidden")))
 @interface ISHintedSize : ISHintedValue
 {
 }

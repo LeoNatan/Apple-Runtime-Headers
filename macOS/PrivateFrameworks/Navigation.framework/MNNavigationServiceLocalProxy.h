@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationSessionManager:(id)arg1 didRerouteWithRoute:(id)arg2 locationDetails:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationSessionManagerWillReroute:(id)arg1;
 - (void)navigationSessionManager:(id)arg1 didUpdatePreviewRoutes:(id)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
+- (void)navigationSessionManager:(id)arg1 didUpdateMotionType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
 - (void)navigationSessionManager:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
 - (void)navigationSessionManager:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationSessionManager:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;

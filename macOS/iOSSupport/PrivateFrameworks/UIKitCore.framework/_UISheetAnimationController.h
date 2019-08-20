@@ -7,14 +7,16 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/UIViewControllerAnimatedTransitioning-Protocol.h>
+#import <UIKitCore/UIViewControllerAnimatedTransitioning_Internal-Protocol.h>
 
 @class NSString, UIView, UIViewPropertyAnimator;
 @protocol UIViewControllerContextTransitioning;
 
-@interface _UISheetAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
+@interface _UISheetAnimationController : NSObject <UIViewControllerAnimatedTransitioning_Internal, UIViewControllerAnimatedTransitioning>
 {
     BOOL _isReversed;
     BOOL _isInInitialLayout;
+    BOOL _scalesDownForwardView;
     CDUnknownBlockType _noninteractiveAnimations;
     CDUnknownBlockType _noninteractiveCompletion;
     id <UIViewControllerContextTransitioning> _transitionContext;
@@ -28,6 +30,7 @@
 
 @property(nonatomic) struct CGPoint attachmentPoint; // @synthesize attachmentPoint=_attachmentPoint;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
+@property(nonatomic) BOOL scalesDownForwardView; // @synthesize scalesDownForwardView=_scalesDownForwardView;
 @property(retain, nonatomic) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
 @property(nonatomic) BOOL isInInitialLayout; // @synthesize isInInitialLayout=_isInInitialLayout;
 @property(nonatomic) struct CGRect forwardViewFullFrame; // @synthesize forwardViewFullFrame=_forwardViewFullFrame;
@@ -38,6 +41,7 @@
 @property(nonatomic) struct CGRect sourceFrame; // @synthesize sourceFrame=_sourceFrame;
 @property(nonatomic) BOOL isReversed; // @synthesize isReversed=_isReversed;
 - (void).cxx_destruct;
+- (BOOL)_allowKeyboardToAnimateAlongside:(id)arg1;
 - (void)runNoninteractiveAnimationsIfPossible;
 - (void)layoutTransitionViews;
 - (void)animateTransition:(id)arg1;

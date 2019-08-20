@@ -33,6 +33,7 @@
 + (_Bool)_isAtrialFibrillationDetectionSupportedOnPhone:(id)arg1;
 + (_Bool)isAtrialFibrillationDetectionSupportedOnPairedPhone;
 + (_Bool)atrialFibrillationDetectionSupportedForDevice:(id)arg1;
++ (_Bool)isDeviceSeries4:(id)arg1;
 + (_Bool)isDeviceSeries3OrOlder:(id)arg1;
 + (unsigned long long)atrialFibrillationDetectionSupportedState;
 + (unsigned long long)_atrialFibrillationDetectionSupportedStateForDeviceRegion:(id)arg1;
@@ -47,10 +48,15 @@
 + (_Bool)_isElectrocardiogramDisabledWithDataSource:(id)arg1;
 + (id)electrocardiogramAppBundleID;
 + (void)installElectrocardiogramAppOnActiveWatch:(CDUnknownBlockType)arg1;
++ (_Bool)_isElectrocardiogramSupportedOniOSDevice:(id)arg1 geolocatedCountryCode:(id)arg2;
++ (_Bool)_isElectrocardiogramSupportedOnPhone:(id)arg1 geolocatedCountryCode:(id)arg2;
 + (_Bool)_isElectrocardiogramSupportedOnPhone:(id)arg1;
 + (_Bool)electrocardiogramSupportedForDevice:(id)arg1;
++ (_Bool)isElectrocardiogramSupportedOnPairedPhoneWithGeolocatedCountryCode:(id)arg1;
 + (_Bool)isElectrocardiogramSupportedOnPairedPhone;
 + (unsigned long long)electrocardiogramSupportedState;
++ (unsigned long long)_electrocardiogramSupportedStateForDeviceRegion:(id)arg1;
++ (_Bool)isElectrocardiogramAppDeletableForActiveWatch;
 + (unsigned long long)electrocardiogramSupportedStateForActiveWatch;
 + (unsigned long long)electrocardiogramSupportedStateForWatch:(id)arg1;
 + (_Bool)isElectrocardiogramSupportedOnAllWatches;
@@ -61,6 +67,7 @@
 + (_Bool)_isRunningSeed;
 + (_Bool)_isDeviceRunningSeed:(id)arg1;
 + (id)featureAvailabilityUserDefaults;
++ (id)currentDeviceRegionCode;
 + (id)pairedDevices;
 + (id)activePairedDevice;
 + (_Bool)isHeartRateEnabledInPrivacy;

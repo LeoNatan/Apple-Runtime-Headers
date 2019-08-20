@@ -103,6 +103,7 @@
 - (BOOL)presentFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)presentFromRect:(struct CGRect)arg1 inView:(id)arg2 animated:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)presentAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)_presentAnimated:(BOOL)arg1 hostingScene:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)_init;
 - (id)init;

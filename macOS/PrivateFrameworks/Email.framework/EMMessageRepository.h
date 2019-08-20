@@ -27,6 +27,7 @@
 }
 
 + (id)remoteInterface;
++ (id)signpostLog;
 + (id)log;
 @property(readonly, nonatomic) EMMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(retain, nonatomic) NSCache *queryCountCache; // @synthesize queryCountCache=_queryCountCache;
@@ -68,6 +69,7 @@
 - (void)_notifyRecoverableObservers;
 - (id)initWithRemoteConnection:(id)arg1 mailboxRepository:(id)arg2 vipManager:(id)arg3;
 - (id)_init;
+- (unsigned long long)signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

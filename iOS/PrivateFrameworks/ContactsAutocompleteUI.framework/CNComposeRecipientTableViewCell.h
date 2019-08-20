@@ -6,10 +6,12 @@
 
 #import <ContactsAutocompleteUI/CNComposeTableViewCell.h>
 
-@class CNAvatarViewController, NSArray, UIButton;
+#import <ContactsAutocompleteUI/NUIContainerViewDelegate-Protocol.h>
+
+@class CNAvatarViewController, NSArray, NSString, UIButton;
 @protocol CNComposeRecipientTableViewCellDelegate;
 
-@interface CNComposeRecipientTableViewCell : CNComposeTableViewCell
+@interface CNComposeRecipientTableViewCell : CNComposeTableViewCell <NUIContainerViewDelegate>
 {
     _Bool _shouldHighlightCompleteMatches;
     id <CNComposeRecipientTableViewCellDelegate> _delegate;
@@ -23,6 +25,8 @@
 + (id)_attributedTitleForRecipient:(id)arg1 matchedStrings:(id)arg2 constrainedToWidth:(double)arg3 font:(id)arg4;
 + (id)_attributedStringForListOfGroupMemberNames:(id)arg1 numberTruncated:(unsigned long long)arg2;
 + (id)_attributedStringForGroupMembersOfRecipient:(id)arg1 matchedStrings:(id)arg2 constrainedToWidth:(double)arg3 font:(id)arg4;
++ (_Bool)avatarsAreHidden;
++ (double)additionalSeparatorInset;
 + (id)identifier;
 @property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
@@ -39,8 +43,14 @@
 - (void)updateLabelsContrainedToWidth:(double)arg1;
 - (void)labelsChangedWidth:(double)arg1;
 - (void)applyActionButtonTouchInsets;
-- (void)layoutSubviews;
+- (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

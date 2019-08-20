@@ -20,12 +20,10 @@
 - (void).cxx_destruct;
 - (_Bool)_syncQueue_resetWithError:(id *)arg1;
 - (_Bool)resetWithError:(id *)arg1;
-- (_Bool)_syncQueue_processSamplesWithLimit:(unsigned long long)arg1 countOfSamplesProcessed:(long long *)arg2 error:(id *)arg3;
+- (_Bool)_syncQueue_processSamplesWithLimit:(long long)arg1 countOfSamplesProcessed:(long long *)arg2 error:(id *)arg3;
 - (_Bool)processSamplesWithLimit:(unsigned long long)arg1 countOfSamplesProcessed:(long long *)arg2 error:(id *)arg3;
-- (_Bool)_syncQueue_processUpdatedSamplesWithLimit:(unsigned long long)arg1 countOfSamplesProcessed:(long long *)arg2 error:(id *)arg3;
-- (_Bool)updateHighestSeenAnchorForProfile:(id)arg1;
-- (_Bool)haveNewRecordsBeenIndexedForProfile:(id)arg1;
-- (_Bool)_syncQueue_processDeletedSamplesWithLimit:(unsigned long long)arg1 sampleType:(id)arg2 countOfSamplesProcessed:(long long *)arg3 error:(id *)arg4;
+- (_Bool)_syncQueue_processUpdatedSamplesWithLimit:(long long)arg1 countOfSamplesProcessed:(long long *)arg2 error:(id *)arg3;
+- (_Bool)_syncQueue_processDeletedSamplesWithLimit:(long long)arg1 sampleType:(id)arg2 countOfSamplesProcessed:(long long *)arg3 error:(id *)arg4;
 - (id)initWithProfile:(id)arg1;
 - (id)init;
 

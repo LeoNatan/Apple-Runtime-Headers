@@ -61,6 +61,7 @@
 - (void)addStringCandidateToContextInternal:(id)arg1;
 - (void)setKeyboardLayout:(id)arg1;
 - (void)setGeometryModel:(void *)arg1 modelData:(struct __CFArray *)arg2;
+- (void)commitPredictionCandidate:(void *)arg1;
 - (_Bool)predictionAnalyzeWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
 - (_Bool)analyzeInput:(id)arg1 options:(unsigned long long)arg2;
 - (_Bool)analyzeString:(id)arg1 options:(unsigned long long)arg2;

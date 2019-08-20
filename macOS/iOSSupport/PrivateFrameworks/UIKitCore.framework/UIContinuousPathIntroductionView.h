@@ -6,13 +6,12 @@
 
 #import <UIKitCore/UIKBTutorialModalDisplay.h>
 
-@class AVPlayerLooper, AVQueuePlayer, NSArray, UIButton, UILabel, UIView;
+@class AVPlayerLayer, AVPlayerLooper, AVQueuePlayer, NSArray, NSLayoutConstraint, UIButton, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIContinuousPathIntroductionView : UIKBTutorialModalDisplay
 {
     struct CGSize _videoSize;
-    double _videoWidth;
     double _textMargin;
     double _paddingAdjust;
     AVPlayerLooper *_playerLooper;
@@ -23,8 +22,14 @@ __attribute__((visibility("hidden")))
     UIButton *_landscapeButton;
     NSArray *_portraitConstraints;
     NSArray *_landscapeConstraints;
+    AVPlayerLayer *_videoLayer;
+    NSLayoutConstraint *_videoWidth;
+    NSLayoutConstraint *_videoHeight;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *videoHeight; // @synthesize videoHeight=_videoHeight;
+@property(retain, nonatomic) NSLayoutConstraint *videoWidth; // @synthesize videoWidth=_videoWidth;
+@property(retain, nonatomic) AVPlayerLayer *videoLayer; // @synthesize videoLayer=_videoLayer;
 @property(retain, nonatomic) NSArray *landscapeConstraints; // @synthesize landscapeConstraints=_landscapeConstraints;
 @property(retain, nonatomic) NSArray *portraitConstraints; // @synthesize portraitConstraints=_portraitConstraints;
 @property(retain, nonatomic) UIButton *landscapeButton; // @synthesize landscapeButton=_landscapeButton;
@@ -37,6 +42,8 @@ __attribute__((visibility("hidden")))
 - (double)mediaLayoutWidthAdjustment;
 - (id)textBodyDescriptions;
 - (id)textTitleDescriptions;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateVideoLayerWithNewVideo:(BOOL)arg1;
 - (id)mediaContents;
 - (id)_introductionMovieAssetURL;
 - (void)setupConstraintData;

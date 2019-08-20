@@ -19,7 +19,6 @@
     _Bool _isGeneratedEvent;
     _Bool _useOriginalHIDTime;
     _Bool _redirectEvent;
-    _Bool _setTouchFlagOnSubevents;
     _Bool _systemDrag;
     unsigned int _type;
     unsigned int _originalType;
@@ -43,6 +42,7 @@
     unsigned long long _HIDTime;
     NSData *_HIDAttributeData;
     long long _scrollAmount;
+    long long _scrollAccelAmount;
     unsigned long long _additionalFlags;
     long long _generationCount;
     struct __IOHIDEvent *_creatorHIDEvent;
@@ -80,7 +80,6 @@
 @property(nonatomic) void *window; // @synthesize window=_window;
 @property(retain, nonatomic) AXEventData *accessibilityData; // @synthesize accessibilityData=_accessibilityData;
 @property(nonatomic, getter=isSystemDrag) _Bool systemDrag; // @synthesize systemDrag=_systemDrag;
-@property(nonatomic) _Bool setTouchFlagOnSubevents; // @synthesize setTouchFlagOnSubevents=_setTouchFlagOnSubevents;
 @property(nonatomic, getter=isRedirectEvent) _Bool redirectEvent; // @synthesize redirectEvent=_redirectEvent;
 @property(retain, nonatomic) struct __IOHIDServiceClient *creatorHIDServiceClient; // @synthesize creatorHIDServiceClient=_creatorHIDServiceClient;
 @property(retain, nonatomic) struct __IOHIDEvent *creatorHIDEvent; // @synthesize creatorHIDEvent=_creatorHIDEvent;
@@ -94,6 +93,7 @@
 @property(nonatomic) unsigned int displayId; // @synthesize displayId=_displayId;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 @property(nonatomic) unsigned long long additionalFlags; // @synthesize additionalFlags=_additionalFlags;
+@property(nonatomic) long long scrollAccelAmount; // @synthesize scrollAccelAmount=_scrollAccelAmount;
 @property(nonatomic) long long scrollAmount; // @synthesize scrollAmount=_scrollAmount;
 @property(retain, nonatomic) NSData *HIDAttributeData; // @synthesize HIDAttributeData=_HIDAttributeData;
 @property(nonatomic) unsigned long long HIDTime; // @synthesize HIDTime=_HIDTime;

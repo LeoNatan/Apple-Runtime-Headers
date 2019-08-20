@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isInteractive;
 @property(readonly, nonatomic) _Bool showsKeyboard;
 @property(readonly, nonatomic) _Bool showsInputViews;
+@property(readonly, nonatomic) _Bool isFloating;
 @property(readonly, nonatomic) _Bool isUndocked;
 - (_Bool)isEqual:(id)arg1;
 - (struct CGAffineTransform)transform;

@@ -16,6 +16,8 @@
 @property(nonatomic) float backlightLevel; // @dynamic backlightLevel;
 @property(nonatomic) long long dataPlanActivationPromptCount; // @dynamic dataPlanActivationPromptCount;
 @property(readonly, nonatomic) _Bool disableAsyncRenderingSurfaceRetention; // @dynamic disableAsyncRenderingSurfaceRetention;
+@property(readonly, nonatomic) _Bool disableAutomaticMallocStackLogging; // @dynamic disableAutomaticMallocStackLogging;
+@property(nonatomic) _Bool launchWithMallocStackLogging; // @dynamic launchWithMallocStackLogging;
 @property(nonatomic) _Bool suppressAlertsForKeynote; // @dynamic suppressAlertsForKeynote;
 @property(readonly, nonatomic) _Bool suppressNoSimAlert; // @dynamic suppressNoSimAlert;
 @property(readonly, nonatomic) _Bool walletPreArmForceLockButton; // @dynamic walletPreArmForceLockButton;

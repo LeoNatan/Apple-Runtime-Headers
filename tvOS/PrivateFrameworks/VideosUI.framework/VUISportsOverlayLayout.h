@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     VUIScoreboardLayout *_scoreboardLayout;
     VUITextBadgeLayout *_textBadgeLayout;
+    TVImageLayout *_appImageLayout;
     TVImageLayout *_logoImageLayout;
 }
 
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (long long)_scoreboardTypeForElement:(id)arg1;
 + (id)overlayLayoutForElement:(id)arg1 cardLayoutType:(long long)arg2;
 @property(retain, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
+@property(retain, nonatomic) TVImageLayout *appImageLayout; // @synthesize appImageLayout=_appImageLayout;
 @property(retain, nonatomic) VUITextBadgeLayout *textBadgeLayout; // @synthesize textBadgeLayout=_textBadgeLayout;
 @property(retain, nonatomic) VUIScoreboardLayout *scoreboardLayout; // @synthesize scoreboardLayout=_scoreboardLayout;
 - (void).cxx_destruct;

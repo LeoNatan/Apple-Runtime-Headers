@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <WebKit/WKApplicationStateTrackingView.h>
 
 #import <WebKit/ASVThumbnailViewDelegate-Protocol.h>
 #import <WebKit/QLPreviewItemDataProvider-Protocol.h>
 #import <WebKit/WKWebViewContentProvider-Protocol.h>
 
-@class NSData, NSString, WKWebView;
+@class NSData, NSString, UIView, WKWebView;
 
 __attribute__((visibility("hidden")))
-@interface WKSystemPreviewView : UIView <ASVThumbnailViewDelegate, WKWebViewContentProvider, QLPreviewItemDataProvider>
+@interface WKSystemPreviewView : WKApplicationStateTrackingView <ASVThumbnailViewDelegate, WKWebViewContentProvider, QLPreviewItemDataProvider>
 {
     struct RetainPtr<NSItemProvider> _itemProvider;
     struct RetainPtr<NSData> _data;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)web_hideFindUI;
 - (void)web_findString:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
 - (void)web_countStringMatches:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
+@property(readonly, nonatomic) _Bool web_isBackground;
 - (void)web_didSameDocumentNavigation:(unsigned int)arg1;
 - (void)web_setFixedOverlayView:(id)arg1;
 - (void)web_computedContentInsetDidChange;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSData *web_dataRepresentation;
-@property(readonly, nonatomic) _Bool web_isBackground;
 @property(readonly, nonatomic) NSString *web_suggestedFilename;
 
 @end

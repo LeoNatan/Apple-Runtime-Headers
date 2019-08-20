@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVPlayerConnection, AVPlayerItem, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, NSURL;
+@class AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVMediaSelection, AVPlayerConnection, AVPlayerItem, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 @protocol AVLoggingIdentifier, AVPlayerItemDelegate, NSObject><NSCopying, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -130,6 +130,7 @@ __attribute__((visibility("hidden")))
     NSArray *loadedTimeRanges;
     CDStruct_e83c9415 loopTimeRange;
     id <AVLoggingIdentifier> loggingIdentifier;
+    AVMediaSelection *currentMediaSelection;
     BOOL needToSeekAfterCreatingFigPlaybackItem;
     CDStruct_1b6d18a9 initialTime;
     unsigned int initialSetTimeFlags;

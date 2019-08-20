@@ -7,11 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSXPCConnection;
+@protocol OS_dispatch_queue;
 
 @interface NTKFaceSnapshotClient : NSObject
 {
     NSXPCConnection *_connection;
     _Bool _registrationNeeded;
+    NSObject<OS_dispatch_queue> *_snapshotFileQueue;
 }
 
 + (id)sharedInstance;

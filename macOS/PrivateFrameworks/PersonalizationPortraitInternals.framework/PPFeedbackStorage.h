@@ -11,12 +11,12 @@
 @interface PPFeedbackStorage : NSObject
 {
     PPSQLDatabase *_db;
-    PPLocalNamedEntityStore *_namedEntityStore;
-    PPLocalTopicStore *_topicStore;
-    PPLocalLocationStore *_locationStore;
-    PPLocalQuickTypeBroker *_quickTypeBroker;
-    PPLocalContactStore *_contactStore;
-    PPLocalEventStore *_eventStore;
+    PPLocalNamedEntityStore *_namedEntityStoreOverride;
+    PPLocalTopicStore *_topicStoreOverride;
+    PPLocalLocationStore *_locationStoreOverride;
+    PPLocalQuickTypeBroker *_quickTypeBrokerOverride;
+    PPLocalContactStore *_contactStoreOverride;
+    PPLocalEventStore *_eventStoreOverride;
 }
 
 + (id)storeTypeDescription:(unsigned char)arg1;
@@ -27,8 +27,14 @@
 - (void)filterPendingFeedbackItems:(id)arg1 storeType:(unsigned char)arg2 timestamp:(double)arg3 clientIdentifier:(id)arg4 clientBundleId:(id)arg5 mappingId:(id)arg6;
 - (id)filteredLocationsFromPendingFeedbackItems:(id)arg1 maxCount:(unsigned long long)arg2 scoringDate:(id)arg3;
 - (void)processFilteredPendingFeedbackWithItems:(id)arg1 timestamp:(double)arg2 clientIdentifier:(id)arg3 clientBundleId:(id)arg4 mappingId:(id)arg5 store:(id)arg6;
-- (id)initWithDatabase:(id)arg1 namedEntityStore:(id)arg2 topicStore:(id)arg3 locationStore:(id)arg4 quickTypeBroker:(id)arg5 contactStore:(id)arg6 eventStore:(id)arg7;
+- (id)initWithDatabase:(id)arg1 namedEntityStoreOverride:(id)arg2 topicStoreOverride:(id)arg3 locationStoreOverride:(id)arg4 quickTypeBrokerOverride:(id)arg5 contactStoreOverride:(id)arg6 eventStoreOverride:(id)arg7;
 - (id)init;
+- (id)eventStore;
+- (id)contactStore;
+- (id)quickTypeBroker;
+- (id)locationStore;
+- (id)topicStore;
+- (id)namedEntityStore;
 
 @end
 

@@ -19,7 +19,7 @@
 @property(retain, nonatomic) NWMTemperatureFormatter *temperatureFormatter; // @synthesize temperatureFormatter=_temperatureFormatter;
 - (void).cxx_destruct;
 - (id)switcherTemplateWithFamily:(long long)arg1;
-- (_Bool)acceptsComplicationFamily:(long long)arg1;
+- (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)utilitarianLargeTemplateForConditions:(id)arg1;
 - (id)modularSmallTemplateForConditions:(id)arg1;

@@ -30,6 +30,7 @@
     NSString *_mediaRouteID;
     NSString *_model;
     NSString *_name;
+    NSString *_sendersKnownAlias;
     NSDate *_dateAcknowledged;
     NSDate *_dateRequested;
 }
@@ -42,6 +43,7 @@
 @property(copy, nonatomic) NSDate *dateAcknowledged; // @synthesize dateAcknowledged=_dateAcknowledged;
 @property(nonatomic) _Bool userAdded; // @synthesize userAdded=_userAdded;
 @property(nonatomic) int type; // @synthesize type=_type;
+@property(copy, nonatomic) NSString *sendersKnownAlias; // @synthesize sendersKnownAlias=_sendersKnownAlias;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *mediaRouteID; // @synthesize mediaRouteID=_mediaRouteID;

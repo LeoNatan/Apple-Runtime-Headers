@@ -134,6 +134,7 @@
 @property(nonatomic) _Bool voiceOverTouchUpdateBrailleWithoutConnectedDisplay;
 @property(nonatomic) _Bool voiceOverTouchBrailleShowTextStyleStatus;
 @property(nonatomic) _Bool voiceOverTouchBrailleShouldReverseDots;
+@property(nonatomic) long long voiceOverTapticChimesSoundType;
 @property(nonatomic) long long voiceOverTapticChimesFrequencyEncoding;
 @property(nonatomic) long long voiceOverTapticChimesAvailability;
 @property(nonatomic) _Bool tapticTimeInternalFlashScreenEnabled;
@@ -225,7 +226,6 @@
 @property(retain, nonatomic) NSArray *customPronunciationSubstitutions;
 @property(nonatomic) struct CGPoint quickSpeakNubbitNormalizedPosition;
 @property(nonatomic) _Bool siriAutoUpdateListInitialized;
-@property(copy, nonatomic) NSSet *downloadedSiriVoices;
 - (void)_removeSpeakingRatePreferenceForLanguage:(id)arg1;
 - (float)quickSpeakSpeakingRateForLanguage:(id)arg1;
 - (void)setQuickSpeakSpeakingRate:(float)arg1 forLanguage:(id)arg2;
@@ -270,6 +270,7 @@
 @property(nonatomic) _Bool skipHearingAidMFiAuth;
 @property(nonatomic) _Bool voiceOverHearingAidRoutingEnabled;
 @property(nonatomic) long long voiceOverKeyboardModifierChoice;
+@property(nonatomic) double voiceOverContinuousPathKeyboardStartTimeout;
 @property(retain, nonatomic) NSArray *currentVoices;
 @property(readonly, nonatomic) _Bool extantVoicesExist;
 @property(retain, nonatomic) NSArray *extantVoices;

@@ -19,6 +19,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain) HMFLocationAuthorization *locationAuthorization;
 @property(retain) NSOperationQueue *delegateQueue;
+@property(getter=isDiscretionary) _Bool discretionary;
 @property unsigned int options;
 @property unsigned int cachePolicy;
 - (_Bool)shouldConnect;

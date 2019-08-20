@@ -236,6 +236,7 @@
 - (_Bool)isSingleCameraPortraitModeSupportedForDevicePosition:(long long)arg1;
 - (_Bool)isPortraitModeSupportedForDevice:(long long)arg1;
 - (_Bool)isPortraitModeSupportedForDevicePosition:(long long)arg1;
+@property(readonly, nonatomic, getter=isPortraitModeSupported) _Bool portraitModeSupported;
 - (_Bool)isTimelapseSupportedForDevice:(long long)arg1;
 - (_Bool)isPanoramaSupportedForDevice:(long long)arg1;
 - (_Bool)is1080p240SupportedForDevice:(long long)arg1;
@@ -247,6 +248,7 @@
 - (long long)sanitizeDesiredDevice:(long long)arg1 forMode:(long long)arg2;
 - (_Bool)isSupportedMode:(long long)arg1 withDevice:(long long)arg2;
 - (_Bool)is4k60VideoSupportedForDevice:(long long)arg1;
+- (_Bool)is1080p60VideoSupportedForDevice:(long long)arg1;
 - (_Bool)is4k30VideoSupportedForDevice:(long long)arg1;
 - (_Bool)is4k24VideoSupportedForDevice:(long long)arg1;
 - (double)captureIntervalForDevice:(long long)arg1;

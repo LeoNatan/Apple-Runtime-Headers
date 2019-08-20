@@ -8,22 +8,24 @@
 
 #import <Home/HFCameraClipPlayerDelegate-Protocol.h>
 #import <Home/HFCameraLiveStreamControllerDelegate-Protocol.h>
-#import <Home/HMCameraClipCollectionObserver-Protocol.h>
+#import <Home/HMCameraClipManagerObserver-Protocol.h>
 
-@class AVPlayer, HFCameraPlaybackPosition, HMCameraClip, HMCameraClipCollection, HMCameraProfile, HMCameraSource, HMHome, NADelegateDispatcher, NSArray, NSDate, NSError, NSMapTable, NSString;
+@class AVPlayer, HFCameraPlaybackPosition, HMCameraClip, HMCameraClipManager, HMCameraProfile, HMCameraSource, HMHome, NADelegateDispatcher, NSArray, NSDate, NSError, NSMapTable, NSString;
 @protocol HFCameraClipPlaying, HFCameraClipScrubbing, HFCameraLiveStreamControlling;
 
-@interface HFCameraPlaybackEngine : NSObject <HMCameraClipCollectionObserver, HFCameraClipPlayerDelegate, HFCameraLiveStreamControllerDelegate>
+@interface HFCameraPlaybackEngine : NSObject <HMCameraClipManagerObserver, HFCameraClipPlayerDelegate, HFCameraLiveStreamControllerDelegate>
 {
     _Bool _prefersAudioEnabled;
     _Bool _microphoneEnabled;
     _Bool _streamAudioEnabled;
+    _Bool _pictureInPictureModeActive;
     _Bool _wantsToPlay;
     _Bool _scrubbing;
     HMCameraProfile *_cameraProfile;
-    HMCameraClipCollection *_clipCollection;
+    HMCameraClipManager *_clipManager;
     NSArray *_clips;
     HMCameraSource *_liveCameraSource;
+    unsigned int _timelineState;
     NSDate *_currentEngineDate;
     unsigned int _timeControlStatus;
     NSError *_playbackError;
@@ -55,12 +57,14 @@
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSError *playbackError; // @synthesize playbackError=_playbackError;
 @property(nonatomic) unsigned int timeControlStatus; // @synthesize timeControlStatus=_timeControlStatus;
+@property(nonatomic, getter=isPictureInPictureModeActive) _Bool pictureInPictureModeActive; // @synthesize pictureInPictureModeActive=_pictureInPictureModeActive;
 @property(retain, nonatomic) NSDate *currentEngineDate; // @synthesize currentEngineDate=_currentEngineDate;
+@property(nonatomic) unsigned int timelineState; // @synthesize timelineState=_timelineState;
 @property(nonatomic, getter=isStreamAudioEnabled) _Bool streamAudioEnabled; // @synthesize streamAudioEnabled=_streamAudioEnabled;
 @property(nonatomic, getter=isMicrophoneEnabled) _Bool microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(retain, nonatomic) HMCameraSource *liveCameraSource; // @synthesize liveCameraSource=_liveCameraSource;
 @property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
-@property(retain, nonatomic) HMCameraClipCollection *clipCollection; // @synthesize clipCollection=_clipCollection;
+@property(retain, nonatomic) HMCameraClipManager *clipManager; // @synthesize clipManager=_clipManager;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(nonatomic) _Bool prefersAudioEnabled; // @synthesize prefersAudioEnabled=_prefersAudioEnabled;
 - (void).cxx_destruct;
@@ -70,7 +74,8 @@
 - (void)clipPlayer:(id)arg1 didUpdateMuted:(_Bool)arg2;
 - (void)clipPlayer:(id)arg1 didUpdateError:(id)arg2 isFatal:(_Bool)arg3;
 - (void)clipPlayer:(id)arg1 didUpdateTimeControlStatus:(int)arg2;
-- (void)clipCollection:(id)arg1 addedClips:(id)arg2 removedClips:(id)arg3 updatedClips:(id)arg4;
+- (void)clipManager:(id)arg1 didRemoveClipsWithUUIDs:(id)arg2;
+- (void)clipManager:(id)arg1 didUpdateClips:(id)arg2;
 - (_Bool)isLiveStreaming;
 - (void)_setStreamAudioEnabled:(_Bool)arg1 notifyObservers:(_Bool)arg2;
 - (void)_setMicrophoneEnabled:(_Bool)arg1 notifyObservers:(_Bool)arg2;
@@ -91,11 +96,10 @@
 @property(retain, nonatomic) HFCameraPlaybackPosition *playbackPosition;
 @property(readonly, nonatomic) AVPlayer *player;
 - (void)_setupTimeObservationForObserver:(id)arg1;
-- (void)_setupClipPlayerWithCollection:(id)arg1;
+- (void)_setupClipPlayerWithClipManager:(id)arg1;
 - (void)_setupLiveStreamController:(id)arg1;
 - (void)updateLiveStreamForCameraProfile:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
-- (id)initWithHome:(id)arg1 cameraProfile:(id)arg2 clipCollection:(id)arg3 playbackPosition:(id)arg4;
 - (id)init;
 
 // Remaining properties

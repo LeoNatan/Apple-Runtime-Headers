@@ -44,7 +44,7 @@
 - (id)keywords;
 - (id)descriptionDictionary;
 - (id)subcategoryForCategory:(id)arg1;
-- (id)category;
+- (id)categories;
 - (id)parameterSummary;
 - (id)shortName;
 - (id)name;

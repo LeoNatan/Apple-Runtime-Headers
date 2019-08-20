@@ -38,7 +38,8 @@
     unsigned int _frameNeedsUpdate:1;
     unsigned int _frameIsObserved:1;
     unsigned int _lockedToOwner:1;
-    unsigned int _reservedFlags:28;
+    unsigned int _internalFrameDiverged:1;
+    unsigned int _reservedFlags:27;
 }
 
 + (void)_allowingStaleFramesPerformBlock:(CDUnknownBlockType)arg1;

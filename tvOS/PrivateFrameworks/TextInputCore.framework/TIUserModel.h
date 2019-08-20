@@ -17,6 +17,7 @@
     id <TIUserModelDataStoring> _userModelStore;
     NSMutableDictionary *_durableCounters;
     NSMutableDictionary *_userModelValuesCollection;
+    NSMutableDictionary *_settingsDictionary;
     _Bool _isLoaded;
     double _timeOfLastPersist;
 }
@@ -30,6 +31,8 @@
 - (void)sessionDidEnd:(id)arg1 aligned:(id)arg2;
 - (id)dictForPowerLog;
 - (_Bool)persistForDate:(id)arg1;
+- (void)loadSettings;
+- (id)populateSettingsDictionary;
 - (void)doLoad;
 - (id)valuesForKey:(id)arg1;
 @property(readonly, nonatomic) NSArray *keys;

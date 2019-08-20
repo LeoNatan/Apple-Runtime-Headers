@@ -106,6 +106,7 @@
 - (_Bool)triggerEditor:(id)arg1 shouldCommitTriggerBuilder:(id)arg2;
 - (void)_presentTriggerEditorForProgrammableSwitchEventOptionItem:(id)arg1;
 - (void)_presentRemoveRouterConfirmation;
+- (_Bool)_shouldPresentRemoveRouterConfirmation;
 - (void)_presentRemoveConfirmation;
 - (void)_presentResetHomePodConfirmation;
 - (void)_restartGroupedHomePodAccessory;

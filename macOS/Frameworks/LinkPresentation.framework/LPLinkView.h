@@ -139,7 +139,6 @@
 - (void)animateOutAndRemoveViews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (struct NSEdgeInsets)_effectiveContentInset;
 - (void)layout;
 @property(readonly, nonatomic) long long _style;
 - (void)_setPresentationProperties:(id)arg1;

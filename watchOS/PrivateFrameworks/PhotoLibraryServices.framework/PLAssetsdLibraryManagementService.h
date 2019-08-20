@@ -20,7 +20,6 @@
 - (void)getPhotoLibraryURLsWithReply:(CDUnknownBlockType)arg1;
 - (void)getActivePhotoLibrariesWithReply:(CDUnknownBlockType)arg1;
 - (void)setSystemPhotoLibraryURL:(id)arg1 bookmark:(id)arg2 options:(unsigned short)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)isSystemLibraryURLDefined:(CDUnknownBlockType)arg1;
 - (id)initWithConnectionAuthorization:(id)arg1 bundleController:(id)arg2;
 
 // Remaining properties

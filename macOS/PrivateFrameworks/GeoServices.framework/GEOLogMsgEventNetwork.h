@@ -34,6 +34,7 @@
     unsigned int _tilesetId;
     int _totalTime;
     BOOL _mptcpNegotiated;
+    BOOL _rnfTriggered;
     struct {
         unsigned int has_requestEnd:1;
         unsigned int has_requestErrorCode:1;
@@ -49,6 +50,7 @@
         unsigned int has_tilesetId:1;
         unsigned int has_totalTime:1;
         unsigned int has_mptcpNegotiated:1;
+        unsigned int has_rnfTriggered:1;
         unsigned int read_manifestEnv:1;
         unsigned int read_requestAppIdentifier:1;
         unsigned int read_requestErrorDescription:1;
@@ -75,6 +77,7 @@
         unsigned int wrote_tilesetId:1;
         unsigned int wrote_totalTime:1;
         unsigned int wrote_mptcpNegotiated:1;
+        unsigned int wrote_rnfTriggered:1;
     } _flags;
 }
 
@@ -93,6 +96,8 @@
 @property(retain, nonatomic) GEONetworkSessionTaskTransactionMetrics *taskMetrics;
 @property(readonly, nonatomic) BOOL hasTaskMetrics;
 - (void)_readTaskMetrics;
+@property(nonatomic) BOOL hasRnfTriggered;
+@property(nonatomic) BOOL rnfTriggered;
 @property(retain, nonatomic) NSString *serviceIpAddress;
 @property(readonly, nonatomic) BOOL hasServiceIpAddress;
 - (void)_readServiceIpAddress;

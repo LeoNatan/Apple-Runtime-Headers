@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)handleSwitchCommand:(_Bool)arg1;
 - (id)inputModeIdentifierWithNextFlag:(_Bool)arg1;
 - (_Bool)isVisibleOrHiding;
+- (void)hideSwitcherIfNeeded;
 - (_Bool)isVisible;
 - (void)clearKeyHoldTimer;
 - (void)touchKeyHoldTimer;

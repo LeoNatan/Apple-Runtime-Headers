@@ -10,15 +10,15 @@
 
 @interface SXLayoutOptions : NSObject
 {
-    BOOL _testing;
     SXColumnLayout *_columnLayout;
+    struct CGSize _viewportSize;
     UITraitCollection *_traitCollection;
     NSString *_contentSizeCategory;
     long long _bundleSubscriptionStatus;
     long long _channelSubscriptionStatus;
+    BOOL _testing;
     unsigned long long _viewingLocation;
     double _contentScaleFactor;
-    struct CGSize _viewportSize;
 }
 
 @property(readonly, nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;

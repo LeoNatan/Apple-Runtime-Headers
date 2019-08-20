@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (void)loadResourcesForTileKey:(const struct _GEOTileKey *)arg1 manifestConfiguration:(id)arg2 auditToken:(id)arg3 finished:(CDUnknownBlockType)arg4 error:(CDUnknownBlockType)arg5;
+- (void)loadResourcesForTileKey:(const struct _GEOTileKey *)arg1 manifestConfiguration:(id)arg2 auditToken:(id)arg3 signpostID:(unsigned long long)arg4 finished:(CDUnknownBlockType)arg5 error:(CDUnknownBlockType)arg6;
 @property(readonly, nonatomic) struct _GEOTileKey *tileKeyPtr;
 - (void)dealloc;
 - (id)init;

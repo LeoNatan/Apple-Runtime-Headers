@@ -18,6 +18,6 @@
 - (void)nowPlayingViewDidSelectContextMenu:(TVPMusicNowPlayingView *)arg1;
 - (void)nowPlayingViewPlaylistDidBecomeHidden:(TVPMusicNowPlayingView *)arg1;
 - (void)nowPlayingView:(TVPMusicNowPlayingView *)arg1 playlistWillBecomeHiddenWithExecutionBlock:(void (^)(void))arg2;
-- (void)nowPlayingView:(TVPMusicNowPlayingView *)arg1 playlistWillBecomeVisibleWithExecutionBlock:(void (^)(void))arg2;
+- (void)nowPlayingView:(TVPMusicNowPlayingView *)arg1 playlistWillBecomeVisibleWithExecutionBlock:(void (^)(_Bool))arg2;
 @end
 

@@ -44,6 +44,7 @@
 - (void)selectCurrentEntryForFromAddressPickerView:(UIPickerView *)arg1;
 
 @optional
+- (void)showMissingAttachmentDataAlert;
 - (struct UIEdgeInsets)additionalContentInsetForBodyField:(UIView<MFComposeBodyField> *)arg1;
 - (void)showContentVariationPickerFromRect:(struct CGRect)arg1 inView:(UIView *)arg2;
 - (_Bool)canShowContentVariationPicker;

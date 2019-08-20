@@ -13,8 +13,6 @@ __attribute__((visibility("hidden")))
 
 + (Class)meltedClass;
 - (_Bool)defaultAlarmRemoved;
-- (id)appLink;
-- (id)action;
 - (id)ekExceptionDates;
 - (id)detachedItems;
 - (id)attachments;
@@ -31,6 +29,8 @@ __attribute__((visibility("hidden")))
 - (id)structuredLocationWithoutPrediction;
 - (id)uniqueID;
 - (id)UUID;
+- (id)action;
+- (id)appLink;
 - (unsigned long long)priority;
 - (id)completionDate;
 - (id)timeZone;

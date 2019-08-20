@@ -22,6 +22,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)_defaultSelectorName;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(_Bool)arg2 comparator:(CDUnknownBlockType)arg3;
++ (id)sortDescriptorWithKey:(id)arg1;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(_Bool)arg2 selector:(SEL)arg3;
 + (id)sortDescriptorWithKey:(id)arg1 ascending:(_Bool)arg2;
 + (void)initialize;
@@ -46,6 +47,7 @@
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 ascending:(_Bool)arg2 comparator:(CDUnknownBlockType)arg3;
 - (id)initWithKey:(id)arg1 ascending:(_Bool)arg2 selector:(SEL)arg3;
+- (id)initWithKey:(id)arg1;
 - (id)initWithKey:(id)arg1 ascending:(_Bool)arg2;
 - (id)replacementObjectForPortCoder:(id)arg1;
 

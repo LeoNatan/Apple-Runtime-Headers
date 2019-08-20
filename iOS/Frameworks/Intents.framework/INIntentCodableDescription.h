@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Intents/INCodableDescription.h>
+#import <Intents/INRootCodableDescription.h>
 
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INCodableAttribute, NSString;
 
-@interface INIntentCodableDescription : INCodableDescription <NSSecureCoding, NSCopying>
+@interface INIntentCodableDescription : INRootCodableDescription <NSSecureCoding, NSCopying>
 {
     _Bool _userConfirmationRequired;
     _Bool _configurable;

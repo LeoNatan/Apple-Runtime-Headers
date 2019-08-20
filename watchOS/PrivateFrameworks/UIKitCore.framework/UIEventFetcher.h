@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     double _lastSignalTimestamp;
     double _estimatedDisplayLinkDrift;
     int _lastSignalType;
+    unsigned int _lastSignalReason;
     _Bool _needsSignalOnDisplayLink;
     id <UIEventFetcherSink> _eventFetcherSink;
     NSMutableDictionary *_latestMoveDragEventsBySessionID;

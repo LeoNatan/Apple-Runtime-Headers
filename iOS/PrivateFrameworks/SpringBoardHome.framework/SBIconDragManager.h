@@ -46,6 +46,7 @@
 - (void)performIconDrop:(id)arg1 inIconListView:(id)arg2;
 - (void)iconDropSessionDidExitWithIdentifier:(id)arg1 fromIconListView:(id)arg2;
 - (void)iconDropSessionDidExit:(id)arg1 fromIconListView:(id)arg2;
+- (void)replaceAllBouncedIconsInContext:(id)arg1;
 - (void)iconDropSessionWithIdentifier:(id)arg1 draggedIconIdentifiers:(id)arg2 didPauseAtLocation:(struct CGPoint)arg3 inIconListView:(id)arg4;
 - (void)iconDropSession:(id)arg1 didPauseAtLocation:(struct CGPoint)arg2 inIconListView:(id)arg3;
 - (id)iconDropSessionDidUpdate:(id)arg1 inIconListView:(id)arg2;
@@ -54,7 +55,7 @@
 - (void)iconDropSessionDidEnter:(id)arg1 inIconListView:(id)arg2;
 - (_Bool)canAcceptDropInSession:(id)arg1 inIconListView:(id)arg2;
 - (_Bool)canHandleIconDropSession:(id)arg1 inIconListView:(id)arg2;
-- (void)_updateDragPreviewsForEditingState;
+- (void)_updateDragPreviewsForEditingState:(_Bool)arg1;
 - (id)iconView:(id)arg1 dragPreviewForItem:(id)arg2 session:(id)arg3 previewParameters:(id)arg4;
 - (void)iconView:(id)arg1 item:(id)arg2 willAnimateDragCancelWithAnimator:(id)arg3;
 - (void)iconView:(id)arg1 willUsePreviewForCancelling:(id)arg2 targetIconView:(id)arg3;

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultProxy;
 @property(nonatomic) __weak id <SidecarServicePresenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)presenterService:(id)arg1 readyWithUUID:(id)arg2;
 - (void)presenterLaunchService:(id)arg1 results:(CDUnknownBlockType)arg2;
 - (id)init;
 

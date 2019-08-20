@@ -73,7 +73,6 @@
 - (void)isSynthesisQueueEmpty:(CDUnknownBlockType)arg1;
 - (_Bool)isSpeaking;
 - (void)prewarmIfNeeded;
-- (void)_updateSynthesizerWithSessionID:(unsigned int)arg1;
 - (id)_siriClientStateManager;
 - (id)_synthesizer;
 - (id)init;

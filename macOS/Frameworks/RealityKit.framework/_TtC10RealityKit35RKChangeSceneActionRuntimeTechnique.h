@@ -8,7 +8,7 @@
 
 @interface _TtC10RealityKit35RKChangeSceneActionRuntimeTechnique : _TtC10RealityKit33RKChangeSceneActionBasicTechnique
 {
-    // Error parsing type: , name: sceneSwitchEntityRef
+    // Error parsing type: , name: sceneSwitchEntity
     // Error parsing type: , name: subcomponent
 }
 

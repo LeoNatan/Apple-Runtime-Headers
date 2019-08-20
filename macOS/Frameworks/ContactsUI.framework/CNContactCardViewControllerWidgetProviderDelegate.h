@@ -13,6 +13,7 @@
 
 @interface CNContactCardViewControllerWidgetProviderDelegate : NSObject <CNContactCardWidgetProviderDelegate>
 {
+    BOOL _isEditing;
     CNUIUserActionListDataSource *_userActionListDataSource;
     CNContact *_displayedContact;
     CNContainer *_containerOfDisplayedContact;
@@ -22,6 +23,7 @@
 
 @property(readonly, nonatomic) CNUIEditingPolicy *editingPolicy; // @synthesize editingPolicy=_editingPolicy;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
+@property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
 @property(retain, nonatomic) CNContainer *containerOfDisplayedContact; // @synthesize containerOfDisplayedContact=_containerOfDisplayedContact;
 @property(retain, nonatomic) CNContact *displayedContact; // @synthesize displayedContact=_displayedContact;
 @property(readonly, nonatomic) CNUIUserActionListDataSource *userActionListDataSource; // @synthesize userActionListDataSource=_userActionListDataSource;

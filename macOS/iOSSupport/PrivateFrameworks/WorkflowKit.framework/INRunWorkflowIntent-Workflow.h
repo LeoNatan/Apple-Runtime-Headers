@@ -7,6 +7,7 @@
 #import <Intents/INRunWorkflowIntent.h>
 
 @interface INRunWorkflowIntent (Workflow)
+- (void)setIconForAssociatedApplicationInWorkflow:(id)arg1;
 - (id)workflowForIntentInDatabase:(id)arg1;
 - (id)initWithWorkflowReference:(id)arg1 includeIcon:(BOOL)arg2;
 - (id)initWithWorkflowReference:(id)arg1;

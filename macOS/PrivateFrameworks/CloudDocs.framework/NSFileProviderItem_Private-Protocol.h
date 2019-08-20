@@ -16,6 +16,7 @@
 @property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
 @property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) BOOL fp_addedByCurrentUser;
 @property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) BOOL fp_lastModifiedByCurrentUser;
+@property(readonly, copy) NSString *fileSystemFilename;
 @property(readonly, nonatomic, getter=isTopLevelSharedItem) BOOL topLevelSharedItem;
 @property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;

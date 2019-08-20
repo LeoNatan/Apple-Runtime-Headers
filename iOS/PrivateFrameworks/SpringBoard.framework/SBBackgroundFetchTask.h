@@ -6,30 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class BKSProcessAssertion, NSString;
+@class NSString, RBSAssertion;
 
 @interface SBBackgroundFetchTask : NSObject
 {
-    _Bool _finished;
-    int _sequenceNumber;
-    BKSProcessAssertion *_assertion;
-    CDUnknownBlockType _completionHandler;
+    struct os_unfair_lock_s _lock;
     NSString *_bundleID;
-    unsigned long long _trigger;
+    int _sequenceNumber;
+    RBSAssertion *_lock_assertion;
+    CDUnknownBlockType _lock_completionHandler;
+    _Bool _lock_finished;
 }
 
-@property(readonly) _Bool finished; // @synthesize finished=_finished;
-@property(readonly) int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-@property(readonly) unsigned long long trigger; // @synthesize trigger=_trigger;
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-@property(retain, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
++ (int)_nextSequenceNumber;
 - (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
-- (void)_fireCompletionHandlerWithResult:(unsigned long long)arg1;
 - (void)finishWithResult:(unsigned long long)arg1;
-- (id)initForApplication:(id)arg1 trigger:(unsigned long long)arg2 sequenceNumber:(int)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)dealloc;
+- (void)execute;
+- (id)initForApplication:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 
 @end
 

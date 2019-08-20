@@ -74,7 +74,6 @@
 @property(retain, nonatomic) UIColor *defaultAccessibilityTintColor; // @synthesize defaultAccessibilityTintColor=_defaultAccessibilityTintColor;
 @property(nonatomic, getter=isOccluded) _Bool occluded; // @synthesize occluded=_occluded;
 @property(copy, nonatomic) NSString *originatingIconLocation; // @synthesize originatingIconLocation=_originatingIconLocation;
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic, getter=isRotating) _Bool rotating; // @synthesize rotating=_rotating;
 @property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
@@ -304,6 +303,7 @@
 @property(readonly, nonatomic) SBFolderContainerView *folderContainerView;
 @property(readonly, nonatomic) SBFolderView *folderViewIfLoaded;
 @property(readonly, nonatomic) SBFolderView *folderView;
+@property(readonly, nonatomic) UIView *contentView;
 - (id)_makeContentViewWithConfiguration:(id)arg1;
 - (void)removeViewFromHierarchyForNestedViewController:(id)arg1;
 - (void)addViewToHierarchyForNestedViewController:(id)arg1;

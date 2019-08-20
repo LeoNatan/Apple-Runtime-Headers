@@ -24,6 +24,7 @@
 @property(nonatomic) unsigned long long dataNetworkType; // @dynamic dataNetworkType;
 @property(copy, nonatomic) NSString *secondaryServiceDescription; // @dynamic secondaryServiceDescription;
 @property(copy, nonatomic) NSString *serviceDescription; // @dynamic serviceDescription;
+@property(nonatomic) unsigned long long cellularServiceState; // @dynamic cellularServiceState;
 @property(nonatomic) unsigned long long serviceState; // @dynamic serviceState;
 @property(nonatomic) unsigned long long maxSignalStrengthBars; // @dynamic maxSignalStrengthBars;
 @property(nonatomic) unsigned long long signalStrengthBars; // @dynamic signalStrengthBars;

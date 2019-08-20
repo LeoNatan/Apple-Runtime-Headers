@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 @interface SiriUICardSnippetViewController : SiriUISnippetViewController <CRKCardViewControllerDelegate, CRKCardPresentationDelegate, SFResourceLoader>
 {
     SACardSnippet *_snippet;
-    struct CGSize _contentSize;
     id <CRCard> _baseCard;
     CDUnknownBlockType _newlyLoadedCardCompletionHandler;
     NSMutableDictionary *_referenceableCommandsByIdentifierMap;
@@ -32,18 +31,22 @@ __attribute__((visibility("hidden")))
 - (void)_applyUserInfoDictionary:(id)arg1 toCommand:(id)arg2;
 - (id)_cardForData:(id)arg1;
 - (BOOL)_loadCard:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)_updateContentSizeAndNotifyDelegateIfNecessary:(BOOL)arg1;
 - (void)_addCardViewControllerAsChildViewController:(id)arg1;
 - (void)_removeCardViewControllerFromParentViewController:(id)arg1;
 - (void)siriDidStopSpeakingWithIdentifier:(id)arg1 speechQueueIsEmpty:(BOOL)arg2;
 - (void)siriDidStartSpeakingWithIdentifier:(id)arg1;
 - (double)desiredHeight;
+- (struct CGSize)desiredSize;
+- (double)desiredHeightForWidth:(double)arg1;
+- (struct CGSize)desiredSizeForWidth:(double)arg1;
 - (BOOL)loadCard:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)performNextCardCommand:(id)arg1 forCardViewController:(id)arg2;
 - (BOOL)performReferentialCommand:(id)arg1 forCardViewController:(id)arg2;
+- (void)cardViewControllerBoundsDidChange:(id)arg1;
 @property(readonly, nonatomic) id <CRKCardViewControllerDelegate> cardViewControllerDelegate;
 - (long long)_pinAnimationType;
 - (void)setSnippet:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)loadView;
 - (id)init;
 

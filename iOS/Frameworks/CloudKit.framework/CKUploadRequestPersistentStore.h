@@ -6,24 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSURL;
 @protocol OS_dispatch_queue;
 
 @interface CKUploadRequestPersistentStore : NSObject
 {
     _Bool _firstInvocation;
-    NSString *_databaseName;
+    NSURL *_databaseURL;
     NSObject<OS_dispatch_queue> *_stateQueue;
 }
 
 + (id)repairRecordToMetadata:(id)arg1;
-+ (id)basePathForBundleID:(id)arg1;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
 @property(nonatomic) _Bool firstInvocation; // @synthesize firstInvocation=_firstInvocation;
-@property(retain, nonatomic) NSString *databaseName; // @synthesize databaseName=_databaseName;
+@property(retain, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (void).cxx_destruct;
 - (id)allData;
-- (id)fileURL;
 - (void)readWriteDatabase:(CDUnknownBlockType)arg1 async:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)readDatabase:(CDUnknownBlockType)arg1 async:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteDatabase;
@@ -37,7 +35,7 @@
 - (void)deleteRepairRecord:(id)arg1;
 - (void)persistRepairRecord:(id)arg1;
 - (void)setCurrentUser:(id)arg1;
-- (void)setHasLaunchedBefore:(_Bool)arg1;
+- (void)setLastFetchDate:(id)arg1;
 - (id)syncEngineMetadata;
 - (long long)delayedSyncCountForRecordName:(id)arg1;
 - (id)delayedSyncDateForRecord:(id)arg1;
@@ -49,8 +47,8 @@
 - (id)packageRepairMetadata;
 - (id)assetRepairMetadata;
 - (id)currentUser;
-- (_Bool)hasLaunchedBefore;
-- (id)initWithName:(id)arg1;
+- (id)lastFetchDate;
+- (id)initWithDatabaseURL:(id)arg1;
 
 @end
 

@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_tempTableNames;
     NSNumber *_hasComplexSchemaTransformations;
     NSMutableSet *_addedColumnSet;
+    NSMutableSet *_renamedColumnSet;
+    NSMutableSet *_renamedMTMSet;
     NSMutableSet *_raisedColumnSet;
     NSMutableSet *_droppedEntitySet;
     NSMutableSet *_columnsUpgradedToMandatory;
@@ -52,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasComplexSchemaTransformationsInMigrationContext:(struct _NSSQLMigrationContext)arg1;
 - (void)_determineSchemaTransformationComplexityInMigrationContext:(struct _NSSQLMigrationContext)arg1;
 - (BOOL)_doRelationshipsHaveChangesRequiringCopyForMigration:(id)arg1 inContext:(struct _NSSQLMigrationContext)arg2;
-- (BOOL)_doAttributesHaveChangesRequiringCopyForMigration:(id)arg1;
+- (BOOL)_doAttributesHaveChangesRequiringCopyForMigration:(id)arg1 withContext:(struct _NSSQLMigrationContext)arg2;
 - (void)addEntityMigrationDescription:(id)arg1;
 - (id)description;
 - (void)dealloc;

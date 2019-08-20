@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     struct Context *_impl;
 }
 
+- (struct Context *)retainRenderContext;
 - (struct Context *)renderContext;
 - (void)setAnnotation:(id)arg1;
 - (id)annotation;

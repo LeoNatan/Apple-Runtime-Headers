@@ -39,6 +39,8 @@
 - (id)localizedLanguageName:(_Bool)arg1;
 - (void)setAssetToUpgrade:(id)arg1;
 - (void)dealloc;
+- (_Bool)assetIsDeletable;
+- (_Bool)assetIsLocal;
 - (id)initWithAsset:(id)arg1;
 
 @end

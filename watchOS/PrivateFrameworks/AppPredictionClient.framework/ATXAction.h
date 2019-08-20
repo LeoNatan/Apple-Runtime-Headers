@@ -38,6 +38,7 @@
 + (id)getDateFromUserActivityString:(id)arg1 forActionKey:(id)arg2;
 + (id)getActionKeyForBundleId:(id)arg1 actionType:(id)arg2;
 + (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
++ (_Bool)_isTVIntent:(id)arg1 bundleId:(id)arg2;
 + (_Bool)_isTVWhiteListedLongFormMediaIntent:(id)arg1 bundleId:(id)arg2;
 @property(readonly, nonatomic) ATXAVRouteInfo *routeInfo; // @synthesize routeInfo=_routeInfo;
 @property(readonly, nonatomic) CSSearchableItemAttributeSet *contentAttributeSet; // @synthesize contentAttributeSet=_contentAttributeSet;
@@ -83,6 +84,7 @@
 - (id)initWithNSUserActivity:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 contentAttributeSet:(id)arg4 itemIdentifier:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 criteria:(id)arg8 isFutureMedia:(_Bool)arg9 title:(id)arg10 subtitle:(id)arg11;
 - (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 heuristicMetadata:(id)arg5 criteria:(id)arg6 isFutureMedia:(_Bool)arg7 title:(id)arg8 subtitle:(id)arg9;
 - (id)init;
+- (_Bool)isTVAction;
 
 @end
 

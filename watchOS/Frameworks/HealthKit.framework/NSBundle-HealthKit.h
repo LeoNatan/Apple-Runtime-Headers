@@ -7,6 +7,7 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (HealthKit)
++ (id)hk_findContainedBundleWithIdentifier:(id)arg1 directoryURL:(id)arg2;
 - (id)hk_findContainedBundleWithIdentifier:(id)arg1;
 - (id)hk_name;
 - (id)hk_displayName;

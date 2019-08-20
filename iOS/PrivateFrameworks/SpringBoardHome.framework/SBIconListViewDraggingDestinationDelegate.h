@@ -19,7 +19,6 @@
     NSMapTable *_dragObservers;
     NSMutableSet *_activeDropSessionIdentifiers;
     NSMutableSet *_dropSessionIdentifiersWaitingForConcludeDrop;
-    NSMapTable *_uniqueIdentifiers;
     _Bool _waitingForConcludeDrag;
     SBIconListView *_iconListView;
     UIDropInteraction *_dropInteraction;

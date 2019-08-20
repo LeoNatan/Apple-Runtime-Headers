@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     CALayer *_viewportLayer;
     float _viewportLayerExtraWidthFactor;
     struct CGRect _visibleViewportBounds;
-    UIBezierPath *_mask;
+    UIBezierPath *_clip;
     struct {
         unsigned int disableTiling:1;
         unsigned int ditchAllTiles:1;

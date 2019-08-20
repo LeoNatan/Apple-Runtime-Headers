@@ -56,6 +56,7 @@
 + (id)nextEventForTopOffProtectionStream;
 + (id)airplaneModeStream;
 + (id)doNotDisturbStream;
++ (id)deviceActivityLevelFeedbackStream;
 + (id)standbyTimerStream;
 + (id)deviceActivityLevelStream;
 + (id)notificationUsageStream;

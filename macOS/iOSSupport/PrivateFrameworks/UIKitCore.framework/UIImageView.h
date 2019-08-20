@@ -7,12 +7,13 @@
 #import <UIKitCore/UIView.h>
 
 #import <UIKitCore/UIAccessibilityContentSizeCategoryImageAdjusting-Protocol.h>
+#import <UIKitCore/UIAccessibilityContentSizeCategoryImageAdjustingInternal-Protocol.h>
 #import <UIKitCore/_UIImageContentEffect-Protocol.h>
 #import <UIKitCore/_UIImageContentLayoutTarget-Protocol.h>
 
 @class NSArray, NSString, UIColor, UIImage, UIImageSymbolConfiguration, UILayoutGuide, UITraitCollection, _UIStackedImageContainerView;
 
-@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting, _UIImageContentLayoutTarget, _UIImageContentEffect>
+@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting, UIAccessibilityContentSizeCategoryImageAdjustingInternal, _UIImageContentLayoutTarget, _UIImageContentEffect>
 {
     id _storage;
     struct UIEdgeInsets _cachedEdgeInsetsForEffects;
@@ -28,6 +29,7 @@
     BOOL _edgeInsetsForEffectsAreValid;
     BOOL _adjustsImageWhenAncestorFocused;
     BOOL _masksFocusEffectToContents;
+    BOOL __symbolImagesIgnoreAccessibilitySizes;
     BOOL __animatesContents;
     UILayoutGuide *_focusedFrameGuide;
 }
@@ -35,13 +37,14 @@
 + (BOOL)_canReuseIOSurface:(struct __IOSurface *)arg1 forRenderingCIImageWithIOSurfaceProperties:(id)arg2;
 + (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize)arg1 pixelFormat:(unsigned int)arg2 bytesPerElement:(unsigned long long)arg3;
 @property(nonatomic, setter=_setAnimatesContents:) BOOL _animatesContents; // @synthesize _animatesContents=__animatesContents;
+@property(nonatomic, setter=_setSymbolImagesIgnoreAccessibilitySizes:) BOOL _symbolImagesIgnoreAccessibilitySizes; // @synthesize _symbolImagesIgnoreAccessibilitySizes=__symbolImagesIgnoreAccessibilitySizes;
 @property(nonatomic) BOOL masksFocusEffectToContents; // @synthesize masksFocusEffectToContents=_masksFocusEffectToContents;
 @property(readonly) UILayoutGuide *focusedFrameGuide; // @synthesize focusedFrameGuide=_focusedFrameGuide;
 @property(nonatomic) BOOL adjustsImageWhenAncestorFocused; // @synthesize adjustsImageWhenAncestorFocused=_adjustsImageWhenAncestorFocused;
 @property(nonatomic, setter=_setEdgeInsetsForEffectsAreValid:) BOOL _edgeInsetsForEffectsAreValid; // @synthesize _edgeInsetsForEffectsAreValid;
 @property(readonly, nonatomic) BOOL _templateSettingsAreInvalid; // @synthesize _templateSettingsAreInvalid;
 - (void).cxx_destruct;
-- (BOOL)_updateLayerContentsForCIImageBackedImage:(id)arg1;
+- (BOOL)_setImageViewContentsForCIImageBackedImage:(id)arg1;
 - (id)_applyImageEffectsToCIImage:(id)arg1 effectiveTintColor:(id)arg2;
 - (void)_updateLayeredImageIsFocusedWithFocusedView:(id)arg1 focusAnimationCoordinator:(id)arg2;
 @property(nonatomic, setter=_setLayeredImageCornerRadius:) double _layeredImageCornerRadius;
@@ -114,7 +117,6 @@
 - (id)_imageContentGuideAllowingCreation:(BOOL)arg1;
 @property(readonly) UILayoutGuide *imageContentGuide;
 - (void)_imageContentParametersDidChange;
-- (struct UIEdgeInsets)_contentInsetsForImage:(id)arg1;
 - (void)_baselineOffsetParametersDidChangeHasBaselinePropertyChanged:(BOOL)arg1;
 - (BOOL)_isHasBaselinePropertyChangeable;
 - (BOOL)_hasBaseline;
@@ -142,6 +144,8 @@
 - (void)_updateState;
 - (id)_renditionForSource:(id)arg1 size:(struct CGSize)arg2 withCGImageProvider:(CDUnknownBlockType)arg3 lazy:(BOOL)arg4;
 - (id)_effectForRenderingSource:(id)arg1;
+- (BOOL)_setImageViewContentsForAnimatedImage:(id)arg1;
+- (void)_updateContentsMultiplyColorAndSwizzleFromLayout:(id)arg1;
 - (BOOL)_setImageViewContents:(id)arg1;
 - (void)_invalidateImageLayouts;
 - (id)_layoutForImage:(id)arg1;
@@ -156,6 +160,7 @@
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 @property(nonatomic) BOOL adjustsImageSizeForAccessibilityContentSizeCategory;
+- (double)_scaleFactorForImage;
 - (id)_cachedPretiledImageForImage:(id)arg1;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;

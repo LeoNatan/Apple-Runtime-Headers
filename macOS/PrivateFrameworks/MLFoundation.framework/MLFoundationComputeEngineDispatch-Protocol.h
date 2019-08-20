@@ -9,6 +9,7 @@
 @class MLFoundationLayer, MLFoundationTensor, NSArray;
 
 @protocol MLFoundationComputeEngineDispatch <NSObject>
+- (void)setOptimizerLearningRate:(NSArray *)arg1 learningRate:(float)arg2;
 - (void)convertUpdatesToTensorDataForLayer:(MLFoundationLayer *)arg1;
 - (void)synchronizeUpdatesForLayer:(MLFoundationLayer *)arg1;
 - (void)updateBatchNormalizationLayer:(NSArray *)arg1 optimizer:(NSArray *)arg2;

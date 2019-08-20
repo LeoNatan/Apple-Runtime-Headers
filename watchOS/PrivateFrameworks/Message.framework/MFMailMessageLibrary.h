@@ -11,7 +11,7 @@
 #import <Message/EFContentProtectionObserver-Protocol.h>
 
 @class EDMessageQueryParser, EDPersistence, EDPersistenceHookRegistry, EDSearchableIndexScheduler, MFFileCompressionQueue, MFLibrarySearchableIndex, MFMessageChangeManager_iOS, MFPersistenceDatabase_iOS, MFWeakObjectCache, NSCache, NSMutableDictionary, NSMutableSet, NSObject, NSString, _MFMailMessageLibraryStatistics;
-@protocol EFScheduler, OS_dispatch_queue, OS_dispatch_source;
+@protocol EFScheduler, OS_dispatch_queue;
 
 @interface MFMailMessageLibrary : MFMessageLibrary <EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EFContentProtectionObserver>
 {
@@ -25,7 +25,6 @@
     NSObject<OS_dispatch_queue> *_keyBagQueue;
     NSObject<OS_dispatch_queue> *_conversationCalculationQueue;
     NSMutableSet *_messagesToThreadAtUnlock;
-    NSObject<OS_dispatch_source> *_suspendTimer;
     _MFMailMessageLibraryStatistics *_lastStats;
     MFFileCompressionQueue *_compressionQueue;
     MFLibrarySearchableIndex *_searchableIndex;
@@ -91,8 +90,6 @@
 - (_Bool)migrate;
 - (void)_addMessageToThreadAtUnlock:(long long)arg1;
 - (void)journalWasReconciled;
-- (void)_reconcileJournalOnResume;
-- (void)reconcileJournalOnStartup;
 - (_Bool)_canAccessProtectedData;
 - (void)_cancelPendingJournalReconciliation;
 - (void)_scheduleJournalReconciliation;
@@ -109,7 +106,6 @@
 - (void)_setProtectedDataAvailabilityState:(unsigned int)arg1;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
 - (id)allUIDsInMailbox:(id)arg1;
-- (id)deletedUIDsInMailbox:(id)arg1;
 - (id)UIDsToDeleteInMailbox:(id)arg1;
 - (void)deletePOPUID:(id)arg1 inMailbox:(id)arg2;
 - (id)_nonLocalAccountsClause;
@@ -190,6 +186,7 @@
 - (void)setFlags:(unsigned long long)arg1 forConversationId:(long long)arg2;
 - (unsigned long long)flagsForConversationId:(long long)arg1;
 - (id)syncedConversations;
+- (void)scheduleRecurringActivity;
 - (void)clearServerSearchFlagsForMessagesWithLibraryIDs:(id)arg1;
 - (_Bool)_canSelectMessagesWithOptions:(unsigned int)arg1 connection:(id)arg2;
 - (_Bool)shouldCancel;
@@ -279,7 +276,6 @@
 - (id)dateOfOldestNonIndexedNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
 - (id)_firstDateForQuery:(id)arg1 inMailbox:(id)arg2;
-- (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;
 - (id)serverSearchResultMessagesForMailbox:(id)arg1;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(int)arg2;
 - (void)_sendMessagesForStatement:(id)arg1 connection:(id)arg2 to:(id)arg3 options:(unsigned int)arg4 timestamp:(unsigned long long)arg5;
@@ -297,7 +293,6 @@
 - (void)persistenceDidAddMessages:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry;
-- (void)addMiddleware:(id)arg1;
 - (long long)addReferenceForContext:(id)arg1 usingDatabaseConnection:(id)arg2 mergeHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_insertThreadReferences:(id)arg1 toMessageWithLibraryID:(long long)arg2 usingDatabaseConnection:(id)arg3;
 - (id)_addThreadingInfoWithContext:(id)arg1 usingDatabaseConnection:(id)arg2;
@@ -314,11 +309,8 @@
 - (void)setFlags:(unsigned long long)arg1 forMessage:(id)arg2;
 - (id)searchableIndex;
 @property(readonly, nonatomic) unsigned int pendingIndexItemsCount;
-- (void)applicationWillResume;
-- (void)applicationWillSuspendIsLocked:(_Bool)arg1;
+- (void)start;
 - (void)_setSuspendedUnderLock:(_Bool)arg1;
-- (void)startSuspendTimer;
-- (void)cancelSuspendTimer;
 - (void)invalidateAndWait;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;

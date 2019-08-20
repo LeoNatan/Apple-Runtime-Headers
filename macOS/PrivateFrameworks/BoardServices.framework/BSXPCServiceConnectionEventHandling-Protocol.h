@@ -7,14 +7,14 @@
 #import <BoardServices/NSObject-Protocol.h>
 
 @class BSXPCServiceConnection, NSError;
-@protocol BSXPCServiceConnectionError, BSXPCServiceConnectionMessage;
+@protocol BSXPCServiceConnectionMessage;
 
 @protocol BSXPCServiceConnectionEventHandling <NSObject>
 - (void)connectionInvalidated:(BSXPCServiceConnection *)arg1;
 - (void)connectionInterrupted:(BSXPCServiceConnection *)arg1;
 - (void)connectionActivated:(BSXPCServiceConnection *)arg1;
 - (void)connection:(BSXPCServiceConnection *)arg1 handleMessage:(id <BSXPCServiceConnectionMessage>)arg2;
-- (void)connection:(BSXPCServiceConnection *)arg1 handleError:(NSError<BSXPCServiceConnectionError> *)arg2;
+- (void)connection:(BSXPCServiceConnection *)arg1 handleError:(NSError *)arg2;
 - (void)connectionHandleNoMoreChildren:(BSXPCServiceConnection *)arg1;
 - (void)connection:(BSXPCServiceConnection *)arg1 handleConnection:(BSXPCServiceConnection *)arg2;
 @end

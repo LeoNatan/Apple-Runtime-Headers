@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     MSVMultiCallback *_lyricsCallbacks;
     MSVMultiCallback *_artworkCallbacks;
     CDUnknownBlockType _playbackSessionCallback;
+    CDUnknownBlockType _playbackSessionMigrateRequestCallback;
     CDUnknownBlockType _beginLyricsEventCallback;
     CDUnknownBlockType _endLyricsEventCallback;
     CDUnknownBlockType _videoThumbnailsCallback;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasPlaybackQueueCallbacks;
 @property(copy, nonatomic) CDUnknownBlockType endLyricsEventCallback;
 @property(copy, nonatomic) CDUnknownBlockType beginLyricsEventCallback;
+@property(copy, nonatomic) CDUnknownBlockType playbackSessionMigrateRequestCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackSessionCallback;
 @property(copy, nonatomic) CDUnknownBlockType audioAmplitudeSamplesCallback;
 @property(copy, nonatomic) CDUnknownBlockType videoThumbnailsCallback;

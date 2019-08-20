@@ -49,7 +49,7 @@
 @property(nonatomic) double titleInterLineSpacing; // @synthesize titleInterLineSpacing=_titleInterLineSpacing;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (double)statusBannerCellHeightForContentSizeCategory:(id)arg1;
+- (double)statusBannerCellHeightForWidth:(double)arg1 havingTitleAndDescription:(id)arg2 forContentSizeCategory:(id)arg3;
 
 @end
 

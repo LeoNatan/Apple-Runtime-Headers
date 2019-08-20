@@ -17,6 +17,7 @@
     unsigned long long _type;
 }
 
++ (id)new;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;

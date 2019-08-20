@@ -19,6 +19,7 @@
     double _playbackProgress;
     UIImage *_artwork;
     UIView *_playbackProgressView;
+    UIImageView *_artworkImageView;
     UIImageView *_explicitItemView;
     UIActivityIndicatorView *_activityIndicatorView;
 }
@@ -26,6 +27,7 @@
 + (id)reuseIdentifier;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) UIImageView *explicitItemView; // @synthesize explicitItemView=_explicitItemView;
+@property(retain, nonatomic) UIImageView *artworkImageView; // @synthesize artworkImageView=_artworkImageView;
 @property(retain, nonatomic) UIView *playbackProgressView; // @synthesize playbackProgressView=_playbackProgressView;
 @property(nonatomic) _Bool currentlyPlaying; // @synthesize currentlyPlaying=_currentlyPlaying;
 @property(retain, nonatomic) UIImage *artwork; // @synthesize artwork=_artwork;

@@ -20,9 +20,10 @@ __attribute__((visibility("hidden")))
     NSButton *_upgradeButton;
     struct TNotificationCenterObserver _backingPropertiesChangedObserver;
     struct TFENode _target;
-    _Bool _isUpgradeToICloudUI;
+    int _whichUI;
 }
 
+@property(nonatomic) int whichUI; // @synthesize whichUI=_whichUI;
 @property(readonly, nonatomic) struct TFENode target; // @synthesize target=_target;
 - (id).cxx_construct;
 - (void).cxx_destruct;

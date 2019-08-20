@@ -8,7 +8,7 @@
 
 @interface _TtCV7SwiftUI12PropertyList7Tracker : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: usedEntries
+    // Error parsing type: , name: usedElements
 }
 
 @end

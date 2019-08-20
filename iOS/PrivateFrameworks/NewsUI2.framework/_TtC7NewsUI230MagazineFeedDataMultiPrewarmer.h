@@ -11,7 +11,6 @@
     // Error parsing type: , name: cachePrewarmer
     // Error parsing type: , name: networkPrewarmer
     // Error parsing type: , name: deferredNetworkReloadPromise
-    // Error parsing type: , name: shouldUseDeferredNetworkReload
 }
 
 @end

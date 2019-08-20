@@ -34,6 +34,7 @@
 + (CDUnknownBlockType)configurationDistanceClassifierWithMetric:(id)arg1;
 + (id)makeDPKey:(id)arg1;
 + (id)makeKeyAggDCompliant:(id)arg1;
++ (id)whitelistAppNameFromBundleID:(id)arg1;
 + (id)aggDKeyBasePrefixForBundleIdentifier:(id)arg1;
 + (id)dpKeyBasePrefix;
 + (id)colorPresetDescriptionForAvatarConfiguration:(id)arg1;
@@ -94,8 +95,9 @@
 - (void)reportAddOneForScalarKey:(id)arg1;
 - (id)makeAggDDistributionKey:(id)arg1;
 - (id)makeAggDScalarKey:(id)arg1;
+- (id)appendHostAppNameToKeyIfNeeded:(id)arg1;
 - (void)performClientWork:(CDUnknownBlockType)arg1;
-- (id)initWithAggDClient:(id)arg1 dpRecorder:(id)arg2 serialQueueProvider:(CDUnknownBlockType)arg3 recordTransformer:(CDUnknownBlockType)arg4 avatarRecord:(id)arg5 defaultConfiguration:(id)arg6 timeProvider:(CDUnknownBlockType)arg7 configurationMetric:(id)arg8 logger:(id)arg9;
+- (id)initWithAggDClient:(id)arg1 dpRecorder:(id)arg2 serialQueueProvider:(CDUnknownBlockType)arg3 recordTransformer:(CDUnknownBlockType)arg4 avatarRecord:(id)arg5 defaultConfiguration:(id)arg6 timeProvider:(CDUnknownBlockType)arg7 configurationMetric:(id)arg8 logger:(id)arg9 aggDKeyBasePrefix:(id)arg10;
 - (id)initWithSerialQueueProvider:(CDUnknownBlockType)arg1 recordTransformer:(CDUnknownBlockType)arg2 logger:(id)arg3;
 
 @end

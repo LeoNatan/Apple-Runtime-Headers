@@ -8,7 +8,7 @@
 
 #import <Message/ECMessage-Protocol.h>
 
-@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFLibraryMessage, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFLibraryMessage, NSArray, NSDate, NSDictionary, NSSet, NSString, NSUUID;
 @protocol ECMailAccount, ECMailbox, ECMessageHeaders, ECMimePart;
 
 @interface _MFAddableMessage : NSObject <ECMessage>
@@ -21,6 +21,7 @@
 @property(readonly, copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 @property(readonly, nonatomic) MFLibraryMessage *libraryMessage; // @synthesize libraryMessage=_libraryMessage;
 - (void).cxx_destruct;
+- (_Bool)isKindOfClass:(Class)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)bestAlternativePart:(_Bool *)arg1;
@@ -40,6 +41,7 @@
 @property(readonly, nonatomic) NSDate *dateSent; // @dynamic dateSent;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSUUID *documentID; // @dynamic documentID;
 @property(readonly, nonatomic) ECMessageFlags *flags; // @dynamic flags;
 @property(readonly, copy, nonatomic) NSArray *from; // @dynamic from;
 @property(readonly) unsigned int hash;

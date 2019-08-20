@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) VUIUpNextButtonProperties *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+- (id)largeContentTitle;
 - (void)_selectButtonAction:(id)arg1 eventType:(id)arg2;
 - (void)upNextStateChangedToRemoved;
 - (void)upNextStateChangedToAdded;

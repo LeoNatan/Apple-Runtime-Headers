@@ -72,6 +72,7 @@
 - (unsigned long long)cardSectionsCount;
 - (void)addCardSections:(id)arg1;
 - (void)clearCardSections;
+- (void)recursiveSetQueryId:(unsigned long long)arg1;
 - (id)initWithFacade:(id)arg1;
 
 // Remaining properties

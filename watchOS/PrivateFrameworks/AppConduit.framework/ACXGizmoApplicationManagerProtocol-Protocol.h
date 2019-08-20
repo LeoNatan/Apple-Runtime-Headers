@@ -6,9 +6,10 @@
 
 #import <AppConduit/NSObject-Protocol.h>
 
-@class NSString;
+@class NSError, NSString;
 
 @protocol ACXGizmoApplicationManagerProtocol <NSObject>
+- (void)appStoreInstallationFailedForApp:(NSString *)arg1 failureReason:(NSError *)arg2 wasUserInitiated:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
 - (void)installabilityForDeletableSystemAppWithBundleID:(NSString *)arg1 completion:(void (^)(unsigned int, NSError *))arg2;
 - (void)deletableSystemAppCanBeInstalledOnWatchWithBundleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)counterpartApplicationisInstalledOnCompanionForWatchBundleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

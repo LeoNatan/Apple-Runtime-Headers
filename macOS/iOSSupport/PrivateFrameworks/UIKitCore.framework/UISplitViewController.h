@@ -82,14 +82,16 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
+- (BOOL)validateToolbarItem:(id)arg1;
+- (void)toggleSidebar:(id)arg1;
 @property(nonatomic) long long primaryBackgroundStyle;
 - (void)toggleMasterVisible:(id)arg1;
 - (void)_updateScrollEdgeBehaviorForDetailNavigationContoller;
 - (void)_enumerateAncestorViewControllersUntilStop:(char *)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (BOOL)_layoutPrimaryOnRight;
 - (BOOL)_iPhoneShouldUseOverlayInCurrentEnvironment;
-- (void)_didEndSnapshotSession;
-- (void)_willBeginSnapshotSession;
+- (void)_didEndSnapshotSession:(id)arg1;
+- (void)_willBeginSnapshotSession:(id)arg1;
 - (void)_willShowCollapsedDetailViewController:(id)arg1 inTargetController:(id)arg2;
 - (void)_descendantWillPresentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animated:(BOOL)arg4;
 - (void)_popoverController:(id)arg1 didChangeFromVisible:(BOOL)arg2;

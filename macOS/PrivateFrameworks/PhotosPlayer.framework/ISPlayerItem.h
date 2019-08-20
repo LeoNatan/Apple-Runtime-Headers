@@ -21,6 +21,7 @@
     BOOL _ivarQueue_aggressivelyCacheVideoFrames;
     BOOL _ivarQueue_reversesMoreVideoFramesInMemory;
     BOOL _ivarQueue_decodesAllFramesDuringOrdinaryPlayback;
+    BOOL _ivarQueue_contentSupportsVitality;
     CDStruct_1b6d18a9 _ivarQueue_prePhotoTime;
     CDStruct_1b6d18a9 _ivarQueue_postPhotoTime;
     CDStruct_1b6d18a9 _ivarQueue_playerItemPhotoTime;
@@ -37,6 +38,7 @@
         char content;
         char minimumClientVersion;
         char playbackStyleIdentifier;
+        char contentSupportsVitality;
     } _ivarQueue_isValid;
     AVAssetImageGenerator *_workQueue_imageGenerator;
     BOOL _workQueue_isGeneratingOffsetImage;
@@ -71,6 +73,10 @@
 - (void)_updateVideoPlayerItemIfNeeded;
 - (BOOL)_isVideoPlayerItemValid;
 - (void)_invalidateVideoPlayerItem;
+@property(nonatomic) BOOL contentSupportsVitality;
+- (void)_updateContentSupportsVitalityIfNeeded;
+- (void)_invalidateContentSupportsVitality;
+- (BOOL)_isContentSupportsVitalityValid;
 @property(retain, nonatomic, setter=_setVariationIdentifier:) NSNumber *_variationIdentifier;
 - (void)_updatePlaybackStyleIdentifierIfNeeded;
 - (BOOL)_isPlaybackStyleIdentifierValid;

@@ -13,8 +13,8 @@
 - (void)beginHSA2PasscodeRequest:(SecureBackup *)arg1 desirePasscodeImmediately:(_Bool)arg2 uuid:(NSString *)arg3 reply:(void (^)(SecureBackupBeginPasscodeRequestResults *, NSError *))arg4;
 - (void)prepareHSA2EscrowRecordContents:(SecureBackup *)arg1 usesComplexPassphrase:(_Bool)arg2 reply:(void (^)(NSError *))arg3;
 - (void)stateCaptureWithReply:(void (^)(NSDictionary *, NSError *))arg1;
-- (void)notificationOccurred:(NSString *)arg1;
 - (void)backupWithInfo:(NSDictionary *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)notificationInfoWithReply:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)uncachePassphraseWithRequestAsync:(SecureBackup *)arg1;
 - (void)cachePassphraseWithRequestAsync:(SecureBackup *)arg1;
 - (void)setBackOffDateWithRequest:(SecureBackup *)arg1 reply:(void (^)(NSError *))arg2;

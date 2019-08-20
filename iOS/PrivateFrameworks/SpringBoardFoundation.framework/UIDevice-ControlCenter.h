@@ -10,7 +10,7 @@
 - (id)_deviceInfoForKey:(struct __CFString *)arg1;
 - (id)_currentProduct;
 - (id)_mediumQualityDevicesForHomeScreenBlur;
-- (long long)sbf_homeScreenBlurGraphicsQuality;
+- (long long)sbf_animatedBlurRadiusGraphicsQuality;
 - (long long)sbf_homeGrabberGraphicsQuality;
 @end
 

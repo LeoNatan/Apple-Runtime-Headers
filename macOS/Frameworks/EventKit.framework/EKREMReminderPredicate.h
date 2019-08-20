@@ -16,10 +16,9 @@
 
 - (void).cxx_destruct;
 - (id)predicateFormat;
-@property(readonly) BOOL requiresPostFiltering;
-@property(readonly) BOOL matchesEverything;
 - (BOOL)evaluateWithObject:(id)arg1;
-- (id)predicateDescriptorWithReminderStore:(id)arg1;
+- (id)fetchMatchingRemindersInStore:(id)arg1 allLists:(id)arg2 error:(id *)arg3;
+- (id)remListIDsWithAllLists:(id)arg1;
 - (id)initWithCalendars:(id)arg1;
 
 @end

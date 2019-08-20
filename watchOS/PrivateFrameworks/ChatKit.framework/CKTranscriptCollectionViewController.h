@@ -39,7 +39,7 @@
     _Bool _allowsPluginPlayback;
     _Bool _forceDisableNotches;
     _Bool _scrolledForURLMessages;
-    _Bool _isPerformingRegenerateOnlyUpdate;
+    _Bool _isPerformingRegenerateOrReloadOnlyUpdate;
     _Bool _peeking;
     _Bool _hasHiddenItems;
     _Bool _isLoadingMoreMessages;
@@ -106,7 +106,7 @@
 @property(nonatomic, getter=isPeeking) _Bool peeking; // @synthesize peeking=_peeking;
 @property(nonatomic) struct CGPoint peekSampleTranslation; // @synthesize peekSampleTranslation=_peekSampleTranslation;
 @property(copy, nonatomic) CDUnknownBlockType alertHandler; // @synthesize alertHandler=_alertHandler;
-@property(nonatomic) _Bool isPerformingRegenerateOnlyUpdate; // @synthesize isPerformingRegenerateOnlyUpdate=_isPerformingRegenerateOnlyUpdate;
+@property(nonatomic) _Bool isPerformingRegenerateOrReloadOnlyUpdate; // @synthesize isPerformingRegenerateOrReloadOnlyUpdate=_isPerformingRegenerateOrReloadOnlyUpdate;
 @property(retain, nonatomic) CKPluginPlaybackManager *pluginPlaybackManager; // @synthesize pluginPlaybackManager=_pluginPlaybackManager;
 @property(retain, nonatomic) CKNanoPPTSmartReplyTest *smartReplyTest; // @synthesize smartReplyTest=_smartReplyTest;
 @property(nonatomic) _Bool scrolledForURLMessages; // @synthesize scrolledForURLMessages=_scrolledForURLMessages;

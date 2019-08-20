@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class NSMutableSet, SBAppStatusBarSettingsAssertion, SBFloatingDockBehaviorAssertion, SBHIconManager, SBIconController, SBUIController, UIView, _UILegibilitySettings;
+@class NSMutableSet, SBAppStatusBarSettingsAssertion, SBFloatingDockBehaviorAssertion, SBFloatingDockWindowLevelAssertion, SBHIconManager, SBIconController, SBUIController, UIView, _UILegibilitySettings;
 @protocol BSInvalidatable;
 
 @interface SBHomeScreenViewController : UIViewController
@@ -17,6 +17,7 @@
     SBAppStatusBarSettingsAssertion *_childOrPresentedStatusBarAssertion;
     UIView *_contentView;
     id <BSInvalidatable> _appIconForceTouchControllerOrientationUpdateDeferralAssertion;
+    SBFloatingDockWindowLevelAssertion *_appIconForceTouchControllerWindowLevelAssertion;
     _Bool _iconControllerHidden;
     _Bool _homeScreenAutorotatesEvenWhenIconIsDragging;
     SBIconController *_iconController;
@@ -32,6 +33,10 @@
 @property(readonly, nonatomic) __weak SBIconController *iconController; // @synthesize iconController=_iconController;
 @property(nonatomic, getter=isIconControllerHidden) _Bool iconControllerHidden; // @synthesize iconControllerHidden=_iconControllerHidden;
 - (void).cxx_destruct;
+- (void)_relinquishForceTouchWindowLevelAssertion;
+- (void)_acquireForceTouchWindowLevelAssertionForIconView:(id)arg1;
+- (void)_relinquishForceTouchOrientationUpdateDeferralAssertion;
+- (void)_acquireForceTouchOrientationUpdateDeferralAssertion;
 - (void)_appIconForceTouchControllerDidDismissNotification:(id)arg1;
 - (void)_appIconForceTouchControllerWillPresentNotification:(id)arg1;
 - (void)_widgetEditViewDidDisappearImplementation;

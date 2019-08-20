@@ -18,7 +18,6 @@
 }
 
 - (void).cxx_destruct;
-- (_Bool)primeWithFormat:(id)arg1;
 - (id)detailedDescription;
 - (void)removeAllRequests;
 - (void)removeRequest:(id)arg1;

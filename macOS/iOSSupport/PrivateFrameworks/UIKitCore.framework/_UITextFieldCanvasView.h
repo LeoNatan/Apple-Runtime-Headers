@@ -15,8 +15,7 @@ __attribute__((visibility("hidden")))
 
 - (void)drawRect:(struct CGRect)arg1;
 - (void)drawTextInRect:(struct CGRect)arg1;
-- (void)_updateTilingViewportLayer;
-- (void)_updateTilingViewportBookkeeping;
+- (BOOL)_enableAutoConstraining;
 
 // Remaining properties
 @property(nonatomic) __weak id <_UITextFieldCanvasViewContext> context; // @dynamic context;

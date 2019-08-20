@@ -11,6 +11,7 @@
 + (id)hk_dateIntervalWithAnchor:(id)arg1 startOffset:(double)arg2 endOffset:(double)arg3;
 + (id)hk_instantaneousDateIntervalWithDate:(id)arg1;
 + (id)hk_dateIntervalWithStart:(double)arg1 end:(double)arg2;
+- (id)hk_prettyString;
 - (BOOL)hk_containsTime:(double)arg1;
 - (BOOL)hk_intersectsDateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 @end

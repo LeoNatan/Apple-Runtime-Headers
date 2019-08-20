@@ -13,7 +13,9 @@
 @property(readonly) CDStruct_1b6d18a9 livePhotoKeyFrameTime;
 @property(readonly) NSDictionary *colorProperties;
 @property(readonly) long long orientation;
+@property(readonly) CDStruct_996ac03c originalCleanAperture;
 @property(readonly) CDStruct_996ac03c cleanAperture;
+@property(readonly) CDStruct_912cb5d2 originalSize;
 @property(readonly) CDStruct_912cb5d2 size;
 @property(readonly) NSArray *metadata;
 @property(readonly) NSURL *url;

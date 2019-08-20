@@ -105,6 +105,8 @@
 - (void)_noteOutstandingUpdateRequestForSequence:(id)arg1;
 - (void)_setLargestAvailableDisplayMode:(long long)arg1;
 - (void)_updatePreferredContentSizeWithHeight:(double)arg1;
+- (void)_layoutMarginsDidChange;
+- (struct UIEdgeInsets)_layoutMargins;
 - (struct UIEdgeInsets)_marginInsets;
 - (struct CGSize)_maxSizeForDisplayMode:(long long)arg1;
 - (void)handleReconnectionRequest:(id)arg1;

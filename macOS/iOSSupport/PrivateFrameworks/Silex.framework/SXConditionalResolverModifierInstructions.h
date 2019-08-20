@@ -9,15 +9,18 @@
 #import <Silex/SXConditionalResolverModifierInstructions-Protocol.h>
 
 @class NSString;
-@protocol SXDocumentProviding;
+@protocol SXDocumentProviding, SXHintsConfigurationOptionProvider;
 
 @interface SXConditionalResolverModifierInstructions : NSObject <SXConditionalResolverModifierInstructions>
 {
     id <SXDocumentProviding> _documentProvider;
+    id <SXHintsConfigurationOptionProvider> _hintsConfigurationOptionProvider;
 }
 
+@property(readonly, nonatomic) id <SXHintsConfigurationOptionProvider> hintsConfigurationOptionProvider; // @synthesize hintsConfigurationOptionProvider=_hintsConfigurationOptionProvider;
 @property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
 - (void).cxx_destruct;
+- (id)hints;
 @property(readonly, nonatomic) BOOL shouldResolveTextStyles;
 @property(readonly, nonatomic) BOOL shouldResolveDocumentStyle;
 @property(readonly, nonatomic) BOOL shouldResolveComponentTextStyles;
@@ -25,7 +28,7 @@
 @property(readonly, nonatomic) BOOL shouldResolveComponentLayouts;
 @property(readonly, nonatomic) BOOL shouldResolveComponents;
 @property(readonly, nonatomic) BOOL shouldResolveAutoplacement;
-- (id)initWithDocumentProvider:(id)arg1;
+- (id)initWithDocumentProvider:(id)arg1 hintsConfigurationOptionProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

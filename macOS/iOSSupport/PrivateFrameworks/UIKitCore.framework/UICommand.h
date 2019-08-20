@@ -22,7 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)_commandWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4;
++ (id)_commandWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 attributes:(unsigned long long)arg4 state:(long long)arg5 propertyList:(id)arg6;
 + (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4 alternates:(id)arg5;
 + (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4;
 + (id)_defaultCommandForAction:(SEL)arg1;
@@ -40,7 +40,7 @@
 @property(readonly) unsigned long long hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_validatedLeafWithAlternate:(id)arg1 validation:(id)arg2;
+- (id)_validatedLeafWithAlternate:(id)arg1 target:(id)arg2 validation:(id)arg3;
 - (id)_resolvedTargetFromFirstTarget:(id)arg1;
 - (void)_performWithTarget:(id)arg1;
 - (long long)_leafKeyModifierFlags;

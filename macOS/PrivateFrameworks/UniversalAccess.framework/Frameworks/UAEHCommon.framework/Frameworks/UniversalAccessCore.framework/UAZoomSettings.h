@@ -61,7 +61,7 @@
 - (unsigned long long)_validateSplitScreenModeValue:(long long)arg1;
 - (unsigned long long)_validateZoomModeValue:(long long)arg1;
 @property(nonatomic, setter=_setTouchBarZoomPreviouslyEnabled:) BOOL _touchBarZoomPreviouslyEnabled;
-@property(nonatomic, setter=_setFingerZoomPreviouslyEnabled:) BOOL _fingerZoomPreviouslyEnabled;
+@property(nonatomic, setter=_setTrackpadGestureZoomPreviouslyEnabled:) BOOL _trackpadGestureZoomPreviouslyEnabled;
 @property(nonatomic, setter=_setScrollZoomPreviouslyEnabled:) BOOL _scrollZoomPreviouslyEnabled;
 @property(nonatomic, setter=_setKeyboardZoomPreviouslyEnabled:) BOOL _keyboardZoomPreviouslyEnabled;
 @property(readonly, nonatomic) BOOL canSetResizeHotKeysEnabled;

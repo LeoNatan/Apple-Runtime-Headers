@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)signpostType;
 - (id)initWithMessageListItems:(id)arg1 specialDestinationMailboxType:(long long)arg2 flagChange:(id)arg3 copyMessages:(_Bool)arg4;
 - (id)initWithMessageListItems:(id)arg1 destinationMailbox:(id)arg2 copyMessages:(_Bool)arg3;
 

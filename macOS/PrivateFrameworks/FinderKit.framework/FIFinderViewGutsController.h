@@ -252,6 +252,7 @@ __attribute__((visibility("hidden")))
 - (struct TFENode)target;
 - (void)didChangeSelection;
 - (void)didChangeTarget;
+- (_Bool)allSelectedItemsAreDownloadedIfNeeded;
 - (void)openSelection;
 - (void)openPendingSelectionIfPossible;
 - (_Bool)_delegateHandleOpenSelection;
@@ -259,7 +260,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)_goUpToParentFolder;
 @property(copy, nonatomic) NSArray *selectedURLs; // @dynamic selectedURLs;
 - (_Bool)_canSelectURL:(id)arg1;
+- (_Bool)startDownloadingSelectedItemsIfNecessary;
 @property(readonly, nonatomic) NSArray *selectedRawURLs; // @dynamic selectedRawURLs;
+- (_Bool)selectedURLsCanIncludeItemsNeedingDownload;
 - (void)ubiquityIdentityChanged;
 - (_Bool)targetingICloud;
 - (id)fileURLOrNil:(id)arg1;

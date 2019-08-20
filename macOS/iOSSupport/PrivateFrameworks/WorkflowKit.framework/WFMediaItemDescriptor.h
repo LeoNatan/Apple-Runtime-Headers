@@ -9,28 +9,29 @@
 #import <WorkflowKit/MTLJSONSerializing-Protocol.h>
 #import <WorkflowKit/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class NSData, NSDictionary, NSNumber, NSString;
 
 @interface WFMediaItemDescriptor : MTLModel <NSSecureCoding, MTLJSONSerializing>
 {
-    BOOL _entireMusicLibrary;
     NSString *_itemName;
     NSNumber *_persistentIdentifier;
+    NSData *_playbackArchiveData;
     NSString *_type;
 }
 
 + (id)JSONKeyPathsByPropertyKey;
 + (BOOL)supportsSecureCoding;
++ (id)playbackArchiveDataJSONTransformer;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
+@property(readonly, copy, nonatomic) NSData *playbackArchiveData; // @synthesize playbackArchiveData=_playbackArchiveData;
 @property(readonly, copy, nonatomic) NSNumber *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(readonly, copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
-@property(readonly, nonatomic) BOOL entireMusicLibrary; // @synthesize entireMusicLibrary=_entireMusicLibrary;
 - (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithMediaItemName:(id)arg1 playbackArchiveData:(id)arg2;
 - (id)initWithMediaItemName:(id)arg1 persistentIdentifier:(id)arg2 mediaType:(id)arg3;
-- (id)initWithEntireMusicLibrary;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

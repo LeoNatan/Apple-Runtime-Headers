@@ -160,6 +160,10 @@
 - (_Bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityTextHandlingAncestorMatchingBlock:(CDUnknownBlockType)arg1;
 - (id)_accessibilityHandwritingAncestor;
+- (_Bool)_accessibilityCanAppearInContextMenuPreview;
+- (id)_accessibilityContextMenuActionForElement:(id)arg1;
+- (_Bool)_accessibilityDelegateCanShowContextMenuForInteraction:(id)arg1 atLocation:(struct CGPoint)arg2;
+- (_Bool)_accessibilityCanShowContextMenuForInteraction:(id)arg1 atLocation:(struct CGPoint)arg2;
 - (id)_accessibilityElementForTextInsertionAndDeletion;
 - (_Bool)_accessibilitySupportsTextInsertionAndDeletion;
 - (id)accessibilityNextTextNavigationElement;
@@ -336,7 +340,7 @@
 - (_Bool)_accessibilityUsesChildrenFramesForSorting;
 - (struct CGRect)_handleRotatingFrame:(struct CGRect)arg1 fromOrientation:(long long)arg2 toOrientation:(long long)arg3;
 - (long long)_accessibilityCompareElement:(id)arg1 toElement:(id)arg2;
-- (long long)_accessibilitySortPriorityWithReturningView:(id *)arg1;
+- (long long)_accessibilitySortPriorityWithReturningElement:(id *)arg1;
 - (_Bool)_accessibilityOverridesInvisibility;
 - (void)_accessibilitySetOverridesInvisibility:(_Bool)arg1;
 - (double)_accessibilityAllowedGeometryOverlapX;
@@ -344,6 +348,7 @@
 - (void)_accessibilitySetAllowedGeometryOverlap:(double)arg1;
 - (void)setAccessibilitySize:(struct CGSize)arg1;
 - (id)_accessibilityScannerElementsGrouped:(_Bool)arg1 shouldIncludeNonScannerElements:(_Bool)arg2;
+- (id)_accessibilityOrderedChildrenContainerWithinViews:(id)arg1;
 - (id)_accessibilityOrderedChildrenContainer;
 - (_Bool)_accessibilityShouldScrollRemoteParent;
 - (id)_accessibilityRemoteParent;
@@ -612,6 +617,7 @@
 - (id)_accessibilityImageData;
 - (_Bool)_accessibilityTouchContainerShouldOutputBraille;
 - (_Bool)accessibilitySupportsTextSelection;
+- (id)_accessibilityTouchContainerStartingWithSelf:(_Bool)arg1;
 - (id)_accessibilityTouchContainer;
 - (_Bool)_accessibilityIsMap;
 - (_Bool)_accessibilityIsGuideElement;
@@ -621,9 +627,11 @@
 - (void)_accessibilityAddTrait:(unsigned long long)arg1;
 - (void)_accessibilityRemoveTrait:(unsigned long long)arg1;
 - (id)_accessibilityCustomActions;
-- (id)_retrieveCustomActions;
+- (id)_retrieveCustomActionsForElement:(id)arg1;
 - (_Bool)_accessibilityPerformLegacyCustomAction:(id)arg1;
 - (id)_privateAccessibilityCustomActions;
+- (void)_accessibilitySetPrivateCustomActionsElement:(id)arg1;
+- (id)_accessibilityPrivateCustomActionsElement;
 - (_Bool)_accessibilityIsDictating;
 - (id)_accessibilitySoftwareMimicKeyboard;
 - (_Bool)_accessibilityIsSoftwareKeyboardMimic;
@@ -904,6 +912,9 @@
 - (_Bool)_accessibilityFullscreenVideoViewIsVisible;
 - (_Bool)_accessibilityUIKitHasNativeFocus;
 - (_Bool)_accessibilityHasNativeFocus;
+- (id)_accessibilitySiblingViewsForViews:(id)arg1;
+- (id)_accessibilitySpeakThisViews;
+- (id)_accessibilitySpeakThisViewController;
 - (id)_accessibilitySpeakThisPreferredUnderlineColor;
 - (id)_accessibilitySpeakThisPreferredHighlightColor;
 - (_Bool)_accessibilitySpeakThisCanBeHighlighted;
@@ -926,6 +937,7 @@
 - (_Bool)_accessibilityHandleMagicTapForPronunciation;
 - (void)_setAccessibilityActivateParagraphInTextViewRangeBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityFrameForSortingBlock:(CDUnknownBlockType)arg1;
+- (void)_setAccessibilityCustomActionsBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityIsRealtimeElementBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityPerformEscapeBlock:(CDUnknownBlockType)arg1;
 - (void)_setAccessibilityActivateBlock:(CDUnknownBlockType)arg1;

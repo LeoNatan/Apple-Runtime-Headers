@@ -9,7 +9,7 @@
 #import <CoreWLAN/NSCopying-Protocol.h>
 #import <CoreWLAN/NSSecureCoding-Protocol.h>
 
-@class CWNetwork, CWNetworkProfile, NSDate, NSError, NSString;
+@class CWNetwork, CWNetworkProfile, NSDate, NSError, NSNumber, NSString;
 
 @interface CWJoinStatistics : NSObject <NSCopying, NSSecureCoding>
 {
@@ -38,6 +38,10 @@
 @property(copy) CWNetwork *network; // @synthesize network=_network;
 @property(copy) NSString *processName; // @synthesize processName=_processName;
 @property(copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
+@property(readonly, nonatomic) NSNumber *joinDuration;
+@property(readonly, nonatomic) NSNumber *authDuration;
+@property(readonly, nonatomic) NSNumber *assocDuration;
+@property(readonly, nonatomic) NSNumber *ipDuration;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

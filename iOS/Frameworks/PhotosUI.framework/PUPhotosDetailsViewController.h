@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)contentAreaContainsPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)setContentInsets:(struct UIEdgeInsets)arg1 changeReason:(long long)arg2;
 @property(readonly, nonatomic) struct UIEdgeInsets contentInsets;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)occludedContentEdges;
 - (struct CGSize)preferredContentSize;
 - (void)_layoutContentUnavailableView;

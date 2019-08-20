@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSURLSessionDownloadDelegate-Protocol.h>
 
-@class NSArray, NSHashTable, NSMutableDictionary, NSObject, NSString, NSURL, NSURLSession, PKPaymentDevice, PKPaymentWebServiceBackgroundContext, PKPaymentWebServiceContext;
+@class NSArray, NSHashTable, NSMutableDictionary, NSObject, NSOperationQueue, NSString, NSURL, NSURLSession, PKPaymentDevice, PKPaymentWebServiceBackgroundContext, PKPaymentWebServiceContext;
 @protocol OS_dispatch_queue, PKPaymentWebServiceArchiver, PKPaymentWebServiceBackgroundDelegate, PKPaymentWebServiceTargetDeviceProtocol;
 
 @interface PKPaymentWebService : PKWebService <NSURLSessionDownloadDelegate>
@@ -20,6 +20,7 @@
     struct os_unfair_lock_s _supportInRegionLock;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_queue> *_backgroundDownloadQueue;
+    NSOperationQueue *_backgroundSessionDelegateQueue;
     NSHashTable *_delegates;
     PKPaymentWebServiceContext *_context;
     struct os_unfair_lock_s _contextLock;

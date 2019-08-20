@@ -20,6 +20,7 @@
     NSString *_debugIdentifier;
     NSData *_workflowData;
     long long _environment;
+    double _timeoutSeconds;
     WFWorkflowReference *_workflowReference;
     NSExtension *_extension;
     NSUUID *_extensionRequestIdentifier;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) NSUUID *extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) WFWorkflowReference *workflowReference; // @synthesize workflowReference=_workflowReference;
+@property(readonly, nonatomic) double timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
 @property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) NSData *workflowData; // @synthesize workflowData=_workflowData;
 @property(readonly, nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;

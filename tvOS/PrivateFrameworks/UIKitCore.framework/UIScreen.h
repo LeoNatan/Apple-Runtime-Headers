@@ -233,6 +233,7 @@
 @property(readonly, nonatomic) UIScreenMode *preferredMode;
 @property(readonly, nonatomic) UIScreen *mirroredScreen;
 - (double)_latency;
+@property(readonly, nonatomic) double calibratedLatency;
 @property(readonly) long long maximumFramesPerSecond;
 - (double)_refreshRate;
 - (long long)_imageOrientation;

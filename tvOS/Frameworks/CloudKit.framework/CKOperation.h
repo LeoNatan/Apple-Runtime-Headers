@@ -17,6 +17,7 @@
     _Bool _isOutstandingOperation;
     _Bool _usesBackgroundSession;
     _Bool _runningDiscretionaryOperation;
+    _Bool _failedToScheduleDiscretionaryOperation;
     _Bool _isFinished;
     _Bool _isFinishingOnCallbackQueue;
     _Bool _clouddConnectionInterrupted;
@@ -67,6 +68,7 @@
 @property(nonatomic) unsigned long long discretionaryWhenBackgroundedState; // @synthesize discretionaryWhenBackgroundedState=_discretionaryWhenBackgroundedState;
 @property(nonatomic) unsigned long long duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
 @property(nonatomic) struct _xpc_activity_eligibility_changed_handler_s *xpcActivityEligibilityChangedHandler; // @synthesize xpcActivityEligibilityChangedHandler=_xpcActivityEligibilityChangedHandler;
+@property(nonatomic) _Bool failedToScheduleDiscretionaryOperation; // @synthesize failedToScheduleDiscretionaryOperation=_failedToScheduleDiscretionaryOperation;
 @property(nonatomic) _Bool runningDiscretionaryOperation; // @synthesize runningDiscretionaryOperation=_runningDiscretionaryOperation;
 @property(readonly, nonatomic) CKEventMetric *operationMetric; // @synthesize operationMetric=_operationMetric;
 @property(retain, nonatomic) NSMutableDictionary *savedW3CNavigationTimingByRequestUUID; // @synthesize savedW3CNavigationTimingByRequestUUID=_savedW3CNavigationTimingByRequestUUID;
@@ -123,6 +125,8 @@
 - (void)_installTimeoutSource;
 - (void)_uninstallTimeoutSource;
 - (void)cancel;
+- (void)_cancelDaemonOperation;
+- (void)_handleDiscretionarySuspensionCallback;
 - (void)cancelWithError:(id)arg1;
 - (void)cancelWithUnderlyingError:(id)arg1;
 @property(readonly, nonatomic) CKOperationInfo *operationInfo;

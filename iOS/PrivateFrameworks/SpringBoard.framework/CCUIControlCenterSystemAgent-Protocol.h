@@ -7,6 +7,7 @@
 #import <SpringBoard/NSObject-Protocol.h>
 
 @protocol CCUIControlCenterSystemAgent <NSObject>
+- (_Bool)isUILocked;
 - (_Bool)isOrientationLocked;
 - (void)unlockOrientation;
 - (void)lockOrientation;

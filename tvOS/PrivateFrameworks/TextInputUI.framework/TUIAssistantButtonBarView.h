@@ -13,6 +13,7 @@
 
 @interface TUIAssistantButtonBarView : UIView <TUIButtonBarViewProvider>
 {
+    _Bool _constrainedHorizontally;
     NSArray *_buttonGroups;
     _UIButtonBarButtonVisualProvider *_visualProvider;
     double _minimumInterItemSpace;
@@ -32,6 +33,7 @@
 @property(nonatomic) __weak id <_UIButtonBarAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
 @property(nonatomic) double horizontalMargins; // @synthesize horizontalMargins=_horizontalMargins;
 @property(nonatomic) __weak id <TUIAssistantButtonBarViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool constrainedHorizontally; // @synthesize constrainedHorizontally=_constrainedHorizontally;
 @property(nonatomic) long long buttonAlignment; // @synthesize buttonAlignment=_buttonAlignment;
 @property(nonatomic) double minimumInterGroupSpace; // @synthesize minimumInterGroupSpace=_minimumInterGroupSpace;
 @property(nonatomic) double minimumInterItemSpace; // @synthesize minimumInterItemSpace=_minimumInterItemSpace;
@@ -55,6 +57,7 @@
 - (id)_visibleGroupViews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
+- (struct UIEdgeInsets)_insetsForHorizontalMargin;
 - (double)_interItemSpacingThatFits:(struct CGSize)arg1 forGroupSize:(struct CGSize)arg2;
 - (struct CGSize)_totalGroupSizeThatFits:(struct CGSize)arg1;
 - (void)_updateBarButtonItemHiddenState;

@@ -57,9 +57,9 @@
 - (void)textureProvider:(id)arg1 didProvideCGImage:(struct CGImage *)arg2 orientation:(unsigned int)arg3 forRequestID:(int)arg4;
 - (void)textureProvider:(id)arg1 didProvideNothingForRequestID:(int)arg2;
 - (_Bool)_getRequestDetails:(out CDStruct_fcaf9308 *)arg1 forRequestID:(int)arg2;
-- (void)_processPixelBuffer:(struct __CVBuffer *)arg1 orientationTransform:(struct CGAffineTransform)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4 forRequestID:(int)arg5;
-- (void)_processCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4 requestID:(int)arg5;
-- (void)_handleProvidedSpriteTexture:(id)arg1 fromTextureProvider:(id)arg2 requestID:(int)arg3;
+- (void)_processPixelBuffer:(struct __CVBuffer *)arg1 orientationTransform:(struct CGAffineTransform)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4 forRequestID:(int)arg5 deliveryOrder:(unsigned int)arg6;
+- (void)_processCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4 requestID:(int)arg5 deliveryOrder:(unsigned int)arg6;
+- (void)_handleProvidedSpriteTexture:(id)arg1 fromTextureProvider:(id)arg2 requestID:(int)arg3 deliveryOrder:(unsigned int)arg4;
 - (id)_textureAtlasManagerForImageDataSpec:(CDStruct_1b544862)arg1;
 - (id)_storeTexture:(id)arg1 forPayload:(id)arg2;
 - (id)_storeTexture:(id)arg1 forPixelBuffer:(struct __CVBuffer *)arg2;

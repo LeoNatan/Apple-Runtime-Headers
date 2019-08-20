@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSArray, NSMutableArray, NSMutableSet, NSString, NSTrackingArea, UINSCursor, UINSInputView, USSLayerHost;
+@class NSArray, NSMutableArray, NSMutableSet, NSString, NSTrackingArea, UINSCursor, UINSInputView, UIWindow, USSLayerHost;
 
 __attribute__((visibility("hidden")))
 @interface UINSSceneView : NSView
@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     USSLayerHost *_sceneLayer;
     struct CGSize _lastSentSceneSize;
     double _lastSentScale;
+    long long _lastSentGamut;
     struct NSEdgeInsets _lastSendSceneContentInsets;
     long long _sceneResizeSuppressionCount;
     UINSCursor *_currentCursor;
@@ -53,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UINSInputView *inputView; // @synthesize inputView=_inputView;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIWindow *keyUIWindow;
 @property(readonly, nonatomic) NSArray *uiWindows;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)viewDidMoveToWindow;
@@ -71,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)layout;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_resizeUIKitScene;
+- (void)viewDidChangeBackingProperties;
 - (void)setLaunchedSceneSize:(struct CGSize)arg1;
 - (void)cursorUpdate:(id)arg1;
 - (void)setUINSCursor:(id)arg1;

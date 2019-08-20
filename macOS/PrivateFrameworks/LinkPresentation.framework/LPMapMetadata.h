@@ -24,8 +24,10 @@
     NSNumber *_transportType;
     NSString *_directionsSourceAddress;
     CNPostalAddress *_directionsSourceAddressComponents;
+    NSString *_directionsSourceLocationName;
     NSString *_directionsDestinationAddress;
     CNPostalAddress *_directionsDestinationAddressComponents;
+    NSString *_directionsDestinationLocationName;
     NSNumber *_distance;
     LPImage *_image;
     LPImage *_darkImage;
@@ -37,8 +39,10 @@
 @property(retain, nonatomic) LPImage *darkImage; // @synthesize darkImage=_darkImage;
 @property(retain, nonatomic) LPImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSNumber *distance; // @synthesize distance=_distance;
+@property(copy, nonatomic) NSString *directionsDestinationLocationName; // @synthesize directionsDestinationLocationName=_directionsDestinationLocationName;
 @property(copy, nonatomic) CNPostalAddress *directionsDestinationAddressComponents; // @synthesize directionsDestinationAddressComponents=_directionsDestinationAddressComponents;
 @property(copy, nonatomic) NSString *directionsDestinationAddress; // @synthesize directionsDestinationAddress=_directionsDestinationAddress;
+@property(copy, nonatomic) NSString *directionsSourceLocationName; // @synthesize directionsSourceLocationName=_directionsSourceLocationName;
 @property(copy, nonatomic) CNPostalAddress *directionsSourceAddressComponents; // @synthesize directionsSourceAddressComponents=_directionsSourceAddressComponents;
 @property(copy, nonatomic) NSString *directionsSourceAddress; // @synthesize directionsSourceAddress=_directionsSourceAddress;
 @property(retain, nonatomic) NSNumber *transportType; // @synthesize transportType=_transportType;

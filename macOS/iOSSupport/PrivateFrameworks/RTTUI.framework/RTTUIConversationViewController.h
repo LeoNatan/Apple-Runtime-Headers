@@ -77,9 +77,13 @@
 - (void)_updateServiceCellWithString:(id)arg1;
 - (void)updateServiceCellWithString:(id)arg1;
 - (id)currentCall;
+- (id)contactDisplayString;
 - (void)toggleMute:(id)arg1;
 - (void)updateMuteButton;
+- (id)onHoldMessage;
 - (void)callDidConnect:(id)arg1;
+- (void)updateCallActiveStatus:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

@@ -9,7 +9,7 @@
 #import <SPOwner/SPOwnerSessionPrivateProtocol-Protocol.h>
 #import <SPOwner/SPTrackingAvoidanceServiceProtocol-Protocol.h>
 
-@class FMXPCServiceDescription, FMXPCSession, NSDictionary, NSOperationQueue, NSSet, NSString;
+@class FMXPCServiceDescription, FMXPCSession, NSDate, NSDictionary, NSOperationQueue, NSSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source, SPOwnerSessionXPCProtocol;
 
 @interface SPOwnerSession : NSObject <SPTrackingAvoidanceServiceProtocol, SPOwnerSessionPrivateProtocol>
@@ -32,8 +32,10 @@
     id _beaconEstimatedLocationChangedNotificationToken;
     NSDictionary *_locationCache;
     NSObject<OS_dispatch_source> *_locationFetchDispatchTimer;
+    NSDate *_fetchLimit;
 }
 
+@property(copy, nonatomic) NSDate *fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *locationFetchDispatchTimer; // @synthesize locationFetchDispatchTimer=_locationFetchDispatchTimer;
 @property(nonatomic) _Bool cacheFetchInProgress; // @synthesize cacheFetchInProgress=_cacheFetchInProgress;
 @property(retain, nonatomic) NSDictionary *locationCache; // @synthesize locationCache=_locationCache;

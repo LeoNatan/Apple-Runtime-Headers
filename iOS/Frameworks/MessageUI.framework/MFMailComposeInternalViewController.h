@@ -8,11 +8,12 @@
 
 #import <MessageUI/MFMailComposeRemoteViewControllerDelegate-Protocol.h>
 #import <MessageUI/MFMailCompositionAdditionalDonating-Protocol.h>
+#import <MessageUI/MFMailCompositionShareSheetRecipients-Protocol.h>
 
 @class MFMailComposePlaceholderViewController, MFMailComposeRemoteViewController, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSString, _UIAsyncInvocation;
 @protocol MFMailComposeViewControllerDelegate;
 
-@interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate, MFMailCompositionAdditionalDonating>
+@interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate, MFMailCompositionAdditionalDonating, MFMailCompositionShareSheetRecipients>
 {
     MFMailComposePlaceholderViewController *_placeholderViewController;
     MFMailComposeRemoteViewController *_serviceViewController;
@@ -45,6 +46,7 @@
 - (void)finalizeCompositionValues;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (id)addAttachmentFileURL:(id)arg1 mimeType:(id)arg2;
+@property(copy, nonatomic) NSString *shareSheetSessionID;
 @property(copy, nonatomic) NSArray *contentURLs;
 @property(copy, nonatomic) NSArray *contentText;
 @property(copy, nonatomic) NSArray *cloudPhotoIDs;

@@ -42,6 +42,7 @@
     BOOL _usePrivateResourceHandler;
     BOOL __didCancelSelection;
     BOOL _hasValidOnscreenVisibleStrokes;
+    BOOL _editMenuVisible;
     PKController *_drawingController;
     id <PKTiledCanvasViewDelegate> _delegate;
     UIImage *_paperTexture;
@@ -80,6 +81,7 @@
 
 + (void)setupDefaults;
 + (void)initialize;
+@property(nonatomic) BOOL editMenuVisible; // @synthesize editMenuVisible=_editMenuVisible;
 @property(retain, nonatomic) NSMutableSet *strokeUUIDsAboutToBeRemoved; // @synthesize strokeUUIDsAboutToBeRemoved=_strokeUUIDsAboutToBeRemoved;
 @property(retain, nonatomic) NSMutableArray *fadeOutStrokeAnimations; // @synthesize fadeOutStrokeAnimations=_fadeOutStrokeAnimations;
 @property(nonatomic) double liveAnimationStartTime; // @synthesize liveAnimationStartTime=_liveAnimationStartTime;

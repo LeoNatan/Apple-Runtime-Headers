@@ -6,11 +6,12 @@
 
 #import <PassKitUI/PKDiscoveryShelfView.h>
 
-@class PKContinuousButton, PKDiscoveryCallToAction, PKDiscoveryMedia, UIImageView, UILabel;
+@class PKContinuousButton, PKDiscoveryCallToAction, PKDiscoveryCallToActionShelf, PKDiscoveryMedia, UIImageView, UILabel;
 @protocol PKDiscoveryCardViewDelegate;
 
 @interface PKDiscoveryCallToActionShelfView : PKDiscoveryShelfView
 {
+    PKDiscoveryCallToActionShelf *_ctaShelf;
     PKDiscoveryCallToAction *_callToAction;
     PKDiscoveryMedia *_media;
     UILabel *_titleLabel;

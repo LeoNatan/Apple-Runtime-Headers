@@ -10,6 +10,10 @@
 {
 }
 
++ (long long)rawSourceMaximumPixelCountForInteractiveEditing;
++ (long long)rawSourceMaximumPixelCountForBackgroundProcessing;
++ (_Bool)canLoadAssetAsRawForInteractiveEditingWithImageProperties:(id)arg1;
++ (struct CGSize)maximumImageSizeFromProperties:(id)arg1;
 + (id)mainVideoTrackForAsset:(id)arg1;
 + (_Bool)isPdfUTI:(id)arg1;
 + (_Bool)isPsdUTI:(id)arg1;
@@ -23,6 +27,7 @@
 + (_Bool)isImageUTI:(id)arg1;
 + (_Bool)isMovieUTI:(id)arg1;
 + (_Bool)isAudioUTI:(id)arg1;
++ (id)imagePropertiesFromImageSource:(struct CGImageSource *)arg1;
 + (long long)defaultRasterizationDPI;
 + (_Bool)UTIRequiresRasterizationDPI:(id)arg1;
 + (_Bool)isValidExtension:(id)arg1 forUTI:(id)arg2;

@@ -148,6 +148,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isHEVCSupported;
 - (_Bool)isHEVCRelaxedAverageBitRateTargetSupported;
 - (_Bool)isHEVCMemoryUsageMinimizationSupported;
+- (_Bool)hevcAllowBFramesForHighCTUCountAndHighResolution;
 - (_Bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (_Bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -196,7 +197,6 @@ __attribute__((visibility("hidden")))
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(_Bool)arg1;
 - (_Bool)automaticallyAdjustsVideoHDREnabled;
 - (_Bool)isAutoRedEyeReductionSupported;
-- (_Bool)isHDRSupported;
 - (id)cameraPoseMatrix;
 - (void)_setMaxAvailableVideoZoomFactor:(double)arg1;
 - (double)maxAvailableVideoZoomFactor;
@@ -295,6 +295,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isWhiteBalanceModeSupported:(long long)arg1;
 - (void)_setAdjustingWhiteBalance:(_Bool)arg1;
 - (_Bool)isAdjustingWhiteBalance;
+- (void)setGlobalToneMappingEnabled:(_Bool)arg1;
+- (_Bool)isGlobalToneMappingEnabled;
 - (void)setActiveMaxExposureDuration:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)activeMaxExposureDuration;
 - (void)setExposurePointOfInterest:(struct CGPoint)arg1;

@@ -31,6 +31,7 @@
 - (id)controlDescriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)descriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)incrementalStateIconDescriptorForPrimaryState:(long long)arg1 incrementalValue:(id)arg2;
+- (id)_iconDescriptorWithFallBackIfNecessary:(id)arg1 withIconPrimaryState:(long long)arg2;
 - (id)_augmentedStandardResultsForUpdateResponse:(id)arg1 controlItems:(id)arg2;
 - (id)performStandardUpdateWithCharacteristicTypes:(id)arg1 options:(id)arg2;
 - (id)characteristicsToReadForCharacteristicTypes:(id)arg1 controlItems:(id)arg2;

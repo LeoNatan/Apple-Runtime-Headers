@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *presentersQueue; // @synthesize presentersQueue=_presentersQueue;
 - (void).cxx_destruct;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
-- (void)writeCheckReportTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)writeCheckReportTo:(id)arg1 limitNumberOfItems:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)currentMaterializedSetSyncAnchorForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)enumerateMaterializedSetForDomain:(id)arg1 syncAnchor:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)customPushTopics;

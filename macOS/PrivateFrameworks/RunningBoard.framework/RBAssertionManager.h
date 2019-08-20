@@ -87,7 +87,7 @@
 - (BOOL)containsAttributeWithDomain:(id)arg1 andName:(id)arg2;
 - (struct NSString *)endowmentNamespaceForDomain:(id)arg1 andName:(id)arg2;
 - (id)originatorEntitlementsForDomain:(id)arg1 andName:(id)arg2;
-- (id)attributesForDomain:(id)arg1 andName:(id)arg2 targetProperties:(id)arg3;
+- (id)attributesForDomain:(id)arg1 andName:(id)arg2 targetProperties:(id)arg3 withError:(id *)arg4;
 - (void)revalidateAssertionsForProcessIdentities:(id)arg1;
 - (id)processForIdentity:(id)arg1;
 - (id)stateForIdentity:(id)arg1;

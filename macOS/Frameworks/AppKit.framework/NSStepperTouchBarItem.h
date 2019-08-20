@@ -6,7 +6,7 @@
 
 #import <AppKit/NSTouchBarItem.h>
 
-@class NSString, _NSStepperTouchBarItemView;
+@class NSFormatter, NSString, _NSStepperTouchBarItemView;
 
 @interface NSStepperTouchBarItem : NSTouchBarItem
 {
@@ -27,9 +27,10 @@
 @property double maxValue;
 - (id)view;
 - (void)dealloc;
-- (void)commonInit;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
+@property(readonly) NSFormatter *formatter;
 
 @end
 

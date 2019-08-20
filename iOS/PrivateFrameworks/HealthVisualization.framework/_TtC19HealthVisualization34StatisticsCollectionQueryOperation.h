@@ -9,7 +9,7 @@
 @interface _TtC19HealthVisualization34StatisticsCollectionQueryOperation : _$s16HealthExperience21AsynchronousOperationCN
 {
     // Error parsing type: , name: underlyingResult
-    // Error parsing type: , name: quantityType
+    // Error parsing type: , name: sampleType
     // Error parsing type: , name: configuration
     // Error parsing type: , name: configurationOverrides
     // Error parsing type: , name: healthStore

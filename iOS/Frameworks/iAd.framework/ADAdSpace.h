@@ -20,6 +20,7 @@
     _Bool _didInstallCreativeView;
     _Bool _hasImpressed;
     _Bool _adLibManagedVideo;
+    _Bool _prerollVideo;
     _Bool _visibilityCheckScheduled;
     _Bool _adRequestMade;
     _Bool _shouldMonitorVisibility;
@@ -83,6 +84,7 @@
 @property(nonatomic) _Bool adRequestMade; // @synthesize adRequestMade=_adRequestMade;
 @property(nonatomic) _Bool visibilityCheckScheduled; // @synthesize visibilityCheckScheduled=_visibilityCheckScheduled;
 @property(nonatomic) long long visibility; // @synthesize visibility=_visibility;
+@property(nonatomic) _Bool prerollVideo; // @synthesize prerollVideo=_prerollVideo;
 @property(nonatomic) _Bool adLibManagedVideo; // @synthesize adLibManagedVideo=_adLibManagedVideo;
 @property(nonatomic) float totalDuration; // @synthesize totalDuration=_totalDuration;
 @property(nonatomic) float lastVolume; // @synthesize lastVolume=_lastVolume;

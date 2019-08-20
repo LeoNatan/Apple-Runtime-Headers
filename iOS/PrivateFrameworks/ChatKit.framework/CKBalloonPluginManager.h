@@ -76,6 +76,8 @@
 @property(nonatomic) __weak id <CKExtensionConsumer> currentExtensionConsumer; // @synthesize currentExtensionConsumer=_currentExtensionConsumer;
 @property(retain, nonatomic) NSString *lastLaunchedIdentifier; // @synthesize lastLaunchedIdentifier=_lastLaunchedIdentifier;
 - (void).cxx_destruct;
+- (_Bool)_shouldShowActivity;
+- (_Bool)_shouldShowSURF;
 - (_Bool)isPluginVisible:(id)arg1;
 - (void)handleManagedConfigSettingsChangeNotification:(id)arg1;
 @property(readonly, nonatomic) _Bool isAppStoreEnabled;
@@ -142,6 +144,7 @@
 - (id)digitalTouchViewControllerWithDataSource:(id)arg1;
 - (id)existingPhotoBrowserViewController;
 - (id)photosBrowserViewControllerWithPluginPayloads:(id)arg1;
+- (void)invalidateAppManagerPlugin;
 - (void)invalidatePhotosPlugin;
 - (id)descriptionOfVisibleDrawerPlugins;
 - (void)removeVisibleInstallationWithID:(id)arg1;

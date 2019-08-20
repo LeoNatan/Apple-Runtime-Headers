@@ -13,7 +13,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-+ (double)desiredContentWidthForTitle:(id)arg1 subTitle:(id)arg2 titleFont:(id)arg3 subtitleFont:(id)arg4 cellUserActionLeftMargin:(double)arg5;
++ (struct CGSize)desiredContentSizeForTitle:(id)arg1 subTitle:(id)arg2 navigationListStyle:(id)arg3;
++ (double)titleLabelFirstBaselineAnchorConstraintConstantForNavigationListStyle:(id)arg1;
++ (double)subtitleLabelFirstBaselineAnchorConstraintConstantForNavigationListStyle:(id)arg1;
++ (double)contentViewBottomAnchorConstraintConstantForNavigationListStyle:(id)arg1;
 @property(nonatomic) long long contentAlignment; // @synthesize contentAlignment=_contentAlignment;
 - (void)applyStyle;
 - (void)updateConstraints;

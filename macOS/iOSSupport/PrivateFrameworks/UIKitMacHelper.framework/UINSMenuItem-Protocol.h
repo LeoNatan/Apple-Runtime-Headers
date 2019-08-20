@@ -10,9 +10,8 @@
 @protocol UINSMenuItem
 @property(retain, nonatomic) id <UIRVPresenterHighlightDelegate> rvHighlighter;
 @property(retain, nonatomic) RVItem *rvItem;
-@property(copy, nonatomic) NSString *hostActionName;
 @property(copy, nonatomic) NSString *actionName;
-@property(nonatomic) unsigned long long targetSearchScopeMask;
+@property(nonatomic) __weak id target;
 @property(retain, nonatomic) id <UINSMenu> submenu;
 @property(readonly, nonatomic) NSDictionary *validatedProperties;
 @property(readonly, nonatomic) NSDictionary *properties;

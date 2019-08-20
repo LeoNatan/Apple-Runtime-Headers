@@ -8,7 +8,7 @@
 
 #import <AppStoreKit/_TtP11AppStoreKitP33_9D347077873A4B21FB1DD2E2A260A4E416ASKGlobalExports_-Protocol.h>
 
-@class ASKClient, NSDictionary, _TtC11AppStoreKit12JSUserObject, _TtC11AppStoreKit20JSStoreMetricsObject, _TtC11AppStoreKit21ClientOrderingWrapper, _TtC11AppStoreKit28JSPersonalizationStoreObject;
+@class ASKClient, NSDictionary, _TtC11AppStoreKit12JSUserObject, _TtC11AppStoreKit14JSArcadeObject, _TtC11AppStoreKit20JSStoreMetricsObject, _TtC11AppStoreKit21ClientOrderingWrapper, _TtC11AppStoreKit28JSPersonalizationStoreObject;
 @protocol _TtP11AppStoreKit20LocalizationProtocol_;
 
 __attribute__((visibility("hidden")))
@@ -21,10 +21,12 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: props
     // Error parsing type: , name: clientOrdering
     // Error parsing type: , name: personalizationStore
+    // Error parsing type: , name: arcade
 }
 
 - (void).cxx_destruct;
 - (id)init;
+@property(nonatomic, readonly) _TtC11AppStoreKit14JSArcadeObject *arcade; // @synthesize arcade;
 @property(nonatomic, readonly) _TtC11AppStoreKit28JSPersonalizationStoreObject *personalizationStore; // @synthesize personalizationStore;
 @property(nonatomic, readonly) _TtC11AppStoreKit21ClientOrderingWrapper *clientOrdering; // @synthesize clientOrdering;
 @property(nonatomic, readonly) NSDictionary *props;

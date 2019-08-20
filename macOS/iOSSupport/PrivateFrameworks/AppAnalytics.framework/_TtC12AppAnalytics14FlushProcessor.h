@@ -9,6 +9,7 @@
 @interface _TtC12AppAnalytics14FlushProcessor : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: sessionManager
+    // Error parsing type: , name: sessionEndFlushGroup
     // Error parsing type: , name: flushEvents
     // Error parsing type: , name: flushInterval
     // Error parsing type: , name: timer

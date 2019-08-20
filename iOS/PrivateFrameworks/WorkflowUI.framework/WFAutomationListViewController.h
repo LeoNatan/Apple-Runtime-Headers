@@ -7,31 +7,33 @@
 #import <UIKit/UITableViewController.h>
 
 #import <WorkflowUI/HMHomeDelegate-Protocol.h>
-#import <WorkflowUI/HMHomeManagerDelegate-Protocol.h>
 #import <WorkflowUI/HUTriggerEditorDelegate-Protocol.h>
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 #import <WorkflowUI/WFCreateAutomationCoordinatorDelegate-Protocol.h>
 #import <WorkflowUI/WFDatabaseResultObserver-Protocol.h>
 #import <WorkflowUI/WFEditAutomationCoordinatorDelegate-Protocol.h>
+#import <WorkflowUI/WFHomeManagerEventObserver-Protocol.h>
 
-@class HMHomeManager, NSArray, NSString, UIView, WFCreateAutomationCoordinator, WFDatabase, WFDatabaseResult, WFEditAutomationCoordinator, WFTriggerManager;
+@class NSArray, NSString, UIView, WFCreateAutomationCoordinator, WFDatabase, WFDatabaseResult, WFEditAutomationCoordinator, WFHomeManager, WFTriggerManager;
 
-@interface WFAutomationListViewController : UITableViewController <WFCreateAutomationCoordinatorDelegate, WFEditAutomationCoordinatorDelegate, WFDatabaseResultObserver, HMHomeManagerDelegate, HMHomeDelegate, HUTriggerEditorDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface WFAutomationListViewController : UITableViewController <WFCreateAutomationCoordinatorDelegate, WFEditAutomationCoordinatorDelegate, WFDatabaseResultObserver, WFHomeManagerEventObserver, HMHomeDelegate, HUTriggerEditorDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     WFDatabase *_database;
     WFTriggerManager *_triggerManager;
     UIView *_subheadWrapperView;
     NSArray *_tableSections;
     WFDatabaseResult *_personalAutomationsDatabaseResult;
-    HMHomeManager *_homeManager;
+    NSArray *_sortedPersonalAutomations;
+    WFHomeManager *_homeManager;
     WFCreateAutomationCoordinator *_createAutomationCoordinator;
     WFEditAutomationCoordinator *_editAutomationCoordinator;
 }
 
 @property(retain, nonatomic) WFEditAutomationCoordinator *editAutomationCoordinator; // @synthesize editAutomationCoordinator=_editAutomationCoordinator;
 @property(retain, nonatomic) WFCreateAutomationCoordinator *createAutomationCoordinator; // @synthesize createAutomationCoordinator=_createAutomationCoordinator;
-@property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
+@property(retain, nonatomic) WFHomeManager *homeManager; // @synthesize homeManager=_homeManager;
+@property(copy, nonatomic) NSArray *sortedPersonalAutomations; // @synthesize sortedPersonalAutomations=_sortedPersonalAutomations;
 @property(readonly, nonatomic) WFDatabaseResult *personalAutomationsDatabaseResult; // @synthesize personalAutomationsDatabaseResult=_personalAutomationsDatabaseResult;
 @property(retain, nonatomic) NSArray *tableSections; // @synthesize tableSections=_tableSections;
 @property(readonly, nonatomic) UIView *subheadWrapperView; // @synthesize subheadWrapperView=_subheadWrapperView;
@@ -75,6 +77,7 @@
 - (void)viewLayoutMarginsDidChange;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)dealloc;
 - (id)initWithDatabase:(id)arg1;
 
 // Remaining properties

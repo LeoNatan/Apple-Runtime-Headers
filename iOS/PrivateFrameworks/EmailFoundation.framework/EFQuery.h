@@ -9,18 +9,20 @@
 #import <EmailFoundation/NSCopying-Protocol.h>
 #import <EmailFoundation/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSPredicate;
+@class NSArray, NSPredicate, NSString;
 
 @interface EFQuery : NSObject <NSSecureCoding, NSCopying>
 {
     Class _targetClass;
     NSPredicate *_predicate;
     NSArray *_sortDescriptors;
-    unsigned long long _searchType;
+    unsigned long long _queryOptions;
+    NSString *_label;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
+@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) unsigned long long queryOptions; // @synthesize queryOptions=_queryOptions;
 @property(readonly, copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) Class targetClass; // @synthesize targetClass=_targetClass;
@@ -32,7 +34,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 searchType:(unsigned long long)arg4;
+- (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 queryOptions:(unsigned long long)arg4 label:(id)arg5;
 - (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
 
 @end

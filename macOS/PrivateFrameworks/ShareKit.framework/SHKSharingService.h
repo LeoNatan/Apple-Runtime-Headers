@@ -50,7 +50,16 @@
 }
 
 + (void)addRecentEmailServiceToDefaultsWithSubject:(id)arg1 recipients:(id)arg2;
++ (BOOL)canPerformWithItems:(id)arg1 identifier:(id)arg2 mask:(unsigned long long)arg3 enabled:(BOOL)arg4 isCustomService:(BOOL)arg5 allowInactive:(BOOL)arg6;
 + (void)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)sharingServicesForFilteredItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3 allowInactive:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)sharingServicesOnMainQueueForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3 allowInactive:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3 allowInactive:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)sharingServicesOnMainQueueForItems:(id)arg1 invokedByPicker:(BOOL)arg2 allowInactive:(BOOL)arg3 onlyViewerOrEditor:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
++ (id)sandboxProofItemsFromItems:(id)arg1;
++ (id)filterAndSortSharingServices:(id)arg1 withMask:(unsigned long long)arg2;
++ (void)sharingServicesForFilteredItems:(id)arg1 invokedByPicker:(BOOL)arg2 allowInactive:(BOOL)arg3 onlyViewerOrEditor:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4 allowInactive:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
 + (void)sharingServicesWithIdentifier:(id)arg1 attributes:(id)arg2 matchingDictionary:(id)arg3 attributeStore:(id)arg4 invokedByPicker:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
@@ -66,8 +75,12 @@
 + (void)saveDefaultDisplayOrder:(id)arg1 domain:(struct __CFString *)arg2;
 + (id)_sortedServicesForServices:(id)arg1 displayOrderDictionary:(id)arg2;
 + (id)sortedServicesForServices:(id)arg1 mask:(unsigned long long)arg2;
++ (id)sharingServicesForItems:(id)arg1 invokedByPicker:(BOOL)arg2 allowInactive:(BOOL)arg3 onlyViewerOrEditor:(BOOL)arg4;
++ (id)sharingServicesForFilteredItems:(id)arg1 invokedByPicker:(BOOL)arg2 allowInactive:(BOOL)arg3 onlyViewerOrEditor:(BOOL)arg4;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 invokedByPicker:(BOOL)arg3 allowInactive:(BOOL)arg4;
++ (id)attributesArrayForSharingAndActionServices;
++ (id)attributesArrayForViewerAndEditorServices;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 allowInactive:(BOOL)arg3;
 + (id)filterOutServicesForCompatibleServices:(id)arg1 identifier:(id)arg2 attributes:(id)arg3;
@@ -146,7 +159,7 @@
 - (void)dismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cancelRemoteServiceUI;
 - (BOOL)isCustomService;
-- (void)handleIOSMacExtension;
+- (void)handleIOSMacExtensionWithExtensionItem:(id)arg1;
 - (void)handleMacExtensionWithOptions:(id)arg1;
 - (void)launchExtensionWithExtensionItem:(id)arg1 options:(id)arg2;
 - (void)performStandardServiceWithItems:(id)arg1;
@@ -162,6 +175,7 @@
 - (id)appID;
 - (id)nsSharingItemFromSHKSharingItem:(id)arg1 fromItems:(id)arg2 delegate:(id)arg3;
 - (void)_runActionBlockWithItems:(id)arg1;
+- (void)canPerformWithItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)canPerformWithItems:(id)arg1;
 - (id)preProcessingJavaScriptURL;
 @property(readonly, copy) NSURL *plugInURL;

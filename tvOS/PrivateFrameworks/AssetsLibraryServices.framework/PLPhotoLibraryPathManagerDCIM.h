@@ -29,6 +29,7 @@
 + (id)systemLibraryPathManager;
 @property(retain, nonatomic) PLImportFileManager *importFileManager; // @synthesize importFileManager=_importFileManager;
 - (void).cxx_destruct;
+- (id)pathsGroupedByAssetBasePathFromFilePaths:(id)arg1;
 - (id)assetBaseFilenameForAdjustmentFilePath:(id)arg1;
 - (id)persistedAlbumDataDirectoryCreateIfNeeded:(_Bool)arg1 error:(id *)arg2;
 - (id)iTunesPhotosSyncCurrentLibraryUUIDPath;

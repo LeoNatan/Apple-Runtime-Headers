@@ -102,6 +102,7 @@
 - (void)familyNameDidChange:(id)arg1;
 - (void)givenNameDidChange:(id)arg1;
 - (void)notifyDelegateOfChangesWithDidSaveToMeCard:(BOOL)arg1;
+- (void)presentErrorAlertForEmptyPhotoIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

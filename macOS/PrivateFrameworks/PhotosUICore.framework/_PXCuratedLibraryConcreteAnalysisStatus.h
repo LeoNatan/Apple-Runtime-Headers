@@ -14,6 +14,7 @@
 {
 }
 
+- (BOOL)hasBattery;
 @property(readonly, nonatomic) BOOL isDeviceUnplugged;
 - (void)_batteryStateDidChange:(id)arg1;
 - (void)_configureBatteryMonitoring;
@@ -21,6 +22,7 @@
 - (long long)_analyzingStateForDataSource:(id)arg1;
 - (float)_enrichmentProgressForDataSource:(id)arg1;
 - (void)_updateStatusProperties;
+- (void)alternateTitleIndexDidChange;
 - (id)initWithDataSourceManager:(id)arg1;
 
 // Remaining properties

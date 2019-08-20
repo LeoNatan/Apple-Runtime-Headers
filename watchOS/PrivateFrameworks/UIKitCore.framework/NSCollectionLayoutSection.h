@@ -18,6 +18,7 @@
     NSDictionary *_supplementaryItemsDict;
     NSDictionary *_decorationItemsDict;
     _Bool _isEmptySection;
+    _Bool _prefersListSolver;
     _Bool _supplementariesFollowContentInsets;
     float _interGroupSpacing;
     int _orthogonalScrollingBehavior;
@@ -35,6 +36,7 @@
 
 + (id)_emptySection;
 + (id)sectionWithGroup:(id)arg1;
+@property(nonatomic) _Bool prefersListSolver; // @synthesize prefersListSolver=_prefersListSolver;
 @property(readonly, nonatomic, getter=_callback) id <_UICollectionLayoutSectionCallback> callback; // @synthesize callback=_callback;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) NSDictionary *decorationItemssDict; // @synthesize decorationItemssDict=_decorationItemssDict;
@@ -50,6 +52,7 @@
 @property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)_isListSolverCompatibleForLayoutAxis:(int)arg1;
 - (id)decorationItemsDict;
 @property(readonly, nonatomic) NSDictionary *supplementaryItemsDict;
 - (id)_auxillaryItemForElementKind:(id)arg1 category:(unsigned int)arg2;
@@ -63,7 +66,7 @@
 - (_Bool)_isEmptySection;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithLayoutGroup:(id)arg1;
-- (id)initWithGroup:(id)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2 supplementaryItems:(id)arg3 boundarySupplementartItems:(id)arg4 pinnedSupplementaryItemIndexes:(id)arg5 interGroupSpacing:(float)arg6 visibleItemsInvalidationHandler:(CDUnknownBlockType)arg7 supplementariesFollowInsets:(_Bool)arg8 decorationItems:(id)arg9 orthogonalScrollingBehavior:(int)arg10 isEmptySection:(_Bool)arg11;
+- (id)initWithGroup:(id)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2 supplementaryItems:(id)arg3 boundarySupplementartItems:(id)arg4 pinnedSupplementaryItemIndexes:(id)arg5 interGroupSpacing:(float)arg6 visibleItemsInvalidationHandler:(CDUnknownBlockType)arg7 supplementariesFollowInsets:(_Bool)arg8 decorationItems:(id)arg9 orthogonalScrollingBehavior:(int)arg10 isEmptySection:(_Bool)arg11 prefersListSolver:(_Bool)arg12;
 
 @end
 

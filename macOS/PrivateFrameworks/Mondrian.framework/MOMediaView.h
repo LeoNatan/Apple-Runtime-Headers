@@ -452,6 +452,7 @@
 - (void)updateMemoryCaches:(unsigned long long)arg1;
 - (void)updateMemoryCaches;
 - (void)installMemoryPressureListener;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 responsiveScrolling:(BOOL)arg2;
@@ -463,7 +464,6 @@
 @property(setter=_setWantsPageAlignedHorizontalAxis:) BOOL _wantsPageAlignedHorizontalAxis;
 @property(setter=_setWantsPageAlignedVerticalAxis:) BOOL _wantsPageAlignedVerticalAxis;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

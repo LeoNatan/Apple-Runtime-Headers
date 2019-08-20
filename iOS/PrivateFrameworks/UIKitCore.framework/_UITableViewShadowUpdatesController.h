@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)indexPathForElementWithModelIdentifier:(id)arg1 inView:(id)arg2;
 - (id)modelIdentifierForElementAtIndexPath:(id)arg1 inView:(id)arg2;
+- (void)tableView:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (void)tableView:(id)arg1 willCommitMenuWithAnimator:(id)arg2;
 - (id)tableView:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;
 - (id)tableView:(id)arg1 previewForHighlightingContextMenuWithConfiguration:(id)arg2;

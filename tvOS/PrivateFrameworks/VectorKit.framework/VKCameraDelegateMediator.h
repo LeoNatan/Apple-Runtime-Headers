@@ -9,12 +9,11 @@
 #import <VectorKit/VKMapViewCameraDelegate-Protocol.h>
 
 @class NSString;
-@protocol AnalyticsProvider, VKMapViewCameraDelegate;
+@protocol VKMapViewCameraDelegate;
 
 __attribute__((visibility("hidden")))
 @interface VKCameraDelegateMediator : NSObject <VKMapViewCameraDelegate>
 {
-    id <AnalyticsProvider> _analyticsProvider;
     id <VKMapViewCameraDelegate> _cameraDelegate;
     _Bool _isChangingMapType;
     unsigned long long _regionChangeCount;
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) _Bool isChangingMapType; // @synthesize isChangingMapType=_isChangingMapType;
 @property(nonatomic) id <VKMapViewCameraDelegate> cameraDelegate; // @synthesize cameraDelegate=_cameraDelegate;
-@property(nonatomic) id <AnalyticsProvider> analyticsProvider; // @synthesize analyticsProvider=_analyticsProvider;
 - (void)mapLayerWasUnableToAnimate;
 - (void)mapLayerWillAnimateToLocation:(CDStruct_c3b9c2ee)arg1;
 - (void)mapLayerNavigationCameraDidReturnToDefaultZoom;

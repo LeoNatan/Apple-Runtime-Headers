@@ -30,6 +30,7 @@
 - (void)buttonTouchDown:(id)arg1 forEvent:(id)arg2;
 @property(readonly, nonatomic) CCUIButtonModuleView *buttonView;
 @property(nonatomic, getter=isSelected) _Bool selected;
+@property(nonatomic) double glyphScale;
 @property(copy, nonatomic) NSString *glyphState;
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription;
 @property(retain, nonatomic) UIColor *selectedGlyphColor;

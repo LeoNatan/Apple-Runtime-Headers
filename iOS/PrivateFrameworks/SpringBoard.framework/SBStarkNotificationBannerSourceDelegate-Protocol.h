@@ -10,6 +10,7 @@
 
 @protocol SBStarkNotificationBannerSourceDelegate <NSObject>
 - (void)didDismissNotificationRequest:(NCNotificationRequest *)arg1;
+- (void)willPresentNotificationRequest:(NCNotificationRequest *)arg1;
 - (void)executeAction:(NCNotificationAction *)arg1 forNotificationRequest:(NCNotificationRequest *)arg2;
 @end
 

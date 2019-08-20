@@ -95,6 +95,7 @@
 + (id)entryEventForwardDefinitionExternalCharger;
 + (id)entryEventForwardDefinitionLightningConnectorStatus;
 + (id)entryEventForwardDefinitionEAPencil;
++ (id)entryEventForwardDefinitionEAPencilCharging;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitionUPOStepper;
 + (id)entryEventPointDefinitionChargingInfo;

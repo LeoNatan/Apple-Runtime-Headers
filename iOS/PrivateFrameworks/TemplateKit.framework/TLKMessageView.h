@@ -23,6 +23,9 @@
 - (void).cxx_destruct;
 - (void)observedPropertiesChanged;
 - (_Bool)usesDefaultInsets;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (id)setupContentView;
 
 @end

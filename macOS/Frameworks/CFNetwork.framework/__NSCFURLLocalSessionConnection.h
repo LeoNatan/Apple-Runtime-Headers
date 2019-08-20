@@ -34,12 +34,9 @@
     unsigned long long _maxDataSegmentCount;
     unsigned int _didReceiveDataCount;
     BOOL _canSendDidFinishCollectingMetrics;
-    BOOL _sentDidFinishCollectingMetrics;
     BOOL _ignoreLoaderEvents;
 }
 
-- (void)_didSendMetrics;
-- (BOOL)_needSendingMetrics;
 - (void)_captureTransportConnection:(shared_ptr_8da4e70b)arg1 extraBytes:(id)arg2;
 - (void)_capturedSocketInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)cancelAuthenticationChallenge:(id)arg1;

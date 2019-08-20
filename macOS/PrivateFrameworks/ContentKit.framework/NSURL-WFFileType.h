@@ -15,6 +15,7 @@
 + (id)dc_queryStringWithQueryDictionary:(id)arg1;
 + (id)dc_dictionaryFromQueryString:(id)arg1;
 + (id)dc_queryItemsFromQueryString:(id)arg1;
++ (id)wf_shortcutsDirectoryURL;
 + (id)rootVolumeURL;
 + (id)realLibraryDirectoryURL;
 + (id)realHomeDirectoryURL;

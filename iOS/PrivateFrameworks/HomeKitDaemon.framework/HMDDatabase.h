@@ -66,7 +66,7 @@
 - (void)addDelegate:(id)arg1;
 @property(readonly, copy) NSString *cloudContainerIdentifier;
 - (id)initWithLocalDatabase:(id)arg1 cloudDatabase:(id)arg2 logEventDispatcher:(id)arg3;
-- (id)initWithCloudContainerIdentifier:(id)arg1;
+- (id)initWithCloudContainerIdentifier:(id)arg1 cloudContainerPushTopic:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

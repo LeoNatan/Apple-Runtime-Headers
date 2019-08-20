@@ -68,6 +68,8 @@ __attribute__((visibility("hidden")))
 - (void)_fetchAndSetURLOnNotification:(id)arg1 dataScopeItemsByID:(id)arg2 documentScopeItemsByID:(id)arg3;
 - (void)_fetchAndSetURLOnNotifications:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)__flush;
+- (void)processProgressUpdates:(id)arg1;
+- (void)_processProgressUpdates:(id)arg1;
 - (void)_flushProgressUpdates;
 - (void)processUpdates:(id)arg1 withRank:(unsigned long long)arg2;
 - (void)_prepareForSecondGatherWithRank:(unsigned long long)arg1;

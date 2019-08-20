@@ -9,6 +9,6 @@
 @class PHVideoRequest;
 
 @protocol PHVideoRequestDelegate <PHMediaRequestDelegate>
-- (void)videoRequest:(PHVideoRequest *)arg1 isRequestingVideoChoosingForSize:(struct CGSize)arg2;
+- (BOOL)videoRequest:(PHVideoRequest *)arg1 didStartVideoChoosingRequestForSize:(struct CGSize)arg2;
 @end
 

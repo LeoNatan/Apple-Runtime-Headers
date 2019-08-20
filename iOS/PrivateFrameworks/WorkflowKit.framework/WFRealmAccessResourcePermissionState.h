@@ -6,15 +6,18 @@
 
 #import <WorkflowKit/RLMObject.h>
 
-@class NSData, NSString;
+@class NSData, NSString, RLMLinkingObjects;
 
 @interface WFRealmAccessResourcePermissionState : RLMObject
 {
     NSString *_identifier;
     NSData *_data;
+    RLMLinkingObjects *_trustedResources;
 }
 
++ (id)linkingObjectsProperties;
 + (id)requiredProperties;
+@property(readonly) RLMLinkingObjects *trustedResources; // @synthesize trustedResources=_trustedResources;
 @property(copy) NSData *data; // @synthesize data=_data;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

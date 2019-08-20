@@ -49,3 +49,7 @@ typedef struct {
     _Bool _field12;
 } CDStruct_a002d41c;
 
+typedef struct {
+    unsigned int :1;
+} CDStruct_65389fcd;
+

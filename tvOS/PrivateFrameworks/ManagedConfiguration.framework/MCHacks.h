@@ -12,6 +12,7 @@
 
 + (id)sharedHacks;
 - (_Bool)isSetupBuddyDone;
+- (_Bool)isJapanSKU;
 - (_Bool)isGreenTea;
 - (_Bool)sanitizedProfileSignerCertificateChainIsAllowedToInstallSupervisedRestrictionsOnUnsupervisedDevices:(id)arg1;
 - (_Bool)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
@@ -21,6 +22,7 @@
 - (void)_sendChangeNotificationsBasedOnDefaultsAdditionByDomain:(id)arg1;
 - (id)_deviceSpecificDefaultSettings;
 - (void)_setRequriesEncryptedBackupInLockdownWithEffectiveUserSettings:(id)arg1;
+- (void)_applyHeuristicsToGranfatheredRestrictionPayloadKeys:(id)arg1;
 - (void)_applyMandatorySettingsToEffectiveUserSettings:(id)arg1;
 - (void)_applyHeuristicsToEffectiveUserSettings:(id)arg1;
 - (void)_applyImpliedSettingsToSettingsDictionary:(id)arg1 currentSettings:(id)arg2 restrictions:(id)arg3;

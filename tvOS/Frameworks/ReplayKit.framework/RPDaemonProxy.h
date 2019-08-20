@@ -49,6 +49,7 @@
 - (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(CDUnknownBlockType)arg3;
 - (oneway void)stopRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (oneway void)startRecordingWindowLayerContextIDs:(id)arg1 windowSize:(struct CGSize)arg2 microphoneEnabled:(_Bool)arg3 cameraEnabled:(_Bool)arg4 broadcast:(_Bool)arg5 systemRecording:(_Bool)arg6 captureEnabled:(_Bool)arg7 listenerEndpoint:(id)arg8 withHandler:(CDUnknownBlockType)arg9;
+- (void)issueSandboxExtension;
 - (id)init;
 
 // Remaining properties

@@ -247,6 +247,10 @@ struct objc_method_description {
     char *_field2;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct shared_ptr<mlcore::DeviceLibrary> {
     struct DeviceLibrary *__ptr_;
     struct __shared_weak_count *__cntrl_;

@@ -6,11 +6,14 @@
 
 #import <WiFiPolicy/NSObject-Protocol.h>
 
-@class NSArray, NSError, NSSet;
+@class NSArray, NSDictionary, NSError, NSSet;
 
 @protocol TBFetchResponse <NSObject>
 @property(readonly, nonatomic) NSSet *tiles;
 @property(readonly, copy, nonatomic) NSError *error;
 @property(readonly, nonatomic) NSArray *results;
+
+@optional
+@property(readonly, nonatomic) NSDictionary *resultsByBSSID;
 @end
 

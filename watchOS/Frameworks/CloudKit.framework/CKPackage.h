@@ -43,10 +43,13 @@
 + (void)destroyClientPackageWithDatabaseBasePath:(id)arg1 UUID:(id)arg2;
 + (id)_createPackageDBWithPath:(id)arg1;
 + (id)clientPackageDatabaseDirectory;
++ (id)packageProcessBasePath;
 + (id)_packageDatabasePathWithBasePath:(id)arg1 UUID:(id)arg2 state:(int)arg3;
 + (id)_packageDatabaseDirectoryWithBasePath:(id)arg1 state:(int)arg2;
 + (id)_packagesBasePathForBundleID:(id)arg1;
-+ (id)packageInDaemonWithBundleIdentifier:(id)arg1 error:(id *)arg2;
++ (id)stagingPathSuffixForCloudKitCachesDirectoryWithBundleIdentifier:(id)arg1;
++ (id)packageInDaemonWithBasePath:(id)arg1 error:(id *)arg2;
++ (id)packageInClientWithBasePath:(id)arg1 error:(id *)arg2;
 + (id)packageWithPackage:(id)arg1 error:(id *)arg2;
 + (id)packageWithError:(id *)arg1;
 @property(copy, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
@@ -117,7 +120,7 @@
 - (id)_initWithBasePath:(id)arg1 UUID:(id)arg2;
 - (id)init;
 - (_Bool)removeDBAndDeleteFilesWithError:(id *)arg1;
-- (id)clonedPackageWithFilesDuplicatedIntoDirectory:(id)arg1 withError:(id *)arg2;
+- (id)clonedPackageInDaemonWithBasePath:(id)arg1 filesDuplicatedIntoDirectory:(id)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

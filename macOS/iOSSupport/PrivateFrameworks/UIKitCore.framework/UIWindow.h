@@ -11,8 +11,8 @@
 #import <UIKitCore/_UIFocusEventRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIFocusMovementActionForwarding-Protocol.h>
 
-@class CAContext, CALayer, NSArray, NSMutableArray, NSMutableSet, NSString, NSUndoManager, UIAccessibilityHUDView, UIResponder, UIScene, UIScreen, UITraitCollection, UIViewController, UIWindowScene, _UIContextBinder, _UIEmbeddedResponder, _UIFocusEventRecognizer, _UIRootPresentationController, _UISystemGestureGateGestureRecognizer, _UIViewControllerNullAnimationTransitionCoordinator, _UIWindowAnimationController;
-@protocol BSInvalidatable, NSISEngineDelegate, UIFocusItem, _UISceneUIWindowHosting;
+@class CAContext, CALayer, NSArray, NSMutableArray, NSMutableSet, NSString, NSUndoManager, UIAccessibilityHUDView, UIResponder, UIScene, UIScreen, UITraitCollection, UIViewController, UIWindowScene, _UIContextBinder, _UIEmbeddedResponder, _UIFocusEventRecognizer, _UIRootPresentationController, _UISystemGestureGateGestureRecognizer, _UIViewControllerNullAnimationTransitionCoordinator, _UIWindowAnimationController, _UIWindowSceneMacComponent;
+@protocol BSInvalidatable, NSISEngineDelegate, UIFocusItem, UINSWindow, _UISceneUIWindowHosting;
 
 @interface UIWindow : UIView <NSISEngineDelegate, _UIFocusEventRecognizerDelegate, _UIFocusMovementActionForwarding, _UIContextBindable>
 {
@@ -139,6 +139,7 @@
 + (void)_setKeyWindowStackEnabled:(BOOL)arg1;
 + (unsigned long long)_keyWindowStackSize;
 + (void)_clearKeyWindowStack;
++ (BOOL)_shouldSoftAssertOnSetScreen;
 + (BOOL)_clearPreCommitHandlerRegistration;
 + (void)_synchronizeDrawingWithFence:(id)arg1 preCommitHandler:(CDUnknownBlockType)arg2;
 + (void)_synchronizeDrawingWithFence:(id)arg1;
@@ -193,6 +194,7 @@
 @property(retain, nonatomic, getter=_rootPresentationController, setter=_setRootPresentationController:) _UIRootPresentationController *rootPresentationController; // @synthesize rootPresentationController=_rootPresentationController;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
 - (void).cxx_destruct;
+@property(nonatomic, setter=setCanResizeToFitContent:) BOOL canResizeToFitContent;
 - (void)_setCanResizeToFitContent:(BOOL)arg1;
 - (BOOL)_canResizeToFitContent;
 - (void)setRestorationIdentifier:(id)arg1;
@@ -270,6 +272,7 @@
 - (struct CGPoint)_convertPointToSceneReferenceSpace:(struct CGPoint)arg1;
 - (struct CGPoint)_convertPointFromSceneReferenceSpace:(struct CGPoint)arg1;
 - (struct CGRect)_sceneReferenceBounds;
+- (long long)_sceneClientOrientation;
 - (long long)_sceneOrientation;
 - (struct CGRect)_sceneBounds;
 - (BOOL)_isHostedInAnotherProcess;
@@ -285,6 +288,7 @@
 - (id)undoManager;
 - (BOOL)_needsShakesWhenInactive;
 - (id)_deepestUnambiguousResponder;
+- (id)_responderForKeyEventsInWindow;
 - (BOOL)_supportsBecomeFirstResponderWhenPossible;
 - (BOOL)_becomeFirstResponderWhenPossible;
 - (BOOL)becomeFirstResponder;
@@ -542,12 +546,14 @@
 - (BOOL)_wantsSceneAssociation;
 - (id)_debugName;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+@property(nonatomic, setter=_setHostWindow:) __weak id <UINSWindow> _hostWindow;
 - (long long)_interfaceOrientationForSceneSafeAreaInsetsIncludingStatusBar:(BOOL)arg1;
 - (void)_performTouchContinuationWithOverrideHitTestedView:(id)arg1;
 - (id)_aboveWindowScrollView;
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientation:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientationIfRotationEnabled:(BOOL)arg1;
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientation;
+@property(readonly, nonatomic) _UIWindowSceneMacComponent *_macComponent;
 - (BOOL)_isAlwaysKeyboardWindow;
 - (void)_traitCollectionDidChangeOnSubtreeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (id)_keyboardSceneSettings;
@@ -584,6 +590,7 @@
 - (id)_uiib_layoutEngineCreatingIfNecessary;
 - (id)_layoutEngineIfAvailable;
 - (id)_layoutEngineCreateIfNecessary;
+- (void)_initializeLayoutEngineDiscardingOldIfNeeded:(BOOL)arg1;
 - (void)_initializeLayoutEngine;
 - (void)_switchToLayoutEngine:(id)arg1;
 - (void)_constraints_subviewWillChangeSuperview:(id)arg1;
@@ -595,8 +602,9 @@
 - (void)_uiib_invalidateWindowInternalConstraints;
 - (void)_invalidateWindowInternalConstraints;
 - (void)_updateWindowEngineHostConstraintsWithSizing:(BOOL)arg1;
-- (void)_checkForSwitchToBridgingConstraints;
 - (BOOL)_shouldBridgeSizeToSceneView;
+- (void)_updateBridgingConstraintsIfNeeded;
+- (id)_engineForBridgingSizeToSceneView;
 - (void)_connectedUINSSceneView;
 - (void)_updateSystemConstraints;
 - (BOOL)_canBecomeLayoutEngineDelegate;

@@ -10,6 +10,7 @@
 
 @interface NTKStopwatchComplicationDataSource : NTKComplicationDataSource
 {
+    _Bool _listeningForNotifications;
     NTSStopwatchModel *_stopwatchModel;
 }
 

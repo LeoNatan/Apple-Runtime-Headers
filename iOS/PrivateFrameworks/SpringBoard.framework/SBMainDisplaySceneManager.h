@@ -10,7 +10,7 @@
 #import <SpringBoard/SBIdleTimerProviding-Protocol.h>
 #import <SpringBoard/SBSuspendedUnderLockManagerDelegate-Protocol.h>
 
-@class FBSSceneClientSettingsDiffInspector, NSArray, NSMutableSet, NSString, SBFaceContactExpectationManager, SBMainDisplayLayoutState, SBMainDisplayLayoutStateManager, SBMainDisplayPolicyAggregator, SBMainDisplaySceneLayoutViewController, SBMedusaHostedKeyboardWindow, SBSuspendedUnderLockManager, UIApplicationSceneClientSettingsDiffInspector;
+@class FBSSceneClientSettingsDiffInspector, NSArray, NSHashTable, NSMutableSet, NSString, SBFaceContactExpectationManager, SBMainDisplayLayoutState, SBMainDisplayLayoutStateManager, SBMainDisplayPolicyAggregator, SBMainDisplaySceneLayoutViewController, SBMedusaHostedKeyboardWindow, SBSuspendedUnderLockManager, UIApplicationSceneClientSettingsDiffInspector;
 @protocol SBIdleTimerCoordinating;
 
 @interface SBMainDisplaySceneManager : SBSceneManager <SBIdleTimerCoordinating, SBSuspendedUnderLockManagerDelegate, SBIdleTimerProviding>
@@ -27,6 +27,7 @@
     NSMutableSet *_requiredContextIdentifiersForMedusaDraggingDestination;
     _Bool _didAddSceneLayoutViewControllerWindowContextIdentifier;
     SBSuspendedUnderLockManager *_lazy_suspendedUnderLockManager;
+    NSHashTable *_preventAdditionalMedusaSnapshotsAssertions;
     id <SBIdleTimerCoordinating> _idleTimerCoordinator;
 }
 
@@ -39,12 +40,13 @@
 - (id)coordinatorRequestedIdleTimerBehavior:(id)arg1;
 - (id)idleTimerProvider:(id)arg1 didProposeBehavior:(id)arg2 forReason:(id)arg3;
 - (id)_proposeIdleTimerBehaviorForReason:(id)arg1;
-- (void)updateStatusBarHeightForScene:(id)arg1 transitionContext:(id)arg2;
 - (void)_updateLevelAndBackgroundSettingsForScene:(id)arg1 transitionContext:(id)arg2;
+- (void)_updateMedusaHostedKeyboardWindowForScene:(id)arg1 isForeground:(_Bool *)arg2;
+- (void)_updateMedusaHostedKeyboardWindow;
 - (void)_updateValidInterfaceOrientationForTransitionContext:(id)arg1;
 - (void)_updateDeviceOrientation:(long long)arg1 ifNeededForScene:(id)arg2;
 - (_Bool)_animateGeometryChangesForExternalForegroundApplicationScenes;
-- (void)_updateExternalForegroundApplicationScenesToInterfaceOrientation:(long long)arg1 force:(_Bool)arg2;
+- (void)_updateExternalForegroundApplicationScenesToInterfaceOrientation:(long long)arg1 force:(_Bool)arg2 prefersTouchCancellationDisabled:(_Bool)arg3;
 - (void)_deviceOrientationChanged:(id)arg1;
 - (void)_application:(id)arg1 initiatedChangefromInterfaceOrientation:(long long)arg2 toInterfaceOrientation:(long long)arg3 scene:(id)arg4 sceneSettings:(id)arg5 transitionContext:(id)arg6;
 - (id)_externalClientSettingsDiffInspector;
@@ -59,6 +61,7 @@
 - (id)_identifierForApplication:(id)arg1;
 - (id)newSceneIdentityForApplication:(id)arg1;
 - (id)_sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3 allowCanMatches:(_Bool)arg4 preferNewScene:(_Bool)arg5 visibleIdentifiers:(id)arg6 excludingIdentifiers:(id)arg7;
+- (id)_sceneIdentityForApplication:(id)arg1 createPrimaryIfRequired:(_Bool)arg2;
 - (id)sceneIdentityForApplication:(id)arg1 uniqueIdentifier:(id)arg2 targetContentIdentifier:(id)arg3;
 - (id)sceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2 allowCanMatches:(_Bool)arg3 preferNewScene:(_Bool)arg4 visibleIdentifiers:(id)arg5;
 - (id)sceneIdentityForApplication:(id)arg1 targetContentIdentifier:(id)arg2;
@@ -70,7 +73,7 @@
 - (id)runningApplicationScenes:(id)arg1;
 - (id)suspendedUnderLockManager:(id)arg1 sceneHandleForScene:(id)arg2;
 - (id)suspendedUnderLockManagerDisplayConfiguration:(id)arg1;
-- (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
+- (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (_Bool)_shouldRequestSnapshotActionsForScene:(id)arg1;
 - (void)_noteDidCommitUpdateForScene:(id)arg1;
 - (void)_noteDidChangeToVisibility:(unsigned long long)arg1 previouslyExisted:(_Bool)arg2 forScene:(id)arg3;
@@ -82,8 +85,10 @@
 - (void)_scene:(id)arg1 interceptUpdateWithNewSettings:(id)arg2;
 - (id)_snapshotRequestsForSceneHandle:(id)arg1 settings:(id)arg2;
 - (_Bool)_handleAction:(id)arg1 forScene:(id)arg2;
+- (_Bool)_shouldTrackScenesForDeactivation;
 - (_Bool)_shouldAutoHostScene:(id)arg1;
 - (id)_createRootWindowScenePresentationBinder;
+- (id)preventTakingAdditionalMedusaSnapshotsForBackgroundingScenesWithReason:(id)arg1;
 - (void)createSceneForApplication:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic, getter=isSuspendedUnderLock) _Bool suspendedUnderLock;
 - (void)removeObserver:(id)arg1;

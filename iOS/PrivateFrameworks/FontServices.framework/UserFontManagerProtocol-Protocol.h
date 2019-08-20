@@ -8,7 +8,8 @@
 
 @protocol UserFontManagerProtocol
 - (void)_removeAllUserFonts;
-- (void)checkTimer:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;
+- (void)suspendedFontProviders:(void (^)(NSArray *))arg1;
+- (void)suspendFontProvider:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
 - (void)resumeSuspendedFontFiles:(void (^)(NSDictionary *))arg1;
 - (void)fontProvidersSubscriptionSupportInfo:(void (^)(NSDictionary *))arg1;
 - (void)secondsSinceLastAccessed:(NSString *)arg1 completionHandler:(void (^)(double))arg2;
@@ -22,7 +23,7 @@
 - (void)registeredFamiliesForIdentifier:(NSString *)arg1 enabled:(_Bool)arg2 completionHandler:(void (^)(NSArray *))arg3;
 - (void)registeredFontsForIdentifier:(NSString *)arg1 enabled:(_Bool)arg2 completionHandler:(void (^)(NSArray *))arg3;
 - (void)registeredFontsInfoForIdentifier:(NSString *)arg1 enabled:(_Bool)arg2 completionHandler:(void (^)(NSArray *))arg3;
-- (void)uninstallFonts:(NSArray *)arg1 forIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSArray *))arg3;
-- (void)installFonts:(NSArray *)arg1 forIdentifier:(NSString *)arg2 enabled:(_Bool)arg3 completionHandler:(void (^)(NSArray *))arg4;
+- (void)uninstallFonts:(NSArray *)arg1 forIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSArray *, NSDictionary *))arg3;
+- (void)installFonts:(NSArray *)arg1 forIdentifier:(NSString *)arg2 enabled:(_Bool)arg3 completionHandler:(void (^)(NSArray *, NSDictionary *))arg4;
 @end
 

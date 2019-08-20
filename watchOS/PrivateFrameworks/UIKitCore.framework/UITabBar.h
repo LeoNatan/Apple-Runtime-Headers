@@ -50,6 +50,7 @@
     int _tabBarSizing;
     UITabBarAppearance *_standardAppearance;
     unsigned int _preferredFocusHeading;
+    UIView *__expectedSuperviewFollowingAnimation;
     int _displayStyle;
     NSArray *_backgroundEffects;
 }
@@ -59,6 +60,7 @@
 + (id)_unselectedTabTintColorForView:(id)arg1;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
 @property(nonatomic, getter=_displayStyle, setter=_setDisplayStyle:) int displayStyle; // @synthesize displayStyle=_displayStyle;
+@property(retain, nonatomic) UIView *_expectedSuperviewFollowingAnimation; // @synthesize _expectedSuperviewFollowingAnimation=__expectedSuperviewFollowingAnimation;
 @property(nonatomic, getter=_preferredFocusHeading, setter=_setPreferredFocusHeading:) unsigned int preferredFocusHeading; // @synthesize preferredFocusHeading=_preferredFocusHeading;
 @property(nonatomic) __weak UITabBarItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(nonatomic) __weak id <UITabBarDelegate> delegate; // @synthesize delegate=_delegate;
@@ -119,12 +121,14 @@
 - (id)_effectiveUnselectedLabelTintColor;
 - (id)_effectiveUnselectedTintColor;
 @property(retain, nonatomic) UIColor *barTintColor;
+- (id)_normalInheritedTintColor;
 @property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
 - (void)_effectiveBarTintColorDidChange;
 - (id)_effectiveBarTintColor;
 @property(retain, nonatomic) UIImage *selectionIndicatorImage;
 @property(retain, nonatomic) UIImage *shadowImage;
 @property(retain, nonatomic) UIImage *backgroundImage;
+- (void)_useModernAppearance;
 @property(copy, nonatomic) UITabBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 - (void)_installDefaultAppearance;
 - (id)preferredFocusedView;
@@ -138,6 +142,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+@property(readonly, nonatomic) UIView *_externalViewForSafeAreaInsets;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (_Bool)_isTranslucent;
 @property(nonatomic, setter=_setBarOrientation:) int _barOrientation;
@@ -187,6 +192,7 @@
 - (void)_setSelectionIndicatorImage:(id)arg1;
 - (void)_setBackgroundImage:(id)arg1;
 @property(retain, nonatomic, setter=_setBackgroundView:) UIView *_backgroundView;
+@property(readonly, copy) NSString *description;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (float)_defaultAutolayoutSpacing;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
@@ -194,7 +200,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

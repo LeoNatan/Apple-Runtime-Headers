@@ -10,6 +10,7 @@
 #import <HomeKitDaemon/HMDCameraRecordingSessionDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraRecordingSessionNotificationTriggerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraRecordingSettingsControlDelegate-Protocol.h>
+#import <HomeKitDaemon/HMDDevicePreferenceDataSource-Protocol.h>
 #import <HomeKitDaemon/HMDHomeMessageReceiver-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
@@ -17,7 +18,7 @@
 @class HMDCameraProfile, HMDCameraRecordingBulkSendDataReadEvent, HMDCameraRecordingBulkSendSessionInitiator, HMDCameraRecordingManagerFactory, HMDCameraRecordingResidentElector, HMDCameraRecordingSession, HMDCameraRecordingSessionNotificationTrigger, HMDCameraRecordingSettingsControl, HMDHAPAccessory, HMDStreamDataChunkAssembler, HMFMessageDispatcher, HMFTimer, NSDictionary, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
 @protocol HMDDataStreamBulkSendSession, OS_dispatch_queue;
 
-@interface HMDCameraRecordingManager : HMFObject <HMDCameraRecordingSessionNotificationTriggerDelegate, HMDCameraRecordingSettingsControlDelegate, HMFLogging, HMDCameraRecordingSessionDelegate, HMDHomeMessageReceiver, HMDCameraBackingStoreDelegate, HMFTimerDelegate>
+@interface HMDCameraRecordingManager : HMFObject <HMDCameraRecordingSessionNotificationTriggerDelegate, HMDCameraRecordingSettingsControlDelegate, HMDDevicePreferenceDataSource, HMFLogging, HMDCameraRecordingSessionDelegate, HMDHomeMessageReceiver, HMDCameraBackingStoreDelegate, HMFTimerDelegate>
 {
     _Bool _motionActive;
     NSString *_logIdentifier;
@@ -64,8 +65,10 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID; // @synthesize messageTargetUUID=_messageTargetUUID;
 @property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 - (void).cxx_destruct;
+- (_Bool)supportsDeviceWithCapabilities:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (void)closeSession:(id)arg1 withError:(id)arg2;
+- (void)_resetCurrentRecordingSession:(id)arg1;
 - (void)_closeCurrentSessionsWithReason:(unsigned short)arg1;
 - (unsigned short)_closeEventReasonForRecordingSessionError:(id)arg1;
 - (void)_handleDataReceived:(id)arg1;

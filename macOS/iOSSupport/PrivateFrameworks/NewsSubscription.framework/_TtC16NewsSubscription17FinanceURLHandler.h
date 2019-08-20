@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: patterns
     // Error parsing type: , name: router
+    // Error parsing type: , name: baseHostName
 }
 
 @end

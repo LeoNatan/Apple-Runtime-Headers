@@ -8,7 +8,8 @@
 
 #import <IOBluetooth/NSPortDelegate-Protocol.h>
 
-@class IOBluetoothDevice, NSPort, NSString;
+@class IOBluetoothDevice, IOBluetoothL2CAPChannelExpansion, NSObject, NSPort, NSString;
+@protocol IOBluetoothL2CAPChannelDelegate;
 
 @interface IOBluetoothL2CAPChannel : IOBluetoothObject <NSPortDelegate>
 {
@@ -16,7 +17,6 @@
     struct _IODataQueueMemory *mIncomingDataQueue;
     IOBluetoothDevice *mDevice;
     BOOL mIncomingChannel;
-    id mL2CAPChannelConnectionHandler;
     CDUnknownFunctionPointerType mIncomingDataListener;
     void *mIncomingDataListenerRefCon;
     CDUnknownFunctionPointerType mEventDataListener;
@@ -26,7 +26,8 @@
     unsigned short mRemoteChannelID;
     BOOL mIsClosed;
     unsigned long long mObjectID;
-    id _mReserved;
+    IOBluetoothL2CAPChannelExpansion *_mReserved;
+    NSObject<IOBluetoothL2CAPChannelDelegate> *_mL2CAPChannelConnectionHandler;
 }
 
 + (id)getKeyForIOService:(unsigned int)arg1;
@@ -35,6 +36,8 @@
 + (id)withL2CAPChannelRef:(struct OpaqueIOBluetoothObjectRef *)arg1;
 + (id)registerForChannelOpenNotifications:(id)arg1 selector:(SEL)arg2 withPSM:(unsigned short)arg3 direction:(int)arg4;
 + (id)registerForChannelOpenNotifications:(id)arg1 selector:(SEL)arg2;
+@property(retain) NSObject<IOBluetoothL2CAPChannelDelegate> *mL2CAPChannelConnectionHandler; // @synthesize mL2CAPChannelConnectionHandler=_mL2CAPChannelConnectionHandler;
+@property(retain) IOBluetoothL2CAPChannelExpansion *mReserved; // @synthesize mReserved=_mReserved;
 @property(readonly) unsigned short localChannelID; // @synthesize localChannelID=mLocalChannelID;
 @property unsigned long long objectID; // @synthesize objectID=mObjectID;
 @property unsigned short PSM; // @synthesize PSM=mChannelPSM;

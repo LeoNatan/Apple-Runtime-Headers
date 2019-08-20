@@ -82,7 +82,7 @@
 - (void)updateDisambiguationSelectionIndex;
 - (void)reloadDisambiguationGridDataIfNeeded;
 - (_Bool)reloadPrimaryGridDataIfNeeded;
-- (void)updateClipsToBoundsViewCornerRadius;
+- (void)updateCornerRadius;
 - (void)resetSortControlIndex;
 - (long long)selectedSortControlIndex;
 - (void)updateSortControlTitlesIfNeeded;

@@ -67,6 +67,7 @@
 - (_Bool)hasColorForName:(const char *)arg1;
 - (_Bool)getColor:(struct _colordef *)arg1 forName:(const char *)arg2;
 - (id)renditionNameForKeyBaseList:(struct _renditionkeytoken *)arg1;
+- (id)renditionNamesWithKeys;
 - (id)renditionNameForKeyList:(struct _renditionkeytoken *)arg1;
 - (id)allRenditionNames;
 - (const struct _renditionkeytoken *)renditionKeyForName:(const char *)arg1 hotSpot:(struct CGPoint *)arg2;

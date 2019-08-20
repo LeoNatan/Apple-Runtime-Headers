@@ -6,11 +6,11 @@
 
 #import <UIKitCore/UIBarItem.h>
 
-#import <UIKitCore/UISpringLoadedInteractionSupporting-Protocol.h>
+#import <UIKitCore/_UIBarAppearanceChangeObserver-Protocol.h>
 
 @class NSString, UIColor, UIImage, UITabBarAppearance, UITabBarButton, _UITabBarItemAppearanceStorage;
 
-@interface UITabBarItem : UIBarItem <UISpringLoadedInteractionSupporting>
+@interface UITabBarItem : UIBarItem <_UIBarAppearanceChangeObserver>
 {
     NSString *_title;
     SEL _action;
@@ -37,7 +37,6 @@
     } _tabBarItemFlags;
     BOOL _springLoaded;
     struct UIOffset _badgeOffset;
-    struct UIOffset _landscapePhoneBadgeOffset;
     UITabBarAppearance *_standardAppearance;
     long long __barMetrics;
     long long __imageStyle;
@@ -51,6 +50,9 @@
 @property(copy, nonatomic) UITabBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
 - (void).cxx_destruct;
+- (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
+- (void)setSpringLoaded:(BOOL)arg1;
+- (BOOL)isSpringLoaded;
 - (void)_updateView;
 - (void)_updateViewAndPositionItems:(BOOL)arg1;
 - (id)_createViewForTabBar:(id)arg1 asProxyView:(BOOL)arg2;
@@ -121,7 +123,6 @@
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 @property(nonatomic, getter=_isSelected, setter=_setSelected:) BOOL _selected;
 @property(readonly, copy) NSString *description;
-@property(nonatomic, getter=isSpringLoaded) BOOL springLoaded;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -185,6 +185,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic, getter=isExcludedFromSync) BOOL excludedFromSync;
 @property(readonly, nonatomic) NSDictionary *extendedAttributes;
+@property(readonly, copy) NSString *fileSystemFilename;
 @property(readonly, nonatomic) id <NSFileProviderItemFlags> flags;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
 @property(readonly, copy) NSString *fp_domainIdentifier;

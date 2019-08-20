@@ -9,17 +9,14 @@
 #import <SpringBoard/UIDraggingSystemMonitorDelegate-Protocol.h>
 
 @class NSHashTable, NSMapTable, NSString;
-@protocol SBDraggingSystemManagerDelegate;
 
 @interface SBDraggingSystemManager : NSObject <UIDraggingSystemMonitorDelegate>
 {
     NSHashTable *_observers;
     NSMapTable *_commandeerReasons;
-    id <SBDraggingSystemManagerDelegate> _delegate;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <SBDraggingSystemManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)touchRoutingPolicyForBeginningDragSessionWithInfo:(id)arg1;
 - (void)dragSessionDidEnd:(id)arg1;

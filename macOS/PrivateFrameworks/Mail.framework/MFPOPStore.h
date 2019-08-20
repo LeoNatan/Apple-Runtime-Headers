@@ -38,6 +38,7 @@
 - (long long)connection:(id)arg1 willRetrieveMessageNumber:(unsigned long long)arg2 header:(id)arg3 size:(unsigned long long)arg4;
 - (void)connection:(id)arg1 receivedNumberOfBytes:(unsigned long long)arg2;
 @property(readonly, nonatomic) BOOL connectionShouldPrefetchMessages;
+- (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
 - (id)moveMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(BOOL)arg3;
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
 - (void)_cancelAutosave;

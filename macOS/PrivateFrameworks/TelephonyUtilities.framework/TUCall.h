@@ -213,6 +213,7 @@
 @property(readonly, nonatomic) float localMeterLevel;
 @property(readonly, nonatomic) float remoteMeterLevel;
 @property(readonly, nonatomic) BOOL wantsStagingArea;
+@property(readonly, nonatomic, getter=isMutuallyExclusiveCall) BOOL mutuallyExclusiveCall;
 @property(readonly, nonatomic) BOOL shouldSuppressInCallUI;
 @property(readonly, nonatomic, getter=isRemoteUplinkMuted) BOOL remoteUplinkMuted;
 @property(readonly, nonatomic) BOOL supportsTTYWithVoice;

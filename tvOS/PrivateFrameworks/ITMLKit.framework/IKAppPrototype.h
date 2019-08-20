@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IKAppPrototypeIdentifier, IKDOMPrototype, IKViewElement, NSDictionary, NSIndexSet, NSMutableIndexSet;
+@class IKAppPrototypeIdentifier, IKDOMPrototype, NSDictionary, NSIndexSet, NSMutableIndexSet;
 
 __attribute__((visibility("hidden")))
 @interface IKAppPrototype : NSObject
@@ -15,10 +15,8 @@ __attribute__((visibility("hidden")))
     IKAppPrototypeIdentifier *_identifier;
     IKDOMPrototype *_prototype;
     NSDictionary *_groupingValues;
-    IKViewElement *_viewElement;
 }
 
-@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(readonly, copy, nonatomic) NSDictionary *groupingValues; // @synthesize groupingValues=_groupingValues;
 @property(readonly, nonatomic) __weak IKDOMPrototype *prototype; // @synthesize prototype=_prototype;
 @property(readonly, nonatomic) IKAppPrototypeIdentifier *identifier; // @synthesize identifier=_identifier;
@@ -29,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (void)addUsageForIndex:(long long)arg1;
 @property(readonly, copy, nonatomic) NSIndexSet *usageIndexes;
 - (id)initWithPrototype:(id)arg1 dataItem:(id)arg2;
+- (void)dsepm_setViewElement:(id)arg1;
+- (id)dsepm_viewElement;
 
 @end
 

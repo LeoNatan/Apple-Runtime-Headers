@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class BrightnessSystemClient, CBAdaptationClient, CBTrueToneClient, DisplayServicesClient, NSDate, NSDictionary, NSMutableArray, NSString, PLDisplayIOReportStats, PLEntry, PLEntryNotificationOperatorComposition, PLEventForwardDisplayEntry, PLIOKitOperatorComposition, PLMonotonicTimer, PLTimer, PLXPCListenerOperatorComposition;
+@class BrightnessSystemClient, CBAdaptationClient, CBTrueToneClient, DisplayServicesClient, KeyboardBrightnessClient, NSDate, NSDictionary, NSMutableArray, NSString, PLDisplayIOReportStats, PLEntry, PLEntryNotificationOperatorComposition, PLEventForwardDisplayEntry, PLIOKitOperatorComposition, PLMonotonicTimer, PLTimer, PLXPCListenerOperatorComposition;
 
 @interface PLDisplayAgent : PLAgent
 {
@@ -58,8 +58,11 @@
     DisplayServicesClient *_displayServiceClient;
     long long _builtInDisplayID;
     CBTrueToneClient *_cbTrueToneClient;
+    KeyboardBrightnessClient *_kbClient;
 }
 
++ (BOOL)shouldModelPowerFromIOMFB;
++ (BOOL)shouldModelPowerFromAPL;
 + (BOOL)shouldLogAPL;
 + (BOOL)shouldLogTouch;
 + (BOOL)shouldLogKeyboardBrightness;
@@ -95,6 +98,7 @@
 + (id)entryEventNoneDefinitionPanelStats;
 + (id)entryEventNoneDefinitions;
 + (void)load;
+@property(retain) KeyboardBrightnessClient *kbClient; // @synthesize kbClient=_kbClient;
 @property(retain) CBTrueToneClient *cbTrueToneClient; // @synthesize cbTrueToneClient=_cbTrueToneClient;
 @property long long builtInDisplayID; // @synthesize builtInDisplayID=_builtInDisplayID;
 @property(retain) DisplayServicesClient *displayServiceClient; // @synthesize displayServiceClient=_displayServiceClient;
@@ -145,6 +149,7 @@
 @property(readonly) PLIOKitOperatorComposition *iokitBacklight; // @synthesize iokitBacklight=_iokitBacklight;
 - (void).cxx_destruct;
 - (void)modelDynamicDisplayPowerFromAPL:(id)arg1;
+- (void)modelDisplayPowerFromIOMFB:(id)arg1;
 - (double)calculatePowerFromAPL:(double)arg1 withAvgRed:(double)arg2 withAvgGreen:(double)arg3 withAvgBlue:(double)arg4;
 - (void)modelDynamicDisplayPower:(id)arg1;
 - (double)averageFrameRateFromIOMFBScanout:(id)arg1;
@@ -175,7 +180,7 @@
 - (void)logEventForwardDisplay;
 - (unsigned long long)getBacklightEnabledTimestamp:(unsigned int)arg1;
 - (void)logEventForwardALSLux:(unsigned long long)arg1;
-- (void)logEventPointKeyboardBrightness;
+- (void)logEventPointKeyboardBrightness:(double)arg1;
 - (void)logEventPointUserBrightnessCommitted:(double)arg1;
 - (void)logEventPointDisplayForBlock:(id)arg1 isActive:(BOOL)arg2;
 - (void)logEventPointDisplayMIE;

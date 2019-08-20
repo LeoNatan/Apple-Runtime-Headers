@@ -323,6 +323,7 @@
 @property(readonly) BOOL rotateEnabled;
 @property(readonly) BOOL markupEnabled;
 - (void)_updateOpenButton;
+- (BOOL)_displayedDisplayBundleBlockedByScreentime;
 - (void)_resetOpenButton;
 - (BOOL)canOpen;
 - (CDUnknownBlockType)openButtonMenuProvider;

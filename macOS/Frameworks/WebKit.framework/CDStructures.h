@@ -294,7 +294,7 @@ struct DOMWrapperWorld;
 struct Data {
     int _field1;
     _Bool _field2;
-    struct String _field3;
+    struct PendingAPIRequest _field3;
     struct String _field4;
     struct String _field5;
     struct String _field6;
@@ -556,7 +556,7 @@ struct Document {
     struct MonotonicTime _field157;
     struct MonotonicTime _field158;
     struct RefPtr<WebCore::ScriptedAnimationController, WTF::DumbPtrTraits<WebCore::ScriptedAnimationController>> _field159;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field160;
+    struct GenericTaskQueue<WebCore::Timer> _field160;
     struct Timer _field161;
     struct Vector<WebCore::ScriptExecutionContext::Task, 0, WTF::CrashOnOverflow, 16> _field162;
     struct unique_ptr<WebCore::TextAutoSizing, std::__1::default_delete<WebCore::TextAutoSizing>> _field163;
@@ -867,8 +867,8 @@ struct Function<void (bool)> {
 
 struct GenericCallback<>;
 
-struct GenericTaskQueue<WebCore::Timer, unsigned int> {
-    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> _field1;
+struct GenericTaskQueue<WebCore::Timer> {
+    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> _field1;
     struct TaskDispatcher<WebCore::Timer> _field2;
     unsigned int _field3;
     _Bool _field4;
@@ -3040,6 +3040,11 @@ struct PaymentAuthorizationPresenter {
     struct Client *_field3;
 };
 
+struct PendingAPIRequest {
+    unsigned long long _field1;
+    struct String _field2;
+};
+
 struct PendingDownload;
 
 struct PerActivityStateCPUUsageSampler;
@@ -4297,6 +4302,7 @@ struct SpeechSynthesisData {
     struct CompletionHandler<void ()> _field3;
     struct CompletionHandler<void ()> _field4;
     struct CompletionHandler<void ()> _field5;
+    struct CompletionHandler<void ()> _field6;
 };
 
 struct StorageManager;
@@ -5069,7 +5075,7 @@ struct WeakPtrFactory<WebCore::ContainerNode> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
-struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
+struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
@@ -5457,6 +5463,7 @@ struct WebPage {
     _Bool _field138;
     struct WeakPtr<WebKit::RemoteObjectRegistry> _field139;
     struct IntSize _field140;
+    struct Timer _field141;
 };
 
 struct WebPageDebuggable;

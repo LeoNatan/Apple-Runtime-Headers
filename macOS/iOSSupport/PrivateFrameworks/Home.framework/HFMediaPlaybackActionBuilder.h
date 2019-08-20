@@ -13,7 +13,6 @@
     NSSet *_mediaProfiles;
     long long _targetPlayState;
     NSNumber *_targetVolume;
-    long long _targetOptions;
     HFPlaybackArchive *_playbackArchive;
     NSSet *_accessories;
 }
@@ -21,7 +20,6 @@
 + (Class)homeKitRepresentationClass;
 @property(copy, nonatomic) NSSet *accessories; // @synthesize accessories=_accessories;
 @property(retain, nonatomic) HFPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
-@property(nonatomic) long long targetOptions; // @synthesize targetOptions=_targetOptions;
 @property(retain, nonatomic) NSNumber *targetVolume; // @synthesize targetVolume=_targetVolume;
 @property(nonatomic) long long targetPlayState; // @synthesize targetPlayState=_targetPlayState;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
@@ -30,7 +28,6 @@
 - (id)_performValidation;
 - (BOOL)isMediaActionValid:(id *)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDescription;
-- (void)clearPlayStateRelatedProperties;
 - (id)copyForCreatingNewAction;
 - (BOOL)hasSameTargetAsAction:(id)arg1;
 - (id)mediaProfileContainersForAccessories:(id)arg1 home:(id)arg2;

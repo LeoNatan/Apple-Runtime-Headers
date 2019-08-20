@@ -103,6 +103,8 @@
 - (void)setWhiteBalanceMode:(long long)arg1;
 - (long long)whiteBalanceMode;
 - (BOOL)isWhiteBalanceModeSupported:(long long)arg1;
+- (void)setGlobalToneMappingEnabled:(BOOL)arg1;
+- (BOOL)isGlobalToneMappingEnabled;
 - (void)setExposureTargetBias:(float)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (float)maxExposureTargetBias;
 - (float)minExposureTargetBias;

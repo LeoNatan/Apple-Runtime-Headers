@@ -60,7 +60,8 @@ __attribute__((visibility("hidden")))
         unsigned int _isWriter:1;
         unsigned int _didSnapshotRecovery:1;
         unsigned int _hasTransactionStringTable:1;
-        unsigned int _reserved:21;
+        unsigned int _isQueryGenTracking:1;
+        unsigned int _reserved:20;
     } _sqliteConnectionFlags;
     unsigned long long _debugInode;
     NSMutableArray *_activeGenerations;
@@ -87,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (void)triggerUpdatedRowInTable:(const char *)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(const char *)arg4 newValue:(long long)arg5;
 - (void)clearObjectIDsUpdatedByTriggers;
 - (id)createSetOfObjectIDsUpdatedByTriggers;
+- (void)_dropAllTriggers;
 - (id)reopenQueryGenerationWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)_checkActiveGenerationsForIdentfier:(id)arg1;
 - (int)adoptQueryGenerationWithIdentifier:(id)arg1;
@@ -115,8 +117,12 @@ __attribute__((visibility("hidden")))
 - (void)prepareInsertStatementForEntity:(id)arg1 includeConstraints:(BOOL)arg2 includeOnConflict:(BOOL)arg3;
 - (void)prepareInsertStatementForAncillaryEntity:(id)arg1;
 - (long long)_insertTransactionForRequestContext:(id)arg1 andStrings:(id)arg2;
+- (id)_insertTransactionStringForMigrationAuthor:(id)arg1;
 - (id)_insertTransactionStringsForRequestContext:(id)arg1;
+- (id)_transactionsStringAndPKsForStrings:(id)arg1;
+- (id)_createTransactionStringWithName:(id)arg1;
 - (void)processExternalDataReferenceFilesDeletedByRequest:(id)arg1;
+- (void)processMigrationRequestForHash:(id)arg1;
 - (void)processDeleteRequest:(id)arg1;
 - (void)dropHistoryBeforeTransactionID:(id)arg1;
 - (id)hasAncillaryEntitiesInHistory;
@@ -188,6 +194,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasTempTableWithName:(id)arg1;
 - (BOOL)_hasTableWithName:(id)arg1;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
+- (id)fetchTriggerCreationSQL;
 - (id)fetchIndexCreationSQL;
 - (id)fetchTableCreationSQL;
 - (id)fetchCreationSQLForType:(id)arg1;

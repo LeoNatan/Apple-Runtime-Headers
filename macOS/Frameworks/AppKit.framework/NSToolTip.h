@@ -10,29 +10,36 @@
 
 @interface NSToolTip : NSObject
 {
-    NSView *view;
-    NSCell *cell;
-    NSString *string;
-    id owner;
-    NSDictionary *dataDictionary;
-    void *weakData;
     long long trackingNum;
-    struct CGRect trackingRect;
+    NSView *view;
+    id owner;
     struct {
         unsigned int ownerIsDisplayDelegate:1;
-        unsigned int isTemporary:1;
         unsigned int fadesOutWhenInactive:1;
         unsigned int isExpansionToolTip:1;
-        unsigned int reserved:28;
+        unsigned int reserved:29;
     } ttFlags;
+    NSCell *_cell;
+    NSString *_string;
+    NSDictionary *_dataDictionary;
+    void *_weakData;
+    struct CGRect _trackingRect;
 }
 
-- (void)setData:(void *)arg1;
-- (void *)data;
+@property(readonly, nonatomic) struct CGRect trackingRect; // @synthesize trackingRect=_trackingRect;
+@property(readonly, nonatomic) id owner; // @synthesize owner;
+@property(readonly, nonatomic) NSCell *cell; // @synthesize cell=_cell;
+@property(readonly, nonatomic) NSView *view; // @synthesize view;
+@property(nonatomic) long long trackingNum; // @synthesize trackingNum;
+@property(copy, nonatomic) NSString *string; // @synthesize string=_string;
+@property(nonatomic) void *data;
 - (id)description;
-- (BOOL)isTemporary;
+- (BOOL)isExpansionToolTip;
+@property(readonly, nonatomic) BOOL fadesOutWhenInactive;
+@property(nonatomic) BOOL ownerIsDisplayDelegate;
 - (void)dealloc;
 - (id)init;
+- (id)initWithView:(id)arg1 cell:(id)arg2 owner:(id)arg3 ownerIsDisplayDelegate:(BOOL)arg4 data:(void *)arg5 trackingRect:(struct CGRect)arg6 string:(id)arg7;
 
 @end
 

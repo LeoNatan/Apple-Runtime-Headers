@@ -38,7 +38,6 @@
     NSString *_mediaPassword;
     _Bool _ownerUser;
     _Bool _anyBTLEAccessoryReachable;
-    _Bool _supportsNetworkProtection;
     _Bool _multiUserEnabled;
     _Bool _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     _Bool _remoteAccessIsEnabled;
@@ -54,9 +53,12 @@
     long long _protectionMode;
     HMDNetworkRouterClientManager *_routerClientManager;
     NSUUID *_activeNetworkRouterUUID;
-    NSArray *_newlyConfiguredAccessories;
+    NSMutableDictionary *_newlyConfiguredAccessories;
     NSUUID *_primaryNetworkRouterManagingDeviceUUID;
     HMDBackingStore *_backingStore;
+    HMDHomeKitVersion *_minimumNetworkRouterSupportHomeKitVersion;
+    unsigned long long _networkRouterSupport;
+    unsigned long long _networkRouterSupportDisableReason;
     NSString *_name;
     HMDHomeObjectLookup *_lookup;
     HMDHomeManager *_homeManager;
@@ -141,6 +143,7 @@
 + (void)appendCharacteristicsToAccessoryList:(id)arg1 responseTuples:(id)arg2 forMultipleCharacteristicsRemoteRead:(id)arg3;
 + (void)appendCharacteristicsToAccessoryList:(id)arg1 responseTuples:(id)arg2 forMultipleCharacteristicsRemoteWrite:(id)arg3 message:(id)arg4;
 + (id)notificationPayloadForChangedCharacterisitics:(id)arg1 destinationIsXPCTransport:(_Bool)arg2;
++ (id)filterUsersSupportingPresence:(id)arg1;
 + (id)shortDescription;
 + (id)zoneIDFromHomeUUID:(id)arg1;
 + (_Bool)isObjectContainedInHome:(id)arg1;
@@ -231,6 +234,7 @@
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) HMDHomeObjectLookup *lookup; // @synthesize lookup=_lookup;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSMutableDictionary *newlyConfiguredAccessories; // @synthesize newlyConfiguredAccessories=_newlyConfiguredAccessories;
 @property(retain, nonatomic) NSArray *mediaSessionStates; // @synthesize mediaSessionStates=_mediaSessionStates;
 @property(retain, nonatomic) NSArray *mediaSessions; // @synthesize mediaSessions=_mediaSessions;
 - (void).cxx_destruct;
@@ -244,7 +248,6 @@
 - (_Bool)_ensureDevicesSymptomDiscoveryMessageCanBeHandled:(id)arg1;
 - (void)removeAccessoriesFromAssistantAccessControl:(id)arg1 accessories:(id)arg2;
 - (void)userAssistantAccessControlDidUpdate:(id)arg1 accessories:(id)arg2;
-- (id)cameraProfileWithUUID:(id)arg1;
 @property(readonly, nonatomic) NSArray *hapAccessories;
 - (void)_handleMediaPropertiesWrite:(id)arg1;
 - (void)_handleWriteMediaProperties:(struct NSDictionary *)arg1 source:(unsigned long long)arg2 requestMessage:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -447,6 +450,7 @@
 - (void)_notifyRemoteUsersOfChangedProperties:(id)arg1 message:(id)arg2;
 - (void)notifyRemoteUsersOfChangedProperties:(id)arg1 message:(id)arg2;
 - (void)_notifyChangedCharacteristics:(id)arg1 withRequestIdentifier:(id)arg2 toUserDeviceAddress:(id)arg3;
+- (_Bool)_shouldSendToDestination:(id)arg1;
 - (void)_notifyRemoteUsersOfChangedCharacteristics:(id)arg1 message:(id)arg2;
 - (_Bool)_shouldRegisterForNotificationsWithDevice:(id)arg1;
 - (_Bool)shouldRelayNotificationToRegisteredDevicesForSource:(id)arg1;
@@ -504,6 +508,7 @@
 - (id)owner;
 - (void)removeUser:(id)arg1;
 - (void)addUser:(id)arg1;
+@property(readonly, copy) NSArray *usersSupportingPresence;
 - (id)users;
 - (void)_handleRemoveAppDataModel:(id)arg1 message:(id)arg2;
 - (void)_handleUpdateAppDataModel:(id)arg1 message:(id)arg2;
@@ -776,11 +781,13 @@
 @property(retain, nonatomic) NSUUID *primaryNetworkRouterManagingDeviceUUID; // @synthesize primaryNetworkRouterManagingDeviceUUID=_primaryNetworkRouterManagingDeviceUUID;
 @property(retain) NSUUID *activeNetworkRouterUUID; // @synthesize activeNetworkRouterUUID=_activeNetworkRouterUUID;
 @property(retain, nonatomic) HMDNetworkRouterClientManager *routerClientManager; // @synthesize routerClientManager=_routerClientManager;
-@property _Bool supportsNetworkProtection; // @synthesize supportsNetworkProtection=_supportsNetworkProtection;
+@property(retain, nonatomic) HMDHomeKitVersion *minimumNetworkRouterSupportHomeKitVersion; // @synthesize minimumNetworkRouterSupportHomeKitVersion=_minimumNetworkRouterSupportHomeKitVersion;
+@property unsigned long long networkRouterSupport; // @synthesize networkRouterSupport=_networkRouterSupport;
+@property unsigned long long networkRouterSupportDisableReason; // @synthesize networkRouterSupportDisableReason=_networkRouterSupportDisableReason;
 @property long long protectionMode; // @synthesize protectionMode=_protectionMode;
-- (id)retrieveAndResetNewlyConfiguredAccessories;
-- (void)addNewlyConfiguredAccessories:(id)arg1;
-@property(readonly, nonatomic) NSArray *newlyConfiguredAccessories; // @synthesize newlyConfiguredAccessories=_newlyConfiguredAccessories;
+- (id)retrieveAndResetNewlyConfiguredAccessoriesForAddSessionIdentifier:(id)arg1;
+- (void)addNewlyConfiguredAccessories:(id)arg1 addSessionIdentifier:(id)arg2;
+- (id)allNewlyConfiguredAccessories;
 - (void)setAnyBTLEAccessoryReachable:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isAnyBTLEAccessoryReachable) _Bool anyBTLEAccessoryReachable; // @synthesize anyBTLEAccessoryReachable=_anyBTLEAccessoryReachable;
 - (id)dumpState;
@@ -798,9 +805,11 @@
 - (id)assistantObject;
 - (id)url;
 - (id)assistantUniqueIdentifier;
+- (_Bool)checkForNetworkRouterSupport:(unsigned long long)arg1 error:(id *)arg2;
 @property(readonly) HMDHAPAccessory *activeNetworkRouterAccessory;
 @property(readonly) NSArray *wiFiRouterAccessories;
 @property(readonly) _Bool supportsRouterManagement;
+- (_Bool)_isNetworkRouterSupportEnabledForCurrentDevice;
 - (id)_currentDeviceCapabilities;
 - (void)_evaluateNetworkProtectionSupport;
 - (void)_requestUniquePSKClientConfigurationWithCompletion:(CDUnknownBlockType)arg1;
@@ -811,9 +820,12 @@
 - (void)_unconfigureNetworkRouterClientManager;
 - (void)_configureNetworkRouterClientManager:(id)arg1;
 - (void)_handleCreateUniquePSKClientConfiguration:(id)arg1;
+- (void)_handleSetMinimumNetworkRouterHomeKitVersion:(id)arg1;
 - (void)_handleUpdateNetworkProtection:(id)arg1;
+- (void)_addTransactionForMinimumNetworkRouterHomeKitVersion:(id)arg1 message:(id)arg2;
 - (void)_addTransactionForActiveNetworkRouterAccessory:(id)arg1;
 - (void)_addTransactionWithProtectionMode:(id)arg1 message:(id)arg2;
+- (unsigned long long)deriveNetworkRouterSupport:(unsigned long long)arg1;
 - (void)executeActionsFromMessage:(id)arg1;
 
 // Remaining properties

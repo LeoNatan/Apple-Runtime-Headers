@@ -124,10 +124,11 @@ struct NetworkEdge {
     unsigned int _field3;
     unsigned int _field4;
     double _field5;
-    unsigned int _field6;
+    double _field6;
     unsigned int _field7;
     unsigned int _field8;
-    vector_12bd641b _field9;
+    unsigned int _field9;
+    vector_12bd641b _field10;
 };
 
 struct NetworkNode;
@@ -591,6 +592,14 @@ struct vector<std::__1::vector<double, std::__1::allocator<double>>, std::__1::a
     } __end_cap_;
 };
 
+struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *_field1;
+    unsigned int *_field2;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *_field1;
+    } _field3;
+};
+
 struct vector<unsigned long, std::__1::allocator<unsigned long>> {
     unsigned long *__begin_;
     unsigned long *__end_;
@@ -848,4 +857,12 @@ typedef struct vector<std::__1::vector<CGPoint, std::__1::allocator<CGPoint>>, s
         vector_2e7754b6 *_field1;
     } _field3;
 } vector_15a5c7bd;
+
+typedef struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *_field1;
+    unsigned int *_field2;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *_field1;
+    } _field3;
+} vector_f672cb0f;
 

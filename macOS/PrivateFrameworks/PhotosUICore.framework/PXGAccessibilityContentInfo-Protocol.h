@@ -10,7 +10,7 @@
 @protocol PXAccessibilityView, PXDisplayAsset;
 
 @protocol PXGAccessibilityContentInfo <NSObject>
-@property(retain, nonatomic) NSArray *px_accessibilityChildren;
+@property(readonly, nonatomic) NSArray *px_accessibilityChildren;
 @property(readonly, nonatomic) BOOL visible;
 @property(readonly, copy, nonatomic) NSArray *selectedContent;
 @property(readonly, nonatomic) BOOL selected;

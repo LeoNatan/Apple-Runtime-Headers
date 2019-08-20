@@ -17,7 +17,7 @@
 }
 
 + (id)mergePreviousOrdering:(id)arg1 incomingOrdering:(id)arg2 outgoingOrdering:(id)arg3 sendOutgoingChange:(_Bool *)arg4 saveLocalChange:(_Bool *)arg5;
-+ (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 andOutgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 detectingDuplicateWorkflowsInDatabase:(id)arg5 outWorkflowIDsToRename:(id *)arg6 outLocalWorkflowsToDelete:(id *)arg7;
++ (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 outgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 incomingOrderedWorkflowIDs:(id)arg5 outgoingOrderedWorkflowIDs:(id)arg6 detectingDuplicateWorkflowsInDatabase:(id)arg7 outWorkflowIDsToRename:(id *)arg8 outLocalWorkflowsToDelete:(id *)arg9;
 + (_Bool)isSyncOrderingEnabled;
 + (_Bool)isSyncEnabled;
 + (void)initialize;

@@ -42,11 +42,12 @@
 - (void)_notificationCenterDidPresent;
 - (void)_lockStateChanged;
 - (void)_hardwareButtonPressed:(id)arg1;
+- (void)_alertNowForNotificationRequest:(id)arg1 presentingDestination:(id)arg2;
 - (void)_alertNowForNotificationRequest:(id)arg1;
 - (void)resetAutomaticLockStateForNotificationRequest:(id)arg1;
 - (void)killRealerts;
 - (void)killAlertsForNotificationRequest:(id)arg1;
-- (void)alertOnPresentationForNotificationRequest:(id)arg1;
+- (void)alertOnPresentationForNotificationRequest:(id)arg1 presentingDestination:(id)arg2;
 - (void)alertOnPostForNotificationRequest:(id)arg1 forRequestDestinations:(id)arg2;
 - (id)initWithSoundController:(id)arg1 screenController:(id)arg2 lockScreenManager:(id)arg3 carNotificationsAgent:(id)arg4 communicationPolicyManager:(id)arg5;
 - (id)init;

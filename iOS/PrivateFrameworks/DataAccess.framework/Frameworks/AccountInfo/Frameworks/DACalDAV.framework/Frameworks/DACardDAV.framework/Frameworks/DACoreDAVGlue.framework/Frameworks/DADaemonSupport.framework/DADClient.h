@@ -14,6 +14,7 @@
     _Bool _hasCalendarAccess;
     _Bool _hasReminderAccess;
     _Bool _hasContactsAccess;
+    _Bool _isInternalTool;
     _Bool _persistent;
     int _numOutstandingBlockingClientCalls;
     int _numOutstandingRefreshPriorityClientCalls;
@@ -45,6 +46,7 @@
 @property(retain, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(readonly, nonatomic) _Bool persistent; // @synthesize persistent=_persistent;
 - (void).cxx_destruct;
+- (_Bool)_isInternalTool;
 - (_Bool)_hasContactsAccess;
 - (_Bool)_hasReminderAccess;
 - (_Bool)_hasCalendarAccess;

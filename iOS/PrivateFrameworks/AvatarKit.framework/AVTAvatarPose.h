@@ -16,20 +16,23 @@
     _Bool _hasNeckOrientation;
     double _bakedAnimationBlendFactor;
     NSMutableDictionary *_weights;
-    struct SCNVector3 _neckPosition;
-    struct SCNVector4 _neckOrientation;
+    // Error parsing type: , name: _neckPosition
+    // Error parsing type: {?="vector"}, name: _neckOrientation
 }
 
 + (id)friendlyPose;
 + (id)neutralPose;
 @property(nonatomic) double bakedAnimationBlendFactor; // @synthesize bakedAnimationBlendFactor=_bakedAnimationBlendFactor;
-@property(nonatomic) struct SCNVector4 neckOrientation; // @synthesize neckOrientation=_neckOrientation;
-@property(nonatomic) struct SCNVector3 neckPosition; // @synthesize neckPosition=_neckPosition;
+@property(nonatomic) struct neckOrientation; // @synthesize neckOrientation=_neckOrientation;
+// Error parsing type for property neckPosition:
+// Property attributes: T,N,V_neckPosition
+
 - (void).cxx_destruct;
 - (id)description;
 - (id)poseByMergingPose:(id)arg1;
+- (_Bool)affectsPhysicsSimulation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithWeights:(id)arg1 neckPosition:(struct SCNVector3 *)arg2 neckOrientation:(struct SCNVector4 *)arg3 bakedAnimationBlendFactor:(double)arg4;
+-     // Error parsing type: @48@0:8@16^24^{?=}32d40, name: initWithWeights:neckPosition:neckOrientation:bakedAnimationBlendFactor:
 - (id)dictionaryRepresentation;
 - (void)setWeight:(double)arg1 forBlendShapeNamed:(id)arg2;
 - (double)weightForBlendShapeNamed:(id)arg1;

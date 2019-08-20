@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     SCRSystemUIServerApplication *_systemUIServerApplication;
     SCRCThreadKey *_threadKey;
     struct __CFSet *_applicationCache;
+    double _lastFocusedApplicationDidChange;
     NSMutableArray *__applications;
     NSMutableArray *__busyApplications;
     NSArray *__targetApplications;
@@ -60,6 +61,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *_targetApplications; // @synthesize _targetApplications=__targetApplications;
 @property(retain, nonatomic) NSMutableArray *_busyApplications; // @synthesize _busyApplications=__busyApplications;
 @property(retain, nonatomic) NSMutableArray *_applications; // @synthesize _applications=__applications;
+@property(readonly, nonatomic) double lastFocusedApplicationDidChange; // @synthesize lastFocusedApplicationDidChange=_lastFocusedApplicationDidChange;
 - (void).cxx_destruct;
 - (id)firstApplicationMenuExtraItem;
 - (id)applicationMenuExtraItems;
@@ -86,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)welcomeMessagePlayed;
 - (BOOL)isCreatingApplicationsAtStartup;
 - (void)_creatingApplicationsAtStartup:(BOOL)arg1;
+- (id)init;
 - (BOOL)wst_isApplicationRunning:(id)arg1;
 - (void)_handleNotification:(int)arg1 time:(double)arg2 data:(void *)arg3 asn:(struct __LSASN *)arg4 context:(const void *)arg5 session:(int)arg6 notificationID:(void *)arg7;
 - (void)_verifyLaunchedApplication:(id)arg1;

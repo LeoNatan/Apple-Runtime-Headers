@@ -249,9 +249,9 @@ struct DeferrableTask<WebCore::Timer> {
 };
 
 struct Deque<WTF::Function<void ()>, 0> {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    struct VectorBuffer<WTF::Function<void ()>, 0> _field3;
+    unsigned long long m_start;
+    unsigned long long m_end;
+    struct VectorBuffer<WTF::Function<void ()>, 0> m_buffer;
 };
 
 struct Deque<WTF::RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event>>, 0> {
@@ -302,17 +302,17 @@ struct Function<void (bool)> {
 
 struct GenericEventQueue {
     struct EventTarget *_field1;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field2;
+    struct GenericTaskQueue<WebCore::Timer> _field2;
     struct Deque<WTF::RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event>>, 0> _field3;
     _Bool _field4;
     _Bool _field5;
 };
 
-struct GenericTaskQueue<WebCore::Timer, unsigned int> {
-    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> _field1;
-    struct TaskDispatcher<WebCore::Timer> _field2;
-    unsigned int _field3;
-    _Bool _field4;
+struct GenericTaskQueue<WebCore::Timer> {
+    struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> m_weakPtrFactory;
+    struct TaskDispatcher<WebCore::Timer> m_dispatcher;
+    unsigned int m_pendingTasks;
+    _Bool m_isClosed;
 };
 
 struct GraphicsContext3D {
@@ -426,12 +426,12 @@ struct HTMLVideoElement {
     struct DeferrableTask<WebCore::Timer> _field40;
     struct DeferrableTask<WebCore::Timer> _field41;
     struct DeferrableTask<WebCore::Timer> _field42;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field43;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field44;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field45;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field46;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field47;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field48;
+    struct GenericTaskQueue<WebCore::Timer> _field43;
+    struct GenericTaskQueue<WebCore::Timer> _field44;
+    struct GenericTaskQueue<WebCore::Timer> _field45;
+    struct GenericTaskQueue<WebCore::Timer> _field46;
+    struct GenericTaskQueue<WebCore::Timer> _field47;
+    struct GenericTaskQueue<WebCore::Timer> _field48;
     struct RefPtr<WebCore::TimeRanges, WTF::DumbPtrTraits<WebCore::TimeRanges>> _field49;
     struct GenericEventQueue _field50;
     struct DeferrableTask<WebCore::Timer> _field51;
@@ -997,7 +997,7 @@ struct MediaSessionManageriOS {
     double _field20;
     double _field21;
     unsigned long long _field22;
-    struct GenericTaskQueue<WebCore::Timer, unsigned int> _field23;
+    struct GenericTaskQueue<WebCore::Timer> _field23;
     struct RetainPtr<WebMediaSessionHelper> _field24;
 };
 
@@ -1085,7 +1085,7 @@ struct PlaybackSessionInterfaceAVKit {
     CDUnknownFunctionPointerType *_field2;
     unsigned int _field3;
     struct RetainPtr<WebAVPlayerController> _field4;
-    struct WeakPtr<WebCore::PlaybackSessionModel> _field5;
+    struct PlaybackSessionModel *_field5;
 };
 
 struct PlaybackSessionModel {
@@ -1516,8 +1516,8 @@ struct Strong<JSC::JSGlobalObject> {
 struct SystemSleepListener;
 
 struct TaskDispatcher<WebCore::Timer> {
-    struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> _field1;
-    struct Deque<WTF::Function<void ()>, 0> _field2;
+    struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> m_weakPtrFactory;
+    struct Deque<WTF::Function<void ()>, 0> m_pendingTasks;
 };
 
 struct TextMarkerData {
@@ -1698,9 +1698,9 @@ struct Vector<std::__1::pair<WebCore::Node *, WebCore::Node *>, 0, WTF::CrashOnO
 };
 
 struct VectorBuffer<WTF::Function<void ()>, 0> {
-    Function_7e9efc80 *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
+    Function_7e9efc80 *m_buffer;
+    unsigned int m_capacity;
+    unsigned int m_size;
 };
 
 struct VectorBuffer<WTF::RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event>>, 0> {
@@ -1739,10 +1739,6 @@ struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
 
 struct WeakPtr<WebCore::PlatformMediaSession>;
 
-struct WeakPtr<WebCore::PlaybackSessionModel> {
-    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
-};
-
 struct WeakPtr<WebCore::RenderObject> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
@@ -1763,8 +1759,8 @@ struct WeakPtrFactory<WebCore::DeferrableTask<WebCore::Timer>> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
-struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
-    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer>> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtrFactory<WebCore::MediaProducer> {
@@ -1776,7 +1772,7 @@ struct WeakPtrFactory<WebCore::PlaybackSessionModel> {
 };
 
 struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> m_impl;
 };
 
 struct WeakPtrImpl;

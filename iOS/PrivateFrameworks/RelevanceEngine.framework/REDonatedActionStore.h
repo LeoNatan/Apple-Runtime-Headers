@@ -19,21 +19,18 @@
 }
 
 - (void).cxx_destruct;
-- (void)_deviceUnlocked_removeThenDistributeAllActions;
-- (void)_applicationStateChanged_removeThenDistributeAllActions;
-- (void)_agedOut_removeThenDistributeAllActions;
-- (void)_removeThenDistributeAllActions;
+- (void)_notified_removeThenDistributeAllActions:(id)arg1;
+- (void)_notified_distributeRecentDonatedActions:(id)arg1;
+- (void)_notified_distributeRecentDeletedActions:(id)arg1;
 - (void)_queue_distributeRecentDeletedActions;
-- (void)_distributeRecentDeletedActions;
 - (void)_queue_distributeRecentDonatedActions;
+- (void)_queue_autoreleased_distributeAllDonatedActions;
 - (void)_queue_distributeAllDonatedActions;
-- (void)_distributeRecentDonatedActions;
-- (void)_distributeAllDonatedActions;
-- (void)_finishLoadingData;
+- (void)_finishLoadingData:(unsigned long long)arg1;
 - (void)_beginLoadingData;
 - (_Bool)_shouldLimitQueries;
 - (void)_subscribeToNotifications;
-- (void)triggerDistributeAllDonatedActions;
+- (void)triggerDistributeAllDonatedActions:(_Bool)arg1;
 - (void)synchronizeDonationsIfNecessary;
 - (void)fetchDonationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)start;

@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIDraggingInfo-Protocol.h>
 
-@class NSArray, NSSet, NSString, NSXPCListenerEndpoint, PBItemCollection, UIDragEvent, UIDraggingBeginningSessionConfiguration, UIDraggingSystemTouchRoutingPolicy, UIView, UIWindow, _UIDragSetDownAnimation, _UIDruidSourceConnection;
+@class NSArray, NSString, NSTimer, PBItemCollection, UIDragEvent, UIDraggingBeginningSessionConfiguration, UIDraggingSystemTouchRoutingPolicy, UIView, UIWindow, _UIDragSetDownAnimation, _UIDruidSourceConnection;
 @protocol _UIDraggingSessionDelegate;
 
 __attribute__((visibility("hidden")))
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     BOOL _sentWillEnd;
     BOOL _hostIsActive;
     BOOL _originatedInHostedWindow;
+    NSTimer *_waitingToSendDidExitAppTimer;
     UIDraggingBeginningSessionConfiguration *_configuration;
     unsigned int _sessionIdentifier;
     id <_UIDraggingSessionDelegate> _delegate;
@@ -32,8 +33,6 @@ __attribute__((visibility("hidden")))
     unsigned long long _resultOperation;
     NSArray *_internalItems;
     long long _dataOwner;
-    NSSet *_touches;
-    NSXPCListenerEndpoint *_accessibilityEndpoint;
     UIWindow *_centroidWindow;
     unsigned long long _withinAppSourceOperationMask;
     unsigned long long _outsideAppSourceOperationMask;
@@ -47,8 +46,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, nonatomic) UIWindow *centroidWindow; // @synthesize centroidWindow=_centroidWindow;
 @property(readonly, nonatomic) struct CGPoint centroid; // @synthesize centroid=_centroid;
-@property(retain, nonatomic) NSXPCListenerEndpoint *accessibilityEndpoint; // @synthesize accessibilityEndpoint=_accessibilityEndpoint;
-@property(copy, nonatomic) NSSet *touches; // @synthesize touches=_touches;
 @property(nonatomic) long long dataOwner; // @synthesize dataOwner=_dataOwner;
 @property(copy, nonatomic) NSArray *internalItems; // @synthesize internalItems=_internalItems;
 @property(nonatomic) unsigned long long resultOperation; // @synthesize resultOperation=_resultOperation;
@@ -74,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (void)_sendWillEndWithOperation:(unsigned long long)arg1;
 - (void)_handOffCancelledItems:(id)arg1;
 - (void)addPublicItems:(id)arg1;
+- (void)dragIsInsideApp;
 - (void)dragDidExitApp;
 - (void)updateCentroidFromDragEvent;
 - (void)itemsBecameDirty:(id)arg1;

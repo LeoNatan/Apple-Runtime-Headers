@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     FigVideoContainerLayer *videoLayer;
     FigSubtitleCALayer *subtitleLayer;
     FigBaseCALayer *closedCaptionLayer;
+    BOOL isForScrubbingOnly;
     AVPlayerLayer *associatedRemoteModeLayer;
     BOOL willManageSublayersAsSwappedLayers;
     long long activeMode;

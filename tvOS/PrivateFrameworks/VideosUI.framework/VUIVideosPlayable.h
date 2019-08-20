@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSURL *tokenServerURL;
 @property(readonly, nonatomic) NSDictionary *mediaMetrics;
 @property(readonly, nonatomic) NSDictionary *vpafMetrics;
-@property(readonly, nonatomic) _Bool isExternal;
+@property(readonly, nonatomic) _Bool isSubscription;
 @property(readonly, nonatomic) NSString *channelName;
 @property(readonly, nonatomic) NSString *channelID;
 @property(readonly, nonatomic) NSString *canonicalID;

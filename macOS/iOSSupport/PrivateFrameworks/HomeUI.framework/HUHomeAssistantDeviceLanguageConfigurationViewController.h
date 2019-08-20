@@ -39,6 +39,7 @@
 @property(retain, nonatomic) OBTrayButton *changeLanguageButton; // @synthesize changeLanguageButton=_changeLanguageButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

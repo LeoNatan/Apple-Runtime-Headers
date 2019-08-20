@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)performActionWithSender:(id)arg1;
 - (void)prepareForReuse;
-- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

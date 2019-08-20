@@ -51,7 +51,7 @@
 - (id)initWithListenerIKEConfig:(id)arg1 saSession:(id)arg2 kernelSASessionName:(id)arg3 listenerUDPPort:(id)arg4 listenerInterface:(id)arg5 listenerQueue:(id)arg6 delegate:(id)arg7 delegateQueue:(id)arg8;
 - (void)sessionFailedBeforeRequestingConfiguration:(id)arg1;
 - (void)requestConfigurationForSession:(id)arg1 sessionConfig:(id)arg2 childConfig:(id)arg3 validateAuthBlock:(CDUnknownBlockType)arg4 responseBlock:(CDUnknownBlockType)arg5;
-- (void)handleNewConnection:(id)arg1;
+- (BOOL)handleNewConnection:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

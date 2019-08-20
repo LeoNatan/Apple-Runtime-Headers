@@ -19,7 +19,6 @@
     long long _cachedPageCount;
 }
 
-@property(copy, nonatomic) NSArray *printFormatters; // @synthesize printFormatters=_printFormatters;
 @property(nonatomic) struct CGRect printableRect; // @synthesize printableRect=_printableRect;
 @property(nonatomic) struct CGRect paperRect; // @synthesize paperRect=_paperRect;
 @property(nonatomic) double footerHeight; // @synthesize footerHeight=_footerHeight;
@@ -43,6 +42,7 @@
 - (void)_removePrintFormatter:(id)arg1;
 - (id)printFormattersForPageAtIndex:(long long)arg1;
 - (void)addPrintFormatter:(id)arg1 startingAtPageAtIndex:(long long)arg2;
+@property(copy) NSArray *printFormatters; // @dynamic printFormatters;
 - (void)dealloc;
 
 @end

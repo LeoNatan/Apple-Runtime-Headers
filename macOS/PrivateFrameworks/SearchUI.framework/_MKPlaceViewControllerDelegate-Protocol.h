@@ -19,6 +19,7 @@
 - (void)placeViewController:(_MKPlaceViewController *)arg1 removeFavoriteForPlaceItem:(id <_MKPlaceItem>)arg2 result:(void (^)(NSArray *, NSError *))arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 addFavoriteForPlaceItem:(id <_MKPlaceItem>)arg2 result:(void (^)(NSArray *, NSError *))arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectAttributionController:(MKTransitAttributionDetailsViewController *)arg2;
+- (BOOL)placeViewController:(_MKPlaceViewController *)arg1 canSelectDepartureSequence:(id <GEOTransitDepartureSequence>)arg2 mapItem:(MKMapItem *)arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectDepartureSequence:(id <GEOTransitDepartureSequence>)arg2 mapItem:(MKMapItem *)arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 showTransitIncidents:(NSArray *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectTransitConnectionInformation:(id <GEOTransitConnectionInfo>)arg2;

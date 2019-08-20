@@ -12,8 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (float)condensedPointSizeForCellularType:(int)arg1 defaultPointSize:(float)arg2 baselineOffset:(float *)arg3;
-+ (id)expandedFont;
-+ (id)normalFont;
 + (float)baseIconScale;
 + (struct NSDirectionalEdgeInsets)expandedEdgeInsets;
 + (float)bottomLeadingWidth;
@@ -21,6 +19,10 @@ __attribute__((visibility("hidden")))
 + (float)baselineBottomInset;
 + (id)pillSmallFont;
 + (id)pillFont;
++ (id)smallFont;
++ (id)emphasizedFont;
++ (id)expandedFont;
++ (id)normalFont;
 + (struct CGSize)smallPillSize;
 + (struct CGSize)pillSize;
 + (float)pillCenteringEdgeInset;
@@ -32,7 +34,6 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)notchSize;
 + (float)referenceWidth;
 - (id)stringForCellularType:(int)arg1 condensed:(_Bool)arg2;
-- (id)styleAttributesForStyle:(int)arg1;
 
 @end
 

@@ -39,6 +39,7 @@
 - (_Bool)isLikedActive;
 - (_Bool)isLikeCommandEnabled;
 - (_Bool)isLikeCommandSupported;
+- (_Bool)hasSupportedPlaybackRates;
 - (_Bool)isPlaybackRateCommandSupported;
 - (int)shuffleMode;
 - (_Bool)isShuffleModeCommandSupported;
@@ -62,7 +63,8 @@
 - (id)itemCompanionPersistentID;
 - (id)itemPersistentID;
 - (id)identifiers;
-- (_Bool)hasNowPlayingInfo;
+- (_Bool)hasUpNextQueue;
+- (_Bool)hasNowPlayingItem;
 - (double)elapsedTimeAtLastUpdate;
 - (unsigned int)playbackState;
 - (float)preferredPlaybackRate;

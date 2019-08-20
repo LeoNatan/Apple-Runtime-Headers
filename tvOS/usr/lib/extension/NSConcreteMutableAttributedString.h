@@ -21,7 +21,6 @@
 + (_Bool)supportsSecureCoding;
 + (Class)_mutableStringClass;
 - (id)initWithCoder:(id)arg1;
-- (Class)classForCoder;
 - (void)edited:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange)arg2;

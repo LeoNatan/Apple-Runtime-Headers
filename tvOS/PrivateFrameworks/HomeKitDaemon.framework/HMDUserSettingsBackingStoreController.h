@@ -49,6 +49,7 @@
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) __weak id <HMDUserSettingsBackingStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (void)runTransaction:(id)arg1 waitForCloudPush:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)settingTransactionWithName:(id)arg1;
@@ -77,7 +78,6 @@
 - (id)loadSharedUserDataModelWithError:(id *)arg1;
 - (id)loadPrivateUserDataModelWithError:(id *)arg1;
 - (void)start;
-- (id)logIdentifier;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 database:(id)arg3 home:(id)arg4 shareMessenger:(id)arg5;
 
 // Remaining properties

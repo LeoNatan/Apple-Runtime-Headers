@@ -9,6 +9,10 @@
 @class NSArray, NSData, NSDate, NSDictionary, NSError, NSNumber, NSString, NSUUID, NSUserActivity, UIViewController;
 
 @protocol SPApplicationRemoteXPCProtocol <NSObject>
+- (void)interfaceViewController:(NSString *)arg1 setupDynamicInterfaceObject:(NSDictionary *)arg2 completion:(void (^)(UIView *))arg3;
+- (void)interfaceViewController:(NSString *)arg1 setUnderlyingUIHostingController:(UIViewController *)arg2;
+- (void)interfaceViewController:(NSString *)arg1 receivePushInterfaceControllerClass:(Class)arg2 willPush:(void (^)(NSString *))arg3;
+- (void)interfaceViewController:(NSString *)arg1 receivePushInterfaceController:(NSString *)arg2 initializationContextID:(NSNumber *)arg3 willPush:(void (^)(NSString *))arg4;
 - (void)setupInProcessNotificationExtensionConnectionWithHostClientIdentifier:(NSString *)arg1 completion:(void (^)(id <SPApplicationRemoteProtocol>))arg2;
 - (void)extensionDelegate:(NSString *)arg1 handlesBGTasksDidChange:(_Bool)arg2;
 - (void)extensionDidEndNotificationUICreation:(NSString *)arg1;
@@ -17,16 +21,12 @@
 - (void)showSystemAlertForBARDisabledWithReply:(void (^)(_Bool))arg1;
 - (void)playHapticDuringScheduledExtendedRuntimeSession:(int)arg1;
 - (NSString *)redirectClientIDForSelector:(SEL)arg1;
-- (void)interfaceViewController:(NSString *)arg1 setupDynamicInterfaceObject:(NSDictionary *)arg2 completion:(void (^)(UIView *))arg3;
-- (void)interfaceViewController:(NSString *)arg1 setTimerSupportVC:(UIViewController *)arg2;
 - (void)controllerDismiss:(NSString *)arg1;
 - (void)notificationController:(NSString *)arg1 setNotificationActions:(NSData *)arg2;
 - (void)notificationControllerPerformDefaultAction:(NSString *)arg1;
 - (void)notificationController:(NSString *)arg1 showNotificationInterfaceType:(NSString *)arg2 bulletinUniqueID:(NSString *)arg3;
 - (void)interfaceViewController:(NSString *)arg1 updateUserActivity:(NSUserActivity *)arg2;
 - (void)interfaceViewController:(NSString *)arg1 updateUserActivityDict:(NSDictionary *)arg2;
-- (void)interfaceViewController:(NSString *)arg1 receivePushTimerSupportInterfaceWithControllerClass:(Class)arg2 completion:(void (^)(NSString *))arg3;
-- (void)interfaceViewController:(NSString *)arg1 receivePushTimerSupportInterfaceWithName:(NSString *)arg2 initializationContextID:(NSNumber *)arg3 completion:(void (^)(NSString *))arg4;
 - (void)receivePushPagingScrollTableRow:(NSString *)arg1 row:(int)arg2 seguesByRowName:(NSDictionary *)arg3 rowNamesAndContextIDs:(NSArray *)arg4;
 - (void)receiveSetViewController:(NSString *)arg1 values:(NSArray *)arg2;
 - (void)receiveSetViewController:(NSString *)arg1 key:(NSString *)arg2 property:(NSString *)arg3 value:(id)arg4;

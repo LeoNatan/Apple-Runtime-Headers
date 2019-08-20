@@ -26,6 +26,7 @@
 - (id)systemScheduler;
 - (id)diagnosticDescription;
 - (void)eventsDidFire:(id)arg1;
+- (void)checkForDueEventsWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)removeAllEventsWithError:(id *)arg1;
 - (_Bool)replaceAllScheduledEventsWithEvents:(id)arg1 error:(id *)arg2;
 - (_Bool)removeEvents:(id)arg1 error:(id *)arg2;

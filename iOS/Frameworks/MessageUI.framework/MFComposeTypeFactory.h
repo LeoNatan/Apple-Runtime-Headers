@@ -19,6 +19,7 @@
 + (unsigned long long)imageScaleFromUserDefaults;
 + (void)addAttachment:(id)arg1 prepend:(_Bool)arg2 withCompositionModel:(id)arg3 delegate:(id)arg4;
 + (void)_setupForNewMessageWithModel:(id)arg1 delegate:(id)arg2;
++ (void)setupSwitchToReplyWithModel:(id)arg1 delegate:(id)arg2;
 + (void)setupSwitchToReplyAllWithModel:(id)arg1 delegate:(id)arg2;
 + (void)_setupForReplyAllWithModel:(id)arg1 delegate:(id)arg2;
 + (void)_setupForForwardWithModel:(id)arg1 delegate:(id)arg2;

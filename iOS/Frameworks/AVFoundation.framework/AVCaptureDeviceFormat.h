@@ -25,12 +25,14 @@
 - (unsigned int)supportedRawPixelFormat;
 - (_Bool)isEquivalentToVirtualDeviceFormat:(id)arg1;
 - (int)ispPowerConsumption;
-- (int)sensorPowerConsumption;
+- (int)variableSensorPowerConsumption;
+- (int)baseSensorPowerConsumption;
 - (float)hardwareCost;
 - (_Bool)isStreamingDepthSupported;
 - (_Bool)isStreamingDisparitySupported;
 - (_Bool)isStillImageDepthSupported;
 - (_Bool)isStillImageDisparitySupported;
+- (_Bool)isHDRSupported;
 - (id)optimizedPhotoFilterNames;
 - (id)optimizedVideoPreviewFilterNames;
 - (_Bool)supportsQuadraHighResolutionStillImageOutput;
@@ -79,6 +81,7 @@
 - (_Bool)isVideoStabilizationModeSupported:(long long)arg1;
 - (_Bool)isVideoHDRSuspensionSupported;
 @property(readonly, nonatomic, getter=isVideoHDRSupported) _Bool videoHDRSupported;
+@property(readonly, nonatomic, getter=isGlobalToneMappingSupported) _Bool globalToneMappingSupported;
 @property(readonly, nonatomic, getter=isVideoStabilizationSupported) _Bool videoStabilizationSupported;
 @property(readonly, nonatomic) double videoMaxZoomFactorForDepthDataDelivery;
 @property(readonly, nonatomic) double videoMinZoomFactorForDepthDataDelivery;

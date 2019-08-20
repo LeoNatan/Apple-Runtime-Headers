@@ -58,7 +58,6 @@
 - (void)_updateDayDuration;
 - (id)resourceProviderKey;
 - (id)provideAtlasBacking:(id)arg1;
-- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsUnadornedSnapshot;
 - (long long)_keylineStyleForComplicationSlot:(id)arg1;
 - (struct CGRect)_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;

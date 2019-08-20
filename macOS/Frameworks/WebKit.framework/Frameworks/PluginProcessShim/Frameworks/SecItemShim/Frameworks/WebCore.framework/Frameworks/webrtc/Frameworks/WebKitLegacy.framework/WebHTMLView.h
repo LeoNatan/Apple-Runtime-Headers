@@ -341,7 +341,7 @@
 - (long long)_addTrackingRect:(struct CGRect)arg1 owner:(id)arg2 userData:(void *)arg3 assumeInside:(BOOL)arg4 useTrackingNum:(int)arg5;
 - (long long)addTrackingRect:(struct CGRect)arg1 owner:(id)arg2 userData:(void *)arg3 assumeInside:(BOOL)arg4;
 - (id)hitTest:(struct CGPoint)arg1;
-- (void)_recursive:(BOOL)arg1 displayRectIgnoringOpacity:(struct CGRect)arg2 inContext:(id)arg3 shouldChangeFontReferenceColor:(BOOL)arg4 stopAtLayerBackedViews:(BOOL)arg5;
+- (void)_recursive:(BOOL)arg1 displayRectIgnoringOpacity:(struct CGRect)arg2 inContext:(id)arg3 stopAtLayerBackedViews:(BOOL)arg4;
 - (void)_recursiveDisplayAllDirtyWithLockFocus:(BOOL)arg1 visRect:(struct CGRect)arg2;
 - (void)_recursiveDisplayRectIfNeededIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3 topView:(BOOL)arg4;
 - (void)viewWillDraw;

@@ -10,7 +10,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIInteractiveUndoHUDActionDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, UIDelayedAction, UIKBUndoInteractionHUD, UIKBUndoStateHUD, UILayoutGuide, UILongPressGestureRecognizer, UITapGestureRecognizer, UIUndoGestureObserver, UIUndoGestureRecognizer, UIUndoPinchGestureRecognizer, UIView;
+@class NSLayoutConstraint, NSString, UIDelayedAction, UIKBTextEditingTraits, UIKBUndoInteractionHUD, UIKBUndoStateHUD, UILayoutGuide, UILongPressGestureRecognizer, UITapGestureRecognizer, UIUndoGestureObserver, UIUndoGestureRecognizer, UIUndoPinchGestureRecognizer, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIUndoGestureInteraction : NSObject <UIInteractiveUndoHUDActionDelegate, UIGestureRecognizerDelegate, UIEditingOverlayInteractionWithView>
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     float _initPinchableDistance;
     float _previousPinchPerimeter;
     int _potentialPinchDirection;
+    UIKBTextEditingTraits *_editingTraits;
     struct CGPoint _previousPanLocation;
     struct CGPoint _beginPanLocation;
     double _lastTapTimestamp;
@@ -50,6 +51,7 @@ __attribute__((visibility("hidden")))
 
 + (void)presentProductivityGestureTutorialInlineWithCompletion:(CDUnknownBlockType)arg1;
 + (void)presentProductivityGestureTutorialIfNeededWithCompletion:(CDUnknownBlockType)arg1;
+@property(retain, nonatomic) UIKBTextEditingTraits *editingTraits; // @synthesize editingTraits=_editingTraits;
 @property(nonatomic) int potentialPinchDirection; // @synthesize potentialPinchDirection=_potentialPinchDirection;
 @property(nonatomic) float previousPinchPerimeter; // @synthesize previousPinchPerimeter=_previousPinchPerimeter;
 @property(nonatomic) float initPinchableDistance; // @synthesize initPinchableDistance=_initPinchableDistance;
@@ -88,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canPaste;
 - (_Bool)canCopy;
 - (_Bool)canCut;
+- (id)currentResponder;
 - (void)redo:(_Bool)arg1;
 - (void)undo:(_Bool)arg1;
 - (_Bool)canRedo;

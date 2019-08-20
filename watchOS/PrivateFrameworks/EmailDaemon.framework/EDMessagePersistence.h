@@ -75,6 +75,7 @@
 - (void)iteratePersistedMessagesMatchingQuery:(id)arg1 limit:(int)arg2 cancelationToken:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)persistedMessagesMatchingQuery:(id)arg1 limit:(int)arg2;
 - (void)iterateMessagesMatchingQuery:(id)arg1 batchSize:(int)arg2 firstBatchSize:(int)arg3 limit:(int)arg4 cancelationToken:(id)arg5 handler:(CDUnknownBlockType)arg6;
+- (id)messagesMatchingQuery:(id)arg1 limit:(int)arg2 cancelationToken:(id)arg3;
 - (id)messagesMatchingQuery:(id)arg1 limit:(int)arg2;
 - (id)messagesMatchingQuery:(id)arg1;
 - (int)countOfMessagesMatchingQuery:(id)arg1;

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isIndeterminate) _Bool indeterminate; // @synthesize indeterminate=_indeterminate;
 @property(nonatomic) double indeterminateWidth; // @synthesize indeterminateWidth=_indeterminateWidth;
 - (void).cxx_destruct;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_removeIndeterminateLayer;
 - (void)_startIndeterminateAnimation;
 - (void)_addIndeterminateLayer;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -32,6 +32,8 @@
 - (CDStruct_79c71658)_maxUseableSensorDimensions;
 - (CDStruct_79c71658)_outputDimensions;
 @property(readonly) int ispPowerConsumption;
+@property(readonly) int variableSensorPowerConsumption;
+@property(readonly) int baseSensorPowerConsumption;
 @property(readonly) int sensorPowerConsumption;
 @property(readonly) float hardwareCost;
 @property(readonly, getter=isMultiCamSupported) _Bool multiCamSupported;

@@ -12,18 +12,16 @@
 {
     NSArray *_playbackInfluencesOptionItems;
     HFStaticItem *_selectedItem;
-    HFStaticItem *_followUserItem;
-    HFStaticItem *_neverItem;
+    HFStaticItem *_useListeningHistoryItem;
 }
 
-@property(retain, nonatomic) HFStaticItem *neverItem; // @synthesize neverItem=_neverItem;
-@property(retain, nonatomic) HFStaticItem *followUserItem; // @synthesize followUserItem=_followUserItem;
+@property(retain, nonatomic) HFStaticItem *useListeningHistoryItem; // @synthesize useListeningHistoryItem=_useListeningHistoryItem;
 @property(retain, nonatomic) HFStaticItem *selectedItem; // @synthesize selectedItem=_selectedItem;
-@property(retain, nonatomic) NSArray *playbackInfluencesOptionItems; // @synthesize playbackInfluencesOptionItems=_playbackInfluencesOptionItems;
+@property(readonly, nonatomic) NSArray *playbackInfluencesOptionItems; // @synthesize playbackInfluencesOptionItems=_playbackInfluencesOptionItems;
 - (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
-- (id)updateSelectionWithItem:(id)arg1;
+- (id)updateUseListeningHistorySetting:(_Bool)arg1;
 - (_Bool)playbackInfluencesFollowUser;
 - (id)playbackInfluencesSetting;
 @property(readonly, nonatomic) HFAccessorySettingItem *settingItem;

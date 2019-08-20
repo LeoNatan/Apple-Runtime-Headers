@@ -6,14 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class BBSectionIcon, NSDictionary, NSString;
 
 @interface BLTSectionInfoListItem : NSObject
 {
     NSDictionary *_overrides;
     NSString *_universalSectionID;
+    NSString *_overriddenFactorySectionID;
+    NSString *_phoneSectionID;
+    NSString *_overriddenDisplayName;
+    BBSectionIcon *_overriddenIcon;
 }
 
+@property(copy) BBSectionIcon *overriddenIcon; // @synthesize overriddenIcon=_overriddenIcon;
+@property(copy) NSString *overriddenDisplayName; // @synthesize overriddenDisplayName=_overriddenDisplayName;
+@property(copy) NSString *phoneSectionID; // @synthesize phoneSectionID=_phoneSectionID;
+@property(copy) NSString *overriddenFactorySectionID; // @synthesize overriddenFactorySectionID=_overriddenFactorySectionID;
 @property(copy) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
 @property(retain) NSDictionary *overrides; // @synthesize overrides=_overrides;
 - (void).cxx_destruct;

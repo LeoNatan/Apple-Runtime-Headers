@@ -56,6 +56,7 @@
 - (int)indexOfAccessibilityElement:(id)arg1;
 - (id)accessibilityElementAtIndex:(int)arg1;
 - (int)accessibilityElementCount;
+- (id)accessibilityCustomActions;
 
 @end
 

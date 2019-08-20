@@ -9,6 +9,7 @@
 @interface _TtCV7SwiftUIP33_557B773A411844CECAE5352E74D4C1C017ContextMenuFilter9Responder : _TtC7SwiftUI18UnaryViewResponder
 {
     // Error parsing type: , name: contextMenu
+    // Error parsing type: , name: accessibilityNodes
 }
 
 @end

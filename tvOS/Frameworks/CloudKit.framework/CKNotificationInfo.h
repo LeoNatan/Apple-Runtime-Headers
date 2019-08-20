@@ -57,6 +57,9 @@
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)_setCategoryNoValidate:(id)arg1;
 - (void)_setShouldSendMutableContentNoValidate:(_Bool)arg1;
 - (void)_setShouldSendContentAvailableNoValidate:(_Bool)arg1;
@@ -73,7 +76,6 @@
 - (void)_setAlertLocalizationArgsNoValidate:(id)arg1;
 - (void)_setAlertLocalizationKeyNoValidate:(id)arg1;
 - (void)_setAlertBodyNoValidate:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

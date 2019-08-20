@@ -20,6 +20,9 @@
     // Error parsing type: , name: backgroundColorNormal
     // Error parsing type: , name: backgroundColorHighlighted
     // Error parsing type: , name: onTap
+    // Error parsing type: , name: currentBorderColor
+    // Error parsing type: , name: currentBackgroundColorNormal
+    // Error parsing type: , name: currentBackgroundColorHighlighted
 }
 
 - (void).cxx_destruct;

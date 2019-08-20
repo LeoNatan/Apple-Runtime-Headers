@@ -12,7 +12,7 @@
 - (void)wallpaperServer:(SBWallpaperServer *)arg1 restoreDefaultWallpaperWithCompletionHandler:(void (^)(_Bool))arg2;
 - (void)wallpaperServer:(SBWallpaperServer *)arg1 setWallpaperGradient:(SBFGradient *)arg2 forVariants:(long long)arg3 completionHandler:(void (^)(_Bool))arg4;
 - (void)wallpaperServer:(SBWallpaperServer *)arg1 setWallpaperColorName:(NSString *)arg2 forVariants:(long long)arg3 completionHandler:(void (^)(_Bool))arg4;
-- (void)wallpaperServer:(SBWallpaperServer *)arg1 setWallpaperVideo:(NSString *)arg2 cropRect:(struct CGRect)arg3 completionHandler:(void (^)(_Bool))arg4;
+- (void)wallpaperServer:(SBWallpaperServer *)arg1 setWallpaperVideoWithWallpaperMode:(NSString *)arg2 cropRect:(struct CGRect)arg3 wallpaperMode:(long long)arg4 completionHandler:(void (^)(_Bool))arg5;
 - (void)wallpaperServer:(SBWallpaperServer *)arg1 fetchThumbnailDataForVariant:(long long)arg2 completionHandler:(void (^)(NSData *))arg3;
 @end
 

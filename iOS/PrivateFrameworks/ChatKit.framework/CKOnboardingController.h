@@ -12,7 +12,7 @@
 #import <ChatKit/IMCNMeCardSharingOnboardingEditViewControllerDelegate-Protocol.h>
 #import <ChatKit/UINavigationControllerDelegate-Protocol.h>
 
-@class AVPlayer, AVPlayerLooper, AVTAvatarStore, IMCloudKitSyncState, NSString, OBWelcomeFullCenterContentController, UINavigationController;
+@class AVPlayer, AVPlayerLooper, AVTAvatarStore, IMCNMeCardSharingResult, IMCloudKitSyncState, NSString, OBWelcomeFullCenterContentController, UINavigationController;
 @protocol AVTAvatarRecord, CKOnboardingControllerDelegate;
 
 @interface CKOnboardingController : NSObject <CNMeCardSharingPickerViewControllerDelegate, AVTAvatarEditorViewControllerDelegate, IMCNMeCardSharingOnboardingEditViewControllerDelegate, IMCNMeCardSharingOnboardingAudienceViewControllerDelegate, UINavigationControllerDelegate>
@@ -26,8 +26,10 @@
     AVPlayerLooper *_memojiVideoPlayerLooper;
     AVTAvatarStore *_avatarStore;
     id <AVTAvatarRecord> _avatarRecord;
+    IMCNMeCardSharingResult *_pendingMeCardSharingResult;
 }
 
+@property(retain, nonatomic) IMCNMeCardSharingResult *pendingMeCardSharingResult; // @synthesize pendingMeCardSharingResult=_pendingMeCardSharingResult;
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(retain, nonatomic) AVTAvatarStore *avatarStore; // @synthesize avatarStore=_avatarStore;
 @property(retain, nonatomic) AVPlayerLooper *memojiVideoPlayerLooper; // @synthesize memojiVideoPlayerLooper=_memojiVideoPlayerLooper;
@@ -66,6 +68,7 @@
 - (id)_meCardSharingState;
 - (long long)_whatsNewLatestShippingVersion;
 - (long long)_whatsNewVersion;
+- (void)_writeDefaultNicknameDidShow;
 - (void)_writeDefaultWhatsNewDidShow;
 - (_Bool)_isRunningTest;
 - (_Bool)_shouldPresentNewInMessages;
@@ -86,7 +89,9 @@
 - (void)prepareForOnboarding;
 - (void)prepareForSuspend;
 - (_Bool)presentNicknameSharingSetupFlow;
+- (_Bool)accountCanCreateNickname;
 - (_Bool)_shouldShowNicknameOnboardingFlow;
+- (_Bool)_shouldShowNicknameOnboardingFlowOnLaunch;
 - (_Bool)presentOnboardingIfNeeded;
 
 // Remaining properties

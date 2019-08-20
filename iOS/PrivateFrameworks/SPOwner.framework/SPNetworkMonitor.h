@@ -12,16 +12,19 @@
 __attribute__((visibility("hidden")))
 @interface SPNetworkMonitor : NSObject
 {
+    _Bool _cachedIsNetworkUp;
     NWPathEvaluator *_evaluator;
     CDUnknownBlockType _block;
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+@property(nonatomic) _Bool cachedIsNetworkUp; // @synthesize cachedIsNetworkUp=_cachedIsNetworkUp;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain, nonatomic) NWPathEvaluator *evaluator; // @synthesize evaluator=_evaluator;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)notifyNetworkStateChange;
 - (_Bool)isNetworkUp;
 - (_Bool)isMonitoring;
 - (void)stopMonitoring;

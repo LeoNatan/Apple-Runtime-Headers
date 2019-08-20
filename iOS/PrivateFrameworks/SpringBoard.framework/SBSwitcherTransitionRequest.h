@@ -15,6 +15,7 @@
     SBAppLayout *_appLayout;
     long long _appLayoutEnvironment;
     long long _unlockedEnvironmentMode;
+    long long _preferredInterfaceOrientation;
     long long _floatingConfiguration;
     long long _floatingSwitcherVisible;
     long long _dismissInlineAppExpose;
@@ -30,6 +31,7 @@
 @property(nonatomic) long long dismissInlineAppExpose; // @synthesize dismissInlineAppExpose=_dismissInlineAppExpose;
 @property(nonatomic) long long floatingSwitcherVisible; // @synthesize floatingSwitcherVisible=_floatingSwitcherVisible;
 @property(nonatomic) long long floatingConfiguration; // @synthesize floatingConfiguration=_floatingConfiguration;
+@property(nonatomic) long long preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(nonatomic) long long unlockedEnvironmentMode; // @synthesize unlockedEnvironmentMode=_unlockedEnvironmentMode;
 @property(nonatomic) long long appLayoutEnvironment; // @synthesize appLayoutEnvironment=_appLayoutEnvironment;
 @property(retain, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;

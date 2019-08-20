@@ -14,10 +14,12 @@
     struct objc_ivar *_swiftIvar;
     _Bool _indexed;
     _Bool _optional;
+    _Bool _array;
     _Bool _isPrimary;
     NSString *_name;
     NSString *_objectClassName;
     NSString *_linkOriginPropertyName;
+    NSString *_columnName;
     unsigned long long _index;
     NSString *_getterName;
     NSString *_setterName;
@@ -33,6 +35,8 @@
 @property(nonatomic) struct objc_ivar *swiftIvar; // @synthesize swiftIvar=_swiftIvar;
 @property(nonatomic) _Bool isPrimary; // @synthesize isPrimary=_isPrimary;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
+@property(retain, nonatomic) NSString *columnName; // @synthesize columnName=_columnName;
+@property(readonly, nonatomic) _Bool array; // @synthesize array=_array;
 @property(nonatomic) _Bool optional; // @synthesize optional=_optional;
 @property(readonly, copy, nonatomic) NSString *linkOriginPropertyName; // @synthesize linkOriginPropertyName=_linkOriginPropertyName;
 @property(copy, nonatomic) NSString *objectClassName; // @synthesize objectClassName=_objectClassName;
@@ -40,7 +44,7 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (struct Property)objectStoreCopy;
+- (struct Property)objectStoreCopy:(id)arg1;
 - (id)description;
 - (_Bool)isEqualToProperty:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
@@ -48,10 +52,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initSwiftLinkingObjectsPropertyWithName:(id)arg1 ivar:(struct objc_ivar *)arg2 objectClassName:(id)arg3 linkOriginPropertyName:(id)arg4;
 - (id)initSwiftOptionalPropertyWithName:(id)arg1 indexed:(_Bool)arg2 ivar:(struct objc_ivar *)arg3 propertyType:(int)arg4;
-- (id)initSwiftListPropertyWithName:(id)arg1 ivar:(struct objc_ivar *)arg2 objectClassName:(id)arg3;
+- (id)initSwiftListPropertyWithName:(id)arg1 instance:(id)arg2;
 - (id)initWithName:(id)arg1 indexed:(_Bool)arg2 linkPropertyDescriptor:(id)arg3 property:(struct objc_property *)arg4;
 - (id)initSwiftPropertyWithName:(id)arg1 indexed:(_Bool)arg2 linkPropertyDescriptor:(id)arg3 property:(struct objc_property *)arg4 instance:(id)arg5;
-- (void)parseObjcProperty:(struct objc_property *)arg1 readOnly:(_Bool *)arg2 rawType:(id *)arg3;
+- (void)parseObjcProperty:(struct objc_property *)arg1 readOnly:(_Bool *)arg2 computed:(_Bool *)arg3 rawType:(id *)arg4;
 - (_Bool)setTypeFromRawType:(id)arg1;
 - (void)updateAccessors;
 - (id)initWithName:(id)arg1 type:(int)arg2 objectClassName:(id)arg3 linkOriginPropertyName:(id)arg4 indexed:(_Bool)arg5 optional:(_Bool)arg6;

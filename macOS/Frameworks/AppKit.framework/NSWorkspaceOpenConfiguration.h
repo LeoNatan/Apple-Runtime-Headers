@@ -19,19 +19,23 @@
     BOOL _hidesOthers;
     BOOL _forPrinting;
     BOOL _createsNewApplicationInstance;
+    BOOL _allowsRunningApplicationSubstitution;
     BOOL _requiresUniversalLinks;
     int _architecture;
     NSArray *_arguments;
     NSDictionary *_environment;
     NSAppleEventDescriptor *_appleEvent;
+    NSDictionary *_additionalLSOpenOptions;
 }
 
 + (id)configuration;
+@property(copy, setter=_setAdditionalLSOpenOptions:) NSDictionary *_additionalLSOpenOptions; // @synthesize _additionalLSOpenOptions;
 @property BOOL requiresUniversalLinks; // @synthesize requiresUniversalLinks=_requiresUniversalLinks;
 @property int architecture; // @synthesize architecture=_architecture;
 @property(retain) NSAppleEventDescriptor *appleEvent; // @synthesize appleEvent=_appleEvent;
 @property(copy) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy) NSArray *arguments; // @synthesize arguments=_arguments;
+@property BOOL allowsRunningApplicationSubstitution; // @synthesize allowsRunningApplicationSubstitution=_allowsRunningApplicationSubstitution;
 @property BOOL createsNewApplicationInstance; // @synthesize createsNewApplicationInstance=_createsNewApplicationInstance;
 @property(getter=isForPrinting) BOOL forPrinting; // @synthesize forPrinting=_forPrinting;
 @property BOOL hidesOthers; // @synthesize hidesOthers=_hidesOthers;

@@ -15,10 +15,12 @@
     id _kernel;
     NSData *_params;
     void *_BNNSFilter;
+    NSData *_sgdFields;
 }
 
 + (id)deviceOptimizerWithParams:(id)arg1;
 + (id)deviceOptimizerWithKernel:(id)arg1;
+@property(retain, nonatomic) NSData *sgdFields; // @synthesize sgdFields=_sgdFields;
 @property(nonatomic) void *BNNSFilter; // @synthesize BNNSFilter=_BNNSFilter;
 @property(readonly, nonatomic) NSData *params; // @synthesize params=_params;
 @property(readonly, nonatomic) id kernel; // @synthesize kernel=_kernel;

@@ -18,8 +18,8 @@
 
 - (void).cxx_destruct;
 - (id)_changeAction;
-- (id)initWithMessageListSelection:(id)arg1 destinationMailboxType:(long long)arg2 flagChange:(id)arg3 copyMessages:(BOOL)arg4;
-- (id)initWithMessageListSelection:(id)arg1 destinationMailbox:(id)arg2 flagChange:(id)arg3 copyMessages:(BOOL)arg4;
+- (id)initWithMessageListSelection:(id)arg1 delegate:(id)arg2 destinationMailboxType:(long long)arg3 flagChange:(id)arg4 copyMessages:(BOOL)arg5;
+- (id)initWithMessageListSelection:(id)arg1 delegate:(id)arg2 destinationMailbox:(id)arg3 flagChange:(id)arg4 copyMessages:(BOOL)arg5;
 
 @end
 

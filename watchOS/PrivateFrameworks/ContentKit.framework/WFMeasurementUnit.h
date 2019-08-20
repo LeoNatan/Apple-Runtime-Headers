@@ -12,6 +12,7 @@
 
 + (id)unitFromString:(id)arg1;
 + (id)defaultUnitForUnitType:(id)arg1;
++ (_Bool)usesMetricSystemForUnitType:(id)arg1;
 + (id)availableUnitsForUnitType:(id)arg1 cacheResult:(_Bool)arg2;
 + (id)availableUnitsForUnitType:(id)arg1;
 + (id)unitTypeMap;

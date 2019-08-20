@@ -6,10 +6,13 @@
 
 #import <TVUIKit/UICollectionViewDelegate-Protocol.h>
 
-@class UICollectionView, _TVCollectionViewFullScreenBrowserLayout;
+@class NSIndexPath, UICollectionView, _TVCollectionViewFullScreenBrowserLayout;
 
 @protocol _TVCollectionViewDelegateFullScreenBrowserLayout <UICollectionViewDelegate>
+
+@optional
 - (void)collectionView:(UICollectionView *)arg1 centerIndexPathTransitionStateDidChangeForLayout:(_TVCollectionViewFullScreenBrowserLayout *)arg2;
 - (void)collectionView:(UICollectionView *)arg1 centerIndexPathDidChangeForLayout:(_TVCollectionViewFullScreenBrowserLayout *)arg2;
+- (_Bool)collectionView:(UICollectionView *)arg1 shouldShowItemAtIndexPath:(NSIndexPath *)arg2;
 @end
 

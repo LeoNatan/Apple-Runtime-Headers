@@ -23,6 +23,7 @@
 + (id)noSuchObjectErrorWithDACalendarItemUniqueIdentifier:(id)arg1;
 + (id)noSuchObjectErrorWithExternalIdentifier:(id)arg1;
 + (id)noSuchObjectErrorWithObjectID:(id)arg1;
++ (_Bool)isNoSuchObjectError:(id)arg1 forObjectID:(id)arg2;
 + (id)cancelledError;
 + (id)throttledErrorWithRemainingTimeInterval:(double)arg1;
 + (id)unauthorizedErrorWithMissingEntitlement:(id)arg1 requestedAccessLevel:(id)arg2 currentAccesslevel:(id)arg3;

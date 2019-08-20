@@ -9,7 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7SwiftUI17FocusableNSButton : NSButton
 {
-    // Error parsing type: , name: isFocused
+    // Error parsing type: , name: focused
+    // Error parsing type: , name: canShowFocusRing
 }
 
 - (id)initWithCoder:(id)arg1;

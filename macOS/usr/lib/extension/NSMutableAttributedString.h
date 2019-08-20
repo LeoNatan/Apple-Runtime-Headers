@@ -11,6 +11,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (Class)classForCoder;
 - (void)endEditing;
 - (void)beginEditing;
 - (void)setAttributedString:(id)arg1;

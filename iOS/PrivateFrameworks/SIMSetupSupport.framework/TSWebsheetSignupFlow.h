@@ -10,13 +10,15 @@
 #import <SIMSetupSupport/TSSIMSetupFlowDelegate-Protocol.h>
 #import <SIMSetupSupport/UINavigationControllerDelegate-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, UIViewController;
+@protocol TSSetupFlowItem;
 
 @interface TSWebsheetSignupFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSEntitlementJSHandlerDelegate, UINavigationControllerDelegate>
 {
     NSString *_websheetURL;
     NSDictionary *_postdata;
     unsigned long long _requestType;
+    UIViewController<TSSetupFlowItem> *_currentViewController;
 }
 
 - (void).cxx_destruct;

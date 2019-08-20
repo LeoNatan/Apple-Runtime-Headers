@@ -18,8 +18,6 @@
 + (Class)meltedClass;
 - (BOOL)allDay;
 - (BOOL)cachedHasLocationAlarm;
-- (id)appLink;
-- (id)action;
 - (BOOL)canEditRecurrence;
 - (id)orderNumber;
 - (id)_nsCalendar;
@@ -64,6 +62,8 @@
 - (id)sharedUID;
 @property(readonly, retain, nonatomic) id <CalendarModelProtocol> container;
 - (id)localUID;
+- (id)action;
+- (id)appLink;
 - (unsigned long long)priority;
 - (id)completionDate;
 - (id)timeZone;

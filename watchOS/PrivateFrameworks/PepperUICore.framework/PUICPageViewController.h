@@ -42,12 +42,12 @@
 - (_Bool)_childViewController:(id)arg1 endAppearanceTransitionIfPossible:(_Bool)arg2;
 - (_Bool)_childViewController:(id)arg1 beginAppearanceTransitionIfPossible:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_removeChildViewController:(id)arg1 fromCell:(id)arg2;
-- (void)_childControllerDidFinishMoveToParent:(id)arg1;
 - (void)_addChildViewController:(id)arg1 toCell:(id)arg2;
 - (void)_pageViewControllerWill:(_Bool)arg1 appear:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_scrollViewDidSettle:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScrollToTop:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;

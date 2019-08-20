@@ -60,6 +60,9 @@
 - (struct OpaqueFigMutableMovie *)_figMutableMovie;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)statusOfValueForKey:(id)arg1 error:(id *)arg2;
+- (void)_removeFigAssetTrackNotifications;
+- (void)_addFigAssetTrackNotifications;
+- (void)_signalMetadataUpdated;
 - (struct OpaqueFigAssetTrack *)_figAssetTrack;
 - (void)dealloc;
 - (id)initWithTrackID:(int)arg1 forMovie:(id)arg2;

@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: view
     // Error parsing type: , name: updateStore
+    // Error parsing type: , name: automaticUpdates
     // Error parsing type: , name: appStateController
     // Error parsing type: , name: hasLoaded
     // Error parsing type: , name: canUpdateBadgeCounts

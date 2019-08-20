@@ -14,6 +14,7 @@
 {
     PKPaymentPass *_paymentPass;
     PKAccount *_account;
+    unsigned int _feature;
     PKCreditAccountStatement *_statement;
     PKCreditAccountStatement *_previousStatement;
     PKBalanceSummaryFetcher *_fetcher;

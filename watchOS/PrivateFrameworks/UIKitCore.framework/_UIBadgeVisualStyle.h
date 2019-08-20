@@ -6,29 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class UIFont;
+@class UIColor, UIFont;
 
 __attribute__((visibility("hidden")))
 @interface _UIBadgeVisualStyle : NSObject
 {
 }
 
-@property(readonly, nonatomic) float horizontalBorderedInset;
-@property(readonly, nonatomic) float horizontalAnimatedInset;
-@property(readonly, nonatomic) float horizontalInset;
-@property(readonly, nonatomic) float verticalBorderedInset;
-@property(readonly, nonatomic) float verticalAnimatedInset;
-@property(readonly, nonatomic) float verticalInset;
-@property(readonly, nonatomic) float singleBadgeWidth;
-@property(readonly, nonatomic) float shadowHeight;
+@property(readonly, nonatomic) float cornerRadius;
 @property(readonly, nonatomic) float minWidth;
 @property(readonly, nonatomic) float maxWidth;
 @property(readonly, nonatomic) float edgePadding;
 @property(readonly, nonatomic) UIFont *font;
 @property(readonly, nonatomic) float fontSize;
-@property(readonly, nonatomic) _Bool positionedRelativeToTrailingEdge;
-@property(readonly, nonatomic) _Bool allowsDrawingOutsideTabBar;
-@property(readonly, nonatomic) _Bool usesExternalImage;
+@property(readonly, nonatomic) UIColor *defaultBadgeColor;
 
 @end
 

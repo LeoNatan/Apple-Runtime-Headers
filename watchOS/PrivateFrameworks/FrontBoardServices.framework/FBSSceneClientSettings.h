@@ -30,7 +30,7 @@
 @property(readonly, copy, nonatomic) NSSet *occlusions; // @synthesize occlusions=_occlusions;
 @property(readonly, nonatomic) int preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(readonly, nonatomic) float preferredLevel; // @synthesize preferredLevel=_preferredLevel;
-@property(copy, nonatomic, setter=_setLayers:) NSOrderedSet *layers; // @synthesize layers=_layers;
+@property(readonly, copy, nonatomic) NSOrderedSet *layers; // @synthesize layers=_layers;
 - (void).cxx_destruct;
 - (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 debug:(_Bool)arg2;
 - (id)initWithBSXPCCoder:(id)arg1;

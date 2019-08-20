@@ -23,6 +23,7 @@
 - (id)description;
 - (void)endFeedbackSessionWithTracePath:(id)arg1;
 - (void)changeNavigationType:(int)arg1;
+- (void)setModalities:(id)arg1;
 - (void)setAudioFeedback:(struct GEONavigationAudioFeedback *)arg1;
 - (void)addAlightNotificationFeedback:(id)arg1;
 - (void)setFinalLocation:(id)arg1 asArrival:(BOOL)arg2;

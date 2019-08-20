@@ -16,6 +16,8 @@
 {
     UIScrollView *_scrollView;
     PKEnterCurrencyAmountPassView *_amountPassView;
+    _Bool _keyboardVisible;
+    struct CGRect _keyboardFrame;
 }
 
 - (void).cxx_destruct;
@@ -34,6 +36,10 @@
 - (void)setMinBalance:(id)arg1;
 - (void)setMaxBalance:(id)arg1;
 - (void)enterCurrencyAmountPassViewDidLoadPassSnapshot:(id)arg1;
+- (void)_updateLayoutForKeyboardAction:(CDUnknownBlockType)arg1;
+- (void)keyboardWillHide:(id)arg1;
+- (void)keyboardWillChange:(id)arg1;
+- (void)keyboardWillShow:(id)arg1;
 - (void)updateAccountValues;
 - (void)updateFirstResponder;
 - (void)willDismissViewController;

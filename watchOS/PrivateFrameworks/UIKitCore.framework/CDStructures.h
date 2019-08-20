@@ -268,6 +268,14 @@ struct ui_size_cache {
     } __end_cap_;
 };
 
+struct vector<CGRect, std::__1::allocator<CGRect>> {
+    struct CGRect *__begin_;
+    struct CGRect *__end_;
+    struct __compressed_pair<CGRect *, std::__1::allocator<CGRect>> {
+        struct CGRect *__value_;
+    } __end_cap_;
+};
+
 struct work_interval_instance {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -483,7 +491,7 @@ typedef struct {
     int touchLevel;
     unsigned int interactionModel;
     unsigned int primaryInteractionModel;
-    unsigned int artworkSubtype;
+    int artworkSubtype;
     int horizontalSizeClass;
     int verticalSizeClass;
     int userInterfaceStyle;
@@ -494,7 +502,7 @@ typedef struct {
     int legibilityWeight;
     int semanticContext;
     int presentationSemanticContext;
-} CDStruct_28a09a45;
+} CDStruct_bbb3e1b0;
 
 typedef struct {
     int commonRowHorizontalAlignment;

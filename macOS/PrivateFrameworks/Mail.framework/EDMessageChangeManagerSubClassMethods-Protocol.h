@@ -10,6 +10,8 @@
 @protocol ECMessage, EDReceivingAccount;
 
 @protocol EDMessageChangeManagerSubClassMethods <NSObject>
+- (BOOL)mailboxPartOfAllMail:(NSURL *)arg1;
+- (BOOL)mailboxIsAllMail:(NSURL *)arg1;
 - (void)displayErrorForTransferAction:(ECTransferMessageAction *)arg1 withResults:(ECTransferMessageActionResults *)arg2;
 - (void)actionHasChangedAccount:(ECLocalMessageAction *)arg1;
 - (void)checkForNewActionsInMailboxID:(long long)arg1;
@@ -23,7 +25,7 @@
 - (BOOL)persistNewMessages:(NSArray *)arg1 mailboxURL:(NSURL *)arg2 oldMessagesByNewMessage:(NSMutableDictionary *)arg3 fromSyncing:(BOOL)arg4;
 - (NSString *)iterateMessagesInMailboxURL:(NSURL *)arg1 excludingMessages:(NSArray *)arg2 batchSize:(unsigned long long)arg3 handler:(void (^)(NSArray *))arg4;
 - (NSArray *)messagesForRemoteIDs:(NSArray *)arg1 mailboxURL:(NSURL *)arg2;
-- (id <ECMessage>)remoteMessageForDatabaseID:(long long)arg1;
+- (id <ECMessage>)messageForDatabaseID:(long long)arg1;
 - (id <EDReceivingAccount>)accountForMailboxURL:(NSURL *)arg1;
 - (long long)mailboxDatabaseIDForURL:(NSURL *)arg1;
 @end

@@ -16,5 +16,6 @@
 - (void)paradeView:(_TVFullScreenBrowserView *)arg1 didCenterCell:(_TVFullScreenBrowserViewCell *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (void)paradeView:(_TVFullScreenBrowserView *)arg1 willCenterCell:(_TVFullScreenBrowserViewCell *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (NSIndexPath *)indexPathForPreferredCenteredCellInParadeView:(_TVFullScreenBrowserView *)arg1;
+- (_Bool)paradeView:(_TVFullScreenBrowserView *)arg1 shouldShowItemAtIndexPath:(NSIndexPath *)arg2;
 @end
 

@@ -8,10 +8,11 @@
 
 #import <AuthKit/NSSecureCoding-Protocol.h>
 
-@class AKAuthorizationRequest, AKPasswordRequest, NSArray, NSData, NSNumber, NSString, NSUUID;
+@class AKAuthorizationRequest, AKPasswordRequest, NSArray, NSData, NSNumber, NSString, NSUUID, NSValue;
 
 @interface AKCredentialRequestContext : NSObject <NSSecureCoding>
 {
+    BOOL _passcodeProtected;
     BOOL _shouldForceUI;
     BOOL _shouldSkipBiometrics;
     BOOL _shouldSkipAuthorizationUI;
@@ -24,11 +25,13 @@
     NSString *_iconName;
     NSData *_iconData;
     NSNumber *_iconScale;
+    NSValue *_iconSize;
     NSString *_proxiedClientAppName;
     NSString *_proxiedClientBundleID;
     NSString *_proxiedClientAppID;
     NSString *_proxiedClientTeamID;
     NSArray *_proxiedAssociatedDomains;
+    NSString *_callerBundleID;
     NSString *_proxiedDeviceName;
     NSString *_proxiedDeviceClass;
     NSUUID *_requestIdentifier;
@@ -42,6 +45,7 @@
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain) NSString *_proxiedDeviceClass; // @synthesize _proxiedDeviceClass;
 @property(retain) NSString *_proxiedDeviceName; // @synthesize _proxiedDeviceName;
+@property(retain) NSString *_callerBundleID; // @synthesize _callerBundleID;
 @property BOOL _isRapportLogin; // @synthesize _isRapportLogin;
 @property BOOL _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
 @property BOOL _isWebLogin; // @synthesize _isWebLogin;
@@ -52,6 +56,7 @@
 @property(retain) NSString *_proxiedClientBundleID; // @synthesize _proxiedClientBundleID;
 @property(retain) NSString *_proxiedClientAppName; // @synthesize _proxiedClientAppName;
 @property BOOL _shouldForcePrivateEmail; // @synthesize _shouldForcePrivateEmail;
+@property(copy) NSValue *_iconSize; // @synthesize _iconSize;
 @property(copy) NSNumber *_iconScale; // @synthesize _iconScale;
 @property(copy) NSData *_iconData; // @synthesize _iconData;
 @property(copy) NSString *_iconName; // @synthesize _iconName;

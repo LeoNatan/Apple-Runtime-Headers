@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: styler
     // Error parsing type: , name: eventHandler
     // Error parsing type: , name: blueprintViewController
+    // Error parsing type: , name: blueprintSelectionProvider
     // Error parsing type: , name: barCompressionManager
     // Error parsing type: , name: alertPresenter
     // Error parsing type: , name: offlineAlertControllerFactory

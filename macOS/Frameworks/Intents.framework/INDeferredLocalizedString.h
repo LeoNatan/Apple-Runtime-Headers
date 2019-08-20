@@ -19,13 +19,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)_sharedFormatRegularExpression;
++ (void)initialize;
 @property(readonly, copy) NSString *_cachedLocalization; // @synthesize _cachedLocalization;
-@property(copy, setter=_setBundleURL:) NSURL *_bundleURL; // @synthesize _bundleURL;
-@property(copy, setter=_setBundleIdentifier:) NSString *_bundleIdentifier; // @synthesize _bundleIdentifier;
-@property(copy, setter=_setArguments:) NSArray *_arguments; // @synthesize _arguments;
-@property(copy, setter=_setTable:) NSString *_table; // @synthesize _table;
-@property(copy, setter=_setFormatKey:) NSString *_formatKey; // @synthesize _formatKey;
+@property(readonly, copy) NSURL *_bundleURL; // @synthesize _bundleURL;
+@property(readonly, copy) NSString *_bundleIdentifier; // @synthesize _bundleIdentifier;
+@property(readonly, copy) NSArray *_arguments; // @synthesize _arguments;
+@property(readonly, copy) NSString *_table; // @synthesize _table;
+@property(readonly, copy) NSString *_formatKey; // @synthesize _formatKey;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,10 +36,8 @@
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
-- (id)_localizeForLanguage:(id)arg1 bundleRef:(struct __CFBundle *)arg2;
 - (id)localizeForLanguage:(id)arg1;
+- (id)initWithDeferredFormat:(id)arg1 fromTable:(id)arg2 bundleIdentifier:(id)arg3 bundleURL:(id)arg4 arguments:(id)arg5;
 - (id)initWithDeferredFormat:(id)arg1 fromTable:(id)arg2 bundle:(id)arg3 arguments:(struct __va_list_tag [1])arg4;
 - (id)_intents_encodeForProto;
 

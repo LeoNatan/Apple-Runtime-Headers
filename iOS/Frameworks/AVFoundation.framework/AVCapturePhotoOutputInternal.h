@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     _Bool dualCameraFusionSupported;
     _Bool dualCameraDualPhotoDeliverySupported;
     _Bool dualCameraDualPhotoDeliveryEnabled;
+    _Bool cameraCalibrationDataDeliverySupported;
     NSArray *supportedHDRModes;
     NSArray *supportedFlashModes;
     _Bool autoRedEyeReductionSupported;

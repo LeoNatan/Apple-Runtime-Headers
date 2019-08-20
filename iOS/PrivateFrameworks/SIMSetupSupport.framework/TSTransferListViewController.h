@@ -11,19 +11,22 @@
 #import <SIMSetupSupport/UITableViewDataSource-Protocol.h>
 #import <SIMSetupSupport/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSString, OBBoldTrayButton, UIView;
+@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, OBBoldTrayButton, UIView;
 @protocol TSSIMSetupFlowDelegate;
 
 @interface TSTransferListViewController : OBTableWelcomeController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, TSSetupFlowItem>
 {
+    _Bool _isInEligiblePlanPresent;
     NSLayoutConstraint *_tableHeightAnchor;
     OBBoldTrayButton *_continueButton;
     id <TSSIMSetupFlowDelegate> _delegate;
     NSArray *_transferItems;
     NSLayoutConstraint *_heightAnchor;
     UIView *_tableFooter;
+    NSMutableArray *_chosenUseIndexPaths;
 }
 
+@property(retain) NSMutableArray *chosenUseIndexPaths; // @synthesize chosenUseIndexPaths=_chosenUseIndexPaths;
 @property(retain) UIView *tableFooter; // @synthesize tableFooter=_tableFooter;
 @property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property(retain) NSArray *transferItems; // @synthesize transferItems=_transferItems;
@@ -34,9 +37,7 @@
 - (void)_preparePlanTransfer:(id)arg1 withDeviceID:(id)arg2;
 - (void)_continueButtonTapped;
 - (void)_skipButtonTapped;
-- (void)_cancelButtonTapped;
 - (double)_heightAnchorConstant;
-- (void)_setNavigationItems;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -99,6 +99,9 @@
     unsigned int _totalUsedCellBudgetTxDataBytes;
     unsigned int _totalUsedCellBudgetRxDataBytes;
     unsigned char _duplicationType;
+    unsigned int _negotiatedSwitches;
+    unsigned int _remoteSwitches;
+    _Bool _remoteFaceTimeSwitchesAvailable;
     unsigned long long _totalCellTxDataBytes;
     unsigned long long _totalCellRxDataBytes;
     unsigned long long _totalWifiTxDataBytes;
@@ -112,11 +115,14 @@
     int _frequency;
     NSString *_segmentName;
     NSString *_previousSegmentName;
+    NSString *_activeConnectionRegistry;
     id <VCAdaptiveLearningDelegate> _delegate;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
 }
 
++ (id)connectionCategoryForType:(id)arg1;
++ (id)interfaceCategoryForType:(id)arg1;
 + (id)newSegmentNameWithComponents:(id)arg1 remoteInterface:(id)arg2 connectionType:(id)arg3 duplicationIndicator:(id)arg4;
 @property(readonly) NSMutableDictionary *fecStatsDict; // @synthesize fecStatsDict=_fecStatsDict;
 @property double duplicationMaxRemoteNoRemotePacketTime; // @synthesize duplicationMaxRemoteNoRemotePacketTime=_duplicationMaxRemoteNoRemotePacketTime;
@@ -133,6 +139,7 @@
 @property(readonly) unsigned int callTransportType; // @synthesize callTransportType=_callTransportType;
 @property(readonly) unsigned int callDeviceRole; // @synthesize callDeviceRole=_callDeviceRole;
 @property(readonly) unsigned int callMode; // @synthesize callMode=_callMode;
+@property(copy) NSString *activeConnectionRegistry; // @synthesize activeConnectionRegistry=_activeConnectionRegistry;
 @property(readonly) NSString *previousSegmentName; // @synthesize previousSegmentName=_previousSegmentName;
 @property(readonly) NSString *segmentName; // @synthesize segmentName=_segmentName;
 @property unsigned int captureVideoFrameCounter; // @synthesize captureVideoFrameCounter=_captureVideoFrameCounter;
@@ -219,7 +226,7 @@
 - (void)merge:(id)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 mode:(unsigned short)arg3 deviceRole:(unsigned short)arg4 transportType:(unsigned short)arg5 relayServer:(id)arg6 relayType:(unsigned short)arg7 accessToken:(id)arg8 duplicationType:(unsigned char)arg9 delegate:(id)arg10;
+- (id)initWithSegmentName:(id)arg1 previousSegmentName:(id)arg2 mode:(unsigned short)arg3 deviceRole:(unsigned short)arg4 transportType:(unsigned short)arg5 relayServer:(id)arg6 relayType:(unsigned short)arg7 accessToken:(id)arg8 duplicationType:(unsigned char)arg9 switchConfig:(id)arg10 delegate:(id)arg11;
 
 @end
 

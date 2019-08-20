@@ -157,8 +157,10 @@
 - (void)reminderTitleForContent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)allRemindersLimitedTo:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)reminderAlarmTriggeredForRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_rejectReminderByRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rejectRealtimeReminder:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rejectReminderByRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_confirmReminderByRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmRealtimeReminder:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmReminderByRecordId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)allEventsLimitedTo:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;

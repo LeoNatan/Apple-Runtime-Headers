@@ -6,16 +6,32 @@
 
 #import <UIKit/UITableViewCell.h>
 
+@class UILabel;
+
 __attribute__((visibility("hidden")))
 @interface PUSearchResultsSuggestionTableViewCell : UITableViewCell
 {
+    UILabel *_resultTitleLabel;
+    UILabel *_resultAuxSubtitleLabel;
 }
 
 + (id)_symbolConfigurationForFont:(id)arg1;
-+ (struct UIEdgeInsets)_edgeInsets;
+@property(retain, nonatomic) UILabel *resultAuxSubtitleLabel; // @synthesize resultAuxSubtitleLabel=_resultAuxSubtitleLabel;
+@property(retain, nonatomic) UILabel *resultTitleLabel; // @synthesize resultTitleLabel=_resultTitleLabel;
+- (void).cxx_destruct;
+- (_Bool)shouldUseAccessibilityLayout;
+- (void)_preferredContentSizeChanged:(id)arg1;
 - (void)setTitle:(id)arg1 resultCount:(unsigned long long)arg2 categoryImage:(id)arg3;
 - (void)setAttributedTitle:(id)arg1 resultCount:(unsigned long long)arg2 categoryImage:(id)arg3;
+- (void)setTitle:(id)arg1 subtitle:(id)arg2 auxSubtitle:(id)arg3;
+- (void)setAttributedTitle:(id)arg1 subtitle:(id)arg2 auxSubtitle:(id)arg3;
 - (void)prepareForReuse;
+- (struct CGSize)imageViewSize;
+- (_Bool)hasAccessory;
+- (struct UIEdgeInsets)edgeInsets;
+- (id)_setupResultAuxSubtitleLabel;
+- (id)_setupResultTitleLabel;
+- (void)_setupSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

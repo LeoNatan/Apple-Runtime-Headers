@@ -8,22 +8,22 @@
 
 #import <SpringBoard/SBSystemServiceServerHardwareButtonDelegate-Protocol.h>
 
-@class BKSApplicationStateMonitor, BSMutableIntegerMap, FBServiceClientAuthenticator, NSCountedSet, NSMutableSet, NSString;
+@class BSMutableIntegerMap, FBServiceClientAuthenticator, NSMutableArray, NSString, RBSProcessMonitor;
 
 @interface SBHardwareButtonService : NSObject <SBSystemServiceServerHardwareButtonDelegate>
 {
     FBServiceClientAuthenticator *_serviceClientHomeHardwareButtonHintSuppressionEntitlementAuthenticator;
     FBServiceClientAuthenticator *_serviceClientEventConsumerEntitlement;
-    BKSApplicationStateMonitor *_appStateMonitor;
-    NSCountedSet *_clientBundleIdentifiers;
-    NSMutableSet *_foregroundBundleIdentifiers;
-    long long _consumersDidChangeCoalescingNestCount;
-    long long _consumersDidChangeNotificationPostCount;
-    BSMutableIntegerMap *_clientsByButtonKind;
+    RBSProcessMonitor *_processMonitor;
+    NSMutableArray *_observers;
+    BSMutableIntegerMap *_eventMaskPerKind;
+    BSMutableIntegerMap *_registrationsByButtonKind;
+    BSMutableIntegerMap *_clientsByPID;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) BSMutableIntegerMap *clientsByButtonKind; // @synthesize clientsByButtonKind=_clientsByButtonKind;
+@property(retain, nonatomic) BSMutableIntegerMap *clientsByPID; // @synthesize clientsByPID=_clientsByPID;
+@property(retain, nonatomic) BSMutableIntegerMap *registrationsByButtonKind; // @synthesize registrationsByButtonKind=_registrationsByButtonKind;
 - (void).cxx_destruct;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 acquireAssertionOfType:(long long)arg3 forReason:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)systemServiceServer:(id)arg1 client:(id)arg2 fetchHapticTypeForButtonKind:(long long)arg3 completion:(CDUnknownBlockType)arg4;
@@ -33,18 +33,20 @@
 - (void)systemServiceServer:(id)arg1 clientDidDisconnect:(id)arg2;
 - (void)_setSystemServiceClient:(id)arg1 buttonKind:(long long)arg2 eventMask:(unsigned long long)arg3 priority:(long long)arg4;
 - (id)_applicationForClientInfo:(id)arg1;
-- (_Bool)_isClientInfoPermittedToConsumeEvents:(id)arg1;
-- (void)_removeClientInfo:(id)arg1 buttonKind:(long long)arg2;
-- (void)_addClientInfo:(id)arg1 buttonKind:(long long)arg2;
+- (void)_removeRegistration:(id)arg1 fromClient:(id)arg2;
+- (void)_addRegistration:(id)arg1 toClient:(id)arg2;
 - (_Bool)_sendEvent:(long long)arg1 buttonKind:(long long)arg2 withPriority:(long long)arg3 continuation:(out CDUnknownBlockType *)arg4;
 - (_Bool)_sendEvent:(long long)arg1 buttonKind:(long long)arg2 withPriority:(long long)arg3;
 - (void)_sendXPCMessageForEvent:(long long)arg1 buttonKind:(long long)arg2 priority:(long long)arg3 toClient:(id)arg4;
-- (id)_clientsForButtonKind:(long long)arg1;
-- (id)_mutableClientsForButtonKind:(long long)arg1;
-- (void)_postConsumersChangedNotification;
-- (void)_coalesceConsumersDidChangeNotificationsWithinBlock:(CDUnknownBlockType)arg1;
-- (id)_mutableClientsForButtonKind:(long long)arg1 createIfNecessary:(_Bool)arg2;
-- (_Bool)_hasEligibleClientsInSet:(id)arg1;
+- (id)_registrationsForButtonKind:(long long)arg1;
+- (id)_mutableRegistrationsForButtonKind:(long long)arg1;
+- (id)_mutableRegistrationsForButtonKind:(long long)arg1 createIfNecessary:(_Bool)arg2;
+- (void)_reconfigureProcessMonitorForPredicates:(id)arg1;
+- (void)_reconfigureProcessMonitor;
+- (void)_performButtonRegistrationChangeAndNotifyObservers:(CDUnknownBlockType)arg1;
+- (void)_updateAllButtonEventMasks;
+- (void)_updateEventMasksForButtonKind:(long long)arg1;
+- (void)_process:(id)arg1 stateDidUpdate:(id)arg2;
 - (_Bool)consumeRingerSwitchToggleStateOffWithPriority:(long long)arg1;
 - (_Bool)consumeRingerSwitchToggleStateOnWithPriority:(long long)arg1;
 - (_Bool)consumeHeadsetPlayPauseSinglePressUpWithPriority:(long long)arg1;
@@ -64,6 +66,7 @@
 - (_Bool)consumeHomeButtonSinglePressUpWithPriority:(long long)arg1;
 - (_Bool)hasConsumersForHomeButtonSinglePress;
 - (_Bool)hasConsumersForHomeButtonPresses;
+- (id)addObserver:(id)arg1;
 - (id)init;
 - (id)_init;
 

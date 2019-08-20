@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QuartzCore/CALayer.h>
+#import <Silex/SXLayer.h>
 
-@interface SXClippingLayer : CALayer
+@class CALayer;
+
+@interface SXClippingLayer : SXLayer
 {
     CALayer *_contentLayer;
     unsigned long long _clippingMode;

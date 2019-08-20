@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)finishProcessing;
 - (void)reset;
 - (void)processChange:(id)arg1;
+- (id)cloudKitAnalyzerOptions;
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1;
 

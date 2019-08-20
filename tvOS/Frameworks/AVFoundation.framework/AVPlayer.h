@@ -16,6 +16,7 @@
     AVPlayerInternal *_player;
 }
 
++ (_Bool)eligibleForHDRPlayback;
 + (long long)availableHDRModes;
 + (void)registerForScreenConnectionChanges;
 + (void)fireAvailableHDRModesDidChangeNotification;
@@ -68,6 +69,7 @@
 - (void)_pixelBufferAttributesDidChangeForLayer:(id)arg1;
 - (_Bool)_hasForegroundLayers;
 - (void)_addLayer:(id)arg1;
+- (void)_removeLayer:(id)arg1 videoLayer:(id)arg2 closedCaptionLayer:(id)arg3 subtitleLayer:(id)arg4;
 - (void)_removeLayer:(id)arg1;
 - (void)_detachClosedCaptionLayersFromFigPlayer:(struct OpaqueFigPlayer *)arg1;
 - (void)_attachClosedCaptionLayersToFigPlayer;

@@ -23,6 +23,7 @@
     struct CGSize _imageSize;
 }
 
++ (id)_silhouetteImage;
 + (void)_configureFloatingContentViewAppearance;
 @property(readonly, nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) _TVSMHighContrastFocusView *highContrastView; // @synthesize highContrastView=_highContrastView;

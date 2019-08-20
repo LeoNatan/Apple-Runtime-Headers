@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (double)defaultSectionHeaderHeightForTableView:(id)arg1;
 - (id)defaultHeaderFooterBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
 - (double)defaultRowHeightForTableView:(id)arg1;
+- (id)defaultHighlightTextColorForCell:(id)arg1 inTableView:(id)arg2;
+- (id)defaultTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultBackgroundColorForCell:(id)arg1 inTableView:(id)arg2;
 - (double)defaultAlphaForDraggingCell:(id)arg1 inTableView:(id)arg2;
 - (long long)defaultSeparatorStyleForTableViewStyle:(long long)arg1;
@@ -28,8 +30,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)defaultRowHeightDependsOnCellStyle;
 - (double)defaultMarginWidthForTableView:(id)arg1;
 - (struct UIEdgeInsets)defaultLayoutMarginsForTableView:(id)arg1;
+- (id)defaultBackgroundColorForTableViewStyle:(long long)arg1;
 - (BOOL)supportsUserInterfaceStyles;
-- (id)variantForActive:(BOOL)arg1 dark:(BOOL)arg2;
+- (id)variantForActive:(BOOL)arg1 dark:(BOOL)arg2 focused:(BOOL)arg3;
 
 @end
 

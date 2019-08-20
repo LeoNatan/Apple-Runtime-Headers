@@ -16,16 +16,12 @@
 {
     PXVideoSession *_videoSession;
     NSString *_bufferRequestIdentifier;
-    _Bool _pixelBufferStreamingEnabled;
     CDUnknownBlockType _pixelBufferDidChangeHandler;
     long long _desiredPlayState;
-    double _videoTranformScale;
     id <PXGVideoSessionPixelBufferSourceDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PXGVideoSessionPixelBufferSourceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) double videoTranformScale; // @synthesize videoTranformScale=_videoTranformScale;
-@property(nonatomic) _Bool pixelBufferStreamingEnabled; // @synthesize pixelBufferStreamingEnabled=_pixelBufferStreamingEnabled;
 @property(nonatomic) long long desiredPlayState; // @synthesize desiredPlayState=_desiredPlayState;
 @property(copy, nonatomic) CDUnknownBlockType pixelBufferDidChangeHandler; // @synthesize pixelBufferDidChangeHandler=_pixelBufferDidChangeHandler;
 - (void).cxx_destruct;
@@ -36,7 +32,7 @@
 - (void)_prepareVideoSession;
 - (void)dealloc;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2;
-- (id)initWithVideoSeesion:(id)arg1;
+- (id)initWithVideoSession:(id)arg1;
 - (id)init;
 
 // Remaining properties

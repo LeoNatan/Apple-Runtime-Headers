@@ -21,7 +21,7 @@
 @property(nonatomic) __weak id <SBModalViewControllerStackDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_noteDidDismissViewController:(id)arg1;
-- (void)_noteWillDismissViewController:(id)arg1;
+- (void)_noteWillDismissViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_noteDidPresentViewController:(id)arg1;
 - (void)_noteWillPresentViewController:(id)arg1;
 - (void)_removeViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;

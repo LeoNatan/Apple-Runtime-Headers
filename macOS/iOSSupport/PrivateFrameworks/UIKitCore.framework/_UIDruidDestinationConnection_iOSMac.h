@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)dropSessionEnded;
 - (void)dropSessionConclude;
 - (BOOL)dropSessionPerform;
+- (void)requestVisibleItemsWithReply:(CDUnknownBlockType)arg1;
 - (void)enableKeyboardIfNeeded;
 - (void)sawDragEndEvent;
 - (void)requestDropWithOperation:(unsigned long long)arg1;

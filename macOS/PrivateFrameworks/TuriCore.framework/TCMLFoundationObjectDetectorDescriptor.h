@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MLFoundationOptimizerDescriptor, MLFoundationTensor, MLFoundationYOLOLossDescriptor, NSDictionary;
+@class MLFoundationTensor, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface TCMLFoundationObjectDetectorDescriptor : NSObject
@@ -14,12 +14,8 @@ __attribute__((visibility("hidden")))
     MLFoundationTensor *_inputTensor;
     unsigned long long _outputChannels;
     NSDictionary *_weights;
-    MLFoundationYOLOLossDescriptor *_lossDescriptor;
-    MLFoundationOptimizerDescriptor *_optimizerDescriptor;
 }
 
-@property(retain, nonatomic) MLFoundationOptimizerDescriptor *optimizerDescriptor; // @synthesize optimizerDescriptor=_optimizerDescriptor;
-@property(retain, nonatomic) MLFoundationYOLOLossDescriptor *lossDescriptor; // @synthesize lossDescriptor=_lossDescriptor;
 @property(retain, nonatomic) NSDictionary *weights; // @synthesize weights=_weights;
 @property(nonatomic) unsigned long long outputChannels; // @synthesize outputChannels=_outputChannels;
 @property(retain, nonatomic) MLFoundationTensor *inputTensor; // @synthesize inputTensor=_inputTensor;

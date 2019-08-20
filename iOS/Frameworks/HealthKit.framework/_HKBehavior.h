@@ -30,14 +30,15 @@
     _Bool _supportsFeatureAvailabilityAssets;
     _Bool _supportsHeartRateDataCollection;
     _Bool _supportsNanoSync;
-    _Bool _supportsOntologyAssets;
     _Bool _supportsSampleExpiration;
     _Bool _supportsWorkouts;
     _Bool _showSensitiveLogItems;
     _Bool _unitTest_useEmbeddedOntology;
     _Bool _unitTest_useEmbeddedOntologyAsset;
+    _Bool _ontologyAvailabilityRequiresAccounts;
     _Bool _ignoreOntologyAssetAvailabilityChanges;
     _Bool _ignoreOntologyVersionCheckDuringReferenceOntologyImport;
+    _Bool _hasOntologyFeaturesEnabled;
     _Bool _isTestingDevice;
     _Bool _healthAppHidden;
 }
@@ -96,14 +97,15 @@
 + (id)sharedBehavior;
 @property(nonatomic) _Bool healthAppHidden; // @synthesize healthAppHidden=_healthAppHidden;
 @property(nonatomic) _Bool isTestingDevice; // @synthesize isTestingDevice=_isTestingDevice;
+@property(nonatomic) _Bool hasOntologyFeaturesEnabled; // @synthesize hasOntologyFeaturesEnabled=_hasOntologyFeaturesEnabled;
 @property(nonatomic) _Bool ignoreOntologyVersionCheckDuringReferenceOntologyImport; // @synthesize ignoreOntologyVersionCheckDuringReferenceOntologyImport=_ignoreOntologyVersionCheckDuringReferenceOntologyImport;
 @property(nonatomic) _Bool ignoreOntologyAssetAvailabilityChanges; // @synthesize ignoreOntologyAssetAvailabilityChanges=_ignoreOntologyAssetAvailabilityChanges;
+@property(nonatomic) _Bool ontologyAvailabilityRequiresAccounts; // @synthesize ontologyAvailabilityRequiresAccounts=_ontologyAvailabilityRequiresAccounts;
 @property(nonatomic) _Bool unitTest_useEmbeddedOntologyAsset; // @synthesize unitTest_useEmbeddedOntologyAsset=_unitTest_useEmbeddedOntologyAsset;
 @property(nonatomic) _Bool unitTest_useEmbeddedOntology; // @synthesize unitTest_useEmbeddedOntology=_unitTest_useEmbeddedOntology;
 @property(nonatomic) _Bool showSensitiveLogItems; // @synthesize showSensitiveLogItems=_showSensitiveLogItems;
 @property(nonatomic) _Bool supportsWorkouts; // @synthesize supportsWorkouts=_supportsWorkouts;
 @property(nonatomic) _Bool supportsSampleExpiration; // @synthesize supportsSampleExpiration=_supportsSampleExpiration;
-@property(nonatomic) _Bool supportsOntologyAssets; // @synthesize supportsOntologyAssets=_supportsOntologyAssets;
 @property(nonatomic) _Bool supportsNanoSync; // @synthesize supportsNanoSync=_supportsNanoSync;
 @property(nonatomic) _Bool supportsHeartRateDataCollection; // @synthesize supportsHeartRateDataCollection=_supportsHeartRateDataCollection;
 @property(readonly, nonatomic) _Bool supportsFeatureAvailabilityAssets; // @synthesize supportsFeatureAvailabilityAssets=_supportsFeatureAvailabilityAssets;
@@ -139,6 +141,7 @@
 @property(readonly, copy, nonatomic) NSString *currentDeviceClass;
 @property(readonly, nonatomic) _Bool isCurrentDeviceSeries3OrOlder;
 @property(readonly, nonatomic) _Bool isCurrentDeviceN2XA;
+- (_Bool)_hasProductTypePrefix:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *currentDeviceProductType;
 - (id)currentDeviceReleaseType;
 @property(readonly, copy, nonatomic) NSString *currentInternalDeviceModel;

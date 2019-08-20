@@ -8,7 +8,7 @@
 
 #import <AnnotationKit/UINavigationBarDelegate-Protocol.h>
 
-@class AKController, AKInkSignatureView, AKSignatureBaselineView, AKSmoothPathView, NSString, PKToolPicker, UILabel, UINavigationBar;
+@class AKController, AKInkSignatureView, AKSignatureBaselineView, AKSmoothPathView, NSString, UILabel, UINavigationBar;
 @protocol AKSignatureCreationControllerDelegate;
 
 @interface AKSignatureCreationViewController_iOS : UIViewController <UINavigationBarDelegate>
@@ -20,10 +20,8 @@
     AKSignatureBaselineView *_baselineView;
     UILabel *_label;
     AKController *_controller;
-    PKToolPicker *_toolPicker;
 }
 
-@property(retain, nonatomic) PKToolPicker *toolPicker; // @synthesize toolPicker=_toolPicker;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) AKSignatureBaselineView *baselineView; // @synthesize baselineView=_baselineView;

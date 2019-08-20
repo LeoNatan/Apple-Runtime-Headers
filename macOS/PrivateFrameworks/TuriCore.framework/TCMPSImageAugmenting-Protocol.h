@@ -9,6 +9,6 @@
 @class TCMPSLabeledImage;
 
 @protocol TCMPSImageAugmenting <NSObject>
-- (TCMPSLabeledImage *)imageAugmentedFromImage:(TCMPSLabeledImage *)arg1;
+- (TCMPSLabeledImage *)imageAugmentedFromImage:(TCMPSLabeledImage *)arg1 generator:(double (^)(double, double))arg2;
 @end
 

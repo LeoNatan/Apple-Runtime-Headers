@@ -21,6 +21,7 @@
     BOOL _usesXPC;
     BOOL _inserting;
     unsigned long long _markedCharacterCount;
+    long long _documentIDCache;
     NSString *_markedTextCache;
     BOOL _currentAttributesCacheValid;
     BOOL _currentIndexZeroAttributeCacheValid;
@@ -43,6 +44,7 @@
 @property(nonatomic) BOOL currentIndexZeroAttributeCacheValid; // @synthesize currentIndexZeroAttributeCacheValid=_currentIndexZeroAttributeCacheValid;
 @property(nonatomic) BOOL currentAttributesCacheValid; // @synthesize currentAttributesCacheValid=_currentAttributesCacheValid;
 @property(readonly, nonatomic) NSMutableDictionary *attributes_Cache; // @synthesize attributes_Cache=_attributes_Cache;
+@property(nonatomic) long long documentIDCache; // @synthesize documentIDCache=_documentIDCache;
 - (void)invalidateAttributesCacheForAllIndex:(BOOL)arg1;
 - (void)setAttributes_Cache:(id)arg1 forIndex:(unsigned long long)arg2;
 - (id)attributesForCharacterIndex_Cache:(unsigned long long)arg1;

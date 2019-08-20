@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, PSPhotosPolicyController;
 
 @interface PSSystemPolicyForApp : NSObject
 {
     unsigned int _policyOptions;
     _Bool _forcePolicyOptions;
+    PSPhotosPolicyController *_photosPrivacyController;
     NSString *_bundleIdentifier;
 }
 
@@ -31,10 +32,6 @@
 - (id)locationStatus:(id)arg1;
 - (_Bool)_isLocationServicesRestricted;
 - (id)locationServicesSpecifier;
-- (Class)photosDetailClass;
-- (id)photosLocalizedStringForAuthType:(id)arg1;
-- (id)photosAuthDescriptionForAppBundle:(struct __CFBundle *)arg1;
-- (id)photosStatus:(id)arg1;
 - (id)photosServicesSpecifier;
 - (id)isBackgroundRefreshEnabled:(id)arg1;
 - (void)setBackgroundRefreshEnabled:(id)arg1 forSpecifier:(id)arg2;

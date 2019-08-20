@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) PLPhotoLibraryBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
 - (id)description;
+- (BOOL)isEqual:(id)arg1;
 - (id)initWithBundle:(id)arg1 priority:(unsigned long long)arg2;
 
 @end

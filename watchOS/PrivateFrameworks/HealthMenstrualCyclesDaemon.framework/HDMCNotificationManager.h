@@ -9,7 +9,7 @@
 #import <HealthMenstrualCyclesDaemon/HDMCAnalysisManagerObserver-Protocol.h>
 #import <HealthMenstrualCyclesDaemon/HKMCSettingsManagerObserver-Protocol.h>
 
-@class HDMCAnalysisManager, HDProfile, HDRestorableAlarm, HKMCSettingsManager, NSString;
+@class HDMCAnalysisManager, HDProfile, HDRestorableAlarm, HKMCAnalysis, HKMCSettingsManager, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HDMCNotificationManager : NSObject <HDMCAnalysisManagerObserver, HKMCSettingsManagerObserver>
@@ -19,6 +19,7 @@
     HKMCSettingsManager *_settingsManager;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _observingAnalysisUpdates;
+    HKMCAnalysis *_lastAnalysis;
     HDRestorableAlarm *_scheduler;
 }
 

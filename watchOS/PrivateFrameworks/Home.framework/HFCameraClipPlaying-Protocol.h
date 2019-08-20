@@ -6,7 +6,7 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class AVPlayer, HFCameraClipPosition, NSArray, NSError;
+@class AVPlayer, HFCameraClipPosition, HMCameraProfile, NSArray, NSError;
 @protocol HFCameraClipPlayerDelegate, HFCameraClipScrubbing;
 
 @protocol HFCameraClipPlaying <NSObject>
@@ -18,6 +18,7 @@
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate;
 @property(retain, nonatomic) NSArray *clips;
+@property(readonly, nonatomic) HMCameraProfile *cameraProfile;
 @property(readonly, nonatomic) AVPlayer *player;
 - (void)removeTimeObserver:(id)arg1;
 - (id)addPeriodicTimeObserverForInterval:(double)arg1 usingBlock:(void (^)(void))arg2;

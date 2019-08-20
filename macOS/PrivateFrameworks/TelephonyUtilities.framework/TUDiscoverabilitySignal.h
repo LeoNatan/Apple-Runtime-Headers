@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)_discoverabilitySignalsStream;
-- (id)_knowledgeStore;
 - (void)donateSignalWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithIdentifier:(id)arg1 context:(id)arg2;
 

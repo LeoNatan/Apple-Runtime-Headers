@@ -13,7 +13,7 @@
 #import <AuthKitUI/UITableViewDelegate-Protocol.h>
 #import <AuthKitUI/UITextFieldDelegate-Protocol.h>
 
-@class AKAuthorizationNameFormatter, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKTiburonAuthorizationUIReport, AKUserInformation, NSArray, NSString, UIBarButtonItem;
+@class AKAuthorizationNameFormatter, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, AKAuthorizationSubPaneConfirmButton, AKAuthorizationSubPaneImage, AKTiburonAuthorizationUIReport, AKUserInformation, NSArray, NSString, UIBarButtonItem;
 
 @interface AKAuthorizationConfirmPaneViewController : AKAuthorizationPaneViewController <AKAuthorizationSubPaneConfirmButtonDelegate, AKAuthorizationPasswordAuthenticationDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, AKAuthorizationEditableDataSources>
 {
@@ -24,19 +24,27 @@
     AKAuthorizationScopeChoices *_editableScopeChoices;
     AKAuthorizationPresentationContext *_presentationContext;
     AKUserInformation *_editingUserInformation;
+    unsigned long long _editingGivenNameIndex;
+    unsigned long long _editingFamilyNameIndex;
+    AKAuthorizationSubPaneImage *_imageSubPane;
     AKAuthorizationSubPaneConfirmButton *_confirmButton;
     NSArray *_validatedScopes;
     double _nameEditHeightChange;
-    UIBarButtonItem *_savedBarButtonItem;
+    UIBarButtonItem *_savedRightBarButtonItem;
+    UIBarButtonItem *_savedLeftBarButtonItem;
     AKAuthorizationNameFormatter *_nameFormatter;
 }
 
 @property(retain, nonatomic) AKAuthorizationNameFormatter *nameFormatter; // @synthesize nameFormatter=_nameFormatter;
-@property(retain, nonatomic) UIBarButtonItem *savedBarButtonItem; // @synthesize savedBarButtonItem=_savedBarButtonItem;
+@property(retain, nonatomic) UIBarButtonItem *savedLeftBarButtonItem; // @synthesize savedLeftBarButtonItem=_savedLeftBarButtonItem;
+@property(retain, nonatomic) UIBarButtonItem *savedRightBarButtonItem; // @synthesize savedRightBarButtonItem=_savedRightBarButtonItem;
 @property(nonatomic) double nameEditHeightChange; // @synthesize nameEditHeightChange=_nameEditHeightChange;
 @property(nonatomic) _Bool internalIsEmailExpanded; // @synthesize internalIsEmailExpanded=_internalIsEmailExpanded;
 @property(readonly, nonatomic) NSArray *validatedScopes; // @synthesize validatedScopes=_validatedScopes;
 @property(retain, nonatomic) AKAuthorizationSubPaneConfirmButton *confirmButton; // @synthesize confirmButton=_confirmButton;
+@property(retain, nonatomic) AKAuthorizationSubPaneImage *imageSubPane; // @synthesize imageSubPane=_imageSubPane;
+@property(nonatomic) unsigned long long editingFamilyNameIndex; // @synthesize editingFamilyNameIndex=_editingFamilyNameIndex;
+@property(nonatomic) unsigned long long editingGivenNameIndex; // @synthesize editingGivenNameIndex=_editingGivenNameIndex;
 @property(copy, nonatomic) AKUserInformation *editingUserInformation; // @synthesize editingUserInformation=_editingUserInformation;
 @property(nonatomic) _Bool internalIsEditingName; // @synthesize internalIsEditingName=_internalIsEditingName;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
@@ -48,9 +56,15 @@
 - (_Bool)validateReadyForAuthorization;
 - (void)performAuthorization;
 - (void)performPasswordAuthentication;
-- (void)subPaneConfirmButton:(id)arg1 confirmationResult:(id)arg2;
+- (void)subpaneConfirmButtonDidFailBiometry:(id)arg1;
+- (void)subPaneConfirmButtonDidEnterProcessingState:(id)arg1;
+- (void)_paneDelegate_authorizationPaneViewControllerDidRequestAuthorizationWithUserProvidedInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_paneDelegate_authorizationPaneViewControllerDismissWithAuthorization:(id)arg1 error:(id)arg2;
+- (void)_handleAuthorizationError:(id)arg1;
+- (void)_setCancelButtonEnabled:(_Bool)arg1;
 - (void)didSelectEditScope:(id)arg1 options:(id)arg2;
 - (void)_performPasswordAuthentication;
+- (void)_performAuthorizationWithRawPassword:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_performAuthorizationWithRawPassword:(id)arg1;
 - (id)_localizedEmailKey;
 - (id)_localizedNameKey;
@@ -74,6 +88,10 @@
 - (id)_cellForScope:(id)arg1 localRow:(long long)arg2;
 - (id)_cellForRow:(long long)arg1;
 - (void)_useOtherIDButtonSelected:(id)arg1;
+- (void)_createIconViewWithIcon:(id)arg1;
+- (void)_updateIconViewWithIconContext:(id)arg1;
+- (void)_fetchWebIconIfNeeded;
+- (void)_setupIconView;
 - (void)_addUseOtherIDButtonToContext:(id)arg1;
 - (void)_showOrHideConfirmButton;
 - (void)_enableOrDisableConfirmButton;
@@ -96,6 +114,9 @@
 - (void)_endEditing;
 - (void)_beginEditingRow:(unsigned long long)arg1;
 - (void)_beginEditing;
+- (double)contentTrayOffset;
+- (_Bool)_shouldOverrideIntrinsicContentHeight;
+- (double)intrinsicContentHeight;
 - (void)_updateLayoutForHeightChange:(double)arg1;
 - (void)_reloadDataAnimated:(_Bool)arg1 heightChange:(CDUnknownBlockType)arg2 animation:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_reloadDataAnimated:(_Bool)arg1 heightChange:(CDUnknownBlockType)arg2 animation:(CDUnknownBlockType)arg3;
@@ -124,6 +145,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)setPaneDelegate:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

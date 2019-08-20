@@ -27,6 +27,8 @@
 + (_Bool)supportsKeepLocalStatusObservation;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredStoreLibraryPersonalizationProperties;
++ (_Bool)storeItemMetadataRequestNeedsPersonalizationForIdentifiers:(id)arg1;
++ (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 - (long long)type;
 - (id)anyObject;
 - (id)humanDescription;

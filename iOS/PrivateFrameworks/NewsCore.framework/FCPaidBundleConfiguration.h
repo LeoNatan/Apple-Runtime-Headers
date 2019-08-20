@@ -41,6 +41,8 @@
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;
+@property(readonly, nonatomic) long long hideSuggestedIssuesMinFollowedIssuesRegularCount;
+@property(readonly, nonatomic) long long hideSuggestedIssuesMinFollowedIssuesCompactCount;
 @property(readonly, nonatomic) long long minimumPagesInPDFIssueBeforeRead;
 @property(readonly, nonatomic) long long minimumArticlesInANFIssueBeforeRead;
 @property(readonly, nonatomic) long long minimumReadIssuesInMyMagazines;

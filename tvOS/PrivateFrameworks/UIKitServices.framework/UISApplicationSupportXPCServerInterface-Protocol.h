@@ -11,7 +11,7 @@
 
 @protocol UISApplicationSupportXPCServerInterface <NSObject>
 - (void)destroyScenesPersistentIdentifiers:(NSArray<__NSString__> *)arg1 animationType:(NSNumber *)arg2 destroySessions:(NSNumber *)arg3 completion:(void (^)(NSNumber *, NSError *))arg4;
-- (void)applicationInitializationContextWithCompletion:(void (^)(UISApplicationInitializationContext *, NSError *))arg1;
 - (oneway void)requestPasscodeUnlockUIWithCompletion:(void (^)(NSNumber *, NSError *))arg1;
+- (void)initializeClientWithCompletion:(void (^)(UISApplicationInitializationContext *, NSError *))arg1;
 @end
 

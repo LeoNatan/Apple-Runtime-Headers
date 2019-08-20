@@ -52,7 +52,6 @@
     _Bool _singleCoverOnly;
     _Bool _showAnimatedBackground;
     _Bool _showsInlineVideo;
-    _Bool _showsTransportBarOnPause;
     _Bool _transportBarVisible;
     _Bool _scrubbing;
     _Bool _restrictionsEnforcementPassed;
@@ -129,7 +128,6 @@
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(retain, nonatomic) _TVPMusicNowPlayingInvalidationContext *invalidationContext; // @synthesize invalidationContext=_invalidationContext;
 @property(retain, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
-@property(nonatomic) _Bool showsTransportBarOnPause; // @synthesize showsTransportBarOnPause=_showsTransportBarOnPause;
 @property(nonatomic) long long initialViewMode; // @synthesize initialViewMode=_initialViewMode;
 @property(retain, nonatomic) MPAVRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) _Bool showsInlineVideo; // @synthesize showsInlineVideo=_showsInlineVideo;
@@ -172,6 +170,7 @@
 - (_Bool)_restrictionsEnabled;
 - (void)_updateIdleViewControllerIfNeeded;
 - (id)_currentMediaItemForIdleViewController;
+- (void)_removeIdleViewControllerAndRestoreLayout:(_Bool)arg1 animatingBeforePlaylist:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_removeIdleViewControllerAndRestoreLayout:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setIdleViewController:(id)arg1 forMediaItem:(id)arg2;
 - (void)updateIdleViewControllerIfNeeded;

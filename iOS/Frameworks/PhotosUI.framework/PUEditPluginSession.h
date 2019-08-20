@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)_beginMarkupSessionWithAsset:(id)arg1 fromViewController:(id)arg2;
 - (void)beginMarkupSessionWithAsset:(id)arg1 fromViewController:(id)arg2;
 - (void)_unlockScreenIfNeededWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_updateAvailability;
+- (void)updateAvailability;
 - (void)_pluginManagerPluginsDidChange:(id)arg1;
 - (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)pluginManagerMediaType;

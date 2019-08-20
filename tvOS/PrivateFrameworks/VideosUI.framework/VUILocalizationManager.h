@@ -17,7 +17,7 @@
 @property(retain) NSDictionary *overideLocDict; // @synthesize overideLocDict=_overideLocDict;
 - (void).cxx_destruct;
 - (void)updateWithJSDictionary:(id)arg1;
-- (id)localizedStringForKey:(id)arg1 withCount:(id)arg2;
+- (id)localizedStringForKey:(id)arg1 withCounts:(id)arg2;
 - (id)localizedStringForKey:(id)arg1;
 
 @end

@@ -79,6 +79,7 @@
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
 + (id)spIdDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
++ (id)getContentsOfDirectory:(id)arg1;
 + (id)getVoiceProfilesMarkedForUpload;
 + (void)markVoiceProfileUploaded:(id)arg1;
 + (void)markUploadForVoiceProfile:(id)arg1;
@@ -99,7 +100,7 @@
 + (unsigned int)getVoiceProfileVersionFromVersionFilePath:(id)arg1;
 + (unsigned int)getCurrentVoiceProfileVersionForProfileId:(id)arg1 forLanguageCode:(id)arg2;
 + (id)getProfileVersionFilePathForProfileId:(id)arg1 forLanguageCode:(id)arg2;
-+ (_Bool)isSpidAssetsAvailable;
++ (_Bool)isSpidSupportedInCurrentLanguage;
 + (void)streamAudioFromFileUrl:(id)arg1 audioStreamBasicDescriptor:(struct AudioStreamBasicDescription)arg2 samplesPerStreamChunk:(unsigned int)arg3 audioDataAvailableHandler:(CDUnknownBlockType)arg4;
 + (id)spidAudioTrainUtterancesDir;
 + (void)cleanupOrphanedVoiceIdGradingFiles;

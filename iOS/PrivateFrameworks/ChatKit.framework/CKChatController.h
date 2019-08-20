@@ -122,7 +122,6 @@
     struct UIEdgeInsets _initialContentInset;
 }
 
-+ (void)load;
 @property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
 @property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(retain, nonatomic) IMNickname *currentNickname; // @synthesize currentNickname=_currentNickname;
@@ -242,6 +241,7 @@
 - (void)nicknameStoreDidChange:(id)arg1;
 - (id)_nicknameBannerUpdatesAndStyle:(unsigned long long *)arg1;
 - (_Bool)_showNicknameBannerIfNeeded;
+- (void)clearHandlesFromScrutinyForNicknameUpdates:(id)arg1;
 - (_Bool)_hasExistingBannerMatchingStyle:(unsigned long long)arg1 withNicknames:(id)arg2;
 - (void)_handleChatItemDidChange:(id)arg1;
 - (void)_updateTranscriptOffsetForBannerView;
@@ -380,6 +380,7 @@
 - (id)inputAccessoryViewController;
 - (_Bool)inputAccessoryViewControllerEnabled;
 - (void)_setShouldLoadInputAccessoryViewOnAppearance:(_Bool)arg1;
+- (_Bool)appModalIsDisplayed;
 - (_Bool)appManagerDisplayedInMessages;
 - (_Bool)shouldShowEntryView;
 @property(readonly, nonatomic) CKMessageEntryView *entryView;

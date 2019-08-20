@@ -87,15 +87,16 @@
 + (id)_generateCompositedSymbolImageForAsset:(id)arg1 usingLayers:(id)arg2 configuration:(id)arg3 alignUsingBaselines:(_Bool)arg4;
 + (id)_systemImageNamed:(id)arg1 fallback:(id)arg2 withConfiguration:(id)arg3;
 + (id)_systemImageNamed:(id)arg1 fallback:(id)arg2;
++ (id)_systemImageNamed:(id)arg1 withConfiguration:(id)arg2 allowPrivate:(_Bool)arg3;
++ (id)_systemImageNamed:(id)arg1 withConfiguration:(id)arg2;
 + (id)systemImageNamed:(id)arg1 withConfiguration:(id)arg2;
 + (id)systemImageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
 + (id)systemImageNamed:(id)arg1;
 + (id)__systemImageNamed:(id)arg1 withConfiguration:(id)arg2;
 + (id)__systemImageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
++ (id)__systemImageNamedSwift:(id)arg1;
 + (id)__systemImageNamed:(id)arg1;
 + (id)_systemImageNamed:(id)arg1;
-+ (id)_imageNamed:(id)arg1 inBundle:(id)arg2 withConfiguration:(id)arg3;
-+ (id)imageNamed:(id)arg1 inCFBundle:(struct __CFBundle *)arg2 withConfiguration:(id)arg3;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 withConfiguration:(id)arg3;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)_imageNamed:(id)arg1 withTrait:(id)arg2;
@@ -124,8 +125,6 @@
 + (id)checkmarkImage;
 + (id)removeImageWithConfiguration:(id)arg1;
 + (id)removeImage;
-+ (id)closeImageWithConfiguration:(id)arg1;
-+ (id)closeImage;
 + (id)addImageWithConfiguration:(id)arg1;
 + (id)addImage;
 + (id)actionsImageWithConfiguration:(id)arg1;

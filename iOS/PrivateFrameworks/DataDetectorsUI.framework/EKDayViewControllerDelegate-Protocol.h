@@ -13,6 +13,9 @@
 - (void)dayViewController:(EKDayViewController *)arg1 didSelectEvent:(EKEvent *)arg2 animated:(_Bool)arg3;
 
 @optional
+- (void)dayViewController:(EKDayViewController *)arg1 requestsSaveFirstVisibleSecondPreference:(int)arg2;
+- (void)dayViewController:(EKDayViewController *)arg1 requestsSaveHourScalePreference:(double)arg2;
+- (double)dayViewControllerPersistedHourScalePreference:(EKDayViewController *)arg1;
 - (void)dayViewControllerDidChangeDisplayedOccurrences:(EKDayViewController *)arg1;
 - (void)dayViewController:(EKDayViewController *)arg1 didChangeDisplayedOccurrencesDueToTrigger:(int)arg2;
 - (void)dayViewControllerDidReloadData:(EKDayViewController *)arg1;

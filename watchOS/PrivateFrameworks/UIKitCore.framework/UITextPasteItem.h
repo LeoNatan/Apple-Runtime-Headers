@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface UITextPasteItem : NSObject <UITextPasteItem>
 {
+    _Bool _forcesDefaultAttributes;
     NSItemProvider *_itemProvider;
     id _localObject;
     NSDictionary *_defaultAttributes;
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSArray *_supportedPasteConfigurationClasses;
 }
 
+@property(nonatomic) _Bool forcesDefaultAttributes; // @synthesize forcesDefaultAttributes=_forcesDefaultAttributes;
 @property(retain, nonatomic) NSArray *supportedPasteConfigurationClasses; // @synthesize supportedPasteConfigurationClasses=_supportedPasteConfigurationClasses;
 @property(readonly, nonatomic) UITextPasteCoordinator *coordinator; // @synthesize coordinator=_coordinator;
 @property(retain, nonatomic) NSDictionary *defaultAttributes; // @synthesize defaultAttributes=_defaultAttributes;

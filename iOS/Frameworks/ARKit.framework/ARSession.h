@@ -56,7 +56,6 @@
     ARTrackedRaycastPostProcessor *_trackedRaycastPostProcessor;
     ARBKSAccelerometer *_bksAccelerometer;
     ARVideoFormat *_primaryVideoFormat;
-    _Bool _wantsPredictedAnchorTracking;
     _Bool _relocalizing;
     ARParentTechnique *_dontUseDirectlyTechnique;
     ARParentTechnique *_dontUseDirectlySecondaryTechnique;
@@ -79,7 +78,6 @@
 + (void)forceEnvironmentTexturingTechniqueToManualMode:(id)arg1;
 + (void)initialize;
 @property _Bool relocalizing; // @synthesize relocalizing=_relocalizing;
-@property _Bool wantsPredictedAnchorTracking; // @synthesize wantsPredictedAnchorTracking=_wantsPredictedAnchorTracking;
 @property(retain) ARLocationData *latestLocationData; // @synthesize latestLocationData=_latestLocationData;
 @property(retain) ARDeviceOrientationData *latestDeviceOrientationData; // @synthesize latestDeviceOrientationData=_latestDeviceOrientationData;
 @property(retain, nonatomic) ARQATracer *tracer; // @synthesize tracer=_tracer;
@@ -102,6 +100,7 @@
 - (void)_enforceThermalMitigationPolicyForDeviceCondition:(id)arg1;
 - (void)_updateTechniquesWithPerformanceLevel:(id)arg1;
 - (void)_configureInitialThermalPolicy;
+- (void)pushCollaborationData:(id)arg1;
 - (void)technique:(id)arg1 didOutputCollaborationData:(id)arg2;
 - (void)technique:(id)arg1 didChangeState:(long long)arg2;
 - (void)_sessionDidOutputCollaborationData:(id)arg1;
@@ -178,6 +177,7 @@
 @property(readonly, copy, nonatomic) ARFrame *currentFrame;
 - (void)dealloc;
 - (id)init;
+- (_Bool)wantsPredictedAnchorTracking;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -22,7 +22,7 @@
 + (void)decodeArguments:(id)arg1 outArgs:(out id [10])arg2 fromMessage:(id)arg3 forConnection:(id)arg4;
 + (void)encodeArguments:(id)arg1 inArgs:(in id [10])arg2 toMessage:(id)arg3 forConnection:(id)arg4;
 + (id)concreteArgumentsForArguments:(id)arg1;
-+ (void)invokeReplyBlock:(CDUnknownBlockType)arg1 withArguments:(id)arg2 andPayload:(id)arg3 forConnection:(id)arg4;
++ (void)invokeReplyBlock:(CDUnknownBlockType)arg1 withArguments:(id)arg2 andPayload:(id)arg3 error:(id)arg4 forConnection:(id)arg5;
 + (CDStruct_20ee95e5)invokeMethod:(id)arg1 onTarget:(id)arg2 withObjects:(in id [10])arg3;
 + (void)invokeMethod:(id)arg1 onTarget:(id)arg2 withMessage:(id)arg3 forConnection:(id)arg4;
 + (void)createImplementationForProtocol:(id)arg1;

@@ -96,15 +96,6 @@ struct CIRenderDestinationInternal {
     id _field13;
 };
 
-struct DetectedLineSegment {
-    struct CGPoint _field1;
-    struct CGPoint _field2;
-    double _field3;
-    float _field4;
-    float _field5;
-    float _field6;
-};
-
 struct FastRegistration_Signatures {
     float *piRow;
     unsigned long long nPiRow;
@@ -121,10 +112,6 @@ struct GridROI_t {
     int endY;
 };
 
-struct HoughTransform {
-    CDUnknownFunctionPointerType *_field1;
-};
-
 struct IPoint {
     long long _field1;
     long long _field2;
@@ -139,6 +126,8 @@ struct ISize {
     unsigned long long _field1;
     unsigned long long _field2;
 };
+
+struct LineCostProxy;
 
 struct Projections_meanStdTable {
     float *sumTable;
@@ -165,15 +154,15 @@ struct SharpnessGridElement_t {
     float _field3;
 };
 
-struct Trilean {
-    char _field1;
+struct Solution {
+    float rX;
+    float rY;
+    float rZ;
+    float cost;
 };
 
-struct UIEdgeInsets {
-    double top;
-    double left;
-    double bottom;
-    double right;
+struct Trilean {
+    char _field1;
 };
 
 struct __SVMParameters {
@@ -263,19 +252,19 @@ struct vector<CI::KernelArgumentType, std::__1::allocator<CI::KernelArgumentType
     } _field3;
 };
 
-struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> {
-    CDStruct_183601bc *__begin_;
-    CDStruct_183601bc *__end_;
-    struct __compressed_pair<CI::Perspective::HoughLine *, std::__1::allocator<CI::Perspective::HoughLine>> {
-        CDStruct_183601bc *__value_;
-    } __end_cap_;
-};
-
 struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<CI::Perspective::Line *, std::__1::allocator<CI::Perspective::Line>> {
         CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> {
+    struct LineCostProxy *__begin_;
+    struct LineCostProxy *__end_;
+    struct __compressed_pair<LineCostProxy *, std::__1::allocator<LineCostProxy>> {
+        struct LineCostProxy *__value_;
     } __end_cap_;
 };
 
@@ -350,15 +339,6 @@ typedef struct {
 } CDStruct_da2e99ad;
 
 typedef struct {
-    double _field1[4];
-    double _field2[2];
-    unsigned int _field3;
-    double *_field4;
-    double *_field5;
-    double *_field6;
-} CDStruct_bae50541;
-
-typedef struct {
     float _field1[4];
     float _field2[4];
     float _field3[4];
@@ -390,10 +370,14 @@ typedef struct {
 } CDStruct_e5fcc3f9;
 
 typedef struct {
-    double _field1;
-    double _field2;
-    _Bool _field3;
-} CDStruct_2815125f;
+    double focalLength;
+    double lineSearchRangeV;
+    double lineSearchRangeH;
+    double pitchLimit;
+    double yawLimit;
+    double rollLimit;
+    CIImage *saliencyHeatmap;
+} CDStruct_58ac58eb;
 
 typedef struct {
     double i;
@@ -404,16 +388,6 @@ typedef struct {
     double variance;
     int nNonZero;
 } CDStruct_fc6961d5;
-
-typedef struct {
-    float focalLength;
-    float lineSearchRangeV;
-    float lineSearchRangeH;
-    float pitchLimit;
-    float yawLimit;
-    float rollLimit;
-    CIImage *saliencyHeatmap;
-} CDStruct_20caa88f;
 
 typedef struct {
     float skinval;

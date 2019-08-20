@@ -23,7 +23,7 @@
     _Bool _started;
     _Bool _invalidated;
     long long _invalidationCode;
-    NFWeakReference *_connectedTag;
+    id <NFTag> _connectedTag;
     NSObject<OS_dispatch_group> *_sessionStartInProgress;
     NSString *_alertMessage;
     unsigned long long _pollMethod;

@@ -44,6 +44,7 @@
     UIBarButtonItem *_compactSpacer1;
     UIBarButtonItem *_compactImportDestinationButton;
     UIBarButtonItem *_compactSpacer2;
+    UIBarButtonItem *_compactEmptyTrailingButton;
     unsigned long long _busyCount;
     _Bool _allowsSelection;
     id _mstreamd_pause_context;
@@ -294,6 +295,7 @@
 - (void)updateCompactWidthToolbarTopConstraint;
 - (void)updateContentInsetForCompactWidthToolbar;
 - (void)updateCompactWidthToolbarVisibility;
+- (void)updateCompactWidthToolbarBackgroundGroupName;
 - (void)setUpCompactWidthToolbar;
 - (void)_updateCompactToolbar;
 - (void)updateNavigationTitleViewVisibilityAnimated:(_Bool)arg1;

@@ -9,14 +9,14 @@
 #import <SampleAnalysis/SAJSONSerialization-Protocol.h>
 #import <SampleAnalysis/SASerializable-Protocol.h>
 
-@class NSMutableSet, NSString, SAInstruction;
+@class NSString, SAInstruction;
 
 @interface SAFrame : NSObject <SAJSONSerialization, SASerializable>
 {
     SAInstruction *_instruction;
     unsigned long long _address;
     SAFrame *_parentFrame;
-    NSMutableSet *_childFrames;
+    id _childFrameOrFrames;
 }
 
 + (void)fixupInstructionsInFrameTree:(id)arg1 binaryLoadInfos:(id)arg2 libraryCache:(id)arg3;
@@ -26,12 +26,11 @@
 + (id)frameWithPAStyleSerializedFrame:(const CDStruct_1a4856f2 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_f51ef38d *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
-@property(retain) NSMutableSet *childFrames; // @synthesize childFrames=_childFrames;
-@property __weak SAFrame *parentFrame; // @synthesize parentFrame=_parentFrame;
+@property(retain) id childFrameOrFrames; // @synthesize childFrameOrFrames=_childFrameOrFrames;
+@property(retain) SAFrame *parentFrame; // @synthesize parentFrame=_parentFrame;
 @property unsigned long long address; // @synthesize address=_address;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
-- (void)_setParentFrame:(id)arg1;
 - (void)_addChildFrame:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

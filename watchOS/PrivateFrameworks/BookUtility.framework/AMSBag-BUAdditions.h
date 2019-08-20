@@ -11,6 +11,7 @@
 @interface AMSBag (BUAdditions)
 + (id)_defaultValueDictionary;
 + (id)_keySetWithDictionary:(id)arg1;
++ (void)bu_audiobookStoreIsAvailable:(CDUnknownBlockType)arg1;
 + (void)bu_registerKeySetToDefaultBag:(id)arg1;
 + (id)bu_defaultBagKeysDictionary;
 + (id)bu_defaultBag;
@@ -43,6 +44,7 @@
 @property(readonly, nonatomic) AMSBagValue *bu_ixStoreSheetBooks;
 @property(readonly, nonatomic) AMSBagValue *bu_ixStoreSheet;
 @property(readonly, nonatomic) AMSBagValue *bu_isBooksStoreEnabled;
+@property(readonly, nonatomic) AMSBagValue *bu_isAudiobooksStoreEnabled;
 @property(readonly, nonatomic) AMSBagValue *bu_forgottenPassword;
 @property(readonly, nonatomic) AMSBagValue *bu_dtPurchasesPages;
 @property(readonly, nonatomic) AMSBagValue *bu_currencyCode;

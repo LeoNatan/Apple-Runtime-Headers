@@ -13,7 +13,6 @@
 + (id)_makeCalendarWithExternalId:(id)arg1 inStore:(id)arg2 error:(id *)arg3;
 + (id)initializeCalendarWithExternalId:(id)arg1 inSource:(id)arg2 needsSave:(_Bool *)arg3 error:(id *)arg4;
 + (_Bool)_updateConstraintsIfNecessaryForSource:(id)arg1;
-+ (id)_makeSourceWithExternalId:(id)arg1 inStore:(id)arg2 error:(id *)arg3;
 + (id)initializeSourceWithExternalId:(id)arg1 inStore:(id)arg2 needsSave:(_Bool *)arg3 error:(id *)arg4;
 + (id)eventStoreWithClientId:(id)arg1;
 

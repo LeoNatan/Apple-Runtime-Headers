@@ -28,6 +28,9 @@
 @property(nonatomic) __weak id <iCloudFollowUpActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 @property(retain, nonatomic) FLFollowUpItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (id)_deSerializedlaunchActionArguments:(id)arg1;
+- (BOOL)_isValidAction:(id)arg1;
+- (void)_deleteFollowup:(CDUnknownBlockType)arg1;
 - (void)startSpinner;
 - (void)stopSpinner;
 - (void)handleFollowUpItem:(id)arg1 andAction:(id)arg2 completion:(CDUnknownBlockType)arg3;

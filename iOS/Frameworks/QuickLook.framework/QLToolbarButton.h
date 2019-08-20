@@ -23,6 +23,7 @@
     _Bool _disappearsOnTap;
     NSString *_identifier;
     UIImage *_image;
+    NSString *_systemImageName;
     long long _systemItem;
     NSString *_title;
     NSString *_accessibilityIdentifier;
@@ -41,6 +42,7 @@
 @property(copy) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property long long systemItem; // @synthesize systemItem=_systemItem;
+@property(copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(copy) UIImage *image; // @synthesize image=_image;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

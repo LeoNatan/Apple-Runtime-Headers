@@ -6,7 +6,7 @@
 
 #import <TextInputCore/TIKeyboardInputManager.h>
 
-@class MCKeyboardInput, NSArray, NSCharacterSet, NSMutableArray, NSMutableDictionary, NSString, TIKeyboardTouchEvent, TIWordSearch, TIWordSearchCandidateResultSet;
+@class MCDrawInput, MCKeyboardInput, NSArray, NSCharacterSet, NSMutableArray, NSMutableDictionary, NSString, TIKeyboardTouchEvent, TIWordSearch, TIWordSearchCandidateResultSet;
 
 @interface TIKeyboardInputManager_zh_ja : TIKeyboardInputManager
 {
@@ -24,6 +24,7 @@
     NSString *_currentClientIdentifier;
     NSString *_currentRecipientIdentifier;
     TIKeyboardTouchEvent *_previousTouchEvent;
+    MCDrawInput *_cancelledDrawInput;
     RefPtr_54d74a7c _favoniusLayoutForCharacterKeysFrame;
     CDUnknownBlockType _compositionCompletionHandler;
     TIWordSearch *_wordSearch;
@@ -52,6 +53,7 @@
 @property(readonly, nonatomic) TIWordSearch *wordSearch; // @synthesize wordSearch=_wordSearch;
 @property(copy, nonatomic) CDUnknownBlockType compositionCompletionHandler; // @synthesize compositionCompletionHandler=_compositionCompletionHandler;
 @property(nonatomic) RefPtr_54d74a7c favoniusLayoutForCharacterKeysFrame; // @synthesize favoniusLayoutForCharacterKeysFrame=_favoniusLayoutForCharacterKeysFrame;
+@property(retain, nonatomic) MCDrawInput *cancelledDrawInput; // @synthesize cancelledDrawInput=_cancelledDrawInput;
 @property(retain, nonatomic) TIKeyboardTouchEvent *previousTouchEvent; // @synthesize previousTouchEvent=_previousTouchEvent;
 @property(nonatomic) _Bool preservesComposingInput; // @synthesize preservesComposingInput=_preservesComposingInput;
 @property(nonatomic) int lastCommittedCandidateType; // @synthesize lastCommittedCandidateType=_lastCommittedCandidateType;
@@ -131,7 +133,7 @@
 - (unsigned long long)autoquoteType;
 - (_Bool)shouldClearInputOnMarkedTextOutOfSync;
 @property(readonly, nonatomic) RefPtr_54d74a7c baseLayout; // @synthesize baseLayout=_baseLayout;
-- (_Bool)hasPathInInput;
+- (_Bool)shouldDelayUpdateComposedText;
 - (_Bool)isProgressivelyPathing;
 @property(readonly, nonatomic) _Bool usesComposingInput;
 @property(readonly, nonatomic) MCKeyboardInput *composingInput; // @synthesize composingInput=_composingInput;

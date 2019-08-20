@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _alphaCroppedFrame;
 }
 
+- (void).cxx_destruct;
 - (struct CGRect)alphaCroppedRect;
 - (struct CGSize)originalUncroppedSize;
 - (_Bool)edgesOnly;

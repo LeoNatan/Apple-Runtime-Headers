@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareForInterfaceBuilder;
 - (void)animateToStateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setStateName:(id)arg1;
+- (void)_updateLayerTreeGeometry;
 - (void)layout;
 - (id)makeCAPackage;
 

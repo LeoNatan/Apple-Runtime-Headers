@@ -95,7 +95,7 @@
 - (_Bool)_enableAutomaticKeyboardPressDone;
 - (_Bool)_disableAutomaticKeyboardUI;
 - (_Bool)_disableAutomaticKeyboardBehavior;
-- (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1;
+- (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1 skipViewControllersPresentingModally:(_Bool)arg2;
 - (id)_keyCommandForEvent:(id)arg1 target:(id *)arg2;
 - (id)_keyCommandForEvent:(id)arg1;
 - (id)_keyCommands;
@@ -130,7 +130,9 @@
 - (void)validateCommand:(id)arg1;
 - (void)_buildMenuFromChainWithBuilder:(id)arg1;
 - (void)buildMenuWithBuilder:(id)arg1;
+- (id)_targetForAction:(SEL)arg1 sender:(id)arg2 skipViewControllersPresentingModally:(_Bool)arg3;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1 nextTargetBlock:(CDUnknownBlockType)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_selectToHereResponderProxy;
@@ -175,8 +177,6 @@
 - (struct CGRect)_lastRectForRange:(id)arg1;
 - (int)selectionAffinity;
 - (_Bool)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(_Bool)arg3;
-- (void)_phraseBoundaryGesture:(id)arg1;
-- (id)_newPhraseBoundaryGestureRecognizer;
 - (void)_unmarkText;
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;

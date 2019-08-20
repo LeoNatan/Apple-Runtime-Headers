@@ -30,6 +30,7 @@
 - (void)purgeMessageCache;
 - (void)setupSessionIfNecessary;
 - (void)stop;
+- (void)reset;
 - (id)description;
 - (_Bool)representsAWatch;
 - (_Bool)representsPeerDevice:(id)arg1;

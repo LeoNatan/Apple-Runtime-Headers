@@ -216,9 +216,9 @@
 - (id)lastTaskWithPid:(int)arg1 onOrBeforeTimestamp:(id)arg2;
 - (id)lastTaskWithPid:(int)arg1;
 - (id)lastTaskWithUniquePid:(unsigned long long)arg1;
-- (id)taskForMicrostackshotTask:(const struct task_snapshot *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5;
-- (id)taskForKCDataDeltaTask:(const struct task_delta_snapshot_v2 *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 timestamp:(id)arg5 sharedCache:(id)arg6;
-- (id)taskForKCDataTask:(const struct task_snapshot_v2 *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 timestamp:(id)arg5 sharedCache:(id)arg6;
+- (id)taskForMicrostackshotTask:(const struct task_snapshot *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5 loadInfosIsPartial:(_Bool)arg6;
+- (id)taskForKCDataDeltaTask:(const struct task_delta_snapshot_v2 *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 timestamp:(id)arg5 sharedCache:(id)arg6 loadInfosIsPartial:(_Bool)arg7;
+- (id)taskForKCDataTask:(const struct task_snapshot_v2 *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 timestamp:(id)arg5 sharedCache:(id)arg6 loadInfosIsPartial:(_Bool)arg7;
 - (void)postprocess;
 - (void)gatherExtraInfoForTargetProcess:(id)arg1;
 - (void)finishedSamplingLiveSystem;

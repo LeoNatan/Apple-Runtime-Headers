@@ -10,6 +10,7 @@
 {
 }
 
+- (void)viewControllerDidGoBack:(id)arg1;
 - (id)_nextViewControllerForResults:(id)arg1;
 
 @end

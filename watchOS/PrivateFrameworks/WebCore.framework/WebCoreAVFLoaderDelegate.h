@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface WebCoreAVFLoaderDelegate : NSObject <AVAssetResourceLoaderDelegate>
 {
     WeakPtr_1a409454 m_player;
-    // Error parsing type: {GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> >="m_weakPtrFactory"{WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >="m_impl"{RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >="m_ptr"^{WeakPtrImpl}}}"m_dispatcher"{TaskDispatcher<WebCore::Timer>="m_weakPtrFactory"{WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer> >="m_impl"{RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl> >="m_ptr"^{WeakPtrImpl}}}"m_pendingTasks"{Deque<WTF::Function<void ()>, 0>="m_start"I"m_end"I"m_buffer"{VectorBuffer<WTF::Function<void ()>, 0>="m_buffer"^{Function<void ()>}"m_capacity"I"m_size"I}}}"m_pendingTasks"{atomic<unsigned int>="__a_"AI}"m_isClosed"B}, name: m_taskQueue
+    struct GenericTaskQueue<WebCore::Timer> m_taskQueue;
 }
 
 - (id).cxx_construct;

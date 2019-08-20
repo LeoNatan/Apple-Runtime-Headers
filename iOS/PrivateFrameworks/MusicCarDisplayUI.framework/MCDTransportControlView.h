@@ -21,17 +21,11 @@
     UIImage *_defaultFastForwardButtonImage;
     UIImage *_playImage;
     UIImage *_pauseImage;
-    NSLayoutConstraint *_leftButtonWidthConstraint;
-    NSLayoutConstraint *_playButtonWidthConstraint;
-    NSLayoutConstraint *_fastForwardButtonWidthConstraint;
     NSLayoutConstraint *_containerHeightConstraint;
     struct CGSize _buttonSize;
 }
 
 @property(retain, nonatomic) NSLayoutConstraint *containerHeightConstraint; // @synthesize containerHeightConstraint=_containerHeightConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *fastForwardButtonWidthConstraint; // @synthesize fastForwardButtonWidthConstraint=_fastForwardButtonWidthConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *playButtonWidthConstraint; // @synthesize playButtonWidthConstraint=_playButtonWidthConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *leftButtonWidthConstraint; // @synthesize leftButtonWidthConstraint=_leftButtonWidthConstraint;
 @property(retain, nonatomic) UIImage *pauseImage; // @synthesize pauseImage=_pauseImage;
 @property(retain, nonatomic) UIImage *playImage; // @synthesize playImage=_playImage;
 @property(retain, nonatomic) UIImage *defaultFastForwardButtonImage; // @synthesize defaultFastForwardButtonImage=_defaultFastForwardButtonImage;

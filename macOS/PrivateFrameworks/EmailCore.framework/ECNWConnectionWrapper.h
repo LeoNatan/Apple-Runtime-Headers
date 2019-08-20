@@ -56,7 +56,7 @@
 @property(readonly, copy, nonatomic) NSArray *serverCertificates; // @synthesize serverCertificates=_serverCertificates;
 @property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock; // @synthesize networkActivityChangeBlock=_networkActivityChangeBlock;
 @property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(retain) NSError *error; // @synthesize error=_error;
 @property(nonatomic) BOOL disableEphemeralDiffieHellmanCiphers; // @synthesize disableEphemeralDiffieHellmanCiphers=_disableEphemeralDiffieHellmanCiphers;
 @property(copy, nonatomic) NSString *connectionServiceType; // @synthesize connectionServiceType=_connectionServiceType;
 @property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;

@@ -15,13 +15,14 @@
     CKDatabase *_database;
 }
 
-+ (void)changeValueInItem:(id)arg1 value:(id)arg2 key:(id)arg3;
++ (id)recordValueForItemValue:(id)arg1 item:(id)arg2 property:(id)arg3 recordKey:(id)arg4 zoneID:(id)arg5;
++ (id)itemValueForRecordValue:(id)arg1 item:(id)arg2 property:(id)arg3 resolvedReferences:(id)arg4;
 + (id)createRecordFromItem:(id)arg1 zoneID:(id)arg2;
 + (id)createRecordIDWithName:(id)arg1 zoneID:(id)arg2;
-+ (void)assignRecordValue:(id)arg1 toItem:(id)arg2 atKey:(id)arg3 resolvedReferences:(id)arg4;
++ (void)assignRecordValue:(id)arg1 toItem:(id)arg2 withProperty:(id)arg3 resolvedReferences:(id)arg4;
 + (void)hydrateItem:(id)arg1 withRecord:(id)arg2 resolvedReferences:(id)arg3 setNilValues:(_Bool)arg4;
++ (id)desiredKeysFromProperties:(id)arg1 itemType:(Class)arg2;
 + (void)hydrateItem:(id)arg1 withRecord:(id)arg2 setNilValues:(_Bool)arg3;
-+ (void)initialize;
 @property(nonatomic) _Bool performExpensiveFetchOperations; // @synthesize performExpensiveFetchOperations=_performExpensiveFetchOperations;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
@@ -30,11 +31,9 @@
 - (id)createTaskCancelledError;
 - (id)deleteItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)updateItems:(id)arg1 setNilValues:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)fetchPropertyValueOfItem:(id)arg1 property:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)deepFetchRecordWithID:(id)arg1 possibleItemTypes:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)fetchUnderlyingRecordWithID:(id)arg1 operationGroup:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)fetchRecordsWithPredicate:(id)arg1 itemType:(Class)arg2 sortDescriptors:(id)arg3 resultsLimit:(unsigned int)arg4 resolvingReferences:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (id)fetchRecordsWithPredicate:(id)arg1 itemType:(Class)arg2 resolvingReferences:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)fetchItemWithID:(id)arg1 itemType:(Class)arg2 properties:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)fetchItemsWithPredicate:(id)arg1 itemType:(Class)arg2 properties:(id)arg3 sortDescriptors:(id)arg4 resultsLimit:(unsigned int)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (id)fetchItemsWithPredicate:(id)arg1 itemType:(Class)arg2 properties:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)initWithContainer:(id)arg1 database:(id)arg2;
 - (id)fetchConfigurationAssetWithType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)fetchConfigurationAssetWithType:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

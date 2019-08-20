@@ -25,7 +25,9 @@
 @property(retain) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 @property(retain) NSManagedObjectContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+- (BOOL)persistAndRefaultObject:(id)arg1 error:(id *)arg2;
 - (BOOL)persistWithError:(id *)arg1;
+- (void)refaultObject:(id)arg1;
 - (BOOL)logMetricsForApplication:(id)arg1 error:(id *)arg2;
 - (BOOL)logSTHMetricsForApplication:(id)arg1 error:(id *)arg2;
 - (BOOL)logSMTMetricsForApplication:(id)arg1 error:(id *)arg2;
@@ -36,6 +38,7 @@
 - (unsigned long long)countOutstandingSMTsForApplication:(id)arg1 error:(id *)arg2;
 - (unsigned long long)countTotalRequestsForApplication:(id)arg1 error:(id *)arg2;
 - (unsigned long long)countOutstandingRequestsForApplication:(id)arg1 error:(id *)arg2;
+- (void)garbageCollectRequests:(id)arg1 olderThan:(id)arg2 error:(id *)arg3;
 - (void)deleteCompletedRequest:(id)arg1;
 - (BOOL)clearState:(id *)arg1;
 - (void)deleteObject:(id)arg1;
@@ -46,7 +49,7 @@
 - (id)fetchSMTsWithUnverifiedSignature:(id)arg1 error:(id *)arg2;
 - (id)createSignedMutationTimestamp:(id)arg1 mutationMs:(unsigned long long)arg2 receiptTime:(double)arg3;
 - (id)createRequestFailure;
-- (id)fetchCompletedRequests:(id)arg1 error:(id *)arg2;
+- (id)fetchCompletedRequests:(id)arg1 olderThan:(id)arg2 error:(id *)arg3;
 - (id)fetchRequestsWithPendingResponses:(id)arg1 error:(id *)arg2;
 - (id)fetchUrisWithPendingSMTs:(id)arg1 error:(id *)arg2;
 - (id)fetchRequestForUUID:(id)arg1 uri:(id)arg2 error:(id *)arg3;

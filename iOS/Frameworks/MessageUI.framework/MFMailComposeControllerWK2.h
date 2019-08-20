@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (void)showMissingAttachmentDataAlert;
 - (struct UIEdgeInsets)additionalContentInsetForBodyField:(id)arg1;
 - (id)composeStyleSelectorPresentationContext:(id)arg1;
 - (void)composeStyleSelectorDidDismissFontPicker:(id)arg1;

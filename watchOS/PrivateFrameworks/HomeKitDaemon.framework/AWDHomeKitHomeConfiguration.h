@@ -42,6 +42,7 @@
     unsigned int _numRooms;
     unsigned int _numScenes;
     unsigned int _numServices;
+    unsigned int _numShortcuts;
     unsigned int _numTargetControllers;
     unsigned int _numTelevisionAccessories;
     unsigned int _numTimerTriggers;
@@ -83,6 +84,7 @@
         unsigned int numRooms:1;
         unsigned int numScenes:1;
         unsigned int numServices:1;
+        unsigned int numShortcuts:1;
         unsigned int numTargetControllers:1;
         unsigned int numTelevisionAccessories:1;
         unsigned int numTimerTriggers:1;
@@ -98,6 +100,7 @@
 }
 
 + (Class)eventTriggersType;
+@property(nonatomic) unsigned int numShortcuts; // @synthesize numShortcuts=_numShortcuts;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionUnprotected; // @synthesize numAccessoriesNetworkProtectionUnprotected=_numAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionHomeKitOnly; // @synthesize numAccessoriesNetworkProtectionHomeKitOnly=_numAccessoriesNetworkProtectionHomeKitOnly;
 @property(nonatomic) unsigned int numAccessoriesNetworkProtectionFullAccess; // @synthesize numAccessoriesNetworkProtectionFullAccess=_numAccessoriesNetworkProtectionFullAccess;
@@ -148,6 +151,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasNumShortcuts;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionUnprotected;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionHomeKitOnly;
 @property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionFullAccess;

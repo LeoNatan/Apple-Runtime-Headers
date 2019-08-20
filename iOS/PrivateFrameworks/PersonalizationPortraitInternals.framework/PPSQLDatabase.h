@@ -27,6 +27,7 @@
 - (id)queriesToSkipFromEmptyToVersion:(unsigned int *)arg1;
 - (id)migrations;
 - (id)databaseHandle;
+- (_Bool)_prepareDatabaseHandleForMigration;
 - (unsigned long long)maxSchemaVersion;
 - (_Bool)unmigrate;
 - (_Bool)migrateToVersion:(unsigned int)arg1;
@@ -42,6 +43,7 @@
 - (void)_releaseReadOnlyHandle:(id)arg1 client:(unsigned char)arg2;
 - (id)_acquireReadOnlyHandleWithClient:(unsigned char)arg1;
 - (id)handleWithClient:(unsigned char)arg1;
+- (id)_nullableHandleWithClient:(unsigned char)arg1;
 - (void)_disableQueryLoggingForHandle:(id)arg1;
 - (void)_enableQueryLoggingForHandle:(id)arg1;
 - (id)_openFreshHandleForClient:(unsigned char)arg1;

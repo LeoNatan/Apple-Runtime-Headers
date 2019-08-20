@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *dspFlavor; // @dynamic dspFlavor;
 @property(retain, nonatomic) NSSet *dspModule; // @dynamic dspModule;
 @property(retain, nonatomic) NSSet *format; // @dynamic format;
+@property(retain, nonatomic) NSSet *hwDSP; // @dynamic hwDSP;
 @property(retain, nonatomic) NSSet *micConfiguration; // @dynamic micConfiguration;
 @property(copy, nonatomic) NSString *mode; // @dynamic mode;
 

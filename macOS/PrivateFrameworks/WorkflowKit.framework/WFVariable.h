@@ -35,7 +35,7 @@
 - (id)possibleAggrandizedContentClasses;
 - (id)possibleContentClasses;
 - (void)variableUpdated;
-- (void)variableProviderDidInvalidateOutputContentClasses:(id)arg1;
+- (void)variableProviderDidInvalidateOutputDetails:(id)arg1;
 - (void)variableProvider:(id)arg1 variableWasMoved:(id)arg2;
 - (void)variableProvider:(id)arg1 variableNameDidChangeTo:(id)arg2;
 - (void)removeDelegate:(id)arg1;

@@ -7,6 +7,7 @@
 @class SPUISearchModel;
 
 @protocol SPSearchAgentDelegate
+- (void)searchAgentFinishedQueryWithoutAdditionalResults:(SPUISearchModel *)arg1;
 - (void)searchAgentClearedResults:(SPUISearchModel *)arg1;
 - (void)searchAgentUpdatedResults:(SPUISearchModel *)arg1;
 @end

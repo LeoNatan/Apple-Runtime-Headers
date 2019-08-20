@@ -25,6 +25,7 @@
     UIColor *_inlayColor;
     UIImage *_shadowImage;
     UIView *_transitionContainerView;
+    UIColor *_handDotColor;
     NTKColoringImageView *_handImageView;
     CLKDevice *_device;
     unsigned long long _style;
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) NTKColoringImageView *handImageView; // @synthesize handImageView=_handImageView;
 @property(readonly, nonatomic) UIView *handDotView; // @synthesize handDotView=_handDotView;
+@property(retain, nonatomic) UIColor *handDotColor; // @synthesize handDotColor=_handDotColor;
 @property(retain, nonatomic) UIView *transitionContainerView; // @synthesize transitionContainerView=_transitionContainerView;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
 @property(nonatomic) struct UIEdgeInsets shadowInsets; // @synthesize shadowInsets=_shadowInsets;
@@ -53,8 +55,12 @@
 - (void)_adjustHandImageSubviewOrder;
 - (void)setupHandDotViewWithDiameter:(double)arg1;
 - (void)_updateShadows;
+- (void)noModelUpdate_setHandDotColor:(id)arg1;
+- (void)noModelUpdate_setInlayInsets:(struct UIEdgeInsets)arg1;
+- (void)noModelUpdate_setInlayColor:(id)arg1;
 @property(readonly, nonatomic) CALayer *inlayLayer;
 - (void)_updateTransform;
+- (void)noModelUpdate_setColor:(id)arg1;
 - (void)_layoutInlayLayer;
 - (void)layoutSubviews;
 - (id)initWithImage:(id)arg1 style:(unsigned long long)arg2 forDevice:(id)arg3;

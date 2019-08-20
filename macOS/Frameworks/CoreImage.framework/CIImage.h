@@ -215,8 +215,8 @@
 - (id)autoAdjustmentFiltersWithImageProperties:(id)arg1 options:(id)arg2;
 - (id)_scaleImageToMaxDimension:(unsigned int)arg1;
 - (void)getAutocropRect:(id)arg1 rotateXfrm:(struct CGAffineTransform)arg2 inputImageRect:(struct CGRect)arg3 clipRect:(struct CGRect *)arg4;
-- (id)autoRotateFilterFFT:(id)arg1 image:(struct CGImage *)arg2 inputRect:(struct CGRect)arg3 maxTiltAngle:(float)arg4 detectVerticalLines:(BOOL)arg5;
-- (id)getAutoRotateFilter:(id)arg1 ciImage:(id)arg2 inputRect:(struct CGRect)arg3 rotateCropRect:(struct CGRect *)arg4 maxTiltAngle:(float)arg5 detectVerticalLines:(BOOL)arg6;
+- (id)autoRotateFilterFFT:(id)arg1 image:(struct CGImage *)arg2 inputRect:(struct CGRect)arg3 minTiltAngle:(float)arg4 maxTiltAngle:(float)arg5 detectVerticalLines:(BOOL)arg6 thrVertAngle:(float)arg7 thrDomAngleDiff:(float)arg8;
+- (id)getAutoRotateFilter:(id)arg1 ciImage:(id)arg2 inputRect:(struct CGRect)arg3 rotateCropRect:(struct CGRect *)arg4 minTiltAngle:(float)arg5 maxTiltAngle:(float)arg6 detectVerticalLines:(BOOL)arg7 thrVertAngle:(float)arg8 thrDomAngleDiff:(float)arg9;
 - (struct CGPoint)calcIntersection:(struct CGPoint)arg1 slope1:(struct CGPoint)arg2 pt2:(struct CGPoint)arg3 slope2:(struct CGPoint)arg4;
 - (id)imageWithExtent:(struct CGRect)arg1 processorDescription:(id)arg2 argumentDigest:(unsigned long long)arg3 inputFormat:(int)arg4 outputFormat:(int)arg5 options:(id)arg6 roiCallback:(CDUnknownBlockType)arg7 processor:(CDUnknownBlockType)arg8;
 - (id)_initWithImageProvider:(CDUnknownBlockType)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 surfaceCache:(_Bool)arg6 options:(id)arg7;

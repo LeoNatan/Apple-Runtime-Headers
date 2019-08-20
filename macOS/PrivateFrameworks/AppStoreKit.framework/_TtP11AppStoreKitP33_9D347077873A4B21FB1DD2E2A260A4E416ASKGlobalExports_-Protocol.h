@@ -6,10 +6,11 @@
 
 #import <AppStoreKit/JSExport-Protocol.h>
 
-@class ASKClient, NSDictionary, _TtC11AppStoreKit12JSUserObject, _TtC11AppStoreKit20JSStoreMetricsObject, _TtC11AppStoreKit21ClientOrderingWrapper, _TtC11AppStoreKit28JSPersonalizationStoreObject;
+@class ASKClient, NSDictionary, _TtC11AppStoreKit12JSUserObject, _TtC11AppStoreKit14JSArcadeObject, _TtC11AppStoreKit20JSStoreMetricsObject, _TtC11AppStoreKit21ClientOrderingWrapper, _TtC11AppStoreKit28JSPersonalizationStoreObject;
 @protocol _TtP11AppStoreKit20LocalizationProtocol_;
 
 @protocol _TtP11AppStoreKitP33_9D347077873A4B21FB1DD2E2A260A4E416ASKGlobalExports_ <JSExport>
+@property(nonatomic, readonly) _TtC11AppStoreKit14JSArcadeObject *arcade;
 @property(nonatomic, readonly) _TtC11AppStoreKit28JSPersonalizationStoreObject *personalizationStore;
 @property(nonatomic, readonly) _TtC11AppStoreKit21ClientOrderingWrapper *clientOrdering;
 @property(nonatomic, readonly) _TtC11AppStoreKit12JSUserObject *user;

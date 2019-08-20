@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_removeAccountRelatedDefaultsUsingAccounts:(id)arg1;
 + (id)_primaryDSIDFromLegacyPreferencesDomain:(id)arg1 clientType:(id)arg2 serverType:(id)arg3;
++ (void)_migrateBiometricsStateIntoAccounts:(id)arg1;
 + (void)_migratePrivacyAcknowledgementIntoAccounts:(id)arg1;
 + (void)_migrateiTunesInformation;
 + (void)_migrateCookiesIntoAccounts:(id)arg1;

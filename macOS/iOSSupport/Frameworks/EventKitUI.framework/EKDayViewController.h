@@ -68,7 +68,6 @@
     BOOL _shouldAutoscrollAfterAppearance;
     BOOL _notifyWhenTapOtherEventDuringDragging;
     BOOL _preloadExtraDays;
-    BOOL _hasStartingFirstVisibleSecond;
     BOOL _transitionedToSameDay;
     int _startingFirstVisibleSecond;
     id <EKDayViewControllerDelegate> _delegate;
@@ -88,7 +87,6 @@
 @property(copy, nonatomic) NSDateComponents *pendingPreviousDate; // @synthesize pendingPreviousDate=_pendingPreviousDate;
 @property(copy, nonatomic) NSDateComponents *pendingNextDate; // @synthesize pendingNextDate=_pendingNextDate;
 @property(nonatomic) struct CGPoint normalizedContentOffset; // @synthesize normalizedContentOffset=_normalizedContentOffset;
-@property(nonatomic) BOOL hasStartingFirstVisibleSecond; // @synthesize hasStartingFirstVisibleSecond=_hasStartingFirstVisibleSecond;
 @property(nonatomic) int startingFirstVisibleSecond; // @synthesize startingFirstVisibleSecond=_startingFirstVisibleSecond;
 @property(retain, nonatomic) EKEventEditViewController *currentEditor; // @synthesize currentEditor=_currentEditor;
 @property(retain, nonatomic) UIView *gestureOccurrenceSuperview; // @synthesize gestureOccurrenceSuperview=_gestureOccurrenceSuperview;
@@ -117,6 +115,7 @@
 - (void)_setHorizontalContentOffsetUsingSpringAnimation:(struct CGPoint)arg1;
 - (void)applicationWillResignActive;
 - (void)applicationDidBecomeActive;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)blockableScrollViewDidChangeFrameSize;
@@ -224,6 +223,7 @@
 - (void)dayView:(id)arg1 didScaleDayViewWithScale:(double)arg2;
 - (void)dayView:(id)arg1 didCreateOccurrenceViews:(id)arg2;
 - (void)dayView:(id)arg1 didSelectEvent:(id)arg2;
+- (long long)_effectiveInterfaceOrientationForSize:(struct CGSize)arg1;
 - (id)preferredEventToSelectOnDate:(id)arg1;
 - (BOOL)_isCalendarDate:(id)arg1 sameDayAsComponents:(id)arg2;
 @property(readonly, nonatomic) BOOL currentDayContainsOccurrences;

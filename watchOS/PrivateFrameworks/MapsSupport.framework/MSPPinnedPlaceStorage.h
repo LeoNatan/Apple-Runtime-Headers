@@ -17,6 +17,7 @@
     NSString *_customName;
     NSString *_identifier;
     GEOMapItemStorage *_mapItemStorage;
+    NSString *_originatingAddressString;
     int _type;
     _Bool _hidden;
     struct {
@@ -26,6 +27,7 @@
 }
 
 + (Class)contactStorageType;
+@property(retain, nonatomic) NSString *originatingAddressString; // @synthesize originatingAddressString=_originatingAddressString;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(retain, nonatomic) NSMutableArray *contactStorages; // @synthesize contactStorages=_contactStorages;
 @property(retain, nonatomic) GEOMapItemStorage *mapItemStorage; // @synthesize mapItemStorage=_mapItemStorage;
@@ -42,6 +44,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOriginatingAddressString;
 @property(nonatomic) _Bool hasHidden;
 - (id)contactStorageAtIndex:(unsigned int)arg1;
 - (unsigned int)contactStoragesCount;

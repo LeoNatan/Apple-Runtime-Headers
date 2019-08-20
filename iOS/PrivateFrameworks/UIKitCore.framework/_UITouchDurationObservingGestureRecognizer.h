@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIGestureRecognizer.h>
 
-@class CADisplayLink, NSMutableSet, UIDelayedAction;
+@class CADisplayLink, UIDelayedAction;
 
 __attribute__((visibility("hidden")))
 @interface _UITouchDurationObservingGestureRecognizer : UIGestureRecognizer
@@ -16,19 +16,19 @@ __attribute__((visibility("hidden")))
     double _allowableMovement;
     double _touchForce;
     double _touchStartTimestamp;
-    NSMutableSet *_trackedTouches;
     UIDelayedAction *_delayedAction;
     struct CGPoint _originalCentroid;
 }
 
 @property(readonly, nonatomic) UIDelayedAction *delayedAction; // @synthesize delayedAction=_delayedAction;
-@property(retain, nonatomic) NSMutableSet *trackedTouches; // @synthesize trackedTouches=_trackedTouches;
 @property(nonatomic) struct CGPoint originalCentroid; // @synthesize originalCentroid=_originalCentroid;
 @property(nonatomic) double touchStartTimestamp; // @synthesize touchStartTimestamp=_touchStartTimestamp;
 @property(readonly, nonatomic) double touchForce; // @synthesize touchForce=_touchForce;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(nonatomic) double minimumDurationRequired; // @synthesize minimumDurationRequired=_minimumDurationRequired;
 - (void).cxx_destruct;
+- (void)_cancelOrFail;
+- (_Bool)_exceededNumberOfTouchesForEvent:(id)arg1;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)_performDelayedBegin;
-- (void)_internalHandler:(id)arg1;
 - (void)_displayLinkDidFire:(id)arg1;
 @property(readonly, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(readonly, nonatomic) double touchDuration;

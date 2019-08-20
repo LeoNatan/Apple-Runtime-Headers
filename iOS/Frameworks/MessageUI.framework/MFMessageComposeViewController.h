@@ -27,6 +27,7 @@
     NSArray *_contentURLs;
     NSString *_chatGUID;
     NSString *_groupName;
+    NSString *_shareSheetSessionID;
     NSArray *_attachments;
 }
 
@@ -48,6 +49,8 @@
 + (_Bool)_canSendText;
 + (void)_setupAccountMonitor;
 @property(readonly, copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
+- (void)setShareSheetSessionID:(id)arg1;
+- (id)shareSheetSessionID;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(copy, nonatomic) NSString *chatGUID; // @synthesize chatGUID=_chatGUID;
 - (void)setContentURLs:(id)arg1;

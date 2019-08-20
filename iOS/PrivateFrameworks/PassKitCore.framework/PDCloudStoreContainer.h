@@ -82,6 +82,7 @@
 - (void)_subscriptionOperationWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 cursor:(id)arg3 fetchedRecords:(id)arg4 zone:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)fetchRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 zone:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)fetchAndProccessRecordsWithQuery:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 zone:(id)arg4 shouldUpdateLocalDatabase:(_Bool)arg5 userInfo:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)_modifyRecordsOperationWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -118,7 +119,7 @@
 - (id)recordTypesForCloudStoreItemType:(unsigned long long)arg1;
 - (id)zoneForCloudStoreItemType:(unsigned long long)arg1;
 - (id)cloudRecordObjectFromItemType:(unsigned long long)arg1 records:(id)arg2;
-- (_Bool)shouldFetchAndStoreCloudDataAtStartup;
+- (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)canUpdateAndFetchRecords;
 - (_Bool)canInitializeContainer;
 - (_Bool)isSetup;

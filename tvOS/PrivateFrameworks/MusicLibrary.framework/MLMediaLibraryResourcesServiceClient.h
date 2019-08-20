@@ -30,6 +30,7 @@
 - (void)terminateForFailureToPerformDatabasePathChange;
 - (void)emergencyDisconnectWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performDatabasePathChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_libraryContainerPathWithError:(id *)arg1;
 - (id)_initWithAccountChangeObserver:(id)arg1;
 - (id)libraryContainerPathWithError:(id *)arg1;
 

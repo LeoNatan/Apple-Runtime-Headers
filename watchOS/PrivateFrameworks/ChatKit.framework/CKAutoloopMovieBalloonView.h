@@ -35,6 +35,7 @@
 @property(nonatomic) _Bool isJellyfishVideo; // @synthesize isJellyfishVideo=_isJellyfishVideo;
 @property(retain, nonatomic) CKMovieMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 - (void).cxx_destruct;
+- (void)previewDidChange:(id)arg1;
 - (void)_setPlaybackRateDeferredIfNecessary:(float)arg1;
 - (void)_setPlaybackRate:(float)arg1;
 - (void)pausePlayback;
@@ -53,7 +54,6 @@
 - (void)layoutSubviews;
 @property(readonly, copy) NSString *description;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)dealloc;
 @property(readonly, nonatomic) _Bool isPlaying;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;
 

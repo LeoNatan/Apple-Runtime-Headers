@@ -36,6 +36,7 @@
 - (void)_cleanup;
 - (void)activityDidFinish:(_Bool)arg1 items:(id)arg2 error:(id)arg3;
 - (void)activityDidFinish:(_Bool)arg1;
+- (void)_prepareWithActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)activityViewController;

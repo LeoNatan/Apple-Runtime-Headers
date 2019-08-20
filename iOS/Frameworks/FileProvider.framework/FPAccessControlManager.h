@@ -10,6 +10,8 @@
 {
 }
 
+- (void)revokeAccessToAllBundlesCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)revokeAccessToAllBundles;
 - (void)revokeAccessToAllItemsForBundle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)bundleIdentifiersWithAccessToAnyItemCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)collectionForItemsAccessibleByBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -31,6 +31,7 @@
 + (id)hkmc_menstruationColor;
 + (id)hkmc_loggingCardBackgroundColor;
 + (id)hkmc_fertilityProjectionColor;
++ (id)hkmc_fertilityBackgroundFadedColor;
 + (id)hkmc_fertilityBackgroundColor;
 + (id)hkmc_fertileWindowColor;
 + (id)hkmc_doneButtonLoggingCarouselColor;

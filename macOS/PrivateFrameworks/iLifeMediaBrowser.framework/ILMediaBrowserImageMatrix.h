@@ -49,7 +49,7 @@
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (id)_dragImageForCell:(id)arg1 withBadgeCount:(long long)arg2;
 - (void)_dragSelectionWithEvent:(id)arg1;
-- (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)mouseMoved:(id)arg1;

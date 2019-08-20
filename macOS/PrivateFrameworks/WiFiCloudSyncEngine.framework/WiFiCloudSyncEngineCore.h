@@ -28,6 +28,8 @@
 - (void)relayMergeNetworks:(id)arg1;
 - (void)relayCloudCleanUpEvent;
 - (void)relayCloudEvent:(id)arg1;
+- (void)pruneKVSStore;
+- (void)relayPruneKVSStore:(id)arg1;
 - (void)unSubscribeKVStoreNotfications;
 - (void)subscribeKVStoreNotficationsForBundleId:(id)arg1;
 - (void)enableIcloudSyncing:(BOOL)arg1 ForBundleId:(id)arg2;

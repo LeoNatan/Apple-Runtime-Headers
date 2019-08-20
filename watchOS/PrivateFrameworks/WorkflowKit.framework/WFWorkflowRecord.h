@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/WFNaming-Protocol.h>
 
-@class NSArray, NSDate, NSString, WFWorkflowIcon, WFWorkflowQuarantine;
+@class NSArray, NSDate, NSSet, NSString, WFWorkflowIcon, WFWorkflowQuarantine;
 
 @interface WFWorkflowRecord : WFRecord <WFNaming>
 {
@@ -32,11 +32,15 @@
     NSString *_lastMigratedClientVersion;
     int _lastSyncedHash;
     NSString *_lastSavedOnDeviceName;
+    NSSet *_accessResourcePermissionStates;
+    int _remoteQuarantineStatus;
     unsigned int _cachedSyncHash;
 }
 
 + (id)defaultPropertyValues;
 @property(nonatomic) unsigned int cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
+@property(nonatomic) int remoteQuarantineStatus; // @synthesize remoteQuarantineStatus=_remoteQuarantineStatus;
+@property(copy, nonatomic) NSSet *accessResourcePermissionStates; // @synthesize accessResourcePermissionStates=_accessResourcePermissionStates;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
 @property(nonatomic) int lastSyncedHash; // @synthesize lastSyncedHash=_lastSyncedHash;
 @property(copy, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;

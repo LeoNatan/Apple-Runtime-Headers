@@ -17,6 +17,7 @@
     NSMutableSet *_activeCollections;
 }
 
++ (void)_promoteItemToToAppLibraryIfNeeded:(id)arg1;
 + (_Bool)isAnyDocumentRecentlyUsed:(id)arg1 excludedFileTypes:(id)arg2 allowedFileProviderIdentifiers:(id)arg3;
 + (id)defaultManager;
 - (void).cxx_destruct;
@@ -50,7 +51,6 @@
 - (id)itemForURL:(id)arg1 error:(id *)arg2;
 - (void)fetchItemForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchItemForURL:(id)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_promoteItemToToAppLibraryIfNeeded:(id)arg1;
 - (void)fetchIndexPropertiesForItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)evictItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchURLForItemID:(id)arg1 creatingPlaceholderIfMissing:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

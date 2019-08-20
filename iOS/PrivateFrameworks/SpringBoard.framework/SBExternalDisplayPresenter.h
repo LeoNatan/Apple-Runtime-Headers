@@ -9,7 +9,7 @@
 #import <SpringBoard/BSInvalidatable-Protocol.h>
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 
-@class CADisplay, CADisplayMode, FBSDisplayConfiguration, FBSDisplayIdentity, FBSDisplayLayoutPublisher, FBScene, NSString, SBApplication, SBApplicationSceneHandle, SBSExternalDisplayLayoutElement, _UIRootWindow;
+@class BSAtomicSignal, CADisplay, CADisplayMode, FBSDisplayConfiguration, FBSDisplayIdentity, FBSDisplayLayoutPublisher, FBScene, NSString, SBApplication, SBApplicationSceneHandle, SBSExternalDisplayLayoutElement, _UIRootWindow;
 @protocol BSInvalidatable, OS_dispatch_queue;
 
 @interface SBExternalDisplayPresenter : NSObject <SBSceneHandleObserver, BSInvalidatable>
@@ -23,7 +23,7 @@
     SBApplication *_foregroundApp;
     SBApplicationSceneHandle *_foregroundAppSceneHandle;
     FBScene *_foregroundAppScene;
-    unsigned long long _foregroundAppSequenceNumber;
+    BSAtomicSignal *_foregroundAppSceneTransactionInvalidator;
     NSObject<OS_dispatch_queue> *_displayMutationQueue;
     unsigned long long _displayMutationEnqueuedCount;
     unsigned long long _displayMutationCompletedCount;
@@ -33,8 +33,9 @@
     FBSDisplayConfiguration *_rootWindowConfiguration;
     SBApplicationSceneHandle *_presentationSceneHandle;
     FBScene *_presentationScene;
-    FBSDisplayConfiguration *_presentationSceneConfiguration;
+    BSAtomicSignal *_presentationSceneActivationInvalidator;
     _Bool _hasEnqueuedPresentationUpdate;
+    _Bool _presentationSceneHasActivated;
     SBSExternalDisplayLayoutElement *_presentedLayoutElement;
     id <BSInvalidatable> _presentedLayoutElementAssertion;
 }
@@ -42,8 +43,8 @@
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
-- (void)sceneHandle:(id)arg1 didUpdateContentState:(long long)arg2;
 - (void)_enqueuePresentationUpdate;
+- (void)_updateHostingIfNecessary;
 - (void)_ensureMode:(id)arg1 overscanCompensation:(long long)arg2;
 - (id)_createUpdateTransaction;
 - (id)updateToConfiguration:(id)arg1 withForegroundApp:(id)arg2;

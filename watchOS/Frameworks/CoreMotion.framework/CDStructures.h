@@ -533,6 +533,7 @@ struct Item {
     struct unique_ptr<CMMsl::TapAccept, std::__1::default_delete<CMMsl::TapAccept>> _tapAccept;
     struct unique_ptr<CMMsl::TapDetect, std::__1::default_delete<CMMsl::TapDetect>> _tapDetect;
     struct unique_ptr<CMMsl::TempestPoCAuxiliaryDeviceMotion, std::__1::default_delete<CMMsl::TempestPoCAuxiliaryDeviceMotion>> _tempestPoCAuxiliaryDeviceMotion;
+    struct unique_ptr<CMMsl::TempestPoCListenerOrientation, std::__1::default_delete<CMMsl::TempestPoCListenerOrientation>> _tempestPoCListenerOrientation;
     struct unique_ptr<CMMsl::TouchOscarEmu, std::__1::default_delete<CMMsl::TouchOscarEmu>> _touchOscarEmu;
     struct unique_ptr<CMMsl::UserStudyEvent, std::__1::default_delete<CMMsl::UserStudyEvent>> _userStudyEvent;
     struct unique_ptr<CMMsl::VibrationEvent, std::__1::default_delete<CMMsl::VibrationEvent>> _vibrationEvent;
@@ -545,6 +546,7 @@ struct Item {
     struct unique_ptr<CMMsl::WifiScanResults, std::__1::default_delete<CMMsl::WifiScanResults>> _wifiScanResults;
     struct unique_ptr<CMMsl::WorkoutEvent, std::__1::default_delete<CMMsl::WorkoutEvent>> _workoutEvent;
     struct unique_ptr<CMMsl::WorkoutRecorderAccel, std::__1::default_delete<CMMsl::WorkoutRecorderAccel>> _workoutRecorderAccel;
+    struct unique_ptr<CMMsl::WorkoutRecorderAccel800, std::__1::default_delete<CMMsl::WorkoutRecorderAccel800>> _workoutRecorderAccel800;
     struct unique_ptr<CMMsl::WorkoutRecorderBodyMetrics, std::__1::default_delete<CMMsl::WorkoutRecorderBodyMetrics>> _workoutRecorderBodyMetrics;
     struct unique_ptr<CMMsl::WorkoutRecorderElevation, std::__1::default_delete<CMMsl::WorkoutRecorderElevation>> _workoutRecorderElevation;
     struct unique_ptr<CMMsl::WorkoutRecorderHealthKitInfo, std::__1::default_delete<CMMsl::WorkoutRecorderHealthKitInfo>> _workoutRecorderHealthKitInfo;
@@ -690,6 +692,8 @@ struct TapDetect;
 
 struct TempestPoCAuxiliaryDeviceMotion;
 
+struct TempestPoCListenerOrientation;
+
 struct TouchOscarEmu;
 
 struct UserStudyEvent;
@@ -729,6 +733,8 @@ struct WifiScanResults;
 struct WorkoutEvent;
 
 struct WorkoutRecorderAccel;
+
+struct WorkoutRecorderAccel800;
 
 struct WorkoutRecorderBodyMetrics;
 
@@ -1669,6 +1675,12 @@ struct unique_ptr<CMMsl::TempestPoCAuxiliaryDeviceMotion, std::__1::default_dele
     } __ptr_;
 };
 
+struct unique_ptr<CMMsl::TempestPoCListenerOrientation, std::__1::default_delete<CMMsl::TempestPoCListenerOrientation>> {
+    struct __compressed_pair<CMMsl::TempestPoCListenerOrientation *, std::__1::default_delete<CMMsl::TempestPoCListenerOrientation>> {
+        struct TempestPoCListenerOrientation *__value_;
+    } __ptr_;
+};
+
 struct unique_ptr<CMMsl::TouchOscarEmu, std::__1::default_delete<CMMsl::TouchOscarEmu>> {
     struct __compressed_pair<CMMsl::TouchOscarEmu *, std::__1::default_delete<CMMsl::TouchOscarEmu>> {
         struct TouchOscarEmu *__value_;
@@ -1738,6 +1750,12 @@ struct unique_ptr<CMMsl::WorkoutEvent, std::__1::default_delete<CMMsl::WorkoutEv
 struct unique_ptr<CMMsl::WorkoutRecorderAccel, std::__1::default_delete<CMMsl::WorkoutRecorderAccel>> {
     struct __compressed_pair<CMMsl::WorkoutRecorderAccel *, std::__1::default_delete<CMMsl::WorkoutRecorderAccel>> {
         struct WorkoutRecorderAccel *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<CMMsl::WorkoutRecorderAccel800, std::__1::default_delete<CMMsl::WorkoutRecorderAccel800>> {
+    struct __compressed_pair<CMMsl::WorkoutRecorderAccel800 *, std::__1::default_delete<CMMsl::WorkoutRecorderAccel800>> {
+        struct WorkoutRecorderAccel800 *__value_;
     } __ptr_;
 };
 

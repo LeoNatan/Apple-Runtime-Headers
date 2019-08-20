@@ -67,7 +67,6 @@
 - (void)cut:(id)arg1;
 - (void)_performAction:(SEL)arg1 sender:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)_menuDismissed:(id)arg1;
 - (void)_handleMenuGesture:(id)arg1;
 - (_Bool)_gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)_isUsingOldStyleMultiselection;

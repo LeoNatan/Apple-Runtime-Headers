@@ -6,11 +6,10 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class NSArray, NSObject, NSString;
+@class NSArray, NSObject, NSString, PXGReusableAccessibilityContentInfo;
 @protocol PXAccessibilityView, PXDisplayAsset;
 
 @protocol PXGMutableAccessibilityContentInfo <NSObject>
-@property(retain, nonatomic) NSArray *px_accessibilityChildren;
 @property(nonatomic) BOOL visible;
 @property(copy, nonatomic) NSArray *selectedContent;
 @property(nonatomic) BOOL selected;
@@ -22,5 +21,6 @@
 @property(retain, nonatomic) NSString *text;
 @property(nonatomic) long long contentKind;
 @property(nonatomic) struct CGRect frame;
+- (void)px_accessibilityAddChildElement:(PXGReusableAccessibilityContentInfo *)arg1;
 @end
 

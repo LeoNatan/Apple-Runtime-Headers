@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     FigSubtitleCALayer *subtitleLayer;
     FigBaseCALayer *closedCaptionLayer;
     _Bool isLegibleDisplayEnabled;
+    _Bool isForScrubbingOnly;
     AVPlayerLayer *associatedRemoteModeLayer;
     _Bool willManageSublayersAsSwappedLayers;
     long long activeMode;

@@ -32,6 +32,7 @@
 + (id)messagesContentType;
 + (id)mailContentType;
 + (id)contactContentType;
++ (id)coreSuggestionsBundle;
 + (id)documentsAppBundle;
 + (id)filesBundle;
 + (id)searchBundle;
@@ -80,7 +81,6 @@
 - (void)computePolicyFeaturesForBundleItems:(id)arg1 isCJK:(BOOL)arg2;
 - (void)updateScoresForPreparedItems:(id)arg1 isCJK:(BOOL)arg2 clientBundle:(id)arg3;
 - (void)updateScoresForPreparedItems:(id)arg1;
-- (void)hackMusicResultsWithItem:(id)arg1 featureVector:(id)arg2;
 - (float *)computeScoresForVectors:(id)arg1 withBundleFeatures:(id)arg2;
 - (void)computeRelativeFeatureForContext:(id)arg1 items:(id)arg2;
 - (void)relevantResultSetPRSL2FeaturesFromBundleFeature:(unsigned long long)arg1 absRankFeatureOut:(unsigned short *)arg2 relRankFeatureOut:(unsigned short *)arg3;

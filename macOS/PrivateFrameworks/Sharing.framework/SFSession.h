@@ -9,7 +9,7 @@
 #import <Sharing/NSSecureCoding-Protocol.h>
 #import <Sharing/SFXPCInterface-Protocol.h>
 
-@class CUAppleIDClient, CUMessageSession, CUMessageSessionServer, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint, SFAppleIDContactInfo, SFDevice, TRSession;
+@class CUAppleIDClient, CUMessageSession, CUMessageSessionServer, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint, SDStatusMonitor, SFAppleIDContactInfo, SFDevice, TRSession;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction;
 
 @interface SFSession : NSObject <NSSecureCoding, SFXPCInterface>
@@ -72,6 +72,7 @@
     NSString *_myAppleID;
     CUAppleIDClient *_myAppleIDInfoClient;
     NSString *_peerContactIdentifier;
+    SDStatusMonitor *_statusMonitor;
     CDUnknownBlockType _bluetoothStateChangedHandler;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
@@ -118,6 +119,7 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
+@property(retain, nonatomic) SDStatusMonitor *statusMonitor; // @synthesize statusMonitor=_statusMonitor;
 @property(copy, nonatomic) NSString *peerContactIdentifier; // @synthesize peerContactIdentifier=_peerContactIdentifier;
 @property(copy, nonatomic) NSString *peerAppleID; // @synthesize peerAppleID=_peerAppleID;
 @property(retain, nonatomic) CUAppleIDClient *myAppleIDInfoClient; // @synthesize myAppleIDInfoClient=_myAppleIDInfoClient;
@@ -166,6 +168,10 @@
 - (void)sendResponse:(id)arg1;
 - (void)sendRequest:(id)arg1;
 - (void)sendEvent:(id)arg1;
+- (id)_appleIDVerifyProof:(id)arg1 error:(id *)arg2;
+- (void)appleIDVerifyProof:(id)arg1 dispatchQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)_appleIDAddProof:(id)arg1 error:(id *)arg2;
+- (void)appleIDAddProof:(id)arg1 dispatchQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_pairVerifyCompleted:(int)arg1;
 - (void)_pairVerify:(id)arg1 start:(BOOL)arg2;
 - (void)_pairVerifyWithFlags:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;

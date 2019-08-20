@@ -81,7 +81,7 @@
     PKTransitBalanceModel *_transitBalanceModel;
 }
 
-+ (_Bool)shouldAutomaticallyAuthorizeForPassType:(unsigned long long)arg1 withContext:(id)arg2;
++ (_Bool)shouldAutomaticallyAuthorizeForPass:(id)arg1 withContext:(id)arg2;
 - (void).cxx_destruct;
 - (void)_processValueAddedServiceTransactionsForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_processPaymentTransactionForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

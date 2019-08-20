@@ -11,7 +11,7 @@
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSMutableArray, NSSet, NSString, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKTableHeaderView;
+@class NSMutableArray, NSSet, NSString, PKPaymentProvisioningController, PKPaymentSetupFlowController, PKPaymentSetupFooterView, PKTableHeaderView;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol>
@@ -20,6 +20,7 @@
     PKPaymentSetupFooterView *_footerView;
     NSMutableArray *_pickerSections;
     NSSet *_betaNetworks;
+    PKPaymentSetupFlowController *_flowController;
     _Bool _hideSetupLaterButton;
     _Bool _allowsManualEntry;
     PKPaymentProvisioningController *_provisioningController;

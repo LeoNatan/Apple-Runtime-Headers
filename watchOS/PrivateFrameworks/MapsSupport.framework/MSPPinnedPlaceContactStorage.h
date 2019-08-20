@@ -14,9 +14,11 @@
 {
     PBUnknownFields *_unknownFields;
     NSString *_contactIdentifier;
+    NSString *_handleValue;
     NSString *_labeledValueIdentifier;
 }
 
+@property(retain, nonatomic) NSString *handleValue; // @synthesize handleValue=_handleValue;
 @property(retain, nonatomic) NSString *labeledValueIdentifier; // @synthesize labeledValueIdentifier=_labeledValueIdentifier;
 @property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
@@ -30,6 +32,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasHandleValue;
 @property(readonly, nonatomic) _Bool hasLabeledValueIdentifier;
 @property(readonly, nonatomic) _Bool hasContactIdentifier;
 

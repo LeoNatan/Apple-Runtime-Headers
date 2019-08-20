@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class HKConcept, HKConceptIdentifier, HKMedicalCodingContext, HKSample, NSNumber, NSString, NSURL;
+@class HKConcept, HKConceptIdentifier, HKMedicalCodingContext, HKSample, NSArray, NSNumber, NSString, NSURL;
 
 @protocol HKConceptStoreServerInterface <NSObject>
 - (void)remote_unitTest_queryConceptByExactNameMatch:(NSString *)arg1 completion:(void (^)(HKConcept *, NSError *))arg2;
@@ -22,8 +22,10 @@
 - (void)remote_queryConceptsByRelationship:(NSString *)arg1 toNodeWithID:(HKConceptIdentifier *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 - (void)remote_queryConceptsByAttribute:(long long)arg1 withValue:(NSString *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
 - (void)remote_queryConceptByID:(NSNumber *)arg1 completion:(void (^)(HKConcept *, NSError *))arg2;
+- (void)remote_displayNamesByResolvingContexts:(NSArray *)arg1 completion:(void (^)(NSArray *))arg2;
 - (void)remote_conceptByResolvingContext:(HKMedicalCodingContext *)arg1 completion:(void (^)(HKConcept *))arg2;
 - (void)remote_ontologyVersionWithCompletion:(void (^)(NSNumber *, NSError *))arg1;
+- (void)remote_currentIndexingState:(void (^)(unsigned int))arg1;
 - (void)remote_testTaskServerWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_startTaskServerIfNeeded;
 @end

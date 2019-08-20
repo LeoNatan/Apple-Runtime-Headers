@@ -32,9 +32,8 @@
 - (void).cxx_destruct;
 - (void)layout;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)init;
+- (id)initWithFrame:(struct CGRect)arg1;
 @property(nonatomic) BOOL isExpanded; // @synthesize isExpanded;
 @property(nonatomic) BOOL isInRoster; // @synthesize isInRoster;
 @property(nonatomic, readonly) _TtC15ConversationKit19ParticipantInfoView *bottomBar; // @synthesize bottomBar;

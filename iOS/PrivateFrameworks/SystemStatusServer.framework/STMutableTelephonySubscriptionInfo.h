@@ -24,6 +24,7 @@
 @property(nonatomic, getter=isProvidingDataConnection) _Bool providingDataConnection; // @dynamic providingDataConnection;
 @property(nonatomic, getter=isPreferredForDataConnections) _Bool preferredForDataConnections; // @dynamic preferredForDataConnections;
 @property(nonatomic) unsigned long long dataConnectionType; // @dynamic dataConnectionType;
+@property(nonatomic) unsigned long long cellularRegistrationStatus; // @dynamic cellularRegistrationStatus;
 @property(nonatomic) unsigned long long registrationStatus; // @dynamic registrationStatus;
 @property(copy, nonatomic) NSString *SIMStatus; // @dynamic SIMStatus;
 @property(copy, nonatomic) NSString *shortSIMLabel; // @dynamic shortSIMLabel;

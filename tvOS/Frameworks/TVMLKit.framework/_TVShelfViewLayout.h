@@ -10,6 +10,7 @@
 
 @interface _TVShelfViewLayout : UICollectionViewLayout
 {
+    _Bool _shouldSnapContent;
     double _minimumInteritemSpacing;
     double _minimumLineSpacing;
     long long _rowCount;
@@ -35,7 +36,14 @@
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_minimumLineSpacing;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
+@property(nonatomic) _Bool shouldSnapContent; // @synthesize shouldSnapContent=_shouldSnapContent;
 - (void).cxx_destruct;
+- (id)indexPathForSnappedContent;
+- (void)snapContentToIndexPath:(id)arg1;
+- (void)snapContent;
+- (id)_indexPathForItemAtProposedContentOffset:(struct CGPoint)arg1;
+- (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
+- (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (_Bool)_bumpHeaderForLayoutSection:(id)arg1 forIndexPath:(id)arg2;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (struct CGRect)boundingSelectionFrameForFrame:(struct CGRect)arg1;

@@ -12,9 +12,11 @@
 
 @interface PRSRankingItem : NSObject <SSDataCollectible>
 {
+    BOOL _isInternal;
     BOOL _eligibleForDemotion;
     BOOL _shouldHideUnderShowMore;
     BOOL _matchedQueryTerms;
+    unsigned char _bundleIDType;
     BOOL _isPrepared;
     float _rawScore;
     float _feedbackScore;
@@ -34,7 +36,6 @@
     NSArray *_emailAddresses;
     unsigned long long _importantPropertiesPrefixMatched;
     unsigned long long _importantPropertiesWordMatched;
-    unsigned long long _playCount;
     NSString *_contentType;
     // Error parsing type: T, name: _indexScore
     // Error parsing type: T, name: _inputToModelScore
@@ -55,7 +56,7 @@
 + (void)initialize;
 @property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) BOOL isPrepared; // @synthesize isPrepared=_isPrepared;
-@property(nonatomic) unsigned long long playCount; // @synthesize playCount=_playCount;
+@property(nonatomic) unsigned char bundleIDType; // @synthesize bundleIDType=_bundleIDType;
 @property(nonatomic) unsigned long long importantPropertiesWordMatched; // @synthesize importantPropertiesWordMatched=_importantPropertiesWordMatched;
 @property(nonatomic) unsigned long long importantPropertiesPrefixMatched; // @synthesize importantPropertiesPrefixMatched=_importantPropertiesPrefixMatched;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;

@@ -16,6 +16,7 @@
 {
     UIAlertController *_alertView;
     UIWindow *_alertWindow;
+    UIWindow *_btAlertWindow;
     UITableView *_tableView;
     NSMutableArray *_deviceList;
     NSString *_title;
@@ -36,6 +37,9 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)dismissPairingAlert:(id)arg1;
+- (void)showPairingAlert:(id)arg1;
+- (void)showAlert:(id)arg1;
 - (void)alertSheetDismissed:(id)arg1;
 - (void)deviceConnectionCompleteHandler:(id)arg1;
 - (void)devicePairedHandler:(id)arg1;
@@ -50,6 +54,7 @@
 - (void)powerChanged:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)cancelDevicePicker;
+- (void)createBTAlertWindow;
 - (void)createAlertWindow;
 - (void)startScanning;
 - (void)checkAttachTimeout;

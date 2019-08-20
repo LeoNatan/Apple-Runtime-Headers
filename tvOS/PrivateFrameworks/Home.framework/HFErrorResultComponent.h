@@ -47,7 +47,7 @@
 - (long long)componentPriority;
 - (id)initWithCategory:(unsigned long long)arg1;
 - (id)init;
-- (void)_addAccountSymptomMessageForAccountName:(id)arg1;
+- (void)_addAccountSymptomMessageForAccountName:(id)arg1 symptom:(id)arg2;
 
 @end
 

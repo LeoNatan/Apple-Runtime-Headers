@@ -18,6 +18,7 @@
 @property(nonatomic) long long initialFloatingConfiguration; // @synthesize initialFloatingConfiguration=_initialFloatingConfiguration;
 - (id)topMostAppLayouts;
 - (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
+- (id)layoutSettings;
 - (double)shadowOffsetForIndex:(unsigned long long)arg1;
 - (double)shadowOpacityForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;

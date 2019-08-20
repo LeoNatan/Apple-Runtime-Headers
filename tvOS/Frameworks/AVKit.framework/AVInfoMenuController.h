@@ -47,6 +47,10 @@ __attribute__((visibility("hidden")))
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (id)_viewControllerForIndexPath:(id)arg1;
+- (id)_firstIndexPath;
+- (id)_indexPathForIndex:(long long)arg1;
+- (long long)_indexForIndexPath:(id)arg1;
 @property(retain, nonatomic) AVInfoPanelContentViewController *selectedViewController;
 @property(nonatomic) unsigned long long selectedIndex;
 - (void)viewWillAppear:(_Bool)arg1;

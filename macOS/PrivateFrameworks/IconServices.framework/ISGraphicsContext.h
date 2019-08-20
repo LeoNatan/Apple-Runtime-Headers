@@ -8,6 +8,7 @@
 
 @class ISColor, ISImage, NSData;
 
+__attribute__((visibility("hidden")))
 @interface ISGraphicsContext : NSObject
 {
     struct CGContext *_cgContext;

@@ -8,7 +8,7 @@
 
 #import <CoreLocationProtobuf/NSCopying-Protocol.h>
 
-@class CLPMotionActivity, CLPSatelliteReport, NSMutableArray;
+@class CLPMotionActivity, CLPPipelineDiagnosticReport, CLPSatelliteReport, NSMutableArray;
 
 @interface CLPLocation : PBCodable <NSCopying>
 {
@@ -30,6 +30,7 @@
     CLPMotionActivity *_motionActivity;
     int _motionActivityConfidence;
     int _motionActivityType;
+    CLPPipelineDiagnosticReport *_pipelineDiagnosticReport;
     int _provider;
     CLPMotionActivity *_rawMotionActivity;
     CLPSatelliteReport *_satReport;
@@ -62,6 +63,7 @@
 }
 
 + (Class)appBundleIdIndicesType;
+@property(retain, nonatomic) CLPPipelineDiagnosticReport *pipelineDiagnosticReport; // @synthesize pipelineDiagnosticReport=_pipelineDiagnosticReport;
 @property(nonatomic) _Bool isFromLocationController; // @synthesize isFromLocationController=_isFromLocationController;
 @property(retain, nonatomic) CLPSatelliteReport *satReport; // @synthesize satReport=_satReport;
 @property(nonatomic) float horzUncSemiMajAz; // @synthesize horzUncSemiMajAz=_horzUncSemiMajAz;
@@ -98,6 +100,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPipelineDiagnosticReport;
 @property(nonatomic) _Bool hasIsFromLocationController;
 @property(readonly, nonatomic) _Bool hasSatReport;
 @property(nonatomic) _Bool hasHorzUncSemiMajAz;

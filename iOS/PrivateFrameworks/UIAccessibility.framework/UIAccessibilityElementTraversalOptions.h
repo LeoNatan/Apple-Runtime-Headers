@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray;
+
 @interface UIAccessibilityElementTraversalOptions : NSObject
 {
     _Bool _shouldReturnScannerGroups;
@@ -22,6 +24,7 @@
     _Bool _shouldIncludeStatusBarWindow;
     long long _direction;
     CDUnknownBlockType _leafNodePredicate;
+    NSArray *_allowedViewsForTraversal;
 }
 
 + (id)defaultSpeakScreenOptions;
@@ -31,6 +34,7 @@
 + (id)options;
 @property(nonatomic) _Bool shouldIncludeStatusBarWindow; // @synthesize shouldIncludeStatusBarWindow=_shouldIncludeStatusBarWindow;
 @property(nonatomic) _Bool forSpeakScreen; // @synthesize forSpeakScreen=_forSpeakScreen;
+@property(retain, nonatomic) NSArray *allowedViewsForTraversal; // @synthesize allowedViewsForTraversal=_allowedViewsForTraversal;
 @property(nonatomic) _Bool includeAncestorsOfSelfInSiblingMatch; // @synthesize includeAncestorsOfSelfInSiblingMatch=_includeAncestorsOfSelfInSiblingMatch;
 @property(nonatomic) _Bool includeDirectDescendantsOnly; // @synthesize includeDirectDescendantsOnly=_includeDirectDescendantsOnly;
 @property(nonatomic) _Bool ignoreObscuresScreen; // @synthesize ignoreObscuresScreen=_ignoreObscuresScreen;

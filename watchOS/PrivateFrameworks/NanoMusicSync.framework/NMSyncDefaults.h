@@ -36,9 +36,6 @@
     NSNumber *_lastFullySentAssetSyncPlaylistPersistentID;
     NSNumber *_lastFullySentAssetSyncPlaylistVersion;
     NSDate *_modificationDate;
-    NSDictionary *_musicSyncInfo;
-    NSDictionary *_podcastsSyncInfo;
-    NSDictionary *_audiobooksSyncInfo;
     unsigned int _assetSyncLimitType;
     unsigned int _assetSyncType;
     NSNumber *_assetSyncPlaylistPersistentID;
@@ -49,9 +46,6 @@
 @property(retain, nonatomic, setter=setAssetSyncPlaylistPersistentID:) NSNumber *assetSyncPlaylistPersistentID; // @synthesize assetSyncPlaylistPersistentID=_assetSyncPlaylistPersistentID;
 @property(nonatomic) unsigned int assetSyncType; // @synthesize assetSyncType=_assetSyncType;
 @property(nonatomic) unsigned int assetSyncLimitType; // @synthesize assetSyncLimitType=_assetSyncLimitType;
-@property(copy, nonatomic) NSDictionary *audiobooksSyncInfo; // @synthesize audiobooksSyncInfo=_audiobooksSyncInfo;
-@property(copy, nonatomic) NSDictionary *podcastsSyncInfo; // @synthesize podcastsSyncInfo=_podcastsSyncInfo;
-@property(copy, nonatomic) NSDictionary *musicSyncInfo; // @synthesize musicSyncInfo=_musicSyncInfo;
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(copy, nonatomic) NSNumber *lastFullySentAssetSyncPlaylistVersion; // @synthesize lastFullySentAssetSyncPlaylistVersion=_lastFullySentAssetSyncPlaylistVersion;
 @property(copy, nonatomic) NSNumber *lastFullySentAssetSyncPlaylistPersistentID; // @synthesize lastFullySentAssetSyncPlaylistPersistentID=_lastFullySentAssetSyncPlaylistPersistentID;
@@ -75,9 +69,11 @@
 - (void)clearAppActivityStatusDefaultsForBundleID:(id)arg1;
 - (void)_writeDate:(id)arg1 forKey:(id)arg2 withBundleID:(id)arg3;
 - (id)_dateValueForKey:(id)arg1 bundleID:(id)arg2;
-- (void)setAudiobooksSyncInfo:(id)arg1 shouldSynchronizeToPairedDevice:(_Bool)arg2;
-- (void)setPodcastsSyncInfo:(id)arg1 shouldSynchronizeToPairedDevice:(_Bool)arg2;
-- (void)setMusicSyncInfo:(id)arg1 shouldSynchronizeToPairedDevice:(_Bool)arg2;
+- (void)_synchronizeSyncInfoToPhone;
+- (_Bool)_shouldSynchronizeSyncInfoToPhoneForBundleIdentifier:(id)arg1;
+@property(copy, nonatomic) NSDictionary *audiobooksSyncInfo;
+@property(copy, nonatomic) NSDictionary *podcastsSyncInfo;
+@property(copy, nonatomic) NSDictionary *musicSyncInfo;
 @property(readonly, nonatomic) _Bool debugSyncInfoEnabled;
 - (id)lastSyncInfoRequestDateForBundleIdentifier:(id)arg1;
 @property(copy, nonatomic) NSDictionary *syncStateDict;

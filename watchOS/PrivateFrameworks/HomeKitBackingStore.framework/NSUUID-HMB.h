@@ -6,8 +6,21 @@
 
 #import <Foundation/NSUUID.h>
 
-@interface NSUUID (HMB)
+#import <HomeKitBackingStore/HMBModelQueryableParameterCoder-Protocol.h>
+
+@class NSString;
+
+@interface NSUUID (HMB) <HMBModelQueryableParameterCoder>
++ (id)hmbDecodeQueryableParameterFromData:(id)arg1;
++ (id)hmbUUIDFromData:(id)arg1;
 + (id)hmbUUIDWithSQLite3Column:(struct sqlite3_stmt *)arg1 column:(int)arg2;
+- (id)hmbEncodeQueryableParameter;
 - (id)data;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @end
 

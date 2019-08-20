@@ -91,7 +91,7 @@
 + (id)_fileURLsWithEvent:(id)arg1;
 + (id)_fixedUpURLsForURLs:(id)arg1 event:(id)arg2;
 + (BOOL)automaticallyNotifiesObserversOf_lockoutEngaged;
-+ (void)_loadLockoutUIFrameworkIfNeeded;
++ (BOOL)_loadScreenTimeServiceUIFrameworkIfNeeded;
 + (BOOL)willRestoreState;
 - (void).cxx_destruct;
 @property __weak id accessibilityParent; // @dynamic accessibilityParent;

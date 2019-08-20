@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
-@protocol OS_dispatch_queue;
+@class NSMutableDictionary, NSOperationQueue;
 
 @interface MPStoreItemMetadataRequestController : NSObject
 {
-    NSObject<OS_dispatch_queue> *_accessQueue;
+    NSOperationQueue *_operationQueue;
     unsigned long long _lastExpiredMetadataPurgeMachTime;
     NSMutableDictionary *_itemCaches;
     long long _cacheSize;

@@ -11,7 +11,6 @@
 }
 
 + (_Bool)isEnabledByDefault;
-- (id)_requiredContextIDsForDragSessionInView:(id)arg1;
 
 @end
 

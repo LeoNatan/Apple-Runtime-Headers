@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *pageViewControllers;
 - (void)viewDidLoad;
 - (void)loadView;
-- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

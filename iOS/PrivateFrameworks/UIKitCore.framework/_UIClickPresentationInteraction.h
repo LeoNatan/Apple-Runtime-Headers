@@ -10,12 +10,12 @@
 #import <UIKitCore/UIInteraction-Protocol.h>
 #import <UIKitCore/UIInteraction_Private-Protocol.h>
 #import <UIKitCore/_UIClickInteractionDelegateInternal-Protocol.h>
-#import <UIKitCore/_UIDragInteractionCancellationPreviewDelegate-Protocol.h>
+#import <UIKitCore/_UIDragInteractionPresentationDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, UIDragInteraction, UIGestureRecognizer, UIView, _UIClickFeedbackGenerator, _UIClickInteraction, _UIClickPresentation, _UIRelationshipGestureRecognizer, _UIStateMachine;
 @protocol UIInteractionEffect, _UIClickPresentationAssisting, _UIClickPresentationInteractionDelegate;
 
-@interface _UIClickPresentationInteraction : NSObject <_UIClickInteractionDelegateInternal, UIInteraction_Private, UIGestureRecognizerDelegate, _UIDragInteractionCancellationPreviewDelegate, UIInteraction>
+@interface _UIClickPresentationInteraction : NSObject <_UIClickInteractionDelegateInternal, UIInteraction_Private, UIGestureRecognizerDelegate, _UIDragInteractionPresentationDelegate, UIInteraction>
 {
     struct {
         _Bool shouldBegin;
@@ -27,7 +27,9 @@
         _Bool shouldAllowDragAfterDismiss;
         _Bool previewForCancellingDragItem;
         _Bool willAnimateDragCancelWithAnimator;
+        _Bool dragSessionDidEndForItems;
         _Bool interactionEffectForTargetedPreview;
+        _Bool endedForPresentation;
     } _delegateImplements;
     _Bool _unableToClick;
     long long _statsPresentation;
@@ -42,8 +44,8 @@
     _UIRelationshipGestureRecognizer *_failureRelationshipGestureRecognizer;
     id <_UIClickPresentationAssisting> _presentationAssistant;
     _UIClickPresentation *_pendingPresentation;
-    CDUnknownBlockType _cancellationCompletion;
     _UIClickFeedbackGenerator *_feedbackGenerator;
+    UIDragInteraction *_latentAssociatedDragInteraction;
     UIDragInteraction *_associatedDragInteraction;
     NSString *_debugIdentifier;
     struct CGPoint _initialLocation;
@@ -51,8 +53,8 @@
 
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
+@property(retain, nonatomic) UIDragInteraction *latentAssociatedDragInteraction; // @synthesize latentAssociatedDragInteraction=_latentAssociatedDragInteraction;
 @property(retain, nonatomic) _UIClickFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
-@property(copy, nonatomic) CDUnknownBlockType cancellationCompletion; // @synthesize cancellationCompletion=_cancellationCompletion;
 @property(nonatomic) struct CGPoint initialLocation; // @synthesize initialLocation=_initialLocation;
 @property(retain, nonatomic) _UIClickPresentation *pendingPresentation; // @synthesize pendingPresentation=_pendingPresentation;
 @property(retain, nonatomic) id <_UIClickPresentationAssisting> presentationAssistant; // @synthesize presentationAssistant=_presentationAssistant;
@@ -66,19 +68,20 @@
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) __weak id <_UIClickPresentationInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_dragInteractionDidCancelWithoutBeginning:(id)arg1;
-- (void)_dragInteractionCancellation:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
-- (id)_dragInteractionCancellation:(id)arg1 previewForCancellingItem:(id)arg2 defaultPreview:(id)arg3 proposedPreview:(id)arg4;
+- (void)_dragInteractionPresentation:(id)arg1 sessionDidEnd:(id)arg2 withoutBeginning:(_Bool)arg3;
+- (void)_dragInteractionPresentation:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
+- (id)_dragInteractionPresentation:(id)arg1 previewForCancellingItem:(id)arg2 defaultPreview:(id)arg3 proposedPreview:(id)arg4;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_gestureRecognizerFailed:(id)arg1;
-- (_Bool)_supportsFluidInteraction;
+- (_Bool)_supportsRapidRestart;
 - (_Bool)_isControlledByCC;
 - (void)_endInteractionEffectIfNeeded;
 - (id)_clickDriverTouch;
 - (void)_prepareInteractionEffect;
-- (void)_endInteractionDidComplete:(_Bool)arg1 reason:(unsigned long long)arg2;
-- (void)_cancelWithReason:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_endInteractionWithContext:(id)arg1;
+- (void)_endInteractionDidComplete:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_cancelWithReason:(unsigned long long)arg1 alongsideActions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setDelegate:(id)arg1;
 - (void)_handleDidTransitionToPossibleFromState:(unsigned long long)arg1 context:(id)arg2;
 - (unsigned long long)_handleTransitionToPossibleByEndingWithContext:(id)arg1;
@@ -90,12 +93,13 @@
 - (unsigned long long)_handleTransitionToActive;
 - (_Bool)_isPaused;
 - (unsigned long long)_currentState;
+- (_Bool)_isActive;
 - (void)_prepareStateMachine;
-- (void)_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_staging_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
 - (void)_attemptDragLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(_Bool)arg2;
 - (id)_clickDragDriver;
 - (void)_associateWithActiveDragInteraction;
+- (void)_clickInteractionDidUpdateDriver:(id)arg1;
 - (unsigned long long)_clickInteractionDefaultDriverType:(id)arg1;
 - (void)clickInteractionDidClickUp:(id)arg1;
 - (void)clickInteractionDidClickDown:(id)arg1;
@@ -108,9 +112,11 @@
 - (void)_performPreviewPresentation;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
+- (void)_delegate_interactionEndedWithContext:(id)arg1;
 - (_Bool)_delegate_shouldAllowDragAfterDismiss;
+@property(readonly, nonatomic, getter=_reachedForceThreshold) _Bool reachedForceThreshold;
 - (struct CGPoint)locationInView:(id)arg1;
-- (void)beginDragWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)beginDragWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
 - (void)cancelInteraction;
 - (void)present;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;

@@ -25,6 +25,7 @@
 @property(retain, nonatomic) id <IMAssistantMessageHandlerDataSource> messageHandlerDataSource; // @synthesize messageHandlerDataSource=_messageHandlerDataSource;
 - (void).cxx_destruct;
 - (void)forceTriggerResumeNotification;
+- (id)personFromSPIHandle:(id)arg1 contact:(id)arg2;
 - (id)personFromSPIHandle:(id)arg1;
 - (id)contactIdentifiersForParticipantsInChat:(id)arg1;
 - (id)meContactIdentifier;

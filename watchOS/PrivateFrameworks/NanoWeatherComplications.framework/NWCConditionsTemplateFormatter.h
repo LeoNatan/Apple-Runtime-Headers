@@ -34,7 +34,7 @@
 - (void)formattedTemplateWithFamily:(int)arg1 entryDate:(id)arg2 isLoading:(_Bool)arg3 withForecast:(id)arg4 templateBlock:(CDUnknownBlockType)arg5;
 - (void)enumerateFutureEntryDatesForFamily:(int)arg1 startingAt:(id)arg2 forForecast:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (id)descriptionForConditions:(id)arg1;
-- (_Bool)acceptsComplicationFamily:(int)arg1;
+- (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)modularSmallTemplateForConditions:(id)arg1;
 - (id)graphicRectangularTemplateForLocalLocation:(_Bool)arg1 timeZone:(id)arg2 conditions:(id)arg3 dailyForecastedConditions:(id)arg4 hourlyForecastedConditions:(id)arg5;

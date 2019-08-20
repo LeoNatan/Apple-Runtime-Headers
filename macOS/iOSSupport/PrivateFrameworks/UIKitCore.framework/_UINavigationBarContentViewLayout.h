@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSLayoutConstraint, UIBarButtonItemGroup, UILabel, UILayoutGuide, UIView, _UIBarButtonItemData, _UIButtonBar, _UIButtonBarButton, _UINavBackButtonAppearanceData, _UINavigationBarContentView, _UITAMICAdaptorView;
+@class NSArray, NSLayoutConstraint, UIBarButtonItemGroup, UILabel, UILayoutGuide, UIView, _UIBarButtonItemData, _UIButtonBar, _UIButtonBarButton, _UINavigationBarContentView, _UITAMICAdaptorView;
 @protocol _UINavigationBarAugmentedTitleView;
 
 __attribute__((visibility("hidden")))
@@ -59,7 +59,7 @@ __attribute__((visibility("hidden")))
     _UIButtonBar *_trailingBar;
     _UIBarButtonItemData *_plainItemAppearance;
     _UIBarButtonItemData *_doneItemAppearance;
-    _UINavBackButtonAppearanceData *_backButtonAppearance;
+    _UIBarButtonItemData *_backButtonAppearance;
     struct UIOffset _titlePositionAdjustment;
     CDStruct_ef18196a _largeTitleHeightRange;
     struct NSDirectionalEdgeInsets _layoutMargins;
@@ -71,9 +71,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *trailingBarSnapshot; // @synthesize trailingBarSnapshot=_trailingBarSnapshot;
 @property(readonly, nonatomic) UIView *leadingBarSnapshot; // @synthesize leadingBarSnapshot=_leadingBarSnapshot;
 @property(nonatomic) BOOL active; // @synthesize active=_active;
-@property(retain, nonatomic) _UINavBackButtonAppearanceData *backButtonAppearance; // @synthesize backButtonAppearance=_backButtonAppearance;
-@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
-@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *backButtonAppearance; // @synthesize backButtonAppearance=_backButtonAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
+@property(copy, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
 @property(retain, nonatomic) _UIButtonBar *trailingBar; // @synthesize trailingBar=_trailingBar;
 @property(retain, nonatomic) _UIButtonBar *leadingBar; // @synthesize leadingBar=_leadingBar;
 @property(nonatomic) CDStruct_c3b9c2ee largeTitleHeightRange; // @synthesize largeTitleHeightRange=_largeTitleHeightRange;
@@ -106,9 +106,6 @@ __attribute__((visibility("hidden")))
 - (void)replaceTrailingBarWithSnapshot;
 - (void)replaceLeadingBarWithSnapshot;
 - (void)updateSpacingConstraints;
-- (void)backButtonAppearanceChanged;
-- (void)doneItemAppearanceChanged;
-- (void)plainItemAppearanceChanged;
 @property(retain, nonatomic) NSArray *trailingBarItems;
 @property(retain, nonatomic) NSArray *leadingBarItems;
 - (void)updateAlphas;

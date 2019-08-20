@@ -13,6 +13,7 @@
 + (double)maxTrimDurationForVideo;
 + (double)maxTrimDurationForAudio;
 + (_Bool)acceptsMIMEType:(NSString *)arg1;
+- (void)setShareSheetSessionID:(NSString *)arg1;
 - (void)setContentText:(NSArray *)arg1;
 - (void)setCloudPhotoIDs:(NSArray *)arg1;
 - (void)setPhotoIDs:(NSArray *)arg1;

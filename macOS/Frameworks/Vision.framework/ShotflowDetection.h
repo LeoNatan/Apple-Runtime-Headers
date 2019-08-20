@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect box; // @synthesize box=_box;
 - (_Bool)isOverlappingLowMergeDet:(id)arg1 withOverlapThreshold:(float)arg2 withMergeCountDelta:(int)arg3;
 - (_Bool)isOverlappingSmallFace:(id)arg1 withOverlapThreshold:(float)arg2 withSizeRatio:(float)arg3;
-- (float)iOa:(id)arg1;
+- (float)intersectionOverArea:(id)arg1;
 - (float)overlap:(id)arg1;
 @property(readonly, nonatomic) float smartDistance;
 @property(readonly, nonatomic) float distanceToDefaultBox;

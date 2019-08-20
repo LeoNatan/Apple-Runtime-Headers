@@ -15,10 +15,8 @@
     UIColor *_statusTextColor;
     NSString *_supplementaryString;
     NSObject<HFIconDescriptor> *_iconDescriptor;
-    double _horizontalShiftValue;
 }
 
-@property(nonatomic) double horizontalShiftValue; // @synthesize horizontalShiftValue=_horizontalShiftValue;
 @property(retain, nonatomic) NSObject<HFIconDescriptor> *iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 @property(retain, nonatomic) NSString *supplementaryString; // @synthesize supplementaryString=_supplementaryString;
 @property(retain, nonatomic) UIColor *statusTextColor; // @synthesize statusTextColor=_statusTextColor;

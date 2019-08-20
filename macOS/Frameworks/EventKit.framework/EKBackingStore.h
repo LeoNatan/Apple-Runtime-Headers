@@ -26,6 +26,7 @@
 }
 
 + (id)createNonPartialFrozenObjectForPartialObject:(id)arg1 withFrozenClass:(Class)arg2;
++ (id)ekBackingStoreHandle;
 @property(retain, nonatomic) NSMutableSet *identifiersToCommit; // @synthesize identifiersToCommit=_identifiersToCommit;
 @property(retain, nonatomic) NSString *backingStoreIdentifier; // @synthesize backingStoreIdentifier=_backingStoreIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *noboCacheQueue; // @synthesize noboCacheQueue=_noboCacheQueue;

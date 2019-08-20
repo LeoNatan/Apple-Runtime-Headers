@@ -12,6 +12,7 @@
 
 + (void)upgradeToManatee:(id)arg1 accessoryKey:(id)arg2;
 + (void)deleteOldContainer;
++ (void)getIDSLocalDeviceInfo;
 + (void)deleteManateeAccessoryZone;
 + (void)readNewContainer;
 + (void)readOldContainer;

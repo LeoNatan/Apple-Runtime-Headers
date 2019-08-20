@@ -14,9 +14,15 @@ __attribute__((visibility("hidden")))
     long long _patchVersion;
 }
 
++ (id)v1_0_1;
++ (id)v1_0_0;
 @property(nonatomic) long long patchVersion; // @synthesize patchVersion=_patchVersion;
 @property(nonatomic) long long minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(nonatomic) long long majorVersion; // @synthesize majorVersion=_majorVersion;
+- (long long)compare:(id)arg1;
+- (_Bool)isEqualToVersion:(id)arg1;
+- (_Bool)isLessThanVersion:(id)arg1;
+- (_Bool)isGreaterThanVersion:(id)arg1;
 - (id)initWithVersionString:(id)arg1;
 
 @end

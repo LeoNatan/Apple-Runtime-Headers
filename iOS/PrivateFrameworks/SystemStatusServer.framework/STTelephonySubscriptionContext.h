@@ -16,7 +16,9 @@
     STMutableTelephonySubscriptionInfo *_subscriptionInfo;
     _Bool *_fakeServiceCanceled;
     _Bool *_fakeRegistrationCanceled;
+    _Bool *_fakeCellularRegistrationCanceled;
     NSString *_cachedCTRegistrationDisplayStatus;
+    NSString *_cachedCTRegistrationCellularStatus;
     unsigned long long _modemDataConnectionType;
     NSString *_cachedCTOperatorName;
     NSArray *_statusBarImages;
@@ -29,8 +31,10 @@
 @property(copy, nonatomic) NSArray *statusBarImages; // @synthesize statusBarImages=_statusBarImages;
 @property(copy, nonatomic) NSString *cachedCTOperatorName; // @synthesize cachedCTOperatorName=_cachedCTOperatorName;
 @property(nonatomic) unsigned long long modemDataConnectionType; // @synthesize modemDataConnectionType=_modemDataConnectionType;
+@property(copy, nonatomic) NSString *cachedCTRegistrationCellularStatus; // @synthesize cachedCTRegistrationCellularStatus=_cachedCTRegistrationCellularStatus;
 @property(copy, nonatomic) NSString *cachedCTRegistrationDisplayStatus; // @synthesize cachedCTRegistrationDisplayStatus=_cachedCTRegistrationDisplayStatus;
 @property(nonatomic, getter=isPretendingToSearch) _Bool pretendingToSearch; // @synthesize pretendingToSearch=_pretendingToSearch;
+@property(nonatomic) _Bool *fakeCellularRegistrationCanceled; // @synthesize fakeCellularRegistrationCanceled=_fakeCellularRegistrationCanceled;
 @property(nonatomic) _Bool *fakeRegistrationCanceled; // @synthesize fakeRegistrationCanceled=_fakeRegistrationCanceled;
 @property(nonatomic) _Bool *fakeServiceCanceled; // @synthesize fakeServiceCanceled=_fakeServiceCanceled;
 @property(retain, nonatomic) STMutableTelephonySubscriptionInfo *subscriptionInfo; // @synthesize subscriptionInfo=_subscriptionInfo;
@@ -43,6 +47,7 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic, getter=isFakingCellularRegistration) _Bool fakingCellularRegistration;
 @property(readonly, nonatomic, getter=isFakingRegistration) _Bool fakingRegistration;
 @property(readonly, nonatomic, getter=isFakingService) _Bool fakingService;
 

@@ -10,6 +10,8 @@
 
 @protocol AFUISiriSessionLocalDataSource <NSObject>
 - (unsigned long long)lockStateForSiriSession:(AFUISiriSession *)arg1;
+- (NSArray *)starkAppBundleIdentifierContextForSiriSession:(AFUISiriSession *)arg1;
+- (NSArray *)currentCarPlaySupportedOEMAppIDListForSiriSession:(AFUISiriSession *)arg1;
 - (NSArray *)contextAppInfosForSiriSession:(AFUISiriSession *)arg1;
 - (NSArray *)bulletinsForSiriSession:(AFUISiriSession *)arg1;
 @end

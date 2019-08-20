@@ -23,6 +23,7 @@
     SBLayoutState *_previousLayoutState;
     NSMutableDictionary *_requestedWorkspaceEntityForLayoutRoleMutableDictionary;
     _Bool _suspendsInlineAppExposeCancellation;
+    _Bool _prefersTouchCancellationDisabled;
     _Bool __alreadyPopulatedRequestedWorkspaceEntities;
     id <SBWorkspaceApplicationSceneTransitionContextDelegate> _delegate;
     long long _interfaceOrientation;
@@ -45,6 +46,7 @@
 @property(nonatomic) long long requestedSpaceConfiguration; // @synthesize requestedSpaceConfiguration=_requestedSpaceConfiguration;
 @property(retain, nonatomic) SBWorkspaceEntity *deactivatingEntity; // @synthesize deactivatingEntity=_deactivatingEntity;
 @property(nonatomic) long long preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
+@property(nonatomic) _Bool prefersTouchCancellationDisabled; // @synthesize prefersTouchCancellationDisabled=_prefersTouchCancellationDisabled;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) __weak id <SBWorkspaceApplicationSceneTransitionContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool suspendsInlineAppExposeCancellation; // @synthesize suspendsInlineAppExposeCancellation=_suspendsInlineAppExposeCancellation;

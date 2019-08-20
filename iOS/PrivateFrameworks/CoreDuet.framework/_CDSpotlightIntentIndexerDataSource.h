@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned long long)currentVersion;
 - (id)bundleIDToSearchableItemsDictionaryFromEvents:(id)arg1;
 - (id)initWithKnowledgeStore:(id)arg1;
 

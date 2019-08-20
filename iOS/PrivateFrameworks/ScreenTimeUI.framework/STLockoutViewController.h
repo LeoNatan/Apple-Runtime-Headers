@@ -7,16 +7,13 @@
 #import <UIKit/UIViewController.h>
 
 #import <ScreenTimeUI/CNContactViewControllerDelegate-Protocol.h>
-#import <ScreenTimeUI/LSApplicationWorkspaceObserverProtocol-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
-#import <ScreenTimeUI/STLockoutViewDelegate-Protocol.h>
 
-@class NSObject, NSString, SBSLockScreenService, STLockoutPolicyController, STLockoutView, UIAlertController, UIImage;
+@class NSObject, NSString, SBSLockScreenService, STHourglassView, STLockoutPolicyController, UIAlertController, UIButton, UILabel, UIVisualEffectView;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
-@interface STLockoutViewController : UIViewController <CNContactViewControllerDelegate, LSApplicationWorkspaceObserverProtocol, STLockoutPolicyControllerDelegate, STLockoutViewDelegate>
+@interface STLockoutViewController : UIViewController <CNContactViewControllerDelegate, STLockoutPolicyControllerDelegate>
 {
-    STLockoutView *_lockOutView;
     long long _style;
     unsigned long long _state;
     unsigned long long _stateBeforePending;
@@ -29,26 +26,46 @@
     NSObject<OS_dispatch_group> *_initialAnimationGroup;
     NSObject<OS_dispatch_group> *_approvalAnimationGroup;
     NSObject<OS_dispatch_group> *_dismissingAnimationGroup;
+    _Bool _okButtonAlwaysHidden;
+    _Bool _mainButtonAlwaysHidden;
     _Bool _forSnapshot;
     _Bool _didFinishDismissing;
-    UIImage *_appIcon;
     STLockoutPolicyController *_policyController;
+    UIVisualEffectView *_backdropView;
+    STHourglassView *_hourglassView;
+    UILabel *_titleLabel;
+    UILabel *_messageLabel;
+    UIButton *_mainButton;
+    UIButton *_okButton;
     long long _okButtonAction;
     id <STLockoutViewControllerDelegate> _viewControllerDelegate;
 }
 
 + (id)messageForWebsiteURL:(id)arg1;
 + (id)messageForBundleIdentifier:(id)arg1 style:(long long)arg2;
++ (id)_messageForCategoryIdentifier:(id)arg1;
 + (id)messageForApplicationName:(id)arg1 style:(long long)arg2;
 + (id)_applicationNameForWebsiteURL:(id)arg1;
 + (id)_bundleIdentifierForWebsiteURL:(id)arg1;
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
++ (id)lockoutViewControllerWithWebsiteURL:(id)arg1;
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
++ (id)lockoutViewControllerWithCategoryIdentifier:(id)arg1;
 @property(nonatomic) __weak id <STLockoutViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
 @property long long okButtonAction; // @synthesize okButtonAction=_okButtonAction;
 @property(readonly, nonatomic) _Bool didFinishDismissing; // @synthesize didFinishDismissing=_didFinishDismissing;
 @property(nonatomic, getter=isForSnapshot) _Bool forSnapshot; // @synthesize forSnapshot=_forSnapshot;
+@property __weak UIButton *okButton; // @synthesize okButton=_okButton;
+@property __weak UIButton *mainButton; // @synthesize mainButton=_mainButton;
+@property __weak UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
+@property __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
+@property __weak UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
-@property(retain, nonatomic) UIImage *appIcon; // @synthesize appIcon=_appIcon;
+@property(nonatomic) _Bool mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
+@property(nonatomic) _Bool okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
 - (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
@@ -62,10 +79,14 @@
 - (void)_hideTextAndButtons;
 - (void)_restoreHourglass;
 - (void)_hideHourglass;
+- (void)_restoreBackdrop;
+- (void)_hideBackdrop;
 - (void)_fadeInTextAndButtons;
 - (void)_fadeOutTextAndButtons;
 - (void)_fadeInHourglass;
 - (void)_fadeOutHourglass;
+- (void)_fadeInBackdropWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_fadeOutBackdropWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_showDismissingAnimationIfNeeded;
 - (void)_undoApprovalAnimationIfNeeded;
 - (void)_showApprovalAnimationIfNeeded;
@@ -84,37 +105,32 @@
 - (void)_changeMainButtonToEnterScreenTimePasscode;
 - (void)_changeMainButtonToIgnoreLimit;
 - (void)_changeMainButtonToAskForMore;
+- (void)_updateOKButtonVisibility;
 - (void)_changeMessageToInitial;
 - (void)_presentAlertController:(id)arg1;
 - (void)_authenticatedApproveForAdditionalTime:(double)arg1;
 - (_Bool)_authenticatedApproveActionSheet;
 - (void)_unlockWithSuccessMainCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)_actionOK;
-- (_Bool)_actionAddContact;
+- (void)_actionAddContact:(id)arg1;
 - (_Bool)_actionUnlockedEnterScreenTimePasscodeActionSheet;
-- (_Bool)_actionEnterScreenTimePasscodeActionSheet;
+- (void)_actionEnterScreenTimePasscodeActionSheet:(id)arg1;
 - (_Bool)_actionUnlockedAskOrApproveActionSheet;
-- (_Bool)_actionAskOrApproveActionSheet;
-- (_Bool)_actionIgnoreLimitActionSheet;
-- (_Bool)_actionIgnoreLimitForToday;
-- (_Bool)_actionOneMoreMinute;
-- (_Bool)_actionRemindMeInOneHour;
-- (_Bool)_actionRemindMeInMinutes;
-- (_Bool)_actionAskForMore;
+- (void)_actionAskOrApproveActionSheet:(id)arg1;
+- (void)_actionIgnoreLimitActionSheet:(id)arg1;
 - (_Bool)_actionDismiss;
-- (_Bool)sender:(id)arg1 requestsAction:(long long)arg2 withParameters:(id)arg3;
+- (void)_actionOK:(id)arg1;
 - (void)setDidFinishDismissing:(_Bool)arg1;
 @property(copy, nonatomic) NSString *bundleIdentifier;
-- (void)loadView;
 - (void)_setupCommon;
 - (void)dealloc;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (id)initWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 - (id)initWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
-- (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithWebsiteURL:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

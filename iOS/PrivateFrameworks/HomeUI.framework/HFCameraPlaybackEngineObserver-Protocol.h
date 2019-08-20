@@ -6,14 +6,14 @@
 
 #import <HomeUI/NSObject-Protocol.h>
 
-@class AVPlayer, HFCameraPlaybackEngine, HFCameraPlaybackPosition, HMCameraClipCollection, HMCameraSource, NSArray, NSError;
+@class AVPlayer, HFCameraPlaybackEngine, HFCameraPlaybackPosition, HMCameraClipManager, HMCameraSource, NSError;
 
 @protocol HFCameraPlaybackEngineObserver <NSObject>
 
 @optional
-- (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 clipCollection:(HMCameraClipCollection *)arg2 addedClips:(NSArray *)arg3 removedClips:(NSArray *)arg4 updatedClips:(NSArray *)arg5;
+- (void)playbackEngineDidUpdateClips:(HFCameraPlaybackEngine *)arg1;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateClipPlayer:(AVPlayer *)arg2;
-- (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateClipCollection:(HMCameraClipCollection *)arg2;
+- (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateClipManager:(HMCameraClipManager *)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateStreamAudioEnabled:(_Bool)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateMicrophoneEnabled:(_Bool)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateLiveCameraSource:(HMCameraSource *)arg2;

@@ -16,6 +16,7 @@
     UIImage *_image;
     NSString *_text;
     UIColor *_textColor;
+    UIColor *_chevronColor;
     UIColor *_detailTextColor;
     NSString *_detailTextCompositingFilter;
     HKGradientView *_gradientView;
@@ -62,6 +63,7 @@
 @property(retain, nonatomic) HKGradientView *gradientView; // @synthesize gradientView=_gradientView;
 @property(nonatomic) NSString *detailTextCompositingFilter; // @synthesize detailTextCompositingFilter=_detailTextCompositingFilter;
 @property(retain, nonatomic) UIColor *detailTextColor; // @synthesize detailTextColor=_detailTextColor;
+@property(retain, nonatomic) UIColor *chevronColor; // @synthesize chevronColor=_chevronColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;

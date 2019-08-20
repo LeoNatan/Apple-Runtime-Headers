@@ -17,5 +17,6 @@
 -     // Error parsing type: {?=[3]}24@0:8@16, name: pu_perspectiveTransformForMetadata:
 - (id)pu_stillAssetTransformMetadata;
 - (id)pu_stillImageTransformAssetTrack;
+@property(readonly, nonatomic) _Bool pu_supportsVitality;
 @end
 

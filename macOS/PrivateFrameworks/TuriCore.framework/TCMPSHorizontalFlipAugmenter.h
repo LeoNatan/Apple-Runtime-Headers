@@ -14,14 +14,11 @@ __attribute__((visibility("hidden")))
 @interface TCMPSHorizontalFlipAugmenter : NSObject <TCMPSImageAugmenting>
 {
     double _skipProbability;
-    CDUnknownBlockType _random;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType random; // @synthesize random=_random;
 @property(nonatomic) double skipProbability; // @synthesize skipProbability=_skipProbability;
-- (void).cxx_destruct;
-- (id)imageAugmentedFromImage:(id)arg1;
-- (id)initWithRNG:(CDUnknownBlockType)arg1;
+- (id)imageAugmentedFromImage:(id)arg1 generator:(CDUnknownBlockType)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

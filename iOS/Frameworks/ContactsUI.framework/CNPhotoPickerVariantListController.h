@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)providerItemDidUpdate:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
@@ -59,9 +60,11 @@ __attribute__((visibility("hidden")))
 - (void)done;
 - (void)cancel:(id)arg1;
 - (void)generateProviderItems;
+- (void)updateFlowLayoutItemSize;
 - (void)viewDidLayoutSubviews;
 - (void)buildCollectionView;
 - (void)buildHeader;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithVariantsManager:(id)arg1 originalItem:(id)arg2;

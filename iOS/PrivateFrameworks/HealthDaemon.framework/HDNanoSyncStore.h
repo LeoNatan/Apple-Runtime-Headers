@@ -70,7 +70,6 @@
 - (long long)syncEpoch;
 - (long long)syncProvenance;
 - (_Bool)validatePairingUUIDsWithIncomingMessage:(id)arg1;
-- (_Bool)validateVersionWithIncomingMessage:(id)arg1;
 - (void)removeExpiredIncomingSyncObservers;
 - (void)_notifyIncomingSyncObservers;
 - (void)addIncomingSyncObserverWithTimeout:(double)arg1 timeoutHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
@@ -101,6 +100,7 @@
 - (void)prepareForObliteration;
 @property(readonly, getter=isInvalidated) _Bool invalidated;
 - (void)invalidate;
+- (id)nanoSyncStoreForProtocolVersion:(int)arg1;
 - (void)dealloc;
 - (id)_initWithIdentityServicesDevice:(id)arg1 nanoRegistryDevice:(id)arg2 pairingEntity:(id)arg3 obliteratedDatabaseUUIDs:(id)arg4 protocolVersion:(int)arg5 delegate:(id)arg6 profile:(id)arg7;
 

@@ -16,6 +16,7 @@
     _Bool _irisPossible;
     _UILegibilityLabel *_irisInstructionsLabel1;
     _UILegibilityLabel *_irisInstructionsLabel2;
+    UIView *_gradientView;
     _Bool _observingParallaxChanges;
     _Bool _usingSegmentedControl;
     id <SBSUIWallpaperPreviewViewDelegate> _delegate;
@@ -48,11 +49,12 @@
 - (void)_layoutParallaxButton;
 - (void)_layoutIrisButton;
 - (void)_layoutIrisInstructionLabels;
-- (void)_buildConstraints;
+- (void)_layoutStackedButtons;
 - (double)_segmentedControlInset;
 - (void)_layoutSegmentedControl;
 - (void)_layoutDateView;
 - (void)_layoutWallpaperView;
+- (void)_layoutGradientView;
 - (void)layoutSubviews;
 - (void)fadeOutIrisInstructions;
 - (void)setIrisInstructionsVisible:(_Bool)arg1 animated:(_Bool)arg2;
@@ -60,6 +62,7 @@
 - (void)_toggleMotion;
 - (_Bool)shouldEnableParallax;
 - (unsigned long long)selectedEffect;
+- (void)setWallpaperView:(id)arg1;
 - (void)dealloc;
 - (void)_userDidTapOnSetButton:(id)arg1;
 - (void)_userDidTapOnCancelButton:(id)arg1;

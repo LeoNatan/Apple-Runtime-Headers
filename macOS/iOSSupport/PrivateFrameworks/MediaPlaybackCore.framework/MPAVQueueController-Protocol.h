@@ -30,7 +30,6 @@
 - (void)player:(MPAVController *)arg1 currentItemDidChangeFromItem:(MPAVItem *)arg2 toItem:(MPAVItem *)arg3;
 - (void)finalizeStateRestorationWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)handlePlaybackFailureForItem:(MPAVItem *)arg1;
-- (void)removeAllItemsAfterContentItemID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)removeContentItemID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)moveContentItemID:(NSString *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(long long)arg2 jumpToIt:(BOOL)arg3 completion:(void (^)(NSError *))arg4;

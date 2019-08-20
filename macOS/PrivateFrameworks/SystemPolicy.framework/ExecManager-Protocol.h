@@ -8,6 +8,7 @@
 
 @protocol ExecManager
 - (void)isBlockedSoftware:(NSURL *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
+- (void)getBlockedSoftwareOverride:(NSURL *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)setBlockedSoftwareOverride:(NSURL *)arg1 isEnabled:(BOOL)arg2 withReply:(void (^)(BOOL, NSError *))arg3;
 - (void)addBlockedSoftwareOverride:(NSURL *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;
 - (void)addGatekeeperUserIntent:(NSURL *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;

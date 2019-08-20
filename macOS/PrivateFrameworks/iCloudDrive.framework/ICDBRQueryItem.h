@@ -78,6 +78,7 @@
 - (id)valueForKey:(id)arg1;
 - (id)attributeForName:(id)arg1;
 @property(nonatomic) id replacement;
+- (void)updateURLBasedOnParent:(id)arg1;
 - (void)mergeProgressUpdate:(id)arg1;
 - (void)merge:(id)arg1;
 - (BOOL)canMerge:(id)arg1;
@@ -112,7 +113,7 @@
 @property(readonly, nonatomic) BOOL isUploadActive;
 @property(retain, nonatomic) NSNumber *isDownloadRequested;
 @property(readonly, copy, getter=isDownloadRequested) NSNumber *downloadRequested;
-@property(readonly, nonatomic) BOOL isDownloadActive;
+@property(nonatomic) BOOL isDownloadActive;
 @property(nonatomic) BOOL isPreCrash;
 - (void)clearDiffs;
 - (void)markDead;
@@ -186,6 +187,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *fileSystemFilename;
 @property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) BOOL fp_addedByCurrentUser;
 @property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
 @property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;

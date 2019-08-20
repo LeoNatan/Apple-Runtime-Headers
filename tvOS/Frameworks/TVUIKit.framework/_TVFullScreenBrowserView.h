@@ -24,6 +24,7 @@
         _Bool respondsToDidEndDisplayingCell;
         _Bool respondsToWillCenterCell;
         _Bool respondsToDidCenterCell;
+        _Bool respondsToShouldShowItemAtIndexPath;
     } _delegateFlags;
     id <_TVFullScreenBrowserViewDelegate> _delegate;
     id <_TVFullScreenBrowserViewDataSource> _dataSource;
@@ -53,6 +54,7 @@
 - (void)_evaluateTransition;
 - (id)_makeParadeLayout;
 - (id)_makeParadeTransitionLayoutWithLayoutAttributes:(id)arg1;
+- (_Bool)_shouldShowItemAtIndexPath:(id)arg1;
 - (void)_didCenterCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)_willCenterCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)_didEndDisplayingCell:(id)arg1 atIndexPath:(id)arg2;
@@ -61,6 +63,7 @@
 - (long long)_numberOfItemsForSection:(long long)arg1;
 - (long long)_numberOfSections;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldShowItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 centerIndexPathTransitionStateDidChangeForLayout:(id)arg2;
 - (void)collectionView:(id)arg1 centerIndexPathDidChangeForLayout:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     double _actualScaleFactor;
     double _baselineOffset;
     double _scaledBaselineOffset;
-    double _scaledLineHeight;
+    double _firstBaselineOffset;
     long long _measuredNumberOfLines;
     NSAttributedString *_scaledAttributedText;
     struct CGSize _targetSize;
@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) NSAttributedString *scaledAttributedText; // @synthesize scaledAttributedText=_scaledAttributedText;
 @property(nonatomic) long long measuredNumberOfLines; // @synthesize measuredNumberOfLines=_measuredNumberOfLines;
-@property(nonatomic) double scaledLineHeight; // @synthesize scaledLineHeight=_scaledLineHeight;
+@property(nonatomic) double firstBaselineOffset; // @synthesize firstBaselineOffset=_firstBaselineOffset;
 @property(nonatomic) double scaledBaselineOffset; // @synthesize scaledBaselineOffset=_scaledBaselineOffset;
 @property(nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
 @property(nonatomic) double actualScaleFactor; // @synthesize actualScaleFactor=_actualScaleFactor;

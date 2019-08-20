@@ -12,13 +12,11 @@
 
 @interface HBUILaunchAnimationViewBlockSnapshotter : NSObject <HBUILaunchAnimationViewSnapshot>
 {
-    _Bool _executed;
     UIView *_snapshotView;
     CDUnknownBlockType _block;
     struct CGRect _rect;
 }
 
-@property(readonly, nonatomic, getter=hasExecuted) _Bool executed; // @synthesize executed=_executed;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;

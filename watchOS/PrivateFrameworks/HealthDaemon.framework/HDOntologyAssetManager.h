@@ -57,7 +57,6 @@
 - (void)_startAssetDownload;
 - (id)_lock_currentOntologyAssetFileURL;
 - (void)_lock_invokeCompletionForPeriodicActivityName:(id)arg1 withResult:(int)arg2 error:(id)arg3;
-- (id)_keyValueDomain;
 - (id)_bestAssetInArray:(id)arg1;
 - (void)_lock_invokeAvailabilityHandlers;
 - (id)_newPeriodicActivityWithName:(id)arg1;

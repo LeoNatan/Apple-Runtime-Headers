@@ -6,7 +6,7 @@
 
 #import <BaseBoard/BSTransaction.h>
 
-@class HBUILaunchAnimationContext, HBUILaunchApplicationAnimationDescription, UIView, UIVisualEffectView, UIWindow;
+@class HBUILaunchAnimationContext, HBUILaunchApplicationAnimationDescription, UIView, UIWindow;
 @protocol HBUILaunchAnimationViewSnapshot;
 
 __attribute__((visibility("hidden")))
@@ -18,11 +18,9 @@ __attribute__((visibility("hidden")))
     HBUILaunchApplicationAnimationDescription *_appIconAnimation;
     UIWindow *_animationHostWindow;
     UIView *_appIconSnapshotView;
-    UIVisualEffectView *_backgroundVisualEffectView;
 }
 
 @property(nonatomic) _Bool needsSetup; // @synthesize needsSetup=_needsSetup;
-@property(retain, nonatomic) UIVisualEffectView *backgroundVisualEffectView; // @synthesize backgroundVisualEffectView=_backgroundVisualEffectView;
 @property(retain, nonatomic) UIView *appIconSnapshotView; // @synthesize appIconSnapshotView=_appIconSnapshotView;
 @property(retain, nonatomic) UIWindow *animationHostWindow; // @synthesize animationHostWindow=_animationHostWindow;
 @property(readonly, nonatomic) HBUILaunchApplicationAnimationDescription *appIconAnimation; // @synthesize appIconAnimation=_appIconAnimation;

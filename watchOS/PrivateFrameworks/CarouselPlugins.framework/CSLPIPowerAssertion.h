@@ -6,13 +6,18 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_dispatch_queue;
+
 @interface CSLPIPowerAssertion : NSObject
 {
     struct __CFString *_assertionType;
     struct __CFString *_assertionName;
     unsigned int _assertionID;
+    NSObject<OS_dispatch_queue> *_assertionQueue;
 }
 
++ (id)globalPowerAssertionSerialQueue;
+- (void).cxx_destruct;
 - (void)relinquish;
 - (void)take;
 - (id)description;

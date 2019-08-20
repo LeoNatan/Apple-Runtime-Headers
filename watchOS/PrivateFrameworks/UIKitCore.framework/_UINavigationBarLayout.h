@@ -9,7 +9,7 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, UILabel, UISearchBar, UIView, _UIBarBackground, _UIBarBackgroundLayout, _UIBarInsertLayoutData, _UINavigationBarContentView, _UINavigationBarContentViewLayout, _UINavigationBarLargeTitleView, _UINavigationBarLargeTitleViewLayout, _UINavigationBarModernPromptView, _UINavigationBarPalette;
+@class NSArray, NSMutableArray, NSString, UILabel, UISearchBar, UIView, _UIBarBackground, _UIBarBackgroundLayout, _UIBarInsertLayoutData, _UINavigationBarContentView, _UINavigationBarContentViewLayout, _UINavigationBarLargeTitleView, _UINavigationBarLargeTitleViewLayout, _UINavigationBarModernPromptView, _UINavigationBarPalette, _UINavigationControllerRefreshControlHost;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarLayout : NSObject <NSCopying, _UINavigationBarTransitionContextParticipant>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _UIBarInsertLayoutData *_contentLayoutData;
     _UIBarInsertLayoutData *_canvasViewLayoutData;
     _UIBarInsertLayoutData *_largeTitleLayoutData;
+    _UIBarInsertLayoutData *_refreshControlLayoutData;
     _UIBarInsertLayoutData *_searchBarLayoutData;
     _UIBarInsertLayoutData *_scopeBarLayoutData;
     _UIBarInsertLayoutData *_bottomPaletteLayoutData;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
     float _backgroundExtension;
     float _requestedBackgroundViewAlpha;
     float _manualScrollEdgeAppearanceProgress;
+    _UINavigationControllerRefreshControlHost *_refreshControlHost;
     UILabel *_weeTitleLabel;
     UIView *_canvasView;
     UISearchBar *_searchBar;
@@ -65,6 +67,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(retain, nonatomic) UIView *canvasView; // @synthesize canvasView=_canvasView;
 @property(retain, nonatomic) UILabel *weeTitleLabel; // @synthesize weeTitleLabel=_weeTitleLabel;
+@property(retain, nonatomic) _UINavigationControllerRefreshControlHost *refreshControlHost; // @synthesize refreshControlHost=_refreshControlHost;
 @property(nonatomic) float manualScrollEdgeAppearanceProgress; // @synthesize manualScrollEdgeAppearanceProgress=_manualScrollEdgeAppearanceProgress;
 @property(nonatomic) _Bool useManualScrollEdgeAppearance; // @synthesize useManualScrollEdgeAppearance=_useManualScrollEdgeAppearance;
 @property(nonatomic) _Bool clientWantsBackgroundHidden; // @synthesize clientWantsBackgroundHidden=_clientWantsBackgroundHidden;
@@ -104,7 +107,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect searchBarLayoutFrame;
 - (struct CGRect)_searchBarLayoutFrameWithLargeTitleMaxY:(float)arg1;
 @property(readonly, nonatomic) struct CGRect largeTitleViewLayoutFrame;
-- (struct CGRect)_largeTitleViewLayoutFrameWithContentOrCanvasMaxY:(float)arg1;
+- (struct CGRect)_largeTitleViewLayoutFrameWithContentOrCanvasOrRefreshControlMaxY:(float)arg1;
+@property(readonly, nonatomic) struct CGRect refreshControlLayoutFrame;
+- (struct CGRect)_refreshControlLayoutFrameWithContentOrCanvasMaxY:(float)arg1;
 @property(readonly, nonatomic) struct CGRect canvasViewLayoutFrame;
 - (struct CGRect)_canvasViewLayoutFrameWithPromptMaxY:(float)arg1;
 @property(readonly, nonatomic) struct CGRect contentViewLayoutFrame;
@@ -113,6 +118,7 @@ __attribute__((visibility("hidden")))
 - (void)updateLayout;
 - (void)_updateLayoutOutputs;
 - (void)_updateLayoutParametersForWidth:(float)arg1;
+- (void)_updateRefreshControlLayoutData;
 - (void)_updateLargeTitleViewLayoutItem;
 - (void)_resolveContentAndCanvasLayouts;
 - (void)_reprioritizeLayoutItem:(id)arg1 toPriority:(int)arg2;

@@ -12,11 +12,15 @@
 
 + (void)removeMobileMailDefaultForKey:(id)arg1;
 + (id)mobileMailDefaultForKey:(id)arg1;
++ (id)currentDeviceIdentifer;
 + (void)migratePropertyForOldKey:(id)arg1 newKey:(id)arg2;
 + (void)migrateDefaultsFromOldKeysToNewKeys:(id)arg1;
 + (void)migrateDefaults:(id)arg1;
-+ (void)run;
-+ (id)defaultsToMigrate;
++ (_Bool)migratePreferencesToSharedAppGroup;
++ (void)_migrateExtPropertiesPlist;
++ (id)_keysToMigrateToSharedAppGroup;
++ (id)oldKeysToNewKeysMap;
++ (id)log;
 
 @end
 

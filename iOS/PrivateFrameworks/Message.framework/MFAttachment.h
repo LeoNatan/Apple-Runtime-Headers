@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <Message/EFCancelable-Protocol.h>
-
 @class MFAttachmentManager, MFAttachmentPlaceholder, MFMailDropMetadata, MFMimePart, NSString, NSURL;
 @protocol MFDataConsumer;
 
-@interface MFAttachment : NSObject <EFCancelable>
+@interface MFAttachment : NSObject
 {
     MFAttachmentManager *_attachmentManager;
     MFAttachmentPlaceholder *_placeholder;
@@ -74,7 +72,6 @@
 @property(readonly) _Bool isContainedInRFC822;
 @property(readonly) NSString *inferredMimeType;
 @property(readonly) _Bool shouldAutoDownload;
-@property(readonly) _Bool isTooLargeToDownload;
 @property(readonly) _Bool isDataAvailableLocally;
 - (id)_dataProvider;
 - (_Bool)hasCalendarMetadata;
@@ -95,7 +92,6 @@
 - (_Bool)isMailDrop;
 - (id)fileWrapperUsingFetchedLocalData;
 - (id)fetchDataToURL:(id *)arg1;
-- (void)cancel;
 - (id)fetchDataSynchronously:(id *)arg1 stripPrivateMetadata:(_Bool)arg2;
 - (id)fetchDataSynchronously:(id *)arg1;
 - (id)fetchLocalData:(id *)arg1 stripPrivateMetadata:(_Bool)arg2;
@@ -104,14 +100,10 @@
 - (id)decodeFilterWithDataConsumer:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)metadataValueForKey:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)initWithURL:(id)arg1 attachmentManager:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

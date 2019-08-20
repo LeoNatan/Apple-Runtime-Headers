@@ -13,6 +13,7 @@
     // Error parsing type: , name: featureAvailability
     // Error parsing type: , name: subscriptionController
     // Error parsing type: , name: subscriptionService
+    // Error parsing type: , name: offlineIssueManager
 }
 
 @end

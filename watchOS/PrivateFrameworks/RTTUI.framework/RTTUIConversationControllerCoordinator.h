@@ -16,6 +16,7 @@
     NSLock *_realtimeSendLock;
     NSIndexPath *_inProgressRealTimeIndexPath;
     RTTUtterance *_inProgressRealTimeUtterance;
+    struct __CTServerConnection *_ctConnection;
     _Bool _processingUtteranceBuffer;
     NSMutableArray *_utteranceBuffer;
 }
@@ -32,6 +33,7 @@
 - (void)sendNewUtteranceString:(id)arg1 controller:(id)arg2;
 - (id)conversationControllers;
 - (void)addConversationController:(id)arg1;
+- (void)_updateCallActiveStatus:(_Bool)arg1;
 - (id)init;
 
 @end

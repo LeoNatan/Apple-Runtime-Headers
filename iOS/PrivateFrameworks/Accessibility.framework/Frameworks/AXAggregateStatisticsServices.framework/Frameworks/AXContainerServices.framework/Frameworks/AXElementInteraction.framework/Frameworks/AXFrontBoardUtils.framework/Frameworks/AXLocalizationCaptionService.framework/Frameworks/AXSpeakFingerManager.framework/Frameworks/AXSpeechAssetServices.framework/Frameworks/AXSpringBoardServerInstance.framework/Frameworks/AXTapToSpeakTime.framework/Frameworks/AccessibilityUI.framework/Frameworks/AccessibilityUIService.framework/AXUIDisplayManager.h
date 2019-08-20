@@ -24,6 +24,7 @@
     NSMutableDictionary *_activeContentViewControllers;
     NSMutableDictionary *_passiveContentViewControllers;
     NSString *_systemServerActionHandlerIdentifier;
+    long long _userInterfaceStyle;
     NSMutableDictionary *_nubbitContexts;
     NSString *_reachabilityHandlerIdentifier;
     double _reachabilityOffset;
@@ -33,6 +34,7 @@
 @property(nonatomic) double reachabilityOffset; // @synthesize reachabilityOffset=_reachabilityOffset;
 @property(copy, nonatomic) NSString *reachabilityHandlerIdentifier; // @synthesize reachabilityHandlerIdentifier=_reachabilityHandlerIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *nubbitContexts; // @synthesize nubbitContexts=_nubbitContexts;
+@property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(copy, nonatomic) NSString *systemServerActionHandlerIdentifier; // @synthesize systemServerActionHandlerIdentifier=_systemServerActionHandlerIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *passiveContentViewControllers; // @synthesize passiveContentViewControllers=_passiveContentViewControllers;
 @property(retain, nonatomic) NSMutableDictionary *activeContentViewControllers; // @synthesize activeContentViewControllers=_activeContentViewControllers;
@@ -84,6 +86,8 @@
 - (double)_originalDurationForRotationFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2 withAdjustedDuration:(double)arg3;
 - (void)_rotateWindow:(id)arg1 toInterfaceOrientation:(long long)arg2 duration:(double)arg3 force:(_Bool)arg4;
 - (id)_windowWithUserInteractionEnabled:(_Bool)arg1 windowLevel:(double)arg2 createIfNeeded:(_Bool)arg3 purposeIdentifier:(id)arg4;
+- (void)_enumerateWindowsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)unregisterNubbit:(id)arg1 shouldUndoFade:(_Bool)arg2;
 - (void)unregisterNubbit:(id)arg1;
 - (void)registerNubbit:(id)arg1 delegate:(id)arg2;
 - (void)hideAlertWithIdentifier:(id)arg1 forService:(id)arg2;

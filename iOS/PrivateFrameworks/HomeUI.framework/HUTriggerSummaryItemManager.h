@@ -6,13 +6,13 @@
 
 #import <Home/HFItemManager.h>
 
-@class HFItem, HFStaticItem, HFStaticItemProvider, HFTriggerBuilder, HFTriggerDurationSummaryItem, HUShortcutItem, HUTriggerBuilderItem;
+@class HFItem, HFStaticItem, HFStaticItemProvider, HFTriggerBuilder, HFTriggerDurationSummaryItem, HUShortcutItem, HUTriggerActionFlow, HUTriggerBuilderItem;
 
 @interface HUTriggerSummaryItemManager : HFItemManager
 {
     _Bool _durationPickerShown;
     HFTriggerBuilder *_triggerBuilder;
-    unsigned long long _mode;
+    HUTriggerActionFlow *_currentFlow;
     HFStaticItemProvider *_unsupportedItemProvider;
     HFItem *_serviceActionsInstructionItem;
     HFItem *_enableItem;
@@ -54,7 +54,7 @@
 @property(retain, nonatomic) HFItem *enableItem; // @synthesize enableItem=_enableItem;
 @property(retain, nonatomic) HFItem *serviceActionsInstructionItem; // @synthesize serviceActionsInstructionItem=_serviceActionsInstructionItem;
 @property(retain, nonatomic) HFStaticItemProvider *unsupportedItemProvider; // @synthesize unsupportedItemProvider=_unsupportedItemProvider;
-@property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
+@property(retain, nonatomic) HUTriggerActionFlow *currentFlow; // @synthesize currentFlow=_currentFlow;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
 - (id)_triggerDeleteInstructionItemString;
@@ -63,10 +63,11 @@
 - (id)_unsupportedTriggers;
 - (_Bool)_showActionSetsInstructionItem;
 - (_Bool)_shouldShowDeleteItem;
+- (_Bool)_shouldShowTestItem;
+- (_Bool)_isInEditMode;
 - (_Bool)_shouldShowDurationItems;
 - (_Bool)_showEnableSwitch;
 - (_Bool)_showTriggerSummary;
-- (_Bool)_isPlaceholderTriggerBuilder;
 - (id)_currentSectionIdentifiersForShortcutOwnedTriggers;
 - (id)_currentSectionIdentifiersForStandardTriggers;
 - (id)_currentSectionIdentifiers;
@@ -85,7 +86,7 @@
 - (id)instructionSections;
 - (long long)unsupportedItemSectionIndex;
 - (void)triggerBuilderDidChange;
-- (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3;
+- (id)initWithTriggerBuilder:(id)arg1 flow:(id)arg2 delegate:(id)arg3;
 
 @end
 

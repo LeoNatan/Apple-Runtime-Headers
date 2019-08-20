@@ -15,12 +15,12 @@
 @interface ICCloudClient : NSObject <ICCloudServerListenerEndpointProvider, ICCloudAvailability>
 {
     _Bool _active;
+    ICConnectionConfiguration *_configuration;
     CDUnknownBlockType _updateSagaInProgressChangedHandler;
     CDUnknownBlockType _updateJaliscoInProgressChangedHandler;
     NSXPCConnection *_xpcConnection;
     NSXPCConnection *_xpcListenerEndpointProviderConnection;
     NSObject<OS_dispatch_queue> *_serialAccessQueue;
-    ICConnectionConfiguration *_configuration;
     long long _preferredVideoQuality;
     ICCloudClientAvailabilityService *_availabilityService;
     ICCloudClientCloudService *_cloudService;
@@ -29,7 +29,6 @@
 @property(readonly, nonatomic) ICCloudClientCloudService *cloudService; // @synthesize cloudService=_cloudService;
 @property(readonly, nonatomic) ICCloudClientAvailabilityService *availabilityService; // @synthesize availabilityService=_availabilityService;
 @property(nonatomic) long long preferredVideoQuality; // @synthesize preferredVideoQuality=_preferredVideoQuality;
-@property(retain, nonatomic) ICConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialAccessQueue; // @synthesize serialAccessQueue=_serialAccessQueue;
 @property(copy, nonatomic) CDUnknownBlockType updateJaliscoInProgressChangedHandler; // @synthesize updateJaliscoInProgressChangedHandler=_updateJaliscoInProgressChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateSagaInProgressChangedHandler; // @synthesize updateSagaInProgressChangedHandler=_updateSagaInProgressChangedHandler;
@@ -43,7 +42,7 @@
 - (void)_tearDownNotifications;
 - (void)_setupNotifications;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (id)listenerEndpointForService:(long long)arg1;
+- (id)listenerEndpointForService:(long long)arg1 error:(id *)arg2;
 - (_Bool)shouldProhibitActionsForCurrentNetworkConditions;
 - (_Bool)isCellularDataRestricted;
 - (_Bool)canShowCloudVideo;
@@ -158,6 +157,7 @@
 - (void)createPlaylistWithPersistentID:(long long)arg1 properties:(id)arg2 trackList:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setCloudAddToPlaylistBehavior:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)cloudAddToPlaylistBehavior;
+@property(readonly, nonatomic) ICConnectionConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithUserIdentity:(id)arg1;

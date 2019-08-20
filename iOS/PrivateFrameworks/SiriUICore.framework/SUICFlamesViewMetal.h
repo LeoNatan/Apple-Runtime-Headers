@@ -101,7 +101,7 @@
 - (float)_currentMicPowerLevel;
 - (void)_didFinishTransition;
 - (void)_updateCurveLayer:(id)arg1;
-- (void)_didSkipFrameUpdateWithReason:(id)arg1;
+- (void)_didSkipFrameUpdateWithReason:(id)arg1 andCount:(unsigned long long)arg2;
 - (id)_metalLayer;
 - (_Bool)_isOriginatingProcessInBackground;
 @property(readonly, nonatomic) _Bool isRenderingEnabled;

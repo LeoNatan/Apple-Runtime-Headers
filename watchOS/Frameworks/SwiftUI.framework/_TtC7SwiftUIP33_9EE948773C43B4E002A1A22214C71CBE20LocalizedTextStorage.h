@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SwiftUI/_TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE14AnyTextStorage.h>
+#import <SwiftUI/_TtC7SwiftUI14AnyTextStorage.h>
 
-@interface _TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE20LocalizedTextStorage : _TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE14AnyTextStorage
+@interface _TtC7SwiftUIP33_9EE948773C43B4E002A1A22214C71CBE20LocalizedTextStorage : _TtC7SwiftUI14AnyTextStorage
 {
     // Error parsing type: , name: key
     // Error parsing type: , name: table

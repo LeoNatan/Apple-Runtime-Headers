@@ -73,6 +73,8 @@
 }
 
 + (id)findAccessoryWithProtocolString:(id)arg1 serialNum:(id)arg2;
++ (id)getEAFirmwareRevisionPending:(id)arg1 forProtocol:(id)arg2;
++ (id)getEAFirmwareRevisionActive:(id)arg1 forProtocol:(id)arg2;
 + (id)multiAssetAppProtocolStringWithEAID:(id)arg1;
 + (id)appProtocolStringWithEAID:(id)arg1;
 + (id)bootloaderProtocolStringWithEAID:(id)arg1;

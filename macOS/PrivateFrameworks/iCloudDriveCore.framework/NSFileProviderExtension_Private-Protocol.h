@@ -6,7 +6,7 @@
 
 #import <iCloudDriveCore/NSObject-Protocol.h>
 
-@class FPCTLTermDumper, NSArray, NSDate, NSError, NSProgress, NSString, NSURL;
+@class FPCTLTermDumper, NSArray, NSDate, NSError, NSFileProviderItemVersion, NSProgress, NSString, NSURL;
 @protocol NSFileProviderItem;
 
 @protocol NSFileProviderExtension_Private <NSObject>
@@ -19,6 +19,7 @@
 - (void)attemptRecoveryFromError:(NSError *)arg1 optionIndex:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)handleEventsForBackgroundURLSession:(NSString *)arg1 completionHandler:(void (^)(void))arg2;
 - (NSProgress *)disconnectWithOptions:(unsigned long long)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)changeItem:(id <NSFileProviderItem>)arg1 baseVersion:(NSFileProviderItemVersion *)arg2 changedFields:(unsigned long long)arg3 contents:(NSURL *)arg4 options:(unsigned long long)arg5 completionHandler:(void (^)(id <NSFileProviderItem>, NSError *))arg6;
 - (void)evictItemWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(id <NSFileProviderItem>, NSError *))arg2;
 - (NSProgress *)fetchPublishingURLForItemIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
 - (void)reparentItemWithIdentifier:(NSString *)arg1 toParentItemWithIdentifier:(NSString *)arg2 completionHandler:(void (^)(id <NSFileProviderItem>, NSError *))arg3;

@@ -20,9 +20,29 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType _NLPClassifierModelGetRevisionImpl;
     CDUnknownFunctionPointerType _NLPClassifierModelIsRevisionSupportedImpl;
     CDUnknownFunctionPointerType _NLPClassifierModelGetCurrentRevisionImpl;
+    CDUnknownFunctionPointerType _NLPGazetteerModelCopyLabelForStringImpl;
+    CDUnknownFunctionPointerType _NLPGazetteerModelCreateWithDataImpl;
+    CDUnknownFunctionPointerType _NLPGazetteerModelGetRevisionImpl;
+    CDUnknownFunctionPointerType _NLPGazetteerModelIsRevisionSupportedImpl;
+    CDUnknownFunctionPointerType _NLPGazetteerModelGetCurrentRevisionImpl;
+    CDUnknownFunctionPointerType _NLPEmbeddingModelCopyVectorForStringImpl;
+    CDUnknownFunctionPointerType _NLPEmbeddingModelCreateWithDataImpl;
+    CDUnknownFunctionPointerType _NLPEmbeddingModelGetRevisionImpl;
+    CDUnknownFunctionPointerType _NLPEmbeddingModelIsRevisionSupportedImpl;
+    CDUnknownFunctionPointerType _NLPEmbeddingModelGetCurrentRevisionImpl;
 }
 
 + (id)sharedHandle;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPEmbeddingModelGetCurrentRevisionImpl; // @synthesize NLPEmbeddingModelGetCurrentRevisionImpl=_NLPEmbeddingModelGetCurrentRevisionImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPEmbeddingModelIsRevisionSupportedImpl; // @synthesize NLPEmbeddingModelIsRevisionSupportedImpl=_NLPEmbeddingModelIsRevisionSupportedImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPEmbeddingModelGetRevisionImpl; // @synthesize NLPEmbeddingModelGetRevisionImpl=_NLPEmbeddingModelGetRevisionImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPEmbeddingModelCreateWithDataImpl; // @synthesize NLPEmbeddingModelCreateWithDataImpl=_NLPEmbeddingModelCreateWithDataImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPEmbeddingModelCopyVectorForStringImpl; // @synthesize NLPEmbeddingModelCopyVectorForStringImpl=_NLPEmbeddingModelCopyVectorForStringImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPGazetteerModelGetCurrentRevisionImpl; // @synthesize NLPGazetteerModelGetCurrentRevisionImpl=_NLPGazetteerModelGetCurrentRevisionImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPGazetteerModelIsRevisionSupportedImpl; // @synthesize NLPGazetteerModelIsRevisionSupportedImpl=_NLPGazetteerModelIsRevisionSupportedImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPGazetteerModelGetRevisionImpl; // @synthesize NLPGazetteerModelGetRevisionImpl=_NLPGazetteerModelGetRevisionImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPGazetteerModelCreateWithDataImpl; // @synthesize NLPGazetteerModelCreateWithDataImpl=_NLPGazetteerModelCreateWithDataImpl;
+@property(readonly, nonatomic) CDUnknownFunctionPointerType NLPGazetteerModelCopyLabelForStringImpl; // @synthesize NLPGazetteerModelCopyLabelForStringImpl=_NLPGazetteerModelCopyLabelForStringImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType NLPClassifierModelGetCurrentRevisionImpl; // @synthesize NLPClassifierModelGetCurrentRevisionImpl=_NLPClassifierModelGetCurrentRevisionImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType NLPClassifierModelIsRevisionSupportedImpl; // @synthesize NLPClassifierModelIsRevisionSupportedImpl=_NLPClassifierModelIsRevisionSupportedImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType NLPClassifierModelGetRevisionImpl; // @synthesize NLPClassifierModelGetRevisionImpl=_NLPClassifierModelGetRevisionImpl;
@@ -34,8 +54,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CDUnknownFunctionPointerType NLPSequenceModelCreateWithDataImpl; // @synthesize NLPSequenceModelCreateWithDataImpl=_NLPSequenceModelCreateWithDataImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType NLPSequenceModelCopyPredictedTokensAndLabelsForTextImpl; // @synthesize NLPSequenceModelCopyPredictedTokensAndLabelsForTextImpl=_NLPSequenceModelCopyPredictedTokensAndLabelsForTextImpl;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
+- (id)predictVectorForString:(void *)arg1 inputString:(id)arg2 error:(id *)arg3;
+- (id)predictLabelForWordString:(void *)arg1 inputString:(id)arg2 error:(id *)arg3;
 - (id)predictLabelsForSentenceString:(void *)arg1 inputString:(id)arg2 error:(id *)arg3;
 - (id)predictTokensLabelsLocationsLengthsForString:(void *)arg1 inputString:(id)arg2 error:(id *)arg3;
+- (const void *)initializeEmbeddingModelWithData:(id)arg1 error:(id *)arg2;
+- (const void *)initializeGazetteerModelWithData:(id)arg1 error:(id *)arg2;
 - (const void *)initializeSentenceClassifierModelWithData:(id)arg1 error:(id *)arg2;
 - (const void *)initializeWordTaggingModelWithData:(id)arg1 error:(id *)arg2;
 - (id)init;

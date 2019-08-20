@@ -6,26 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSString;
 
 @interface TMFirmLinkMap : NSObject
 {
+    struct _fakelink_group *_group;
     NSString *_systemVolumeMountPoint;
     NSString *_dataVolumeMountPoint;
-    NSDictionary *_firmLinkDictionary;
 }
 
 + (id)currentRootFirmLinkMap;
-@property(retain) NSDictionary *firmLinkDictionary; // @synthesize firmLinkDictionary=_firmLinkDictionary;
 @property(readonly, copy) NSString *dataVolumeMountPoint; // @synthesize dataVolumeMountPoint=_dataVolumeMountPoint;
 @property(readonly, copy) NSString *systemVolumeMountPoint; // @synthesize systemVolumeMountPoint=_systemVolumeMountPoint;
+- (id)firmLinkedPathByUnresolvingAbsolutePathOnDataVolume:(id)arg1;
 - (id)absolutePathOnDataVolumeByResolvingFirmLinkInPath:(id)arg1;
-- (id)absolutePathOnDataVolumeForFirmLink:(id)arg1;
-- (id)relativePathOnDataVolumeForFirmLink:(id)arg1;
-@property(readonly, copy) NSArray *firmLinkPathsOnSystemVolume;
-- (id)_parseFirmLinkFile:(id)arg1;
+@property(readonly, copy) NSArray *virtualLinksOnSystemVolume;
 - (void)dealloc;
-- (id)initWithSystemMountPoint:(id)arg1 dataMountPoint:(id)arg2 firmLinkDictionary:(id)arg3;
+- (id)initWithSystemMountPoint:(id)arg1 dataMountPoint:(id)arg2 firmLinkManifest:(id)arg3 syntheticManifest:(id)arg4;
 - (id)initWithMountPoint:(id)arg1;
 
 @end

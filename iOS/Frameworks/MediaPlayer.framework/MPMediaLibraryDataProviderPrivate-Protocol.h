@@ -12,6 +12,8 @@
 @protocol MPMediaLibraryDataProviderPrivate <MPMediaLibraryDataProvider>
 
 @optional
++ (void)setOnDiskProviders:(NSArray *)arg1;
++ (NSArray *)onDiskProviders;
 @property(readonly, nonatomic) NSArray *localizedSectionIndexTitles;
 @property(readonly, nonatomic) id <MPArtworkDataSource> completeMyCollectionArtworkDataSource;
 @property(readonly, nonatomic) NSArray *preferredSubtitleLanguages;
@@ -19,6 +21,7 @@
 @property(readonly, nonatomic) _Bool isGeniusEnabled;
 @property(readonly, nonatomic) long long playbackHistoryPlaylistPersistentID;
 @property(readonly, nonatomic) NSString *databasePath;
+@property(readonly, copy, nonatomic) NSString *accountDSID;
 - (void)importArtworkTokenForEntityPersistentID:(unsigned long long)arg1 entityType:(long long)arg2 artworkToken:(NSString *)arg3 artworkType:(long long)arg4 sourceType:(long long)arg5;
 - (_Bool)importOriginalArtworkFromImageData:(NSData *)arg1 withArtworkToken:(NSString *)arg2 artworkType:(long long)arg3 sourceType:(long long)arg4 mediaType:(unsigned long long)arg5;
 - (_Bool)recordPlayEventForPlaylistPersistentID:(long long)arg1;

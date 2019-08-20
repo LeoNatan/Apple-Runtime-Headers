@@ -8,7 +8,7 @@
 
 #import <WorkflowUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel, UIView, UIViewController, WFActionDrawerImageView, WFDragController, WFDragGestureRecognizer;
+@class NSArray, NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel, UIView, UIViewController, WFActionDrawerImageView, WFDragController, WFDragGestureRecognizer;
 @protocol VCActionDonation;
 
 @interface WFActionDrawerSiriSuggestionsCollectionViewCell : UICollectionViewCell <UIGestureRecognizerDelegate>
@@ -25,10 +25,16 @@
     UIView *_addView;
     UIImageView *_addImageView;
     NSLayoutConstraint *_imageViewWidthConstraint;
+    NSArray *_verticalStackConstraints;
+    NSArray *_horizontalStackConstraints;
 }
 
 + (double)spacingForType:(long long)arg1;
-+ (struct CGSize)preferredSizeForType:(long long)arg1;
++ (struct CGSize)sizeForCellUsingVerticalStacking:(_Bool)arg1;
++ (struct CGSize)preferredSizeForType:(long long)arg1 forTraitCollection:(id)arg2;
++ (_Bool)shouldStackVerticallyForTraitCollection:(id)arg1;
+@property(retain, nonatomic) NSArray *horizontalStackConstraints; // @synthesize horizontalStackConstraints=_horizontalStackConstraints;
+@property(retain, nonatomic) NSArray *verticalStackConstraints; // @synthesize verticalStackConstraints=_verticalStackConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewWidthConstraint; // @synthesize imageViewWidthConstraint=_imageViewWidthConstraint;
 @property(nonatomic) __weak UIImageView *addImageView; // @synthesize addImageView=_addImageView;
 @property(nonatomic) __weak UIView *addView; // @synthesize addView=_addView;
@@ -44,8 +50,12 @@
 - (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (_Bool)shouldStackVerticallyForTraitCollection:(id)arg1;
 - (void)prepareForReuse;
 - (void)configureWithCellType:(long long)arg1 title:(id)arg2 keyImage:(id)arg3 appIconImage:(id)arg4 donation:(id)arg5 genericAction:(id)arg6 forDailyRoutines:(_Bool)arg7;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)adjustStackingStyle;
+- (void)setUpLayoutConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

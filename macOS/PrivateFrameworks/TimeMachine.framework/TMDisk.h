@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSNumber, NSString, NSURL;
+@class NSArray, NSDictionary, NSNumber, NSString, NSURL;
 
 @interface TMDisk : NSObject
 {
@@ -35,6 +35,7 @@
 @property(readonly) BOOL isROSPSystemVolume;
 @property(readonly) NSNumber *apfsVolumeRole;
 @property(readonly) NSString *apfsVolumeGroupUUID;
+@property(readonly) NSArray *mountedDisksInVolumeGroup;
 - (id)privateSizeOfAPFSSnapshotsFromStartXID:(unsigned long long)arg1 to:(unsigned long long)arg2 error:(id *)arg3;
 - (id)privateSizeOfAPFSSnapshotsFrom:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (BOOL)mountAPFSSnapshot:(id)arg1 atMountPoint:(id)arg2 error:(id *)arg3;

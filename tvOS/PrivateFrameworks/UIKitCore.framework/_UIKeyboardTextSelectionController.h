@@ -76,6 +76,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasRangedSelection;
 @property(readonly, nonatomic) _Bool hasCaretSelection;
 @property(readonly, nonatomic) UIView *textInputView;
+- (struct CGRect)selectedRectInLineWithPoint:(struct CGPoint)arg1;
 - (_Bool)cursorPositionIsContainedByRange:(id)arg1;
 - (void)setSelectedTextRange:(id)arg1;
 - (void)resetCursorPosition;

@@ -23,6 +23,7 @@
     _Bool _supportsSiriZLLButton;
     _Bool _supportsSiriMixable;
     _Bool _manufacturerIconVisible;
+    _Bool _hasAccessory;
     NSString *_name;
     NSString *_modelName;
     NSString *_manufacturerName;
@@ -51,6 +52,7 @@
 + (id)descriptionForUserInterfaceStyle:(long long)arg1;
 + (id)descriptionForCapability:(long long)arg1;
 + (id)_descriptionForTransportType:(unsigned long long)arg1;
+@property(nonatomic) _Bool hasAccessory; // @synthesize hasAccessory=_hasAccessory;
 @property(readonly, nonatomic) _Bool manufacturerIconVisible; // @synthesize manufacturerIconVisible=_manufacturerIconVisible;
 @property(readonly, copy, nonatomic) NSString *manufacturerIconLabel; // @synthesize manufacturerIconLabel=_manufacturerIconLabel;
 @property(readonly, nonatomic) _Bool supportsSiriMixable; // @synthesize supportsSiriMixable=_supportsSiriMixable;

@@ -22,6 +22,7 @@
     _Bool _peoplePickerHidden;
     _Bool _editable;
     _Bool _forceMMS;
+    _Bool _isDisambiguating;
     _Bool _preventAtomization;
     _Bool _didShowOneTimeErrorAlert;
     _Bool _homogenizePreferredServiceForiMessage;
@@ -48,6 +49,7 @@
 @property(nonatomic) _Bool didShowOneTimeErrorAlert; // @synthesize didShowOneTimeErrorAlert=_didShowOneTimeErrorAlert;
 @property(nonatomic) _Bool preventAtomization; // @synthesize preventAtomization=_preventAtomization;
 @property(retain, nonatomic) CKManualUpdater *addressBookNotificationUpdater; // @synthesize addressBookNotificationUpdater=_addressBookNotificationUpdater;
+@property(nonatomic) _Bool isDisambiguating; // @synthesize isDisambiguating=_isDisambiguating;
 @property(retain, nonatomic) CNComposeRecipient *recentContactForPresentedCNCard; // @synthesize recentContactForPresentedCNCard=_recentContactForPresentedCNCard;
 @property(retain, nonatomic) CNContactPickerViewController *contactPickerViewController; // @synthesize contactPickerViewController=_contactPickerViewController;
 @property(retain, nonatomic) UILabel *toFieldPlaceholderLabel; // @synthesize toFieldPlaceholderLabel=_toFieldPlaceholderLabel;
@@ -132,6 +134,7 @@
 - (id)preferredRecipientForRecipients:(id)arg1 forServiceType:(BOOL)arg2;
 - (id)preferredRecipientForNewContact:(id)arg1;
 - (id)autocompleteResultsController:(id)arg1 preferredRecipientForRecipients:(id)arg2;
+- (void)autocompleteResultsController:(id)arg1 preferredRecipientForRecipients:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recipientIsDuetSuggestion:(id)arg1;
 - (void)autocompleteResultsController:(id)arg1 tintColorForRecipient:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)chatForIMHandle:(id)arg1;

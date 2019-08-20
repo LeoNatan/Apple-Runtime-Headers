@@ -39,6 +39,7 @@
 - (void)navigationService:(MNNavigationService *)arg1 didReroute:(GEOComposedRoute *)arg2 traffic:(GEOComposedRouteTraffic *)arg3;
 - (void)navigationServiceWillReroute:(MNNavigationService *)arg1;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdatePreviewRoutes:(NSArray *)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateMotionType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateETAResponse:(GEOETATrafficUpdateResponse *)arg2 forRoute:(GEOComposedRoute *)arg3;

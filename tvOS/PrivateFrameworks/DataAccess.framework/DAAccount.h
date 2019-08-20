@@ -35,6 +35,7 @@
 }
 
 + (id)_leafAccountTypesToCheckForEquality;
++ (_Bool)shouldCreateAccountForBackingAccountInfo:(id)arg1;
 + (id)daAccountSubclassWithBackingAccountInfo:(id)arg1;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountIDs;
@@ -139,6 +140,7 @@
 - (_Bool)useSSLFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)hostFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)urlFromDataclassPropertiesForDataclass:(id)arg1;
+- (void)performUsingAccountPersona:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) NSString *password;
 - (id)passwordWithExpected:(_Bool)arg1;
 - (void)clientTokenRequestedByServer;
@@ -185,6 +187,7 @@
 - (id)containerProviderWithDBHelper:(id)arg1;
 - (id)accountsProviderWithDBHelper:(id)arg1;
 - (void)ingestBackingAccountInfoProperties;
+- (void)_refreshCredential;
 - (id)initWithBackingAccountInfo:(id)arg1;
 - (void)dealloc;
 - (_Bool)handleTrustChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

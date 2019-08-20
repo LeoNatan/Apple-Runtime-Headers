@@ -51,6 +51,7 @@
 + (void)ensureFallbackImageDirectoryExistsForAccount:(id)arg1;
 + (id)fallbackImageDirectoryURL;
 + (id)newFetchRequestForAttachments;
++ (id)notDeletedPredicate;
 + (id)predicateForInlineDrawing;
 + (id)predicateForPasswordProtected:(_Bool)arg1;
 + (id)predicateForSearchableAttachments;

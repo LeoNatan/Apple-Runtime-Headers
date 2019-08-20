@@ -19,11 +19,16 @@
 @property(nonatomic) long long verificationType; // @synthesize verificationType=_verificationType;
 @property(copy, nonatomic) NSNumber *secondFactorCode; // @synthesize secondFactorCode=_secondFactorCode;
 - (void).cxx_destruct;
-- (void)_selectPrimaryActionForAlertIn:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_jsonPostbackDictionaryForCode:(id)arg1 numberId:(id)arg2;
+- (id)_jsonDictionaryForData:(id)arg1 error:(id)arg2;
+- (id)_mutableJSONRequestForURLString:(id)arg1;
 - (id)_xmlUIRequestForURL:(id)arg1 withPostbackDictionary:(id)arg2;
 - (id)_xmlUIRequestForURL:(id)arg1 withServerInfo:(id)arg2;
-- (void)_beginXMLUIDataTaskWithRequest:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_parseHeaderTitleForPasscodeView:(id)arg1;
+- (void)_beginDataTaskWithRequest:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_verifySecondFactorCodeWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_promptForVerificationCodeWithSecureEntry:(_Bool)arg1;
+- (void)_handleServerUISMSSecondFactorWithDictionary:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleServerUISecondFactorWithObjectModel:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentServerUISecondFactorWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;

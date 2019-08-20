@@ -8,7 +8,7 @@
 
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
 
-@class ARCoachingAnimationView, ARCoachingHeuristicCollection, ARCoachingMotionTracker, ARCoachingPillButton, ARCoachingState, ARSession, NSMutableArray, NSString, UILabel;
+@class ARCoachingAnimationView, ARCoachingHeuristicCollection, ARCoachingMotionTracker, ARCoachingPillButton, ARCoachingState, ARSession, NSMutableArray, NSObject, NSString, UILabel;
 @protocol ARCoachingOverlayViewDelegate, ARSessionProviding;
 
 @interface ARCoachingOverlayView : UIView <ARInternalSessionObserver>
@@ -28,11 +28,12 @@
     ARCoachingAnimationView *_coachingAnimationView;
     NSMutableArray *_uiAnimationQueue;
     _Bool _uiAnimationQueueRunning;
+    _Bool _isSessionRelocalizingMap;
     _Bool _activatesAutomatically;
     _Bool _wasEverActivated;
     _Bool _trackingStateNormalOverride;
     id <ARCoachingOverlayViewDelegate> _delegate;
-    id <ARSessionProviding> _sessionProvider;
+    NSObject<ARSessionProviding> *_sessionProvider;
     ARSession *_session;
     long long _goal;
     long long _trackingStateReasonOverride;
@@ -44,7 +45,7 @@
 @property(nonatomic) _Bool activatesAutomatically; // @synthesize activatesAutomatically=_activatesAutomatically;
 @property(nonatomic) long long goal; // @synthesize goal=_goal;
 @property(retain, nonatomic) ARSession *session; // @synthesize session=_session;
-@property(nonatomic) __weak id <ARSessionProviding> sessionProvider; // @synthesize sessionProvider=_sessionProvider;
+@property(nonatomic) __weak NSObject<ARSessionProviding> *sessionProvider; // @synthesize sessionProvider=_sessionProvider;
 @property(nonatomic) __weak id <ARCoachingOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)finishAllUIAnimations;
@@ -62,6 +63,7 @@
 - (void)setCoachingMessage:(long long)arg1 animationState:(long long)arg2;
 - (void)resolveCoachingMessage;
 - (void)restartIfActive;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)session:(id)arg1 willRunWithConfiguration:(id)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (_Bool)checkDeactivationHeuristics;
@@ -70,6 +72,7 @@
 - (void)fadeInWithButton:(_Bool)arg1;
 - (void)teardown;
 - (void)startup;
+@property(readonly, nonatomic) _Bool isRelocalizing;
 @property(readonly, nonatomic) _Bool isUIAnimating;
 - (void)setActive:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool isActive;

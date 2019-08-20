@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewLayout.h>
 
-@class CADisplayLink, NSArray, NSIndexSet, NSMutableDictionary, NSMutableIndexSet;
+@class CADisplayLink, NSArray, NSDate, NSIndexSet, NSMutableDictionary, NSMutableIndexSet;
 
 @interface CKTranscriptCollectionViewLayout : UICollectionViewLayout
 {
@@ -14,7 +14,6 @@
     _Bool _useInitialLayoutAttributesForRotation;
     _Bool _isResting;
     _Bool _easingUp;
-    _Bool _invalidatedViaBoundsChange;
     _Bool _hasLoadMore;
     _Bool _useFastQuanta;
     _Bool _coalesceInvalidations;
@@ -29,6 +28,7 @@
     NSMutableIndexSet *_insertedAssociatedLayoutAttributes;
     CADisplayLink *_displayLink;
     double _prevTimestamp;
+    NSDate *_lastTouchTime;
     NSMutableDictionary *_initialParentLayoutAttributes;
     NSMutableDictionary *_finalParentVerticalOffsets;
     struct CGPoint _targetContentOffset;
@@ -45,7 +45,7 @@
 @property(retain, nonatomic) NSMutableDictionary *finalParentVerticalOffsets; // @synthesize finalParentVerticalOffsets=_finalParentVerticalOffsets;
 @property(retain, nonatomic) NSMutableDictionary *initialParentLayoutAttributes; // @synthesize initialParentLayoutAttributes=_initialParentLayoutAttributes;
 @property(nonatomic) _Bool hasLoadMore; // @synthesize hasLoadMore=_hasLoadMore;
-@property(nonatomic) _Bool invalidatedViaBoundsChange; // @synthesize invalidatedViaBoundsChange=_invalidatedViaBoundsChange;
+@property(retain, nonatomic) NSDate *lastTouchTime; // @synthesize lastTouchTime=_lastTouchTime;
 @property(nonatomic) _Bool easingUp; // @synthesize easingUp=_easingUp;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) double prevTimestamp; // @synthesize prevTimestamp=_prevTimestamp;
@@ -68,7 +68,6 @@
 - (void)reduceMotionSettingChanged:(id)arg1;
 - (void)sizeCategoryDidChange:(id)arg1;
 - (void)updateFrames;
-- (void)_invalidateLayoutForDisplayLink;
 - (void)displayLinkFired:(id)arg1;
 - (double)bezierPointForPercentage:(double)arg1 anchor1:(double)arg2 anchor2:(double)arg3 control1:(double)arg4 control2:(double)arg5;
 - (void)updateAttributesForTargetContentOffsetChangeWithAttributes:(id)arg1;

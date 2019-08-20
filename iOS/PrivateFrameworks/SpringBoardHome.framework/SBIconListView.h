@@ -23,9 +23,9 @@
     _Bool _performingSpecialIconAnimations;
     NSMapTable *_iconViews;
     NSMapTable *_specialIconAnimations;
-    UIView *_fadeView;
     SBIconListViewDraggingDestinationDelegate *_draggingDelegate;
     struct __CFRunLoopObserver *_layoutRunLoopObserver;
+    unsigned long long _predictedIconViewCount;
     _Bool _editing;
     _Bool _layoutReversed;
     _Bool _pausesIconsForScrolling;
@@ -49,6 +49,7 @@
     SBHIconImageCache *_iconImageCache;
     SBIconListViewIconLocationTransitionHandler *_currentIconLocationTransitionHandler;
     struct _NSRange _visibleColumnRange;
+    struct SBIconListPredictedVisibleColumn _predictedVisibleColumn;
 }
 
 + (struct CGRect)defaultFrameForOrientation:(long long)arg1;
@@ -63,6 +64,7 @@
 @property(nonatomic) __weak id <SBIconListViewDragDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
 @property(nonatomic) double iconContentScale; // @synthesize iconContentScale=_iconContentScale;
 @property(nonatomic) _Bool iconsNeedLayout; // @synthesize iconsNeedLayout=_iconsNeedLayout;
+@property(nonatomic) struct SBIconListPredictedVisibleColumn predictedVisibleColumn; // @synthesize predictedVisibleColumn=_predictedVisibleColumn;
 @property(nonatomic) struct _NSRange visibleColumnRange; // @synthesize visibleColumnRange=_visibleColumnRange;
 @property(copy, nonatomic) NSString *iconLocation; // @synthesize iconLocation=_iconLocation;
 @property(nonatomic) __weak id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
@@ -101,7 +103,8 @@
 - (struct CGPoint)fractionalCoordinateAtPoint:(struct CGPoint)arg1;
 - (unsigned long long)rowAtPoint:(struct CGPoint)arg1 metrics:(const struct SBIconListLayoutMetrics *)arg2;
 - (unsigned long long)rowAtPoint:(struct CGPoint)arg1;
-- (unsigned long long)columnAtPoint:(struct CGPoint)arg1 metrics:(const struct SBIconListLayoutMetrics *)arg2;
+- (unsigned long long)columnAtPoint:(struct CGPoint)arg1 metrics:(const struct SBIconListLayoutMetrics *)arg2 fractionOfDistanceThroughColumn:(double *)arg3;
+- (unsigned long long)columnAtPoint:(struct CGPoint)arg1 fractionOfDistanceThroughColumn:(double *)arg2;
 - (unsigned long long)columnAtPoint:(struct CGPoint)arg1;
 - (struct CGPoint)originForIconAtCoordinate:(struct SBIconCoordinate)arg1 metrics:(const struct SBIconListLayoutMetrics *)arg2;
 - (struct CGPoint)originForIconAtCoordinate:(struct SBIconCoordinate)arg1;
@@ -139,6 +142,7 @@
 - (void)configureIconView:(id)arg1 forIcon:(id)arg2;
 - (id)makeIconView;
 - (id)iconViewForIcon:(id)arg1;
+@property(readonly, nonatomic) unsigned long long numberOfDisplayedIconViews;
 - (id)displayedIconViewForIcon:(id)arg1;
 - (struct CGPoint)centerForIconAtIndex:(unsigned long long)arg1 metrics:(const struct SBIconListLayoutMetrics *)arg2;
 - (struct CGPoint)centerForIconAtIndex:(unsigned long long)arg1;

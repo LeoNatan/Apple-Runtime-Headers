@@ -39,6 +39,7 @@
 @property(readonly) unsigned long long encodedLength;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) unsigned long long alignment;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 @property(readonly, copy) NSString *description;
 - (id)forwardingTargetForSelector:(SEL)arg1;

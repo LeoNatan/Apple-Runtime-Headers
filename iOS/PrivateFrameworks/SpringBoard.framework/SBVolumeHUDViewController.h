@@ -25,9 +25,8 @@
 - (void)_dismiss;
 - (void)elasticVolumeViewControllerNeedsDismissal:(id)arg1;
 - (_Bool)elasticAudioViewControllerShouldShowVolumeWarningForCurrentVolumeLevel:(id)arg1;
-- (_Bool)elasticAudioViewControllerAreHeadphonesPresent:(id)arg1;
+- (id)elasticAudioViewControllerActiveAudioRouteTypes:(id)arg1;
 - (id)elasticAudioViewControllerActiveAudioCategory:(id)arg1;
-- (id)elasticAudioViewControllerActiveAudioRoute:(id)arg1;
 - (_Bool)elasticAudioViewController:(id)arg1 updateCurrentVolumeToLevel:(float)arg2;
 - (float)elasticAudioViewControllerCurrentVolume:(id)arg1;
 - (unsigned long long)_volumeHUDPresentationEdge;
@@ -38,6 +37,7 @@
 - (void)viewDidLoad;
 - (void)refreshAudioUI;
 - (void)noteVolumeDidChange:(float)arg1;
+- (void)noteVolumeWillDeltaStepForRepeatedPress;
 - (void)noteVolumeDownWasHit:(_Bool)arg1;
 - (void)noteVolumeUpWasHit:(_Bool)arg1;
 - (unsigned long long)supportedInterfaceOrientations;

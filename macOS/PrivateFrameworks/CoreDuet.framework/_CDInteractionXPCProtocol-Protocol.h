@@ -8,7 +8,9 @@
 @protocol _CDInteractionXPCHeartBeatProtocol;
 
 @protocol _CDInteractionXPCProtocol
+- (void)rankedAutocompleteSuggestionsFromContext:(_PSPredictionContext *)arg1 candidates:(NSArray *)arg2 reply:(void (^)(NSArray *))arg3;
 - (void)rankedNameSuggestionsFromContext:(_PSPredictionContext *)arg1 name:(NSString *)arg2 reply:(void (^)(NSArray *))arg3;
+- (void)rankedContactSuggestionsFromContext:(_PSPredictionContext *)arg1 contactsOnly:(BOOL)arg2 maxSuggestions:(NSNumber *)arg3 reply:(void (^)(NSArray *))arg4;
 - (void)messagesZKWSuggestionsFromContext:(_PSPredictionContext *)arg1 maxSuggestions:(NSNumber *)arg2 reply:(void (^)(NSArray *))arg3;
 - (void)mapsSuggestionsFromContext:(_PSMapsPredictionContext *)arg1 maxSuggestions:(NSNumber *)arg2 reply:(void (^)(NSArray *))arg3;
 - (void)shareExtensionSuggestionsFromContext:(_PSPredictionContext *)arg1 reply:(void (^)(NSArray *))arg2;

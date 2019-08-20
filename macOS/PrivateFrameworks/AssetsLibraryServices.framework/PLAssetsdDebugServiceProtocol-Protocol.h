@@ -40,7 +40,6 @@
 - (void)momentGenerationStatusWithReply:(void (^)(NSString *))arg1;
 - (void)recoverAssetsInInconsistentCloudState;
 - (void)asynchronousUnloadImageFilesForAssetWithObjectURI:(NSURL *)arg1 minimumFormat:(unsigned short)arg2 reply:(void (^)(BOOL, NSError *))arg3;
-- (void)getSandboxExtensionForPath:(NSString *)arg1 reply:(void (^)(NSString *, NSError *))arg2;
 - (void)statusWithReply:(void (^)(NSString *))arg1;
 @end
 

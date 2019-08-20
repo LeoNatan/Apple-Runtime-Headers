@@ -61,7 +61,6 @@
 @property(readonly, nonatomic) NSURL *serverURL; // @synthesize serverURL;
 @property(readonly, nonatomic) NSString *dropBoxPathString; // @synthesize dropBoxPathString;
 @property(readonly, retain, nonatomic) NSString *typeString; // @synthesize typeString;
-@property(readonly, nonatomic) BOOL supportsTaskCalendarCreation; // @synthesize supportsTaskCalendarCreation;
 @property(readonly, nonatomic) BOOL supportsSharingScheduling; // @synthesize supportsSharingScheduling;
 @property(readonly, nonatomic) BOOL supportsPrivateEvents; // @synthesize supportsPrivateEvents;
 @property(readonly, nonatomic) BOOL supportsPhoneNumbers; // @synthesize supportsPhoneNumbers;
@@ -76,7 +75,6 @@
 @property(readonly, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier;
 @property(readonly, retain, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier;
 @property(readonly, nonatomic) NSSet *ownerAddresses; // @synthesize ownerAddresses;
-@property(readonly, nonatomic) BOOL isEnabledForReminders; // @synthesize isEnabledForReminders;
 @property(readonly, nonatomic) BOOL isEnabledForEvents; // @synthesize isEnabledForEvents;
 @property(readonly, nonatomic) BOOL isWritable; // @synthesize isWritable;
 @property(readonly, nonatomic) BOOL isDelegate; // @synthesize isDelegate;
@@ -105,6 +103,8 @@
 - (BOOL)validate:(id *)arg1;
 - (void)_applyKnownImmutableValuesFrom:(id)arg1;
 - (id)backingSource;
+@property(readonly, nonatomic) BOOL supportsTaskCalendarCreation; // @synthesize supportsTaskCalendarCreation;
+@property(readonly, nonatomic) BOOL isEnabledForReminders; // @synthesize isEnabledForReminders;
 @property(readonly, nonatomic) REMObjectID *remAccountObjectID;
 @property(readonly, nonatomic) NSError *sourceError;
 - (id)sharedCalendarInvitationsForEntityType:(unsigned long long)arg1;

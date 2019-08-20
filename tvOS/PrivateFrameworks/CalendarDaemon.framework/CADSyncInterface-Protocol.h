@@ -5,6 +5,7 @@
 //
 
 @protocol CADSyncInterface
+- (void)CADDatabaseGetOrCreateSubscribedCalendarsSource:(void (^)(int, NSNumber *))arg1;
 - (void)CADDatabaseGetDeletableSources:(void (^)(int, NSArray *))arg1;
 - (void)CADDatabaseGetDeletableCalendars:(void (^)(int, NSArray *))arg1;
 @end

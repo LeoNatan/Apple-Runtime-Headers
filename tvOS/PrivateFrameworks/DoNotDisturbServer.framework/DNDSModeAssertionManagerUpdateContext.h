@@ -8,25 +8,26 @@
 
 #import <DoNotDisturbServer/DNDSModeAssertionUpdateContext-Protocol.h>
 
-@class DNDSClientDetailsProvider, DNDSModeAssertionStore, DNDSModeAssertionUpdateResult, DNDSMutableModeAssertionStore, NSMutableArray, NSString;
+@class DNDSClientDetailsProvider, DNDSModeAssertionStore, DNDSModeAssertionUpdateResult, NSString;
 
 @interface DNDSModeAssertionManagerUpdateContext : NSObject <DNDSModeAssertionUpdateContext>
 {
-    DNDSMutableModeAssertionStore *_store;
     DNDSClientDetailsProvider *_clientDetailsProvider;
-    NSMutableArray *_results;
+    DNDSModeAssertionStore *_store;
+    DNDSModeAssertionUpdateResult *_updateResult;
 }
 
+@property(readonly, copy, nonatomic) DNDSModeAssertionUpdateResult *updateResult; // @synthesize updateResult=_updateResult;
+@property(readonly, copy, nonatomic) DNDSModeAssertionStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
-- (id)invalidateAssertionsMatchingPredicate:(id)arg1 details:(id)arg2 source:(id)arg3 reason:(unsigned long long)arg4 reasonOverride:(unsigned long long)arg5;
+- (id)_calculateUpdateResultForStore:(id)arg1 previousStore:(id)arg2;
+- (void)_cleanupStore:(inout id)arg1;
+- (void)_resolveStore:(inout id)arg1;
+- (id)invalidateAssertionsForRequest:(id)arg1;
 - (id)takeAssertionWithDetails:(id)arg1 source:(id)arg2 startDate:(id)arg3;
-- (id)lastCompleteInvalidationDate;
-- (id)lastUpdateDate;
 - (id)modeAssertionInvalidationsMatchingPredicate:(id)arg1;
 - (id)modeAssertionsMatchingPredicate:(id)arg1;
 - (id)takeAssertionWithUUID:(id)arg1 details:(id)arg2 source:(id)arg3 startDate:(id)arg4;
-@property(readonly, copy, nonatomic) DNDSModeAssertionUpdateResult *updateResult; // @dynamic updateResult;
-@property(readonly, copy, nonatomic) DNDSModeAssertionStore *store; // @dynamic store;
 - (id)initWithStore:(id)arg1 clientDetailsProvider:(id)arg2;
 
 // Remaining properties

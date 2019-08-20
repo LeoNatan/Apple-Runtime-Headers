@@ -42,13 +42,14 @@
 + (id)sharedTextEffectsWindowForCanvas:(id)arg1;
 + (id)_sharedTextEffectsWindowforWindowScene:(id)arg1 allowHosted:(BOOL)arg2 matchesStatusBarOrientationOnAccess:(BOOL)arg3 shouldCreateIfNecessary:(BOOL)arg4;
 + (BOOL)_isSecure;
++ (BOOL)_shouldSoftAssertOnSetScreen;
 @property(nonatomic) struct UIEdgeInsets hostedSafeInsets; // @synthesize hostedSafeInsets=_hostedSafeInsets;
 @property(nonatomic) struct CGSize hostedSceneSize; // @synthesize hostedSceneSize=_hostedSceneSize;
 @property(nonatomic) struct CGPoint hostedWindowOffset; // @synthesize hostedWindowOffset=_hostedWindowOffset;
 @property(nonatomic) double defaultWindowLevel; // @synthesize defaultWindowLevel=_defaultWindowLevel;
 @property(readonly, nonatomic) BOOL isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 - (void).cxx_destruct;
-- (BOOL)_shouldBridgeSizeToSceneView;
+- (id)_engineForBridgingSizeToSceneView;
 - (BOOL)_shouldInstallRootPresentationController;
 - (void)_didSnapshot;
 - (void)_willSnapshot;
@@ -68,6 +69,7 @@
 - (struct CGRect)actualSceneBoundsForLandscape:(BOOL)arg1;
 - (void)_updateTransformLayer;
 - (void)_sceneBoundsDidChange;
+- (BOOL)_shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)updateEditingOverlayContainer;
 - (BOOL)_shouldResizeWithScene;
 - (id)aboveStatusBarWindow;

@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+- (_Bool)_shouldScrollToContentBeginningInRightToLeft;
 - (id)init;
 
 @end

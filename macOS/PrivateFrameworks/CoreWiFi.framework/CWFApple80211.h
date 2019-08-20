@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (id)SSID:(id *)arg1;
 - (id)capabilities:(id *)arg1;
 - (id)numberOfSpatialStreams:(id *)arg1;
+- (id)__numberOfSpatialStreams:(id *)arg1;
 - (id)guardInterval:(id *)arg1;
 - (id)__guardInterval:(id *)arg1;
 - (id)opMode:(id *)arg1;

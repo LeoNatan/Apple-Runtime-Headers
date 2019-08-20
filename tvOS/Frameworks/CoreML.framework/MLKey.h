@@ -24,6 +24,7 @@
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)hasSameNameAsKey:(id)arg1;
 - (_Bool)hasGlobalScope;
 - (id)deletingPrefixingScope:(id)arg1;
 - (id)scopedTo:(id)arg1;

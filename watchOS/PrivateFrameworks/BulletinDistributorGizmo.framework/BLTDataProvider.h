@@ -24,6 +24,7 @@
     BBSectionInfo *_defaultSectionInfo;
     unsigned int _pushSettings;
     NSMutableDictionary *_attachments;
+    NSMutableDictionary *_icons;
     BLTDataProviderConnection *_connection;
     BBDataProviderProxy *_proxy;
     id <BLTBulletinActionResponder> _responseDelegate;
@@ -32,6 +33,7 @@
 @property(nonatomic) __weak id <BLTBulletinActionResponder> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
 @property(retain, nonatomic) BBDataProviderProxy *proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) BLTDataProviderConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) NSMutableDictionary *icons; // @synthesize icons=_icons;
 @property(retain, nonatomic) NSMutableDictionary *attachments; // @synthesize attachments=_attachments;
 @property(nonatomic) unsigned int pushSettings; // @synthesize pushSettings=_pushSettings;
 @property(retain, nonatomic) BBSectionInfo *defaultSectionInfo; // @synthesize defaultSectionInfo=_defaultSectionInfo;
@@ -39,6 +41,7 @@
 @property(copy, nonatomic) NSString *universalSectionIdentifier; // @synthesize universalSectionIdentifier=_universalSectionIdentifier;
 @property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 - (void).cxx_destruct;
+- (void)_dpqueue_cleanupCachesForBulletin:(id)arg1;
 - (void)_dpqueue_removeAndWithdrawBulletinRequest:(id)arg1;
 - (void)_dpqueue_withdrawBulletinsNotInIdentifierList:(id)arg1;
 - (id)_dpqueue_bulletinsWithLimit:(unsigned int)arg1 since:(id)arg2;
@@ -52,7 +55,7 @@
 - (_Bool)_dpqueue_replaceBulletin:(id)arg1 withAttachment:(id)arg2 updateAttachment:(_Bool)arg3 forDestinations:(unsigned int)arg4 replaceBulletinDidRepublish:(CDUnknownBlockType)arg5;
 - (void)_dpqueue_withdrawAllBulletins;
 - (void)_dqpqueue_withdrawBulletinWithPublisherBulletinID:(id)arg1 andRecordID:(id)arg2;
-- (void)_dpqueue_addBulletin:(id)arg1 attachment:(id)arg2 forDestinations:(unsigned int)arg3 updateType:(unsigned int)arg4 updateAttachment:(_Bool)arg5 replaceBulletinDidRepublish:(CDUnknownBlockType)arg6;
+- (void)_dpqueue_addBulletin:(id)arg1 attachment:(id)arg2 forDestinations:(unsigned int)arg3 updateType:(unsigned int)arg4 updateAttachment:(_Bool)arg5 updateIcon:(_Bool)arg6 replaceBulletinDidRepublish:(CDUnknownBlockType)arg7;
 @property(copy, nonatomic) BBSectionIcon *sectionIcon; // @synthesize sectionIcon=_sectionIcon;
 @property(copy, nonatomic) NSString *sectionDisplayName; // @synthesize sectionDisplayName=_sectionDisplayName;
 - (id)sortDescriptors;
@@ -72,7 +75,7 @@
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1 andRecordID:(id)arg2;
 - (void)withdrawBulletinsNotInIdentifierList:(id)arg1;
 - (void)removeSection;
-- (void)addBulletin:(id)arg1 attachment:(id)arg2 forDestinations:(unsigned int)arg3 updateType:(unsigned int)arg4 updateAttachment:(_Bool)arg5 replaceBulletinDidRepublish:(CDUnknownBlockType)arg6;
+- (void)addBulletin:(id)arg1 attachment:(id)arg2 forDestinations:(unsigned int)arg3 updateType:(unsigned int)arg4 updateAttachment:(_Bool)arg5 updateIcon:(_Bool)arg6 replaceBulletinDidRepublish:(CDUnknownBlockType)arg7;
 - (id)initWithSectionID:(id)arg1 sectionDisplayName:(id)arg2 connection:(id)arg3 responseDelegate:(id)arg4 sectionInfoStore:(id)arg5 universalSectionID:(id)arg6;
 - (id)init;
 

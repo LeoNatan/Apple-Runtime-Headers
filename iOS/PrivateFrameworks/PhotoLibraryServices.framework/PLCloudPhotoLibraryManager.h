@@ -26,7 +26,6 @@
     _Bool _hasAttemptedMigration;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     PLForegroundMonitor *_foregroundMonitor;
-    _Bool _processingChange;
     unsigned long long _mode;
     _Bool _checkEnableStateOnIdle;
     _Bool _icplEnabled;
@@ -34,8 +33,6 @@
     _Bool _pullOnIdle;
     _Bool _modeChangePending;
     CPLLibraryManager *_cplLibrary;
-    _Bool _stopped;
-    _Bool _needSoftReset;
     int _pauseRequest;
     short _pauseReason;
     PLCloudTaskManager *_taskManager;
@@ -132,7 +129,7 @@
 - (void)libraryManagerHasChangesToPull:(id)arg1;
 - (void)libraryManagerDidStartSynchronization:(id)arg1;
 - (void)libraryManagerStatusDidChange:(id)arg1;
-- (void)_markResourceObjectIDsAsPurgeable:(id)arg1;
+- (void)_markResourceObjectIDsAsPurgeable:(id)arg1 urgency:(long long)arg2;
 - (void)processDownloadBatchWithSession:(id)arg1;
 - (void)_downloadFromCloud;
 - (_Bool)overrideSystemBudgetsForSyncSession:(_Bool)arg1 forSystemBudgets:(unsigned long long)arg2;
@@ -153,7 +150,6 @@
 - (id)fetchEventsFromChangeTracker;
 - (void)_fetchNewEventsFromChangeTracker;
 - (void)dumpStatusIncludingDaemon:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)doSoftResetSync;
 - (void)resetSyncDueToMigrationMarker;
 - (id)readLocalVersion;
 - (void)setLocalVersion:(id)arg1;
@@ -183,8 +179,8 @@
 - (void)_checkEnableState;
 @property(readonly, nonatomic, getter=isCloudPhotoLibraryEnabled) _Bool cloudPhotoLibraryEnabled;
 - (void)_processNextTransaction;
-- (void)_checkAndMarkPurgeableResourcesIfSafe:(id)arg1 checkServerIfNecessary:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_markPurgeableResourcesMatchingPredicate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_checkAndMarkPurgeableResourcesIfSafe:(id)arg1 checkServerIfNecessary:(_Bool)arg2 urgency:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_markPurgeableResourcesMatchingPredicate:(id)arg1 urgency:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_clearPurgeableResourcesMatchingPredicate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_repushVideoAssetsMetadata;
 - (void)_handleOptimizeSettingChangeWithCompletionHandler:(CDUnknownBlockType)arg1;

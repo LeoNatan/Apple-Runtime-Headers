@@ -8,19 +8,17 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSString, PKSecureElementCertificateSet;
+@class NSData;
 
 @interface PKPaymentDeviceRewrapData : NSObject <NSSecureCoding>
 {
-    NSString *_deviceIdentifier;
-    PKSecureElementCertificateSet *_certificates;
-    NSString *_kextBlacklistVersion;
+    NSData *_platformData;
+    NSData *_platformDataSignature;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *kextBlacklistVersion; // @synthesize kextBlacklistVersion=_kextBlacklistVersion;
-@property(copy, nonatomic) PKSecureElementCertificateSet *certificates; // @synthesize certificates=_certificates;
-@property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
+@property(copy, nonatomic) NSData *platformDataSignature; // @synthesize platformDataSignature=_platformDataSignature;
+@property(copy, nonatomic) NSData *platformData; // @synthesize platformData=_platformData;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

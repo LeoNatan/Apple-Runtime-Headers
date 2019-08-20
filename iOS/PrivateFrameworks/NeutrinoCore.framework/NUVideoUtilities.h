@@ -10,6 +10,7 @@
 {
 }
 
++ (id)cleanApertureVideoSettingsFor:(CDStruct_996ac03c)arg1 scale:(CDStruct_912cb5d2)arg2 videoSize:(CDStruct_912cb5d2)arg3;
 + (_Bool)compositionInstructions:(id)arg1 areEqualToCompositionInstructions:(id)arg2;
 + (id)videoCompositionDescription:(id)arg1;
 + (id)videoDescription:(id)arg1;

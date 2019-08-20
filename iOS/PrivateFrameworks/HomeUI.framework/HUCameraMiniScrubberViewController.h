@@ -40,7 +40,7 @@
 - (void).cxx_destruct;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;
-- (void)playbackEngine:(id)arg1 didUpdateClipCollection:(id)arg2;
+- (void)playbackEngine:(id)arg1 didUpdateClipManager:(id)arg2;
 @property(readonly, nonatomic) double currentScrubberResolution;
 - (void)_displayLinkUpdated:(id)arg1;
 - (void)_updateScrubberDisplayLinkState;

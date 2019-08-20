@@ -11,10 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)errorForOperationFailedWithLocalizedDescription:(id)arg1;
-+ (id)errorForInvalidModelWithLocalizedDescription:(id)arg1;
-+ (id)errorForInvalidFormatWithLocalizedDescription:(id)arg1;
-+ (id)errorWithCode:(long long)arg1 message:(id)arg2;
++ (void)populateClientError:(id *)arg1 withCode:(long long)arg2 underlyingError:(id)arg3 message:(id)arg4;
++ (id)errorWithCode:(long long)arg1 underlyingError:(id)arg2 message:(id)arg3;
 
 @end
 

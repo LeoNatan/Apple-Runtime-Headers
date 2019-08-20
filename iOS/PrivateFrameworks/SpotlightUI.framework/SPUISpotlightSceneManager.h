@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class BSTimer, FBSDisplayLayoutMonitor, NSHashTable, RBSAssertion, RBSProcessHandle;
+@class BSTimer, FBSDisplayLayoutMonitor, NSHashTable, RBSAssertion, RBSProcessHandle, SPUIAppService;
 
 @interface SPUISpotlightSceneManager : NSObject
 {
+    SPUIAppService *_appService;
     NSHashTable *_managedScenes;
     NSHashTable *_foregroundScenes;
     FBSDisplayLayoutMonitor *_layoutMonitor;

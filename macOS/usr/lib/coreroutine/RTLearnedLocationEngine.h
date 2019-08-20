@@ -102,6 +102,8 @@
 - (BOOL)_reconcileLearnedLocationsWithError:(id *)arg1;
 - (unsigned long long)preferredReconciliationAlgorithm;
 - (void)trainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
+- (void)_requestTrainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
+- (void)requestTrainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_trainLocationsOfInterestModelWithError:(id *)arg1;
 - (void)trainWithHandler:(CDUnknownBlockType)arg1;
 - (void)_trainWithFromDate:(id)arg1 ToDate:(id)arg2 forLastLearnedVisit:(id)arg3 handler:(CDUnknownBlockType)arg4;

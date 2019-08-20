@@ -8,7 +8,7 @@
 
 #import <WiFiPolicy/TBFetchResponse-Protocol.h>
 
-@class NSArray, NSError, NSSet, NSString;
+@class NSArray, NSDictionary, NSError, NSSet, NSString;
 
 @interface TBErrorFetchResponse : NSObject <TBFetchResponse>
 {
@@ -29,6 +29,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSDictionary *resultsByBSSID;
 @property(readonly) Class superclass;
 
 @end

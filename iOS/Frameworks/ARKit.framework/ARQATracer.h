@@ -9,7 +9,7 @@
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
 #import <ARKit/ARReplaySensorDelegate-Protocol.h>
 
-@class ARScreenRecording, NSMutableData, NSMutableDictionary, NSOutputStream, NSString, UILabel;
+@class ARScreenRecording, NSArray, NSDictionary, NSMutableData, NSMutableDictionary, NSOutputStream, NSString, UILabel;
 @protocol ARQATracerDelegate, OS_dispatch_queue;
 
 @interface ARQATracer : NSObject <ARInternalSessionObserver, ARReplaySensorDelegate>
@@ -20,6 +20,8 @@
     NSMutableData *_dataBuffer;
     NSOutputStream *_framesStreamToFile;
     NSObject<OS_dispatch_queue> *_processingQueue;
+    NSDictionary *_raycastQueryData;
+    NSArray *_raycastResultData;
     _Bool _forceQuitApp;
     _Bool _recordScreen;
     id <ARQATracerDelegate> _delegate;
@@ -50,6 +52,8 @@
 - (void)writeStringToOutputStream:(id)arg1;
 - (void)writeJSONObjectToStream:(id)arg1 prefix:(id)arg2;
 - (void)receiveDefaults;
+- (void)traceRaycastResults:(id)arg1;
+- (void)traceRaycastQuery:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

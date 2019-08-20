@@ -20,7 +20,7 @@
 - (void)restoreDefaultWallpaperWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)setWallpaperGradient:(id)arg1 forVariants:(unsigned long long)arg2;
 - (_Bool)setWallpaperColorName:(id)arg1 forVariants:(unsigned long long)arg2;
-- (_Bool)setWallpaperWithVideo:(id)arg1 cropRect:(struct CGRect)arg2;
+- (_Bool)setWallpaperWithVideoWithWallpaperMode:(id)arg1 cropRect:(struct CGRect)arg2 wallpaperMode:(long long)arg3;
 - (void)fetchThumbnailForVariant:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)dealloc;

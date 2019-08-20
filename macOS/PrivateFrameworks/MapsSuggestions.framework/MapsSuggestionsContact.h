@@ -13,20 +13,18 @@
 
 @interface MapsSuggestionsContact : NSObject <NSSecureCoding, NSCopying>
 {
-    NSString *_contactID;
-    NSString *_labeledValueID;
+    NSString *_handleValue;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSString *labeledValueID; // @synthesize labeledValueID=_labeledValueID;
-@property(copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
+@property(copy, nonatomic) NSString *handleValue; // @synthesize handleValue=_handleValue;
 - (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithContactID:(id)arg1 labeledValueID:(id)arg2;
+- (id)initWithHandleValue:(id)arg1;
 
 @end
 

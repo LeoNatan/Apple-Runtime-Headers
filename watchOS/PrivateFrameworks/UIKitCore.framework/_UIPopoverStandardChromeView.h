@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) UIColor *popoverBackgroundColor;
 - (void)setBackgroundStyle:(int)arg1 animated:(_Bool)arg2;
 - (void)_updateBackgroundStyle;
+- (int)_resolvedBackgroundStyle;
 @property(nonatomic) int backgroundStyle;
 - (_Bool)isRightArrowPinnedToBottom;
 - (_Bool)isRightArrowPinnedToTop;

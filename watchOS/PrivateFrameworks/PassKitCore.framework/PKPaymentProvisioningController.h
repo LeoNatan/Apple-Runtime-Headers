@@ -14,6 +14,7 @@
 
 @interface PKPaymentProvisioningController : NSObject <CLLocationManagerDelegate, PKPaymentWebServiceDelegate>
 {
+    _Bool _preflightCompleted;
     NSMutableSet *_tasks;
     NSTimer *_descriptionTimer;
     NSMutableArray *_associatedCredentials;
@@ -81,7 +82,9 @@
 - (void)_endRequiringUpgradedPasscodeIfNecessary;
 - (void)_startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
 - (void)passcodeUpgradeCompleted:(_Bool)arg1;
+- (void)skipPasscodeUpgrade;
 - (void)preflightPasscodeUpgradeWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic, getter=isPasscodeUpgradeRequired) _Bool passcodeUpgradeRequired;
 @property(readonly, copy, nonatomic) NSArray *allCredentials;
 - (id)associatedCredentialsForDefaultBehaviour;
 - (void)removeDelegate:(id)arg1;
@@ -146,6 +149,7 @@
 - (void)retrieveAccountCredentials:(CDUnknownBlockType)arg1;
 - (id)supportedFeatureIdentifierStrings;
 - (void)retrieveRemoteCredentials:(CDUnknownBlockType)arg1;
+- (void)performDeviceCheckInIfNeeded:(CDUnknownBlockType)arg1;
 - (id)_doesDisplayableErrorConstitutePreflightFailure:(id)arg1;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
 - (void)validatePreconditionsRegisterAndAssociateRemoteCredentials:(CDUnknownBlockType)arg1;

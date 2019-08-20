@@ -11,6 +11,7 @@
     _Bool _invalid;
     _Bool _shouldShowChevron;
     float _summaryLabelCapFrameYOrigin;
+    float _trailingLayoutMarginSize;
     struct CGRect _tableBounds;
     struct CGRect _summaryFrame;
     struct CGRect _dateFrame;
@@ -28,6 +29,7 @@
 @property(nonatomic) struct CGRect groupViewFrame; // @synthesize groupViewFrame=_groupViewFrame;
 @property(nonatomic) struct CGRect senderFrameWhenUnread; // @synthesize senderFrameWhenUnread=_senderFrameWhenUnread;
 @property(nonatomic) struct CGRect summaryFrameWhenSummarizingAttachment; // @synthesize summaryFrameWhenSummarizingAttachment=_summaryFrameWhenSummarizingAttachment;
+@property(nonatomic) float trailingLayoutMarginSize; // @synthesize trailingLayoutMarginSize=_trailingLayoutMarginSize;
 @property(nonatomic) float summaryLabelCapFrameYOrigin; // @synthesize summaryLabelCapFrameYOrigin=_summaryLabelCapFrameYOrigin;
 @property(nonatomic) struct CGRect unreadFrame; // @synthesize unreadFrame=_unreadFrame;
 @property(nonatomic) struct CGRect chevronFrame; // @synthesize chevronFrame=_chevronFrame;

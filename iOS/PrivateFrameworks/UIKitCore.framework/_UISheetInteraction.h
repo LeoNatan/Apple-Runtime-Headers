@@ -55,6 +55,7 @@
 - (void)draggingChangedInSource:(id)arg1 withTranslation:(struct CGPoint)arg2 animateChange:(_Bool)arg3;
 - (void)draggingBeganFromSource:(id)arg1;
 - (_Bool)_shouldInteractWithDescendentScrollView:(id)arg1 startOffset:(struct CGPoint)arg2 maxTopOffset:(double)arg3;
+- (void)_descendentScrollViewDidCancelDragging:(id)arg1;
 - (void)_descendentScrollViewDidEndDragging:(id)arg1;
 - (_Bool)_descendentScrollView:(id)arg1 shouldPreserveStartOffset:(struct CGPoint)arg2;
 - (struct CGPoint)_scrollView:(id)arg1 adjustedUnconstrainedOffsetForUnconstrainedOffset:(struct CGPoint)arg2 startOffset:(struct CGPoint)arg3 horizontalVelocity:(inout double *)arg4 verticalVelocity:(inout double *)arg5 animator:(out id *)arg6;
@@ -67,6 +68,7 @@
 - (void)_setCurrentOffsetY:(double)arg1;
 @property(readonly, nonatomic) struct CGPoint attachmentPoint;
 - (void)sendCurrentOffsetDidChange;
+@property(readonly, nonatomic, getter=isAnimating) _Bool animating;
 @property(readonly, nonatomic, getter=isDragging) _Bool dragging;
 - (void)cancelDraggingIfNeeded;
 - (double)rubberBandExtentForOffset:(double)arg1;

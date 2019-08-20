@@ -76,6 +76,7 @@
 - (void)enterTestModeWithParameters:(id)arg1;
 - (id)blockingPoliciesWithParameters:(id)arg1;
 - (id)policies;
+- (void)setCapacity:(double)arg1 forBudgetWithName:(id)arg2;
 - (void)setBalance:(double)arg1 forBudgetWithName:(id)arg2;
 - (double)remainingBalanceForBudgetWithName:(id)arg1;
 - (id)currentPredictions;

@@ -15,7 +15,7 @@
 }
 
 + (id)_valueForItem:(id)arg1;
-+ (void)presentCell:(id)arg1 withDataItem:(id)arg2 shouldShowSeperator:(_Bool)arg3 forPaymentRequest:(id)arg4;
++ (void)presentCell:(id)arg1 withDataItem:(id)arg2 shouldShowSeperator:(_Bool)arg3 forPaymentRequest:(id)arg4 cellProvider:(CDUnknownBlockType)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -7,25 +7,27 @@
 #import <InputMethodKit/IMKCandidateEngine.h>
 
 @class NSString;
+@protocol IMKMacSpellChecker;
 
 @interface IMKAppleSpellCandidateEngine : IMKCandidateEngine
 {
     long long _processID;
     long long _spellDocumentTag;
     NSString *_bundleID;
+    id <IMKMacSpellChecker> _spellChecker;
 }
 
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(readonly, nonatomic) long long spellDocumentTag; // @synthesize spellDocumentTag=_spellDocumentTag;
-@property(readonly, nonatomic) long long processID; // @synthesize processID=_processID;
+@property(readonly, nonatomic) id <IMKMacSpellChecker> spellChecker; // @synthesize spellChecker=_spellChecker;
+@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(nonatomic) long long spellDocumentTag; // @synthesize spellDocumentTag=_spellDocumentTag;
+@property(nonatomic) long long processID; // @synthesize processID=_processID;
 - (void).cxx_destruct;
 - (id)contentForRange:(struct _NSRange)arg1 forCursorPosition:(long long)arg2 inDocument:(id)arg3;
 - (id)_candidateListFromChecker:(id)arg1 withContext:(id)arg2 cursorPosition:(long long)arg3;
 - (void)generateCandidatesFor:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
-- (id)initForProcess:(long long)arg1 withSpellDocumentTag:(long long)arg2 withBundleId:(id)arg3;
-- (id)initForProcess:(long long)arg1 withSpellDocumentTag:(long long)arg2;
-- (id)initForProcess:(long long)arg1;
-- (id)init;
+- (void)preflight;
+- (unsigned long long)textCheckingTypes;
+- (id)initWithSpellChecker:(id)arg1;
 
 @end
 

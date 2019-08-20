@@ -13,6 +13,7 @@
 @interface CLPlacemark (WFSerialization) <WFNaming>
 - (id)wf_serializedPlacemark;
 - (id)wf_initWithSerializedPlacemark:(id)arg1;
+- (id)wf_postalAddress;
 @property(readonly, copy, nonatomic) NSString *wfName;
 @end
 

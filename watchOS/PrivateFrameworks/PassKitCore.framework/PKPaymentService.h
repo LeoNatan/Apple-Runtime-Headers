@@ -51,7 +51,6 @@
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disbursementVoucherWithDisbursementSource:(unsigned int)arg1 disbursementTarget:(unsigned int)arg2 bundleIdentifier:(id)arg3 teamIdentifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (_Bool)supportsDisbursements;
 - (void)sharedPaymentWebServiceContextWithCompletion:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) PKPaymentWebServiceContext *sharedPaymentWebServiceContext;
 @property(retain, nonatomic) NSString *defaultPaymentPassUniqueIdentifier;

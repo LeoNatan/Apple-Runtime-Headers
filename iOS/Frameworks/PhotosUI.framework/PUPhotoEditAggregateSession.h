@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool _pluginSaved;
     _Bool _shouldUseVideoKeys;
     _Bool __hasCropSuggestion;
+    _Bool __hasPerspectiveCropSuggestion;
     _Bool __autoCropAdjusted;
     _Bool __autoCropReset;
     double _originalDuration;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic, setter=_setAutoCropReset:) _Bool _autoCropReset; // @synthesize _autoCropReset=__autoCropReset;
 @property(nonatomic, setter=_setAutoCropAdjusted:) _Bool _autoCropAdjusted; // @synthesize _autoCropAdjusted=__autoCropAdjusted;
+@property(nonatomic, setter=_setHasPerspectiveCropSuggestion:) _Bool _hasPerspectiveCropSuggestion; // @synthesize _hasPerspectiveCropSuggestion=__hasPerspectiveCropSuggestion;
 @property(nonatomic, setter=_setHasCropSuggestion:) _Bool _hasCropSuggestion; // @synthesize _hasCropSuggestion=__hasCropSuggestion;
 @property(nonatomic) double originalDuration; // @synthesize originalDuration=_originalDuration;
 @property(nonatomic) _Bool shouldUseVideoKeys; // @synthesize shouldUseVideoKeys=_shouldUseVideoKeys;
@@ -36,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak NSArray *_autoCropKeys;
 - (void)notifyDidAdjustCrop;
 - (void)notifyDidResetCrop;
+- (void)notifyDidApplyPerspectiveAutoCrop;
 - (void)notifyDidApplyAutoCrop;
 - (struct __CFString *)_keyForSessionEnd:(long long)arg1;
 

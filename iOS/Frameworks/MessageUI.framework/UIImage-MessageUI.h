@@ -13,6 +13,8 @@
 + (id)_mf_symbolConfigurationForImageSymbolType:(long long)arg1 textStyle:(id)arg2 scale:(long long)arg3 weight:(long long)arg4 traits:(unsigned int)arg5 maximumContentSizeCategory:(id)arg6;
 + (id)_mf_symbolConfigurationForView:(long long)arg1 imageSymbolType:(long long)arg2;
 + (id)mf_symbolConfigurationForView:(long long)arg1;
++ (id)mf_largeContentSizeImageNamed:(id)arg1;
++ (id)mf_assistantBarSystemImageNamed:(id)arg1;
 + (id)_mf_systemImageNamed:(id)arg1 textStyle:(id)arg2 scale:(long long)arg3 weight:(long long)arg4 imageSymbolType:(long long)arg5 traits:(unsigned int)arg6 maximumContentSizeCategory:(id)arg7;
 + (id)mf_systemImageNamed:(id)arg1 textStyle:(id)arg2 scale:(long long)arg3 weight:(long long)arg4;
 + (id)mf_systemImageNamed:(id)arg1 textStyle:(id)arg2 scale:(long long)arg3;

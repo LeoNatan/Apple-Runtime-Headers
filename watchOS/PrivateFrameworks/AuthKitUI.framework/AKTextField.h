@@ -22,10 +22,6 @@
     NSMutableArray *_constraints;
 }
 
-+ (id)_cachedImageForRowIdentifier:(int)arg1 blurEffectStyle:(int)arg2 backgroundColor:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
-+ (void)drawFillForStyle:(int)arg1 pathRect:(struct CGRect)arg2 roundedCorners:(int)arg3 cornerRadius:(float)arg4 backgroundColor:(id)arg5;
-+ (void)drawStrokeForStyle:(int)arg1 pathRect:(struct CGRect)arg2 roundedCorners:(int)arg3 cornerRadius:(float)arg4 pathSegments:(int)arg5;
-+ (id)_backgroundImageForRowIdentifier:(int)arg1 blurEffectStyle:(int)arg2 backgroundColor:(id)arg3;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
@@ -37,6 +33,10 @@
 @property(readonly, nonatomic) UITextField *entryField; // @synthesize entryField=_entryField;
 @property(readonly, nonatomic) UILabel *entryDescription; // @synthesize entryDescription=_entryDescription;
 - (void).cxx_destruct;
+- (id)cachedImageUsingBlock:(CDUnknownBlockType)arg1;
+- (void)drawFillForPathRect:(struct CGRect)arg1 roundedCorners:(int)arg2 cornerRadius:(float)arg3;
+- (void)drawStrokeForPathRect:(struct CGRect)arg1 roundedCorners:(int)arg2 cornerRadius:(float)arg3 pathSegments:(int)arg4;
+- (id)backgroundImage;
 - (void)_setupAlertStyleViews;
 - (void)_setupInlineEntryStyleViews;
 - (void)_setupLabelAndFieldStyles;

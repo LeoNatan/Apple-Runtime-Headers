@@ -23,6 +23,7 @@
     } _delegateFlags;
     NSDictionary *_identifierMap;
     id <PICompositionControllerDelegate> _changeDelegate;
+    long long _mediaType;
     long long _imageOrientation;
 }
 
@@ -32,6 +33,7 @@
 + (id)settingForAdjustmentKey:(id)arg1 settingKey:(id)arg2;
 + (id)schemaForKey:(id)arg1;
 @property(nonatomic) long long imageOrientation; // @synthesize imageOrientation=_imageOrientation;
+@property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) __weak id <PICompositionControllerDelegate> changeDelegate; // @synthesize changeDelegate=_changeDelegate;
 - (void).cxx_destruct;
 - (void)setSource:(id)arg1 mediaType:(long long)arg2;

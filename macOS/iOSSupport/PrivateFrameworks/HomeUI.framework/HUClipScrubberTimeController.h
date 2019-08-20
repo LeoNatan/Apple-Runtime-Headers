@@ -15,10 +15,14 @@
 
 + (id)attributedLiveStringFromDate:(id)arg1;
 + (id)attributedTimeStringFromDate:(id)arg1;
++ (BOOL)_shouldUseTwentyFourHourTime;
 + (id)attributedStringFromDateString:(id)arg1;
++ (id)attributedStringFromTwentyFourHourDateString:(id)arg1;
++ (id)twentyFourHourLiveStringFromDate:(id)arg1;
 + (id)liveStringFromDate:(id)arg1;
 + (id)dayNameStringFromDate:(id)arg1;
-+ (id)timeStringFromDate:(id)arg1;
++ (id)twelveHourTimeStringFromDate:(id)arg1;
++ (id)twentyFourHourTimeStringFromDate:(id)arg1;
 @property(nonatomic) double maximumDuration; // @synthesize maximumDuration=_maximumDuration;
 @property(nonatomic) double minimumDuration; // @synthesize minimumDuration=_minimumDuration;
 @property(nonatomic) double timeScale; // @synthesize timeScale=_timeScale;

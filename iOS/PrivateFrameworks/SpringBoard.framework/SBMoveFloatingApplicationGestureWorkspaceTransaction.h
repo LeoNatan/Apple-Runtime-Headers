@@ -22,6 +22,8 @@
 - (void)_updateStatusBarAssertionsForGesture;
 - (void)_updateStatusBarAssertionsForLayoutState;
 - (void)_acquireStatusBarAssertions;
+- (void)_stopSuppressingKeyboard;
+- (void)_startSuppressingKeyboardForFloatingApplication;
 - (void)_performBlockWithLiveContentOverlayUpdatesSuspended:(CDUnknownBlockType)arg1;
 - (id)_transitionRequestForPreemptiveFloatingApplicationActivation;
 - (void)_tryPreemptiveFloatingApplicationActivationIfNecessaryWithGesture:(id)arg1;

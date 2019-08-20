@@ -7,6 +7,6 @@
 #import <Foundation/NSException.h>
 
 @interface NSException (AppAnalytics)
-+ (_Bool)aa_tryCatch:(CDUnknownBlockType)arg1 error:(id *)arg2;
++ (_Bool)__aa_tryCatch:(CDUnknownBlockType)arg1 error:(id *)arg2;
 @end
 

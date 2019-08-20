@@ -19,6 +19,7 @@
 - (id)wd_dataListViewControllerWithProfile:(id)arg1;
 - (id)wd_listViewControllerDataProviderWithProfile:(id)arg1 unitController:(id)arg2 isHierarchical:(_Bool)arg3;
 - (id)wd_listViewControllerDataProviderWithProfile:(id)arg1 unitController:(id)arg2;
+- (id)wd_outOfRangeAlertDisplayName;
 @property(readonly) long long wd_heartRateDisplayTypeContext;
 @end
 

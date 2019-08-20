@@ -22,7 +22,7 @@
     struct UIEdgeInsets _imageInsets;
 }
 
-+ (id)HUDItemForBarButtonItem:(id)arg1;
++ (id)HUDItemForBarButtonItem:(id)arg1 atPoint:(struct CGPoint)arg2 inView:(id)arg3;
 + (id)HUDItemForTabBarItem:(id)arg1;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(nonatomic) struct UIEdgeInsets imageInsets; // @synthesize imageInsets=_imageInsets;

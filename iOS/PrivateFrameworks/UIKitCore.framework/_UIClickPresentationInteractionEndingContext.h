@@ -6,15 +6,24 @@
 
 #import <objc/NSObject.h>
 
+@class _UIClickPresentation;
+
 __attribute__((visibility("hidden")))
 @interface _UIClickPresentationInteractionEndingContext : NSObject
 {
     _Bool _didComplete;
     unsigned long long _reason;
+    _UIClickPresentation *_presentation;
+    CDUnknownBlockType _alongsideActions;
+    CDUnknownBlockType _completion;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(copy, nonatomic) CDUnknownBlockType alongsideActions; // @synthesize alongsideActions=_alongsideActions;
+@property(nonatomic) __weak _UIClickPresentation *presentation; // @synthesize presentation=_presentation;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(nonatomic) _Bool didComplete; // @synthesize didComplete=_didComplete;
+- (void).cxx_destruct;
 
 @end
 

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 + (int)modelOutputBlockSize:(id)arg1;
 + (int)modelInputBlockSize:(id)arg1;
 + (int)modelBlockSize:(id)arg1;
-+ (int)modelSampleRate:(id)arg1 withDefaultRate:(int)arg2;
++ (int)modelSampleRate:(id)arg1 orDefaultRate:(int)arg2;
 + (id)vggishFrontEndProcessingModelDescription;
 + (id)vggishFeatureEmbeddingOutputShape;
 + (id)vggishFeatureEmbeddingInputShape;

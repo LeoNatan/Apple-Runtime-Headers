@@ -48,7 +48,7 @@
 - (void)_evaluateNeedForSync;
 - (void)reevaluateNeedForSync;
 - (void)_updateResidents;
-- (void)handleHomeDataFetchedNotification:(id)arg1;
+- (void)handleHomeCloudZoneReadyNotification:(id)arg1;
 - (void)residentsChanged:(id)arg1;
 - (id)logIdentifier;
 - (void)registerForMessages;

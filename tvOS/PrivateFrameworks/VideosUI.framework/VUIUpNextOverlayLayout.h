@@ -20,6 +20,10 @@ __attribute__((visibility("hidden")))
     VUITextBadgeLayout *_textBadgeLayout;
 }
 
++ (void)_setAppImageDefaultSize:(id)arg1;
++ (void)_setLogoImageDefaultSize:(id)arg1;
++ (id)appImageLayout;
++ (id)logoImageLayout;
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
 @property(retain, nonatomic) VUITextBadgeLayout *textBadgeLayout; // @synthesize textBadgeLayout=_textBadgeLayout;
 @property(retain, nonatomic) VUITextLayout *subtitleLayout; // @synthesize subtitleLayout=_subtitleLayout;

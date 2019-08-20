@@ -10,6 +10,7 @@
 
 @interface VSAppSettingsFacade : NSObject
 {
+    _Bool _hasChannelApps;
     _Bool _needsUpdateApps;
     _Bool _needsPresentationOfMVPDAppInstallPromptIfAvailable;
     int _registrationToken;
@@ -41,6 +42,7 @@
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) NSOperation *currentPresentationOperation; // @synthesize currentPresentationOperation=_currentPresentationOperation;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
+@property(nonatomic) _Bool hasChannelApps; // @synthesize hasChannelApps=_hasChannelApps;
 @property(copy, nonatomic) NSArray *availableApps; // @synthesize availableApps=_availableApps;
 @property(copy, nonatomic) NSArray *decidedApps; // @synthesize decidedApps=_decidedApps;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;

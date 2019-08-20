@@ -9,26 +9,20 @@
 #import <HomeAI/HMFLogging-Protocol.h>
 #import <HomeAI/HMICameraVideoFrameAnalyzer-Protocol.h>
 
-@class HMFOSTransaction, HMISignificantActivityDetector, NSMutableArray, NSMutableDictionary, NSString;
+@class HMFOSTransaction, HMISignificantActivityDetector, NSString;
 
 @interface HMICameraVideoFrameAnalyzerSignificantActivity : HMFObject <HMICameraVideoFrameAnalyzer, HMFLogging>
 {
     HMISignificantActivityDetector *_significantActivityDetector;
-    NSMutableDictionary *_annotationScores;
-    long long _events;
-    NSMutableArray *_detections;
     HMFOSTransaction *_transaction;
 }
 
 + (id)logCategory;
 + (id)classHierarchyMap;
 @property(retain, nonatomic) HMFOSTransaction *transaction; // @synthesize transaction=_transaction;
-@property(retain) NSMutableArray *detections; // @synthesize detections=_detections;
-@property long long events; // @synthesize events=_events;
-@property(retain) NSMutableDictionary *annotationScores; // @synthesize annotationScores=_annotationScores;
 @property(readonly) HMISignificantActivityDetector *significantActivityDetector; // @synthesize significantActivityDetector=_significantActivityDetector;
 - (void).cxx_destruct;
-- (_Bool)classify:(id)arg1 error:(id *)arg2;
+- (id)classify:(id)arg1 error:(id *)arg2;
 - (id)initWithConfidenceThresholds:(struct NSDictionary *)arg1 nmsThreshold:(double)arg2 error:(id *)arg3;
 
 // Remaining properties

@@ -26,8 +26,12 @@
     NSArray *_secondLabelVisibleConstraintsArray;
     UILabel *_labelForPositioning;
     _UIAirDropProgressView *_circleProgressView;
+    NSArray *_regularConstraints;
+    NSArray *_largeTextConstraints;
 }
 
+@property(retain, nonatomic) NSArray *largeTextConstraints; // @synthesize largeTextConstraints=_largeTextConstraints;
+@property(retain, nonatomic) NSArray *regularConstraints; // @synthesize regularConstraints=_regularConstraints;
 @property(retain, nonatomic) _UIAirDropProgressView *circleProgressView; // @synthesize circleProgressView=_circleProgressView;
 @property(retain, nonatomic) UILabel *labelForPositioning; // @synthesize labelForPositioning=_labelForPositioning;
 @property(retain, nonatomic) NSArray *secondLabelVisibleConstraintsArray; // @synthesize secondLabelVisibleConstraintsArray=_secondLabelVisibleConstraintsArray;
@@ -49,6 +53,8 @@
 - (void)setHighlighted:(_Bool)arg1;
 - (void)updateDarkening;
 - (void)setProgress:(float)arg1 animated:(_Bool)arg2;
+- (void)_updateForCurrentSizeCategory;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForReuse;
 - (void)setupConstraintsYukon;
 - (id)initWithFrame:(struct CGRect)arg1;

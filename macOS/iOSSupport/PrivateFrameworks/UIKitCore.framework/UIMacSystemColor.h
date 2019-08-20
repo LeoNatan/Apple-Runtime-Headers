@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     id <UINSColor> _macSystemColor;
 }
 
++ (id)_resolveColor:(id)arg1 withTraitCollection:(id)arg2;
 - (void).cxx_destruct;
 - (id)description;
 - (id)_resolvedColorWithTraitCollection:(id)arg1;

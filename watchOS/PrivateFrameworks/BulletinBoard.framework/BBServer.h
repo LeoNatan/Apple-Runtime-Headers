@@ -52,6 +52,8 @@
     NSMutableSet *_suspendedConnections;
     BBDismissalSyncCache *_dismissalSyncCache;
     BBBiometricResource *_biometricResource;
+    _Bool _siriAllowedWhenLocked;
+    _Bool _siriEnabled;
 }
 
 + (unsigned int)pairedDeviceCount;
@@ -148,10 +150,13 @@
 - (int)_effectiveGlobalSpokenNotificationSetting;
 - (void)_setGlobalSpokenNotificationSetting:(int)arg1;
 - (int)_globalSpokenNotificationSetting;
+- (void)_updateSpokenNotificationSettings;
 - (void)_setSpokenNotificationsSupported:(_Bool)arg1;
 - (_Bool)_isSpokenNotificationsSupported;
 - (void)_saveGlobalSpokenNotificationSettingEnabledEvent;
 - (void)_updateSpokenNotificationControlCenterModuleAvailability;
+- (void)_updateSiriPreferences;
+- (void)_siriPreferencesDidChange:(id)arg1;
 - (void)requestCanBeHandledChanged:(_Bool)arg1;
 - (void)hasEligibleSetupChanged:(_Bool)arg1;
 - (void)setEffectiveGlobalContentPreviewsSetting:(int)arg1 withHandler:(CDUnknownBlockType)arg2;

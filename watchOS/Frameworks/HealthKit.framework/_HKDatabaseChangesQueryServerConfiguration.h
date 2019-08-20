@@ -11,11 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface _HKDatabaseChangesQueryServerConfiguration : HKQueryServerConfiguration
 {
+    _Bool _includeChangeDetails;
     NSSet *_sampleTypes;
     HKQueryAnchor *_anchor;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool includeChangeDetails; // @synthesize includeChangeDetails=_includeChangeDetails;
 @property(copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(copy, nonatomic) NSSet *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
 - (void).cxx_destruct;

@@ -20,10 +20,12 @@
     NSArray *_results;
     unsigned long long _batchSize;
     SFRankingFeedback *_rankingFeedback;
+    unsigned long long _parsecQueryID;
     SFMoreResults *_moreResults;
 }
 
 @property(retain, nonatomic) SFMoreResults *moreResults; // @synthesize moreResults=_moreResults;
+@property(nonatomic) unsigned long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(retain, nonatomic) SFRankingFeedback *rankingFeedback; // @synthesize rankingFeedback=_rankingFeedback;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
@@ -37,7 +39,7 @@
 - (id)_rankingFeedbackWithSection:(id)arg1;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (id)initWithMoreResults:(id)arg1;
+- (id)initWithMoreResults:(id)arg1 parsecQueryID:(unsigned long long)arg2;
 - (BOOL)validateOperation;
 
 @end

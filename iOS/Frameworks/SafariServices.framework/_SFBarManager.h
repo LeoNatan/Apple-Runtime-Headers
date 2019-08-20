@@ -40,6 +40,7 @@
 - (void)_invalidateCoalescedUpdatesTimer;
 - (void)_performCoalescedUpdatesNow;
 - (void)performCoalescedUpdates:(CDUnknownBlockType)arg1;
+- (void)setDownloadsItemNeedsLayout;
 - (void)pulseDownloadsItem;
 - (void)visibleBarItemsNeedUpdate;
 - (void)setBarItem:(long long)arg1 hidden:(_Bool)arg2;

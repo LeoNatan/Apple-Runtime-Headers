@@ -30,6 +30,7 @@
 - (id)hk_errorByAddingEntriesToUserInfo:(id)arg1;
 - (id)hk_sanitizedError;
 - (id)hk_underlyingErrorWithDomain:(id)arg1;
+- (_Bool)hk_isXPCConnectionInterruptedError;
 - (_Bool)hk_isXPCConnectionError;
 - (_Bool)hk_isCocoaNoSuchFileError;
 - (_Bool)hk_isUserCanceledError;

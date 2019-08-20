@@ -26,7 +26,6 @@
 - (void)insertText:(id)arg1;
 - (void)deleteBackward;
 - (void)insertTextAttachment:(id)arg1;
-- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 // Remaining properties
 @property(nonatomic) long long autocapitalizationType;

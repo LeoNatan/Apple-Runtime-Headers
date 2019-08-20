@@ -41,7 +41,7 @@
 - (id)_maildropMetadataFromContext:(id)arg1;
 - (id)_attachmentContentItemsForMailDropNodes:(id)arg1 withContext:(id)arg2;
 - (id)_contentItemForAttachment:(id)arg1 manager:(id)arg2 managed:(_Bool)arg3;
-- (id)_requestContentForAttachment:(id)arg1 manager:(id)arg2 managed:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_requestContentForAttachment:(id)arg1 manager:(id)arg2 options:(id)arg3 managed:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_messageForLegacyMessage:(id)arg1;
 - (void)_includeSuggestionItemsIfNeededForRepresentation:(id)arg1 message:(id)arg2;
 - (id)_contentRepresentationForEvent:(id)arg1 contentURL:(id)arg2 relatedItems:(id)arg3 existingRepresentation:(id)arg4 invocable:(id)arg5;

@@ -57,6 +57,8 @@
 - (void)_associateWithLayer:(id)arg1 forMode:(long long)arg2;
 - (void)_configurePlayerWhenLeavingPIP;
 - (void)_configurePlayerWhenEnteringPIP;
+- (void)setForScrubbingOnly:(_Bool)arg1;
+- (_Bool)isForScrubbingOnly;
 - (void)setLegibleDisplayEnabled:(_Bool)arg1;
 - (_Bool)isLegibleDisplayEnabled;
 - (struct CGRect)_videoRectForBounds:(struct CGRect)arg1;

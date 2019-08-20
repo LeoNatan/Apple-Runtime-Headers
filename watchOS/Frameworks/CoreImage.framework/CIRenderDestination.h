@@ -38,7 +38,7 @@
 - (id)initWithIOSurface:(id)arg1;
 - (id)initWithWidth:(unsigned int)arg1 height:(unsigned int)arg2 pixelFormat:(unsigned long)arg3 colorSpace:(struct CGColorSpace *)arg4 pixelBufferProvider:(CDUnknownBlockType)arg5;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1;
-- (void)_set_YCC_matrix:(int)arg1 fullRange:(_Bool)arg2;
+- (void)_set_YCC_matrix:(int)arg1 fullRange:(_Bool)arg2 deep:(_Bool)arg3;
 -     // Error parsing type: ^{RenderTask=^^?{atomic<unsigned int>=AI}**i[64c]L^{Node}{CGRect={CGPoint=ff}{CGSize=ff}}iQ^{__CFString}^{__CFString}{vector<std::__1::unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> >, std::__1::allocator<std::__1::unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> > > >=^{unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> >}^{unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> >}{__compressed_pair<std::__1::unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> > *, std::__1::allocator<std::__1::unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> > > >=^{unique_ptr<CI::TileTask, CI::ObjectDeleter<CI::TileTask> >}}}dQIII}16@0:4^{Image=^^?{atomic<unsigned int>=AI}{CGRect={CGPoint=ff}{CGSize=ff}}^{__CFURL}^v^vII}8^{Context=^^?{atomic<unsigned int>=AI}^{CGColorSpace}^{CGColorSpace}iBBBBB^{CGContext}fB{CGRect={CGPoint=ff}{CGSize=ff}}{CGAffineTransform=ffffff}ILLi[64c]B^{ObjectCache<CI::MainProgram, false>}^{ObjectCache<CI::Node, false>}^{ObjectCache<CI::Node, false>}dd^{RenderTask}ii^{Context}I}12, name: _render:withContext:
 - (void)dealloc;
 -     // Error parsing type: @28@0:4^{RenderDestination=^^?{atomic<unsigned int>=AI}^{__CFString}^{CGColorSpace}}8I12I16i20^{CGColorSpace=}24, name: _initWithInternalRenderDestination:width:height:format:colorspace:

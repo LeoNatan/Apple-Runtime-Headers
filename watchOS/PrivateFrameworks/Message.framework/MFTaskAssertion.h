@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_source> *_timer;
 }
 
++ (id)log;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isValid;

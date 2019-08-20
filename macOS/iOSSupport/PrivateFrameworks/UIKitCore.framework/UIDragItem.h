@@ -51,6 +51,8 @@
 - (void)_updatePreferredPreview;
 - (id)initWithItemProvider:(id)arg1;
 @property(retain, nonatomic, setter=_setDraggedTextRange:) UITextRange *_draggedTextRange;
+- (id)_uicmi_getAssociatedMenuIdentifier;
+- (void)_uicmi_setAssociatedMenuIdentifier:(id)arg1;
 
 @end
 

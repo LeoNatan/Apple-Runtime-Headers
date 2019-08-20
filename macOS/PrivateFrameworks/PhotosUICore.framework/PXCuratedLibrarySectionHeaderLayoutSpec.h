@@ -33,6 +33,7 @@
     double _fadeOutDistanceFromSafeAreaTop;
     double _fadeOutDistance;
     double _fadeOutMinimumAlpha;
+    double _gradientAlpha;
     double _gradientHeight;
     double _minimumSpacingBetweenTopSafeAreaAndContentTop;
     double _minimumSpacingBetweenTopSafeAreaAndTitleTop;
@@ -51,6 +52,7 @@
 @property(nonatomic) BOOL gradientAlwaysSticksToTop; // @synthesize gradientAlwaysSticksToTop=_gradientAlwaysSticksToTop;
 @property(nonatomic) BOOL gradientRespectsSafeArea; // @synthesize gradientRespectsSafeArea=_gradientRespectsSafeArea;
 @property(nonatomic) double gradientHeight; // @synthesize gradientHeight=_gradientHeight;
+@property(nonatomic) double gradientAlpha; // @synthesize gradientAlpha=_gradientAlpha;
 @property(nonatomic) BOOL shouldAccomdateAccessibilityButtonLayout; // @synthesize shouldAccomdateAccessibilityButtonLayout=_shouldAccomdateAccessibilityButtonLayout;
 @property(nonatomic) double fadeOutMinimumAlpha; // @synthesize fadeOutMinimumAlpha=_fadeOutMinimumAlpha;
 @property(nonatomic) double fadeOutDistance; // @synthesize fadeOutDistance=_fadeOutDistance;

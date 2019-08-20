@@ -18,8 +18,10 @@
     UILabel *_descriptionLabel;
     NSString *_titleText;
     UIFont *_titleFont;
+    unsigned long long _maxNumberOfTitleLines;
     NSString *_descriptionText;
     UIFont *_descriptionFont;
+    unsigned long long _maxNumberOfDescriptionLines;
     UIImage *_descriptionIcon;
     double _textAlpha;
     NSArray *_verticalLabelConstraints;
@@ -34,9 +36,11 @@
 @property(nonatomic) double textAlpha; // @synthesize textAlpha=_textAlpha;
 @property(nonatomic) _Bool hideDescriptionIcon; // @synthesize hideDescriptionIcon=_hideDescriptionIcon;
 @property(retain, nonatomic) UIImage *descriptionIcon; // @synthesize descriptionIcon=_descriptionIcon;
+@property(nonatomic) unsigned long long maxNumberOfDescriptionLines; // @synthesize maxNumberOfDescriptionLines=_maxNumberOfDescriptionLines;
 @property(nonatomic) _Bool hideDescription; // @synthesize hideDescription=_hideDescription;
 @property(retain, nonatomic) UIFont *descriptionFont; // @synthesize descriptionFont=_descriptionFont;
 @property(retain, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
+@property(nonatomic) unsigned long long maxNumberOfTitleLines; // @synthesize maxNumberOfTitleLines=_maxNumberOfTitleLines;
 @property(nonatomic) _Bool hideTitle; // @synthesize hideTitle=_hideTitle;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;

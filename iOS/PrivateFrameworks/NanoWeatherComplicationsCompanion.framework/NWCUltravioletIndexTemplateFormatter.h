@@ -21,7 +21,7 @@
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 conditions:(id)arg2 sevenDayDailyForecastedConditions:(id)arg3 timeZone:(id)arg4;
 - (id)_localizedIndexForConditions:(id)arg1;
 - (id)switcherTemplateWithFamily:(long long)arg1;
-- (_Bool)acceptsComplicationFamily:(long long)arg1;
+- (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 - (id)init;
 - (id)utilitarianSmallTemplateForConditions:(id)arg1;
 - (id)utilitarianLargeTemplateForConditions:(id)arg1;

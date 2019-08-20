@@ -15,6 +15,8 @@
 + (id)_audioTitleAttributes;
 + (id)_itemWithTitleKey:(id)arg1 valueKey:(id)arg2 hideSeparator:(_Bool)arg3;
 + (id)_itemWithTitleKey:(id)arg1 valueKey:(id)arg2;
++ (id)_whoExposureTextItem;
++ (id)_exposureLimitTextItem;
 + (id)_itemForAudioInfographicWithClassification:(unsigned int)arg1 descriptionKey:(id)arg2;
 + (id)_headphoneAudioExposureInfographic;
 + (id)_environmentalAudioExposureInfographic;

@@ -6,25 +6,45 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreSpeech/CSVoiceTriggerXPCClientDelegate-Protocol.h>
+
+@class CSVoiceTriggerXPCClient, NSMutableSet, NSString;
 @protocol CSVoiceTriggerXPCServiceDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerXPCService : NSObject
+@interface CSVoiceTriggerXPCService : NSObject <CSVoiceTriggerXPCClientDelegate>
 {
+    BOOL _isPhraseSpotterBypassed;
     NSObject<OS_dispatch_queue> *_queue;
     id <CSVoiceTriggerXPCServiceDelegate> _delegate;
+    NSMutableSet *_activationAssertions;
+    CSVoiceTriggerXPCClient *_xpcClient;
 }
 
 + (id)sharedServiceForCoreSpeechDaemon;
 + (id)sharedService;
+@property(retain, nonatomic) CSVoiceTriggerXPCClient *xpcClient; // @synthesize xpcClient=_xpcClient;
+@property(nonatomic) BOOL isPhraseSpotterBypassed; // @synthesize isPhraseSpotterBypassed=_isPhraseSpotterBypassed;
+@property(retain, nonatomic) NSMutableSet *activationAssertions; // @synthesize activationAssertions=_activationAssertions;
 @property(nonatomic) __weak id <CSVoiceTriggerXPCServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (id)_createXPCClientConnection;
+- (void)_teardownXPCClientIfNeeded;
+- (void)voiceTriggerXPCClient:(id)arg1 didDisconnect:(BOOL)arg2;
+- (id)_createXPCClientConnectionIfNeeded;
+- (void)notifyServiceConnectionLostForCoreSpeechDaemon;
 - (void)notifyVoiceTriggeredSiriSessionCancelledForCoreSpeechDaemon;
 - (void)notifyVoiceTriggeredSiriSessionCancelled;
 - (void)setPhraseSpotterBypassingForCoreSpeechDaemon:(BOOL)arg1 timeout:(double)arg2;
 - (void)setPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
+- (void)enableVoiceTriggerForCoreSpeechDaemon:(BOOL)arg1 withAssertion:(id)arg2 timestamp:(double)arg3;
+- (void)enableVoiceTrigger:(BOOL)arg1 withAssertion:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

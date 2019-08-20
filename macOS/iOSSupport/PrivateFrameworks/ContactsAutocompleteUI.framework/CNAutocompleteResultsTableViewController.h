@@ -20,12 +20,15 @@
     BOOL _tableViewNeedsReload;
     BOOL _deferTableViewUpdates;
     BOOL _inDisambiguationMode;
+    BOOL _hasPerformedRecipientExpansion;
     id <CNAutocompleteResultsTableViewControllerDelegate> _delegate;
     NSArray *_recipients;
     double _trailingButtonMidlineInsetFromLayoutMargin;
     NSMutableSet *_expandedIdentifiers;
 }
 
++ (void)dispatchMainIfNecessary:(CDUnknownBlockType)arg1;
+@property(nonatomic) BOOL hasPerformedRecipientExpansion; // @synthesize hasPerformedRecipientExpansion=_hasPerformedRecipientExpansion;
 @property(nonatomic) BOOL inDisambiguationMode; // @synthesize inDisambiguationMode=_inDisambiguationMode;
 @property(retain, nonatomic) NSMutableSet *expandedIdentifiers; // @synthesize expandedIdentifiers=_expandedIdentifiers;
 @property(nonatomic) double trailingButtonMidlineInsetFromLayoutMargin; // @synthesize trailingButtonMidlineInsetFromLayoutMargin=_trailingButtonMidlineInsetFromLayoutMargin;
@@ -36,11 +39,12 @@
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)didTapInfoButtonForCell:(id)arg1;
-- (BOOL)updatePreferredRecipientForCell:(id)arg1 animated:(BOOL)arg2;
-- (void)updateLabelColorForCell:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)updatePreferredRecipientForCell:(id)arg1 isInvalidation:(BOOL)arg2;
+- (void)updateLabelColorForCell:(id)arg1;
 - (void)invalidatePreferredRecipients;
 - (void)invalidateAddressTintColors;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (BOOL)recipientIsDisambiguationRecipient:(id)arg1;
 - (BOOL)recipientIsExpanded:(id)arg1;
 - (BOOL)recipientIsExpandedChild:(id)arg1;
 - (BOOL)recipientIsExpandedParent:(id)arg1;

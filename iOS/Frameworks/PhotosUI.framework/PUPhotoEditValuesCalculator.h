@@ -40,6 +40,7 @@
 - (double)smartColorAutoSuggestion;
 - (double)smartToneAutoSuggestion;
 - (id)smartColorStatisticsWithAccuracy:(long long)arg1;
+- (void)updateAdjustmentSmartToneStatistics:(id)arg1 withAccuracy:(long long)arg2;
 - (id)smartToneStatisticsWithAccuracy:(long long)arg1;
 - (id)apertureValuesWithAccuracy:(long long)arg1;
 - (id)portraitValuesWithAccuracy:(long long)arg1;

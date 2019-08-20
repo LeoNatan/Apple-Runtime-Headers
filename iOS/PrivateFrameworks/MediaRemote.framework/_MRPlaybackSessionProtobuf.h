@@ -8,24 +8,15 @@
 
 #import <MediaRemote/NSCopying-Protocol.h>
 
-@class NSData, NSString, _MRContentItemProtobuf, _MRNowPlayingPlayerPathProtobuf;
+@class NSData, NSString;
 
 @interface _MRPlaybackSessionProtobuf : PBCodable <NSCopying>
 {
-    double _timestamp;
-    _MRContentItemProtobuf *_contentItem;
     NSString *_identifier;
     NSData *_playbackSessionData;
-    _MRNowPlayingPlayerPathProtobuf *_playerPath;
     NSString *_type;
-    struct {
-        unsigned int timestamp:1;
-    } _has;
 }
 
-@property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
-@property(retain, nonatomic) _MRContentItemProtobuf *contentItem; // @synthesize contentItem=_contentItem;
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSData *playbackSessionData; // @synthesize playbackSessionData=_playbackSessionData;
@@ -39,9 +30,6 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasPlayerPath;
-@property(readonly, nonatomic) _Bool hasContentItem;
-@property(nonatomic) _Bool hasTimestamp;
 @property(readonly, nonatomic) _Bool hasType;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 @property(readonly, nonatomic) _Bool hasPlaybackSessionData;

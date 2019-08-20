@@ -17,7 +17,7 @@
 #import <UIKitCore/_UIUserInterfaceValidations-Protocol.h>
 
 @class NSArray, NSString, NSTouchBar, NSUndoManager, NSUserActivity, UIInputViewController, UITextInputAssistantItem, UITextInputMode, UIView;
-@protocol UINSCopyConfiguration, UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
+@protocol UIActivityItemsConfigurationReading, UINSActivityItemsConfiguration, UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
 
 @interface UIResponder : NSObject <NSTouchBarProvider, UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UIServicesMenuDataProviding, _UIUserInterfaceValidations, _UITouchable, UIResponderStandardEditActions>
 {
@@ -103,7 +103,7 @@
 - (BOOL)_enableAutomaticKeyboardPressDone;
 - (BOOL)_disableAutomaticKeyboardUI;
 - (BOOL)_disableAutomaticKeyboardBehavior;
-- (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1;
+- (id)_keyCommandsInChainPassingTest:(CDUnknownBlockType)arg1 skipViewControllersPresentingModally:(BOOL)arg2;
 - (id)_keyCommandForEvent:(id)arg1 target:(id *)arg2;
 - (id)_keyCommandForEvent:(id)arg1;
 - (id)_keyCommands;
@@ -138,7 +138,9 @@
 - (void)validateCommand:(id)arg1;
 - (void)_buildMenuFromChainWithBuilder:(id)arg1;
 - (void)buildMenuWithBuilder:(id)arg1;
+- (id)_targetForAction:(SEL)arg1 sender:(id)arg2 skipViewControllersPresentingModally:(BOOL)arg3;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
+- (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1 nextTargetBlock:(CDUnknownBlockType)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_selectToHereResponderProxy;
@@ -175,6 +177,14 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
+- (BOOL)_handleActivityItemsConfigurationShare:(id)arg1;
+- (BOOL)_handleActivityItemsConfigurationDoesNotHandleSelector:(SEL)arg1;
+- (BOOL)_handleActivityItemsConfigurationCanPerformAction:(SEL)arg1 sender:(id)arg2;
+- (id)_firstNonnullActivityItemsConfigurationInResponderChainForView:(id)arg1 location:(struct CGPoint)arg2 sender:(id)arg3 responder:(id *)arg4;
+@property(retain, nonatomic) id <UIActivityItemsConfigurationReading> activityItemsConfiguration;
+- (id)_effectiveActivityItemsConfigurationForView:(id)arg1 location:(struct CGPoint)arg2 sender:(id)arg3;
+- (id)_effectiveActivityItemsConfiguration;
+- (id)_effectiveActivityItemsConfigurationForSender:(id)arg1;
 - (id)makeTouchBar;
 @property(retain, nonatomic) NSTouchBar *touchBar;
 - (void)_clearTextInputSource;
@@ -185,8 +195,6 @@
 - (struct CGRect)_lastRectForRange:(id)arg1;
 - (long long)selectionAffinity;
 - (BOOL)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(BOOL)arg3;
-- (void)_phraseBoundaryGesture:(id)arg1;
-- (id)_newPhraseBoundaryGestureRecognizer;
 - (void)_unmarkText;
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
@@ -306,13 +314,7 @@
 - (id)_restorationIdentifierPath;
 @property(copy, nonatomic) NSString *restorationIdentifier;
 - (void)_rebuildStateRestorationIdentifierPath;
-- (BOOL)_handleCopyConfigurationShare:(id)arg1;
-- (BOOL)_handleCopyConfigurationDoesNotHandleSelector:(SEL)arg1;
-- (BOOL)_handleCopyConfigurationCanPerformAction:(SEL)arg1;
-- (id)_firstNonnullCopyConfigurationInResponderChainForView:(id)arg1 location:(struct CGPoint)arg2 responder:(id *)arg3;
 @property(retain, nonatomic, setter=_setCopyConfiguration:) id <_UICopyConfigurationReading> _copyConfiguration;
-- (id)_effectiveCopyConfigurationForView:(id)arg1 location:(struct CGPoint)arg2;
-- (id)_effectiveCopyConfiguration;
 - (struct UIEdgeInsets)_focusRingContentMargins;
 - (void)_noteFocusRingMaskChanged;
 - (void)_drawFocusRingMask;
@@ -320,7 +322,7 @@
 - (unsigned long long)_effectiveFocusRingType;
 - (unsigned long long)_defaultFocusRingType;
 - (id)_designatedFocusRingView;
-@property(readonly, nonatomic) id <UINSCopyConfiguration> _copyConfigurationForServicesMenu;
+@property(readonly, nonatomic) id <UINSActivityItemsConfiguration> _activityItemsConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(id)arg1;
 - (id)_servicesMenuProviderForReturnType:(id)arg1;
 - (id)_dataProviderForServicesMenu;

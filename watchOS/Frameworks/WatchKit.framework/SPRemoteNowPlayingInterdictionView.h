@@ -10,6 +10,8 @@
 {
 }
 
++ (float)nowPlayingSideWidth;
++ (float)nowPlayingBottomHeight;
 + (float)nowPlayingTitleHeight;
 - (void)layoutSubviews;
 

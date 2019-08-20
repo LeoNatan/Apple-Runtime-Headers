@@ -22,6 +22,7 @@
     unsigned int _filteringOptions;
     MPRequestResponseController *_requestResponseController;
     NMRPlayerResponseNowPlayingState *_nowPlayingState;
+    unsigned int _numberOfConsecutiveFailuresToResolve;
     _Bool _shouldObserveLibraryAddStatus;
     _Bool shouldObserveArtwork;
     _Bool shouldObservePlaybackQueue;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(nonatomic) __weak id <NMROriginObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_asyncToSerialQueueCheckingProcessWithBlock:(CDUnknownBlockType)arg1;
 - (void)_updateIsEnforcingApplicationFilterWithNowPlayingState:(id)arg1;
 - (id)_requestResponseController;
 - (void)_notifyObserversOfUpdatedPlaybackQueue;
@@ -46,6 +48,7 @@
 - (void)_notifyObserverOfUpdatedPlaybackState;
 - (void)_notifyObserverOfUpdatedNowPlayingApplicationBundleID;
 - (void)_notifyObserverOfUpdatedNowPlayingInfo;
+- (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NMRNowPlayingState *nowPlayingState;
 - (void)updateNowPlayingStateWithCompletion:(CDUnknownBlockType)arg1;

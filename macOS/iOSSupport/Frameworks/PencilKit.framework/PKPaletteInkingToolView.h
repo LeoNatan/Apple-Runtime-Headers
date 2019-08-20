@@ -73,9 +73,10 @@
 - (void)setInkColor:(id)arg1;
 - (void)_reloadToolImage;
 - (void)_updateToolColorBandAndTipImageViews;
+- (id)_uiColor;
+- (long long)_uiColorUserInterfaceStyle;
 - (void)setEdgeLocation:(unsigned long long)arg1;
 - (void)updateConstraints;
-- (double)_bandVerticalOffset;
 - (struct CGRect)_colorIndicatorImageViewFrame;
 - (id)_toolTipContourImageForCurrentEdgeLocation;
 - (id)_toolTipImageForCurrentEdgeLocation;

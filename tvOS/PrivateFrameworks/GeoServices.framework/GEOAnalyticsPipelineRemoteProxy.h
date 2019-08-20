@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)getEvalStatus;
+- (void)showEvalDataWithPredicate:(id)arg1 visitorBlock:(CDUnknownBlockType)arg2 summaryBlock:(CDUnknownBlockType)arg3;
 - (void)initiateUploadOfType:(int)arg1;
 - (void)flushEvalData;
 - (void)setEvalMode:(_Bool)arg1;

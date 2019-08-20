@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) BDSServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 - (void).cxx_destruct;
+- (void)audiobookStoreEnabledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateBitrateForItemWithAdamID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)updateReadingNowWithCompletion:(CDUnknownBlockType)arg1;
 - (id)updateWantToReadWithCompletion:(CDUnknownBlockType)arg1;

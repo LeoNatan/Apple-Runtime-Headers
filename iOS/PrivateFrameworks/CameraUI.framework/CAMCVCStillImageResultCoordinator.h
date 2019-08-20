@@ -48,6 +48,8 @@
 - (_Bool)_attemptDispatchForPairWithFilteredResultSpecifiers:(unsigned long long)arg1 unfilteredResultSpecifiers:(unsigned long long)arg2 forceRemainingDispatches:(_Bool)arg3;
 - (_Bool)_isWaitingOnResultSpecifiers:(unsigned long long)arg1;
 - (void)_dispatchPendingPropertiesForced:(_Bool)arg1;
+@property(readonly, nonatomic) NSSet *unreceivedVideoSpecifiers;
+@property(readonly, nonatomic) NSSet *unreceivedPhotoSpecifiers;
 - (void)forceRemainingDispatches;
 - (void)updateVideoProperties:(id)arg1 forResultSpecifiers:(unsigned long long)arg2;
 - (void)updatePhotoProperties:(id)arg1 assetAdjustments:(id)arg2 forResultSpecifiers:(unsigned long long)arg3;

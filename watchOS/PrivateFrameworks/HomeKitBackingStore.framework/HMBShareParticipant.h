@@ -6,12 +6,13 @@
 
 #import <HMFoundation/HMFObject.h>
 
+#import <HomeKitBackingStore/HMBModelObjectStorage-Protocol.h>
 #import <HomeKitBackingStore/NSCopying-Protocol.h>
 #import <HomeKitBackingStore/NSSecureCoding-Protocol.h>
 
-@class CKShareParticipant, HMBShareInvitation, NSUUID;
+@class CKShareParticipant, HMBShareInvitation, HMBShareUserID, NSString, NSUUID;
 
-@interface HMBShareParticipant : HMFObject <NSCopying, NSSecureCoding>
+@interface HMBShareParticipant : HMFObject <HMBModelObjectStorage, NSCopying, NSSecureCoding>
 {
     NSUUID *_clientIdentifier;
     CKShareParticipant *_ckShareParticipant;
@@ -19,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned int)arg2 error:(id *)arg3;
 @property(copy) HMBShareInvitation *pendingInvitation; // @synthesize pendingInvitation=_pendingInvitation;
 @property(readonly, copy) CKShareParticipant *ckShareParticipant; // @synthesize ckShareParticipant=_ckShareParticipant;
 @property(readonly, copy) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
@@ -26,12 +28,19 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) _Bool hasAccepted;
 @property(readonly) _Bool hasWriteAccess;
+@property(readonly, copy) HMBShareUserID *cloudShareID;
 - (id)attributeDescriptions;
 - (id)initWithCKShareParticipant:(id)arg1 clientIdentifier:(id)arg2;
+- (id)hmbEncodeForStorageLocation:(unsigned int)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -19,6 +19,7 @@
 @property(nonatomic) long long dismissInlineAppExpose; // @dynamic dismissInlineAppExpose;
 @property(nonatomic) long long floatingConfiguration; // @dynamic floatingConfiguration;
 @property(nonatomic) long long floatingSwitcherVisible; // @dynamic floatingSwitcherVisible;
+@property(nonatomic) long long preferredInterfaceOrientation; // @dynamic preferredInterfaceOrientation;
 @property(nonatomic) long long unlockedEnvironmentMode; // @dynamic unlockedEnvironmentMode;
 @end
 

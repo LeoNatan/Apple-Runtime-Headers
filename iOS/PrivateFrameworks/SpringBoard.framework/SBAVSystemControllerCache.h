@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSHashTable, NSMutableDictionary, NSNotificationCenter, NSString;
+@class AVOutputContext, NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSNotificationCenter, NSString;
 @protocol OS_dispatch_queue, SBAVSystemControllerDataProviding;
 
 @interface SBAVSystemControllerCache : NSObject
@@ -17,6 +17,7 @@
     struct os_unfair_lock_s _lock;
     NSHashTable *_lock_observers;
     NSObject<OS_dispatch_queue> *_queue;
+    AVOutputContext *_queue_outputContext;
     id <SBAVSystemControllerDataProviding> _queue_dataProvider;
     NSMutableDictionary *_notificationToHandlerMap;
     _Bool _queue_initialized;
@@ -25,7 +26,10 @@
     _Bool _queue_volumeLimitEnforced;
     int _queue_recordingPID;
     NSString *_queue_activeAudioRoute;
+    NSDictionary *_queue_activeAudioRouteInfo;
     NSArray *_queue_pickableRoutes;
+    NSArray *_queue_activeOutputDevices;
+    _Bool _outputContextSupportsMultipleOutputDevices;
     _Bool _queue_airplayDisplayActive;
 }
 
@@ -34,8 +38,10 @@
 - (void)_receiveUpdatedValueFromNotification:(id)arg1;
 - (void)_serverDied:(id)arg1;
 - (void)_queue_rebuildCache;
+- (void)_queue_updateActiveOutputDevices;
 - (void)_queue_updateAirplayDisplayActiveFromNotification:(id)arg1;
 - (void)_queue_updatePickableRoutesFromNotification:(id)arg1;
+- (void)_queue_updateActiveOutputDevicesFromNotification:(id)arg1;
 - (void)_queue_updateActiveAudioRouteFromNotification:(id)arg1;
 - (void)_queue_updateRecordingPIDFromNotification:(id)arg1;
 - (void)_queue_updateVolumeLimitEnforcedFromNotification:(id)arg1;
@@ -44,7 +50,9 @@
 - (void)_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isAirplayDisplayActive) _Bool airplayDisplayActive; // @dynamic airplayDisplayActive;
 - (void)fetchPickableRoutesWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, copy, nonatomic) NSArray *activeOutputDevices; // @dynamic activeOutputDevices;
 @property(readonly, copy, nonatomic) NSArray *pickableRoutes; // @dynamic pickableRoutes;
+@property(readonly, copy, nonatomic) NSDictionary *activeAudioRouteInfo; // @dynamic activeAudioRouteInfo;
 @property(readonly, copy, nonatomic) NSString *activeAudioRoute; // @dynamic activeAudioRoute;
 @property(readonly, nonatomic) int recordingPID; // @dynamic recordingPID;
 @property(readonly, nonatomic, getter=isVolumeLimitEnforced) _Bool volumeLimitEnforced; // @dynamic volumeLimitEnforced;

@@ -42,6 +42,7 @@
 + (id)sharedTextEffectsWindowForCanvas:(id)arg1;
 + (id)_sharedTextEffectsWindowforWindowScene:(id)arg1 allowHosted:(_Bool)arg2 matchesStatusBarOrientationOnAccess:(_Bool)arg3 shouldCreateIfNecessary:(_Bool)arg4;
 + (_Bool)_isSecure;
++ (_Bool)_shouldSoftAssertOnSetScreen;
 @property(nonatomic) struct UIEdgeInsets hostedSafeInsets; // @synthesize hostedSafeInsets=_hostedSafeInsets;
 @property(nonatomic) struct CGSize hostedSceneSize; // @synthesize hostedSceneSize=_hostedSceneSize;
 @property(nonatomic) struct CGPoint hostedWindowOffset; // @synthesize hostedWindowOffset=_hostedWindowOffset;
@@ -67,6 +68,7 @@
 - (struct CGRect)actualSceneBoundsForLandscape:(_Bool)arg1;
 - (void)_updateTransformLayer;
 - (void)_sceneBoundsDidChange;
+- (_Bool)_shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)updateEditingOverlayContainer;
 - (_Bool)_shouldResizeWithScene;
 - (id)aboveStatusBarWindow;

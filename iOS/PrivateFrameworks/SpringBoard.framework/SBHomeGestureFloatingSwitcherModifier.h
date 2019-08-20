@@ -37,6 +37,7 @@
 - (_Bool)isContentStatusBarVisibleForIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfAppLayoutsToCacheSnapshots;
 - (id)topMostAppLayouts;
+- (double)shadowOffsetForIndex:(unsigned long long)arg1;
 - (double)shadowOpacityForIndex:(unsigned long long)arg1;
 - (double)darkeningAlphaForIndex:(unsigned long long)arg1;
 - (double)opacityForIndex:(unsigned long long)arg1;
@@ -44,6 +45,7 @@
 - (_Bool)isIndexVisible:(unsigned long long)arg1;
 - (double)scaleForIndex:(unsigned long long)arg1;
 - (struct CGRect)frameForIndex:(unsigned long long)arg1;
+- (id)adjustedAppLayoutsForAppLayouts:(id)arg1;
 - (id)_actionForActivatingFinalDestination:(long long)arg1;
 - (double)unconditionalDistanceThresholdForHome;
 - (long long)currentFinalDestination;

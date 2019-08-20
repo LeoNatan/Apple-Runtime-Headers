@@ -8,8 +8,10 @@
 
 @interface OBBaseWelcomeController : UIViewController
 {
+    unsigned long long _templateType;
 }
 
+@property(nonatomic) unsigned long long templateType; // @synthesize templateType=_templateType;
 - (void)_presentationStyleValidationCheck;
 - (void)_applyChromelessToBar:(long long)arg1 navigationItem:(id)arg2;
 - (id)navigationItem;
@@ -19,6 +21,7 @@
 - (struct NSDirectionalEdgeInsets)directionalLayoutMargins;
 - (void)updateDirectionalLayoutMargins;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)loadView;
 
 @end

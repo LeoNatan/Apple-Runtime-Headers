@@ -18,6 +18,7 @@
     struct map<long, MPIdentifierSet *, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, MPIdentifierSet *>>> _itemIdentifierSetMap;
     NSCache *_sectionsCache;
     struct map<long, MPIdentifierSet *, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, MPIdentifierSet *>>> _sectionIdentifierSetMap;
+    struct os_unfair_lock_s _mapLock;
     id <MPLazySectionedCollectionDataSource> _dataSource;
 }
 

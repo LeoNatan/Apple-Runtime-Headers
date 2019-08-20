@@ -53,6 +53,8 @@
 - (void)_associateWithLayer:(id)arg1 forMode:(long long)arg2;
 - (void)_configurePlayerWhenLeavingPIP;
 - (void)_configurePlayerWhenEnteringPIP;
+- (void)setForScrubbingOnly:(BOOL)arg1;
+- (BOOL)isForScrubbingOnly;
 - (struct CGRect)_videoRectForBounds:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect videoRect;
 - (void)setLanczosFilterDownscaleFactor:(long long)arg1;

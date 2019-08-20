@@ -15,7 +15,7 @@
 #import <SpringBoard/SBTodayOverlayViewControllerDelegate-Protocol.h>
 #import <SpringBoard/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSHashTable, NSString, SBBarSwipeAffordanceViewController, SBHomeGesturePanGestureRecognizer, SBMainScreenActiveInterfaceOrientationWindow, SBMainStatusBarContentAssertion, SBTodayOverlayViewController;
+@class FBDisplayLayoutElement, NSHashTable, NSString, SBBarSwipeAffordanceViewController, SBHomeGesturePanGestureRecognizer, SBMainScreenActiveInterfaceOrientationWindow, SBMainStatusBarContentAssertion, SBTodayOverlayViewController;
 @protocol SBTodayOverlayWindow;
 
 @interface SBTodayOverlayController : NSObject <SBBarSwipeAffordanceObserver, SBTodayOverlayViewControllerDelegate, UIGestureRecognizerDelegate, SBFTodayOverlayControlling, SBFIdleTimerBehaviorProviding, CSExternalBehaviorProviding, CSExternalEventHandling, BSDescriptionProviding>
@@ -26,11 +26,15 @@
     SBBarSwipeAffordanceViewController *_homeAffordanceViewController;
     SBTodayOverlayViewController *_overlayViewController;
     SBHomeGesturePanGestureRecognizer *_dismissHomeGestureRecognizer;
+    FBDisplayLayoutElement *_displayLayoutElement;
     SBMainStatusBarContentAssertion *_statusBarContentAssertion;
+    unsigned long long _systemGestureType;
 }
 
+@property(readonly, nonatomic) unsigned long long systemGestureType; // @synthesize systemGestureType=_systemGestureType;
 @property(nonatomic, getter=isDismissing) _Bool dismissing; // @synthesize dismissing=_dismissing;
 @property(retain, nonatomic) SBMainStatusBarContentAssertion *statusBarContentAssertion; // @synthesize statusBarContentAssertion=_statusBarContentAssertion;
+@property(retain, nonatomic) FBDisplayLayoutElement *displayLayoutElement; // @synthesize displayLayoutElement=_displayLayoutElement;
 @property(readonly, nonatomic) SBHomeGesturePanGestureRecognizer *dismissHomeGestureRecognizer; // @synthesize dismissHomeGestureRecognizer=_dismissHomeGestureRecognizer;
 @property(readonly, nonatomic) SBTodayOverlayViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
 @property(readonly, nonatomic) SBBarSwipeAffordanceViewController *homeAffordanceViewController; // @synthesize homeAffordanceViewController=_homeAffordanceViewController;
@@ -57,12 +61,14 @@
 - (void)_relinquishStatusBarContentAssertion;
 - (void)_takeStatusBarContentAssertion;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_removeSystemGestureRecognizer;
 - (void)_addSystemGestureRecognizer;
 - (void)dismissScrollGestureUpdated:(id)arg1;
 - (void)dismissTapGestureUpdated:(id)arg1;
 - (id)testScrollView;
 - (void)dismiss;
+- (void)setDisplayLayoutElementActive:(_Bool)arg1;
 - (void)enumerateTodayOverlayObserversUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeTodayOverlayObserver:(id)arg1;
 - (void)addTodayOverlayObserver:(id)arg1;
@@ -73,7 +79,7 @@
 @property(readonly, nonatomic) double contentWidth;
 - (void)dealloc;
 - (id)init;
-- (id)initWithWindowLevel:(double)arg1 homeGestureParticipantIdentifier:(long long)arg2 secure:(_Bool)arg3;
+- (id)initWithWindowLevel:(double)arg1 homeGestureParticipantIdentifier:(long long)arg2 systemGestureType:(unsigned long long)arg3 secure:(_Bool)arg4;
 
 // Remaining properties
 @property(readonly, nonatomic) double customIdleExpirationTimeout;

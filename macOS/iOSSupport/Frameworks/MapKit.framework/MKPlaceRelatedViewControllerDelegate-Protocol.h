@@ -6,12 +6,12 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class MKMapItem, MKPlaceRelatedViewController, NSArray;
+@class MKMapItem, MKPlaceRelatedViewController, NSArray, NSString;
 @protocol _MKInfoCardAnalyticsDelegate;
 
 @protocol MKPlaceRelatedViewControllerDelegate <NSObject>
 - (NSArray *)placeRelatedViewController:(MKPlaceRelatedViewController *)arg1 viewsForMapItems:(NSArray *)arg2 prefersAddressOverCategory:(BOOL)arg3;
-- (void)placeRelatedViewController:(MKPlaceRelatedViewController *)arg1 showRelatedMapItems:(NSArray *)arg2 originalMapItem:(MKMapItem *)arg3 analyticsDelegate:(id <_MKInfoCardAnalyticsDelegate>)arg4;
+- (void)placeRelatedViewController:(MKPlaceRelatedViewController *)arg1 showRelatedMapItems:(NSArray *)arg2 withTitle:(NSString *)arg3 originalMapItem:(MKMapItem *)arg4 analyticsDelegate:(id <_MKInfoCardAnalyticsDelegate>)arg5;
 - (void)placeRelatedViewController:(MKPlaceRelatedViewController *)arg1 itemSelected:(MKMapItem *)arg2;
 @end
 

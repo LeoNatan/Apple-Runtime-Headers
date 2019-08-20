@@ -6,14 +6,15 @@
 
 #import <UIKitMacHelper/NSObject-Protocol.h>
 
-@class NSArray, NSISEngine, NSObject, NSString, NSToolbar;
+@class NSArray, NSISEngine, NSObject, NSString, NSToolbar, NSURL, UIWindow;
 @protocol OS_dispatch_queue, UINSAlert, UINSCursor, UINSDocumentBrowserViewController, UINSDocumentPickerViewController, UINSDragSessionHandler, UINSToolbar, UINSTouchBarCoordinator;
 
 @protocol UINSWindow <NSObject>
 @property(readonly, nonatomic) BOOL appearsKeyIncludingSheets;
 @property(readonly, nonatomic) BOOL appearsKey;
 @property(readonly) NSISEngine *_layoutEngine;
-@property(readonly, nonatomic) NSArray *uiWindows;
+@property(nonatomic) __weak UIWindow *keyUIWindow;
+@property(retain, nonatomic) NSArray *uiWindows;
 @property(nonatomic) long long windowAppearance;
 @property(readonly, copy, nonatomic) NSString *sceneIdentifier;
 @property(nonatomic, getter=isTitlebarTransparent) BOOL titlebarTransparent;
@@ -21,12 +22,16 @@
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen;
 @property(nonatomic) struct CGSize contentMinSize;
 @property(retain, nonatomic) NSObject<UINSTouchBarCoordinator> *touchBarCoordinator;
+@property(copy) NSURL *representedURL;
 @property(retain, nonatomic) NSToolbar *toolbar;
 @property(readonly, nonatomic) id <UINSToolbar> uins_toolbar;
 @property(copy, nonatomic) NSString *title;
+- (void)setNeedsSizeRestrictionsUpdate;
 - (void)setNeedsDragRegionsUpdate;
 - (struct CGRect)convertRectToUIWindow:(struct CGRect)arg1;
 - (struct CGRect)convertRectFromUIWindow:(struct CGRect)arg1;
+- (struct CGSize)convertSizeToUIWindow:(struct CGSize)arg1;
+- (struct CGSize)convertSizeFromUIWindow:(struct CGSize)arg1;
 - (struct CGPoint)convertPointToUIWindow:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointFromUIWindow:(struct CGPoint)arg1;
 - (struct CGRect)convertRectFromWindowSceneView:(struct CGRect)arg1;

@@ -13,6 +13,7 @@
     NSMutableDictionary *_accounts;
     MMTermsOfServiceController *_termsOfServiceController;
     NSWindow *_parentWindow;
+    struct os_unfair_lock_s _accountContextLock;
 }
 
 + (id)sharedMgr;

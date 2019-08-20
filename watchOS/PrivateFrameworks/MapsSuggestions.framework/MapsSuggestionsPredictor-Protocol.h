@@ -12,5 +12,10 @@
 @protocol MapsSuggestionsPredictor <NSObject, MapsSuggestionsObject>
 - (_Bool)predictedTransportModeForDestinationEntry:(MapsSuggestionsEntry *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(void (^)(struct NSArray *, NSError *))arg3;
 - (_Bool)predictedTransportModeForDestinationMapItem:(struct GEOMapItemStorage *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(void (^)(struct NSArray *, NSError *))arg3;
+
+@optional
+- (void)cancelCapturingAnalytics;
+- (void)capturePredictedTransportationMode:(int)arg1;
+- (void)captureActualTransportationMode:(int)arg1 withMapItem:(struct GEOMapItemStorage *)arg2;
 @end
 

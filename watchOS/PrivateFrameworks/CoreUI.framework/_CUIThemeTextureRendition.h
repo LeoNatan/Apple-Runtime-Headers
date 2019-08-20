@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_textureMipLevels;
 }
 
+- (void).cxx_destruct;
 - (id)provideImageInfoAtLevel:(unsigned int)arg1 element:(unsigned int)arg2 face:(unsigned int)arg3 withBufferAllocator:(id)arg4;
 - (id)provideTextureInfo;
 - (id)_texturedImageWithKey:(id)arg1;

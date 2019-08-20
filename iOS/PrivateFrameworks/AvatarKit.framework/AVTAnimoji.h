@@ -33,6 +33,7 @@
 + (id)puppetNames;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)stickerPhysicsStateIdentifier;
 - (id)specializationSettings;
 - (id)arTechniqueName;
 - (_Bool)hasCustomARTechnique;

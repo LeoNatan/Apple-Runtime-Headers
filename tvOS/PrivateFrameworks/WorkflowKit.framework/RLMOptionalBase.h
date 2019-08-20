@@ -6,18 +6,12 @@
 
 #import <Foundation/NSProxy.h>
 
-@class RLMObjectBase, RLMProperty;
-
 @interface RLMOptionalBase : NSProxy
 {
-    RLMObjectBase *_object;
-    RLMProperty *_property;
-    id _unmanagedValue;
+    struct unique_ptr<(anonymous namespace)::OptionalBase, std::__1::default_delete<(anonymous namespace)::OptionalBase>> _impl;
 }
 
-@property(retain, nonatomic) id unmanagedValue; // @synthesize unmanagedValue=_unmanagedValue;
-@property(nonatomic) RLMProperty *property; // @synthesize property=_property;
-@property(nonatomic) __weak RLMObjectBase *object; // @synthesize object=_object;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)doesNotRecognizeSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
@@ -25,7 +19,6 @@
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)isKindOfClass:(Class)arg1;
-@property(retain, nonatomic) id underlyingValue;
 - (id)init;
 
 @end

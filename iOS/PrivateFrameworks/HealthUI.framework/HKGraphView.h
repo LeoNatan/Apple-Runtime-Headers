@@ -367,7 +367,7 @@
 - (void)_walkAllSeries:(CDUnknownBlockType)arg1;
 - (_Bool)_axisRangeIsDateRange;
 - (void)resetAndRedraw;
-- (void)_dynamicUserInterfaceTraitDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)_measureStartupFlagFromEnvironment;
 - (id)initWithFrame:(struct CGRect)arg1;
 

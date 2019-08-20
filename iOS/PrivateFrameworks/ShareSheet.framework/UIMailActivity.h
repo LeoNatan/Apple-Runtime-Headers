@@ -46,7 +46,8 @@
 - (id)activityViewController;
 - (void)_setSessionID:(id)arg1;
 - (void)_setMailSubject:(id)arg1;
-- (void)prepareWithActivityItems:(id)arg1 recipients:(id)arg2;
+- (void)setRecipients:(id)arg1;
+- (void)_prepareWithActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)prepareWithActivityItems:(id)arg1;
 - (CDUnknownBlockType)_backgroundPreheatBlock;
 - (CDStruct_9a98c240)_checkCanSendMail;

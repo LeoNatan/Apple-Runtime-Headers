@@ -73,7 +73,7 @@
 - (void)createManagedObjectContext:(CDUnknownBlockType)arg1;
 - (BOOL)initializeContainer;
 - (void)dealloc;
-- (void)initializePersistenceStores;
+- (BOOL)initializePersistenceStores;
 - (id)initWithModelsDirectory:(id)arg1 storesDirectory:(id)arg2;
 - (id)init;
 - (void)mirroringDelegateSetupState:(CDUnknownBlockType)arg1;

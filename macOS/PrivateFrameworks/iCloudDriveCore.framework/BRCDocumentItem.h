@@ -81,6 +81,7 @@
 @property(readonly, nonatomic) BOOL shouldTransferThumbnail;
 @property(readonly, nonatomic) BOOL shouldHaveThumbnail;
 @property(readonly, nonatomic) BOOL shouldBeGreedy;
+- (void)markDoneMigratingToFPFS;
 - (BOOL)hasShareIDAndIsOwnedByMe;
 @property(readonly, nonatomic) BOOL iCloudDriveIsResponsibleForAutoEviction;
 @property(readonly, nonatomic) BOOL isVisibleIniCloudDrive;

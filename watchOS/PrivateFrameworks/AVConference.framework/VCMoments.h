@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (id)transportDelegate;
 - (void)setFrameRate:(float)arg1;
 - (void)processRequest:(id)arg1;
+- (_Bool)validateIncomingRequest:(id)arg1;
 - (void)updateRemoteScreenAttributes:(id)arg1;
 - (void)getInitialRemoteScreenAttributes:(id)arg1;
 - (void)addLocalVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraStatusBits:(unsigned char)arg2 timestamp:(unsigned int)arg3;

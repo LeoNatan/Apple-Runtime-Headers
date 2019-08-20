@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)replaceSectionInfos:(id)arg1;
 - (id)getFlattenedRepresentedObjectList;
 - (BOOL)fetchAllNeededRepresentedObjectsFromObjectBasedDataSource:(id)arg1 forCollectionView:(id)arg2;
+- (void)_removeIndexPathForRepresentedObject:(id)arg1;
 - (void)_invalidateEverything;
 - (id)_indexPathForRepresentedObject:(id)arg1;
 - (id)_indexPathOfItemWithRepresentedObject:(id)arg1;

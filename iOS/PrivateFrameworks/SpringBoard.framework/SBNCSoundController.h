@@ -27,8 +27,8 @@
 - (_Bool)_isDeviceUILocked;
 - (void)_killSounds;
 - (void)stopSoundForNotificationRequest:(id)arg1;
-- (void)playSoundIfPossibleForNotificationRequest:(id)arg1;
-- (void)playSoundForNotificationRequest:(id)arg1;
+- (void)playSoundIfPossibleForNotificationRequest:(id)arg1 presentingDestination:(id)arg2;
+- (void)playSoundForNotificationRequest:(id)arg1 presentingDestination:(id)arg2;
 - (_Bool)canPlaySoundForNotificationRequest:(id)arg1;
 - (id)initWithLockScreenManager:(id)arg1 lockStateAggregator:(id)arg2;
 - (id)init;

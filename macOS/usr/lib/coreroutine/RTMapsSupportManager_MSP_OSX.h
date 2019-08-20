@@ -10,6 +10,7 @@
 {
 }
 
+- (id)pinnedPlacesContainer;
 - (id)historyContainer;
 - (id)favoritesContainer;
 

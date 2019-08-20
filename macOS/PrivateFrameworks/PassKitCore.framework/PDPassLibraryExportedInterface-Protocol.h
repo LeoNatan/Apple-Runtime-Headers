@@ -11,6 +11,7 @@
 @protocol PDPassLibraryExportedInterface <PDXPCServiceExportedInterface>
 - (void)postUpgradedPassNotificationForMarket:(PKPaymentMarket *)arg1 passUniqueID:(NSString *)arg2;
 - (void)checkForTransitNotification;
+- (void)supportsDisbursements:(void (^)(BOOL, NSError *))arg1;
 - (void)peerPaymentPassUniqueIDWithHandler:(void (^)(NSString *))arg1;
 - (void)migrateDataWithHandler:(void (^)(BOOL))arg1;
 - (void)passWithDPANIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentPass *))arg2;

@@ -10,6 +10,7 @@
 
 @class ISColor, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ISBorderEffect : NSObject <ISEffect>
 {
     ISColor *_color;

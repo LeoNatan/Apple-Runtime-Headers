@@ -17,7 +17,6 @@
     HMTrigger *_trigger;
 }
 
-+ (id)iconDescriptorForTriggerType:(unsigned long long)arg1;
 @property(readonly, nonatomic) HMTrigger *trigger; // @synthesize trigger=_trigger;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;

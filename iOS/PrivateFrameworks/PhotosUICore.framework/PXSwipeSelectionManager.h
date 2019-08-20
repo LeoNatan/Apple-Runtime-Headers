@@ -24,6 +24,7 @@
         _Bool respondsToShouldBeginSelectionAtLocation;
         _Bool respondsToShouldAutomaticallyTransitionToMultiSelectModeAtPoint;
         _Bool respondsToAutomaticallyTransitionToMultiSelectMode;
+        _Bool respondsToIndexPathSetFromIndexPathToIndexPath;
     } _delegateFlags;
     id <PXSwipeSelectionManagerDelegate> _delegate;
     unsigned long long _state;
@@ -56,6 +57,7 @@
 - (void)multiSelectInteraction:(id)arg1 toggleSelectionStateUpToPoint:(struct CGPoint)arg2;
 - (void)willBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (_Bool)shouldBeginMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
+- (_Bool)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2 withVelocity:(struct CGPoint)arg3;
 - (_Bool)interaction:(id)arg1 shouldAutomaticallyTransitionToMultiSelectModeAtPoint:(struct CGPoint)arg2;
 - (void)automaticallyTransitionToMultiSelectModeKeepingCurrentSelection:(_Bool)arg1;
 - (_Bool)isInMultiSelectMode;

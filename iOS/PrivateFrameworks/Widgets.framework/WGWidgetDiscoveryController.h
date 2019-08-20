@@ -147,6 +147,7 @@
 - (id)_disabledIdentifiers;
 - (id)_orderedVisibleIdentifiersForGroup:(id)arg1;
 - (void)_invalidateVisibleIdentifiersForGroup:(id)arg1;
+- (void)invalidateVisibleIdentifiers;
 - (id)_orderedVisibleIdentifiersForWidgetGroup;
 - (id)_orderedVisibleIdentifiersForTodayGroup;
 - (id)_orderedEnabledIdentifiersForGroup:(id)arg1;

@@ -39,7 +39,7 @@
 - (void).cxx_destruct;
 - (void)_sendSessionDidEnd:(id)arg1;
 - (void)_dropSessionEntered:(id)arg1 withSessionDestination:(id)arg2;
-- (unsigned long long)_setLastDragOperation:(unsigned long long)arg1 forbidden:(BOOL)arg2 precise:(BOOL)arg3 prefersFullSizePreview:(BOOL)arg4 onSession:(id)arg5;
+- (unsigned long long)_setLastDragOperation:(unsigned long long)arg1 forbidden:(BOOL)arg2 precise:(BOOL)arg3 prefersFullSizePreview:(BOOL)arg4 preferredBadgeStyle:(long long)arg5 onSession:(id)arg6;
 - (unsigned long long)_validateDragOperation:(unsigned long long)arg1 forSelector:(SEL)arg2 delegate:(id)arg3 dropSession:(id)arg4 onSession:(id)arg5 forbidden:(char *)arg6;
 - (BOOL)_canHandleDragEvent:(id)arg1;
 - (BOOL)_setDownAnimation:(id)arg1 shouldDelaySetDownOfDragItem:(id)arg2 completion:(CDUnknownBlockType)arg3;

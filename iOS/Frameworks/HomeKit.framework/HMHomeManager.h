@@ -17,6 +17,7 @@
 {
     HMFUnfairLock *_lock;
     HMAccessory *_currentAccessory;
+    NSOperationQueue *_syncOperationQueue;
     _Bool _frameworkMergeComplete;
     _Bool _thisDeviceResidentCapable;
     _Bool _residentEnabledForThisDevice;
@@ -40,29 +41,29 @@
     HMMutableArray *_currentHomes;
     HMMutableArray *_homeInvitations;
     NSOperationQueue *_mergeOperationQueue;
-    unsigned long long _generationCounter;
     NSNumber *_fileGenerationCounter;
     NSNumber *_fileMetadataVersion;
-    unsigned long long _metadataVersion;
     NSString *_homeDataCache;
     NSString *_metadataCache;
     NSUUID *_uuid;
     _HMContext *_context;
+    unsigned long long _generationCounter;
+    unsigned long long _metadataVersion;
     HMNetworkRouterFirewallRuleManager *_firewallRuleManager;
 }
 
 + (_Bool)dataSyncInProgressFromDataSyncState:(unsigned long long)arg1;
 @property(readonly, nonatomic) HMNetworkRouterFirewallRuleManager *firewallRuleManager; // @synthesize firewallRuleManager=_firewallRuleManager;
 @property(nonatomic, getter=isViewServiceActive) _Bool viewServiceActive; // @synthesize viewServiceActive=_viewServiceActive;
+@property(nonatomic) unsigned long long metadataVersion; // @synthesize metadataVersion=_metadataVersion;
+@property(nonatomic) unsigned long long generationCounter; // @synthesize generationCounter=_generationCounter;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSString *metadataCache; // @synthesize metadataCache=_metadataCache;
 @property(retain) NSString *homeDataCache; // @synthesize homeDataCache=_homeDataCache;
-@property(nonatomic) unsigned long long metadataVersion; // @synthesize metadataVersion=_metadataVersion;
 @property(retain, nonatomic) NSNumber *fileMetadataVersion; // @synthesize fileMetadataVersion=_fileMetadataVersion;
 @property(retain, nonatomic) NSNumber *fileGenerationCounter; // @synthesize fileGenerationCounter=_fileGenerationCounter;
 @property(nonatomic) int serverGenerationCounterToken; // @synthesize serverGenerationCounterToken=_serverGenerationCounterToken;
-@property(nonatomic) unsigned long long generationCounter; // @synthesize generationCounter=_generationCounter;
 @property(nonatomic) _Bool didUpdateHomes; // @synthesize didUpdateHomes=_didUpdateHomes;
 @property(retain, nonatomic) NSOperationQueue *mergeOperationQueue; // @synthesize mergeOperationQueue=_mergeOperationQueue;
 @property(retain, nonatomic) HMMutableArray *homeInvitations; // @synthesize homeInvitations=_homeInvitations;
@@ -116,7 +117,7 @@
 - (id)_addAccessoryRequestsFromArray:(id)arg1;
 - (void)__handleHomeManagerState:(id)arg1;
 - (void)__start;
-- (void)_requestFetchHomeConfigurationWithGenerationCounter:(id)arg1 cachedHomeConfiguration:(id)arg2 metadataVersion:(id)arg3 cachedMetadataConfiguration:(id)arg4 refreshRequested:(_Bool)arg5 qualityOfService:(long long)arg6 activity:(id)arg7;
+- (void)__processSyncResponse:(id)arg1 refreshRequested:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_fetchHomeConfigurationWithRefreshRequested:(_Bool)arg1;
 - (void)_requestRefresh;
 @property(readonly) NSString *homeCacheDir;

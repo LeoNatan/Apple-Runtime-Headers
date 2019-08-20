@@ -66,6 +66,10 @@
 }
 
 + (unsigned long long)cleanOldDatabases;
++ (long long)libraryStatusAsReader;
++ (long long)libraryStatusAsWriter:(id *)arg1;
++ (long long)_libraryStatusCanWrite:(BOOL)arg1 library:(id *)arg2;
++ (BOOL)_fileExists;
 + (long long)threadPriority;
 + (id)propertyMapper;
 + (BOOL)isSearchableIndexEnabled;
@@ -117,11 +121,7 @@
 - (void)_setCurrentMailbox:(id)arg1;
 - (id)currentMailbox;
 @property(getter=isInitialized) BOOL initialized;
-- (long long)libraryStatusAsReader;
-- (long long)libraryStatusAsWriter;
-- (long long)_libraryStatusCanWrite:(BOOL)arg1;
 - (void)dispose;
-- (BOOL)_fileExists;
 - (void)takeAccountsOnlineAllAccounts:(BOOL)arg1;
 - (void)upgradeMessageDirectoriesIfNeeded;
 - (void)_upgradeMessageDirectoriesSynchronously;

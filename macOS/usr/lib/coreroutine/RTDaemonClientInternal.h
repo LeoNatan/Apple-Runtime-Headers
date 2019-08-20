@@ -87,6 +87,7 @@
 - (void)simulateScenarioTrigger:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)forceRelabeling:(CDUnknownBlockType)arg1;
 - (void)fetchVisitsWithReply:(CDUnknownBlockType)arg1;
+- (void)fetchLocationsOfInterestWithVisitsWithinDistance:(id)arg1 location:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchStoredLocationsCountFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)injectVisit:(id)arg1 locationOfInterest:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)injectLocationOfInterest:(id)arg1 reply:(CDUnknownBlockType)arg2;

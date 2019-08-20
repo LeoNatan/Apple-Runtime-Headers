@@ -33,6 +33,7 @@
 - (struct CGSize)_preferredSizeForItems:(id)arg1 fittingWidth:(double)arg2;
 @property(readonly, nonatomic) _Bool containsFlexibleItems;
 - (id)_visibleItems;
+- (id)_visibleItemsAllowingCollapse:(_Bool)arg1;
 - (_Bool)_canBeCollapsed;
 - (id)initWithBarButtonItemGroup:(id)arg1 visualProvider:(id)arg2 buttonProvider:(id)arg3;
 

@@ -11,11 +11,12 @@
 #import <NanoPassKit/PKPaymentWebServiceTargetDeviceProtocol-Protocol.h>
 
 @class IDSService, NPKCompanionAgentConnection, NPKTapToRadarManager, NPKTargetDeviceAssertionManager, NRActiveDeviceAssertion, NSMutableDictionary, NSString;
-@protocol NPKPaymentWebServiceCompanionTargetDeviceDelegate, OS_dispatch_queue;
+@protocol NPKPaymentWebServiceCompanionTargetDeviceDelegate, NPKPaymentWebServiceCompanionTargetDevicePasscodeChangeDelegate, OS_dispatch_queue;
 
 @interface NPKPaymentWebServiceCompanionTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceTargetDeviceProtocol, PKPaymentWebServiceArchiver>
 {
     id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> _delegate;
+    id <NPKPaymentWebServiceCompanionTargetDevicePasscodeChangeDelegate> _passcodeChangeDelegate;
     unsigned int _context;
     IDSService *_provisioningService;
     NPKCompanionAgentConnection *_companionAgentConnection;
@@ -37,13 +38,16 @@
 @property(retain, nonatomic) NPKCompanionAgentConnection *companionAgentConnection; // @synthesize companionAgentConnection=_companionAgentConnection;
 @property(retain, nonatomic) IDSService *provisioningService; // @synthesize provisioningService=_provisioningService;
 @property(nonatomic) unsigned int context; // @synthesize context=_context;
+@property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDevicePasscodeChangeDelegate> passcodeChangeDelegate; // @synthesize passcodeChangeDelegate=_passcodeChangeDelegate;
 @property(nonatomic) __weak id <NPKPaymentWebServiceCompanionTargetDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_currentlyPairing;
 - (id)_categoryIdentifierForPass:(id)arg1;
 - (id)_expressModesFromExpressPassesInformation:(id)arg1;
 - (id)_expressPassesInformationFromDataArray:(id)arg1;
 - (_Bool)_deviceIsFortuneOrLater;
 - (_Bool)_deviceIsDaytonaOrLater;
+- (_Bool)deviceSupportTransitReminderSetting;
 - (_Bool)deviceSupportMultipleExpressPasses;
 - (id)_serialNumbersOfAllPairedDevices;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
@@ -53,6 +57,9 @@
 - (void)_acquireAssertionOfType:(unsigned int)arg1;
 - (void)endRequiringUpgradedPasscodeIfNecessary;
 - (void)startRequiringUpgradedPasscodeWithPasscodeMeetsPolicy:(_Bool)arg1;
+- (void)handlePasscodeUpgradeFlowShouldExitRequest:(id)arg1;
+- (void)applyPasscodeRestrictionsResponse:(id)arg1;
+- (void)applyPasscodeRestrictionsRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)checkPasscodePolicyComplianceResponse:(id)arg1;
 - (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -124,8 +131,12 @@
 - (void)enableServiceModeForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
 - (void)enableServiceModeResponse:(id)arg1;
+- (void)commutePlanReminderIntervalForCommutePlan:(id)arg1 pass:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)commutePlanReminderWithCommutePlanAndPassResponse:(id)arg1;
 - (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setCommutePlanReminderWithCommutePlanAndPassResponse:(id)arg1;
+- (void)balanceReminderForBalance:(id)arg1 pass:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)balanceReminderWithBalanceAndPassResponse:(id)arg1;
 - (void)setBalanceReminder:(id)arg1 forBalance:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setBalanceReminderWithBalanceAndPassResponse:(id)arg1;
 - (void)conflictingExpressPassIdentifiersForPassInformationResponse:(id)arg1;

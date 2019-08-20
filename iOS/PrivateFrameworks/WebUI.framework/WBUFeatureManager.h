@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccount, ACAccountStore, STManagementState;
+@class ACAccount, ACAccountStore, NSNumber, STManagementState;
 @protocol OS_dispatch_queue;
 
 @interface WBUFeatureManager : NSObject
@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
     ACAccountStore *_accountStore;
     ACAccount *_account;
+    NSNumber *_cachedShouldRequestMoreTime;
     STManagementState *_managementState;
     _Bool _autoFillAvailable;
     _Bool _bookmarksAvailable;

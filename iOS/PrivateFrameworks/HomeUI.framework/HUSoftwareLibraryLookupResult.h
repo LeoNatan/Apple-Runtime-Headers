@@ -12,14 +12,14 @@
 {
     NSSet *_matchedLibraryItems;
     NSSet *_matchedStoreItems;
-    NSSet *_unmatchedStoreIDs;
+    NSSet *_unmatchedRequests;
 }
 
-+ (id)_storeResultForStoreIDs:(id)arg1;
-+ (id)_libraryResultForStoreIDs:(id)arg1;
-+ (id)resultForStoreIDs:(id)arg1;
++ (id)_storeResultForRequests:(id)arg1;
++ (id)_libraryResultForRequests:(id)arg1;
++ (id)resultForRequests:(id)arg1;
 + (id)resultForAccessories:(id)arg1;
-@property(retain, nonatomic) NSSet *unmatchedStoreIDs; // @synthesize unmatchedStoreIDs=_unmatchedStoreIDs;
+@property(retain, nonatomic) NSSet *unmatchedRequests; // @synthesize unmatchedRequests=_unmatchedRequests;
 @property(retain, nonatomic) NSSet *matchedStoreItems; // @synthesize matchedStoreItems=_matchedStoreItems;
 @property(retain, nonatomic) NSSet *matchedLibraryItems; // @synthesize matchedLibraryItems=_matchedLibraryItems;
 - (void).cxx_destruct;

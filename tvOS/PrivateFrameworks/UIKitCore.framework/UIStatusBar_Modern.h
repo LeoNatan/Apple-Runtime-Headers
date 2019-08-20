@@ -19,6 +19,7 @@
 @property(retain, nonatomic) _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
+- (void)statusBarServer:(id)arg1 didReceiveDoubleHeightStatusString:(id)arg2 forStyle:(long long)arg3;
 - (void)statusBarStateProvider:(id)arg1 didPostStatusBarData:(const CDStruct_0942cde0 *)arg2 withActions:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStyleOverrides:(int)arg2;
 - (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(const CDStruct_0942cde0 *)arg2 withActions:(int)arg3;
@@ -48,7 +49,7 @@
 - (void)_requestStyle:(long long)arg1 partStyles:(id)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4 animationParameters:(id)arg5 forced:(_Bool)arg6;
 - (void)_updateWithData:(id)arg1 force:(_Bool)arg2;
 - (int)_implicitStyleOverrideForStyle:(long long)arg1;
-- (id)_effectiveDataFromData:(id)arg1 activeOverride:(int)arg2;
+- (id)_effectiveDataFromData:(id)arg1 activeOverride:(int)arg2 canUpdateBackgroundActivity:(_Bool)arg3;
 - (long long)_effectiveStyleFromStyle:(long long)arg1;
 - (id)_dataFromLegacyData:(const CDStruct_0942cde0 *)arg1;
 - (void)_updateSemanticContentAttributeFromLegacyData:(const CDStruct_0942cde0 *)arg1;

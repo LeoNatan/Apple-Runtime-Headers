@@ -8,27 +8,23 @@
 
 #import <IntentsCore/NSCopying-Protocol.h>
 
-@class FBSDisplayLayoutMonitor, INWatchdogTimer, NSDictionary, NSString, NSURL, NSUserActivity;
+@class NSDictionary, NSString, NSURL, NSUserActivity;
 
 @interface INCAppLaunchRequest : NSObject <NSCopying>
 {
-    INWatchdogTimer *_requestTimer;
     NSString *_bundleIdentifier;
     NSDictionary *_options;
     NSURL *_URL;
     NSUserActivity *_userActivity;
-    FBSDisplayLayoutMonitor *_layoutMonitor;
 }
 
 + (void)initialize;
-@property(retain, nonatomic) FBSDisplayLayoutMonitor *layoutMonitor; // @synthesize layoutMonitor=_layoutMonitor;
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
-- (void)_createTimerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)observeForAppLaunchWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)observeForAppLaunchWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performWithService:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isSupportedInCarPlay) _Bool supportedInCarPlay;
@@ -39,7 +35,7 @@
 - (id)initWithBundleIdentifier:(id)arg1 options:(id)arg2 URL:(id)arg3 userActivity:(id)arg4;
 - (id)initWithSockPuppetApplicationProxy:(id)arg1 userActivity:(id)arg2;
 - (id)initWithURL:(id)arg1 error:(id *)arg2;
-- (id)initWithCallIntentForCarousel:(id)arg1 error:(id *)arg2;
+- (id)initWithAudioCallIntentForCarousel:(id)arg1 error:(id *)arg2;
 - (id)initWithIntent:(id)arg1 userActivity:(id)arg2 inBackground:(_Bool)arg3 error:(id *)arg4;
 - (id)initWithInteraction:(id)arg1 userActivity:(id)arg2 inBackground:(_Bool)arg3 error:(id *)arg4;
 

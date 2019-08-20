@@ -35,7 +35,7 @@
     _Bool _transitionedFromComposing;
     _Bool _transcriptUpdateAnimated;
     _Bool _allowsPluginPlayback;
-    _Bool _isPerformingRegenerateOnlyUpdate;
+    _Bool _isPerformingRegenerateOrReloadOnlyUpdate;
     _Bool _peeking;
     _Bool _hasHiddenItems;
     _Bool _isLoadingMoreMessages;
@@ -90,7 +90,7 @@
 @property(nonatomic, getter=isPeeking) _Bool peeking; // @synthesize peeking=_peeking;
 @property(nonatomic) struct CGPoint peekSampleTranslation; // @synthesize peekSampleTranslation=_peekSampleTranslation;
 @property(copy, nonatomic) CDUnknownBlockType alertHandler; // @synthesize alertHandler=_alertHandler;
-@property(nonatomic) _Bool isPerformingRegenerateOnlyUpdate; // @synthesize isPerformingRegenerateOnlyUpdate=_isPerformingRegenerateOnlyUpdate;
+@property(nonatomic) _Bool isPerformingRegenerateOrReloadOnlyUpdate; // @synthesize isPerformingRegenerateOrReloadOnlyUpdate=_isPerformingRegenerateOrReloadOnlyUpdate;
 @property(retain, nonatomic) CKPluginPlaybackManager *pluginPlaybackManager; // @synthesize pluginPlaybackManager=_pluginPlaybackManager;
 @property(retain, nonatomic) CKAudioController *audioController; // @synthesize audioController=_audioController;
 @property(retain, nonatomic) CKTranscriptCollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -210,6 +210,7 @@
 - (void)associatedMessageTranscriptCellLongTouched:(id)arg1;
 - (void)associatedMessageTranscriptCellDoubleTapped:(id)arg1;
 - (void)_handleAssociatedMessageCellTapEvent:(id)arg1 isDoubleTap:(_Bool)arg2;
+- (void)balloonView:(id)arg1 willInsertPluginViewAsSubview:(id)arg2;
 - (void)balloonViewDoubleTapped:(id)arg1;
 - (void)balloonViewLongTouched:(id)arg1;
 - (void)liveBalloonTouched:(id)arg1;
@@ -283,6 +284,7 @@
 - (void)performResumeDeferredSetup;
 - (void)prepareForSuspend;
 - (void)parentControllerDidBecomeActive;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)didMoveToParentViewController:(id)arg1;

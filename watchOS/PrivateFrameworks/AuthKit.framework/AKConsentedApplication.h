@@ -15,9 +15,13 @@
     NSArray *_scopes;
     NSString *_clientID;
     int _state;
+    NSString *_transferState;
+    NSString *_primaryClientID;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *primaryClientID; // @synthesize primaryClientID=_primaryClientID;
+@property(retain, nonatomic) NSString *transferState; // @synthesize transferState=_transferState;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(copy, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;

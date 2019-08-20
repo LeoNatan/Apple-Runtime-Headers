@@ -11,16 +11,18 @@
     unsigned long long _maxCollapseIterations;
     double _placeholderCollapseDistanceThreshold;
     double _reverseGeocodeLeewayDistance;
+    double _unconcreteLOICollapseDistanceThreshold;
     double _visitAdjacencyMergeThreshold;
 }
 
 @property(readonly, nonatomic) double visitAdjacencyMergeThreshold; // @synthesize visitAdjacencyMergeThreshold=_visitAdjacencyMergeThreshold;
+@property(readonly, nonatomic) double unconcreteLOICollapseDistanceThreshold; // @synthesize unconcreteLOICollapseDistanceThreshold=_unconcreteLOICollapseDistanceThreshold;
 @property(readonly, nonatomic) double reverseGeocodeLeewayDistance; // @synthesize reverseGeocodeLeewayDistance=_reverseGeocodeLeewayDistance;
 @property(readonly, nonatomic) double placeholderCollapseDistanceThreshold; // @synthesize placeholderCollapseDistanceThreshold=_placeholderCollapseDistanceThreshold;
 @property(readonly, nonatomic) unsigned long long maxCollapseIterations; // @synthesize maxCollapseIterations=_maxCollapseIterations;
 - (id)description;
 - (id)initWithDefaultsManager:(id)arg1;
-- (id)initWithMaxCollapseIterations:(unsigned long long)arg1 placeholderCollapseDistanceThreshold:(double)arg2 reverseGeocodeLeewayDistance:(double)arg3 visitAdjacencyMergeThreshold:(double)arg4;
+- (id)initWithMaxCollapseIterations:(unsigned long long)arg1 placeholderCollapseDistanceThreshold:(double)arg2 reverseGeocodeLeewayDistance:(double)arg3 unconcreteLOICollapseDistanceThreshold:(double)arg4 visitAdjacencyMergeThreshold:(double)arg5;
 - (id)init;
 
 @end

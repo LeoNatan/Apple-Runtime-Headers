@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *delegateNotificationQueue;
     int _currentActiveRequestsCount;
     _Bool _isActive;
+    _Bool _isClientRegistered;
     VideoAttributes *_remoteScreenAttributes;
     NSMutableSet *_requests;
     _Bool _lastRequest;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)deviceFreeDiskSpace;
 + (_Bool)deviceHasSufficientFreeSpace;
++ (unsigned long long)fileSize:(id)arg1;
 @property(retain, nonatomic) VideoAttributes *remoteScreenAttributes; // @synthesize remoteScreenAttributes=_remoteScreenAttributes;
 @property(readonly, nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(nonatomic) unsigned int capabilities; // @synthesize capabilities=_capabilities;
@@ -56,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (id)transportDelegate;
 - (void)setFrameRate:(float)arg1;
 - (void)processRequest:(id)arg1;
+- (_Bool)validateIncomingRequest:(id)arg1;
 - (void)updateRemoteScreenAttributes:(id)arg1;
 - (void)getInitialRemoteScreenAttributes:(id)arg1;
 - (void)addLocalVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraStatusBits:(unsigned char)arg2 timestamp:(unsigned int)arg3;

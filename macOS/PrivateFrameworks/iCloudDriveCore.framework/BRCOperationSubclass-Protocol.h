@@ -6,9 +6,11 @@
 
 #import <iCloudDriveCore/NSObject-Protocol.h>
 
-@class NSError, NSNumber;
+@class NSError, NSNumber, NSObject;
+@protocol OS_os_activity;
 
 @protocol BRCOperationSubclass <NSObject>
+- (NSObject<OS_os_activity> *)createActivity;
 - (BOOL)shouldRetryForError:(NSError *)arg1;
 - (void)main;
 

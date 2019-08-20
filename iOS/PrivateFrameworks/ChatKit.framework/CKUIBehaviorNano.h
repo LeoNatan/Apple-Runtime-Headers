@@ -146,6 +146,7 @@ __attribute__((visibility("hidden")))
 - (double)maxTranscriptPortraitHeight;
 - (unsigned long long)defaultConversationLoadMoreCount;
 - (unsigned long long)defaultConversationViewingMessageCount;
+- (_Bool)disableTranscriptOrb;
 - (_Bool)usesNavigationBarControls;
 - (_Bool)usesEntryView;
 - (_Bool)shouldUseTranslucentBars;

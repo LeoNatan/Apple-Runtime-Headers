@@ -26,6 +26,7 @@
 @property(nonatomic) float preferredVolume;
 @property(nonatomic) float preferredRate;
 - (CDStruct_1b6d18a9)duration;
+- (void)_signalMetadataUpdated;
 - (void)_signalTracksUpdated;
 - (struct OpaqueFigFormatReader *)_formatReader;
 - (struct OpaqueFigMutableMovie *)_figMutableMovie;

@@ -13,6 +13,8 @@
 - (void)npkPassCollectionViewCellDidDisplayCell:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellDidReceiveNewZIndex:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellDidChangeSuperview:(NPKPassCollectionViewCell *)arg1;
+- (void)npkPassCollectionViewBarcodeDidExitFullscreen:(NPKPassCollectionViewCell *)arg1;
+- (void)npkPassCollectionViewBarcodeDidEnterFullscreen:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellBeganDragging:(NPKPassCollectionViewCell *)arg1;
 - (void)npkPassCollectionViewCellTapped:(NPKPassCollectionViewCell *)arg1;
 @end

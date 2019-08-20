@@ -34,6 +34,7 @@
 @property(nonatomic) __weak id <VCSpotlightSyncOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)cleanupAndExitWithRequestToRelaunch:(_Bool)arg1;
+- (void)deleteSpotlightFileAndCleanup;
 - (void)clearLocalStateAndExit;
 - (void)saveLocalState;
 - (void)indexSearchableItems;

@@ -11,8 +11,9 @@
 @interface _TtC16HealthExperience21AsynchronousOperation : NSOperation
 {
     // Error parsing type: , name: autoFinishesOnCancel
-    // Error parsing type: , name: _state
+    // Error parsing type: , name: operationState
     // Error parsing type: , name: workLock
+    // Error parsing type: , name: didBeginWork
 }
 
 - (void).cxx_destruct;
@@ -23,10 +24,12 @@
 - (void)start;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;
+- (_Bool)isCancelled;
 - (_Bool)isAsynchronous;
 
 // Remaining properties
 @property(nonatomic, readonly) _Bool asynchronous;
+@property(nonatomic, readonly) _Bool cancelled;
 @property(nonatomic, readonly) _Bool executing;
 @property(nonatomic, readonly) _Bool finished;
 

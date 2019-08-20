@@ -15,7 +15,6 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) struct _AVAudioChannelRange channelIDs;
 - (BOOL)setPort:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) AVAudioAggregateStreamTopology *topology;
 @property(readonly) __weak AVAudioIOController *owningIOController;

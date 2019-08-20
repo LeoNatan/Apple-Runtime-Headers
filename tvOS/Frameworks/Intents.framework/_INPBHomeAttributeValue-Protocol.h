@@ -6,7 +6,7 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, _INPBHomeAttributeRange;
 
 @protocol _INPBHomeAttributeValue <NSObject>
 @property(nonatomic) _Bool hasValueType;
@@ -15,6 +15,8 @@
 @property(nonatomic) int unit;
 @property(readonly, nonatomic) _Bool hasStringValue;
 @property(copy, nonatomic) NSString *stringValue;
+@property(readonly, nonatomic) _Bool hasRangeValue;
+@property(retain, nonatomic) _INPBHomeAttributeRange *rangeValue;
 @property(nonatomic) _Bool hasLimitValue;
 @property(nonatomic) int limitValue;
 @property(nonatomic) _Bool hasIntegerValue;

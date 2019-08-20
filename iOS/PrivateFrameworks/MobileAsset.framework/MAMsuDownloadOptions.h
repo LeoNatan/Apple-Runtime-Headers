@@ -11,11 +11,13 @@
 @interface MAMsuDownloadOptions : MADownloadOptions
 {
     _Bool _supervised;
+    _Bool _allowSameVersion;
     NSString *_requestedProductVersion;
     long long _delayPeriod;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool allowSameVersion; // @synthesize allowSameVersion=_allowSameVersion;
 @property(nonatomic) _Bool supervised; // @synthesize supervised=_supervised;
 @property(nonatomic) long long delayPeriod; // @synthesize delayPeriod=_delayPeriod;
 @property(retain, nonatomic) NSString *requestedProductVersion; // @synthesize requestedProductVersion=_requestedProductVersion;

@@ -33,7 +33,6 @@
 + (_Bool)supportsMenuInteraction;
 + (_Bool)supportsQuicklook;
 + (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
-+ (id)rankingQueriesWithText:(id)arg1;
 @property(nonatomic) _Bool queryRunning; // @synthesize queryRunning=_queryRunning;
 @property(nonatomic) _Bool suppressAvatars; // @synthesize suppressAvatars=_suppressAvatars;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
@@ -50,7 +49,7 @@
 - (id)_pasteboardItemsForResult:(id)arg1;
 - (id)_additionalMenuActionsForResult:(id)arg1;
 - (id)previewViewControllerForResult:(id)arg1;
-- (id)menuActionsForResult:(id)arg1;
+- (id)menuActionsForResult:(id)arg1 atRect:(struct CGRect)arg2;
 - (id)queryResultsForItems:(id)arg1;
 - (id)chatGUIDForSearchableItem:(id)arg1;
 - (void)searchEnded;
@@ -74,6 +73,7 @@
 - (double)interGroupSpacing;
 - (id)initWithSectionIndex:(unsigned long long)arg1;
 - (_Bool)shouldStartMenuInteractionForResult:(id)arg1;
+- (id)rankingQueriesWithText:(id)arg1;
 - (id)detailsFilterQueriesForChatGUIDs:(id)arg1;
 - (id)zkwFilterQueries;
 - (id)filterQueries;

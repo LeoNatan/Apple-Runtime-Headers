@@ -16,18 +16,22 @@
     NSURL *_commitURL;
     WFURLComponents *_URLComponents;
     WATodayModel *_model;
+    UIView *_backgroundView;
     WATodayHeaderView *_headerView;
     UIView *_dividerLineView;
     NSArray *_hourlyForecastViews;
     UIStackView *_hourlyBeltView;
     NSMutableArray *_constraints;
+    double _viewWidth;
 }
 
+@property(nonatomic) double viewWidth; // @synthesize viewWidth=_viewWidth;
 @property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIStackView *hourlyBeltView; // @synthesize hourlyBeltView=_hourlyBeltView;
 @property(retain, nonatomic) NSArray *hourlyForecastViews; // @synthesize hourlyForecastViews=_hourlyForecastViews;
 @property(retain, nonatomic) UIView *dividerLineView; // @synthesize dividerLineView=_dividerLineView;
 @property(retain, nonatomic) WATodayHeaderView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) WATodayModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) WFURLComponents *URLComponents; // @synthesize URLComponents=_URLComponents;
 @property(copy, nonatomic) NSURL *commitURL; // @synthesize commitURL=_commitURL;
@@ -39,6 +43,13 @@
 - (void)_contentSizeDidUpdate:(id)arg1;
 - (void)_updateViewContent;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnitTo:(int)arg2;
+- (void)viewDidLayoutSubviews;
+- (void)setupConstraints;
+- (void)setupHourlyForecast;
+- (void)setupDividerView;
+- (void)setupHeaderView;
+- (void)setupBackgroundView;
+- (void)updateViewConstraints;
 - (void)viewDidLoad;
 - (id)initWithURLComponents:(id)arg1;
 - (id)initWithURL:(id)arg1;

@@ -57,6 +57,7 @@
 - (void)_updateMaxBracketedCapturePhotoCountForSourceDevice:(id)arg1;
 - (void)_updateSupportedFlashModesForSourceDevice:(id)arg1;
 - (void)_updateSupportedHDRModesForSourceDevice:(id)arg1;
+- (void)_updateCameraCalibrationDataDeliverySupportedForSourceDevice:(id)arg1;
 - (void)_updateDualCameraDualPhotoDeliverySupportedForSourceDevice:(id)arg1;
 - (void)_updateVirtualDeviceFusionSupportedForSourceDevice:(id)arg1;
 - (void)_updateStillImageStabilizationSupportedForSourceDevice:(id)arg1;
@@ -69,6 +70,7 @@
 - (void)_updateAvailablePhotoPixelFormatTypesForSourceDevice:(id)arg1;
 - (void)_updateSupportedPropertiesForSourceDevice:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)handleChangedActiveFormat:(id)arg1 forDevice:(id)arg2;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;

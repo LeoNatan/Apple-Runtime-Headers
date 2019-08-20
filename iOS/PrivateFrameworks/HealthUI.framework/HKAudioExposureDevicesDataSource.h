@@ -27,6 +27,7 @@
 @property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic, getter=isReady) _Bool ready; // @synthesize ready=_ready;
 - (void).cxx_destruct;
+- (id)_localizedNameForDevice:(id)arg1;
 - (id)_sampleTypeForDeviceType;
 - (id)_makeDeviceQueryForDeviceType;
 - (void)_notify_dataSourceIsReady;

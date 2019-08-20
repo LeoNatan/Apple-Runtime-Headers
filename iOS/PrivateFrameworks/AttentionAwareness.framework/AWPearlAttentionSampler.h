@@ -20,12 +20,10 @@ __attribute__((visibility("hidden")))
     BKFaceDetectOperation *_finishingPresenceOperation;
     NSObject<OS_dispatch_source> *_operationStalledTimer;
     unsigned long long _operationCreateTime;
-    unsigned long long _currentDeadline;
     unsigned long long _lastErrorTime;
     int _displayNotifyToken;
     _Bool _displayState;
     _Bool _smartCoverClosed;
-    NSObject<OS_dispatch_source> *_pearlAttentionSamplerErrorTimer;
 }
 
 - (void).cxx_destruct;
@@ -44,10 +42,10 @@ __attribute__((visibility("hidden")))
 - (void)updateSuppressedMaskWithDisplayState:(_Bool)arg1 smartCoverClosed:(_Bool)arg2;
 - (void)cancelStalledTimer;
 - (void)startStalledTimerForOperation:(id)arg1;
-- (void)cancelPearlAttentionSamplerErrorTimer;
-- (void)startPearlAttentionSamplerErrorTimer;
+- (unsigned long long)minimumAttentionSamplerErrorRetryTime;
+- (unsigned long long)nextSampleTimeForSamplingInterval:(unsigned long long)arg1;
 - (void)setCurrentState:(int)arg1;
-- (void)pearlAttentionSamplerErrorOccurred:(_Bool)arg1;
+- (void)pearlAttentionSamplerErrorOccurred;
 - (void)updateFaceState:(int)arg1 withFaceMetadata:(struct AWFaceDetectMetadata *)arg2;
 - (void)updateFaceState:(int)arg1;
 - (void)shouldSample:(_Bool)arg1 withDeadline:(unsigned long long)arg2;

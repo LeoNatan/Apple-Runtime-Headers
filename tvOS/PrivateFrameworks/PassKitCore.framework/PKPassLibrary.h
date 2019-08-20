@@ -24,6 +24,7 @@
     id <PKPassLibraryDelegate> _delegate;
 }
 
++ (_Bool)contactlessInterfaceCanBePresentedFromSource:(long long)arg1 deviceUILocked:(_Bool)arg2;
 + (_Bool)contactlessInterfaceCanBePresentedFromSource:(long long)arg1;
 + (id)sharedInstance;
 + (id)sharedInstanceWithRemoteLibrary;
@@ -78,6 +79,7 @@
 - (long long)_currentNotificationCountForIdentifier:(id)arg1;
 - (void)transitMessageDidDisplay:(id)arg1;
 - (void)transitMessageForRouteInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)supportsDisbursements;
 - (id)_defaultPaymentPassForPaymentRequest:(id)arg1;
 - (void)supportedTransitPartnersForDigitalIssuance:(CDUnknownBlockType)arg1;
 - (id)_sortedPaymentPassesForPaymentRequest:(id)arg1;
@@ -118,6 +120,7 @@
 - (void)canPresentPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentWalletWithRelevantPassUniqueID:(id)arg1;
 - (void)presentPaymentPass:(id)arg1;
+- (void)paymentPassWithAssociatedAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentSetupFeaturesForConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentPaymentSetupRequest:(id)arg1 orientation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)openPaymentSetupForMerchantIdentifier:(id)arg1 domain:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -148,6 +151,7 @@
 - (_Bool)canAddPaymentPassWithPrimaryAccountIdentifier:(id)arg1;
 - (_Bool)canAddPassOfType:(unsigned long long)arg1;
 - (unsigned long long)countPassesOfType:(unsigned long long)arg1;
+- (unsigned long long)countOfPasses;
 - (id)peerPaymentPassUniqueID;
 - (id)paymentPassesWithLocallyStoredValue;
 - (_Bool)hasPassesOfType:(unsigned long long)arg1;

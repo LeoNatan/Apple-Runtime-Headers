@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isExcludedFromSync) BOOL excludedFromSync;
 @property(readonly, nonatomic) NSDictionary *extendedAttributes;
 @property(readonly, copy, nonatomic) NSNumber *favoriteRank;
+@property(readonly, copy) NSString *fileSystemFilename;
 @property(readonly, copy) NSURL *fileURL;
 @property(readonly, nonatomic) id <NSFileProviderItemFlags> flags;
 @property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) BOOL fp_addedByCurrentUser;

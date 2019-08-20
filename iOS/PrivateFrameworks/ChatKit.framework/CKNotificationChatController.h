@@ -86,6 +86,7 @@
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (id)_menuTitleForChatItem:(id)arg1;
 - (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(_Bool)arg2;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)forceWindowedPresentation;
 - (_Bool)constrainToPresentingVCBounds;
 - (_Bool)preserveModalPresentationStyle;

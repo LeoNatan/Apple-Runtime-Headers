@@ -65,10 +65,9 @@
 - (void)_sendActivationResultWithSuccess:(_Bool)arg1;
 - (_Bool)_overrideInterfaceOrientationForOrientationMismatch:(long long *)arg1;
 - (void)_updateScenesForTransitionCompletion;
-- (void)_teardownKeyboardSuppression;
-- (void)_setupKeyboardSuppression;
 - (void)_prepareScenesForTransition;
 - (void)_prepareScenesForSceneUpdates;
+- (void)_updateKeyboardContextMaskStyleForEntities:(id)arg1;
 - (void)_updateAggregateDictionary;
 - (void)_mainDisplayUpdateAggregateDictionaryForLayoutRoleWithApplication:(id)arg1;
 - (void)_beginLayoutTransition;

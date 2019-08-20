@@ -42,6 +42,7 @@
 - (void)deviceMetadataWithFields:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)featureApplicationsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updatedAccountsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)supportedFeatureIdentifiersForAccountProvisioningWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportedFeatureIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportsAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(CDUnknownBlockType)arg1;

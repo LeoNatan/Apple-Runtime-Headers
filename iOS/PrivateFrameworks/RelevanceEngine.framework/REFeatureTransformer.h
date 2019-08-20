@@ -43,6 +43,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_invalidate;
 - (void)_performAndScheduleTimer;
+- (void)_invalidationQueue_scheduleInvalidation:(id)arg1;
 - (void)invalidateWithContext:(id)arg1;
 - (id)invalidationDelegate;
 - (void)setInvalidationDelegate:(id)arg1;

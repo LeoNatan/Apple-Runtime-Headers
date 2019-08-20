@@ -23,11 +23,13 @@
 - (long long)layoutManager:(id)arg1 shouldUseAction:(long long)arg2 forControlCharacterAtIndex:(unsigned long long)arg3;
 - (BOOL)layoutManager:(id)arg1 shouldSetLineFragmentRect:(inout struct CGRect *)arg2 lineFragmentUsedRect:(inout struct CGRect *)arg3 baselineOffset:(inout double *)arg4 inTextContainer:(id)arg5 forGlyphRange:(struct _NSRange)arg6;
 - (BOOL)layoutManager:(id)arg1 shouldBreakLineByWordBeforeCharacterAtIndex:(unsigned long long)arg2;
-- (void)getCalculatedLineHeight:(double *)arg1 originalFontLineHeight:(double *)arg2 atCharacterIndex:(unsigned long long)arg3;
+- (void)getCalculatedLineHeight:(double *)arg1 originalFontLineHeight:(double *)arg2;
 - (double)preferredHeightForDrawingTextAttachment:(id)arg1 atCharacterIndex:(unsigned long long)arg2 withProposedHeight:(double)arg3;
 - (BOOL)shouldDrawTextAttachment:(id)arg1 atCharacterIndex:(unsigned long long)arg2;
 - (void)drawBackgroundForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;
-- (id)enclosingRectsForCharacterRange:(struct _NSRange)arg1 insetForBackground:(BOOL)arg2 onlyFirst:(BOOL)arg3;
+- (void)enumerateEnclosingRectsForGlyphRange:(struct _NSRange)arg1 insetForBackground:(BOOL)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateInsetEnclosingRectsForGlyphRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateEnclosingRectsForSlot:(id)arg1 includeInsideSpacing:(BOOL)arg2 insetForBackground:(BOOL)arg3 usingBlock:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) unsigned long long numberOfLaidLines;
 - (id)init;
 

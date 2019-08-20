@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol FPDAccessControlServicing
+- (void)revokeAccessToAllBundlesCompletionHandler:(void (^)(NSError *))arg1;
 - (void)revokeAccessToAllItemsForBundle:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)fetchEnumeratorForItemsAccessibleByBundleIdentifier:(NSString *)arg1 completionHandler:(void (^)(id <FPXEnumerator>, NSError *))arg2;
 - (void)bundleIdentifiersWithAccessToAnyItemCompletionHandler:(void (^)(NSArray *, NSError *))arg1;

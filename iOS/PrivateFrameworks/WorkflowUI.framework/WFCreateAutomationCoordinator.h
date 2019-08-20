@@ -13,7 +13,7 @@
 #import <WorkflowUI/WFTriggerComposeViewControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFTriggerConfigurationViewControllerDelegate-Protocol.h>
 
-@class HMHomeManager, NSString, UINavigationController, WFConfiguredTriggerRecord, WFDatabase, WFTriggerManager, WFWorkflow;
+@class NSString, UINavigationController, WFConfiguredTriggerRecord, WFDatabase, WFHomeManager, WFTriggerManager, WFWorkflow;
 @protocol WFCreateAutomationCoordinatorDelegate;
 
 @interface WFCreateAutomationCoordinator : NSObject <WFAutomationTypeChooserViewControllerDelegate, WFAutomationSelectTypeViewControllerDelegate, WFTriggerConfigurationViewControllerDelegate, WFTriggerComposeViewControllerDelegate, WFAutomationSummaryViewControllerDelegate, HUTriggerEditorDelegate>
@@ -25,10 +25,10 @@
     WFDatabase *_database;
     WFConfiguredTriggerRecord *_triggerRecord;
     WFWorkflow *_workflow;
-    HMHomeManager *_homeManager;
+    WFHomeManager *_homeManager;
 }
 
-@property(readonly, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
+@property(readonly, nonatomic) WFHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(retain, nonatomic) WFConfiguredTriggerRecord *triggerRecord; // @synthesize triggerRecord=_triggerRecord;
 @property(retain, nonatomic) WFDatabase *database; // @synthesize database=_database;
@@ -37,13 +37,13 @@
 @property(nonatomic) __weak id <WFCreateAutomationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 - (void).cxx_destruct;
-- (id)homesToWhichWeCanAddAutomations;
 - (void)automationSummaryViewController:(id)arg1 didFinishWithTrigger:(id)arg2;
 - (void)triggerComposeViewController:(id)arg1 didFinishWithWorkflow:(id)arg2;
 - (void)triggerConfigurationViewController:(id)arg1 didFinishWithTrigger:(id)arg2;
 - (void)selectTypeViewController:(id)arg1 didChooseTriggerClass:(Class)arg2;
 - (void)triggerEditor:(id)arg1 didFinishWithTriggerBuilder:(id)arg2;
 - (void)automationTypeChooser:(id)arg1 didChooseAutomationType:(unsigned long long)arg2;
+- (void)openHomeApp;
 - (void)cancel;
 - (void)finish;
 - (void)buildViewControllerForHomeTriggerChooserStepWithBackButtonAction:(unsigned long long)arg1 hostingViewController:(id)arg2 completion:(CDUnknownBlockType)arg3;

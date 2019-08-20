@@ -11,7 +11,7 @@
 #import <CoreML/MLUpdatable-Protocol.h>
 #import <CoreML/NSSecureCoding-Protocol.h>
 
-@class MLUpdateProgressHandlers, NSArray, NSDictionary, NSObject, NSOrderedSet, NSString;
+@class MLParameterContainer, MLUpdateProgressHandlers, NSArray, NSDictionary, NSObject, NSOrderedSet, NSString;
 @protocol MLNearestNeighborsIndex, OS_dispatch_queue;
 
 @interface MLKNearestNeighborsClassifier : MLModel <MLSpecificationCompiler, MLCompiledModelLoader, MLUpdatable, NSSecureCoding>
@@ -20,8 +20,8 @@
     MLUpdateProgressHandlers *_progressHandlers;
     NSObject<OS_dispatch_queue> *_progressHandlersDispatchQueue;
     NSDictionary *_updateParameters;
+    MLParameterContainer *_parameterContainer;
     unsigned long long _numberOfDimensions;
-    unsigned long long _neighborCount;
     long long _indexType;
     id <MLNearestNeighborsIndex> _index;
     long long _labelType;
@@ -46,8 +46,8 @@
 @property(nonatomic) long long labelType; // @synthesize labelType=_labelType;
 @property(retain, nonatomic) id <MLNearestNeighborsIndex> index; // @synthesize index=_index;
 @property(nonatomic) long long indexType; // @synthesize indexType=_indexType;
-@property(nonatomic) unsigned long long neighborCount; // @synthesize neighborCount=_neighborCount;
 @property(nonatomic) unsigned long long numberOfDimensions; // @synthesize numberOfDimensions=_numberOfDimensions;
+@property(retain, nonatomic) MLParameterContainer *parameterContainer; // @synthesize parameterContainer=_parameterContainer;
 @property(nonatomic) BOOL continueWithUpdate; // @synthesize continueWithUpdate=_continueWithUpdate;
 @property(retain, nonatomic) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *progressHandlersDispatchQueue; // @synthesize progressHandlersDispatchQueue=_progressHandlersDispatchQueue;
@@ -55,6 +55,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)parameterValueForKey:(id)arg1 error:(id *)arg2;
 - (BOOL)writeToURL:(id)arg1 error:(id *)arg2;
 - (void)resumeUpdateWithParameters:(id)arg1;
 - (void)cancelUpdate;
@@ -67,7 +68,7 @@
 - (id)inputMultiArray:(id)arg1 error:(id *)arg2;
 - (void)computeClassProbabilities:(id *)arg1 from:(vector_392775c5 *)arg2;
 - (vector_392775c5)computeKClosestLabels:(id)arg1;
-- (id)initWithDescription:(id)arg1 dataPoints:(vector_7584168e *)arg2 dimensionality:(unsigned long long)arg3 k:(unsigned long long)arg4 labels:(id)arg5 defaultLabel:(id)arg6 weightingScheme:(long long)arg7 indexType:(long long)arg8 leafSize:(unsigned long long)arg9 nearestLabelsFeatureName:(id)arg10 nearestDistancesFeatureName:(id)arg11 error:(id *)arg12;
+- (id)initWithDescription:(id)arg1 configuration:(id)arg2 parameters:(id)arg3 dataPoints:(vector_7584168e *)arg4 labels:(id)arg5 error:(id *)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

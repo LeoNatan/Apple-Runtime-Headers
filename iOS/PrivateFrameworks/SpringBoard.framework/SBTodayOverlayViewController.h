@@ -26,6 +26,8 @@
 @property(nonatomic) double presentationProgress; // @synthesize presentationProgress=_presentationProgress;
 @property(nonatomic) __weak id <SBTodayOverlayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (struct CGSize)_suggestedTodayViewSizeForBounds:(struct CGRect)arg1;
+- (struct CGSize)widgetGroupViewController:(id)arg1 sizeForInterfaceOrientation:(long long)arg2;
 - (void)widgetGroupViewControllerDidChangeHeaderVisibility:(id)arg1;
 @property(readonly, nonatomic, getter=isHeaderVisible) _Bool headerVisible;
 - (void)viewDidLoad;

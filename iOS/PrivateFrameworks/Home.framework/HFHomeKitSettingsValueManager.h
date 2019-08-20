@@ -20,8 +20,6 @@
 @property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (void)_clearTransaction:(id)arg1;
-- (void)_dispatchDidWriteValueForSettings:(id)arg1 failedSettings:(id)arg2;
-- (void)_dispatchWillWriteValueForSettings:(id)arg1;
 @property(readonly, nonatomic) NSSet *pendingWrites;
 - (id)valueForSettingAtKeyPath:(id)arg1;
 - (id)_valueForSetting:(id)arg1 logRead:(_Bool)arg2;

@@ -52,6 +52,7 @@
 @property(copy, nonatomic) NSURL *localVideoDestinationURL; // @dynamic localVideoDestinationURL;
 @property(copy, nonatomic) NSString *irisIdentifier; // @dynamic irisIdentifier;
 @property(nonatomic) struct CGSize desiredPreviewSize; // @dynamic desiredPreviewSize;
+@property(nonatomic) _Bool stillDuringVideo; // @dynamic stillDuringVideo;
 @property(nonatomic) _Bool wantsHighResolutionStills; // @dynamic wantsHighResolutionStills;
 @property(nonatomic) _Bool wantsSquareCrop; // @dynamic wantsSquareCrop;
 @property(nonatomic) _Bool wantsAudioForCapture; // @dynamic wantsAudioForCapture;

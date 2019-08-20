@@ -13,10 +13,8 @@
     HFMediaPlaybackActionBuilder *_mediaActionBuilder;
     long long _originalHMNonPausePlaybackState;
     HFPlaybackArchive *_playbackArchive;
-    long long _targetOptions;
 }
 
-@property(nonatomic) long long targetOptions; // @synthesize targetOptions=_targetOptions;
 @property(retain, nonatomic) HFPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(nonatomic) long long originalHMNonPausePlaybackState; // @synthesize originalHMNonPausePlaybackState=_originalHMNonPausePlaybackState;
 @property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaActionBuilder; // @synthesize mediaActionBuilder=_mediaActionBuilder;

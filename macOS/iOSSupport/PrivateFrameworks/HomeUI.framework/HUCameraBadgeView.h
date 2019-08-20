@@ -6,13 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString, UILabel, UIVisualEffectView;
+@class HULegibilityLabel, NSArray, NSString, UIVisualEffectView, _UILegibilitySettings;
 
 @interface HUCameraBadgeView : UIView
 {
-    unsigned long long _style;
     unsigned long long _size;
-    UILabel *_label;
+    HULegibilityLabel *_label;
+    _UILegibilitySettings *_legibilitySettings;
     UIVisualEffectView *_blurEffectView;
     UIVisualEffectView *_vibrancyEffectView;
     NSArray *_staticConstraints;
@@ -24,11 +24,10 @@
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
 @property(readonly, nonatomic) UIVisualEffectView *vibrancyEffectView; // @synthesize vibrancyEffectView=_vibrancyEffectView;
 @property(readonly, nonatomic) UIVisualEffectView *blurEffectView; // @synthesize blurEffectView=_blurEffectView;
-@property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
+@property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
+@property(readonly, nonatomic) HULegibilityLabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) unsigned long long size; // @synthesize size=_size;
-@property(nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
-- (void)_applyStyle;
 @property(copy, nonatomic) NSString *labelText;
 - (void)updateConstraints;
 - (id)initWithSize:(unsigned long long)arg1;

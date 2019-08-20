@@ -89,7 +89,13 @@ typedef struct {
     char _field12;
     char _field13;
     char _field14;
-} CDStruct_278a5119;
+    char _field15;
+} CDStruct_4172db96;
+
+typedef struct {
+    id _field1;
+    struct CGRect _field2;
+} CDStruct_37f6246c;
 
 typedef struct {
     unsigned char base;

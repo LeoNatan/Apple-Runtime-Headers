@@ -16,6 +16,7 @@
     struct os_unfair_lock_s __lock;
     id <_DASActivityBackgroundTasksScheduler> __scheduler;
     NSMutableSet *__queuedLaunchActivities;
+    NSMutableSet *__queuedExpiredLaunchActivities;
     NSMutableDictionary *__registrations;
     NSSet *__permittedIdentifiers;
     NSMapTable *__runningTasksMap;
@@ -31,12 +32,14 @@
 @property(retain, nonatomic, setter=_setPermittedIdentifiers:) NSSet *_permittedIdentifiers; // @synthesize _permittedIdentifiers=__permittedIdentifiers;
 @property(retain, nonatomic, setter=_setRegistrations:) NSMutableDictionary *_registrations; // @synthesize _registrations=__registrations;
 @property(nonatomic, setter=_setLock:) struct os_unfair_lock_s _lock; // @synthesize _lock=__lock;
+@property(retain, nonatomic, setter=_setQueuedExpiredLaunchActivities:) NSMutableSet *_queuedExpiredLaunchActivities; // @synthesize _queuedExpiredLaunchActivities=__queuedExpiredLaunchActivities;
 @property(retain, nonatomic, setter=_setQueuedLaunchActivities:) NSMutableSet *_queuedLaunchActivities; // @synthesize _queuedLaunchActivities=__queuedLaunchActivities;
 @property(retain, nonatomic, setter=_setScheduler:) id <_DASActivityBackgroundTasksScheduler> _scheduler; // @synthesize _scheduler=__scheduler;
 - (void).cxx_destruct;
 - (void)_simulateExpirationForTaskWithIdentifier:(id)arg1;
 - (void)_simulateLaunchForTaskWithIdentifier:(id)arg1;
 - (void)scheduler:(id)arg1 willExpireActivities:(id)arg2;
+- (void)_callExpirationHandlersForActivities:(id)arg1 shouldQueue:(BOOL)arg2;
 - (void)_callRegisteredHandlersForActivities:(id)arg1;
 - (void)scheduler:(id)arg1 handleLaunchForActivities:(id)arg2;
 - (void)_runTask:(id)arg1 registration:(id)arg2;

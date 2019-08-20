@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSURL, _TVStackedMediaVideoLoopConfiguration;
+@class NSString, NSURL, _TVStackedMediaDocumentVersion, _TVStackedMediaVideoLoopConfiguration;
 
 __attribute__((visibility("hidden")))
 @interface _TVStackedMediaDocumentEntry : NSObject
@@ -20,11 +20,13 @@ __attribute__((visibility("hidden")))
     long long _mediaType;
     long long _blendMode;
     struct CGImage *_imageRef;
+    _TVStackedMediaDocumentVersion *_documentVersion;
     struct CGRect _frame;
 }
 
 + (long long)_mediaTypeForMediaTypeString:(id)arg1;
 + (long long)_blendModeForBlendModeString:(id)arg1;
+@property(retain, nonatomic) _TVStackedMediaDocumentVersion *documentVersion; // @synthesize documentVersion=_documentVersion;
 @property(nonatomic) struct CGImage *imageRef; // @synthesize imageRef=_imageRef;
 @property(nonatomic) long long blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
@@ -36,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *remoteAssetFileName; // @synthesize remoteAssetFileName=_remoteAssetFileName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)initWithDictionary:(id)arg1 directory:(id)arg2 fileNamePrefix:(id)arg3;
+- (id)initWithDictionary:(id)arg1 documentVersion:(id)arg2 directory:(id)arg3 fileNamePrefix:(id)arg4;
 
 @end
 

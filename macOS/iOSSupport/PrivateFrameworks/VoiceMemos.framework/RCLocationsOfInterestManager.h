@@ -17,8 +17,9 @@
     CLLocationManager *_locationManager;
     CLLocation *_currentLocation;
     NSArray *_locationsOfInterest;
-    BOOL _ignoringLocationUpdates;
+    BOOL _isFetchingPlacesOfInterest;
     BOOL _active;
+    unsigned long long _placeInferencePolicy;
     id <RCLocationsOfInterestDelegate> _delegate;
 }
 
@@ -27,12 +28,15 @@
 @property(readonly, nonatomic) BOOL active; // @synthesize active=_active;
 @property(nonatomic) __weak id <RCLocationsOfInterestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_didFetchPlaceInferences:(id)arg1 location:(id)arg2 error:(id)arg3;
+- (void)_requestPlaceInferences;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 @property(readonly, nonatomic) BOOL authorized;
 @property(readonly, copy) NSArray *locationsOfInterest;
 - (void)stop;
+- (void)_startMonitoringLocation;
 - (void)start;
 - (id)init;
 
