@@ -75,6 +75,8 @@ __attribute__((visibility("hidden")))
     _Bool _photoOutputFlashSceneEnabled;
     _Bool _flashActive;
     _Bool _flashSceneDetectedForPhotoOutput;
+    long long _digitalFlashMode;
+    NSDictionary *_digitalFlashSceneForPhotoOutput;
     _Bool _flashAvailable;
     long long _torchMode;
     _Bool _torchActive;
@@ -121,6 +123,10 @@ __attribute__((visibility("hidden")))
     AVCaptureSystemPressureState *_systemPressureState;
     int _highestSystemPressureLevelEncountered;
     _Bool _lowLightVideoCaptureEnabled;
+    _Bool _spatialOverCaptureEnabled;
+    _Bool _nonDestructiveCropEnabled;
+    long long _nonDestructiveCropAspectRatio;
+    _Bool _geometricDistortionCorrectionEnabled;
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -141,6 +147,12 @@ __attribute__((visibility("hidden")))
 - (int)_setFigCaptureSourceProperty:(struct __CFString *)arg1 withValue:(id)arg2;
 - (int)_setFigCaptureSourceProperty:(struct __CFString *)arg1 withValue:(id)arg2 cacheOnly:(_Bool)arg3;
 - (id)_copyFigCaptureSourceProperty:(struct __CFString *)arg1;
+- (void)setNonDestructiveCropAspectRatio:(long long)arg1;
+- (long long)nonDestructiveCropAspectRatio;
+- (void)setNonDestructiveCropEnabled:(_Bool)arg1;
+- (_Bool)isNonDestructiveCropEnabled;
+- (void)setSpatialOverCaptureEnabled:(_Bool)arg1;
+- (_Bool)isSpatialOverCaptureEnabled;
 - (void)_setBravoCameraSelectionBehavior:(id)arg1;
 - (id)bravoCameraSelectionBehavior;
 - (_Bool)isHEIFSupported;
@@ -198,9 +210,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)automaticallyAdjustsVideoHDREnabled;
 - (_Bool)isAutoRedEyeReductionSupported;
 - (id)cameraPoseMatrix;
+- (void)setGeometricDistortionCorrectionEnabled:(_Bool)arg1;
+- (_Bool)isGeometricDistortionCorrectionEnabled;
+- (_Bool)isGeometricDistortionCorrectionSupported;
 - (void)_setMaxAvailableVideoZoomFactor:(double)arg1;
 - (double)maxAvailableVideoZoomFactor;
 - (void)_setMinAvailableVideoZoomFactor:(double)arg1;
+- (id)virtualDeviceSwitchOverVideoZoomFactors;
 - (double)minAvailableVideoZoomFactor;
 - (double)dualCameraSwitchOverVideoZoomFactor;
 - (void)cancelVideoZoomRamp;
@@ -221,6 +237,10 @@ __attribute__((visibility("hidden")))
 - (float)videoZoomRampAcceleration;
 - (_Bool)isMachineReadableCodeDetectionSupported;
 - (void)_setPhotoSettingsForSceneMonitoring:(id)arg1;
+- (void)_setDigitalFlashSceneForPhotoOutput:(id)arg1;
+- (id)digitalFlashSceneForPhotoOutput;
+- (id)_digitalFlashExposureTimes;
+- (long long)_digitalFlashStatus;
 - (void)_setIsStillImageStabilizationScene:(_Bool)arg1;
 - (_Bool)_isStillImageStabilizationScene;
 - (_Bool)isStillImageStabilizationScene;
@@ -235,6 +255,7 @@ __attribute__((visibility("hidden")))
 - (void)setFaceDetectionDrivenImageProcessingEnabled:(_Bool)arg1;
 - (_Bool)isFaceDetectionDrivenImageProcessingEnabled;
 - (_Bool)isFaceDetectionDuringVideoPreviewSupported;
+- (_Bool)isObjectDetectionSupported;
 - (_Bool)isFaceDetectionSupported;
 - (_Bool)isDiagnosticsTestSupported:(id)arg1;
 - (id)runDiagnosticsWithTestType:(id)arg1;
@@ -340,6 +361,9 @@ __attribute__((visibility("hidden")))
 - (long long)position;
 - (_Bool)isConnected;
 - (_Bool)isInUseByAnotherApplication;
+- (void)_setDigitalFlashModeInternal:(long long)arg1;
+- (void)setDigitalFlashMode:(long long)arg1;
+- (long long)digitalFlashMode;
 - (void)setLowLightVideoCaptureEnabled:(_Bool)arg1;
 - (_Bool)isLowLightVideoCaptureEnabled;
 - (int)powerConsumptionAt30FPSForOISMode:(int)arg1;

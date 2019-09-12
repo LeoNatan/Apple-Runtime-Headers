@@ -16,13 +16,13 @@
     UIViewController *_presentedViewController;
 }
 
++ (unsigned long long)variableResultTypeForParameter:(id)arg1;
 + (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)recipientViewControllerDidFinish:(id)arg1 cancelled:(BOOL)arg2;
-- (unsigned long long)variableResultType;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (id)stateForVariable:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;

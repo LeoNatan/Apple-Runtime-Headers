@@ -21,7 +21,7 @@
 @property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) EDCachingMailboxPredictor *cachingPredictor; // @synthesize cachingPredictor=_cachingPredictor;
 - (void).cxx_destruct;
-- (void)persistenceDidAddMessages:(id)arg1;
+- (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (id)mailboxPredictionFutureForMessages:(id)arg1;
 - (void)dealloc;
 - (id)init;

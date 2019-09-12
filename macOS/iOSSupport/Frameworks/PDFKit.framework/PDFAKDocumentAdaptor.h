@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     PDFAKDocumentAdaptorPrivate *_private;
 }
 
-+ (BOOL)requirePasswordsUIEnabledForThisThread;
-+ (void)setRequirePasswordsUIEnabledForThisThread:(BOOL)arg1;
++ (BOOL)isHandlingEditDetected;
++ (void)setIsHandlingEditDetected:(BOOL)arg1;
 - (void).cxx_destruct;
 - (void)_delayedModelBaseScaleFactorCalculation;
 - (void)_scheduleDelayedModelBaseScaleFactorCalculation;
@@ -58,8 +58,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)rulerHostWantsSharedRuler;
 - (id)rulerHostingView;
 - (void)pdfDocument:(id)arg1 didReplacePagePlaceholder:(id)arg2 atIndex:(unsigned long long)arg3 withPage:(id)arg4;
-- (void)pdfDocument:(id)arg1 didInsertPagePlaceholder:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)pdfDocument:(id)arg1 didExchangePage:(id)arg2 atIndex:(unsigned long long)arg3 withPage:(id)arg4 atIndex:(unsigned long long)arg5;
+- (void)pdfDocumentDidRemoveAllPagesOrPlaceholders;
 - (void)pdfDocument:(id)arg1 didRemovePage:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)pdfDocument:(id)arg1 didInsertPage:(id)arg2 atIndex:(unsigned long long)arg3;
 @property(nonatomic) __weak id <PDFAKControllerDelegateProtocol> PDFAKControllerDelegate;

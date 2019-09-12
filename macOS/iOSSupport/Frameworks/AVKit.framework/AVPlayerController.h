@@ -6,7 +6,7 @@
 
 #import <UIKit/UIResponder.h>
 
-@class AVAsset, AVAssetTrack, AVMediaSelectionOption, AVObservationController, AVPlayer, AVTimecodeController, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSNumber, NSObject;
+@class AVAsset, AVAssetTrack, AVMediaSelectionOption, AVObservationController, AVPlayer, AVTimecodeController, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSNumber, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface AVPlayerController : UIResponder
@@ -18,8 +18,8 @@
     NSArray *_legibleMediaSelectionOptions;
     AVMediaSelectionOption *_cachedSelectedAudioMediaSelectionOption;
     AVMediaSelectionOption *_cachedSelectedLegibleMediaSelectionOption;
-    long long _savedCaptionAppearanceDisplayType;
-    BOOL _alwaysWantsAutomaticMediaOptionSelection;
+    AVMediaSelectionOption *_cachedSelectedLegibleMediaSelectionOptionAccordingToAVFoundation;
+    NSString *_lastKnownPersistedExtendedLanguageTag;
     float _rate;
     BOOL _isResumed;
     NSObject<OS_dispatch_source> *_seekTimer;
@@ -143,6 +143,7 @@
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
++ (id)canonicalLanguageIdentifierFromString:(id)arg1;
 + (id)keyPathsForValuesAffectingMaximumVideoResolution;
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
 @property(nonatomic) BOOL touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
@@ -320,22 +321,23 @@
 - (void)startInspectionIfNeeded;
 - (id)initWithPlayer:(id)arg1;
 - (id)init;
+- (BOOL)_mediaSelectionCriteriaCanBeAppliedAutomaticallyToLegibleMediaSelectionGroup;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
-- (void)_enableAutoMediaSelection:(id)arg1 shouldUpdateUserPreference:(BOOL)arg2;
 - (void)_enableAutoMediaSelection:(id)arg1;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
+- (void)_performAutomaticMediaSelectionForUserCaptionDisplayType:(long long)arg1;
+- (void)_ensureUserCaptionDisplayType:(long long)arg1;
 - (id)legibleOptions;
 - (id)audioOptions;
 - (void)reloadLegibleOptions;
 - (void)reloadAudioOptions;
+- (void)reloadOptionsAssumingMediaOptionsMayHaveChanged:(BOOL)arg1;
+- (void)reloadOptionsAndCurrentSelections;
 - (void)reloadOptions;
+- (void)selectedMediaOptionMayHaveChanged:(BOOL)arg1;
 - (void)selectedMediaOptionMayHaveChanged;
 - (id)_optionsForGroup:(id)arg1;
-- (void)enableAutomaticCaptionDisplayTypeIfNeeded;
-- (void)toggleCaptions;
-- (void)setSavedCaptionAppearanceDisplayType:(long long)arg1;
-- (long long)savedCaptionAppearanceDisplayType;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (id)keyPathsForValuesAffectingCurrentLegibleMediaSelectionOption;
@@ -348,6 +350,7 @@
 - (id)currentAudioMediaSelectionOption;
 - (void)setAudioMediaSelectionOptions:(id)arg1;
 - (id)audioMediaSelectionOptions;
+- (void)setLegibleMediaSelectionOptions:(id)arg1 audioMediaSelectionOptions:(id)arg2 assumeMediaOptionMayHaveChanged:(BOOL)arg3;
 - (BOOL)hasAudioMediaSelectionOptions;
 - (BOOL)hasMediaSelectionOptions;
 @property(readonly, nonatomic) BOOL supportsVolumeAnimation;

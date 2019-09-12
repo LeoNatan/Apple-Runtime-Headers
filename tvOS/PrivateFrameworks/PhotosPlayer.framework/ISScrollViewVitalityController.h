@@ -10,6 +10,7 @@
 
 @interface ISScrollViewVitalityController : NSObject
 {
+    _Bool _enabled;
     _Bool __isPerformingChanges;
     _Bool _scrolling;
     _Bool _decelerating;
@@ -30,6 +31,7 @@
 @property(nonatomic, setter=_setPerformingChanges:) _Bool _isPerformingChanges; // @synthesize _isPerformingChanges=__isPerformingChanges;
 @property(readonly, nonatomic) NSHashTable *_playerViews; // @synthesize _playerViews=__playerViews;
 @property(nonatomic, setter=_setScrollView:) __weak UIScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
+@property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
 - (void)_updateVitalityFilters;
 - (id)_newVitalityFilter;

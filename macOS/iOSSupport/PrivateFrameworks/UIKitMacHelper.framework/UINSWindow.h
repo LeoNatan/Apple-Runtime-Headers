@@ -47,11 +47,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UINSToolbar> uins_toolbar; // @synthesize uins_toolbar=_uins_toolbar;
 @property(retain, nonatomic) NSObject<UINSTouchBarCoordinator> *touchBarCoordinator; // @synthesize touchBarCoordinator=_touchBarCoordinator;
 - (void).cxx_destruct;
+- (id)_responderChainFromFirstResponder;
+- (id)_dumpLayer;
 @property(nonatomic) __weak UIWindow *keyUIWindow;
 @property(retain, nonatomic) NSArray *uiWindows;
 - (void)setNeedsSizeRestrictionsUpdate;
 - (struct CGSRegionObject *)_regionForOpaqueViewsBlockingDraggableFrame:(struct CGRect)arg1;
 - (void)setNeedsDragRegionsUpdate;
+- (id)_layerHostedContext;
 - (id)_contextForLayerHosting;
 @property(readonly, nonatomic) unsigned int _contextIdForHitTesting;
 - (void)noteUIWindowContextsChanged;
@@ -70,7 +73,6 @@ __attribute__((visibility("hidden")))
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)endHostModalSession;
 - (void)beginHostModalSession;
-- (void)getDropSessionWithID:(unsigned int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)beginDragWithItems:(id)arg1 handler:(id)arg2;
 - (void)setCursor:(id)arg1;
 - (void)takeCursor:(id)arg1;

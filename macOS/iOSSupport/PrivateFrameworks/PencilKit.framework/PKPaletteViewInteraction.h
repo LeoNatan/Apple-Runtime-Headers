@@ -16,7 +16,6 @@
 @interface PKPaletteViewInteraction : NSObject <UIEditingOverlayInteractionWithView, PKPaletteHostingWindowScene, UIInteraction>
 {
     BOOL _paletteDidHideForCanvasState;
-    id <PKPaletteViewDelegate> _delegate;
     PKPaletteHostView *_paletteHostView;
     UIWindowScene *_windowScene;
     UIView *_view;
@@ -41,14 +40,13 @@
 @property(nonatomic) BOOL paletteDidHideForCanvasState; // @synthesize paletteDidHideForCanvasState=_paletteDidHideForCanvasState;
 @property(nonatomic) __weak UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
 @property(retain, nonatomic) PKPaletteHostView *paletteHostView; // @synthesize paletteHostView=_paletteHostView;
-@property(nonatomic) __weak id <PKPaletteViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (struct CGRect)paletteHostingWindowSceneBounds;
 - (id)hostingWindow;
 - (void)_updatePaletteTraitCollection:(id)arg1;
 - (id)_traitCollectionForHostingWindow;
 - (void)_updatePaletteViewConstraints;
-- (void)_updatePaletteViewSize;
+- (void)_updateSceneBounds;
 - (void)editingOverlayContainerDidChangeToSceneBounds:(struct CGRect)arg1;
 - (id)_viewControllerForPalette;
 - (void)_updateForRotation:(id)arg1;
@@ -58,6 +56,7 @@
 - (void)hidePaletteViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)showPaletteViewWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isPaletteVisible) BOOL paletteVisible;
+@property(nonatomic) __weak id <PKPaletteViewDelegate> delegate;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
 - (id)initWithWindowSize:(struct CGSize)arg1;

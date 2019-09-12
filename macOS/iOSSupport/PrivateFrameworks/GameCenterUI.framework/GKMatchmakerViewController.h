@@ -68,6 +68,7 @@
 - (id)initialState;
 - (struct CGSize)_gkSizeForDialogController;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (long long)modalPresentationStyle;
 - (void)requestRemoteViewController;
 - (void)loadView;
 - (id)view;

@@ -15,7 +15,7 @@
 #import <MediaControls/MediaControlsMasterVolumeSliderDelegate-Protocol.h>
 #import <MediaControls/MediaControlsPanelViewControllerDelegate-Protocol.h>
 
-@class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MSVTimer, MTVisualStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, UIView;
+@class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MSVTimer, MTVisualStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, SFShareAudioViewController, UIView;
 @protocol MRPlatterViewControllerDelegate;
 
 @interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, MTVisualStylingRequiring, MediaControlsCollectionItemViewController>
@@ -46,6 +46,7 @@
     MediaControlsTransitioningDelegate *_transitioningDelegate;
     MediaControlsLanguageOptionsViewController *_languageOptionsViewController;
     MPMediaControls *_mediaControls;
+    SFShareAudioViewController *_shareAudioViewController;
     FBSDisplayLayoutMonitor *_displayMonitor;
     NSArray *_displayElements;
     NSString *_explicitString;
@@ -75,6 +76,7 @@
 @property(copy, nonatomic) NSString *explicitString; // @synthesize explicitString=_explicitString;
 @property(retain, nonatomic) NSArray *displayElements; // @synthesize displayElements=_displayElements;
 @property(retain, nonatomic) FBSDisplayLayoutMonitor *displayMonitor; // @synthesize displayMonitor=_displayMonitor;
+@property(retain, nonatomic) SFShareAudioViewController *shareAudioViewController; // @synthesize shareAudioViewController=_shareAudioViewController;
 @property(retain, nonatomic) MPMediaControls *mediaControls; // @synthesize mediaControls=_mediaControls;
 @property(nonatomic) __weak MediaControlsLanguageOptionsViewController *languageOptionsViewController; // @synthesize languageOptionsViewController=_languageOptionsViewController;
 @property(retain, nonatomic) MediaControlsTransitioningDelegate *transitioningDelegate; // @synthesize transitioningDelegate=_transitioningDelegate;

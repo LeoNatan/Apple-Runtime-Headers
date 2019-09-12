@@ -31,6 +31,8 @@
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (id)complicationTemplate;
 - (void)setComplicationTemplate:(id)arg1 reason:(int)arg2;

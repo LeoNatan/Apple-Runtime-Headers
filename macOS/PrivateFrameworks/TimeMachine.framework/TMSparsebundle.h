@@ -20,6 +20,7 @@
 + (id)_canonicalVolumeName;
 + (id)purgeableSparsebundlesInDirectory:(id)arg1;
 + (id)sparsebundleMatchingThisComputerInDirectory:(id)arg1;
++ (id)_sparsebundleWithExtension:(id)arg1 matchingHostUUIDs:(id)arg2 orMACAddresses:(id)arg3 inDirectory:(id)arg4;
 + (id)sparsebundleMatchingHostUUIDs:(id)arg1 orMACAddresses:(id)arg2 inDirectory:(id)arg3;
 @property(copy) NSURL *sparsebundleURL; // @synthesize sparsebundleURL=_sparsebundleURL;
 - (id)healthCheckDate;
@@ -59,7 +60,6 @@
 - (id)readTimeMachineInfo;
 - (BOOL)setImmutable:(BOOL)arg1;
 - (BOOL)isImmutable;
-- (BOOL)_canBeProbed;
 - (BOOL)_isPurgeable;
 - (BOOL)_isPartiallyCreated;
 - (id)_backupHistoryURL;

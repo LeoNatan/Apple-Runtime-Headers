@@ -13,7 +13,6 @@
     NSString *mServiceID;
     NSBundle *mBundle;
     NSURL *mApplicationURL;
-    AppleNetworkMenuHeaderView *mHeaderView;
     NSMenuItem *mHeaderMenuItem;
     NSMutableArray *mMenuItems;
     BOOL mHeaderEnabled;
@@ -36,9 +35,10 @@
     BOOL mUnloading;
     long long mStatus;
     int mConnectionState;
-    long long mGotApplicationURLOnce;
+    AppleNetworkMenuHeaderView *_headerView;
 }
 
+@property(retain) AppleNetworkMenuHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void)p_performStatusCheck;
 - (void)p_stopStatusCheckTimer;
 - (void)p_startStatusCheckTimer;

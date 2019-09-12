@@ -9,6 +9,6 @@
 #import <NewsUI2/TSTabBarSplitViewAutoObserver-Protocol.h>
 
 @interface _TtC7NewsUI226MagazineFeedViewController (NewsUI21) <TSTabBarSplitViewAutoObserver>
-- (void)tabBarSplitViewDidChangeFocusToFocus:(long long)arg1;
+- (void)tabBarSplitViewDidChangeFocusToFocus:(long long)arg1 action:(long long)arg2;
 @end
 

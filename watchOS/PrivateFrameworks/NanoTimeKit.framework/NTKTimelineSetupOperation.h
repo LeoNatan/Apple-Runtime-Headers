@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKTimelineDataOperation.h>
 
-@class CLKComplicationTimelineEntry, NSDate;
+@class CLKComplicationTemplate, CLKComplicationTimelineEntry, NSDate;
 
 @interface NTKTimelineSetupOperation : NTKTimelineDataOperation
 {
@@ -16,12 +16,14 @@
     unsigned int _privacyBehavior;
     unsigned int _timelineAnimationBehavior;
     CLKComplicationTimelineEntry *_currentEntry;
+    CLKComplicationTemplate *_alwaysOnTemplate;
     CDUnknownBlockType _handler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
 - (void)_invokeHandler;
+- (void)_getAlwaysOnTemplate;
 - (void)_getCurrentEntry;
 - (void)_getTimelineAnimationBehavior;
 - (void)_getPrivacyBehavior;

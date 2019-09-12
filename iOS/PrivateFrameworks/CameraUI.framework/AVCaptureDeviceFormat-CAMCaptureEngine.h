@@ -12,6 +12,7 @@
 - (long long)cam_compareUsingBinning:(id)arg1;
 - (long long)cam_compareUsingQuality:(id)arg1;
 - (long long)cam_compareUsingDimensions:(id)arg1;
+@property(readonly, nonatomic) _Bool cam_supportsPortraitFrontFacingZoomed;
 - (_Bool)cam_supportsPanoramaConfiguration:(id)arg1;
 - (_Bool)cam_supportsFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (_Bool)cam_supportsFrameRate:(double)arg1;

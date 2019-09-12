@@ -70,8 +70,11 @@
 @property(retain) HMBShareUserID *cloudShareID; // @synthesize cloudShareID=_cloudShareID;
 @property(copy, setter=setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (void)cloudShareTrustManager:(id)arg1 didRemoveUserWithUUID:(id)arg2;
+- (void)didRemoveTrustZoneInCloudShareTrustManager:(id)arg1;
 - (void)didFinishConfiguringForCloudShareTrustManager:(id)arg1;
 - (void)cloudShareTrustManager:(id)arg1 didFetchOwnerCloudShareID:(id)arg2;
+- (_Bool)isOwnerCapableForTrustManager:(id)arg1;
 - (id)homeForCloudShareTrustManager:(id)arg1;
 - (id)ownerForCloudShareTrustManager:(id)arg1;
 - (id)zoneNameForCloudShareTrustManager:(id)arg1;
@@ -94,7 +97,7 @@
 @property(readonly) _Bool isRunningOnHomeOwnersDevice;
 - (void)settingsController:(id)arg1 didUpdateWithCompletion:(CDUnknownBlockType)arg2;
 - (id)dictionaryEncoding;
-- (void)removeUserData;
+- (void)removeCloudData;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (id)backingStoreObjects:(long long)arg1;

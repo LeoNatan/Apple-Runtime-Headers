@@ -46,6 +46,7 @@
 }
 
 + (id)activityItemSourceLog;
++ (unsigned long long)assetBundleReframeVariationFromPHAssetReframeVariation:(unsigned long long)arg1;
 + (unsigned short)assetBundleVideoComplementVisibilityStateFromPHVideoComplementVisibilityState:(unsigned short)arg1;
 + (unsigned long long)assetBundlePlaybackVariationFromPHAssetPlaybackVariation:(unsigned short)arg1;
 + (long long)assetBundlePlaybackStyleFromPHAssetPlaybackStyle:(long long)arg1;

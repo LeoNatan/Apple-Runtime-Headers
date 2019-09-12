@@ -9,8 +9,14 @@
 @interface TUISystemInputAssistantLayoutStandard : TUISystemInputAssistantLayout
 {
     _Bool _buttonBarItemsExpanded;
+    _Bool _isSplit;
+    double _leftSplitWidth;
+    double _rightSplitWidth;
 }
 
+@property(nonatomic) double rightSplitWidth; // @synthesize rightSplitWidth=_rightSplitWidth;
+@property(nonatomic) double leftSplitWidth; // @synthesize leftSplitWidth=_leftSplitWidth;
+@property(nonatomic) _Bool isSplit; // @synthesize isSplit=_isSplit;
 @property(nonatomic) _Bool buttonBarItemsExpanded; // @synthesize buttonBarItemsExpanded=_buttonBarItemsExpanded;
 - (void)layoutViewSet:(id)arg1 inBounds:(struct CGRect)arg2 forAssistantView:(id)arg3;
 - (void)_layoutViewSet:(id)arg1 forFlexibleCenterViewInBounds:(struct CGRect)arg2 forAssistantView:(id)arg3;

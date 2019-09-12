@@ -42,6 +42,7 @@
 - (id)nextLaunchAnimationEnvironments;
 - (id)launchAnimationsWithContext:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (void)topShelfContentViewController:(id)arg1 willScrollToFirstItem:(_Bool)arg2;
 - (void)topShelfContentViewController:(id)arg1 contentStyleDidChange:(unsigned long long)arg2;
 - (void)transactionDidComplete:(id)arg1;
 - (void)_updateContentViewControllerContentOccluded;

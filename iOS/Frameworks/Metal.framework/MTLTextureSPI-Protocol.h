@@ -20,6 +20,7 @@
 @property(readonly) struct __IOSurface *iosurface;
 
 @optional
+@property(readonly) unsigned long long sparseSurfaceDefaultValue;
 @property(nonatomic) unsigned long long resourceIndex;
 @property(readonly) unsigned long long uniqueIdentifier;
 - (void)generateMipmapLevel:(unsigned long long)arg1 slice:(unsigned long long)arg2;

@@ -7,13 +7,14 @@
 #import <SceneKit/SCNView.h>
 
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
+#import <ARKit/ARPresentationDelegate-Protocol.h>
 #import <ARKit/ARSessionProviding-Protocol.h>
 #import <ARKit/_SCNSceneRendererDelegate-Protocol.h>
 
-@class ARFrame, ARPointCloud, ARSCNCompositor, ARSession, CIWarpKernel, NSMutableArray, NSMutableDictionary, NSObject, NSString, SCNNode, SCNScene, UIView;
+@class ARFrame, ARPointCloud, ARPresentation, ARPresentationFrame, ARSCNCompositor, ARSession, ARSinglePassRenderer, CIWarpKernel, NSMutableArray, NSMutableDictionary, NSObject, NSString, SCNNode, SCNScene, UIView;
 @protocol ARSCNViewDelegate, OS_dispatch_semaphore, SCNCaptureDeviceOutputConsumer;
 
-@interface ARSCNView : SCNView <ARInternalSessionObserver, _SCNSceneRendererDelegate, ARSessionProviding>
+@interface ARSCNView : SCNView <ARInternalSessionObserver, _SCNSceneRendererDelegate, ARPresentationDelegate, ARSessionProviding>
 {
     ARSession *_session;
     double _lastFrameTimestamp;
@@ -47,6 +48,9 @@
     _Bool _attemptRenderSynchronisationARFrame;
     ARSCNCompositor *_compositor;
     struct os_unfair_lock_s _occlusionLock;
+    ARPresentation *_presentation;
+    ARPresentationFrame *_currentPresentationFrame;
+    ARSinglePassRenderer *_arSinglePassRenderer;
     // Error parsing type: {?="columns"[4]}, name: _currentReferenceTransform
     _Bool _runningWithSegmentation;
     _Bool _automaticallyOccludesVirtualContent;
@@ -117,6 +121,7 @@
 - (void)session:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (void)_renderer:(id)arg1 updateAtTime:(double)arg2;
+- (void)presentationIsReadyForNextRender:(id)arg1;
 - (void)_drawAtTime:(double)arg1;
 @property(nonatomic) __weak id <ARSCNViewDelegate> delegate; // @dynamic delegate;
 - (long long)preferredFramesPerSecond;
@@ -140,6 +145,7 @@
 @property(readonly, copy) NSString *description;
 - (void)layoutSubviews;
 - (void)encodeWithCoder:(id)arg1;
+- (void)setupCompositor;
 - (void)_commonInit;
 @property(readonly, nonatomic) ARFrame *currentRenderFrame;
 - (id)compositor;

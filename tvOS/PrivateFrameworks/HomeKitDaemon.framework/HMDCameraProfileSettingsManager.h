@@ -65,6 +65,7 @@
 - (id)messageDestination;
 - (_Bool)_shouldQueryCanDisableRecordingForAccessMode:(unsigned long long)arg1 isAtHome:(_Bool)arg2 currentSettings:(id)arg3;
 - (_Bool)_shouldQueryCanEnableRecordingForAccessMode:(unsigned long long)arg1 currentSettings:(id)arg2;
+- (void)_addRecordingAudioEnabledWriteRequestToArray:(id)arg1 recordingAudioEnabled:(_Bool)arg2;
 - (void)_addAccessModeCharacteristicWriteRequestsToArray:(id)arg1 currentAccessMode:(unsigned long long)arg2;
 - (void)_addHomeKitCameraActiveCharacteristicWriteRequestToArray:(id)arg1 currentAccessMode:(unsigned long long)arg2;
 - (void)_addSnapshotsActiveCharacteristicWriteRequestToArray:(id)arg1 snapshotsAllowed:(_Bool)arg2;
@@ -92,11 +93,14 @@
 - (void)_updateCurrentAccessModeForSettings:(id)arg1 withDescription:(id)arg2;
 - (void)handleHomePresenceUpdateNotification:(id)arg1;
 - (void)_handleBulletinBoardNotificationCommit:(id)arg1;
+- (void)_handleAccessModeChangeNotificationEnabled:(id)arg1;
+- (void)_handleRecordingAudioEnabled:(id)arg1;
 - (void)_handleUpdateNightVisionModeEnabled:(id)arg1;
 - (void)_handleUpdateSnapshotsAllowed:(id)arg1;
 - (void)_handleAccessModeIndicatorEnabled:(id)arg1;
 - (void)_handleUpdateRecordingTriggerEvents:(id)arg1;
 - (void)_handleUpdateAccessMode:(id)arg1;
+@property(readonly) NSString *zoneName;
 - (void)disableRecordingAccessModes;
 @property(readonly) unsigned long long supportedFeatures;
 @property(readonly) HMDCameraProfileSettingsModel *defaultSettingsModel;

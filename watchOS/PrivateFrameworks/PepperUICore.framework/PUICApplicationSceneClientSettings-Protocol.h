@@ -7,6 +7,8 @@
 #import <PepperUICore/NSObject-Protocol.h>
 
 @protocol PUICApplicationSceneClientSettings <NSObject>
+@property(readonly, nonatomic) double fromAOTAnimationDuration;
+@property(readonly, nonatomic) double toAOTAnimationDuration;
 @property(readonly, nonatomic) unsigned int crownWindowContextID;
 @property(readonly, nonatomic) _Bool statusBarOccluded;
 @property(readonly, nonatomic) unsigned int screenOffIdleBehavior;

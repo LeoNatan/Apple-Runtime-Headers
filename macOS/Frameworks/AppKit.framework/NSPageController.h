@@ -41,7 +41,7 @@
         unsigned int reserved:28;
     } _pcFlags;
     char *_cancelAnimation;
-    NSMutableDictionary *_reusueQueue;
+    NSMutableDictionary *_reuseQueue;
     NSMutableDictionary *_templateCache;
     NSView *_transitionView;
     id _animator;

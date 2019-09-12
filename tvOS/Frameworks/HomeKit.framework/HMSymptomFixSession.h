@@ -25,6 +25,7 @@
     HMFTimer *_symptomDisappearanceTimer;
     UIViewController *_presentingViewController;
     _HMContext *_context;
+    NSString *_logIdentifier;
     HMSymptom *_symptom;
     NSUUID *_deviceIdentifier;
 }
@@ -34,6 +35,7 @@
 + (id)_createDeviceRepairSession;
 @property(readonly, nonatomic) NSUUID *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(readonly, nonatomic) HMSymptom *symptom; // @synthesize symptom=_symptom;
+@property(readonly, copy, nonatomic) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;

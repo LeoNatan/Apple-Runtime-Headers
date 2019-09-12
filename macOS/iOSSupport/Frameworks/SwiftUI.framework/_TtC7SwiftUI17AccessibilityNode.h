@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: children
     // Error parsing type: , name: parent
-    // Error parsing type: , name: displayLinkHost
+    // Error parsing type: , name: viewRendererHost
     // Error parsing type: , name: oldAttachmentForNotification
     // Error parsing type: , name: skipNotifyForAttachmentChanged
     // Error parsing type: , name: attachmentsStorage

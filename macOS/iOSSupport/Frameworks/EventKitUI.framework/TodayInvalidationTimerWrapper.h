@@ -17,9 +17,9 @@
 - (void)invalidateTodayAndNotifyIfChanged;
 - (BOOL)todayChangedAfterInvalidation;
 - (void)_killTimeZoneTimer;
-- (void)_setupTimeZoneTimer;
+- (void)_setupTimeZoneTimerWithCalendar:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithCalendar:(id)arg1;
 
 @end
 

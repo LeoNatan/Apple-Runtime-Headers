@@ -12,10 +12,13 @@
 {
     _Bool _runningGraceOrLater;
     _Bool _isLuxo;
+    _Bool _supportsTritium;
+    _Bool _isZeusBlack;
     _Bool _limitedToPreGlory;
     _Bool _isBridgeActive;
     _Bool _isExplorer;
     _Bool _hasRichMediaComplications;
+    _Bool _supportsUrsa;
     int _pairedDeviceCapabilitiesChangeNotificationToken;
     struct os_unfair_lock_s _capabilitiesLock;
     unsigned long long _sizeClass;
@@ -37,6 +40,7 @@
 + (void)initialize;
 + (void)setCurrentDevice:(id)arg1;
 + (id)currentDevice;
+@property(nonatomic) _Bool supportsUrsa; // @synthesize supportsUrsa=_supportsUrsa;
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
 @property(nonatomic) _Bool isBridgeActive; // @synthesize isBridgeActive=_isBridgeActive;
@@ -46,6 +50,8 @@
 @property(retain, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
 @property(nonatomic) unsigned long long materialType; // @synthesize materialType=_materialType;
 @property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
+@property(readonly, nonatomic) _Bool isZeusBlack; // @synthesize isZeusBlack=_isZeusBlack;
+@property(readonly, nonatomic) _Bool supportsTritium; // @synthesize supportsTritium=_supportsTritium;
 @property(nonatomic) _Bool isLuxo; // @synthesize isLuxo=_isLuxo;
 @property(nonatomic) double screenCornerRadius; // @synthesize screenCornerRadius=_screenCornerRadius;
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;

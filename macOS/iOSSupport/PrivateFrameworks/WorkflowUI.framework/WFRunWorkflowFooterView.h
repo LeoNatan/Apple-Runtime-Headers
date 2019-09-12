@@ -26,6 +26,7 @@
 - (void)setQuickLookViewHidden:(BOOL)arg1 addButtonHidden:(BOOL)arg2;
 - (void)didTapAddButton;
 - (void)tintColorDidChange;
+- (void)updateAddButtonGradient;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

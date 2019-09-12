@@ -65,6 +65,7 @@
 - (void)_minValueAccessoryDidFire:(id)arg1;
 - (void)_sliderDidChange:(id)arg1;
 - (void)updateConstraints;
+- (id)_displayImageForImage:(id)arg1;
 - (void)_loadViewHierarchy;
 @property(retain) NSSlider *slider;
 @property(readonly) BOOL _maxValueAccessoryIsHidden;

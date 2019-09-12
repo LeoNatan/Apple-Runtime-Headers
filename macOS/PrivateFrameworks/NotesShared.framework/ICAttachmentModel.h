@@ -38,7 +38,7 @@
 - (id)generateTemporaryURLWithExtension:(id)arg1;
 @property(readonly) NSURL *previewItemURL;
 - (id)titleForSubAttachment:(id)arg1;
-- (id)hardLinkFolderPath;
+- (id)hardLinkFolderURL;
 - (BOOL)canConvertToHTMLForSharing;
 - (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
 - (void)noteWillAddOrRemovePassword;

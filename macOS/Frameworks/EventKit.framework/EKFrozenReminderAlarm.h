@@ -6,7 +6,7 @@
 
 #import <EventKit/EKFrozenReminderObject.h>
 
-@class NSArray, NSString, REMAlarm;
+@class EKFrozenReminderStructuredLocation, NSArray, NSString, REMAlarm;
 
 @interface EKFrozenReminderAlarm : EKFrozenReminderObject
 {
@@ -17,6 +17,8 @@
 + (id)sharedUIDFromFrozenCalendarAlarm:(id)arg1;
 + (long long)alarmProximityFromString:(id)arg1;
 + (id)alarmProximityToString:(long long)arg1;
++ (id)semanticIdentifierFromDateComponents:(id)arg1;
++ (id)semanticIdentifierFromREMAlarm:(id)arg1;
 + (id)uniqueIdentifierForREMObject:(id)arg1;
 + (id)triggersFromAbsoluteDate:(id)arg1 relativeOffset:(double)arg2 timeValuesRelevant:(BOOL)arg3 structuredLocation:(id)arg4 proximity:(long long)arg5;
 + (long long)ekAlarmProximityToEKAlarmProximity:(long long)arg1;
@@ -43,7 +45,7 @@
 - (id)_remStructuredLocation;
 @property(readonly) NSString *externalID;
 - (id)modifiedStructuredLocation;
-- (id)structuredLocation;
+@property(readonly) EKFrozenReminderStructuredLocation *structuredLocation;
 - (id)absoluteDate;
 - (double)relativeOffset;
 - (id)uniqueIdentifier;

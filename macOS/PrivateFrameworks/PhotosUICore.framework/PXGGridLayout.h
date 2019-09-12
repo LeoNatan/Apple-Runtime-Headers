@@ -8,10 +8,11 @@
 
 #import <PhotosUICore/PXCuratedLibraryAllPhotosBodyLayout-Protocol.h>
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
+#import <PhotosUICore/PXGItemsGeometry-Protocol.h>
 
 @class NSString;
 
-@interface PXGGridLayout : PXGItemsLayout <PXCuratedLibraryAllPhotosBodyLayout, PXGDiagnosticsProvider>
+@interface PXGGridLayout : PXGItemsLayout <PXCuratedLibraryAllPhotosBodyLayout, PXGItemsGeometry, PXGDiagnosticsProvider>
 {
     CDStruct_5f1286c4 _updateFlags;
     BOOL _isUpdating;
@@ -66,6 +67,9 @@
 @property(nonatomic) BOOL canHandleVisibleRectRejection; // @synthesize canHandleVisibleRectRejection=_canHandleVisibleRectRejection;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
+- (id)itemsInRect:(struct CGRect)arg1 inLayout:(id)arg2;
+- (id)itemsBetweenItem:(long long)arg1 andItem:(long long)arg2;
+- (long long)itemClosestToItem:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
 - (void)setNumberOfItems:(long long)arg1 withChangeDetails:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;
 - (void)loadedItemsDidChange;
@@ -76,6 +80,7 @@
 - (void)referenceSizeDidChange;
 - (BOOL)shouldUpdateDecorationMediaTargetSizes;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
+- (id)itemsGeometry;
 - (struct _NSRange)itemsToLoad;
 - (struct CGRect)_pageAlignedRectForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)_itemsToLoadForVisibleRect:(struct CGRect)arg1;

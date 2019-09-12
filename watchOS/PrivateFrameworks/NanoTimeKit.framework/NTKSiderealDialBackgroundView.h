@@ -25,6 +25,7 @@
 - (void)layoutSubviews;
 - (void)setSectors:(id)arg1;
 - (void)setSolarDayProgress:(float)arg1;
+- (float)computeDimming;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 dialImage:(struct CGImage *)arg2 waypointImage:(struct CGImage *)arg3 dataSource:(id)arg4;
 

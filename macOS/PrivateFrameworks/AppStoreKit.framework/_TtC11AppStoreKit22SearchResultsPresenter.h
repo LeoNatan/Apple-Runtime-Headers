@@ -15,6 +15,7 @@
     // Error parsing type: , name: url
     // Error parsing type: , name: searchEntity
     // Error parsing type: , name: searchOrigin
+    // Error parsing type: , name: isNetworkConstrained
     // Error parsing type: , name: results
     // Error parsing type: , name: facets
     // Error parsing type: , name: facetSetsView

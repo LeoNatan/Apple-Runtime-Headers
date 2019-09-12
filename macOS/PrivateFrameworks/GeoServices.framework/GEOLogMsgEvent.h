@@ -137,11 +137,6 @@
 
 + (BOOL)isValid:(id)arg1;
 + (Class)logMsgStateType;
-+ (id)logMsgEventSettings;
-+ (BOOL)logMsgEventType:(int)arg1 acceptsLogMsgStateType:(int)arg2;
-+ (id)acceptedLogMsgStatesForLogMsgEventType:(int)arg1;
-+ (id)acceptedLogMsgStates;
-+ (void)_initializeAcceptedLogMsgStateTypes;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL hasUsageEventTime;
 @property(nonatomic) double usageEventTime;
@@ -274,22 +269,6 @@
 - (void)clearLogMsgStates;
 @property(retain, nonatomic) NSMutableArray *logMsgStates;
 - (void)_readLogMsgStates;
-- (void)unregisterLogMsgStateOfType:(int)arg1;
-- (void)unregisterLogMsgStatesOfTypes:(id)arg1;
-- (id)logMsgStateOfType:(int)arg1 stateOrigin:(id)arg2;
-- (id)logMsgStateOfType:(int)arg1;
-- (unsigned long long)numberOfLogMsgStatesOfType:(int)arg1 stateOrigin:(id)arg2;
-- (unsigned long long)numberOfLogMsgStatesOfType:(int)arg1;
-- (id)disallowedStatesForLogMessage:(id)arg1;
-- (BOOL)disallowedStateWithStateType:(int)arg1 logMessage:(id)arg2;
-- (BOOL)supportsCohortSession;
-- (BOOL)isSessionlessEvent;
-- (BOOL)isApplicationStatesAllowed;
-- (BOOL)isFullExperimentsStateAllowed;
-- (BOOL)isFullCarPlayStateAllowed;
-- (BOOL)isNavigationSessionAllowed;
-- (BOOL)isLogMsgEventSettingsAllowed:(id)arg1 defaultValue:(BOOL)arg2;
-- (BOOL)acceptsLogMsgStateType:(int)arg1;
 
 @end
 

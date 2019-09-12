@@ -13,11 +13,13 @@
     AVCaptureResolvedPhotoSettingsInternal *_internal;
 }
 
-+ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(CDStruct_79c71658)arg2 rawPhotoDimensions:(CDStruct_79c71658)arg3 previewDimensions:(CDStruct_79c71658)arg4 embeddedThumbnailDimensions:(CDStruct_79c71658)arg5 rawEmbeddedThumbnailDimensions:(CDStruct_79c71658)arg6 livePhotoMovieEnabled:(_Bool)arg7 livePhotoMovieDimensions:(CDStruct_79c71658)arg8 portraitEffectsMatteDimensions:(CDStruct_79c71658)arg9 hairSegmentationMatteDimensions:(CDStruct_79c71658)arg10 skinSegmentationMatteDimensions:(CDStruct_79c71658)arg11 teethSegmentationMatteDimensions:(CDStruct_79c71658)arg12 turboModeEnabled:(_Bool)arg13 flashEnabled:(_Bool)arg14 redEyeReductionEnabled:(_Bool)arg15 HDREnabled:(_Bool)arg16 adjustedPhotoFiltersEnabled:(_Bool)arg17 EV0PhotoDeliveryEnabled:(_Bool)arg18 stillImageStabilizationEnabled:(_Bool)arg19 virtualDeviceFusionEnabled:(_Bool)arg20 squareCropEnabled:(_Bool)arg21 photoProcessingTimeRange:(CDStruct_e83c9415)arg22 photoManifest:(id)arg23;
++ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(CDStruct_79c71658)arg2 rawPhotoDimensions:(CDStruct_79c71658)arg3 previewDimensions:(CDStruct_79c71658)arg4 embeddedThumbnailDimensions:(CDStruct_79c71658)arg5 rawEmbeddedThumbnailDimensions:(CDStruct_79c71658)arg6 livePhotoMovieEnabled:(_Bool)arg7 livePhotoMovieDimensions:(CDStruct_79c71658)arg8 portraitEffectsMatteDimensions:(CDStruct_79c71658)arg9 hairSegmentationMatteDimensions:(CDStruct_79c71658)arg10 skinSegmentationMatteDimensions:(CDStruct_79c71658)arg11 teethSegmentationMatteDimensions:(CDStruct_79c71658)arg12 spatialOverCapturePhotoDimensions:(CDStruct_79c71658)arg13 turboModeEnabled:(_Bool)arg14 flashEnabled:(_Bool)arg15 redEyeReductionEnabled:(_Bool)arg16 HDREnabled:(_Bool)arg17 adjustedPhotoFiltersEnabled:(_Bool)arg18 EV0PhotoDeliveryEnabled:(_Bool)arg19 stillImageStabilizationEnabled:(_Bool)arg20 virtualDeviceFusionEnabled:(_Bool)arg21 squareCropEnabled:(_Bool)arg22 deferredPhotoProxyDimensions:(CDStruct_79c71658)arg23 photoProcessingTimeRange:(CDStruct_e83c9415)arg24 photoManifest:(id)arg25;
 @property(readonly) CDStruct_e83c9415 photoProcessingTimeRange;
+- (CDStruct_79c71658)deferredPhotoProxyDimensions;
 - (id)photoManifest;
 @property(readonly) unsigned long long expectedPhotoCount;
 @property(readonly, getter=isDualCameraFusionEnabled) _Bool dualCameraFusionEnabled;
+@property(readonly, getter=isVirtualDeviceFusionEnabled) _Bool virtualDeviceFusionEnabled;
 - (_Bool)livePhotoMovieEnabled;
 - (_Bool)isSquareCropEnabled;
 @property(readonly, getter=isStillImageStabilizationEnabled) _Bool stillImageStabilizationEnabled;
@@ -27,6 +29,7 @@
 @property(readonly, getter=isRedEyeReductionEnabled) _Bool redEyeReductionEnabled;
 @property(readonly, getter=isFlashEnabled) _Bool flashEnabled;
 - (_Bool)isTurboModeEnabled;
+- (CDStruct_79c71658)spatialOverCapturePhotoDimensions;
 - (CDStruct_79c71658)dimensionsForSemanticSegmentationMatteOfType:(id)arg1;
 @property(readonly) CDStruct_79c71658 portraitEffectsMatteDimensions;
 @property(readonly) CDStruct_79c71658 livePhotoMovieDimensions;
@@ -39,7 +42,7 @@
 - (id)description;
 - (id)debugDescription;
 - (void)dealloc;
-- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(CDStruct_79c71658)arg2 rawPhotoDimensions:(CDStruct_79c71658)arg3 previewDimensions:(CDStruct_79c71658)arg4 embeddedThumbnailDimensions:(CDStruct_79c71658)arg5 rawEmbeddedThumbnailDimensions:(CDStruct_79c71658)arg6 livePhotoMovieEnabled:(_Bool)arg7 livePhotoMovieDimensions:(CDStruct_79c71658)arg8 portraitEffectsMatteDimensions:(CDStruct_79c71658)arg9 hairSegmentationMatteDimensions:(CDStruct_79c71658)arg10 skinSegmentationMatteDimensions:(CDStruct_79c71658)arg11 teethSegmentationMatteDimensions:(CDStruct_79c71658)arg12 turboModeEnabled:(_Bool)arg13 flashEnabled:(_Bool)arg14 redEyeReductionEnabled:(_Bool)arg15 HDREnabled:(_Bool)arg16 adjustedPhotoFiltersEnabled:(_Bool)arg17 EV0PhotoDeliveryEnabled:(_Bool)arg18 stillImageStabilizationEnabled:(_Bool)arg19 virtualDeviceFusionEnabled:(_Bool)arg20 squareCropEnabled:(_Bool)arg21 photoProcessingTimeRange:(CDStruct_e83c9415)arg22 photoManifest:(id)arg23;
+- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(CDStruct_79c71658)arg2 rawPhotoDimensions:(CDStruct_79c71658)arg3 previewDimensions:(CDStruct_79c71658)arg4 embeddedThumbnailDimensions:(CDStruct_79c71658)arg5 rawEmbeddedThumbnailDimensions:(CDStruct_79c71658)arg6 livePhotoMovieEnabled:(_Bool)arg7 livePhotoMovieDimensions:(CDStruct_79c71658)arg8 portraitEffectsMatteDimensions:(CDStruct_79c71658)arg9 hairSegmentationMatteDimensions:(CDStruct_79c71658)arg10 skinSegmentationMatteDimensions:(CDStruct_79c71658)arg11 teethSegmentationMatteDimensions:(CDStruct_79c71658)arg12 spatialOverCapturePhotoDimensions:(CDStruct_79c71658)arg13 turboModeEnabled:(_Bool)arg14 flashEnabled:(_Bool)arg15 redEyeReductionEnabled:(_Bool)arg16 HDREnabled:(_Bool)arg17 adjustedPhotoFiltersEnabled:(_Bool)arg18 EV0PhotoDeliveryEnabled:(_Bool)arg19 stillImageStabilizationEnabled:(_Bool)arg20 virtualDeviceFusionEnabled:(_Bool)arg21 squareCropEnabled:(_Bool)arg22 deferredPhotoProxyDimensions:(CDStruct_79c71658)arg23 photoProcessingTimeRange:(CDStruct_e83c9415)arg24 photoManifest:(id)arg25;
 
 @end
 

@@ -74,6 +74,7 @@
 @property(readonly) struct CGRect overlayFrame;
 - (struct CGRect)_contentFrameInViewSpace;
 @property(readonly) struct CGRect borderFrame;
+- (BOOL)hasContentAtLocation:(struct CGPoint)arg1;
 - (struct CGRect)_convertRectFromDisplayBundleToView:(struct CGRect)arg1;
 @property(readonly) CALayer *overlayParentLayer;
 @property(readonly) NSView *overlayParentView;

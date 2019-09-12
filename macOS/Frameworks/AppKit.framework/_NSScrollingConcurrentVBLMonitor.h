@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSRecursiveLock, _NSScrollingConcurrentConstantData, _NSScrollingConcurrentMainThreadSynchronizer, _NSScrollingConcurrentSharedData, _NSScrollingConcurrentVBLPreprocessFilter;
+@class NSLock, _NSScrollingConcurrentConstantData, _NSScrollingConcurrentMainThreadSynchronizer, _NSScrollingConcurrentSharedData, _NSScrollingConcurrentVBLPreprocessFilter;
 @protocol _NSScrollStateEventListener;
 
 __attribute__((visibility("hidden")))
 @interface _NSScrollingConcurrentVBLMonitor : NSObject
 {
-    NSRecursiveLock *_synchLock;
+    NSLock *_synchLock;
     char *_isCancelledPtr;
     struct {
         unsigned int isCursorInTarget:1;
@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (void)remove;
 - (void)suspend;
 - (void)resume;
-- (void)_synchronizeForVBLSerialNumber:(unsigned long long)arg1 timestamp:(double)arg2 updateDuration:(double)arg3;
 - (void)_updateScrollAnimation;
 - (void)_checkCursorTargeting;
 - (void)dealloc;

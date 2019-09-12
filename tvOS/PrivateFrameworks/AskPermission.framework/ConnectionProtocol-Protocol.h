@@ -10,11 +10,11 @@
 
 @protocol ConnectionProtocol <NSObject>
 - (void)didReceiveStorePushNotificationWithPayload:(NSDictionary *)arg1;
-- (void)presentProductPageWithTitle:(NSString *)arg1 body:(NSString *)arg2 itemIdentifier:(NSString *)arg3 previewURL:(NSString *)arg4;
+- (void)presentProductPageWithTitle:(NSString *)arg1 body:(NSString *)arg2 approve:(NSString *)arg3 decline:(NSString *)arg4 itemIdentifier:(NSString *)arg5 previewURL:(NSString *)arg6;
 - (void)start;
+- (void)resetAccountWithType:(long long)arg1;
 - (void)updateRequestWithIdentifier:(NSString *)arg1 action:(long long)arg2 completion:(void (^)(NSError *))arg3;
 - (void)localApproveRequestWithItemIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)resetAccountWithType:(long long)arg1;
 - (void)addRequestWithURL:(NSURL *)arg1 account:(ACAccount *)arg2 completion:(void (^)(NSError *))arg3;
 @end
 

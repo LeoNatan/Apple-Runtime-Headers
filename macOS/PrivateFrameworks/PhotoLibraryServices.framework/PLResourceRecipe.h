@@ -14,8 +14,10 @@
 
 + (id)recipeFromID:(unsigned int)arg1;
 + (Class)classFromRecipeID:(unsigned int)arg1;
+- (long long)adjustedIngredientsForAsset:(id)arg1 ingredients:(id)arg2 version:(unsigned int)arg3;
 - (unsigned short)recipeClassID;
 - (BOOL)isDerivative;
+- (BOOL)isMarkedFullSize;
 - (id)maxPixelCountForAssetWidth:(long long)arg1 height:(long long)arg2;
 - (id)expectedFileURLForVersion:(unsigned int)arg1 asset:(id)arg2;
 - (id)supportedVersionsForLocalResourceGeneration;

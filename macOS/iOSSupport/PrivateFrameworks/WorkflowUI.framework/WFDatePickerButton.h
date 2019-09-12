@@ -43,6 +43,7 @@
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
 - (void).cxx_destruct;
 - (void)datePickerValueChanged;
+- (void)tintColorDidChange;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;

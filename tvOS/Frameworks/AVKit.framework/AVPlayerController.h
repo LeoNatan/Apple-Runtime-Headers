@@ -6,7 +6,7 @@
 
 #import <UIKit/UIResponder.h>
 
-@class AVAsset, AVAssetTrack, AVDelegateManager, AVInterstitialController, AVMediaSelectionOption, AVNavigationMarkersGroup, AVObservationController, AVPlayer, AVPlayerItem, AVQueuePlayer, AVTimeRange, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSNumber, NSObject;
+@class AVAsset, AVAssetTrack, AVDelegateManager, AVInterstitialController, AVMediaSelectionOption, AVNavigationMarkersGroup, AVObservationController, AVPlayer, AVPlayerItem, AVQueuePlayer, AVTimeRange, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSNumber, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSArray *_legibleMediaSelectionOptions;
     AVMediaSelectionOption *_cachedSelectedAudioMediaSelectionOption;
     AVMediaSelectionOption *_cachedSelectedLegibleMediaSelectionOption;
-    long long _savedCaptionAppearanceDisplayType;
-    _Bool _alwaysWantsAutomaticMediaOptionSelection;
+    AVMediaSelectionOption *_cachedSelectedLegibleMediaSelectionOptionAccordingToAVFoundation;
+    NSString *_lastKnownPersistedExtendedLanguageTag;
     NSObject<OS_dispatch_queue> *_seekQueue;
     _Bool _ignoreRateKeyValueChange;
     void *_observationInfo;
@@ -140,6 +140,7 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
++ (id)canonicalLanguageIdentifierFromString:(id)arg1;
 @property(nonatomic) _Bool touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property(nonatomic) double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(nonatomic) long long bestAvailableAudioFormat; // @synthesize bestAvailableAudioFormat=_bestAvailableAudioFormat;
@@ -387,22 +388,23 @@ __attribute__((visibility("hidden")))
 - (id)preferredDisplayCriteria;
 @property(readonly, nonatomic) _Bool usesExternalPlaybackWhileExternalScreenIsActive;
 @property(nonatomic) _Bool handlesAudioSessionInterruptions;
+- (_Bool)_mediaSelectionCriteriaCanBeAppliedAutomaticallyToLegibleMediaSelectionGroup;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
-- (void)_enableAutoMediaSelection:(id)arg1 shouldUpdateUserPreference:(_Bool)arg2;
 - (void)_enableAutoMediaSelection:(id)arg1;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
+- (void)_performAutomaticMediaSelectionForUserCaptionDisplayType:(long long)arg1;
+- (void)_ensureUserCaptionDisplayType:(long long)arg1;
 - (id)legibleOptions;
 - (id)audioOptions;
 - (void)reloadLegibleOptions;
 - (void)reloadAudioOptions;
+- (void)reloadOptionsAssumingMediaOptionsMayHaveChanged:(_Bool)arg1;
+- (void)reloadOptionsAndCurrentSelections;
 - (void)reloadOptions;
+- (void)selectedMediaOptionMayHaveChanged:(_Bool)arg1;
 - (void)selectedMediaOptionMayHaveChanged;
 - (id)_optionsForGroup:(id)arg1;
-- (void)enableAutomaticCaptionDisplayTypeIfNeeded;
-- (void)toggleCaptions;
-- (void)setSavedCaptionAppearanceDisplayType:(long long)arg1;
-- (long long)savedCaptionAppearanceDisplayType;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (id)keyPathsForValuesAffectingCurrentLegibleMediaSelectionOption;
@@ -415,6 +417,7 @@ __attribute__((visibility("hidden")))
 - (id)currentAudioMediaSelectionOption;
 - (void)setAudioMediaSelectionOptions:(id)arg1;
 - (id)audioMediaSelectionOptions;
+- (void)setLegibleMediaSelectionOptions:(id)arg1 audioMediaSelectionOptions:(id)arg2 assumeMediaOptionMayHaveChanged:(_Bool)arg3;
 - (_Bool)hasAudioMediaSelectionOptions;
 - (_Bool)hasMediaSelectionOptions;
 

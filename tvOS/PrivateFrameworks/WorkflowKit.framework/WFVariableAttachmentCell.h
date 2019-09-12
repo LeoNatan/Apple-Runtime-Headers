@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/NSTextAttachmentCell-Protocol.h>
 
-@class NSString, UIFont, UIImage, WFVariableAttachment;
+@class NSString, UIColor, UIFont, UIImage, WFVariableAttachment;
 
 @interface WFVariableAttachmentCell : NSObject <NSTextAttachmentCell>
 {
@@ -16,8 +16,10 @@
     UIImage *_cachedImage;
     unsigned long long _cachedImageControlState;
     UIFont *_cachedImageFont;
+    UIColor *_cachedImageTintColor;
 }
 
+@property(retain, nonatomic) UIColor *cachedImageTintColor; // @synthesize cachedImageTintColor=_cachedImageTintColor;
 @property(retain, nonatomic) UIFont *cachedImageFont; // @synthesize cachedImageFont=_cachedImageFont;
 @property(nonatomic) unsigned long long cachedImageControlState; // @synthesize cachedImageControlState=_cachedImageControlState;
 @property(retain, nonatomic) UIImage *cachedImage; // @synthesize cachedImage=_cachedImage;

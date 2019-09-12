@@ -14,6 +14,7 @@
 - (void)playbackEngineDidUpdateClips:(HFCameraPlaybackEngine *)arg1;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateClipPlayer:(AVPlayer *)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateClipManager:(HMCameraClipManager *)arg2;
+- (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateStreamAudioVolume:(BOOL)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateStreamAudioEnabled:(BOOL)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateMicrophoneEnabled:(BOOL)arg2;
 - (void)playbackEngine:(HFCameraPlaybackEngine *)arg1 didUpdateLiveCameraSource:(HMCameraSource *)arg2;

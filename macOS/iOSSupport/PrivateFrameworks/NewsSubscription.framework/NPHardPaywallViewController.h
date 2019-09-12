@@ -16,7 +16,6 @@
     // Error parsing type: , name: renderer
     // Error parsing type: , name: layoutAttributesFactory
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory
-    // Error parsing type: , name: $__lazy_storage_$_spinnerViewController
     // Error parsing type: , name: $__lazy_storage_$_verifyingSpinnerViewController
     // Error parsing type: , name: paywallApplicationStateMonitor
     // Error parsing type: , name: eventHandlerDelegate

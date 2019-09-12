@@ -6,26 +6,26 @@
 
 #import <CoreData/PFHistoryAnalyzerContext.h>
 
-@class NSMutableSet, NSSet;
+@class NSManagedObjectContext, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitHistoryAnalyzerContext : PFHistoryAnalyzerContext
 {
-    NSMutableSet *_mAllDeletedObjectIDs;
-    NSMutableSet *_mAllObjectIDs;
-    NSSet *_allDeletedObjectIDs;
-    NSSet *_allObjectIDs;
+    NSMutableDictionary *_objectIDToAnalyzerStateCache;
+    NSManagedObjectContext *_managedObjectContext;
 }
 
-@property(readonly, nonatomic) NSSet *allObjectIDs; // @synthesize allObjectIDs=_allObjectIDs;
-@property(readonly, nonatomic) NSSet *allDeletedObjectIDs; // @synthesize allDeletedObjectIDs=_allDeletedObjectIDs;
-- (void)resetStateForObjectID:(id)arg1;
-- (void)finishProcessing;
-- (void)reset;
-- (void)processChange:(id)arg1;
+@property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
+- (id)newAnalyzerStateForChange:(id)arg1 error:(id *)arg2;
+- (id)analyzerStateForChangedObjectID:(id)arg1 error:(id *)arg2;
+- (id)fetchSortedStates:(id *)arg1;
+- (BOOL)finishProcessing:(id *)arg1;
+- (BOOL)resetStateForObjectID:(id)arg1 error:(id *)arg2;
+- (BOOL)reset:(id *)arg1;
+- (BOOL)processChange:(id)arg1 error:(id *)arg2;
 - (id)cloudKitAnalyzerOptions;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1;
+- (id)initWithOptions:(id)arg1 managedObjectContext:(id)arg2;
 
 @end
 

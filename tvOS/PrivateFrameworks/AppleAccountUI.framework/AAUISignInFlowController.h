@@ -20,6 +20,7 @@
     NSMutableDictionary *_cdpContextsByAccountID;
     NSLock *_cdpContextsByAccountIDLock;
     _Bool _shouldAutomaticallySaveSignInResults;
+    _Bool _ignoreLockAssertErrors;
     _Bool _shouldStashLoginResponse;
     UIViewController *_presentingViewController;
     CUMessageSession *_messageSession;
@@ -29,6 +30,7 @@
 @property(nonatomic) _Bool shouldStashLoginResponse; // @synthesize shouldStashLoginResponse=_shouldStashLoginResponse;
 @property(nonatomic) unsigned long long activationAction; // @synthesize activationAction=_activationAction;
 @property(retain, nonatomic) CUMessageSession *messageSession; // @synthesize messageSession=_messageSession;
+@property(nonatomic) _Bool ignoreLockAssertErrors; // @synthesize ignoreLockAssertErrors=_ignoreLockAssertErrors;
 @property(nonatomic) _Bool shouldAutomaticallySaveSignInResults; // @synthesize shouldAutomaticallySaveSignInResults=_shouldAutomaticallySaveSignInResults;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;

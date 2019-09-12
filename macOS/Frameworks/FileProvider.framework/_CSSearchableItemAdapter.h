@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *fp_cloudContainerIdentifier;
 @property(readonly) BOOL fp_isContainerPristine;
 @property(readonly) BOOL fp_isContainer;
-- (id)appContainerBundleIdentifier;
+- (id)fp_appContainerBundleIdentifier;
 - (id)sharingCurrentUserPermissions;
 @property(readonly, nonatomic, getter=isMostRecentVersionDownloaded) BOOL mostRecentVersionDownloaded;
 - (BOOL)isDataless;

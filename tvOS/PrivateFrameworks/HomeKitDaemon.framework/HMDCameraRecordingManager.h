@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
-#import <HomeKitDaemon/HMDCameraBackingStoreDelegate-Protocol.h>
+#import <HomeKitDaemon/HMDCameraClipManagerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraRecordingSessionDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraRecordingSessionNotificationTriggerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraRecordingSettingsControlDelegate-Protocol.h>
@@ -18,7 +18,7 @@
 @class HMDCameraProfile, HMDCameraRecordingBulkSendDataReadEvent, HMDCameraRecordingBulkSendSessionInitiator, HMDCameraRecordingManagerFactory, HMDCameraRecordingResidentElector, HMDCameraRecordingSession, HMDCameraRecordingSessionNotificationTrigger, HMDCameraRecordingSettingsControl, HMDHAPAccessory, HMDStreamDataChunkAssembler, HMFMessageDispatcher, HMFTimer, NSDictionary, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
 @protocol HMDDataStreamBulkSendSession, OS_dispatch_queue;
 
-@interface HMDCameraRecordingManager : HMFObject <HMDCameraRecordingSessionNotificationTriggerDelegate, HMDCameraRecordingSettingsControlDelegate, HMDDevicePreferenceDataSource, HMFLogging, HMDCameraRecordingSessionDelegate, HMDHomeMessageReceiver, HMDCameraBackingStoreDelegate, HMFTimerDelegate>
+@interface HMDCameraRecordingManager : HMFObject <HMDCameraRecordingSessionNotificationTriggerDelegate, HMDCameraRecordingSettingsControlDelegate, HMDDevicePreferenceDataSource, HMFLogging, HMDCameraRecordingSessionDelegate, HMDHomeMessageReceiver, HMDCameraClipManagerDelegate, HMFTimerDelegate>
 {
     _Bool _motionActive;
     NSString *_logIdentifier;
@@ -88,13 +88,14 @@
 - (void)_coordinateRecordingSessionForAccessory:(unsigned long long)arg1;
 - (void)recordingSettingsControlDidConfigure:(id)arg1;
 - (void)handleCameraSettingsDidChangeNotification:(id)arg1;
-- (void)cameraBackingStoreDidStop:(id)arg1;
-- (void)cameraBackingStoreDidStart:(id)arg1;
+- (void)clipManagerDidBecomeUnavailable:(id)arg1;
+- (void)clipManagerDidBecomeAvailable:(id)arg1;
 - (void)notificationTrigger:(id)arg1 didObserveTriggerType:(unsigned long long)arg2 changeToActive:(_Bool)arg3;
 - (void)_start;
 - (void)start;
 - (void)dealloc;
 - (id)initWithCamera:(id)arg1 recordingManagementService:(id)arg2 factory:(id)arg3;
+- (id)initWithCamera:(id)arg1 recordingManagementService:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

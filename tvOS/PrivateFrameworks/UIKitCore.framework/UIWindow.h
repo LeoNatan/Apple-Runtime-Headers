@@ -392,6 +392,7 @@
 - (_Bool)_shouldAdjustSizeClassesAndResizeWindow;
 - (void)_rotateToBounds:(struct CGRect)arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
 - (_Bool)_guardSizeTransitionFromAnimations;
+- (void)_executeDeferredLaunchBlock;
 - (void)_handleStatusBarOrientationChange:(id)arg1;
 - (void)_setWindowControlsStatusBarOrientation:(_Bool)arg1;
 - (_Bool)_windowControlsStatusBarOrientation;
@@ -460,8 +461,7 @@
 - (_Bool)_areOverlayInsetsValid:(struct UIEdgeInsets)arg1;
 - (void)_noteOverlayInsetsDidChange;
 - (struct UIEdgeInsets)_overlayInsets;
-- (void)_removeAllViewControllersFromWindowHierarchy;
-- (void)_removeAllPresentationsFromWindowHierarchy;
+- (void)_removeAllViewControllersFromWindowHierarchyFromDealloc:(_Bool)arg1;
 - (void)makeKey:(id)arg1;
 - (void)orderOut:(id)arg1;
 - (void)_orderFrontWithoutMakingKey;
@@ -479,6 +479,7 @@
 - (unsigned int)_contextId;
 - (_Bool)_disableGroupOpacity;
 - (_Bool)_ignoresHitTest;
+- (void)_updateLayerOrderingAndSetLayerHidden:(_Bool)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)_updateLayerOrderingAndSetLayerHidden:(_Bool)arg1;
 - (_Bool)_hasContext;
 - (void)_configureContextOptions:(id)arg1;

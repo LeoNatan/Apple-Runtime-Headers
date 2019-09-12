@@ -6,8 +6,11 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableArray;
+
 @interface NSAnimationManager : NSObject
 {
+    NSMutableArray *_pendingStartAnimations;
 }
 
 + (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -20,6 +23,7 @@
 - (void)setTargetValue:(id)arg1 forObject:(id)arg2 keyPath:(id)arg3 animation:(id)arg4;
 - (void)removeAllAnimationsForObject:(id)arg1;
 - (void)removeAnimationsForObject:(id)arg1 keyPath:(id)arg2;
+- (void)dealloc;
 
 @end
 

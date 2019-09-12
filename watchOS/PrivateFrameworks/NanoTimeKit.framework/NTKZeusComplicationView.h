@@ -7,12 +7,13 @@
 #import <UIKit/UIView.h>
 
 #import <NanoTimeKit/NTKComplicationDisplay-Protocol.h>
+#import <NanoTimeKit/NTKTritiumBaseAnimator-Protocol.h>
 #import <NanoTimeKit/NTKZeusComplicationDisplay-Protocol.h>
 
 @class CLKDevice, NSString, NTKZeusColorPalette, PUICClientSideAnimation;
 @protocol NTKComplicationDisplayObserver;
 
-@interface NTKZeusComplicationView : UIView <NTKComplicationDisplay, NTKZeusComplicationDisplay>
+@interface NTKZeusComplicationView : UIView <NTKComplicationDisplay, NTKZeusComplicationDisplay, NTKTritiumBaseAnimator>
 {
     PUICClientSideAnimation *_highlightAnimation;
     _Bool canUseCurvedText;
@@ -35,6 +36,9 @@
 - (void).cxx_destruct;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_prepareForTransition;
 - (void)_updateLegibility;
 - (struct CGRect)contentFrame;
 - (id)init;

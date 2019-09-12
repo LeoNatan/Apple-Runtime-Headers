@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) HMDCloudLegacyZone *legacyZone; // @synthesize legacyZone=_legacyZone;
 @property(nonatomic) __weak HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 - (void).cxx_destruct;
+- (_Bool)areAllServerChangeTokenValid;
 @property(retain, nonatomic) CKServerChangeToken *databaseServerChangeToken;
 - (void)deleteHomeZoneWithName:(id)arg1;
 - (void)deleteAllZones;

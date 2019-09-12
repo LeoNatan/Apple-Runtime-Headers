@@ -25,6 +25,9 @@
 + (void)beginSubjectReporting:(id)arg1;
 + (id)reporterForSubject:(id)arg1;
 + (id)subjectDictionary;
++ (void)reportDashboardEventIfNecessary:(id)arg1 forPass:(id)arg2;
++ (id)subjectToReportDashboardAnalyticsForAccount:(id)arg1;
++ (id)subjectToReportDashboardAnalyticsForPass:(id)arg1;
 - (void).cxx_destruct;
 - (void)sendEvent:(id)arg1;
 - (id)archivedSessionToken;

@@ -12,7 +12,6 @@
 @protocol NSViewServiceMarshal <NSVB_ViewServiceUIBehaviorInterface>
 - (void)remoteViewDidChangeState:(unsigned char)arg1 ofPopoverBar:(NSString *)arg2 forItem:(NSString *)arg3;
 - (void)remoteViewCaresAboutTouchBars:(BOOL)arg1;
-- (void)automaticFocusRingChangedInHostApp;
 - (void)remoteViewBackingScaleFactorDidChange:(double)arg1;
 - (void)refreshAccessoryViewBitmap:(NSBitmapImageRep *)arg1;
 - (void)invokeBlockOnCurrentFenceIfAny:(void (^)(void))arg1;

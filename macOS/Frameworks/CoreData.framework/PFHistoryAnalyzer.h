@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, copy, nonatomic) PFHistoryAnalyzerOptions *options; // @synthesize options=_options;
-- (void)processTransaction:(id)arg1 withContext:(id)arg2;
+- (BOOL)processTransaction:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (id)instantiateNewAnalyzerContext;
 - (id)newAnalyzerContextForStore:(id)arg1 sinceLastHistoryToken:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;
 - (void)dealloc;

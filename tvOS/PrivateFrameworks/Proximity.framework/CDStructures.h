@@ -4,11 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSXPCConnection;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
 #pragma mark Named Structures
+
+struct AdditionalInfo {
+    unsigned char _field1;
+    unsigned short _field2;
+    unsigned short _field3;
+    basic_string_a1f69cfb _field4;
+    unsigned short _field5;
+    unsigned char _field6;
+    unsigned int _field7;
+};
 
 struct BtProxData {
     double _field1;
@@ -21,7 +33,33 @@ struct BtProximityFilterBase {
     basic_string_a1f69cfb _field2;
 };
 
+struct DaemonBackedService {
+    NSXPCConnection *_connection;
+};
+
 struct Estimator;
+
+struct GetPowerStatsResponse {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned short _field10;
+    unsigned short _field11;
+};
+
+struct HelloResponse {
+    basic_string_a1f69cfb _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned short _field4;
+    struct optional<Rose::HelloResponse::AdditionalInfo> _field5;
+};
 
 struct NeighborMeasurements {
     basic_string_a1f69cfb _field1;
@@ -33,8 +71,12 @@ struct NeighborMeasurements {
     _Bool _field7;
     int _field8;
     _Bool _field9;
-    _Bool _field10;
+    double _field10;
+    _Bool _field11;
+    _Bool _field12;
 };
+
+struct SharingImportanceManager;
 
 struct SharingImportanceMeasurements {
     struct vector<NeighborMeasurements, std::__1::allocator<NeighborMeasurements>> userSharingInput;
@@ -77,6 +119,20 @@ struct deque<BtProxData, std::__1::allocator<BtProxData>> {
     struct __compressed_pair<unsigned long, std::__1::allocator<BtProxData>> {
         unsigned long long __value_;
     } __size_;
+};
+
+struct optional<Rose::HelloResponse::AdditionalInfo> {
+    union {
+        char _field1;
+        struct AdditionalInfo _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> {
+    struct __compressed_pair<SharingImportanceManager *, std::__1::default_delete<SharingImportanceManager>> {
+        struct SharingImportanceManager *__value_;
+    } __ptr_;
 };
 
 struct unique_ptr<SingleThresholdProx::Estimator, std::__1::default_delete<SingleThresholdProx::Estimator>> {

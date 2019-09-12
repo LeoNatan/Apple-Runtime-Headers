@@ -7,7 +7,8 @@
 #import <UIKit/UIScreen.h>
 
 @interface UIScreen (SwiftUITesting_Swizzles)
-+ (void)_overrideDisplayScale;
++ (void)_performSwiftUITestingOverrides;
+- (BOOL)_SwiftUITesting_wantsWideContentMargins;
 - (double)_SwiftUITesting_currentScreenScale;
 @end
 

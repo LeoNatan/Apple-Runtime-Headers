@@ -11,18 +11,21 @@
 #import <EmailDaemon/EDProtectedDataReconciliationHookResponder-Protocol.h>
 #import <EmailDaemon/EFCancelable-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EMMailboxChangeObserver-Protocol.h>
 
-@class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EDUpdateThrottler, EFCancelationToken, EFQuery, EMMailboxScope, NSMutableDictionary, NSMutableSet, NSPredicate, NSString;
+@class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EDUpdateThrottler, EFCancelationToken, EFQuery, EMMailboxScope, EMObjectID, NSMutableDictionary, NSMutableSet, NSPredicate, NSString;
 @protocol EMMessageRepositoryCountQueryObserver_xpc;
 
-@interface EDMessageCountQueryHandler : NSObject <EFLoggable, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EFCancelable>
+@interface EDMessageCountQueryHandler : NSObject <EFLoggable, EDMailboxChangeHookResponder, EDMessageChangeHookResponder, EDProtectedDataReconciliationHookResponder, EMMailboxChangeObserver, EFCancelable>
 {
     NSMutableDictionary *_serverCounts;
     NSMutableSet *_mailboxesBeingSynced;
     long long _resyncDatabaseGeneration;
+    EMObjectID *_mailboxObserverID;
     NSMutableSet *_seenMessageIDs;
     NSMutableSet *_newMessageIDs;
     struct os_unfair_lock_s _seenMessageIDsLock;
+    // Error parsing type: AQ, name: _recalculationPending
     // Error parsing type: {EFAtomicObject="cfObject"Aq}, name: _atomicQueryDescription
     // Error parsing type: {EFAtomicObject="cfObject"Aq}, name: _atomicMailboxScopeDescription
     EFQuery *_query;
@@ -54,6 +57,7 @@
 @property(retain, nonatomic) EFQuery *expandedQuery; // @synthesize expandedQuery=_expandedQuery;
 @property(retain, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+- (void)mailboxListChanged:(id)arg1;
 - (void)persistenceDidReconcileProtectedData;
 - (void)persistenceDidUpdateLastSyncAndMostRecentStatusCount:(long long)arg1 forMailboxWithObjectID:(id)arg2 generationWindow:(id)arg3;
 - (void)persistenceDidUpdateMostRecentStatusCount:(long long)arg1 forMailboxWithObjectID:(id)arg2 generationWindow:(id)arg3;
@@ -66,7 +70,6 @@
 - (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2 generationWindow:(id)arg3;
 - (void)persistenceWillChangeFlags:(id)arg1 messages:(id)arg2;
 - (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
-- (void)persistenceWillAddMessage:(id)arg1 fromExistingMessage:(_Bool)arg2;
 - (_Bool)_moreThan:(long long)arg1 messagesExistWithMessageIDHeaderHash:(id)arg2;
 - (id)_filterMessages:(id)arg1 potentiallyMatchingMessages:(id *)arg2;
 - (void)_processChangedMessages:(id)arg1 changeKey:(id)arg2 generationWindow:(id)arg3;
@@ -77,6 +80,7 @@
 - (void)_notifyObserverWithLogMessage:(id)arg1;
 - (void)_decrementLocalCount:(long long)arg1 logMessage:(id)arg2 generationWindow:(id)arg3;
 - (void)_incrementLocalCount:(long long)arg1 logMessage:(id)arg2 generationWindow:(id)arg3;
+- (void)_fireCountCalculation;
 - (void)_scheduleCountCalculation;
 - (void)cancel;
 - (void)dealloc;

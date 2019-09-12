@@ -7,6 +7,7 @@
 @class NSArray, NSData, NSError, NSString, OTJoiningConfiguration, OTOperationConfiguration, _SFECKeyPair;
 
 @protocol OTControlProtocol
+- (void)tapToRadar:(NSString *)arg1 description:(NSString *)arg2 radar:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)postCDPFollowupResult:(_Bool)arg1 type:(NSString *)arg2 error:(NSError *)arg3 containerName:(NSString *)arg4 contextName:(NSString *)arg5 reply:(void (^)(NSError *))arg6;
 - (void)waitForOctagonUpgrade:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)attemptSosUpgrade:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;

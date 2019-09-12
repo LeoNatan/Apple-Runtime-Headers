@@ -15,6 +15,7 @@
     BOOL _overlayFixedFrame;
     BOOL _adjustMotionForSize;
     BOOL _flatImageContainsCornerRadius;
+    BOOL _useSeparateUnfocusedShadowImage;
     BOOL _allowsNonOpaqueShadow;
     BOOL _boostBrightness;
     BOOL _hueShift;
@@ -86,6 +87,7 @@
 @property(nonatomic) BOOL boostBrightness; // @synthesize boostBrightness=_boostBrightness;
 @property(nonatomic) BOOL allowsNonOpaqueShadow; // @synthesize allowsNonOpaqueShadow=_allowsNonOpaqueShadow;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
+@property(nonatomic) BOOL useSeparateUnfocusedShadowImage; // @synthesize useSeparateUnfocusedShadowImage=_useSeparateUnfocusedShadowImage;
 @property(nonatomic) double defaultSelectedShadowVerticalOffset; // @synthesize defaultSelectedShadowVerticalOffset=_defaultSelectedShadowVerticalOffset;
 @property(nonatomic) double defaultUnfocusedShadowVerticalOffset; // @synthesize defaultUnfocusedShadowVerticalOffset=_defaultUnfocusedShadowVerticalOffset;
 @property(nonatomic) double defaultHighlightedShadowVerticalOffset; // @synthesize defaultHighlightedShadowVerticalOffset=_defaultHighlightedShadowVerticalOffset;

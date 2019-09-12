@@ -155,6 +155,8 @@
 - (void)_setupView;
 - (void)_fetchMetadata;
 - (id)_fetchMetadataForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)_shouldClipAnimationView;
+- (BOOL)_shouldApplyCornerRadius;
 - (void)_commonInitWithURL:(id)arg1;
 - (id)initWithPresentationProperties:(id)arg1 URL:(id)arg2;
 - (id)initWithPresentationProperties:(id)arg1;

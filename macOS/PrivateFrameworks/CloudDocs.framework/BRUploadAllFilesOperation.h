@@ -14,7 +14,6 @@
     BRContainer *_container;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType uploadAllFilesCompletion; // @synthesize uploadAllFilesCompletion=_uploadAllFilesCompletion;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

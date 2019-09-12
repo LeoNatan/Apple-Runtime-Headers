@@ -10,10 +10,12 @@
 {
 }
 
-+ (long long)rawSourceMaximumPixelCount;
-+ (BOOL)canLoadAssetAsRawWithImageProperties:(id)arg1;
++ (long long)rawSourceMaximumPixelCountForInteractiveEditing;
++ (long long)rawSourceMaximumPixelCountForBackgroundProcessing;
++ (BOOL)canLoadAssetAsRawForInteractiveEditingWithImageProperties:(id)arg1;
 + (struct CGSize)maximumImageSizeFromProperties:(id)arg1;
 + (id)mainVideoTrackForAsset:(id)arg1;
++ (BOOL)isQuicktimeMovieUTI:(id)arg1;
 + (BOOL)isPdfUTI:(id)arg1;
 + (BOOL)isPsdUTI:(id)arg1;
 + (BOOL)isPngUTI:(id)arg1;
@@ -26,6 +28,7 @@
 + (BOOL)isImageUTI:(id)arg1;
 + (BOOL)isMovieUTI:(id)arg1;
 + (BOOL)isAudioUTI:(id)arg1;
++ (id)imagePropertiesFromImageSource:(struct CGImageSource *)arg1;
 + (long long)defaultRasterizationDPI;
 + (BOOL)UTIRequiresRasterizationDPI:(id)arg1;
 + (BOOL)isValidExtension:(id)arg1 forUTI:(id)arg2;

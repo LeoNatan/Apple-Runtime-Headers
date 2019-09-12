@@ -13,12 +13,10 @@
 
 @interface WFChooseFromMenuAction : WFControlFlowAction <WFArrayParameterEventObserver, WFVariableDelegate>
 {
-    BOOL _usesLegacyBehavior;
     long long _latestMenuChoice;
     WFVariableString *_itemTitle;
 }
 
-@property(readonly, nonatomic) BOOL usesLegacyBehavior; // @synthesize usesLegacyBehavior=_usesLegacyBehavior;
 @property(copy, nonatomic) WFVariableString *itemTitle; // @synthesize itemTitle=_itemTitle;
 @property(readonly, nonatomic) long long latestMenuChoice; // @synthesize latestMenuChoice=_latestMenuChoice;
 - (void).cxx_destruct;
@@ -35,6 +33,7 @@
 - (void)showNotificationWithInput:(id)arg1;
 - (id)newIntermediaryActionWithMenuItemTitle:(id)arg1;
 - (id)createAccompanyingActions;
+- (id)inputSourceInWorkflow:(id)arg1;
 - (BOOL)inputPassthrough;
 - (BOOL)inputRequired;
 - (id)localizedName;

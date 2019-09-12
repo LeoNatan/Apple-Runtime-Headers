@@ -29,6 +29,7 @@
 - (void)insertEventWithContact:(id)arg1 forDateComponents:(id)arg2 intoCalendar:(id)arg3 inStore:(id)arg4;
 - (id)allContactsWithBirthdays;
 - (id)birthdayCalendarsCreateIfNeeded:(BOOL)arg1 inStore:(id)arg2 originalIdentifier:(id)arg3 originalAlarms:(id)arg4 ignoreAlarms:(BOOL)arg5;
+- (void)setDefaultBirthdayAlarms:(id)arg1 forCalendar:(id)arg2;
 - (void)disableBirthdayCalendarsInStore:(id)arg1;
 - (void)disableBirthdayCalendars;
 - (id)birthdayCalendarsInStore:(id)arg1;
@@ -36,6 +37,7 @@
 - (void)addBirthdayCalendars;
 - (BOOL)areBirthdaysEnabled;
 - (id)eventStore;
+- (void)checkForFailures;
 - (id)initSingleton;
 
 @end

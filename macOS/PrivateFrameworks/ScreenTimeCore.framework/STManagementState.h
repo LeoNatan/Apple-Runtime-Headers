@@ -20,6 +20,7 @@
 @property BOOL cachedShouldRequestMoreTime; // @synthesize cachedShouldRequestMoreTime=_cachedShouldRequestMoreTime;
 - (void).cxx_destruct;
 - (void)isExplicitContentRestricted:(CDUnknownBlockType)arg1;
+- (id)shouldAllowOneMoreMinuteForCategoryIdentifier:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForWebsiteURL:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)permitWebFilterURL:(id)arg1 pageTitle:(id)arg2 error:(id *)arg3;
@@ -37,6 +38,7 @@
 - (BOOL)setScreenTimeEnabled:(BOOL)arg1 error:(id *)arg2;
 - (void)screenTimeStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)authenticateRestrictionsPasscode:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly) BOOL needsToSetRestrictionsPasscode;
 - (void)isRestrictionsPasscodeSet:(CDUnknownBlockType)arg1;
 - (BOOL)clearRestrictionsPasscodeWithError:(id *)arg1;
 @property(readonly, nonatomic) BOOL isRestrictionsPasscodeSet;

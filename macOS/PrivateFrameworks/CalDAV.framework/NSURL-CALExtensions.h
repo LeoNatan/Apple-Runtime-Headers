@@ -14,7 +14,6 @@
 + (int)classicPortForScheme:(id)arg1;
 - (id)pathWithoutDecodingAndRemovingTrailingSlash;
 - (id)pathWithoutTrailingRemovingSlash;
-- (BOOL)isEqualToURL:(id)arg1;
 - (id)serverURL;
 - (id)unquotedPassword;
 - (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;

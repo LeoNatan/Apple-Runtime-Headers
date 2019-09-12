@@ -6,12 +6,10 @@
 
 #import <Intents/INCodableAttributeMetadata.h>
 
-@class NSOrderedSet, NSString, NSUnit;
+@class NSOrderedSet, NSUnit;
 
 @interface INCodableMeasurementAttributeMetadata : INCodableAttributeMetadata
 {
-    NSString *_unitString;
-    NSString *_defaultUnitsString;
     _Bool _supportsNegativeNumbers;
     NSUnit *_unit;
     NSOrderedSet *_defaultUnits;

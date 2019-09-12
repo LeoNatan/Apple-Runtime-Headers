@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     id <PUEditableAsset> _asset;
     PICompositionController *_compositionController;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     PUPhotoEditValuesCalculator *_valuesCalculator;
     PUPhotoEditToolControllerSpec *_toolControllerSpec;
     PUPhotoEditViewControllerSpec *_photoEditSpec;
@@ -56,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUPhotoEditViewControllerSpec *photoEditSpec; // @synthesize photoEditSpec=_photoEditSpec;
 @property(retain, nonatomic) PUPhotoEditToolControllerSpec *toolControllerSpec; // @synthesize toolControllerSpec=_toolControllerSpec;
 @property(readonly, nonatomic) PUPhotoEditValuesCalculator *valuesCalculator; // @synthesize valuesCalculator=_valuesCalculator;
+@property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 @property(readonly, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
@@ -117,7 +119,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct UIEdgeInsets preferredPreviewViewInsets;
 @property(readonly, nonatomic) NSString *localizedResetToolActionTitle;
 @property(readonly, nonatomic) _Bool canResetToDefaultValue;
-- (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 valuesCalculator:(id)arg4;
+- (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 overcaptureEditSource:(id)arg4 valuesCalculator:(id)arg5;
 - (_Bool)_canShowWhileLocked;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

@@ -40,6 +40,7 @@
 - (void)setScrollViewContentBounds:(struct CGRect)arg1;
 - (struct CGSize)scrollViewContentSize;
 - (struct CGRect)scrollViewContentBounds;
+- (struct CGRect)scrollViewTargetRect;
 - (struct CGRect)scrollViewConstrainedVisibleRect;
 - (struct CGRect)scrollViewVisibleRect;
 - (struct CGRect)scrollViewActiveRect;

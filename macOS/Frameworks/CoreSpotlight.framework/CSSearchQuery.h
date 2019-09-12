@@ -74,7 +74,7 @@
 - (id)copyResultFromPlist:(id)arg1 protectionClass:(id)arg2;
 - (void)processResultFromPlist:(id)arg1 atIndex:(unsigned long long)arg2 protectionClass:(id)arg3 oids:(long long *)arg4 oidCount:(unsigned int)arg5 items:(id)arg6;
 - (BOOL)removeUserFSLiveOID:(long long)arg1 outBundleID:(id *)arg2 outIdentifier:(id *)arg3;
-- (void)updateUserFSLiveOID:(long long)arg1 identifier:(id)arg2;
+- (void)updateUserFSLiveOID:(long long)arg1 userFSDomain:(id)arg2 identifier:(id)arg3;
 - (void)updateLiveOID:(long long)arg1 bundleID:(id)arg2 identifier:(id)arg3;
 - (BOOL)removeLiveOID:(long long)arg1 outBundleID:(id *)arg2 outIdentifier:(id *)arg3;
 - (void)processRemoveResultsData:(id)arg1 protectionClass:(id)arg2;

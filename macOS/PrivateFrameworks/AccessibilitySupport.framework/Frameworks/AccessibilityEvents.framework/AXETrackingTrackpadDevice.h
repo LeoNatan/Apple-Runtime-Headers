@@ -9,7 +9,7 @@
 #import <AccessibilityEvents/AXEEventTapListener-Protocol.h>
 #import <AccessibilityEvents/AXETrackingTouchInputDevice-Protocol.h>
 
-@class AXEThrottler, AXETrackingGestureEvent, NSArray, NSString;
+@class AXETrackingGestureEvent, AXFThrottler, NSArray, NSString;
 @protocol AXETrackingTouchInputDeviceDelegate;
 
 @interface AXETrackingTrackpadDevice : NSObject <AXEEventTapListener, AXETrackingTouchInputDevice>
@@ -17,14 +17,14 @@
     BOOL _swallowAllGestureEvents;
     BOOL __eventCaptureStarted;
     id <AXETrackingTouchInputDeviceDelegate> _delegate;
-    AXEThrottler *__throttler;
+    AXFThrottler *__throttler;
     AXETrackingGestureEvent *__previousGestureEvent;
     NSArray *__availableTrackpadInfos;
 }
 
 @property(copy, nonatomic) NSArray *_availableTrackpadInfos; // @synthesize _availableTrackpadInfos=__availableTrackpadInfos;
 @property(retain, nonatomic) AXETrackingGestureEvent *_previousGestureEvent; // @synthesize _previousGestureEvent=__previousGestureEvent;
-@property(retain, nonatomic) AXEThrottler *_throttler; // @synthesize _throttler=__throttler;
+@property(retain, nonatomic) AXFThrottler *_throttler; // @synthesize _throttler=__throttler;
 @property(nonatomic) BOOL _eventCaptureStarted; // @synthesize _eventCaptureStarted=__eventCaptureStarted;
 @property(nonatomic) BOOL swallowAllGestureEvents; // @synthesize swallowAllGestureEvents=_swallowAllGestureEvents;
 @property(nonatomic) __weak id <AXETrackingTouchInputDeviceDelegate> delegate; // @synthesize delegate=_delegate;

@@ -44,7 +44,9 @@
 @property(readonly, nonatomic) _Bool isShortcutOwned;
 @property(readonly, nonatomic) HFSetDiff *namedActionSetsDiff;
 - (void)updateFromTriggerActionSetsBuilder:(id)arg1;
+- (id)_removeEmptyActionSets:(id)arg1;
 - (id)_removeDuplicateActionSets:(id)arg1;
+- (id)initWithActionSets:(id)arg1 inHome:(id)arg2 filterEmptyActionSets:(_Bool)arg3;
 - (id)initWithActionSets:(id)arg1 inHome:(id)arg2;
 - (id)mediaAccessoriesForPlaybackAction:(id)arg1;
 - (id)_uniqueServiceGroupForServices:(id)arg1;

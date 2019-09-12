@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
-@property(readonly, copy) INIntent *intent; // @synthesize intent=_intent;
+@property(readonly) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
+@property(readonly) INIntent *intent; // @synthesize intent=_intent;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;

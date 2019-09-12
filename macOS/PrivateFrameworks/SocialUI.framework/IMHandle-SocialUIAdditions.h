@@ -19,8 +19,6 @@
 + (id)genericPicture;
 + (id)handleAvatarCache;
 + (id)logger;
-- (id)fmfSiblingHandles;
-- (id)fmfHandle;
 - (id)menuItemsForAVOptions:(unsigned long long)arg1 target:(id)arg2 availableAVOptions:(unsigned long long *)arg3 updateBlock:(CDUnknownBlockType)arg4;
 - (id)menuForLegacyAVOptions:(unsigned long long)arg1 target:(id)arg2 availableAVOptions:(unsigned long long *)arg3 updateBlock:(CDUnknownBlockType)arg4;
 - (id)menuItemsWithTarget:(id)arg1;

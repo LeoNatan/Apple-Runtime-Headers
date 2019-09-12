@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+#import <HealthAlgorithms/SRMultiSampleExporting-Protocol.h>
 
-@interface HAECGExporter : NSObject
+@class NSMutableArray, NSString;
+
+@interface HAECGExporter : NSObject <SRMultiSampleExporting>
 {
     struct unique_ptr<CinnAlgs::CnAlgs, std::__1::default_delete<CinnAlgs::CnAlgs>> _cinAlgs;
     NSMutableArray *_currentLiveWaveform;
@@ -24,6 +26,12 @@
 - (void)sr_beginMultiSampleStream;
 - (void)resetFilter;
 - (void)handleRealtimeSamples:(const float *)arg1 count:(unsigned int)arg2 startTimestamp:(unsigned long long)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

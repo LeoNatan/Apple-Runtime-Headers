@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)draggingExited:(id)arg1 sceneView:(id)arg2;
 - (unsigned long long)draggingUpdated:(id)arg1 sceneView:(id)arg2;
 - (unsigned long long)draggingEntered:(id)arg1 sceneView:(id)arg2;
-- (id)initWithDraggingInfo:(id)arg1 sceneView:(id)arg2;
+- (id)initWithDraggingInfo:(id)arg1 sessionID:(unsigned int)arg2 sceneView:(id)arg3;
 
 @end
 

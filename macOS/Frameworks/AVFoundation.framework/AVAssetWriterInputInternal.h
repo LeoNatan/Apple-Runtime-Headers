@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     AVWeakReference *weakReferenceToAssetWriter;
     AVKeyPathDependencyManager *keyPathDependencyManager;
     long long numberOfAppendFailures;
+    BOOL markAsFinishedCalled;
     NSObject<OS_dispatch_queue> *appendFailureReadWriteQueue;
     AVAssetWriterInputPassDescriptionResponder *passDescriptionResponder;
 }

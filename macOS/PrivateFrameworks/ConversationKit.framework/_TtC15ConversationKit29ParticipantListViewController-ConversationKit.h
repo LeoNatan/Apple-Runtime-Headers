@@ -7,7 +7,5 @@
 #import <ConversationKit/_TtC15ConversationKit29ParticipantListViewController.h>
 
 @interface _TtC15ConversationKit29ParticipantListViewController (ConversationKit)
-- (void)collectionView:(id)arg1 didEndDisplayingItem:(id)arg2 forRepresentedObjectAtIndexPath:(id)arg3;
-- (void)collectionView:(id)arg1 willDisplayItem:(id)arg2 forRepresentedObjectAtIndexPath:(id)arg3;
 @end
 

@@ -9,6 +9,7 @@
 @protocol HBUITopShelfContentViewController;
 
 @protocol HBUITopShelfContentViewControllerDelegate <NSObject>
+- (void)topShelfContentViewController:(id <HBUITopShelfContentViewController>)arg1 willScrollToFirstItem:(_Bool)arg2;
 - (void)topShelfContentViewController:(id <HBUITopShelfContentViewController>)arg1 contentStyleDidChange:(unsigned long long)arg2;
 @end
 

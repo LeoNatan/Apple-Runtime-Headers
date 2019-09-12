@@ -12,13 +12,17 @@
 @interface CAMZoomButton : UIControl
 {
     _Bool _shouldHideBackground;
+    _Bool _overPlatter;
     _Bool _abbreviateAndEnlargeText;
     id <CAMZoomButtonDelegate> _delegate;
+    long long _contentType;
     double _zoomFactor;
+    long long _zoomSymbol;
     long long _orientation;
     NSString *_contentSizeCategory;
     UIView *__contentContainerView;
     CAMZoomFactorLabel *__zoomFactorLabel;
+    UIImageView *__zoomSymbolView;
     UIImageView *__circleImageView;
     UIImageView *__backgroundImageView;
     struct UIEdgeInsets _tappableEdgeInsets;
@@ -33,15 +37,19 @@
 + (_Bool)_useOutline;
 @property(readonly, nonatomic) UIImageView *_backgroundImageView; // @synthesize _backgroundImageView=__backgroundImageView;
 @property(readonly, nonatomic) UIImageView *_circleImageView; // @synthesize _circleImageView=__circleImageView;
+@property(readonly, nonatomic) UIImageView *_zoomSymbolView; // @synthesize _zoomSymbolView=__zoomSymbolView;
 @property(readonly, nonatomic) CAMZoomFactorLabel *_zoomFactorLabel; // @synthesize _zoomFactorLabel=__zoomFactorLabel;
 @property(readonly, nonatomic) UIView *_contentContainerView; // @synthesize _contentContainerView=__contentContainerView;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) _Bool abbreviateAndEnlargeText; // @synthesize abbreviateAndEnlargeText=_abbreviateAndEnlargeText;
 @property(nonatomic, setter=_setHighlightingTransform:) struct CGAffineTransform highlightingTransform; // @synthesize highlightingTransform=_highlightingTransform;
+@property(nonatomic, getter=isOverPlatter) _Bool overPlatter; // @synthesize overPlatter=_overPlatter;
 @property(nonatomic) _Bool shouldHideBackground; // @synthesize shouldHideBackground=_shouldHideBackground;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct UIEdgeInsets tappableEdgeInsets; // @synthesize tappableEdgeInsets=_tappableEdgeInsets;
+@property(nonatomic) long long zoomSymbol; // @synthesize zoomSymbol=_zoomSymbol;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
+@property(nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) __weak id <CAMZoomButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (double)_backgroundImageDiameterForContentSize:(id)arg1;
@@ -60,6 +68,10 @@
 - (struct CGSize)intrinsicContentSize;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (void)setShouldHideBackground:(_Bool)arg1 animationDuration:(double)arg2;
+- (id)_imageForZoomSymbol:(long long)arg1;
+- (void)_createZoomSymbolViewIfNecessary;
+- (void)setZoomSymbol:(long long)arg1 animated:(_Bool)arg2;
+- (void)setContentType:(long long)arg1 animated:(_Bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_updateForContentSize;

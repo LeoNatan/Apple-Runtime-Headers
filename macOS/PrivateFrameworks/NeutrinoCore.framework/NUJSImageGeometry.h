@@ -15,6 +15,7 @@
 }
 
 @property(readonly) long long orientation;
+@property(readonly) struct CGSize scaledSize;
 @property(readonly) struct CGSize size;
 @property(readonly) struct CGRect extent;
 @property(readonly) NUJSScale *scale;

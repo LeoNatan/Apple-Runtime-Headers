@@ -17,8 +17,10 @@
     NSMutableOrderedSet *_selectedOptions;
     NSArray *_sections;
     NSString *_nameOfAnyOption;
+    NSString *_mainSectionTitle;
 }
 
+@property(readonly, copy, nonatomic) NSString *mainSectionTitle; // @synthesize mainSectionTitle=_mainSectionTitle;
 @property(readonly, copy, nonatomic) NSString *nameOfAnyOption; // @synthesize nameOfAnyOption=_nameOfAnyOption;
 @property(nonatomic) BOOL anyOption; // @synthesize anyOption=_anyOption;
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
@@ -30,13 +32,14 @@
 - (void)cancel:(id)arg1;
 - (void)updateDoneButtonEnabledState;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)infoForSection:(long long)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (id)initWithOptions:(id)arg1 selectedOptions:(id)arg2 nameOfAnyOption:(id)arg3;
+- (id)initWithOptions:(id)arg1 selectedOptions:(id)arg2 nameOfAnyOption:(id)arg3 mainSectionTitle:(id)arg4;
 
 @end
 

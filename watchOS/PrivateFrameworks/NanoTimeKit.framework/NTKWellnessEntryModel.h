@@ -15,6 +15,7 @@
 {
     _Bool _databaseLoading;
     _Bool _deviceLocked;
+    _Bool _privacy;
     HKQuantity *_activeEnergyTotal;
     HKQuantity *_activeEnergyGoal;
     int _appleStandHoursTotal;
@@ -35,7 +36,9 @@
 + (id)largeModular:(id)arg1;
 + (id)_activityTemplateWithFamily:(int)arg1 entryModel:(id)arg2;
 + (id)idealizedEntryModel;
++ (id)privacyEntryModel;
 + (id)lockedEntryModel;
+@property(readonly, nonatomic, getter=isPrivacy) _Bool privacy; // @synthesize privacy=_privacy;
 @property(readonly, nonatomic) _Bool deviceLocked; // @synthesize deviceLocked=_deviceLocked;
 @property(nonatomic) _Bool databaseLoading; // @synthesize databaseLoading=_databaseLoading;
 @property(retain, nonatomic) NSArray *appleStandHourChartData; // @synthesize appleStandHourChartData=_appleStandHourChartData;

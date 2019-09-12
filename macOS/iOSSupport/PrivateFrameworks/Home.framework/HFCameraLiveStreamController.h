@@ -16,6 +16,7 @@
 {
     BOOL _microphoneEnabled;
     BOOL _streamAudioEnabled;
+    float _streamAudioVolume;
     id <HFCameraLiveStreamControllerDelegate> _delegate;
     HMCameraSource *_liveCameraSource;
     NSError *_streamError;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) HFCameraAudioManager *audioManager; // @synthesize audioManager=_audioManager;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
+@property(nonatomic) float streamAudioVolume; // @synthesize streamAudioVolume=_streamAudioVolume;
 @property(nonatomic, getter=isStreamAudioEnabled) BOOL streamAudioEnabled; // @synthesize streamAudioEnabled=_streamAudioEnabled;
 @property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(nonatomic) __weak id <HFCameraLiveStreamControllerDelegate> delegate; // @synthesize delegate=_delegate;

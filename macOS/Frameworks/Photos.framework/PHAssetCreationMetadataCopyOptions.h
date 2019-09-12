@@ -13,6 +13,7 @@
     BOOL _shouldCopyTitleDescriptionAndKeywords;
 }
 
++ (id)metadataCopyOptionsForPublishingOriginals;
 @property(nonatomic) BOOL shouldCopyTitleDescriptionAndKeywords; // @synthesize shouldCopyTitleDescriptionAndKeywords=_shouldCopyTitleDescriptionAndKeywords;
 - (id)description;
 - (void)encodeToXPCDict:(id)arg1;

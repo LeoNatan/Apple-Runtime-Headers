@@ -6,14 +6,17 @@
 
 #import <NanoTimeKit/NTKRichComplicationCornerTextCustomView.h>
 
-@class NTKAstronomyRichComplicationContentView;
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 
-@interface NTKAstronomyRichComplicationCornerView : NTKRichComplicationCornerTextCustomView
+@class NSString, NTKAstronomyRichComplicationContentView;
+
+@interface NTKAstronomyRichComplicationCornerView : NTKRichComplicationCornerTextCustomView <NTKTritiumMetalContentView>
 {
     NTKAstronomyRichComplicationContentView *_astronomyContentView;
 }
 
 - (void).cxx_destruct;
+- (void)tritium_invalidateMetalContentForSnapshot;
 - (void)_updateInnerLabel;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
@@ -22,6 +25,12 @@
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)_applyPausedUpdate;
 - (id)_outerView;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -19,6 +19,7 @@
     BOOL __encodeLegacyGloryData;
     _INPBFileDataAttachment *_file;
     _INPBURLValue *_fileURL;
+    _INPBURLValue *_speechDataURL;
     unsigned long long _whichDatasource;
 }
 
@@ -34,6 +35,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+@property(readonly, nonatomic) BOOL hasSpeechDataURL;
+@property(retain, nonatomic) _INPBURLValue *speechDataURL; // @synthesize speechDataURL=_speechDataURL;
 @property(readonly, nonatomic) BOOL hasFileURL;
 @property(retain, nonatomic) _INPBURLValue *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) BOOL hasFile;

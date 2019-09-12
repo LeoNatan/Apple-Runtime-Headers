@@ -19,7 +19,8 @@
 
 + (id)sharedCache;
 - (void).cxx_destruct;
-- (void)_postLocalChangeNotification;
+- (id)_statusChangeUserInfoForUserIdentity:(id)arg1 oldStatus:(id)arg2 newStatus:(id)arg3;
+- (void)_postLocalChangeNotificationWithUserInfo:(id)arg1;
 - (void)_persistCachePostingGlobalNotification:(_Bool)arg1;
 - (void)_loadPersistedCacheWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_getUserIdentityCacheKeyForRequestContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

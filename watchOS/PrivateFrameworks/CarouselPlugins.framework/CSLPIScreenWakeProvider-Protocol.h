@@ -6,9 +6,9 @@
 
 #import <CarouselPlugins/CSLSScreenWakeProvider-Protocol.h>
 
-@protocol CSLSScreenWakeProvider;
+@protocol CSLSAOTModeProvider;
 
 @protocol CSLPIScreenWakeProvider <CSLSScreenWakeProvider>
-@property(retain, nonatomic) id <CSLSScreenWakeProvider> client;
+@property(retain, nonatomic) id <CSLSAOTModeProvider> client;
 @end
 

@@ -10,17 +10,14 @@
 {
 }
 
-+ (void)pauseCloudPhotos:(BOOL)arg1 reason:(short)arg2 libraryServicesManager:(id)arg3;
-+ (void)processCloudPhotosLibraryStateChange:(BOOL)arg1 libraryServicesManager:(id)arg2;
-+ (void)performOnceLibraryIsReadyForCPLManager:(CDUnknownBlockType)arg1;
-+ (void)_stopWaitingForLibraryToBeReadyForCPLManager;
-+ (BOOL)_isAssetsdReadyForCPLManager;
 + (void)setShouldHandleOptimizeModeChange:(BOOL)arg1;
 + (BOOL)shouldHandleOptimizeModeChange;
 + (void)setShouldClearPurgeableResourcesOnce:(BOOL)arg1;
 + (BOOL)shouldClearPurgeableResourcesOnce;
 + (void)setShouldMarkPurgeableResourcesOnce:(BOOL)arg1;
 + (BOOL)shouldMarkPurgeableResourcesOnce;
++ (void)setShouldRepushMasterWithMissingMediaMetadataOnce:(BOOL)arg1;
++ (BOOL)shouldRepushMasterWithMissingMediaMetadataOnce;
 + (void)setShouldRepushVideoAssetsMetadataOnce:(BOOL)arg1;
 + (BOOL)shouldRepushVideoAssetsMetadataOnce;
 + (void)setShouldSendOptimizeFeedbackOnce:(BOOL)arg1;

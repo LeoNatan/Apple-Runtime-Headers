@@ -14,6 +14,7 @@
     _Bool _succeeded;
     long long _variationType;
     PLLivePhotoEditSource *_editSource;
+    PLLivePhotoEditSource *_overcaptureEditSource;
     NSDictionary *_analysisResult;
     PICompositionController *_baseCompositionController;
     CDUnknownBlockType _startHandler;
@@ -44,6 +45,7 @@
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(readonly, copy, nonatomic) PICompositionController *baseCompositionController; // @synthesize baseCompositionController=_baseCompositionController;
 @property(readonly, copy, nonatomic) NSDictionary *analysisResult; // @synthesize analysisResult=_analysisResult;
+@property(readonly, nonatomic) PLLivePhotoEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLLivePhotoEditSource *editSource; // @synthesize editSource=_editSource;
 @property(readonly, nonatomic) long long variationType; // @synthesize variationType=_variationType;
 - (void).cxx_destruct;
@@ -51,7 +53,7 @@
 - (void)main;
 - (void)cancel;
 - (void)_timeout;
-- (id)initWithEditSource:(id)arg1 variationType:(long long)arg2 analysisResult:(id)arg3 baseCompositionController:(id)arg4 outputImageURL:(id)arg5 outputVideoURL:(id)arg6 targetSize:(struct CGSize)arg7 renderAllResources:(_Bool)arg8;
+- (id)initWithEditSource:(id)arg1 overcaptureEditSource:(id)arg2 variationType:(long long)arg3 analysisResult:(id)arg4 baseCompositionController:(id)arg5 outputImageURL:(id)arg6 outputVideoURL:(id)arg7 targetSize:(struct CGSize)arg8 renderAllResources:(_Bool)arg9;
 - (id)init;
 
 @end

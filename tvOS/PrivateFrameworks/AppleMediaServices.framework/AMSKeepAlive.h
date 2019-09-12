@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 + (void)_handleAssertionExpiration;
 + (void)_accessAssertionCache:(CDUnknownBlockType)arg1;
-+ (id)_accessQueue;
 + (void)keepAliveWithName:(id)arg1 style:(long long)arg2 block:(CDUnknownBlockType)arg3;
 + (id)keepAliveWithName:(id)arg1 style:(long long)arg2;
 + (id)keepAliveWithName:(id)arg1;

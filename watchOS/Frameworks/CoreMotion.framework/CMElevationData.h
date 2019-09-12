@@ -8,10 +8,11 @@
 
 #import <CoreMotion/NSCopying-Protocol.h>
 #import <CoreMotion/NSSecureCoding-Protocol.h>
+#import <CoreMotion/SRSampling-Protocol.h>
 
-@class NSDate, NSUUID;
+@class NSDate, NSString, NSUUID;
 
-@interface CMElevationData : NSObject <NSSecureCoding, NSCopying>
+@interface CMElevationData : NSObject <SRSampling, NSSecureCoding, NSCopying>
 {
     unsigned int fRecordId;
     NSUUID *fSourceId;
@@ -24,7 +25,7 @@
 
 + (id)sourceName:(int)arg1;
 + (_Bool)supportsSecureCoding;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) int source;
 @property(readonly, nonatomic) unsigned int elevationDescended;
 @property(readonly, nonatomic) unsigned int elevationAscended;
@@ -38,6 +39,13 @@
 - (void)dealloc;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 elevationAscended:(unsigned int)arg3 elevationDescended:(unsigned int)arg4 source:(int)arg5 recordId:(unsigned int)arg6 sourceId:(id)arg7;
 - (id)initWithSignificantElevationSample:(id)arg1;
+- (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
+- (id)binarySampleRepresentation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

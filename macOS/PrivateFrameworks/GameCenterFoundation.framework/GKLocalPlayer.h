@@ -32,8 +32,6 @@
     double _authStartTimeStamp;
     unsigned long long _authenticationType;
     NSWindow *_alertWindow;
-    NSString *_lastPersonalizationVersionDisplayed;
-    unsigned long long _lastPrivacyNoticeVersionDisplayed;
 }
 
 + (void)authenticateWithUsername:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -51,8 +49,6 @@
 + (void)performSync:(CDUnknownBlockType)arg1;
 + (id)localPlayerAccessQueue;
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long lastPrivacyNoticeVersionDisplayed; // @synthesize lastPrivacyNoticeVersionDisplayed=_lastPrivacyNoticeVersionDisplayed;
-@property(retain, nonatomic) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property(retain, nonatomic) NSWindow *alertWindow; // @synthesize alertWindow=_alertWindow;
 @property(nonatomic) unsigned long long authenticationType; // @synthesize authenticationType=_authenticationType;
 @property(nonatomic) double authStartTimeStamp; // @synthesize authStartTimeStamp=_authStartTimeStamp;

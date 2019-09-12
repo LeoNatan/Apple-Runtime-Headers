@@ -154,8 +154,11 @@
 - (void)_updateAccessoriesIfNeeded;
 - (void)_updateAccessories;
 - (void)_updateAccessoryMetrics;
-- (id)_trailingAccessoriesForType:(long long)arg1 view:(id)arg2 editing:(_Bool)arg3;
+- (id)_trailingAccessoriesForType:(long long)arg1 view:(id)arg2 editing:(_Bool)arg3 style:(long long)arg4;
 - (id)_leadingAccessoriesForEditing:(_Bool)arg1 style:(long long)arg2;
+- (id)_editControlAccessoryForStyle:(long long)arg1;
+- (_Bool)_editControlShouldBeOnLeadingSideForStyle:(long long)arg1;
+- (long long)_sanitizedEditingStyleForEditing:(_Bool)arg1 style:(long long)arg2;
 - (void)_setAccessoryManager:(id)arg1;
 @property(nonatomic, getter=_usesModernAccessoriesLayout, setter=_setUsesModernAccessoriesLayout:) _Bool usesModernAccessoriesLayout;
 - (void)traitCollectionDidChange:(id)arg1;

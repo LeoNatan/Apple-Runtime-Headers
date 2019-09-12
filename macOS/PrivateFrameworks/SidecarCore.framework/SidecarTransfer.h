@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s _lock;
     long long _requestID;
     SidecarSession *_session;
+    // Error parsing type: Ai, name: _suspendCount
     long long _transferID;
 }
 
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long requestID; // @synthesize requestID=_requestID;
 @property(nonatomic) __weak id <SidecarTransferDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (CDUnknownBlockType)_resumeMessage:(id)arg1;
 - (id)dataForType:(id)arg1;
 @property(readonly, nonatomic) SidecarSession *session;
 - (id)initWithSession:(id)arg1 requestID:(long long)arg2 transferID:(long long)arg3;

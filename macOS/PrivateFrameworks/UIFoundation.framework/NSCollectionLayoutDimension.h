@@ -23,10 +23,10 @@
 @property(nonatomic) double dimension; // @synthesize dimension=_dimension;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly, nonatomic) BOOL isEstimated;
-@property(readonly, nonatomic) BOOL isFractionalHeight;
-@property(readonly, nonatomic) BOOL isFractionalWidth;
-@property(readonly, nonatomic) BOOL isAbsolute;
+@property(readonly) BOOL isEstimated;
+@property(readonly) BOOL isFractionalHeight;
+@property(readonly) BOOL isFractionalWidth;
+@property(readonly) BOOL isAbsolute;
 - (id)initWithDimension:(double)arg1 semantic:(long long)arg2;
 
 @end

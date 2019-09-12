@@ -28,6 +28,8 @@
 - (void).cxx_destruct;
 - (void)_mergeNewSettings:(id)arg1 operations:(id)arg2;
 - (void)_callSettingsDidUpdateDelegate;
+@property(readonly, getter=isAccessModeChangeNotificationEnabled) _Bool accessModeChangeNotificationEnabled;
+@property(readonly, getter=isRecordingAudioEnabled) _Bool recordingAudioEnabled;
 @property(readonly, getter=isCameraDisabledByThirdParty) _Bool cameraDisabledByThirdParty;
 @property(readonly) HMCameraBulletinBoardSmartNotification *smartNotificationBulletin;
 @property(readonly, getter=isNightVisionModeEnabled) _Bool nightVisionModeEnabled;
@@ -47,6 +49,8 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, copy) NSString *description;
+- (void)updateAccessModeChangeNotificationEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)updateRecordingAudioEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateNightVisionModeEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateSnapshotsAllowed:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAccessModeIndicatorEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

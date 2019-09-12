@@ -41,6 +41,7 @@
 - (void)_updateRolloverMenu:(id)arg1;
 - (id)menuItemFromService:(id)arg1;
 - (BOOL)displaysAsPopUpMenu;
+- (id)_touchBarImageFromRepresentedObject:(id)arg1;
 - (id)_alternateItemIdentifierFromRepresentedObject:(id)arg1;
 - (id)_serviceFromRepresentedObject:(id)arg1;
 - (id)_representedObjectForService:(id)arg1 alternateItemIdentifier:(id)arg2;

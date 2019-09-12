@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_didTransitionToPresented;
 - (void)_didTransitionToPresenting;
 - (void)_prepareStateMachine;
-- (void)dismissWithStyle:(unsigned long long)arg1 alongsideActions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)dismissWithReason:(unsigned long long)arg1 alongsideActions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentFromViewController:(id)arg1 sourcePreview:(id)arg2 dismissalCompletion:(CDUnknownBlockType)arg3;
 - (id)initWithClickPresentation:(id)arg1;
 

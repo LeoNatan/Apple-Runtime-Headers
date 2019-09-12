@@ -10,8 +10,8 @@
 #import <FrontBoardServices/FBSSceneHandle-Protocol.h>
 #import <FrontBoardServices/FBSSceneSnapshotRequestDelegate-Protocol.h>
 
-@class FBSSceneClientSettings, FBSSceneIdentityToken, FBSSceneSettings, FBSSceneSpecification, FBSSerialQueue, NSMutableArray, NSObject, NSOrderedSet, NSString;
-@protocol FBSSceneClientAgent, FBSSceneDelegate, FBSSceneUpdater, OS_dispatch_queue;
+@class FBSSceneClientSettings, FBSSceneIdentityToken, FBSSceneSettings, FBSSceneSpecification, FBSSerialQueue, NSMutableArray, NSOrderedSet, NSString;
+@protocol FBSSceneClientAgent, FBSSceneDelegate, FBSSceneUpdater;
 
 @interface FBSSceneImpl : FBSScene <FBSSceneSnapshotRequestDelegate, FBSSceneHandle, FBSSceneAgentProxy>
 {
@@ -30,7 +30,6 @@
     NSOrderedSet *_lock_layers;
     id <FBSSceneDelegate> _lock_delegate;
     FBSSceneIdentityToken *_identityToken;
-    NSObject<OS_dispatch_queue> *_sendQueue;
 }
 
 - (void).cxx_destruct;
@@ -60,7 +59,7 @@
 - (void)_callOutQueue_agent_didCreateWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_hasAgent;
 - (void)_configureReceivedActions:(id)arg1;
-- (void)_sendQueue_comsumeLock_updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
+- (void)_calloutQueue_comsumeLock_updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
 - (id)identityToken;
 - (_Bool)invalidateSnapshotWithContext:(id)arg1;
 - (_Bool)performSnapshotWithContext:(id)arg1;

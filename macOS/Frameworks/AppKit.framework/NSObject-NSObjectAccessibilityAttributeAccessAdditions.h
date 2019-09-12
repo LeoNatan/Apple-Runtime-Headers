@@ -92,6 +92,7 @@
 - (void)_releaseBindingAdaptor;
 - (id)_bindingAdaptor;
 - (void)_setBindingAdaptor:(id)arg1;
+- (id)NSLifeguard_autorelease;
 - (void)setUserInterfaceItemIdentifier:(id)arg1;
 - (id)userInterfaceItemIdentifier;
 - (void)accessibilityRemoveTemporaryChild:(id)arg1;

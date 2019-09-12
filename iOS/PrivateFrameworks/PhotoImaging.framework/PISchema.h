@@ -15,6 +15,7 @@
 + (id)registeredPhotosSchemaIdentifier;
 + (id)photosCompositionSchema;
 + (id)photosSchema;
++ (id)videoReframeSchema;
 + (id)selectiveColorSchema;
 + (id)curvesSchema;
 + (id)levelsSchema;
@@ -45,6 +46,7 @@
 + (id)smartToneSchema;
 + (id)rawNoiseReductionSchema;
 + (id)rawSchema;
++ (id)sourceSelectSchema;
 
 @end
 

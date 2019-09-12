@@ -8,7 +8,7 @@
 
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class NSData, NSSet, NSUUID;
+@class NSData, NSSet, NSUUID, PRCollaborationData, PRPeer;
 
 @interface ARCollaborationData : NSObject <NSSecureCoding>
 {
@@ -19,9 +19,13 @@
     unsigned long long _vioSessionID;
     NSUUID *_anchorIdentifier;
     NSSet *_anchors;
+    PRCollaborationData *_prCollaborationData;
+    PRPeer *_prPeer;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) PRPeer *prPeer; // @synthesize prPeer=_prPeer;
+@property(retain, nonatomic) PRCollaborationData *prCollaborationData; // @synthesize prCollaborationData=_prCollaborationData;
 @property(retain, nonatomic) NSSet *anchors; // @synthesize anchors=_anchors;
 @property(retain, nonatomic) NSUUID *anchorIdentifier; // @synthesize anchorIdentifier=_anchorIdentifier;
 @property(readonly, nonatomic) unsigned long long vioSessionID; // @synthesize vioSessionID=_vioSessionID;
@@ -32,6 +36,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithProximityCollaborationData:(id)arg1 sessionID:(unsigned long long)arg2;
 - (id)initWithVIOData:(id)arg1 type:(long long)arg2 sessionID:(unsigned long long)arg3;
 
 @end

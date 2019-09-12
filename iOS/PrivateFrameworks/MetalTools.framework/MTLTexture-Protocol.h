@@ -11,6 +11,9 @@
 @protocol MTLTexture <MTLResource>
 @property(readonly, nonatomic) CDStruct_a06f635e swizzle;
 @property(readonly) _Bool allowGPUOptimizedContents;
+@property(readonly) _Bool isSparse;
+@property(readonly) unsigned long long tailSizeInBytes;
+@property(readonly) unsigned long long firstMipmapInTail;
 @property(readonly, getter=isFramebufferOnly) _Bool framebufferOnly;
 @property(readonly) unsigned long long usage;
 @property(readonly) unsigned long long arrayLength;

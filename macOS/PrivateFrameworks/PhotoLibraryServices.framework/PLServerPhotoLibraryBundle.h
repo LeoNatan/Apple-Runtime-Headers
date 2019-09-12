@@ -31,6 +31,8 @@
 - (BOOL)bindAssetsdService:(id)arg1 error:(id *)arg2;
 - (id)boundAssetsdServices;
 - (void)shutdownWithReason:(id)arg1;
+- (void)clearShutdownReason;
+- (void)invalidateClientConnectionsWithReason:(id)arg1;
 - (void)close;
 - (id)newBoundAssetsdServicesTable;
 - (id)newLibraryServicesManager;

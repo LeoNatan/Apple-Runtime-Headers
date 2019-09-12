@@ -20,9 +20,11 @@
 + (id)sharedScheduler;
 @property(nonatomic, setter=_setActive:) BOOL _isActive; // @synthesize _isActive=__isActive;
 - (void).cxx_destruct;
+- (void)scheduleTaskAfterCATransactionCommits:(CDUnknownBlockType)arg1;
 - (void)_updateIsActive;
 - (void)_runLoopWillStartWaiting;
 - (BOOL)_shouldExecutePendingBlock;
+- (void)scheduleDeferredBackgroundTask:(CDUnknownBlockType)arg1;
 - (void)scheduleBackgroundTask:(CDUnknownBlockType)arg1;
 - (void)scheduleMainQueueTaskAndWait:(CDUnknownBlockType)arg1;
 - (void)scheduleMainQueueTask:(CDUnknownBlockType)arg1;

@@ -6,10 +6,12 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@class NSObject;
+#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
+
+@class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NTKCalendarComplicationDataSource : NTKComplicationDataSource
+@interface NTKCalendarComplicationDataSource : NTKComplicationDataSource <NTKTritiumRandomizedComplicationEntryProvider>
 {
     NSObject<OS_dispatch_queue> *_loadQueue;
 }
@@ -17,6 +19,8 @@
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
+- (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
+- (float)tritium_randomizedPossibility;
 - (void)_handleLocaleChange:(id)arg1;
 - (void)_modelInvalidated:(id)arg1;
 - (void)_stopObserving;
@@ -24,6 +28,7 @@
 - (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (id)complicationApplicationIdentifier;
 - (id)lockedTemplate;
+- (id)privacyTemplate;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
@@ -35,6 +40,12 @@
 - (unsigned int)timelineAnimationBehavior;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

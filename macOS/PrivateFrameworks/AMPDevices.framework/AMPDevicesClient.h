@@ -28,8 +28,11 @@
 - (void)promptForPasswordWithParameters:(id)arg1 inParentWindow:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)askUserWithParameters:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)canShowUserInteractionForDeviceWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)didCompleteIPodVoiceOverKitInstallForDeviceWithIdentifier:(id)arg1 withError:(id)arg2;
+- (void)didStartIPodVoiceOverKitInstallForDeviceWithIdentifier:(id)arg1;
 - (void)updateAvailableWithSoftwareInfo:(id)arg1 forDeviceWithIdentifier:(id)arg2;
 - (void)didRemoveDeviceWithIdentifier:(id)arg1;
+- (void)didHideDeviceWithIdentifier:(id)arg1;
 - (void)didCompleteSoftwareUpdateRestoreForDeviceWithIdentifier:(id)arg1 withError:(id)arg2;
 - (void)didStartSoftwareUpdateRestoreForDeviceWithIdentifier:(id)arg1;
 - (void)didCompleteSoftwareDownloadForDeviceWithIdentifier:(id)arg1 withError:(id)arg2;
@@ -57,7 +60,8 @@
 - (id)copyItemAtURL:(id)arg1 toURL:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchFileSharingItemsForApp:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchFileSharingAppsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchIPodVoiceOverKitStatusForDevice:(id)arg1 WithReply:(CDUnknownBlockType)arg2;
+- (id)startIPodVoiceOverKitInstallForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)fetchIPodVoiceOverKitStatusWithReply:(CDUnknownBlockType)arg1;
 - (void)ejectDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)revealDeviceInFinder:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)resetWarningsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;

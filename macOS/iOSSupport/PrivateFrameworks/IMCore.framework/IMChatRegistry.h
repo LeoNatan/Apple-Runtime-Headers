@@ -168,7 +168,7 @@
 - (void)_noteChatInit:(id)arg1;
 - (id)performanceLogHandle;
 - (void)verifyFilteringForAllChats;
-- (void)enumerateAllChatsAndIncludingSyncedAttachmentSizes:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateAllChatsAndAttachmentSizesWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_postMultiWayStateChangedNotification:(id)arg1;
 - (void)conversationManager:(id)arg1 removedActiveConversation:(id)arg2;
 - (void)conversationManager:(id)arg1 activeRemoteParticipantsChangedForConversation:(id)arg2;
@@ -268,7 +268,8 @@
 - (void)chat:(id)arg1 lastAddressedHandleUpdated:(id)arg2;
 - (void)chat:(id)arg1 displayNameUpdated:(id)arg2;
 - (void)chat:(id)arg1 propertiesUpdated:(id)arg2;
-- (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 member:(id)arg5 statusChanged:(int)arg6;
+- (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 chatPersonCentricID:(id)arg5 member:(id)arg6 statusChanged:(int)arg7;
+- (void)_updatePersonCentricIDToChatMapForChat:(id)arg1 toNewPersonCentricID:(id)arg2;
 - (void)leftChat:(id)arg1;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 groupID:(id)arg5 chatPersonCentricID:(id)arg6 statusChanged:(int)arg7 handleInfo:(id)arg8;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 error:(id)arg5;

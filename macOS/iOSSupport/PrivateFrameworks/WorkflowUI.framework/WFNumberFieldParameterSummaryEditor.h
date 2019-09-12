@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
 - (void)showActionOutputPickerFromSourceResponder:(id)arg1 allowExtensionInput:(BOOL)arg2 variableProvider:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)sourceViewTintColorDidChange;
 - (void)textEntryDidFinish;
 - (void)textEntryTextDidChange:(id)arg1;
 - (BOOL)textEntryShouldChangeText:(id)arg1;

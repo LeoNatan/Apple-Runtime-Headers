@@ -14,7 +14,6 @@
 @interface MPMediaLibrary : NSObject <NSSecureCoding>
 {
     id <MPMediaLibraryDataProviderPrivate> _libraryDataProvider;
-    long long _libraryChangeObservers;
     NSObject<OS_dispatch_queue> *_entityCacheQueue;
     NSObject<OS_dispatch_queue> *_fixedQueue;
     NSArray *_notificationObservers;
@@ -82,6 +81,7 @@
     id __MLCoreStorage;
     NSObject<OS_dispatch_queue> *_accessQueue;
     ICUserIdentity *_userIdentity;
+    long long _libraryChangeObservers;
 }
 
 + (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
@@ -114,13 +114,12 @@
 + (void)_postNotificationName:(id)arg1 library:(id)arg2 userInfo:(id)arg3;
 + (void)_postNotificationName:(id)arg1 library:(id)arg2;
 + (BOOL)supportsSecureCoding;
-+ (id)_deviceMediaLibraryWithUserIdentity:(id)arg1 isSingletonLibrary:(BOOL)arg2 createIfRequired:(BOOL)arg3;
++ (id)_deviceMediaLibraryWithUserIdentity:(id)arg1 createIfRequired:(BOOL)arg2;
 + (id)deviceMediaLibraryWithUserIdentity:(id)arg1;
 + (id)deviceMediaLibrary;
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (id)defaultMediaLibrary;
 + (void)initialize;
-@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
 - (BOOL)recordPlayEventForPlaylistPersistentID:(long long)arg1;
 - (BOOL)recordPlayEventForAlbumPersistentID:(long long)arg1;
@@ -141,15 +140,17 @@
 - (id)artworkDataSource;
 - (id)libraryDataProvider;
 - (id)_initWithLibraryDataProvider:(id)arg1;
+@property(readonly, nonatomic) long long libraryChangeObservers; // @synthesize libraryChangeObservers=_libraryChangeObservers;
 @property(retain, nonatomic, setter=_setMLCoreStorage:) id _MLCoreStorage; // @synthesize _MLCoreStorage=__MLCoreStorage;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) ML3MusicLibrary *ml3Library;
 - (void)_tearDownNotifications;
 - (void)_setupNotifications;
 - (void)_disconnect;
 - (void)_removeConnectionAssertion:(id)arg1;
 - (id)_collectionsForQueryCriteria:(id)arg1;
-- (void)setLibraryFilterPredicates;
+- (void)_setLibraryFilterPredicates;
 - (long long)cloudFilteringType;
 - (void)setCloudFilteringType:(long long)arg1;
 - (void)_clearPendingDisconnection;
@@ -167,6 +168,8 @@
 - (BOOL)collectionExistsWithStoreID:(long long)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long *)arg3;
 - (BOOL)collectionExistsWithName:(id)arg1 groupingType:(long long)arg2 existentPID:(unsigned long long *)arg3;
 - (BOOL)collectionExistsContainedWithinPersistentIDs:(const unsigned long long *)arg1 count:(unsigned long long)arg2 groupingType:(long long)arg3 existentPID:(unsigned long long *)arg4;
+- (void)_performBlockOnLibraryHandlingTheSameAccount:(CDUnknownBlockType)arg1;
+- (BOOL)_handlesSameAccountAs:(id)arg1;
 - (unsigned long long)_persistentIDForAssetURL:(id)arg1;
 - (id)pathForAssetURL:(id)arg1;
 - (BOOL)isValidAssetURL:(id)arg1;
@@ -266,9 +269,9 @@
 - (unsigned long long)currentEntityRevision;
 - (void)addItemWithProductID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSDate *lastModifiedDate;
-- (void)endGeneratingLibraryChangeNotifications;
 - (void)disconnect;
 - (void)connectWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)endGeneratingLibraryChangeNotifications;
 - (void)beginGeneratingLibraryChangeNotifications;
 - (void)_displayValuesDidChangeNotification:(id)arg1;
 - (void)_didReceiveMemoryWarning:(id)arg1;
@@ -287,7 +290,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)_initWithUserIdentity:(id)arg1 isSingletonLibrary:(BOOL)arg2;
+- (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 @property(readonly, nonatomic) NSURL *protectedContentSupportStorageURL;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

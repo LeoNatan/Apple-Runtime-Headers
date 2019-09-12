@@ -13,7 +13,8 @@
 
 @interface VCVoiceShortcutClient : NSObject <INVCVoiceShortcutClient>
 {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_xpcQueue;
+    NSObject<OS_dispatch_queue> *_internalStateQueue;
     NSHashTable *_errorHandlers;
     NSXPCConnection *_xpcConnection;
     CDUnknownBlockType _creationBlock;
@@ -24,17 +25,19 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) NSHashTable *errorHandlers; // @synthesize errorHandlers=_errorHandlers;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalStateQueue; // @synthesize internalStateQueue=_internalStateQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 - (void).cxx_destruct;
 - (void)requestSyncToWatchWithForceReset:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unsafeSetupXPCConnection;
-- (void)unsafeHandleXPCConnectionInvalidation;
-- (void)unsafeHandleXPCConnectionInterruption;
-- (void)unsafeRunConnectionErrorHandlersIsInvalidation:(BOOL)arg1;
+- (void)handleXPCConnectionInvalidation;
+- (void)handleXPCConnectionInterruption;
+- (id)unsafePopConnectionErrorHandlers;
 - (void)callErrorHandlerIfNeeded:(CDUnknownBlockType)arg1 withError:(id)arg2;
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1 synchronous:(BOOL)arg2;
 - (id)synchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)obliterateShortcuts:(CDUnknownBlockType)arg1;
 - (BOOL)hasRunEventsInTheLast30DaysWithError:(id *)arg1;
 - (void)runShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runShortcutWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -50,6 +53,7 @@
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;
 - (void)generateSingleUseTokenForWorkflowIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)generateSingleUseTokenForWorkflowReference:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 resolvedActivityItems:(id)arg2 hostBundleIdentifier:(id)arg3 error:(id *)arg4;
 - (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 error:(id *)arg3;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

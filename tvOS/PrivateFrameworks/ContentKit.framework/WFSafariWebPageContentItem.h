@@ -20,6 +20,7 @@
 + (id)typeDescription;
 + (id)contentCategories;
 + (id)outputTypes;
++ (id)ownedPasteboardTypes;
 + (id)ownedTypes;
 + (_Bool)supportedTypeMustBeDeterminedByInstance:(id)arg1;
 + (id)propertyBuilders;

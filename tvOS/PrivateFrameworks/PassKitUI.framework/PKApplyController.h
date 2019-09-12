@@ -68,13 +68,15 @@
 - (void)_handleApplyResponse:(id)arg1 originalFeatureApplication:(id)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleResponseError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submitActionIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)termsDataForFeatureWithFormat:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)termsDataForFeatureWithIdentifier:(id)arg1 format:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)termsDataForIdentifier:(id)arg1 format:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_performApplyWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performCreateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_deviceMetadataFields:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performWithdrawWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_reset;
+- (void)_stopPaymentServiceListener;
+- (void)_startPaymentServiceListener;
 - (void)endApplyFlow;
 - (id)applicationUpdatedAlertControllerWithHandler:(CDUnknownBlockType)arg1;
 - (void)withdrawApplicationWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,20 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSPredicate, PLDatabaseContext, PLPhotoLibrary;
+@class NSPredicate;
 
 @interface PLPairing : NSObject
 {
-    PLDatabaseContext *_context;
     NSPredicate *_locatedInUsersPhotoLibrary;
-    PLPhotoLibrary *_photolibrary;
+    struct os_unfair_lock_s _lock;
 }
 
-@property(retain) PLPhotoLibrary *photolibrary; // @synthesize photolibrary=_photolibrary;
 - (void).cxx_destruct;
-- (void)initializeInternalProperties;
-- (id)initWithDatabaseContext:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1;
+- (BOOL)processPairingForGroupIDs:(id)arg1 inContext:(id)arg2 duplicateDetection:(BOOL)arg3 error:(id *)arg4;
+- (id)init;
 
 @end
 

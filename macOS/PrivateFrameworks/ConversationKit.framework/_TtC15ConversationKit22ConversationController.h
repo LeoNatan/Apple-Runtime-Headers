@@ -14,8 +14,9 @@
     // Error parsing type: , name: remoteParticipants
     // Error parsing type: , name: includeLocalParticipantInVisibleParticipants
     // Error parsing type: , name: audioFrequencyController
-    // Error parsing type: , name: momentsController
     // Error parsing type: , name: audioCallbackQueue
+    // Error parsing type: , name: $__lazy_storage_$_momentsController
+    // Error parsing type: , name: lastRegisteredMomentsProvider
     // Error parsing type: , name: recentPresentationContexts
     // Error parsing type: , name: scheduledIsChangingMirroredVideoResetDates
     // Error parsing type: , name: conversationState

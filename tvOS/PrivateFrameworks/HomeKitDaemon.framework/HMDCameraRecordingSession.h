@@ -25,6 +25,7 @@
     id <HMDCameraRecordingSessionDelegate> _delegate;
     double _configuredFragmentDuration;
     HMFActivity *_sessionActivity;
+    NSString *_logIdentifier;
     HMDCameraRecordingUploader *_recordingUploader;
     unsigned long long _pendingFragmentsCount;
     NSString *_fragmentDirectoryPath;
@@ -53,12 +54,12 @@
 @property(retain) HMDCameraRecordingUploader *recordingUploader; // @synthesize recordingUploader=_recordingUploader;
 @property(getter=isActive) _Bool active; // @synthesize active=_active;
 @property _Bool noMoreFragmentsAvailable; // @synthesize noMoreFragmentsAvailable=_noMoreFragmentsAvailable;
+@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) HMFActivity *sessionActivity; // @synthesize sessionActivity=_sessionActivity;
 @property(readonly) double configuredFragmentDuration; // @synthesize configuredFragmentDuration=_configuredFragmentDuration;
 @property __weak id <HMDCameraRecordingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)logIdentifier;
 - (void)recordingUploaderIsIdle:(id)arg1;
 - (void)recordingUploader:(id)arg1 didFinishClip:(id)arg2;
 - (void)recordingUploader:(id)arg1 didStartClip:(id)arg2;

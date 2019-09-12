@@ -17,7 +17,7 @@
 #import <UIKitCore/_UIUserInterfaceValidations-Protocol.h>
 
 @class NSArray, NSString, NSTouchBar, NSUndoManager, NSUserActivity, UIInputViewController, UITextInputAssistantItem, UITextInputMode, UIView;
-@protocol UIActivityItemsConfigurationReading, UINSActivityItemsConfiguration, UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
+@protocol UIActivityItemsConfigurationReading, UINSActivityItemsConfigurationReading, UITextInput, UITextInputPrivate, _UICopyConfigurationReading;
 
 @interface UIResponder : NSObject <NSTouchBarProvider, UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UIServicesMenuDataProviding, _UIUserInterfaceValidations, _UITouchable, UIResponderStandardEditActions>
 {
@@ -177,6 +177,8 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
+@property(readonly) NSString *_responderDebugDescription;
+- (id)_debugMenuResponderChainItemDictionary;
 - (BOOL)_handleActivityItemsConfigurationShare:(id)arg1;
 - (BOOL)_handleActivityItemsConfigurationDoesNotHandleSelector:(SEL)arg1;
 - (BOOL)_handleActivityItemsConfigurationCanPerformAction:(SEL)arg1 sender:(id)arg2;
@@ -322,7 +324,7 @@
 - (unsigned long long)_effectiveFocusRingType;
 - (unsigned long long)_defaultFocusRingType;
 - (id)_designatedFocusRingView;
-@property(readonly, nonatomic) id <UINSActivityItemsConfiguration> _activityItemsConfigurationForServicesMenu;
+@property(readonly, nonatomic) id <UINSActivityItemsConfigurationReading> _activityItemsConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(id)arg1;
 - (id)_servicesMenuProviderForReturnType:(id)arg1;
 - (id)_dataProviderForServicesMenu;

@@ -16,11 +16,13 @@
     NSXPCConnection *_conn;
     CDUnknownBlockType _sceneUpdateNotificationHandler;
     NSObject<OS_dispatch_queue> *_disconnectionQueue;
+    BOOL _isNotSystemApp;
     NSXPCConnection *_connection;
     struct CGSize _defaultSceneSize;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) BOOL isNotSystemApp; // @synthesize isNotSystemApp=_isNotSystemApp;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) struct CGSize defaultSceneSize; // @synthesize defaultSceneSize=_defaultSceneSize;
 - (void).cxx_destruct;
@@ -42,6 +44,7 @@
 - (void)submitSceneResizeRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)forgetPersistentScenesWithIdentifiers:(id)arg1;
 - (void)createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createNewSceneOfSize:(struct CGSize)arg1 background:(BOOL)arg2 persistenceIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)connectWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connect;
 - (void)waitForServerToBeReady;

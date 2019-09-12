@@ -12,6 +12,7 @@
     // Error parsing type: , name: alignment
     // Error parsing type: , name: isVibrant
     // Error parsing type: , name: outlineShapeSize
+    // Error parsing type: , name: theme
     // Error parsing type: , name: hasBeenUnapplied
 }
 

@@ -10,15 +10,13 @@
 
 @interface AppleNetworkMenuExtraNetworkExtensionServiceController : AppleNetworkMenuExtraServiceController
 {
-    int _sessionStatus;
     NEConfiguration *_configuration;
     void *_session;
     NSNumber *_startTime;
 }
 
-@property NSNumber *startTime; // @synthesize startTime=_startTime;
+@property(retain) NSNumber *startTime; // @synthesize startTime=_startTime;
 @property void *session; // @synthesize session=_session;
-@property int sessionStatus; // @synthesize sessionStatus=_sessionStatus;
 @property(retain) NEConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)a_connectOrDisconnect:(id)arg1;
 - (void)prepareToUnload;

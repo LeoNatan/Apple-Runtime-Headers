@@ -15,6 +15,7 @@
 - (void)prefetchIndexPaths:(id)arg1 level:(unsigned long long)arg2;
 - (id)assetCollectionReferenceNearestToObjectReference:(id)arg1;
 - (id)objectReferenceNearestToObjectReference:(id)arg1;
+@property(readonly, nonatomic) _Bool areAllSectionsConsideredAccurate;
 - (long long)estimatedAssetsCountWithEnrichmentState:(unsigned short)arg1;
 - (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
 - (_Bool)hasCurationForAssetCollection:(id)arg1;

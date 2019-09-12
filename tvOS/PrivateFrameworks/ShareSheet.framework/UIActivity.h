@@ -9,7 +9,7 @@
 #import <ShareSheet/UIActivityExtensionItemDataProviding-Protocol.h>
 #import <ShareSheet/UIActivityExtensionItemDataReceiving-Protocol.h>
 
-@class NSExtension, NSString, NSUUID, UIImage, UIViewController, _UIActivityResourceLoader;
+@class NSExtension, NSLocale, NSString, NSUUID, UIImage, UIViewController, _UIActivityResourceLoader;
 
 @interface UIActivity : NSObject <UIActivityExtensionItemDataProviding, UIActivityExtensionItemDataReceiving>
 {
@@ -20,6 +20,7 @@
     CDUnknownBlockType _didFinishPerformingActivityHandler;
     long long _maxPreviews;
     NSString *_contentSizeCategory;
+    NSLocale *_preferredLocale;
     unsigned long long _indexInApplicationDefinedActivities;
     NSUUID *_activityUUID;
 }
@@ -46,6 +47,7 @@
 + (unsigned long long)_xpcAttributes;
 @property(readonly, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(nonatomic) unsigned long long indexInApplicationDefinedActivities; // @synthesize indexInApplicationDefinedActivities=_indexInApplicationDefinedActivities;
+@property(retain, nonatomic) NSLocale *preferredLocale; // @synthesize preferredLocale=_preferredLocale;
 @property(retain, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) long long maxPreviews; // @synthesize maxPreviews=_maxPreviews;
 @property(copy, nonatomic) CDUnknownBlockType didFinishPerformingActivityHandler; // @synthesize didFinishPerformingActivityHandler=_didFinishPerformingActivityHandler;

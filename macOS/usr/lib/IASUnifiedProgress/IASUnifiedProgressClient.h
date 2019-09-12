@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <IASUnifiedProgress/IASUnifiedProgressConnectProtocol-Protocol.h>
+
 @class NSString, NSUUID, NSXPCConnection;
 
-@interface IASUnifiedProgressClient : NSObject
+@interface IASUnifiedProgressClient : NSObject <IASUnifiedProgressConnectProtocol>
 {
     BOOL _done;
     BOOL _finished;
@@ -32,6 +34,7 @@
 @property(retain) NSString *phaseName; // @synthesize phaseName=_phaseName;
 - (void)dealloc;
 - (id)initWithPhaseName:(id)arg1;
+- (void)connectionInterrupted;
 - (void)_registerConnection;
 - (id)_clientInfo;
 - (void)_callCompletionHandler;
@@ -49,6 +52,12 @@
 - (void)reportStatus:(id)arg1;
 - (void)reportProgress:(float)arg1 animate:(BOOL)arg2;
 - (void)reportProgress:(float)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

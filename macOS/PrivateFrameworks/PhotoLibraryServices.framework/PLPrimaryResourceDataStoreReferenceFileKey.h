@@ -22,6 +22,7 @@
 - (id)initWithKeyStruct:(const void *)arg1;
 - (id)keyData;
 - (id)fileURLForAssetID:(id)arg1;
+- (id)fileURLForAssetID:(id)arg1 inContext:(id)arg2;
 - (id)initFromExistingLocationOfExternalResource:(id)arg1 asset:(id)arg2;
 - (id)initWithResourceType:(unsigned int)arg1;
 

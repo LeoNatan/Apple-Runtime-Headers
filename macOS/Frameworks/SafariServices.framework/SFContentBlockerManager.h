@@ -33,6 +33,7 @@
 - (void)_resetContentBlockersState;
 - (void)_disableUnsignedContentBlockersIfNecessary;
 - (void)_blockedContentBlockersDidChange;
+- (void)_replaceLegacyExtensionsWithContentBlocker:(id)arg1;
 - (void)_applyEnabledContentBlockers;
 - (void)_loadContentBlockersIfNecessary:(id)arg1;
 - (void)_findContentBlockerAppExtensions;

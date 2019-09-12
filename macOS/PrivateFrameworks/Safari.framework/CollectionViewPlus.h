@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL hasEnclosingScrollView; // @synthesize hasEnclosingScrollView=_hasEnclosingScrollView;
 - (void)_setOpensDropInsertionGaps:(BOOL)arg1;
+- (id)makeItemWithIdentifier:(id)arg1 forIndexPath:(id)arg2 forCollectionView:(id)arg3;
 - (BOOL)isScreenPointWithinBounds:(struct CGPoint)arg1;
 - (id)enclosingScrollView;
 - (void)draggingSession:(id)arg1 movedToPoint:(struct CGPoint)arg2;

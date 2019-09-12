@@ -25,6 +25,7 @@
 + (id)allMenuServices;
 + (id)allServices;
 + (id)serviceWithName:(id)arg1;
++ (id)serviceWithIdentifier:(id)arg1;
 + (id)menuServices;
 + (id)services;
 - (void).cxx_destruct;

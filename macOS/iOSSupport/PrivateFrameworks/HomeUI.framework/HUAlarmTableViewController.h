@@ -43,6 +43,7 @@
 - (void).cxx_destruct;
 - (void)mobileTimerAdapterDidUpdateReadiness:(id)arg1;
 - (void)accessoryDidUpdateControllable:(id)arg1;
+- (void)accessoryDidUpdateReachableTransports:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
 - (void)_updateAccessoryControllable:(BOOL)arg1 alarmsSettingReady:(BOOL)arg2;
 - (void)_discernReachabilityForAccessory:(id)arg1;

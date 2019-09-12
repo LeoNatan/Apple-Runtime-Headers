@@ -88,6 +88,9 @@
 @property(nonatomic) __weak id <PKPassGroupViewReceiver> receiver; // @synthesize receiver=_receiver;
 @property(nonatomic) _Bool footerSuppressed; // @synthesize footerSuppressed=_footerSuppressed;
 - (void).cxx_destruct;
+- (void)_reportEventForPassIfNecessary:(id)arg1;
+- (void)_endReportingSessionForPassIfNecessary;
+- (void)_startReportingSessionForPassIfNecessary;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)deleteAnimationController:(id)arg1 didComplete:(_Bool)arg2;
 - (void)deleteAnimationControllerWillBeginDeleteAnimation:(id)arg1;

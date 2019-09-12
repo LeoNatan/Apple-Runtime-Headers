@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) NSString *apiVersionFallback; // @synthesize apiVersionFallback=_apiVersionFallback;
 @property(readonly, nonatomic) NSString *apiVersion; // @synthesize apiVersion=_apiVersion;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)aqiEnabledForCountryCode:(id)arg1;
 @property(readonly, nonatomic) _Bool isExpired;
 @property(readonly, copy) NSString *description;

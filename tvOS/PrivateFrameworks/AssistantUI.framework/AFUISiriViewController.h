@@ -16,7 +16,7 @@
 #import <AssistantUI/SiriUIKeyboardViewDelegate-Protocol.h>
 #import <AssistantUI/SiriUIPresentationRemoteControlling-Protocol.h>
 
-@class AFUIDelayedActionCommandCache, AFUISiriRemoteSceneViewController, AFUISiriSession, NSDictionary, NSNumber, NSObject, NSString, SASRequestOptions, SiriUIAudioRoutePickerController, SiriUIConfiguration, SiriUIKeyboardView, UIScreen, UIStatusBar, UIView;
+@class AFUIDelayedActionCommandCache, AFUISiriRemoteSceneViewController, AFUISiriSession, NSDictionary, NSNumber, NSObject, NSString, SASRequestOptions, SiriUIAudioRoutePickerController, SiriUIConfiguration, SiriUIKeyboardView, UIStatusBar, UIView;
 @protocol AFUISiriRemoteViewHosting, AFUISiriViewControllerDataSource, AFUISiriViewControllerDelegate, OS_dispatch_queue;
 
 @interface AFUISiriViewController : UIViewController <AFUISiriRemoteSceneViewControllerDataSource, AFUISiriRemoteSceneViewControllerDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDataSource, SiriUIKeyboardViewDelegate, SiriUIPresentationRemoteControlling>
@@ -56,7 +56,6 @@
     _Bool _punchingOut;
     id <AFUISiriViewControllerDataSource> _dataSource;
     id <AFUISiriViewControllerDelegate> _delegate;
-    UIScreen *_fallbackScreen;
     AFUISiriSession *_session;
     AFUISiriRemoteSceneViewController *_remoteViewController;
     NSObject<OS_dispatch_queue> *_remoteViewControllerDispatchQueue;
@@ -83,7 +82,6 @@
 @property(readonly, nonatomic, getter=_remoteViewControllerDispatchQueue) NSObject<OS_dispatch_queue> *remoteViewControllerDispatchQueue; // @synthesize remoteViewControllerDispatchQueue=_remoteViewControllerDispatchQueue;
 @property(readonly, nonatomic, getter=_remoteViewController) AFUISiriRemoteSceneViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(readonly, nonatomic, getter=_session) AFUISiriSession *session; // @synthesize session=_session;
-@property(retain, nonatomic) UIScreen *fallbackScreen; // @synthesize fallbackScreen=_fallbackScreen;
 @property(nonatomic) _Bool statusBarEnabled; // @synthesize statusBarEnabled=_statusBarEnabled;
 @property(nonatomic) _Bool showsStatusBar; // @synthesize showsStatusBar=_showsStatusBar;
 @property(nonatomic) _Bool turnsOnScreenOnAppearance; // @synthesize turnsOnScreenOnAppearance=_turnsOnScreenOnAppearance;
@@ -99,6 +97,9 @@
 - (void)_setRecordingStartedOnRoute:(_Bool)arg1;
 - (_Bool)_recordingStartedOnRoute;
 - (void)updateToPresentationWithIdentifier:(id)arg1 presentationProperties:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)updateSettingsOnRemoteSceneForInterfaceOrientationChange:(long long)arg1 willAnimationWithDuration:(double)arg2;
+- (void)handlePunchoutCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)shouldNonLocalDelegateHandlePunchouts;
 - (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
 - (void)siriSessionShouldExtendAudioSessionForImminentPhoneCall;
 - (void)siriSessionDidFinishRequestWithError:(id)arg1;

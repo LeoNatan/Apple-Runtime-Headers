@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)setControls:(id)arg1;
 - (void)requestClose;
 - (void)closeBubble:(id)arg1;
+- (struct CGSize)preferredContentSize;
 - (void)updateViewController;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)invalidate;

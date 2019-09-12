@@ -47,8 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)_performRestrictionsCheckWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_contentRatingValue;
 - (_Bool)_isTrailer;
-- (_Bool)_isTVShow;
-- (_Bool)_isMovie;
+- (id)_ratingDomain;
 - (void)_preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)preflightWithOptions:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;

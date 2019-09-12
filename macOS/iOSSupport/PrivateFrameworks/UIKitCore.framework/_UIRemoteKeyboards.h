@@ -59,6 +59,8 @@
 @property(nonatomic) BOOL enableMultiscreenHack; // @synthesize enableMultiscreenHack=_enableMultiscreenHack;
 @property(readonly, nonatomic) long long lastEventSource; // @synthesize lastEventSource=_lastEventSource;
 @property(copy, nonatomic) NSString *focusedSceneIdentifier; // @synthesize focusedSceneIdentifier=_focusedSceneIdentifier;
+- (void)didBecomeActive:(id)arg1;
+- (void)willResignActive:(id)arg1;
 - (void)didRemoveDeactivationReason:(id)arg1;
 - (void)willAddDeactivationReason:(id)arg1;
 - (BOOL)shouldAllowInputViewsRestoredForId:(id)arg1;
@@ -125,7 +127,6 @@
 - (void)queue_keyboardIAVChanged:(double)arg1 onComplete:(CDUnknownBlockType)arg2;
 - (void)queue_keyboardChangedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)queue_keyboardChanged:(id)arg1 onComplete:(CDUnknownBlockType)arg2;
-- (BOOL)isKeyboardExtension;
 - (void)keyboardChangedCompleted;
 - (BOOL)didHandleKeyboardChange:(id)arg1 shouldConsiderSnapshottingKeyboard:(BOOL)arg2 isLocalEvent:(BOOL)arg3;
 - (void)resetSnapshotWithWindowCheck:(BOOL)arg1;

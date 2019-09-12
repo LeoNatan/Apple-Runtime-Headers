@@ -58,6 +58,11 @@
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+- (BOOL)_updateQualitySortForResourcesWithCPLResourceTypeVideoFullSizeInStore:(id)arg1;
+- (BOOL)_fixAdjustedFingerprintsInStore:(id)arg1;
+- (BOOL)_fixUnpushedVideoComplementResourcesInStore:(id)arg1;
+- (BOOL)_fixUploadedButNotRemotelyAvailalbeCPLResourcesInStore:(id)arg1;
+- (BOOL)_fixSharedStreamVideoResourcesInStore:(id)arg1;
 - (BOOL)_removeAllSharedAssetDCIMFilesInStore:(id)arg1;
 - (BOOL)_removeCloudSharedFileAtPath:(id)arg1 withFileManager:(id)arg2 error:(id *)arg3;
 - (BOOL)relocateOriginalUBFPaths:(id)arg1;
@@ -65,6 +70,7 @@
 - (BOOL)_cleanupLegacyFiles;
 - (BOOL)_removeLegacyLocationForLibraryAtURL:(id)arg1 relativePath:(id)arg2 checkPath:(id)arg3 error:(id *)arg4;
 - (BOOL)_relocateCPLMarkerFiles;
+- (BOOL)setProxyLockPath;
 - (BOOL)_verifyAndFixBrokenLocalAvailabilityForResourceWithFileIDsInStore:(id)arg1;
 - (BOOL)_move1kResourcesOutOfMastersDir:(id)arg1;
 - (BOOL)_requestAvailabilityChangeForAssetsMissing1kResourcesInStore:(id)arg1;
@@ -338,7 +344,7 @@
 - (void)_collectFileURLs:(id)arg1 urlsToSkip:(id)arg2 forAddingToAlbum:(id)arg3 intoAssetsArray:(id)arg4 assetsKind:(int)arg5 testCreationDates:(BOOL)arg6;
 - (void)_importAllDCIMAssets:(id)arg1 pendingFraction:(float)arg2;
 - (void)_rebuildAssetsFromJournal:(id)arg1 pendingFraction:(float)arg2;
-- (void)_forceCreateIndexOnOrderedAssets:(BOOL)arg1;
+- (BOOL)_createManualIndexesDropBeforeCreate:(BOOL)arg1;
 - (id)_orderedAssetsToImport;
 - (void)resumePhotoStreams;
 - (void)pausePhotoStreams;

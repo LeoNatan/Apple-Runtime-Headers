@@ -17,6 +17,7 @@
     PBUnknownFields *_unknownFields;
     NSString *_baseURL;
     NSMutableArray *_countryRegionWhitelists;
+    NSMutableArray *_deviceSKUWhitelists;
     NSString *_localizationURL;
     NSString *_multiTileURL;
     NSMutableArray *_supportedLanguages;
@@ -44,6 +45,7 @@
         unsigned int read_unknownFields:1;
         unsigned int read_baseURL:1;
         unsigned int read_countryRegionWhitelists:1;
+        unsigned int read_deviceSKUWhitelists:1;
         unsigned int read_localizationURL:1;
         unsigned int read_multiTileURL:1;
         unsigned int read_supportedLanguages:1;
@@ -51,6 +53,7 @@
         unsigned int wrote_unknownFields:1;
         unsigned int wrote_baseURL:1;
         unsigned int wrote_countryRegionWhitelists:1;
+        unsigned int wrote_deviceSKUWhitelists:1;
         unsigned int wrote_localizationURL:1;
         unsigned int wrote_multiTileURL:1;
         unsigned int wrote_supportedLanguages:1;
@@ -70,6 +73,7 @@
 }
 
 + (BOOL)isValid:(id)arg1;
++ (Class)deviceSKUWhitelistType;
 + (Class)countryRegionWhitelistType;
 + (Class)supportedLanguageType;
 + (Class)validVersionType;
@@ -86,6 +90,13 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)deviceSKUWhitelistAtIndex:(unsigned long long)arg1;
+- (unsigned long long)deviceSKUWhitelistsCount;
+- (void)_addNoFlagsDeviceSKUWhitelist:(id)arg1;
+- (void)addDeviceSKUWhitelist:(id)arg1;
+- (void)clearDeviceSKUWhitelists;
+@property(retain, nonatomic) NSMutableArray *deviceSKUWhitelists;
+- (void)_readDeviceSKUWhitelists;
 @property(nonatomic) BOOL hasAlternativeMultipathTCPPort;
 @property(nonatomic) unsigned int alternativeMultipathTCPPort;
 @property(nonatomic) BOOL hasSupportsMultipathTCP;

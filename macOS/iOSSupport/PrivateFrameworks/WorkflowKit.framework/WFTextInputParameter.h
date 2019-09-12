@@ -16,7 +16,6 @@
     BOOL _multiline;
     BOOL _processesIntoContentItems;
     NSString *_prefix;
-    NSString *_placeholder;
     long long _keyboardType;
     NSString *_textContentType;
     long long _autocapitalizationType;
@@ -38,9 +37,9 @@
 @property(readonly, copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(readonly, nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(readonly, nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
-@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *localizedPlaceholder;
 - (id)defaultSupportedVariableTypes;
 - (id)hintForState:(id)arg1;
 - (BOOL)shouldAlignLabels;

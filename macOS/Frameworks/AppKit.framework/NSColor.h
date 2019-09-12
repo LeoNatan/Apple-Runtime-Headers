@@ -23,6 +23,7 @@
 + (BOOL)ignoresAlpha;
 + (void)setIgnoresAlpha:(BOOL)arg1;
 + (BOOL)supportsSecureCoding;
++ (BOOL)_canDecodeClass:(Class)arg1;
 + (id)oldSystemColorWithCoder:(id)arg1;
 + (id)colorFromPasteboard:(id)arg1;
 + (id)_colorFromData:(id)arg1;

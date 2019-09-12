@@ -46,7 +46,7 @@
 - (void)_fetchAndValidateFileTransfersFromCloudKit:(id)arg1 capturedWithABC:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processAndValidateAttachmentRecordsEligibleForPurge:(id)arg1 recordIDsToTransfers:(id)arg2 capturedWithABC:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_validateTransferFromCloudKit:(id)arg1 localTransfer:(id)arg2 validateCompletion:(CDUnknownBlockType)arg3;
-- (void)clearLocalSyncState;
+- (void)clearLocalSyncState:(unsigned long long)arg1;
 - (void)deleteAttachmentZone;
 - (void)_deleteStingRayToken;
 - (id)latestSyncTokenForSyncType:(long long)arg1;
@@ -72,7 +72,6 @@
 - (void)_processRecordZoneFetchCompletion:(id)arg1 zoneID:(id)arg2 clientChangeTokenData:(id)arg3 moreComing:(BOOL)arg4 shouldWriteBackChanges:(BOOL)arg5 desiredKeys:(long long)arg6 syncType:(long long)arg7 error:(id)arg8 currentBatchCount:(long long)arg9 maxBatchCount:(long long)arg10 completionBlock:(CDUnknownBlockType)arg11;
 - (BOOL)_kickOffWriteIfNeededForSyncType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_kickOffWriteOnCKQueueWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_resetSyncToken;
 - (void)deleteAttachmentSyncToken;
 - (BOOL)_attachmentZoneCreated;
 - (void)_writeCKRecordsToAttachmentZone:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -111,8 +110,9 @@
 - (void)_markAllUnsuccessFullSyncAttachmentsAsNeedingSync;
 - (BOOL)_shouldMarkAttachmentsAsNeedingReupload;
 - (long long)_numberOfBatchesOfAttachmentsToFetchInInitialSync;
-- (void)_updateAllAttachmentsAsNotNeedingReUpload;
+- (void)_hasMarkedAllAttachmentsAsNeedingSync;
 - (BOOL)_shouldMarkAllAttachmentsAsNeedingSync;
+- (void)_needsToMarkAllAttachmentsAsNeedingSync;
 - (long long)syncControllerRecordType;
 - (id)init;
 - (id)initWithSyncTokenStore:(id)arg1;

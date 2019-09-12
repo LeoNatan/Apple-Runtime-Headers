@@ -41,6 +41,8 @@
 - (void).cxx_destruct;
 - (void)_handleTimeoutTimer:(id)arg1;
 - (void)_rescheduleTimeout;
+- (void)_handleScrubbingTimeout;
+- (void)_scheduleScrubbingTimeout;
 - (double)fastUpperThreshold;
 - (double)fastLowerThreshold;
 - (double)mediumUpperThreshold;

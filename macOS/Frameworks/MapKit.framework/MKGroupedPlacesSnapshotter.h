@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MKMapCamera, MKMapSnapshotOptions, MKMapSnapshotter, NSArray;
+@class MKMapCamera, MKMapSnapshotOptions, MKMapSnapshotter, NSAppearance, NSArray;
 
 @interface MKGroupedPlacesSnapshotter : NSObject
 {
@@ -15,10 +15,13 @@
     MKMapSnapshotOptions *_snapshotOptions;
     BOOL _useSnapshotService;
     MKMapSnapshotter *_snapshotter;
+    NSAppearance *_appearance;
 }
 
+@property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 - (void).cxx_destruct;
 - (void)cancel;
+@property(readonly, nonatomic, getter=isLoading) BOOL loading;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startWithQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) MKMapCamera *camera;

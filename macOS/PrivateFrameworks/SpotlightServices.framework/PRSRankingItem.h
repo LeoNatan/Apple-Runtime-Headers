@@ -16,14 +16,15 @@
     BOOL _eligibleForDemotion;
     BOOL _shouldHideUnderShowMore;
     BOOL _matchedQueryTerms;
-    unsigned char _bundleIDType;
     BOOL _isPrepared;
+    unsigned short _bundleIDType;
     float _rawScore;
     float _feedbackScore;
     float _score;
     float _withinBundleScore;
     NSString *_identifier;
     NSString *_sectionBundleIdentifier;
+    NSString *_realSectionBundleIdentifier;
     PRSL2FeatureVector *_L2FeatureVector;
     NSData *_serverFeaturesJSON;
     double _mostRecentUsedDate;
@@ -56,7 +57,7 @@
 + (void)initialize;
 @property(retain, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) BOOL isPrepared; // @synthesize isPrepared=_isPrepared;
-@property(nonatomic) unsigned char bundleIDType; // @synthesize bundleIDType=_bundleIDType;
+@property(nonatomic) unsigned short bundleIDType; // @synthesize bundleIDType=_bundleIDType;
 @property(nonatomic) unsigned long long importantPropertiesWordMatched; // @synthesize importantPropertiesWordMatched=_importantPropertiesWordMatched;
 @property(nonatomic) unsigned long long importantPropertiesPrefixMatched; // @synthesize importantPropertiesPrefixMatched=_importantPropertiesPrefixMatched;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
@@ -80,6 +81,7 @@
 @property(nonatomic) BOOL eligibleForDemotion; // @synthesize eligibleForDemotion=_eligibleForDemotion;
 @property(retain, nonatomic) NSData *serverFeaturesJSON; // @synthesize serverFeaturesJSON=_serverFeaturesJSON;
 @property(retain, nonatomic) PRSL2FeatureVector *L2FeatureVector; // @synthesize L2FeatureVector=_L2FeatureVector;
+@property(retain, nonatomic) NSString *realSectionBundleIdentifier; // @synthesize realSectionBundleIdentifier=_realSectionBundleIdentifier;
 @property(retain, nonatomic) NSString *sectionBundleIdentifier; // @synthesize sectionBundleIdentifier=_sectionBundleIdentifier;
 @property(nonatomic) float withinBundleScore; // @synthesize withinBundleScore=_withinBundleScore;
 @property(nonatomic) float score; // @synthesize score=_score;
@@ -96,9 +98,9 @@
 - (id)displayName;
 - (long long)compare:(id)arg1 currentTime:(double)arg2;
 - (long long)compareWithDates:(id)arg1 currentTime:(double)arg2;
+- (long long)compareWithTypes:(id)arg1;
 - (id)moreRecentDateFromDate1:(id)arg1 date2:(id)arg2;
 - (id)interestingDate;
-- (id)dedupeIdentifier;
 - (void)populateTextFeatureValuesForProperty:(id)arg1 updatingBundleFeatureValues:(float (*)[0])arg2 propertyIndex:(unsigned long long)arg3 withEvaluator:(id)arg4 withContext:(struct prs_feature_population_ctx_t *)arg5 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg6 propertyCanFuzzyMatch:(BOOL)arg7 keyboardLanguage:(id)arg8 isCJK:(BOOL)arg9;
 - (void)populateFeaturesWithEvaluator:(id)arg1 updatingBundleFeatures:(float *)arg2 withContext:(struct prs_feature_population_ctx_t *)arg3 keyboardLanguage:(id)arg4 isCJK:(BOOL)arg5 currentTime:(double)arg6;
 - (void)populateOtherFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
@@ -114,7 +116,8 @@
 - (void)populateContactFeatures:(struct PRSL2FeatureScoreInfo *)arg1 currentTime:(double)arg2;
 - (BOOL)didMatchRankingDescriptor:(id)arg1;
 - (void)dealloc;
--     // Error parsing type: @24@0:8^{?=[2Q]TT[0^v]}16, name: initWithAttrs:
+-     // Error parsing type: @36@0:8^{?=[2Q]TT[0^v]}16@24c32, name: initWithAttrs:bundleID:isAppleApp:
+-     // Error parsing type: @32@0:8^{?=[2Q]TT[0^v]}16@24, name: initWithAttrs:bundleID:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

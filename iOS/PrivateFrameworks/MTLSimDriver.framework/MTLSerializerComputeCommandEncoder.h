@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool hadSplit;
     id <MTLSerializerBuffer> buffers[31];
-    id <MTLSerializerTexture> textures[96];
+    id <MTLSerializerTexture> textures[128];
     id <MTLSerializerSamplerState> samplers[16];
     id <MTLSerializerComputePipelineState> pipelineState;
 }

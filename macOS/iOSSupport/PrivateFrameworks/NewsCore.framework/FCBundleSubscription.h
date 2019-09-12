@@ -14,6 +14,7 @@
 @interface FCBundleSubscription : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _isPurchaser;
+    BOOL _isAmplifyUser;
     NSString *_bundlePurchaseID;
     NSSet *_bundleChannelIDs;
     unsigned long long _unprotectedSubscriptionState;
@@ -22,6 +23,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)subscriptionWithSubscriptionState:(unsigned long long)arg1 bundleChannelIDs:(id)arg2;
 @property(nonatomic) unsigned long long unprotectedSubscriptionState; // @synthesize unprotectedSubscriptionState=_unprotectedSubscriptionState;
+@property(nonatomic) BOOL isAmplifyUser; // @synthesize isAmplifyUser=_isAmplifyUser;
 @property(nonatomic) BOOL isPurchaser; // @synthesize isPurchaser=_isPurchaser;
 @property(copy, nonatomic) NSSet *bundleChannelIDs; // @synthesize bundleChannelIDs=_bundleChannelIDs;
 @property(copy, nonatomic) NSString *bundlePurchaseID; // @synthesize bundlePurchaseID=_bundlePurchaseID;
@@ -35,7 +37,7 @@
 - (BOOL)containsTagID:(id)arg1;
 @property(readonly, nonatomic) BOOL isSubscribed;
 @property(readonly, nonatomic) unsigned long long subscriptionState;
-- (id)initWithBundlePurchaseID:(id)arg1 bundleChannelIDs:(id)arg2 inTrialPeriod:(BOOL)arg3 isPurchaser:(BOOL)arg4;
+- (id)initWithBundlePurchaseID:(id)arg1 bundleChannelIDs:(id)arg2 inTrialPeriod:(BOOL)arg3 isPurchaser:(BOOL)arg4 isAmplifyUser:(BOOL)arg5;
 - (BOOL)containsHeadline:(id)arg1;
 
 @end

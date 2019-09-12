@@ -17,12 +17,12 @@ __attribute__((visibility("hidden")))
     BOOL _showsTitle;
     BOOL _reversesActionOrder;
     id <_UIContextMenuActionsListViewDelegate> _delegate;
-    UIInterfaceActionGroupView *_currentActionGroupView;
     UIMenu *_displayedMenu;
+    UIInterfaceActionGroupView *_currentActionGroupView;
 }
 
-@property(copy, nonatomic) UIMenu *displayedMenu; // @synthesize displayedMenu=_displayedMenu;
 @property(retain, nonatomic) UIInterfaceActionGroupView *currentActionGroupView; // @synthesize currentActionGroupView=_currentActionGroupView;
+@property(copy, nonatomic) UIMenu *displayedMenu; // @synthesize displayedMenu=_displayedMenu;
 @property(nonatomic) BOOL reversesActionOrder; // @synthesize reversesActionOrder=_reversesActionOrder;
 @property(nonatomic) BOOL showsTitle; // @synthesize showsTitle=_showsTitle;
 @property(nonatomic) BOOL surfacesActionRadius; // @synthesize surfacesActionRadius=_surfacesActionRadius;

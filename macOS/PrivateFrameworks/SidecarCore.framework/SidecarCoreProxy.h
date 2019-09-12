@@ -8,24 +8,25 @@
 
 #import <SidecarCore/SidecarCore_Interface-Protocol.h>
 
-@protocol SidecarPresenterDelegate, SidecarSessionDelegate;
+@protocol SidecarServicePresenterDelegate, SidecarSessionDelegate;
 
 __attribute__((visibility("hidden")))
 @interface SidecarCoreProxy : NSObject <SidecarCore_Interface>
 {
     id <SidecarSessionDelegate> _delegate;
-    id <SidecarPresenterDelegate> _presenterDelegate;
+    id <SidecarServicePresenterDelegate> _presenterDelegate;
 }
 
 + (id)defaultProxy;
-@property(retain, nonatomic) id <SidecarPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate=_presenterDelegate;
+@property(retain, nonatomic) id <SidecarServicePresenterDelegate> presenterDelegate; // @synthesize presenterDelegate=_presenterDelegate;
 @property(retain, nonatomic) id <SidecarSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)relayTerminateService;
-- (void)relayPresenterServiceReady:(id)arg1 uuid:(id)arg2;
-- (void)relayPresenterLaunchService:(id)arg1 results:(CDUnknownBlockType)arg2;
+- (void)relayPresenterServiceExtensionReady:(id)arg1;
+- (void)relayPresenterStartServiceExtension:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)relaySession:(long long)arg1 receivedOPACKData:(id)arg2 dataLink:(long long)arg3;
-- (void)relaySession:(long long)arg1 invalidatedWithError:(id)arg2;
+- (void)relaySession:(id)arg1 openedByDevice:(id)arg2 dataLink:(long long)arg3 service:(id)arg4;
+- (void)relaySession:(long long)arg1 closedWithError:(id)arg2;
 
 @end
 

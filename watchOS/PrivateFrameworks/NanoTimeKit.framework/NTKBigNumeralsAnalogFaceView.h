@@ -19,6 +19,11 @@
 + (Class)_timeViewClass;
 + (int)uiSensitivity;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (id)tritium_timeViews;
+- (void)tritium_applyBurnInStudyFakeActiveState;
 - (void)_updateHourLabelColorForColor:(unsigned int)arg1;
 - (void)_updateHourLabelColor;
 - (void)_updateHourLabelText;

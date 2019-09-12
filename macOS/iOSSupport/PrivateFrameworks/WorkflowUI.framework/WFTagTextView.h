@@ -41,6 +41,7 @@
 @property(copy, nonatomic) NSAttributedString *attributedText;
 - (void)textDidChange:(id)arg1;
 - (void)updateTextContainerInsets;
+- (void)tintColorDidChange;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;

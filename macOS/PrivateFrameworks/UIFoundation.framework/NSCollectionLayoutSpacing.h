@@ -19,9 +19,10 @@
 + (id)defaultSpacing;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) BOOL isFixedSpacing;
-@property(readonly, nonatomic) BOOL isFlexibleSpacing;
-@property(readonly, nonatomic) double spacing;
+@property(readonly) BOOL isFixedSpacing;
+@property(readonly) BOOL isFlexibleSpacing;
+- (BOOL)_hasSpacing;
+@property(readonly) double spacing;
 - (id)description;
 - (id)initWithSpacing:(double)arg1 isFlexible:(BOOL)arg2;
 

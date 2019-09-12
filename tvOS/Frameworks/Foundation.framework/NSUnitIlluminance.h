@@ -14,6 +14,7 @@
 
 + (id)lux;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

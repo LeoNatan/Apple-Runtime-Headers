@@ -69,7 +69,6 @@
 - (void)passLibraryReceivedInterruption;
 - (id)acquireMatchingAssertionWithMode:(unsigned long long)arg1 reason:(id)arg2;
 - (_Bool)biometricUnlockBehavior:(id)arg1 requestsUnlock:(id)arg2 withFeedback:(id)arg3;
-- (_Bool)_shouldShowAlertForSeed;
 - (_Bool)biometricUnlockBehavior:(id)arg1 requestsFeedback:(id)arg2;
 - (void)walletPrearmRecognizer:(id)arg1 didFailToRecognizeForReason:(unsigned long long)arg2;
 - (void)walletPrearmRecognizerDidRecognize:(id)arg1;

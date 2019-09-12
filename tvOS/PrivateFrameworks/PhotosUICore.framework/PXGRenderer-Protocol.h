@@ -12,7 +12,7 @@
 @protocol PXGRenderer <NSObject>
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter;
 @property(readonly, nonatomic) int presentationType;
-@property(nonatomic) CDStruct_04522d6a interactionState;
+@property(nonatomic) CDStruct_93894d6c interactionState;
 @property(nonatomic) struct CGRect visibleRect;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate;
 - (void)renderSpritesWithTextures:(NSArray *)arg1 dataStore:(PXGSpriteDataStore *)arg2 presentationDataStore:(PXGSpriteDataStore *)arg3 presentationMetadataStore:(PXGSpriteMetadataStore *)arg4 layout:(PXGLayout *)arg5;

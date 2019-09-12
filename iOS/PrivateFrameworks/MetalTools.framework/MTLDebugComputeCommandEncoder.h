@@ -11,11 +11,11 @@
 @interface MTLDebugComputeCommandEncoder : MTLToolsComputeCommandEncoder
 {
     CDStruct_0f4bf8df _buffers[31];
-    CDStruct_0f4bf8df _textures[96];
+    CDStruct_0f4bf8df _textures[128];
     CDStruct_0f4bf8df _samplers[16];
     CDStruct_0f4bf8df _threadgroupMemoryLengths[31];
     CDStruct_da2e99ad _imageBlockSize;
-    const CDStruct_52c93ad5 *_limits;
+    const CDStruct_886a8514 *_limits;
     _Bool canDealloc;
     _Bool canEndEncoding;
     _Bool canSetComputePipelineState;

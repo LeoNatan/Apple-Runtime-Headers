@@ -104,7 +104,6 @@
 - (void)_migrateEventsToRecords;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (void)_reevaluateIfRelaunchRequired;
-- (void)_activateAfterResidentChangeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_activateEvents:(CDUnknownBlockType)arg1;
 - (void)_computeActivation;

@@ -114,6 +114,8 @@ __attribute__((visibility("hidden")))
 - (void)onStartWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)reportTransportInfo;
 - (void)initializeInterfaceType;
+- (void)initializeInterfaceTypeForSocket;
+- (void)initializeInterfaceTypeForNWConnection;
 - (void)setupReportingAgent;
 - (void)collectChannelSequenceMetrics:(id)arg1;
 - (void)collectImageQueuePerformanceMetrics:(struct __CFDictionary *)arg1;

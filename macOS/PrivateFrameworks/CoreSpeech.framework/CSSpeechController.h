@@ -135,6 +135,7 @@
 - (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
 - (void)endWaitingForMyriadWithDecision:(unsigned long long)arg1;
 - (void)beginWaitingForMyriad;
+- (void)setLanguageDetectorInteractionID:(id)arg1;
 - (void)cancelCurrentLanguageDetectorRequest;
 - (void)languageDetectorSetMostRecentRecognitionLanguage:(id)arg1;
 - (float)getSmartSiriVolume;
@@ -227,7 +228,7 @@
 - (void)prewarmAudioSession;
 - (void)preheat;
 - (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
-- (BOOL)_activateAudioSession:(id *)arg1;
+- (BOOL)_activateAudioSession:(id *)arg1 forRetry:(BOOL)arg2;
 - (void)_performPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_cancelPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_scheduleActivateAudioSessionWithDelay:(double)arg1 forReason:(id)arg2 validator:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;

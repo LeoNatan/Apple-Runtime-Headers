@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (void)configureIntent:(id)arg1;
 - (_Bool)executeIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)openUserActivity:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)speakText:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)openInteractionInApp:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

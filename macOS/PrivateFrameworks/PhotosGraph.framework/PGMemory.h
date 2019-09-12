@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotosGraph/PGMemoryCore-Protocol.h>
 #import <PhotosGraph/PGMemoryProtocol-Protocol.h>
 
 @class CLLocation, NSArray, NSDate, NSDictionary, NSMutableSet, NSSet, NSString, PGMemoryDebug, PHAsset, PHAssetCollection;
 
-@interface PGMemory : NSObject <PGMemoryProtocol>
+@interface PGMemory : NSObject <PGMemoryProtocol, PGMemoryCore>
 {
     NSDate *_creationDate;
     PHAssetCollection *_assetCollection;
@@ -88,6 +89,9 @@
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long suggestedMood;
+@property(readonly, nonatomic) NSArray *moodKeywords;
+@property(readonly, nonatomic) NSArray *meaningLabels;
 - (void)addPersistedFeature:(id)arg1;
 @property(nonatomic) unsigned short memoriesAlgorithmsVersion;
 @property(nonatomic) unsigned short relatedAlgorithmsVersion;

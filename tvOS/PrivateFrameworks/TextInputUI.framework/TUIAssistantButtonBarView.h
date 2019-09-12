@@ -42,7 +42,9 @@
 - (void).cxx_destruct;
 - (void)_didTapButtonBarButton:(id)arg1 withEvent:(id)arg2;
 - (id)_itemViewForSender:(id)arg1;
+- (void)preferredSizeDidChangeForButtonBarItem:(id)arg1;
 - (struct CGSize)preferredSizeForButtonBarItem:(id)arg1;
+- (struct CGSize)_preferredTitleSizeForBarButtonItem:(id)arg1;
 - (void)configureButtonBarItemView:(id)arg1 forItem:(id)arg2 group:(id)arg3;
 - (void)validateButtonGroups;
 - (void)layoutSubviews;

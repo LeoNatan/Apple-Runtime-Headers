@@ -100,6 +100,7 @@
 - (id)home;
 - (id)cancelBarButtonItem;
 - (id)doneBarButtonItem;
+- (void)adjustLargeTitleSize;
 - (void)updateNavigationBarStateAnimated:(BOOL)arg1;
 - (void)setEditingState:(unsigned long long)arg1 animated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateEditingStateAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -120,7 +121,9 @@
 - (void)updateToolbarVisibility;
 - (void)updateDrawerVisibility;
 - (void)updateBottomContentInsetForVisibility:(unsigned long long)arg1;
+- (BOOL)shouldUseOverlaidDrawer;
 - (id)workflowSubViewController;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

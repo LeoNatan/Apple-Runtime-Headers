@@ -11,11 +11,13 @@
 @interface PKApplyWebServiceFeatureTermsDataRequest : PKApplyWebServiceRequest
 {
     unsigned long long _featureIdentifier;
+    NSString *_termsIdentifier;
     NSString *_termsDataFormat;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *termsDataFormat; // @synthesize termsDataFormat=_termsDataFormat;
+@property(copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
 @property(nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
 - (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;

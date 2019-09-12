@@ -20,6 +20,7 @@
 - (void)setLivePhotoMovieFileURLForOriginalPhoto:(id)arg1;
 - (void)setLivePhotoMovieFileURL:(id)arg1;
 - (void)setAutoDualCameraFusionEnabled:(_Bool)arg1;
+- (void)setAutoVirtualDeviceFusionEnabled:(_Bool)arg1;
 - (void)setAutoStillImageStabilizationEnabled:(_Bool)arg1;
 - (void)setEV0PhotoDeliveryEnabled:(_Bool)arg1;
 - (void)setHDRMode:(long long)arg1;

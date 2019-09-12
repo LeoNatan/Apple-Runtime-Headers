@@ -6,13 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@class SFAuthorization;
+
 @interface IPSystemDefaultsManager : NSObject
 {
+    SFAuthorization *_authorization;
 }
 
 + (BOOL)isSingleUserSystem;
 + (id)sharedDefaultsManager;
-- (void)updatePrebootWithAuthRef:(struct AuthorizationOpaqueRef *)arg1;
+@property(retain, nonatomic) SFAuthorization *authorization; // @synthesize authorization=_authorization;
+- (void).cxx_destruct;
+- (void)updateNVRAM;
+- (void)updatePreboot;
 - (BOOL)setSystemLanguages:(id)arg1 locale:(id)arg2 isRightToLeft:(BOOL)arg3;
 
 @end

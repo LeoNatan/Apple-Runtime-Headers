@@ -111,11 +111,14 @@
 - (void)mergeMetadata:(id)arg1;
 - (void)clearImageAttributes;
 @property(readonly, nonatomic) int customRendered;
+@property(readonly, nonatomic) _Bool isDeferredPhotoProxy;
 @property(readonly, nonatomic) _Bool isPortrait;
 @property(readonly, nonatomic) _Bool isLongExposure;
 @property(readonly, nonatomic) _Bool isMirror;
 @property(readonly, nonatomic) _Bool isAutoloop;
 @property(readonly, nonatomic) _Bool hasCustomRendered;
+@property(readonly, nonatomic) _Bool isSpatialOverCapture;
+@property(readonly, nonatomic) NSString *spatialOverCaptureIdentifier;
 @property(readonly, nonatomic) NSString *deferredPhotoProcessingIdentifer;
 @property(readonly, nonatomic) NSString *mediaGroupUUID;
 @property(readonly, nonatomic) NSString *groupingUuid;

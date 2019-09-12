@@ -385,8 +385,10 @@
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)init;
 - (void)stopScan;
+- (void)_stopScan;
 - (void)scanningCompleteWithAccessoryFound:(BOOL)arg1 suspended:(BOOL)arg2;
 - (BOOL)initiateScan:(CDUnknownBlockType)arg1;
+- (void)initializeBTLEScan;
 - (BOOL)_handleUpdatedServicesForNetworkRouterProfileAndController:(id)arg1;
 - (BOOL)__createSatelliteNetworkRouterProfile:(id)arg1;
 - (BOOL)__createNetworkRouterProfileAndController:(id)arg1;
@@ -415,7 +417,9 @@
 - (void)_handleUpdatedServicesForDataStreamController:(id)arg1;
 - (BOOL)isPoweringOn;
 - (void)cancelPowerOn;
+- (void)_cancelPowerOn;
 - (void)wirelessPowerOn:(CDUnknownBlockType)arg1;
+- (void)_wirelessPowerOn:(CDUnknownBlockType)arg1;
 - (void)powerOnComplete:(id)arg1;
 - (void)wirelessResumeInit;
 

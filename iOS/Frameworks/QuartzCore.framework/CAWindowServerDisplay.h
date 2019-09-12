@@ -47,6 +47,8 @@
 @property struct CGSize overscanAmounts;
 @property double overscanAmount;
 @property(copy) NSString *orientation;
+@property(getter=isFlipBookEnabled) _Bool flipBookEnabled;
+- (void)setCalibrationPhase:(unsigned int)arg1 forIdentifier:(unsigned int)arg2;
 - (void)willUnblank;
 @property(getter=isBlanked) _Bool blanked;
 @property(readonly) CAWindowServerDisplay *cloneMaster;

@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
+#import <ClockKit/CLKComplicationTritiumCopyable-Protocol.h>
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class NSMutableDictionary, UIColor;
+@class NSMutableDictionary, NSString, UIColor;
 
-@interface CLKProgressProvider : NSObject <NSCopying, NSSecureCoding>
+@interface CLKProgressProvider : NSObject <CLKComplicationTritiumCopyable, NSCopying, NSSecureCoding>
 {
     unsigned int _nextUpdateToken;
     NSMutableDictionary *_updateHandlersByToken;
     struct NSNumber *_timerToken;
     _Bool _finalized;
+    _Bool _tritium_isTritiumInactiveCopy;
     _Bool _paused;
     UIColor *_tintColor;
     float _backgroundRingAlpha;
@@ -26,6 +28,7 @@
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property float backgroundRingAlpha; // @synthesize backgroundRingAlpha=_backgroundRingAlpha;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
 - (void).cxx_destruct;
 - (float)_progressFractionForNow:(id)arg1;
 - (void)_validate;
@@ -33,9 +36,12 @@
 - (id)JSONObjectRepresentation;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)tritium_inactiveProgressProvider;
+- (_Bool)tritium_requiresCopy;
+- (id)tritium_inactiveCopy;
 - (void)_update;
 - (void)_maybeStartOrStopUpdates;
 - (int)timeTravelUpdateFrequency;
@@ -47,6 +53,11 @@
 - (void)dealloc;
 - (void)_commonInit;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

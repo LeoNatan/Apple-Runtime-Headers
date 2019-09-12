@@ -80,6 +80,7 @@
 - (id)initWithURLs:(id)arg1 destinationFolder:(id)arg2;
 - (id)initWithItems:(id)arg1 destinationURL:(id)arg2;
 - (id)initWithSourceItems:(id)arg1 orSourceURLs:(id)arg2 destinationFolder:(id)arg3 orDestinationURL:(id)arg4 action:(id)arg5;
+- (void)checkNonEmptyPackage;
 
 @end
 

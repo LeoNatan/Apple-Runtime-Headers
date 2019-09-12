@@ -14,6 +14,7 @@
     // Error parsing type: , name: image
     // Error parsing type: , name: expirationDate
     // Error parsing type: , name: userInfo
+    // Error parsing type: , name: accessibilityLabel
 }
 
 @end

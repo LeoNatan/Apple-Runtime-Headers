@@ -10,12 +10,11 @@
 {
 }
 
++ (BOOL)forceAttributesOfSrcPath:(id)arg1 toDstPath:(id)arg2;
 + (void)forceNVRAMSync;
 + (BOOL)unsupportedInstallEnvironmentForGatheringDiagnosticsWithError:(id *)arg1;
 + (id)parseFirmlinkManifestForVolume:(id)arg1 withError:(id *)arg2;
 + (id)masterBOMSystemPath;
-+ (void)purgeKextCacheBlockerFileOnMountPoint:(id)arg1;
-+ (void)ensureKextCacheBlockerFileOnMountPoint:(id)arg1;
 + (id)mapMountPointToROSVPath:(id)arg1;
 + (id)mapPathToROSV:(id)arg1;
 + (void)setUseROSVPaths:(BOOL)arg1;

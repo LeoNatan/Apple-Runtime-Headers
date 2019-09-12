@@ -59,6 +59,7 @@
 - (int)BluetoothHCIChangeConnectionPriority:(unsigned short)arg1 option:(unsigned char)arg2;
 - (int)BluetoothHCISetSpecialSniffTransitionEnable:(unsigned short)arg1 enable:(unsigned char)arg2;
 - (int)BluetoothHCICommandWriteClass15PowerTable:(unsigned char)arg1 radioTXPowerMode:(unsigned char)arg2 powerTableLength:(unsigned char)arg3 testModePowerTableLength:(unsigned char)arg4 powerTable:(char *)arg5 testPowerTable:(char *)arg6;
+- (int)BluetoothHCILEUpdateExtendedAdvertisingInstance:(unsigned char)arg1 addressType:(unsigned char)arg2 address:(struct BluetoothDeviceAddress *)arg3;
 - (int)BluetoothHCILESetExtendedAdvertiseEnable:(unsigned char)arg1 advertiseEnable:(unsigned char)arg2 timeout:(unsigned int)arg3 timeoutEvent:(unsigned char)arg4;
 - (int)BluetoothHCILESetExtendedScanResponseData:(unsigned char)arg1 scanResponseDataLength:(unsigned char)arg2 scanResponseData:(char *)arg3;
 - (int)BluetoothHCILESetExtendedAdvertisingData:(unsigned char)arg1 advertisingDataLength:(unsigned char)arg2 advertsingData:(char *)arg3;

@@ -29,11 +29,14 @@
 }
 
 - (void).cxx_destruct;
+- (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)_customerAgreementAttributedString;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)doneButtonTapped;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
 - (id)initWithAccount:(id)arg1;
 

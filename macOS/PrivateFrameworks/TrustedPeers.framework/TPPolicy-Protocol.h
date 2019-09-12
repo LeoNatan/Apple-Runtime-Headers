@@ -15,6 +15,7 @@
 - (BOOL)peerInCategory:(NSString *)arg1 canAccessView:(NSString *)arg2;
 - (BOOL)trustedPeerInCategory:(NSString *)arg1 canIntroduceCategory:(NSString *)arg2;
 - (NSString *)categoryForModel:(NSString *)arg1;
+- (BOOL)unknownRedactions;
 - (unsigned long long)version;
 @end
 

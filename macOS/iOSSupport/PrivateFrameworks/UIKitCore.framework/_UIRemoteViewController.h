@@ -72,6 +72,7 @@
     long long _preferredUserInterfaceStyle;
     id <UINSShadowRemoteViewController> _shadowRemoteViewController;
     BOOL _isUpdatingSize;
+    BOOL _isUpdatingSizeInHost;
     BOOL _serviceViewShouldShareTouchesWithHost;
 }
 
@@ -88,6 +89,7 @@
 + (id)serviceViewControllerInterface;
 + (BOOL)shouldPropagateAppearanceCustomizations;
 @property(nonatomic) BOOL serviceViewShouldShareTouchesWithHost; // @synthesize serviceViewShouldShareTouchesWithHost=_serviceViewShouldShareTouchesWithHost;
+@property(nonatomic, setter=_setIsUpdatingSizeInHost:) BOOL _isUpdatingSizeInHost; // @synthesize _isUpdatingSizeInHost;
 @property(nonatomic, setter=_setIsUpdatingSize:) BOOL _isUpdatingSize; // @synthesize _isUpdatingSize;
 - (void).cxx_destruct;
 - (void)__handleFocusMovementAction:(id)arg1;

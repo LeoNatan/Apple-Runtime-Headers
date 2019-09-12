@@ -18,7 +18,7 @@
 - (NAFuture *)removeOwnedZonesWithName:(NSString *)arg1;
 - (HMDDatabaseFetchZonesResult *)sharedZonesWithID:(HMBCloudZoneID *)arg1 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg2 error:(id *)arg3;
 - (HMBCloudZoneID *)existingSharedZoneIDWithName:(NSString *)arg1;
-- (HMDDatabaseFetchZonesResult *)ownedZonesWithName:(NSString *)arg1 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg2 error:(id *)arg3;
+- (HMDDatabaseFetchZonesResult *)ownedZonesWithName:(NSString *)arg1 shouldRebuildOnManateeKeyLoss:(BOOL)arg2 delegate:(id <HMBLocalZoneDelegate><HMBCloudZoneDelegate>)arg3 error:(id *)arg4;
 - (NAFuture *)unregisterSharedSubscriptionForExternalRecordType:(NSString *)arg1;
 - (NAFuture *)registerSharedSubscriptionForExternalRecordType:(NSString *)arg1;
 - (void)start;

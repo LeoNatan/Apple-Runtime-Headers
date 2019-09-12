@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CDPContext, CDPStateController, NSData, NSString, RPFileTransferSession, SFDevice, SFDeviceDiscovery, SFSession;
+@class CDPContext, CDPStateController, CoreTelephonyClient, NSData, NSString, RPFileTransferSession, SFDevice, SFDeviceDiscovery, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceSetupSessioniOS : NSObject
@@ -29,6 +29,9 @@
     int _resumeState;
     SFSession *_sfSession;
     _Bool _sfSessionActivated;
+    CoreTelephonyClient *_eSIMClient;
+    _Bool _eSIMSetupEnabled;
+    int _eSIMSetupState;
     int _cdpState;
     CDPContext *_cdpContext;
     CDPStateController *_cdpController;
@@ -66,6 +69,7 @@
 - (void)_sendConfigInfo;
 - (int)_runResume;
 - (int)_runCoreCDPSetup;
+- (int)_runESIMSetup;
 - (int)_runPreAuthPairSetup;
 - (void)_runSFSessionActivated;
 - (void)_runSFSessionStart;

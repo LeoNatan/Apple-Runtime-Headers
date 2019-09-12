@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     double _initialTimestamp;
 }
 
-- (void)scrollingVBLMonitor:(id)arg1 synchronizeForVBLSerialNumber:(unsigned long long)arg2 timestamp:(double)arg3 updateDuration:(double)arg4;
+- (void)scrollingVBLMonitor:(id)arg1 synchronizeForTimestamp:(double)arg2;
 - (void)dealloc;
 - (id)initWithInitialOrigin:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2 stretch:(struct CGSize)arg3;
 

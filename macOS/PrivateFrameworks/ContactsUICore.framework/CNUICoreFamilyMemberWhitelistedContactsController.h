@@ -55,7 +55,7 @@
 @property(readonly, nonatomic) long long fetchStatus;
 - (void)dealloc;
 - (void)setupChangeNotificationResponse;
-- (id)initWithModelFetcher:(id)arg1 familyMemberContactsUpdator:(id)arg2 schedulerProvider:(id)arg3 familyMemberScopedContactStoreFacade:(id)arg4 mainContactStoreFacade:(id)arg5;
+- (id)initWithModelFetcher:(id)arg1 familyMemberContactsUpdator:(id)arg2 familyMemberScopedContactStoreFacade:(id)arg3 mainContactStoreFacade:(id)arg4 schedulerProvider:(id)arg5;
 - (id)initWithFamilyMember:(id)arg1 options:(id)arg2 schedulerProvider:(id)arg3;
 - (id)init;
 

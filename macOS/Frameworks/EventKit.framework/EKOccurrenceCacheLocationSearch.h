@@ -22,6 +22,7 @@
 @property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain) CalAutoCompleteOperation *acOperation; // @synthesize acOperation=_acOperation;
 - (void).cxx_destruct;
+- (id)searchTerm;
 - (void)setCNAutocompleteStore:(id)arg1;
 - (void)updatedAutoComplete:(id)arg1;
 - (void)receivedBatchResultsFromServer:(id)arg1 finished:(BOOL)arg2;

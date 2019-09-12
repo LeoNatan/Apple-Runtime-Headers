@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)beginDragWithTouches:(id)arg1 itemIterator:(CDUnknownBlockType)arg2 beginningSessionHandler:(CDUnknownBlockType)arg3;
 - (void)beginLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)isLifted;
-- (_Bool)isPreparingToDrag;
 - (_Bool)canBeginLiftAtLocation:(struct CGPoint)arg1;
 
 @end

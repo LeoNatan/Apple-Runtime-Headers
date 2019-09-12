@@ -12,7 +12,7 @@
 @protocol _UIClickPresentationInteractionDelegateInternal <_UIClickPresentationInteractionDelegate>
 
 @optional
-- (void)_clickPresentationInteractionEnded:(_UIClickPresentationInteraction *)arg1 forPresentation:(_UIClickPresentation *)arg2 wasCancelled:(BOOL)arg3;
+- (void)_clickPresentationInteractionEnded:(_UIClickPresentationInteraction *)arg1 forPresentation:(_UIClickPresentation *)arg2 reason:(unsigned long long)arg3;
 - (void)_clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 dragSessionDidEndForItems:(NSArray *)arg2;
 - (id <UIInteractionEffect>)_clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 interactionEffectForTargetedPreview:(UITargetedPreview *)arg2;
 - (void)_clickPresentationInteraction:(_UIClickPresentationInteraction *)arg1 item:(UIDragItem *)arg2 willAnimateDragCancelWithAnimator:(id <UIDragAnimating>)arg3;

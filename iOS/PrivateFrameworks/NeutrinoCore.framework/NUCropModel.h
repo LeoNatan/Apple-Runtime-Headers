@@ -19,6 +19,7 @@
     _Bool _isAutoCrop;
     unsigned long long _hitVertexID;
     struct CGSize _masterImageSize;
+    struct CGSize _stitchedImageSize;
     CDStruct_d58201db _aspectRatio;
 }
 
@@ -28,6 +29,8 @@
 @property(nonatomic) _Bool isAutoCrop; // @synthesize isAutoCrop=_isAutoCrop;
 @property(readonly) unsigned long long hitVertexID; // @synthesize hitVertexID=_hitVertexID;
 @property(nonatomic) CDStruct_912cb5d2 aspectRatio; // @synthesize aspectRatio=_aspectRatio;
+@property(readonly, nonatomic) struct CGSize stitchedImageSize; // @synthesize stitchedImageSize=_stitchedImageSize;
+@property(readonly, nonatomic) double fovRadians; // @synthesize fovRadians=_fovRadians;
 @property(readonly, nonatomic) struct CGSize masterImageSize; // @synthesize masterImageSize=_masterImageSize;
 @property(readonly, nonatomic) double rollDegreeUI;
 @property(readonly, nonatomic) double yawDegreeUI;
@@ -52,6 +55,7 @@
 - (unsigned long long)constrainedMoveCropRectBy:(struct CGVector)arg1 strict:(_Bool)arg2 startRect:(struct CGRect)arg3;
 - (unsigned long long)constrainedMoveCropRectBy:(struct CGVector)arg1 strict:(_Bool)arg2;
 - (unsigned long long)constrainedMoveCropRectBy:(struct CGVector)arg1;
+- (struct CGRect)getCropRectThatCompletelyContainsMasterImageForPitch:(double)arg1 yaw:(double)arg2 roll:(double)arg3;
 - (struct CGRect)getCropRect:(struct CGRect)arg1 newCropRect:(struct CGRect)arg2 pitch:(double)arg3 yaw:(double)arg4 roll:(double)arg5 constrainWithAnchorPoint:(struct CGPoint)arg6 strict:(_Bool)arg7 hitVertexId:(unsigned long long *)arg8;
 - (struct CGRect)_expandedCropRectForZoom:(struct CGRect)arg1 candidateRect:(struct CGRect)arg2;
 - (unsigned long long)setForZoomCropRect:(struct CGRect)arg1 newCropRect:(struct CGRect)arg2;
@@ -85,9 +89,15 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToCropModel:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) struct CGRect stitchedImageRect;
+@property(readonly) _Bool cropNeedsOvercapture;
+@property(readonly, nonatomic) _Bool hasOvercapture;
 @property(readonly, nonatomic) struct CGRect masterImageRect;
 @property(readonly) _Bool hasCrop;
 - (void)reset;
+- (id)copyWithMasterImageSize:(struct CGSize)arg1 fovRadians:(double)arg2;
+- (id)initWithMasterImageSize:(struct CGSize)arg1 stitchedImageSize:(struct CGSize)arg2;
+- (id)initWithMasterImageSize:(struct CGSize)arg1 fovRadians:(double)arg2;
 - (id)initWithMasterImageSize:(struct CGSize)arg1;
 - (id)init;
 

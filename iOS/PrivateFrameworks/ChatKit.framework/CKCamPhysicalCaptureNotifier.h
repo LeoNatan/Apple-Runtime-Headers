@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class SBSHardwareButtonService;
 @protocol CKCamPhysicalCaptureNotifierDelegate;
 
 @interface CKCamPhysicalCaptureNotifier : NSObject
@@ -15,8 +16,10 @@
     long long _state;
     long long __volumeUpButtonState;
     long long __volumeDownButtonState;
+    SBSHardwareButtonService *__cameraButtonRequest;
 }
 
+@property(retain, nonatomic) SBSHardwareButtonService *_cameraButtonRequest; // @synthesize _cameraButtonRequest=__cameraButtonRequest;
 @property(nonatomic, setter=_setVolumeDownButtonState:) long long _volumeDownButtonState; // @synthesize _volumeDownButtonState=__volumeDownButtonState;
 @property(nonatomic, setter=_setVolumeUpButtonState:) long long _volumeUpButtonState; // @synthesize _volumeUpButtonState=__volumeUpButtonState;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;

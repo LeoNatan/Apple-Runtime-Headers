@@ -6,12 +6,11 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSArray, NSString;
+@class NSArray;
 
 @interface WFTagFieldParameter : WFParameter
 {
     BOOL _allowsTextEntry;
-    NSString *_placeholder;
     long long _keyboardType;
     long long _autocapitalizationType;
     long long _autocorrectionType;
@@ -25,7 +24,6 @@
 @property(readonly, nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
 @property(readonly, nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(readonly, nonatomic) BOOL allowsTextEntry; // @synthesize allowsTextEntry=_allowsTextEntry;
-@property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 - (void).cxx_destruct;
 - (BOOL)shouldAlignLabels;
 - (id)initWithDefinition:(id)arg1;

@@ -18,6 +18,7 @@
 + (id)mainDisplay;
 + (id)displays;
 - (void)overrideDisplayTimings:(id)arg1;
+- (id)flipBookWithCapacity:(unsigned int)arg1;
 - (id)allowedHDRModes;
 - (id)preferredHDRModes;
 - (id)supportedHDRModes;

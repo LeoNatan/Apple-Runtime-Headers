@@ -19,6 +19,7 @@
 - (void)_generateAndStoreUsingMediaConversionServicesForAsset:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 isHighPriority:(_Bool)arg4 progress:(id *)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)_mediaConversionServiceOptionsForAsset:(id)arg1 adjustmentData:(id)arg2 largeAdjustmentData:(id)arg3 isHighPriority:(_Bool)arg4;
 - (id)chooseIngredientsFrom:(id)arg1 version:(unsigned int)arg2;
+- (id)_localAvailabileResourceForAsset:(id)arg1 cplType:(unsigned long long)arg2;
 - (id)supportedVersionsForLocalResourceGeneration;
 - (id)utiInContext:(id)arg1;
 - (id)codecInContext:(id)arg1;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AMPArtworkEventInfo;
+@class NSArray;
 
 @protocol AMPArtworkEventsProtocol
-- (void)notifyArtworkStatusChangedWithInfo:(AMPArtworkEventInfo *)arg1;
+- (void)notifyArtworkStatusChangedWithInfoArray:(NSArray *)arg1;
 @end
 

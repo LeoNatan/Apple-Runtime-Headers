@@ -19,6 +19,7 @@
     unsigned long long _homeAppInstallState;
 }
 
++ (void)initialize;
 @property(nonatomic) int homeKitPreferencesChangeNotifyToken; // @synthesize homeKitPreferencesChangeNotifyToken=_homeKitPreferencesChangeNotifyToken;
 @property(nonatomic) unsigned long long homeAppInstallState; // @synthesize homeAppInstallState=_homeAppInstallState;
 @property(nonatomic) BOOL homesConfigured; // @synthesize homesConfigured=_homesConfigured;

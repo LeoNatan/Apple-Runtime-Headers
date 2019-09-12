@@ -24,6 +24,7 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
++ (_Bool)wantsToSkipPauseWhenEnteringTritium;
 - (void).cxx_destruct;
 - (void)activeNowPlayingOriginDidUpdateForController:(id)arg1;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingInfoForOrigin:(id)arg2;

@@ -53,6 +53,7 @@
 - (void)_getRemoteValuesOffMainThread:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long uuidHash;
 - (void)dealloc;
+- (id)_accessibilityHandwritingElement;
 - (id)_accessibilityTextViewTextOperationResponder;
 - (id)_accessibilityTextOperations;
 - (void)platformCleanup;

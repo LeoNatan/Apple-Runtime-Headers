@@ -17,17 +17,20 @@ __attribute__((visibility("hidden")))
     CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _additionalPlaceTypes;
     NSString *_deviceCountryCode;
+    NSString *_deviceSku;
     NSString *_displayRegion;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
     struct {
         unsigned int read_additionalPlaceTypes:1;
         unsigned int read_deviceCountryCode:1;
+        unsigned int read_deviceSku:1;
         unsigned int read_displayRegion:1;
         unsigned int read_locations:1;
         unsigned int read_serviceTags:1;
         unsigned int wrote_additionalPlaceTypes:1;
         unsigned int wrote_deviceCountryCode:1;
+        unsigned int wrote_deviceSku:1;
         unsigned int wrote_displayRegion:1;
         unsigned int wrote_locations:1;
         unsigned int wrote_serviceTags:1;
@@ -58,6 +61,9 @@ __attribute__((visibility("hidden")))
 - (void)clearServiceTags;
 @property(retain, nonatomic) NSMutableArray *serviceTags;
 - (void)_readServiceTags;
+@property(retain, nonatomic) NSString *deviceSku;
+@property(readonly, nonatomic) _Bool hasDeviceSku;
+- (void)_readDeviceSku;
 @property(retain, nonatomic) NSString *displayRegion;
 @property(readonly, nonatomic) _Bool hasDisplayRegion;
 - (void)_readDisplayRegion;

@@ -8,7 +8,7 @@
 
 @interface _TtC16NewsSubscription32AccountPageViewControllerFactory : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: bridgedAccountPageViewControllerFactory
+    // Error parsing type: , name: accountPageViewControllerFactory
 }
 
 @end

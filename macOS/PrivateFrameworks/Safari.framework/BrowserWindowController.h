@@ -1056,6 +1056,7 @@ __attribute__((visibility("hidden")))
 - (void)printFromToolbar:(id)arg1;
 - (void)performWebSearch:(id)arg1;
 - (id)makeNewEmptyBrowserViewControllerInTab;
+- (BOOL)openNewTabInCurrentContext:(BOOL)arg1;
 - (BOOL)openNewTab;
 - (BOOL)shouldOpenNewTabFromFileMenu;
 - (BOOL)_isTabEquivalentToNewlyCreatedTabRespectingNewTabBehavior:(id)arg1;

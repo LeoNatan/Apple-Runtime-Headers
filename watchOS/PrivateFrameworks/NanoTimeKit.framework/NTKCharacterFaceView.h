@@ -6,12 +6,13 @@
 
 #import <NanoTimeKit/NTKFaceView.h>
 
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 #import <NanoTimeKit/NTKUtilityComplicationFactoryDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSString, NTKCharacterTimeView, NTKUtilityComplicationFactory, UIColor, UITapGestureRecognizer, UIView;
 
-@interface NTKCharacterFaceView : NTKFaceView <UIGestureRecognizerDelegate, NTKUtilityComplicationFactoryDelegate>
+@interface NTKCharacterFaceView : NTKFaceView <UIGestureRecognizerDelegate, NTKUtilityComplicationFactoryDelegate, NTKTritiumMetalContentView>
 {
     NTKCharacterTimeView *_characterTimeView;
     UIView *_circleView;
@@ -27,6 +28,12 @@
 
 + (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_invalidateMetalContentForSnapshot;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (id)tritium_timeViews;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;

@@ -10,9 +10,10 @@
 @protocol HMDSettingGroupModelProtocol, HMDSettingModelProtocol, HMDSettingTransactionReceiverProtocol, HMDSettingsBackingStoreController, HMDSettingsMessageHandlerProtocol, HMDSettingsMetadataParserProtocol;
 
 @protocol HMDSettingsControllerDependency <NSObject>
+@property(readonly) NSString *logIdentifier;
+@property(readonly) NSUUID *parentIdentifier;
 @property(readonly) NSString *codingKey;
 @property __weak id <HMDSettingTransactionReceiverProtocol> transactionReceiver;
-- (NSUUID *)parentIdentifier;
 - (NSDictionary *)loadMetadata;
 - (HMSettingValue *)settingValueForValue:(id)arg1 type:(NSNumber *)arg2 constraintModels:(NSArray *)arg3 error:(id *)arg4;
 - (id <HMDSettingModelProtocol>)settingModelForUpdateWithIdentifier:(NSUUID *)arg1 parentIdentifier:(NSUUID *)arg2 value:(HMSettingValue *)arg3;

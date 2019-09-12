@@ -11,10 +11,7 @@
 - (void)synchronousRefreshSubscribedPlaylist:(unsigned long long)arg1 withCloudID:(unsigned long long)arg2 withReason:(unsigned char)arg3 withReply:(void (^)(NSError *))arg4;
 - (void)synchronousCloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(void (^)(NSError *))arg4;
 - (void)cloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(void (^)(NSError *))arg4;
-- (void)sendDBChangesToLibrary:(NSDictionary *)arg1 fromRevision:(unsigned int)arg2 withReply:(void (^)(NSError *))arg3;
-- (void)addTrackToLibrary:(NSDictionary *)arg1 withReply:(void (^)(NSError *))arg2;
-- (void)enqueueSynchronousLibraryCommand:(unsigned int)arg1 commandData:(NSDictionary *)arg2 withReply:(void (^)(NSError *))arg3;
-- (void)enqueueLibraryCommand:(unsigned int)arg1 commandData:(NSDictionary *)arg2 withReply:(void (^)(NSError *, unsigned int))arg3;
+- (void)sendDBChangesToLibrary:(NSDictionary *)arg1 fromRevision:(unsigned int)arg2 withReply:(void (^)(NSError *, unsigned int))arg3;
 - (void)fetchLibraryChangesFromRevision:(unsigned int)arg1 withInitialLoad:(_Bool)arg2 withReply:(void (^)(NSError *, unsigned int, NSDictionary *))arg3;
 - (void)closeDomainsForClientID:(unsigned int)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)openDomains:(unsigned long long)arg1 forClientID:(unsigned int)arg2 optionalParams:(NSDictionary *)arg3 withReply:(void (^)(NSError *, NSDictionary *, unsigned int, NSDictionary *))arg4;

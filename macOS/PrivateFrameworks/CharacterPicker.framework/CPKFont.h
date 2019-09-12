@@ -18,6 +18,7 @@
 
 + (id)defaultFontName;
 + (id)glyphInfoArrayForAttributedString:(id)arg1;
++ (void)registerFontRef:(struct __CTFont *)arg1;
 + (id)sharedFontWithName:(id)arg1 size:(double)arg2;
 @property(readonly) BOOL isEmojiFont; // @synthesize isEmojiFont=_isEmojiFont;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
@@ -28,9 +29,15 @@
 @property(readonly) double descent;
 @property(readonly) double ascent;
 - (struct CGRect)boundingRectForGlyph:(unsigned short)arg1;
+- (void)_setFontRef:(struct __CTFont *)arg1;
+- (const struct __CTFont *)copyFontRef;
 @property(readonly) const struct __CTFont *ctFont;
+- (unsigned short)_glyphForString:(id)arg1 fallbackFontName:(id *)arg2 fallbackFontRef:(const struct __CTFont **)arg3;
+- (unsigned short)glyphForString:(id)arg1 fallbackFontRef:(const struct __CTFont **)arg2;
 - (unsigned short)glyphForString:(id)arg1 fallbackFontName:(id *)arg2;
 - (void)dealloc;
+- (id)_privateInit;
+- (id)initWithFontRef:(struct __CTFont *)arg1;
 - (id)initWithName:(id)arg1 size:(double)arg2;
 
 @end

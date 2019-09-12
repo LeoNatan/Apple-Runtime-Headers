@@ -34,7 +34,10 @@
 - (BOOL)isObserving:(id)arg1 element:(id)arg2;
 - (BOOL)removeObserver:(id)arg1 selector:(SEL)arg2;
 - (BOOL)addObserver:(id)arg1 selector:(SEL)arg2 queue:(id)arg3;
+- (BOOL)_unregisterObserverSync:(BOOL)arg1;
 - (BOOL)unregisterObserver;
+- (BOOL)unregisterObserverAsync;
+- (void)pruneObservers;
 - (BOOL)registerObserver;
 - (struct __AXUIElement *)_elementRef;
 @property(nonatomic) struct __AXObserver *observer; // @synthesize observer=_observer;

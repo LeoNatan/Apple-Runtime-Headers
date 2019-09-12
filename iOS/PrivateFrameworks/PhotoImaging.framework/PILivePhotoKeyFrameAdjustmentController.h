@@ -12,7 +12,7 @@
 
 + (id)scaleKey;
 + (id)timeKey;
-@property(nonatomic) CDStruct_198678f7 keyFrameTime;
+@property(nonatomic) CDStruct_1b6d18a9 keyFrameTime;
 - (id)initWithAdjustment:(id)arg1;
 
 @end

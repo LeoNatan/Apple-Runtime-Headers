@@ -16,10 +16,12 @@
     unsigned long long _numberOfInboxEntriesAffected;
     unsigned long long _numberOfEventsAffected;
     unsigned long long _numberOfNotificationsAffected;
+    BOOL fromUserInitiatedRefresh;
 }
 
 + (BOOL)updateLastABCReportTimeAndAllowReport;
 + (void)reportRefreshExceptionToABC:(id)arg1;
+@property(nonatomic) BOOL fromUserInitiatedRefresh; // @synthesize fromUserInitiatedRefresh;
 @property(nonatomic) BOOL fromFullRefresh; // @synthesize fromFullRefresh=_fromFullRefresh;
 @property(nonatomic) BOOL notifyOnChanges; // @synthesize notifyOnChanges=_notifyOnChanges;
 @property(nonatomic) unsigned long long numberOfNotificationsAffected; // @synthesize numberOfNotificationsAffected=_numberOfNotificationsAffected;

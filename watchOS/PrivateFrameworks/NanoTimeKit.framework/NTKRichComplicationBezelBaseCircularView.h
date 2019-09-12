@@ -32,6 +32,8 @@
 @property(readonly, nonatomic) NTKRichComplicationView *circularView; // @synthesize circularView=_circularView;
 @property(nonatomic) float bezelLabelCircularRadius; // @synthesize bezelLabelCircularRadius=_bezelLabelCircularRadius;
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)_updateNewDataAnimationFinalAlpha:(float)arg1 finalBezelLabelScale:(float)arg2 finalCircularViewScale:(float)arg3 animationApplierBlock:(CDUnknownBlockType)arg4 animationFraction:(float)arg5;
 - (void)_setWhistlerAnalogEditingTransitonFraction:(float)arg1 direction:(int)arg2 position:(int)arg3;
 - (void)_createBezelLabel;

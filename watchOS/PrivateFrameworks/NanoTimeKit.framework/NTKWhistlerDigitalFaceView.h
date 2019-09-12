@@ -17,6 +17,7 @@
     unsigned int _faceColor;
 }
 
+- (id)tritium_createFaceAnimator;
 - (id)_defaultDateAccentColor;
 - (id)_defaultDateTextColor;
 - (void)setFaceColor:(unsigned int)arg1;

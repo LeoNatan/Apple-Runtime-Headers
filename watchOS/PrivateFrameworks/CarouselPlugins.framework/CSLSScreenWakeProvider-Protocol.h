@@ -6,17 +6,21 @@
 
 #import <CarouselPlugins/NSObject-Protocol.h>
 
+@class NSDate, NSString;
 @protocol CSLSScreenWakeProviderDelegate;
 
 @protocol CSLSScreenWakeProvider <NSObject>
 - (void)handleScreenBlanked;
 - (void)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(void (^)(double))arg3 completion:(void (^)(void))arg4;
 - (void)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(void (^)(double))arg3 completion:(void (^)(void))arg4;
+- (void)handleAOTEnabled:(_Bool)arg1;
 
 @optional
+@property(readonly, nonatomic) _Bool usesFlipbook;
 @property(nonatomic) __weak id <CSLSScreenWakeProviderDelegate> delegate;
 - (void)handleScreenUnblanked;
 - (void)didChangeActiveProvider:(_Bool)arg1 completion:(void (^)(void))arg2;
 - (void)willBecomeInactiveProvider:(void (^)(void))arg1;
+- (void)invalidateFramesOnOrAfterPresentationTime:(NSDate *)arg1 forReason:(NSString *)arg2;
 @end
 

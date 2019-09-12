@@ -165,6 +165,7 @@
 - (long long)type;
 - (id)playbackInfo;
 - (id)containerUniqueID;
+- (_Bool)hasTimeSyncedLyrics;
 - (_Bool)hasStoreLyrics;
 - (id)libraryLyrics;
 - (_Bool)supportsLikedState;

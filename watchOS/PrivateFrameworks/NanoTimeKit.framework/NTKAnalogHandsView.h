@@ -7,10 +7,11 @@
 #import <UIKit/UIView.h>
 
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
 @class CALayer, CLKDevice, NSCalendar, NSDate, NSNumber, NSString, NSTimeZone, NSTimer, NTKColoringImageView, NTKHandView, PUICClientSideAnimation, UIColor;
 
-@interface NTKAnalogHandsView : UIView <NTKTimeView>
+@interface NTKAnalogHandsView : UIView <NTKTimeView, NTKTritiumAnimator>
 {
     NTKColoringImageView *_colorTransitionSecondHandLowerView;
     NTKColoringImageView *_colorTransitionSecondHandUpperView;
@@ -27,6 +28,7 @@
     CALayer *_hourHandTransitionBodyLayer;
     CALayer *_hourHandTransitionStemLayer;
     unsigned int _style;
+    _Bool _animatingToTritiumOff;
     _Bool _timeScrubbing;
     _Bool _frozen;
     _Bool _showDebugClientSideHands;
@@ -74,6 +76,14 @@
 - (void)_enumerateSecondHandViewsWithBlock:(CDUnknownBlockType)arg1;
 - (id)displayTime;
 - (void)_significantTimeChanged;
+- (void)_setTritiumProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_willTransitionToTritiumOn;
 - (void)_addHourMinuteHandsTransitionLayers;
 - (void)_removeHourMinuteHandsTransitionLayers;
 - (void)_removeColorTransitionViews;
@@ -90,6 +100,7 @@
 - (float)_timeAnimationFramesPerSecondForDevice:(id)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
+- (id)tritium_animationToCurrentDateFromDate:(id)arg1;
 - (void)didMoveToWindow;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_enumerateHandViews:(CDUnknownBlockType)arg1;

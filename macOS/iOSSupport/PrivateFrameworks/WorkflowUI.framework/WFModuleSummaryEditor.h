@@ -29,6 +29,7 @@
     WFVariableConfigurationResponder *_variableResponder;
 }
 
++ (unsigned long long)variableResultTypeForParameter:(id)arg1;
 + (BOOL)supportsEditingTextAttachment:(id)arg1 inSlotWithIdentifier:(id)arg2;
 + (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) BOOL returnToKeyboardOnComplete; // @synthesize returnToKeyboardOnComplete=_returnToKeyboardOnComplete;
@@ -56,9 +57,9 @@
 - (void)_beginEditingVariableAttachment:(id)arg1 withParentView:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (BOOL)canTypeAlongsideVariables;
-- (unsigned long long)variableResultType;
 - (void)beginEditingTextAttachment:(id)arg1 inSlotWithIdentifier:(id)arg2 sourceView:(id)arg3;
 - (void)presentVariablePickerWithCurrentState:(id)arg1 fromViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)sourceViewTintColorDidChange;
 - (void)textEntryDidFinish;
 - (void)textEntryTextDidChange:(id)arg1;
 - (BOOL)textEntryShouldChangeText:(id)arg1;

@@ -83,6 +83,7 @@
 - (void)updateFromSession:(id)arg1 bag:(id)arg2 forClient:(id)arg3 error:(id)arg4;
 - (void)fetchModifiedResourceFromSession:(id)arg1 resource:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateWithBagDictionary:(id)arg1 error:(id)arg2;
+- (BOOL)isBagEnabled;
 - (BOOL)isLocaleSupported:(id)arg1;
 - (id)supportedServices;
 - (BOOL)sessionReady;

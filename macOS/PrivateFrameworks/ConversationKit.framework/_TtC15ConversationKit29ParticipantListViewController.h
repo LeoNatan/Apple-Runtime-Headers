@@ -12,11 +12,14 @@
     // Error parsing type: , name: viewContent
     // Error parsing type: , name: lastLayedOutViewSize
     // Error parsing type: , name: participantsViewControllerDelegate
+    // Error parsing type: , name: recentlyVisibleParticipantIdentifiers
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;
+- (void)handleScrollViewBoundsDidChangedNotificationWithNotification:(id)arg1;
+- (void)viewDidLayout;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 

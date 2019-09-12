@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
     struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> vClusterOutliersProxies;
     struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> hClusterOutliersProxies;
     // Error parsing type: [64], name: initialSimplexVerticesXYZ
-    // Error parsing type: [64], name: initialSimplexVerticesXZ
-    // Error parsing type: [64], name: initialSimplexVerticesYZ
+    // Error parsing type: [16], name: initialSimplexVerticesXZ
+    // Error parsing type: [16], name: initialSimplexVerticesYZ
     int solutionType;
     struct Solution solution;
     double unlimitedPitch;

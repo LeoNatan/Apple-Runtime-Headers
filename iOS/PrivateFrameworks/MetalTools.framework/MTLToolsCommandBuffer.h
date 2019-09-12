@@ -72,6 +72,7 @@
 - (void *)debugBufferContentsWithLength:(unsigned long long *)arg1;
 @property(readonly) double kernelEndTime;
 @property(readonly) double kernelStartTime;
+- (id)resourceStateCommandEncoder;
 - (id)computeCommandEncoder;
 - (id)blitCommandEncoder;
 @property(readonly) NSError *error;

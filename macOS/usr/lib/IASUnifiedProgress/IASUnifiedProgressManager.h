@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <IASUnifiedProgress/IASUnifiedProgressConnectProtocol-Protocol.h>
 #import <IASUnifiedProgress/NSXPCListenerDelegate-Protocol.h>
 
 @class NSString, NSXPCConnection;
 
-@interface IASUnifiedProgressManager : NSObject <NSXPCListenerDelegate>
+@interface IASUnifiedProgressManager : NSObject <IASUnifiedProgressConnectProtocol, NSXPCListenerDelegate>
 {
     NSXPCConnection *_progressAppConnection;
 }

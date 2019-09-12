@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
         NSString *name;
         long long requirement;
         _Bool supported;
-    } _featureInfo[96];
+    } _featureInfo[104];
     id <MTLDeviceSPI> _device;
 }
 
@@ -30,6 +30,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsSIMDReduction;
 - (_Bool)supportsMirrorClampToEdgeSamplerMode;
 - (_Bool)supportsBlackOrWhiteSamplerBorderColors;
+- (_Bool)supportsSparseTextures;
+- (_Bool)supportsASTCHDRTextureCompression;
+- (_Bool)supportsYCBCRFormatsXR;
+- (_Bool)supportsYCBCRFormats12;
+- (_Bool)supportsYCBCRFormatsPQ;
+- (_Bool)supportsYCBCRFormats;
+- (_Bool)supportsVariableRateRasterization;
 - (_Bool)supportsSIMDShufflesAndBroadcast;
 - (_Bool)supportsShaderMinLODClamp;
 - (_Bool)supportsSIMDGroup;
@@ -108,6 +115,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)supportsLimitedYUVFormats;
 - (_Bool)supportsOpenCLTextureWriteSwizzles;
 - (_Bool)supportsPlacementHeaps;
+- (_Bool)supportsVertexAmplification;
 - (_Bool)supports32bpcMSAATextures;
 - (_Bool)supportsSamplerAddressModeClampToHalfBorder;
 - (_Bool)supportsCustomBorderColor;

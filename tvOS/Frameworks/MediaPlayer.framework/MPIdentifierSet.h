@@ -13,11 +13,12 @@
 #import <MediaPlayer/MPMutableUniversalStoreIdentifiers-Protocol.h>
 #import <MediaPlayer/NSCopying-Protocol.h>
 #import <MediaPlayer/NSSecureCoding-Protocol.h>
+#import <MediaPlayer/_MPStateDumpPropertyListTransformable-Protocol.h>
 
 @class MPModelKind, NSArray, NSString;
 @protocol MPLocalLibraryIdentifiers, MPPersonalStoreIdentifiers, MPRadioIdentifiers, MPUniversalStoreIdentifiers;
 
-@interface MPIdentifierSet : NSObject <MPMutableLocalLibraryIdentifiers, MPMutablePersonalStoreIdentifiers, MPMutableUniversalStoreIdentifiers, MPMutableRadioIdentifiers, MPMutableIdentifierSet, NSCopying, NSSecureCoding>
+@interface MPIdentifierSet : NSObject <MPMutableLocalLibraryIdentifiers, MPMutablePersonalStoreIdentifiers, MPMutableUniversalStoreIdentifiers, MPMutableRadioIdentifiers, MPMutableIdentifierSet, _MPStateDumpPropertyListTransformable, NSCopying, NSSecureCoding>
 {
     _Bool _shouldExcludeFromShuffle;
     NSString *_databaseID;
@@ -93,6 +94,7 @@
 - (void)_setDefaultPersonIDIfNeeded;
 - (void)_setDefaultDatabaseIDIfNeeded;
 - (id)identifierDescriptions;
+- (id)_stateDumpObject;
 @property(nonatomic) long long storeSubscriptionAdamID;
 @property(nonatomic) long long storePurchasedAdamID;
 @property(copy, nonatomic) NSString *storeRecommendationID;

@@ -13,7 +13,6 @@
 - (void)didShowItemWithIdentifier:(NSString *)arg1 userInfo:(NSDictionary *)arg2;
 - (void)didSelectActionWithURL:(NSURL *)arg1 actionUserInfo:(NSDictionary *)arg2 forItemWithIdentifier:(NSString *)arg3 itemUserInfo:(NSDictionary *)arg4;
 - (void)performCustomActionWithURL:(NSURL *)arg1 actionUserInfo:(NSDictionary *)arg2 forItemWithIdentifier:(NSString *)arg3 itemUserInfo:(NSDictionary *)arg4 replyHandler:(void (^)(TVTopShelfActionResult *))arg5;
-- (void)loadTopShelfContentWithReplyHandler:(void (^)(id <TVTopShelfContent>))arg1;
-- (void)fetchContentExtensionDelegateFlagsWithReplyHandler:(void (^)(TVTopShelfContentExtensionDelegateFlags *))arg1;
+- (void)loadTopShelfContentAndDelegateFlags:(_Bool)arg1 replyHandler:(void (^)(id <TVTopShelfContent>, TVTopShelfContentExtensionDelegateFlags *))arg2;
 @end
 

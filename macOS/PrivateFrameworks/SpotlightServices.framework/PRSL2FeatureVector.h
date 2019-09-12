@@ -24,12 +24,14 @@
     NSString *_device_type;
     NSDictionary *_searchThroughCEPData;
     // Error parsing type: T, name: _indexScore
+    struct _opaque_pthread_mutex_t _featureDataLock;
 }
 
 + (struct FeatureInfo *)featureForName:(id)arg1;
 + (id)contextWithFeatureOrder:(id)arg1 withInflation:(unsigned long long)arg2 withInflatedIndexToSize:(id)arg3;
 + (struct __CFSet *)getL2FeatureSet;
 + (void)initialize;
+@property(nonatomic) struct _opaque_pthread_mutex_t featureDataLock; // @synthesize featureDataLock=_featureDataLock;
 // Error parsing type for property indexScore:
 // Property attributes: TT,N,V_indexScore
 
@@ -45,11 +47,12 @@
 - (void)dealloc;
 - (void)cleanup;
 - (BOOL)serializeToJSON:(void *)arg1 valuesOnly:(BOOL)arg2 ignoreDefaultValues:(BOOL)arg3;
+- (void)restoreFromJazzkonHacks:(float *)arg1;
 - (id)dictionaryRepresentationWithoutDefaultValues;
 - (id)_dictionaryRepresentationWithoutDefaultValues:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (void)setScores:(float *)arg1 forFeatures:(unsigned short *)arg2 count:(unsigned long long)arg3;
-- (float *)getAllScores:(float [1237])arg1;
+- (float *)getAllScores:(float [1245])arg1;
 - (float)scoreForFeature:(unsigned short)arg1;
 @property(readonly, nonatomic) BOOL receiverIsVip;
 @property(readonly, nonatomic) BOOL senderIsVip;

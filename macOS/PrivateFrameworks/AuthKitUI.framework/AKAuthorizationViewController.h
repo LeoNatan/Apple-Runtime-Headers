@@ -6,12 +6,13 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <AuthKitUI/AKAuthorizationPaneAutomaticResizeDelegate-Protocol.h>
 #import <AuthKitUI/AKAuthorizationPaneViewControllerDelegate-Protocol.h>
 
 @class AKAuthorizationNavigationController, AKAuthorizationPresentationContext, AKAuthorizationScopeChoices, NSString;
 @protocol AKAuthorizationViewControllerDelegate;
 
-@interface AKAuthorizationViewController : NSViewController <AKAuthorizationPaneViewControllerDelegate>
+@interface AKAuthorizationViewController : NSViewController <AKAuthorizationPaneViewControllerDelegate, AKAuthorizationPaneAutomaticResizeDelegate>
 {
     BOOL _resizePending;
     AKAuthorizationPresentationContext *_presentationContext;

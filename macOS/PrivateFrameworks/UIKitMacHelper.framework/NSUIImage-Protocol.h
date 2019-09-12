@@ -12,7 +12,6 @@
 @protocol NSUIImage <NSObject>
 + (id <NSUIImage>)imageWithCGImage:(struct CGImage *)arg1;
 @property(readonly, nonatomic) CIImage *CIImage;
-@property(readonly, nonatomic) struct CGImage *CGImage;
 @property(readonly, nonatomic) id <NSUIImageAsset> imageAsset;
 @property(readonly, nonatomic) struct CGSize size;
 - (long long)_effectiveRenderingMode;

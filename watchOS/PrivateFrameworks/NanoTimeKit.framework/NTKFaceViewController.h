@@ -13,11 +13,13 @@
 #import <NanoTimeKit/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewDelegate-Protocol.h>
 #import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimationControllerViewProvider-Protocol.h>
+#import <NanoTimeKit/NTKTritiumFaceAnimatorDelegate-Protocol.h>
 
 @class NSCache, NSDate, NSMutableDictionary, NSObject, NSString, NTKComplicationController, NTKComplicationDisplayWrapperView, NTKDelayedBlock, NTKFace, NTKFaceEditView, NTKFaceView, PUICClientSideAnimation, UIView;
 @protocol NTKClockStatusBarViewController, NTKFaceViewControllerDelegate, OS_dispatch_source;
 
-@interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, NTKSensitiveUIStateObserver, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate, NTKFaceObserver>
+@interface NTKFaceViewController : UIViewController <NTKFaceEditViewDelegate, NTKComplicationPickerViewDataSource, NTKSensitiveUIStateObserver, NTKTritiumFaceAnimatorDelegate, NTKClockIconZoomAnimator, NTKClockHardwareInput, NTKFaceViewDelegate, NTKFaceObserver, NTKTritiumAnimationControllerViewProvider>
 {
     NTKFaceView *_faceView;
     struct os_unfair_lock_s _normalComplicationControllersLock;
@@ -51,6 +53,8 @@
     _Bool _hasRemovedUnadornedSnapshot;
     NSString *_lastTappedSlotIdentifier;
     struct CGRect _faceLaunchRect;
+    NSMutableDictionary *_tritiumTransitionSlotToWrapperViewMapping;
+    UIViewController<NTKClockStatusBarViewController> *_tritiumStatusBarViewController;
     _Bool _shouldShowSnapshot;
     _Bool _supressesNonSnapshotUI;
     _Bool _showsCanonicalContent;
@@ -131,6 +135,16 @@
 - (void)PPTCreateComplication:(id)arg1 forSlot:(id)arg2 synchronously:(_Bool)arg3;
 - (void)PPTPrepareComplicationTest;
 - (id)PPTUniqueComplicationsToSlotForCurrentFace;
+- (void)tritium_removeStatusBarViewController;
+- (void)tritium_setupStatusBarViewController;
+- (void)tritium_cleanUpComplicationTransitionAtSlot:(id)arg1;
+- (void)tritium_updateTransitionProgress:(float)arg1 forComplicationAtSlot:(id)arg2;
+- (void)tritium_prepareTransitionForComplicationAtSlot:(id)arg1 willTurnTritiumOn:(_Bool)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 didUpdateStep:(id)arg2 fraction:(float)arg3;
+- (void)tritiumFaceAnimator:(id)arg1 didTransitionStepToTritiumOff:(id)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 willTransitionStepToTritiumOff:(id)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 didTransitionStepToTritiumOn:(id)arg2;
+- (void)tritiumFaceAnimator:(id)arg1 willTransitionStepToTritiumOn:(id)arg2;
 - (id)faceViewAllVisibleComplicationsForCurrentConfiguration;
 - (id)faceViewComplicationSlotsHiddenByEditOption:(id)arg1;
 - (id)faceViewEditOptionThatHidesAllComplications;

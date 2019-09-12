@@ -46,7 +46,7 @@
 @property(readonly, nonatomic) UIDropShadowView *dropShadowView; // @synthesize dropShadowView=_dropShadowView;
 @property(nonatomic) BOOL _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
 @property(retain, nonatomic) UIViewPropertyAnimator *_remoteDismissalPropertyAnimator; // @synthesize _remoteDismissalPropertyAnimator=__remoteDismissalPropertyAnimator;
-@property(nonatomic) BOOL _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
+@property(nonatomic, getter=_isRemoteDismissing, setter=_setRemoteDismissing:) BOOL _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
 @property(readonly, nonatomic) _UIRemoteViewController *_connectedRemoteViewController; // @synthesize _connectedRemoteViewController=__connectedRemoteViewController;
 @property(retain, nonatomic, setter=_setTearOffActivity:) NSUserActivity *_tearOffActivity; // @synthesize _tearOffActivity=__tearOffActivity;
 @property(nonatomic, setter=_setInitialTearOffPoint:) struct CGPoint _initialTearOffPoint; // @synthesize _initialTearOffPoint=__initialTearOffPoint;
@@ -61,6 +61,9 @@
 @property(readonly, nonatomic) _UISheetLayoutInfo *_layoutInfo; // @synthesize _layoutInfo=__layoutInfo;
 @property(nonatomic) struct CGRect frameOfPresentedViewInContainerView; // @synthesize frameOfPresentedViewInContainerView=_frameOfPresentedViewInContainerView;
 - (void).cxx_destruct;
+- (id)dragInteraction:(id)arg1 previewForCancellingItem:(id)arg2 withDefault:(id)arg3;
+- (void)dragInteraction:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
+- (void)dragInteraction:(id)arg1 session:(id)arg2 didEndWithOperation:(unsigned long long)arg3;
 - (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
 - (void)dragInteraction:(id)arg1 sessionWillBegin:(id)arg2;
 - (BOOL)dragInteraction:(id)arg1 prefersFullSizePreviewsForSession:(id)arg2;
@@ -80,6 +83,7 @@
 - (id)_preferredAnimationControllerForPresentation;
 - (id)_viewToIgnoreLayerTransformForViewFrameInWindowContentOverlayInsetsCalculation;
 - (void)containerViewDidLayoutSubviews;
+- (void)_updateShouldPresentedViewControllerControlStatusBarAppearance;
 - (void)_updatePresentedViewFrame;
 - (void)_containerViewLayoutSubviews;
 - (void)containerViewWillLayoutSubviews;
@@ -104,12 +108,14 @@
 @property(readonly, nonatomic) BOOL _isRootPresentation;
 - (long long)presentationStyle;
 - (void)_sheetLayoutInfoLayout:(id)arg1;
+- (void)_sheetLayoutInfoPrelayout:(id)arg1;
 - (void)_sheetLayoutInfoDidInvalidateOutput:(id)arg1;
 - (void)_updateLayoutInfoContainerTraitCollection;
 - (void)_containerViewTraitCollectionDidChange;
 - (void)_updateLayoutInfoContainerSafeAreaInsets;
 - (void)_containerViewSafeAreaInsetsDidChange;
 - (void)_containerViewBoundsDidChange;
+- (void)_resetRemoteDismissing;
 - (void)_tryToConnectToRemoteViewController:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_expectedRemoteViewController;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;

@@ -35,6 +35,7 @@
     struct CGPoint _logoPositionBig;
     struct CGPoint _logoPositionCircularDial;
     float _dialShapeFraction;
+    float _tritiumFraction;
     id <NTKVictoryAnalogBackgroundColorPalette> _palette;
     unsigned int _style;
     unsigned int _dialShape;
@@ -64,6 +65,7 @@
 - (float)_elementScaleForTransitionProgress:(float)arg1 initialScale:(float)arg2 middleScale:(float)arg3 finalScale:(float)arg4;
 - (float)_transitionProgressForDigitAtIndex:(unsigned int)arg1 overallProgress:(float)arg2 delayPerDigit:(float)arg3 digitTransitionLength:(float)arg4;
 - (struct CGColor *)_layerTransitionColorFromColor:(id)arg1 toColor:(id)arg2 amount:(float)arg3;
+- (void)applyTransitionTritiumOnWithFraction:(float)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4 animateElements:(_Bool)arg5;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4;
 - (void)_applyPalette:(id)arg1 forStyle:(unsigned int)arg2;
@@ -73,6 +75,7 @@
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3 fromPalette:(id)arg4 toPalette:(id)arg5;
 - (id)_activeRingObjects;
 - (id)_activeRingLayers;
+- (void)applyTransitionFraction:(float)arg1 fromOlympusStyle:(unsigned int)arg2 toOlympusStyle:(unsigned int)arg3;
 - (void)applyTransitionFraction:(float)arg1 fromDialShape:(unsigned int)arg2 toDialShape:(unsigned int)arg3;
 - (_Bool)isCircularDial;
 - (void)setInTimeTravel:(_Bool)arg1 animated:(_Bool)arg2;

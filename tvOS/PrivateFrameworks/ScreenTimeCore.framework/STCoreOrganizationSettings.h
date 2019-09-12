@@ -29,6 +29,7 @@
 @property(nonatomic) long long contactManagementState; // @dynamic contactManagementState;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) _Bool needsToSetPasscode; // @dynamic needsToSetPasscode;
 @property(copy, nonatomic) NSString *passcode; // @dynamic passcode;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) STCoreUser *user; // @dynamic user;

@@ -19,6 +19,9 @@
 }
 
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_willSnapshotForBurnInStudy;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
 - (_Bool)_shouldDelayBeforePlayingNextVideo;

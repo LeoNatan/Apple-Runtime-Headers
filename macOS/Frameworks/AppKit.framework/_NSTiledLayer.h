@@ -13,14 +13,12 @@ __attribute__((visibility("hidden")))
 {
     NSPointerArray *_observedObjects;
     NSTileScrollingInfoLayer *_tileScrollingInfoLayer;
-    Class _tileClass;
     BOOL _isScrolling;
 }
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (void)initialize;
-@property(nonatomic) Class tileClass; // @synthesize tileClass=_tileClass;
 - (void)addSublayer:(id)arg1;
 - (void)NS_prepareContentRect:(struct CGRect)arg1;
 - (void)NS_invalidatePreparedContentRect;
@@ -34,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)NS_wantsToPrefetchTiles;
 - (void)_purgeExcessTileContents;
 - (void)drawTile:(id)arg1 inContext:(struct CGContext *)arg2;
-- (BOOL)canDrawTile:(id)arg1;
 - (void)setContents:(id)arg1;
 - (void)NS_setContentsScaleSize:(struct CGSize)arg1;
 - (void)setContentsScale:(double)arg1;

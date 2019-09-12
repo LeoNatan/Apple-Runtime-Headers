@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) _Bool hasReceivedAllExpectedResponses;
 - (void)updateForTimeoutTimerFiredForCoordinationInfo:(id)arg1 request:(id)arg2;
 - (void)_dispatchRemotePersistenceIfPossibleForResultSpecifiers:(unsigned long long)arg1 request:(id)arg2;
+- (void)_dispatchRemotePersistenceIfPossibleForPairWithOriginalResultSpecifiers:(unsigned long long)arg1 overCaptureResultSpecifiers:(unsigned long long)arg2 request:(id)arg3 identifier:(id)arg4 shouldPersistAsSingleAsset:(_Bool)arg5;
 - (void)_dispatchRemotePersistenceIfPossibleForPairWithOriginalResultSpecifiers:(unsigned long long)arg1 processedResultSpecifiers:(unsigned long long)arg2 request:(id)arg3 identifier:(id)arg4 shouldPersistAsSingleAsset:(_Bool)arg5;
 - (void)updateForCoordinationInfo:(id)arg1 localPersistenceResult:(id)arg2 request:(id)arg3;
 - (id)initWithDelegate:(id)arg1;

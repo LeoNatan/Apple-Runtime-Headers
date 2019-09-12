@@ -32,6 +32,11 @@
 }
 
 - (void).cxx_destruct;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (id)tritium_timeViews;
 - (void)_removeTimeViews;
 - (void)_createTimeViews;
 - (void)_initLargeTimeLabelIfNecessary;

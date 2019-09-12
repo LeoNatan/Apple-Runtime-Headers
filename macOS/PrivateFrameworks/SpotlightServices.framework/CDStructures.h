@@ -53,6 +53,11 @@ struct __CFArray;
 
 struct __CFDictionary;
 
+struct _opaque_pthread_mutex_t {
+    long long __sig;
+    char __opaque[56];
+};
+
 struct _resultset_computation_ctx {
     float *_field1;
     _Bool _field2;

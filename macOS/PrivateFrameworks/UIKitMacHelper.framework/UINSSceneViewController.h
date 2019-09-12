@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsSizeRestrictionsUpdate;
 - (void)_setMinimumSizeForScreenInUIKit;
 - (void)updateViewConstraints;
+- (struct CGSize)_contentInsetsFromScene;
 - (void)loadView;
 - (BOOL)acceptKeyViewHandoff:(BOOL)arg1;
 - (void)noteFocusRingMaskChanged;

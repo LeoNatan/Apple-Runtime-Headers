@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     id <HBUITopShelfParadeContentCoordinatorDelegate> _delegate;
     id <HBUITopShelfParadeItem> _paradeItem;
     UIImageView *_standardTitleGradientView;
-    UIImageView *_actionsDetailsGradientView;
+    UIImageView *_contentGradientView;
     UIImageView *_photosGradientView;
     HBUITopShelfParadeStandardTitleView *_standardTitleView;
     HBUITopShelfImageView *_standardTitleImageView;
@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) HBUITopShelfImageView *standardTitleImageView; // @synthesize standardTitleImageView=_standardTitleImageView;
 @property(readonly, nonatomic) HBUITopShelfParadeStandardTitleView *standardTitleView; // @synthesize standardTitleView=_standardTitleView;
 @property(readonly, nonatomic) UIImageView *photosGradientView; // @synthesize photosGradientView=_photosGradientView;
-@property(readonly, nonatomic) UIImageView *actionsDetailsGradientView; // @synthesize actionsDetailsGradientView=_actionsDetailsGradientView;
+@property(readonly, nonatomic) UIImageView *contentGradientView; // @synthesize contentGradientView=_contentGradientView;
 @property(readonly, nonatomic) UIImageView *standardTitleGradientView; // @synthesize standardTitleGradientView=_standardTitleGradientView;
 @property(nonatomic, getter=isStandardTitleHidden) _Bool standardTitleHidden; // @synthesize standardTitleHidden=_standardTitleHidden;
 @property(nonatomic, getter=isContentHidden) _Bool contentHidden; // @synthesize contentHidden=_contentHidden;
@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)paradeContentViewController:(id)arg1 didSelectAction:(id)arg2 forItem:(id)arg3;
 - (void)paradeBackgroundViewControllerDidFinish:(id)arg1;
 - (void)paradeBackgroundViewControllerContentStateDidChange:(id)arg1;
+- (void)_configureContentGradientViewWithImage:(id)arg1;
 - (void)_updateStandardTitleView;
 - (_Bool)_promotionVideoIsPlaying;
 - (void)_updateActionsDetailsViewAlpha;

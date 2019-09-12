@@ -20,6 +20,7 @@
     double musicDataCollectionSamplingRateForCTS;
     double musicDataCollectionSamplingRateForAMP;
     int musicDataCollectionMaximumRecordsPerType;
+    BOOL musicDataCollectionCollectNonAMPNowPlaying;
     NSArray *musicDataCollectionAMPBundleIds;
     NSString *variantName;
     NSString *naturalVariantName;

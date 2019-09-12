@@ -31,7 +31,6 @@
 
 + (long long)currentDeviceAuthenticationMode;
 + (id)deviceSpecificLocalizedStringWithKey:(id)arg1;
-+ (id)personaIDIfCurrentPersonaIsEnterprise;
 + (id)_serverFriendlyDeviceColorForArea:(struct __CFString *)arg1;
 + (id)_buildNumber;
 + (id)_osVersion;

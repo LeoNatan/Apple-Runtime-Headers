@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)layoutSublayers;
 - (void)NS_prepareContentRect:(struct CGRect)arg1;
 - (void)NS_invalidatePreparedContentRect;
-- (BOOL)NS_canDraw;
 - (void)_appkitViewBackingLayerUniqueMethod;
 - (void)NS_setView:(id)arg1;
 - (id)NS_view;

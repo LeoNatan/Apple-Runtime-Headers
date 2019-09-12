@@ -158,6 +158,7 @@
 - (long long)type;
 - (id)playbackInfo;
 - (id)containerUniqueID;
+- (BOOL)hasTimeSyncedLyrics;
 - (BOOL)hasStoreLyrics;
 - (id)libraryLyrics;
 - (BOOL)supportsLikedState;

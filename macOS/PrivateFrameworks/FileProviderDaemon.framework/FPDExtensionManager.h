@@ -49,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (void)migrateEnabledStateIfNecessary:(id)arg1;
 - (void)loadProvidersAndMonitorWithUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)_garbageCollectRemovedProvidersForInstalledProviderIdentifiers:(id)arg1;
+- (void)garbageCollectDomainOwnedDirectoriesAtURL:(id)arg1 isUserData:(BOOL)arg2 installedProviderIdentifiers:(id)arg3;
+- (id)xattrForName:(id)arg1 url:(id)arg2;
 - (void)afterFirstDiscovery;
 - (id)initWithServer:(id)arg1;
 

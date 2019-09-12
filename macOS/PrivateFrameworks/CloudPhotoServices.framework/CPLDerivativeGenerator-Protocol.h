@@ -10,5 +10,6 @@
 + (BOOL)isUnsupportedOriginalFormatError:(NSError *)arg1;
 + (void)generateDerivativeResourcesFromInputResource:(CPLResource *)arg1 withAdjustments:(CPLAdjustments *)arg2 destinationDirectory:(NSURL *)arg3 derivativesFilter:(CPLDerivativesFilter *)arg4 completionHandler:(void (^)(NSArray *, NSError *))arg5;
 + (BOOL)canGenerateImageDerivativesFromUTI:(NSString *)arg1;
++ (BOOL)isMovieUTI:(NSString *)arg1;
 @end
 

@@ -19,6 +19,7 @@
 - (id)notificationIconBundleIdentifier;
 - (BOOL)canBePerformedByOpeningURL;
 - (void)performFromView:(id)arg1;
+- (id)dialRequestWithProvider:(id)arg1;
 - (id)dialRequest;
 - (id)notificationTitle;
 - (id)notificationTitleTargetString;

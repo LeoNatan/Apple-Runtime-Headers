@@ -22,6 +22,7 @@
     _Bool _supportsSkipSignIn;
     _Bool __useSecureBackupCachedPassphrase;
     _Bool __alwaysCreateEscrowRecord;
+    _Bool __ignoreLockAssertErrors;
     _Bool _idmsRecovery;
     _Bool _idmsMasterKeyRecovery;
     NSDictionary *_authenticationResults;
@@ -46,6 +47,7 @@
 + (id)preflightContext:(id)arg1;
 @property(nonatomic) _Bool idmsMasterKeyRecovery; // @synthesize idmsMasterKeyRecovery=_idmsMasterKeyRecovery;
 @property(nonatomic) _Bool idmsRecovery; // @synthesize idmsRecovery=_idmsRecovery;
+@property(nonatomic) _Bool _ignoreLockAssertErrors; // @synthesize _ignoreLockAssertErrors=__ignoreLockAssertErrors;
 @property(copy, nonatomic) NSString *_recoveryToken; // @synthesize _recoveryToken=__recoveryToken;
 @property(nonatomic) _Bool _alwaysCreateEscrowRecord; // @synthesize _alwaysCreateEscrowRecord=__alwaysCreateEscrowRecord;
 @property(nonatomic) _Bool _useSecureBackupCachedPassphrase; // @synthesize _useSecureBackupCachedPassphrase=__useSecureBackupCachedPassphrase;

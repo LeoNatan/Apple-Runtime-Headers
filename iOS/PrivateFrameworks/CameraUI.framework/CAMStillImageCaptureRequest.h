@@ -23,10 +23,13 @@
     NSString *_timelapseIdentifier;
     long long _effectFilterType;
     long long _lightingEffectType;
+    long long _aspectRatioCrop;
     unsigned long long _maximumBurstLength;
     long long _flashMode;
     long long _hdrMode;
     long long _irisMode;
+    long long _ctmCaptureType;
+    _Bool _wantsSpatialOverCapture;
     _Bool _wantsPortraitEffect;
     NSArray *_adjustmentFilters;
     NSArray *_originalFilters;
@@ -34,15 +37,21 @@
     _Bool _wantsAutoDualCameraFusion;
     _Bool _wantsAudioForCapture;
     _Bool _wantsSquareCrop;
+    long long _lowLightMode;
+    long long _aspectRatio;
     _Bool _wantsHighResolutionStills;
     _Bool _stillDuringVideo;
     struct CGSize _desiredPreviewSize;
     NSString *_burstIdentifier;
     NSString *_irisIdentifier;
     NSURL *_localVideoDestinationURL;
+    NSURL *_localCTMVideoDestinationURL;
+    NSURL *_localSpatialOverCaptureVideoDestinationURL;
+    NSURL *_localCTMSpatialOverCaptureVideoDestinationURL;
     NSString *_videoPersistenceUUID;
     NSString *_EV0IrisIdentifier;
     NSURL *_EV0LocalVideoDestinationURL;
+    NSURL *_EV0LocalSpatialOverCaptureVideoDestinationURL;
     NSString *_EV0VideoPersistenceUUID;
     unsigned long long _userInitiationTime;
     double _loggingVideoZoomFactor;
@@ -51,6 +60,7 @@
 }
 
 @property(readonly, nonatomic) unsigned long long maximumBurstLength; // @synthesize maximumBurstLength=_maximumBurstLength;
+@property(readonly, nonatomic) long long aspectRatioCrop; // @synthesize aspectRatioCrop=_aspectRatioCrop;
 @property(readonly, nonatomic) long long lightingEffectType; // @synthesize lightingEffectType=_lightingEffectType;
 @property(readonly, nonatomic) long long effectFilterType; // @synthesize effectFilterType=_effectFilterType;
 @property(readonly, copy, nonatomic) NSString *timelapseIdentifier; // @synthesize timelapseIdentifier=_timelapseIdentifier;
@@ -60,13 +70,20 @@
 @property(readonly, nonatomic) double loggingVideoZoomFactor; // @synthesize loggingVideoZoomFactor=_loggingVideoZoomFactor;
 @property(readonly, nonatomic) unsigned long long userInitiationTime; // @synthesize userInitiationTime=_userInitiationTime;
 @property(readonly, copy, nonatomic) NSString *EV0VideoPersistenceUUID; // @synthesize EV0VideoPersistenceUUID=_EV0VideoPersistenceUUID;
+@property(readonly, copy, nonatomic) NSURL *EV0LocalSpatialOverCaptureVideoDestinationURL; // @synthesize EV0LocalSpatialOverCaptureVideoDestinationURL=_EV0LocalSpatialOverCaptureVideoDestinationURL;
 @property(readonly, copy, nonatomic) NSURL *EV0LocalVideoDestinationURL; // @synthesize EV0LocalVideoDestinationURL=_EV0LocalVideoDestinationURL;
 @property(readonly, copy, nonatomic) NSString *EV0IrisIdentifier; // @synthesize EV0IrisIdentifier=_EV0IrisIdentifier;
 @property(readonly, copy, nonatomic) NSString *videoPersistenceUUID; // @synthesize videoPersistenceUUID=_videoPersistenceUUID;
+@property(readonly, copy, nonatomic) NSURL *localCTMSpatialOverCaptureVideoDestinationURL; // @synthesize localCTMSpatialOverCaptureVideoDestinationURL=_localCTMSpatialOverCaptureVideoDestinationURL;
+@property(readonly, copy, nonatomic) NSURL *localSpatialOverCaptureVideoDestinationURL; // @synthesize localSpatialOverCaptureVideoDestinationURL=_localSpatialOverCaptureVideoDestinationURL;
+@property(readonly, copy, nonatomic) NSURL *localCTMVideoDestinationURL; // @synthesize localCTMVideoDestinationURL=_localCTMVideoDestinationURL;
 @property(readonly, copy, nonatomic) NSURL *localVideoDestinationURL; // @synthesize localVideoDestinationURL=_localVideoDestinationURL;
 @property(readonly, copy, nonatomic) NSString *irisIdentifier; // @synthesize irisIdentifier=_irisIdentifier;
 @property(readonly, copy, nonatomic) NSString *burstIdentifier; // @synthesize burstIdentifier=_burstIdentifier;
 @property(readonly, nonatomic) struct CGSize desiredPreviewSize; // @synthesize desiredPreviewSize=_desiredPreviewSize;
+@property(readonly, nonatomic) long long lowLightMode; // @synthesize lowLightMode=_lowLightMode;
+@property(readonly, nonatomic) _Bool wantsSpatialOverCapture; // @synthesize wantsSpatialOverCapture=_wantsSpatialOverCapture;
+@property(readonly, nonatomic) long long ctmCaptureType; // @synthesize ctmCaptureType=_ctmCaptureType;
 @property(readonly, nonatomic) _Bool stillDuringVideo; // @synthesize stillDuringVideo=_stillDuringVideo;
 @property(readonly, nonatomic) _Bool wantsHighResolutionStills; // @synthesize wantsHighResolutionStills=_wantsHighResolutionStills;
 @property(readonly, nonatomic) _Bool wantsSquareCrop; // @synthesize wantsSquareCrop=_wantsSquareCrop;
@@ -81,8 +98,11 @@
 @property(readonly, nonatomic) long long flashMode; // @synthesize flashMode=_flashMode;
 - (void).cxx_destruct;
 - (_Bool)hasAdjustments;
+@property(readonly, nonatomic, getter=isCTMVideo) _Bool CTMVideo;
 - (_Bool)shouldProtectPersistenceForVideo;
+- (_Bool)isLocalSpatialOverCaptureVideoDestinationURL:(id)arg1;
 - (_Bool)isEV0LocalVideoDestinationURL:(id)arg1;
+- (id)irisLocalSpatialOverCaptureVideoDestinationForEV0:(_Bool)arg1;
 - (id)irisLocalVideoDestinationURLForEV0:(_Bool)arg1;
 - (id)irisVideoPersistenceUUIDForEV0:(_Bool)arg1;
 - (id)irisStillImagePersistenceUUIDForEV0:(_Bool)arg1;

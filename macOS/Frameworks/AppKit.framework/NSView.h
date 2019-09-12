@@ -214,6 +214,7 @@
     NSViewController *_viewController;
     NSMutableArray *_gestureRecognizers;
     _NSViewLayerSurface *_layerSurface;
+    NSView *_ancestorWithLayerForLastLayerGeometryUpdate;
     unsigned long long _antialiasThresholdChangedNotificationToken;
     NSArray *_drawingCalloutDependencyContexts;
     struct os_unfair_lock_s _atomicPropertiesLock;
@@ -979,7 +980,6 @@
 - (void)_updateVibrantBlendingCACompositingFilterWithBlendMode:(int)arg1;
 - (int)_vibrancyBlendMode;
 - (void)_updateLayerGeometryFromView;
-- (void)_updateInclusiveLayerSublayerViewPositions;
 - (BOOL)_useCoreAnimationFrameOriginChanges;
 - (BOOL)_useCoreAnimationFrameChanges;
 - (void)_handleFrameChangeForSubview:(id)arg1;
@@ -1194,9 +1194,9 @@
 - (void)_updateLayerHiddenFromView;
 - (void)_updateLayerShadowColorFromView;
 - (void)_updateLayerShadowFromView;
-- (void)_updateGeometryFlippedOnSelfAndSubviews;
+- (void)_updateLayerGeometryForSelfAndSubviews;
 - (void)_updateGeometryFlippedOnLayer;
-- (id)_parentSuperviewWithLayer;
+- (id)_ancestorWithLayer;
 - (void)_updateContentsGravityBasedOnFlippedChange;
 - (BOOL)_layerCoordinatesEqualViewCoordinates;
 - (id)_dumpLayer;

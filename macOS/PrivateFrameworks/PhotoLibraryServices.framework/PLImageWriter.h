@@ -24,18 +24,22 @@
     PLLibraryServicesManager *_libraryServicesManager;
 }
 
++ (void)setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 cameraAdjustments:(id)arg3 renderedContentPath:(id)arg4 renderedPosterFramePreviewPath:(id)arg5 finalAssetSize:(struct CGSize)arg6;
 + (void)decorateThumbnailInRect:(struct CGRect)arg1 size:(struct CGSize)arg2 duration:(id)arg3 inContext:(struct CGContext *)arg4 format:(id)arg5;
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
 + (BOOL)_hasPrimaryAssetAndAdjustmentsFilesWithType:(short)arg1 inIncomingFilenames:(id)arg2 forAssetUUID:(id)arg3;
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
 + (BOOL)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 finalAssetSize:(struct CGSize)arg6 isSubstandardRender:(BOOL)arg7;
++ (id)_assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2 assetType:(short)arg3;
 + (id)assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
++ (id)_assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2 assetType:(short)arg3;
 + (id)assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
 + (id)assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
 + (id)_assetAdjustmentsFromCompositionController:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsWithEffectFilterName:(id)arg1 exportProperties:(id)arg2;
++ (BOOL)_requiresAssetUUIDForJobType:(id)arg1;
 + (BOOL)_requiresIndicatorFileForJobType:(id)arg1;
 - (void).cxx_destruct;
 - (void)enqueueAutoDeleteEmptyAlbumJobWithAlbumID:(id)arg1;
@@ -43,7 +47,6 @@
 - (BOOL)imageWriterJob:(id)arg1 hasValidPathsWithConnection:(id)arg2;
 - (void)_processJob:(id)arg1;
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 cameraAdjustments:(id)arg3 renderedContentPath:(id)arg4 renderedPosterFramePreviewPath:(id)arg5 finalAssetSize:(struct CGSize)arg6;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(char *)arg3 error:(id *)arg4;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;

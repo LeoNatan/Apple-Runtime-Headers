@@ -11,12 +11,14 @@
 @interface NTKTimelineComplicationController : NTKComplicationController
 {
     _Bool _ignoreNewTemplates;
+    CLKComplicationTemplate *_alwaysOnTemplate;
     CLKComplicationTemplate *_lockedTemplate;
 }
 
 + (_Bool)_isLegacy;
 @property(readonly, nonatomic) CLKComplicationTemplate *lockedTemplate; // @synthesize lockedTemplate=_lockedTemplate;
 @property(nonatomic) _Bool ignoreNewTemplates; // @synthesize ignoreNewTemplates=_ignoreNewTemplates;
+@property(readonly, nonatomic) CLKComplicationTemplate *alwaysOnTemplate; // @synthesize alwaysOnTemplate=_alwaysOnTemplate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *activeDisplayTemplate;
 - (void)_aggdAppLaunchForTimeTravelDate:(id)arg1 timelineEntryDate:(id)arg2;

@@ -18,6 +18,7 @@
 }
 
 @property(readonly) long long actionSheetUI; // @synthesize actionSheetUI=_actionSheetUI;
+- (id)skipMifareClassification;
 - (id)updateUIAlertMessage:(id)arg1;
 - (id)felicaRequestService:(id)arg1 error:(id *)arg2;
 - (unsigned int)runScript:(id)arg1 parameters:(id)arg2 results:(id *)arg3;

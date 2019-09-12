@@ -14,6 +14,7 @@
 @property(readonly, nonatomic) NSString *sf_error;
 - (void)sf_failedWithError:(id)arg1;
 @property(nonatomic) long long sf_transferState;
+@property(nonatomic) unsigned int sf_initiator;
 - (id)sf_initWithFileURL:(id)arg1;
 @property(readonly, nonatomic) NSString *sf_personRealName;
 @property(readonly, nonatomic) NSString *sf_sessionID;

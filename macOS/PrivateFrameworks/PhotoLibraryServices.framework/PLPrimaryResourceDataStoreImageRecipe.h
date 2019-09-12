@@ -25,6 +25,7 @@
 - (id)maxPixelCountForAssetWidth:(long long)arg1 height:(long long)arg2;
 - (id)colorSpaceGivenSourceColorSpace:(id)arg1 inContext:(id)arg2;
 - (id)codecInContext:(id)arg1;
+- (BOOL)isMarkedFullSize;
 - (BOOL)colorSpaceIsNativeForDisplay;
 - (id)utiInContext:(id)arg1;
 - (id)initWithRecipeID:(unsigned int)arg1;

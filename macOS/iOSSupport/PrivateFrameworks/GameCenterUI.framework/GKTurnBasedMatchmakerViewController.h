@@ -38,6 +38,7 @@
 - (BOOL)shouldShowQuitForTurnBasedMatch;
 - (BOOL)shouldShowPlayForTurnBasedMatch;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (long long)modalPresentationStyle;
 - (void)requestRemoteViewController;
 - (void)loadView;
 - (id)view;

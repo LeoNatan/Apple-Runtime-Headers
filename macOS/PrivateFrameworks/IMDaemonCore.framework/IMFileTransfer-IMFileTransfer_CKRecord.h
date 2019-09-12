@@ -13,7 +13,7 @@
 + (id)transferGUIDOfRecord:(id)arg1;
 + (long long)sizeOfAssetForRecord:(id)arg1;
 + (id)utiTypeForRecord:(id)arg1;
-+ (BOOL)_recordIsValid:(id)arg1;
++ (BOOL)_recordIsInvalid:(id)arg1;
 + (id)transferMetaDataFromRecord:(id)arg1;
 + (id)_recordType;
 - (id)_fileManager;

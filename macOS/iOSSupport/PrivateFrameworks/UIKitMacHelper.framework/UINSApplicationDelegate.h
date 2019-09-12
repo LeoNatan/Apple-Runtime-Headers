@@ -9,8 +9,8 @@
 #import <UIKitMacHelper/NSWindowRestoration-Protocol.h>
 #import <UIKitMacHelper/UINSApplicationDelegate-Protocol.h>
 
-@class NSArray, NSBundle, NSDictionary, NSMutableDictionary, NSString, UINSApplicationLifecycleController, UINSPrintingController, USSBackgroundLaunchRequest, USSUserActivityContinuationRequest, USSUserNotificationResponseRequest;
-@protocol NSObject, UINSActivityItemsConfiguration, UINSApplicationShortcutItemMenuController, UINSDebugUtilities, UINSMenuController, UINSSceneUtilities, UINSShareSheetController, UINSSystemAppearance, UINSWindow;
+@class NSArray, NSBundle, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UINSApplicationLifecycleController, UINSPrintingController, USSBackgroundLaunchRequest, USSUserActivityContinuationRequest, USSUserNotificationResponseRequest;
+@protocol NSObject, UINSActivityItemsConfigurationReading, UINSApplicationShortcutItemMenuController, UINSDebugUtilities, UINSMenuController, UINSSceneUtilities, UINSShareSheetController, UINSSystemAppearance, UINSWindow;
 
 @interface UINSApplicationDelegate : NSObject <NSWindowRestoration, UINSApplicationDelegate>
 {
@@ -41,6 +41,7 @@
     CDUnknownBlockType _receivedTestURLCallback;
     CDUnknownBlockType _sceneIdentifierForOpenURLCallback;
     NSArray *_pendingOpenURLs;
+    NSMutableArray *_pendingOpenTALIdentifiers;
     USSUserActivityContinuationRequest *_pendingUserActivityContinuationRequest;
     USSUserNotificationResponseRequest *_pendingUserNotificationResponseRequest;
     id <UINSSystemAppearance> _systemAppearance;
@@ -50,14 +51,17 @@
     CDUnknownBlockType _printOrExportPanelWasDismissedCallback;
     CDUnknownBlockType _backgroundTasksWillExpireCallback;
     CDUnknownBlockType _appWillTerminateCallback;
-    CDUnknownBlockType _regionBlockingWindowDragCallback;
+    CDUnknownBlockType _copyRegionBlockingWindowDragCallback;
     CDUnknownBlockType _appSupportsMultiwindowCallback;
+    CDUnknownBlockType _appIsInBackgroundStateCallback;
+    CDUnknownBlockType _backgroundTaskCountCallback;
     CDUnknownBlockType _acceptsActivatingTouchCallback;
     id _appMenu;
     CDUnknownBlockType _explicitlyMarksAppLaunchCompleteCallback;
+    CDUnknownBlockType _filterTabEventsForRTI;
     id <UINSDebugUtilities> _debugUtilities;
     id <UINSSceneUtilities> _sceneUtilities;
-    id <UINSActivityItemsConfiguration> _cachedActivityItemsConfigurationForServicesAndSharing;
+    id <UINSActivityItemsConfigurationReading> _cachedActivityItemsConfigurationForServicesAndSharing;
     CDUnknownBlockType _sceneViewCreatedForSceneCallback;
     CDUnknownBlockType _preferredSceneViewSizeForSceneCallback;
     CDUnknownBlockType _tabbingIdentifierForSceneIdentifierCallback;
@@ -78,16 +82,19 @@
 @property(copy, nonatomic) CDUnknownBlockType tabbingIdentifierForSceneIdentifierCallback; // @synthesize tabbingIdentifierForSceneIdentifierCallback=_tabbingIdentifierForSceneIdentifierCallback;
 @property(copy, nonatomic) CDUnknownBlockType preferredSceneViewSizeForSceneCallback; // @synthesize preferredSceneViewSizeForSceneCallback=_preferredSceneViewSizeForSceneCallback;
 @property(copy, nonatomic) CDUnknownBlockType sceneViewCreatedForSceneCallback; // @synthesize sceneViewCreatedForSceneCallback=_sceneViewCreatedForSceneCallback;
-@property(retain, nonatomic) id <UINSActivityItemsConfiguration> cachedActivityItemsConfigurationForServicesAndSharing; // @synthesize cachedActivityItemsConfigurationForServicesAndSharing=_cachedActivityItemsConfigurationForServicesAndSharing;
+@property(retain, nonatomic) id <UINSActivityItemsConfigurationReading> cachedActivityItemsConfigurationForServicesAndSharing; // @synthesize cachedActivityItemsConfigurationForServicesAndSharing=_cachedActivityItemsConfigurationForServicesAndSharing;
 @property(retain, nonatomic) id <UINSSceneUtilities> sceneUtilities; // @synthesize sceneUtilities=_sceneUtilities;
 @property(retain, nonatomic) id <UINSDebugUtilities> debugUtilities; // @synthesize debugUtilities=_debugUtilities;
+@property(copy, nonatomic) CDUnknownBlockType filterTabEventsForRTI; // @synthesize filterTabEventsForRTI=_filterTabEventsForRTI;
 @property(nonatomic) BOOL shouldEmitApplicationLaunchSignpost; // @synthesize shouldEmitApplicationLaunchSignpost=_shouldEmitApplicationLaunchSignpost;
 @property(copy, nonatomic) CDUnknownBlockType explicitlyMarksAppLaunchCompleteCallback; // @synthesize explicitlyMarksAppLaunchCompleteCallback=_explicitlyMarksAppLaunchCompleteCallback;
 @property(readonly, nonatomic) BOOL didConfigureWindow; // @synthesize didConfigureWindow=_didConfigureWindow;
 @property(retain, nonatomic) id appMenu; // @synthesize appMenu=_appMenu;
 @property(copy, nonatomic) CDUnknownBlockType acceptsActivatingTouchCallback; // @synthesize acceptsActivatingTouchCallback=_acceptsActivatingTouchCallback;
+@property(copy, nonatomic) CDUnknownBlockType backgroundTaskCountCallback; // @synthesize backgroundTaskCountCallback=_backgroundTaskCountCallback;
+@property(copy, nonatomic) CDUnknownBlockType appIsInBackgroundStateCallback; // @synthesize appIsInBackgroundStateCallback=_appIsInBackgroundStateCallback;
 @property(copy, nonatomic) CDUnknownBlockType appSupportsMultiwindowCallback; // @synthesize appSupportsMultiwindowCallback=_appSupportsMultiwindowCallback;
-@property(copy, nonatomic) CDUnknownBlockType regionBlockingWindowDragCallback; // @synthesize regionBlockingWindowDragCallback=_regionBlockingWindowDragCallback;
+@property(copy, nonatomic) CDUnknownBlockType copyRegionBlockingWindowDragCallback; // @synthesize copyRegionBlockingWindowDragCallback=_copyRegionBlockingWindowDragCallback;
 @property(copy, nonatomic) CDUnknownBlockType appWillTerminateCallback; // @synthesize appWillTerminateCallback=_appWillTerminateCallback;
 @property(copy, nonatomic) CDUnknownBlockType backgroundTasksWillExpireCallback; // @synthesize backgroundTasksWillExpireCallback=_backgroundTasksWillExpireCallback;
 @property(copy, nonatomic) CDUnknownBlockType printOrExportPanelWasDismissedCallback; // @synthesize printOrExportPanelWasDismissedCallback=_printOrExportPanelWasDismissedCallback;
@@ -97,6 +104,7 @@
 @property(retain, nonatomic) id <UINSSystemAppearance> systemAppearance; // @synthesize systemAppearance=_systemAppearance;
 @property(retain, nonatomic) USSUserNotificationResponseRequest *pendingUserNotificationResponseRequest; // @synthesize pendingUserNotificationResponseRequest=_pendingUserNotificationResponseRequest;
 @property(retain, nonatomic) USSUserActivityContinuationRequest *pendingUserActivityContinuationRequest; // @synthesize pendingUserActivityContinuationRequest=_pendingUserActivityContinuationRequest;
+@property(retain, nonatomic) NSMutableArray *pendingOpenTALIdentifiers; // @synthesize pendingOpenTALIdentifiers=_pendingOpenTALIdentifiers;
 @property(retain, nonatomic) NSArray *pendingOpenURLs; // @synthesize pendingOpenURLs=_pendingOpenURLs;
 @property(copy, nonatomic) CDUnknownBlockType sceneIdentifierForOpenURLCallback; // @synthesize sceneIdentifierForOpenURLCallback=_sceneIdentifierForOpenURLCallback;
 @property(copy, nonatomic) CDUnknownBlockType receivedTestURLCallback; // @synthesize receivedTestURLCallback=_receivedTestURLCallback;
@@ -124,6 +132,7 @@
 - (void)printingFinished:(BOOL)arg1;
 - (void)dismissPrintOrExportPanel;
 - (void)showPrintOrExportPanelWithPrintInfo:(id)arg1 andPDFDocumentGenerator:(CDUnknownBlockType)arg2;
+- (void)iterateWindowsForDropSessionWithID:(unsigned int)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)aquaTheme;
 - (id)hostWindowForSceneIdentifier:(id)arg1;
 - (id)hostWindowForUIWindow:(id)arg1;
@@ -146,9 +155,12 @@
 - (BOOL)applicationShouldHandleReopen:(id)arg1 hasVisibleWindows:(BOOL)arg2;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)_launchingDidComplete;
+- (void)_destroyUnopenedPreviouslyPersistedScenes;
 - (void)_finishLaunching;
 - (void)_resumeLaunchCompletion;
 - (void)_suspendLaunchCompletion;
+- (void)_popTALIdentifierIfFound:(id)arg1;
+- (void)_pushTALIdentifier:(id)arg1;
 - (BOOL)_wantsInitialScene;
 - (BOOL)applicationExplicitlyMarksAppLaunchComplete:(id)arg1;
 - (void)application:(id)arg1 openURLs:(id)arg2;
@@ -159,6 +171,7 @@
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSBundle *bundle;
 - (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_createNewSceneInForegroundWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_createNewSceneWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)sceneWindowControllerWithIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;

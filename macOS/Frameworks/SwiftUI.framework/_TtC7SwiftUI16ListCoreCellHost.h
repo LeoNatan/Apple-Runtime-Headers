@@ -9,8 +9,9 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7SwiftUI16ListCoreCellHost : NSTableCellView
 {
-    // Error parsing type: , name: host
     // Error parsing type: , name: backgroundHost
+    // Error parsing type: , name: selectionBehavior
+    // Error parsing type: , name: host
 }
 
 - (void).cxx_destruct;

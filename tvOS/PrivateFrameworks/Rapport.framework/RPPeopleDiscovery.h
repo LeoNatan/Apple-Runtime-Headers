@@ -25,6 +25,7 @@
     unsigned int _discoveryFlags;
     int _discoveryMode;
     int _peopleDensity;
+    unsigned int _statusFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
@@ -32,9 +33,12 @@
     CDUnknownBlockType _personFoundHandler;
     CDUnknownBlockType _personLostHandler;
     CDUnknownBlockType _personChangedHandler;
+    CDUnknownBlockType _statusChangedHandler;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
+@property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType personChangedHandler; // @synthesize personChangedHandler=_personChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType personLostHandler; // @synthesize personLostHandler=_personLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType personFoundHandler; // @synthesize personFoundHandler=_personFoundHandler;
@@ -53,6 +57,7 @@
 - (void)xpcPersonChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)xpcPersonLost:(id)arg1;
 - (void)xpcPersonFound:(id)arg1;
+- (void)xpcPeopleStatusChanged:(unsigned int)arg1;
 - (void)_updatePeopleDensity:(unsigned long long)arg1;
 - (void)_lostAllPeople;
 @property(readonly, copy, nonatomic) NSArray *discoveredPeople;

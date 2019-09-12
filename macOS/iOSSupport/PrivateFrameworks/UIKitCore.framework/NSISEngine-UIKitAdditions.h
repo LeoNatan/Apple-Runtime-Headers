@@ -6,11 +6,14 @@
 
 #import <Foundation/NSISEngine.h>
 
+@protocol NSISEngineDelegate;
+
 @interface NSISEngine (UIKitAdditions)
 - (id)debugQuickLookObject;
 - (unsigned long long)_UIKitRowCount;
 - (void)_UIKitPerformPendingChangeNotifications;
 - (BOOL)_UIKitEngineTrackingOn;
 - (void)_setUIKitEngineTrackingOn:(BOOL)arg1;
+@property(nonatomic, setter=NS_setAppKitEngineDelegate:) __weak id <NSISEngineDelegate> UINS_appKitEngineDelegate; // @dynamic UINS_appKitEngineDelegate;
 @end
 

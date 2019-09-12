@@ -43,6 +43,8 @@
 - (void)setJarvisTriggerMode:(long long)arg1;
 - (BOOL)jarvisAudioLoggingEnabled;
 - (BOOL)secondPassAudioLoggingEnabled;
+- (id)myriadHashFilePath;
+- (id)myriadHashDirectory;
 - (id)assistantAudioFileLogDirectory;
 - (id)assistantLogDirectory;
 - (id)voiceTriggerAudioLogDirectory;

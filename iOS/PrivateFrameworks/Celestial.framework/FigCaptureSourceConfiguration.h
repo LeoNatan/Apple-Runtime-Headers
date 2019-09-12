@@ -36,12 +36,18 @@
     FigCaptureSourceDepthDataFormat *_depthDataFormat;
     float _depthDataMaxFrameRate;
     _Bool _lowLightVideoCaptureEnabled;
+    _Bool _spatialOverCaptureEnabled;
+    _Bool _nonDestructiveCropEnabled;
+    _Bool _geometricDistortionCorrectionEnabled;
 }
 
 + (id)stringForSourceDeviceType:(int)arg1;
 + (id)stringForSourcePosition:(int)arg1;
 + (int)sourceTypeForString:(id)arg1;
 + (id)stringForSourceType:(int)arg1;
+@property(nonatomic) _Bool geometricDistortionCorrectionEnabled; // @synthesize geometricDistortionCorrectionEnabled=_geometricDistortionCorrectionEnabled;
+@property(nonatomic) _Bool nonDestructiveCropEnabled; // @synthesize nonDestructiveCropEnabled=_nonDestructiveCropEnabled;
+@property(nonatomic) _Bool spatialOverCaptureEnabled; // @synthesize spatialOverCaptureEnabled=_spatialOverCaptureEnabled;
 @property(nonatomic) _Bool lowLightVideoCaptureEnabled; // @synthesize lowLightVideoCaptureEnabled=_lowLightVideoCaptureEnabled;
 @property(nonatomic) float depthDataMaxFrameRate; // @synthesize depthDataMaxFrameRate=_depthDataMaxFrameRate;
 @property(retain, nonatomic) FigCaptureSourceDepthDataFormat *depthDataFormat; // @synthesize depthDataFormat=_depthDataFormat;

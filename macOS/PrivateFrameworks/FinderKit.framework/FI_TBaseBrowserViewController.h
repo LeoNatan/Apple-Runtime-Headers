@@ -110,7 +110,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateRemoveTag:(id)arg1;
 - (void)handleMoveToTrashCommand:(const struct TFENodeVector *)arg1 immediately:(_Bool)arg2;
 - (void)handleMoveToTrashOrPutBackCommand:(const struct TFENodeVector *)arg1;
-- (void)cmdPinItems:(id)arg1;
 - (_Bool)validatePinItems:(id)arg1;
 - (void)cmdRemoveDownload:(id)arg1;
 - (_Bool)validateRemoveDownload:(id)arg1;

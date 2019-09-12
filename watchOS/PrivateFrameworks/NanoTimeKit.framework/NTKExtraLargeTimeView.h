@@ -7,13 +7,16 @@
 #import <UIKit/UIView.h>
 
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
 @class CLKDevice, NSString, NTKDigitalTimeLabel;
 
-@interface NTKExtraLargeTimeView : UIView <NTKTimeView>
+@interface NTKExtraLargeTimeView : UIView <NTKTimeView, NTKTritiumAnimator>
 {
     CLKDevice *_device;
     _Bool _statusBarVisible;
+    _Bool _cachedMinimumBrightnessIsValid;
+    float _cachedMinimumBrightness;
     _Bool _frozen;
     NTKDigitalTimeLabel *_timeHourView;
     NTKDigitalTimeLabel *_timeMinuteView;
@@ -23,6 +26,12 @@
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeHourView; // @synthesize timeHourView=_timeHourView;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)_tritium_applyToTritiumBrightnessForProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setStatusBarVisible:(_Bool)arg1 animated:(_Bool)arg2;

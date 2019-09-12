@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long totalAssetBytes; // @synthesize totalAssetBytes=_totalAssetBytes;
 @property(readonly, nonatomic) NSDictionary *assetPathToSafeSaveURL; // @synthesize assetPathToSafeSaveURL=_assetPathToSafeSaveURL;
 - (id)cloudKitSerializer:(id)arg1 safeSaveURLForAsset:(id)arg2;
-- (void)cloudKitSerializer:(id)arg1 resolvedPendingRelationship:(id)arg2;
 - (void)cloudKitSerializer:(id)arg1 failedToUpdateRelationship:(id)arg2 withError:(id)arg3;
 - (void)removeDownloadedAssetFiles;
 - (void)fetchOperationFinishedWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;

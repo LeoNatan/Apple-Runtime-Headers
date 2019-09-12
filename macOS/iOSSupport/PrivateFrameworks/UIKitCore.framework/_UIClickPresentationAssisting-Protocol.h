@@ -11,7 +11,7 @@
 @protocol _UIClickPresentationAssisting <NSObject>
 @property(copy, nonatomic) CDUnknownBlockType dismissalCompletion;
 @property(retain, nonatomic) _UIClickPresentation *presentation;
-- (void)dismissWithStyle:(unsigned long long)arg1 alongsideActions:(void (^)(void))arg2 completion:(void (^)(void))arg3;
+- (void)dismissWithReason:(unsigned long long)arg1 alongsideActions:(void (^)(void))arg2 completion:(void (^)(void))arg3;
 - (void)presentFromViewController:(UIViewController *)arg1 sourcePreview:(UITargetedPreview *)arg2 dismissalCompletion:(void (^)(void))arg3;
 - (id)initWithClickPresentation:(_UIClickPresentation *)arg1;
 @end

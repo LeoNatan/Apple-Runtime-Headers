@@ -32,7 +32,7 @@
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (BOOL)isMultiSensorDevice;
 - (id)_buildControlDescription;
-- (id)_buildTileDescription;
+- (id)_buildTileDescription:(BOOL)arg1;
 @property(readonly, nonatomic) NSArray *allHomeKitObjects;
 @property(readonly, nonatomic) id <HFHomeKitObject> primaryHomeKitObject;
 @property(readonly, nonatomic) unsigned long long numberOfCompoundItems;

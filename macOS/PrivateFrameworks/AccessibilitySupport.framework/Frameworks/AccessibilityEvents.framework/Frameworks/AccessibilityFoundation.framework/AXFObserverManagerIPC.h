@@ -6,11 +6,14 @@
 
 #import <AccessibilityFoundation/AXFObserverManager.h>
 
-@class NSLock, NSMutableDictionary;
+@class NSLock, NSMutableDictionary, NSObject;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface AXFObserverManagerIPC : AXFObserverManager
 {
     NSLock *__observerLock;
+    NSObject<OS_dispatch_source> *__pruneTimer;
+    NSObject<OS_dispatch_queue> *__pruneTimerQueue;
     NSMutableDictionary *__applicationAXObservers;
     NSMutableDictionary *__applicationLocks;
     NSMutableDictionary *__applicationObserverGroupSets;
@@ -25,12 +28,16 @@
 @property(retain, nonatomic) NSMutableDictionary *_applicationObserverGroupSets; // @synthesize _applicationObserverGroupSets=__applicationObserverGroupSets;
 @property(retain, nonatomic) NSMutableDictionary *_applicationLocks; // @synthesize _applicationLocks=__applicationLocks;
 @property(retain, nonatomic) NSMutableDictionary *_applicationAXObservers; // @synthesize _applicationAXObservers=__applicationAXObservers;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_pruneTimerQueue; // @synthesize _pruneTimerQueue=__pruneTimerQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *_pruneTimer; // @synthesize _pruneTimer=__pruneTimer;
 @property(retain, nonatomic) NSLock *_observerLock; // @synthesize _observerLock=__observerLock;
 - (void).cxx_destruct;
 - (void)fireObserverID:(long long)arg1 element:(id)arg2 info:(id)arg3;
 - (BOOL)removeAllObserversForApplication:(id)arg1;
 - (BOOL)removeObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 element:(id)arg4 application:(id)arg5;
 - (BOOL)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 element:(id)arg4 application:(id)arg5 queue:(id)arg6;
+- (void)_pruneObservers;
+- (void)_cleanupNonObservingGroups;
 - (void)unregisterApplication:(id)arg1;
 - (BOOL)registerApplication:(id)arg1;
 - (id)init;

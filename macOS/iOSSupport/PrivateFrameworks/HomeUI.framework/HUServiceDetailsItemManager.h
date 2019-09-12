@@ -182,6 +182,7 @@
 @property(readonly, nonatomic) NSArray *orderedRoomSectionItems;
 - (BOOL)sourceItemIsService;
 - (BOOL)sourceItemIsMultiServiceAccessory;
+- (BOOL)sourceItemIsSingleServiceAccessory;
 - (BOOL)isAccessory;
 @property(readonly, nonatomic) BOOL isItemGroup;
 - (void)_unregisterForExternalUpdates;

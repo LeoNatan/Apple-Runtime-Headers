@@ -7,11 +7,12 @@
 #import <QuickLookUI/QLUIServiceBaseDisplayBundle.h>
 
 #import <QuickLookUI/QLRemoteViewControllerDelegate-Protocol.h>
+#import <QuickLookUI/STLockoutViewControllerDelegate-Protocol.h>
 
 @class NSExtension, NSString, NSView, QLPreviewHostExtensionContext, STLockoutViewController;
 @protocol QLPreviewExtensionContextProtocol, QLPreviewExtensionViewControllerProtocol;
 
-@interface QLPreviewExtensionDisplayBundle : QLUIServiceBaseDisplayBundle <QLRemoteViewControllerDelegate>
+@interface QLPreviewExtensionDisplayBundle : QLUIServiceBaseDisplayBundle <QLRemoteViewControllerDelegate, STLockoutViewControllerDelegate>
 {
     NSExtension *_extension;
     id _extensionRequestId;

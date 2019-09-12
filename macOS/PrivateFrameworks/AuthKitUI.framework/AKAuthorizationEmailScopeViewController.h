@@ -7,14 +7,14 @@
 #import <AppKit/NSViewController.h>
 
 @class AKUserInformation, NSBox, NSLayoutConstraint, NSMutableDictionary, NSStackView, NSString, NSTextField;
-@protocol AKAuthorizationEmailScopeViewControllerDelegate;
+@protocol AKAuthorizationEmailScopeViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate;
 
 @interface AKAuthorizationEmailScopeViewController : NSViewController
 {
     BOOL _internalIsEmailExpanded;
     AKUserInformation *_userInformation;
     NSTextField *_scopeLabel;
-    id <AKAuthorizationEmailScopeViewControllerDelegate> _delegate;
+    id <AKAuthorizationEmailScopeViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> _delegate;
     NSString *_internalScopeString;
     NSStackView *_emailStackView;
     NSStackView *_expandableEmailStackView;
@@ -32,7 +32,7 @@
 @property(retain) NSStackView *emailStackView; // @synthesize emailStackView=_emailStackView;
 @property BOOL internalIsEmailExpanded; // @synthesize internalIsEmailExpanded=_internalIsEmailExpanded;
 @property(copy) NSString *internalScopeString; // @synthesize internalScopeString=_internalScopeString;
-@property __weak id <AKAuthorizationEmailScopeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <AKAuthorizationEmailScopeViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSTextField *scopeLabel; // @synthesize scopeLabel=_scopeLabel;
 @property(copy) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
 - (void).cxx_destruct;

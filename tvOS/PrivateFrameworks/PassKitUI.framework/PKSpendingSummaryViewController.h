@@ -55,6 +55,7 @@
 
 @property(nonatomic) __weak id <PKSpendingSummaryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_reportTappedButtonWithTag:(id)arg1;
 - (void)invalidatedSummariesAvailable;
 - (void)invalidatedSpendingSummaryOfType:(unsigned long long)arg1 startingWithDate:(id)arg2;
 - (void)spendingSingleSummaryViewController:(id)arg1 changedSelection:(unsigned long long)arg2;
@@ -89,6 +90,8 @@
 - (void)_updateScrollViewContentSize;
 - (void)_layoutCollectionViews;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1 account:(id)arg2 fetcher:(id)arg3 weeks:(id)arg4 months:(id)arg5 type:(unsigned long long)arg6 unit:(unsigned long long)arg7 currentMonthTransactions:(id)arg8 upcomingScheduledPayments:(id)arg9;

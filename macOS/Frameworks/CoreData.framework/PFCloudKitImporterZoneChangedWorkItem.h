@@ -15,10 +15,9 @@ __attribute__((visibility("hidden")))
 {
     NSArray *_changedRecordZoneIDs;
     NSMutableDictionary *_assetPathToSafeSaveURL;
-    NSMutableArray *_resolvedRelationships;
     NSUUID *_importOperationIdentifier;
     NSMutableArray *_updatedRecords;
-    unsigned long long _totalAssetBytes;
+    unsigned long long _totalOperationBytes;
     PFCloudKitFetchedAssetBytesMetric *_fetchedAssetBytesMetric;
     PFCloudKitFetchedRecordBytesMetric *_fetchedRecordBytesMetric;
     NSMutableDictionary *_recordTypeToDeletedRecordID;
@@ -33,13 +32,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *allRecordIDs; // @synthesize allRecordIDs=_allRecordIDs;
 @property(readonly, nonatomic) NSDictionary *recordTypeToDeletedRecordID; // @synthesize recordTypeToDeletedRecordID=_recordTypeToDeletedRecordID;
 @property(readonly, nonatomic) NSArray *updatedRecords; // @synthesize updatedRecords=_updatedRecords;
-@property(readonly, nonatomic) unsigned long long totalAssetBytes; // @synthesize totalAssetBytes=_totalAssetBytes;
+@property(readonly, nonatomic) unsigned long long totalOperationBytes; // @synthesize totalOperationBytes=_totalOperationBytes;
 @property(readonly, nonatomic) NSDictionary *assetPathToSafeSaveURL; // @synthesize assetPathToSafeSaveURL=_assetPathToSafeSaveURL;
 @property(readonly, nonatomic) NSUUID *importOperationIdentifier; // @synthesize importOperationIdentifier=_importOperationIdentifier;
-@property(readonly, nonatomic) NSArray *resolvedRelationships; // @synthesize resolvedRelationships=_resolvedRelationships;
 @property(readonly, nonatomic) NSArray *changedRecordZoneIDs; // @synthesize changedRecordZoneIDs=_changedRecordZoneIDs;
 - (id)cloudKitSerializer:(id)arg1 safeSaveURLForAsset:(id)arg2;
-- (void)cloudKitSerializer:(id)arg1 resolvedPendingRelationship:(id)arg2;
 - (void)cloudKitSerializer:(id)arg1 failedToUpdateRelationship:(id)arg2 withError:(id)arg3;
 - (void)removeDownloadedAssetFiles;
 - (void)fetchOperationFinishedWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;

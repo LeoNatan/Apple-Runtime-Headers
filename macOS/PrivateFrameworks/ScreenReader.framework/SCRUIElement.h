@@ -479,7 +479,7 @@
 @property(readonly, nonatomic) NSNumber *_accessibilityTotalPages;
 @property(readonly, nonatomic) NSNumber *_accessibilityPageIndex;
 @property(readonly, nonatomic) NSNumber *_accessibilityBlockquoteLevel;
-@property(readonly, nonatomic) NSString *_accessibilityPopupValue;
+@property(readonly, copy, nonatomic) NSString *_accessibilityPopupValue;
 @property(readonly, nonatomic, getter=_hasAccessibilityPopup) BOOL _accessibilityPopup;
 @property(readonly, nonatomic, getter=_isAccessibilityVisited) BOOL _accessibilityVisited;
 @property(readonly, nonatomic, getter=_isAccessibilityBusy) BOOL _accessibilityBusy;

@@ -24,6 +24,7 @@
 + (id)errorWithDescription:(id)arg1;
 + (id)sharedAnalysisService;
 - (void).cxx_destruct;
+- (void)notifyLibraryAvailableAtURL:(id)arg1;
 - (void)invalidate;
 - (void)cancelAllRequests;
 - (void)cancelRequest:(int)arg1;

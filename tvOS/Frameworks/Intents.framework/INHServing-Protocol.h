@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class INImage, INPortableImageLoader, NSSet, NSString, NSUUID;
+@class INImage, INPortableImageLoader, INUserContext, NSSet, NSString, NSUUID;
 
 @protocol INHServing
+- (oneway void)storeUserContext:(INUserContext *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (oneway void)fetchShareExtensionIntentForExtensionContextUUID:(NSUUID *)arg1 completion:(void (^)(INIntent *))arg2;
 - (oneway void)loadBundleURLsForBundleIdentifiers:(NSSet *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (oneway void)loadSchemaURLsWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;

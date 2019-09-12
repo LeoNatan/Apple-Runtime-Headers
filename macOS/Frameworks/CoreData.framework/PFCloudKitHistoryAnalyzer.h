@@ -6,18 +6,23 @@
 
 #import <CoreData/PFHistoryAnalyzer.h>
 
+@class NSManagedObjectContext;
+
 __attribute__((visibility("hidden")))
 @interface PFCloudKitHistoryAnalyzer : PFHistoryAnalyzer
 {
+    NSManagedObjectContext *_managedObjectContext;
 }
 
 + (BOOL)isPrivateContextName:(id)arg1;
 + (BOOL)isPrivateTransactionAuthor:(id)arg1;
 + (BOOL)isPrivateTransaction:(id)arg1;
-- (void)processTransaction:(id)arg1 withContext:(id)arg2;
+@property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
+- (BOOL)processTransaction:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (id)instantiateNewAnalyzerContext;
 - (id)cloudKitAnalyzerOptions;
-- (id)initWithOptions:(id)arg1;
+- (void)dealloc;
+- (id)initWithOptions:(id)arg1 managedObjectContext:(id)arg2;
 
 @end
 

@@ -9,9 +9,6 @@
 @class AKAuthorizationEmailScopeViewController, NSString;
 
 @protocol AKAuthorizationEmailScopeViewControllerDelegate <NSObject>
-- (void)setAutomaticResizeDelay:(double)arg1;
-- (void)endAutomaticResizeDisabled;
-- (void)beginAutomaticResizeDisabled;
 - (void)emailScopeViewController:(AKAuthorizationEmailScopeViewController *)arg1 didSelectEmail:(NSString *)arg2 protected:(BOOL)arg3;
 @end
 

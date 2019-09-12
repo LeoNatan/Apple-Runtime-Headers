@@ -12,7 +12,7 @@
 #import <AVKitMacHelper/AVTouchBarScrubberControlling-Protocol.h>
 #import <AVKitMacHelper/AVTouchBarTrackControlling-Protocol.h>
 
-@class AVThumbnailGenerator, AVTouchBarMediaSelectionOption, AVValueTiming, AVWaveform, NSArray, NSString, NSURL;
+@class AVAssetTrack, AVThumbnailGenerator, AVTouchBarMediaSelectionOption, AVValueTiming, AVWaveform, NSArray, NSString, NSURL;
 @protocol AVTouchBarPlaybackControlsControlling;
 
 __attribute__((visibility("hidden")))
@@ -48,8 +48,10 @@ __attribute__((visibility("hidden")))
     AVThumbnailGenerator *_thumbnailGenerator;
     NSURL *_currentWaveformURL;
     AVWaveform *_audioWaveform;
+    AVAssetTrack *_currentAudioTrack;
 }
 
++ (id)keyPathsForValuesAffectingCurrentAudioTrack;
 + (id)keyPathsForValuesAffectingHasEnabledVideo;
 + (BOOL)automaticallyNotifiesObserversOfHasEnabledVideo;
 + (id)keyPathsForValuesAffectingHasEnabledAudio;
@@ -91,9 +93,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)automaticallyNotifiesObserversOfTiming;
 + (id)keyPathsForValuesAffectingContentDuration;
 + (BOOL)automaticallyNotifiesObserversOfContentDuration;
+@property(retain, nonatomic) AVAssetTrack *currentAudioTrack; // @synthesize currentAudioTrack=_currentAudioTrack;
 @property(retain, nonatomic) AVWaveform *audioWaveform; // @synthesize audioWaveform=_audioWaveform;
 - (void).cxx_destruct;
-- (void)_updateAudioWaveformIfNeeded;
+- (void)_updateCurrentAudioTrackAndWaveformIfNeeded;
 - (void)cancelThumbnailGenerationForRequestType:(long long)arg1;
 - (void)generateTouchBarThumbnailsForTimes:(id)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 requestType:(long long)arg4 thumbnailHandler:(CDUnknownBlockType)arg5;
 @property(readonly) BOOL hasEnabledVideo;

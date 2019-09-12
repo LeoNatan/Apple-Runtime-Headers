@@ -25,7 +25,9 @@
 @property(readonly, nonatomic) EFQuery *messageQuery; // @synthesize messageQuery=_messageQuery;
 - (void).cxx_destruct;
 - (id)filterMessages:(id)arg1 unmatchedMessages:(id *)arg2;
+- (id)transformMessages:(id)arg1 includeDeleted:(BOOL)arg2;
 - (id)transformMessages:(id)arg1;
+- (id)transformAndFilterMessages:(id)arg1 includeDeleted:(BOOL)arg2;
 - (id)transformAndFilterMessages:(id)arg1;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2;
 

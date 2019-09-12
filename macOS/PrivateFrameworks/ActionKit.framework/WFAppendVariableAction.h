@@ -10,7 +10,7 @@
 {
 }
 
-- (id)outputVariableWithVariableProvider:(id)arg1;
+- (id)outputVariableWithVariableProvider:(id)arg1 UUIDProvider:(id)arg2;
 - (id)accessibilityName;
 - (id)inheritedOutputContentClassesInWorkflow:(id)arg1 context:(id)arg2;
 - (id)providedVariableNames;

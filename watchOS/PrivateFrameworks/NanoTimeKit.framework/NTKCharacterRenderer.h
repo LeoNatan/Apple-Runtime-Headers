@@ -19,6 +19,8 @@
     float _fromMinutePercent;
     float _toHourPercent;
     float _toMinutePercent;
+    float _tritiumTimeAnimationFraction;
+    float _tritiumBoneDampingMultiplier;
     float _animationFrameInterval;
     int _prevState;
     int _idealState;
@@ -34,6 +36,7 @@
     unsigned int _currentPipeline;
     _Bool _animatingToNewDate;
     _Bool _animatingIntoOrb;
+    _Bool _animatingIntoTritium;
     _Bool _applyInstantTimeWarp;
     _Bool _pinHandsBrightnessToMax;
     _Bool _sayCheese;
@@ -129,6 +132,7 @@
 - (void)_idleBodyAfterAnimation;
 - (void)_drawBackgroundWithEncoder:(id)arg1;
 - (void)bindPipelineState:(unsigned int)arg1 withEncoder:(id)arg2;
+- (void)_updateArmBendsToIdeal;
 - (void)_updateStateAndPose;
 - (void)setScrubOffset:(float)arg1;
 - (void)scrubToDate:(id)arg1;
@@ -160,6 +164,11 @@
 - (id)initWithCharacter:(unsigned int)arg1 loader:(id)arg2 prefix:(id)arg3;
 - (void)setClothingColor:(id)arg1 andDesaturation:(float)arg2;
 - (void)setTimeOffset:(double)arg1;
+- (void)prepareForTritiumOffAnimationFromDate:(id)arg1;
+- (void)cleanupOutOfTritium;
+- (void)setTritiumBoneDampingMultiplier:(float)arg1;
+- (void)setTritiumTimeAnimationFraction:(float)arg1;
+- (void)prepareToAnimateIntoTritium;
 - (void)cleanupToOverrideDate:(id)arg1;
 - (void)setOverrideDateFraction:(float)arg1;
 - (void)prepareToAnimateToDate:(id)arg1 forOrb:(_Bool)arg2;

@@ -29,7 +29,7 @@
 - (void).cxx_destruct;
 - (void)_removeRequestforID:(long long)arg1;
 - (void)cancelImageRequest:(long long)arg1;
-- (void)_handleRequestCompletedWithID:(long long)arg1;
+- (void)_handleRequestCompletedWithID:(long long)arg1 info:(id)arg2;
 - (long long)_nextRequestID;
 - (void)stopCachingImagesForAllAssets;
 - (void)stopCachingImagesForAssets:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4;

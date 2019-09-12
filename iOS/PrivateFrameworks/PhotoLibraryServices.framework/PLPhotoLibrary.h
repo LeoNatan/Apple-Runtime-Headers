@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSPersistentStore, NSSet, NSString, PLGenericAlbum, PLKeywordManager, PLLibraryServicesManager, PLManagedObjectContext, PLPhotoLibraryBundle, PLPhotoLibraryOptions, PLPhotoLibraryPathManager, PLSimpleDCIMDirectory, PLThumbnailIndexes, PLThumbnailManager;
+@class NSArray, NSMutableArray, NSPersistentStore, NSSet, NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient, PLGenericAlbum, PLKeywordManager, PLLibraryServicesManager, PLManagedObjectContext, PLPhotoLibraryBundle, PLPhotoLibraryOptions, PLPhotoLibraryPathManager, PLSimpleDCIMDirectory, PLThumbnailIndexes, PLThumbnailManager;
 @protocol PLAlbumProtocol;
 
 @interface PLPhotoLibrary : NSObject
@@ -24,6 +24,8 @@
     struct os_unfair_lock_s _managedObjectContextLock;
     PLManagedObjectContext *_managedObjectContext;
     NSPersistentStore *_loadedPersistentStore;
+    PAImageConversionServiceClient *_imageConversionServiceClient;
+    PAVideoConversionServiceClient *_videoConversionServiceClient;
     PLPhotoLibraryPathManager *_pathManager;
     PLLibraryServicesManager *_libraryServicesManager;
     NSString *_name;
@@ -223,6 +225,8 @@
 - (void)enableOpportunisticTasks;
 - (id)description;
 - (void)handlePossibleCoreDataError:(id)arg1;
+@property(readonly, nonatomic) PAVideoConversionServiceClient *videoConversionServiceClient;
+@property(readonly, nonatomic) PAImageConversionServiceClient *imageConversionServiceClient;
 @property(readonly, nonatomic) PLThumbnailIndexes *thumbnailIndexes;
 @property(readonly, nonatomic) PLThumbnailManager *thumbnailManager;
 - (id)libraryID;

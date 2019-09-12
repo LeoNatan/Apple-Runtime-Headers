@@ -153,7 +153,7 @@
 - (id)cachedMeltedChildIdentifierToParentMap;
 - (id)prepareReminderKitObjectForSaveWithUpdatedBackingObjectProvider:(id)arg1;
 - (id)backingObjectOfChildObject:(id)arg1 withRelationshipKey:(id)arg2;
-- (id)_convertBackingObjectsWithPath:(id)arg1 updateBackingObjects:(BOOL)arg2 allChangedBackingObjects:(id)arg3 updatedBackingObjectProvider:(id)arg4;
+- (id)_convertBackingObjectsWithPath:(id)arg1 updateBackingObjects:(BOOL)arg2 allChangedBackingObjects:(id)arg3 eventStore:(id)arg4 updatedBackingObjectProvider:(id)arg5;
 - (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
 - (void)_emptyMeltedCacheForKey:(id)arg1;
@@ -185,6 +185,7 @@
 - (BOOL)_refreshCommon;
 - (BOOL)_refreshable;
 - (BOOL)_resetCommon;
+- (BOOL)_resetIfBackingObjectIsOfClass:(Class)arg1 fetchResetFrozenObjectBlock:(CDUnknownBlockType)arg2;
 - (void)_rollbackCommon;
 - (id)changedKeys;
 - (void)replaceMultiChangedObjectValuesWithObjectValues:(id)arg1 forKey:(id)arg2;

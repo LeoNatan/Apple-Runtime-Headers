@@ -77,7 +77,7 @@
 + (id)spIdSiriDebugTrainedUsersFilePathForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectoryForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
-+ (id)spIdDataRootDirectory;
++ (id)spIdSiriDebugGradingDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
 + (id)getHomeUserIdForVoiceProfile:(id)arg1;
 + (id)getContentsOfDirectory:(id)arg1;
@@ -106,7 +106,7 @@
 + (id)spidAudioTrainUtterancesDir;
 + (void)cleanupOrphanedVoiceIdGradingFiles;
 + (_Bool)spIdAudioLogsCountLimitReached;
-+ (id)spIdAudioLogsDir2;
++ (id)spIdAudioLogsGradingDir;
 + (id)spIdAudioLogsDir;
 + (void)createDirectoryIfDoesNotExist:(id)arg1;
 + (id)spIdVoiceProfileImportRootDir;

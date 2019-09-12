@@ -20,11 +20,11 @@
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
 - (id)_filterInMessagesWithValidPersistentIDsFromMessages:(id)arg1;
-- (void)persistenceDidAddLabels:(id)arg1 removeLabels:(id)arg2 messages:(id)arg3;
-- (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2;
-- (void)persistenceDidDeleteMessages:(id)arg1;
+- (void)persistenceDidAddLabels:(id)arg1 removeLabels:(id)arg2 messages:(id)arg3 generationWindow:(id)arg4;
+- (void)persistenceDidChangeFlags:(id)arg1 messages:(id)arg2 generationWindow:(id)arg3;
+- (void)persistenceDidDeleteMessages:(id)arg1 generationWindow:(id)arg2;
 - (void)persistenceDidUpdateData:(id)arg1 message:(id)arg2;
-- (void)persistenceDidAddMessages:(id)arg1;
+- (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (void)persistenceDidFinishUpdates;
 - (void)persistenceWillBeginUpdates;
 - (void)removeAllItemsFromIndexAndWait:(BOOL)arg1;

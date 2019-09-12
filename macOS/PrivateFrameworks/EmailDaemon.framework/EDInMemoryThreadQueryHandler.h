@@ -7,42 +7,62 @@
 #import <EmailDaemon/EDThreadQueryHandler.h>
 
 #import <EmailDaemon/EDMessageQueryHelperDelegate-Protocol.h>
+#import <EmailDaemon/EFContentProtectionObserver-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessageQueryHelper, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSString;
+@class EDMessageQueryHelper, EDUpdateThrottler, NSArray, NSMutableDictionary, NSMutableOrderedSet, NSObject, NSString;
+@protocol EFScheduler, EMMessageListItemQueryResultsObserver, OS_dispatch_queue;
 
-@interface EDInMemoryThreadQueryHandler : EDThreadQueryHandler <EDMessageQueryHelperDelegate, EFLoggable>
+@interface EDInMemoryThreadQueryHandler : EDThreadQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
     NSMutableOrderedSet *_conversationIDs;
     NSMutableDictionary *_threadsByConversationID;
+    NSMutableDictionary *_changesWhilePaused;
     NSMutableDictionary *_oldestThreadsByMailboxObjectIDs;
+    struct os_unfair_lock_s _threadsLock;
+    BOOL _didCancel;
+    BOOL _isInitialized;
+    BOOL _isPaused;
+    BOOL _hasChangesWhilePaused;
     EDMessageQueryHelper *_messageQueryHelper;
-    NSArray *_threadSortDescriptors;
     NSArray *_messageSortDescriptors;
+    CDUnknownBlockType _comparator;
+    EDUpdateThrottler *_updateThrottler;
+    id <EFScheduler> _scheduler;
+    NSObject<OS_dispatch_queue> *_contentProtectionQueue;
+    NSObject<OS_dispatch_queue> *_resultQueue;
 }
 
 + (id)log;
+@property(nonatomic) BOOL hasChangesWhilePaused; // @synthesize hasChangesWhilePaused=_hasChangesWhilePaused;
+@property(nonatomic) BOOL isPaused; // @synthesize isPaused=_isPaused;
+@property(nonatomic) BOOL isInitialized; // @synthesize isInitialized=_isInitialized;
+@property(nonatomic) BOOL didCancel; // @synthesize didCancel=_didCancel;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resultQueue; // @synthesize resultQueue=_resultQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
+@property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(readonly, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
+@property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, copy, nonatomic) NSArray *messageSortDescriptors; // @synthesize messageSortDescriptors=_messageSortDescriptors;
-@property(readonly, copy, nonatomic) NSArray *threadSortDescriptors; // @synthesize threadSortDescriptors=_threadSortDescriptors;
 @property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
 - (void).cxx_destruct;
 - (BOOL)_messageListItemChangeAffectsSorting:(id)arg1;
 - (id)_inMemoryThreadSortDescriptorsForThreadSortDescriptors:(id)arg1;
 - (id)_messageQueryFromThreadsQuery:(id)arg1;
-- (void)_oldestThreadsByMailboxObjectIDsWasUpdated;
-- (void)_updateOldestThreadsForMailboxes:(id)arg1;
-- (void)_threadsWereDeleted;
-- (void)_didMergeInThreads:(id)arg1;
+- (void)_notifyObserverOfOldestThreadsByMailboxObjectIDs;
+- (BOOL)_updateOldestThreadsForMailboxes:(id)arg1;
+- (BOOL)_threadsWereDeleted;
+- (BOOL)_didMergeInThreads:(id)arg1;
 - (BOOL)_updateCurrentOldestThreadWithThreadIfApplicable:(id)arg1 forMailbox:(id)arg2;
 - (void)_initializeOldestThreadsByMailbox;
 - (void)queryHelperNeedsRestart:(id)arg1;
 - (void)queryHelperDidFinishRemoteSearch:(id)arg1;
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
-- (void)_removeThreadsForInMemoryThreads:(id)arg1;
-- (void)_reportDeletes:(id)arg1;
-- (void)_reportChanges:(id)arg1;
-- (void)_mergeInThreads:(id)arg1 forMove:(BOOL)arg2;
+- (BOOL)_removeThreadsForInMemoryThreads:(id)arg1 forMove:(BOOL)arg2;
+- (BOOL)_reportDeletes:(id)arg1;
+- (BOOL)_reportChanges:(id)arg1;
+- (BOOL)_mergeInThreads:(id)arg1 forMove:(BOOL)arg2;
 - (id)_messagesByConversationIDForMessages:(id)arg1;
 - (void)_messagesWereChanged:(id)arg1 forKeyPaths:(id)arg2 deleted:(BOOL)arg3;
 - (void)queryHelper:(id)arg1 conversationNotificationLevelDidChangeForConversation:(long long)arg2 conversationID:(long long)arg3;
@@ -57,8 +77,17 @@
 - (void)queryHelper:(id)arg1 didFindMessages:(id)arg2;
 - (id)messagesForThread:(id)arg1;
 - (id)threadForObjectID:(id)arg1 error:(id *)arg2;
-- (void)_createHelper;
+- (void)_contentProtectionChangedToUnlocked;
+- (void)_contentProtectionChangedToLocked;
+- (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (BOOL)_queryHelperIsCurrent:(id)arg1;
+- (void)_createHelperAndReconcileJournal:(BOOL)arg1;
 - (void)_restartHelper;
+- (void)_refreshObserver;
+- (void)_didSendUpdates;
+- (void)_prepareToSendUpdates;
+- (void)dealloc;
+@property(readonly, nonatomic) id <EMMessageListItemQueryResultsObserver> resultsObserverIfNotPaused;
 - (void)cancel;
 - (void)start;
 - (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 hookRegistry:(id)arg3 observer:(id)arg4 observationIdentifier:(id)arg5;

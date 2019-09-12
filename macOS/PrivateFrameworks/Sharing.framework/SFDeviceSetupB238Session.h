@@ -199,7 +199,7 @@
 - (void)_runFinishResponse:(id)arg1 error:(id)arg2;
 - (void)_runFinishRequest;
 - (int)_runFinishStart;
-- (int)_runCDPSetup;
+- (int)_runCDPSetup:(BOOL)arg1;
 - (int)_runWiFiSetup;
 - (int)_runAppleMusic;
 - (void)_runBasicConfigReceiveResponse:(id)arg1 error:(id)arg2;

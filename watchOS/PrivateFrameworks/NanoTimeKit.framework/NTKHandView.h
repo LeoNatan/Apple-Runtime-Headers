@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@class CALayer, CLKDevice, NSString, NTKColoringImageView, UIColor, UIImage, UIImageView;
+@class CALayer, CLKDevice, NSString, NTKAnalogTritiumHandStyleDescriptor, NTKColoringImageView, UIColor, UIImage, UIImageView;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKHandView : UIView <CLKMonochromeComplicationView>
@@ -16,7 +16,13 @@
     UIImageView *_shadowImageView;
     CALayer *_inlayLayer;
     UIView *_handDotView;
+    NTKAnalogTritiumHandStyleDescriptor *_tritiumOffHandStyle;
+    NTKAnalogTritiumHandStyleDescriptor *_tritiumOnHandStyle;
+    _Bool _usingCustomTritiumOnHandStyle;
+    float _localAlpha;
+    float _tritiumAlpha;
     _Bool _shadowsHidden;
+    _Bool _insetsInlayForTritium;
     id <CLKMonochromeFilterProvider> _filterProvider;
     UIColor *_color;
     UIImage *_image;
@@ -33,10 +39,12 @@
     struct UIEdgeInsets _shadowInsets;
 }
 
+@property(nonatomic) _Bool insetsInlayForTritium; // @synthesize insetsInlayForTritium=_insetsInlayForTritium;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) NTKColoringImageView *handImageView; // @synthesize handImageView=_handImageView;
 @property(readonly, nonatomic) UIView *handDotView; // @synthesize handDotView=_handDotView;
+@property(retain, nonatomic) NTKAnalogTritiumHandStyleDescriptor *tritiumOnHandStyle; // @synthesize tritiumOnHandStyle=_tritiumOnHandStyle;
 @property(retain, nonatomic) UIColor *handDotColor; // @synthesize handDotColor=_handDotColor;
 @property(retain, nonatomic) UIView *transitionContainerView; // @synthesize transitionContainerView=_transitionContainerView;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
@@ -50,6 +58,11 @@
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)setTritiumProgress:(float)arg1;
+- (void)tritium_prepareForTransition;
+@property(nonatomic) float tritiumAlpha;
+- (void)noModelUpdate_setAlpha:(float)arg1;
+- (void)setAlpha:(float)arg1;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_adjustHandImageSubviewOrder;

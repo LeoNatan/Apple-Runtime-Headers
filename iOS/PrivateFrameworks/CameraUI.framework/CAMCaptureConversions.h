@@ -10,6 +10,9 @@
 {
 }
 
++ (long long)overCapturePreviewStatusForAVPreviewStatus:(long long)arg1;
++ (long long)lowLightStatusForCaptureStatus:(long long)arg1;
++ (long long)captureDigitalFlashModeForLowLightMode:(long long)arg1;
 + (long long)flashModeForTorchMode:(long long)arg1;
 + (long long)torchModeForFlashMode:(long long)arg1;
 + (long long)CAMPhotoQualityPrioritizationForAVCapturePhotoQualityPrioritization:(long long)arg1;

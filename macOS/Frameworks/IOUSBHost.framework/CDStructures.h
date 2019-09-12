@@ -67,6 +67,21 @@ struct IOUSBEndpointDescriptor {
     unsigned char _field6;
 };
 
+struct IOUSBHostIOSourceDescriptors {
+    unsigned short _field1;
+    struct IOUSBEndpointDescriptor _field2;
+    struct IOUSBSuperSpeedEndpointCompanionDescriptor _field3;
+    struct IOUSBSuperSpeedPlusIsochronousEndpointCompanionDescriptor _field4;
+};
+
+struct IOUSBHostIsochronousFrame {
+    int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned long long _field5;
+};
+
 struct IOUSBInterfaceDescriptor {
     unsigned char _field1;
     unsigned char _field2;
@@ -93,20 +108,4 @@ struct IOUSBSuperSpeedPlusIsochronousEndpointCompanionDescriptor {
     unsigned short _field3;
     unsigned int _field4;
 };
-
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    int _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned long long _field4;
-} CDStruct_879b174e;
-
-typedef struct {
-    unsigned short _field1;
-    struct IOUSBEndpointDescriptor _field2;
-    struct IOUSBSuperSpeedEndpointCompanionDescriptor _field3;
-    struct IOUSBSuperSpeedPlusIsochronousEndpointCompanionDescriptor _field4;
-} CDStruct_7b4da8c3;
 

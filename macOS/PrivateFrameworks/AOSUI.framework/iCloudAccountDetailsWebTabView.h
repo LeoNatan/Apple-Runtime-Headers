@@ -129,6 +129,8 @@
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;
 - (void)button1Pressed:(id)arg1;
+- (BOOL)shouldSelect;
+- (void)didSelect;
 - (void)wasNotifiedOfDataChange:(id)arg1;
 - (BOOL)shouldSelectToLocation:(id)arg1 toSection:(id)arg2;
 - (void)didChangetoLocation:(id)arg1 toSection:(id)arg2 withContext:(id)arg3;

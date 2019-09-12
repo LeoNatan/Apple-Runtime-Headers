@@ -40,6 +40,7 @@
 - (_Bool)_hf_isDirectlyOrIndirectlyLinkedToService:(id)arg1;
 - (id)hf_childServices;
 - (id)hf_childServicesOfType:(id)arg1;
+- (_Bool)hf_isChildService;
 - (_Bool)hf_isTelevision;
 - (_Bool)hf_isVisible;
 - (_Bool)hf_isLegacyService;

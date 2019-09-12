@@ -35,9 +35,10 @@
         unsigned int entityIsName:1;
         unsigned int refreshesRefetched:1;
         unsigned int propertiesValidated:1;
+        unsigned int expressionsValidated:1;
         unsigned int disableCaching:1;
         unsigned int allocationType:3;
-        unsigned int _RESERVED:16;
+        unsigned int _RESERVED:15;
     } _flags;
 }
 
@@ -58,6 +59,7 @@
 @property(nonatomic) unsigned long long fetchBatchSize;
 @property(nonatomic) unsigned long long fetchOffset;
 @property(copy, nonatomic) NSArray *propertiesToFetch;
+- (void)_bindExpressionDescriptionProperties:(id)arg1;
 - (id)_newValidatedProperties:(id)arg1 groupBy:(BOOL)arg2 error:(id *)arg3;
 @property(nonatomic) BOOL returnsDistinctResults;
 @property(nonatomic) BOOL includesPendingChanges;

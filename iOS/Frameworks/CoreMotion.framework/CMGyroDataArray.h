@@ -6,9 +6,21 @@
 
 #import <Foundation/NSArray.h>
 
-@interface CMGyroDataArray : NSArray
+#import <CoreMotion/SRSampling-Protocol.h>
+
+@class NSString;
+
+@interface CMGyroDataArray : NSArray <SRSampling>
 {
 }
+
+- (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

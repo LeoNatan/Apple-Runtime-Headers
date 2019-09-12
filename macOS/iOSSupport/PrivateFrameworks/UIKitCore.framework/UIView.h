@@ -686,6 +686,8 @@
 - (struct CGRect)_systemMarginsRelevantBounds;
 - (id)_frameLayoutItem;
 - (struct CGColor *)_backgroundCGColor;
+- (void)_prepareForWindowDealloc;
+- (void)_prepareDescendantsForWindowDealloc;
 @property(nonatomic) long long compositingMode;
 - (BOOL)_hasTransparentBackground;
 - (BOOL)_hasOpaqueBackground;
@@ -803,9 +805,12 @@
 - (BOOL)accessibilityInvertFilterApplied;
 - (id)_enclosingInterfaceActionGroupView;
 - (id)_enclosingInterfaceActionRepresentationView;
+@property(nonatomic) BOOL allowsGroupBlending;
+@property(nonatomic) BOOL allowsGroupOpacity;
 - (void)_uinavigationbar_prepareToAppearInNavigationItem:(id)arg1 onLeft:(BOOL)arg2;
 - (id)_visualRecursiveDescription;
 @property(nonatomic, setter=_setFlipsHorizontalAxis:) BOOL _flipsHorizontalAxis;
+- (id)_responderDebugDescription;
 - (BOOL)_accessibilityCanDrop;
 - (BOOL)_accessibilityAddItemsToDragSessionAtPoint:(struct CGPoint)arg1;
 - (BOOL)_accessibilityCanAddItemsToDragSession;
@@ -1405,7 +1410,7 @@
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (BOOL)_canHostViewControllerContentScrollView;
-- (BOOL)_hasActingParentViewForGestureRecognizers:(id)arg1;
+- (BOOL)_isEffectivelyDescendantOfViewForGestures:(id)arg1;
 - (id)_actingParentViewForGestureRecognizers;
 - (id)_containingScrollView;
 - (id)_viewIndexPath;
@@ -1420,7 +1425,7 @@
 - (long long)_viewOrderRelativeToView:(id)arg1;
 - (void)_addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (BOOL)_isAlphaHittableAndHasAlphaHittableAncestors;
-@property(retain, nonatomic, getter=_presentationControllerToNotifyOnLayoutSubviews, setter=_setPresentationControllerToNotifyOnLayoutSubviews:) UIPresentationController *_presentationControllerToNotifyOnLayoutSubviews; // @dynamic _presentationControllerToNotifyOnLayoutSubviews;
+@property(nonatomic, getter=_presentationControllerToNotifyOnLayoutSubviews, setter=_setPresentationControllerToNotifyOnLayoutSubviews:) __weak UIPresentationController *_presentationControllerToNotifyOnLayoutSubviews; // @dynamic _presentationControllerToNotifyOnLayoutSubviews;
 @property(nonatomic, getter=_viewDelegate, setter=_setViewDelegate:) UIViewController *viewDelegate;
 @property(nonatomic) BOOL viewTraversalMark;
 @property(nonatomic) BOOL skipsSubviewEnumeration;

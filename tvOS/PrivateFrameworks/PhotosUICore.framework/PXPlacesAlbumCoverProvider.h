@@ -13,9 +13,9 @@
 {
     UIImage *_cachedSnapshotImage;
     NSString *_cachedSnapshotImageIdentifier;
-    long long _cachedCount;
     NSObject<OS_dispatch_queue> *_backgroundQueue;
     NSObject<OS_dispatch_queue> *_requestsQueue;
+    long long _cachedCount;
     PXPlacesSnapshotFactory *_factory;
     id <PXPlacesSnapshotFactoryDelegate> _factoryDelegate;
     PHAssetCollection *_placesCollection;
@@ -40,6 +40,7 @@
 - (void)requestPlacesAlbumCover:(id)arg1 snapshotTraitCollection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)preloadPlaceholderForTraitCollection:(id)arg1;
 - (void)preloadCachedSnapshotForUserInterfaceStyle:(long long)arg1;
+@property(nonatomic) long long cachedCount; // @synthesize cachedCount=_cachedCount;
 - (id)initWithDelegate:(id)arg1 andPlacesCollection:(id)arg2;
 
 @end

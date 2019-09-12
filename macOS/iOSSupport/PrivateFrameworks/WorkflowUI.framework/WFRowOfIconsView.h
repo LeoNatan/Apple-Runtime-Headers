@@ -6,19 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, UIStackView;
+@class NSMutableArray, UIStackView;
 
 @interface WFRowOfIconsView : UIView
 {
+    unsigned long long _maxNumberOfIcons;
     UIStackView *_stackView;
-    NSArray *_iconViews;
+    NSMutableArray *_iconViews;
     double _height;
 }
 
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
-@property(readonly, nonatomic) NSArray *iconViews; // @synthesize iconViews=_iconViews;
+@property(readonly, nonatomic) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
+@property(readonly, nonatomic) unsigned long long maxNumberOfIcons; // @synthesize maxNumberOfIcons=_maxNumberOfIcons;
 - (void).cxx_destruct;
+- (void)rebuildSubviewsForItems:(id)arg1;
+- (void)setHomeIcons:(id)arg1;
 - (void)setIcons:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithMaxNumberOfIcons:(unsigned long long)arg1 height:(double)arg2;

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)getRecentlyPlayedGames;
+- (id)getRecentlyPlayedGamesWithTimeout:(id)arg1;
 
 @end
 

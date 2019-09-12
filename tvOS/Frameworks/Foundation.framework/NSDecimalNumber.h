@@ -31,6 +31,7 @@
 + (id)decimalNumberWithDecimal:(CDStruct_5fe7aead)arg1;
 + (id)decimalNumberWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(_Bool)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (void)initialize;
 + (id)numberWithBool:(_Bool)arg1;
 + (id)numberWithDouble:(double)arg1;
 + (id)numberWithFloat:(float)arg1;

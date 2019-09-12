@@ -62,6 +62,7 @@
 - (void)_requestDistances;
 - (void)_decorateEntry:(id)arg1 eta:(id)arg2;
 - (void)trackSuggestionEntries:(struct NSArray *)arg1 transportType:(int)arg2;
+- (void)_captureSignalsFromEntries:(struct NSArray *)arg1;
 - (id)_bestValidOfflineETAForEntry:(id)arg1 destinationKey:(id)arg2;
 - (BOOL)_isMatchingTransportType:(int)arg1;
 - (BOOL)_isUnusableETA:(id)arg1;

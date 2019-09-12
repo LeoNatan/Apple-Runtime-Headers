@@ -59,6 +59,7 @@
 - (id)_sharingViewPresentationController;
 - (id)_customPresentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (BOOL)_requiresCustomPresentationController;
+- (void)_cloudSharingControllerDidActivateShowSharedFolder;
 - (void)_cloudSharingControllerDidModifySecondarySwitch:(BOOL)arg1;
 - (void)_cloudSharingControllerDidModifyPrimarySwitch:(BOOL)arg1;
 - (void)_requestSavedShareWithCompletion:(CDUnknownBlockType)arg1;

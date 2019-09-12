@@ -33,6 +33,7 @@
     NSString *_promptString;
     SKScrollDetector *_scrollDetector;
     BOOL _viewWasOnScreen;
+    CDUnknownBlockType _dismissalCompleted;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
@@ -54,6 +55,8 @@
 - (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_sk_applicationWillEnterForeground:(id)arg1;
 - (void)_sk_applicationDidEnterBackground:(id)arg1;
+- (void)dismissModalViewControllerAnimated:(BOOL)arg1;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (int)_preferredStatusBarVisibility;
 - (long long)preferredStatusBarStyle;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;

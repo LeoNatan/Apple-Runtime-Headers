@@ -116,6 +116,7 @@
 - (void)_setupSessionWithPrimaryResidentDevice;
 - (void)_run;
 - (void)run;
+@property(readonly, nonatomic) BOOL hasTrustZoneCapableResident;
 - (void)_registerForMessages;
 - (void)configureWithHome:(id)arg1;
 @property(readonly) HMDMessageDispatcher *messageDispatcher;

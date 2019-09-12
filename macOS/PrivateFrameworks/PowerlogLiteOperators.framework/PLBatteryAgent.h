@@ -88,6 +88,7 @@
 + (id)entryEventBackwardDefinitionBatteryUI;
 + (id)entryEventBackwardDefinitionBattery;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionSmartChargingStatus;
 + (id)entryEventForwardDefinitionSmartCharging;
 + (id)entryEventForwardDefinitionMitigationState;
 + (id)entryEventForwardDefinitionUPOStepper;

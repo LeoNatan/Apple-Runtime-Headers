@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) CDStruct_c3b9c2ee coordinate; // @synthesize coordinate=_coordinate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) VKCustomFeature *feature;
+- (void)setCustomFeature:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

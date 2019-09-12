@@ -15,6 +15,7 @@
     _Bool _valid;
     _Bool _hasAdjustments;
     _Bool _hasRAW;
+    _Bool _hasSpatialOverCapture;
     PHAssetCreationRequest *_assetCreationRequest;
     NSArray *_assetResources;
     long long _mediaType;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) PHExternalAssetResource *primaryResource; // @synthesize primaryResource=_primaryResource;
 @property(readonly, nonatomic) unsigned long long mediaSubtype; // @synthesize mediaSubtype=_mediaSubtype;
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
+@property(readonly, nonatomic) _Bool hasSpatialOverCapture; // @synthesize hasSpatialOverCapture=_hasSpatialOverCapture;
 @property(readonly, nonatomic) _Bool hasRAW; // @synthesize hasRAW=_hasRAW;
 @property(readonly, nonatomic) _Bool hasAdjustments; // @synthesize hasAdjustments=_hasAdjustments;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;

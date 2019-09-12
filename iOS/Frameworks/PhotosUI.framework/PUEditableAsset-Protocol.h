@@ -16,6 +16,7 @@
 @property(readonly, nonatomic, getter=isResourceDownloadPossible) _Bool resourceDownloadPossible;
 @property(readonly, nonatomic) int originalEXIFOrientation;
 @property(readonly, nonatomic) NSDictionary *imageProperties;
+@property(readonly, nonatomic) unsigned long long reframeVariation;
 @property(readonly, nonatomic) PFVideoAVObjectBuilder *videoObjectBuilder;
 @property(readonly, nonatomic) unsigned long long livePhotoVisibilityState;
 @property(readonly, nonatomic, getter=isTrimmableType) _Bool trimmableType;

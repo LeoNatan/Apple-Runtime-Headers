@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
+@property(readonly, nonatomic) NSArray *allPlaceholderReplacementsIDs;
 @property(readonly, nonatomic) NSArray *allPlaceholderItems;
 - (void)registerStitchingSession:(id)arg1;
 - (id)init;

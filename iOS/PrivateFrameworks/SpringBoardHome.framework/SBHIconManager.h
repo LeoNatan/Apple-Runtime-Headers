@@ -138,6 +138,7 @@
 - (void)_iconModelDidLayout:(id)arg1;
 - (void)_iconModelWillLayout:(id)arg1;
 - (void)_iconModelDidReloadIcons:(id)arg1;
+- (void)_iconModelWillReloadIcons:(id)arg1;
 - (void)iconModel:(id)arg1 willRemoveIcon:(id)arg2;
 - (id)iconModel:(id)arg1 localizedFolderNameForDefaultDisplayName:(id)arg2;
 - (void)iconModel:(id)arg1 launchIcon:(id)arg2 fromLocation:(id)arg3 context:(id)arg4;

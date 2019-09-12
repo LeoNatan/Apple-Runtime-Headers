@@ -33,7 +33,7 @@
     NSHashTable *_variablesBeingObserved;
 }
 
-+ (double)heightForWidth:(double)arg1 withSummaryFormatString:(id)arg2 parameters:(id)arg3 editableParameters:(id)arg4 parameterStates:(id)arg5 stagedParameterStates:(id)arg6 font:(id)arg7 unpopulatedFont:(id)arg8 textAlignment:(long long)arg9;
++ (double)heightForWidth:(double)arg1 withSummaryFormatString:(id)arg2 parameters:(id)arg3 editableParameters:(id)arg4 parameterStates:(id)arg5 stagedParameterStates:(id)arg6 horizontalPadding:(double)arg7 font:(id)arg8 unpopulatedFont:(id)arg9 textAlignment:(long long)arg10;
 + (id)parameterStatesByApplyingStaging:(id)arg1 toOriginal:(id)arg2;
 + (void)enumerateVariableAttachmentsInContents:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (id)paragraphStyleWithAlignment:(long long)arg1;
@@ -55,7 +55,7 @@
 @property(readonly, copy, nonatomic) NSString *summaryFormatString; // @synthesize summaryFormatString=_summaryFormatString;
 - (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
-- (void)updateVariableAttachmentFontsInContents:(id)arg1;
+- (void)updateVariableAttachmentAppearanceInContents:(id)arg1;
 - (void)updateVariableObservationsWithContents:(id)arg1;
 - (void)summaryEditor:(id)arg1 willUpdateVariable:(id)arg2;
 - (id)transformParameterStateForSerialization:(id)arg1 inEditor:(id)arg2;
@@ -85,6 +85,7 @@
 - (BOOL)slotTemplateView:(id)arg1 shouldLongPressSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didDeselectSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didSelectSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;
+- (void)tintColorDidChange;
 @property(nonatomic) BOOL extendSlotBackgroundOffEdges;
 @property(nonatomic) long long textAlignment;
 @property(nonatomic) double horizontalPadding;

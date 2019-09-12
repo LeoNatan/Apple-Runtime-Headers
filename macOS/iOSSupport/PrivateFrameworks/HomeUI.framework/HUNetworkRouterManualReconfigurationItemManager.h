@@ -14,7 +14,6 @@
     HFNetworkConfigurationItemProvider *_networkConfigurationItemProvider;
 }
 
-+ (CDUnknownBlockType)_networkConfigurationItemComparator;
 @property(retain, nonatomic) HFNetworkConfigurationItemProvider *networkConfigurationItemProvider; // @synthesize networkConfigurationItemProvider=_networkConfigurationItemProvider;
 @property(readonly, nonatomic) HMHome *overrideHome; // @synthesize overrideHome=_overrideHome;
 - (void).cxx_destruct;

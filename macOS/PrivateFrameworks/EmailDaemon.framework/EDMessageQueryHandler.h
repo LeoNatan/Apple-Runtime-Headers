@@ -11,12 +11,14 @@
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
 @class EDMessageQueryHelper, EFCancelationToken, NSMutableDictionary, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@protocol EFScheduler, OS_dispatch_queue;
 
 @interface EDMessageQueryHandler : EDMessageRepositoryQueryHandler <EDMessageQueryHelperDelegate, EFLoggable, EFContentProtectionObserver>
 {
     BOOL _didCancel;
+    BOOL _isInitialized;
     EDMessageQueryHelper *_currentQueryHelper;
+    id <EFScheduler> _scheduler;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     NSObject<OS_dispatch_queue> *_resultQueue;
     NSMutableDictionary *_oldestMessageIDsByMailboxObjectIDs;
@@ -27,9 +29,11 @@
 + (id)log;
 @property(retain, nonatomic) EFCancelationToken *updateOldestMessagesCancelationToken; // @synthesize updateOldestMessagesCancelationToken=_updateOldestMessagesCancelationToken;
 @property(readonly, copy, nonatomic) NSMutableDictionary *oldestMessageIDsByMailboxObjectIDs; // @synthesize oldestMessageIDsByMailboxObjectIDs=_oldestMessageIDsByMailboxObjectIDs;
+@property(nonatomic) BOOL isInitialized; // @synthesize isInitialized=_isInitialized;
 @property(nonatomic) BOOL didCancel; // @synthesize didCancel=_didCancel;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resultQueue; // @synthesize resultQueue=_resultQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
+@property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) EDMessageQueryHelper *currentQueryHelper; // @synthesize currentQueryHelper=_currentQueryHelper;
 - (void).cxx_destruct;
 - (id)findMessagesByPreviousObjectIDForAddedMessages:(id)arg1 helper:(id)arg2;
@@ -54,7 +58,7 @@
 - (void)_contentProtectionChangedToLocked;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (BOOL)_queryHelperIsCurrent:(id)arg1;
-- (void)_createHelper;
+- (void)_createHelperAndReconcileJournal:(BOOL)arg1;
 - (void)_restartHelper;
 - (void)dealloc;
 - (void)cancel;

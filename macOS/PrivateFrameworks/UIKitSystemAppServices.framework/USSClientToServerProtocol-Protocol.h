@@ -18,7 +18,7 @@
 - (void)submitSceneSizeRequest:(USSSceneResizeRequest *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)beginSendingNotificationsCompletionHandler:(void (^)(void))arg1;
 - (void)forgetPersistentScenesWithIdentifiers:(NSSet *)arg1;
-- (void)createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *, NSString *))arg3;
+- (void)createNewSceneOfSize:(struct CGSize)arg1 background:(BOOL)arg2 persistenceIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *, NSString *))arg4;
 - (void)connectCompletionHandler:(void (^)(void))arg1;
 - (void)waitForServerToBeReadyCompletionHandler:(void (^)(void))arg1;
 @end

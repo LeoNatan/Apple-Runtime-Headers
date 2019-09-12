@@ -9,6 +9,6 @@
 @class CSBluetoothWirelessSplitterMonitor;
 
 @protocol CSBluetoothWirelessSplitterMonitorDelegate <NSObject>
-- (void)CSBluetoothWirelessSplitterMonitor:(CSBluetoothWirelessSplitterMonitor *)arg1 didReceiveSplitterStateChange:(unsigned long long)arg2;
+- (void)CSBluetoothWirelessSplitterMonitor:(CSBluetoothWirelessSplitterMonitor *)arg1 didReceiveSplitterStateChange:(unsigned long long)arg2 shouldDisableSpeakerVerificationInSplitterMode:(BOOL)arg3;
 @end
 

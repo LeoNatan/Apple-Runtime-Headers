@@ -6,10 +6,14 @@
 
 #import <MediaPlayer/MPStoreModelRequestOperation.h>
 
+@class NSIndexSet;
+
 @interface MPModelStoreBrowseMusicKitRequestOperation : MPStoreModelRequestOperation
 {
+    NSIndexSet *_carPlayWhitelistedFCKinds;
 }
 
+- (void).cxx_destruct;
 - (id)radioGenresURLWithStoreBagDictionary:(id)arg1;
 - (id)browseURLWithStoreBagDictionary:(id)arg1;
 - (id)_produceResponseWithParser:(id)arg1 results:(id)arg2 error:(id *)arg3;

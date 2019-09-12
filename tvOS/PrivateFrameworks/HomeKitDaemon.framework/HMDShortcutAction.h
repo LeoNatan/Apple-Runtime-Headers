@@ -38,7 +38,7 @@
 - (unsigned long long)type;
 - (void)dealloc;
 - (id)removeShortcut;
-- (id)initWithSerializedShortcut:(id)arg1 actionSet:(id)arg2;
+- (id)initWithSerializedShortcut:(id)arg1 uuid:(id)arg2 actionSet:(id)arg3;
 
 @end
 

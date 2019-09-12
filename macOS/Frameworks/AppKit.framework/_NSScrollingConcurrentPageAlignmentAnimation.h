@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property struct CGPoint destinationOrigin; // @synthesize destinationOrigin=_destinationOrigin;
 @property struct CGPoint initialOrigin; // @synthesize initialOrigin=_initialOrigin;
-- (void)scrollingVBLMonitor:(id)arg1 synchronizeForVBLSerialNumber:(unsigned long long)arg2 timestamp:(double)arg3 updateDuration:(double)arg4;
+- (void)scrollingVBLMonitor:(id)arg1 synchronizeForTTimestamp:(double)arg2;
 - (void)dealloc;
 - (id)init;
 

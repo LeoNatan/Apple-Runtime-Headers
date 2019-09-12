@@ -24,9 +24,12 @@
 - (id)contentItemClassesSupportingType:(id)arg1;
 - (Class)contentItemClassForType:(id)arg1;
 @property(readonly, nonatomic) NSSet *contentItemClasses;
+@property(readonly, nonatomic) NSSet *allOwnedTypes;
 - (void)registerContentItemClass:(Class)arg1;
 - (id)init;
 - (void)rediscoverContentItemClassesIfNeeded;
+- (id)contentItemClassesForShareSheetWithExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2;
+- (id)contentItemClassesForShareSheetWithExtensionMatchingDictionaries:(id)arg1;
 
 @end
 

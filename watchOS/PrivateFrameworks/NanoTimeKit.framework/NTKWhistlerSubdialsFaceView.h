@@ -19,6 +19,13 @@
 
 + (int)uiSensitivity;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (id)tritium_animationToCurrentDateFromDate:(id)arg1;
 - (void)rectangularViewDidEndInteractive:(id)arg1;
 - (void)rectangularViewDidBecomeInteractive:(id)arg1;
 - (_Bool)_shouldShowEditingPageDotsOnBottom;

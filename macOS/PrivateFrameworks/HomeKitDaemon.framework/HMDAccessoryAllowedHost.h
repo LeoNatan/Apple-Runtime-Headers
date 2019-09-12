@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)_encodeForLocalStoreWithCoder:(id)arg1;
 - (void)_encodeForSPIEntitledXPCTransportWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

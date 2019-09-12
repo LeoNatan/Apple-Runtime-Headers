@@ -53,8 +53,8 @@
 - (void)_reloadForExternalChange;
 - (void)_prepareDelegateAccountStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)userIdentityStoreBackendDidChange:(id)arg1;
-- (void)getUserIdentitiesForAuthenticatedAccountsWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)userIdentitiesForAuthenticatedAccountsWithError:(id *)arg1;
+- (void)getUserIdentitiesForManageableAccountsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)userIdentitiesForManageableAccountsWithError:(id *)arg1;
 - (id)DSIDForUserIdentity:(id)arg1 outError:(id *)arg2;
 - (void)updatePropertiesForUserIdentity:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updatePropertiesForUserIdentity:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

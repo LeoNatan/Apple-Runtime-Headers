@@ -162,7 +162,7 @@ __attribute__((visibility("hidden")))
 - (void)updateForKeyplaneChangeWithContext:(id)arg1;
 - (void)checkPlaceholdersForRemoteKeyboardsAndForceConstraintsUpdate:(_Bool)arg1 layoutSubviews:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
-- (struct CGRect)_convertRectFromContainerCoordinateSpaceToScreenSpace:(struct CGRect)arg1;
+- (struct CGRect)convertRectFromContainerCoordinateSpaceToScreenSpace:(struct CGRect)arg1;
 - (id)_screenCoordinateSpace;
 - (void)transferActiveNotificationInfoToInfo:(id)arg1;
 - (void)viewWillLayoutSubviews;

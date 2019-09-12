@@ -6,6 +6,8 @@
 
 #import <EventKit/EKFrozenReminderObject.h>
 
+@class NSString;
+
 @interface EKFrozenReminderStructuredLocation : EKFrozenReminderObject
 {
 }
@@ -29,7 +31,7 @@
 - (id)updatedStructuredLocation;
 - (id)_structuredLocation;
 - (id)remObjectID;
-- (id)uniqueIdentifier;
+@property(readonly) NSString *uniqueIdentifier;
 - (id)initWithAlternateUniverseObject:(id)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 
 @end

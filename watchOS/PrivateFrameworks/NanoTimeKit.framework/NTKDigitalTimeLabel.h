@@ -8,21 +8,42 @@
 
 #import <NanoTimeKit/NTKColoringView-Protocol.h>
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
-@class NSString, NTKDigitalTimeLabelStyle, UIColor;
+@class NSString, NTKDigitalTimeLabelStyle, UIColor, UIView;
 
-@interface NTKDigitalTimeLabel : CLKUITimeLabel <NTKColoringView, NTKTimeView>
+@interface NTKDigitalTimeLabel : CLKUITimeLabel <NTKColoringView, NTKTimeView, NTKTritiumAnimator>
 {
     UIColor *_shadowColor;
+    UIView *_tritiumContainerView;
+    NTKDigitalTimeLabel *_tritiumInnerLabel;
+    NTKDigitalTimeLabel *_tritiumOuterLabel;
     _Bool _usesLegibility;
     _Bool _frozen;
+    _Bool _useTritiumFont;
     UIColor *_overrideColor;
+    int _tritiumTextAlignment;
+    UIColor *_tritium_outlineColor;
+    UIColor *_tritium_fillColor;
 }
 
++ (id)_tritiumOutlineColor;
+@property(retain, nonatomic, setter=tritium_setFillColor:) UIColor *tritium_fillColor; // @synthesize tritium_fillColor=_tritium_fillColor;
+@property(retain, nonatomic, setter=tritium_setOutlineColor:) UIColor *tritium_outlineColor; // @synthesize tritium_outlineColor=_tritium_outlineColor;
+@property(nonatomic, setter=tritium_setTextAlignment:) int tritiumTextAlignment; // @synthesize tritiumTextAlignment=_tritiumTextAlignment;
+@property(nonatomic, setter=tritium_setUseTritiumFont:) _Bool useTritiumFont; // @synthesize useTritiumFont=_useTritiumFont;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
 - (void).cxx_destruct;
+- (_Bool)_isDigitalTimeLabelInLatin;
+- (id)_tritiumFontForFont:(id)arg1 style:(unsigned int)arg2;
+- (id)_createTritiumLabelWithStyle:(unsigned int)arg1;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_willTransitionToTritiumOn;
 - (void)layoutSubviews;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;

@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     long long _firstResponderRow;
     NSControl *_firstResponder;
     NSView *_delayedFirstResponder;
-    NSMutableDictionary *_reusueQueue;
+    NSMutableDictionary *_reuseQueue;
     NSBundle *_nibBundle;
     NSString *_nibPath;
     NSTableViewDropFeedbackData *_dropFeedbackData;
@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
     unsigned int _keyViewLoopIsDirty:1;
     unsigned int _rowViewPurgatoryEnabled:1;
     unsigned int _rowViewsBeingAnimatedOffPurgeInProgress:1;
+    unsigned int _rowViewsDereferenceImminent:1;
 }
 
 @property(readonly, nonatomic) NSMutableIndexSet *mutableHiddenRowIndexes; // @synthesize mutableHiddenRowIndexes=_hiddenRowIndexes;
@@ -409,6 +410,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL callingHeightOfRow; // @dynamic callingHeightOfRow;
 - (void)dealloc;
 - (void)removeAllObjects;
+- (void)_check_rowViewsOkToClear;
 - (void)_pullExistingSubviewsOnTopAnimated:(BOOL)arg1;
 - (void)_setExistingSubviews:(id)arg1;
 - (id)_existingSubviews;

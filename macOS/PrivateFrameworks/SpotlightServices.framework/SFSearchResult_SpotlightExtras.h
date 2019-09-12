@@ -15,6 +15,7 @@
 {
     unsigned long long _matchBits;
     BOOL _lastRestrictionStatus;
+    BOOL _needsPreviewUpdate;
     BOOL _autoLaunch;
     BOOL _isFirstTopHit;
     BOOL _isAnyTopHit;
@@ -25,6 +26,8 @@
     BOOL _isUsed;
     BOOL _hasUsage;
     float _l2score;
+    NSNumber *_groupId;
+    NSString *_groupName;
     PRSRankingItem *_rankingItem;
     NSString *_relatedIdentifier;
     NSString *_uniqueIdentifier;
@@ -40,8 +43,6 @@
     NSString *_NLPConfidence;
     NSString *_NLPCategory;
     double _cep;
-    NSString *_groupName;
-    NSNumber *_groupId;
     long long _feedbackBlockId;
     // Error parsing type: T, name: _rank
 }
@@ -49,8 +50,6 @@
 + (void)initialize;
 @property BOOL hasUsage; // @synthesize hasUsage=_hasUsage;
 @property(nonatomic) long long feedbackBlockId; // @synthesize feedbackBlockId=_feedbackBlockId;
-@property(retain, nonatomic) NSNumber *groupId; // @synthesize groupId=_groupId;
-@property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property BOOL isUsed; // @synthesize isUsed=_isUsed;
 @property(nonatomic) double cep; // @synthesize cep=_cep;
 @property(retain) NSString *NLPCategory; // @synthesize NLPCategory=_NLPCategory;
@@ -87,28 +86,32 @@
 // Property attributes: TT,N
 
 - (unsigned long long)matchQuality;
-- (BOOL)isExactMatch;
-- (BOOL)isPrefixMatch;
+@property(readonly) BOOL isExactMatch;
+@property(readonly) BOOL isPrefixMatch;
+@property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
+@property(retain, nonatomic) NSNumber *groupId; // @synthesize groupId=_groupId;
 - (void)updateRenderOrEngagementCountsForKey:(id)arg1 date:(id)arg2;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly) BOOL allowsCPRecording;
+- (void)cacheImage:(id)arg1 forKey:(id)arg2;
+- (id)cachedImageForKey:(id)arg1;
 - (void)prepare;
-- (id)initWithFastLaunchURL:(id)arg1 displayName:(id)arg2 contentType:(id)arg3;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithFastLaunchURL:(id)arg1 contentType:(id)arg2 displayName:(id)arg3 groupId:(id)arg4;
+- (id)initWithFastLaunchURL:(id)arg1 contentType:(id)arg2 displayName:(id)arg3;
 - (id)initWithContentType:(id)arg1 displayName:(id)arg2;
 - (id)initWithContentType:(id)arg1 displayName:(id)arg2 groupId:(id)arg3;
+- (id)initWithResult:(id)arg1;
 - (id)initWithResult:(id)arg1 groupId:(id)arg2;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id <NSPasteboardWriting> pasteboardObject;
 @property(readonly, nonatomic) NSURL *URL;
 - (id)fastURL;
 @property(readonly) NSString *filePath;
 @property(readonly) LSApplicationProxy *appProxy;
-- (void)cacheImage:(id)arg1 forKey:(id)arg2;
-- (id)cachedImageForKey:(id)arg1;
-- (BOOL)isLocalResult;
+@property(readonly) BOOL isLocalResult;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,7 +15,6 @@
 {
 }
 
-+ (id)ACRequirementString;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 @property(readonly) BOOL extensionHasACRequirement;

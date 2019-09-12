@@ -235,6 +235,7 @@
 @property(copy, nonatomic) NSString *name;
 - (id)apply:(id)arg1;
 - (id)apply:(id)arg1 arguments:(id)arg2 options:(id)arg3;
+- (id)debugDescription;
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

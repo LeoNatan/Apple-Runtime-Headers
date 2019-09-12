@@ -29,6 +29,8 @@ __attribute__((visibility("hidden")))
     _Bool _lastRequest;
 }
 
++ (unsigned long long)countForRequestType:(int)arg1;
++ (int)typeForRequest:(id)arg1;
 + (unsigned long long)deviceFreeDiskSpace;
 + (_Bool)deviceHasSufficientFreeSpace;
 + (unsigned long long)fileSize:(id)arg1;

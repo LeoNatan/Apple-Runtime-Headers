@@ -20,6 +20,7 @@
 - (id)resolveContactIfPossibleFromContactIdentifierString:(id)arg1;
 - (id)resolveContact:(id)arg1;
 - (id)resolveContactIdentifier:(id)arg1;
+- (id)allEmailAndPhoneNumberHandlesForContact:(id)arg1;
 - (id)resolveContactFromINPerson:(id)arg1;
 - (id)contactWithIdentifier:(id)arg1;
 - (id)initWithContactStore:(id)arg1 keysToFetch:(id)arg2;

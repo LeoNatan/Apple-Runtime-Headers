@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)unlock;
 - (BOOL)tryLock;
 - (void)lock;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

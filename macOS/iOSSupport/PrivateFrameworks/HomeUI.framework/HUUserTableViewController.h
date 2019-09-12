@@ -29,6 +29,7 @@
 - (void)setAMSiTunesAccount:(id)arg1 forHome:(id)arg2;
 - (id)_fetchAccountsForHome:(id)arg1;
 - (void)_refreshSplitAccountsHeaderViewIfNeeded;
+- (BOOL)shouldResizeHeaderWhenLayoutSubviews;
 - (void)performRemovalAction:(id)arg1;
 - (id)userHandle;
 - (id)itemTableHeaderView;

@@ -16,7 +16,9 @@
     PICompositionController *_compositionControllerForCurrentValues;
     NSObject<OS_dispatch_queue> *_computationQueue;
     NSObject<OS_dispatch_group> *_computingValuesGroup;
+    long long _currentSourceSelection;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     PICompositionController *_compositionController;
     CDStruct_1b6d18a9 _videoFrameTime;
 }
@@ -24,6 +26,7 @@
 + (_Bool)shouldRunGeometricAutoCalculatorForSource:(id)arg1;
 @property(nonatomic) CDStruct_1b6d18a9 videoFrameTime; // @synthesize videoFrameTime=_videoFrameTime;
 @property(retain, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
+@property(retain, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 - (void)_ensureInitialImageValuesAreComputed;
@@ -41,6 +44,8 @@
 - (double)smartToneAutoSuggestion;
 - (id)smartColorStatisticsWithAccuracy:(long long)arg1;
 - (void)updateAdjustmentSmartToneStatistics:(id)arg1 withAccuracy:(long long)arg2;
+- (id)overcaptureSmartToneStatisticsWithAccuracy:(long long)arg1;
+- (id)primarySmartToneStatisticsWithAccuracy:(long long)arg1;
 - (id)smartToneStatisticsWithAccuracy:(long long)arg1;
 - (id)apertureValuesWithAccuracy:(long long)arg1;
 - (id)portraitValuesWithAccuracy:(long long)arg1;

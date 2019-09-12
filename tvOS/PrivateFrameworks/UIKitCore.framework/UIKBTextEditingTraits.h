@@ -26,7 +26,7 @@
     UIResponder *_actionResponder;
 }
 
-+ (id)traitsWithFirstResponder:(id)arg1 actionResponder:(id)arg2 keyMaskFlags:(unsigned long long)arg3;
++ (id)traitsForEditingInteractionWithFirstResponder:(id)arg1 actionResponder:(id)arg2 keyMaskFlags:(unsigned long long)arg3;
 + (id)traitsWithResponder:(id)arg1 keyMaskFlags:(unsigned long long)arg2;
 @property(readonly, nonatomic) _Bool isUnderlined; // @synthesize isUnderlined=_isUnderlined;
 @property(readonly, nonatomic) _Bool isItalicized; // @synthesize isItalicized=_isItalicized;
@@ -43,7 +43,7 @@
 @property(readonly, nonatomic) _Bool canToggleItalics; // @synthesize canToggleItalics=_canToggleItalics;
 @property(readonly, nonatomic) _Bool canToggleBoldface; // @synthesize canToggleBoldface=_canToggleBoldface;
 - (void).cxx_destruct;
-- (id)initWithResponder:(id)arg1 actionResponder:(id)arg2 keyMaskFlags:(unsigned long long)arg3;
+- (id)initWithResponder:(id)arg1 actionResponder:(id)arg2 keyMaskFlags:(unsigned long long)arg3 sender:(id)arg4;
 
 @end
 

@@ -15,6 +15,7 @@
     AVCapturePhotoSettingsInternal *_internal;
 }
 
++ (id)photoSettingsFromMomentCaptureSettings:(id)arg1 withFormat:(id)arg2;
 + (id)photoSettingsFromPhotoSettings:(id)arg1;
 + (id)burstQualityPhotoSettings;
 + (id)photoSettingsFromPhotoInitiationSettings:(id)arg1 format:(id)arg2;
@@ -25,6 +26,26 @@
 + (id)photoSettings;
 + (long long)uniqueID;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id *)arg2;
+- (void)setProcessedPhotoZoomWithoutUpscalingEnabled:(_Bool)arg1;
+- (_Bool)isProcessedPhotoZoomWithoutUpscalingEnabled;
+- (id)spatialOverCaptureGroupIdentifierForOriginalPhoto;
+- (id)spatialOverCaptureLivePhotoContentIdentifierForOriginalPhoto;
+- (void)setSpatialOverCaptureLivePhotoMovieMetadataForOriginalPhoto:(id)arg1;
+- (id)spatialOverCaptureLivePhotoMovieMetadataForOriginalPhoto;
+- (void)setSpatialOverCaptureLivePhotoMovieFileURLForOriginalPhoto:(id)arg1;
+- (id)spatialOverCaptureLivePhotoMovieFileURLForOriginalPhoto;
+- (void)setSpatialOverCaptureMetadataForOriginalPhoto:(id)arg1;
+- (id)spatialOverCaptureMetadataForOriginalPhoto;
+- (id)spatialOverCaptureGroupIdentifier;
+- (id)spatialOverCaptureLivePhotoContentIdentifier;
+- (void)setSpatialOverCaptureLivePhotoMovieMetadata:(id)arg1;
+- (id)spatialOverCaptureLivePhotoMovieMetadata;
+- (void)setSpatialOverCaptureLivePhotoMovieFileURL:(id)arg1;
+- (id)spatialOverCaptureLivePhotoMovieFileURL;
+- (void)setSpatialOverCaptureMetadata:(id)arg1;
+- (id)spatialOverCaptureMetadata;
+- (void)setAutoSpatialOverCaptureEnabled:(_Bool)arg1;
+- (_Bool)isAutoSpatialOverCaptureEnabled;
 - (void)setVideoFileMetadata:(id)arg1;
 - (id)videoFileMetadata;
 - (void)setVideoFormat:(id)arg1;
@@ -37,6 +58,8 @@
 - (id)adjustedPhotoFilters;
 - (void)setPhotoFilters:(id)arg1;
 - (id)photoFilters;
+- (void)setAutoDeferredProcessingEnabled:(_Bool)arg1;
+- (_Bool)isAutoDeferredProcessingEnabled;
 - (void)setUserInitiatedPhotoRequestTime:(unsigned long long)arg1;
 - (unsigned long long)userInitiatedPhotoRequestTime;
 - (struct CGSize)rawEmbeddedThumbnailCGSize;
@@ -79,11 +102,15 @@
 @property(nonatomic, getter=isDepthDataDeliveryEnabled) _Bool depthDataDeliveryEnabled;
 @property(nonatomic, getter=isHighResolutionPhotoEnabled) _Bool highResolutionPhotoEnabled;
 @property(nonatomic, getter=isDualCameraDualPhotoDeliveryEnabled) _Bool dualCameraDualPhotoDeliveryEnabled;
+@property(copy, nonatomic) NSArray *virtualDeviceConstituentPhotoDeliveryEnabledDevices;
 @property(nonatomic, getter=isAutoDualCameraFusionEnabled) _Bool autoDualCameraFusionEnabled;
+@property(nonatomic, getter=isAutoVirtualDeviceFusionEnabled) _Bool autoVirtualDeviceFusionEnabled;
 @property(nonatomic, getter=isAutoStillImageStabilizationEnabled) _Bool autoStillImageStabilizationEnabled;
 - (_Bool)photoQualityPrioritizationIsSetByClient;
 - (void)_setPhotoQualityPrioritization:(long long)arg1;
 @property(nonatomic) long long photoQualityPrioritization;
+- (void)setDigitalFlashMode:(long long)arg1;
+- (long long)digitalFlashMode;
 - (void)setEV0PhotoDeliveryEnabled:(_Bool)arg1;
 - (_Bool)isEV0PhotoDeliveryEnabled;
 - (void)setHDRMode:(long long)arg1;

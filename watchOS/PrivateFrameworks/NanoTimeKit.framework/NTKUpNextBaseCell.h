@@ -9,7 +9,7 @@
 #import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CALayer, CLKDevice, NSHashTable, NSString, REContent, UIColor, UIImage, UIImageView, UIView;
+@class CALayer, CLKDevice, NSDate, NSHashTable, NSString, REContent, UIColor, UIImage, UIImageView, UIView;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKUpNextBaseCell : UICollectionViewCell <UIGestureRecognizerDelegate, CLKMonochromeComplicationView>
@@ -25,6 +25,7 @@
     _Bool _paused;
     id <CLKMonochromeFilterProvider> _filterProvider;
     CLKDevice *_device;
+    NSDate *_overrideDate;
     UIImage *_contentImage;
     UIImage *_overrideContentImage;
     NSString *_representedElementIdentifier;
@@ -43,9 +44,11 @@
 @property(readonly, nonatomic) REContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) UIImage *overrideContentImage; // @synthesize overrideContentImage=_overrideContentImage;
 @property(readonly, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
+@property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)overrideDateDidChange;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (id)transitionContextInView:(id)arg1;

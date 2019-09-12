@@ -8,10 +8,11 @@
 
 #import <NanoTimeKit/CLKTimeFormatterObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
 @class CLKDevice, NSDate, NSString, NTKBigNumeralsTimeComponentLabel;
 
-@interface NTKBigNumeralsDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView>
+@interface NTKBigNumeralsDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView, NTKTritiumAnimator>
 {
     CLKDevice *_device;
     NTKBigNumeralsTimeComponentLabel *_topLabel;
@@ -32,6 +33,11 @@
 @property(nonatomic) _Bool showingStatus; // @synthesize showingStatus=_showingStatus;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
 - (void)cleanupTransition;
 - (void)applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
 - (void)applyColor:(unsigned int)arg1;

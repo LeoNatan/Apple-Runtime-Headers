@@ -33,9 +33,14 @@
 - (id)hf_updateColorPalette:(id)arg1;
 - (id)hf_colorPaletteOfType:(unsigned long long)arg1;
 - (id)hf_colorPalette;
+@property(readonly, nonatomic) BOOL hf_hasAutomatableProfiles;
+@property(readonly, nonatomic) BOOL hf_hasAutomatableServices;
+- (BOOL)hf_isAutomatable;
 - (BOOL)hf_userCanCreateTrigger;
-@property(readonly, nonatomic) BOOL hf_userIsAllowedToCreateTrigger;
+- (BOOL)hf_userIsAllowedToCreateTrigger;
 @property(readonly, nonatomic) BOOL hf_isAbleToAddTrigger;
+- (BOOL)hf_hasAnyVisibleTriggers;
+- (BOOL)hf_hasEnabledResident;
 - (void)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;
 - (BOOL)hf_cameraRecordingHasBeenOnboarded;
 - (void)hf_startReprovisioningAccessory:(id)arg1;
@@ -44,7 +49,6 @@
 - (unsigned long long)hf_numberOfHomePods;
 - (BOOL)hf_hasHomePods;
 - (BOOL)hf_hasMediaAccessories;
-- (BOOL)hf_hasAutomatableServices;
 - (BOOL)hf_supportsSharedEventAutomation;
 - (BOOL)hf_isMediaAccessoryProfileValid:(id)arg1;
 - (BOOL)hf_isPresenceAuthorizedForUser:(id)arg1;

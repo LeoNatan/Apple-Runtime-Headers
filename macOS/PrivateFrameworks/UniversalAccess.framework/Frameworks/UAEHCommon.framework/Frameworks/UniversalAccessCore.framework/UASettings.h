@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AXEThrottler, NSMutableArray, NSMutableDictionary, NSUserDefaults;
+@class AXFThrottler, NSMutableArray, NSMutableDictionary, NSUserDefaults;
 
 @interface UASettings : NSObject
 {
     BOOL __performingUndoableModifications;
     NSUserDefaults *_universalAccessUserDefaults;
-    AXEThrottler *__notificationPostingThrottler;
+    AXFThrottler *__notificationPostingThrottler;
     NSMutableDictionary *__propertiesToUndoAndTheirOriginalValues;
     NSMutableArray *__orderedPropertiesToUndo;
 }
@@ -20,7 +20,7 @@
 @property(nonatomic) BOOL _performingUndoableModifications; // @synthesize _performingUndoableModifications=__performingUndoableModifications;
 @property(retain, nonatomic) NSMutableArray *_orderedPropertiesToUndo; // @synthesize _orderedPropertiesToUndo=__orderedPropertiesToUndo;
 @property(retain, nonatomic) NSMutableDictionary *_propertiesToUndoAndTheirOriginalValues; // @synthesize _propertiesToUndoAndTheirOriginalValues=__propertiesToUndoAndTheirOriginalValues;
-@property(retain, nonatomic) AXEThrottler *_notificationPostingThrottler; // @synthesize _notificationPostingThrottler=__notificationPostingThrottler;
+@property(retain, nonatomic) AXFThrottler *_notificationPostingThrottler; // @synthesize _notificationPostingThrottler=__notificationPostingThrottler;
 @property(retain, nonatomic) NSUserDefaults *universalAccessUserDefaults; // @synthesize universalAccessUserDefaults=_universalAccessUserDefaults;
 - (void).cxx_destruct;
 - (void)_postSettingsDidChangeNotification:(id)arg1;

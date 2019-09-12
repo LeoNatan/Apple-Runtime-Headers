@@ -9,7 +9,7 @@
 #import <MapsSupport/IDSServiceDelegate-Protocol.h>
 
 @class IDSService, MSPSharedTripGroupSession, MSPSharedTripStorageController, NSMutableDictionary, NSString;
-@protocol MSPSharedTripRelayDelegate;
+@protocol MSPSharedTripAvailabiltyDelegate, MSPSharedTripRelayDelegate;
 
 __attribute__((visibility("hidden")))
 @interface MSPSharedTripRelay : NSObject <IDSServiceDelegate>
@@ -22,11 +22,14 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_packetBuckets;
     MSPSharedTripStorageController *_storageController;
     id <MSPSharedTripRelayDelegate> _delegate;
+    id <MSPSharedTripAvailabiltyDelegate> _availabilityDelegate;
 }
 
+@property(nonatomic) __weak id <MSPSharedTripAvailabiltyDelegate> availabilityDelegate; // @synthesize availabilityDelegate=_availabilityDelegate;
 @property(nonatomic) __weak id <MSPSharedTripRelayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MSPSharedTripStorageController *storageController; // @synthesize storageController=_storageController;
 - (void).cxx_destruct;
+- (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 fromID:(id)arg4 hasBeenDeliveredWithContext:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5 context:(id)arg6;
 - (void)service:(id)arg1 account:(id)arg2 receivedGroupSessionParticipantUpdate:(id)arg3;
@@ -34,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_removeFinishedSession:(id)arg1;
+- (BOOL)_hasValidIDSAccount;
 - (void)_handleIncomingMessage:(id)arg1 info:(id)arg2 fromID:(id)arg3 receivingHandle:(id)arg4 receivingAccountIdentifier:(id)arg5;
 - (void)_handleCommand:(id)arg1 fromID:(id)arg2;
 - (void)_handleChunk:(id)arg1 fromID:(id)arg2 receivingHandle:(id)arg3 receivingAccountIdentifier:(id)arg4;

@@ -11,6 +11,8 @@
 @interface NTKChronoHandsView : NTKAnalogHandsView
 {
     _Bool _isChronoAnimationRunning;
+    _Bool _isTritiumOn;
+    _Bool _needsChronoMinuteHandVisibleInTritium;
     _Bool _minuteHandUsesManualTime;
     unsigned int _timeScale;
     NTKChronoPalette *_palette;
@@ -29,6 +31,12 @@
 @property(retain, nonatomic) NTKChronoPalette *palette; // @synthesize palette=_palette;
 @property(nonatomic) unsigned int timeScale; // @synthesize timeScale=_timeScale;
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_applyMinuteHandTimeInterval:(double)arg1;
+- (void)tritium_setNeedsChronoMinuteHandVisibleInTritium:(_Bool)arg1;
 - (double)secondsAnimationFPS;
 - (double)upperDuration;
 - (double)chronoDuration;

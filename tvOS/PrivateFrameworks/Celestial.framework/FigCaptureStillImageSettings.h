@@ -42,9 +42,11 @@
     _Bool _noiseReductionEnabled;
     _Bool _burstQualityCaptureEnabled;
     float _scaleFactor;
+    _Bool _zoomWithoutUpscalingEnabled;
     unsigned int _shutterSound;
     int _flashMode;
     _Bool _autoRedEyeReductionEnabled;
+    int _digitalFlashMode;
     int _wideColorMode;
     int _HDRMode;
     _Bool _depthDataDeliveryEnabled;
@@ -62,6 +64,9 @@
     float _simulatedAperture;
     _Bool _providesOriginalImage;
     NSArray *_bravoConstituentImageDeliveryDeviceTypes;
+    _Bool _autoSpatialOverCaptureEnabled;
+    NSDictionary *_spatialOverCaptureMetadata;
+    NSDictionary *_spatialOverCaptureMetadataForOriginalImage;
     int _qualityPrioritization;
     int _bravoImageFusionMode;
     NSDictionary *_vtCompressionProperties;
@@ -80,10 +85,15 @@
     NSString *_captureRequestIdentifier;
     _Bool _clientInitiatedPrepareSettings;
     _Bool _userInitiatedRequestSettings;
+    _Bool _beginMomentCaptureSettings;
+    float _videoStabilizationOverscanCropMultiplier;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) NSString *imageGroupIdentifier; // @synthesize imageGroupIdentifier=_imageGroupIdentifier;
+@property(copy, nonatomic) NSDictionary *spatialOverCaptureMetadataForOriginalImage; // @synthesize spatialOverCaptureMetadataForOriginalImage=_spatialOverCaptureMetadataForOriginalImage;
+@property(nonatomic) float videoStabilizationOverscanCropMultiplier; // @synthesize videoStabilizationOverscanCropMultiplier=_videoStabilizationOverscanCropMultiplier;
+@property(nonatomic, getter=isBeginMomentCaptureSettings) _Bool beginMomentCaptureSettings; // @synthesize beginMomentCaptureSettings=_beginMomentCaptureSettings;
 @property(nonatomic, getter=isUserInitiatedRequestSettings) _Bool userInitiatedRequestSettings; // @synthesize userInitiatedRequestSettings=_userInitiatedRequestSettings;
 @property(nonatomic, getter=isClientInitiatedPrepareSettings) _Bool clientInitiatedPrepareSettings; // @synthesize clientInitiatedPrepareSettings=_clientInitiatedPrepareSettings;
 @property(readonly, nonatomic) NSString *captureRequestIdentifier; // @synthesize captureRequestIdentifier=_captureRequestIdentifier;
@@ -101,6 +111,8 @@
 @property(copy, nonatomic) NSDictionary *vtCompressionProperties; // @synthesize vtCompressionProperties=_vtCompressionProperties;
 @property(nonatomic) int bravoImageFusionMode; // @synthesize bravoImageFusionMode=_bravoImageFusionMode;
 @property(nonatomic) int qualityPrioritization; // @synthesize qualityPrioritization=_qualityPrioritization;
+@property(copy, nonatomic) NSDictionary *spatialOverCaptureMetadata; // @synthesize spatialOverCaptureMetadata=_spatialOverCaptureMetadata;
+@property(nonatomic) _Bool autoSpatialOverCaptureEnabled; // @synthesize autoSpatialOverCaptureEnabled=_autoSpatialOverCaptureEnabled;
 @property(copy, nonatomic) NSArray *bravoConstituentImageDeliveryDeviceTypes; // @synthesize bravoConstituentImageDeliveryDeviceTypes=_bravoConstituentImageDeliveryDeviceTypes;
 @property(nonatomic) _Bool providesOriginalImage; // @synthesize providesOriginalImage=_providesOriginalImage;
 @property(nonatomic) float simulatedAperture; // @synthesize simulatedAperture=_simulatedAperture;
@@ -118,9 +130,11 @@
 @property(nonatomic) _Bool depthDataDeliveryEnabled; // @synthesize depthDataDeliveryEnabled=_depthDataDeliveryEnabled;
 @property(nonatomic) int HDRMode; // @synthesize HDRMode=_HDRMode;
 @property(nonatomic) int wideColorMode; // @synthesize wideColorMode=_wideColorMode;
+@property(nonatomic) int digitalFlashMode; // @synthesize digitalFlashMode=_digitalFlashMode;
 @property(nonatomic) _Bool autoRedEyeReductionEnabled; // @synthesize autoRedEyeReductionEnabled=_autoRedEyeReductionEnabled;
 @property(nonatomic) int flashMode; // @synthesize flashMode=_flashMode;
 @property(nonatomic) unsigned int shutterSound; // @synthesize shutterSound=_shutterSound;
+@property(nonatomic, getter=isZoomWithoutUpscalingEnabled) _Bool zoomWithoutUpscalingEnabled; // @synthesize zoomWithoutUpscalingEnabled=_zoomWithoutUpscalingEnabled;
 @property(nonatomic) float scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(nonatomic) _Bool burstQualityCaptureEnabled; // @synthesize burstQualityCaptureEnabled=_burstQualityCaptureEnabled;
 @property(nonatomic) _Bool noiseReductionEnabled; // @synthesize noiseReductionEnabled=_noiseReductionEnabled;

@@ -45,6 +45,7 @@
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
 - (void)_deleteByWord;
+- (NSString *)_normalizedStringForRangeComparison:(NSString *)arg1;
 - (UITextRange *)_intersectionOfRange:(UITextRange *)arg1 andRange:(UITextRange *)arg2;
 - (BOOL)_range:(UITextRange *)arg1 intersectsRange:(UITextRange *)arg2;
 - (BOOL)_range:(UITextRange *)arg1 containsRange:(UITextRange *)arg2;

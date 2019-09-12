@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/NTKPhotosReaderDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NTKCachedPhoto, NTKPhotosReader, UITapGestureRecognizer, UIView, _NTKPhotoIndexGenerator;
+@class NSMutableArray, NSString, NTKCachedPhoto, NTKPhotoAnalysis, NTKPhotosReader, UIColor, UITapGestureRecognizer, UIView, _NTKPhotoIndexGenerator;
 
 @interface NTKPhotosFaceView : NTKBasePhotosFaceView <NTKPhotosReaderDelegate>
 {
@@ -31,11 +31,31 @@
     NSMutableArray *_preloaded;
     NSMutableArray *_toload;
     unsigned int _deviceSizeClass;
+    UIColor *_currentForegroundColor;
+    UIView *_currentPosterViewSnapshot;
+    NTKCachedPhoto *_nextCachedPhoto;
+    NTKPhotoAnalysis *_nextAnalysis;
+    UIColor *_nextForegroundColor;
+    UIView *_nextPosterViewSnapshot;
+    _Bool _isInactiveViewUsedForBurnInTesting;
     NTKCachedPhoto *_presentedPhoto;
 }
 
 @property(retain, nonatomic) NTKCachedPhoto *presentedPhoto; // @synthesize presentedPhoto=_presentedPhoto;
 - (void).cxx_destruct;
+- (id)_synchronousAnalysisForCachedPhoto:(id)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)_setTritiumOffProgress:(float)arg1;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)_setTritiumOnProgress:(float)arg1;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (void)tritium_setupForBurnInStudy;
+- (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)tritium_createFaceAnimator;
 - (id)_createAndCachePhotoAnalysisForKey:(id)arg1 dateAlignment:(unsigned int)arg2 image:(id)arg3;
 - (id)_cachedAnalysisForKey:(id)arg1;
 - (id)_analysisCacheKeyFor:(id)arg1;

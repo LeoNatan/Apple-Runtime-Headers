@@ -32,6 +32,8 @@
 - (void)timelapseRequestDidStartCapturing;
 - (void)panoramaRequestDidStopCapturing:(id)arg1 interrupted:(_Bool)arg2;
 - (void)panoramaRequestDidStartCapturing:(id)arg1;
+- (void)stillImageRequestsDidStopCapturingCTMVideo;
+- (void)stillImageRequestWillStartCapturingCTMVideoWithCaptureInFlight:(_Bool)arg1;
 - (void)videoRequestDidStopCapturing:(id)arg1;
 - (void)videoRequestDidStartCapturing:(id)arg1;
 - (void)stillImageRequestDidStopCapturingStillImage:(id)arg1;

@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (void)selectChildUIElement:(id)arg1;
 - (BOOL)setSingleSelectionWithRequest:(id)arg1;
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
-- (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (void)_collectionSelectionDidChange;
 - (void)selectionDidChange;
 - (BOOL)_moveToContentSibling:(id)arg1;

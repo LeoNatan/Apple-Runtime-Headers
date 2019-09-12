@@ -38,10 +38,12 @@
 - (void)clickDriver:(id)arg1 didUpdateHighlightProgress:(double)arg2;
 - (void)clickDriver:(id)arg1 didPerformEvent:(unsigned long long)arg2;
 - (void)clickDriver:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
-- (BOOL)clickDriverShouldBegin:(id)arg1;
 - (void)_viewTraitCollectionDidChange:(id)arg1;
+@property(nonatomic) BOOL driverCancelsTouchesInView;
 @property(readonly, nonatomic) BOOL isDriverCurrentlyAcceleratedByForce;
+@property(readonly, nonatomic) BOOL hasDriverExceededAllowableMovement;
 @property(readonly, nonatomic) double touchDuration;
+@property(readonly, nonatomic) BOOL driverPrefersCancelsTouchesInView;
 @property(readonly, nonatomic) UIGestureRecognizer *driverPrimaryGestureRecognizer;
 - (void)_createFeedbackGenerator;
 - (Class)_driverClass;

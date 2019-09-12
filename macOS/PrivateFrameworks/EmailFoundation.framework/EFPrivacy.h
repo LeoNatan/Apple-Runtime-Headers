@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned int)bucketMessageCount:(unsigned long long)arg1;
 + (id)fullyRedactedStringForString:(id)arg1;
 + (id)partiallyRedactedStringForString:(id)arg1;
 + (id)partiallyRedactedStringForString:(id)arg1 maximumUnredactedLength:(unsigned long long)arg2;

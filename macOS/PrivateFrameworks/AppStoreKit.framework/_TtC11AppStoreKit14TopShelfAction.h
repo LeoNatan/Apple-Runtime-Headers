@@ -13,6 +13,7 @@
     // Error parsing type: , name: subtitle
     // Error parsing type: , name: imageName
     // Error parsing type: , name: userInfo
+    // Error parsing type: , name: accessibilityLabel
 }
 
 @end

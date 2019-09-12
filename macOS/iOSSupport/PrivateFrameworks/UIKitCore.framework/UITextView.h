@@ -79,6 +79,7 @@
     struct CGRect _frameOfTrailingWhitespace;
     id <UITextDragDropSupport> _textDragDropSupport;
     UILayoutManagerBasedDraggableGeometry *_geometry;
+    long long _defaultTextPreviewOptions;
     _UITextItemDiscoverer *_textItemDiscoverer;
     _UITextViewContentPadding *_topContentPadding;
     _UITextViewContentPadding *_bottomContentPadding;
@@ -133,7 +134,10 @@
 - (BOOL)_presentActionsForTextInteractableItem:(id)arg1;
 - (BOOL)_mightHaveInteractableItems;
 - (BOOL)_allowInteraction:(long long)arg1 forTextInteractableItem:(id)arg2;
-- (id)_targetedPreviewForTextInteractableItem:(id)arg1;
+- (void)_setDefaultTextPreviewOptions:(long long)arg1;
+- (long long)_defaultTextPreviewOptions;
+- (id)_targetedPreviewForTextInteractableItem:(id)arg1 dismissing:(BOOL)arg2;
+- (void)_applyOptionsToGeometry;
 - (id)_textGeometry;
 - (void)_updateSelectionGestures;
 - (void)_resetDataDetectorsResults;
@@ -481,6 +485,7 @@
 - (BOOL)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long *)arg1;
 - (id)_fontInfoForBaselineSpacing;
 - (BOOL)_hasFontInfoForVerticalBaselineSpacing;
+- (unsigned long long)_defaultFocusRingType;
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;

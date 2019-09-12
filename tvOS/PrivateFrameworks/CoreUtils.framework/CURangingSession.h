@@ -17,6 +17,7 @@
     _Bool _peersChanged;
     struct LogCategory *_ucat;
     unsigned int _flags;
+    unsigned int _statusFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _invalidationHandler;
@@ -24,8 +25,11 @@
     CDUnknownBlockType _measurementHandler;
     CDUnknownBlockType _measurementHandlerEx;
     NSArray *_peers;
+    CDUnknownBlockType _statusChangedHandler;
 }
 
+@property(readonly, nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
+@property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(copy, nonatomic) NSArray *peers; // @synthesize peers=_peers;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandlerEx; // @synthesize measurementHandlerEx=_measurementHandlerEx;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandler; // @synthesize measurementHandler=_measurementHandler;

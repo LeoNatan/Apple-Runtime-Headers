@@ -9,7 +9,6 @@
 __attribute__((visibility("hidden")))
 @interface SCNActionCustom : SCNAction
 {
-    struct SCNCActionCustom *_mycaction;
 }
 
 + (id)customActionWithDuration:(double)arg1 actionBlock:(CDUnknownBlockType)arg2;

@@ -6,14 +6,16 @@
 
 #import <HomeKitBackingStore/HMBCloudStateModel.h>
 
-@class HMBCloudZone, HMBCloudZoneID, NSData, NSNumber, NSSet;
+@class HMBCloudZone, HMBCloudZoneID, HMBCloudZoneRebuilderStatus, NSData, NSNumber, NSSet;
 
 @interface HMBCloudZoneStateModel : HMBCloudStateModel
 {
     HMBCloudZone *_cloudZone;
+    HMBCloudZoneRebuilderStatus *_rebuilderStatus;
 }
 
 + (id)hmbProperties;
+@property(retain, nonatomic) HMBCloudZoneRebuilderStatus *rebuilderStatus; // @synthesize rebuilderStatus=_rebuilderStatus;
 @property __weak HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *subscriptions;

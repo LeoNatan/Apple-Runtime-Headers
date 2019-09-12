@@ -173,6 +173,7 @@
     BOOL m_editingTraitsMarkedDirty;
     BOOL m_selectionIsEmpty;
     BOOL m_shouldProvideUsernameAutoFillTypingUpdates;
+    NSMutableDictionary *m_hardwareKeyDownCodeToEventMap;
     BOOL m_showsCandidateBar;
     BOOL m_showsCandidateInline;
     BOOL committingCandidate;
@@ -190,8 +191,6 @@
     TIKeyboardTouchEvent *m_touchEventWaitingForKeyInputEvent;
     _UIActionWhenIdle *m_delayedCandidateRequest;
     _UIActionWhenIdle *m_deferredDidSetDelegateAction;
-    UIPhysicalKeyboardEvent *m_hardwareRepeatEvent;
-    UIKeyboardScheduledTask *m_hardwareRepeatTask;
     UIView *m_internationalKeyIntroductionView;
     RTIInputSystemClient *m_rtiClient;
     RTIDocumentTraits *m_rtiDocumentTraits;
@@ -313,8 +312,6 @@
 @property(nonatomic) BOOL receivedCandidatesInCurrentInputMode; // @synthesize receivedCandidatesInCurrentInputMode=m_receivedCandidatesInCurrentInputMode;
 @property(nonatomic) BOOL showsCandidateBar; // @synthesize showsCandidateBar=m_showsCandidateBar;
 @property(nonatomic) BOOL showInputModeIndicator; // @synthesize showInputModeIndicator=m_showInputModeIndicator;
-@property(retain, nonatomic) UIKeyboardScheduledTask *hardwareRepeatTask; // @synthesize hardwareRepeatTask=m_hardwareRepeatTask;
-@property(retain, nonatomic) UIPhysicalKeyboardEvent *hardwareRepeatEvent; // @synthesize hardwareRepeatEvent=m_hardwareRepeatEvent;
 @property(retain, nonatomic) id changedDelegate; // @synthesize changedDelegate=m_changedDelegate;
 @property(retain, nonatomic) _UIActionWhenIdle *deferredDidSetDelegateAction; // @synthesize deferredDidSetDelegateAction=m_deferredDidSetDelegateAction;
 @property(retain, nonatomic) _UIActionWhenIdle *delayedCandidateRequest; // @synthesize delayedCandidateRequest=m_delayedCandidateRequest;
@@ -372,7 +369,6 @@
 @property(nonatomic, getter=isInHardwareKeyboardMode) BOOL inHardwareKeyboardMode;
 - (void)showKeyboard;
 - (void)hideKeyboard;
-- (void)firstHardwareAutoRepeatWithExecutionContext:(id)arg1;
 - (void)hardwareKeyboardAvailabilityChanged;
 - (void)detachHardwareKeyboard;
 - (void)clearDetachHardwareKeyboardAction;
@@ -665,6 +661,7 @@
 - (void)updateShiftState;
 - (void)notifyShiftState;
 - (void)updateInputManagerAutocapitalizationType;
+- (void)recomputeActiveInputModesWithExtensions:(BOOL)arg1 allowNonLinguisticInputModes:(BOOL)arg2;
 - (void)recomputeActiveInputModesWithExtensions:(BOOL)arg1;
 - (id)desirableInputModesWithExtensions:(BOOL)arg1;
 - (BOOL)shouldSwitchInputMode:(id)arg1;
@@ -978,7 +975,6 @@
 - (int)textInputChangingCount;
 - (BOOL)_isShowingCandidateUIWithAvailableCandidates;
 - (void)updateFromTextInputTraits;
-- (BOOL)hasAutoRepeat;
 - (void)_setShiftLockedEnabled:(BOOL)arg1;
 - (void)_setInputManager:(id)arg1;
 - (void)createTypoTrackerReport;

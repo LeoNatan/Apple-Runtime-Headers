@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 @property(retain, nonatomic) NSWindowController *windowController; // @synthesize windowController=_windowController;
+- (BOOL)_respondsToAction:(SEL)arg1 forTarget:(id)arg2;
+- (BOOL)_validateTarget:(id)arg1 forAction:(SEL)arg2;
+- (id)_redirectTarget:(id)arg1 forSelector:(SEL)arg2;
 - (void)loadView;
 - (void)dealloc;
 

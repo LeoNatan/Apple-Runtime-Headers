@@ -16,7 +16,7 @@
 + (BOOL)actionDonation:(id)arg1 matchesQuery:(id)arg2;
 + (id)donationsByRemovingDuplicatesFromDonations:(id)arg1 query:(id)arg2 excludingAppIdentifiers:(id)arg3 includingSingleDonationPerApp:(BOOL)arg4;
 + (void)fetchRecentDonationsWithLimit:(unsigned long long)arg1 applicationBundleIdentifier:(id)arg2 filteringForTopLevel:(BOOL)arg3 filteringForIsEligibleForPrediction:(BOOL)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
-+ (void)fetchSuggestedDonationsForForApplicationBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)fetchSuggestedDonationsForApplicationBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)fetchSuggestedDonationsForAllAppsWithLimit:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)fetchRecommendedDonationsByAppIdentifierWithLimit:(unsigned long long)arg1 query:(id)arg2 filteringForIsEligibleForPrediction:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)fetchRecommendedDonationsForApplicationBundleIdentifier:(id)arg1 limit:(unsigned long long)arg2 query:(id)arg3 filteringForIsEligibleForPrediction:(BOOL)arg4 filteringActiveShortcuts:(BOOL)arg5 actionDonationCategory:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;

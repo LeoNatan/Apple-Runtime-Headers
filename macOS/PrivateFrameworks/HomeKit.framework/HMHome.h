@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKit/HMFLogging-Protocol.h>
 #import <HomeKit/HMFMessageReceiver-Protocol.h>
 #import <HomeKit/HMMutableApplicationData-Protocol.h>
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class CLLocation, HMApplicationData, HMCameraClipCollectionManager, HMFMessageDestination, HMFUnfairLock, HMHomeManager, HMMutableArray, HMRoom, HMSetupViewController, HMUser, NSArray, NSDate, NSOperationQueue, NSString, NSUUID, _HMContext;
+@class CLLocation, HMApplicationData, HMFMessageDestination, HMFUnfairLock, HMHomeManager, HMMutableArray, HMRoom, HMSetupViewController, HMUser, NSArray, NSDate, NSOperationQueue, NSString, NSUUID, _HMContext;
 @protocol HMHomeDelegate, HMSetupRemoteService, OS_dispatch_queue;
 
-@interface HMHome : NSObject <NSSecureCoding, HMFMessageReceiver, HMObjectMerge, HMMutableApplicationData>
+@interface HMHome : NSObject <HMFLogging, NSSecureCoding, HMFMessageReceiver, HMObjectMerge, HMMutableApplicationData>
 {
     BOOL _automaticSoftwareUpdateEnabled;
     long long _minimumMediaUserPrivilege;
@@ -37,7 +38,6 @@
     HMUser *_currentUser;
     HMApplicationData *_applicationData;
     NSDate *_notificationsUpdatedTime;
-    HMCameraClipCollectionManager *_cameraClipCollectionManager;
     long long _homeLocationStatus;
     unsigned long long _networkRouterSupport;
     unsigned long long _networkRouterSupportDisableReason;
@@ -64,6 +64,7 @@
     HMMutableArray *_currentAccessories;
 }
 
++ (id)logCategory;
 + (BOOL)supportsSecureCoding;
 + (BOOL)isValidMediaPassword:(id)arg1 error:(id *)arg2;
 + (id)generateMediaPasswordWithError:(id *)arg1;
@@ -95,6 +96,7 @@
 @property(readonly, nonatomic) unsigned long long homeHubState; // @synthesize homeHubState=_homeHubState;
 @property(nonatomic) BOOL multiUserEnabled; // @synthesize multiUserEnabled=_multiUserEnabled;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)_updateApplicationData:(id)arg1 forAppDataContainer:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateApplicationData:(id)arg1 forAppDataContainer:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateApplicationData:(id)arg1 forActionSet:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -250,7 +252,6 @@
 @property unsigned long long networkRouterSupportDisableReason; // @synthesize networkRouterSupportDisableReason=_networkRouterSupportDisableReason;
 @property unsigned long long networkRouterSupport; // @synthesize networkRouterSupport=_networkRouterSupport;
 @property long long protectionMode; // @synthesize protectionMode=_protectionMode;
-@property(readonly) HMCameraClipCollectionManager *cameraClipCollectionManager; // @synthesize cameraClipCollectionManager=_cameraClipCollectionManager;
 @property(copy, nonatomic) NSDate *notificationsUpdatedTime; // @synthesize notificationsUpdatedTime=_notificationsUpdatedTime;
 @property(nonatomic, getter=areNotificationsEnabled) BOOL notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
 - (id)targetControllers;
@@ -270,7 +271,6 @@
 - (id)initWithName:(id)arg1 uuid:(id)arg2 homeAsRoomUUID:(id)arg3 homeAsRoomName:(id)arg4 actionSets:(id)arg5;
 - (id)initWithName:(id)arg1 uuid:(id)arg2;
 - (id)init;
-- (id)cameraProfileWithUniqueIdentifier:(id)arg1;
 - (void)_performBatchCharacteristicRequest:(id)arg1;
 - (void)performBatchCharacteristicRequest:(id)arg1;
 - (void)unblockAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -386,8 +386,7 @@
 - (void)_didAddAccessoryNetworkProtectionGroup:(id)arg1;
 - (void)_handleAccessoryNetworkProtectionGroupRemovedNotification:(id)arg1;
 - (void)_handleAccessoryNetworkProtectionGroupAddedNotification:(id)arg1;
-- (void)_handleAccessoryNetworkProtectionGroupUpdatedNotification:(id)arg1;
-- (void)updateAccessoryNetworkProtectionGroupWithUUID:(id)arg1 protectionMode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateAccessoryNetworkProtectionGroup:(id)arg1 protectionMode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleHomeNetworkProtectionModeUpdatedNotification:(id)arg1;
 - (void)updateNetworkProtection:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSArray *accessoryProtectionGroups;

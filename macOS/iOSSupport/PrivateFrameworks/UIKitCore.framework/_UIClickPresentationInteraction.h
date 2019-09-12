@@ -27,6 +27,7 @@
         char shouldAllowDragAfterDismiss;
         char previewForCancellingDragItem;
         char willAnimateDragCancelWithAnimator;
+        char dragSessionDidEndForItems;
         char interactionEffectForTargetedPreview;
         char endedForPresentation;
     } _delegateImplements;
@@ -46,9 +47,11 @@
     UIDragInteraction *_latentAssociatedDragInteraction;
     UIDragInteraction *_associatedDragInteraction;
     NSString *_debugIdentifier;
+    NSString *_presentationTypeDebugString;
     struct CGPoint _initialLocation;
 }
 
+@property(copy, nonatomic) NSString *presentationTypeDebugString; // @synthesize presentationTypeDebugString=_presentationTypeDebugString;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
 @property(retain, nonatomic) UIDragInteraction *latentAssociatedDragInteraction; // @synthesize latentAssociatedDragInteraction=_latentAssociatedDragInteraction;
@@ -77,7 +80,7 @@
 - (id)_clickDriverTouch;
 - (void)_prepareInteractionEffect;
 - (void)_endInteractionWithContext:(id)arg1;
-- (void)_endInteractionDidComplete:(BOOL)arg1;
+- (void)_endInteractionDidComplete:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_cancelWithReason:(unsigned long long)arg1 alongsideActions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setDelegate:(id)arg1;
 - (void)_handleDidTransitionToPossibleFromState:(unsigned long long)arg1 context:(id)arg2;
@@ -90,17 +93,18 @@
 - (unsigned long long)_handleTransitionToActive;
 - (BOOL)_isPaused;
 - (unsigned long long)_currentState;
+- (BOOL)_isActive;
 - (void)_prepareStateMachine;
 - (void)_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
 - (void)_attemptDragLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(BOOL)arg2;
 - (id)_clickDragDriver;
 - (void)_associateWithActiveDragInteraction;
+- (void)_clickInteractionDidUpdateDriver:(id)arg1;
 - (unsigned long long)_clickInteractionDefaultDriverType:(id)arg1;
 - (void)clickInteractionDidClickUp:(id)arg1;
 - (void)clickInteractionDidClickDown:(id)arg1;
 - (id)highlightEffectForClickInteraction:(id)arg1;
 - (void)clickInteractionDidEnd:(id)arg1;
-- (BOOL)clickInteractionShouldBegin:(id)arg1;
 - (void)_clickInteraction:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
 - (void)_performPresentation;
 - (BOOL)_canPerformPresentation;
@@ -109,8 +113,11 @@
 - (void)willMoveToView:(id)arg1;
 - (void)_delegate_interactionEndedWithContext:(id)arg1;
 - (BOOL)_delegate_shouldAllowDragAfterDismiss;
+@property(readonly, nonatomic, getter=_reachedForceThreshold) BOOL reachedForceThreshold;
 - (struct CGPoint)locationInView:(id)arg1;
 - (void)beginDragWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
+- (void)endPanInteraction;
+- (void)beginPanInteraction;
 - (void)cancelInteraction;
 - (void)present;
 @property(readonly, nonatomic) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;

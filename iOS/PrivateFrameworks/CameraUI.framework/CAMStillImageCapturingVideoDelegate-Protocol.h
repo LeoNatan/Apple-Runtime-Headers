@@ -9,6 +9,10 @@
 @protocol CAMStillImageCapturingVideoDelegate <NSObject>
 
 @optional
+- (void)stillImageRequestsDidStopCapturingCTMVideo;
+- (void)stillImageRequestWillStartCapturingCTMVideoWithCaptureInFlight:(_Bool)arg1;
+- (void)stillImageRequestsWillRequestCTMVideoCaptureEnd;
+- (void)stillImageRequestsWillRequestCTMVideoCaptureStart;
 - (void)stillImageRequestsDidCompleteCapturingLivePhotoVideo;
 - (void)stillImageRequestsWillStartCapturingLivePhotoVideo;
 @end

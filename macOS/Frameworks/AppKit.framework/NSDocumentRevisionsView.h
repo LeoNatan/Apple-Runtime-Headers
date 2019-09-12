@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class CALayer, NSArray, NSButton, NSDocumentRevisionsAuxiliaryWindow, NSDocumentRevisionsController, NSMapTable, NSMutableArray, NSTextField;
+@class NSArray, NSButton, NSDocumentRevisionsAuxiliaryWindow, NSDocumentRevisionsController, NSMapTable, NSMutableArray, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface NSDocumentRevisionsView : NSView
@@ -26,9 +26,7 @@ __attribute__((visibility("hidden")))
     double _windowScaleFactor;
     BOOL _topLayerHidden;
     NSView *_stackView;
-    CALayer *_screenShotLayer;
     NSMapTable *_transitionAnimations;
-    BOOL _transitoryLayersVisible;
     BOOL _isStartTransition;
     NSArray *_layerStackAnimations;
     NSArray *_backdropLayerStackAnimations;
@@ -74,11 +72,8 @@ __attribute__((visibility("hidden")))
 - (void)prepareForFinishAnimationWithOutcome:(long long)arg1;
 - (void)prepareForStartAnimation;
 - (void)_prepareRevisionLayers;
-- (void)setFullScreenShot:(id)arg1;
-- (void)_setupFullScreenShot;
+- (void)_setupDesktopPictureFade;
 - (void)_commitTransitoryAnimations;
-- (void)hideTransitoryLayers;
-- (void)showTransitoryLayers;
 - (void)_whenRevisionUpdatesAreAllowedDo:(CDUnknownBlockType)arg1;
 - (void)_animationDidEnd;
 - (void)_animationWillStart;

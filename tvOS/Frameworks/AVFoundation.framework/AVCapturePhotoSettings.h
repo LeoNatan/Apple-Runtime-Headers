@@ -14,10 +14,12 @@
 {
     AVCapturePhotoSettingsInternal *_internal;
     _Bool _autoRedEyeReductionEnabled;
+    _Bool _autoVirtualDeviceFusionEnabled;
     _Bool _portraitEffectsMatteDeliveryEnabled;
     _Bool _embedsPortraitEffectsMatteInPhoto;
     _Bool _embedsSemanticSegmentationMattesInPhoto;
     long long _photoQualityPrioritization;
+    NSArray *_virtualDeviceConstituentPhotoDeliveryEnabledDevices;
     NSArray *_enabledSemanticSegmentationMatteTypes;
     NSArray *_availableRawEmbeddedThumbnailPhotoCodecTypes;
     NSDictionary *_rawEmbeddedThumbnailPhotoFormat;
@@ -38,6 +40,8 @@
 @property(copy, nonatomic) NSArray *enabledSemanticSegmentationMatteTypes; // @synthesize enabledSemanticSegmentationMatteTypes=_enabledSemanticSegmentationMatteTypes;
 @property(nonatomic) _Bool embedsPortraitEffectsMatteInPhoto; // @synthesize embedsPortraitEffectsMatteInPhoto=_embedsPortraitEffectsMatteInPhoto;
 @property(nonatomic, getter=isPortraitEffectsMatteDeliveryEnabled) _Bool portraitEffectsMatteDeliveryEnabled; // @synthesize portraitEffectsMatteDeliveryEnabled=_portraitEffectsMatteDeliveryEnabled;
+@property(copy, nonatomic) NSArray *virtualDeviceConstituentPhotoDeliveryEnabledDevices; // @synthesize virtualDeviceConstituentPhotoDeliveryEnabledDevices=_virtualDeviceConstituentPhotoDeliveryEnabledDevices;
+@property(nonatomic, getter=isAutoVirtualDeviceFusionEnabled) _Bool autoVirtualDeviceFusionEnabled; // @synthesize autoVirtualDeviceFusionEnabled=_autoVirtualDeviceFusionEnabled;
 @property(nonatomic) long long photoQualityPrioritization; // @synthesize photoQualityPrioritization=_photoQualityPrioritization;
 @property(nonatomic, getter=isAutoRedEyeReductionEnabled) _Bool autoRedEyeReductionEnabled; // @synthesize autoRedEyeReductionEnabled=_autoRedEyeReductionEnabled;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id *)arg2;

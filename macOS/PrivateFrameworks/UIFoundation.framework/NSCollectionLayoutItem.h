@@ -32,8 +32,8 @@
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSCollectionLayoutSize *size; // @synthesize size=_size;
 @property(copy, nonatomic) NSArray *supplementaryItems; // @synthesize supplementaryItems=_supplementaryItems;
-@property(copy, nonatomic) NSCollectionLayoutEdgeSpacing *edgeSpacing; // @synthesize edgeSpacing=_edgeSpacing;
-@property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+@property(copy) NSCollectionLayoutEdgeSpacing *edgeSpacing; // @synthesize edgeSpacing=_edgeSpacing;
+@property struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 - (void).cxx_destruct;
 - (BOOL)hasCustomGroupItemProvider;
 - (BOOL)ignoresRTL;
@@ -49,7 +49,7 @@
 - (BOOL)containsEstimatedSizeItem;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSCollectionLayoutSize *layoutSize;
+@property(readonly) NSCollectionLayoutSize *layoutSize;
 - (id)description;
 - (id)initWithSize:(id)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2 edgeSpacing:(id)arg3 supplementaryItems:(id)arg4 decorationItems:(id)arg5 name:(id)arg6 identifier:(id)arg7;
 - (id)_renderedDescription;

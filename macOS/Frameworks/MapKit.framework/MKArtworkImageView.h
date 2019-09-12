@@ -24,6 +24,7 @@
 - (void)viewDidChangeEffectiveAppearance;
 @property(readonly, nonatomic) MKImageView *badgeView;
 - (void)_updateImageView;
+- (void)setImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

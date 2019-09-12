@@ -69,7 +69,8 @@
         unsigned int canResolveUbiquitousConflicts:1;
         unsigned int delegate_panel_newDocumentCustomization:1;
         unsigned int delegate_panel_customActionInvoked:1;
-        unsigned int reserved:3;
+        unsigned int delegate_safeToCall:1;
+        unsigned int reserved:2;
     } _spFlags;
     NSSavePanelAuxiliary *_spAuxiliaryStorage;
     unsigned int _unused:1;
@@ -416,7 +417,10 @@
 - (void)_reloadDisplayState;
 - (void)validateVisibleColumns;
 @property __weak id <NSOpenSavePanelDelegate> delegate;
-- (void)_refreshDelegateOptions;
+- (void)_disableDelegateCalls;
+- (void)_enableDelegateCalls;
+- (id)stringValueForIntrospectorPropertyKey:(id)arg1;
+- (id)propertyKeysForIntrospector;
 - (void)_setSupportedDelegateMethodsWithDelegate:(id)arg1 overrides:(id)arg2;
 - (void)_clearDelegateOptions;
 - (void)_accessoryViewFrameDidChange:(id)arg1;

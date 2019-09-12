@@ -16,6 +16,8 @@
 - (void)optimizeContentsForCPUAccess:(id <MTLTexture>)arg1;
 - (void)optimizeContentsForGPUAccess:(id <MTLTexture>)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
 - (void)optimizeContentsForGPUAccess:(id <MTLTexture>)arg1;
+- (void)resetTextureAccessCounters:(id <MTLTexture>)arg1 region:(CDStruct_1e3be3a8)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4;
+- (void)getTextureAccessCounters:(id <MTLTexture>)arg1 region:(CDStruct_1e3be3a8)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4 resetCounters:(_Bool)arg5 countersBuffer:(id <MTLBuffer>)arg6 countersBufferOffset:(unsigned long long)arg7;
 - (void)waitForFence:(id <MTLFence>)arg1;
 - (void)updateFence:(id <MTLFence>)arg1;
 - (void)copyFromBuffer:(id <MTLBuffer>)arg1 sourceOffset:(unsigned long long)arg2 toBuffer:(id <MTLBuffer>)arg3 destinationOffset:(unsigned long long)arg4 size:(unsigned long long)arg5;

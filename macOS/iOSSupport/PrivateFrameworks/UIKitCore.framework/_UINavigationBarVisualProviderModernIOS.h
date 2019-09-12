@@ -83,6 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationBarInvalidatedResolvedLayoutMargins;
 - (void)_setupTopNavigationItemAnimated:(BOOL)arg1;
 - (id)restingHeights;
+- (BOOL)topItemHasVariableHeight;
 - (CDStruct_39925896)layoutHeightsFittingWidth:(double)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

@@ -16,6 +16,7 @@
 // Remaining properties
 @property(copy, nonatomic) NSDateComponents *dateAndTimeAnswer; // @dynamic dateAndTimeAnswer;
 @property(copy, nonatomic) NSDateComponents *dateAnswer; // @dynamic dateAnswer;
+@property(copy, nonatomic) NSString *defaultURLAnswer; // @dynamic defaultURLAnswer;
 @property(copy, nonatomic) NSNumber *numberAnswer; // @dynamic numberAnswer;
 @property(copy, nonatomic) NSString *question; // @dynamic question;
 @property(copy, nonatomic) NSString *stringAnswer; // @dynamic stringAnswer;

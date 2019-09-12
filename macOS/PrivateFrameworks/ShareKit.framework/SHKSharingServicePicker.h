@@ -89,12 +89,13 @@
 - (id)_subtitleAttributes;
 - (id)_titleAttributes;
 - (id)userMenuImage;
-- (id)tintedImageFromImage:(id)arg1;
+- (id)tintedImageWithSize:(struct CGSize)arg1 fraction:(double)arg2 fromImage:(id)arg3;
+- (id)moreButtonTouchBarImage;
 - (id)moreButtonImage;
 - (id)emptyMenuImage;
 - (id)_alternateItemIdentifierFromRepresentedObject:(id)arg1;
 - (id)_serviceFromRepresentedObject:(id)arg1;
-- (id)_representedObjectForService:(id)arg1 alternateItemIdentifier:(id)arg2;
+- (id)_representedObjectForService:(id)arg1 alternateItemIdentifier:(id)arg2 touchBarImage:(id)arg3;
 - (void)notifyDidChooseSharingService:(id)arg1;
 - (void)_handleItemsReady;
 - (void)_performSharingService:(id)arg1;

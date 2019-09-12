@@ -156,7 +156,8 @@
 - (id)uninstalledProfileIdentifiersForDevice:(unsigned long long)arg1;
 - (id)installedProfileIdentifiers;
 - (id)installedMDMProfileIdentifier;
-- (_Bool)_isRestrictionDictionaryForbiddenForUserEnrollment:(id)arg1;
+- (id)_transmogrifyRestrictionDictionaryForUserEnrollment:(id)arg1 outError:(id *)arg2;
+- (id)_disallowedRestrictionErrorForRestrictionKey:(id)arg1;
 - (id)effectiveWhitelistedAppsAndOptions;
 - (void)removeOrphanedClientRestrictionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeOrphanedClientRestrictions;

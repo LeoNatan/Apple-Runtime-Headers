@@ -30,6 +30,7 @@
     unsigned long long _raycastCount;
     _Bool _didRunPlaneDetection;
     long long _highestThermalState;
+    _Bool _didSwitchToWornMode;
 }
 
 - (void).cxx_destruct;
@@ -40,6 +41,7 @@
 - (id)configBasedKey:(id)arg1;
 - (void)_recordSessionEnd;
 - (void)sessionStopped;
+- (void)sessionSwitchedPresentationMode:(long long)arg1;
 - (void)recordRaycast:(id)arg1 tracked:(_Bool)arg2;
 - (void)saveMapWithFrame:(id)arg1;
 - (void)sessionUpdateThermalState:(long long)arg1;

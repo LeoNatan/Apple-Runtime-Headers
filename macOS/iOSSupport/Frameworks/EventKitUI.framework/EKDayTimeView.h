@@ -91,6 +91,7 @@
 @property(nonatomic) BOOL showsRightBorder;
 @property(nonatomic) BOOL showsLeftBorder;
 - (void)setOpaque:(BOOL)arg1;
+- (void)updateHourHeight;
 - (double)scaledHourHeight;
 - (double)_timeWidth;
 - (void)_invalidateTimeWidth;

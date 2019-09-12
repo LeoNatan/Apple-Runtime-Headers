@@ -7,9 +7,9 @@
 #import <UIFoundation/NSObject-Protocol.h>
 
 @protocol NSCollectionLayoutContainer <NSObject>
-@property(readonly, nonatomic) struct NSDirectionalEdgeInsets effectiveContentInsets;
-@property(readonly, nonatomic) struct NSDirectionalEdgeInsets contentInsets;
-@property(readonly, nonatomic) struct CGSize effectiveContentSize;
-@property(readonly, nonatomic) struct CGSize contentSize;
+@property(readonly) struct NSDirectionalEdgeInsets effectiveContentInsets;
+@property(readonly) struct NSDirectionalEdgeInsets contentInsets;
+@property(readonly) struct CGSize effectiveContentSize;
+@property(readonly) struct CGSize contentSize;
 @end
 

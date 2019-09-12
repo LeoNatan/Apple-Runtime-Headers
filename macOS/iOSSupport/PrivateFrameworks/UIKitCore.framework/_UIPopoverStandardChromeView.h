@@ -12,9 +12,6 @@ __attribute__((visibility("hidden")))
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView
 {
     UIView *_arrowBackgroundView;
-    UIView *_arrowView;
-    UIView *_leftCapView;
-    UIView *_rightCapView;
     UIVisualEffectView *_blurView;
     UIView *_maskView;
     UIColor *_popoverBackgroundColor;
@@ -25,15 +22,22 @@ __attribute__((visibility("hidden")))
     long long _requestedBackgroundStyle;
     long long _backgroundStyle;
     BOOL _arrowVisible;
+    BOOL _wasPinned;
     BOOL useShortMode;
     BOOL _debugMode;
     UIView *viewToMaskWhenContentExtendsOverArrow;
     UIColor *_contentBlendingColor;
+    UIView *_arrowView;
+    UIView *_leftCapView;
+    UIView *_rightCapView;
 }
 
 + (struct UIEdgeInsets)contentViewInsets;
 + (double)arrowBase;
 + (double)arrowHeight;
+@property(readonly, nonatomic) UIView *rightCapView; // @synthesize rightCapView=_rightCapView;
+@property(readonly, nonatomic) UIView *leftCapView; // @synthesize leftCapView=_leftCapView;
+@property(readonly, nonatomic) UIView *arrowView; // @synthesize arrowView=_arrowView;
 @property(readonly, nonatomic) UIColor *contentBlendingColor; // @synthesize contentBlendingColor=_contentBlendingColor;
 @property(nonatomic) __weak UIView *viewToMaskWhenContentExtendsOverArrow; // @synthesize viewToMaskWhenContentExtendsOverArrow;
 @property(nonatomic, getter=isDebugModeEnabled) BOOL debugModeEnabled; // @synthesize debugModeEnabled=_debugMode;
@@ -53,8 +57,9 @@ __attribute__((visibility("hidden")))
 - (double)minNonPinnedOffset;
 - (BOOL)wouldPinForOffset:(double)arg1;
 - (BOOL)isPinned;
-- (BOOL)hasComponentViews;
+@property(readonly, nonatomic) BOOL hasComponentViews;
 - (void)_loadNecessaryViews;
+- (void)_resetComponentViews;
 - (struct CGRect)_contentViewFrame;
 - (struct UIEdgeInsets)safeAreaInsetsForContentView;
 - (BOOL)_shouldUseEqualContentInsetsOnAllSides;

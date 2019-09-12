@@ -26,14 +26,18 @@
     CDUnknownBlockType _didInvalidateCacheBlock;
     unsigned long long _dereferenceCount;
     BOOL _alwaysShowsComposingTextAsMarkedText;
+    BOOL _hasComposingTextChanges;
+    BOOL _recomposing;
 }
 
 + (id)appsWithUnreliableTextInputImplementation;
+@property(nonatomic, getter=isRecomposing) BOOL recomposing; // @synthesize recomposing=_recomposing;
 @property(readonly, nonatomic) BOOL alwaysShowsComposingTextAsMarkedText; // @synthesize alwaysShowsComposingTextAsMarkedText=_alwaysShowsComposingTextAsMarkedText;
 @property(nonatomic) unsigned long long dereferenceCount; // @synthesize dereferenceCount=_dereferenceCount;
 @property(copy, nonatomic) CDUnknownBlockType didInvalidateCacheBlock; // @synthesize didInvalidateCacheBlock=_didInvalidateCacheBlock;
 @property(copy, nonatomic) CDUnknownBlockType willInvalidateCacheBlock; // @synthesize willInvalidateCacheBlock=_willInvalidateCacheBlock;
 @property(nonatomic) struct _NSRange composingTextRangeInTextInput; // @synthesize composingTextRangeInTextInput=_composingTextRangeInTextInput;
+@property(nonatomic) BOOL hasComposingTextChanges; // @synthesize hasComposingTextChanges=_hasComposingTextChanges;
 @property(nonatomic) BOOL hasChanges; // @synthesize hasChanges=_hasChanges;
 @property(nonatomic, getter=isEditingInternally) BOOL editingInternally; // @synthesize editingInternally=_editingInternally;
 @property(nonatomic) BOOL hasMoreTextAfterCache; // @synthesize hasMoreTextAfterCache=_hasMoreTextAfterCache;

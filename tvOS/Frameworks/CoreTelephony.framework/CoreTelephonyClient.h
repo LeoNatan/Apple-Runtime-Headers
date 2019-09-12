@@ -114,7 +114,6 @@
 - (void)isEmergencyNumberWithWhitelistIncluded:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)isEmergencyNumber:(id)arg1 number:(id)arg2 error:(id *)arg3;
 - (void)isEmergencyNumber:(id)arg1 number:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)injectMTsms:(id)arg1 smsData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getEmergencyTextNumbers:(id)arg1 error:(id *)arg2;
 - (void)getEmergencyTextNumbers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getSmscAddress:(id)arg1 error:(id *)arg2;

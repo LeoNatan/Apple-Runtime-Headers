@@ -24,6 +24,7 @@
     BOOL _canRenderLoopingVideoLive;
     long long _playbackMode;
     BOOL _muted;
+    BOOL _didReleaseAVObjects;
     // Error parsing type: Ai, name: _videoRenderInFlightCount
     NSObject<OS_dispatch_group> *_renderGroup;
     NSObject<OS_dispatch_queue> *_renderQueue;

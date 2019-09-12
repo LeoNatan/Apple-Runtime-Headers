@@ -44,7 +44,6 @@
 - (void)makeKeyAndOrderFront:(id)arg1;
 - (void)endHostModalSession;
 - (void)beginHostModalSession;
-- (void)getDropSessionWithID:(unsigned int)arg1 reply:(void (^)(id <UINSDropSession>))arg2;
 - (void)beginDragWithItems:(NSArray *)arg1 handler:(id <UINSDragSessionHandler>)arg2;
 - (void)setCursor:(id <UINSCursor>)arg1;
 - (void)takeCursor:(id <UINSCursor>)arg1;

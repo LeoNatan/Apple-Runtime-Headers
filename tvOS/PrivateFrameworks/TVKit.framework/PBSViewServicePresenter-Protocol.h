@@ -16,5 +16,6 @@
 @optional
 - (void)viewServiceHandleMessage:(NSDictionary *)arg1 reply:(void (^)(id <NSSecureCoding>, NSError *))arg2;
 - (void)viewServiceUpdatePresentationWithOptions:(NSDictionary *)arg1;
+- (void)viewServiceBeginPresentationWithOptions:(NSDictionary *)arg1 completion:(void (^)(void))arg2;
 @end
 

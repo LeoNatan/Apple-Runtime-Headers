@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)disableAutomaticTermination;
 - (void)enableAutomaticTermination;
+- (void)_updateManagedDisplay;
 - (struct CGRect)constrainFrameRect:(struct CGRect)arg1 toScreen:(id)arg2;
 - (id)resizeCursor;
 - (unsigned long long)horizontalIndex;

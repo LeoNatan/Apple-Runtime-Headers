@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 + (double)_MaxRetryInterval;
 + (unsigned long long)_MaxRetry;
 + (BOOL)supportsSecureCoding;
-- (BOOL)isMatchingSession:(id)arg1;
+- (BOOL)isMatchingSession:(id)arg1 outError:(id *)arg2;
 - (void)_sendAPDU:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_transceiveWithSession:(id)arg1 sendData:(id)arg2 receivedData:(id *)arg3 error:(id *)arg4;
 - (void)_transceiveWithData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

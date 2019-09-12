@@ -23,10 +23,10 @@
 @property(readonly, nonatomic) NSString *typeDescription;
 @property(readonly, nonatomic) NSString *string;
 - (BOOL)isEqualToClass:(Class)arg1;
-- (BOOL)isEqualToUTType:(struct __CFString *)arg1;
+- (BOOL)isEqualToUTType:(const struct __CFString *)arg1;
 - (BOOL)isEqualToType:(id)arg1;
 - (BOOL)conformsToClass:(Class)arg1;
-- (BOOL)conformsToUTType:(struct __CFString *)arg1;
+- (BOOL)conformsToUTType:(const struct __CFString *)arg1;
 - (BOOL)conformsToTypes:(id)arg1;
 - (BOOL)conformsToType:(id)arg1;
 

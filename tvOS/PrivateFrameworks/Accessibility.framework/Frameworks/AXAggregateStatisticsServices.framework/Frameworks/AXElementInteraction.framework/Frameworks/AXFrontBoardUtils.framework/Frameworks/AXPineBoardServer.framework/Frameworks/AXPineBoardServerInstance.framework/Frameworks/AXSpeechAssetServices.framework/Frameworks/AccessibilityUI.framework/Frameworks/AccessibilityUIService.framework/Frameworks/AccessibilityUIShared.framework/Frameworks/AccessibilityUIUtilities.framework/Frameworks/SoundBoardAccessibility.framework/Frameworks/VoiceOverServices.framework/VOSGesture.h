@@ -22,6 +22,7 @@
 + (id)twoFingerGestures;
 + (id)oneFingerGestures;
 + (id)_gesturesForFingerCount:(long long)arg1;
++ (id)rtlGestureForGesture:(id)arg1;
 + (id)horizontalMirrorGestureForGesture:(id)arg1;
 + (id)gestureWithStringValue:(id)arg1;
 + (id)allGestures;

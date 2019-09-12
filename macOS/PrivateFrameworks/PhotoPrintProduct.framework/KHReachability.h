@@ -14,7 +14,6 @@
 
 + (id)defaultReachability;
 + (id)defaultOfflineError;
-+ (void)initialize;
 - (unsigned long long)_networkStatusForFlags:(unsigned int)arg1;
 - (unsigned long long)currentStatus;
 - (void)dealloc;

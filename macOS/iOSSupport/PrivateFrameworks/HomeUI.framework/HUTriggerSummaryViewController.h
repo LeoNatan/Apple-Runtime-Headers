@@ -14,7 +14,7 @@
 #import <HomeUI/UITextViewDelegate-Protocol.h>
 #import <HomeUI/WFHomeComposeViewControllerDelegate-Protocol.h>
 
-@class HFTriggerBuilder, HUForwardingTriggerActionBuilderDelegate, HUTriggerSummaryActionGridViewController, HUTriggerSummaryItemManager, NSString;
+@class HFTriggerBuilder, HUForwardingTriggerActionBuilderDelegate, HUTriggerActionFlow, HUTriggerSummaryActionGridViewController, HUTriggerSummaryItemManager, NSString;
 @protocol HUTriggerEditorDelegate;
 
 @interface HUTriggerSummaryViewController : HUItemTableViewController <HUTriggerEditorDelegate, HUSwitchCellDelegate, HUTriggerSummaryActionGridViewControllerDelegate, HUTriggerDurationPickerDelegate, UITextViewDelegate, WFHomeComposeViewControllerDelegate, HUMediaSelectionViewControllerDelegate>
@@ -26,10 +26,12 @@
     HFTriggerBuilder *_triggerBuilder;
     id <HUTriggerEditorDelegate> _delegate;
     HUForwardingTriggerActionBuilderDelegate *_forwardingTriggerActionBuilderDelegate;
+    HUTriggerActionFlow *_flow;
 }
 
 + (BOOL)adoptsDefaultGridLayoutMargins;
 + (id)createTriggerSummaryViewControllerForHome:(id)arg1 withTriggerActionSetBuilder:(id)arg2 andTriggerActionBuilderEditorDelegate:(id)arg3;
+@property(retain, nonatomic) HUTriggerActionFlow *flow; // @synthesize flow=_flow;
 @property(nonatomic) BOOL isEditingExistingTrigger; // @synthesize isEditingExistingTrigger=_isEditingExistingTrigger;
 @property(retain, nonatomic) HUForwardingTriggerActionBuilderDelegate *forwardingTriggerActionBuilderDelegate; // @synthesize forwardingTriggerActionBuilderDelegate=_forwardingTriggerActionBuilderDelegate;
 @property(nonatomic) BOOL viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
@@ -75,9 +77,11 @@
 - (void)_showEditorForTriggerBuilderItem:(id)arg1;
 - (void)_cancel:(id)arg1;
 - (void)_done:(id)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *serviceActionsGridViewController; // @synthesize serviceActionsGridViewController=_serviceActionsGridViewController;
 @property(readonly, nonatomic) HUTriggerSummaryActionGridViewController *actionSetsGridViewController; // @synthesize actionSetsGridViewController=_actionSetsGridViewController;
+- (void)viewDidLayoutSubviews;
 - (id)initWithTriggerBuilder:(id)arg1 flow:(id)arg2 delegate:(id)arg3;
 - (id)initWithTriggerBuilder:(id)arg1 mode:(unsigned long long)arg2 isPresentedModally:(BOOL)arg3 delegate:(id)arg4;
 

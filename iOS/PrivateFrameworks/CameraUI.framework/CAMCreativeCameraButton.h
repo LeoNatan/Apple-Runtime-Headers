@@ -6,18 +6,25 @@
 
 #import <UIKit/UIButton.h>
 
+@class UIImageView;
+
 @interface CAMCreativeCameraButton : UIButton
 {
     _Bool _useCompactLayout;
+    _Bool __overContent;
     long long _layoutStyle;
     long long _orientation;
+    UIImageView *__circleBackgroundView;
     struct UIEdgeInsets _tappableEdgeInsets;
 }
 
+@property(retain, nonatomic) UIImageView *_circleBackgroundView; // @synthesize _circleBackgroundView=__circleBackgroundView;
+@property(readonly, nonatomic, getter=_isOverContent) _Bool _overContent; // @synthesize _overContent=__overContent;
 @property(nonatomic, setter=useCompactLayout:) _Bool useCompactLayout; // @synthesize useCompactLayout=_useCompactLayout;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct UIEdgeInsets tappableEdgeInsets; // @synthesize tappableEdgeInsets=_tappableEdgeInsets;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
@@ -26,8 +33,9 @@
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateImages;
+- (id)initForOverContent;
 - (id)initWithLayoutStyle:(long long)arg1;
-- (void)_commonCAMCreativeCameraButtonInitializationWithStyle:(long long)arg1;
+- (void)_commonCAMCreativeCameraButtonInitializationWithStyle:(long long)arg1 overContent:(_Bool)arg2;
 
 @end
 

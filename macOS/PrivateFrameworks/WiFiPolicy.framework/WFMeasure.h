@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableURLRequest, NSTimer, NSURLSession, NSURLSessionDataTask;
+@class NSDate, NSMutableURLRequest, NSTimer, NSURLSession, NSURLSessionDownloadTask;
 
 @interface WFMeasure : NSObject
 {
     CDUnknownBlockType _completionHandler;
     NSMutableURLRequest *_url;
     NSURLSession *_session;
-    NSURLSessionDataTask *_task;
+    NSURLSessionDownloadTask *_task;
     NSDate *_startDate;
     BOOL _isInProgress;
     unsigned int _wakeAssertionId;

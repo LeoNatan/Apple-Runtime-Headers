@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKitDaemon/HMDDevicePreferenceDataSource-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class HMDHAPAccessory, HMDHome, HMDNetworkRouterController, HMFUnfairLock, NSNotificationCenter, NSString;
 @protocol HMDNetworkRouterFirewallRuleManager, OS_dispatch_queue;
 
-@interface HMDNetworkRouterClientManager : NSObject <HMFLogging>
+@interface HMDNetworkRouterClientManager : NSObject <HMFLogging, HMDDevicePreferenceDataSource>
 {
     BOOL _started;
     BOOL _initialConfigureNeeded;
@@ -35,6 +36,7 @@
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) HMFUnfairLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+- (BOOL)supportsDeviceWithCapabilities:(id)arg1;
 - (id)_transactionBlockForAccessoriesWithStaleClientIdentifier;
 - (void)_unregisterInterestForFirewallRulesForProductData:(id)arg1 firmwareVersion:(id)arg2;
 - (void)_unregisterInterestForFirewallRulesForAccessory:(id)arg1;

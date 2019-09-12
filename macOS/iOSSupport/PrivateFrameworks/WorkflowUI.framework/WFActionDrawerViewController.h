@@ -56,7 +56,7 @@
 - (void).cxx_destruct;
 - (BOOL)moveToState:(id)arg1 animated:(BOOL)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
-- (void)suggestionsViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2;
+- (void)suggestionsViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2 title:(id)arg3;
 - (void)suggestionsViewControllerViewControllerDidSelectCategoryScripting:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryFavorites:(id)arg1 title:(id)arg2;
 - (void)suggestionsViewControllerDidSelectCategoryApps:(id)arg1 title:(id)arg2;

@@ -14,6 +14,7 @@
 {
     _Bool _uppercase;
     _Bool _shouldEmbedTintColors;
+    _Bool _shouldStyleForTritium;
     CLKFont *_font;
     CLKFont *_smallCapsBaseFont;
     NSDictionary *_otherAttributes;
@@ -25,6 +26,8 @@
 + (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4;
 + (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4 minimumScaleFactor:(double)arg5;
 + (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4 minimumScaleFactor:(double)arg5 shouldEmbedTintColor:(_Bool)arg6;
++ (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4 minimumScaleFactor:(double)arg5 shouldEmbedTintColor:(_Bool)arg6 shouldStyleForTritium:(_Bool)arg7;
+@property(nonatomic) _Bool shouldStyleForTritium; // @synthesize shouldStyleForTritium=_shouldStyleForTritium;
 @property(nonatomic) _Bool shouldEmbedTintColors; // @synthesize shouldEmbedTintColors=_shouldEmbedTintColors;
 @property(nonatomic) double minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
 @property(copy, nonatomic) NSDictionary *otherAttributes; // @synthesize otherAttributes=_otherAttributes;

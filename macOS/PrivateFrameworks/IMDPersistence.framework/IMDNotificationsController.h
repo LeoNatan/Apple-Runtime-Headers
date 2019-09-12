@@ -26,6 +26,7 @@
 + (id)_formattedDisplayStringForAddress:(id)arg1 countryCode:(id)arg2;
 + (id)_countryCodeForHandle:(struct _IMDHandleRecordStruct *)arg1;
 + (id)_addressForHandle:(struct _IMDHandleRecordStruct *)arg1;
++ (id)_uncanonicalizedAddressForHandle:(struct _IMDHandleRecordStruct *)arg1;
 + (id)_addressBookNameForAddress:(id)arg1 orContact:(id)arg2;
 + (id)_truncateNameIfNeeded:(id)arg1;
 + (id)_contactKeysForMe;
@@ -36,8 +37,10 @@
 @property(retain, nonatomic) UNNotificationCategory *incomingFilesNotificationCategory; // @synthesize incomingFilesNotificationCategory=_incomingFilesNotificationCategory;
 @property(retain, nonatomic) UNNotificationCategory *incomingMessageNotificationCategory; // @synthesize incomingMessageNotificationCategory=_incomingMessageNotificationCategory;
 @property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
+- (id)_groupHashForHandles:(id)arg1 lastAddressedHandle:(id)arg2;
 - (void)_setContactInMessageDictionary:(struct _IMDHandleRecordStruct *)arg1 messageDictionary:(id)arg2;
 - (BOOL)_chatHasDNDSetBasedOnDNDIdentifier:(id)arg1;
+- (BOOL)_messageShouldBeSilentlyDeliveredForBusinessChat:(id)arg1;
 -     // Error parsing type: @24@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _chatDictionaryForMessageRecord:
 -     // Error parsing type: @24@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _messageDictionaryForMessageRecord:
 -     // Error parsing type: @28@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16c24, name: _generateNotificationRequestForFailedDelivery:isCarouselUITriggered:

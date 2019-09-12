@@ -42,7 +42,6 @@
 - (id)description;
 - (id)initWithClipManager:(id)arg1 clip:(id)arg2 dataSource:(id)arg3;
 - (id)initWithClipManager:(id)arg1 clip:(id)arg2;
-- (id)initWithClip:(id)arg1;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <AVKitMacHelper/AVRoutePickerViewHostInterface-Protocol.h>
 
-@class NSString;
+@class AVOutputContext;
 @protocol AVRoutePickerViewRemoteViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -26,8 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)stopDiscoveringAudioRoutes;
 - (void)startDiscoveringAudioRoutes;
 @property(nonatomic) BOOL prioritizesVideoDevices;
-@property(nonatomic) BOOL useSystemAudioOutputContext;
-@property(copy, nonatomic) NSString *outputContextID;
+@property(retain, nonatomic) AVOutputContext *outputContext;
 
 @end
 

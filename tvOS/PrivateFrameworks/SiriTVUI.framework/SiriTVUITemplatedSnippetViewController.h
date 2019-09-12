@@ -45,6 +45,7 @@
 - (void)templateItemViewController:(id)arg1 performAceCommands:(id)arg2;
 - (void)templateItemViewController:(id)arg1 updateLayoutOffsetsForHighlightedItemInViewController:(id)arg2;
 - (void)templateItemViewController:(id)arg1 highlightTemplateItem:(id)arg2 atIndexPath:(id)arg3 hasStopped:(_Bool)arg4;
+- (id)preferredFocusEnvironments;
 - (void)didReceiveMemoryWarning;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (struct CGSize)preferredContentSize;

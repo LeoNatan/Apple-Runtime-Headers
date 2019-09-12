@@ -21,7 +21,7 @@
     WFFileRepresentation *_serializedDataFile;
     long long _cachedSyncHash;
     NSData *_serializedQuarantineData;
-    NSData *_serializedAccessResourcePermissionStateData;
+    NSData *_serializedAccessResourcePerWorkflowStateData;
     NSString *_lastSavedOnDeviceName;
     WFWorkflowRecord *_cachedRecord;
 }
@@ -30,7 +30,7 @@
 + (id)recordType;
 @property(retain, nonatomic) WFWorkflowRecord *cachedRecord; // @synthesize cachedRecord=_cachedRecord;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
-@property(copy, nonatomic) NSData *serializedAccessResourcePermissionStateData; // @synthesize serializedAccessResourcePermissionStateData=_serializedAccessResourcePermissionStateData;
+@property(copy, nonatomic) NSData *serializedAccessResourcePerWorkflowStateData; // @synthesize serializedAccessResourcePerWorkflowStateData=_serializedAccessResourcePerWorkflowStateData;
 @property(copy, nonatomic) NSData *serializedQuarantineData; // @synthesize serializedQuarantineData=_serializedQuarantineData;
 @property(nonatomic) long long cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
 @property(retain, nonatomic) WFFileRepresentation *serializedDataFile; // @synthesize serializedDataFile=_serializedDataFile;

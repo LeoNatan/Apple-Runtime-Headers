@@ -8,7 +8,7 @@
 
 @interface PLPhotoLibraryPathManager (conveniences)
 + (BOOL)supportedFilesystemForCloneWithLibraryURL:(id)arg1 error:(id *)arg2;
-- (id)temporaryRenderContentURLForInternalRendersWithExtension:(id)arg1 createEmptyFile:(BOOL)arg2;
+- (id)temporaryRenderContentURLForInternalRendersWithExtension:(id)arg1;
 - (id)cloudSharingArchiveDirectory;
 - (id)directoryPathForInFlightComments:(BOOL)arg1;
 - (id)cplDownloadFinishedMarkerFilePath;

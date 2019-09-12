@@ -215,6 +215,7 @@
 - (void)_cleanupFrozenTitleView;
 - (void)_freezeCurrentTitleView;
 @property(readonly, copy) NSString *description;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1;

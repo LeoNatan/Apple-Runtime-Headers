@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_datesForPreviewViewControllerWithStartDate:(id *)arg1 endDate:(id *)arg2;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (void)_createNewEventCopy;
 - (BOOL)configureWithCalendar:(id)arg1 preview:(BOOL)arg2;
 - (void)setEvent:(id)arg1 store:(id)arg2;
 - (void)reset;

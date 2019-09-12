@@ -6,22 +6,24 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class UIView;
+@class UIImageView, UIView, UIVisualEffectView;
 
 @interface HBUIMainAppGridTopShelfContainerView : UICollectionReusableView
 {
     double _blurFractionComplete;
     UIView *_topShelfContentView;
     unsigned long long _snapshotRequestToken;
-    UIView *_contentSnapshotOverlayView;
+    UIImageView *_contentSnapshotOverlayView;
+    UIVisualEffectView *_visualEffectView;
 }
 
-@property(retain, nonatomic) UIView *contentSnapshotOverlayView; // @synthesize contentSnapshotOverlayView=_contentSnapshotOverlayView;
+@property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
+@property(retain, nonatomic) UIImageView *contentSnapshotOverlayView; // @synthesize contentSnapshotOverlayView=_contentSnapshotOverlayView;
 @property(nonatomic) unsigned long long snapshotRequestToken; // @synthesize snapshotRequestToken=_snapshotRequestToken;
 @property(retain, nonatomic) UIView *topShelfContentView; // @synthesize topShelfContentView=_topShelfContentView;
 @property(nonatomic) double blurFractionComplete; // @synthesize blurFractionComplete=_blurFractionComplete;
 - (void).cxx_destruct;
-- (void)updateBlurStateForceSnapshot:(_Bool)arg1;
+- (void)_updateBlurState;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willRemoveSubview:(id)arg1;
 - (void)layoutSubviews;

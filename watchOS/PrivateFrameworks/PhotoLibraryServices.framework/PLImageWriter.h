@@ -38,6 +38,11 @@
 + (id)assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
 + (id)_assetAdjustmentsFromCompositionController:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsWithEffectFilterName:(id)arg1 exportProperties:(id)arg2;
++ (id)finalizedAssetURLForDeferredPhotoPreviewURL:(id)arg1 extension:(id)arg2;
++ (_Bool)isDeferredPhotoPreviewURL:(id)arg1;
++ (id)deferredPhotoPreviewDestinationURLForPrimaryAssetURL:(id)arg1;
++ (_Bool)isSpatialOverCaptureURL:(id)arg1;
++ (id)spatialOverCaptureDestinationURLForPrimaryAssetURL:(id)arg1;
 + (_Bool)_requiresIndicatorFileForJobType:(id)arg1;
 - (void).cxx_destruct;
 - (void)enqueueAutoDeleteEmptyAlbumJobWithAlbumID:(id)arg1;
@@ -48,6 +53,7 @@
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3 error:(id *)arg4;
+- (_Bool)_transferSpatialOverCaptureVideoFromIncomingPath:(id)arg1 forBaseDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_decorateThumbnail:(id)arg1;
 - (void)_processXPCDaemonJob:(id)arg1 completion:(CDUnknownBlockType)arg2;

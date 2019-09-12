@@ -27,10 +27,8 @@ __attribute__((visibility("hidden")))
     struct TKeyValueObserver _arrangedMetadataViewDidChange;
     struct TriStateBool _wasCollapsedBeforeEditing;
     struct TKeyValueObserver _editingOptionsObserver;
-    _Bool _mouseInside;
 }
 
-@property(nonatomic, getter=isMouseInside) _Bool mouseInside; // @synthesize mouseInside=_mouseInside;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)expandToggle:(id)arg1;

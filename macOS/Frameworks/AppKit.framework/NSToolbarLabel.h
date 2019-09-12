@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)setBordered:(BOOL)arg1;
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;
 @property(copy) NSString *title;

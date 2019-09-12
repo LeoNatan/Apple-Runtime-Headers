@@ -13,26 +13,28 @@ __attribute__((visibility("hidden")))
 {
     CIImage *img;
     CIContext *ctx;
-    CDStruct_20caa88f config;
-    float pitch;
-    float yaw;
-    float roll;
+    CDStruct_58ac58eb config;
+    double pitch;
+    double yaw;
+    double roll;
+    double confidence;
+    CIImage *debugImage;
     long long pitchFailureReason;
     long long yawFailureReason;
-    float confidence;
-    CIImage *debugImage;
+    _Bool generateDebugImage;
 }
 
-@property(readonly) CIImage *debugImage; // @synthesize debugImage;
-@property(readonly) float confidence; // @synthesize confidence;
 @property(readonly) long long yawFailureReason; // @synthesize yawFailureReason;
 @property(readonly) long long pitchFailureReason; // @synthesize pitchFailureReason;
-@property(readonly) float roll; // @synthesize roll;
-@property(readonly) float yaw; // @synthesize yaw;
-@property(readonly) float pitch; // @synthesize pitch;
+@property(readonly) CIImage *debugImage; // @synthesize debugImage;
+@property _Bool generateDebugImage; // @synthesize generateDebugImage;
+@property(readonly) double confidence; // @synthesize confidence;
+@property(readonly) double roll; // @synthesize roll;
+@property(readonly) double yaw; // @synthesize yaw;
+@property(readonly) double pitch; // @synthesize pitch;
 - (_Bool)compute;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1 image:(id)arg2 config:(const CDStruct_20caa88f *)arg3;
+- (id)initWithContext:(id)arg1 image:(id)arg2 config:(const CDStruct_58ac58eb *)arg3;
 
 @end
 

@@ -29,8 +29,8 @@
 - (struct CGRect)_itemFrameForContainerRect:(struct CGRect)arg1 itemSize:(struct CGSize)arg2 itemLayoutAnchor:(id)arg3;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly, nonatomic) BOOL isFractionalOffset;
-@property(readonly, nonatomic) BOOL isAbsoluteOffset;
+@property(readonly) BOOL isFractionalOffset;
+@property(readonly) BOOL isAbsoluteOffset;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithEdges:(unsigned long long)arg1 offset:(struct CGPoint)arg2 anchorPoint:(struct CGPoint)arg3 offsetIsUnitOffset:(BOOL)arg4;
 

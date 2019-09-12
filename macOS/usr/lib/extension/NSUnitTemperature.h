@@ -16,6 +16,7 @@
 + (id)fahrenheit;
 + (id)celsius;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

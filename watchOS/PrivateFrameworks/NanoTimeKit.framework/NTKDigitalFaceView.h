@@ -14,6 +14,9 @@
 }
 
 @property(nonatomic) int viewMode; // @synthesize viewMode=_viewMode;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_loadContentViews;
 - (void)_createTimeViewIfNecessary;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_cleanupAfterZoom;

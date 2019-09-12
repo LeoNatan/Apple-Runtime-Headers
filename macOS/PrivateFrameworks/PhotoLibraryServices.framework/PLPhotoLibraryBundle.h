@@ -66,6 +66,7 @@
 @property(readonly) PLManagedObjectLookupItemCache *uniformTypeIdentiferCache;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
 @property(readonly) PLPersistentContainer *persistentContainer;
+@property(readonly, copy) NSError *shutdownReason;
 - (id)description;
 - (id)initWithLibraryURL:(id)arg1 bundleController:(id)arg2;
 - (BOOL)registerPLPhotoLibrary:(id)arg1;

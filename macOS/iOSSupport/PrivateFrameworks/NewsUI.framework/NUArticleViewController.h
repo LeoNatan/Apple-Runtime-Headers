@@ -18,6 +18,7 @@
 @interface NUArticleViewController : UIViewController <SXScrollViewControllerDelegate, SXAnalyticsReporting, NUANFDebugSettingsObserver, NULoadable, NUBarCompressible>
 {
     BOOL _articleIsPresentingFullscreen;
+    BOOL _isShowingDeferredHardPayall;
     id <NULoadingDelegate> _loadingDelegate;
     NSString *_contentSizeCategory;
     long long _contentScale;
@@ -39,6 +40,7 @@
 }
 
 + (id)_parentOrPresentingViewControllerFor:(id)arg1;
+@property(nonatomic) BOOL isShowingDeferredHardPayall; // @synthesize isShowingDeferredHardPayall=_isShowingDeferredHardPayall;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(nonatomic) BOOL articleIsPresentingFullscreen; // @synthesize articleIsPresentingFullscreen=_articleIsPresentingFullscreen;
 @property(readonly, nonatomic) id <NUANFDebugSettingsProvider> debugSettingsProvider; // @synthesize debugSettingsProvider=_debugSettingsProvider;
@@ -58,6 +60,8 @@
 @property(nonatomic) long long contentScale; // @synthesize contentScale=_contentScale;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 - (void).cxx_destruct;
+- (void)updateTextSelectionForPaywallPresentation;
+- (BOOL)isPreviewingOrShowingHardPaywall;
 - (BOOL)accessibilityShouldScrollForScrollViewController:(id)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)scrollViewController:(id)arg1 shouldOccludeAccessibilityElement:(id)arg2;
 - (id)currentPresentationAttributes;

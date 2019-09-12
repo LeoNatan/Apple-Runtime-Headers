@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     PICompositionController *_compositionController;
     unsigned long long _state;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     PULivePhotoKeyFrameSelectionViewController *_livePhotoKeyFramePicker;
     PLPhotoEditRenderer *__renderer;
     AVPlayerItem *_currentVideoPlayerItem;
@@ -80,6 +81,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVPlayerItem *currentVideoPlayerItem; // @synthesize currentVideoPlayerItem=_currentVideoPlayerItem;
 @property(retain, nonatomic, setter=_setRenderer:) PLPhotoEditRenderer *_renderer; // @synthesize _renderer=__renderer;
 @property(nonatomic) __weak PULivePhotoKeyFrameSelectionViewController *livePhotoKeyFramePicker; // @synthesize livePhotoKeyFramePicker=_livePhotoKeyFramePicker;
+@property(retain, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 @property(readonly, nonatomic, getter=isSlomoEnabled) _Bool slomoEnabled; // @synthesize slomoEnabled=_slomoEnabled;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -139,6 +141,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) CDStruct_1b6d18a9 adjustedStillFrameTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 currentStillFrameTime;
 - (id)currentEditSource;
+- (void)setEditSource:(id)arg1 overcaptureEditSource:(id)arg2;
 - (void)releaseAVObjects;
 @property(readonly, nonatomic) double scrubberHeight;
 - (void)trimScrubberDidLayoutSubviews:(id)arg1;

@@ -190,14 +190,16 @@ __attribute__((visibility("hidden")))
 - (void)_clearSaveRequest;
 - (void)_setSaveRequest:(id)arg1;
 - (void)saveMetadata:(id)arg1;
+- (BOOL)_dropTableWithName:(id)arg1;
 - (BOOL)_hasTableWithName:(id)arg1 isTemp:(BOOL)arg2;
 - (BOOL)_hasTempTableWithName:(id)arg1;
 - (BOOL)_hasTableWithName:(id)arg1;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)fetchTriggerCreationSQL;
 - (id)fetchIndexCreationSQL;
+- (id)fetchTableCreationSQLContaining:(id)arg1;
 - (id)fetchTableCreationSQL;
-- (id)fetchCreationSQLForType:(id)arg1;
+- (id)fetchCreationSQLForType:(id)arg1 containing:(id)arg2;
 - (id)fetchTableNames;
 - (BOOL)performIntegrityCheck;
 - (struct sqlite3_stmt *)_vmstatement;
@@ -295,6 +297,7 @@ __attribute__((visibility("hidden")))
 - (void)forceTransactionClosed;
 - (BOOL)hasOpenTransaction;
 - (void)_restoreBusyTimeOutSettings;
+- (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)performAndWait:(CDUnknownBlockType)arg1;
 - (id)connectionManager;
 - (id)adapter;

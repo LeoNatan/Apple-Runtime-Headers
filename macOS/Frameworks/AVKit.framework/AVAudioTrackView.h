@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidEndLiveResize;
 - (id)makeBackingLayer;
+- (void)layout;
 - (void)dealloc;
 - (id)init;
 

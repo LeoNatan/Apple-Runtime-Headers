@@ -156,8 +156,11 @@
 - (void)_updateAccessoriesIfNeeded;
 - (void)_updateAccessories;
 - (void)_updateAccessoryMetrics;
-- (id)_trailingAccessoriesForType:(long long)arg1 view:(id)arg2 editing:(BOOL)arg3;
+- (id)_trailingAccessoriesForType:(long long)arg1 view:(id)arg2 editing:(BOOL)arg3 style:(long long)arg4;
 - (id)_leadingAccessoriesForEditing:(BOOL)arg1 style:(long long)arg2;
+- (id)_editControlAccessoryForStyle:(long long)arg1;
+- (BOOL)_editControlShouldBeOnLeadingSideForStyle:(long long)arg1;
+- (long long)_sanitizedEditingStyleForEditing:(BOOL)arg1 style:(long long)arg2;
 - (void)_setAccessoryManager:(id)arg1;
 @property(nonatomic, getter=_usesModernAccessoriesLayout, setter=_setUsesModernAccessoriesLayout:) BOOL usesModernAccessoriesLayout;
 - (void)_highlightDidEndForInteraction:(id)arg1;
@@ -175,7 +178,6 @@
 - (void)_updateDefaultAccessoryViewForFocus:(BOOL)arg1;
 - (void)_updateDefaultLabelsForFocus:(BOOL)arg1;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (id)_viewToAddFocusLayer;
 - (id)preferredFocusedView;
 - (BOOL)canBecomeFocused;
 - (void)_removeFocusedFloatingContentView;
@@ -322,6 +324,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (BOOL)_insetsBackground;
 - (struct CGRect)contentRectForState:(unsigned long long)arg1;
@@ -378,6 +381,7 @@
 - (void)_setAccessoryTintColor:(id)arg1;
 @property(retain, nonatomic) UIView *accessoryView;
 @property(nonatomic) long long accessoryType;
+- (BOOL)_updateExpansionButtonFromType:(long long)arg1 toType:(long long)arg2;
 - (void)_syncAccessoryViewsIfNecessary;
 @property(nonatomic) BOOL shouldIndentWhileEditing;
 @property(nonatomic) BOOL showsReorderControl;
@@ -563,6 +567,7 @@
 - (BOOL)_changesOpaqueStateOfSubviews;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (struct UIEdgeInsets)_focusRingContentMargins;
+- (unsigned long long)_defaultFocusRingType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

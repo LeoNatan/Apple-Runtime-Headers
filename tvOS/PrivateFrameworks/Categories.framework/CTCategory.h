@@ -29,8 +29,8 @@
 + (id)_equivalentBundleIDsMapping;
 + (id)_equivalentBundleIDsMappingForWatchOSBundleID:(id)arg1;
 + (id)itemWith:(id)arg1 platform:(id)arg2 array:(id)arg3;
-+ (id)_canonicalBundleIdentifierFor:(id)arg1 platform:(id)arg2;
 + (id)equivalentIdentifiersForBundleID:(id)arg1;
++ (id)_schemeRemovedEquivalentBundleIDsMapping:(id)arg1;
 + (id)_getequivalentBundleIdentifiers:(id)arg1;
 + (void)_lookupAppStoreUsing:(id)arg1 platform:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (id)_DHToAppStoreCategoriesMap;

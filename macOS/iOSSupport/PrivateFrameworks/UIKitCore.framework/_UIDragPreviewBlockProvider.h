@@ -8,18 +8,20 @@
 
 #import <UIKitCore/_UIDragPreviewProvider-Protocol.h>
 
-@class NSString, UIDragPreview;
+@class NSString, UIDragPreview, _UIDraggingImageComponent;
 @protocol _UIDragPreviewProvider;
 
 __attribute__((visibility("hidden")))
 @interface _UIDragPreviewBlockProvider : NSObject <_UIDragPreviewProvider>
 {
     CDUnknownBlockType _previewProviderBlock;
+    _UIDraggingImageComponent *_imageComponent;
     UIDragPreview *_preview;
 }
 
 + (id)previewProviderWithBlock:(CDUnknownBlockType)arg1;
 - (void).cxx_destruct;
+- (id)_createImageComponent;
 - (id)imageComponent;
 - (id)_duiPreview;
 @property(readonly, nonatomic) id <_UIDragPreviewProvider> _dragPreviewProvider;

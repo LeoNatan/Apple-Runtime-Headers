@@ -17,6 +17,7 @@
 + (id)ams_sharedAccountStoreForMediaType:(id)arg1;
 + (id)ams_sharedAccountStore;
 - (id)ams_iTunesSandboxAccounts;
+- (id)ams_iTunesAccountForHomeWithIdentifier:(id)arg1;
 - (id)_storeClientIdentifier;
 - (id)_saveAccount:(id)arg1 verifyCredentials:(BOOL)arg2;
 - (BOOL)_isAccountNew:(id)arg1;
@@ -37,10 +38,11 @@
 - (id)ams_saveAccount:(id)arg1 verifyCredentials:(BOOL)arg2;
 - (id)ams_saveAccount:(id)arg1;
 - (id)ams_iTunesAccountWithUsername:(id)arg1;
+- (id)ams_iTunesAccountWithHomeUserIdentifier:(id)arg1;
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1;
-- (id)ams_iTunesAccountForHomeWithIdentifier:(id)arg1;
+- (id)ams_iTunesAccountForHomeWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)ams_iTunesAccountForAccount:(id)arg1;
 - (id)ams_IDSAccountForAccount:(id)arg1;
 - (id)ams_IDMSAccountForAccount:(id)arg1;
@@ -50,12 +52,10 @@
 - (id)ams_accountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3 accountTypeIdentifier:(id)arg4;
 @property(readonly) NSString *ams_mediaType;
 @property(readonly) ACAccount *ams_localiTunesAccount;
+@property(readonly) NSArray *ams_iTunesAccountsWithHomeUserIdentifiers;
 @property(readonly) NSArray *ams_iTunesAccounts;
 @property(readonly) ACAccount *ams_activeiTunesAccount;
 @property(readonly) ACAccount *ams_activeiCloudAccount;
 @property(readonly, getter=ams_isActiveAccountCombined) BOOL ams_activeAccountCombined;
-
-// Remaining properties
-@property(readonly) NSArray *ams_iTunesAccountsWithHomeUserIdentifiers;
 @end
 

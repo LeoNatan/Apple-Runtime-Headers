@@ -6,7 +6,7 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class NSString, NSTextField, NSWindow;
+@class NSButton, NSString, NSTextField, NSWindow;
 
 @interface SMMigrationCustomizePasswordCollectWindowController : NSWindowController
 {
@@ -16,12 +16,14 @@
     NSString *_verifyPassword;
     NSString *_errorText;
     NSString *_instructionText;
+    NSButton *_setPasswordButton;
     NSWindow *_overWindow;
     NSString *_userShortName;
 }
 
 @property __weak NSString *userShortName; // @synthesize userShortName=_userShortName;
 @property NSWindow *overWindow; // @synthesize overWindow=_overWindow;
+@property NSButton *setPasswordButton; // @synthesize setPasswordButton=_setPasswordButton;
 @property BOOL passwordIsTemporary; // @synthesize passwordIsTemporary=_passwordIsTemporary;
 @property(retain) NSString *instructionText; // @synthesize instructionText=_instructionText;
 @property(retain) NSString *errorText; // @synthesize errorText=_errorText;
@@ -29,6 +31,7 @@
 @property(retain) NSString *password; // @synthesize password=_password;
 @property NSTextField *passwordField; // @synthesize passwordField=_passwordField;
 - (void).cxx_destruct;
+- (void)controlTextDidEndEditing:(id)arg1;
 - (void)pressedSetpassword:(id)arg1;
 - (void)collectPasswordForUser:(id)arg1 overWindow:(id)arg2 callbackBlock:(CDUnknownBlockType)arg3;
 - (void)windowDidLoad;

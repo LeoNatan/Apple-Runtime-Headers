@@ -91,6 +91,7 @@
 - (void)_primeExtensionDiscovery;
 - (void)_cancel;
 - (void)_presentMacShareSheet;
+- (id)_shareKitInfoWithMoreImage;
 - (void)_handleActivitySelected:(id)arg1;
 - (id)compatibleApplicationActivities;
 - (id)initWithUserDefaults:(id)arg1 userDefaultsIdentifier:(id)arg2 applicationActivities:(id)arg3;

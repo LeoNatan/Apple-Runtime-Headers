@@ -42,7 +42,7 @@
 @property(copy, nonatomic) NSArray *visualFormats; // @synthesize visualFormats=_visualFormats;
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
-@property(copy, nonatomic) NSCollectionLayoutSpacing *interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
+@property(copy) NSCollectionLayoutSpacing *interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 - (void).cxx_destruct;
 - (id)_effectiveSizeForSize:(id)arg1 count:(long long)arg2 layoutDirection:(long long)arg3;
 - (id)_effectiveCopiedSubitemsForSubitems:(id)arg1 count:(long long)arg2 layoutDirection:(long long)arg3;
@@ -59,7 +59,7 @@
 - (id)initWithSize:(id)arg1 subitems:(id)arg2 count:(long long)arg3 interItemSpacing:(id)arg4 contentInsets:(struct NSDirectionalEdgeInsets)arg5 edgeSpacing:(id)arg6 layoutDirection:(long long)arg7 supplementaryItems:(id)arg8 visualFormats:(id)arg9 itemsProvider:(CDUnknownBlockType)arg10 visualFormatItemProvider:(CDUnknownBlockType)arg11 customGroupItemProvider:(CDUnknownBlockType)arg12 options:(long long)arg13 name:(id)arg14 identifier:(id)arg15;
 
 // Remaining properties
-@property(copy, nonatomic) NSArray *supplementaryItems; // @dynamic supplementaryItems;
+@property(copy) NSArray *supplementaryItems; // @dynamic supplementaryItems;
 
 @end
 

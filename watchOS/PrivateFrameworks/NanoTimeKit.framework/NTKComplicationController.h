@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CLKDevice, NSDate, NSMapTable, NSMutableArray, NTKComplication;
-@protocol NTKComplicationDisplay;
+@protocol NTKComplicationControllerTritiumDelegate, NTKComplicationDisplay;
 
 @interface NTKComplicationController : NSObject
 {
@@ -21,6 +21,7 @@
     NTKComplication *_complication;
     int _complicationFamily;
     CLKDevice *_device;
+    id <NTKComplicationControllerTritiumDelegate> _tritiumDelegate;
     CDUnknownBlockType _invalidationHandler;
     NSDate *_pauseDate;
     int _cachingMode;
@@ -43,6 +44,7 @@
 @property(nonatomic) _Bool showsLockedUI; // @synthesize showsLockedUI=_showsLockedUI;
 @property(retain, nonatomic) NSDate *pauseDate; // @synthesize pauseDate=_pauseDate;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
+@property(nonatomic) __weak id <NTKComplicationControllerTritiumDelegate> tritiumDelegate; // @synthesize tritiumDelegate=_tritiumDelegate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int complicationFamily; // @synthesize complicationFamily=_complicationFamily;
 @property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;

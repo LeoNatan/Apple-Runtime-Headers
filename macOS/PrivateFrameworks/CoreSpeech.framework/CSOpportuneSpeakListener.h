@@ -10,7 +10,7 @@
 #import <CoreSpeech/CSMediaPlayingMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSPGEndpointAnalyzerDelegate-Protocol.h>
 
-@class CSAudioRecordContext, CSAudioStream, CSSPGEndpointAnalyzer, NSString;
+@class CSAudioRecordContext, CSAudioStream, CSSPGEndpointAnalyzer, NSMutableArray, NSString;
 @protocol CSAudioSessionProviding, CSAudioStreamProviding, CSOpportuneSpeakListenerDelegate;
 
 @interface CSOpportuneSpeakListener : NSObject <CSAudioStreamProvidingDelegate, CSSPGEndpointAnalyzerDelegate, CSMediaPlayingMonitorDelegate>
@@ -23,8 +23,12 @@
     id <CSAudioStreamProviding> _audioStreamProvider;
     id <CSAudioSessionProviding> _audioSessionProvider;
     CSAudioRecordContext *_latestContext;
+    NSMutableArray *_remoteVADAlignBuffer;
+    unsigned long long _remoteVADAlignCount;
 }
 
+@property(nonatomic) unsigned long long remoteVADAlignCount; // @synthesize remoteVADAlignCount=_remoteVADAlignCount;
+@property(retain, nonatomic) NSMutableArray *remoteVADAlignBuffer; // @synthesize remoteVADAlignBuffer=_remoteVADAlignBuffer;
 @property BOOL isMediaPlayingNow; // @synthesize isMediaPlayingNow=_isMediaPlayingNow;
 @property(retain, nonatomic) CSAudioRecordContext *latestContext; // @synthesize latestContext=_latestContext;
 @property(retain, nonatomic) id <CSAudioSessionProviding> audioSessionProvider; // @synthesize audioSessionProvider=_audioSessionProvider;
@@ -35,7 +39,7 @@
 @property(nonatomic) __weak id <CSOpportuneSpeakListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
-- (void)spgEndpointAnalyzer:(id)arg1 hasSilenceScoreEstimate:(float)arg2;
+- (void)spgEndpointAnalyzer:(id)arg1 hasSilenceScoreEstimate:(double)arg2;
 - (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
 - (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
 - (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectly:(long long)arg2;

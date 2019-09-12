@@ -30,6 +30,7 @@
 @property(nonatomic) unsigned long long inputPrimitiveTopology; // @dynamic inputPrimitiveTopology;
 @property(copy, nonatomic) NSString *label; // @dynamic label;
 @property(nonatomic) unsigned long long maxTessellationFactor; // @dynamic maxTessellationFactor;
+@property(nonatomic) unsigned long long maxVertexAmplificationCount; // @dynamic maxVertexAmplificationCount;
 @property(nonatomic) unsigned long long rasterSampleCount; // @dynamic rasterSampleCount;
 @property(nonatomic, getter=isRasterizationEnabled) _Bool rasterizationEnabled; // @dynamic rasterizationEnabled;
 @property(nonatomic) unsigned long long sampleCount; // @dynamic sampleCount;

@@ -43,6 +43,7 @@
     CALayer *_radiosityLayer;
     CALayer *_selectedPlaceholderLayer;
     CALayer *_shadowLayer;
+    CALayer *_unfocusedShadowLayer;
     CALayer *_specularLayer;
     CALayer *_cursorLayer;
     CALayer *_cursorLayerContainer;

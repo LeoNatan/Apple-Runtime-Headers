@@ -76,6 +76,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) CDStruct_da2e99ad maxThreadsPerThreadgroup;
 - (id)newSharedEvent;
 - (id)newEvent;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
+- (_Bool)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
 - (id)newRenderPipelineStateWithTileDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id *)arg3 error:(id *)arg4;
 - (void)newRenderPipelineStateWithTileDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
@@ -128,6 +131,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)registerCommandBuffer:(id)arg1;
 - (id)commandBufferForReference:(unsigned int)arg1;
 - (CDStruct_4bcfbbae)heapTextureSizeAndAlignWithDescriptor:(id)arg1;
+- (CDStruct_da2e99ad)sparseTileSizeWithTextureType:(unsigned long long)arg1 pixelFormat:(unsigned long long)arg2 sampleCount:(unsigned long long)arg3;
 - (CDStruct_4bcfbbae)heapBufferSizeAndAlignWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (unsigned int)getNewResourceID;
 - (id)compiler;
@@ -138,6 +142,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSObject<OS_xpc_object> *compilerConnection;
 @property(readonly) NSObject<OS_xpc_object> *resourceConnection;
 @property(readonly) NSObject<OS_xpc_object> *mainConnection;
+- (_Bool)supportsVertexAmplificationCount:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly) unsigned long long argumentBuffersSupport;
@@ -151,7 +156,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct IndirectArgumentBufferCapabilities indirectArgumentBufferCapabilities;
 @property(readonly) unsigned long long iosurfaceReadOnlyTextureAlignmentBytes;
 @property(readonly) unsigned long long iosurfaceTextureAlignmentBytes;
-@property(readonly) const CDStruct_ae106c81 *limits;
+@property(readonly) const CDStruct_a9d832e7 *limits;
 @property(readonly) unsigned long long linearTextureAlignmentBytes;
 @property(readonly) unsigned long long linearTextureArrayAlignmentBytes;
 @property(readonly) unsigned long long linearTextureArrayAlignmentSlice;
@@ -195,6 +200,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long maxTileSamplers;
 @property(readonly) unsigned long long maxTileTextures;
 @property(readonly) unsigned long long maxTotalComputeThreadsPerThreadgroup;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
 @property(readonly) unsigned long long maxVertexAttributes;
 @property(readonly) unsigned long long maxVertexBuffers;
 @property(readonly) unsigned long long maxVertexInlineDataSize;
@@ -212,11 +219,14 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long readWriteTextureSupport;
 @property(nonatomic, getter=isResourceIndirectionEnabled) _Bool resourceIndirectionEnabled;
 @property _Bool shaderDebugInfoCaching;
+@property(readonly) unsigned long long sparseTexturesSupport;
+@property(readonly) unsigned long long sparseTileSizeInBytes;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) _Bool supports2DLinearTexArraySPI;
 @property(readonly, nonatomic) _Bool supports32bpcMSAATextures;
 @property(readonly, nonatomic) _Bool supports3DASTCTextures;
 @property(readonly, nonatomic) _Bool supports3DBCTextures;
+@property(readonly, nonatomic) _Bool supportsASTCHDRTextureCompression;
 @property(readonly, nonatomic) _Bool supportsASTCTextureCompression;
 @property(readonly, nonatomic) _Bool supportsAlphaYUVFormats;
 @property(readonly, nonatomic) _Bool supportsArgumentBuffersTier2;
@@ -301,6 +311,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsSeparateVisibilityAndShadingRate;
 @property(readonly, nonatomic) _Bool supportsShaderLODAverage;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
+@property(readonly, nonatomic) _Bool supportsSparseTextures;
 @property(readonly, nonatomic) _Bool supportsStencilFeedback;
 @property(readonly, nonatomic) _Bool supportsTessellation;
 @property(readonly, nonatomic) _Bool supportsTexture2DMultisampleArray;
@@ -308,7 +319,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsTextureOutOfBoundsReads;
 @property(readonly, nonatomic) _Bool supportsTextureSwizzle;
 @property(readonly, nonatomic) _Bool supportsTileShaders;
+@property(readonly, nonatomic) _Bool supportsVariableRateRasterization;
+@property(readonly, nonatomic) _Bool supportsVertexAmplification;
 @property(readonly, nonatomic) _Bool supportsViewportAndScissorArray;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats12;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsPQ;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsXR;
 @property(readonly) const struct MTLTargetDeviceArch *targetDeviceInfo;
 @property(readonly, getter=isUtilityBufferRequired) _Bool utilityBufferRequired;
 @property(retain, nonatomic) NSArray *utilityBuffers;

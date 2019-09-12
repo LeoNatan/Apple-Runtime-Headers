@@ -48,6 +48,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (id)objectReferenceForSpriteIndex:(unsigned int)arg1;
 - (void)enumerateVisibleAnchoringSpriteIndexesUsingBlock:(CDUnknownBlockType)arg1;

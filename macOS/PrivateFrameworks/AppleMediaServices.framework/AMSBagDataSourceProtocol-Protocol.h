@@ -18,6 +18,7 @@
 - (AMSBagKeyInfo *)bagKeyInfoForKey:(NSString *)arg1;
 
 @optional
+@property(copy) CDUnknownBlockType dataSourceDataInvalidatedHandler;
 @property(copy) CDUnknownBlockType dataSourceChangedHandler;
 @end
 

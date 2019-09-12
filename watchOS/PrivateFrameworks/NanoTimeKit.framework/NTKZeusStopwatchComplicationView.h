@@ -8,17 +8,24 @@
 
 #import <NanoTimeKit/NTKStopwatchComplicationDisplay-Protocol.h>
 
-@class NSString, NTKColoringLabel;
+@class NSDate, NSString, NTKColoringLabel;
 @protocol NTKComplicationDisplayObserver;
 
 @interface NTKZeusStopwatchComplicationView : NTKZeusFramedComplicationView <NTKStopwatchComplicationDisplay>
 {
     NTKColoringLabel *_label;
     int _stopwatchState;
+    _Bool _tritiumRequireCrossFade;
+    NTKColoringLabel *_tritiumLabel;
+    NSDate *_timeTravelDate;
 }
 
 - (void).cxx_destruct;
 - (id)_createLabel;
+- (void)_setupTritiumLabelIfNecessary;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_prepareForTransition;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
 - (struct CGRect)contentFrame;

@@ -77,6 +77,13 @@
 }
 
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
 - (unsigned int)_timeLabelOptions;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;

@@ -7,6 +7,7 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (TMAdditions)
++ (id)tm_rospDataVolumeURL;
 - (id)tm_recomputeCRC32Checksum;
 - (id)tm_computeCRC32Checksum;
 - (id)tm_name;

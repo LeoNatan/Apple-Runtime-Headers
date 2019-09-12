@@ -46,6 +46,7 @@
 - (BOOL)_shouldAllowReceiptBasedFileObsoletingForPackage:(id)arg1;
 - (BOOL)_isUnsafeToObsoleteComponent:(id)arg1;
 - (id)extendedAttributesForComponent:(id)arg1;
+@property(readonly) BOOL includesAppleInternalRootContent;
 - (id)actualFileInstallPathsViolatingReadOnlySystemLocationsEvaluatingDestinationPath:(BOOL)arg1;
 - (id)actualFileInstallPathsWithoutParents;
 - (id)actualFileInstallPaths;

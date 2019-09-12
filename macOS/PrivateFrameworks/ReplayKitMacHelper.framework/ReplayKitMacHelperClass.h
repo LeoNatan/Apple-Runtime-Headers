@@ -41,6 +41,7 @@
 @property(nonatomic) __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(nonatomic) __weak id <ReplayKitMacHelperDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+- (void)windowWillClose:(id)arg1;
 - (void)windowDidDeminiaturize:(id)arg1;
 - (void)windowDidMiniaturize:(id)arg1;
 - (void)registerForApplicationStateChangesWithSourceUIWindow:(id)arg1;

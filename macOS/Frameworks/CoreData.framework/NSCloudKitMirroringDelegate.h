@@ -9,7 +9,7 @@
 #import <CoreData/NSPersistentStoreMirroringDelegate-Protocol.h>
 #import <CoreData/PFCloudKitExporterDelegate-Protocol.h>
 
-@class CDDCloudKitClient, CKContainer, CKDatabase, CKDatabaseSubscription, CKNotificationListener, CKRecordZone, CKScheduler, NSCloudKitMirroringDelegateOptions, NSCloudKitMirroringRequestManager, NSError, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString, PFCloudKitExporterOptions;
+@class CDDCloudKitClient, CKContainer, CKDatabase, CKDatabaseSubscription, CKNotificationListener, CKRecordZone, CKScheduler, NSCloudKitMirroringDelegateOptions, NSCloudKitMirroringRequestManager, NSError, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString, PFCloudKitExporterOptions, PFCloudKitThrottledNotificationObserver;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface NSCloudKitMirroringDelegate : NSObject <PFCloudKitExporterDelegate, NSPersistentStoreMirroringDelegate>
@@ -31,10 +31,14 @@
     CDDCloudKitClient *_coredatadClient;
     NSSQLCore *_observedStore;
     NSPersistentStoreCoordinator *_observedCoordinator;
-    // Error parsing type: Ai, name: _accountChangeNotificationIteration
+    PFCloudKitThrottledNotificationObserver *_accountChangeObserver;
+    PFCloudKitThrottledNotificationObserver *_appActivateLifecycleObserver;
+    PFCloudKitThrottledNotificationObserver *_appDeactivateLifecycleObserver;
     NSCloudKitMirroringRequestManager *_requestManager;
 }
 
++ (BOOL)isFirstPartyContainerIdentifier:(id)arg1;
++ (id)stringForResetReason:(unsigned long long)arg1;
 + (void)initialize;
 + (id)createCloudKitServerWithMachServiceName:(id)arg1 andStorageDirectoryPath:(id)arg2;
 + (id)cloudKitMachServiceName;
@@ -65,6 +69,8 @@
 - (void).cxx_destruct;
 - (void)fetchChangesAndUpdateObservedStore;
 - (void)checkForNewChanges;
+- (void)_setAppDeactivateObserver:(id)arg1;
+- (void)_setAppActivateObserver:(id)arg1;
 - (void)_setRequestManager:(id)arg1;
 - (void)_setAccountNotificationBackoffInterval:(long long)arg1;
 - (void)_setZone:(id)arg1;
@@ -73,6 +79,8 @@
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;
 - (BOOL)_createSchemaWithMonitor:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (void)_performSchemaInitializationRequest:(id)arg1;
+- (void)_scheduleAutomatedExportWithLabel:(id)arg1 activity:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_scheduleAutomatedImportWithLabel:(id)arg1 activity:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)finishedAutomatedRequestWithResult:(id)arg1;
 - (void)_finishedRequest:(id)arg1 withResult:(id)arg2;
 - (void)checkAndExecuteNextRequest;
@@ -80,15 +88,18 @@
 - (BOOL)_dateExceedsSchedulingThreshold:(id)arg1;
 - (void)checkAndScheduleImportIfNecessary:(BOOL)arg1;
 - (void)scheduleExportWithMonitor:(id)arg1;
+- (void)_respondToApplicationActivationNotification:(id)arg1;
+- (void)applicationDidActivate:(id)arg1;
+- (void)_respondToApplicationDeactivationNotification:(id)arg1;
+- (void)applicationWillDeactivate:(id)arg1;
 - (void)remoteStoreDidChange:(id)arg1;
 - (void)managedObjectContextSaved:(id)arg1;
 - (void)exporter:(id)arg1 willScheduleOperations:(id)arg2;
 - (id)resetNotificationUserInfoForError:(id)arg1;
+- (void)logResetSyncNotification:(id)arg1;
+- (void)_postResetSyncNotificationWithName:(id)arg1 forError:(id)arg2;
 - (void)postDidResetNotificationForError:(id)arg1;
 - (void)postWillResetNotificationForError:(id)arg1;
-- (BOOL)purgeMetadataMatchingObjectIDs:(id)arg1 inRequest:(id)arg2 inStore:(id)arg3 withMonitor:(id)arg4 error:(id *)arg5;
-- (BOOL)purgeMetadataFromStore:(id)arg1 inMonitor:(id)arg2 withOptions:(unsigned long long)arg3 forRecordZones:(id)arg4 andTransactionAuthor:(id)arg5 error:(id *)arg6;
-- (BOOL)purgeMetadataFromStore:(id)arg1 inMonitor:(id)arg2 withOptions:(unsigned long long)arg3 forRecordZones:(id)arg4 error:(id *)arg5;
 - (BOOL)_recoverFromPartialError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)_recoverFromError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)recoverFromError:(id)arg1;
@@ -109,6 +120,7 @@
 - (void)_enqueueRequest:(id)arg1;
 - (id)executeMirroringRequest:(id)arg1 error:(id *)arg2;
 - (void)_openTransactionWithLabel:(id)arg1 andExecuteWorkBlock:(CDUnknownBlockType)arg2;
+- (void)_respondToAccountOrIdentityChangeNotification:(id)arg1;
 - (void)ckAccountOrIdentityChangedHandler:(id)arg1;
 - (void)storesDidChange:(id)arg1;
 - (void)coordinatorWillRemoveStore:(id)arg1;

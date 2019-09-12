@@ -31,6 +31,7 @@
 - (void)postContent:(id)arg1 withHeaders:(id)arg2;
 - (void)abort;
 - (BOOL)submitLogsUsingPolicy:(id)arg1 resultsCallback:(CDUnknownBlockType)arg2;
+- (BOOL)cheaterTaskingWithSets:(id)arg1 usingConfig:(id)arg2 resultsCallback:(CDUnknownBlockType)arg3;
 - (id)processJob:(id)arg1 forRouting:(id)arg2 including:(id)arg3 usingConfig:(id)arg4 taskings:(id)arg5 summarize:(id)arg6;
 - (id)applyTasking:(id)arg1 taskId:(id)arg2 usingConfig:(id)arg3 fromBlob:(id)arg4;
 - (id)locateLog:(id)arg1 forRouting:(id)arg2 usingConfig:(id)arg3 options:(id)arg4 error:(id *)arg5;

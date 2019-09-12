@@ -10,6 +10,7 @@
 {
 }
 
+- (void)observeAOTDisplayStyle:(CDUnknownBlockType)arg1;
 - (void)observePUICStatusBarStyle:(CDUnknownBlockType)arg1;
 - (void)observeKeepsContextsInBackgroundWithBlock:(CDUnknownBlockType)arg1;
 

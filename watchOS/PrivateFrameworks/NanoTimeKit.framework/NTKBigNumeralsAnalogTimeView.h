@@ -10,6 +10,11 @@
 {
 }
 
+- (void)_setTritiumProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
 - (float)_largeHandAlpha;
 - (void)layoutSubviews;
 - (float)_minuteHandDotDiameter;

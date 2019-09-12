@@ -28,7 +28,7 @@
 @property(retain, nonatomic) NSCollectionLayoutAnchor *itemAnchor; // @synthesize itemAnchor=_itemAnchor;
 @property(retain, nonatomic) NSCollectionLayoutAnchor *containerAnchor; // @synthesize containerAnchor=_containerAnchor;
 @property(retain, nonatomic) NSString *elementKind; // @synthesize elementKind=_elementKind;
-@property(nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
+@property long long zIndex; // @synthesize zIndex=_zIndex;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSCollectionLayoutDecorationItem *decorationItem;
 @property(readonly, nonatomic) NSCollectionLayoutBoundarySupplementaryItem *boundarySupplementaryItem;

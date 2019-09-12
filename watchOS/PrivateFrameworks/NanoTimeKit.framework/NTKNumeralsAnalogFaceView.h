@@ -23,6 +23,11 @@
 }
 
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (void)_prepareForHourChangeWithSecondsUntilChange:(float)arg1;
 - (id)_faceCurrentDate;
 - (_Bool)_isInTimeTravel;

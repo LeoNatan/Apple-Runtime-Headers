@@ -23,6 +23,8 @@
 - (id)_queue_startCarouselSessionForAssertion:(id)arg1;
 - (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
 - (void)assertionManager:(id)arg1 assertionTaken:(id)arg2;
+- (id)takeDisableAOTAssertionForOwnerIdentifier:(id)arg1;
+- (id)takeSessionAssertionForOwnerIdentifier:(id)arg1 supportsAOT:(_Bool)arg2;
 - (id)takeSessionAssertionForOwnerIdentifier:(id)arg1;
 - (id)init;
 

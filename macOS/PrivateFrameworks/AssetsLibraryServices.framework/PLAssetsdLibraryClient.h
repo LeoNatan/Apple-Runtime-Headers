@@ -11,6 +11,7 @@
 @interface PLAssetsdLibraryClient : PLAssetsdBaseClient
 {
     NSMutableDictionary *_securityScopedURLs;
+    // Error parsing type: AB, name: _isOpen
 }
 
 - (void).cxx_destruct;
@@ -29,6 +30,7 @@
 - (id)getPhotoLibraryStoreXPCListenerEndpoint;
 - (BOOL)shutdownPhotoLibraryDatabaseWithError:(id *)arg1;
 - (id)upgradePhotoLibraryDatabaseWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)openPhotoLibraryDatabaseWithoutProgressIfNeeded:(id *)arg1;
 - (BOOL)openPhotoLibraryDatabaseWithPostOpenProgress:(id *)arg1 error:(id *)arg2;
 - (BOOL)createPhotoLibraryDatabaseWithError:(id *)arg1;
 - (long long)getCurrentModelVersion;

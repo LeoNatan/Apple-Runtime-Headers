@@ -7,12 +7,11 @@
 #import <NewsCore/FCAssetHandle.h>
 
 #import <NewsSubscription/TSAssetDataProviderType-Protocol.h>
-#import <NewsSubscription/TSAssetHandleType-Protocol.h>
 
 @class NSData, UIImage;
 @protocol TSAssetDataProviderType;
 
-@interface FCAssetHandle (NewsSubscription) <TSAssetHandleType, TSAssetDataProviderType>
+@interface FCAssetHandle (NewsSubscription) <TSAssetDataProviderType>
 @property(nonatomic, readonly) id <TSAssetDataProviderType> assetDataProvider;
 - (void)downloadWithGroup:(id)arg1;
 @property(nonatomic, readonly) UIImage *fallbackImage;

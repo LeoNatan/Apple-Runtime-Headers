@@ -140,8 +140,10 @@ struct MTLHeapDescriptorPrivate {
     unsigned long long _field1;
     unsigned long long _field2;
     unsigned long long _field3;
-    long long _field4;
-    unsigned long long _field5;
+    unsigned long long _field4;
+    _Bool _field5;
+    long long _field6;
+    unsigned long long _field7;
 };
 
 struct MTLLibraryBuilder {
@@ -257,6 +259,7 @@ struct MTLRenderPassDescriptorPrivate {
     unsigned long long threadgroupMemoryLength;
     CDStruct_6e3f967a customSamplePositions[4];
     unsigned long long numCustomSamplePositions;
+    id rasterizationRateMap;
 };
 
 struct MTLRenderPipelineAttachmentDescriptorPrivate {
@@ -312,7 +315,7 @@ struct MTLRenderPipelineDescriptorPrivate {
             unsigned int openGLMode:1;
             unsigned int sampleCoverageInvert:1;
             unsigned int private4:1;
-            unsigned int private5:1;
+            unsigned int vertexAmplificationMode:1;
             unsigned int twoSideEnabled:1;
             unsigned int pointSizeOutputVS:1;
             unsigned int pointCoordLowerLeft:1;
@@ -339,6 +342,7 @@ struct MTLRenderPipelineDescriptorPrivate {
     id pipelineLibrary;
     void *pad0;
     void *pad1;
+    unsigned int maxVertexAmplificationCount;
 };
 
 struct MTLResourceListEntry;
@@ -432,6 +436,7 @@ struct MTLTextureDescriptorPrivate {
         unsigned long long usage;
     } ;
     unsigned long long resourceOptions;
+    unsigned long long sparseSurfaceDefaultValue;
     _Bool allowGPUOptimizedContents;
     _Bool forceResourceIndex;
     unsigned int resourceIndex;
@@ -974,6 +979,14 @@ struct vector<MTLDebugSubProgram *, std::__1::allocator<MTLDebugSubProgram *>> {
     } __end_cap_;
 };
 
+struct vector<MTLRasterizationRateLayerDescriptor *, std::__1::allocator<MTLRasterizationRateLayerDescriptor *>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<MTLRasterizationRateLayerDescriptor **, std::__1::allocator<MTLRasterizationRateLayerDescriptor *>> {
+        id *__value_;
+    } __end_cap_;
+};
+
 struct vector<NSObject *, std::__1::allocator<NSObject *>> {
     id *_field1;
     id *_field2;
@@ -1054,6 +1067,8 @@ typedef struct {
     unsigned int maxIndirectSamplersPerDevice;
     unsigned int maxViewportCount;
     unsigned int maxCustomSamplePositions;
+    unsigned int maxVertexAmplificationFactor;
+    unsigned int maxVertexAmplificationCount;
     unsigned int maxTextureBufferWidth;
     unsigned int maxComputeAttributes;
     unsigned int maxFramebufferStorageBits;
@@ -1065,7 +1080,7 @@ typedef struct {
     unsigned int maxTileInlineDataSize;
     unsigned int minTilePixels;
     unsigned long long maxBufferLength;
-} CDStruct_52c93ad5;
+} CDStruct_886a8514;
 
 typedef struct {
     unsigned int _field1;

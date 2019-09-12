@@ -21,9 +21,11 @@
     UIPreviewParameters *_parameters;
     UIView *_viewToSnapshot;
     id <_UIPreviewProvider> __PreviewProvider;
+    UIView *_overridePositionTrackingView;
 }
 
 + (id)new;
+@property(retain, nonatomic, setter=_setOverridePositionTrackingView:) UIView *overridePositionTrackingView; // @synthesize overridePositionTrackingView=_overridePositionTrackingView;
 @property(readonly, nonatomic) BOOL hasCustomTarget; // @synthesize hasCustomTarget=_hasCustomTarget;
 @property(readonly, nonatomic) BOOL sourceViewIsInViewHierarchy; // @synthesize sourceViewIsInViewHierarchy=_sourceViewIsInViewHierarchy;
 @property(readonly, nonatomic) id <_UIPreviewProvider> _PreviewProvider; // @synthesize _PreviewProvider=__PreviewProvider;
@@ -43,6 +45,7 @@
 - (id)initWithView:(id)arg1;
 - (id)initWithView:(id)arg1 parameters:(id)arg2;
 - (id)initWithView:(id)arg1 parameters:(id)arg2 target:(id)arg3;
+- (BOOL)platterAnimator_isValidPreview;
 - (void)platterAnimator_getBounds:(struct CGRect *)arg1 center:(struct CGPoint *)arg2 transform:(struct CGAffineTransform *)arg3 forContainer:(id)arg4;
 
 @end

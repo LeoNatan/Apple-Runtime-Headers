@@ -7,20 +7,17 @@
 #import <AppleMediaServices/AMSTask.h>
 
 @class AMSBiometricsSignatureRequest;
-@protocol AMSBagProtocol;
 
 __attribute__((visibility("hidden")))
 @interface AMSBiometricsSignatureTask : AMSTask
 {
-    id <AMSBagProtocol> _bag;
     AMSBiometricsSignatureRequest *_request;
 }
 
 @property(readonly, nonatomic) AMSBiometricsSignatureRequest *request; // @synthesize request=_request;
-@property(readonly, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
 - (id)performSignature;
-- (id)initWithRequest:(id)arg1 bag:(id)arg2;
+- (id)initWithRequest:(id)arg1;
 
 @end
 

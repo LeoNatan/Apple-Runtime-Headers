@@ -15,6 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIRightClickClickInteractionDriver : NSObject <UIGestureRecognizerDelegate, _UIClickInteractionDriving>
 {
+    BOOL _cancelsTouchesInView;
     id <_UIClickInteractionDriverDelegate> _delegate;
     UIView *_view;
     double _allowableMovement;
@@ -22,9 +23,11 @@ __attribute__((visibility("hidden")))
     _UIContextualClickDriverGestureRecognizer *_gestureRecognizer;
 }
 
++ (BOOL)prefersCancelsTouchesInView;
 + (BOOL)requiresForceCapability;
 @property(retain) _UIContextualClickDriverGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(nonatomic) BOOL cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
@@ -38,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelInteraction;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
+@property(readonly, nonatomic) BOOL hasExceededAllowableMovement;
 @property(readonly, nonatomic) double touchDuration;
 @property(readonly, nonatomic) double maximumEffectProgress;
 - (id)init;

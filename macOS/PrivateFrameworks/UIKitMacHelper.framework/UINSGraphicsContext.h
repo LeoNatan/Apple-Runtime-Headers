@@ -4,27 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import <UIKitMacHelper/UINSGraphicsContext-Protocol.h>
-
-@class NSString;
+#import <AppKit/NSBitmapGraphicsContext.h>
 
 __attribute__((visibility("hidden")))
-@interface UINSGraphicsContext : NSObject <UINSGraphicsContext>
+@interface UINSGraphicsContext : NSBitmapGraphicsContext
 {
+    int _type;
+    void *_auxInfo;
 }
 
-+ (id)sharedInstance;
-- (BOOL)_isAppKit;
-- (void)pop;
-- (void)pushCGContext:(struct CGContext *)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property(readonly) void *auxInfo; // @synthesize auxInfo=_auxInfo;
+@property(readonly) int type; // @synthesize type=_type;
+- (void)dealloc;
+- (id)initWithCGContext:(struct CGContext *)arg1 type:(int)arg2 auxInfo:(void *)arg3;
 
 @end
 

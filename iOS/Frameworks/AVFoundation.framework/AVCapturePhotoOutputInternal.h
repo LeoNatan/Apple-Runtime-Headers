@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVCapturePhotoSettings, AVWeakReference, NSArray, NSMutableArray, NSString;
+@class AVCapturePhotoSettings, AVMomentCaptureSettings, AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSString;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -22,12 +22,16 @@ __attribute__((visibility("hidden")))
     long long maxPhotoQualityPrioritization;
     _Bool maxPhotoQualityPrioritizationHasBeenSetByClient;
     _Bool stillImageStabilizationSupported;
-    _Bool dualCameraFusionSupported;
+    _Bool virtualDeviceFusionSupported;
+    _Bool virtualDeviceConstituentPhotoDeliverySupported;
+    _Bool virtualDeviceConstituentPhotoDeliveryEnabled;
     _Bool dualCameraDualPhotoDeliverySupported;
     _Bool dualCameraDualPhotoDeliveryEnabled;
     _Bool cameraCalibrationDataDeliverySupported;
     NSArray *supportedHDRModes;
     NSArray *supportedFlashModes;
+    NSArray *supportedDigitalFlashModes;
+    _Bool digitalFlashCaptureEnabled;
     _Bool autoRedEyeReductionSupported;
     _Bool highResolutionCaptureEnabled;
     unsigned long long maxBracketedCapturePhotoCount;
@@ -61,13 +65,25 @@ __attribute__((visibility("hidden")))
     _Bool isFlashScene;
     _Bool isHDRScene;
     _Bool isStillImageStabilizationScene;
+    int digitalFlashStatusObserverCount;
+    long long digitalFlashStatus;
+    int digitalFlashExposureTimesObserverCount;
+    NSDictionary *digitalFlashExposureTimes;
     AVCapturePhotoSettings *photoSettingsForSceneMonitoring;
     struct OpaqueFigSimpleMutex *requestsLock;
     NSMutableArray *photoRequests;
     NSMutableArray *prepareRequests;
+    NSMutableArray *movieRequests;
     NSObject<OS_dispatch_queue> *beginEndIrisMovieCaptureHostTimeQueue;
     NSObject<OS_dispatch_group> *beginEndIrisMovieCaptureHostTimeDispatchGroup;
     NSString *sourceDeviceType;
+    _Bool movieRecordingSupported;
+    _Bool movieRecordingEnabled;
+    AVMomentCaptureSettings *momentCaptureInFlight;
+    long long lastMomentSettingsUniqueID;
+    _Bool deferredProcessingSupported;
+    _Bool deferredProcessingEnabled;
+    _Bool processedPhotoZoomWithoutUpscalingSupported;
 }
 
 @end

@@ -24,6 +24,7 @@
 - (void)addTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (BOOL)canAddTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (void)markCurrentPassAsFinished;
+@property(readonly, getter=_markAsFinishedCalled) BOOL markAsFinishedCalled;
 - (void)markAsFinished;
 @property(readonly) long long numberOfAppendFailures;
 - (long long)_appendCaptionGroup:(id)arg1 error:(id *)arg2;

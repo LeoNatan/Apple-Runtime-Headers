@@ -25,9 +25,10 @@ __attribute__((visibility("hidden")))
 
 @property __weak id <NSDebugResponderChainUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void).cxx_destruct;
-- (void)updateResponderChainFromFirstResponder:(id)arg1;
+- (void)updateResponderChainFromWindow:(id)arg1;
 - (void)switchObservedWindow:(id)arg1;
 - (void)toggleObservingKeyWindow:(BOOL)arg1;
+- (void)updateForCFMZ:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_sharedPanel;
 - (void)toggleResponderChainPanel:(id)arg1;

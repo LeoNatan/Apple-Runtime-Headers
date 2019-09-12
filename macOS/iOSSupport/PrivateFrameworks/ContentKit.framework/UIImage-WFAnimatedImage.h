@@ -16,6 +16,7 @@
 + (id)wf_animatedImageWithData:(id)arg1;
 + (id)wf_imageWithColor:(id)arg1;
 + (BOOL)imageSizeIndicatesScreenshot:(struct CGSize)arg1;
++ (id)imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2;
 + (id)imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 cgImagePropertyOrientation:(unsigned int)arg3;
 - (id)wf_tintedImageWithColor:(id)arg1;
 @property(readonly, nonatomic) BOOL isScreenshot;

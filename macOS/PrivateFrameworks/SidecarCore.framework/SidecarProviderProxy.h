@@ -21,7 +21,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)sidecarServiceTerminate;
 - (void)sidecarSession:(id)arg1 receivedMessage:(id)arg2;
-- (void)sidecarSession:(id)arg1 invalidatedWithError:(id)arg2;
+- (void)sidecarSessionStarted:(id)arg1;
+- (void)sidecarSession:(id)arg1 closedWithError:(id)arg2;
 - (id)init;
 
 @end

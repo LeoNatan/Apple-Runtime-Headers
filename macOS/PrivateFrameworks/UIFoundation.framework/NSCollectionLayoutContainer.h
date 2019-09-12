@@ -18,8 +18,8 @@
 
 @property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
-@property(readonly, nonatomic) struct NSDirectionalEdgeInsets effectiveContentInsets;
-@property(readonly, nonatomic) struct CGSize effectiveContentSize;
+@property(readonly) struct NSDirectionalEdgeInsets effectiveContentInsets;
+@property(readonly) struct CGSize effectiveContentSize;
 @property(readonly, copy) NSString *description;
 - (id)initWithContentSize:(struct CGSize)arg1 contentInsets:(struct NSDirectionalEdgeInsets)arg2;
 

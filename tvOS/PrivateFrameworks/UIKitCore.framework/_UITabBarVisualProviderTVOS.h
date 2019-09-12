@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     _UIBarBackgroundLayout *_backgroundViewLayout;
     UIView *_customBackgroundView;
     UIScrollView *_itemsScrollView;
-    UIView *_backgroundContainerView;
     UIView *_itemsScrollContainerView;
     CAGradientLayer *_scrollViewMask;
     CABackdropLayer *_maskBackdropLayer;
@@ -43,12 +42,12 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_getRectForFocusedSelectionPlatterForView:(id)arg1 finalSize:(_Bool)arg2;
 - (struct CGRect)_getRectForUnfocusedSelectionPlatterForView:(id)arg1;
 - (void)_updatePlatterRectWithSelectedItem:(id)arg1;
-- (struct CGRect)_getFadeFrameRight:(_Bool)arg1;
 - (void)_updateScrollContainerMaskIfNeeded;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)_updateMotionEffect;
 - (void)_updateColorsWithTitleAnimationDuration:(double)arg1 withDelay:(double)arg2;
 - (void)_updateColors;
+- (void)_updateScrollOffsetIfNeeded;
 - (void)_updateViews;
 - (void)_updateBackground;
 - (void)_updateBackgroundModern;
@@ -68,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusedView;
-- (id)defaultTintColor;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;

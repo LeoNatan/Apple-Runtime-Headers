@@ -15,6 +15,7 @@
     double _currentDirectionsModeStartTime;
     NSMutableArray *_navigationModes;
     double _originalExpectedTime;
+    BOOL _hasEnteredPreArrivalMode;
 }
 
 @property(retain, nonatomic) GEODirectionsFeedback *currentDirectionsFeedback; // @synthesize currentDirectionsFeedback=_currentDirectionsFeedback;
@@ -26,6 +27,7 @@
 - (void)setModalities:(id)arg1;
 - (void)setAudioFeedback:(struct GEONavigationAudioFeedback *)arg1;
 - (void)addAlightNotificationFeedback:(id)arg1;
+- (void)setHasEnteredPreArrivalMode:(BOOL)arg1;
 - (void)setFinalLocation:(id)arg1 asArrival:(BOOL)arg2;
 - (void)addTrafficRerouteFeedback:(id)arg1;
 - (void)addRouteID:(id)arg1 routeIndex:(unsigned int)arg2 stepID:(unsigned int)arg3 completeStep:(BOOL)arg4;

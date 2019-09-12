@@ -10,6 +10,7 @@
 
 @interface VUIOpenURLHandler : NSObject
 {
+    _Bool _openedByDeeplink;
     CDUnknownBlockType _completionHandler;
     NSURL *_deferredOpenURL;
     CDUnknownBlockType _deferredOpenURLCompletion;
@@ -22,6 +23,7 @@
 @property(copy, nonatomic) CDUnknownBlockType deferredOpenURLCompletion; // @synthesize deferredOpenURLCompletion=_deferredOpenURLCompletion;
 @property(retain, nonatomic) NSURL *deferredOpenURL; // @synthesize deferredOpenURL=_deferredOpenURL;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(nonatomic) _Bool openedByDeeplink; // @synthesize openedByDeeplink=_openedByDeeplink;
 - (void).cxx_destruct;
 - (void)_fetchLocalMediaWithAdamID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_processLocalLibraryLink:(id)arg1 playbackInitiationDate:(id)arg2 openURLCompletionDate:(id)arg3;

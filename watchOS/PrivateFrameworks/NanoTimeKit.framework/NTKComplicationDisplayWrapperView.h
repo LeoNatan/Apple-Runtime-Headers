@@ -10,11 +10,12 @@
 #import <NanoTimeKit/NTKControl-Protocol.h>
 #import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
+#import <NanoTimeKit/NTKTritiumBaseAnimator-Protocol.h>
 
-@class CLKComplicationTemplate, NSDate, NSString, PUICClientSideAnimation, UIView;
+@class CLKComplicationTemplate, NSDate, NSString, PUICClientSideAnimation, UIColor, UIView;
 @protocol CLKMonochromeFilterProvider, NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
 
-@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKSensitiveUIStateObserver, NTKControl, NTKTimeTravel>
+@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKSensitiveUIStateObserver, NTKControl, NTKTimeTravel, NTKTritiumBaseAnimator>
 {
     UIView<NTKComplicationDisplay> *_currentComplicationView;
     UIView<NTKComplicationDisplay> *_nextComplicationView;
@@ -29,6 +30,10 @@
     _Bool _isAnimating;
     _Bool _isDetachedDisplay;
     PUICClientSideAnimation *_timelineAnimation;
+    CLKComplicationTemplate *_tritium_fromTemplate;
+    CLKComplicationTemplate *_tritium_toTemplate;
+    float _tritium_animationProgress;
+    CDUnknownBlockType _reapplyTritiumProgress;
     _Bool _supportsCurvedText;
     _Bool _paused;
     _Bool _editing;
@@ -47,9 +52,13 @@
     float _alphaForDimmedState;
     int _layoutOverride;
     id <CLKMonochromeFilterProvider> _filterProvider;
+    UIColor *_tritium_overrideForegroundColor;
+    UIColor *_tritium_overridePlatterColor;
     struct CGSize _maxSize;
 }
 
+@property(retain, nonatomic) UIColor *tritium_overridePlatterColor; // @synthesize tritium_overridePlatterColor=_tritium_overridePlatterColor;
+@property(retain, nonatomic) UIColor *tritium_overrideForegroundColor; // @synthesize tritium_overrideForegroundColor=_tritium_overrideForegroundColor;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(readonly, nonatomic) int layoutOverride; // @synthesize layoutOverride=_layoutOverride;
 @property(readonly, nonatomic) _Bool hasLegacyDisplay; // @synthesize hasLegacyDisplay=_hasLegacyDisplay;
@@ -102,6 +111,11 @@
 - (void)_replaceDisplayWithDisplayClass:(Class)arg1 template:(id)arg2 reason:(int)arg3 animation:(unsigned int)arg4 animationType:(unsigned int)arg5 animationFraction:(float)arg6;
 - (void)_setComplicationTemplate:(id)arg1 reason:(int)arg2 animation:(unsigned int)arg3 animationType:(unsigned int)arg4 animationFraction:(float)arg5;
 - (void)setComplicationTemplate:(id)arg1 reason:(int)arg2 animation:(unsigned int)arg3;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_cleanUpAnimationTransition;
+- (void)tritium_updateAnimationTransitionFraction:(float)arg1 animationType:(unsigned int)arg2;
+- (void)tritium_prepareForAnimationFromTemplate:(id)arg1 toTemplate:(id)arg2 animationType:(unsigned int)arg3;
 - (void)dealloc;
 - (id)initWithCustomTemplateDisplay:(id)arg1 isDetachedDisplay:(_Bool)arg2 family:(int)arg3;
 - (id)initWithLegacyDisplay:(id)arg1;

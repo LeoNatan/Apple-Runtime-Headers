@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, NSMutableArray, NSMutableDictionary, NSProgress, NSString, NSURL, PLAssetsdCrashRecoverySupport, PLBackgroundJobService, PLChangeHandlingContainer, PLClientServerTransaction, PLCloudPhotoLibraryManager, PLDatabaseContext, PLDupeManager, PLImageWriter, PLJournalManager, PLKeywordManager, PLLazyObject, PLLibraryServicesStateNode, PLModelMigrator, PLMomentGenerationDataManager, PLPairing, PLPhotoLibrary, PLPhotoLibraryBundle, PLPhotoLibraryPathManager, PLQuickActionManager, PLRelationshipOrderKeyManager, PLSearchIndexManager;
+@class NSError, NSMutableArray, NSMutableDictionary, NSProgress, NSString, NSURL, PLAssetsdCrashRecoverySupport, PLBackgroundJobService, PLChangeHandlingContainer, PLClientServerTransaction, PLCloudPhotoLibraryManager, PLDatabaseContext, PLDupeManager, PLImageWriter, PLJournalManager, PLKeywordManager, PLLazyObject, PLLibraryServicesStateNode, PLModelMigrator, PLMomentGenerationDataManager, PLPairing, PLPhotoLibrary, PLPhotoLibraryBundle, PLPhotoLibraryPathManager, PLQuickActionManager, PLReframeService, PLRelationshipOrderKeyManager, PLSearchIndexManager;
 @protocol OS_dispatch_queue, PLLibraryServicesDelegate;
 
 @interface PLLibraryServicesManager : NSObject
@@ -28,6 +28,7 @@
     PLLazyObject *_lazyCloudPhotoLibraryManager;
     PLLazyObject *_lazyCrashRecoverySupport;
     PLLazyObject *_lazyPairingManager;
+    PLLazyObject *_lazyReframeService;
     PLClientServerTransaction *_serverTransaction;
     NSObject<OS_dispatch_queue> *_albumCountQueue;
     NSMutableDictionary *_externalWaiterCompletionBlocksByState;
@@ -117,6 +118,7 @@
 @property(readonly) PLMomentGenerationDataManager *momentGenerationDataManager;
 @property(readonly) PLRelationshipOrderKeyManager *relationshipOrderKeyManager;
 - (void)_invalidateBackgroundJobService;
+- (void)_invalidateReframeService;
 - (void)_invalidateCrashRecoverySupport;
 - (void)_invalidateCloudPhotoLibraryManager;
 - (void)_invalidateDatabaseContext;
@@ -132,6 +134,7 @@
 - (void)_invalidateSearchIndexManager;
 - (void)_invalidateJournalManager;
 - (void)_invalidateMomentGenerationDataManager;
+@property(readonly) PLReframeService *reframeService;
 - (id)newMomentGenerationDataManager;
 - (id)newSearchIndexManager;
 @property(readonly) PLAssetsdCrashRecoverySupport *crashRecoverySupport;

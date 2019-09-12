@@ -53,6 +53,9 @@
 - (_Bool)_displayImageAsLayered:(id)arg1;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
 - (_Bool)_resolveImageForTrait:(id)arg1 previouslyDisplayedImage:(id)arg2;
+- (id)_resolvedImageFromImage:(id)arg1;
+- (id)_resolvedImageFromImage:(id)arg1 forTrait:(id)arg2;
+- (id)_imageResolvingTraitCollectionForTraitCollection:(id)arg1 layoutDirection:(long long)arg2;
 - (_Bool)_resolveImageForTrait:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_currentHighlightedImage;
@@ -111,6 +114,7 @@
 - (id)_imageContentGuideAllowingCreation:(_Bool)arg1;
 @property(readonly) UILayoutGuide *imageContentGuide;
 - (void)_imageContentParametersDidChange;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (void)_baselineOffsetParametersDidChangeHasBaselinePropertyChanged:(_Bool)arg1;
 - (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
@@ -147,7 +151,7 @@
 - (void)_updateContentsMultiplyColorAndSwizzleFromLayout:(id)arg1;
 - (_Bool)_setImageViewContents:(id)arg1;
 - (void)_invalidateImageLayouts;
-- (id)_layoutForImage:(id)arg1;
+- (id)_layoutForImage:(id)arg1 inSize:(struct CGSize)arg2;
 - (_Bool)_canDrawContent;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (unsigned long long)defaultAccessibilityTraits;
@@ -164,7 +168,6 @@
 - (_Bool)_recomputePretilingState;
 
 // Remaining properties
-@property(readonly, nonatomic) struct CGRect bounds;
 @property(readonly, nonatomic) long long contentMode; // @dynamic contentMode;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

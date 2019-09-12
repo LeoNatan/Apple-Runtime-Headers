@@ -77,6 +77,8 @@
 - (void)generateNewRecoveryKeyWithType:(long long)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)deleteRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)_setRecoveryKeyState:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)showAllPreferences;
+- (void)updateReachableEmails:(id)arg1 callback:(id)arg2;
 @property(readonly, nonatomic) NSString *numberOfDaysSinceIMExit;
 - (void)setIMEnabled:(BOOL)arg1;
 @property(readonly, nonatomic) NSNumber *isIMChangingEnabledState;
@@ -183,6 +185,8 @@
 - (void)mmWebKitControllerDidSucceed:(id)arg1;
 - (void)mmWebKitControllerDidCancel:(id)arg1;
 - (void)mmWebKitControllerDidCreateJavaScriptContext:(id)arg1 forFrame:(id)arg2;
+- (BOOL)shouldSelect;
+- (void)didSelect;
 - (void)wasNotifiedOfDataChange:(id)arg1;
 - (void)didChangeToLocation:(id)arg1 toSection:(id)arg2 withContext:(id)arg3;
 - (BOOL)willChangeToLocation:(id)arg1 toSection:(id)arg2 withContext:(id)arg3;

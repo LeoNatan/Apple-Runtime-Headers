@@ -13,12 +13,13 @@
 #import <NanoTimeKit/NTKContainerViewLayoutDelegate-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravelModuleViewTapClient-Protocol.h>
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumFaceView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CAFilter, CLKDevice, CSLPIMinorDetentAssertion, NSDate, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NTKClockIconView, NTKContainerView, NTKExtraLargeTimeView, NTKFaceEditView, NTKTimeTravelModuleView, PUICCrownInputSequencer, UIColor, UIImage, UIImageView;
-@protocol NTKFaceViewComplicationFactory, NTKFaceViewDelegate, NTKTimeView;
+@class CAFilter, CLKDevice, CSLPIMinorDetentAssertion, NSDate, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NTKClockIconView, NTKContainerView, NTKExtraLargeTimeView, NTKFaceEditView, NTKTimeTravelModuleView, NTKTritiumFaceAnimator, PUICCrownInputSequencer, UIColor, UIImage, UIImageView;
+@protocol NTKFaceViewComplicationFactory, NTKFaceViewDelegate, NTKFaceViewTritiumDelegate, NTKTimeView, NTKTritiumFaceAnimatorDelegate;
 
-@interface NTKFaceView : UIView <PUICCrownInputSequencerDelegate, NTKTimeTravelModuleViewTapClient, NTKContainerViewLayoutDelegate, CLKMonochromeFilterProvider, NTKComplicationDisplayWrapperViewAnimationDelegate, NTKClockIconZoomAnimator, NTKTimeView, NTKClockHardwareInput>
+@interface NTKFaceView : UIView <PUICCrownInputSequencerDelegate, NTKTimeTravelModuleViewTapClient, NTKContainerViewLayoutDelegate, CLKMonochromeFilterProvider, NTKComplicationDisplayWrapperViewAnimationDelegate, NTKClockIconZoomAnimator, NTKTimeView, NTKClockHardwareInput, NTKTritiumFaceView>
 {
     PUICCrownInputSequencer *_crownSequencer;
     CSLPIMinorDetentAssertion *_minorDetentAssertion;
@@ -45,6 +46,8 @@
     double _aggdTimeTravelMaximumOffset;
     _Bool _statusIconVisible;
     NTKExtraLargeTimeView *_sensitiveUIShieldView;
+    _Bool _timeViewIsTritiumAnimator;
+    NTKTritiumFaceAnimator *_tritiumFaceAnimator;
     NSMutableDictionary *_complicationDisplayWrappers;
     NSMutableDictionary *_complicationLayouts;
     NSMutableDictionary *_complicationPickerViews;
@@ -78,11 +81,14 @@
     UIColor *_alternateComplicationColor;
     UIColor *_complicationColor;
     UIColor *_interpolatedComplicationColor;
+    unsigned int _tritiumState;
     int _faceStyle;
     CLKDevice *_device;
     NSString *_clientIdentifier;
     int _dataMode;
     id <NTKFaceViewDelegate> _delegate;
+    id <NTKTritiumFaceAnimatorDelegate> _tritiumFaceAnimatorDelegate;
+    id <NTKFaceViewTritiumDelegate> _tritiumDelegate;
     NTKFaceEditView *_editView;
     UIView *_unadornedSnapshotView;
     UIImageView *_switcherSnapshotView;
@@ -100,6 +106,7 @@
     float _editModeTransitionFraction;
 }
 
++ (Class)tritium_frameSpecifierClass;
 + (int)_numberOfDetailModes;
 + (int)numberOfDetailModesForFaceStyle:(int)arg1;
 + (void)_prewarmForDevice:(id)arg1;
@@ -129,6 +136,8 @@
 @property(retain, nonatomic) UIImageView *switcherSnapshotView; // @synthesize switcherSnapshotView=_switcherSnapshotView;
 @property(retain, nonatomic) UIView *unadornedSnapshotView; // @synthesize unadornedSnapshotView=_unadornedSnapshotView;
 @property(retain, nonatomic) NTKFaceEditView *editView; // @synthesize editView=_editView;
+@property(nonatomic) __weak id <NTKFaceViewTritiumDelegate> tritiumDelegate; // @synthesize tritiumDelegate=_tritiumDelegate;
+@property(nonatomic) __weak id <NTKTritiumFaceAnimatorDelegate> tritiumFaceAnimatorDelegate; // @synthesize tritiumFaceAnimatorDelegate=_tritiumFaceAnimatorDelegate;
 @property(nonatomic) __weak id <NTKFaceViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showsLockedUI; // @synthesize showsLockedUI=_showsLockedUI;
 @property(nonatomic) _Bool showContentForUnadornedSnapshot; // @synthesize showContentForUnadornedSnapshot=_showContentForUnadornedSnapshot;
@@ -138,6 +147,7 @@
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int faceStyle; // @synthesize faceStyle=_faceStyle;
+@property(readonly, nonatomic) unsigned int tritiumState; // @synthesize tritiumState=_tritiumState;
 @property(retain, nonatomic) UIColor *interpolatedComplicationColor; // @synthesize interpolatedComplicationColor=_interpolatedComplicationColor;
 @property(retain, nonatomic) UIColor *complicationColor; // @synthesize complicationColor=_complicationColor;
 @property(retain, nonatomic) UIColor *alternateComplicationColor; // @synthesize alternateComplicationColor=_alternateComplicationColor;
@@ -146,6 +156,30 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UIView *foregroundContainerView; // @synthesize foregroundContainerView=_foregroundContainerView;
 - (void).cxx_destruct;
+- (double)tritium_durationForTritiumOffAnimation;
+- (double)tritium_durationForTritiumOnAnimation;
+- (id)tritium_createFaceAnimator;
+- (id)_tritium_createFaceAnimator;
+- (struct NTKTritiumTimeAnimationConfiguration)tritium_timeTransitionAnimationConfiguration;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_setupForBurnInStudy;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_layoutSubviewsIfNecessary;
+- (void)tritium_setNeedsInvalidateFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_loadContentViews;
+- (id)tritium_backgroundView;
+- (id)tritium_timeViews;
+- (id)tritium_brightnessCurve;
+@property(readonly, nonatomic) _Bool isTritiumCopy;
 - (id)interpolatedColorForView:(id)arg1;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2;

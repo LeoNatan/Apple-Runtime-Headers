@@ -25,7 +25,6 @@
 + (id)sortDescriptorForDateAscending:(BOOL)arg1;
 + (id)predicateFromPredicate:(id)arg1 ignoringKeyPaths:(id)arg2;
 + (id)_predicateForMessagesInMailboxWithURL:(id)arg1;
-+ (id)predicateForExcludingDeletedMessages;
 + (id)predicateForExcludingMessagesInMailboxWithURL:(id)arg1;
 + (id)predicateForMessagesNewerThanDate:(id)arg1;
 + (id)predicateForCCMeMessages;

@@ -7,6 +7,7 @@
 @class NSArray, NSDictionary, NSURL;
 
 @protocol VCPMediaAnalysisServerProtocol
+- (void)notifyLibraryAvailableAtURL:(NSURL *)arg1;
 - (void)cancelAllRequests;
 - (void)cancelRequest:(int)arg1;
 - (void)requestAssetProcessing:(int)arg1 withTaskID:(unsigned long long)arg2 forLocalIdentifiers:(NSArray *)arg3 fromPhotoLibraryWithURL:(NSURL *)arg4 withOptions:(NSDictionary *)arg5 andReply:(void (^)(NSDictionary *, NSError *))arg6;

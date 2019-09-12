@@ -9,11 +9,12 @@
 #import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKit/NTKSiderealDataSourceDelegate-Protocol.h>
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
 @class CALayer, CAShapeLayer, CSLPIMinorDetentAssertion, NSCalendar, NSDateFormatter, NSString, NSTimer, NTKFaceViewTapControl, NTKSiderealAuxiliaryDialLabels, NTKSiderealDataSource, NTKSiderealDialBackgroundView, NTKSiderealSolarContainerView, NTKSiderealSolarOrbitView, NTKSiderealTimeView, NTKSiderealWaypointsView, NTKWhistlerAnalogFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UILabel, UIView;
 
-@interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider, PUICCrownInputSequencerDelegate>
+@interface NTKSiderealFaceView : NTKFaceView <NTKTimeView, NTKSiderealDataSourceDelegate, CLKMonochromeFilterProvider, PUICCrownInputSequencerDelegate, NTKTritiumMetalContentView>
 {
     int _previousDataMode;
     NSCalendar *_calendar;
@@ -49,10 +50,24 @@
     CDUnknownBlockType _waypointSettleAnimationBlock;
     float _breathScaleModifier;
     float _rubberBandScaleModifier;
+    float _tritium_dimming;
 }
 
++ (Class)tritium_frameSpecifierClass;
 + (int)uiSensitivity;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (void)tritium_invalidateMetalContentForSnapshot;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (id)_innerComplicationColors;
 - (id)_outerComplicationColors;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;

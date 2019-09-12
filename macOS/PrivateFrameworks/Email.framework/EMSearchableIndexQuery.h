@@ -23,6 +23,7 @@
     BOOL _counting;
     BOOL _live;
     BOOL _queryDidMoveToFinishedState;
+    NSString *_bundleIdentifier;
     CDUnknownBlockType _resultsBlock;
     CDUnknownBlockType _completionBlock;
     CDUnknownBlockType _failureBlock;
@@ -74,6 +75,7 @@
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType resultsBlock; // @synthesize resultsBlock=_resultsBlock;
+@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (void)_logSignpostForSearchQueryDidFinishWithStatus:(id)arg1;
 - (void)_logSignpostForSearchQueryDidReceiveFirstResultsWithItemCount:(unsigned long long)arg1;
@@ -100,6 +102,7 @@
 - (void)_changedItems:(id)arg1;
 - (void)_foundItems:(id)arg1;
 @property(readonly) NSProgress *progress;
+@property(readonly, nonatomic) BOOL isFinished;
 - (BOOL)_isFinishedQueryStatus:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

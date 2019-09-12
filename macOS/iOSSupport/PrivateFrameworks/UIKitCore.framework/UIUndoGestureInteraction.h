@@ -92,7 +92,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)canPaste;
 - (BOOL)canCopy;
 - (BOOL)canCut;
-- (id)responderForOperation:(SEL)arg1;
+- (id)responderForOperation:(SEL)arg1 withSender:(id)arg2;
 - (id)currentResponder;
 - (void)redo:(BOOL)arg1;
 - (void)undo:(BOOL)arg1;
@@ -129,15 +129,18 @@ __attribute__((visibility("hidden")))
 - (void)multiPansTimerElaspsed:(id)arg1;
 - (void)clearMultiPansTimer;
 - (void)touchMultiPansTimer;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)bundleIniWorkFamily:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)textEditingOperationsAvailableWithGestureRecognizer:(id)arg1;
+- (BOOL)editingInteractionOptionsAllowGestureRecognizerToBegin:(id)arg1;
 - (BOOL)undoManagerOperationsCutCopyPasteAvailable;
 - (BOOL)undoManagerOperationsUndoRedoAvailable;
 - (id)_undoManagerFlattenedGroupingInfo;
 - (unsigned long long)privateEditingInteractionOptions;
+- (id)_editingInteractionFirstResponder;
 - (id)_undoManager;
 - (void)_removeGestureRecognizers;
 - (void)_addGestureRecognizers;

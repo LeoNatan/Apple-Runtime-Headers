@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface VUISportsOverlayLayout : TVViewLayout
 {
+    _Bool _logoShowOnlyOnFocus;
     VUIScoreboardLayout *_scoreboardLayout;
     VUITextBadgeLayout *_textBadgeLayout;
     TVImageLayout *_appImageLayout;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)_sportsOverlayALayoutWithElement:(id)arg1;
 + (long long)_scoreboardTypeForElement:(id)arg1;
 + (id)overlayLayoutForElement:(id)arg1 cardLayoutType:(long long)arg2;
+@property(nonatomic) _Bool logoShowOnlyOnFocus; // @synthesize logoShowOnlyOnFocus=_logoShowOnlyOnFocus;
 @property(retain, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
 @property(retain, nonatomic) TVImageLayout *appImageLayout; // @synthesize appImageLayout=_appImageLayout;
 @property(retain, nonatomic) VUITextBadgeLayout *textBadgeLayout; // @synthesize textBadgeLayout=_textBadgeLayout;

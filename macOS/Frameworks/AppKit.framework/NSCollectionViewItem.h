@@ -43,6 +43,8 @@
 @property(readonly) NSArray *draggingImageComponents;
 - (id)_draggingItemView;
 - (id)_draggingImageForView:(id)arg1;
+- (void)_setAssociatedSupplementaryViewsHiddenForDragging:(id)arg1;
+- (id)_associatedSupplementaryViewsHiddenForDragging;
 - (void)_setDragging:(BOOL)arg1;
 - (BOOL)_dragging;
 - (BOOL)_hasOpaquePartsInRect:(struct CGRect)arg1;

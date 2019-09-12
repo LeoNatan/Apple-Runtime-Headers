@@ -9,7 +9,7 @@
 #import <ScreenTimeUI/NSAnimationDelegate-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
 
-@class NSAnimation, NSBox, NSButton, NSObject, NSString, NSTextField, STBlockingBackdropView, STHourglassView, STLockoutAlertController, STLockoutPolicyController;
+@class NSAnimation, NSButton, NSObject, NSString, NSTextField, NSVisualEffectView, STHourglassView, STLockoutAlertController, STLockoutPolicyController;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
 @interface STLockoutViewController : NSViewController <NSAnimationDelegate, STLockoutPolicyControllerDelegate>
@@ -24,6 +24,8 @@
     NSObject<OS_dispatch_group> *_initialAnimationGroup;
     NSObject<OS_dispatch_group> *_approvalAnimationGroup;
     NSObject<OS_dispatch_group> *_dismissingAnimationGroup;
+    NSAnimation *_fadeOutBackdropAnimation;
+    NSAnimation *_fadeInBackdropAnimation;
     NSAnimation *_fadeOutHourglassAnimation;
     NSAnimation *_fadeInHourglassAnimation;
     NSAnimation *_fadeOutTextAndButtonsAnimation;
@@ -33,8 +35,8 @@
     BOOL _forSnapshot;
     BOOL _didFinishDismissing;
     STLockoutPolicyController *_policyController;
-    STBlockingBackdropView *_backdropView;
     STHourglassView *_hourglassView;
+    CDUnknownBlockType _backdropAnimationCompletion;
     NSTextField *_titleLabel;
     NSTextField *_messageLabel;
     NSButton *_mainButton;
@@ -64,8 +66,8 @@
 @property __weak NSButton *mainButton; // @synthesize mainButton=_mainButton;
 @property __weak NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(copy) CDUnknownBlockType backdropAnimationCompletion; // @synthesize backdropAnimationCompletion=_backdropAnimationCompletion;
 @property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
-@property __weak STBlockingBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(nonatomic) BOOL mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
 @property(nonatomic) BOOL okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
@@ -77,10 +79,14 @@
 - (void)_hideTextAndButtons;
 - (void)_restoreHourglass;
 - (void)_hideHourglass;
+- (void)_restoreBackdrop;
+- (void)_hideBackdrop;
 - (void)_fadeInTextAndButtons;
 - (void)_fadeOutTextAndButtons;
 - (void)_fadeInHourglass;
 - (void)_fadeOutHourglass;
+- (void)_fadeInBackdropWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_fadeOutBackdropWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animationDidEnd:(id)arg1;
 - (void)_showDismissingAnimationIfNeeded;
 - (void)_undoApprovalAnimationIfNeeded;
@@ -100,6 +106,7 @@
 - (void)_changeMainButtonToEnterScreenTimePasscode;
 - (void)_changeMainButtonToIgnoreLimit;
 - (void)_changeMainButtonToAskForMore;
+- (void)_updateMainButtonVisibility;
 - (void)_updateOKButtonVisibility;
 - (void)_changeMessageToInitial;
 - (void)_presentAlertController:(id)arg1;
@@ -118,7 +125,7 @@
 - (void)setDidFinishDismissing:(BOOL)arg1;
 @property(copy, nonatomic) NSString *bundleIdentifier;
 - (void)_setupCommon;
-@property(retain) NSBox *view;
+@property(retain) NSVisualEffectView *view;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;
 - (void)viewWillAppear;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)useGroupSizing;
 - (void)setSuppressSpacing:(_Bool)arg1;
 - (_Bool)suppressSpacing;
+- (void)dirtyLayoutForPlainAppearanceChange:(_Bool)arg1 doneAppearanceChanged:(_Bool)arg2;
 - (_Bool)compact;
 - (void)configure;
 - (id)_metricsData;

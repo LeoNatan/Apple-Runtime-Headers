@@ -25,8 +25,11 @@
 - (void)cancel;
 - (void)executeQuery;
 - (void)initQuery;
+- (void)gatherEnded;
 - (void)completed:(id)arg1;
 - (void)foundItems:(id)arg1;
+- (void)removedItems:(id)arg1;
+- (void)addNewResults:(id)arg1;
 - (BOOL)isCoreSpotlightQuery;
 - (BOOL)isDocumentQuery;
 

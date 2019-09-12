@@ -16,6 +16,9 @@
     _Bool __backgroundViewUpdateNeeded;
     _Bool __labelsUpdateNeeded;
     _Bool __dotsUpdateNeeded;
+    _Bool __ticksUpdateNeeded;
+    _Bool __maskUpdateNeeded;
+    long long _style;
     NSArray *_zoomFactors;
     double _minAvailableZoomFactor;
     double _maxAvailableZoomFactor;
@@ -27,25 +30,43 @@
     UIImageView *__backgroundView;
     UIView *__contentContainerView;
     UIView *__labelContainerView;
+    UIImageView *__ticksView;
+    UIImageView *__contentMaskView;
+    UIView *__needleView;
+    NSArray *__focalLengthLabelsPortrait;
+    NSArray *__focalLengthLabelsLandscape;
     NSArray *__labels;
     CAMZoomDialDotsView *__activeDots;
     CAMZoomDialDotsView *__inactiveDots;
     NSObject<OS_dispatch_queue> *__imageGenerationQueue;
     long long __backgroundImageJobIdentifier;
+    long long __ticksImageJobIdentifier;
+    long long __maskImageJobIdentifier;
 }
 
++ (id)_createMaskImageWithSize:(struct CGSize)arg1 tickLabelCenterRadialInset:(double)arg2 notchMaskImage:(id)arg3 labelMaskImage:(id)arg4;
++ (id)_createTicksImageForBounds:(struct CGRect)arg1 dialCenter:(struct CGPoint)arg2 radius:(double)arg3 pixelWidth:(double)arg4 zoomFactors:(id)arg5 minAvailableZoomFactor:(double)arg6 maxAvailableZoomFactor:(double)arg7 signedAngleDeltaForZoomRange:(double)arg8;
 + (id)_createBackgroundImageForBounds:(struct CGRect)arg1 dialCenter:(struct CGPoint)arg2 radius:(double)arg3 backgroundAlpha:(double)arg4 borderStrokeWidth:(double)arg5;
 + (struct CGPoint)_pointForOffsetAngle:(double)arg1 dialCenter:(struct CGPoint)arg2 radius:(double)arg3;
 + (double)_offsetAngleForZoomFactor:(double)arg1 relativeToCurrentZoomFactor:(_Bool)arg2 currentZoomFactor:(double)arg3 min:(double)arg4 max:(double)arg5 signedAngleDeltaForZoomRange:(double)arg6;
 + (double)_normalizedValueForZoomFactor:(double)arg1 min:(double)arg2 max:(double)arg3;
+@property(nonatomic, setter=_setMaskImageJobIdentifier:) long long _maskImageJobIdentifier; // @synthesize _maskImageJobIdentifier=__maskImageJobIdentifier;
+@property(nonatomic, setter=_setTicksImageJobIdentifier:) long long _ticksImageJobIdentifier; // @synthesize _ticksImageJobIdentifier=__ticksImageJobIdentifier;
 @property(nonatomic, setter=_setBackgroundImageJobIdentifier:) long long _backgroundImageJobIdentifier; // @synthesize _backgroundImageJobIdentifier=__backgroundImageJobIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_imageGenerationQueue; // @synthesize _imageGenerationQueue=__imageGenerationQueue;
+@property(nonatomic, getter=_isMaskUpdateNeeded, setter=_setMaskUpdateNeeded:) _Bool _maskUpdateNeeded; // @synthesize _maskUpdateNeeded=__maskUpdateNeeded;
+@property(nonatomic, getter=_isTicksUpdateNeeded, setter=_setTicksUpdateNeeded:) _Bool _ticksUpdateNeeded; // @synthesize _ticksUpdateNeeded=__ticksUpdateNeeded;
 @property(nonatomic, getter=_isDotsUpdateNeeded, setter=_setDotsUpdateNeeded:) _Bool _dotsUpdateNeeded; // @synthesize _dotsUpdateNeeded=__dotsUpdateNeeded;
 @property(nonatomic, getter=_isLabelsUpdateNeeded, setter=_setLabelsUpdateNeeded:) _Bool _labelsUpdateNeeded; // @synthesize _labelsUpdateNeeded=__labelsUpdateNeeded;
 @property(nonatomic, getter=_isBackgroundViewUpdateNeeded, setter=_setBackgroundViewUpdateNeeded:) _Bool _backgroundViewUpdateNeeded; // @synthesize _backgroundViewUpdateNeeded=__backgroundViewUpdateNeeded;
 @property(readonly, nonatomic) CAMZoomDialDotsView *_inactiveDots; // @synthesize _inactiveDots=__inactiveDots;
 @property(readonly, nonatomic) CAMZoomDialDotsView *_activeDots; // @synthesize _activeDots=__activeDots;
 @property(retain, nonatomic, setter=_setLabels:) NSArray *_labels; // @synthesize _labels=__labels;
+@property(retain, nonatomic, setter=_setFocalLengthLabelsLandscape:) NSArray *_focalLengthLabelsLandscape; // @synthesize _focalLengthLabelsLandscape=__focalLengthLabelsLandscape;
+@property(retain, nonatomic, setter=_setFocalLengthLabelsPortrait:) NSArray *_focalLengthLabelsPortrait; // @synthesize _focalLengthLabelsPortrait=__focalLengthLabelsPortrait;
+@property(readonly, nonatomic) UIView *_needleView; // @synthesize _needleView=__needleView;
+@property(readonly, nonatomic) UIImageView *_contentMaskView; // @synthesize _contentMaskView=__contentMaskView;
+@property(readonly, nonatomic) UIImageView *_ticksView; // @synthesize _ticksView=__ticksView;
 @property(readonly, nonatomic) UIView *_labelContainerView; // @synthesize _labelContainerView=__labelContainerView;
 @property(readonly, nonatomic) UIView *_contentContainerView; // @synthesize _contentContainerView=__contentContainerView;
 @property(readonly, nonatomic) UIImageView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
@@ -59,12 +80,16 @@
 @property(nonatomic) double maxAvailableZoomFactor; // @synthesize maxAvailableZoomFactor=_maxAvailableZoomFactor;
 @property(nonatomic) double minAvailableZoomFactor; // @synthesize minAvailableZoomFactor=_minAvailableZoomFactor;
 @property(retain, nonatomic) NSArray *zoomFactors; // @synthesize zoomFactors=_zoomFactors;
+@property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
 - (double)_labelRotationAngleForOrientation;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (id)_createDotImage;
+- (void)_updateMaskImageIfNeeded;
+- (void)_updateTicksImageIfNeeded;
 - (void)_updateBackroundImageViewIfNeeded;
 - (void)removeInternalAnimationsAndSetToCurrentPresentationValues:(_Bool)arg1;
+- (void)_layoutSubviewsWithTicks;
 - (void)_layoutSubviewsWithDots;
 - (void)_layoutBackgroundAndContainerWithContentInset:(double)arg1;
 - (void)layoutSubviews;
@@ -73,6 +98,7 @@
 - (void)setBounds:(struct CGRect)arg1;
 - (struct CGPoint)_textCenterForOffsetAngle:(double)arg1 assumeExpanded:(_Bool)arg2;
 - (struct CGPoint)textCenterForZoomFactor:(double)arg1 assumeExpanded:(_Bool)arg2;
+- (struct CGPoint)_tickEndpointForOffsetAngle:(double)arg1 isTop:(_Bool)arg2;
 - (struct CGPoint)_dotCenterForOffsetAngle:(double)arg1 assumeExpanded:(_Bool)arg2;
 - (struct CGPoint)_dotCenterForZoomFactor:(double)arg1 assumeExpanded:(_Bool)arg2 relativeToCurrentZoomFactor:(_Bool)arg3;
 - (struct CGPoint)_pointForOffsetAngle:(double)arg1 radialInset:(double)arg2 assumeExpanded:(_Bool)arg3;
@@ -82,6 +108,10 @@
 - (double)offsetAngleForZoomFactor:(double)arg1;
 - (double)_signedAngleDeltaForZoomRange;
 @property(readonly, nonatomic) double angleDeltaForZoomRange;
+@property(readonly, nonatomic) double _focalLengthInsetLandscape;
+@property(readonly, nonatomic) double _focalLengthInsetPortrait;
+@property(readonly, nonatomic) double _tickLabelCenterRadialInset;
+@property(readonly, nonatomic) double _labelPaddingForContentSizeCategory;
 @property(readonly, nonatomic) double _backgroundAlpha;
 @property(readonly, nonatomic) double _borderStrokeWidth;
 @property(readonly, nonatomic) double dialBorderWidth;
@@ -89,7 +119,9 @@
 @property(readonly, nonatomic) struct CGPoint dialCenter;
 @property(readonly, nonatomic) double _fullRadiusInset;
 @property(readonly, nonatomic) double _fullRadius;
+- (void)_updateFocalLengthLabelAlphas;
 - (void)_updateDots;
+- (void)_updateFocalLengthLabels;
 - (void)_updateLabels;
 - (void)_updateContentIfNeeded;
 @property(readonly, nonatomic) double _radiusDelta;
@@ -97,9 +129,10 @@
 - (double)normalizedValueForZoomFactor:(double)arg1;
 @property(readonly, nonatomic) double maximumZoomFactor;
 @property(readonly, nonatomic) double minimumZoomFactor;
+@property(readonly, nonatomic) _Bool _useTicks;
 @property(readonly, nonatomic) _Bool _useDots;
 - (void)_commonCAMZoomDialInitialization;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithStyle:(long long)arg1;
 
 @end
 

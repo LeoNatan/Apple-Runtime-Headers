@@ -27,11 +27,23 @@
     UIColor *_cornerComplicationsAccentColor;
     unsigned int _bleed;
     UIColor *_backgroundColor;
+    UIColor *_smallNumbersTritiumColor;
+    UIColor *_smallNumbersTritiumOutlineColor;
+    UIColor *_largeNumbersTritiumColor;
+    UIColor *_largeNumbersTritiumOutlineColor;
+    float _smallNumbersColorBrightness;
+    float _smallDotsColorBrightness;
 }
 
 + (id)paletteForColor:(unsigned int)arg1 bleed:(unsigned int)arg2;
 + (id)paletteForColor:(unsigned int)arg1 style:(unsigned int)arg2;
 + (id)voltColor;
+@property(nonatomic) float smallDotsColorBrightness; // @synthesize smallDotsColorBrightness=_smallDotsColorBrightness;
+@property(nonatomic) float smallNumbersColorBrightness; // @synthesize smallNumbersColorBrightness=_smallNumbersColorBrightness;
+@property(retain, nonatomic) UIColor *largeNumbersTritiumOutlineColor; // @synthesize largeNumbersTritiumOutlineColor=_largeNumbersTritiumOutlineColor;
+@property(retain, nonatomic) UIColor *largeNumbersTritiumColor; // @synthesize largeNumbersTritiumColor=_largeNumbersTritiumColor;
+@property(retain, nonatomic) UIColor *smallNumbersTritiumOutlineColor; // @synthesize smallNumbersTritiumOutlineColor=_smallNumbersTritiumOutlineColor;
+@property(retain, nonatomic) UIColor *smallNumbersTritiumColor; // @synthesize smallNumbersTritiumColor=_smallNumbersTritiumColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) unsigned int bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) _Bool hasWhiteElements; // @synthesize hasWhiteElements=_hasWhiteElements;

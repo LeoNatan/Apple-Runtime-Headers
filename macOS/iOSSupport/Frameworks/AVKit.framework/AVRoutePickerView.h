@@ -34,6 +34,7 @@
 - (struct CGRect)_normalizedRectInWindow;
 - (id)_defaultActiveTintColor;
 - (BOOL)_isAirPlayActive;
+- (id)_outputContext;
 - (void)_updateAirPlayActive;
 - (void)_registerNotifications;
 - (void)_setRoutePickerButtonAlpha:(double)arg1 animated:(BOOL)arg2;

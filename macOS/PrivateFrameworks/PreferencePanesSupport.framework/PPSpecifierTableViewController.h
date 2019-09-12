@@ -54,6 +54,7 @@
 - (void)reloadRowForSpecifier:(id)arg1;
 - (BOOL)selectSpecifier:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)viewDidLoad;
 - (void)awakeFromNib;
 @property(retain) NSArray *specifiers; // @dynamic specifiers;
 @property(readonly) NSView *tableView; // @dynamic tableView;

@@ -1072,6 +1072,7 @@
 @property(readonly, copy) NSString *description;
 - (BOOL)_allowsSnapping;
 - (BOOL)_canBeSnappingTarget;
+@property(readonly) __weak CAContext *_layerHostedContext;
 @property(readonly) __weak CAContext *_contextForLayerHosting;
 @property(readonly, getter=_isFunctionRowWindow) BOOL _functionRowWindow;
 - (BOOL)_allowedInDashboardSpaceWithCollectionBehavior:(unsigned long long)arg1;

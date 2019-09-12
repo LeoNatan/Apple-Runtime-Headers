@@ -125,7 +125,7 @@
 - (unsigned int)paragraphStyleForRange:(struct _NSRange)arg1 inTextView:(struct NSTextView *)arg2 inTextStorage:(id)arg3 ignoreTypingAttributes:(BOOL)arg4;
 - (void)dealloc;
 - (id)init;
-- (id)analyticsInfoForChecklistAtIndex:(unsigned long long)arg1 textView:(struct NSTextView *)arg2;
+- (id)analyticsInfoForChecklistAtIndex:(unsigned long long)arg1 textView:(struct ICMacBaseTextView *)arg2;
 - (void)showFirstTimeAutoSortEnabledAlertWithTextView:(struct ICMacBaseTextView *)arg1 completionHandler:(CDUnknownBlockType)arg2 analyticsHandler:(CDUnknownBlockType)arg3;
 - (void)showFirstTimeAutoSortEnabledAlertIfNecessaryWithTextView:(struct ICMacBaseTextView *)arg1 completionHandler:(CDUnknownBlockType)arg2 analyticsHandler:(CDUnknownBlockType)arg3;
 - (void)autoSortChecklistIfNecessaryForTrackedParagraph:(id)arg1 textView:(struct ICMacBaseTextView *)arg2 analyticsHandler:(CDUnknownBlockType)arg3;

@@ -17,6 +17,7 @@
     int _sessionTimePeriod;
     double _elapsedTime;
     _Bool _sessionInProgress;
+    _Bool _tritium_pausedTextProvider;
     _Bool _disableSmallCapUnits;
     _Bool _shrinkUnitsInCJK;
     _Bool _disableOffsetPrefix;
@@ -39,10 +40,12 @@
 @property(nonatomic) _Bool shrinkUnitsInCJK; // @synthesize shrinkUnitsInCJK=_shrinkUnitsInCJK;
 @property(nonatomic) _Bool disableSmallCapUnits; // @synthesize disableSmallCapUnits=_disableSmallCapUnits;
 @property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
+@property(nonatomic, getter=tritium_isPausedTextProvider, setter=tritium_setIsPausedTextProvider:) _Bool tritium_pausedTextProvider; // @synthesize tritium_pausedTextProvider=_tritium_pausedTextProvider;
 @property(nonatomic) unsigned int calendarUnits; // @synthesize calendarUnits=_calendarUnits;
 @property(nonatomic) int relativeDateStyle; // @synthesize relativeDateStyle=_relativeDateStyle;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+- (_Bool)tritium_requiresCopy;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

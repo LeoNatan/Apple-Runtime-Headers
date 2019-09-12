@@ -42,6 +42,7 @@
 @property(retain, nonatomic) NTKVideoPlayerDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NTKVideoPlayerFaceViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)tritium_willSnapshotForBurnInStudy:(id)arg1;
 - (void)_mediaServicesWereReset:(id)arg1;
 - (_Bool)_shouldChangeVideoOnWake;
 - (_Bool)_shouldChangeVideoOnTap;

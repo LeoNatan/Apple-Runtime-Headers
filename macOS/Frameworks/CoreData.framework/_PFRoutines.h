@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)wrapBlockInGuardedAutoreleasePool:(CDUnknownBlockType)arg1;
 + (id)applicationActivateLifecyleNotifications;
 + (id)applicationDeactivateLifecyleNotifications;
 + (id)sanitize:(id)arg1;

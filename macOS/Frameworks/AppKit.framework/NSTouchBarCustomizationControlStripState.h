@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     long long _functionVariant;
     BOOL _cachedConfigurationIsValid;
     NSDictionary *_cachedConfiguration;
+    long long _currentStateSeed;
 }
 
 + (id)sharedControlStrip;
@@ -32,8 +33,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct CGRect escapeKeyRect;
 @property(readonly) long long functionVariant;
 @property(readonly) long long primaryMode;
-- (void)invalidate;
-- (void)_updateIfNeeded;
+- (void)_updateStateIfNeeded;
+- (void)invalidateConfiguration;
+- (void)_updateConfigurationIfNeeded;
 - (void)_updateExpandedControlStripTouchBarIfNeededFrom:(id)arg1 to:(id)arg2;
 - (void)_updateMiniControlStripTouchBarIfNeededFrom:(id)arg1 to:(id)arg2;
 - (void)dealloc;

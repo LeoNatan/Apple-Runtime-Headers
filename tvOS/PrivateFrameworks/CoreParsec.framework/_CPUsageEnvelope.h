@@ -23,10 +23,12 @@
     long long _collectionStartTimestamp;
     long long _collectionEndTimestamp;
     _CPDeviceContext *_context;
+    NSData *_uuidBytes;
     unsigned long long _whichKind;
 }
 
 @property(readonly, nonatomic) unsigned long long whichKind; // @synthesize whichKind=_whichKind;
+@property(copy, nonatomic) NSData *uuidBytes; // @synthesize uuidBytes=_uuidBytes;
 @property(retain, nonatomic) _CPDeviceContext *context; // @synthesize context=_context;
 @property(nonatomic) int totalSessions; // @synthesize totalSessions=_totalSessions;
 @property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;

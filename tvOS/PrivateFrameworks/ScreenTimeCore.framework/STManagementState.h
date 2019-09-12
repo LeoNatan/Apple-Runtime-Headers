@@ -20,6 +20,7 @@
 @property _Bool cachedShouldRequestMoreTime; // @synthesize cachedShouldRequestMoreTime=_cachedShouldRequestMoreTime;
 - (void).cxx_destruct;
 - (void)isExplicitContentRestricted:(CDUnknownBlockType)arg1;
+- (id)shouldAllowOneMoreMinuteForCategoryIdentifier:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForWebsiteURL:(id)arg1 error:(id *)arg2;
 - (id)shouldAllowOneMoreMinuteForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)permitWebFilterURL:(id)arg1 pageTitle:(id)arg2 error:(id *)arg3;

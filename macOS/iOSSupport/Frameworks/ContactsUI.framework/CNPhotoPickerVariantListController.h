@@ -60,9 +60,11 @@ __attribute__((visibility("hidden")))
 - (void)done;
 - (void)cancel:(id)arg1;
 - (void)generateProviderItems;
+- (void)updateFlowLayoutItemSize;
 - (void)viewDidLayoutSubviews;
 - (void)buildCollectionView;
 - (void)buildHeader;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithVariantsManager:(id)arg1 originalItem:(id)arg2;

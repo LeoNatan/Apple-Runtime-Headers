@@ -73,6 +73,7 @@
 - (id)_orthogonalScrollingSections;
 - (BOOL)_hasOrthogonalScrollingSections;
 - (int)_layoutAxis;
+- (BOOL)_disallowsFadeCellsForBoundsChange;
 - (unsigned long long)_edgesForSafeAreaPropagationToDescendants;
 - (BOOL)_overridesSafeAreaPropagationToDescendants;
 - (BOOL)_preparedForBoundsChanges;

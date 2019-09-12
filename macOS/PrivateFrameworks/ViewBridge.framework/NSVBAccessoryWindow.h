@@ -6,7 +6,7 @@
 
 #import <AppKit/NSWindow.h>
 
-@class NSEvent, NSRemoteView, NSVBAccessoryWindowBackstopResponder;
+@class NSEvent, NSRemoteView, NSVBAccessoryWindowBackstopResponder, NSView;
 
 __attribute__((visibility("hidden")))
 @interface NSVBAccessoryWindow : NSWindow
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned int _notificationsRegistered:1;
     unsigned long long _setFrameInProgress;
     unsigned long long _orderingInProgress;
+    NSView *_view;
 }
 
 @property(readonly, nonatomic) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;

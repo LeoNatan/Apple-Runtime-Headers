@@ -70,6 +70,8 @@
 + (id)extensionForMediumThumbnailFile;
 + (id)extensionForLargeThumbnailFile;
 + (id)extensionForFullsizeThumbnailFile;
++ (id)pathForAdjustmentDataFileWithPathManager:(id)arg1 uuid:(id)arg2 directory:(id)arg3 filename:(id)arg4;
++ (id)pathForAdjustmentFileWithPathManager:(id)arg1 uuid:(id)arg2 directory:(id)arg3 filename:(id)arg4;
 + (unsigned long long)localResourceOptionFromResourceType:(unsigned long long)arg1 useMaster:(BOOL)arg2;
 + (id)pathForAdjustmentDirectoryWithMutationsDirectory:(id)arg1;
 + (id)pathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
@@ -93,6 +95,7 @@
 + (struct CGSize)dimensionsForVideoAtURL:(id)arg1;
 + (struct CGSize)sizeOfImageAtURL:(id)arg1 outOrientation:(short *)arg2;
 + (BOOL)photoGroupingVisibilityEnabled;
++ (void)_setPhotoGroupingVisibilityEnabled:(BOOL)arg1;
 + (void)_setVisibility:(BOOL)arg1 forNonPrimaryAssetsWithGroupingUUID:(id)arg2 inLibrary:(id)arg3;
 + (void)_setGroupingStateForPrimaryAsset:(id)arg1 secondaryAssets:(id)arg2 secondaryVisible:(BOOL)arg3;
 + (void)autoPickPrimaryGroupingStateForAssets:(id)arg1;
@@ -265,7 +268,7 @@
 - (void)_setupMediaConversionSourceURLCollection:(id)arg1 destinationURLCollection:(id)arg2 forDeferredAdjustmentOnAsset:(id)arg3 baseVersion:(long long)arg4;
 - (unsigned long long)deferredProcessingHash;
 - (BOOL)_shouldSetupVideoComplementForAsyncEditWithBaseVersion:(long long)arg1;
-- (id)_sourcePathForAsyncEditWithBaseVersion:(long long)arg1;
+- (id)_sourceURLForAsyncEditWithBaseVersion:(long long)arg1;
 - (void)synchronouslyGenerateFullsizeRenderImageIfNecessaryAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(long long)arg6 renderedImageFilePath:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)generateLargeThumbnailFileIfNecessary;
@@ -431,6 +434,7 @@
 - (void)setImageInfoFromOriginalImageProperties:(id)arg1 metadata:(id)arg2;
 - (id)evaluateWhiteBalanceValueWithOriginalExifProperties:(id)arg1;
 - (void)setExtendedAttributesInfoFromOriginalImageProperties:(id)arg1 metadata:(id)arg2;
+- (id)editedIPTCAttributesCreateIfNeeded:(BOOL)arg1;
 - (id)_formatDoubleValueForKey:(id)arg1 fromDictionary:(id)arg2 withFormat:(id)arg3;
 - (void)hideNonPrimaryAssetsInAssetGroup;
 - (void)revealNonPrimaryAssetsInAssetGroup;
@@ -716,7 +720,7 @@
 - (void)_debugPrintAdjustmentState;
 - (void)_applyResourceChangeToCPLAsset:(id)arg1 forChangeType:(unsigned long long)arg2 shouldGenerateDerivatives:(BOOL)arg3 inLibrary:(id)arg4;
 - (id)_calculateCloudAdjustmentFingerprintFromAdjustmentPListAndCPLResources;
-- (void)_synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)createResourcesForAssetInPhotoLibrary:(id)arg1 shouldGenerateDerivatives:(BOOL)arg2;
 - (BOOL)_hasAllOriginalResourcesLocallyAvailable;
 - (BOOL)_hasAllAdjustedResourcesLocallyAvailable;
@@ -726,6 +730,7 @@
 - (id)bestAvaliableAdjustedResource;
 - (void)_applyFaceChangeToCPLAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)_applyPropertiesChangeToCPLAssetChange:(id)arg1 withMasterScopedIdentifier:(id)arg2 inLibrary:(id)arg3;
+- (BOOL)hasEditedIPTCAttributes;
 - (id)_createVideoResourceFromVideoURL:(id)arg1 withResourceType:(unsigned long long)arg2 scopedIdentifier:(id)arg3 applyVideoAdjustments:(BOOL)arg4 forMaster:(BOOL)arg5 forPhotoIris:(BOOL)arg6;
 - (id)_createCPLResourceFromResourcePath:(id)arg1 withResourceType:(unsigned long long)arg2 uniformTypeIdentifier:(id)arg3 scopedIdentifier:(id)arg4;
 - (id)_createImageResourceForResourceType:(unsigned long long)arg1 withPreviewImagePath:(id)arg2 scopedIdentifier:(id)arg3 forMaster:(BOOL)arg4;
@@ -739,7 +744,7 @@
 - (void)_copyResourceFileFrom:(id)arg1 to:(id)arg2;
 - (id)_videoComplementDerivativeResourcesForMaster:(id)arg1;
 - (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2 shouldGenerateDerivatives:(BOOL)arg3;
-- (void)_createPhotoResourcesForMaster:(id)arg1 withOriginalResource:(id)arg2 intoMasterResources:(id)arg3 shouldGenerateDerivatives:(BOOL)arg4;
+- (void)_createPhotoResourcesForMaster:(id)arg1 withOriginalResource:(id)arg2 intoMasterResources:(id)arg3 shouldGenerateDerivatives:(BOOL)arg4 inPhotoLibrary:(id)arg5;
 - (void)createMasterIfNecessaryInLibrary:(id)arg1;
 - (id)existingCloudMaster;
 - (void)incrementUploadAttempts;
@@ -751,7 +756,7 @@
 - (unsigned long long)originalResourceChoice;
 - (void)removeSidecar:(id)arg1;
 - (id)fileURLForHypotheticalSidecarFileWithFilename:(id)arg1;
-- (id)pathForSideCarImageFile;
+- (id)urlForSideCarImageFile;
 - (BOOL)addSidecarFileAtIndex:(unsigned long long)arg1 sidecarURL:(id)arg2 withFilename:(id)arg3 compressedSize:(id)arg4 captureDate:(id)arg5 modificationDate:(id)arg6 uniformTypeIdentifier:(id)arg7 pathManager:(id)arg8;
 - (BOOL)addSidecarFileInfo:(id)arg1 pathManager:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)sidecarFileMatchingUTI:(struct __CFString *)arg1 requireExactMatch:(BOOL)arg2 requireSort:(BOOL)arg3;
@@ -804,7 +809,7 @@
 - (id)rm_applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)rm_createAssetResourcesForCPLResources:(id)arg1 inLibrary:(id)arg2;
 - (id)rm_cplExpungeableMasterResourceStates;
-- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1;
+- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1 addOriginalResourceMode:(BOOL)arg2;
 - (id)rm_cplMasterResourceForResourceType:(unsigned long long)arg1;
 - (id)rm_cplResourceForResourceType:(unsigned long long)arg1;
 - (void)_rm_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
@@ -817,7 +822,6 @@
 - (BOOL)hasAdjustedCPLThumbResource;
 - (id)allLocalCPLResources;
 - (id)allMasterCPLResources;
-- (id)allOriginalAssetCPLResources;
 - (id)allAssetCPLResources;
 - (id)assetResourceForCPLType:(unsigned long long)arg1;
 - (id)masterResourceForCPLType:(unsigned long long)arg1;

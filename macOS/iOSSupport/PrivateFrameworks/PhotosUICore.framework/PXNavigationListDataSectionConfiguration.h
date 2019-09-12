@@ -13,12 +13,16 @@
     BOOL _emptyCollectionsHidden;
     BOOL _includeKeyAssetFetches;
     BOOL _includeUserSmartAlbums;
+    BOOL _skipKeyAssetFetchesForSmartAlbums;
+    BOOL _skipAssetFetches;
     PHCollectionList *_collectionList;
     PHFetchResult *_collectionsFetchResult;
 }
 
 + (id)configurationWithCollectionsFetchResult:(id)arg1;
 + (id)configurationWithCollectionList:(id)arg1;
+@property(nonatomic) BOOL skipAssetFetches; // @synthesize skipAssetFetches=_skipAssetFetches;
+@property(nonatomic) BOOL skipKeyAssetFetchesForSmartAlbums; // @synthesize skipKeyAssetFetchesForSmartAlbums=_skipKeyAssetFetchesForSmartAlbums;
 @property(nonatomic) BOOL includeUserSmartAlbums; // @synthesize includeUserSmartAlbums=_includeUserSmartAlbums;
 @property(nonatomic) BOOL includeKeyAssetFetches; // @synthesize includeKeyAssetFetches=_includeKeyAssetFetches;
 @property(nonatomic) BOOL emptyCollectionsHidden; // @synthesize emptyCollectionsHidden=_emptyCollectionsHidden;

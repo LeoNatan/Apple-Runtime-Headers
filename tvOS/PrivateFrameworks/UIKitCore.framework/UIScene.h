@@ -124,6 +124,7 @@
 - (void)_scheduleBackgroundSceneDetach;
 @property(nonatomic, setter=_setInvolvedInMediaPlayback:) _Bool _involvedInMediaPlayback;
 - (void)_initializeSceneComponents;
+- (_Bool)_needsMakeKeyAndVisible;
 - (void)_makeKeyAndVisibleIfNeeded;
 - (void)_readySceneForConnection;
 - (void)__releaseWindow:(id)arg1;

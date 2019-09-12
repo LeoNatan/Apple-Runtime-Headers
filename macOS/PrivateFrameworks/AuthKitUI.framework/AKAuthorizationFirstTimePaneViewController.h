@@ -20,6 +20,7 @@
 - (void)_addTitleToContext:(id)arg1 title:(id)arg2;
 - (void)_addViewToContext:(id)arg1 spacing:(double)arg2;
 - (id)_frameworkImageNamed:(id)arg1;
+- (BOOL)shouldEmbedContentTrayIfNeeded;
 - (void)viewDidLoad;
 
 @end

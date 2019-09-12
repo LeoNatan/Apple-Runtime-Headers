@@ -33,6 +33,7 @@
 - (void)_ensureVideoSession;
 - (void)prepareForInvisible;
 - (void)prepareForVisible;
+- (_Bool)isPlaying;
 - (void)setDesiredPlayState:(long long)arg1;
 - (void)dealloc;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2 spriteReference:(id)arg3;

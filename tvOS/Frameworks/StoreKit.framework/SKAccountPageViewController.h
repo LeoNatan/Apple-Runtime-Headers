@@ -28,6 +28,7 @@
     CDUnknownBlockType redeemCompletionHandler;
     id <SKAccountPageViewControllerDelegate> _delegate;
     ACAccount *_account;
+    NSString *_referrer;
     long long _type;
     SKAccountPageViewController *_preWarmedViewController;
     SKAccountPageViewController *_presentingAccountPageViewController;
@@ -37,6 +38,7 @@
 @property(nonatomic) __weak SKAccountPageViewController *presentingAccountPageViewController; // @synthesize presentingAccountPageViewController=_presentingAccountPageViewController;
 @property(retain, nonatomic) SKAccountPageViewController *preWarmedViewController; // @synthesize preWarmedViewController=_preWarmedViewController;
 @property(nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic) NSString *referrer; // @synthesize referrer=_referrer;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(nonatomic) __weak id <SKAccountPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

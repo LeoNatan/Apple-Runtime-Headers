@@ -25,6 +25,7 @@
 - (void)stopSiriWithContext:(id)arg1;
 - (void)startSiriWithContext:(id)arg1;
 - (void)activateSiriWithContext:(id)arg1;
+- (void)dispose;
 - (void)prepareViewServices;
 - (void)_stopSiriWithContext:(id)arg1;
 - (void)_startSiriWithContext:(id)arg1;

@@ -18,20 +18,21 @@
     NSDate *_fragmentCreationReferenceDate;
     NSMutableArray *_motionActiveDateIntervals;
     NSMutableArray *_doorbellActiveDateIntervals;
+    NSString *_logIdentifier;
 }
 
 + (id)logCategory;
+@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) NSMutableArray *doorbellActiveDateIntervals; // @synthesize doorbellActiveDateIntervals=_doorbellActiveDateIntervals;
 @property(readonly) NSMutableArray *motionActiveDateIntervals; // @synthesize motionActiveDateIntervals=_motionActiveDateIntervals;
 @property(readonly, copy) NSDate *fragmentCreationReferenceDate; // @synthesize fragmentCreationReferenceDate=_fragmentCreationReferenceDate;
 @property(readonly) double fragmentDuration; // @synthesize fragmentDuration=_fragmentDuration;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
-- (id)logIdentifier;
 - (void)handleDoorbellDidActivateAtDate:(id)arg1;
 - (void)handleMotionActive:(BOOL)arg1 didChangeAtDate:(id)arg2;
 - (id)contextForFragmentWithSequenceNumber:(unsigned long long)arg1;
-- (id)initWithWorkQueue:(id)arg1 fragmentDuration:(double)arg2 fragmentCreationReferenceDate:(id)arg3;
+- (id)initWithWorkQueue:(id)arg1 fragmentDuration:(double)arg2 fragmentCreationReferenceDate:(id)arg3 logIdentifier:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

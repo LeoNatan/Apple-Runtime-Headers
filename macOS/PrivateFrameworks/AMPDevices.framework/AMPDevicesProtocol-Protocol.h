@@ -13,7 +13,8 @@
 - (NSProgress *)copyItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)fetchFileSharingItemsForApp:(NSString *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchFileSharingAppsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
-- (void)fetchIPodVoiceOverKitStatusForDevice:(AMPDevice *)arg1 WithReply:(void (^)(BOOL, BOOL, NSError *))arg2;
+- (NSProgress *)startIPodVoiceOverKitInstallForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)fetchIPodVoiceOverKitStatusWithReply:(void (^)(BOOL, BOOL, NSError *))arg1;
 - (void)ejectDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)revealDeviceInFinder:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)resetWarningsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;

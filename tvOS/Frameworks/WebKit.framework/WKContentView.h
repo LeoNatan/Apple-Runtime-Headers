@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIWebFormAccessory> _formAccessoryView;
     struct RetainPtr<_UIHighlightView> _highlightView;
     struct RetainPtr<UIView> _interactionViewsContainerView;
+    struct RetainPtr<UIView> _contextMenuHintContainerView;
     struct RetainPtr<NSString> _markedText;
     struct RetainPtr<WKActionSheetAssistant> _actionSheetAssistant;
     struct RetainPtr<WKAirPlayRoutePicker> _airPlayRoutePicker;
@@ -99,6 +100,7 @@ __attribute__((visibility("hidden")))
     _Bool _waitingForEditDragSnapshot;
     _Bool _hasSetUpInteractions;
     unsigned long long _ignoreSelectionCommandFadeCount;
+    long long _suppressNonEditableSingleTapTextInteractionCount;
     CompletionHandler_2aa2525f _domPasteRequestHandler;
     struct BlockPtr<void (UIWKAutocorrectionContext *)> _pendingAutocorrectionContextHandler;
     struct unique_ptr<WebKit::PageClientImpl, std::__1::default_delete<WebKit::PageClientImpl>> _pageClient;
@@ -165,6 +167,7 @@ __attribute__((visibility("hidden")))
 - (id)_commonInitializationWithProcessPool:(struct WebProcessPool *)arg1 configuration:(Ref_1d7364d1 *)arg2;
 @property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
 - (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;
+- (void)_hideContextMenuHintContainer;
 - (id)containerViewForTargetedPreviews;
 @property(readonly, nonatomic) _Bool _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) _Bool _shouldAvoidResizingWhenInputViewBoundsChange;
@@ -181,7 +184,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (Optional_597ad795)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_8b32703a)positionInformationForActionSheetAssistant:(id)arg1;
 - (_Bool)isAnyTouchOverActiveArea:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (_Bool)shouldIgnoreWebTouch;
@@ -215,6 +218,7 @@ __attribute__((visibility("hidden")))
 - (void)_didUpdateInputMode:(unsigned char)arg1;
 - (void)_hardwareKeyboardAvailabilityChanged;
 @property(readonly, nonatomic) _Bool shouldIgnoreKeyboardWillHideNotification;
+- (void)_updateInputContextAfterBlurringAndRefocusingElement;
 - (void)_elementDidBlur;
 - (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(_Bool)arg2 blurPreviousNode:(_Bool)arg3 activityStateChanges:(OptionSet_05ce0fa5)arg4 userObject:(id)arg5;
 - (Vector_116a0919 *)focusedSelectElementOptions;
@@ -668,6 +672,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long smartQuotesType;
 @property(nonatomic) long long spellCheckingType;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool supportsImagePaste;
 @property(nonatomic) _Bool suppressReturnKeyStyling;
 @property(copy, nonatomic) NSString *textContentType;
 @property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;

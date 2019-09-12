@@ -27,6 +27,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)secondaryTechniques;
+- (id)imageSensorSettingsForSuperWide;
 - (id)imageSensorSettings;
 - (id)parentImageSensorSettings;
 - (long long)worldAlignment;

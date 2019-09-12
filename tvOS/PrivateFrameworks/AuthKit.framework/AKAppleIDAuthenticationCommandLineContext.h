@@ -31,7 +31,7 @@
 - (id)_promptForVerificationCodeWithSecureEntry:(_Bool)arg1;
 - (id)_promptUserForSelectionWithTrustedNumbers:(id)arg1;
 - (void)_collectAndPostSecondFactorCodeForTrustedNumber:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_handleServerUISMSSecondFactorWithDictionary:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_handleServerUISMSSecondFactorWithDictionary:(id)arg1 statusCode:(long long)arg2 configuration:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleServerUISecondFactorWithObjectModel:(id)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentServerUISecondFactorWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;

@@ -13,7 +13,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)insertMetadataForObject:(id)arg1 inZone:(id)arg2 recordNamePrefix:(id)arg3 error:(id *)arg4;
++ (id)batchUpdateMetadataMatchingEntityIdsAndPKs:(id)arg1 withUpdates:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4 error:(id *)arg5;
++ (id)countRecordMetadataInStore:(id)arg1 matchingPredicate:(id)arg2 withManagedObjectContext:(id)arg3 error:(id *)arg4;
++ (id)countRecordMetadataInStore:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
++ (BOOL)purgeRecordMetadataWithRecordIDs:(id)arg1 inStore:(id)arg2 withManagedObjectContext:(id)arg3 error:(id *)arg4;
++ (id)insertMetadataForObject:(id)arg1 setRecordName:(BOOL)arg2 inZone:(id)arg3 recordNamePrefix:(id)arg4 error:(id *)arg5;
 + (id)createMapOfMetadataMatchingRecords:(id)arg1 andRecordIDs:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4 error:(id *)arg5;
 + (id)metadataForRecordIDs:(id)arg1 fromStore:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;
 + (id)metadataForRecord:(id)arg1 inManagedObjectContext:(id)arg2 fromStore:(id)arg3 error:(id *)arg4;
@@ -30,6 +34,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *ckShare; // @dynamic ckShare;
 @property(retain, nonatomic) NSNumber *entityId; // @dynamic entityId;
 @property(retain, nonatomic) NSNumber *entityPK; // @dynamic entityPK;
+@property(retain, nonatomic) NSNumber *lastExportedTransactionNumber; // @dynamic lastExportedTransactionNumber;
+@property(nonatomic) BOOL needsCloudDelete; // @dynamic needsCloudDelete;
+@property(nonatomic) BOOL needsLocalDelete; // @dynamic needsLocalDelete;
+@property(nonatomic) BOOL needsUpload; // @dynamic needsUpload;
+@property(retain, nonatomic) NSNumber *pendingExportChangeTypeNumber; // @dynamic pendingExportChangeTypeNumber;
+@property(retain, nonatomic) NSNumber *pendingExportTransactionNumber; // @dynamic pendingExportTransactionNumber;
 @property(retain, nonatomic) NSCKRecordZoneMetadata *recordZone; // @dynamic recordZone;
 
 @end

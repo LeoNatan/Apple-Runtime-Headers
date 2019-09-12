@@ -10,13 +10,13 @@
 
 @interface WFActionDrawerResultsController : NSObject
 {
-    WFActionRegistry *_actionRegistry;
     HMHome *_home;
+    WFActionRegistry *_actionRegistry;
 }
 
 + (id)localizedAppNames;
-@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) WFActionRegistry *actionRegistry; // @synthesize actionRegistry=_actionRegistry;
+@property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (id)actions;
 - (id)actionsForCategory:(id)arg1;
@@ -25,12 +25,12 @@
 - (id)suggestedCategoriesForContentClasses:(id)arg1;
 - (void)getDeveloperSuggestedResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSiriSuggestedGroupedResultsWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)getSiriSuggestedResultsForAppIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getSiriSuggestedResultsForBundleIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)resultsForFavorites;
 - (id)resultsForSuggestionsWithWorkflow:(id)arg1;
-- (id)resultsForAppWithIdentifier:(id)arg1 shouldFilterForAppsViewController:(BOOL)arg2;
+- (id)resultsForAppWithBundleIdentifier:(id)arg1 legacyIdentifier:(id)arg2 shouldFilterForAppsViewController:(BOOL)arg3;
 - (id)resultsForCategory:(id)arg1;
-- (void)getResultsForAppIdentifier:(id)arg1 shouldFilterForAppsViewController:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getResultsForAppWithBundleIdentifier:(id)arg1 legacyIdentifier:(id)arg2 shouldFilterForAppsViewController:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)resultsForSearchQuery:(id)arg1 includingSiriSuggestedResults:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithActionRegistry:(id)arg1;
 

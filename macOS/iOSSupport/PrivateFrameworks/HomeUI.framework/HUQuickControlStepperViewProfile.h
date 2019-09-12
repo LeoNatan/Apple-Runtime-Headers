@@ -23,6 +23,7 @@
 @property(nonatomic) unsigned long long stepperBehavior; // @synthesize stepperBehavior=_stepperBehavior;
 @property(nonatomic) unsigned long long numberOfSegments; // @synthesize numberOfSegments=_numberOfSegments;
 - (void).cxx_destruct;
+- (BOOL)supportsTouchContinuation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

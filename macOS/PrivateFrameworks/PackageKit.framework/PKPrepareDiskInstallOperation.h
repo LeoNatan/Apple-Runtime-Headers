@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)ensureAppleInternalExistsOnDestination;
 - (void)main;
 - (int)installState;
 - (id)initWithRequest:(id)arg1 sandbox:(id)arg2 analyzer:(id)arg3;

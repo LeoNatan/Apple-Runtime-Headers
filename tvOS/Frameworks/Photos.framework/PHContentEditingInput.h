@@ -28,6 +28,8 @@
     long long _baseVersion;
     NSNumber *_originalResourceChoice;
     NSURL *_videoURL;
+    NSURL *_overCapturePhotoURL;
+    NSURL *_overCaptureVideoURL;
     NSURL *_frontSwappingImageRenderURL;
     NSURL *_backSwappingImageRenderURL;
     NSURL *_frontSwappingVideoRenderURL;
@@ -40,6 +42,8 @@
 @property(copy, nonatomic) NSURL *frontSwappingVideoRenderURL; // @synthesize frontSwappingVideoRenderURL=_frontSwappingVideoRenderURL;
 @property(copy, nonatomic) NSURL *backSwappingImageRenderURL; // @synthesize backSwappingImageRenderURL=_backSwappingImageRenderURL;
 @property(copy, nonatomic) NSURL *frontSwappingImageRenderURL; // @synthesize frontSwappingImageRenderURL=_frontSwappingImageRenderURL;
+@property(copy, nonatomic) NSURL *overCaptureVideoURL; // @synthesize overCaptureVideoURL=_overCaptureVideoURL;
+@property(copy, nonatomic) NSURL *overCapturePhotoURL; // @synthesize overCapturePhotoURL=_overCapturePhotoURL;
 @property(copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(retain, nonatomic) NSNumber *originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;

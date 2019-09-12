@@ -52,6 +52,7 @@
 - (void)_endObservingCloudLibraryEnabled;
 - (void)_beginObservingCloudLibraryEnabled;
 - (void)_updateSubscriptionStatusWithIgnoreCachePolicy:(_Bool)arg1;
+- (void)_updateSubscriptionAvailabilityWithValue:(_Bool)arg1;
 - (void)_updateSubscriptionAvailability;
 - (void)_updateMatchStatus;
 - (_Bool)_currentPurchaseHistoryEnabled;
@@ -80,14 +81,15 @@
 - (void)_subscriptionStatusDidChange:(id)arg1;
 - (void)_userIdentityStoreDidChange:(id)arg1;
 - (void)_cloudClientAuthenticationDidChange;
+- (void)_allowsMusicSubscriptionDidChange:(id)arg1;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

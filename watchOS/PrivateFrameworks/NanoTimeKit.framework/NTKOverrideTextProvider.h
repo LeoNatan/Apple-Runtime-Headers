@@ -20,6 +20,7 @@
 @property(copy, nonatomic) CDUnknownBlockType overrideBlock; // @synthesize overrideBlock=_overrideBlock;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+- (_Bool)tritium_requiresCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

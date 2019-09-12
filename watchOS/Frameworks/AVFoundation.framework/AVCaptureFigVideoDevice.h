@@ -217,6 +217,7 @@ __attribute__((visibility("hidden")))
 - (void)setFaceDetectionDrivenImageProcessingEnabled:(_Bool)arg1;
 - (_Bool)isFaceDetectionDrivenImageProcessingEnabled;
 - (_Bool)isFaceDetectionDuringVideoPreviewSupported;
+- (_Bool)isObjectDetectionSupported;
 - (_Bool)isFaceDetectionSupported;
 - (_Bool)isDiagnosticsTestSupported:(id)arg1;
 - (id)runDiagnosticsWithTestType:(id)arg1;

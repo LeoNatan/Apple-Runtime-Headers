@@ -146,6 +146,7 @@
 - (void)_setAccount:(id)arg1 locally:(BOOL)arg2;
 - (void)_setAccount:(id)arg1;
 - (BOOL)_hasCommunicatedOnService:(id)arg1;
+- (id)_generatePersonCentricID;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 ofParticipant:(id)arg3;
 - (id)valueForProperty:(id)arg1 ofParticipant:(id)arg2;
 - (id)allPropertiesOfParticipant:(id)arg1;
@@ -209,6 +210,7 @@
 - (void)_showErrorMessage:(id)arg1;
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (void)_setJoinState:(long long)arg1 quietly:(BOOL)arg2;
+- (void)_clearPendingMessages;
 - (void)_setJoinState:(long long)arg1;
 - (BOOL)_handleIncomingItem:(id)arg1;
 - (void)_fixSendingItemDateAndSortID:(id)arg1;
@@ -371,6 +373,7 @@
 - (void)_markItemAsPlayed:(id)arg1;
 - (void)markChatItemAsPlayed:(id)arg1;
 - (void)markChatItemAsSaved:(id)arg1;
+- (void)deleteIMMessageItems:(id)arg1;
 - (void)deleteChatItems:(id)arg1;
 - (id)_getMessageChatItemMap:(id)arg1 withDeleteMap:(id)arg2 andAllChatItems:(id)arg3;
 - (id)_getDeleteChatItemMap:(id)arg1;

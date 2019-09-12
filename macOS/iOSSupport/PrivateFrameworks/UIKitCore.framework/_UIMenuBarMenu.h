@@ -37,7 +37,6 @@
 - (void)insertItems:(id)arg1 afterStandardItem:(id)arg2;
 - (void)insertItems:(id)arg1 atBeginningOfMenu:(id)arg2;
 - (void)insertMenu:(id)arg1 afterStandardMenu:(id)arg2;
-- (void)_recursivelySetMenuChangeShouldRebuildMenu;
 - (double)forwardingInterposableRunLoopTimeOut;
 
 // Remaining properties

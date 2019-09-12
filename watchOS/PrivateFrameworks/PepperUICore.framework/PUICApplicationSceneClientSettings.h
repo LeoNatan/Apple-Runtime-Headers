@@ -16,6 +16,8 @@
 
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
+@property(readonly, nonatomic) double fromAOTAnimationDuration;
+@property(readonly, nonatomic) double toAOTAnimationDuration;
 @property(readonly, nonatomic) unsigned int crownWindowContextID;
 @property(readonly, nonatomic) _Bool statusBarOccluded;
 @property(readonly, nonatomic) unsigned int screenOffIdleBehavior;

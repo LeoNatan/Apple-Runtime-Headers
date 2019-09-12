@@ -11,8 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)setBrailleLineWithFocusedElement:(id)arg1 forceRebuild:(BOOL)arg2;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (BOOL)moveOutWithEvent:(id)arg1 request:(id)arg2;
+- (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (id)uiElementForAccessibilitySelectedChildren;
 - (BOOL)setSingleSelectionWithRequest:(id)arg1;
 - (id)elementToSpeakAfterMove;

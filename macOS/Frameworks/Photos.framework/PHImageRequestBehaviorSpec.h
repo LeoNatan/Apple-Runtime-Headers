@@ -16,9 +16,11 @@
     unsigned long long _loadingOptions;
     long long _version;
     long long _resizeMode;
+    double _minimumTableThumbnailLongSide;
 }
 
 + (unsigned long long)loadingOptionsFromLoadingMode:(long long)arg1;
+@property(nonatomic) double minimumTableThumbnailLongSide; // @synthesize minimumTableThumbnailLongSide=_minimumTableThumbnailLongSide;
 @property(nonatomic) BOOL onlyUseFetchedAssetPropertiesDuringChoosing; // @synthesize onlyUseFetchedAssetPropertiesDuringChoosing=_onlyUseFetchedAssetPropertiesDuringChoosing;
 @property(nonatomic) BOOL allowPlaceholder; // @synthesize allowPlaceholder=_allowPlaceholder;
 @property(nonatomic, getter=isNetworkAccessAllowed) BOOL networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;

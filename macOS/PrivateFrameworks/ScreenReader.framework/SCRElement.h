@@ -380,6 +380,7 @@
 - (BOOL)isAdjustable;
 - (BOOL)isControlElement;
 - (long long)blockquoteLevel;
+- (BOOL)supportsSelection;
 - (BOOL)hasMultipleSelection;
 - (BOOL)hasSelectedChildren;
 - (BOOL)isRegisteredForSelectionChanges;
@@ -916,6 +917,7 @@
 - (void)moveSelectionForwardWithRequest:(id)arg1;
 - (void)setPreviousSelectionUIElements:(id)arg1;
 - (id)previousSelectionUIElements;
+- (id)selectionUIElements;
 - (BOOL)toggleMultipleSelectionWithRequest:(id)arg1;
 - (BOOL)toggleSingleSelectionWithRequest:(id)arg1;
 - (BOOL)setSingleSelectionWithRequest:(id)arg1 receiverAlreadySelected:(char *)arg2;

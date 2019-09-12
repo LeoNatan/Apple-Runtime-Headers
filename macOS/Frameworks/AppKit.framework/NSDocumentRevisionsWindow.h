@@ -6,12 +6,13 @@
 
 #import <AppKit/NSWindow.h>
 
-@class CABackdropLayer, NSDocumentRevisionsView;
+@class CABackdropLayer, CALayer, NSDocumentRevisionsView;
 
 __attribute__((visibility("hidden")))
 @interface NSDocumentRevisionsWindow : NSWindow
 {
     NSDocumentRevisionsView *view;
+    CALayer *dpLayer;
     CABackdropLayer *rootBackdropLayer;
 }
 
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)canBecomeMainWindow;
 - (BOOL)canBecomeKeyWindow;
 - (BOOL)_allowsOrdering;
+@property(readonly) CALayer *dpLayer;
 @property(readonly) NSDocumentRevisionsView *view;
 - (id)initWithController:(id)arg1;
 

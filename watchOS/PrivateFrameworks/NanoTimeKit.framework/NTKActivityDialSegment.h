@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NTKFaceColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
 - (void).cxx_destruct;
+- (void)setTritiumOnWithProgress:(float)arg1;
 - (void)_updateTransform;
 - (id)initWithHourIndex:(int)arg1;
 

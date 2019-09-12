@@ -14,6 +14,7 @@
 {
 }
 
++ (void)initialize;
 - (void)getCredentialStateForUserID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)createRequest;
 

@@ -54,6 +54,9 @@
 @property(readonly, nonatomic) PLMigrationPostProcessingToken *postProcessingToken; // @synthesize postProcessingToken=_postProcessingToken;
 @property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
 - (void).cxx_destruct;
+- (_Bool)_fixAdjustedFingerprintsInStore:(id)arg1;
+- (_Bool)_fixUnpushedVideoComplementResourcesInStore:(id)arg1;
+- (_Bool)_fixUploadedButNotRemotelyAvailalbeCPLResourcesInStore:(id)arg1;
 - (_Bool)_fixSharedStreamVideoResourcesInStore:(id)arg1;
 - (_Bool)_removeAllSharedAssetDCIMFilesInStore:(id)arg1;
 - (_Bool)_removeCloudSharedFileAtPath:(id)arg1 withFileManager:(id)arg2 error:(id *)arg3;

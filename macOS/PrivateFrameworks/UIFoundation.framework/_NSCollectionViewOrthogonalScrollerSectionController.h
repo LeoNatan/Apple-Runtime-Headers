@@ -13,7 +13,7 @@
 @interface _NSCollectionViewOrthogonalScrollerSectionController : NSObject <NSScrollViewDelegate>
 {
     _NSCollectionViewCore *_collectionView;
-    NSMapTable *_scrollViewMap;
+    NSMapTable *_scrollViewFromSectionMap;
     NSMapTable *_scrollViewToSectionMap;
     NSHashTable *_frontMostElements;
     NSIndexSet *_currentOrthogonalSectionIndexes;
@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSIndexSet *currentOrthogonalSectionIndexes; // @synthesize currentOrthogonalSectionIndexes=_currentOrthogonalSectionIndexes;
 @property(retain, nonatomic) NSHashTable *frontMostElements; // @synthesize frontMostElements=_frontMostElements;
 @property(retain, nonatomic) NSMapTable *scrollViewToSectionMap; // @synthesize scrollViewToSectionMap=_scrollViewToSectionMap;
-@property(retain, nonatomic) NSMapTable *scrollViewMap; // @synthesize scrollViewMap=_scrollViewMap;
+@property(retain, nonatomic) NSMapTable *scrollViewFromSectionMap; // @synthesize scrollViewFromSectionMap=_scrollViewFromSectionMap;
 @property(nonatomic) __weak _NSCollectionViewCore *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
 - (void)_forceElementsOnTopAsNeeded;
@@ -38,7 +38,7 @@
 - (id)_addSectionScrollViewForIndexPath:(id)arg1;
 - (id)_sectionScrollViewForSection:(long long)arg1;
 - (id)_sectionScrollViewForIndexPath:(id)arg1;
-- (void)insertDeleteOrthogonalSectionsOnLayoutInvalidation;
+- (void)reconfigureOrthogonalSectionsForUpdate:(id)arg1;
 - (void)performLayout;
 - (void)addElementIfNeeded:(id)arg1;
 - (BOOL)isElementInOrthogonalScrollingSection:(id)arg1;

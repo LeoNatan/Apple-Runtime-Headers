@@ -86,8 +86,8 @@
 - (id)itemForContentItemID:(id)arg1;
 - (void)updateLocationDependentPropertiesForItem:(id)arg1;
 - (_Bool)isPlaceholderItemForContentItemID:(id)arg1;
-- (unsigned long long)displayIndexForItem:(id)arg1;
-- (unsigned long long)displayCountForItem:(id)arg1;
+- (long long)displayIndexForContentItemID:(id)arg1;
+@property(readonly, nonatomic) long long displayCount;
 - (void)handlePlaybackFailureForItem:(id)arg1;
 - (void)finalizeStateRestorationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)contentItemIDsFromOffset:(long long)arg1 toOffset:(long long)arg2 nowPlayingIndex:(long long *)arg3;

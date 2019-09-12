@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _isCenterViewController;
     _Bool _muted;
     _Bool _contentOccluded;
+    _Bool _preventsDisplaySleepDuringPreviewVideoPlayback;
     id <HBUITopShelfParadeItem> _paradeItem;
     id <HBUITopShelfParadeBackgroundViewControllerDelegate> _delegate;
     TVSStateMachine *_stateMachine;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_bumperCinemagraphView) HBUIPlayerView *bumperCinemagraphView; // @synthesize bumperCinemagraphView=_bumperCinemagraphView;
 @property(readonly, nonatomic, getter=_bumperImageView) UIImageView *bumperImageView; // @synthesize bumperImageView=_bumperImageView;
 @property(readonly, nonatomic, getter=_stateMachine) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(nonatomic) _Bool preventsDisplaySleepDuringPreviewVideoPlayback; // @synthesize preventsDisplaySleepDuringPreviewVideoPlayback=_preventsDisplaySleepDuringPreviewVideoPlayback;
 @property(nonatomic, getter=isContentOccluded) _Bool contentOccluded; // @synthesize contentOccluded=_contentOccluded;
 @property(nonatomic) __weak id <HBUITopShelfParadeBackgroundViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <HBUITopShelfParadeItem> paradeItem; // @synthesize paradeItem=_paradeItem;
@@ -51,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long contentState;
 - (void)prepareForReuse;
+- (_Bool)_audioIsMuted;
 - (void)_updatePreviewVideoPlayerVolume:(_Bool)arg1;
 - (void)_secondaryAudioHintDidChange:(id)arg1;
 - (void)_notifyDelegateDidFinish;

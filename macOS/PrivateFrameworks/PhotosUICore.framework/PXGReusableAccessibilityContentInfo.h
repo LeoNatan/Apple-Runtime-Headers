@@ -77,6 +77,7 @@
 - (id)accessibilityRole;
 - (id)accessibilityLabel;
 - (void)resetAccessibilityInformation;
+- (void)px_accessibilityRemoveAllChildren;
 - (void)px_accessibilityAddChildElement:(id)arg1;
 - (void)prepareForReuse;
 - (void)becomeReusable;

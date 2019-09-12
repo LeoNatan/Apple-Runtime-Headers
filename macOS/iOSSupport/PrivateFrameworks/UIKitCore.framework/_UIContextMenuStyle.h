@@ -21,9 +21,11 @@
     UITraitCollection *_preferredTraitCollection;
     NSArray *_preferredBackgroundEffects;
     struct UIEdgeInsets _preferredEdgeInsets;
+    struct UIEdgeInsets _preferredBackgroundInsets;
 }
 
 + (id)defaultStyle;
+@property(nonatomic) struct UIEdgeInsets preferredBackgroundInsets; // @synthesize preferredBackgroundInsets=_preferredBackgroundInsets;
 @property(retain, nonatomic) NSArray *preferredBackgroundEffects; // @synthesize preferredBackgroundEffects=_preferredBackgroundEffects;
 @property(retain, nonatomic) UITraitCollection *preferredTraitCollection; // @synthesize preferredTraitCollection=_preferredTraitCollection;
 @property(nonatomic) BOOL reversesActionOrderWhenAttachedToTop; // @synthesize reversesActionOrderWhenAttachedToTop=_reversesActionOrderWhenAttachedToTop;

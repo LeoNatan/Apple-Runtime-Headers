@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 {
     _Bool _complete;
     NSDictionary *_smartToneStatistics;
+    NSDictionary *_primarySmartToneStatistics;
+    NSDictionary *_overcaptureSmartToneStatistics;
     NSDictionary *_smartColorStatistics;
     double _smartToneAutoSuggestion;
     double _smartColorAutoSuggestion;
@@ -30,6 +32,8 @@ __attribute__((visibility("hidden")))
 @property double smartColorAutoSuggestion; // @synthesize smartColorAutoSuggestion=_smartColorAutoSuggestion;
 @property double smartToneAutoSuggestion; // @synthesize smartToneAutoSuggestion=_smartToneAutoSuggestion;
 @property(copy) NSDictionary *smartColorStatistics; // @synthesize smartColorStatistics=_smartColorStatistics;
+@property(copy) NSDictionary *overcaptureSmartToneStatistics; // @synthesize overcaptureSmartToneStatistics=_overcaptureSmartToneStatistics;
+@property(copy) NSDictionary *primarySmartToneStatistics; // @synthesize primarySmartToneStatistics=_primarySmartToneStatistics;
 @property(copy) NSDictionary *smartToneStatistics; // @synthesize smartToneStatistics=_smartToneStatistics;
 - (void).cxx_destruct;
 

@@ -23,10 +23,13 @@
 @property(readonly, nonatomic) _Bool representsFinalProcessedStillImage;
 @property(readonly, nonatomic, getter=isFinalExpectedVideoResult) _Bool finalExpectedVideoResult;
 @property(readonly, nonatomic, getter=isFinalExpectedStillImageResult) _Bool finalExpectedStillImageResult;
+@property(readonly, nonatomic, getter=isSecondaryAssetForOverCapturePair) _Bool secondaryAssetForOverCapturePair;
+@property(readonly, nonatomic, getter=isPrimaryAssetForOverCapturePair) _Bool primaryAssetForOverCapturePair;
 @property(readonly, nonatomic, getter=isHDRForHDREV0Pair) _Bool HDRForHDREV0Pair;
 @property(readonly, nonatomic, getter=isEV0ForHDREV0Pair) _Bool EV0ForHDREV0Pair;
 @property(readonly, nonatomic, getter=isFilteredImageForFilteredPair) _Bool filteredImageForFilteredPair;
 @property(readonly, nonatomic, getter=isUnfilteredImageForFilteredPair) _Bool unfilteredImageForFilteredPair;
+@property(readonly, nonatomic, getter=isOverCapture) _Bool overCapture;
 @property(readonly, nonatomic, getter=isFiltered) _Bool filtered;
 @property(readonly, nonatomic, getter=isHDR) _Bool HDR;
 - (id)description;

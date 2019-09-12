@@ -26,6 +26,7 @@
 - (void)loadView;
 - (id)initWithWrappedViewController:(id)arg1 type:(long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (_Bool)_canShowWhileLocked;
 
 @end
 

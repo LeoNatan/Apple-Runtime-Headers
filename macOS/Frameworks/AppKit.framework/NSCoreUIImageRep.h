@@ -17,6 +17,7 @@
 - (BOOL)draw;
 - (struct __CFDictionary *)coreUIDrawOptions;
 - (id)description;
+- (BOOL)_incorporatesContentStyling;
 - (BOOL)_drawOnlyUsesOneDrawingOperation;
 - (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
 - (void)setTemplate:(BOOL)arg1;

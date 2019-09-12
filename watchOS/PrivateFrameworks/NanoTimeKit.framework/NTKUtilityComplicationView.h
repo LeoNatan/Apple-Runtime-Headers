@@ -8,17 +8,21 @@
 
 #import <NanoTimeKit/NTKComplicationDisplay-Protocol.h>
 #import <NanoTimeKit/NTKTemplateComplicationDisplay-Protocol.h>
+#import <NanoTimeKit/NTKTritiumOverridableColorDisplay-Protocol.h>
 
 @class CLKComplicationTemplate, CLKDevice, CLKFont, NSDate, NSString, NTKFaceColorScheme, UIColor, UIImageView;
 @protocol NTKComplicationDisplayObserver;
 
-@interface NTKUtilityComplicationView : UIView <NTKTemplateComplicationDisplay, NTKComplicationDisplay>
+@interface NTKUtilityComplicationView : UIView <NTKTemplateComplicationDisplay, NTKComplicationDisplay, NTKTritiumOverridableColorDisplay>
 {
     _Bool _highlighted;
     _Bool _usesLegibility;
     UIColor *_foregroundColor;
     CLKFont *_font;
     NSDate *_timeTravelDate;
+    float _tritium_overrideColorAmount;
+    UIColor *_tritium_platterColor;
+    UIColor *_tritium_foregroundColor;
     UIColor *_computedForegroundColor;
     UIColor *_computedPlatterColor;
     float _computedForegroundAlpha;
@@ -39,6 +43,8 @@
     unsigned int _placement;
     float _fontWeight;
     float _editingRotationAngle;
+    UIColor *_tritium_overrideForegroundColor;
+    UIColor *_tritium_overridePlatterColor;
     UIImageView *_backgroundPlatter;
     float _minimumWidth;
     UIView *_highlightView;
@@ -67,6 +73,8 @@
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(nonatomic) float minimumWidth; // @synthesize minimumWidth=_minimumWidth;
 @property(retain, nonatomic) UIImageView *backgroundPlatter; // @synthesize backgroundPlatter=_backgroundPlatter;
+@property(retain, nonatomic) UIColor *tritium_overridePlatterColor; // @synthesize tritium_overridePlatterColor=_tritium_overridePlatterColor;
+@property(retain, nonatomic) UIColor *tritium_overrideForegroundColor; // @synthesize tritium_overrideForegroundColor=_tritium_overrideForegroundColor;
 @property(nonatomic) _Bool suppressesInternalColorOverrides; // @synthesize suppressesInternalColorOverrides=_suppressesInternalColorOverrides;
 @property(nonatomic) float editingRotationAngle; // @synthesize editingRotationAngle=_editingRotationAngle;
 @property(nonatomic) _Bool useBlockyHighlightCorners; // @synthesize useBlockyHighlightCorners=_useBlockyHighlightCorners;
@@ -106,6 +114,7 @@
 - (struct UIEdgeInsets)_touchEdgeInsetsForPlacement:(unsigned int)arg1;
 - (void)_enumerateColoringStackedImagesViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateColoringViewsWithBlock:(CDUnknownBlockType)arg1;
+- (void)tritium_forceUpdateColoringViews;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)setComplicationTemplate:(id)arg1 reason:(int)arg2;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted;
@@ -124,6 +133,8 @@
 - (void)_applyColorScheme:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
 - (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)_updateForegroundImageAlpha;
 - (void)_computeForegroundImageAlpha;
 - (void)_computeForegroundAlpha;

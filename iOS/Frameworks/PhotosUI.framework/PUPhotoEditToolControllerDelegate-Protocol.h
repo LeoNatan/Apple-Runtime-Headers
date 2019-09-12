@@ -43,6 +43,9 @@
 - (CDStruct_910f5d27)toolControllerImageModulationOptions:(PUPhotoEditToolController *)arg1;
 - (PICompositionController *)toolControllerOriginalCompositionController:(PUPhotoEditToolController *)arg1;
 - (PICompositionController *)toolControllerUneditedCompositionController:(PUPhotoEditToolController *)arg1;
+- (void)toolController:(PUPhotoEditToolController *)arg1 switchEditSource:(long long)arg2;
+- (long long)overcaptureType;
+- (long long)sourceSelection;
 - (void)toolControllerDidUpdateToolbar:(PUPhotoEditToolController *)arg1;
 - (void)toolControllerDidChangePreferredAlternateToolbarButton:(PUPhotoEditToolController *)arg1;
 - (void)toolControllerDidChangeWantsDefaultPreviewView:(PUPhotoEditToolController *)arg1;

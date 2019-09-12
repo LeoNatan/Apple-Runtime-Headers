@@ -20,6 +20,7 @@
     BOOL _applePayTrustAllAccess;
     BOOL _inAppPayments;
     BOOL _inAppPaymentsPrivate;
+    BOOL _manualPaymentPassProvisioning;
     BOOL _webPayments;
     BOOL _winterpegPayments;
     BOOL _cardOnFilePayments;
@@ -53,6 +54,7 @@
 @property(readonly) BOOL cardOnFilePayments; // @synthesize cardOnFilePayments=_cardOnFilePayments;
 @property(readonly) BOOL winterpegPayments; // @synthesize winterpegPayments=_winterpegPayments;
 @property(readonly) BOOL webPayments; // @synthesize webPayments=_webPayments;
+@property(readonly) BOOL manualPaymentPassProvisioning; // @synthesize manualPaymentPassProvisioning=_manualPaymentPassProvisioning;
 @property(readonly) BOOL inAppPaymentsPrivate; // @synthesize inAppPaymentsPrivate=_inAppPaymentsPrivate;
 @property(readonly) BOOL inAppPayments; // @synthesize inAppPayments=_inAppPayments;
 @property(readonly) BOOL applePayTrustAllAccess; // @synthesize applePayTrustAllAccess=_applePayTrustAllAccess;

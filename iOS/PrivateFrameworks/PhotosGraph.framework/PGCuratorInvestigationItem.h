@@ -26,6 +26,7 @@
     NSNumber *_clsIsInterestingPanorama;
     NSNumber *_clsIsInterestingSDOF;
     NSNumber *_clsIsInterestingHDR;
+    NSNumber *_clsIsInterestingReframe;
     NSNumber *_clsHasInterestingAudioClassification;
     NSNumber *_clsHasCustomPlaybackVariation;
     NSNumber *_clsSharpnessScore;
@@ -95,6 +96,7 @@
 @property(readonly, nonatomic) double clsSharpnessScore;
 @property(readonly, nonatomic) _Bool clsHasCustomPlaybackVariation;
 @property(readonly, nonatomic) _Bool clsHasInterestingAudioClassification;
+@property(readonly, nonatomic) _Bool clsIsInterestingReframe;
 @property(readonly, nonatomic) _Bool clsIsInterestingHDR;
 @property(readonly, nonatomic) _Bool clsIsInterestingSDOF;
 @property(readonly, nonatomic) _Bool clsIsInterestingPanorama;

@@ -23,16 +23,14 @@
     UIColor *_warningSeparatorColor;
     UIColor *_parametersBackgroundColor;
     UIColor *_parametersHighlightedColor;
-    UIColor *_tintColor;
     UIColor *_headingButtonColor;
     struct CGSize _shadowOffset;
 }
 
 + (id)commentAppearance;
-+ (id)lightAppearanceWithTintColor:(id)arg1;
-+ (id)defaultAppearanceWithTintColor:(id)arg1;
++ (id)lightAppearance;
++ (id)defaultAppearance;
 @property(readonly, nonatomic) UIColor *headingButtonColor; // @synthesize headingButtonColor=_headingButtonColor;
-@property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) UIColor *parametersHighlightedColor; // @synthesize parametersHighlightedColor=_parametersHighlightedColor;
 @property(readonly, nonatomic) UIColor *parametersBackgroundColor; // @synthesize parametersBackgroundColor=_parametersBackgroundColor;
 @property(readonly, nonatomic) UIColor *warningSeparatorColor; // @synthesize warningSeparatorColor=_warningSeparatorColor;

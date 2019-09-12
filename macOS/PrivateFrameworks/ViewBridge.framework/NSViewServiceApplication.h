@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)appModalSessionsOutlawed;
 - (struct _NSModalSession *)beginServiceAppModalSessionForWindow:(id)arg1 relativeToWindow:(id)arg2;
 - (BOOL)beginHostAppModalSessionForWindow:(id)arg1 withLocalSession:(struct _NSModalSession *)arg2 relativeToWindow:(id)arg3;
-- (id)beginHostAppModalSession:(id)arg1 forWindow:(id)arg2 withSize:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
+- (BOOL)beginHostAppModalSession:(id)arg1 forWindow:(id)arg2 withSize:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)endSheet:(id)arg1;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;
 - (void)beginSheet:(id)arg1 modalForWindow:(id)arg2 modalDelegate:(id)arg3 didEndSelector:(SEL)arg4 contextInfo:(void *)arg5;

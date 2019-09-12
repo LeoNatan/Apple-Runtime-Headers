@@ -9,14 +9,13 @@
 #import <PencilKit/PKPalettePencilInteractionFeedbackHostViewDelegate-Protocol.h>
 #import <PencilKit/PKPaletteTransitionDelegate-Protocol.h>
 #import <PencilKit/PKPaletteViewInternalDelegate-Protocol.h>
-#import <PencilKit/PKPaletteWindowSceneListening-Protocol.h>
 #import <PencilKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
 @class NSLayoutConstraint, NSString, PKColorPicker, PKPalettePencilInteractionFeedbackHostView, PKPaletteTransition, PKPaletteView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer;
 @protocol PKPaletteHostViewDelegate, PKPaletteHostingWindowScene;
 
-@interface PKPaletteHostView : UIView <UIGestureRecognizerDelegate, PKPaletteViewInternalDelegate, UIPopoverPresentationControllerDelegate, PKPalettePencilInteractionFeedbackHostViewDelegate, PKPaletteTransitionDelegate, PKPaletteWindowSceneListening>
+@interface PKPaletteHostView : UIView <UIGestureRecognizerDelegate, PKPaletteViewInternalDelegate, UIPopoverPresentationControllerDelegate, PKPalettePencilInteractionFeedbackHostViewDelegate, PKPaletteTransitionDelegate>
 {
     BOOL paletteDragging;
     BOOL paletteMinimized;
@@ -35,7 +34,6 @@
     UIPanGestureRecognizer *_panGestureRecognizer;
     UITapGestureRecognizer *_tapToExpandPaletteFromMinimizedGestureRecognizer;
     UILongPressGestureRecognizer *_touchDownFeedbackGestureRecognizer;
-    long long _dockingAppearance;
     long long _paletteDraggingBehavior;
     long long _paletteVisualState;
     long long _draggingPendingPaletteVisualState;
@@ -60,7 +58,6 @@
 @property(nonatomic) long long draggingPendingPaletteVisualState; // @synthesize draggingPendingPaletteVisualState=_draggingPendingPaletteVisualState;
 @property(nonatomic, setter=_setPaletteVisualState:) long long paletteVisualState; // @synthesize paletteVisualState=_paletteVisualState;
 @property(nonatomic) long long paletteDraggingBehavior; // @synthesize paletteDraggingBehavior=_paletteDraggingBehavior;
-@property(nonatomic) long long dockingAppearance; // @synthesize dockingAppearance=_dockingAppearance;
 @property(retain, nonatomic) UILongPressGestureRecognizer *touchDownFeedbackGestureRecognizer; // @synthesize touchDownFeedbackGestureRecognizer=_touchDownFeedbackGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapToExpandPaletteFromMinimizedGestureRecognizer; // @synthesize tapToExpandPaletteFromMinimizedGestureRecognizer=_tapToExpandPaletteFromMinimizedGestureRecognizer;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
@@ -90,7 +87,6 @@
 - (struct CGSize)regularPaletteSize;
 - (struct CGSize)minimizedPaletteSize;
 - (double)paletteScaleFactor;
-- (double)_currentWindowSceneScaleFactor;
 - (void)paletteViewShowFeedbackForToolChange:(id)arg1;
 - (void)paletteView:(id)arg1 didChangeAnnotationSupport:(BOOL)arg2;
 - (struct CGSize)paletteSizeForEdge:(unsigned long long)arg1;
@@ -137,14 +133,11 @@
 - (void)layoutSubviews;
 - (void)_updatePaletteContentAlpha;
 - (void)_updatePaletteViewSizeConstraints;
-- (void)setCommonPaletteViewProperties;
-- (void)adaptAppearanceToExpandFromAnyCorner;
-- (void)adaptAppearanceToDockToAnyCorner;
-- (void)adaptAppearanceToDockToAnyEdge;
-- (void)adaptAppearanceToHorizontalCompactSize;
+- (void)_updatePaletteAppearance;
 @property(readonly, nonatomic, getter=isPaletteDragging) BOOL paletteDragging; // @synthesize paletteDragging;
 @property(readonly, nonatomic, getter=isPaletteMinimized) BOOL paletteMinimized; // @synthesize paletteMinimized;
 - (void)_setPaletteVisualState:(long long)arg1 usingTransition:(BOOL)arg2;
+- (double)_currentWindowSceneScaleFactor;
 - (void)_updatePaletteScaleFactor;
 - (void)windowSceneDidChangeBounds:(id)arg1;
 - (void)animatePaletteToVisible:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;

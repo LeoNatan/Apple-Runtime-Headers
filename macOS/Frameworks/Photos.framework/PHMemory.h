@@ -84,6 +84,7 @@
 @property(readonly, nonatomic) BOOL isStellar;
 @property(readonly, nonatomic) BOOL isMustSee;
 @property(readonly, nonatomic) NSDictionary *musicGenreDistribution;
+- (id)meaningLabels;
 - (id)moodKeywords;
 - (unsigned long long)suggestedMood;
 - (id)description;

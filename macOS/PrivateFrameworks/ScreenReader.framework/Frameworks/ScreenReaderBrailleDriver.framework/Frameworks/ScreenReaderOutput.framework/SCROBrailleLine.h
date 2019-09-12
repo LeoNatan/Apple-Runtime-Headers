@@ -149,6 +149,7 @@
 - (void)setAppToken:(id)arg1;
 - (void)dealloc;
 - (id)initWithDriver:(id)arg1 mainSize:(long long)arg2 statusSize:(long long)arg3;
+@property(readonly, nonatomic) BRLTBrailleStateManager *stateManager;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

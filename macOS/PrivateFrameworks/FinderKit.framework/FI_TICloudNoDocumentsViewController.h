@@ -20,13 +20,14 @@ __attribute__((visibility("hidden")))
     NSButton *_upgradeButton;
     struct TNotificationCenterObserver _backingPropertiesChangedObserver;
     struct TFENode _target;
-    int _whichUI;
+    struct TNSRef<NSMetadataQuery, void> _boostingQuery;
+    _Bool _isUpgradeToICloudUI;
 }
 
-@property(nonatomic) int whichUI; // @synthesize whichUI=_whichUI;
 @property(readonly, nonatomic) struct TFENode target; // @synthesize target=_target;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)upgradeToiCloudDrive:(id)arg1;
 - (void)learnAboutICloudBtnPressed:(id)arg1;
 @property(retain, nonatomic) NSView *dropTargetView;

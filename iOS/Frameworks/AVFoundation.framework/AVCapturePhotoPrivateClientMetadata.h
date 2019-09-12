@@ -14,10 +14,18 @@
 {
     NSDictionary *_inferenceAttachments;
     NSDictionary *_detectedObjectInfo;
+    unsigned int _spatialOverCaptureImageStitchingConfidenceScore;
+    _Bool _spatialOverCaptureImageHorizonLinePresent;
+    float _spatialOverCaptureImageHorizonLineAngleInDegrees;
+    float _spatialOverCaptureImageHorizonLineVerticalCenterlineIntersection;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly) NSString *captureFolderClientPath;
+@property(readonly) float spatialOverCaptureImageHorizonLineVerticalCenterlineIntersection;
+@property(readonly) float spatialOverCaptureImageHorizonLineAngleInDegrees;
+@property(readonly) _Bool spatialOverCaptureImageHorizonLinePresent;
+@property(readonly) unsigned int spatialOverCaptureImageStitchingConfidenceScore;
 @property(readonly) NSDictionary *detectedObjectInfo;
 @property(readonly) NSDictionary *inferenceAttachments;
 - (void)encodeWithCoder:(id)arg1;

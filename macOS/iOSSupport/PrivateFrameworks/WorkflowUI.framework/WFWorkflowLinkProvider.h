@@ -26,6 +26,7 @@
 @property(copy, nonatomic) NSString *exclusiveActivityType; // @synthesize exclusiveActivityType=_exclusiveActivityType;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
+- (id)activityViewControllerLinkMetadata:(id)arg1;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)item;

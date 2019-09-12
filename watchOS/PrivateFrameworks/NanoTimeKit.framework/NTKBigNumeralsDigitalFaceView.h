@@ -11,6 +11,10 @@
 }
 
 + (int)uiSensitivity;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (void)tritium_applyBurnInStudyFakeActiveState;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;

@@ -10,12 +10,15 @@
 @protocol UICoordinateSpace, _UIClickInteractionDriverDelegate;
 
 @protocol _UIClickInteractionDriving <NSObject>
++ (BOOL)prefersCancelsTouchesInView;
 + (BOOL)requiresForceCapability;
 @property(readonly, nonatomic) double maximumEffectProgress;
 @property(readonly, nonatomic) BOOL clicksUpAutomaticallyAfterTimeout;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
+@property(readonly, nonatomic) BOOL hasExceededAllowableMovement;
 @property(readonly, nonatomic) double touchDuration;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
+@property(nonatomic) BOOL cancelsTouchesInView;
 @property(nonatomic) double allowableMovement;
 @property(nonatomic) __weak UIView *view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate;

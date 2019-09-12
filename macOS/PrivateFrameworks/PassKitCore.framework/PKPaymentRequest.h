@@ -129,6 +129,7 @@
 - (id)initWithDictionary:(id)arg1 error:(id *)arg2;
 @property(readonly) BOOL _isAMPPayment;
 @property(readonly) BOOL _isPSD2StyleRequest;
+- (id)description;
 - (id)_transactionAmount;
 - (unsigned long long)_contactFieldsToAddressFields:(id)arg1;
 - (id)_addressFieldsToContactFields:(unsigned long long)arg1;

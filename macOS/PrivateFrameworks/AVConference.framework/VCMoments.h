@@ -23,11 +23,14 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *delegateNotificationQueue;
     int _currentActiveRequestsCount;
     BOOL _isActive;
+    BOOL _isClientRegistered;
     VideoAttributes *_remoteScreenAttributes;
     NSMutableSet *_requests;
     BOOL _lastRequest;
 }
 
++ (unsigned long long)countForRequestType:(int)arg1;
++ (int)typeForRequest:(id)arg1;
 + (unsigned long long)deviceFreeDiskSpace;
 + (BOOL)deviceHasSufficientFreeSpace;
 + (unsigned long long)fileSize:(id)arg1;

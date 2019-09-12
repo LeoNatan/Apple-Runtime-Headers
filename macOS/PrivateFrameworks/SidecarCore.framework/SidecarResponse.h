@@ -11,6 +11,7 @@
     // Error parsing type: AB, name: _accepted
 }
 
+- (void)_willConnect;
 - (void)sendItems:(id)arg1;
 - (void)accept;
 

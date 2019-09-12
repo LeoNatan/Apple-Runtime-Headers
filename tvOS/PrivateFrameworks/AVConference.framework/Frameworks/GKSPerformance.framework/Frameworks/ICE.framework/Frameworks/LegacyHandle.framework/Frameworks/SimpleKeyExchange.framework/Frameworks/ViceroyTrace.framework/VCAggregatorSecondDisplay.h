@@ -68,6 +68,9 @@ __attribute__((visibility("hidden")))
     CDStruct_f2f7ecfd _channelSequenceStats;
     NSString *_previousChannelSequence;
     CDStruct_f2f7ecfd _previousChannelSequenceStats;
+    NSString *_remoteOSBuildVersion;
+    NSString *_remoteFrameworkVersion;
+    NSString *_remoteDeviceModel;
 }
 
 @property(retain, nonatomic) NSString *previousChannelSequence; // @synthesize previousChannelSequence=_previousChannelSequence;

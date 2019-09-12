@@ -12,6 +12,6 @@
 + (id)blankIcon;
 + (id)iconWithAppURL:(id)arg1;
 + (id)iconWithAppBundleID:(id)arg1;
-- (id)iconFromPrecomposedImage:(BOOL)arg1;
+- (id)iconFromPrecomposedImage:(BOOL)arg1 platform:(short)arg2;
 @end
 

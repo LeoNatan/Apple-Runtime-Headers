@@ -88,6 +88,7 @@
 - (void)_configureDefaultViewIfNecessary;
 @property(copy) NSString *title;
 @property(retain) NSImage *image;
+- (id)_imageToDisplay;
 @property(getter=isBordered) BOOL bordered;
 - (BOOL)isSpace;
 - (BOOL)isMeasuring;

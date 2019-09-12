@@ -66,6 +66,7 @@
 - (void)_cleanUpFeedbackForGesture;
 - (void)_prepareFeedbackForGesture;
 - (void)_createFeedbackIfNecessary;
+- (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
 @property(readonly, nonatomic) long long textInteractionSet;
 @property(readonly, nonatomic) NSArray *gesturesForFailureRequirements;

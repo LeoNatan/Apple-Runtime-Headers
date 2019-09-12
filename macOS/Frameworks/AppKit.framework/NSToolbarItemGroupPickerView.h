@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 @property(getter=isEnabled) BOOL enabled;
 - (void)_configureCollapsedSubitems;
 - (void)_configureExpandedSubitems;
+- (id)_imageToDisplayForImage:(id)arg1;
 @property(retain) NSArray *subitems;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (void)dealloc;

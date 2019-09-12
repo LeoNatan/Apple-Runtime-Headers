@@ -6,9 +6,11 @@
 
 #import <NanoTimeKit/NTKSpriteKitAnalogFaceView.h>
 
-@class NTKZeusAnalogScene, NTKZeusColorPalette, UIView;
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 
-@interface NTKZeusAnalogFaceView : NTKSpriteKitAnalogFaceView
+@class NSString, NTKZeusAnalogScene, NTKZeusColorPalette, UIView;
+
+@interface NTKZeusAnalogFaceView : NTKSpriteKitAnalogFaceView <NTKTritiumMetalContentView>
 {
     _Bool _isEditing;
     _Bool _isHandsVisibleInColorEditing;
@@ -22,6 +24,12 @@
 + (id)_supportedComplicationSlots;
 - (void).cxx_destruct;
 - (struct CGPoint)_timeTravelStatusModuleCenter;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_invalidateMetalContentForSnapshot;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (id)tritium_animationToCurrentDateFromDate:(id)arg1;
 - (void)_setStatusBarIconShadowNeeded:(_Bool)arg1;
 - (_Bool)_wantsStatusBarIconShadow;
 - (void)_prepareForStatusChange:(_Bool)arg1;
@@ -57,6 +65,10 @@
 
 // Remaining properties
 @property(readonly, nonatomic) NTKZeusAnalogScene *analogScene; // @dynamic analogScene;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

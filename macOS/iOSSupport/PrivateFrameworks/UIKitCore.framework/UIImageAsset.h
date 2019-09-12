@@ -62,7 +62,8 @@
 - (id)_initWithAssetName:(id)arg1 forFilesInBundle:(id)arg2;
 - (id)_initWithAssetName:(id)arg1 forManager:(id)arg2;
 - (id)init;
-- (void)_drawInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 usingScale:(double)arg3 layoutDirection:(long long)arg4 style:(long long)arg5 displayGamut:(long long)arg6;
+@property(readonly, getter=_isCoreGlyphsAsset) BOOL _coreGlyphsAsset;
+- (void)_drawInRect:(struct CGRect)arg1 usingScale:(double)arg2 layoutDirection:(long long)arg3 style:(long long)arg4 displayGamut:(long long)arg5 configuration:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

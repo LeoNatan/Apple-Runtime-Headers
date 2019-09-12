@@ -17,6 +17,7 @@
 + (int)actionID;
 @property(retain) NSArray *bundlePaths; // @synthesize bundlePaths=_bundlePaths;
 - (void).cxx_destruct;
+- (id)setOfClassesToDecodeInTheResult;
 - (BOOL)success;
 - (BOOL)returnsData;
 - (BOOL)setResultFromDict:(id)arg1;

@@ -88,7 +88,6 @@
 @property(nonatomic) BOOL isInCloudDocsZone; // @synthesize isInCloudDocsZone=_isInCloudDocsZone;
 @property(nonatomic) BOOL isInInitialState; // @synthesize isInInitialState=_isInInitialState;
 @property(nonatomic) BOOL isCloudSyncTCCDisabled; // @synthesize isCloudSyncTCCDisabled=_isCloudSyncTCCDisabled;
-@property(retain, nonatomic) BRMangledID *mangledID; // @synthesize mangledID=_mangledID;
 - (void).cxx_destruct;
 - (void)_performWhileAccessingSecurityScopedContainer:(CDUnknownBlockType)arg1;
 - (id)_pathForIconName:(id)arg1;
@@ -101,6 +100,7 @@
 - (id)imageDataForSize:(struct CGSize)arg1 scale:(long long)arg2 shouldTransformToAppIcon:(char *)arg3;
 - (id)imageDataForSize:(struct CGSize)arg1 scale:(long long)arg2 isiOSIcon:(char *)arg3;
 - (id)imageDataForSize:(struct CGSize)arg1 scale:(long long)arg2;
+- (id)trashRestoreStringForURL:(id)arg1;
 @property(readonly, nonatomic) NSURL *trashURL;
 @property(readonly, nonatomic) NSURL *documentsURL;
 @property(readonly, nonatomic) NSURL *url;

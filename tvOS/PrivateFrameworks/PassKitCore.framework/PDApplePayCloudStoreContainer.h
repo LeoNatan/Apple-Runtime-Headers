@@ -47,6 +47,7 @@
 - (id)_strippedRecordName:(id)arg1;
 - (id)_serviceIdentifierForRecordType:(id)arg1 recordID:(id)arg2;
 - (id)_serviceIdentifierForRecord:(id)arg1;
+- (id)_originDeviceID;
 - (id)_cloudStoreSpecificKeysForItem:(id)arg1 paymentPass:(id)arg2;
 - (id)_insertOrUpdatePaymentTransaction:(id)arg1 withOriginDeviceID:(id)arg2 forPassUniqueIdentifier:(id)arg3 paymentApplication:(id)arg4 withInsertionMode:(unsigned long long)arg5 performTruncation:(_Bool)arg6;
 - (id)_paymentApplicationForPassUniqueIdentifier:(id)arg1;
@@ -77,7 +78,7 @@
 - (void)shouldFetchAndStoreCloudDataAtStartupWithCompletion:(CDUnknownBlockType)arg1;
 - (void)accountManager:(id)arg1 didRemoveAccount:(id)arg2;
 - (void)accountManager:(id)arg1 didAddAccount:(id)arg2;
-- (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1;
+- (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1 clearCache:(_Bool)arg2;
 - (id)initWithDataSource:(id)arg1 transactionProcessor:(id)arg2 paymentWebServiceCoordinator:(id)arg3 accountManager:(id)arg4;
 
 // Remaining properties

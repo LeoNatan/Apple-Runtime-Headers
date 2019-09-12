@@ -13,6 +13,7 @@
 - (id <PXGDisplayAssetRequestObserver>)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(PXGLayout *)arg2;
 - (id <PXDisplayAssetFetchResult>)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(PXGLayout *)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(PXGLayout *)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(PXGLayout *)arg1;
 @end
 

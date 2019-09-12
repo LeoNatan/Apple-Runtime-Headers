@@ -20,6 +20,7 @@
     _Bool _deliverRawSceneUnderstandingResults;
     _Bool _collaborationEnabled;
     ARImageSensorSettings *_imageSensorSettings;
+    ARImageSensorSettings *_imageSensorSettingsForSuperWide;
     NSString *_deviceModel;
     ARWorldMap *_initialWorldMap;
     NSString *_slamConfiguration;
@@ -39,6 +40,7 @@
 @property(copy, nonatomic) ARWorldMap *initialWorldMap; // @synthesize initialWorldMap=_initialWorldMap;
 @property(nonatomic) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
 @property(copy, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
+@property(copy, nonatomic) ARImageSensorSettings *imageSensorSettingsForSuperWide; // @synthesize imageSensorSettingsForSuperWide=_imageSensorSettingsForSuperWide;
 @property(copy, nonatomic) ARImageSensorSettings *imageSensorSettings; // @synthesize imageSensorSettings=_imageSensorSettings;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
@@ -46,6 +48,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionary;
 - (unsigned int)cameraIdForCaptureDeviceType:(id)arg1;
 - (void)updateCameraMap;
+- (_Bool)shouldUseSuperWide;
 - (id)initWithImageSensorSettings:(id)arg1;
 - (id)init;
 

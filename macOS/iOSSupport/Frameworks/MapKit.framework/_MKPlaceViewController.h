@@ -106,7 +106,6 @@
 - (void).cxx_destruct;
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
-- (id)logContextForLogMsgEvent:(id)arg1;
 - (void)placeCardWillCloseFromClientType:(unsigned long long)arg1;
 - (id)generateUnactionableUIElementsForAnalytics;
 - (id)generateAvailableActionForAnalytics;

@@ -36,6 +36,7 @@
 + (id)defaultName;
 + (id)supportedInputClassNames;
 + (id)supportedInputClasses;
++ (id)workflowWithReference:(id)arg1 storageProvider:(id)arg2 migrateIfNecessary:(_Bool)arg3 environment:(long long)arg4 error:(id *)arg5;
 + (id)workflowWithReference:(id)arg1 storageProvider:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) id <WFRecordStorageProvider> storageProvider; // @synthesize storageProvider=_storageProvider;
 @property(nonatomic) _Bool saveDisabled; // @synthesize saveDisabled=_saveDisabled;

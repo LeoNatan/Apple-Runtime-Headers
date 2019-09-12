@@ -24,6 +24,8 @@
 
 - (void).cxx_destruct;
 - (void)_updateReviewLabel;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_willSnapshotForBurnInStudy;
 - (void)updateReviewDirection:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

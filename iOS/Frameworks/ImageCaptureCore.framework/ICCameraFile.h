@@ -43,6 +43,7 @@
     NSDate *_fileModificationDate;
     NSDate *_exifCreationDate;
     NSDate *_exifModificationDate;
+    NSString *_imgSpatialOverCaptureGroupID;
     NSMutableArray *_sidecarFiles;
     unsigned long long _mediaMetadata;
     NSString *_devMediaBase;
@@ -69,6 +70,7 @@
 @property(copy, nonatomic) NSString *devMediaBase; // @synthesize devMediaBase=_devMediaBase;
 @property(nonatomic) unsigned long long mediaMetadata; // @synthesize mediaMetadata=_mediaMetadata;
 @property(retain, nonatomic) NSMutableArray *sidecarFiles; // @synthesize sidecarFiles=_sidecarFiles;
+@property(copy, nonatomic) NSString *imgSpatialOverCaptureGroupID; // @synthesize imgSpatialOverCaptureGroupID=_imgSpatialOverCaptureGroupID;
 @property(nonatomic) _Bool imgHasMetadata; // @synthesize imgHasMetadata=_imgHasMetadata;
 @property(nonatomic) _Bool imgHasThumbnail; // @synthesize imgHasThumbnail=_imgHasThumbnail;
 @property(copy, nonatomic) NSDate *exifModificationDate; // @synthesize exifModificationDate=_exifModificationDate;
@@ -142,6 +144,8 @@
 - (id)debugMediaMetadata;
 - (id)description;
 - (void)addSidecarFile:(id)arg1;
+@property(readonly, nonatomic) NSString *spatialOverCaptureGroupID;
+- (void)setSpatialOverCaptureGroupID:(id)arg1;
 - (id)subImageDictForPixelWidth:(id)arg1;
 - (void)addSubImageDict:(id)arg1;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;

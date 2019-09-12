@@ -54,8 +54,7 @@
 - (void)performCustomActionWithURL:(id)arg1 actionUserInfo:(id)arg2 forItemWithIdentifier:(id)arg3 itemUserInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)didShowItemWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)didSelectActionWithURL:(id)arg1 actionUserInfo:(id)arg2 forItemWithIdentifier:(id)arg3 itemUserInfo:(id)arg4;
-- (void)loadTopShelfContentWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)fetchContentExtensionAttributesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)loadTopShelfContentAndAttributes:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithExtension:(id)arg1 containingBundleIdentifier:(id)arg2;
 

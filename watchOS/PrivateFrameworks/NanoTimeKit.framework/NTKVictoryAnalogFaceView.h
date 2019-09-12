@@ -20,6 +20,9 @@
 }
 
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (_Bool)slotUsesCurvedText:(int)arg1;
 - (id)utilityDateComplicationFontForDateStyle:(unsigned int)arg1;
 - (float)_keylinePaddingForState:(int)arg1;

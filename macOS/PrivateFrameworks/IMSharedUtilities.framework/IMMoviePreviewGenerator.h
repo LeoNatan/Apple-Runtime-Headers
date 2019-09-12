@@ -13,6 +13,7 @@
 + (id)_avAssetForURL:(id)arg1;
 + (Class)__AVAssetImageGeneratorClass;
 + (Class)__AVURLAssetClass;
++ (BOOL)isAutoloopAsset:(id)arg1;
 + (id)UTITypes;
 + (id)fetchUTITypes;
 

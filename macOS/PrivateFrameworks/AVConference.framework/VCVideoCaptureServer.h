@@ -55,7 +55,6 @@ __attribute__((visibility("hidden")))
     double falteredRenderingtimeStamp;
     VCImageQueue *frontQueue;
     VCImageQueue *backQueue;
-    unsigned int _previewSlot;
     int _thermalNotificationToken;
     int _thermalLevel;
     int _newThermalLevel;

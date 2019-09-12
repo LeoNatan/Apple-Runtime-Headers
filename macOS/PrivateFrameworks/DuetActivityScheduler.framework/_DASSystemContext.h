@@ -26,6 +26,7 @@
 - (BOOL)allowDiscretionaryWorkForUtilityTask:(id)arg1 withParameters:(id)arg2;
 - (BOOL)allowDiscretionaryWorkForBackgroundTask:(id)arg1 withParameters:(id)arg2;
 - (BOOL)allowsDiscretionaryWorkForTask:(id)arg1 withPriority:(unsigned long long)arg2 withParameters:(id)arg3;
+- (BOOL)isApplicationFocalForPushTask:(id)arg1;
 - (BOOL)isInexpensiveNetworkAvailable;
 - (BOOL)isNetworkAvailable;
 - (id)init;

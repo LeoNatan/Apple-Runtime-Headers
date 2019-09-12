@@ -52,6 +52,7 @@
 - (void)fetchClipsBeforeDate:(id)arg1 withLimit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchClipsWithDateInterval:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)configure;
+- (void)importClipsWithImportData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deleteClipWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchVideoSegmentsAssetContextForClip:(id)arg1 completion:(CDUnknownBlockType)arg2;

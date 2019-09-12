@@ -60,6 +60,7 @@
     struct sqlite3_stmt *selectRecordsOfType;
     struct sqlite3_stmt *selectRecordsOfTypeOrderedByID;
     struct sqlite3_stmt *selectRecords;
+    struct sqlite3_stmt *selectRecordAllIterator;
     struct sqlite3_stmt *deleteQueryableStore;
     struct sqlite3_stmt *deleteQueryableRecord;
     struct sqlite3_stmt *updateQueryable;
@@ -71,6 +72,7 @@
 + (void)unlinkDatastoreAt:(id)arg1 everything:(_Bool)arg2;
 - (id)logIdentifier;
 - (id)flush:(_Bool)arg1;
+- (id)selectAllRecordsWithZoneRow:(unsigned long long)arg1 returning:(unsigned long long)arg2;
 - (id)_selectQueryableWithZoneRow:(unsigned long long)arg1 type:(id)arg2 desired:(id)arg3 limit:(unsigned long long)arg4 after:(unsigned long long)arg5 error:(id *)arg6;
 - (_Bool)_updateQueryableWithZoneRow:(unsigned long long)arg1 recordRow:(unsigned long long)arg2 type:(id)arg3 fields:(id)arg4 error:(id *)arg5;
 - (_Bool)_deleteQueryableWithRecordRow:(unsigned long long)arg1 error:(id *)arg2;

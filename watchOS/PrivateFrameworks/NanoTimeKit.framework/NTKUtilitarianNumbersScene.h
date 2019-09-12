@@ -10,6 +10,7 @@
 {
 }
 
+- (void)tritium_setTritiumOnProgress:(float)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
 - (float)getRelativeFractionFromOverallFraction:(float)arg1 forIntervalStart:(float)arg2 andIntervalEnd:(float)arg3;
 - (void)applyDensity:(unsigned int)arg1;

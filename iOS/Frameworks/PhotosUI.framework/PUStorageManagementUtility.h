@@ -17,10 +17,13 @@
 + (id)fetchVideoAssetsBySizeWithSortOrder:(_Bool)arg1;
 + (id)_defaultVideoAssetFetchOptionsWithSortOrder:(_Bool)arg1 fetchLimit:(unsigned long long)arg2 minimumFileSize:(unsigned long long)arg3;
 + (id)stringWithSizeUnitForValue:(id)arg1;
++ (void)expungeTrashedSpatialOverCaptureResourcesWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)expungeRecentlyDeletedItemsWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)enableCPLWithCompletionBlock:(CDUnknownBlockType)arg1;
 + (void)enableOptimizedMode:(_Bool)arg1;
 + (_Bool)isOptimizedModeOn;
++ (id)sizeForTrashedSpatialOvercaptureResources;
++ (id)_assetsWithSpatialOvercaptureResources;
 + (_Bool)isDeletableItemsInTrash;
 + (id)sizeForRecentlyDeletedItems;
 + (id)_assetsInTrash;

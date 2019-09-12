@@ -101,6 +101,7 @@
 - (void)refreshAvailableUpdatesForCurrentConfigurationLimitedToProductKeys:(id)arg1 distributionEnvironment:(id)arg2 distributionEvalutionMetainfo:(id)arg3 installedPrinters:(id)arg4 mdmInitiated:(BOOL)arg5 preferredLocalizations:(id)arg6 replyWhenDone:(CDUnknownBlockType)arg7;
 - (void)refreshAvailableUpdates:(BOOL)arg1 preferredLocalizations:(id)arg2 limitedToProductTypes:(id)arg3 replyWhenDone:(CDUnknownBlockType)arg4;
 - (void)catalogAndScanInformationWithReply:(CDUnknownBlockType)arg1;
+- (void)updateProductsForProductKeys:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)installedUpdateJournalPrunedAndSortedWithReply:(CDUnknownBlockType)arg1;
 - (void)installedUpdateJournalWithReply:(CDUnknownBlockType)arg1;
 - (void)catalogInformationWithReply:(CDUnknownBlockType)arg1;

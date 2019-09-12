@@ -20,6 +20,8 @@
 @property(nonatomic) unsigned int currentDialShape; // @synthesize currentDialShape=_currentDialShape;
 @property(nonatomic) unsigned int currentSmokeColor; // @synthesize currentSmokeColor=_currentSmokeColor;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_applyBurnInStudyFakeActiveState;
 - (_Bool)_wantsConstantSpeedZoom;
 - (void)reloadDataSources;
 - (void)setupDataSources;

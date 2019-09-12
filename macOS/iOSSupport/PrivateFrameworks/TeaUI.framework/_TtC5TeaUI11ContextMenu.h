@@ -9,6 +9,7 @@
 @interface _TtC5TeaUI11ContextMenu : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: groups
+    // Error parsing type: , name: activityItemConfiguration
 }
 
 @end

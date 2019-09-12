@@ -21,6 +21,7 @@
 + (id)persistentIDPropertyForGroupingType:(long long)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (id)itemFromSong:(id)arg1;
 + (id)screenshotArtworkCatalogCacheProperties;
 + (id)artworkCatalogCacheProperties;
 + (id)MPSD_mediaItemPropertiesForDownloadability;

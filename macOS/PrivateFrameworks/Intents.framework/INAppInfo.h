@@ -14,6 +14,7 @@
 {
     NSString *_applicationIdentifier;
     NSString *_companionApplicationIdentifier;
+    NSString *_developmentRegion;
     NSSet *_supportedActions;
     NSSet *_supportedActionsByExtensions;
     NSSet *_actionsRestrictedWhileLocked;
@@ -33,6 +34,7 @@
 @property(copy, nonatomic) NSSet *actionsRestrictedWhileLocked; // @synthesize actionsRestrictedWhileLocked=_actionsRestrictedWhileLocked;
 @property(copy, nonatomic) NSSet *supportedActionsByExtensions; // @synthesize supportedActionsByExtensions=_supportedActionsByExtensions;
 @property(copy, nonatomic) NSSet *supportedActions; // @synthesize supportedActions=_supportedActions;
+@property(copy, nonatomic) NSString *developmentRegion; // @synthesize developmentRegion=_developmentRegion;
 @property(copy, nonatomic) NSString *companionApplicationIdentifier; // @synthesize companionApplicationIdentifier=_companionApplicationIdentifier;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void).cxx_destruct;

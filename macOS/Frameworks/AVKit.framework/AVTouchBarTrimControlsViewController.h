@@ -6,26 +6,32 @@
 
 #import <AppKit/NSViewController.h>
 
-@class AVTrimControlsViewController, AVTrimView, NSMutableArray;
+@class AVTrackViewController, AVTrimControlsViewController, AVTrimView, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface AVTouchBarTrimControlsViewController : NSViewController
 {
     NSMutableArray *_bindings;
-    AVTrimControlsViewController *_parentTrimViewController;
+    AVTrimControlsViewController *_weakParentTrimViewController;
     AVTrimView *_trimView;
+    AVTrackViewController *_trackViewController;
+    AVTrimControlsViewController *_strongParentTrimViewControllerForBinding;
 }
 
+@property(retain) AVTrimControlsViewController *strongParentTrimViewControllerForBinding; // @synthesize strongParentTrimViewControllerForBinding=_strongParentTrimViewControllerForBinding;
+@property(retain) AVTrackViewController *trackViewController; // @synthesize trackViewController=_trackViewController;
 @property(retain) AVTrimView *trimView; // @synthesize trimView=_trimView;
 - (void).cxx_destruct;
 - (void)_unbindAllObjects;
 - (void)_bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;
+- (void)_tearDownBindingsIfNeeded;
+- (void)_setUpBindingsIfNeeded;
 - (id)_makeTrackViewController;
 - (id)_makeTouchBarTrimView;
 - (void)viewDidDisappear;
 - (void)viewWillAppear;
 - (void)loadView;
-@property(retain) AVTrimControlsViewController *parentTrimViewController;
+@property __weak AVTrimControlsViewController *parentTrimViewController;
 - (void)dealloc;
 - (id)init;
 

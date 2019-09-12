@@ -30,12 +30,14 @@
     NSArray *_trainingData;
     NSArray *_validationData;
     NSDictionary *_gradientTestData;
+    NSString *_modelArchitecture;
 }
 
 + (id)inferenceTestConfigurationFromFile:(id)arg1 error:(id *)arg2;
 + (id)modelUpdateTestConfigurationFromFile:(id)arg1 error:(id *)arg2;
 + (id)readConfigurationFromFile:(id)arg1 forTest:(id)arg2 error:(id *)arg3;
 + (id)readJSONFile:(id)arg1 error:(id *)arg2;
+@property(retain) NSString *modelArchitecture; // @synthesize modelArchitecture=_modelArchitecture;
 @property(retain) NSDictionary *gradientTestData; // @synthesize gradientTestData=_gradientTestData;
 @property(retain) NSArray *validationData; // @synthesize validationData=_validationData;
 @property(retain) NSArray *trainingData; // @synthesize trainingData=_trainingData;
@@ -60,6 +62,7 @@
 - (id)trainingDataSampleForModelUpdateGradientTest:(id *)arg1;
 - (id)biasGradientsForLayerName:(id)arg1 error:(id *)arg2;
 - (id)weightGradientsForLayerName:(id)arg1 error:(id *)arg2;
+- (id)getModelArchitecture:(id *)arg1;
 - (id)layerNamesForModelUpdateGradientTest:(id *)arg1;
 - (id)initForModelUpdateGradientTestFromFile:(id)arg1 error:(id *)arg2;
 - (id)validationDataAtIndex:(unsigned long long)arg1 error:(id *)arg2;

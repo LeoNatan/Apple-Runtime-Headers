@@ -9,7 +9,7 @@
 #import <QuickLookUI/QLControlsDelegate-Protocol.h>
 #import <QuickLookUI/QLIndexSheetDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NSTimer, NSTrackingArea, NSView, NSWindow, QLControlsController, QLFadeWindowEffect, QLFullscreenControlsPanel, QLPreviewPageNavigationView, QLPreviewPanelController, QLPreviewScroller, QLScaleWindowEffect, QLTimeSlider;
+@class NSMutableArray, NSScreen, NSString, NSTimer, NSTrackingArea, NSView, NSWindow, QLControlsController, QLFadeWindowEffect, QLFullscreenControlsPanel, QLPreviewPageNavigationView, QLPreviewPanelController, QLPreviewScroller, QLScaleWindowEffect, QLTimeSlider;
 
 __attribute__((visibility("hidden")))
 @interface QLFullscreenController : NSResponder <QLIndexSheetDelegate, QLControlsDelegate>
@@ -43,8 +43,10 @@ __attribute__((visibility("hidden")))
     NSView *_screenshotView;
     BOOL _observingPlaying;
     NSMutableArray *_timeSliderConstraints;
+    NSScreen *_screenOnEntry;
 }
 
+@property(retain) NSScreen *screenOnEntry; // @synthesize screenOnEntry=_screenOnEntry;
 @property(retain) NSMutableArray *timeSliderConstraints; // @synthesize timeSliderConstraints=_timeSliderConstraints;
 @property BOOL observingPlaying; // @synthesize observingPlaying=_observingPlaying;
 @property(retain) NSView *screenshotView; // @synthesize screenshotView=_screenshotView;
@@ -91,6 +93,7 @@ __attribute__((visibility("hidden")))
 - (void)_showControlsPanel;
 - (void)_stopControlsFade;
 @property BOOL hasViewControls;
+- (void)screenParametersDidChange:(id)arg1;
 - (void)_unpauseDisableDisplaySleep;
 - (void)_pauseDisableDisplaySleep;
 - (void)_enableDisplaySleep;

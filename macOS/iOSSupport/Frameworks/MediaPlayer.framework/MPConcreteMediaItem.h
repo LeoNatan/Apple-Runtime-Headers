@@ -21,6 +21,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)createUncachedConcreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
 - (void).cxx_destruct;

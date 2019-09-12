@@ -8,11 +8,13 @@
 
 @interface _TtC7SwiftUIP33_C58093E7172B0A541A997680E343D0D520_SystemTextFieldCell : NSTextFieldCell
 {
+    // Error parsing type: , name: disableAutocorrection
 }
 
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initTextCell:(id)arg1;
+- (id)setUpFieldEditorAttributes:(id)arg1;
 - (id)fieldEditorForView:(id)arg1;
 
 @end

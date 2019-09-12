@@ -26,6 +26,7 @@
 - (id)title;
 - (void)setImage:(id)arg1;
 - (id)image;
+- (id)_imageToDisplay;
 @property BOOL showsIndicator;
 @property(retain) NSMenu *menu;
 - (id)menuFormRepresentation;
@@ -37,6 +38,8 @@
 - (id)target;
 - (void)_configureControlRepresentation;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithItemIdentifier:(id)arg1;
 
 @end

@@ -11,16 +11,13 @@
 @interface SPMetadataResult : SFSearchResult_SpotlightExtras
 {
     struct __MDItem *_metadataItem;
-    // Error parsing type: T, name: _rank
     // Error parsing type: T, name: _score
     NSImage *_icon;
     NSImage *_appImage;
     NSString *_filePath;
     NSURL *_fileURL;
-    NSString *_groupName;
     NSDictionary *_attributes;
     NSMutableDictionary *_dynamicCache;
-    const void *_lastUsedDate;
     NSOrderedSet *_alreadyFetchedAttributes;
     CSSearchableItem *_csItem;
 }
@@ -39,12 +36,11 @@
 - (id)fastURL;
 - (void)setScore: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: T16@0:8, name: score
-- (void)setGroupName:(id)arg1;
 - (id)sectionBundleIdentifier;
-- (id)groupName;
 @property(readonly, nonatomic) NSNumber *groupNumber;
 - (id)category;
 - (void)dealloc;
+- (id)groupName;
 - (id)groupId;
 - (void)_setObject:(id)arg1 forCacheSlot:(const void **)arg2;
 - (id)_objectForCacheSlot:(const void **)arg1 getterKey:(id)arg2;
@@ -67,12 +63,10 @@
 - (unsigned long long)hash;
 - (BOOL)isEqualToMetadataResult:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-// Error parsing type for property rank:
-// Property attributes: TT,N
-
 - (void)prepareIcons;
 - (id)blah;
 - (id)documentIdentifier;
+- (id)initWithResult:(id)arg1;
 - (id)initWithFilePath:(id)arg1 prefetchAttributes:(id)arg2;
 - (id)initWithCSSearchableItem:(id)arg1;
 - (id)initWithCSSearchableItem:(id)arg1 attributeDictionary:(id)arg2;

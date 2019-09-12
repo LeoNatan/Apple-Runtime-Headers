@@ -79,7 +79,6 @@
 - (id)fetchRecordsForOutputBlock:(unsigned long long)arg1 error:(id *)arg2;
 - (id)fetchOptionsForOutputBlock:(unsigned long long)arg1 error:(id *)arg2;
 - (_Bool)removeBlockWithRow:(unsigned long long)arg1 error:(id *)arg2;
-- (id)fetchItemsInBlock:(id)arg1 after:(id)arg2 limit:(unsigned long long)arg3 error:(id *)arg4;
 - (id)fetchItemsInBlock:(id)arg1 error:(id *)arg2;
 - (id)fetchReadyBlocksWithType:(unsigned long long)arg1 error:(id *)arg2;
 - (unsigned long long)insertBlockToRemoveAllModelsAndChildModelsWithType:(unsigned long long)arg1 modelIDs:(id)arg2 options:(id)arg3 error:(id *)arg4;
@@ -91,6 +90,9 @@
 - (id)update:(id)arg1;
 - (id)update:(id)arg1 remove:(id)arg2;
 - (id)objectFromData:(id)arg1 encoding:(unsigned long long)arg2 storageLocation:(unsigned long long)arg3 recordRowID:(unsigned long long)arg4 error:(id *)arg5;
+- (_Bool)removeAllRecordsWithError:(id *)arg1;
+- (id)setExternalID:(id)arg1 externalData:(id)arg2 forRecordRow:(unsigned long long)arg3;
+- (id)queryAllRowRecordsReturning:(unsigned long long)arg1;
 - (id)fetchRecordRowsWithModelIDs:(id)arg1 error:(id *)arg2;
 - (id)fetchRecordRowWithExternalID:(id)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;
 - (id)fetchRecordRowWithModelID:(id)arg1 returning:(unsigned long long)arg2 error:(id *)arg3;

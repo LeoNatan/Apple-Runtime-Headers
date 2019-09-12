@@ -35,6 +35,7 @@
 @property _Bool _collectsTimingData; // @synthesize _collectsTimingData=__collectsTimingData;
 @property long long multipathServiceType; // @synthesize multipathServiceType=_multipathServiceType;
 - (struct _CFHSTSPolicy *)copyHSTSPolicy;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct HTTPConnectionCacheLimits)getConnectionCacheLimits;
 - (void *)_copyAttribute:(struct __CFString *)arg1;

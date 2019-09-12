@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) NSString *displayName;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)registerForRelevantChangeNotifications;
 - (id)initWithStore:(id)arg1;
 
 // Remaining properties

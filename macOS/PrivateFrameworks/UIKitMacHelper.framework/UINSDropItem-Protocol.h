@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSString;
+@class NSArray, NSItemProvider;
 
 @protocol UINSDropItem
+@property(readonly, nonatomic) NSItemProvider *itemProvider;
 @property(readonly, copy, nonatomic) NSArray *typeIdentifiers;
-- (void)loadDataWithTypeIdentifier:(NSString *)arg1 forItemProviderCompletionHandler:(void (^)(NSData *, NSError *))arg2;
 @end
 

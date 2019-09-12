@@ -23,6 +23,7 @@
 - (void)removeSuppressionsFromProcessWithPID:(id)arg1;
 - (void)endVoiceTriggerSuppressionActivityWithReason:(id)arg1 forPID:(id)arg2;
 - (void)beginVoiceTriggerSuppressionActivityWithReason:(id)arg1 forPID:(id)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

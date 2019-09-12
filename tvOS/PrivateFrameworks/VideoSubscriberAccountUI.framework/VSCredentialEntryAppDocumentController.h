@@ -7,21 +7,23 @@
 #import <VideoSubscriberAccountUI/VSAppDocumentController.h>
 
 #import <VideoSubscriberAccountUI/VSCredentialEntryViewModelDelegate-Protocol.h>
+#import <VideoSubscriberAccountUI/VSIKItemGroupDelegate-Protocol.h>
 
-@class IKViewElement, NSArray, NSString;
+@class NSArray, NSString, VSIKItemGroupElement;
 
 __attribute__((visibility("hidden")))
-@interface VSCredentialEntryAppDocumentController : VSAppDocumentController <VSCredentialEntryViewModelDelegate>
+@interface VSCredentialEntryAppDocumentController : VSAppDocumentController <VSCredentialEntryViewModelDelegate, VSIKItemGroupDelegate>
 {
-    IKViewElement *_pickerElement;
+    VSIKItemGroupElement *_pickerElement;
     NSArray *_buttonElements;
 }
 
 @property(retain, nonatomic) NSArray *buttonElements; // @synthesize buttonElements=_buttonElements;
-@property(retain, nonatomic) IKViewElement *pickerElement; // @synthesize pickerElement=_pickerElement;
+@property(retain, nonatomic) VSIKItemGroupElement *pickerElement; // @synthesize pickerElement=_pickerElement;
 - (void).cxx_destruct;
 - (void)viewModel:(id)arg1 pickerDidSelectRow:(unsigned long long)arg2;
 - (void)viewModel:(id)arg1 buttonTappedAtIndex:(unsigned long long)arg2;
+- (void)itemGroup:(id)arg1 selectedItemIndexDidChange:(long long)arg2;
 - (_Bool)_updateCredentialEntryViewModel:(id)arg1 withTemplate:(id)arg2 error:(id *)arg3;
 - (_Bool)_updateCredentialEntryViewModel:(id)arg1 error:(id *)arg2;
 - (id)_credentialEntryViewModelWithViewModel:(id)arg1;

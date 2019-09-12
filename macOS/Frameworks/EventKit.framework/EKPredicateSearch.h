@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <EventKit/EKFetchRequestToken-Protocol.h>
+
 @class CalMDQuery, EKEventStore, NSMutableSet, NSPredicate;
 @protocol OS_dispatch_queue;
 
-@interface EKPredicateSearch : NSObject
+@interface EKPredicateSearch : NSObject <EKFetchRequestToken>
 {
     NSPredicate *_predicate;
     EKEventStore *_store;
@@ -33,6 +35,7 @@
 @property(retain) NSMutableSet *currentResults; // @synthesize currentResults=_currentResults;
 - (void).cxx_destruct;
 - (void)cancelSearch;
+- (void)cancel;
 - (void)startWithCompletionCallback:(CDUnknownBlockType)arg1 cancelCallback:(CDUnknownBlockType)arg2 synchronous:(BOOL)arg3 batchCompletion:(BOOL)arg4;
 - (id)_managedCalendarsForCalendarUIDs:(id)arg1 context:(id)arg2;
 - (id)runForCountsOnly;

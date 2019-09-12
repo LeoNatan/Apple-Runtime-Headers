@@ -90,6 +90,7 @@
 @property(getter=isOpaque) BOOL opaque;
 @property(getter=hasAlpha) BOOL alpha;
 @property long long layoutDirection;
+@property(readonly) BOOL _incorporatesContentStyling;
 - (long long)_internalLayoutDirection;
 - (long long)_pixelsHighOrResolutionIndependent;
 - (long long)_pixelsWideOrResolutionIndependent;

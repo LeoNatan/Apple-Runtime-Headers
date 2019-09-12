@@ -8,7 +8,7 @@
 
 #import <CameraUI/CAMZoomButtonDelegate-Protocol.h>
 
-@class CAMZoomButton, CAMZoomControlButtonMaskView, CAMZoomDial, NSArray, NSDate, NSString, NSTimer, UIView;
+@class CAMFeedbackController, CAMZoomButton, CAMZoomButtonPlatter, CAMZoomControlButtonMaskView, CAMZoomDial, NSArray, NSDate, NSString, NSTimer, UIView;
 @protocol CAMZoomControlDelegate;
 
 @interface CAMZoomControl : UIControl <CAMZoomButtonDelegate>
@@ -32,6 +32,7 @@
     CAMZoomDial *__zoomDial;
     UIView *__dialClippingView;
     CAMZoomControlButtonMaskView *__buttonMaskView;
+    CAMZoomButtonPlatter *__buttonPlatter;
     long long __zoomControlMode;
     NSArray *__zoomFactors;
     NSArray *__displayZoomFactors;
@@ -39,6 +40,10 @@
     NSTimer *__zoomDialVisibilityTimer;
     NSDate *__startTimeForHideAnimationInProgress;
     CAMZoomButton *__highlightedZoomButton;
+    CAMFeedbackController *__feedbackController;
+    NSArray *__significantHapticDisplayValues;
+    NSArray *__significantHapticDisplayValueEpsilons;
+    long long __lastHapticZone;
     double _leftMargin;
     double _zoomButtonMaxYWhenContracted;
     double _zoomDialRadius;
@@ -51,6 +56,10 @@
 @property(nonatomic) double zoomButtonMaxYWhenContracted; // @synthesize zoomButtonMaxYWhenContracted=_zoomButtonMaxYWhenContracted;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
+@property(nonatomic) long long _lastHapticZone; // @synthesize _lastHapticZone=__lastHapticZone;
+@property(retain, nonatomic) NSArray *_significantHapticDisplayValueEpsilons; // @synthesize _significantHapticDisplayValueEpsilons=__significantHapticDisplayValueEpsilons;
+@property(retain, nonatomic, setter=_setSignificantHapticDisplayValues:) NSArray *_significantHapticDisplayValues; // @synthesize _significantHapticDisplayValues=__significantHapticDisplayValues;
+@property(readonly, nonatomic) CAMFeedbackController *_feedbackController; // @synthesize _feedbackController=__feedbackController;
 @property(retain, nonatomic, setter=_setHighlightedZoomButton:) CAMZoomButton *_highlightedZoomButton; // @synthesize _highlightedZoomButton=__highlightedZoomButton;
 @property(retain, nonatomic, setter=_setStartTimeForHideAnimationInProgress:) NSDate *_startTimeForHideAnimationInProgress; // @synthesize _startTimeForHideAnimationInProgress=__startTimeForHideAnimationInProgress;
 @property(retain, nonatomic, setter=_setZoomDialVisibilityTimer:) NSTimer *_zoomDialVisibilityTimer; // @synthesize _zoomDialVisibilityTimer=__zoomDialVisibilityTimer;
@@ -63,6 +72,7 @@
 @property(retain, nonatomic, setter=_setDisplayZoomFactors:) NSArray *_displayZoomFactors; // @synthesize _displayZoomFactors=__displayZoomFactors;
 @property(retain, nonatomic, setter=_setZoomFactors:) NSArray *_zoomFactors; // @synthesize _zoomFactors=__zoomFactors;
 @property(nonatomic, setter=_setZoomControlMode:) long long _zoomControlMode; // @synthesize _zoomControlMode=__zoomControlMode;
+@property(readonly, nonatomic) CAMZoomButtonPlatter *_buttonPlatter; // @synthesize _buttonPlatter=__buttonPlatter;
 @property(readonly, nonatomic) CAMZoomControlButtonMaskView *_buttonMaskView; // @synthesize _buttonMaskView=__buttonMaskView;
 @property(readonly, nonatomic) UIView *_dialClippingView; // @synthesize _dialClippingView=__dialClippingView;
 @property(readonly, nonatomic) CAMZoomDial *_zoomDial; // @synthesize _zoomDial=__zoomDial;
@@ -75,10 +85,20 @@
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic) __weak id <CAMZoomControlDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateHaptics:(_Bool)arg1;
+- (long long)_hapticZoneForDisplayValue:(double)arg1;
+- (void)_updateHapticEpsilons;
+- (void)_updateSignificantValuesForHaptics;
 - (void)zoomButtonDidLayout;
 - (void)_handleButtonTappedForSingleCameraZoomPlusToggle;
+- (void)_handleButtonTappedForSelection:(id)arg1;
+- (void)_handleButtonTappedForTripleCameraMode:(id)arg1;
 - (void)_handleButtonTappedForDualCameraMode;
 - (void)_handleButtonTapped:(id)arg1;
+- (_Bool)_isPointWithinButtonPlatter:(struct CGPoint)arg1;
+- (_Bool)_isTouchWithinButtonPlatter:(id)arg1;
+@property(readonly, nonatomic) _Bool _shouldShowButtonPlatter;
+@property(readonly, nonatomic, getter=_isButtonPlatterSupportedForConfiguration) _Bool _buttonPlatterSupportedForConfiguration;
 - (void)_cleanupForCancelTracking;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -112,6 +132,9 @@
 @property(readonly, nonatomic) double zoomDialBorderWidth;
 @property(nonatomic) double zoomDialContentMaskingHeight;
 - (void)setLeftMargin:(double)arg1 animated:(_Bool)arg2;
+- (void)setZoomButtonSymbol:(long long)arg1 animated:(_Bool)arg2;
+@property(readonly, nonatomic) long long zoomButtonSymbol;
+@property(readonly, nonatomic) long long zoomButtonContentType;
 - (void)_setZoomFactor:(double)arg1 interactionType:(long long)arg2 shouldNotifyDelegate:(_Bool)arg3;
 - (double)_zoomFactorForDisplayZoomValue:(double)arg1;
 - (double)_displayZoomValueForZoomFactor:(double)arg1;
@@ -121,11 +144,14 @@
 @property(readonly, nonatomic) double _displayMinimumZoomFactor;
 @property(readonly, nonatomic) double maximumZoomFactor;
 @property(readonly, nonatomic) double minimumZoomFactor;
+- (void)configureForZoomSymbolToggle;
+- (void)configureForSelectionOnlyWithDisplayZoomFactors:(id)arg1 selectedIndex:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)configureForToggleOnlyWithZoomFactor:(double)arg1 displayZoomFactor:(double)arg2;
 - (void)configureForToggleOnlyWithZoomFactor:(double)arg1 minimumZoomFactor:(double)arg2 displayMinimumZoomFactor:(double)arg3 maximumZoomFactor:(double)arg4 displayMaximumZoomFactor:(double)arg5;
 - (void)configureForSingleCameraPlusToggleWithZoomFactor:(double)arg1 minimumZoomFactor:(double)arg2 displayMinimumZoomFactor:(double)arg3 maximumZoomFactor:(double)arg4 displayMaximumZoomFactor:(double)arg5;
 - (void)configureForDualDeviceWithZoomFactor:(double)arg1 minimumZoomFactor:(double)arg2 displayMinimumZoomFactor:(double)arg3 maximumZoomFactor:(double)arg4 displayMaximumZoomFactor:(double)arg5 dualCameraSwitchOverZoomFactor:(double)arg6 displayDualCameraSwitchOverZoomFactor:(double)arg7;
-- (void)_configureForControlMode:(long long)arg1 zoomFactor:(double)arg2 zoomFactors:(id)arg3 displayZoomFactors:(id)arg4;
+- (void)configureForTripleDeviceWithZoomFactor:(double)arg1 minimumZoomFactor:(double)arg2 displayMinimumZoomFactor:(double)arg3 maximumZoomFactor:(double)arg4 displayMaximumZoomFactor:(double)arg5 switchOverZoomFactor1:(double)arg6 displaySwitchOverZoomFactor1:(double)arg7 switchOverZoomFactor2:(double)arg8 displaySwitchOverZoomFactor2:(double)arg9;
+- (void)_configureForControlMode:(long long)arg1 zoomFactor:(double)arg2 zoomFactors:(id)arg3 displayZoomFactors:(id)arg4 zoomButtonContentType:(long long)arg5 animated:(_Bool)arg6;
 - (id)initWithLayoutStyle:(long long)arg1;
 
 // Remaining properties

@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/UINSActivityItemsConfiguration-Protocol.h>
+#import <UIKitCore/UINSActivityItemsConfigurationReading-Protocol.h>
 #import <UIKitCore/_UICopyConfigurationReading-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface _UICopyConfiguration : NSObject <UINSActivityItemsConfiguration, _UICopyConfigurationReading>
+@interface _UICopyConfiguration : NSObject <UINSActivityItemsConfigurationReading, _UICopyConfigurationReading>
 {
     NSArray *_itemProviders;
     BOOL _allowsSharing;
@@ -36,6 +36,7 @@
 @property(readonly, copy, nonatomic) NSArray *activityItemsForSharing;
 - (id)previewForSharedItemProviderAtIndex:(long long)arg1 intent:(id)arg2;
 - (id)sharingMetadataForKey:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *itemProvidersForActivityItemsConfiguration;
 - (id)itemProviders;
 - (id)initWithItemProviders:(id)arg1;
 - (id)initWithSharedObjects:(id)arg1;
@@ -45,7 +46,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy, nonatomic) NSArray *itemProvidersForActivityItemsConfiguration;
 @property(readonly) Class superclass;
 
 @end

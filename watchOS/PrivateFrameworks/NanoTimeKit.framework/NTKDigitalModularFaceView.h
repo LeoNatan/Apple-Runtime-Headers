@@ -21,6 +21,9 @@
 
 + (void)_performIfNonRichModuleView:(id)arg1 actions:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (void)_updateLocale;
 - (void)_applyFaceColor:(unsigned int)arg1 toModuleView:(id)arg2;
 - (void)_enumerateModuleViewsWithBlock:(CDUnknownBlockType)arg1;

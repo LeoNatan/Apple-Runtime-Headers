@@ -24,6 +24,7 @@
     BOOL _disableCornerRadiusForAvatar;
     BOOL _autoUpdateContact;
     BOOL _asynchronousRendering;
+    BOOL _allowStaleRendering;
     BOOL _allowsAnimation;
     BOOL _prohibitsPersonaFetch;
     UIView *_forcePressView;
@@ -53,6 +54,7 @@
 + (id)descriptorForRequiredKeys;
 @property(nonatomic) BOOL prohibitsPersonaFetch; // @synthesize prohibitsPersonaFetch=_prohibitsPersonaFetch;
 @property(nonatomic) BOOL allowsAnimation; // @synthesize allowsAnimation=_allowsAnimation;
+@property(nonatomic) BOOL allowStaleRendering; // @synthesize allowStaleRendering=_allowStaleRendering;
 @property(nonatomic) BOOL asynchronousRendering; // @synthesize asynchronousRendering=_asynchronousRendering;
 @property(nonatomic) BOOL autoUpdateContact; // @synthesize autoUpdateContact=_autoUpdateContact;
 @property(nonatomic) long long monogrammerStyle; // @synthesize monogrammerStyle=_monogrammerStyle;

@@ -39,6 +39,7 @@
     NSData *_widgetSessionId;
     NSString *_widgetUserId;
     NSString *_windowFrameInScreen;
+    BOOL _isAmplifyUser;
     BOOL _isBundlePurchaser;
     BOOL _isPaidSubscriberDuringEvent;
     BOOL _isPaidSubscriberFromAppStoreDuringEvent;
@@ -56,6 +57,7 @@
         unsigned int gestureType:1;
         unsigned int interfaceOrientation:1;
         unsigned int reachabilityStatus:1;
+        unsigned int isAmplifyUser:1;
         unsigned int isBundlePurchaser:1;
         unsigned int isPaidSubscriberDuringEvent:1;
         unsigned int isPaidSubscriberFromAppStoreDuringEvent:1;
@@ -65,6 +67,7 @@
 }
 
 + (Class)userPaidSubscriptionStatusType;
+@property(nonatomic) BOOL isAmplifyUser; // @synthesize isAmplifyUser=_isAmplifyUser;
 @property(retain, nonatomic) NSString *appAnalyticsEventPath; // @synthesize appAnalyticsEventPath=_appAnalyticsEventPath;
 @property(retain, nonatomic) NSString *appAnalyticsEventIdentifier; // @synthesize appAnalyticsEventIdentifier=_appAnalyticsEventIdentifier;
 @property(nonatomic) BOOL isBundlePurchaser; // @synthesize isBundlePurchaser=_isBundlePurchaser;
@@ -100,6 +103,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsAmplifyUser;
 @property(readonly, nonatomic) BOOL hasAppAnalyticsEventPath;
 @property(readonly, nonatomic) BOOL hasAppAnalyticsEventIdentifier;
 @property(nonatomic) BOOL hasIsBundlePurchaser;

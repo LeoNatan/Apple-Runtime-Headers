@@ -54,6 +54,7 @@
     float _overallAestheticScore;
     int _cloudPlaceholderKind;
     float _hdrGain;
+    unsigned int _reframeVariation;
     NSArray *_faceRegions;
     int _RAWPlusJPEGBadgeAttributes;
     id _faceAdjustmentVersion;
@@ -184,6 +185,7 @@
 @property(readonly, nonatomic) NSArray *faceRegions; // @synthesize faceRegions=_faceRegions;
 @property(readonly, nonatomic) struct CGRect acceptableCropRect; // @synthesize acceptableCropRect=_acceptableCropRect;
 @property(readonly, nonatomic) struct CGRect preferredCropRect; // @synthesize preferredCropRect=_preferredCropRect;
+@property(readonly, nonatomic) unsigned int reframeVariation; // @synthesize reframeVariation=_reframeVariation;
 @property(readonly, nonatomic) float hdrGain; // @synthesize hdrGain=_hdrGain;
 @property(readonly, nonatomic) unsigned short playbackVariation; // @synthesize playbackVariation=_playbackVariation;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D locationCoordinate; // @synthesize locationCoordinate=_locationCoordinate;

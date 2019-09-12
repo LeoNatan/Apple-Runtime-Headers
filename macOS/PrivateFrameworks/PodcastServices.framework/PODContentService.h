@@ -26,8 +26,7 @@
 - (void)withEachObserver:(CDUnknownBlockType)arg1;
 - (void)withProxyForwardingForMessage:(SEL)arg1 perform:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)contentServiceDidReceiveChangesInDomain:(id)arg1;
-- (void)fullAccessForFileURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)obtainAccessToFileURL:(id)arg1 response:(CDUnknownBlockType)arg2;
+- (void)obtainSecurityScopedURL:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)requestITunesManagedLibraryLocation:(CDUnknownBlockType)arg1;
 - (void)requestContentImportStateForDomain:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)discardChangesUpToAnchor:(id)arg1 completion:(CDUnknownBlockType)arg2;

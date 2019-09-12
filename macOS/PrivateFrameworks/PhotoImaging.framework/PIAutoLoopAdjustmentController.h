@@ -16,6 +16,7 @@
 + (id)flavorKey;
 @property(copy, nonatomic) NSString *flavor;
 @property(copy, nonatomic) NSDictionary *recipe;
+@property(readonly, nonatomic) struct CGRect stabilizedCropRect;
 
 @end
 

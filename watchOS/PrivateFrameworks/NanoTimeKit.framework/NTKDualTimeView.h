@@ -7,10 +7,11 @@
 #import <UIKit/UIView.h>
 
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
 @class CALayer, CAReplicatorLayer, CLKDevice, NSArray, NSCalendar, NSDate, NSString, NTKAnalogHandsView, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle;
 
-@interface NTKDualTimeView : UIView <NTKTimeView>
+@interface NTKDualTimeView : UIView <NTKTimeView, NTKTritiumAnimator>
 {
     NSDate *_overrideDate;
     NSCalendar *_calendar;
@@ -21,6 +22,7 @@
     CALayer *_digitalTicksContainer;
     NSArray *_digitalTicks;
     NTKDigitalTimeLabelStyle *_digitalStyle;
+    _Bool _isTritiumOff;
     _Bool _frozen;
     _Bool _editing;
     _Bool _hideActiveTicks;
@@ -50,6 +52,15 @@
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+- (float)dialBrightnessForTritiumOn:(_Bool)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (id)tritium_animationToCurrentDateFromDate:(id)arg1;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (id)_secondTickInactiveColorForColor:(unsigned int)arg1;

@@ -20,6 +20,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
+@property(readonly, nonatomic) _Bool supportsSparseTextures;
+@property(readonly, nonatomic) _Bool supportsASTCHDRTextureCompression;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsXR;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats12;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsPQ;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats;
+@property(readonly, nonatomic) _Bool supportsVariableRateRasterization;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;
@@ -98,6 +105,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool supportsLimitedYUVFormats;
 @property(readonly, nonatomic) _Bool supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) _Bool supportsPlacementHeaps;
+@property(readonly, nonatomic) _Bool supportsVertexAmplification;
 @property(readonly, nonatomic) _Bool supports32bpcMSAATextures;
 @property(readonly, nonatomic) _Bool supportsSamplerAddressModeClampToHalfBorder;
 @property(readonly, nonatomic) _Bool supportsCustomBorderColor;

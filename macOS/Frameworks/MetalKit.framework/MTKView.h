@@ -89,6 +89,7 @@
 @property(nonatomic) BOOL framebufferOnly;
 @property(nonatomic) unsigned long long multisampleColorAttachmentTextureUsage;
 @property(nonatomic) unsigned long long depthStencilAttachmentTextureUsage;
+- (void)setNilValueForKey:(id)arg1;
 - (void)viewDidChangeBackingProperties;
 - (void)setBoundsSize:(struct CGSize)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;

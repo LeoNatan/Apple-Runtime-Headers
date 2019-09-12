@@ -60,7 +60,6 @@
 - (void)performAction:(id)arg1 withPaymentIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)formalRequestTokenForAmount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateLastUsedAlternateFundingSource;
-- (id)performQuoteOrientation;
 - (void)performQuoteWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performQuote:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_defaultAlternateFundingSourceForMode:(unsigned long long)arg1;

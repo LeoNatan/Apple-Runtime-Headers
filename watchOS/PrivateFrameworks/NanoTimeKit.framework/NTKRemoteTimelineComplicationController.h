@@ -45,6 +45,7 @@
     _Bool _inRemoveDataAndWakeSessionGracePeriod;
     unsigned int _extendForwardOperationsInThisWakeSession;
     unsigned int _extendBackwardOperationsInThisWakeSession;
+    CLKComplicationTemplate *_alwaysOnTemplate;
     _Bool _hasSetup;
     CLKComplicationTemplate *_currentTemplate;
 }
@@ -61,6 +62,7 @@
 - (_Bool)hasTapAction;
 - (void)_updateComplicationDimState;
 - (id)lockedTemplate;
+- (id)privacyTemplate;
 - (id)_currentEntry;
 - (void)_startExtendLeftOperationFromDate:(id)arg1;
 - (void)_startExtendRightOperationFromDate:(id)arg1;
@@ -80,13 +82,15 @@
 - (void)_scheduleForcedTimelineExtensionTimer;
 - (void)setCurrentTemplate:(id)arg1 withAnimation:(unsigned int)arg2;
 - (void)_startSetupOperationIfPossible;
-- (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 privacyBehavior:(unsigned int)arg4 timelineAnimationBehavior:(unsigned int)arg5 currentEntry:(id)arg6;
+- (id)alwaysOnTemplate;
+- (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 privacyBehavior:(unsigned int)arg4 timelineAnimationBehavior:(unsigned int)arg5 currentEntry:(id)arg6 alwaysOnTemplate:(id)arg7;
 - (void)complicationCollection:(id)arg1 didRemoveSampleTemplatesForClient:(id)arg2;
 - (void)complicationCollection:(id)arg1 didUpdateSampleTemplateForClient:(id)arg2;
 - (void)entriesDidChangeInTimeline:(id)arg1;
 - (void)timeTravelEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)_queueAnimationForNextUpdate:(unsigned int)arg1;
 - (void)nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;
+- (id)_tritium_complicationTemplateAtDate:(id)arg1;
 - (void)setTimelineEndDate:(id)arg1;
 - (void)setTimelineStartDate:(id)arg1;
 - (void)_reloadTimeline;

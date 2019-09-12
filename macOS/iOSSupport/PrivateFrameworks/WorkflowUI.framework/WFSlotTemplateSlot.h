@@ -9,25 +9,23 @@
 #import <WorkflowUI/NSCopying-Protocol.h>
 #import <WorkflowUI/WFSlotTemplateContent-Protocol.h>
 
-@class NSAttributedString, NSMutableDictionary, NSString, WFSlotIdentifier;
+@class NSAttributedString, NSString, WFSlotIdentifier;
 
 @interface WFSlotTemplateSlot : NSObject <WFSlotTemplateContent, NSCopying>
 {
     BOOL _enabled;
     BOOL _prefersNoWrapping;
     BOOL _standaloneTextAttachment;
+    BOOL _usesErrorAppearance;
     WFSlotIdentifier *_identifier;
     NSString *_placeholder;
     NSAttributedString *_contentAttributedString;
     long long _userInputInsertionIndex;
-    NSMutableDictionary *_titleColorsByState;
-    NSMutableDictionary *_backgroundColorsByState;
 }
 
 + (id)slotWithPlaceholder:(id)arg1 key:(id)arg2;
 + (id)addingSlotWithKey:(id)arg1;
-@property(readonly, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
-@property(readonly, nonatomic) NSMutableDictionary *titleColorsByState; // @synthesize titleColorsByState=_titleColorsByState;
+@property(nonatomic) BOOL usesErrorAppearance; // @synthesize usesErrorAppearance=_usesErrorAppearance;
 @property(nonatomic) long long userInputInsertionIndex; // @synthesize userInputInsertionIndex=_userInputInsertionIndex;
 @property(nonatomic) BOOL standaloneTextAttachment; // @synthesize standaloneTextAttachment=_standaloneTextAttachment;
 @property(nonatomic) BOOL prefersNoWrapping; // @synthesize prefersNoWrapping=_prefersNoWrapping;
@@ -39,13 +37,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)backgroundColorForControlState:(unsigned long long)arg1;
-- (void)setBackgroundColor:(id)arg1 forControlState:(unsigned long long)arg2;
-- (id)titleColorForControlState:(unsigned long long)arg1;
-- (void)setTitleColor:(id)arg1 forControlState:(unsigned long long)arg2;
+- (id)backgroundColorForControlState:(unsigned long long)arg1 withTintColor:(id)arg2;
+- (id)titleColorForControlState:(unsigned long long)arg1 withTintColor:(id)arg2;
 @property(readonly, nonatomic, getter=isPopulated) BOOL populated;
 - (id)initWithPlaceholder:(id)arg1 identifier:(id)arg2;
-- (void)applyErrorColors;
 - (void)populateWithVariableString:(id)arg1;
 - (void)populateWithVariable:(id)arg1;
 - (void)populateWithIcon:(id)arg1 string:(id)arg2;

@@ -9,6 +9,10 @@
 @class CLKComplicationTemplate, CLKGaugeProvider, CLKImageProvider, CLKTextProvider;
 
 @interface REContent (REUIAdditions)
++ (id)defaultPrivacyContentWithAppName:(id)arg1;
++ (id)defaultPrivacyContentWithAppName:(id)arg1 iconImageProvider:(id)arg2;
++ (id)defaultPrivacyContentWithAppName:(id)arg1 icon:(id)arg2;
+@property(copy, nonatomic) REContent *privacyContent;
 @property(copy, nonatomic) CLKGaugeProvider *gaugeProvider;
 @property(copy, nonatomic) CLKComplicationTemplate *circularTempate;
 @property(copy, nonatomic) CLKImageProvider *summaryImageProvider;

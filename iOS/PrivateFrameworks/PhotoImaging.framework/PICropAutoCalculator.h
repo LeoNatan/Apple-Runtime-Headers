@@ -46,7 +46,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(nonatomic) CDStruct_198678f7 time;
+@property(nonatomic) CDStruct_1b6d18a9 time;
 
 @end
 

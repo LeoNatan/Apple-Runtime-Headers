@@ -19,6 +19,7 @@
     _Bool _forceRunAsUnadjustedAsset;
     _Bool _forceReturnFullLivePhoto;
     _Bool _forcePrepareCurrentBaseVersionInAddition;
+    _Bool _editAsOvercapture;
     _Bool _loadResourcesToFlip;
     _Bool _skipDisplaySizeImage;
     CDUnknownBlockType _canHandleAdjustmentData;
@@ -32,6 +33,7 @@
 
 @property(nonatomic) _Bool skipDisplaySizeImage; // @synthesize skipDisplaySizeImage=_skipDisplaySizeImage;
 @property(nonatomic) _Bool loadResourcesToFlip; // @synthesize loadResourcesToFlip=_loadResourcesToFlip;
+@property(nonatomic) _Bool editAsOvercapture; // @synthesize editAsOvercapture=_editAsOvercapture;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resultHandlerQueue; // @synthesize resultHandlerQueue=_resultHandlerQueue;
 @property(nonatomic) _Bool forcePrepareCurrentBaseVersionInAddition; // @synthesize forcePrepareCurrentBaseVersionInAddition=_forcePrepareCurrentBaseVersionInAddition;
 @property(nonatomic) _Bool forceReturnFullLivePhoto; // @synthesize forceReturnFullLivePhoto=_forceReturnFullLivePhoto;

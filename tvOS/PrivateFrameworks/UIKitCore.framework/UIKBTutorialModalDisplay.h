@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *textTitleDescriptions;
 @property(readonly, nonatomic) NSString *buttonTitle;
 - (void)extraButtonTapAction;
+- (void)restartPagingAnimation;
 - (void)tapInsideButton:(id)arg1;
 - (id)constructMediaView;
 - (void)updateMediaViewTextAndPlacement;

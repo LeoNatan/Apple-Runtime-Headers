@@ -14,6 +14,7 @@ struct AXVCGFullscreenZoomParameters {
     double _field1;
     struct CGPoint _field2;
     _Bool _field3;
+    int _field4;
 };
 
 struct CGPoint {

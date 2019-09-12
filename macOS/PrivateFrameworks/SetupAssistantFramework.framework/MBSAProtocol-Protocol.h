@@ -41,6 +41,8 @@
 - (void)createTeslaUsersWithInfo:(NSArray *)arg1 completionBlock:(void (^)(BOOL, BOOL))arg2;
 - (void)createUserWithInfo:(NSDictionary *)arg1 completionBlock:(void (^)(unsigned int))arg2;
 - (void)writeMachineDefaults:(NSDictionary *)arg1 toApplicationID:(NSString *)arg2 withCompletionHandler:(void (^)(BOOL))arg3;
+- (void)setPasswordPolicyDictionary:(NSDictionary *)arg1 withCompletion:(void (^)(BOOL))arg2;
+- (void)passwordPolicyWithCompletion:(void (^)(NSDictionary *))arg1;
 - (void)setPasswordPolicy:(long long)arg1 withCompletion:(void (^)(BOOL))arg2;
 - (void)removeBuddyUserHome:(void (^)(BOOL))arg1;
 - (void)tellBuddyAppToQuit:(void (^)(BOOL))arg1;

@@ -19,6 +19,7 @@
     _Bool _sharingCollapsed;
     _Bool _photosLandscapeMode;
     _Bool _contentInstalled;
+    _Bool _ignorePersonTap;
     id <UIActivityContentDelegate> _delegate;
     UIViewController *_photosCarouselViewController;
     NSArray *_applicationActivities;
@@ -41,6 +42,7 @@
     NSUUID *_airDropUUID;
 }
 
+@property(nonatomic) _Bool ignorePersonTap; // @synthesize ignorePersonTap=_ignorePersonTap;
 @property(retain, nonatomic) NSUUID *airDropUUID; // @synthesize airDropUUID=_airDropUUID;
 @property(nonatomic) _Bool contentInstalled; // @synthesize contentInstalled=_contentInstalled;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;

@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)_centerForBundleId:(id)arg1;
 + (id)_removeNotificationWithIdentifier:(id)arg1 centerBundleId:(id)arg2 logKey:(id)arg3;
 + (id)_removeNotification:(id)arg1 centerBundleId:(id)arg2;
-+ (id)_postNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_postNotification:(id)arg1 bag:(id)arg2 centerBundleId:(id)arg3;
 + (id)_activeNotificationsWithCenterBundleId:(id)arg1;
 @property(retain) NSUserNotificationCenter *center; // @synthesize center=_center;
 - (void).cxx_destruct;

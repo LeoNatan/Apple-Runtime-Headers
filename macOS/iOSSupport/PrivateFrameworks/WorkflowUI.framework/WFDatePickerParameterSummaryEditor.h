@@ -10,12 +10,13 @@
 #import <WorkflowUI/WFNonViewResponderDelegate-Protocol.h>
 #import <WorkflowUI/WFVariableUIDelegate-Protocol.h>
 
-@class NSString, UIDatePicker, UIViewController, WFNonViewResponder, WFVariableInputCoordinator;
+@class NSString, UIDatePicker, UIView, UIViewController, WFNonViewResponder, WFVariableInputCoordinator;
 
 @interface WFDatePickerParameterSummaryEditor : WFModuleSummaryEditor <UIPopoverPresentationControllerDelegate, WFNonViewResponderDelegate, WFVariableUIDelegate>
 {
     BOOL _isPickingMagicVariable;
     UIViewController *_presentedViewController;
+    UIView *_sourceView;
     UIDatePicker *_datePicker;
     WFNonViewResponder *_datePickerResponder;
     WFVariableInputCoordinator *_variableCoordinator;
@@ -26,6 +27,7 @@
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(retain, nonatomic) WFNonViewResponder *datePickerResponder; // @synthesize datePickerResponder=_datePickerResponder;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
+@property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
@@ -33,6 +35,7 @@
 - (void)responderWillResign:(id)arg1;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (void)sourceViewTintColorDidChange;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)datePickerValueChanged:(id)arg1;
 - (void)setVariableUIDelegate:(id)arg1;

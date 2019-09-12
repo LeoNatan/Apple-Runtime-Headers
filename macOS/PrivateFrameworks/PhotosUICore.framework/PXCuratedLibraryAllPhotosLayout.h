@@ -49,6 +49,7 @@
     BOOL _performedInitialVisualShift;
     long long _visuallyStableAnchorItem;
     long long _visuallyStableAnchorItemDesiredColumn;
+    BOOL _visuallyStableAnchorAllowedCloseToTop;
     unsigned long long _dataSourceIdentifierOfCachedRangeForSelectedItems;
     struct _NSRange _cachedRangeForSelectedItems;
     BOOL _shouldAnimateTowardsAnchor;
@@ -87,6 +88,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(struct PXGItemsLayout *)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(struct PXGItemsLayout *)arg1;
 - (CDUnknownBlockType)locationNamesFutureForContentInRect:(struct CGRect)arg1;
 - (CDUnknownBlockType)dateIntervalFutureForContentInRect:(struct CGRect)arg1;
@@ -96,7 +98,6 @@
 - (CDStruct_3fe57b01)spriteTransformForLevel:(unsigned long long)arg1;
 - (struct CGRect)frameForItemAtIndexPath:(struct PXSimpleIndexPath)arg1 level:(unsigned long long)arg2;
 - (id)_displayAssetForItem:(long long)arg1;
-- (struct _NSRange)rangeOfItemsToPreventUnloadingInItemsLayout:(id)arg1;
 - (void)itemsLayout:(id)arg1 updateTagsInSpriteInfos:(CDStruct_9d1ebe49 *)arg2 forItemsInRange:(struct _NSRange)arg3;
 - (struct CGRect)itemsLayout:(id)arg1 bestCropRectForItem:(long long)arg2 withAspectRatio:(double)arg3;
 - (double)itemsLayout:(id)arg1 aspectRatioForItem:(long long)arg2;
@@ -104,6 +105,7 @@
 - (CDStruct_3fe57b01)_spriteTransformForLayout:(id)arg1;
 - (void)_performAnchorAlignmentVisualShiftWithBaseLayout:(struct PXGItemsLayout *)arg1;
 - (void)_performVisualShiftWithLayout:(struct PXGItemsLayout *)arg1 movingItem:(long long)arg2 toColumn:(long long)arg3;
+- (long long)_estimatedItemsPerScreenForLayout:(struct PXGItemsLayout *)arg1;
 - (void)_updateViewModelIsAnimating;
 - (void)_updatePrefetching;
 - (void)_updatePinchEffect;
@@ -116,6 +118,7 @@
 - (void)_updateLayers;
 - (void)update;
 - (void)invalidateItemsLayout;
+- (id)presentedItemsGeometryForDataSource:(id)arg1;
 @property(readonly, nonatomic) PXGItemsLayout<PXCuratedLibraryAllPhotosBodyLayout> *primaryItemsLayout;
 - (BOOL)_wantsDecorationForNumberOfColumns:(long long)arg1;
 - (double)_interItemSpacingForLayout:(struct PXGItemsLayout *)arg1;

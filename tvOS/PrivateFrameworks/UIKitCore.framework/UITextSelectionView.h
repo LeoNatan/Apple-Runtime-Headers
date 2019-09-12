@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     _Bool m_isSuspended;
     int m_showingCommandsCounterForRotate;
     _Bool m_forceRangeView;
+    _Bool m_isInstalledInSelectionContainerView;
     _Bool _isIndirectFloatingCaret;
     struct CGRect _stashedCaretRect;
     struct CGRect _previousGhostCaretRect;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect previousGhostCaretRect; // @synthesize previousGhostCaretRect=_previousGhostCaretRect;
 @property(nonatomic) _Bool isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
 @property(nonatomic) struct CGRect stashedCaretRect; // @synthesize stashedCaretRect=_stashedCaretRect;
+@property(readonly, nonatomic) _Bool isInstalledInSelectionContainerView; // @synthesize isInstalledInSelectionContainerView=m_isInstalledInSelectionContainerView;
 @property(retain, nonatomic) NSArray *replacements; // @synthesize replacements=m_replacements;
 @property(nonatomic) _Bool forceRangeView; // @synthesize forceRangeView=m_forceRangeView;
 @property(readonly, nonatomic) __weak UITextInteractionAssistant *interactionAssistant; // @synthesize interactionAssistant=m_interactionAssistant;

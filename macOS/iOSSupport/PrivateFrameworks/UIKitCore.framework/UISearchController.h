@@ -38,6 +38,7 @@
     } _controllerFlags;
     BOOL _obscuresBackgroundDuringPresentation;
     BOOL _hidesNavigationBarDuringPresentation;
+    BOOL __tabBarHidden;
     BOOL __showResultsForEmptySearch;
     BOOL __shouldRespectPreferredContentSize;
     UIView *_resultsControllerViewContainer;
@@ -58,6 +59,7 @@
 @property(nonatomic, setter=_setShowResultsForEmptySearch:) BOOL _showResultsForEmptySearch; // @synthesize _showResultsForEmptySearch=__showResultsForEmptySearch;
 @property(nonatomic) __weak UINavigationItem *_navigationItemCurrentlyDisplayingSearchController; // @synthesize _navigationItemCurrentlyDisplayingSearchController=__navigationItemCurrentlyDisplayingSearchController;
 @property(retain, nonatomic) UIView *_systemInputMarginView; // @synthesize _systemInputMarginView=__systemInputMarginView;
+@property(nonatomic) BOOL _tabBarHidden; // @synthesize _tabBarHidden=__tabBarHidden;
 @property(nonatomic) double _resultsContentScrollViewPresentationOffset; // @synthesize _resultsContentScrollViewPresentationOffset=__resultsContentScrollViewPresentationOffset;
 @property(nonatomic) long long _previousSearchBarPosition; // @synthesize _previousSearchBarPosition=__previousSearchBarPosition;
 @property(readonly, nonatomic) UIViewController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;

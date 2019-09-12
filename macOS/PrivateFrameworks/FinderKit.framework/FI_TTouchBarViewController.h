@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear;
 - (void)reload;
 - (void)setViewDidDisappearCallback:(const function_b1fce659 *)arg1;
-- (const function_b1fce659 *)viewDidDisppearCallback;
+- (const function_b1fce659 *)viewDidDisappearCallback;
 - (void)setViewWillDisappearCallback:(const function_b1fce659 *)arg1;
-- (const function_b1fce659 *)viewWillDisppearCallback;
+- (const function_b1fce659 *)viewWillDisappearCallback;
 - (void)setViewWillAppearCallback:(const function_b1fce659 *)arg1;
 - (const function_b1fce659 *)viewWillAppearCallback;
 - (id)makeTouchBarView;

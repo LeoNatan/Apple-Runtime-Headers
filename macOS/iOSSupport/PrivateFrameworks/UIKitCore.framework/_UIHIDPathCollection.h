@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _position;
     unsigned int _buttonMask;
     unsigned long long _machTimestamp;
+    unsigned char _locus;
     struct __IOHIDEvent *_hidEvent;
     unsigned int _fallbackContextId;
 }

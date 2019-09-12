@@ -20,6 +20,7 @@
     unsigned long long _availableTilesSpace;
     NSString *_baseURL;
     NSMutableArray *_countryRegionWhitelists;
+    NSMutableArray *_deviceSKUWhitelists;
     NSString *_localizationURL;
     NSMutableArray *_sentinelTiles;
     NSMutableArray *_supportedLanguages;
@@ -42,6 +43,7 @@
         unsigned int read_availableTiles:1;
         unsigned int read_baseURL:1;
         unsigned int read_countryRegionWhitelists:1;
+        unsigned int read_deviceSKUWhitelists:1;
         unsigned int read_localizationURL:1;
         unsigned int read_sentinelTiles:1;
         unsigned int read_supportedLanguages:1;
@@ -49,6 +51,7 @@
         unsigned int wrote_availableTiles:1;
         unsigned int wrote_baseURL:1;
         unsigned int wrote_countryRegionWhitelists:1;
+        unsigned int wrote_deviceSKUWhitelists:1;
         unsigned int wrote_localizationURL:1;
         unsigned int wrote_sentinelTiles:1;
         unsigned int wrote_supportedLanguages:1;
@@ -65,6 +68,7 @@
 }
 
 + (BOOL)isValid:(id)arg1;
++ (Class)deviceSKUWhitelistType;
 + (Class)countryRegionWhitelistType;
 + (Class)supportedLanguageType;
 + (Class)sentinelTileType;
@@ -82,6 +86,13 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)deviceSKUWhitelistAtIndex:(unsigned long long)arg1;
+- (unsigned long long)deviceSKUWhitelistsCount;
+- (void)_addNoFlagsDeviceSKUWhitelist:(id)arg1;
+- (void)addDeviceSKUWhitelist:(id)arg1;
+- (void)clearDeviceSKUWhitelists;
+@property(retain, nonatomic) NSMutableArray *deviceSKUWhitelists;
+- (void)_readDeviceSKUWhitelists;
 @property(nonatomic) BOOL hasUseAuthProxy;
 @property(nonatomic) BOOL useAuthProxy;
 - (int)StringAsRequestStyle:(id)arg1;

@@ -58,7 +58,8 @@
 - (void)_addAsset:(id)arg1 toAssetChanges:(id)arg2 isInsert:(BOOL)arg3 seenAssetUuid:(id)arg4;
 - (id)_syncDescriptionForObject:(id)arg1;
 - (void)_promptToFileRadarWithTitle:(id)arg1 description:(id)arg2;
-- (BOOL)_validate:(id)arg1 onRelatedObject:(id)arg2;
+- (BOOL)_validateAsset:(id)arg1 onRelatedObject:(id)arg2;
+- (BOOL)_validateAdditionalAssetAttributes:(id)arg1 onRelatedObject:(id)arg2;
 - (void)_sortData:(id)arg1 isInsert:(BOOL)arg2 forUploadChanges:(id)arg3 shouldTriggerPrefetch:(char *)arg4 inManagedObjectContext:(id)arg5;
 - (void)_sortRelationshipData:(id)arg1 forRelationshipUpdate:(id)arg2 inManagedObjectContext:(id)arg3;
 - (void)recordDeletions:(id)arg1;

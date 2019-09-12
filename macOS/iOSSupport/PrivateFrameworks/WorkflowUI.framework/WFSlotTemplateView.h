@@ -34,7 +34,7 @@
     NSArray *_accessibilityElements;
 }
 
-+ (double)heightForWidth:(double)arg1 withContents:(id)arg2 font:(id)arg3 unpopulatedFont:(id)arg4 paragraphStyle:(id)arg5;
++ (double)heightForWidth:(double)arg1 withContents:(id)arg2 horizontalPadding:(double)arg3 font:(id)arg4 unpopulatedFont:(id)arg5 paragraphStyle:(id)arg6;
 @property(retain, nonatomic) NSArray *accessibilityElements; // @synthesize accessibilityElements=_accessibilityElements;
 @property(nonatomic) unsigned long long lastLayoutManagerLineCount; // @synthesize lastLayoutManagerLineCount=_lastLayoutManagerLineCount;
 @property(nonatomic) BOOL typingAllowsMultipleLines; // @synthesize typingAllowsMultipleLines=_typingAllowsMultipleLines;
@@ -71,7 +71,7 @@
 - (void)slotTemplateTypingTextViewDidDelete:(id)arg1;
 - (void)slotTemplateStorageDidInvalidateDisplay:(id)arg1;
 - (void)tintColorDidChange;
-- (void)updateEnabledStateInTextStorage;
+- (void)updateTintColorInTextStorage;
 - (struct CGRect)sourceRectForSlot:(id)arg1;
 - (struct CGRect)sourceRectForSlotWithIdentifier:(id)arg1;
 - (id)slotAtPoint:(struct CGPoint)arg1;

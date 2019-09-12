@@ -8,36 +8,42 @@
 
 #import <PassKitCore/CLLocationManagerDelegate-Protocol.h>
 
-@class CLGeocoder, CLLocationManager, NSMutableArray, NSMutableSet, NSString, PKMerchantCategoryCodeMap, PKUsageNotificationServer;
+@class CLGeocoder, CLLocationManager, NSDictionary, NSMutableArray, NSMutableSet, NSString, PKMerchantCategoryCodeMap, PKUsageNotificationServer;
 @protocol OS_dispatch_source, PKPaymentTransactionProcessorDelegate;
 
 @interface PKPaymentTransactionProcessor : NSObject <CLLocationManagerDelegate>
 {
     struct os_unfair_lock_s _itemsLock;
+    struct os_unfair_lock_s _regionDataLock;
     NSMutableSet *_locationUpdateItems;
     NSMutableSet *_backgroundLocationUpdateItems;
     NSMutableArray *_reverseGeocodeItems;
     NSMutableSet *_stationsUpdateItems;
-    NSMutableSet *_merchantCleanupItems;
+    NSMutableArray *_merchantCleanupItems;
     CLLocationManager *_locationManager;
     CLLocationManager *_backgroundMerchantLocationManager;
     CLGeocoder *_geocoder;
     NSObject<OS_dispatch_source> *_locationUpdateTimeoutTimer;
     NSObject<OS_dispatch_source> *_backgroundLocationUpdateTimer;
     BOOL _active;
+    BOOL _processingMerchantCleanupItems;
     PKMerchantCategoryCodeMap *_categoryCodeMap;
     id <PKPaymentTransactionProcessorDelegate> _delegate;
     PKUsageNotificationServer *_usageNotificationServer;
+    NSDictionary *_maximumTransitLocationAccuracyPerRegion;
 }
 
+@property(retain, nonatomic) NSDictionary *maximumTransitLocationAccuracyPerRegion; // @synthesize maximumTransitLocationAccuracyPerRegion=_maximumTransitLocationAccuracyPerRegion;
 @property(nonatomic) __weak PKUsageNotificationServer *usageNotificationServer; // @synthesize usageNotificationServer=_usageNotificationServer;
 @property(nonatomic) __weak id <PKPaymentTransactionProcessorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void).cxx_destruct;
+- (BOOL)_locationMeetsMinimumAccuracyRequirements:(id)arg1 transaction:(id)arg2;
 - (id)_pendingMerchantCleanupItemForTransaction:(id)arg1;
 - (id)_pendingStationsUpdateItemForTransaction:(id)arg1;
 - (id)_pendingLocationUpdateItemForTransaction:(id)arg1;
 - (void)_processForLocalMCCLookup:(id)arg1;
+- (void)_beginMerchantCleanupIfPossible;
 - (void)_processItemForMerchantCleanup:(id)arg1 clearingAttempt:(BOOL)arg2;
 - (void)_processPaymentTransactionForMerchantCleanup:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 clearingAttempt:(BOOL)arg4;
 - (void)_processItemForStationsCleanup:(id)arg1;

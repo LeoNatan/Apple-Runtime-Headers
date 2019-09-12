@@ -786,6 +786,7 @@
 - (void)revealContext:(id)arg1 drawRectsForItem:(id)arg2;
 - (BOOL)revealContext:(id)arg1 shouldUseDefaultHighlightForItem:(id)arg2;
 - (id)revealContext:(id)arg1 rectsForItem:(id)arg2;
+- (id)_rvPresentingContextAtLocation:(struct CGPoint)arg1;
 - (id)_immediateActionMenuItemForTextCheckingResult:(id)arg1 range:(struct _NSRange)arg2 location:(struct CGPoint)arg3;
 - (id)menuItemsForTextCheckingResult:(id)arg1 range:(struct _NSRange)arg2 contextual:(BOOL)arg3 event:(id)arg4;
 - (id)_menuItemsForTextCheckingResult:(id)arg1 range:(struct _NSRange)arg2 contextual:(BOOL)arg3 immediate:(BOOL)arg4 location:(struct CGPoint)arg5;

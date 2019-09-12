@@ -32,6 +32,7 @@
     CLKDevice *_device;
 }
 
++ (id)paletteForColor:(unsigned int)arg1 tritium:(_Bool)arg2;
 + (id)paletteForColor:(unsigned int)arg1;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;

@@ -59,6 +59,7 @@
 - (BOOL)_deleteDatabaseFiles:(id)arg1;
 - (BOOL)confirmDatabaseConnectionFor:(id)arg1;
 - (BOOL)isManagedObjectContextFor:(id)arg1 equalToManagedObjectContext:(id)arg2;
+- (id)privateManagedObjectContextFor:(id)arg1;
 - (id)managedObjectContextFor:(id)arg1;
 - (void)removeManagedObjectContextForKey:(id)arg1;
 - (id)managedObjectContextForKey:(id)arg1;

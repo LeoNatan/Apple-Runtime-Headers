@@ -10,6 +10,11 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct _NSRange {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
 struct _opaque_pthread_mutex_t {
     long __sig;
     char __opaque[40];

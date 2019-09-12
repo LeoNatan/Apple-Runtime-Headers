@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 @property long long scrollAxis; // @synthesize scrollAxis=_scrollAxis;
 @property double scrollStepSize; // @synthesize scrollStepSize=_scrollStepSize;
 @property long long scrollLaps; // @synthesize scrollLaps=_scrollLaps;
-- (void)scrollingVBLMonitor:(id)arg1 synchronizeForVBLSerialNumber:(unsigned long long)arg2 timestamp:(double)arg3 updateDuration:(double)arg4;
+- (void)scrollingVBLMonitor:(id)arg1 synchronizeForTimestamp:(double)arg2;
 - (id)initWithConstantData:(id)arg1;
 
 @end

@@ -40,13 +40,13 @@ __attribute__((visibility("hidden")))
     BOOL __showGeneralStatus;
     BOOL __showTextStatus;
     BOOL __showExtendedTextStatus;
-    unsigned int _toggledBrailleModifierKeys;
+    unsigned int _toggledSCROModifierKeys;
 }
 
+@property(nonatomic) unsigned int toggledSCROModifierKeys; // @synthesize toggledSCROModifierKeys=_toggledSCROModifierKeys;
 @property(nonatomic) BOOL _showExtendedTextStatus; // @synthesize _showExtendedTextStatus=__showExtendedTextStatus;
 @property(nonatomic) BOOL _showTextStatus; // @synthesize _showTextStatus=__showTextStatus;
 @property(nonatomic) BOOL _showGeneralStatus; // @synthesize _showGeneralStatus=__showGeneralStatus;
-@property(nonatomic) unsigned int toggledBrailleModifierKeys; // @synthesize toggledBrailleModifierKeys=_toggledBrailleModifierKeys;
 - (void).cxx_destruct;
 - (void)_dispatchBrailleDidPanWithSuccess:(id)arg1 token:(id)arg2 appToken:(id)arg3 direction:(int)arg4;
 - (void)_speakUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;
@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleBrailleDisplayKeypress:(id)arg1;
 - (BOOL)handleBrailleInputCommand:(id)arg1 withInfo:(id)arg2;
 - (BOOL)handleBrailleModifierCommand:(id)arg1 modifier:(unsigned long long *)arg2 persistent:(char *)arg3;
+- (unsigned long long)toggledBrailleModifierKeys;
 - (void)_handleBrailleKeyboardHelp:(id)arg1;
 - (void)handleEvent:(id)arg1;
 - (BOOL)_isAnnouncementForCategory:(id)arg1 variants:(id)arg2 isAlert:(char *)arg3 alertHasTimeout:(char *)arg4 ignoreTimeoutPrefs:(char *)arg5 force:(char *)arg6;

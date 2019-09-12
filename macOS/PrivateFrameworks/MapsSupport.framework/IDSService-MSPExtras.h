@@ -13,5 +13,6 @@
 - (id)_msp_accountFromIdentifier:(id)arg1;
 - (id)_msp_currentAccount;
 - (id)_msp_currentAccountIdentifier;
+- (BOOL)_msp_hasValidIDSAccount;
 @end
 

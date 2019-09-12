@@ -249,6 +249,7 @@
 @property BOOL shouldUseAuthentication;
 @property(readonly, copy, nonatomic) NSArray *standardPorts;
 @property(readonly, copy, nonatomic) NSArray *standardSSLPorts;
+@property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly) Class superclass;
 @property(readonly, copy) ACAccount *systemAccount;
 @property(readonly, nonatomic) IMAPTaskManager *taskManager; // @dynamic taskManager;

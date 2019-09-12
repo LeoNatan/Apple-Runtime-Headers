@@ -12,6 +12,7 @@
 
 + (BOOL)onDeviceDiagnosticsAllowed;
 + (BOOL)explicitContentAllowed;
++ (BOOL)eroticaAllowed;
 + (BOOL)allowAccountModifications;
 
 @end

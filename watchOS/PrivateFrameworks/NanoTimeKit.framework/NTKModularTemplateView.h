@@ -23,6 +23,7 @@
 @property(readonly) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(retain, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 - (void).cxx_destruct;
+- (void)tritium_forceUpdateColoringViews;
 - (void)_propagateColorSchemeToSubviews:(id)arg1;
 - (void)_enumerateColoringViewsSubviewsWithBlock:(CDUnknownBlockType)arg1 invertedHighlight:(_Bool)arg2;
 - (_Bool)_useInvertedHighlightForColorScheme:(id)arg1;

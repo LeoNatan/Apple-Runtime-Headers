@@ -11,6 +11,7 @@
 @protocol _CPUsageEnvelope <NSObject>
 @property(readonly, nonatomic) unsigned long long whichKind;
 @property(readonly, nonatomic) NSData *jsonData;
+@property(copy, nonatomic) NSData *uuidBytes;
 @property(retain, nonatomic) _CPDeviceContext *context;
 @property(nonatomic) int totalSessions;
 @property(nonatomic) int configuredLookbackTimeInDays;

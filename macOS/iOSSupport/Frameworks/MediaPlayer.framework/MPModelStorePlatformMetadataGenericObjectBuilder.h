@@ -53,7 +53,7 @@
         CDStruct_63a3d127 composer;
         CDStruct_63a3d127 genre;
         CDStruct_f9384266 homeSharingAsset;
-        CDStruct_99cfb959 lyrics;
+        CDStruct_78b3e931 lyrics;
     } _requestedSongProperties;
     MPPropertySet *_requestedProperties;
 }

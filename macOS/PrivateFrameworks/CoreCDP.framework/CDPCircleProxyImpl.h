@@ -54,8 +54,10 @@
 - (id)contextType;
 - (void)reportFailure:(id)arg1;
 - (void)reportSuccess;
+- (void)waitForUpdate;
 - (unsigned long long)circleStatus:(id *)arg1;
-- (unsigned long long)cachedCircleStatus:(id *)arg1;
+- (int)cachedCircleStatus:(id *)arg1;
+- (unsigned long long)cachedCliqueStatus:(id *)arg1;
 - (void)didJoinCircleAfterRecovery:(id)arg1;
 - (id)initWithContext:(id)arg1;
 

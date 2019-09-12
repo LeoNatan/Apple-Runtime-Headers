@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) _NSScrollingMomentumCalculator *momentumCalculator; // @synthesize momentumCalculator=_momentumCalculator;
-- (void)scrollingVBLMonitor:(id)arg1 synchronizeForVBLSerialNumber:(unsigned long long)arg2 timestamp:(double)arg3 updateDuration:(double)arg4;
+- (void)scrollingVBLMonitor:(id)arg1 synchronizeForTimestamp:(double)arg2;
 - (void)dealloc;
 - (id)initWithMomentumCalculator:(id)arg1;
 

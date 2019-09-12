@@ -11,11 +11,11 @@
 @interface WFFileType : WFType
 {
     NSString *_string;
-    struct __CFString *_utType;
+    const struct __CFString *_utType;
 }
 
-+ (id)typesForTagClass:(struct __CFString *)arg1 tag:(struct __CFString *)arg2 conformingToType:(struct __CFString *)arg3;
-+ (id)typeForTagClass:(struct __CFString *)arg1 tag:(struct __CFString *)arg2;
++ (id)typesForTagClass:(const struct __CFString *)arg1 tag:(const struct __CFString *)arg2 conformingToType:(const struct __CFString *)arg3;
++ (id)typeForTagClass:(const struct __CFString *)arg1 tag:(const struct __CFString *)arg2;
 + (id)typesFromUTTypes:(id)arg1;
 + (id)typesFromUTTypes:(id)arg1 excludingType:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -23,12 +23,13 @@
 + (id)typeFromMIMEType:(id)arg1;
 + (id)typeFromFileExtension:(id)arg1;
 + (id)typeFromFilename:(id)arg1;
-+ (id)typeWithUTType:(struct __CFString *)arg1 string:(id)arg2;
-+ (id)typeWithUTType:(struct __CFString *)arg1;
++ (id)typeWithUTType:(const struct __CFString *)arg1 string:(id)arg2;
++ (id)typeWithUTType:(const struct __CFString *)arg1;
 + (id)typeWithString:(id)arg1;
-+ (id)cachedFileTypeForUTType:(struct __CFString *)arg1;
-- (id)conformingTypesWithTagClass:(struct __CFString *)arg1 tag:(id)arg2;
-- (id)preferredTagWithClass:(struct __CFString *)arg1;
++ (id)cachedFileTypeForUTType:(const struct __CFString *)arg1;
+- (void).cxx_destruct;
+- (id)conformingTypesWithTagClass:(const struct __CFString *)arg1 tag:(id)arg2;
+- (id)preferredTagWithClass:(const struct __CFString *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSString *OSType;
@@ -44,18 +45,18 @@
 - (id)conformingTypesWithMIMEType:(id)arg1;
 - (id)conformingTypesWithFileExtension:(id)arg1;
 - (BOOL)conformsToUTTypes:(id)arg1;
-- (BOOL)conformsToUTType:(struct __CFString *)arg1;
+- (BOOL)conformsToUTType:(const struct __CFString *)arg1;
 - (BOOL)conformsToType:(id)arg1;
-- (BOOL)isEqualToUTType:(struct __CFString *)arg1;
+- (BOOL)isEqualToUTType:(const struct __CFString *)arg1;
 - (BOOL)isEqualToString:(id)arg1;
 - (BOOL)isEqualToType:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
-@property(readonly, nonatomic) struct __CFString *utType;
+@property(readonly, nonatomic) const struct __CFString *utType; // @synthesize utType=_utType;
 - (void)dealloc;
-- (id)initWithUTType:(struct __CFString *)arg1 string:(id)arg2;
-- (id)initWithUTType:(struct __CFString *)arg1;
+- (id)initWithUTType:(const struct __CFString *)arg1 string:(id)arg2;
+- (id)initWithUTType:(const struct __CFString *)arg1;
 @property(readonly, nonatomic) NSImage *documentIcon;
 @property(readonly, nonatomic) NSImage *icon;
 

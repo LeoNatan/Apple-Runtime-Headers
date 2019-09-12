@@ -13,6 +13,7 @@
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
+- (BOOL)setNodeCredentialsWithBootstrapToken:(id)arg1 error:(id *)arg2;
 - (BOOL)isMemberRecordRefresh:(id)arg1 error:(id *)arg2;
 - (BOOL)isMemberRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)removeMemberRecord:(id)arg1 error:(id *)arg2;

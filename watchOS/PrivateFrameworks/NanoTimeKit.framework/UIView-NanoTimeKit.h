@@ -7,6 +7,8 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (NanoTimeKit)
+- (void)setTritiumSaturation:(float)arg1;
+- (void)setTritiumBrightness:(float)arg1;
 - (void)_updateFilter:(unsigned int)arg1 amount:(float)arg2;
 - (void)ntk_setBoundsAndPositionFromFrame:(struct CGRect)arg1;
 @end

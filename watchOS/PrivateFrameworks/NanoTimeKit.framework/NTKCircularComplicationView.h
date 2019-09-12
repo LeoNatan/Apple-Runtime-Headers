@@ -8,15 +8,19 @@
 
 #import <NanoTimeKit/NTKComplicationDisplay-Protocol.h>
 #import <NanoTimeKit/NTKTemplateComplicationDisplay-Protocol.h>
+#import <NanoTimeKit/NTKTritiumOverridableColorDisplay-Protocol.h>
 
 @class CLKComplicationTemplate, CLKDevice, NSDate, NSString, UIColor;
 @protocol NTKComplicationDisplayObserver;
 
-@interface NTKCircularComplicationView : UIView <NTKTemplateComplicationDisplay, NTKComplicationDisplay>
+@interface NTKCircularComplicationView : UIView <NTKTemplateComplicationDisplay, NTKComplicationDisplay, NTKTritiumOverridableColorDisplay>
 {
     UIView *_platter;
     UIView *_highlightView;
     NSDate *_timeTravelDate;
+    float _tritium_overrideColorAmount;
+    UIColor *_tritium_platterColor;
+    UIColor *_tritium_foregroundColor;
     UIColor *_computedForegroundColor;
     UIColor *_computedPlatterColor;
     _Bool canUseCurvedText;
@@ -28,6 +32,8 @@
     CLKDevice *_device;
     UIColor *_foregroundColor;
     UIColor *_platterColor;
+    UIColor *_tritium_overrideForegroundColor;
+    UIColor *_tritium_overridePlatterColor;
     CLKComplicationTemplate *_complicationTemplate;
 }
 
@@ -38,6 +44,8 @@
 + (id)mediumViewForComplicationType:(unsigned int)arg1;
 + (id)viewForComplicationType:(unsigned int)arg1;
 @property(readonly, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
+@property(retain, nonatomic) UIColor *tritium_overridePlatterColor; // @synthesize tritium_overridePlatterColor=_tritium_overridePlatterColor;
+@property(retain, nonatomic) UIColor *tritium_overrideForegroundColor; // @synthesize tritium_overrideForegroundColor=_tritium_overrideForegroundColor;
 @property(readonly) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(nonatomic) _Bool usesMultiColor; // @synthesize usesMultiColor=_usesMultiColor;
 @property(nonatomic) _Bool wantsPlatter; // @synthesize wantsPlatter=_wantsPlatter;
@@ -63,6 +71,9 @@
 - (void)_updateImageViewColor:(id)arg1;
 - (void)_updateColorChange;
 - (void)_updateLabelsForFontChange;
+- (void)tritium_forceUpdateColoringViews;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)_updatePlatterColor;
 - (void)_updateForegroundColor;
 - (id)_computedPlatterColor;

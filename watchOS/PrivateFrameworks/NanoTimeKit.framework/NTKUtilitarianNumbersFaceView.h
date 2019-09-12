@@ -10,6 +10,9 @@
 {
 }
 
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (struct CGPoint)_dateComplicationCenterOffset;
 - (struct CGPoint)_dateComplicationRightAlignment;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;

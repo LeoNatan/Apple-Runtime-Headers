@@ -45,6 +45,7 @@
 - (BOOL)extendRangeSelectionToIndexPath:(struct PXSimpleIndexPath)arg1;
 - (BOOL)addIndexPathToDeselect:(struct PXSimpleIndexPath)arg1;
 - (BOOL)addIndexPathToSelect:(struct PXSimpleIndexPath)arg1;
+- (BOOL)canAddIndexPathToSelect:(struct PXSimpleIndexPath)arg1;
 - (void)removeRubberBandView;
 - (void)clearAutoscrollTimer;
 - (void)autoscrollAndDragSelectWithLastNonPeriodicEvent;

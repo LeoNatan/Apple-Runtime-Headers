@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableOrderedSet;
+@class AKSparseMutableControllerArray, NSArray;
 
 @interface AKModelController : NSObject
 {
-    NSMutableOrderedSet *_mutablePageModelControllers;
+    AKSparseMutableControllerArray *_mutablePageModelControllers;
 }
 
 - (void).cxx_destruct;

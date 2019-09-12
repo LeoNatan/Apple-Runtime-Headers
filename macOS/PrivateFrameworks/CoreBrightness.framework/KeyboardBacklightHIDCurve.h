@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) float maxLevelPercentage;
 @property(readonly) float maxCurveNits;
 @property(readonly) NSDictionary *brightnessCurve;
+- (BOOL)isBrightnessCurveValid:(id)arg1;
 - (void)updateBrightnessCurve:(id)arg1;
 - (id)description;
 - (void)dealloc;

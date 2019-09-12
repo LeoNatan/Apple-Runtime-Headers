@@ -6,9 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class _TVStackedImageView, _TVStackedMediaDocumentEntry, _TVStackedVideoPlayerLayerContainerView;
+#import <TVUIKit/_TVStackedMediaEntryView-Protocol.h>
 
-@interface _TVStackedVideoPlayerView : UIView
+@class NSString, _TVStackedImageView, _TVStackedMediaDocumentEntry, _TVStackedVideoPlayerLayerContainerView;
+
+@interface _TVStackedVideoPlayerView : UIView <_TVStackedMediaEntryView>
 {
     _TVStackedMediaDocumentEntry *_entry;
     _TVStackedImageView *_previewImageView;
@@ -31,6 +33,12 @@
 - (void)playVideo:(_Bool)arg1;
 - (void)configureWithEntry:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

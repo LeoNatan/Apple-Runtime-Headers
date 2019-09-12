@@ -28,6 +28,7 @@
 + (id)_publicSourceForGatewayExternalIdentifier:(id)arg1 name:(id)arg2;
 + (id)_privateSourceForClinicalAccountIdentifier:(id)arg1 name:(id)arg2;
 + (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
++ (id)_researchStudiesDirectoryURL;
 + (_Bool)_isPlaceholderBundleIdentifier:(id)arg1;
 + (id)_generateIdentifierForAppleDeviceWithUUID:(id)arg1;
 + (id)_generateIdentifierForAppleDevice;
@@ -40,6 +41,7 @@
 + (id)_uncachedDefaultSourceWithEntitlements:(id)arg1;
 + (id)_uncachedDefaultSource;
 + (id)defaultSource;
++ (id)_studyNameForResearchStudySource:(id)arg1;
 + (id)_applicationNameForCompanionBundleIdentifier:(id)arg1;
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
 + (_Bool)hd_isSpartanDeviceBundleIdentifier:(id)arg1;
@@ -70,6 +72,7 @@
 - (id)init;
 - (id)_fetchBundleWithError:(id *)arg1;
 - (id)_deducedClinicalAccountIdentifier;
+- (_Bool)_isResearchStudy;
 - (_Bool)_isClinicalSource;
 - (_Bool)_isHidden;
 - (_Bool)_requiresAuthorization;

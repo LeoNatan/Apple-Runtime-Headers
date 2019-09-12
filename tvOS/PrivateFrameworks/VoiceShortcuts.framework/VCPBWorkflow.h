@@ -16,7 +16,7 @@
     unsigned long long _integerLastMigratedClientVersion;
     unsigned long long _integerMinimumClientVersion;
     double _modificationDate;
-    NSData *_accessResourcePermissionStateData;
+    NSData *_accessResourcePerWorkflowStateData;
     NSData *_actionsData;
     unsigned int _iconColor;
     unsigned int _iconGlyph;
@@ -40,7 +40,7 @@
 
 + (Class)inputClassesType;
 + (Class)workflowTypesType;
-@property(retain, nonatomic) NSData *accessResourcePermissionStateData; // @synthesize accessResourcePermissionStateData=_accessResourcePermissionStateData;
+@property(retain, nonatomic) NSData *accessResourcePerWorkflowStateData; // @synthesize accessResourcePerWorkflowStateData=_accessResourcePerWorkflowStateData;
 @property(retain, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property(retain, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
 @property(nonatomic) unsigned long long integerLastMigratedClientVersion; // @synthesize integerLastMigratedClientVersion=_integerLastMigratedClientVersion;
@@ -68,7 +68,7 @@
 - (id)remoteQuarantineStatusAsString:(int)arg1;
 @property(nonatomic) _Bool hasRemoteQuarantineStatus;
 @property(nonatomic) int remoteQuarantineStatus; // @synthesize remoteQuarantineStatus=_remoteQuarantineStatus;
-@property(readonly, nonatomic) _Bool hasAccessResourcePermissionStateData;
+@property(readonly, nonatomic) _Bool hasAccessResourcePerWorkflowStateData;
 @property(readonly, nonatomic) _Bool hasLastMigratedClientVersion;
 @property(readonly, nonatomic) _Bool hasMinimumClientVersion;
 @property(nonatomic) _Bool hasIntegerLastMigratedClientVersion;

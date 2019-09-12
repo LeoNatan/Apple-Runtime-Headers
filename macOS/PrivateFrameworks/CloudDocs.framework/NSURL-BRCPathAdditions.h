@@ -9,13 +9,13 @@
 @class NSPersonNameComponents, NSString;
 
 @interface NSURL (BRCPathAdditions)
-+ (id)br_fileURLWithVolumeDeviceID:(id)arg1 fileID:(id)arg2 isDirectory:(BOOL)arg3;
-+ (id)br_fileURLWithFileDescriptor:(int)arg1;
++ (id)brc_fileURLWithVolumeDeviceID:(id)arg1 fileID:(id)arg2 isDirectory:(BOOL)arg3;
++ (id)brc_fileURLWithFileDescriptor:(int)arg1;
 + (void)br_containerIDsWithExternalReferencesTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)br_documentURLFromBookmarkableString:(id)arg1 error:(id *)arg2;
 + (void)br_documentURLFromBookmarkableString:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)br_documentURLFromFileObjectID:(id)arg1 error:(id *)arg2;
-- (id)br_issueSandboxExtensionOfClass:(const char *)arg1 error:(id *)arg2;
+- (id)brc_issueSandboxExtensionOfClass:(const char *)arg1 error:(id *)arg2;
 - (BOOL)br_setTagNames:(id)arg1 error:(id *)arg2;
 - (BOOL)br_getTagNames:(id *)arg1 error:(id *)arg2;
 - (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 error:(id *)arg3;
@@ -33,7 +33,9 @@
 - (BOOL)br_isPromiseURL;
 - (id)br_logicalURL;
 - (id)br_physicalURL;
+- (id)icd_documentRecordIDWithError:(id *)arg1;
 - (id)br_documentRecordIDWithError:(id *)arg1;
+- (id)icd_itemID;
 - (id)br_itemID;
 - (id)br_URLByResolvingExternalDocumentReferenceWithError:(id *)arg1;
 - (id)br_URLByResolvingInProcessExternalDocumentReferenceWithProperties:(id)arg1;

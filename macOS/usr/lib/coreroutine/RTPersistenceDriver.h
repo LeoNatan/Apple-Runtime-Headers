@@ -99,6 +99,10 @@
 - (void)persistenceDriver:(id)arg1 persistenceMigrator:(id)arg2 didStartMigratingStore:(id)arg3 withModelProvider:(id)arg4;
 - (void)persistenceStoreResetSyncWithUserInfo:(id)arg1;
 - (void)persistenceStoreFailedWithError:(id)arg1;
+- (id)cloudManagedObjectWithEntityDescription:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 context:(id)arg4 error:(id *)arg5;
+- (id)earliestCloudManagedObjectWithEntityDescription:(id)arg1 predicate:(id)arg2 context:(id)arg3 error:(id *)arg4;
+- (id)latestCloudManagedObjectWithEntityDescription:(id)arg1 predicate:(id)arg2 context:(id)arg3 error:(id *)arg4;
+- (unsigned long long)countOfCloudManagedObjectWithEntityDescription:(id)arg1 predicate:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (void)persistenceStore:(id)arg1 didPrepareWithContext:(id)arg2;
 
 // Remaining properties

@@ -30,6 +30,7 @@
 - (void)setBroadcastedSyncStateStateToStarting;
 - (void)setBroadcastedSyncStateStateToFinished;
 - (long long)syncControllerRecordType;
+- (void)clearLocalSyncState:(unsigned long long)arg1;
 @property(readonly, nonatomic) IMDCKSyncState *syncState;
 - (id)ckUtilities;
 @property(readonly, nonatomic) BOOL isUsingStingRay;

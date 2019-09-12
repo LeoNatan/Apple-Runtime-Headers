@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXPhotoLibraryUIChangeObserver-Protocol.h>
 
-@class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSPredicate, NSSet, NSString, PHAsset, PHFetchResult, PHPhotoLibrary, PXLIFOQueue, PXPhotosDataSourceSectionCache;
+@class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSPredicate, NSSet, NSString, PHAsset, PHFetchResult, PHPhotoLibrary, PXBackgroundFetchToken, PXLIFOQueue, PXPhotosDataSourceSectionCache;
 @protocol OS_dispatch_queue;
 
 @interface PXPhotosDataSource : NSObject <PXPhotoLibraryUIChangeObserver>
@@ -24,9 +24,11 @@
     NSMutableDictionary *_resultRecordByAssetCollection;
     NSMutableSet *__inaccurateAssetCollections;
     _Bool _inaccurateAssetCollectionsNeedsUpdate;
+    NSMutableDictionary *_preparedChangeDetailsByAssetCollection;
     NSMutableDictionary *_infoForAssetCollection;
     _Bool _backgroundFetchOriginSectionChanged;
     _Bool _needToStartBackgroundFetch;
+    PXBackgroundFetchToken *_backgroundFetchToken;
     _Bool _interruptBackgroundFetch;
     _Bool _pauseBackgroundFetchResultsDelivery;
     NSMutableSet *_pauseLibraryChangeDeliveryTokens;
@@ -61,12 +63,14 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
++ (void)waitForAllBackgroundFetchingToFinish;
++ (id)backgroundFetchingGroup;
 + (id)_sharedPrefetchQueue;
 + (id)_curationSharedBackgroundQueue;
 @property(nonatomic) _Bool allowNextChangeDeliveryOnAllRunLoopModes; // @synthesize allowNextChangeDeliveryOnAllRunLoopModes=_allowNextChangeDeliveryOnAllRunLoopModes;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic, setter=_setPreviousCollectionsCount:) unsigned long long _previousCollectionsCount; // @synthesize _previousCollectionsCount=__previousCollectionsCount;
-@property(readonly, nonatomic) _Bool isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
+@property(nonatomic) _Bool isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
 @property(nonatomic) _Bool wantsCurationByDefault; // @synthesize wantsCurationByDefault=_wantsCurationByDefault;
 @property(nonatomic) _Bool reverseSortOrder; // @synthesize reverseSortOrder=_reverseSortOrder;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
@@ -85,6 +89,8 @@
 - (void)_didFinishBackgroundFetching;
 - (void)_addResultTuple:(id)arg1 forAssetCollection:(id)arg2 toMutableResultRecord:(id)arg3;
 - (void)_processAndPublishPendingCollectionFetchResults;
+- (void)_performProcessAndPublishSelectorInDefaultRunLoopMode;
+- (void)_prepareDiffsForPendingResultsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_processAndPublishPendingCollectionFetchResultsWhenAppropriate;
 - (void)_fetchRemainingCollectionsBackgroundLoop;
 - (void)_cancelBackgroundFetchIfNeeded;
@@ -180,7 +186,8 @@
 - (void)_publishChange:(id)arg1;
 - (void)_publishWillChange;
 - (void)_publishReloadChange;
-- (id)_fetchTupleForAssetCollection:(id)arg1 calledOnMainQueue:(_Bool)arg2;
+- (id)_fetchTupleForAssetCollection:(id)arg1 calledOnMainQueue:(_Bool)arg2 isLimitedInitialFetch:(_Bool)arg3;
+- (void)_getFetchLimit:(unsigned long long *)arg1 fetchWithReverseSortOrder:(_Bool *)arg2 forAssetCollection:(id)arg3 isLimitedInitialFetch:(_Bool)arg4;
 - (void)_performManualReloadWithChangeBlock:(CDUnknownBlockType)arg1;
 - (void)_performManualChangesForAssetCollections:(id)arg1 collectionsToDiff:(id)arg2 changeBlock:(CDUnknownBlockType)arg3;
 - (void)_performManualChangesForAssetCollections:(id)arg1 changeBlock:(CDUnknownBlockType)arg2;
@@ -193,7 +200,7 @@
 - (id)_allowedUUIDsForAssetCollection:(id)arg1;
 - (id)_filterPredicateForAssetCollection:(id)arg1;
 - (_Bool)_reverseSortOrderForAssetCollection:(id)arg1;
-- (_Bool)_isAssetCollectionAccurate:(id)arg1;
+- (unsigned long long)_assetCollectionFetchStatus:(id)arg1;
 - (_Bool)_allSectionsConsideredAccurate;
 @property(readonly, nonatomic) _Bool areAllSectionsConsideredAccurate;
 - (id)_fetcher;

@@ -139,6 +139,7 @@
 
 // Remaining properties
 @property(readonly) NSArray *activeSessionDisplayIDs;
+@property(readonly) BOOL allowMixableAudioWhileRecording;
 @property(readonly) unsigned int opaqueSessionID;
 @property(readonly) NSDictionary *pickedRoute;
 @property(readonly) BOOL requiresNoAudioResources;

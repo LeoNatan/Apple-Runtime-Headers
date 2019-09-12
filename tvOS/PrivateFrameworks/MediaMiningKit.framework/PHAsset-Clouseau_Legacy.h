@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) _Bool clsHasCustomPlaybackVariation;
 - (short)clsInterestingAudioClassifications;
 @property(readonly, nonatomic) _Bool clsHasInterestingAudioClassification;
+@property(readonly, nonatomic) _Bool clsIsInterestingReframe;
 @property(readonly, nonatomic) _Bool clsIsInterestingHDR;
 @property(readonly, nonatomic) _Bool clsIsInterestingSDOF;
 @property(readonly, nonatomic) _Bool clsIsInterestingPanorama;

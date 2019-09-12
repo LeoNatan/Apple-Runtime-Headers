@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)dequeuePrintRequest;
-- (void)enqueuePrintRequestForFrameHandle:(id)arg1;
+- (void)enqueuePrintRequestForFrameHande:(id)arg1 shouldWaitUntilDone:(BOOL)arg2;
 
 @end
 

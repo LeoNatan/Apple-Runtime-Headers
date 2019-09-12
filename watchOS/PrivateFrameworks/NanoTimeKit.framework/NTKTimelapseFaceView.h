@@ -24,6 +24,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_willSnapshotForBurnInStudy;
 - (void)_endScrubbingAnimationFromUIViewAnimateWithDuration;
 - (void)_startScrubbingAnimationFromUIViewAnimateWithDuration;
 - (void)_applyScrubbingForegroundColor:(id)arg1 shadowColor:(id)arg2;

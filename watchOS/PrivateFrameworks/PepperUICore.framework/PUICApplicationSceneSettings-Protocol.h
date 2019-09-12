@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol PUICApplicationSceneSettings <NSObject>
+@property(readonly, nonatomic) unsigned int AOTDisplayStyle;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier;
 @property(readonly, nonatomic) unsigned int puicStatusBarStyle;
 @property(readonly, nonatomic) _Bool keepsContextsInBackground;

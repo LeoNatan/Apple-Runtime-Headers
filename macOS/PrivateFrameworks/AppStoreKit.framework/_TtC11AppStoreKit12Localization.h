@@ -15,6 +15,7 @@
     // Error parsing type: , name: locale
     // Error parsing type: , name: localizedStringTables
     // Error parsing type: , name: dateFormatters
+    // Error parsing type: , name: dynamicDateFormatters
     // Error parsing type: , name: $__lazy_storage_$_relativeDateFormatter
 }
 
@@ -22,6 +23,7 @@
 - (id)init;
 - (id)relativeDate:(id)arg1;
 - (id)formatDate:(id)arg1:(id)arg2;
+- (id)formatDateInSentence:(id)arg1:(id)arg2:(id)arg3;
 - (id)timeAgo:(id)arg1;
 - (id)formattedCount:(id)arg1;
 - (id)fileSize:(id)arg1;

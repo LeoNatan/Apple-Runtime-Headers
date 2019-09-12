@@ -28,6 +28,7 @@
 - (void)_validate;
 - (_Bool)_needsUpdates;
 - (float)_progressFractionForNow:(id)arg1;
+- (_Bool)tritium_requiresCopy;
 
 @end
 

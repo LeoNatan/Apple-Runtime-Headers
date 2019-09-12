@@ -81,6 +81,7 @@
 - (void)_updateSmartMailboxUnreadCountUsingSpotlight:(id)arg1;
 - (BOOL)_canCreateQuery;
 - (void)_updateSmartMailboxUnreadCountUsingSearchableIndexForMailbox:(id)arg1;
+- (BOOL)_shouldRestartQueryForError:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

@@ -32,6 +32,8 @@ __attribute__((visibility("hidden")))
 - (void)willMoveToWindow:(id)arg1;
 - (void)_keyboardChanged:(id)arg1;
 - (void)_updateConstraintsForKeyboardNotification:(id)arg1;
+- (BOOL)_shouldOverrideAnimationForFrameChangeNotification:(id)arg1;
+- (BOOL)_shouldIgnoreFrameChangeNotification:(id)arg1;
 - (void)_updateConstraintsToMatchKeyboardFrame:(struct CGRect)arg1;
 - (struct CGRect)_frameInBoundsForKeyboardFrame:(struct CGRect)arg1;
 

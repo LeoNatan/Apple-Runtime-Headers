@@ -7,10 +7,11 @@
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
 #import <NanoTimeKit/NTKTimelineEntryModelCacheDataSource-Protocol.h>
+#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
 @class CLLocation, NSString, NSTimer, NTKTimelineEntryModelCache;
 
-@interface NTKSunriseComplicationDataSource : NTKComplicationDataSource <NTKTimelineEntryModelCacheDataSource>
+@interface NTKSunriseComplicationDataSource : NTKComplicationDataSource <NTKTimelineEntryModelCacheDataSource, NTKTritiumRandomizedComplicationEntryProvider>
 {
     NTKTimelineEntryModelCache *_entryModelCache;
     _Bool _isWaitingForGeocodeRequest;
@@ -30,6 +31,8 @@
 @property(retain, nonatomic) CLLocation *displayedLocation; // @synthesize displayedLocation=_displayedLocation;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+- (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
+- (float)tritium_randomizedPossibility;
 - (void)_geocodeRequestDelayTimerTriggerred;
 - (void)_handleLocation:(id)arg1 error:(id)arg2;
 - (_Bool)_needsToSendGeocodingRequest;

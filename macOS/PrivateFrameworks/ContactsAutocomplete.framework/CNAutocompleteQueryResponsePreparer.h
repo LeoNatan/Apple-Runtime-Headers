@@ -18,6 +18,8 @@
     id <CNPromise> _matchingPriorityResultsPromise;
 }
 
++ (id)makeBundleIdentifierOfCurrentProcess;
++ (id)bundleIdentifierOfCurrentProcess;
 @property(retain, nonatomic) id <CNPromise> matchingPriorityResultsPromise; // @synthesize matchingPriorityResultsPromise=_matchingPriorityResultsPromise;
 @property(retain, nonatomic) id <CNFuture> priorityResultsFuture; // @synthesize priorityResultsFuture=_priorityResultsFuture;
 @property(readonly, nonatomic) CNAutocompleteFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;

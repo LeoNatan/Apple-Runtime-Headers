@@ -8,14 +8,14 @@
 
 #import <WorkflowUI/WFModuleParameterStateWriter-Protocol.h>
 
-@class NSArray, NSDictionary, NSError, NSString, UIImage, WFAction, WFModuleAppearance;
+@class NSArray, NSAttributedString, NSDictionary, NSError, NSString, UIImage, WFAction, WFModuleAppearance;
 @protocol WFModuleIndentationProvider, WFModuleParameterStateWriter, WFVariableProvider, WFVariableUIDelegate;
 
 @interface WFModuleModel : NSObject <WFModuleParameterStateWriter>
 {
     BOOL _isMissing;
     BOOL _isDiscontinued;
-    BOOL _hideConfiguration;
+    BOOL _isDraggingIntoWorkflow;
     BOOL _hideHeader;
     BOOL _isDimmed;
     BOOL _showHandoffRequired;
@@ -33,6 +33,7 @@
     UIImage *_icon;
     UIImage *_keyImage;
     NSString *_localizedParameterSummaryFormatString;
+    NSAttributedString *_localizedFooter;
     WFModuleAppearance *_appearance;
     unsigned long long _indentationLevel;
     NSError *_resourceError;
@@ -59,8 +60,8 @@
 + (id)modelForPlaceholder;
 + (id)modelForSelectingParameterOfAction:(id)arg1 excludingParameters:(id)arg2 selectionAction:(CKTypedComponentAction_92b97a4d)arg3 indentationProvider:(id)arg4;
 + (id)modelForProcessingAction:(id)arg1 withParameters:(id)arg2 cancelAction:(CKTypedComponentAction_789af415)arg3 doneAction:(CKTypedComponentAction_789af415)arg4;
-+ (id)modelForEditingAction:(id)arg1 withWorkflowTypes:(id)arg2 hideConfiguration:(BOOL)arg3 customConfigurationClass:(Class)arg4 removeAction:(CKTypedComponentAction_aa963706)arg5 variableUIDelegate:(id)arg6 indentationProvider:(id)arg7 appearance:(id)arg8;
-+ (id)modelForViewingAction:(id)arg1 whileWorkflowRunning:(BOOL)arg2 withWorkflowTypes:(id)arg3 appearance:(id)arg4 showResourceErrors:(BOOL)arg5 dimmed:(BOOL)arg6 hideConfiguration:(BOOL)arg7 customConfigurationClass:(Class)arg8 indentationProvider:(id)arg9;
++ (id)modelForEditingAction:(id)arg1 withWorkflowTypes:(id)arg2 draggingIntoWorkflow:(BOOL)arg3 customConfigurationClass:(Class)arg4 removeAction:(CKTypedComponentAction_aa963706)arg5 variableUIDelegate:(id)arg6 indentationProvider:(id)arg7;
++ (id)modelForViewingAction:(id)arg1 whileWorkflowRunning:(BOOL)arg2 withWorkflowTypes:(id)arg3 appearance:(id)arg4 showResourceErrors:(BOOL)arg5 dimmed:(BOOL)arg6 customConfigurationClass:(Class)arg7 indentationProvider:(id)arg8;
 @property(readonly, nonatomic) __weak id <WFModuleIndentationProvider> indentationProvider; // @synthesize indentationProvider=_indentationProvider;
 @property(readonly, nonatomic) __weak WFAction *action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSArray *workflowTypes; // @synthesize workflowTypes=_workflowTypes;
@@ -92,10 +93,11 @@
 @property(readonly, nonatomic) BOOL showHandoffRequired; // @synthesize showHandoffRequired=_showHandoffRequired;
 @property(readonly, nonatomic) BOOL isDimmed; // @synthesize isDimmed=_isDimmed;
 @property(readonly, nonatomic) BOOL hideHeader; // @synthesize hideHeader=_hideHeader;
-@property(readonly, nonatomic) BOOL hideConfiguration; // @synthesize hideConfiguration=_hideConfiguration;
+@property(readonly, nonatomic) BOOL isDraggingIntoWorkflow; // @synthesize isDraggingIntoWorkflow=_isDraggingIntoWorkflow;
 @property(readonly, nonatomic) WFModuleAppearance *appearance; // @synthesize appearance=_appearance;
 @property(readonly, nonatomic) BOOL isDiscontinued; // @synthesize isDiscontinued=_isDiscontinued;
 @property(readonly, nonatomic) BOOL isMissing; // @synthesize isMissing=_isMissing;
+@property(readonly, copy, nonatomic) NSAttributedString *localizedFooter; // @synthesize localizedFooter=_localizedFooter;
 @property(readonly, copy, nonatomic) NSString *localizedParameterSummaryFormatString; // @synthesize localizedParameterSummaryFormatString=_localizedParameterSummaryFormatString;
 @property(readonly, nonatomic) UIImage *keyImage; // @synthesize keyImage=_keyImage;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
@@ -108,7 +110,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)setState:(id)arg1 ofParameter:(id)arg2;
-- (id)initWithAction:(id)arg1 processingParameters:(id)arg2 workflowTypes:(id)arg3 editable:(BOOL)arg4 processing:(BOOL)arg5 workflowRunning:(BOOL)arg6 appearance:(id)arg7 dimmed:(BOOL)arg8 hideConfiguration:(BOOL)arg9 customConfigurationClass:(Class)arg10 showResourceErrors:(BOOL)arg11 variableUIDelegate:(id)arg12 indentationProvider:(id)arg13 removeAction:(CKTypedComponentAction_aa963706)arg14 cancelAction:(CKTypedComponentAction_789af415)arg15 doneAction:(CKTypedComponentAction_789af415)arg16 parameterSelectionAction:(CKTypedComponentAction_92b97a4d)arg17 parameterSelectionExclusions:(id)arg18 placeholder:(BOOL)arg19;
+- (id)initWithAction:(id)arg1 processingParameters:(id)arg2 workflowTypes:(id)arg3 editable:(BOOL)arg4 processing:(BOOL)arg5 workflowRunning:(BOOL)arg6 appearance:(id)arg7 dimmed:(BOOL)arg8 draggingIntoWorkflow:(BOOL)arg9 customConfigurationClass:(Class)arg10 showResourceErrors:(BOOL)arg11 variableUIDelegate:(id)arg12 indentationProvider:(id)arg13 removeAction:(CKTypedComponentAction_aa963706)arg14 cancelAction:(CKTypedComponentAction_789af415)arg15 doneAction:(CKTypedComponentAction_789af415)arg16 parameterSelectionAction:(CKTypedComponentAction_92b97a4d)arg17 parameterSelectionExclusions:(id)arg18 placeholder:(BOOL)arg19;
 
 @end
 

@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class AVOutputContext;
 
 @protocol AVRoutePickerViewServiceInterface
 @property(nonatomic) BOOL prioritizesVideoDevices;
-@property(nonatomic) BOOL useSystemAudioOutputContext;
-@property(copy, nonatomic) NSString *outputContextID;
+@property(retain, nonatomic) AVOutputContext *outputContext;
 - (void)stopDiscoveringAudioRoutes;
 - (void)startDiscoveringAudioRoutes;
 @end

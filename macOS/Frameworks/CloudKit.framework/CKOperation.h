@@ -17,6 +17,7 @@
     BOOL _isOutstandingOperation;
     BOOL _usesBackgroundSession;
     BOOL _runningDiscretionaryOperation;
+    BOOL _failedToScheduleDiscretionaryOperation;
     BOOL _isFinished;
     BOOL _isFinishingOnCallbackQueue;
     BOOL _clouddConnectionInterrupted;
@@ -67,6 +68,7 @@
 @property(nonatomic) unsigned long long discretionaryWhenBackgroundedState; // @synthesize discretionaryWhenBackgroundedState=_discretionaryWhenBackgroundedState;
 @property(nonatomic) unsigned long long duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
 @property(nonatomic) struct _xpc_activity_eligibility_changed_handler_s *xpcActivityEligibilityChangedHandler; // @synthesize xpcActivityEligibilityChangedHandler=_xpcActivityEligibilityChangedHandler;
+@property(nonatomic) BOOL failedToScheduleDiscretionaryOperation; // @synthesize failedToScheduleDiscretionaryOperation=_failedToScheduleDiscretionaryOperation;
 @property(nonatomic) BOOL runningDiscretionaryOperation; // @synthesize runningDiscretionaryOperation=_runningDiscretionaryOperation;
 @property(readonly, nonatomic) CKEventMetric *operationMetric; // @synthesize operationMetric=_operationMetric;
 @property(retain, nonatomic) NSMutableDictionary *savedW3CNavigationTimingByRequestUUID; // @synthesize savedW3CNavigationTimingByRequestUUID=_savedW3CNavigationTimingByRequestUUID;

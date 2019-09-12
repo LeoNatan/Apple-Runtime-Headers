@@ -27,6 +27,7 @@
     _Bool _showFacesRect;
     _Bool _showPaddedFacesRect;
     _Bool _showBestSquareRect;
+    _Bool _showToggleCTMButton;
     _Bool _hideToolbarWhenShowingAccessoryView;
     _Bool _useGlobalDetailsVisibility;
     _Bool _useGlobalCommentsVisibility;
@@ -49,6 +50,7 @@
     _Bool _livePhotoScrubberShowForPlayback;
     _Bool _shouldMergeOverlappingLivePhotos;
     _Bool _showOffBadgeForDisabledLivePhotos;
+    _Bool _showReframedBadge;
     _Bool _allowGIFPlayback;
     _Bool _showGIFLoadingDelays;
     _Bool _useDebuggingColors;
@@ -143,6 +145,7 @@
 @property(nonatomic) double visibilityDurationForExitingQuickPagingRegime; // @synthesize visibilityDurationForExitingQuickPagingRegime=_visibilityDurationForExitingQuickPagingRegime;
 @property(nonatomic) double visibilityDurationForEnteringQuickPagingRegime; // @synthesize visibilityDurationForEnteringQuickPagingRegime=_visibilityDurationForEnteringQuickPagingRegime;
 @property(nonatomic) unsigned long long viewModelCacheCountLimit; // @synthesize viewModelCacheCountLimit=_viewModelCacheCountLimit;
+@property(nonatomic) _Bool showReframedBadge; // @synthesize showReframedBadge=_showReframedBadge;
 @property(nonatomic) _Bool showOffBadgeForDisabledLivePhotos; // @synthesize showOffBadgeForDisabledLivePhotos=_showOffBadgeForDisabledLivePhotos;
 @property(nonatomic) unsigned long long overlappingLivePhotosCountLimit; // @synthesize overlappingLivePhotosCountLimit=_overlappingLivePhotosCountLimit;
 @property(nonatomic) double livePhotoMinimumOverlappingDuration; // @synthesize livePhotoMinimumOverlappingDuration=_livePhotoMinimumOverlappingDuration;
@@ -194,6 +197,7 @@
 @property(nonatomic) double minimumVisibleContentHeight; // @synthesize minimumVisibleContentHeight=_minimumVisibleContentHeight;
 @property(nonatomic) double accessoryInitialTopPosition; // @synthesize accessoryInitialTopPosition=_accessoryInitialTopPosition;
 @property(nonatomic) long long accessoryViewType; // @synthesize accessoryViewType=_accessoryViewType;
+@property(nonatomic) _Bool showToggleCTMButton; // @synthesize showToggleCTMButton=_showToggleCTMButton;
 @property(nonatomic) _Bool showBestSquareRect; // @synthesize showBestSquareRect=_showBestSquareRect;
 @property(nonatomic) _Bool showPaddedFacesRect; // @synthesize showPaddedFacesRect=_showPaddedFacesRect;
 @property(nonatomic) _Bool showFacesRect; // @synthesize showFacesRect=_showFacesRect;

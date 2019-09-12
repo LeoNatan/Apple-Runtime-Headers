@@ -12,6 +12,7 @@
 {
 }
 
++ (id)writerInstance;
 - (void)writeSessionSamples:(id)arg1;
 - (void)write:(id)arg1;
 - (_Bool)isReady;

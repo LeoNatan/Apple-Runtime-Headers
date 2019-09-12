@@ -64,6 +64,7 @@
     BOOL _isMultiAssetSession;
     BOOL _byteEscape;
     BOOL _skipReconnect;
+    BOOL _skipVersionCheck;
     BOOL _closeEASession;
     NSString *_multiAssetAppProtocol;
     NSString *_updateBundleFilename;
@@ -141,7 +142,7 @@
 - (BOOL)findAccessory;
 - (void)setFirmwareImage:(id)arg1;
 - (void)dealloc;
-- (id)initWithDeviceClass:(id)arg1 assetType:(id)arg2 skipDFU:(BOOL)arg3 byteEscape:(BOOL)arg4 skipReconnect:(BOOL)arg5 options:(id)arg6 serialNum:(id)arg7;
+- (id)initWithDeviceClass:(id)arg1 assetType:(id)arg2 skipDFU:(BOOL)arg3 byteEscape:(BOOL)arg4 skipReconnect:(BOOL)arg5 skipVersionCheck:(BOOL)arg6 options:(id)arg7 serialNum:(id)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

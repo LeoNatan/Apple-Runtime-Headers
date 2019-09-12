@@ -759,6 +759,7 @@ struct _CAMetalDrawablePrivate {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
+    unsigned int :1;
 };
 
 struct _CAMetalLayerPrivate {

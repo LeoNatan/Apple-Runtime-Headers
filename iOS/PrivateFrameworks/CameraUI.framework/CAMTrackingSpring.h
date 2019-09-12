@@ -10,11 +10,14 @@
 {
     CAMSpring *__settleProgressSpring;
     double __convergenceStartValue;
-    CDStruct_8bc0f2ec __secondaryTarget;
+    struct {
+        double value;
+        double strength;
+    } __secondaryTarget;
 }
 
 @property(nonatomic, setter=_convergenceStartValue:) double _convergenceStartValue; // @synthesize _convergenceStartValue=__convergenceStartValue;
-@property(nonatomic, setter=_setSecondaryTarget:) CDStruct_8bc0f2ec _secondaryTarget; // @synthesize _secondaryTarget=__secondaryTarget;
+@property(nonatomic, setter=_setSecondaryTarget:) CDStruct_c3b9c2ee _secondaryTarget; // @synthesize _secondaryTarget=__secondaryTarget;
 @property(retain, nonatomic, setter=_setSettlingSpring:) CAMSpring *_settleProgressSpring; // @synthesize _settleProgressSpring=__settleProgressSpring;
 - (void).cxx_destruct;
 - (void)updateForTimestamp:(double)arg1;

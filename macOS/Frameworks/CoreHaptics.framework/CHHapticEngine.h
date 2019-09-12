@@ -52,9 +52,11 @@
 - (id)init;
 - (BOOL)doInit;
 - (void)dealloc;
+- (void)setMetricsTestModeEnabled:(BOOL)arg1;
+- (id)getMetricsForPlayer:(id)arg1;
 @property(nonatomic) BOOL highPriority;
 @property(nonatomic) BOOL muteAudioOnRingerOff;
-@property(nonatomic) BOOL stopPlaybackOnAudioSessionInterruption;
+@property(nonatomic) BOOL activateAudioSessionOnStart;
 @property(nonatomic) BOOL followAudioRoute;
 @property(nonatomic) BOOL hapticsIsMuted;
 @property(nonatomic) BOOL audioIsMuted;

@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)refreshControl:(id)arg1 didChangeToState:(long long)arg2 fromState:(long long)arg3;
 - (void)decrementInsetHeight:(double)arg1;
 - (void)incrementInsetHeight:(double)arg1;
+- (void)dealloc;
 - (BOOL)isHostingRefreshControlOwnedByScrollView:(id)arg1;
 - (void)stopAnimations;
 @property(readonly, nonatomic) double fullHeightOfRefreshControl;

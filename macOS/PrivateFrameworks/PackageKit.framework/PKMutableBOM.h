@@ -10,13 +10,14 @@
 {
 }
 
-- (BOOL)_addAppleDoubleAsNeededForForDirectory:(id)arg1 includeACLs:(BOOL)arg2;
-- (BOOL)_addAppleDoubleForFile:(id)arg1 forBOMPath:(id)arg2;
+- (BOOL)_addAppleDoubleAsNeededForForDirectory:(id)arg1 includeACLs:(BOOL)arg2 withError:(id *)arg3;
+- (BOOL)_addAppleDoubleForFile:(id)arg1 forBOMPath:(id)arg2 withError:(id *)arg3;
 - (BOOL)_needAppleDoubleForPath:(id)arg1 includeACLs:(BOOL)arg2;
 - (BOOL)commitData;
 - (BOOL)setAttributes:(id)arg1 ofItemAtPath:(id)arg2;
 - (BOOL)addFile:(id)arg1 forBomPath:(id)arg2 includeACLs:(BOOL)arg3;
 - (BOOL)addBomPath:(id)arg1 fileType:(id)arg2;
+- (id)initWithDirectory:(id)arg1 writingToPath:(id)arg2 includeACLs:(BOOL)arg3 maskPatterns:(id)arg4 withError:(id *)arg5;
 - (id)initWithDirectory:(id)arg1 writingToPath:(id)arg2 includeACLs:(BOOL)arg3 maskPatterns:(id)arg4;
 - (struct __CFArray *)_newBOMPatternList:(id)arg1;
 - (id)initForWritingToPath:(id)arg1;

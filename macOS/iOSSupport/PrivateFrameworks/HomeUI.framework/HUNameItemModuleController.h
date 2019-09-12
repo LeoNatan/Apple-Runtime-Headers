@@ -15,18 +15,22 @@
 {
     BOOL _nameFieldHasClearButton;
     BOOL _showIcon;
+    BOOL _shouldUseAccessoryName;
     HUNameItemModule *_nameModule;
     HFNamingComponents *_namingComponent;
 }
 
 @property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
 @property(retain, nonatomic) HUNameItemModule *nameModule; // @synthesize nameModule=_nameModule;
+@property(nonatomic) BOOL shouldUseAccessoryName; // @synthesize shouldUseAccessoryName=_shouldUseAccessoryName;
 @property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(nonatomic) BOOL nameFieldHasClearButton; // @synthesize nameFieldHasClearButton=_nameFieldHasClearButton;
 - (void).cxx_destruct;
 - (void)iconPicker:(id)arg1 didPickIconDescriptor:(id)arg2;
 - (void)iconPickerDidCancel:(id)arg1;
 - (void)nameAndIconEditorCellDidTapIcon:(id)arg1;
+- (id)_builderName;
+- (void)_setBuilderName:(id)arg1;
 - (void)_cleanupTextFieldSetBuilderName;
 - (id)prepareForCommit;
 - (void)cancelNameEdit;

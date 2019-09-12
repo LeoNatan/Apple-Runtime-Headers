@@ -23,6 +23,7 @@
     NSString *_toolTip;
     NSString *_keyEquivalent;
     unsigned long long _keyEquivalentModifierMask;
+    long long _buttonState;
     long long _style;
     double _width;
     NSView *_customView;
@@ -50,6 +51,7 @@
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;
 @property(nonatomic) BOOL ignoresMultiClick; // @synthesize ignoresMultiClick=_ignoresMultiClick;
+@property(nonatomic) long long buttonState; // @synthesize buttonState=_buttonState;
 @property(nonatomic) unsigned long long keyEquivalentModifierMask; // @synthesize keyEquivalentModifierMask=_keyEquivalentModifierMask;
 @property(retain, nonatomic) NSString *keyEquivalent; // @synthesize keyEquivalent=_keyEquivalent;
 @property(retain, nonatomic) NSString *toolTip; // @synthesize toolTip=_toolTip;

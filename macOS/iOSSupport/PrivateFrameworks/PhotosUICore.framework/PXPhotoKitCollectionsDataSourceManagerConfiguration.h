@@ -13,6 +13,8 @@
     BOOL _separateSectionsForSmartAndUserCollections;
     BOOL _includePeopleAlbum;
     BOOL _skipKeyAssetFetches;
+    BOOL _skipKeyAssetFetchesForSmartAlbums;
+    BOOL _skipAssetFetches;
     BOOL _shouldIgnoreLibraryChanges;
     PHFetchResult *_collectionsFetchResult;
     PHCollectionList *_collectionList;
@@ -23,6 +25,8 @@
 @property BOOL shouldIgnoreLibraryChanges; // @synthesize shouldIgnoreLibraryChanges=_shouldIgnoreLibraryChanges;
 @property(nonatomic) unsigned long long collectionTypesToInclude; // @synthesize collectionTypesToInclude=_collectionTypesToInclude;
 @property(nonatomic) unsigned long long assetTypesToInclude; // @synthesize assetTypesToInclude=_assetTypesToInclude;
+@property(nonatomic) BOOL skipAssetFetches; // @synthesize skipAssetFetches=_skipAssetFetches;
+@property(nonatomic) BOOL skipKeyAssetFetchesForSmartAlbums; // @synthesize skipKeyAssetFetchesForSmartAlbums=_skipKeyAssetFetchesForSmartAlbums;
 @property(nonatomic) BOOL skipKeyAssetFetches; // @synthesize skipKeyAssetFetches=_skipKeyAssetFetches;
 @property(nonatomic) BOOL includePeopleAlbum; // @synthesize includePeopleAlbum=_includePeopleAlbum;
 @property(nonatomic) BOOL separateSectionsForSmartAndUserCollections; // @synthesize separateSectionsForSmartAndUserCollections=_separateSectionsForSmartAndUserCollections;

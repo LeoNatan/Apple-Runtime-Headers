@@ -36,6 +36,7 @@
     NSDictionary *_startTimeModifications;
     id <MPMutableIdentifierListSection> _section;
     MPCModelGenericAVItemUserIdentityPropertySet *_identityPropertySet;
+    BOOL _isForRepresentativeMetadataOnly;
     MPModelGenericObject *_fallbackSectionRepresentation;
 }
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (int)copyDefaultContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
 - (int)copySystemRemotePoolContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
 - (int)createVideoContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
 - (int)createControlChannelOnlyContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;

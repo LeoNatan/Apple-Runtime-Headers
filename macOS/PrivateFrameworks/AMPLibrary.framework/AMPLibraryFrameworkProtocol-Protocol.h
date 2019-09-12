@@ -25,6 +25,7 @@
 - (void)registerClientName:(NSString *)arg1 withReply:(void (^)(NSError *, unsigned int))arg2;
 
 @optional
+- (void)parentalPreferencesWithReply:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)appHasMigrated:(NSString *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)openLibraryFileAtPath:(NSString *)arg1 withDomains:(unsigned long long)arg2 withReply:(void (^)(NSError *, NSDictionary *))arg3;
 - (void)openDevice:(NSString *)arg1 forClientID:(unsigned int)arg2 withReply:(void (^)(NSError *, NSDictionary *))arg3;

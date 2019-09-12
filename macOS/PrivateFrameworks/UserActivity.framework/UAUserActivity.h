@@ -215,6 +215,7 @@
 @property(readonly) BOOL forwardToCoreSpotlightIndexer;
 @property(copy) CSSearchableItemAttributeSet *contentAttributeSet; // @dynamic contentAttributeSet;
 @property(copy) NSString *persistentIdentifier;
+@property(getter=isEligibleForPrediction) BOOL eligibleForPrediction; // @dynamic eligibleForPrediction;
 - (void)setDirty:(BOOL)arg1 identifier:(id)arg2;
 - (BOOL)isPayloadDirty:(id)arg1;
 - (CDUnknownBlockType)payloadUpdateBlockForIdentifier:(id)arg1;
@@ -226,7 +227,6 @@
 - (id)payloadIdentifiers;
 
 // Remaining properties
-@property(getter=isEligibleForPrediction) BOOL eligibleForPrediction;
 @property(readonly) Class superclass;
 
 @end

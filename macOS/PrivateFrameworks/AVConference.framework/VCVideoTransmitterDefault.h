@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     struct tagHANDLE *_videoTransmitterHandle;
 }
 
++ (double)minKeyFrameGenerationIntervalForMode:(int)arg1;
 @property(readonly) struct tagHANDLE *videoTransmitterHandle; // @synthesize videoTransmitterHandle=_videoTransmitterHandle;
 - (unsigned int)parameterSetForPayload:(int)arg1;
 - (void)handleActiveConnectionChange:(id)arg1;

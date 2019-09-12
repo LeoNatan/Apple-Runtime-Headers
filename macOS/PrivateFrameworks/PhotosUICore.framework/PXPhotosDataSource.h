@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXPhotoLibraryUIChangeObserver-Protocol.h>
 
-@class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSPredicate, NSSet, NSString, PHAsset, PHFetchResult, PHPhotoLibrary, PXLIFOQueue, PXPhotosDataSourceSectionCache;
+@class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSPredicate, NSSet, NSString, PHAsset, PHFetchResult, PHPhotoLibrary, PXBackgroundFetchToken, PXLIFOQueue, PXPhotosDataSourceSectionCache;
 @protocol OS_dispatch_queue;
 
 @interface PXPhotosDataSource : NSObject <PXPhotoLibraryUIChangeObserver>
@@ -24,9 +24,11 @@
     NSMutableDictionary *_resultRecordByAssetCollection;
     NSMutableSet *__inaccurateAssetCollections;
     BOOL _inaccurateAssetCollectionsNeedsUpdate;
+    NSMutableDictionary *_preparedChangeDetailsByAssetCollection;
     NSMutableDictionary *_infoForAssetCollection;
     BOOL _backgroundFetchOriginSectionChanged;
     BOOL _needToStartBackgroundFetch;
+    PXBackgroundFetchToken *_backgroundFetchToken;
     BOOL _interruptBackgroundFetch;
     BOOL _pauseBackgroundFetchResultsDelivery;
     NSMutableSet *_pauseLibraryChangeDeliveryTokens;
@@ -61,12 +63,14 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
++ (void)waitForAllBackgroundFetchingToFinish;
++ (id)backgroundFetchingGroup;
 + (id)_sharedPrefetchQueue;
 + (id)_curationSharedBackgroundQueue;
 @property(nonatomic) BOOL allowNextChangeDeliveryOnAllRunLoopModes; // @synthesize allowNextChangeDeliveryOnAllRunLoopModes=_allowNextChangeDeliveryOnAllRunLoopModes;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic, setter=_setPreviousCollectionsCount:) unsigned long long _previousCollectionsCount; // @synthesize _previousCollectionsCount=__previousCollectionsCount;
-@property(readonly, nonatomic) BOOL isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
+@property(nonatomic) BOOL isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
 @property(nonatomic) BOOL wantsCurationByDefault; // @synthesize wantsCurationByDefault=_wantsCurationByDefault;
 @property(nonatomic) BOOL reverseSortOrder; // @synthesize reverseSortOrder=_reverseSortOrder;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
@@ -85,6 +89,8 @@
 - (void)_didFinishBackgroundFetching;
 - (void)_addResultTuple:(id)arg1 forAssetCollection:(id)arg2 toMutableResultRecord:(id)arg3;
 - (void)_processAndPublishPendingCollectionFetchResults;
+- (void)_performProcessAndPublishSelectorInDefaultRunLoopMode;
+- (void)_prepareDiffsForPendingResultsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_processAndPublishPendingCollectionFetchResultsWhenAppropriate;
 - (void)_fetchRemainingCollectionsBackgroundLoop;
 - (void)_cancelBackgroundFetchIfNeeded;
@@ -180,7 +186,8 @@
 - (void)_publishChange:(id)arg1;
 - (void)_publishWillChange;
 - (void)_publishReloadChange;
-- (id)_fetchTupleForAssetCollection:(id)arg1 calledOnMainQueue:(BOOL)arg2;
+- (id)_fetchTupleForAssetCollection:(id)arg1 calledOnMainQueue:(BOOL)arg2 isLimitedInitialFetch:(BOOL)arg3;
+- (void)_getFetchLimit:(unsigned long long *)arg1 fetchWithReverseSortOrder:(char *)arg2 forAssetCollection:(id)arg3 isLimitedInitialFetch:(BOOL)arg4;
 - (void)_performManualReloadWithChangeBlock:(CDUnknownBlockType)arg1;
 - (void)_performManualChangesForAssetCollections:(id)arg1 collectionsToDiff:(id)arg2 changeBlock:(CDUnknownBlockType)arg3;
 - (void)_performManualChangesForAssetCollections:(id)arg1 changeBlock:(CDUnknownBlockType)arg2;
@@ -193,7 +200,7 @@
 - (id)_allowedUUIDsForAssetCollection:(id)arg1;
 - (id)_filterPredicateForAssetCollection:(id)arg1;
 - (BOOL)_reverseSortOrderForAssetCollection:(id)arg1;
-- (BOOL)_isAssetCollectionAccurate:(id)arg1;
+- (unsigned long long)_assetCollectionFetchStatus:(id)arg1;
 - (BOOL)_allSectionsConsideredAccurate;
 @property(readonly, nonatomic) BOOL areAllSectionsConsideredAccurate;
 - (id)_fetcher;

@@ -11,14 +11,20 @@
 @interface NTKTimelineComplicationController : NTKComplicationController
 {
     _Bool _ignoreNewTemplates;
+    CLKComplicationTemplate *_alwaysOnTemplate;
+    CLKComplicationTemplate *_privacyTemplate;
     CLKComplicationTemplate *_lockedTemplate;
 }
 
 + (_Bool)_isLegacy;
 @property(readonly, nonatomic) CLKComplicationTemplate *lockedTemplate; // @synthesize lockedTemplate=_lockedTemplate;
+@property(readonly, nonatomic) CLKComplicationTemplate *privacyTemplate; // @synthesize privacyTemplate=_privacyTemplate;
 @property(nonatomic) _Bool ignoreNewTemplates; // @synthesize ignoreNewTemplates=_ignoreNewTemplates;
+@property(readonly, nonatomic) CLKComplicationTemplate *alwaysOnTemplate; // @synthesize alwaysOnTemplate=_alwaysOnTemplate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *activeDisplayTemplate;
+- (id)tritium_tritiumOverrideTemplate;
+- (id)tritium_complicationEntryTemplateAtDate:(id)arg1;
 - (void)_aggdAppLaunchForTimeTravelDate:(id)arg1 timelineEntryDate:(id)arg2;
 - (unsigned int)_animationForTimelineEntryTransitionFrom:(id)arg1 to:(id)arg2 withAnimationBehavior:(unsigned int)arg3;
 

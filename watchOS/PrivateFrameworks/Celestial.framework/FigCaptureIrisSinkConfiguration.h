@@ -22,12 +22,16 @@
     NSArray *_enabledSemanticSegmentationMatteURNs;
     _Bool _filterRenderingEnabled;
     _Bool _bravoConstituentPhotoDeliveryEnabled;
+    _Bool _momentCaptureMovieRecordingEnabled;
     int _maxQualityPrioritization;
+    _Bool _digitalFlashCaptureEnabled;
     _Bool _irisFrameHarvestingEnabled;
 }
 
 @property(nonatomic) _Bool irisFrameHarvestingEnabled; // @synthesize irisFrameHarvestingEnabled=_irisFrameHarvestingEnabled;
+@property(nonatomic) _Bool digitalFlashCaptureEnabled; // @synthesize digitalFlashCaptureEnabled=_digitalFlashCaptureEnabled;
 @property(nonatomic) int maxQualityPrioritization; // @synthesize maxQualityPrioritization=_maxQualityPrioritization;
+@property(nonatomic) _Bool momentCaptureMovieRecordingEnabled; // @synthesize momentCaptureMovieRecordingEnabled=_momentCaptureMovieRecordingEnabled;
 @property(nonatomic) _Bool bravoConstituentPhotoDeliveryEnabled; // @synthesize bravoConstituentPhotoDeliveryEnabled=_bravoConstituentPhotoDeliveryEnabled;
 @property(nonatomic) _Bool filterRenderingEnabled; // @synthesize filterRenderingEnabled=_filterRenderingEnabled;
 @property(retain, nonatomic) NSArray *enabledSemanticSegmentationMatteURNs; // @synthesize enabledSemanticSegmentationMatteURNs=_enabledSemanticSegmentationMatteURNs;

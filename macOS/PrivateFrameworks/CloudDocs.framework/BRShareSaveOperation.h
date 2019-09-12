@@ -15,7 +15,6 @@
 }
 
 + (BOOL)shouldRetryShareSaveOnError:(id)arg1;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType shareSaveCompletionBlock; // @synthesize shareSaveCompletionBlock=_shareSaveCompletionBlock;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 - (void).cxx_destruct;

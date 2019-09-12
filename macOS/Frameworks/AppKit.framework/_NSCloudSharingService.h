@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)_participantListReceivedAddPeople;
 - (void)_showAddPeopleServiceForItem:(id)arg1 relativeToWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_receivedError:(id)arg1;
+- (void)_participantListReceivedShowSharedFolder;
 - (void)_participantListReceivedStopSharing;
 - (void)_participantListReceivedCancel;
 - (void)_dismissParticipantList;

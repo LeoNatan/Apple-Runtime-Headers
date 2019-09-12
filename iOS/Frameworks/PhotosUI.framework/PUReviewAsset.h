@@ -98,6 +98,7 @@
 - (_Bool)_linkFileAtURL:(id)arg1 toURL:(id)arg2;
 - (id)_uniqueDestinationURLForFileURL:(id)arg1 inDirectory:(id)arg2;
 - (id)_ensureLinkDestinationDirectoryFromBaseDirectory:(id)arg1;
+@property(readonly, nonatomic) unsigned long long reframeVariation;
 - (_Bool)isOriginalRaw;
 @property(readonly, copy, nonatomic) NSString *pathForTrimmedVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalVideoFile;

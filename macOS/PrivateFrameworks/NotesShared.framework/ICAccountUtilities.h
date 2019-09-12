@@ -27,6 +27,7 @@
 - (void)internalInvalidatePrimaryICloudACAccount;
 @property(readonly, nonatomic) BOOL didChooseToMigratePrimaryICloudAccount;
 @property(readonly, nonatomic) BOOL primaryICloudAccountEnabled;
+- (id)temporaryDirectoryURLForAccountIdentifier:(id)arg1;
 - (id)applicationDocumentsURLForAccountIdentifier:(id)arg1;
 - (id)iCloudACAccountWithIdentifier:(id)arg1;
 - (id)allICloudACAccounts;

@@ -29,6 +29,7 @@
 
 + (id)appSandboxRequestForApplicationAtURL:(id)arg1 error:(id *)arg2;
 + (id)appSandboxRequestForAuditToken:(CDStruct_6ad76789)arg1 error:(id *)arg2;
++ (id)appsandboxProfilePaths;
 + (id)implicitProfilePaths;
 + (id)profileSnippetFileName;
 + (BOOL)_setFatalError:(id *)arg1 withMessage:(id)arg2;

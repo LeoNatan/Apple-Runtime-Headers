@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)actionsModel:(id)arg1 didDelete:(id)arg2 atIndexPath:(id)arg3;
-- (void)actionsModel:(id)arg1 didDuplicate:(id)arg2 atIndexPath:(id)arg3;
+- (void)actionsModel:(id)arg1 didDuplicate:(id)arg2 atIndexPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)actionsModel:(id)arg1 didEdit:(id)arg2 atIndexPath:(id)arg3;
 - (void)actionsModel:(id)arg1 didAssignToContact:(id)arg2 atIndexPath:(id)arg3;
 - (void)performDuplicateTransitionToItem:(id)arg1 fromView:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

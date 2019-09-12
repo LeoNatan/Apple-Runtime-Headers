@@ -18,6 +18,7 @@
     UIView *_ccMaterialView;
 }
 
++ (id)_sharedBlurEffect;
 @property(retain, nonatomic) UIView *ccMaterialView; // @synthesize ccMaterialView=_ccMaterialView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
@@ -32,6 +33,7 @@
 - (void)_updateBackgroundColor;
 - (void)_updateCornerRadius;
 - (void)_updateDisplay;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_createCCMaterialViewIfNecessary;
 - (void)_createEffectViewIfNecessary;
 

@@ -153,7 +153,7 @@
 - (id)_accessibilityHandwritingAttributes;
 - (_Bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityTextHandlingAncestorMatchingBlock:(CDUnknownBlockType)arg1;
-- (id)_accessibilityHandwritingAncestor;
+- (id)_accessibilityHandwritingElement;
 - (_Bool)_accessibilityCanAppearInContextMenuPreview;
 - (id)_accessibilityElementForTextInsertionAndDeletion;
 - (_Bool)_accessibilitySupportsTextInsertionAndDeletion;
@@ -164,6 +164,7 @@
 - (void)_accessibilityPostValueChangedNotificationWithChangeType:(struct __CFString *)arg1 insertedText:(id)arg2;
 - (id)_accessibilityAttributedValueForRange:(struct _NSRange *)arg1;
 - (void)_accessibilityAddMispellingsToAttributedString:(id)arg1;
+- (struct UIEdgeInsets)_accessibilityNavigationControllerInset;
 - (void)_accessibilitySetNavigationControllerInset:(struct UIEdgeInsets)arg1;
 - (void)_accessibilityConvertStyleAttributesToAccessibility:(id)arg1;
 - (void)_accessibilitySetValue:(id)arg1;
@@ -312,6 +313,7 @@
 - (_Bool)_accessibilityOnlyComparesByXAxis;
 - (struct CGRect)_accessibilityContentFrame;
 - (void)_accessibilitySetVisibleContentInset:(struct UIEdgeInsets)arg1;
+- (_Bool)_accessibilityShouldUseFallbackForVisibleContentInset;
 - (struct UIEdgeInsets)_accessibilityVisibleContentInset;
 - (struct CGAffineTransform)_accessibilityJailTransform;
 - (id)_accessibilityCirclePathBasedOnBoundsWidth;
@@ -808,6 +810,7 @@
 - (_Bool)accessibilityScrollDownPage;
 - (_Bool)accessibilityScrollUpPage;
 - (struct CGRect)accessibilityFrameForScrolling;
+- (_Bool)_accessibilityIgnoresStatusBarFrame;
 - (struct _NSRange)_accessibilityRawRangeForUITextRange:(id)arg1;
 - (id)_accessibilityTextRangeFromNSRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilityTextInputElementRangeAsNSRange;

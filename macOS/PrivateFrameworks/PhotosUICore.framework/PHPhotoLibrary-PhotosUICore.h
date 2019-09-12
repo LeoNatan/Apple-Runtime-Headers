@@ -16,8 +16,10 @@
 - (id)px_memoryWithLocalIdentifier:(id)arg1;
 - (id)px_assetCollectionWithLocalIdentifier:(id)arg1;
 - (id)px_assetCollectionForSmartAlbumWithSubtype:(long long)arg1;
+- (id)px_objectWithLocalIdentifier:(id)arg1;
 - (BOOL)px_fetchHasNoVisibleAssets;
 @property(readonly) PXPhotoLibraryLocalDefaults *px_localDefaults;
+@property(readonly, nonatomic, getter=px_areChangesPaused) BOOL px_changesPaused;
 - (void)px_endPausingChanges:(id)arg1;
 - (id)px_beginPausingChangesWithTimeout:(double)arg1;
 - (void)px_unregisterChangeObserver:(id)arg1;

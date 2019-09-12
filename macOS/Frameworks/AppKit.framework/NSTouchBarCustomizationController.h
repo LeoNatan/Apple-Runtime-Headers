@@ -54,7 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)toggleCustomizationPalette:(id)arg1 forceControlStrip:(BOOL)arg2;
 - (void)restorePresentationOptions;
 - (void)savePresentationOptions;
-- (BOOL)appTouchBarIsCustomizable;
+- (BOOL)activeTouchBarIsCustomizable;
 - (BOOL)_touchBarsAreCustomizable:(id)arg1;
 - (void)toggleCustomizationPalette:(id)arg1;
 - (void)toggleControlStripCustomizationPalette:(id)arg1;

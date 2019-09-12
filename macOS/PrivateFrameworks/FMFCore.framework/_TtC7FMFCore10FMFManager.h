@@ -20,7 +20,6 @@
     // Error parsing type: , name: myLocationController
     // Error parsing type: , name: selectedFriend
     // Error parsing type: , name: isInitialized
-    // Error parsing type: , name: isBackgrounded
 }
 
 @end

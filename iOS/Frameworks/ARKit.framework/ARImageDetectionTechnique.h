@@ -34,6 +34,7 @@
 @property(nonatomic) _Bool enableAutomaticImageScaleEstimation; // @synthesize enableAutomaticImageScaleEstimation=_enableAutomaticImageScaleEstimation;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)updateARPresentationMode:(long long)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)_loadReferenceImages;
 @property(readonly, nonatomic) _Bool finishedLoadingImages;

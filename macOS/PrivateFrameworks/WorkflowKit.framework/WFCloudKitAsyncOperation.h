@@ -12,8 +12,8 @@
     BOOL _isFinished;
 }
 
-@property(nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
-@property(nonatomic) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
+@property BOOL isFinished; // @synthesize isFinished=_isFinished;
+@property BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
 - (void)finishExecuting;
 - (void)startExecuting;
 - (void)start;

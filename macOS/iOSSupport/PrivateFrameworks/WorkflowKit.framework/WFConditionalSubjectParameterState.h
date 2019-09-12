@@ -26,6 +26,7 @@
     NSString *_homeIdentifier;
 }
 
++ (Class)processingValueClass;
 + (id)subjectType;
 + (id)subjectClasses;
 @property(copy, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;

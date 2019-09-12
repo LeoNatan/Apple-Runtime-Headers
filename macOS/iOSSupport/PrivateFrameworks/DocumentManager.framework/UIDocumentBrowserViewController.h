@@ -13,12 +13,13 @@
 #import <DocumentManager/DOCViewServiceErrorViewControllerDelegate-Protocol.h>
 #import <DocumentManager/NSCoding-Protocol.h>
 #import <DocumentManager/UINSDocumentBrowserViewControllerDelegate-Protocol.h>
+#import <DocumentManager/UIPresentationControllerDelegatePrivate-Protocol.h>
 #import <DocumentManager/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class DOCAppearance, DOCConfiguration, DOCDocBrowserVC_UIActivityViewController, NSArray, NSOperationQueue, NSString, UIColor, UIView, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController;
+@class DOCAppearance, DOCConfiguration, DOCDocBrowserVC_UIActivityViewController, NSArray, NSOperationQueue, NSString, UIColor, UIPresentationController, UIView, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController;
 @protocol DOCServiceDocumentBrowserViewControllerInterface, NSObject, UIDocumentBrowserViewControllerDelegate, UINSDocumentBrowserViewController;
 
-@interface UIDocumentBrowserViewController : UIViewController <UINSDocumentBrowserViewControllerDelegate, DOCHostDocumentBrowserViewControllerInterface, DOCRemoteViewControllerDelegate, DOCViewServiceErrorViewControllerDelegate, DOCKeyCommandResponder, _UIRemoteViewControllerContaining, DOCAppearanceCustomization, NSCoding>
+@interface UIDocumentBrowserViewController : UIViewController <UINSDocumentBrowserViewControllerDelegate, DOCHostDocumentBrowserViewControllerInterface, DOCViewServiceErrorViewControllerDelegate, UIPresentationControllerDelegatePrivate, _UIRemoteViewControllerContaining, DOCRemoteViewControllerDelegate, DOCKeyCommandResponder, DOCAppearanceCustomization, NSCoding>
 {
     BOOL _isDisplayingRemoteViewController;
     UIView *_trackingViewsContainer;
@@ -38,6 +39,7 @@
     NSArray *_remoteAdditionalTrailingNavigationBarButtonItems;
     _UIResilientRemoteViewContainerViewController *_remoteViewController;
     DOCDocBrowserVC_UIActivityViewController *_activityViewController;
+    UIPresentationController *_adaptivePresentationController;
     id <DOCServiceDocumentBrowserViewControllerInterface> _serviceProxy;
     NSOperationQueue *_serviceQueue;
     id <UINSDocumentBrowserViewController> _bridgedDocumentBrowserViewController;
@@ -70,6 +72,7 @@
 @property(retain, nonatomic) id <UINSDocumentBrowserViewController> bridgedDocumentBrowserViewController; // @synthesize bridgedDocumentBrowserViewController=_bridgedDocumentBrowserViewController;
 @property(retain, nonatomic) NSOperationQueue *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
 @property(retain, nonatomic) id <DOCServiceDocumentBrowserViewControllerInterface> serviceProxy; // @synthesize serviceProxy=_serviceProxy;
+@property(nonatomic) __weak UIPresentationController *adaptivePresentationController; // @synthesize adaptivePresentationController=_adaptivePresentationController;
 @property(nonatomic) __weak DOCDocBrowserVC_UIActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
 @property(retain, nonatomic) _UIResilientRemoteViewContainerViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) BOOL shouldDelayRemoteViewController; // @synthesize shouldDelayRemoteViewController=_shouldDelayRemoteViewController;
@@ -85,6 +88,7 @@
 @property(nonatomic) BOOL allowsDocumentCreation; // @synthesize allowsDocumentCreation=_allowsDocumentCreation;
 @property(nonatomic) __weak id <UIDocumentBrowserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_presentationController:(id)arg1 prepareAdaptivePresentationController:(id)arg2;
 - (void)forwardHostSceneIdentifier:(id)arg1;
 - (id)recentDocumentsTypesFromInfoPlist;
 - (BOOL)supportsRemovableFileProvidersForConfiguration:(id)arg1;

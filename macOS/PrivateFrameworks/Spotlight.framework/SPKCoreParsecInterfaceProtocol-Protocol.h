@@ -8,6 +8,7 @@
 
 @protocol SPKCoreParsecInterfaceProtocol
 + (id)getSharedInstance;
+- (double)searchRenderTimeout;
 - (void)unitConversion:(NSString *)arg1 withReply:(void (^)(PRSConversionResult *))arg2;
 - (void)deactivate;
 - (void)activate:(double)arg1 isSiri:(BOOL)arg2;

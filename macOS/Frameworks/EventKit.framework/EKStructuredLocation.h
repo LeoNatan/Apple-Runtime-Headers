@@ -29,6 +29,7 @@
 + (id)locationWithTitle:(id)arg1;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid;
 - (void).cxx_destruct;
+- (BOOL)_reset;
 - (void)updateFromMapItem:(id)arg1;
 - (BOOL)isEqualToLocation:(id)arg1;
 @property(readonly, copy) NSString *description;

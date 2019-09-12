@@ -72,6 +72,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) SOKerberosRealmSettings *currentSettings;
 - (void)presentAuthorizationViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)completeRequestWithDoNotHandle;
 - (void)completeRequestWithError:(id)arg1;
 - (void)completeRequestWithHTTPResponse:(id)arg1 httpBody:(id)arg2;
 - (void)completeRequestWithHTTPResponseHeaders:(id)arg1;

@@ -21,6 +21,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (unsigned long long)preferredContextMenuLayout;
 - (id)contextMenuConfiguration;
+- (id)actionSheetActionsForAlertController:(id)arg1;
+- (id)actionSheetTitle;
+- (BOOL)shouldShowActionSheet;
 - (id)_defaultDDAction;
 - (id)defaultAction;
 - (id)initWithRange:(struct _NSRange)arg1 textContentView:(id)arg2;

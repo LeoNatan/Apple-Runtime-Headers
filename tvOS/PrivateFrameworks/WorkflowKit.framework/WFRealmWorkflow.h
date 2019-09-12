@@ -8,7 +8,7 @@
 
 #import <WorkflowKit/WFRecordStorage-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSSet, NSString, RLMArray, RLMLinkingObjects, WFRealmWorkflowIcon, WFRealmWorkflowQuarantine, WFWorkflowIcon, WFWorkflowQuarantine, WFWorkflowTrustedResources;
+@class NSArray, NSData, NSDate, NSNumber, NSSet, NSString, RLMArray, RLMLinkingObjects, WFRealmWorkflowIcon, WFRealmWorkflowQuarantine, WFWorkflowIcon, WFWorkflowQuarantine, WFWorkflowTrustedResources;
 @protocol WFWorkflowInputClass, WFWorkflowType;
 
 @interface WFRealmWorkflow : RLMObject <WFRecordStorage>
@@ -78,7 +78,9 @@
 @property(retain) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(copy) NSString *workflowID; // @synthesize workflowID=_workflowID;
 - (void).cxx_destruct;
-@property(copy, nonatomic) NSSet *accessResourcePermissionStates;
+@property(readonly, nonatomic, getter=isConflictOfOtherWorkflow) _Bool conflictOfOtherWorkflow;
+@property(readonly, nonatomic) NSNumber *location;
+@property(copy, nonatomic) NSSet *accessResourcePerWorkflowStates;
 @property(copy, nonatomic) NSArray *importQuestions;
 @property(copy, nonatomic) NSArray *actions;
 @property(copy, nonatomic) NSArray *inputClasses;

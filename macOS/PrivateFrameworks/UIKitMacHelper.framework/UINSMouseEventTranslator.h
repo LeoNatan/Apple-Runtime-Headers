@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     unsigned int _mouseContextId;
     unsigned int _gestureContextId;
     unsigned int _hoverContextId;
+    unsigned int _dragContextId;
     BOOL _mouseIsInside;
     BOOL _needMouseExitOnUp;
     unsigned long long _lastButtonMask;
+    unsigned char _lastClickCount;
     unsigned long long _lastModifiers;
-    struct CGPoint _lastLoc;
+    struct CGPoint _lastSceneLoc;
     BOOL _dragAndDropDragging;
     UINSSceneView *_sceneView;
 }
@@ -41,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_nextScrollGestureDelta:(struct CGPoint *)arg1 wait:(BOOL)arg2;
 - (void)_handleMomentumScrollEvent:(id)arg1;
 - (void)_handleScrollWheelEvent:(id)arg1;
-- (void)_handleMouseEventAtSceneLocation:(struct CGPoint)arg1 buttonMask:(long long)arg2 modifierFlags:(unsigned long long)arg3 childEvent:(struct __IOHIDEvent *)arg4 contextId:(unsigned int)arg5;
+- (void)_handleMouseEventAtSceneLocation:(struct CGPoint)arg1 buttonMask:(long long)arg2 clickCount:(unsigned char)arg3 modifierFlags:(unsigned long long)arg4 childEvent:(struct __IOHIDEvent *)arg5 contextId:(unsigned int)arg6;
 - (void)_handleMouseEvent:(id)arg1 contextId:(unsigned int)arg2;
 - (void)draggingEnded:(id)arg1;
 - (void)prepareForDragOperation:(id)arg1;
@@ -63,10 +65,12 @@ __attribute__((visibility("hidden")))
 - (void)mouseMoved:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
+- (void)flagsChanged:(id)arg1;
 - (void)cancelOutstandingMouseButtons;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (unsigned int)_contextIdAtWindowLocation:(struct CGPoint)arg1;
 - (struct CGPoint)_convertScrollDeltaToSceneDelta:(id)arg1;
+- (struct CGPoint)_convertSceneLocationToWindowCoordinates:(struct CGPoint)arg1;
 - (struct CGPoint)_convertWindowLocationToSceneCoordinates:(struct CGPoint)arg1;
 - (void)dealloc;
 - (id)init;

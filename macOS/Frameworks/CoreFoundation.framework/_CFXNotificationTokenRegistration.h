@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) void *object;
 @property(readonly) struct __CFString *name;
 - (void)_removeFromParent;
-- (void)removeFromParent;
+- (void)removeFromParent:(unsigned long long)arg1;
 - (void)addToObserver:(id)arg1;
 - (void *)key;
 - (void)dealloc;

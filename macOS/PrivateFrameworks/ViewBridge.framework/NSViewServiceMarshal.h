@@ -241,7 +241,6 @@ __attribute__((visibility("hidden")))
 - (void)hostWindowResignedKey:(BOOL)arg1;
 - (void)afterResignKey;
 - (void)remoteViewDidEndLiveResize;
-- (void)automaticFocusRingChangedInHostApp;
 - (void)remoteViewWillStartLiveResizeWithReply:(CDUnknownBlockType)arg1;
 - (void)remoteViewGeometryDidChange:(struct CGRect)arg1 transaction:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (struct CGRect)_remoteViewGeometryDidChange:(id)arg1 serviceWindowSize:(struct CGSize *)arg2;

@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (void)setType:(long long)arg1;
 - (long long)type;
+@property(nonatomic) _Bool sparsePageAccessCountersEnabled;
+@property(nonatomic) unsigned long long sparsePageSize;
 - (void)setStorageMode:(unsigned long long)arg1;
 - (unsigned long long)storageMode;
 - (void)setCpuCacheMode:(unsigned long long)arg1;

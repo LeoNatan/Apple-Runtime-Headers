@@ -15,6 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface VCConnectionManager : NSObject <VCConnectionHealthMonitorDelegate, VCWifiAssistManagerDelegate>
 {
+    _Bool _isStarted;
     unsigned int _callID;
     int _connectionSelectionVersion;
     int _relayServerProvider;
@@ -157,6 +158,7 @@ __attribute__((visibility("hidden")))
 - (void)disableRemotePreferredInterfaceInference:(_Bool)arg1;
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
 - (void)checkpointPrimaryConnection:(id)arg1;
+- (id)suggestedLinkTypeCombo;
 - (id)activeConnectionRegistry;
 - (void)updateSessionStats:(unsigned short)arg1;
 - (unsigned int)getByteCountWithIndex:(unsigned char)arg1 isOutgoing:(_Bool)arg2;

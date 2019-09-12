@@ -8,11 +8,14 @@
 
 #import <MediaLibrary/MLMediaLibraryProtocol-Protocol.h>
 
-@class MLMediaLibrary, NSCondition, NSDate, NSDictionary, NSOperationQueue, NSString, NSXPCConnection;
+@class MLMediaLibrary, NSCondition, NSDate, NSDictionary, NSOperationQueue, NSSet, NSString, NSXPCConnection;
 @protocol MLSMediaLibraryProtocol;
 
 @interface MLMediaLibraryImpl : NSObject <MLMediaLibraryProtocol>
 {
+    NSSet *_mediaGroupAttributesExpectedClasses;
+    NSSet *_mediaObjectAttributesExpectedClasses;
+    NSSet *_mediaSourceAttributesExpectedClasses;
     BOOL _outboundRequestInFlight;
     MLMediaLibrary *_mediaLibrary;
     NSDictionary *_options;
@@ -32,9 +35,10 @@
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property MLMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 - (void)updateMediaSources:(id)arg1;
-- (void)setAttributes:(id)arg1 forMediaObject:(id)arg2 inMediaSource:(id)arg3;
-- (void)setAttributes:(id)arg1 forMediaGroup:(id)arg2 inMediaSource:(id)arg3;
-- (void)rootGroup:(id)arg1 forMediaSource:(id)arg2;
+- (void)setAttributesData:(id)arg1 forMediaObject:(id)arg2 inMediaSource:(id)arg3;
+- (void)setAttributesData:(id)arg1 forMediaGroup:(id)arg2 inMediaSource:(id)arg3;
+- (void)rootGroupData:(id)arg1 forMediaSource:(id)arg2;
+- (id)_unarchivedMediaGroupAttributesDictionaryFromData:(id)arg1;
 - (id)mediaSourceForIdentifier:(id)arg1;
 @property(readonly) id <MLSMediaLibraryProtocol> service;
 - (void)determineLogLevel;
@@ -45,6 +49,8 @@
 - (void)_nullOutLibraryPointers;
 - (void)invalidateConnection;
 - (void)dealloc;
+- (id)init;
+@property(readonly, retain) NSSet *mediaObjectAttributesExpectedClasses;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -29,7 +29,7 @@
 - (void)updateShortcutsVocabularyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleAssistantPreferencesChangedNotification;
 - (id)generateSingleUseTokenForWorkflowIdentifier:(id)arg1;
-- (void)getShareSheetWorkflowsForTypeIdentifiers:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getShareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updateLSDatabaseAnchors;
 - (_Bool)lsDatabaseChangedSinceLastCheck;
 - (void)deleteSuggestionsFromApps:(id)arg1;

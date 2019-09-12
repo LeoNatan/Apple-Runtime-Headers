@@ -26,6 +26,7 @@
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (void)handleDidResumeRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2;
 - (void)handleDidPauseRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2;
+- (void)handleDidStopRecordingNotificationForMomentCaptureWrapper:(id)arg1 withPayload:(id)arg2 demoof:(_Bool)arg3 addMetadata:(_Bool)arg4;
 - (void)handleDidStopRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2 demoof:(_Bool)arg3 addMetadata:(_Bool)arg4;
 - (void)handleDidStartRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2;
 - (void)_removeRecordingDelegateWrapper:(id)arg1;
@@ -34,6 +35,7 @@
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (struct CGSize)outputSizeForSourceFormat:(id)arg1;
 - (id)_avErrorUserInfoDictionaryForError:(int)arg1 wrapper:(id)arg2 payload:(id)arg3;
+- (void)startRecordingMovieWithSettings:(id)arg1 delegate:(id)arg2;
 - (void)setRecordsVideoOrientationAndMirroringChanges:(_Bool)arg1 asMetadataTrackForConnection:(id)arg2;
 - (_Bool)recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:(id)arg1;
 @property(copy, nonatomic) NSArray *metadata;

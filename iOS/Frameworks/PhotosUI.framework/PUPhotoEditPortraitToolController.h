@@ -97,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateToolConstraints;
 - (void)_updateToolContainerConstraints;
 - (void)viewDidLoad;
-- (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 valuesCalculator:(id)arg4;
+- (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 overcaptureEditSource:(id)arg4 valuesCalculator:(id)arg5;
 - (void)dealloc;
 
 // Remaining properties

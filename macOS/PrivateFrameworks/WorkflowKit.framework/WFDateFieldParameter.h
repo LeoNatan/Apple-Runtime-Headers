@@ -21,8 +21,8 @@
 - (id)localizedIncompleteHintString;
 - (id)hintForState:(id)arg1;
 @property(readonly, nonatomic) NSDateFormatter *hintDateFormatter; // @synthesize hintDateFormatter=_hintDateFormatter;
-- (BOOL)dateOnlyMode;
-- (BOOL)timeOnlyMode;
+@property(readonly, nonatomic) BOOL dateOnlyMode;
+@property(readonly, nonatomic) BOOL timeOnlyMode;
 - (id)initWithDefinition:(id)arg1;
 
 @end

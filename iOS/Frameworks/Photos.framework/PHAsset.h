@@ -60,6 +60,7 @@
     double _curationScore;
     long long _cloudPlaceholderKind;
     long long _videoCpDurationValue;
+    unsigned long long _reframeVariation;
     NSArray *_faceRegions;
     double _faceAreaMinX;
     double _faceAreaMaxX;
@@ -184,6 +185,7 @@
 @property(readonly, nonatomic) NSArray *faceRegions; // @synthesize faceRegions=_faceRegions;
 @property(readonly, nonatomic) struct CGRect acceptableCropRect; // @synthesize acceptableCropRect=_acceptableCropRect;
 @property(readonly, nonatomic) struct CGRect preferredCropRect; // @synthesize preferredCropRect=_preferredCropRect;
+@property(readonly, nonatomic) unsigned long long reframeVariation; // @synthesize reframeVariation=_reframeVariation;
 @property(readonly, nonatomic) float hdrGain; // @synthesize hdrGain=_hdrGain;
 @property(readonly, nonatomic) unsigned short playbackVariation; // @synthesize playbackVariation=_playbackVariation;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D locationCoordinate; // @synthesize locationCoordinate=_locationCoordinate;

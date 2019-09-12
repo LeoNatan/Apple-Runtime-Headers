@@ -12,7 +12,7 @@
 #import <UIKitCore/_UIFocusMovementActionForwarding-Protocol.h>
 
 @class CAContext, CALayer, NSArray, NSMutableArray, NSMutableSet, NSString, NSUndoManager, UIAccessibilityHUDView, UIResponder, UIScene, UIScreen, UITraitCollection, UIViewController, UIWindowScene, _UIContextBinder, _UIEmbeddedResponder, _UIFocusEventRecognizer, _UIRootPresentationController, _UISystemGestureGateGestureRecognizer, _UIViewControllerNullAnimationTransitionCoordinator, _UIWindowAnimationController, _UIWindowSceneMacComponent;
-@protocol BSInvalidatable, NSISEngineDelegate, UIFocusItem, UINSWindow, _UISceneUIWindowHosting;
+@protocol BSInvalidatable, UIFocusItem, UINSWindow, _UISceneUIWindowHosting;
 
 @interface UIWindow : UIView <NSISEngineDelegate, _UIFocusEventRecognizerDelegate, _UIFocusMovementActionForwarding, _UIContextBindable>
 {
@@ -93,7 +93,6 @@
     BOOL __containedGestureRecognizersShouldRespectGestureServerInstructions;
     _UIRootPresentationController *_rootPresentationController;
     _UIViewControllerNullAnimationTransitionCoordinator *_traitCollectionChangeTransitionCoordinator;
-    id <NSISEngineDelegate> _appKitEngineDelegate;
     NSArray *_windowInternalConstraints;
     NSArray *_rootViewConstraints;
     CDUnknownBlockType _deferredLaunchBlock;
@@ -189,7 +188,6 @@
 @property(nonatomic, setter=_setShouldDisableTransformLayerScalingForSnapshotting:) BOOL _shouldDisableTransformLayerScalingForSnapshotting; // @synthesize _shouldDisableTransformLayerScalingForSnapshotting;
 @property(copy, nonatomic, setter=_setRootViewConstraints:) NSArray *_rootViewConstraints; // @synthesize _rootViewConstraints;
 @property(copy, nonatomic, setter=_setWindowInternalConstraints:) NSArray *_windowInternalConstraints; // @synthesize _windowInternalConstraints;
-@property(nonatomic, setter=_setAppKitEngineDelegate:) __weak id <NSISEngineDelegate> _appKitEngineDelegate; // @synthesize _appKitEngineDelegate;
 @property(retain, nonatomic, setter=_setTraitCollectionChangeTransitionCoordinator:) _UIViewControllerNullAnimationTransitionCoordinator *_traitCollectionChangeTransitionCoordinator; // @synthesize _traitCollectionChangeTransitionCoordinator;
 @property(retain, nonatomic, getter=_rootPresentationController, setter=_setRootPresentationController:) _UIRootPresentationController *rootPresentationController; // @synthesize rootPresentationController=_rootPresentationController;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
@@ -214,6 +212,7 @@
 - (BOOL)_focusEventRecognizer:(id)arg1 didRecognizeFocusMovementRequest:(id)arg2;
 - (id)_focusMovementSystemForFocusEventRecognizer:(id)arg1;
 - (BOOL)_shouldRecognizeEventsInFocusEventRecognizer:(id)arg1;
+- (BOOL)shouldUpdateFocusInContext:(id)arg1;
 @property(readonly, nonatomic, getter=_focusResponder) __weak UIResponder *focusResponder;
 - (void)_removeFocusEventRecognizer;
 - (void)_installFocusEventRecognizer;
@@ -400,6 +399,7 @@
 - (BOOL)_shouldAdjustSizeClassesAndResizeWindow;
 - (void)_rotateToBounds:(struct CGRect)arg1 withAnimator:(id)arg2 transitionContext:(id)arg3;
 - (BOOL)_guardSizeTransitionFromAnimations;
+- (void)_executeDeferredLaunchBlock;
 - (void)_handleStatusBarOrientationChange:(id)arg1;
 - (void)_setWindowControlsStatusBarOrientation:(BOOL)arg1;
 - (BOOL)_windowControlsStatusBarOrientation;
@@ -471,8 +471,7 @@
 - (BOOL)_areOverlayInsetsValid:(struct UIEdgeInsets)arg1;
 - (void)_noteOverlayInsetsDidChange;
 - (struct UIEdgeInsets)_overlayInsets;
-- (void)_removeAllViewControllersFromWindowHierarchy;
-- (void)_removeAllPresentationsFromWindowHierarchy;
+- (void)_removeAllViewControllersFromWindowHierarchyFromDealloc:(BOOL)arg1;
 - (void)makeKey:(id)arg1;
 - (void)orderOut:(id)arg1;
 - (void)_orderFrontWithoutMakingKey;
@@ -490,6 +489,7 @@
 - (unsigned int)_contextId;
 - (BOOL)_disableGroupOpacity;
 - (BOOL)_ignoresHitTest;
+- (void)_updateLayerOrderingAndSetLayerHidden:(BOOL)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)_updateLayerOrderingAndSetLayerHidden:(BOOL)arg1;
 - (BOOL)_hasContext;
 - (void)_configureContextOptions:(id)arg1;
@@ -546,6 +546,7 @@
 - (BOOL)_wantsSceneAssociation;
 - (id)_debugName;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (id)_responderChainFromFirstResponder;
 @property(nonatomic, setter=_setHostWindow:) __weak id <UINSWindow> _hostWindow;
 - (long long)_interfaceOrientationForSceneSafeAreaInsetsIncludingStatusBar:(BOOL)arg1;
 - (void)_performTouchContinuationWithOverrideHitTestedView:(id)arg1;
@@ -602,7 +603,6 @@
 - (void)_uiib_invalidateWindowInternalConstraints;
 - (void)_invalidateWindowInternalConstraints;
 - (void)_updateWindowEngineHostConstraintsWithSizing:(BOOL)arg1;
-- (BOOL)_shouldBridgeSizeToSceneView;
 - (void)_updateBridgingConstraintsIfNeeded;
 - (id)_engineForBridgingSizeToSceneView;
 - (void)_connectedUINSSceneView;

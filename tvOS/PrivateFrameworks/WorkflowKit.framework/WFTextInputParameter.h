@@ -23,10 +23,8 @@
     long long _textAlignment;
     unsigned long long _hintDisplayMode;
     unsigned long long _syntaxHighlightingType;
-    NSString *_placeholder;
 }
 
-@property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, nonatomic) _Bool processesIntoContentItems; // @synthesize processesIntoContentItems=_processesIntoContentItems;
 @property(readonly, nonatomic) unsigned long long syntaxHighlightingType; // @synthesize syntaxHighlightingType=_syntaxHighlightingType;
 @property(readonly, nonatomic) unsigned long long hintDisplayMode; // @synthesize hintDisplayMode=_hintDisplayMode;
@@ -41,6 +39,7 @@
 @property(readonly, nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *localizedPlaceholder;
 - (id)defaultSupportedVariableTypes;
 - (id)hintForState:(id)arg1;
 - (_Bool)shouldAlignLabels;

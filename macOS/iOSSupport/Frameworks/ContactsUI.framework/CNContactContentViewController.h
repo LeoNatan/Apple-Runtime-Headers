@@ -408,7 +408,9 @@
 - (void)_didCompleteWithContact:(id)arg1;
 - (id)_removeUnauthorizedKeysFromContact:(id)arg1;
 - (id)_updateContact:(id)arg1 withMissingKeysFromRequiredKeys:(id)arg2;
-- (void)_updateItemsInGroup:(id)arg1 forTableView:(id)arg2;
+- (void)reloadRowsAndRestoreFirstResponderAtIndexPaths:(id)arg1 ofTableView:(id)arg2;
+- (id)indexPathsOfEditingItemsInGroup:(id)arg1 withSectionIndex:(unsigned long long)arg2;
+- (void)_updateItemsInGroup:(id)arg1 forTableView:(id)arg2 deletedIndexPath:(id)arg3;
 - (void)removeEditingItem:(id)arg1 atIndexPath:(id)arg2 forTableView:(id)arg3;
 - (void)addEditingItemAtIndexPath:(id)arg1 forTableView:(id)arg2;
 - (void)_updateLabelWidthsForAllVisibleCells;
@@ -468,7 +470,7 @@
 - (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (long long)_modalPresentationStyleForViewController:(id)arg1;
-- (void)performConfirmedCancel:(id)arg1;
+- (void)performConfirmedCancel;
 - (BOOL)isModalInPresentation;
 - (void)presentationControllerWillDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
@@ -541,9 +543,8 @@
 - (void)saveModelChangesToContact;
 - (BOOL)saveChanges;
 - (void)clearMapsDataIfEdited;
-- (id)confirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
-- (void)presentConfirmCancelAlertControllerAnchoredAtButtonItem:(id)arg1;
 - (void)presentConfirmCancelAlertController;
+- (BOOL)shouldPresentConfirmCancelAlert;
 - (void)editCancel:(id)arg1;
 - (void)cancelAsyncLookups;
 - (BOOL)hasPendingChanges;

@@ -65,6 +65,12 @@
 + (double)contentScoreForAssets:(id)arg1;
 + (id)dedupedAssetsWithAssets:(id)arg1 precision:(unsigned long long)arg2;
 + (id)representativeAssetsForAssetCollection:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
++ (BOOL)categoryIsUsableWithConditionalKeywordsForMemory:(id)arg1;
++ (id)m5IncompatibleMeaningLabels;
++ (id)m5IncompatibleMoods;
++ (id)placeKeywords;
++ (id)m5TimeConditionalKeywords;
++ (id)m5IncompatibleKeywords;
 + (id)allRecomputedTripMomentsInGraph:(id)arg1;
 + (id)exportableDictionaryFromKeywords:(id)arg1;
 + (unsigned long long)_minimumNumberOfItemsForDuration:(unsigned long long)arg1 withMaximumNumberOfItems:(unsigned long long)arg2;
@@ -316,6 +322,7 @@
 - (id)curatedKeyAssetIdentifierForCollectionWithIdentifier:(id)arg1 curatedAssetCollection:(id)arg2 options:(id)arg3 criteria:(id)arg4;
 - (id)curatedAssetIdentifiersForEvent:(id)arg1 duration:(unsigned long long)arg2 precision:(unsigned long long)arg3;
 - (id)curatedAssetsFetchResultForEvent:(id)arg1 duration:(unsigned long long)arg2 precision:(unsigned long long)arg3;
+- (BOOL)canAddM5KeywordToMemory:(id)arg1 currentKeywords:(id)arg2;
 - (id)_momentNodesForMemory:(id)arg1;
 - (id)_poiLabelsForMomentNodes:(id)arg1;
 - (id)_roiLabelsForMomentNodes:(id)arg1;

@@ -185,6 +185,7 @@
 - (void)cancelFaceSwitchingIfInProgress;
 - (void)handleCrownPress;
 - (void)dismissLibraryForCancellation;
+- (void)dismissLibraryForTritium;
 - (void)_dismissLibraryViaCrown;
 - (void)dismissLibraryAnimated:(_Bool)arg1;
 - (void)dismissLibraryAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

@@ -9,7 +9,7 @@
 #import <PhotoLibraryServices/PLHighlightItemModelReader-Protocol.h>
 #import <PhotoLibraryServices/PLMomentGenerationDataManagement-Protocol.h>
 
-@class CNContactStore, NSDictionary, NSManagedObjectContext, NSString, PLBackgroundJobCameraWatcher, PLLibraryServicesManager, PLMomentGeneration, PLPhotoLibrary, PLPhotoLibraryPathManager, PLRoutineService, PLXPCTransaction;
+@class CNContactStore, NSDictionary, NSManagedObjectContext, NSString, PLCameraAppWatcher, PLLibraryServicesManager, PLMomentGeneration, PLPhotoLibrary, PLPhotoLibraryPathManager, PLRoutineService, PLXPCTransaction;
 
 @interface PLMomentGenerationDataManager : NSObject <PLMomentGenerationDataManagement, PLHighlightItemModelReader>
 {
@@ -26,7 +26,7 @@
     _Bool _shouldPerformLightweightValidation;
     _Bool _previousValidationSucceeded;
     long long _previousValidatedModelVersion;
-    PLBackgroundJobCameraWatcher *_cameraWatcher;
+    PLCameraAppWatcher *_cameraWatcher;
     NSManagedObjectContext *_managedObjectContext;
     PLPhotoLibrary *_momentGenerationLibrary;
 }
@@ -37,7 +37,7 @@
 + (void)initialize;
 @property(retain, nonatomic) PLPhotoLibrary *momentGenerationLibrary; // @synthesize momentGenerationLibrary=_momentGenerationLibrary;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-@property(readonly, nonatomic) PLBackgroundJobCameraWatcher *cameraWatcher; // @synthesize cameraWatcher=_cameraWatcher;
+@property(readonly, nonatomic) PLCameraAppWatcher *cameraWatcher; // @synthesize cameraWatcher=_cameraWatcher;
 @property(nonatomic) _Bool previousValidationSucceeded; // @synthesize previousValidationSucceeded=_previousValidationSucceeded;
 @property(nonatomic) long long previousValidatedModelVersion; // @synthesize previousValidatedModelVersion=_previousValidatedModelVersion;
 @property(nonatomic) _Bool shouldPerformLightweightValidation; // @synthesize shouldPerformLightweightValidation=_shouldPerformLightweightValidation;

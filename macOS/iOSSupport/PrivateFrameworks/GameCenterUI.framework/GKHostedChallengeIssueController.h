@@ -36,6 +36,7 @@
 @property(retain, nonatomic) NSArray *players; // @synthesize players=_players;
 @property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void)extensionDidFinishWithError:(id)arg1;
+- (long long)modalPresentationStyle;
 - (void)_setupRemoteViewController;
 - (void)doneWithPlayers:(id)arg1 message:(id)arg2;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;

@@ -46,6 +46,7 @@
 + (id)notificationCenter:(id)arg1 didChangeSettings:(id)arg2 bag:(id)arg3;
 + (void)handleServiceExtensionNotificationRequest:(id)arg1 bag:(id)arg2 withContentHandler:(CDUnknownBlockType)arg3;
 + (id)handleNotificationResponse:(id)arg1 bag:(id)arg2;
++ (long long)explicitEnabledForCenterBundleID:(id)arg1;
 + (id)notificationWithPayload:(id)arg1 andConfig:(id)arg2;
 @property(retain) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property BOOL shouldSuppressDefaultAction; // @synthesize shouldSuppressDefaultAction=_shouldSuppressDefaultAction;

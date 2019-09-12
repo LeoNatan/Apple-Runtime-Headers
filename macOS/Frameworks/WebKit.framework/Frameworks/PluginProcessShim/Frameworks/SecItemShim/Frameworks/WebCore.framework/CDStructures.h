@@ -228,6 +228,15 @@ struct CompletionHandler<void (bool, WTF::Optional<WTF::Vector<std::__1::pair<WT
 
 struct ContainerNode;
 
+struct CookieStorageObserver {
+    struct WeakPtrFactory<WebCore::CookieStorageObserver> _field1;
+    struct WeakPtr<WebCore::CookieStorageObserver> _field2;
+    struct RetainPtr<NSHTTPCookieStorage> _field3;
+    _Bool _field4;
+    struct RetainPtr<WebCookieObserverAdapter> _field5;
+    Function_15535652 _field6;
+};
+
 struct CubicBezierTimingFunction;
 
 struct CurrentFramePainter {
@@ -1102,6 +1111,10 @@ struct RetainPtr<NSDate> {
     void *m_ptr;
 };
 
+struct RetainPtr<NSHTTPCookieStorage> {
+    void *_field1;
+};
+
 struct RetainPtr<NSMutableArray> {
     void *_field1;
 };
@@ -1175,6 +1188,10 @@ struct RetainPtr<WebCDMSessionAVContentKeySessionDelegate> {
 };
 
 struct RetainPtr<WebCDMSessionAVStreamSessionObserver> {
+    void *_field1;
+};
+
+struct RetainPtr<WebCookieObserverAdapter> {
     void *_field1;
 };
 
@@ -1699,6 +1716,10 @@ struct WeakPtr<WebCore::CDMInstanceSessionClient> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 
+struct WeakPtr<WebCore::CookieStorageObserver> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+};
+
 struct WeakPtr<WebCore::HTMLFormElement> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
@@ -1744,6 +1765,10 @@ struct WeakPtrFactory<WebCore::CaptureDeviceManager> {
 };
 
 struct WeakPtrFactory<WebCore::ContainerNode> {
+    struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
+};
+
+struct WeakPtrFactory<WebCore::CookieStorageObserver> {
     struct RefPtr<WTF::WeakPtrImpl, WTF::DumbPtrTraits<WTF::WeakPtrImpl>> _field1;
 };
 

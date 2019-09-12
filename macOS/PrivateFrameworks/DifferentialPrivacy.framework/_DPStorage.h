@@ -41,6 +41,7 @@
 - (void)saveRecords:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchRecordsFor:(id)arg1 predicate:(id)arg2 fetchLimit:(unsigned long long)arg3 fetchOffset:(unsigned long long)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)fetchKeynamesFor:(id)arg1 predicate:(id)arg2 fetchLimit:(unsigned long long)arg3 fetchOffset:(unsigned long long)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)fetchRecordCountForEntity:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleEmptyArrayError:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)removeBadObjects:(id)arg1;
 - (id)initWithDirectory:(id)arg1 readOnly:(BOOL)arg2;

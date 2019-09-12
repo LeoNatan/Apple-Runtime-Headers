@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)resetTextureAccessCounters:(id)arg1 region:(CDStruct_caaed6bc)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4;
+- (void)getTextureAccessCounters:(id)arg1 region:(CDStruct_caaed6bc)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4 resetCounters:(_Bool)arg5 countersBuffer:(id)arg6 countersBufferOffset:(unsigned long long)arg7;
 - (void)copyFromTexture:(id)arg1 toTexture:(id)arg2;
 - (void)copyFromTexture:(id)arg1 sourceSlice:(unsigned long long)arg2 sourceLevel:(unsigned long long)arg3 toTexture:(id)arg4 destinationSlice:(unsigned long long)arg5 destinationLevel:(unsigned long long)arg6 sliceCount:(unsigned long long)arg7 levelCount:(unsigned long long)arg8;
 - (unsigned long long)getType;

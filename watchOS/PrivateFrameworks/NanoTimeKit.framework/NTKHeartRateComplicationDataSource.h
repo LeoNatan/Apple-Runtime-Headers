@@ -32,6 +32,7 @@
 - (id)_currentEntryModel;
 - (id)_currentTimelineEntry;
 - (id)lockedTemplate;
+- (id)privacyTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;

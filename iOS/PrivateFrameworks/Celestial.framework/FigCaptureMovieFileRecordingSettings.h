@@ -6,7 +6,7 @@
 
 #import <Celestial/FigCaptureRecordingSettings.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, NSURL;
 
 @interface FigCaptureMovieFileRecordingSettings : FigCaptureRecordingSettings
 {
@@ -21,9 +21,17 @@
     _Bool _irisRecording;
     _Bool _debugMetadataSidecarFileEnabled;
     int _bravoCameraSelectionBehavior;
+    _Bool _irisMovieRecording;
+    NSURL *_spatialOverCaptureMovieURL;
+    NSArray *_spatialOverCaptureMovieLevelMetadata;
+    unsigned long long _movieStartTimeOverride;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long movieStartTimeOverride; // @synthesize movieStartTimeOverride=_movieStartTimeOverride;
+@property(copy, nonatomic) NSArray *spatialOverCaptureMovieLevelMetadata; // @synthesize spatialOverCaptureMovieLevelMetadata=_spatialOverCaptureMovieLevelMetadata;
+@property(copy, nonatomic) NSURL *spatialOverCaptureMovieURL; // @synthesize spatialOverCaptureMovieURL=_spatialOverCaptureMovieURL;
+@property(nonatomic, getter=isIrisMovieRecording) _Bool irisMovieRecording; // @synthesize irisMovieRecording=_irisMovieRecording;
 @property(nonatomic) int bravoCameraSelectionBehavior; // @synthesize bravoCameraSelectionBehavior=_bravoCameraSelectionBehavior;
 @property(nonatomic) _Bool debugMetadataSidecarFileEnabled; // @synthesize debugMetadataSidecarFileEnabled=_debugMetadataSidecarFileEnabled;
 @property(nonatomic, getter=isIrisRecording) _Bool irisRecording; // @synthesize irisRecording=_irisRecording;

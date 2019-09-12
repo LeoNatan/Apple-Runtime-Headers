@@ -6,15 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString;
+@class NSString, UILabel;
 @protocol WFWorkflowWizardSuggestedPhraseViewDelegate;
 
 @interface WFWorkflowWizardSuggestedPhraseView : UIView
 {
     id <WFWorkflowWizardSuggestedPhraseViewDelegate> _delegate;
     NSString *_suggestedPhrase;
+    UILabel *_label;
 }
 
+@property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSString *suggestedPhrase; // @synthesize suggestedPhrase=_suggestedPhrase;
 @property(nonatomic) __weak id <WFWorkflowWizardSuggestedPhraseViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -24,6 +26,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)tintColorDidChange;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithSuggestedPhrase:(id)arg1;
 

@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithFileSystemRepresentation:(const char *)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (id)initWithPath:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (BOOL)checkResourceIsReachableAndReturnError:(id *)arg1;
+- (id)sideFaultResourceValuesReturningError:(id *)arg1;
 - (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
 - (BOOL)getTemporaryResourceValue:(id *)arg1 forKey:(id)arg2;
 - (void)removeCachedResourceValueForKey:(id)arg1;
@@ -84,6 +85,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isHidden) BOOL hidden;
 @property(readonly, nonatomic, getter=isRegularFile) BOOL regularFile;
 @property(readonly, nonatomic) BOOL hasPackageBit;
+@property(readonly, nonatomic, getter=isSideFault) BOOL sideFault;
 @property(readonly, nonatomic, getter=isAliasFile) BOOL aliasFile;
 @property(readonly, nonatomic, getter=isSymbolicLink) BOOL symbolicLink;
 @property(readonly, nonatomic, getter=isResolvable) BOOL resolvable;

@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     id NSCurrentNibLoadingBundles;
     id NSCurrentNibPaths;
     void *NSStringDrawingTextStorageSettings;
+    id NSCurrentOpenGLContext;
     NSMapTable *NSWindowDisableFlushCounts;
     NSMapTable *NSWindowDisablePostingCounts;
     long long NSThreadSequenceNumber;

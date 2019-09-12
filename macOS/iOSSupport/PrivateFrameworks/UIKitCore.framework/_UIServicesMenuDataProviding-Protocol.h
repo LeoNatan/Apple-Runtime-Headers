@@ -5,10 +5,10 @@
 //
 
 @class NSString, UIPasteboard;
-@protocol UINSActivityItemsConfiguration, _UIServicesMenuDataProviding;
+@protocol UINSActivityItemsConfigurationReading, _UIServicesMenuDataProviding;
 
 @protocol _UIServicesMenuDataProviding
-@property(readonly, nonatomic) id <UINSActivityItemsConfiguration> _activityItemsConfigurationForServicesMenu;
+@property(readonly, nonatomic) id <UINSActivityItemsConfigurationReading> _activityItemsConfigurationForServicesMenu;
 - (BOOL)_readServicesMenuDataFromPasteboard:(UIPasteboard *)arg1;
 - (id <_UIServicesMenuDataProviding>)_servicesMenuProviderForReturnType:(NSString *)arg1;
 @end

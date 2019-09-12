@@ -13,6 +13,7 @@
 + (id)hk_invalidProfileError;
 + (id)hk_featureUnavailableForProfileError;
 + (id)hk_protectedDataInaccessibilityError;
++ (id)hk_databaseInaccessibleBeforeFirstUnlockError;
 + (id)hk_healthDataUnavailableError;
 + (id)hk_error:(long long)arg1 format:(id)arg2;
 + (id)hk_error:(long long)arg1 description:(id)arg2 underlyingError:(id)arg3;

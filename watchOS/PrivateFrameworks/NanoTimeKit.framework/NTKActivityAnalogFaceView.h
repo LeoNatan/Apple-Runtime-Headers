@@ -7,10 +7,12 @@
 #import <NanoTimeKit/NTKAnalogFaceView.h>
 
 #import <NanoTimeKit/NTKActivityFaceViewFactoryDelegate-Protocol.h>
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
+#import <NanoTimeKit/NTKWellnessTimelineModelSubscriber-Protocol.h>
 
-@class ARUIRingsView, NSMutableDictionary, NSString, NTKActivityDateComplicationLabel, NTKActivityDialView, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKDateComplicationController, NTKFaceViewTapControl, UILabel, UIView;
+@class ARUIRingsView, NSMutableDictionary, NSString, NTKActivityDateComplicationLabel, NTKActivityDialView, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKDateComplicationController, NTKFaceColorScheme, NTKFaceViewTapControl, UILabel, UIView;
 
-@interface NTKActivityAnalogFaceView : NTKAnalogFaceView <NTKActivityFaceViewFactoryDelegate>
+@interface NTKActivityAnalogFaceView : NTKAnalogFaceView <NTKActivityFaceViewFactoryDelegate, NTKTritiumMetalContentView, NTKWellnessTimelineModelSubscriber>
 {
     NTKActivityFaceViewFactory *_faceViewFactory;
     ARUIRingsView *_ringsView;
@@ -33,10 +35,25 @@
     float _lastStandPercentage;
     float _innerDialViewScale;
     NTKActivitySignificantRingChangeModel *_significantRingChangeModel;
+    UILabel *_tritiumPrivacyMoveLabel;
+    UILabel *_tritiumPrivacyExerciseLabel;
+    UILabel *_tritiumPrivacyStandLabel;
+    unsigned int _tritiumFaceDensity;
+    NTKFaceColorScheme *_tritiumDialColorScheme;
 }
 
 + (void)_prewarmForDevice:(id)arg1;
 - (void).cxx_destruct;
+- (void)wellnessTimeLineModelCurrentEntryModelUpdated:(id)arg1;
+- (void)tritium_invalidateMetalContentForSnapshot;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (id)tritium_createFaceAnimator;
+- (void)_updateRingController:(id)arg1 toOpacity:(float)arg2;
+- (void)_removeTritiumLabels;
+- (void)_createTritiumLabelsIfNeeded;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
 - (id)_highlightImage;
 - (void)_enumerateChronoViews:(CDUnknownBlockType)arg1;
 - (void)_enumerateActivityLabels:(CDUnknownBlockType)arg1;

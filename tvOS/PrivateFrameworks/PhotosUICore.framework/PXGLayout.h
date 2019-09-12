@@ -96,7 +96,7 @@
 @property(readonly, nonatomic) _Bool canCreateAccessibilityGroupElement;
 - (void)_appendDescription:(id)arg1 atLevel:(long long)arg2;
 - (id)_paddingForLevel:(long long)arg1;
-- (id)recursiveDescription;
+@property(readonly, nonatomic) NSString *recursiveDescription;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 @property(readonly, nonatomic) CDStruct_3fe57b01 orientedContentTransform;
 @property(readonly, nonatomic) unsigned long long fullyVisibleEdgesWithDefaultTolerance;
@@ -252,7 +252,7 @@
 - (id)createAnchorWithConstraints:(CDUnknownBlockType)arg1;
 - (id)createAnchorForSpriteReferences:(id)arg1;
 - (id)createAnchorForSpriteAtIndex:(unsigned int)arg1;
-- (id)createAnchorForVisibleAreaIgnoringEdges:(_Bool)arg1;
+- (id)createAnchorForVisibleAreaIgnoringEdges:(unsigned long long)arg1;
 - (id)createAnchorForVisibleArea;
 @property(readonly, nonatomic) PXGItemsLayout *layoutForItemChanges;
 - (void)applySectionedChangedDetailsForSingleSection:(id)arg1 dataSourceAfterChanges:(id)arg2 changeMediaVersionHandler:(CDUnknownBlockType)arg3;

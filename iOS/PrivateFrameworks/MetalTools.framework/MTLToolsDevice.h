@@ -34,9 +34,11 @@
     MTLToolsPointerArray *_argumentEncoders;
     MTLToolsPointerArray *_indirectCommandBuffers;
     MTLToolsPointerArray *_resourceGroups;
+    MTLToolsPointerArray *_rasterizationRateMaps;
 }
 
 + (void)registerDevices;
+@property(readonly, nonatomic) MTLToolsPointerArray *rasterizationRateMaps; // @synthesize rasterizationRateMaps=_rasterizationRateMaps;
 @property(readonly, nonatomic) MTLToolsPointerArray *resourceGroups; // @synthesize resourceGroups=_resourceGroups;
 @property(readonly, nonatomic) MTLToolsPointerArray *indirectCommandBuffers; // @synthesize indirectCommandBuffers=_indirectCommandBuffers;
 @property(readonly, nonatomic) MTLToolsPointerArray *argumentEncoders; // @synthesize argumentEncoders=_argumentEncoders;
@@ -65,6 +67,13 @@
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
+@property(readonly, nonatomic) _Bool supportsSparseTextures;
+@property(readonly, nonatomic) _Bool supportsASTCHDRTextureCompression;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsXR;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats12;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsPQ;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats;
+@property(readonly, nonatomic) _Bool supportsVariableRateRasterization;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;
@@ -143,6 +152,7 @@
 @property(readonly, nonatomic) _Bool supportsLimitedYUVFormats;
 @property(readonly, nonatomic) _Bool supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) _Bool supportsPlacementHeaps;
+@property(readonly, nonatomic) _Bool supportsVertexAmplification;
 @property(readonly, nonatomic) _Bool supports32bpcMSAATextures;
 @property(readonly, nonatomic) _Bool supportsSamplerAddressModeClampToHalfBorder;
 @property(readonly, nonatomic) _Bool supportsCustomBorderColor;
@@ -154,7 +164,11 @@
 @property(readonly, nonatomic) _Bool supportsArgumentBuffersTier2;
 @property(readonly, nonatomic) _Bool supportsBufferlessClientStorageTexture;
 @property(readonly, nonatomic) _Bool supportsQuadReduction;
+- (_Bool)supportsVertexAmplificationCount:(unsigned long long)arg1;
 @property(readonly, getter=isPlacementHeapSupported) _Bool placementHeapSupported;
+- (void)convertSparseTileRegions:(const CDStruct_1e3be3a8 *)arg1 toPixelRegions:(CDStruct_1e3be3a8 *)arg2 withTileSize:(CDStruct_14f26992)arg3 numRegions:(unsigned long long)arg4;
+- (void)convertSparsePixelRegions:(const CDStruct_1e3be3a8 *)arg1 toTileRegions:(CDStruct_1e3be3a8 *)arg2 withTileSize:(CDStruct_14f26992)arg3 alignmentMode:(unsigned long long)arg4 numRegions:(unsigned long long)arg5;
+@property(readonly) unsigned long long sparseTileSizeInBytes;
 - (_Bool)setResourcesPurgeableState:(id *)arg1 newState:(unsigned long long)arg2 oldState:(unsigned long long *)arg3 count:(int)arg4;
 - (void)allowLibrariesFromOtherPlatforms;
 @property(readonly) unsigned long long currentAllocatedSize;
@@ -169,6 +183,9 @@
 - (id)newTextureWithDescriptor:(id)arg1 iosurface:(struct __IOSurface *)arg2 plane:(unsigned long long)arg3;
 @property(nonatomic) _Bool metalAssertionsEnabled;
 - (id)newResourceGroupFromResources:(const id *)arg1 count:(unsigned long long)arg2;
+- (CDStruct_14f26992)sparseTileSizeWithTextureType:(unsigned long long)arg1 pixelFormat:(unsigned long long)arg2 sampleCount:(unsigned long long)arg3;
+- (CDStruct_14f26992)tileSizeWithSparsePageSize:(unsigned long long)arg1 textureType:(unsigned long long)arg2 pixelFormat:(unsigned long long)arg3 sampleCount:(unsigned long long)arg4;
+@property(readonly) unsigned long long sparseTexturesSupport;
 @property(readonly, getter=isQuadDataSharingSupported) _Bool quadDataSharingSupported;
 @property(readonly, getter=areRasterOrderGroupsSupported) _Bool rasterOrderGroupsSupported;
 @property(readonly) unsigned long long argumentBuffersSupport;
@@ -184,6 +201,8 @@
 @property(readonly) unsigned long long maxFramebufferStorageBits;
 @property(readonly) unsigned long long maxComputeAttributes;
 @property(readonly) unsigned long long maxTextureBufferWidth;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
 @property(readonly) unsigned long long maxCustomSamplePositions;
 @property(readonly) unsigned long long maxViewportCount;
 @property(readonly) unsigned long long maxIndirectSamplersPerDevice;
@@ -231,7 +250,7 @@
 @property(readonly) unsigned long long maxVertexAttributes;
 @property(readonly) unsigned long long maxColorAttachments;
 @property(readonly) _Bool supportPriorityBand;
-@property(readonly) const CDStruct_52c93ad5 *limits;
+@property(readonly) const CDStruct_886a8514 *limits;
 @property(readonly) unsigned long long featureProfile;
 @property(readonly) unsigned long long doubleFPConfig;
 @property(readonly) unsigned long long singleFPConfig;
@@ -241,6 +260,9 @@
 - (id)newBufferWithIOSurface:(struct __IOSurface *)arg1;
 - (id)_deviceWrapper;
 - (void)_setDeviceWrapper:(id)arg1;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
+- (_Bool)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
 - (void)getDefaultSamplePositions:(CDStruct_b2fbf00d *)arg1 count:(unsigned long long)arg2;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) _Bool programmableSamplePositionsSupported;
 - (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;

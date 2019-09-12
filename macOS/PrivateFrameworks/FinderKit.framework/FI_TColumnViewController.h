@@ -81,7 +81,7 @@ __attribute__((visibility("hidden")))
 - (double)browser:(id)arg1 shouldSizeColumn:(long long)arg2 forUserResize:(BOOL)arg3 toWidth:(double)arg4;
 - (double)browser:(id)arg1 sizeToFitWidthOfColumn:(long long)arg2;
 - (double)browser:(id)arg1 heightOfRow:(long long)arg2 inColumn:(long long)arg3;
-- (void)columnView:(id)arg1 willStopUsingNode:(const struct TFENode *)arg2 forColumn:(long long)arg3;
+- (void)columnView:(id)arg1 willStopUsingNodes:(const struct TFENodeVector *)arg2 forColumn:(long long)arg3;
 - (void)columnView:(id)arg1 willStopUsingItem:(id)arg2 forColumn:(long long)arg3;
 - (void)columnView:(id)arg1 willStartUsingNode:(const struct TFENode *)arg2 forColumn:(long long)arg3;
 - (void)columnView:(id)arg1 willStartUsingItem:(id)arg2 forColumn:(long long)arg3;

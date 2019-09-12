@@ -12,7 +12,6 @@
 {
     NSString *_customizationLabel;
     NSPickerTouchBarItemView *_pickerView;
-    id _overlay;
 }
 
 + (id)pickerTouchBarItemWithIdentifier:(id)arg1 images:(id)arg2 selectionMode:(long long)arg3 target:(id)arg4 action:(SEL)arg5;

@@ -9,15 +9,15 @@
 #import <UIKitMacHelper/NSSharingServicePickerToolbarItemDelegate-Protocol.h>
 
 @class NSString;
-@protocol UINSActivityItemsConfiguration;
+@protocol UINSActivityItemsConfigurationReading;
 
 __attribute__((visibility("hidden")))
 @interface UINSToolbarSharingDelegate : NSObject <NSSharingServicePickerToolbarItemDelegate>
 {
-    id <UINSActivityItemsConfiguration> _activityItemsConfiguration;
+    id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration;
 }
 
-@property(retain, nonatomic) id <UINSActivityItemsConfiguration> activityItemsConfiguration; // @synthesize activityItemsConfiguration=_activityItemsConfiguration;
+@property(retain, nonatomic) id <UINSActivityItemsConfigurationReading> activityItemsConfiguration; // @synthesize activityItemsConfiguration=_activityItemsConfiguration;
 - (void).cxx_destruct;
 - (id)itemsForSharingServicePickerToolbarItem:(id)arg1;
 

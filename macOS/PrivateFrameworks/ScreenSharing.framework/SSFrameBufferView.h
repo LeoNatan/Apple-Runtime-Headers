@@ -11,7 +11,7 @@
 #import <ScreenSharing/SSDragDelegate-Protocol.h>
 #import <ScreenSharing/SSFrameBufferObserver-Protocol.h>
 
-@class CALayer, NSArray, NSDraggingSession, NSImage, NSMutableDictionary, NSPasteboard, NSString, SSFrameBuffer;
+@class CALayer, NSArray, NSDraggingSession, NSImage, NSMutableDictionary, NSPasteboard, NSString, SSFrameBuffer, SSFrameBufferRenderView;
 @protocol SSFrameBufferViewDelegate, SSInputEventConsumer;
 
 @interface SSFrameBufferView : NSView <SSFrameBufferObserver, SSDragDelegate, CAAnimationDelegate, NSFilePromiseProviderDelegate>
@@ -59,7 +59,7 @@
 - (void)setTouchEvents:(id)arg1;
 - (void)setAVConferenceLayerRotation:(unsigned int)arg1;
 - (void)AVConferenceLayerContent:(id)arg1;
-- (id)renderView;
+@property(readonly) SSFrameBufferRenderView *renderView;
 - (struct SSPoint)frameBufferCoordinatesFromWindowCoordinates:(struct CGPoint)arg1;
 - (struct SSPoint)frameBufferCoordinatesFromNSEvent:(id)arg1;
 - (void)sendMouseEventWithWindowCoordinates:(struct CGPoint)arg1;

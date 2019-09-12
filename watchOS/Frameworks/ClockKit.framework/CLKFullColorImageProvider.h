@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <ClockKit/CLKComplicationTritiumCopyable-Protocol.h>
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
 @class CLKImageProvider, NSDictionary, NSString, UIColor, UIImage;
 
-@interface CLKFullColorImageProvider : NSObject <NSSecureCoding, NSCopying>
+@interface CLKFullColorImageProvider : NSObject <CLKComplicationTritiumCopyable, NSSecureCoding, NSCopying>
 {
     UIColor *_tintColor;
     _Bool _applyScalingAndCircularMasking;
     _Bool _finalized;
+    _Bool _tritium_isTritiumInactiveCopy;
     _Bool _prefersFilterOverTransition;
     UIImage *_image;
     CLKImageProvider *_tintedImageProvider;
@@ -41,18 +43,27 @@
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) CLKImageProvider *tintedImageProvider; // @synthesize tintedImageProvider=_tintedImageProvider;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
 - (void).cxx_destruct;
 - (void)_resizeImagesIfNecessaryWithMaxSize:(struct CGSize)arg1 cornerRadius:(float)arg2;
 - (void)finalizeWithMaxSize:(struct CGSize)arg1 cornerRadius:(float)arg2;
 - (void)validate;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
+@property(readonly, nonatomic, getter=tritium_isTritiumInactiveFullColorImageProvider) _Bool tritium_inactiveFullColorImageProvider;
+- (id)tritium_inactiveCopy;
+- (_Bool)tritium_requiresCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -65,6 +65,7 @@
 + (id)fontWithDescriptor:(id)arg1 textTransform:(id)arg2;
 + (id)fontWithDescriptor:(id)arg1 size:(double)arg2;
 + (id)fontWithName:(id)arg1 matrix:(const double *)arg2;
++ (id)_fontWithName:(id)arg1 size:(double)arg2;
 + (id)fontWithName:(id)arg1 size:(double)arg2;
 + (void)initialize;
 + (BOOL)_allowsDefaultFontSubstitutionFor1XOnly;

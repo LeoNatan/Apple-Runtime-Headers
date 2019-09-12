@@ -238,7 +238,6 @@ __attribute__((visibility("hidden")))
 - (void)setIsPopulationInProgress:(_Bool)arg1;
 - (void)tellDelegatePopulationInProgress:(_Bool)arg1;
 - (_Bool)canSelectNode:(const struct TFENode *)arg1;
-- (_Bool)panelDisableEvictedNode:(const struct TFENode *)arg1 url:(id)arg2;
 - (_Bool)panelDisableNode:(const struct TFENode *)arg1;
 - (_Bool)requestEnableStateForNodes:(const struct TFENodeVector *)arg1;
 - (_Bool)shouldRequestEnableStatesAsync;

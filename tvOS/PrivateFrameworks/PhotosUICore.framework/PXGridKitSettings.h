@@ -22,6 +22,7 @@
     _Bool _colorCopiedImages;
     _Bool _requestThumbnailsOnly;
     _Bool _requestMasterThumbsOnly;
+    _Bool _disableLowResThumbnails;
     _Bool _allowBlockingDuringScrolling;
     _Bool _allowBlockingDueToFences;
     _Bool _wantsOrthogonalProjection;
@@ -43,6 +44,8 @@
     _Bool _shouldShowBoundariesOfTextTextures;
     _Bool _shouldIncludeSpecialCharactersInTextTextures;
     long long _sampleCount;
+    double _blockingWhileScrollingTimeout;
+    double _blockingWhileScrubbingTimeout;
     long long _blockOnMissingThumbnailsAtSpeedRegime;
     long long _videoAllowedAtOrBelowSpeed;
     long long _videoAllowedAtOrBelowSpeedForLowSpec;
@@ -82,7 +85,10 @@
 @property(nonatomic) long long videoAllowedAtOrBelowSpeedForLowSpec; // @synthesize videoAllowedAtOrBelowSpeedForLowSpec=_videoAllowedAtOrBelowSpeedForLowSpec;
 @property(nonatomic) long long videoAllowedAtOrBelowSpeed; // @synthesize videoAllowedAtOrBelowSpeed=_videoAllowedAtOrBelowSpeed;
 @property(nonatomic) long long blockOnMissingThumbnailsAtSpeedRegime; // @synthesize blockOnMissingThumbnailsAtSpeedRegime=_blockOnMissingThumbnailsAtSpeedRegime;
+@property(nonatomic) double blockingWhileScrubbingTimeout; // @synthesize blockingWhileScrubbingTimeout=_blockingWhileScrubbingTimeout;
+@property(nonatomic) double blockingWhileScrollingTimeout; // @synthesize blockingWhileScrollingTimeout=_blockingWhileScrollingTimeout;
 @property(nonatomic) _Bool allowBlockingDuringScrolling; // @synthesize allowBlockingDuringScrolling=_allowBlockingDuringScrolling;
+@property(nonatomic) _Bool disableLowResThumbnails; // @synthesize disableLowResThumbnails=_disableLowResThumbnails;
 @property(nonatomic) _Bool requestMasterThumbsOnly; // @synthesize requestMasterThumbsOnly=_requestMasterThumbsOnly;
 @property(nonatomic) _Bool requestThumbnailsOnly; // @synthesize requestThumbnailsOnly=_requestThumbnailsOnly;
 @property(nonatomic) _Bool colorCopiedImages; // @synthesize colorCopiedImages=_colorCopiedImages;

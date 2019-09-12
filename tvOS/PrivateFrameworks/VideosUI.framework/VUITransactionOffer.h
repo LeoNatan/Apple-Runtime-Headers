@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *videosPlayables;
 @property(readonly, copy, nonatomic) VUIActionItunesExtras *extrasAction;
+- (id)notificationBody;
+- (id)notificationTitle;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) NSString *buyParams;
 @property(readonly, nonatomic) _Bool playWhenDone;

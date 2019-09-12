@@ -25,12 +25,10 @@ __attribute__((visibility("hidden")))
 - (void)CA_prepareRenderValue;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (BOOL)NS_canDrawLayer:(id)arg1;
 - (void)display;
 - (void)invalidateRect:(struct CGRect)arg1;
 - (void)update;
 @property CALayer *backingLayer;
-- (Class)tileClass;
 - (void)dealloc;
 @property(readonly) CALayer *contentLayer;
 

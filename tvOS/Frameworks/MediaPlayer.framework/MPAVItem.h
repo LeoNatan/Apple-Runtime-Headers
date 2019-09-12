@@ -251,6 +251,7 @@
 - (unsigned long long)alternatesCountForTypes:(unsigned long long)arg1;
 - (_Bool)hasAlternatesForTypes:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *containerUniqueID;
+@property(readonly, nonatomic) _Bool hasTimeSyncedLyrics;
 @property(readonly, nonatomic) _Bool hasStoreLyrics;
 @property(readonly, nonatomic) NSString *libraryLyrics;
 @property(readonly, nonatomic) NSString *lyrics;

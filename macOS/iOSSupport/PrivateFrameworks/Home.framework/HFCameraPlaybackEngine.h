@@ -21,6 +21,7 @@
     BOOL _pictureInPictureModeActive;
     BOOL _wantsToPlay;
     BOOL _scrubbing;
+    float _streamAudioVolume;
     HMCameraProfile *_cameraProfile;
     HMCameraClipManager *_clipManager;
     HMCameraSource *_liveCameraSource;
@@ -59,6 +60,7 @@
 @property(nonatomic, getter=isPictureInPictureModeActive) BOOL pictureInPictureModeActive; // @synthesize pictureInPictureModeActive=_pictureInPictureModeActive;
 @property(retain, nonatomic) NSDate *currentEngineDate; // @synthesize currentEngineDate=_currentEngineDate;
 @property(nonatomic) unsigned long long timelineState; // @synthesize timelineState=_timelineState;
+@property(nonatomic) float streamAudioVolume; // @synthesize streamAudioVolume=_streamAudioVolume;
 @property(nonatomic, getter=isStreamAudioEnabled) BOOL streamAudioEnabled; // @synthesize streamAudioEnabled=_streamAudioEnabled;
 @property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(retain, nonatomic) HMCameraSource *liveCameraSource; // @synthesize liveCameraSource=_liveCameraSource;
@@ -76,6 +78,7 @@
 - (void)clipManager:(id)arg1 didUpdateClips:(id)arg2;
 - (BOOL)isLiveStreaming;
 - (void)_setStreamAudioEnabled:(BOOL)arg1 notifyObservers:(BOOL)arg2;
+- (void)_setPlayerVolume:(float)arg1 notifyObservers:(BOOL)arg2;
 - (void)_setMicrophoneEnabled:(BOOL)arg1 notifyObservers:(BOOL)arg2;
 - (void)_updateStateForRequestedPlaybackPosition:(id)arg1 notifyObservers:(BOOL)arg2;
 - (void)_updatePlaybackStateNotifyingObservers:(BOOL)arg1 rebuildClipPlayerIfNeeded:(BOOL)arg2;

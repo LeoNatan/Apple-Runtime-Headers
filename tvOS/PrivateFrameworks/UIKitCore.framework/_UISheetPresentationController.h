@@ -44,7 +44,7 @@
 @property(readonly, nonatomic) UIDropShadowView *dropShadowView; // @synthesize dropShadowView=_dropShadowView;
 @property(nonatomic) _Bool _dimmingViewTapDismissing; // @synthesize _dimmingViewTapDismissing=__dimmingViewTapDismissing;
 @property(retain, nonatomic) UIViewPropertyAnimator *_remoteDismissalPropertyAnimator; // @synthesize _remoteDismissalPropertyAnimator=__remoteDismissalPropertyAnimator;
-@property(nonatomic) _Bool _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
+@property(nonatomic, getter=_isRemoteDismissing, setter=_setRemoteDismissing:) _Bool _remoteDismissing; // @synthesize _remoteDismissing=__remoteDismissing;
 @property(readonly, nonatomic) _UIRemoteViewController *_connectedRemoteViewController; // @synthesize _connectedRemoteViewController=__connectedRemoteViewController;
 @property(retain, nonatomic, setter=_setTearOffActivity:) NSUserActivity *_tearOffActivity; // @synthesize _tearOffActivity=__tearOffActivity;
 @property(nonatomic, setter=_setInitialTearOffPoint:) struct CGPoint _initialTearOffPoint; // @synthesize _initialTearOffPoint=__initialTearOffPoint;
@@ -104,6 +104,7 @@
 - (void)_updateLayoutInfoContainerSafeAreaInsets;
 - (void)_containerViewSafeAreaInsetsDidChange;
 - (void)_containerViewBoundsDidChange;
+- (void)_resetRemoteDismissing;
 - (void)_tryToConnectToRemoteViewController:(id)arg1;
 @property(readonly, nonatomic) _UIRemoteViewController *_expectedRemoteViewController;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;

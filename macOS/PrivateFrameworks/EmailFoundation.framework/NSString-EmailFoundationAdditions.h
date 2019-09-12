@@ -21,6 +21,7 @@
 @property(readonly) BOOL ef_conformsToMarkupUTType;
 - (BOOL)ef_conformsToUTType:(struct __CFString *)arg1;
 - (id)ef_stringByEscapingForXML;
+- (BOOL)ef_isUnsignedIntegerString;
 - (BOOL)ef_isWebAddress;
 - (const void *)ef_lossyDefaultCStringBytes;
 - (id)ef_stringByReplacingPercentEscapesUsingEncoding:(unsigned long long)arg1;

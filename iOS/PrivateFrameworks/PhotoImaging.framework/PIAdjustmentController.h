@@ -28,7 +28,7 @@
 - (_Bool)isEqual:(id)arg1 forKeys:(id)arg2;
 - (_Bool)isEqual:(id)arg1 visualChangesOnly:(_Bool)arg2;
 - (id)visualInputKeys;
-- (CDStruct_198678f7)timeFromInputKey:(id)arg1 timescaleKey:(id)arg2;
+- (CDStruct_1b6d18a9)timeFromInputKey:(id)arg1 timescaleKey:(id)arg2;
 - (void)interpolateFromStart:(id)arg1 toEnd:(id)arg2 progress:(double)arg3;
 - (void)setFromAdjustment:(id)arg1;
 - (id)valuesForArrayInputKey:(id)arg1;

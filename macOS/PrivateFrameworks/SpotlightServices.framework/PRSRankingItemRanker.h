@@ -26,12 +26,14 @@
     double _currentTime;
 }
 
++ (id)phoneFavoritesCopy;
 + (id)importantAttributesForBundle:(id)arg1;
 + (id)calendarContentType;
 + (id)remindersContentType;
 + (id)messagesContentType;
 + (id)mailContentType;
 + (id)contactContentType;
++ (id)podcastsBundle;
 + (id)coreSuggestionsBundle;
 + (id)documentsAppBundle;
 + (id)filesBundle;
@@ -71,6 +73,7 @@
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 - (void).cxx_destruct;
+- (void)prepareItems:(id)arg1 inRealSectionBundle:(id)arg2;
 - (void)prepareItems:(id)arg1 inBundle:(id)arg2;
 - (void)setRenderEngagementFeaturesForItem:(id)arg1 counts:(id)arg2 isRender:(BOOL)arg3 bundleDict:(id)arg4;
 - (void)setRenderEngagementFeaturesForItemAsShorts:(id)arg1 counts:(short [6])arg2 isRender:(BOOL)arg3 bundleDict:(id)arg4;

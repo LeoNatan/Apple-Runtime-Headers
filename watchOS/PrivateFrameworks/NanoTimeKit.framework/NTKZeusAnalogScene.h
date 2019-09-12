@@ -37,6 +37,9 @@
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
+- (void)tritium_cleanUpAfterTransition;
+- (void)tritium_setTritiumOnWithProgress:(float)arg1;
+- (void)tritium_prepareForTransition;
 @property(nonatomic) float backgroundAlpha;
 - (float)_splitAngle;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;

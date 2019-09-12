@@ -100,6 +100,7 @@
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;
 - (_Bool)_colorSpaceIsNativeForDisplay;
+- (id)referenceMediaFileURL;
 - (_Bool)canRepresentAsSidecar;
 @property(readonly, retain, nonatomic) CPLScopedIdentifier *scopedIdentifier;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;

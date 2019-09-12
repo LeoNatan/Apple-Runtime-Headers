@@ -30,6 +30,7 @@
 + (id)sharedPrefManager;
 + (BOOL)isAdminUser:(unsigned int)arg1;
 - (id)init;
+- (BOOL)hideCatalogEnrollment;
 - (id)majorOSVariant;
 - (void)clearCriticalUpdateNotificationDate;
 - (BOOL)shouldAutoInstallCriticalUpdatesNowForDelay:(long long)arg1;

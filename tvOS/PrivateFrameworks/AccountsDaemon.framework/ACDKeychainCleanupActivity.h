@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)_activityQueue_unregisterActivity;
 - (void)_activityQueue_removeCredentialItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)_removeExpiredCredentials;
 - (void)_activityQueue_removeExpiredCredentials;
 - (void)_activityQueue_registerXPCActivityWithCriteria:(id)arg1;
 - (void)_activityQueue_configureXPCActivityWithCriteria:(id)arg1;

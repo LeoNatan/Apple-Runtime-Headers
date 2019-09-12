@@ -141,6 +141,7 @@
 - (void)assistantConnectionWillStartAcousticIDRequest:(id)arg1;
 - (void)_requestDidFinishWithError:(id)arg1;
 - (void)assistantConnection:(id)arg1 startUIRequestWithText:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_performPunchoutCommand:(id)arg1 delegate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)assistantConnection:(id)arg1 receivedCommand:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_setRefIdForAllViewsInAddViews:(id)arg1;
 - (CDUnknownBlockType)safeWrapResponseCompletion:(CDUnknownBlockType)arg1;

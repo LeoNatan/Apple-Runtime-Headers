@@ -38,6 +38,10 @@
 - (int)_backgroundedTimeViewEditModes;
 - (struct CGPoint)_contentCenterOffset;
 - (void)_configureTimeView:(id)arg1;
+- (void)tritium_applyBurnInStudyFakeActiveState;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
 - (void)_cleanupAfterZoom;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;

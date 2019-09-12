@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)_internalDragFailed;
 - (void)dataTransferSessionFinished;
 - (id)fileNameForItemIndex:(unsigned long long)arg1 type:(id)arg2;
+- (id)pasteboardObjectForItemIndex:(unsigned long long)arg1 type:(id)arg2 class:(Class)arg3;
 - (id)dataForItemIndex:(unsigned long long)arg1 type:(id)arg2;
 - (void)dragFailed;
 - (void)dragEndedWithOperation:(unsigned long long)arg1;

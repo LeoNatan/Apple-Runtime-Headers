@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     id <MTLSerializerRenderPipelineState> pipelineState;
     id <MTLSerializerDepthStencilState> depthStencilState;
     id <MTLSerializerBuffer> fragmentBuffers[31];
-    id <MTLSerializerTexture> fragmentTextures[96];
+    id <MTLSerializerTexture> fragmentTextures[128];
     id <MTLSerializerSamplerState> fragmentSamplers[16];
     id <MTLSerializerBuffer> vertexBuffers[31];
-    id <MTLSerializerTexture> vertexTextures[96];
+    id <MTLSerializerTexture> vertexTextures[128];
     id <MTLSerializerSamplerState> vertexSamplers[16];
     id <MTLSerializerBuffer> tessellationFactorBuffer;
     unsigned long long tileWidth;
@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)forceStoreActionsForPosition:(unsigned long long)arg1;
 - (void)fixStoreActions:(id)arg1;
 - (unsigned long long)getType;
+- (void)setVertexAmplificationCount:(unsigned long long)arg1 viewMappings:(const CDStruct_c0454aff *)arg2;
+- (void)setVertexAmplificationMode:(unsigned long long)arg1 value:(unsigned long long)arg2;
 - (void)setTileTextures:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setTileTexture:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setTileSamplerStates:(const id *)arg1 withRange:(struct _NSRange)arg2;

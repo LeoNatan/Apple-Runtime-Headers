@@ -16,6 +16,7 @@
     _Bool _isReadOnly;
     _Bool _isLocalVolume;
     _Bool _isInternalVolume;
+    _Bool _isRootFileSystemVolume;
     _Bool _isValid;
     NSError *_error;
 }
@@ -23,6 +24,7 @@
 + (id)capabilitiesWithURL:(id)arg1;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) _Bool isValid; // @synthesize isValid=_isValid;
+@property(readonly) _Bool isRootFileSystemVolume; // @synthesize isRootFileSystemVolume=_isRootFileSystemVolume;
 @property(readonly) _Bool isInternalVolume; // @synthesize isInternalVolume=_isInternalVolume;
 @property(readonly) _Bool isLocalVolume; // @synthesize isLocalVolume=_isLocalVolume;
 @property(readonly) _Bool isReadOnly; // @synthesize isReadOnly=_isReadOnly;

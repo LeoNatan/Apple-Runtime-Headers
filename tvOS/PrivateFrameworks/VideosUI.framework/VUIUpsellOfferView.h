@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VUIUpsellOfferViewLayout *_layout;
     VUILabel *_titleLabel;
     VUILabel *_descriptionLabel;
+    VUIAppleTVChannelLogoView *_appleTVChannelLogoView;
     VUILabel *_disclaimerLabel;
     NSArray *_buttons;
-    VUIAppleTVChannelLogoView *_appleTVChannelLogoView;
     UIVisualEffectView *_bgVisualEffectView;
     UIFocusContainerGuide *_containerGuide;
 }
@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 + (id)upsellViewFromElement:(id)arg1 existingView:(id)arg2;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
 @property(retain, nonatomic) UIVisualEffectView *bgVisualEffectView; // @synthesize bgVisualEffectView=_bgVisualEffectView;
-@property(retain, nonatomic) VUIAppleTVChannelLogoView *appleTVChannelLogoView; // @synthesize appleTVChannelLogoView=_appleTVChannelLogoView;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) VUILabel *disclaimerLabel; // @synthesize disclaimerLabel=_disclaimerLabel;
+@property(retain, nonatomic) VUIAppleTVChannelLogoView *appleTVChannelLogoView; // @synthesize appleTVChannelLogoView=_appleTVChannelLogoView;
 @property(retain, nonatomic) VUILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUIUpsellOfferViewLayout *layout; // @synthesize layout=_layout;

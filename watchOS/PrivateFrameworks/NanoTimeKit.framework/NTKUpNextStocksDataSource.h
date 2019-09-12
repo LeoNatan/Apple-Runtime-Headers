@@ -24,6 +24,8 @@
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver;
 - (id)_newDowntimeElement;
 - (void)getElementsInSection:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

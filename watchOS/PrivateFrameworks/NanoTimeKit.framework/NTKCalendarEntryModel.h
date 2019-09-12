@@ -30,6 +30,7 @@
 
 + (id)_entryForTemplateDescription:(id)arg1 family:(int)arg2;
 + (id)loadingEntryForFamily:(int)arg1;
++ (id)privacyEntryForFamily:(int)arg1;
 + (id)lockedEntryForFamily:(int)arg1;
 + (id)signatureRectangular:(id)arg1;
 + (id)_signatureCornerImageProvider;

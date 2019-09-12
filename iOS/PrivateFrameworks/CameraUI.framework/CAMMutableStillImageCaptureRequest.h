@@ -20,6 +20,7 @@
 }
 
 @property(copy, nonatomic) NSString *timelapseIdentifier; // @dynamic timelapseIdentifier;
+@property(nonatomic) long long aspectRatioCrop; // @dynamic aspectRatioCrop;
 @property(nonatomic) long long lightingEffectType; // @dynamic lightingEffectType;
 @property(nonatomic) long long effectFilterType; // @dynamic effectFilterType;
 @property(nonatomic) unsigned long long maximumBurstLength; // @dynamic maximumBurstLength;
@@ -46,14 +47,19 @@
 @property(nonatomic) __weak id <CAMStillImageCaptureRequestDelegate> delegate; // @dynamic delegate;
 @property(nonatomic) unsigned short sessionIdentifier; // @dynamic sessionIdentifier;
 @property(copy, nonatomic) NSString *EV0VideoPersistenceUUID; // @dynamic EV0VideoPersistenceUUID;
+@property(copy, nonatomic) NSURL *EV0LocalSpatialOverCaptureVideoDestinationURL; // @dynamic EV0LocalSpatialOverCaptureVideoDestinationURL;
 @property(copy, nonatomic) NSURL *EV0LocalVideoDestinationURL; // @dynamic EV0LocalVideoDestinationURL;
 @property(copy, nonatomic) NSString *EV0IrisIdentifier; // @dynamic EV0IrisIdentifier;
 @property(copy, nonatomic) NSString *videoPersistenceUUID; // @dynamic videoPersistenceUUID;
+@property(copy, nonatomic) NSURL *localCTMSpatialOverCaptureVideoDestinationURL; // @dynamic localCTMSpatialOverCaptureVideoDestinationURL;
+@property(copy, nonatomic) NSURL *localSpatialOverCaptureVideoDestinationURL; // @dynamic localSpatialOverCaptureVideoDestinationURL;
 @property(copy, nonatomic) NSURL *localVideoDestinationURL; // @dynamic localVideoDestinationURL;
+@property(copy, nonatomic) NSURL *localCTMVideoDestinationURL; // @dynamic localCTMVideoDestinationURL;
 @property(copy, nonatomic) NSString *irisIdentifier; // @dynamic irisIdentifier;
 @property(nonatomic) struct CGSize desiredPreviewSize; // @dynamic desiredPreviewSize;
 @property(nonatomic) _Bool stillDuringVideo; // @dynamic stillDuringVideo;
 @property(nonatomic) _Bool wantsHighResolutionStills; // @dynamic wantsHighResolutionStills;
+- (void)setAspectRatio:(long long)arg1;
 @property(nonatomic) _Bool wantsSquareCrop; // @dynamic wantsSquareCrop;
 @property(nonatomic) _Bool wantsAudioForCapture; // @dynamic wantsAudioForCapture;
 @property(nonatomic) _Bool wantsAutoDualCameraFusion; // @dynamic wantsAutoDualCameraFusion;
@@ -61,6 +67,9 @@
 @property(retain, nonatomic) NSArray *originalFilters; // @dynamic originalFilters;
 @property(retain, nonatomic) NSArray *adjustmentFilters; // @dynamic adjustmentFilters;
 @property(nonatomic) _Bool wantsPortraitEffect; // @dynamic wantsPortraitEffect;
+@property(nonatomic) long long lowLightMode; // @dynamic lowLightMode;
+@property(nonatomic) _Bool wantsSpatialOverCapture; // @dynamic wantsSpatialOverCapture;
+@property(nonatomic) long long ctmCaptureType; // @dynamic ctmCaptureType;
 @property(nonatomic) long long irisMode; // @dynamic irisMode;
 @property(nonatomic) long long hdrMode; // @dynamic hdrMode;
 @property(nonatomic) long long flashMode; // @dynamic flashMode;

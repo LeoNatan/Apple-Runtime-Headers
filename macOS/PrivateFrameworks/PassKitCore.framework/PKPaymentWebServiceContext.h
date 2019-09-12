@@ -25,6 +25,7 @@
     NSString *_deviceID;
     NSString *_secureElementID;
     NSString *_pushToken;
+    NSString *_nextPushToken;
     NSString *_companionSerialNumber;
     NSDate *_registrationDate;
     NSDate *_configurationDate;
@@ -51,6 +52,7 @@
 @property(copy) NSDate *registrationDate; // @synthesize registrationDate=_registrationDate;
 @property BOOL devSigned; // @synthesize devSigned=_devSigned;
 @property(copy) NSString *companionSerialNumber; // @synthesize companionSerialNumber=_companionSerialNumber;
+@property(copy) NSString *nextPushToken; // @synthesize nextPushToken=_nextPushToken;
 @property(copy) NSString *pushToken; // @synthesize pushToken=_pushToken;
 @property(copy) NSString *secureElementID; // @synthesize secureElementID=_secureElementID;
 @property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;

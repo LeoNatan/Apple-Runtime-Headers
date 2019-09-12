@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)updateMetadataForSavedRecords:(id)arg1 deletedRecordIDs:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4;
 - (void)exportOperationFinished:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)executeOperationsInContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)analyzeHistoryInStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
 - (void)exportIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1 request:(id)arg2 monitor:(id)arg3 workQueue:(id)arg4;

@@ -7,11 +7,13 @@
 #import <UIKitCore/NSObject-Protocol.h>
 
 @class NSString;
-@protocol NSUIImage, NSUITraitCollection;
+@protocol NSUIImage, NSUIImageConfiguration, NSUITraitCollection;
 
 @protocol NSUIImageAsset <NSObject>
 + (id)_dynamicAssetNamed:(NSString *)arg1 generator:(id <NSUIImage> (^)(id <NSUIImageAsset>, id <NSUIImageConfiguration>, id <NSUIImage>))arg2;
-- (void)_drawInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 usingScale:(double)arg3 layoutDirection:(long long)arg4 style:(long long)arg5 displayGamut:(long long)arg6;
+@property(readonly, getter=_isCoreGlyphsAsset) BOOL _coreGlyphsAsset;
+- (void)_drawInRect:(struct CGRect)arg1 usingScale:(double)arg2 layoutDirection:(long long)arg3 style:(long long)arg4 displayGamut:(long long)arg5 configuration:(id <NSUIImageConfiguration>)arg6;
+- (id <NSUIImage>)imageWithConfiguration:(id <NSUIImageConfiguration>)arg1;
 - (id <NSUIImage>)imageWithTraitCollection:(id <NSUITraitCollection>)arg1;
 @end
 

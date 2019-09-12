@@ -163,6 +163,8 @@ __attribute__((visibility("hidden")))
 - (void)setShowTabAncestryInTabTitle:(id)arg1;
 - (BOOL)validate_setSuppressRelatingNewBlankTabs:(id)arg1;
 - (void)setSuppressRelatingNewBlankTabs:(id)arg1;
+- (BOOL)validate_setApplyPositionToAllBlankTabs:(id)arg1;
+- (void)setApplyPositionToAllBlankTabs:(id)arg1;
 - (BOOL)validate_setApplyPositionToSpawnedTabs:(id)arg1;
 - (void)setApplyPositionToSpawnedTabs:(id)arg1;
 - (BOOL)validate_updateNewTabPositionValue:(id)arg1;

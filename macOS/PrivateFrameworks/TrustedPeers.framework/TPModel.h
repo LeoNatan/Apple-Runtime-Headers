@@ -53,11 +53,11 @@
 - (BOOL)considerPolicyFromPeerID:(id)arg1 stableInfo:(id)arg2 secrets:(id)arg3 newestPolicyDoc:(id *)arg4 error:(id *)arg5;
 - (id)policyForPeerIDs:(id)arg1 candidatePeerID:(id)arg2 candidateStableInfo:(id)arg3 error:(id *)arg4;
 - (id)policyForPeerIDs:(id)arg1 error:(id *)arg2;
-- (id)dynamicInfoForJoiningPeerID:(id)arg1 peerPermanentInfo:(id)arg2 sponsorID:(id)arg3 preapprovedKeys:(id)arg4 signingKeyPair:(id)arg5 error:(id *)arg6;
+- (id)dynamicInfoForJoiningPeerID:(id)arg1 peerPermanentInfo:(id)arg2 peerStableInfo:(id)arg3 sponsorID:(id)arg4 preapprovedKeys:(id)arg5 signingKeyPair:(id)arg6 error:(id *)arg7;
 - (void)filterPreapprovals:(id)arg1 forExistingPeers:(id)arg2;
 - (id)peersWithMachineID:(id)arg1;
 - (id)filterPeerListByMachineID:(id)arg1 dispositions:(id)arg2;
-- (id)calculateDynamicInfoFromModel:(id)arg1 peer:(id)arg2 peerPermanentInfo:(id)arg3 startingDynamicInfo:(id)arg4 addingPeerIDs:(id)arg5 removingPeerIDs:(id)arg6 preapprovedKeys:(id)arg7 signingKeyPair:(id)arg8 error:(id *)arg9;
+- (id)calculateDynamicInfoFromModel:(id)arg1 peer:(id)arg2 peerPermanentInfo:(id)arg3 peerStableInfo:(id)arg4 startingDynamicInfo:(id)arg5 addingPeerIDs:(id)arg6 removingPeerIDs:(id)arg7 preapprovedKeys:(id)arg8 signingKeyPair:(id)arg9 error:(id *)arg10;
 - (id)calculateDynamicInfoForPeerWithID:(id)arg1 addingPeerIDs:(id)arg2 removingPeerIDs:(id)arg3 preapprovedKeys:(id)arg4 signingKeyPair:(id)arg5 error:(id *)arg6;
 - (void)recursivelyExpandIncludedPeerIDs:(id)arg1 andExcludedPeerIDs:(id)arg2 dispositions:(id)arg3 withPeersTrustedBySponsorID:(id)arg4 forEpoch:(unsigned long long)arg5;
 - (void)considerVouchersSponsoredByPeerID:(id)arg1 sponsorPermanentInfo:(id)arg2 toReecursivelyExpandIncludedPeerIDs:(id)arg3 andExcludedPeerIDs:(id)arg4 dispositions:(id)arg5 forEpoch:(unsigned long long)arg6;
@@ -81,6 +81,7 @@
 - (BOOL)validatePeerWithPreApproval:(id)arg1 sponsor:(id)arg2;
 - (BOOL)hasPeerPreapprovingKey:(id)arg1;
 - (unsigned long long)statusOfMachineID:(id)arg1;
+- (id)allMachineIDs;
 - (BOOL)anyUnknownMachineIDs;
 - (id)actualPeerWithID:(id)arg1 error:(id *)arg2;
 - (id)peerWithID:(id)arg1;

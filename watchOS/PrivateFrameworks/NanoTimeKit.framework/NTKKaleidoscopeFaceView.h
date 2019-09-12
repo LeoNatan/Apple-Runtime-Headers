@@ -11,7 +11,7 @@
 #import <NanoTimeKit/NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CLKUIQuadView, CLKUIResourceProviderKey, CLKUITexture, NSMapTable, NSMutableSet, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKKaleidoscopePathfinder, NTKPhoto, NTKRoundedCornerOverlayView, PUICClientSideAnimation, PUICCrownInputSequencer, UIColor, UIImage;
+@class CLKUIQuadView, CLKUIResourceProviderKey, CLKUITexture, NSDate, NSMapTable, NSMutableSet, NSString, NTKColorCircularUtilitarianFaceViewComplicationFactory, NTKKaleidoscopePathfinder, NTKPhoto, NTKRoundedCornerOverlayView, PUICClientSideAnimation, PUICCrownInputSequencer, UIColor, UIImage, UIImageView, UIView;
 
 @interface NTKKaleidoscopeFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate, CLKUIQuadViewDelegate, CLKUIResourceProviderDelegate, PUICCrownInputSequencerDelegate>
 {
@@ -38,13 +38,37 @@
     double _dayDuration;
     NSMapTable *_quadPathfinderMapTable;
     NSMutableSet *_loadedAssets;
+    NSDate *_tritium_quadOverrideDate;
+    NSDate *_tritium_transitionFromDate;
+    UIView *_tritium_transitionFromBackdropView;
+    UIImageView *_tritium_transitionFromView;
+    float _tritium_transitionFromDim;
+    NSDate *_tritium_transitionToDate;
+    UIView *_tritium_transitionToBackdropView;
+    UIImageView *_tritium_transitionToView;
+    float _tritium_transitionToDim;
+    NSDate *_tritium_willTransitionToOnDate;
+    PUICClientSideAnimation *_tritium_timeAdjustmentAnimation;
+    float _tritium_currentFrameDim;
     unsigned int _currentAsset;
     unsigned int _currentStyle;
 }
 
++ (Class)tritium_frameSpecifierClass;
 @property(nonatomic) unsigned int currentStyle; // @synthesize currentStyle=_currentStyle;
 @property(nonatomic) unsigned int currentAsset; // @synthesize currentAsset=_currentAsset;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (void)_animateToCurrentDateFromDate:(id)arg1;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_applyBurnInStudyFakeActiveState;
 - (_Bool)_wantsConstantSpeedZoom;
 - (id)_quadWithStyle:(unsigned int)arg1 asset:(unsigned int)arg2;
 - (id)_textureForAsset:(unsigned int)arg1;

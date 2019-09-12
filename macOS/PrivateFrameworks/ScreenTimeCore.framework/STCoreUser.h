@@ -6,7 +6,7 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSNumber, NSSet, NSString, STCoreOrganization, STCoreOrganizationSettings, STFamilyOrganizationSettings, STLocalOrganizationSettings, STUserDeviceState, STiCloudOrganizationSettings;
+@class NSDate, NSNumber, NSSet, NSString, STCoreOrganization, STCoreOrganizationSettings, STFamilyOrganizationSettings, STLocalOrganizationSettings, STUserDeviceState, STiCloudOrganizationSettings;
 
 @interface STCoreUser : NSManagedObject
 {
@@ -22,11 +22,12 @@
 + (id)keyPathsForValuesAffectingCommunicationWhileLimitedPolicy;
 + (id)keyPathsForValuesAffectingCommunicationPolicy;
 + (id)keyPathsForValuesAffectingShareWebUsage;
++ (id)keyPathsForValuesAffectingNeedsToSetPasscode;
 + (id)keyPathsForValuesAffectingEffectivePasscode;
 + (id)keyPathsForValuesAffectingManaging;
 + (id)keyPathsForValuesAffectingManaged;
 + (id)keyPathsForValuesAffectingAllLimitsEnabled;
-+ (id)keyPathsForValuesAffectingHasiCloudFamily;
++ (id)keyPathsForValuesAffectingCanSetUpFamily;
 + (id)keyPathsForValuesAffectingSyncingEnabled;
 + (id)keyPathsForValuesAffectingScreenTimeEnabled;
 + (id)keyPathsForValuesAffectingLocalizedFullName;
@@ -41,12 +42,13 @@
 @property(nonatomic) long long communicationPolicy;
 @property(readonly) NSString *organizationIdentifier;
 @property BOOL shareWebUsage;
+@property(readonly) BOOL needsToSetPasscode;
 @property(copy) NSString *effectivePasscode;
 @property(readonly, getter=isManaging) BOOL managing;
 @property(readonly, getter=isManaged) BOOL managed;
 @property(readonly) STCoreOrganization *managingOrganization; // @dynamic managingOrganization;
 @property BOOL allLimitsEnabled;
-@property(readonly) BOOL hasiCloudFamily;
+@property(readonly) BOOL canSetUpFamily;
 @property BOOL syncingEnabled;
 @property BOOL screenTimeEnabled;
 @property(readonly, copy, nonatomic) NSString *localizedFullName;
@@ -73,6 +75,8 @@
 @property(nonatomic) BOOL isParent; // @dynamic isParent;
 @property(retain, nonatomic) STLocalOrganizationSettings *localSettings; // @dynamic localSettings;
 @property(retain, nonatomic) STUserDeviceState *localUserDeviceState; // @dynamic localUserDeviceState;
+@property(nonatomic) long long passcodeEntryAttemptCount; // @dynamic passcodeEntryAttemptCount;
+@property(copy, nonatomic) NSDate *passcodeEntryTimeoutEndDate; // @dynamic passcodeEntryTimeoutEndDate;
 @property(readonly, copy, nonatomic) NSString *phoneticFamilyName; // @dynamic phoneticFamilyName;
 @property(readonly, copy, nonatomic) NSString *phoneticGivenName; // @dynamic phoneticGivenName;
 @property(nonatomic) BOOL supportsEncryption; // @dynamic supportsEncryption;

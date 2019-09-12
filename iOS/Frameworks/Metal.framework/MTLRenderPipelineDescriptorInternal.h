@@ -76,6 +76,10 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)colorSampleCount;
 - (void)setVertexEnabled:(_Bool)arg1;
 - (_Bool)isVertexEnabled;
+- (void)setMaxVertexAmplificationCount:(unsigned long long)arg1;
+- (unsigned long long)maxVertexAmplificationCount;
+- (void)setVertexAmplificationMode:(unsigned long long)arg1;
+- (unsigned long long)vertexAmplificationMode;
 - (void)setRasterizationEnabled:(_Bool)arg1;
 - (_Bool)isRasterizationEnabled;
 - (void)setAlphaToOneEnabled:(_Bool)arg1;

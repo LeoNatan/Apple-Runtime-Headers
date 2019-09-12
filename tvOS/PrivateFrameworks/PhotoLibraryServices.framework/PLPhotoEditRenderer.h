@@ -20,6 +20,7 @@
     double _smartBWLevelInCachedAdjustments;
     PICompositionController *_compositionController;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     long long _smartFiltersCubeSize;
 }
 
@@ -27,9 +28,11 @@
 + (void)updateComposition:(id)arg1 fromPortraitMetadata:(id)arg2;
 + (_Bool)currentDeviceShouldAllowLocalLight;
 + (id)newImageDataFromCGImage:(struct CGImage *)arg1 withCompressionQuality:(double)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(_Bool)arg4;
++ (id)compositionWithController:(id)arg1 source:(id)arg2 overcaptureSource:(id)arg3;
 + (id)compositionWithController:(id)arg1 source:(id)arg2;
 + (void)configureNeutrinoCacheDirectoryIfNeeded;
 @property(nonatomic) long long smartFiltersCubeSize; // @synthesize smartFiltersCubeSize=_smartFiltersCubeSize;
+@property(retain, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 - (void)applySourceChangesToCompositionController:(id)arg1 source:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
@@ -63,8 +66,8 @@
 - (void)renderImageWithTargetSize:(struct CGSize)arg1 contentMode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, retain, nonatomic) NUComposition *composition;
 - (id)exportVideoToURL:(id)arg1 preset:(id)arg2 livePhotoPairingIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)initWithEditSource:(id)arg1 renderPriority:(long long)arg2;
-- (id)initWithEditSource:(id)arg1;
+- (id)initWithEditSource:(id)arg1 overcaptureEditSource:(id)arg2 renderPriority:(long long)arg3;
+- (id)initWithEditSource:(id)arg1 overcaptureEditSource:(id)arg2;
 
 @end
 

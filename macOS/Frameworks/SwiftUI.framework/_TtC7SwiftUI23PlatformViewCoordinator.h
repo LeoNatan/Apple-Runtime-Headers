@@ -9,10 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface _TtC7SwiftUI23PlatformViewCoordinator : NSObject
 {
-    // Error parsing type: , name: host
 }
 
-- (void).cxx_destruct;
 - (id)init;
 
 @end

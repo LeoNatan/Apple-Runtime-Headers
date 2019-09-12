@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider, PFCloudKitMetricsClient, PFCloudKitStoreMonitorProvider;
+@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider, PFCloudKitMetadataPurger, PFCloudKitMetricsClient, PFCloudKitStoreMonitorProvider;
 
 @interface NSCloudKitMirroringDelegateOptions : NSObject
 {
@@ -24,6 +24,7 @@
     PFCloudKitContainerProvider *_containerProvider;
     PFCloudKitStoreMonitorProvider *_storeMonitorProvider;
     PFCloudKitMetricsClient *_metricsClient;
+    PFCloudKitMetadataPurger *_metadataPurger;
     NSString *_apsConnectionMachServiceName;
     BOOL _useDaemon;
     BOOL _useTestDaemon;
@@ -34,6 +35,7 @@
 @property(nonatomic) BOOL preserveLegacyRecordMetadataBehavior; // @synthesize preserveLegacyRecordMetadataBehavior=_preserveLegacyRecordMetadataBehavior;
 @property(nonatomic) BOOL useTestDaemon; // @synthesize useTestDaemon=_useTestDaemon;
 @property(nonatomic) BOOL useDaemon; // @synthesize useDaemon=_useDaemon;
+@property(retain, nonatomic) PFCloudKitMetadataPurger *metadataPurger; // @synthesize metadataPurger=_metadataPurger;
 @property(retain, nonatomic) PFCloudKitStoreMonitorProvider *storeMonitorProvider; // @synthesize storeMonitorProvider=_storeMonitorProvider;
 @property(retain, nonatomic) PFCloudKitContainerProvider *containerProvider; // @synthesize containerProvider=_containerProvider;
 @property(nonatomic) BOOL skipCloudKitSetup; // @synthesize skipCloudKitSetup=_skipCloudKitSetup;

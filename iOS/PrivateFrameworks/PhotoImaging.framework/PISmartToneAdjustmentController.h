@@ -22,6 +22,8 @@
     } _smartSettings;
 }
 
++ (id)sourceSelectionKey;
++ (id)overcaptureStatisticsKey;
 + (id)statisticsKey;
 + (id)inputRawHighlightsKey;
 + (id)inputLocalLightKey;
@@ -56,6 +58,8 @@
 @property(nonatomic) double offsetContrast;
 @property(nonatomic) double offsetBrightness;
 @property(nonatomic) double offsetBlack;
+@property(copy, nonatomic) NSDictionary *overcaptureStatistics;
+@property(nonatomic) long long sourceSelection;
 @property(copy, nonatomic) NSDictionary *statistics;
 - (double)inputRawHighlights;
 - (void)setInputRawHighlights:(double)arg1;

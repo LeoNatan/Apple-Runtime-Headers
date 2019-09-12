@@ -44,6 +44,7 @@
 - (void)setPaused:(_Bool)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)tritium_requiresCopy;
 
 @end
 

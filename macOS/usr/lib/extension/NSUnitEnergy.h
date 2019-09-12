@@ -19,6 +19,7 @@
 + (id)joules;
 + (id)kilojoules;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

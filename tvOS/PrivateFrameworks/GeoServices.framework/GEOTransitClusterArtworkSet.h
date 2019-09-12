@@ -58,6 +58,7 @@
 @property(readonly, nonatomic) unsigned long long artworkIndexsCount;
 - (void)_readArtworkIndexs;
 - (void)dealloc;
+- (id)_maps_artworkIndicesAsString;
 
 @end
 

@@ -9,16 +9,17 @@
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
 #import <AppleMediaServices/AMSURLProtocolDelegate-Protocol.h>
 
-@class ACAccount, AMSURLSession, NSString;
-@protocol AMSBagProtocol;
+@class ACAccount, AMSProcessInfo, NSString;
+@protocol AMSBagProtocol, NSURLSessionDelegate><AMSURLProtocolDelegate;
 
 @interface AMSSyncPasswordSettingsTask : AMSTask <AMSURLProtocolDelegate, AMSBagConsumer>
 {
     ACAccount *_account;
+    id <AMSBagProtocol> _bag;
+    AMSProcessInfo *_clientInfo;
+    id <NSURLSessionDelegate><AMSURLProtocolDelegate> _delegate;
     unsigned long long _freeSetting;
     unsigned long long _paidSetting;
-    AMSURLSession *_session;
-    id <AMSBagProtocol> _bag;
 }
 
 + (id)bagSubProfileVersion;
@@ -27,11 +28,12 @@
 + (void)addRequiredBagKeysToAggregator:(id)arg1;
 + (id)serverValueForPaidPasswordSetting:(unsigned long long)arg1;
 + (id)serverValueForFreePasswordSetting:(unsigned long long)arg1;
-@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-@property(retain) AMSURLSession *session; // @synthesize session=_session;
-@property unsigned long long paidSetting; // @synthesize paidSetting=_paidSetting;
-@property unsigned long long freeSetting; // @synthesize freeSetting=_freeSetting;
-@property(retain) ACAccount *account; // @synthesize account=_account;
+@property(readonly) unsigned long long paidSetting; // @synthesize paidSetting=_paidSetting;
+@property(readonly) unsigned long long freeSetting; // @synthesize freeSetting=_freeSetting;
+@property(readonly) __weak id <NSURLSessionDelegate><AMSURLProtocolDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
+@property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
+@property(readonly) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 - (id)performSync;
 - (id)initWithAccount:(id)arg1 freeSetting:(unsigned long long)arg2 paidSetting:(unsigned long long)arg3 delegate:(id)arg4 bag:(id)arg5;

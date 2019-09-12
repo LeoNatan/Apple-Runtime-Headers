@@ -17,8 +17,15 @@
 }
 
 + (id)mergePreviousOrdering:(id)arg1 incomingOrdering:(id)arg2 outgoingOrdering:(id)arg3 sendOutgoingChange:(char *)arg4 saveLocalChange:(char *)arg5;
-+ (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 andOutgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 detectingDuplicateWorkflowsInDatabase:(id)arg5 outWorkflowIDsToRename:(id *)arg6 outLocalWorkflowsToDelete:(id *)arg7;
++ (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 outgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 incomingOrderedWorkflowIDs:(id)arg5 outgoingOrderedWorkflowIDs:(id)arg6 detectingDuplicateWorkflowsInDatabase:(id)arg7 outWorkflowIDsToRename:(id *)arg8 outLocalWorkflowsToDelete:(id *)arg9;
++ (void)setVoiceShortcutMigrationDidSync:(BOOL)arg1;
++ (BOOL)voiceShortcutMigrationDidSync;
++ (void)setVoiceShortcutMigrationDidRun:(BOOL)arg1;
++ (BOOL)voiceShortcutMigrationDidRun;
++ (void)setIgnoresUserDeletedZoneErrors:(BOOL)arg1;
++ (BOOL)ignoresUserDeletedZoneErrors;
 + (BOOL)isSyncOrderingEnabled;
++ (void)setSyncEnabled:(BOOL)arg1;
 + (BOOL)isSyncEnabled;
 + (void)initialize;
 @property(readonly, nonatomic) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
@@ -31,7 +38,7 @@
 - (BOOL)buildOutgoingChangesFromDatabase:(id)arg1 sendAllChanges:(BOOL)arg2 outChangedWorkflows:(out id *)arg3 outPreSyncHashes:(out id *)arg4 outDeletedWorkflowIDs:(out id *)arg5 outOrderedWorkflowIDs:(out id *)arg6;
 - (void)pruneIncomingChanges:(id)arg1 deletes:(id)arg2 inDatabase:(id)arg3 outWorkflowsToReupload:(id *)arg4;
 - (BOOL)fetchChangesFromCloudKitSinceChangeToken:(id)arg1 outChangedWorkflowRecords:(out id *)arg2 outDeleted:(out id *)arg3 outOrderedWorkflowIDs:(out id *)arg4 outNewServerChangeToken:(out id *)arg5 error:(id *)arg6;
-- (BOOL)createRecordZoneIfNecessaryError:(id *)arg1;
+- (BOOL)createRecordZoneIfNecessaryWithDatabase:(id)arg1 error:(id *)arg2;
 - (void)clearSyncStateForWorkflows:(id)arg1 inDatabase:(id)arg2;
 - (id)accountNameForSyncToken;
 - (long long)fetchCurrentAccountInfo;

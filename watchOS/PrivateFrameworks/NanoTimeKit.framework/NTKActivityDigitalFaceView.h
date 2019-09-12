@@ -7,10 +7,12 @@
 #import <NanoTimeKit/NTKDigitalFaceView.h>
 
 #import <NanoTimeKit/NTKActivityFaceViewFactoryDelegate-Protocol.h>
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
+#import <NanoTimeKit/NTKWellnessTimelineModelSubscriber-Protocol.h>
 
 @class ARUIRingsView, NSDate, NSString, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKFaceViewTapControl, NTKPolygonCylinderView, UILabel, UIView;
 
-@interface NTKActivityDigitalFaceView : NTKDigitalFaceView <NTKActivityFaceViewFactoryDelegate>
+@interface NTKActivityDigitalFaceView : NTKDigitalFaceView <NTKActivityFaceViewFactoryDelegate, NTKTritiumMetalContentView, NTKWellnessTimelineModelSubscriber>
 {
     NTKActivityFaceViewFactory *_faceViewFactory;
     ARUIRingsView *_ringsView;
@@ -30,6 +32,9 @@
     int _exerciseStringMetricWidth;
     int _standStringMetricWidth;
     NTKActivitySignificantRingChangeModel *_significantRingChangeModel;
+    UILabel *_tritiumPrivacyMoveLabel;
+    UILabel *_tritiumPrivacyExerciseLabel;
+    UILabel *_tritiumPrivacyStandLabel;
     _Bool _showSeconds;
     float _rightTimeViewInset;
 }
@@ -39,6 +44,16 @@
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(nonatomic) float rightTimeViewInset; // @synthesize rightTimeViewInset=_rightTimeViewInset;
 - (void).cxx_destruct;
+- (void)wellnessTimeLineModelCurrentEntryModelUpdated:(id)arg1;
+- (void)tritium_invalidateMetalContentForSnapshot;
+- (void)tritium_willSnapshotForBurnInStudy;
+- (id)tritium_createFaceAnimator;
+- (void)_updateRingsOpacity:(float)arg1;
+- (void)_removeTritiumLabels;
+- (void)_createTritiumLabelsIfNeeded;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
 - (id)_additionalPrelaunchApplicationIdentifiers;
 - (float)_blinkerAndSecondsWidth;
 - (void)_removeActivityRelatedUIs;

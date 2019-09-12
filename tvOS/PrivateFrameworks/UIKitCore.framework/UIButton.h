@@ -198,6 +198,7 @@
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeForTitle:(id)arg1 attributedTitle:(id)arg2 image:(id)arg3 backgroundImage:(id)arg4 titlePaddingInsets:(struct UIEdgeInsets *)arg5;
 - (struct CGSize)_roundSize:(struct CGSize)arg1;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)_viewForBaselineLayout;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

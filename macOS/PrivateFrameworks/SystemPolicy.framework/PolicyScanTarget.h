@@ -15,6 +15,8 @@
     unsigned long long _objectID;
     NSString *_fsTypeName;
     NSString *_volumePath;
+    NSString *_blockDevice;
+    NSDate *_mountTime;
     NSDate *_modTime;
     NSDate *_chgTime;
     BOOL _checkValidity;
@@ -31,6 +33,7 @@
     NSString *_teamID;
     NSString *_signingID;
     BOOL _quarantineChecked;
+    BOOL _isQuarantinedMount;
     BOOL _isQuarantined;
     BOOL _isUserApproved;
     BOOL _isScript;
@@ -39,15 +42,18 @@
     int _pid;
 }
 
+@property(readonly, nonatomic) NSDate *mountTime; // @synthesize mountTime=_mountTime;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(nonatomic) BOOL isBundled; // @synthesize isBundled=_isBundled;
 @property(nonatomic) BOOL isScript; // @synthesize isScript=_isScript;
+@property(readonly, nonatomic) BOOL isQuarantinedMount; // @synthesize isQuarantinedMount=_isQuarantinedMount;
 @property(nonatomic) BOOL triggeredByLibraryLoad; // @synthesize triggeredByLibraryLoad=_triggeredByLibraryLoad;
 @property(nonatomic) BOOL checkValidity; // @synthesize checkValidity=_checkValidity;
 @property(readonly, nonatomic) NSDate *modTime; // @synthesize modTime=_modTime;
 @property(readonly, nonatomic) NSString *volumePath; // @synthesize volumePath=_volumePath;
 @property(readonly, nonatomic) NSString *fsTypeName; // @synthesize fsTypeName=_fsTypeName;
 @property(readonly, nonatomic) unsigned long long objectID; // @synthesize objectID=_objectID;
+@property(readonly, nonatomic) NSString *blockDevice; // @synthesize blockDevice=_blockDevice;
 @property(readonly, nonatomic) NSString *pathOnVolume; // @synthesize pathOnVolume=_pathOnVolume;
 @property(readonly, nonatomic) NSUUID *volumeUUID; // @synthesize volumeUUID=_volumeUUID;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;

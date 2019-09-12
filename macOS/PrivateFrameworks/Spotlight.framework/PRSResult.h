@@ -145,7 +145,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) BOOL allowsCPRecording;
 - (void)prepare;
-- (id)initWithFastLaunchURL:(id)arg1 displayName:(id)arg2 contentType:(id)arg3;
+- (id)initWithFastLaunchURL:(id)arg1 contentType:(id)arg2 displayName:(id)arg3;
 - (id)initWithContentType:(id)arg1 displayName:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id <NSPasteboardWriting> pasteboardObject;

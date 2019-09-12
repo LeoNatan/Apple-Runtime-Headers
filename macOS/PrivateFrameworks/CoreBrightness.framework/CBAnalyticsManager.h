@@ -20,15 +20,16 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)stopReporting:(unsigned long long)arg1;
-+ (void)sendEventLazy:(id)arg1 andDict:(id)arg2;
 + (void)sendEventOnceADayLazy:(id)arg1 andDict:(id)arg2;
-+ (_Bool)handleColorSample:(id)arg1;
++ (BOOL)handleColorSample:(id)arg1;
 + (id)sharedInstance;
-- (id)typeToString:(unsigned long long)arg1;
-- (_Bool)isSameDay:(id)arg1 asDay:(id)arg2;
-- (_Bool)isFirstEventToday:(id)arg1;
+- (id)stringForType:(unsigned long long)arg1;
+- (BOOL)isSameDay:(id)arg1 asDay:(id)arg2;
+- (BOOL)isFirstEventToday:(id)arg1;
 - (void)stopReportingInternal:(unsigned long long)arg1;
 - (void)startReporting;
+- (void)sendEventLazy:(id)arg1 andDict:(id)arg2;
+- (void)sendEventOnceADayLazyInternal:(id)arg1 andDict:(id)arg2;
 - (void)logColorSample:(id)arg1 withType:(id)arg2;
 - (void)logAllColorSamples;
 - (_Bool)handleColorSampleInternal:(id)arg1;

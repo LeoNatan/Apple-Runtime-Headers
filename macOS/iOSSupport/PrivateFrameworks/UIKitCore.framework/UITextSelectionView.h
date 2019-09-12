@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     BOOL m_wasShowingCommands;
     BOOL m_delayShowingCommands;
     BOOL m_dictationReplacementsMode;
-    BOOL m_shouldEmphasizeNextSelectionRects;
     int m_showingCommandsCounter;
+    BOOL m_preserveEmphasisForRangeView;
     NSArray *m_replacements;
     BOOL m_deferSelectionCommands;
     struct __CFRunLoopObserver *m_observer;
@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     BOOL m_wasBlinking;
     int m_showingCommandsCounterForRotate;
     BOOL m_forceRangeView;
+    BOOL m_isInstalledInSelectionContainerView;
     BOOL _isIndirectFloatingCaret;
     RVItem *_rvItem;
     struct CGRect _stashedCaretRect;
@@ -45,6 +46,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect previousGhostCaretRect; // @synthesize previousGhostCaretRect=_previousGhostCaretRect;
 @property(nonatomic) BOOL isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
 @property(nonatomic) struct CGRect stashedCaretRect; // @synthesize stashedCaretRect=_stashedCaretRect;
+@property(readonly, nonatomic) BOOL isInstalledInSelectionContainerView; // @synthesize isInstalledInSelectionContainerView=m_isInstalledInSelectionContainerView;
 @property(retain, nonatomic) NSArray *replacements; // @synthesize replacements=m_replacements;
 @property(nonatomic) BOOL forceRangeView; // @synthesize forceRangeView=m_forceRangeView;
 @property(readonly, nonatomic) __weak UITextInteractionAssistant *interactionAssistant; // @synthesize interactionAssistant=m_interactionAssistant;
@@ -105,7 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)hideSelectionCommands;
 - (void)hideSelectionCommandsAfterDelay:(double)arg1;
 - (void)showReplacementsWithGenerator:(id)arg1 forDictation:(BOOL)arg2 afterDelay:(double)arg3;
-- (void)calculateAndShowReplacements:(id)arg1;
+- (void)calculateReplacementsWithGenerator:(id)arg1 andShowAfterDelay:(double)arg2;
 - (void)_showSelectionCommandsForContextMenu:(BOOL)arg1;
 - (void)showSelectionCommandsForContextMenuWithRVItem:(id)arg1 atLocationInView:(struct CGPoint)arg2;
 - (void)showSelectionCommands;
@@ -113,7 +115,8 @@ __attribute__((visibility("hidden")))
 - (void)showCalloutBarAfterDelay:(double)arg1;
 - (void)cancelDelayedCommandRequests;
 - (void)updateSelectionCommands;
-- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(BOOL)arg2 rectsToEvade:(id)arg3;
+- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(BOOL)arg2 forDictation:(BOOL)arg3 rectsToEvade:(id)arg4;
+- (void)_showCommandsWithReplacements:(id)arg1 forDictation:(BOOL)arg2 afterDelay:(double)arg3;
 - (void)showCommandsWithReplacements:(id)arg1;
 - (BOOL)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2 rectsToEvade:(id)arg3;
 @property(nonatomic) BOOL caretBlinks; // @synthesize caretBlinks=m_caretBlinks;
@@ -123,6 +126,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSelectionDots;
 - (void)updateSelectionRectsIfNeeded;
 - (void)deferredUpdateSelectionCommands;
+- (void)clearEmphasisImmediately;
 - (void)setEmphasisOnNextSelectionRects;
 - (void)deferredUpdateSelectionRects;
 - (void)wilLResume:(id)arg1;
@@ -148,6 +152,7 @@ __attribute__((visibility("hidden")))
 - (void)viewAnimate:(id)arg1;
 - (void)inputModeDidChange:(id)arg1;
 - (void)windowDidResignOrBecomeKey;
+- (void)deactivateAndCollapseSelection:(BOOL)arg1;
 - (void)deactivate;
 - (void)activate;
 - (void)detach;

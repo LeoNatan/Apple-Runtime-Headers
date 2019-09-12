@@ -21,6 +21,8 @@
     struct os_unfair_lock_s _iCloudAccountTypeLock;
 }
 
++ (void)performWithinPersonaForAccount:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (id)personaIDIfCurrentPersonaIsEnterprise;
 + (id)stringRepresentationForService:(long long)arg1;
 + (BOOL)isAccountsFrameworkAvailable;
 + (id)sharedInstance;
@@ -72,6 +74,8 @@
 - (BOOL)needsRepairForAccount:(id)arg1;
 - (void)updateSatoriWarmUpTimestampForAccount:(id)arg1;
 - (BOOL)shouldPerformSatoriWarmupVerificationForAccount:(id)arg1;
+- (void)setDeviceTrustRevoked:(BOOL)arg1 forAccount:(id)arg2;
+- (BOOL)deviceTrustRevokedForAccount:(id)arg1;
 - (void)setAuthenticationMode:(unsigned long long)arg1 forAccount:(id)arg2;
 - (unsigned long long)authenticationModeForAccount:(id)arg1;
 - (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;

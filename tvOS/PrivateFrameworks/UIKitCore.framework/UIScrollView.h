@@ -100,7 +100,8 @@
     _Bool _deferredUpdateTargetIsValid;
     struct CGPoint _deferredUpdateTargetContentOffset;
     struct CGSize _deferredUpdateTargetContentSize;
-    NSTimer *_scrollIndicatorHideDelayTimer;
+    NSTimer *_verticalScrollIndicatorHideDelayTimer;
+    NSTimer *_horizontalScrollIndicatorHideDelayTimer;
     _UIScrollViewScrollIndicator *_verticalScrollIndicator;
     _UIScrollViewScrollIndicator *_horizontalScrollIndicator;
     double _intervalBetweenPanGestures;
@@ -680,7 +681,6 @@
 - (_Bool)_isRectFullyVisible:(struct CGRect)arg1;
 @property(readonly, nonatomic, getter=_contentInsetIncludingDecorations) struct UIEdgeInsets _contentInsetIncludingDecorations;
 - (void)adjustedContentInsetDidChange;
-@property(readonly, nonatomic, getter=_delegateImplementsScrollViewDidScroll) _Bool _delegateImplementsScrollViewDidScroll;
 - (struct CGPoint)_roundedProposedContentOffset:(struct CGPoint)arg1;
 - (double)_allowedNavigationOverlapAmount;
 - (void)_setAllowedNavigationOverlapAmount:(double)arg1;

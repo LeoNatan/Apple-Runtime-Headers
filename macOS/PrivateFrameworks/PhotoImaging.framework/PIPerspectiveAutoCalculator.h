@@ -38,6 +38,7 @@
     CIImage *_debugLineDetectionImage;
 }
 
++ (void)requestVisionCleanUp;
 + (void)undoOrientation:(long long)arg1 forPitch:(double *)arg2 yaw:(double *)arg3 angle:(double *)arg4;
 @property(retain, nonatomic) CIImage *debugLineDetectionImage; // @synthesize debugLineDetectionImage=_debugLineDetectionImage;
 @property(readonly) NSMutableDictionary *debugDiagnostics; // @synthesize debugDiagnostics=_debugDiagnostics;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, SidecarDevice, SidecarService;
+@class NSUUID, SidecarDevice, SidecarService;
 @protocol OS_dispatch_queue, SidecarSessionDelegate;
 
 @interface SidecarSession : NSObject
@@ -15,32 +15,33 @@
     SidecarDevice *_device;
     SidecarService *_service;
     long long _transport;
+    NSUUID *_uuid;
     long long _dataLink;
     long long _handle;
-    NSError *_error;
-    unsigned int _remote:1;
-    // Error parsing type: AB, name: _invalid
+    unsigned int _isRemote:1;
+    // Error parsing type: Aq, name: _state
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) long long handle; // @synthesize handle=_handle;
+@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property __weak id <SidecarSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)timeSyncWithCompletion:(CDUnknownBlockType)arg1;
-- (void)invalidateWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)closeWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)connectWithTransport:(long long)arg1 requestID:(long long)arg2;
-- (_Bool)_invalidate;
-- (void)setError:(id)arg1;
-@property __weak id <SidecarSessionDelegate> delegate;
+- (void)connectWithTransport:(long long)arg1 reconnectToSession:(id)arg2;
+- (void)_closeWithError:(id)arg1;
 @property(readonly, nonatomic) int dataLink;
 @property(readonly, nonatomic) long long transport;
 @property(readonly, nonatomic) SidecarService *service;
+@property(readonly) long long handle;
 @property(readonly, nonatomic) SidecarDevice *device;
 - (id)description;
 - (void)dealloc;
 - (id)initWithService:(id)arg1 device:(id)arg2;
-- (id)initWithRemoteHandle:(long long)arg1 transport:(long long)arg2;
+- (id)initWithRemote:(id)arg1 device:(id)arg2 dataLink:(int)arg3 service:(id)arg4 error:(id *)arg5;
+- (id)init;
 - (void)openStreamForType:(long long)arg1 flags:(unsigned long long)arg2 identifier:(id)arg3 processUniqueID:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)listenForStreamType:(long long)arg1 flags:(unsigned long long)arg2 identifier:(id)arg3 processUniqueID:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 

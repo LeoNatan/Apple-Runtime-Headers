@@ -42,8 +42,7 @@
 - (void)performCustomActionWithURL:(id)arg1 actionUserInfo:(id)arg2 forItemWithIdentifier:(id)arg3 itemUserInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)didShowItemWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)didSelectActionWithURL:(id)arg1 actionUserInfo:(id)arg2 forItemWithIdentifier:(id)arg3 itemUserInfo:(id)arg4;
-- (void)loadTopShelfContentWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)fetchContentExtensionAttributesWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)loadTopShelfContentAndAttributes:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSString *containingBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *extensionPointIdentifier;
 - (void)dealloc;

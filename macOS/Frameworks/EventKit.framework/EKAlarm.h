@@ -55,6 +55,7 @@
 @property(readonly, nonatomic) NSString *UUID;
 - (id)initWithAbsoluteDate:(id)arg1;
 - (long long)compare:(id)arg1;
+- (BOOL)_reset;
 - (BOOL)shouldIncludeInNormalAlarms;
 @property(nonatomic, getter=isDefaultAlarm) BOOL defaultAlarm;
 @property(nonatomic) long long proximity;

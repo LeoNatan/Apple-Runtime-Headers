@@ -39,6 +39,7 @@
 - (void)updateLastUpdatedDate:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;
 - (id)lastUpdatedDateForPrimaryAccountIdentifier:(id)arg1;
 - (void)_hardDeleteDefaultBillingAddress;
+- (void)deleteDefaultBillingAddressForPrimaryAccountIdentifier:(id)arg1;
 - (void)deleteDefaultBillingAddress:(id)arg1;
 - (void)setDefaultBillingAddress:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;
 - (void)setDefaultBillingAddress:(id)arg1 forRemotePaymentInstrument:(id)arg2;

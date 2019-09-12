@@ -154,7 +154,6 @@
 - (void)_sendFallbackDidDismiss;
 - (void)_sendFallbackWillDismiss;
 - (BOOL)_fallbackShouldDismiss;
-- (void)_containedViewControllerModalStateChanged;
 - (void)_stopWatchingForNotifications;
 - (void)set_ignoreBarButtonItemSiblings:(BOOL)arg1;
 @property(nonatomic, setter=_setIgnoresKeyboardNotifications:) BOOL _ignoresKeyboardNotifications; // @dynamic _ignoresKeyboardNotifications;

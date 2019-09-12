@@ -17,7 +17,7 @@
     WFAlert *_alert;
 }
 
-+ (id)preferredButtonWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
++ (id)buttonWithTitle:(id)arg1 style:(long long)arg2 preferred:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)buttonWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)okButtonWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)cancelButtonWithTarget:(id)arg1 action:(SEL)arg2;

@@ -13,6 +13,7 @@
 @interface PXStaticEditSourceLoader : NSObject <PXEditSourceLoader>
 {
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     PICompositionController *_compositionController;
     PICompositionController *_originalCompositionController;
     long long _baseVersion;
@@ -29,6 +30,7 @@
 @property(readonly, nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(readonly, copy, nonatomic) PICompositionController *originalCompositionController; // @synthesize originalCompositionController=_originalCompositionController;
 @property(readonly, copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
+@property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *loadDuration;

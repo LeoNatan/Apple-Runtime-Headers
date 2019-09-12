@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (void)_reloadHistoryBasedSections;
 - (void)viewDidDisappear;
 - (void)viewDidAppear;
+- (void)viewWillAppear;
 - (void)_stackViewFrameDidChange:(id)arg1;
 - (void)resetChildViewControllerLevels;
 - (void)_updateSpacingForScrollbar;

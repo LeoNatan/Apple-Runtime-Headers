@@ -34,6 +34,7 @@
 @property(nonatomic) int codec;
 @property(nonatomic) BOOL clearContext;
 @property(copy, nonatomic) NSString *audioSource;
+@property(copy, nonatomic) NSString *audioDestination;
 @property(copy, nonatomic) NSString *origin;
 - (id)encodedClassName;
 - (id)groupIdentifier;

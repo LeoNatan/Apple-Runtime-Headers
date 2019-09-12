@@ -17,7 +17,6 @@
     CDUnknownBlockType _copyShareURLCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType copyShareURLCompletionBlock; // @synthesize copyShareURLCompletionBlock=_copyShareURLCompletionBlock;
 @property(copy) CDUnknownBlockType shareCopyURLCompletionBlock; // @synthesize shareCopyURLCompletionBlock=_shareCopyURLCompletionBlock;
 @property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;

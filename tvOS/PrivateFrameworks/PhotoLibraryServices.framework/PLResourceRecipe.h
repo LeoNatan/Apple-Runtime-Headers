@@ -14,6 +14,7 @@
 
 + (id)recipeFromID:(unsigned int)arg1;
 + (Class)classFromRecipeID:(unsigned int)arg1;
+- (long long)adjustedIngredientsForAsset:(id)arg1 ingredients:(id)arg2 version:(unsigned int)arg3;
 - (unsigned short)recipeClassID;
 - (_Bool)isDerivative;
 - (id)maxPixelCountForAssetWidth:(long long)arg1 height:(long long)arg2;

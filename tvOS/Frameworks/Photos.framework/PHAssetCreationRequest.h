@@ -27,6 +27,7 @@
     _Bool _duplicateLivePhotoAsStill;
     _Bool _duplicateAsOriginal;
     _Bool _duplicateSinglePhotoFromBurst;
+    _Bool _duplicateSpatialOverCaptureResources;
     short _importedBy;
     unsigned short _duplicateAssetPhotoLibraryType;
     NSString *_importSessionID;
@@ -58,6 +59,7 @@
 @property(copy, nonatomic, setter=_setDestinationAssetAvailabilityHandler:) CDUnknownBlockType destinationAssetAvailabilityHandler; // @synthesize destinationAssetAvailabilityHandler=_destinationAssetAvailabilityHandler;
 @property(copy, nonatomic, setter=_setMetadataCopyOptions:) PHAssetCreationMetadataCopyOptions *metadataCopyOptions; // @synthesize metadataCopyOptions=_metadataCopyOptions;
 @property(copy, nonatomic, setter=_setAdjustmentBakeInOptions:) PHAssetCreationAdjustmentBakeInOptions *adjustmentBakeInOptions; // @synthesize adjustmentBakeInOptions=_adjustmentBakeInOptions;
+@property(nonatomic, setter=_setDuplicateSpatialOverCaptureResources:) _Bool duplicateSpatialOverCaptureResources; // @synthesize duplicateSpatialOverCaptureResources=_duplicateSpatialOverCaptureResources;
 @property(nonatomic, setter=_setDuplicateSinglePhotoFromBurst:) _Bool duplicateSinglePhotoFromBurst; // @synthesize duplicateSinglePhotoFromBurst=_duplicateSinglePhotoFromBurst;
 @property(nonatomic, setter=_setDuplicateAsOriginal:) _Bool duplicateAsOriginal; // @synthesize duplicateAsOriginal=_duplicateAsOriginal;
 @property(nonatomic, setter=_setDuplicateLivePhotoAsStill:) _Bool duplicateLivePhotoAsStill; // @synthesize duplicateLivePhotoAsStill=_duplicateLivePhotoAsStill;
@@ -110,6 +112,7 @@
 - (_Bool)_createOriginalResourceForAsset:(id)arg1 fromValidatedResource:(id)arg2 resourceType:(unsigned int)arg3 photoLibrary:(id)arg4 destinationURL:(id)arg5 error:(id *)arg6;
 - (_Bool)_createAudioResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (_Bool)_createXmpResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
+- (_Bool)_createSocResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (_Bool)_createRAWSidecarForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (_Bool)_createAssetAsPhotoIris:(id)arg1 fromValidatedResources:(id)arg2 error:(id *)arg3;
 - (id)_ingestOriginalFromSrcURL:(id)arg1 toDstURL:(id)arg2 useSecureMove:(_Bool)arg3 resource:(id)arg4 resourceType:(unsigned int)arg5 asset:(id)arg6 error:(id *)arg7;

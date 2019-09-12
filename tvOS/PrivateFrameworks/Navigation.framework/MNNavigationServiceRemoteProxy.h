@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (id)_remoteObjectProxy;
 - (void)_closeConnection;
 - (_Bool)_shouldReconnectWithInterruptionOnDate:(id)arg1;
+- (void)_restoreIdleConnection;
 - (void)_restoreNavigationSession;
 - (void)_restorePredictionSession;
 - (void)_handleInterruption;

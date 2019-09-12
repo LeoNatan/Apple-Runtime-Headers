@@ -28,6 +28,5 @@
 - (void)addStickerWithURL:(NSURL *)arg1 atPosition:(struct CGPoint)arg2 identifier:(NSString *)arg3;
 - (BOOL)setMemoji:(NSData *)arg1;
 - (BOOL)setAnimoji:(NSString *)arg1;
-- (unsigned int)previewSlot;
 @end
 

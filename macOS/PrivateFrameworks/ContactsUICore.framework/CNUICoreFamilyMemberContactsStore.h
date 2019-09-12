@@ -14,33 +14,24 @@
 @interface CNUICoreFamilyMemberContactsStore : NSObject <CNUICoreFamilyMemberContactsUpdating>
 {
     id <CNUICoreContactStoreFacade> _familyMemberScopedContactStore;
-    id <CNUICoreContactStoreFacade> _mainContactStore;
     FAFamilyMember *_familyMember;
     id <CNSchedulerProvider> _schedulerProvider;
 }
 
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
-@property(readonly, nonatomic) id <CNUICoreContactStoreFacade> mainContactStore; // @synthesize mainContactStore=_mainContactStore;
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 - (void).cxx_destruct;
 - (id)updateContactWhitelistByRemovingContacts:(id)arg1;
 - (id)contactsFoundAndNotFoundInFamilyMemberContainerFuture:(id)arg1;
-- (id)contactsInsertedIntoFamilyMemberContainerIfMissingFuture:(id)arg1 tryToRefetchContactsFromMainStore:(BOOL)arg2 preserveEditsToProvidedContactsOverContactsFoundInFamilyMemberStore:(BOOL)arg3;
-- (id)updateContactWhitelistByAddingContacts:(id)arg1 tryToRefetchContactsFromMainStore:(BOOL)arg2;
+- (id)contactsInsertedIntoFamilyMemberContainerIfMissingFuture:(id)arg1 preserveEditsToProvidedContactsOverContactsFoundInFamilyMemberStore:(BOOL)arg2;
 - (id)updateContactWhitelistByAddingContacts:(id)arg1;
-- (id)updateContactWhitelistByAddingContactsFromCandidateContacts:(id)arg1;
 - (id)updateContactListByRemovingContacts:(id)arg1;
 - (id)updateContactListByUpdatingContacts:(id)arg1;
-- (id)contactsRefetchedFromMainStoreIfFound:(id)arg1;
-- (id)updateContactListByAddingContacts:(id)arg1 tryToRefetchContactsFromMainStore:(BOOL)arg2;
 - (id)updateContactListByAddingContacts:(id)arg1;
-- (id)updateContactListByAddingContactsFromCandidateContacts:(id)arg1;
 @property(readonly, nonatomic) id <CNScheduler> backgroundOrImmediateScheduler;
-- (void)commonInitWithWithFamilyMemberScopedContactStoreFacade:(id)arg1 mainContactStoreFacade:(id)arg2 familyMember:(id)arg3 schedulerProvider:(id)arg4;
-- (id)initWithFamilyMemberScopedContactStoreFacade:(id)arg1 mainContactStoreFacade:(id)arg2 familyMember:(id)arg3 schedulerProvider:(id)arg4;
-- (id)initWithFamilyMemberScopedContactStore:(id)arg1 mainContactStore:(id)arg2 familyMember:(id)arg3 schedulerProvider:(id)arg4;
-- (id)initWithFamilyMemberScopedContactStore:(id)arg1 familyMember:(id)arg2 schedulerProvider:(id)arg3;
+- (id)initWithFamilyMemberScopedContactStoreFacade:(id)arg1 familyMember:(id)arg2 schedulerProvider:(id)arg3;
+- (id)initWithFamilyMember:(id)arg1 schedulerProvider:(id)arg2;
 - (id)init;
 
 @end

@@ -19,6 +19,7 @@
     NSImage *_noButtonImage;
     NSImage *_noButtonImageTinted;
     NSUserDefaults *_defaults;
+    int statusToken;
     NSURL *_prefsURL;
     BOOL _touchbarAllowed;
 }

@@ -486,6 +486,8 @@ typedef struct {
     unsigned int maxIndirectSamplersPerDevice;
     unsigned int maxViewportCount;
     unsigned int maxCustomSamplePositions;
+    unsigned int maxVertexAmplificationFactor;
+    unsigned int maxVertexAmplificationCount;
     unsigned int maxTextureBufferWidth;
     unsigned int maxComputeAttributes;
     unsigned int maxFramebufferStorageBits;
@@ -497,7 +499,7 @@ typedef struct {
     unsigned int maxTileInlineDataSize;
     unsigned int minTilePixels;
     unsigned long long maxBufferLength;
-} CDStruct_52c93ad5;
+} CDStruct_886a8514;
 
 typedef struct {
     unsigned int _field1;

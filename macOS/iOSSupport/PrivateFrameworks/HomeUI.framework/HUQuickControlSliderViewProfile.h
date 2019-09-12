@@ -30,6 +30,7 @@
 @property(nonatomic) BOOL hasSecondaryValue; // @synthesize hasSecondaryValue=_hasSecondaryValue;
 - (void).cxx_destruct;
 - (double)gestureDragCoefficient;
+- (BOOL)supportsTouchContinuation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

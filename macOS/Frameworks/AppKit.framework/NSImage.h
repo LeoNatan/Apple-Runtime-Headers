@@ -11,7 +11,7 @@
 #import <AppKit/NSPasteboardWriting-Protocol.h>
 #import <AppKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSColor, NSData, NSImageRep, NSString;
+@class NSArray, NSColor, NSData, NSString;
 @protocol NSImageDelegate;
 
 @interface NSImage : NSObject <NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
@@ -47,7 +47,6 @@
     NSColor *_backgroundColor;
     id <NSImageDelegate> _imageDelegate;
     struct CGRect _alignmentRectInNormalizedCoordinates;
-    NSImageRep *_cachedRep;
     NSString *_accessibilityDescriptionBacking;
     struct NSEdgeInsets _capInsets;
     long long _resizingMode;
@@ -83,6 +82,8 @@
 + (id)_emblemForCount:(long long)arg1;
 @property(retain, setter=_setReps:) id _reps; // @synthesize _reps;
 - (void).cxx_destruct;
+@property(readonly, getter=_isSymbolImage) BOOL _symbolImage;
+- (id)_alternateImageWithCriteria:(id)arg1;
 - (void)lockFocusOnRepresentation:(id)arg1;
 - (BOOL)_composite:(long long)arg1 delta:(double)arg2 fromRect:(struct CGRect)arg3 toPoint:(struct CGPoint)arg4;
 - (void)_compositeFlipped:(BOOL)arg1 atPoint:(struct CGPoint)arg2 fromRect:(struct CGRect)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5;
@@ -144,6 +145,7 @@
 - (id)_accessibilityDescriptionBackingForCopying;
 - (void)_setAccessibilityDescriptionBacking:(id)arg1;
 - (id)_accessibilityDescriptionBacking;
+@property(readonly) BOOL _incorporatesContentStyling;
 - (void)_applyAsContentsToLayer:(id)arg1;
 @property(retain, setter=_setDefaultAccessibilityDescription:) NSString *_defaultAccessibilityDescription;
 @property unsigned long long imageInterpolation;
@@ -214,15 +216,7 @@
 - (void)_usingRepProviderPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_setRepProvider:(id)arg1;
 - (id)_defaultImageHints;
-- (id)_snapshotRepForRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
-- (id)_newSnapshotRepForRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
-- (id)_newSnapshotRepForCGImage:(struct CGImage *)arg1 drawingRect:(struct CGRect)arg2 applicableForRect:(struct CGRect)arg3 context:(id)arg4 processedHints:(id)arg5;
-- (BOOL)_shouldCacheWhenDrawingRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
 - (void)recache;
-- (BOOL)_hasCacheRep;
-- (BOOL)_isCachedToRep:(id)arg1;
-- (void)_usingCacheRepPerformBlock:(CDUnknownBlockType)arg1;
-- (void)_setCacheRep:(id)arg1;
 - (BOOL)NS_needsRecommitOnDefaultContentsScaleChange;
 - (void *)CA_copyRenderValue;
 - (void)CA_prepareRenderValue;

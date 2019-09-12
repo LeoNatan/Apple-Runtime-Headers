@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *pageViews; // @synthesize pageViews=_pageViews;
 @property(retain, nonatomic) UIScrollView *pageScrollView; // @synthesize pageScrollView=_pageScrollView;
 - (void).cxx_destruct;
+- (void)resetPageScrolling;
 - (void)scrollToNextPage;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;

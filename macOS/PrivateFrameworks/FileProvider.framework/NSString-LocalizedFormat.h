@@ -38,5 +38,6 @@
 - (id)fp_fpIdentifier;
 - (id)fp_toProviderID;
 - (id)fp_toDomainIdentifier;
+- (id)_fp_escapedStringForSearchQuery;
 @end
 

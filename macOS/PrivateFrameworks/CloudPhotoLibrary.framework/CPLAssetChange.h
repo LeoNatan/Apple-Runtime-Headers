@@ -26,6 +26,8 @@
     NSArray *_keywords;
     NSString *_mediaMetaDataType;
     NSData *_mediaMetaData;
+    NSString *_adjustedMediaMetaDataType;
+    NSData *_adjustedMediaMetaData;
     NSString *_timeZoneName;
     NSNumber *_timeZoneOffset;
     NSString *_momentIdentifier;
@@ -89,6 +91,8 @@
 @property(copy, nonatomic) NSNumber *timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
 @property(copy, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
+@property(retain, nonatomic) NSData *adjustedMediaMetaData; // @synthesize adjustedMediaMetaData=_adjustedMediaMetaData;
+@property(copy, nonatomic) NSString *adjustedMediaMetaDataType; // @synthesize adjustedMediaMetaDataType=_adjustedMediaMetaDataType;
 @property(retain, nonatomic) NSData *mediaMetaData; // @synthesize mediaMetaData=_mediaMetaData;
 @property(copy, nonatomic) NSString *mediaMetaDataType; // @synthesize mediaMetaDataType=_mediaMetaDataType;
 @property(copy, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
@@ -113,6 +117,7 @@
 - (BOOL)validateFullRecord;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (BOOL)supportsDeletion;
+- (BOOL)supportsResourceType:(unsigned long long)arg1;
 - (BOOL)supportsResources;
 - (id)allRelatedScopedIdentifiers;
 - (long long)dequeueOrder;

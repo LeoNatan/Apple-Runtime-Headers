@@ -53,8 +53,8 @@
     // Error parsing type: , name: outputs
     // Error parsing type: , name: disabledOutputs
     // Error parsing type: , name: needsFocusUpdate
-    // Error parsing type: , name: nextUpdate
     // Error parsing type: , name: pendingTransactions
+    // Error parsing type: , name: nextUpdate
     // Error parsing type: , name: preferenceBridge
     // Error parsing type: , name: observedPreferenceKeys
     // Error parsing type: , name: observedPreferenceValues

@@ -582,6 +582,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isMicrosoftApplication;
 - (BOOL)isVOQuickStartApplication;
 - (BOOL)isVoiceOverUtilityApplication;
+- (BOOL)isInstallerProgressApplication;
 - (BOOL)isiBooksApplication;
 - (BOOL)isSageOrEarlieriWorkApplication;
 - (BOOL)isiWorkApplication;

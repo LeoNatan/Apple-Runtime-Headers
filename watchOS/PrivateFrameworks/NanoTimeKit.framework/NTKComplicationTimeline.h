@@ -56,6 +56,7 @@
 - (void)extendRightFromDate:(id)arg1 withEntries:(struct NSArray *)arg2;
 - (void)resetWithEntry:(id)arg1;
 - (void)clearTimeTravelCache;
+- (id)tritium_entryForDate:(id)arg1;
 - (void)dealloc;
 - (id)initWithEntry:(id)arg1;
 - (int)timeTravelWindowNodeCapacity;

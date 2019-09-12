@@ -98,6 +98,7 @@
 - (void)enableCloudLibraryWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isCloudLibraryEnabled;
 @property(readonly, nonatomic, getter=isEnablingCloudLibraryDestructive) _Bool enablingCloudLibraryDestructive;
+- (void)loadLastKnownEnableICMLErrorStatusWithCompletionHander:(CDUnknownBlockType)arg1;
 - (void)loadJaliscoLibraryUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadCloudMusicLibraryUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadUpdateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -143,12 +144,14 @@
 - (_Bool)hasProperNetworkConditionsToPlayMedia;
 @property(readonly, nonatomic) ICConnectionConfiguration *configuration;
 @property(readonly, nonatomic) ICUserIdentity *userIdentity;
+- (void)enableICMLErrorReasonChange:(id)arg1;
 - (void)activeUserDidChangeNotification:(id)arg1;
 - (void)authenticatedDidChangeNotification:(id)arg1;
 - (void)isCellularDataRestrictedDidChangeNotification:(id)arg1;
 - (void)hasProperNetworkConditionsToShowCloudMediaDidChangeNotification:(id)arg1;
 - (void)canShowCloudTracksDidChangeNotification:(id)arg1;
 - (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)_initWithUserIdentity:(id)arg1;
 - (id)init;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)view:(id)arg1 shouldResize:(struct CGSize)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(id)arg4;
 - (void)_setValue:(id)arg1 forKey:(id)arg2 context:(id)arg3;
+- (void)_setWindowLevel:(id)arg1 forKey:(id)arg2 ofView:(id)arg3;
 @property(readonly) BOOL isSettingValue;
 - (void)windowDidMove:(id)arg1;
 - (void)windowDidResize:(id)arg1;

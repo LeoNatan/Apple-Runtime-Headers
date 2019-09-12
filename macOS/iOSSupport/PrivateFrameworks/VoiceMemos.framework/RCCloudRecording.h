@@ -54,8 +54,8 @@
 @property(nonatomic) BOOL evicted;
 @property(nonatomic) BOOL pendingRestore;
 @property(nonatomic) BOOL synced;
-- (id)purgeAudioFuture:(id *)arg1;
-@property(readonly, nonatomic) NSNumber *purgeableAudioFutureSize;
+- (id)purgeAudioFileWithModel:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) NSNumber *purgeableAudioFileSize;
 - (BOOL)synchronizeWithExistingAudioFuture:(id *)arg1;
 - (void)_updateAudioFuture:(id)arg1;
 - (void)setLocation:(id)arg1;

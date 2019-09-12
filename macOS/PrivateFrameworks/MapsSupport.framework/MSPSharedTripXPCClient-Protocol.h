@@ -20,5 +20,6 @@
 - (void)sendMessage:(NSString *)arg1 toParticipant:(NSString *)arg2;
 - (void)invalidateActiveHandles;
 - (void)sharedTripInvalidatedWithError:(NSError *)arg1;
+- (void)accountAvailabilityDidChange:(BOOL)arg1;
 @end
 

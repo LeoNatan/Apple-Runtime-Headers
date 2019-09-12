@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)_configureImageOrTitleFromBarItem:(id)arg1;
 - (id)_defaultTitleAttributes;
 - (id)_newButton;
+- (id)contentView;
 - (void)updateButton:(id)arg1 forEnabledState:(BOOL)arg2;
 - (void)updateButton:(id)arg1 forHighlightedState:(BOOL)arg2;
 

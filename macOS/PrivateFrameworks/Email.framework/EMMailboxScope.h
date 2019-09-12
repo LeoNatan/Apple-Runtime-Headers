@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) BOOL excludeTypes; // @synthesize excludeTypes=_excludeTypes;
 @property(readonly, copy, nonatomic) NSSet *mailboxTypes; // @synthesize mailboxTypes=_mailboxTypes;
 - (void).cxx_destruct;
+- (BOOL)_scopeContainsMailboxWithObjectID:(id)arg1 mailboxTypeBlock:(CDUnknownBlockType)arg2;
 - (BOOL)scopeContainsMailboxObjectID:(id)arg1 mailboxTypeResolver:(id)arg2;
 - (BOOL)scopeContainsMailbox:(id)arg1;
 - (id)_mailboxObjectIDsForTypesWithMailboxTypeResolver:(id)arg1;

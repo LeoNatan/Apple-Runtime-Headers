@@ -9,7 +9,7 @@
 #import <BusinessChat/BCApplePayManagerDelegate-Protocol.h>
 #import <BusinessChat/BCAuthenticationViewControllerDelegate-Protocol.h>
 
-@class BCApplePayManager, BCAuthenticationManager, BCInternalAuthenticationManager, BCMessage;
+@class BCApplePayManager, BCAuthenticationManager, BCInternalAuthenticationManager, BCMessage, NSString;
 @protocol BCMessageHandlerDelegate;
 
 @interface BCMessageHandler : NSObject <BCApplePayManagerDelegate, BCAuthenticationViewControllerDelegate>
@@ -19,10 +19,12 @@
     BCAuthenticationManager *_authManager;
     BCInternalAuthenticationManager *_internalAuthManager;
     BCApplePayManager *_applePayManager;
+    NSString *_recipientID;
 }
 
 + (id)appIconForWindow:(id)arg1;
 + (id)appIcon;
+@property(retain, nonatomic) NSString *recipientID; // @synthesize recipientID=_recipientID;
 @property(retain, nonatomic) BCApplePayManager *applePayManager; // @synthesize applePayManager=_applePayManager;
 @property(retain, nonatomic) BCInternalAuthenticationManager *internalAuthManager; // @synthesize internalAuthManager=_internalAuthManager;
 @property(retain, nonatomic) BCAuthenticationManager *authManager; // @synthesize authManager=_authManager;
@@ -31,12 +33,14 @@
 - (void).cxx_destruct;
 - (void)showHandoffAlert:(id)arg1;
 - (void)sendAuthenticationMessage:(id)arg1;
+- (BOOL)recipientIsWhitelistedForInternalAuthentication;
 - (void)performAuthenticationWithWindow:(id)arg1;
 - (void)performInternalAuthentication;
 - (void)paymentRequestDidUpdate:(id)arg1;
 - (id)presentationProperties;
 - (void)handleActionWithWindow:(id)arg1;
 - (void)initializeManagers;
+- (id)initWithMessage:(id)arg1 recipientID:(id)arg2 andDelegate:(id)arg3;
 - (id)initWithMessage:(id)arg1 andDelegate:(id)arg2;
 
 @end

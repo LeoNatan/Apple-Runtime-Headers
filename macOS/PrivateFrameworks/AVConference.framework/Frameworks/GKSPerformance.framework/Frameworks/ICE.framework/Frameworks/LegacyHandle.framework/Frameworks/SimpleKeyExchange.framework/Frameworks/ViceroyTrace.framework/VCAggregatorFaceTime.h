@@ -139,9 +139,7 @@ __attribute__((visibility("hidden")))
 - (void)startNewSegment;
 - (BOOL)isDuplicationEnabledForSegment:(id)arg1;
 - (id)duplicationIndicator;
-- (id)connectionTypeIndicator;
 - (BOOL)isLocalInterfaceTypeForSegment:(id)arg1 equalTo:(id)arg2;
-- (id)interfaceTypeIndicator:(BOOL)arg1;
 - (void)reset;
 - (void)flushCurrentSegment;
 - (id)aggregatedSessionReport;

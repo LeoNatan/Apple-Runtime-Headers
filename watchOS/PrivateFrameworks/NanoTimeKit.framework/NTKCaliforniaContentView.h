@@ -26,9 +26,11 @@
     unsigned int _temporaryHourMarkersDial;
     NTKCaliforniaColorPalette *_colorPalette;
     NTKCaliforniaStyleTransitionHandler *_styleTransitionHandler;
+    NTKCaliforniaColorPalette *_tritiumColorPalette;
 }
 
 + (id)_disabledLayerActions;
+@property(retain, nonatomic) NTKCaliforniaColorPalette *tritiumColorPalette; // @synthesize tritiumColorPalette=_tritiumColorPalette;
 @property(nonatomic) _Bool circularPillMarkersCenterPointsCalculated; // @synthesize circularPillMarkersCenterPointsCalculated=_circularPillMarkersCenterPointsCalculated;
 @property(nonatomic) _Bool showingStatusIcon; // @synthesize showingStatusIcon=_showingStatusIcon;
 @property(retain, nonatomic) NTKCaliforniaStyleTransitionHandler *styleTransitionHandler; // @synthesize styleTransitionHandler=_styleTransitionHandler;
@@ -46,6 +48,7 @@
 @property(nonatomic) unsigned int dial; // @synthesize dial=_dial;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (void)applyTransitionTritiumOnWithFraction:(float)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
 - (void)applyTransitionFraction:(float)arg1 fromDial:(unsigned int)arg2 toDial:(unsigned int)arg3;
 - (void)applyTransitionFraction:(float)arg1 fromColorPalette:(id)arg2 toColorPalette:(id)arg3;

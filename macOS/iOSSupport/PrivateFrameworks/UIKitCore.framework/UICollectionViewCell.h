@@ -98,6 +98,7 @@
 - (void)_setContentView:(id)arg1 addToHierarchy:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (unsigned long long)_defaultFocusRingType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

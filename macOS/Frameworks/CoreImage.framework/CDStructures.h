@@ -108,19 +108,6 @@ struct CIRenderDestinationInternal {
     id _field13;
 };
 
-struct DetectedLineSegment {
-    struct CGPoint _field1;
-    struct CGPoint _field2;
-    double _field3;
-    float _field4;
-    float _field5;
-    float _field6;
-};
-
-struct HoughTransform {
-    CDUnknownFunctionPointerType *_field1;
-};
-
 struct IPoint {
     long long _field1;
     long long _field2;
@@ -136,12 +123,7 @@ struct ISize {
     unsigned long long _field2;
 };
 
-struct NSEdgeInsets {
-    double top;
-    double left;
-    double bottom;
-    double right;
-};
+struct LineCostProxy;
 
 struct PseudoRand {
     unsigned int u;
@@ -156,6 +138,13 @@ struct Rectangle {
 };
 
 struct RenderDestination;
+
+struct Solution {
+    float rX;
+    float rY;
+    float rZ;
+    float cost;
+};
 
 struct Trilean {
     char _field1;
@@ -212,19 +201,19 @@ struct vector<CI::KernelArgumentType, std::__1::allocator<CI::KernelArgumentType
     } _field3;
 };
 
-struct vector<CI::Perspective::HoughLine, std::__1::allocator<CI::Perspective::HoughLine>> {
-    CDStruct_183601bc *__begin_;
-    CDStruct_183601bc *__end_;
-    struct __compressed_pair<CI::Perspective::HoughLine *, std::__1::allocator<CI::Perspective::HoughLine>> {
-        CDStruct_183601bc *__value_;
-    } __end_cap_;
-};
-
 struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<CI::Perspective::Line *, std::__1::allocator<CI::Perspective::Line>> {
         CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> {
+    struct LineCostProxy *__begin_;
+    struct LineCostProxy *__end_;
+    struct __compressed_pair<LineCostProxy *, std::__1::allocator<LineCostProxy>> {
+        struct LineCostProxy *__value_;
     } __end_cap_;
 };
 
@@ -281,12 +270,6 @@ typedef struct {
     unsigned long long height;
     unsigned long long depth;
 } CDStruct_da2e99ad;
-
-typedef struct {
-    double _field1[4];
-    double _field2[2];
-    unsigned int _field3;
-} CDStruct_8b8affab;
 
 typedef struct {
     float _field1[4];
@@ -360,10 +343,14 @@ typedef struct {
 } CDStruct_6f39cd5e;
 
 typedef struct {
-    double _field1;
-    double _field2;
-    char _field3;
-} CDStruct_202aea77;
+    double focalLength;
+    double lineSearchRangeV;
+    double lineSearchRangeH;
+    double pitchLimit;
+    double yawLimit;
+    double rollLimit;
+    CIImage *saliencyHeatmap;
+} CDStruct_58ac58eb;
 
 typedef struct {
     double i;
@@ -374,16 +361,6 @@ typedef struct {
     double variance;
     int nNonZero;
 } CDStruct_fc6961d5;
-
-typedef struct {
-    float focalLength;
-    float lineSearchRangeV;
-    float lineSearchRangeH;
-    float pitchLimit;
-    float yawLimit;
-    float rollLimit;
-    CIImage *saliencyHeatmap;
-} CDStruct_20caa88f;
 
 typedef struct {
     float _field1;

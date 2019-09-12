@@ -8,7 +8,7 @@
 
 #import <IMDaemonCore/TUConversationManagerDelegate-Protocol.h>
 
-@class IMDCKUtilities, IMDCNPersonAliasResolver, IMDChatStore, IMDMessageHistorySyncController, IMDMessageProcessingController, NSArray, NSMutableDictionary, NSRecursiveLock, NSString, TUConversationManager;
+@class IMDCKUtilities, IMDCNPersonAliasResolver, IMDChatStore, IMDMessageHistorySyncController, IMDMessageProcessingController, NSArray, NSData, NSMutableDictionary, NSRecursiveLock, NSString, TUConversationManager;
 
 @interface IMDChatRegistry : NSObject <TUConversationManagerDelegate>
 {
@@ -20,6 +20,7 @@
     NSMutableDictionary *_chatsByGroupID;
     BOOL _hasDumpedLogsForNoExisitingGroup;
     NSMutableDictionary *_idToHandlesMap;
+    NSData *_historyToken;
     IMDCKUtilities *_ckUtilities;
     IMDChatStore *_chatStore;
     IMDMessageProcessingController *_messageProcessingController;
@@ -38,6 +39,7 @@
 @property(nonatomic) BOOL hasDumpedLogsForNoExisitingGroup; // @synthesize hasDumpedLogsForNoExisitingGroup=_hasDumpedLogsForNoExisitingGroup;
 @property(retain, nonatomic) IMDChatStore *chatStore; // @synthesize chatStore=_chatStore;
 @property(retain, nonatomic) IMDCKUtilities *ckUtilities; // @synthesize ckUtilities=_ckUtilities;
+@property(readonly, nonatomic) NSData *historyToken; // @synthesize historyToken=_historyToken;
 @property(retain, nonatomic) NSMutableDictionary *idToHandlesMap; // @synthesize idToHandlesMap=_idToHandlesMap;
 - (void)updateMeCardHasUpdatedForAllChats;
 - (void)_chatGUIDsThatNeedRemerging:(id *)arg1 chatDictionaryArray:(id *)arg2 aliasMap:(id)arg3;
@@ -52,10 +54,11 @@
 - (void)_updateCachedCNIDMapForHandles:(id)arg1;
 - (void)_populateContactIDOnHandles;
 - (id)_generateCurrentAliasToCNIDDictionary;
-- (void)_generateCurrentAliasToCNIDDictionaryWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_updateCurrentAliasToCNIDDictionaryAndHistoryTokenWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)aliasToCNIDMap;
+- (void)setHistoryToken:(id)arg1;
 - (id)_aliasToCNIDMapForAliases:(id)arg1;
-- (void)_aliasToCNIDMapForAliases:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_updateCachedAliasToCNIDMap:(id)arg1 withHistoryToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_contactsBasedMerginEnabled;
 - (void)invalidatePersonCentricGroupedChatsCache;
 - (void)simulateMessageReceive:(id)arg1 serviceName:(id)arg2 groupID:(id)arg3 handles:(id)arg4 sender:(id)arg5;

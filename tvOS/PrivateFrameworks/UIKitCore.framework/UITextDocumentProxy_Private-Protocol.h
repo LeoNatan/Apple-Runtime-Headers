@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol UITextDocumentProxy_Private
+@property(readonly, nonatomic) _Bool needsInputModeSwitchKey;
 @property(readonly, nonatomic) NSString *markedText;
 @end
 

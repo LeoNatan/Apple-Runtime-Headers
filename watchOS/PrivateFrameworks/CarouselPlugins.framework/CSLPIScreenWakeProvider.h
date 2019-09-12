@@ -8,8 +8,8 @@
 
 #import <CarouselPlugins/CSLPIScreenWakeProvider-Protocol.h>
 
-@class NSString;
-@protocol CSLPIBacklightProxy, CSLSScreenWakeProvider, CSLSScreenWakeProviderDelegate;
+@class CSLPIFlipbook, NSString;
+@protocol CSLFlipbookInvalidationDelegate, CSLPIBacklightProxy, CSLSAOTModeProvider, CSLSScreenWakeProviderDelegate;
 
 @interface CSLPIScreenWakeProvider : NSObject <CSLPIScreenWakeProvider>
 {
@@ -17,10 +17,14 @@
     id <CSLPIBacklightProxy> _backlightProxy;
     _Bool _screenOn;
     _Bool _isActiveProvider;
-    id <CSLSScreenWakeProvider> _client;
+    id <CSLFlipbookInvalidationDelegate> _invalidationDelegate;
+    CSLPIFlipbook *_flipbook;
+    _Bool _aotEnabled;
+    id <CSLSAOTModeProvider> _client;
 }
 
-@property(retain, nonatomic) id <CSLSScreenWakeProvider> client; // @synthesize client=_client;
+@property(nonatomic) _Bool aotEnabled; // @synthesize aotEnabled=_aotEnabled;
+@property(retain, nonatomic) id <CSLSAOTModeProvider> client; // @synthesize client=_client;
 - (void).cxx_destruct;
 - (void)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
@@ -28,9 +32,13 @@
 - (void)willBecomeInactiveProvider:(CDUnknownBlockType)arg1;
 - (void)handleScreenUnblanked;
 - (void)handleScreenBlanked;
+- (void)invalidateFramesOnOrAfterPresentationTime:(id)arg1 forReason:(id)arg2;
+@property(readonly, nonatomic) _Bool usesFlipbook;
+- (void)handleAOTEnabled:(_Bool)arg1;
+- (void)_lock_configureFlipbook;
 - (void)setIsActiveProvider:(_Bool)arg1;
 @property(readonly, copy) NSString *description;
-- (id)initWithClient:(id)arg1 backlightProxy:(id)arg2;
+- (id)initWithClient:(id)arg1 invalidationDelegate:(id)arg2 backlightProxy:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

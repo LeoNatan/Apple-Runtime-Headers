@@ -43,6 +43,8 @@ __attribute__((visibility("hidden")))
     _Bool _framebufferOnly;
     unsigned int _swizzle;
     _Bool _isInternalTextureView;
+    unsigned long long _firstMipmapInTail;
+    unsigned long long _tailSizeInBytes;
     _Bool isCompressed;
     _Bool _isDrawable;
     unsigned long long rotation;
@@ -53,6 +55,8 @@ __attribute__((visibility("hidden")))
 
 + (void)decompress:(const char *)arg1 expandedTex:(char *)arg2 srcFormat:(unsigned long long)arg3 destFormat:(unsigned long long)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6 destRowBytes:(unsigned long long)arg7 srcRowBytes:(unsigned long long)arg8;
 + (unsigned long long)getDecompressedFormat:(unsigned long long)arg1;
+@property(readonly) unsigned long long tailSizeInBytes; // @synthesize tailSizeInBytes=_tailSizeInBytes;
+@property(readonly) unsigned long long firstMipmapInTail; // @synthesize firstMipmapInTail=_firstMipmapInTail;
 @property(readonly) unsigned long long usage; // @synthesize usage=_usage;
 @property(readonly, getter=isFramebufferOnly) _Bool framebufferOnly; // @synthesize framebufferOnly=_framebufferOnly;
 @property(readonly) _Bool allowGPUOptimizedContents; // @synthesize allowGPUOptimizedContents=_allowGPUOptimizedContents;
@@ -104,6 +108,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithTextureInternal:(id)arg1 pixelFormat:(unsigned long long)arg2 decompressedPixelFormat:(unsigned long long)arg3 textureType:(unsigned long long)arg4 levels:(struct _NSRange)arg5 slices:(struct _NSRange)arg6 swizzle:(CDStruct_a06f635e)arg7 compressedView:(_Bool)arg8 textureRef:(unsigned int)arg9 isInternalTextureView:(_Bool)arg10;
 - (unsigned long long)calculateOffsetToRegion:(CDStruct_caaed6bc)arg1 level:(unsigned long long)arg2 slice:(unsigned long long)arg3;
 - (void)decompressPlaceholder:(const char *)arg1 expandedTex:(char *)arg2 srcFormat:(unsigned long long)arg3 destFormat:(unsigned long long)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6 destRowBytes:(unsigned long long)arg7 srcRowBytes:(unsigned long long)arg8;
+@property(readonly) _Bool isSparse;
 @property(readonly) id <MTLTexture> decompressedTextureView;
 @property(readonly) id <MTLBuffer> backingBuffer;
 @property(readonly) long long compressionFeedback; // @dynamic compressionFeedback;
@@ -124,6 +129,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned int resourceRef;
 @property int responsibleProcess;
 @property(readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
+@property(readonly) unsigned long long sparseSurfaceDefaultValue;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) Class superclass;
 @property(readonly) unsigned long long unfilteredResourceOptions;

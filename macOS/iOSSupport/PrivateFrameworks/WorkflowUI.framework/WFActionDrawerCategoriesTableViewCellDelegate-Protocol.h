@@ -7,7 +7,7 @@
 @class NSString, UIView, WFAction, WFActionDrawerCategoriesTableViewCell;
 
 @protocol WFActionDrawerCategoriesTableViewCellDelegate
-- (void)categoriesTableViewCell:(WFActionDrawerCategoriesTableViewCell *)arg1 didSelectCategoryForContentType:(NSString *)arg2;
+- (void)categoriesTableViewCell:(WFActionDrawerCategoriesTableViewCell *)arg1 didSelectCategoryForContentType:(NSString *)arg2 title:(NSString *)arg3;
 - (void)categoriesTableViewCellDidSelectCategoryScripting:(WFActionDrawerCategoriesTableViewCell *)arg1 title:(NSString *)arg2;
 - (void)categoriesTableViewCellDidSelectCategoryFavorites:(WFActionDrawerCategoriesTableViewCell *)arg1 title:(NSString *)arg2;
 - (void)categoriesTableViewCellDidSelectCategoryApps:(WFActionDrawerCategoriesTableViewCell *)arg1 title:(NSString *)arg2;

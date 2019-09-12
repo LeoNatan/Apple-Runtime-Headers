@@ -13,6 +13,7 @@
     struct __GSEvent *_gsEvent;
     struct __IOHIDEvent *_hidEvent;
     long long _mzModifierFlags;
+    unsigned long long _mzClickCount;
     long long _buttonMask;
     UIScreen *_cachedScreen;
     NSMutableSet *_eventObservers;
@@ -43,6 +44,7 @@
 - (struct CGPoint)_digitizerLocation;
 - (BOOL)_isKeyDown;
 - (long long)_buttonMask;
+- (unsigned long long)_clickCount;
 - (long long)_modifierFlags;
 - (id)_unmodifiedInput;
 - (id)_modifiedInput;

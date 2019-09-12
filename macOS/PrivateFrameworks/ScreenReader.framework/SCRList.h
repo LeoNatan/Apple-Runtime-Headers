@@ -40,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)addTitleAlphabeticSpellingToRequest:(id)arg1;
 - (BOOL)addTitleToRequest:(id)arg1;
 - (void)_executeBlockForReadVisible:(CDUnknownBlockType)arg1;
-- (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (BOOL)addKeyboardSelectionSummaryToRequest:(id)arg1;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (id)statusDescription;

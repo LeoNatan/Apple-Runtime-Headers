@@ -107,6 +107,7 @@
 - (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;
 - (void)siriClientBehaviorMonitor:(id)arg1 didStartStreamWithContext:(id)arg2 successfully:(BOOL)arg3 option:(id)arg4;
+- (id)_buildVoiceTriggerEventInfo:(id)arg1;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(BOOL)arg4;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;

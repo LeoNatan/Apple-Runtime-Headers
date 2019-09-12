@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSButton, NSColor, NSImage, NSLayoutConstraint, NSSegmentedControl, NSString, NSTouchBarItem;
+@class NSButton, NSColor, NSImage, NSLayoutConstraint, NSMutableArray, NSSegmentedControl, NSString, NSTouchBarItem, NSTouchBarItemOverlay;
 
 __attribute__((visibility("hidden")))
 @interface NSPickerTouchBarItemView : NSView
@@ -20,7 +20,9 @@ __attribute__((visibility("hidden")))
     BOOL _enabled;
     NSString *_collapsedRepresentationLabel;
     NSImage *_collapsedRepresentationImage;
-    id _overlay;
+    NSMutableArray *_images;
+    NSMutableArray *_labels;
+    NSTouchBarItemOverlay *_overlay;
     NSTouchBarItem *_sourceItemForOverlay;
     struct CGSize _minimumCollapsedSize;
     struct CGSize _minimumExpandedSize;
@@ -65,6 +67,7 @@ __attribute__((visibility("hidden")))
 @property long long selectionMode;
 @property long long controlRepresentation;
 @property(copy) NSColor *selectionColor;
+- (id)_imageToDisplayAtIndex:(long long)arg1;
 - (void)setImage:(id)arg1 atIndex:(long long)arg2;
 - (id)imageAtIndex:(long long)arg1;
 - (void)setLabel:(id)arg1 atIndex:(long long)arg2;

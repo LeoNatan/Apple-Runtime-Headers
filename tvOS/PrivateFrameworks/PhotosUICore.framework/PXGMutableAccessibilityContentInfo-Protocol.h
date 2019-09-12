@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSString *text;
 @property(nonatomic) long long contentKind;
 @property(nonatomic) struct CGRect frame;
+- (void)px_accessibilityRemoveAllChildren;
 - (void)px_accessibilityAddChildElement:(PXGReusableAccessibilityContentInfo *)arg1;
 @end
 

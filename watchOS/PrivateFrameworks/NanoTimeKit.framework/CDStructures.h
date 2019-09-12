@@ -130,6 +130,11 @@ struct NTKLabelPosition {
     int _field3;
 };
 
+struct NTKTritiumTimeAnimationConfiguration {
+    unsigned int _field1;
+    double _field2;
+};
+
 struct RingLayout {
     float bottomEdgeInset;
     float leftEdgeInset;

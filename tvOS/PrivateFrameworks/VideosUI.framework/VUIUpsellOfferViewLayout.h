@@ -13,29 +13,25 @@ __attribute__((visibility("hidden")))
 {
     VUITextLayout *_titleTextLayout;
     VUITextLayout *_descriptionTextLayout;
-    VUITextLayout *_disclaimerTextLayout;
-    VUIButtonLayout *_buttonLayout;
     double _cornerRadius;
     long long _blurEffectStyle;
     long long _darkBlurEffectStyle;
     VUIAppleTVChannelLogoLayout *_channelLogoLayout;
+    VUITextLayout *_disclaimerTextLayout;
+    VUIButtonLayout *_buttonLayout;
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+@property(readonly, nonatomic) VUIButtonLayout *buttonLayout; // @synthesize buttonLayout=_buttonLayout;
+@property(readonly, nonatomic) VUITextLayout *disclaimerTextLayout; // @synthesize disclaimerTextLayout=_disclaimerTextLayout;
 @property(readonly, nonatomic) VUIAppleTVChannelLogoLayout *channelLogoLayout; // @synthesize channelLogoLayout=_channelLogoLayout;
 @property(nonatomic) long long darkBlurEffectStyle; // @synthesize darkBlurEffectStyle=_darkBlurEffectStyle;
 @property(nonatomic) long long blurEffectStyle; // @synthesize blurEffectStyle=_blurEffectStyle;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-@property(readonly, nonatomic) VUIButtonLayout *buttonLayout; // @synthesize buttonLayout=_buttonLayout;
-@property(readonly, nonatomic) VUITextLayout *disclaimerTextLayout; // @synthesize disclaimerTextLayout=_disclaimerTextLayout;
 @property(readonly, nonatomic) VUITextLayout *descriptionTextLayout; // @synthesize descriptionTextLayout=_descriptionTextLayout;
 @property(readonly, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 - (void).cxx_destruct;
 - (void)_configureLayout;
-- (double)bottomSectionTopMargin;
-- (double)buttonSpacing;
-- (double)buttonHeight;
-- (double)disclaimerBottomMargin;
 - (double)descriptionTopMargin;
 - (double)titleTopMargin;
 - (struct UIEdgeInsets)safeAreaInsets;

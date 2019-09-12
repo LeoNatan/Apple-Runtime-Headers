@@ -22,6 +22,7 @@
 }
 
 + (id)logCategory;
++ (BOOL)isPeerAvailable;
 @property(copy, nonatomic) CDUnknownBlockType finalCompletionHandler; // @synthesize finalCompletionHandler=_finalCompletionHandler;
 @property(nonatomic) BOOL broadcastFailure; // @synthesize broadcastFailure=_broadcastFailure;
 @property(retain, nonatomic) HMFExponentialBackoffTimer *broadcastUUIDTimer; // @synthesize broadcastUUIDTimer=_broadcastUUIDTimer;
@@ -43,7 +44,6 @@
 - (void)timerDidFire:(id)arg1;
 - (BOOL)_endAdvertiseUUIDWithError:(id *)arg1;
 - (BOOL)_startAdvertiseUUIDWithError:(id *)arg1;
-@property(readonly, getter=isPeerAvailable) BOOL peerAvailable;
 - (void)resetConfig;
 - (void)dealloc;
 - (id)initWithHomeManager:(id)arg1;

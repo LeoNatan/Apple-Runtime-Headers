@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)accessibilityIsSingleCelled;
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic, readonly) double lastBaselineOffsetFromBottom;
+@property(nonatomic, readonly) double firstBaselineOffsetFromTop;
 - (void)layout;
 @property(nonatomic, readonly) BOOL canBecomeKeyView;
 @property(nonatomic) BOOL enabled;

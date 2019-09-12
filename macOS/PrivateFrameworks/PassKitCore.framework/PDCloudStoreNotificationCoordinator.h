@@ -62,7 +62,7 @@
 - (void)cloudStoreContainer:(id)arg1 didChangeContainerState:(unsigned long long)arg2;
 - (void)cloudStoreContainer:(id)arg1 createdZoneWithName:(id)arg2;
 - (void)recreateZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;

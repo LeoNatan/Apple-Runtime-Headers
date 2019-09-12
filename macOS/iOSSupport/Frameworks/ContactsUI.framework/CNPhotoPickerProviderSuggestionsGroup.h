@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)providerItemDidUpdate:(id)arg1;
+- (id)defaultMonogramItem;
+- (long long)removeProviderItem:(id)arg1;
 - (long long)addProviderItem:(id)arg1;
 - (unsigned long long)maxRecentsAndMonogramsCount;
 - (id)paddedDisplayItems:(id)arg1;

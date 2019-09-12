@@ -15,6 +15,7 @@
 }
 
 + (_Bool)shouldPushArtworkData;
++ (void)performChangeImmediately:(CDUnknownBlockType)arg1;
 + (void)performSuppressingChangeNotifications:(CDUnknownBlockType)arg1;
 + (_Bool)isSuppressingChangeNotifications;
 @property(retain, nonatomic) MPMediaItemArtwork *artwork; // @synthesize artwork=_artwork;

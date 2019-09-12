@@ -6,7 +6,7 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleLAN.h>
 
-@class HMFNetAddress;
+@class HMFNetAddress, NSArray;
 
 @interface HMDNetworkRouterFirewallRuleLANStatic : HMDNetworkRouterFirewallRuleLAN
 {
@@ -14,9 +14,11 @@
     unsigned short _portStart;
     unsigned short _portEnd;
     HMFNetAddress *_ipAddress;
+    NSArray *_icmpTypes;
 }
 
 + (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 ruleDictionary:(struct NSDictionary *)arg8;
+@property(readonly, nonatomic) NSArray *icmpTypes; // @synthesize icmpTypes=_icmpTypes;
 @property(readonly, nonatomic) unsigned short portEnd; // @synthesize portEnd=_portEnd;
 @property(readonly, nonatomic) unsigned short portStart; // @synthesize portStart=_portStart;
 @property(readonly, nonatomic) HMFNetAddress *ipAddress; // @synthesize ipAddress=_ipAddress;
@@ -24,7 +26,7 @@
 - (void).cxx_destruct;
 - (struct NSDictionary *)prettyJSONDictionary;
 - (id)attributeDescriptions;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 transportProtocol:(unsigned char)arg8 ipAddress:(id)arg9 portStart:(unsigned short)arg10 portEnd:(unsigned short)arg11;
+- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 transportProtocol:(unsigned char)arg8 ipAddress:(id)arg9 portStart:(unsigned short)arg10 portEnd:(unsigned short)arg11 icmpTypes:(id)arg12;
 
 @end
 

@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)previewView:(id)arg1 pasteboardWriterForPreviewItem:(id)arg2;
 - (BOOL)previewView:(id)arg1 acceptDrop:(id)arg2 onPreviewItem:(id)arg3;
 - (unsigned long long)previewView:(id)arg1 validateDrop:(id)arg2 onPreviewItem:(id)arg3;
-- (_Bool)createOrConfigureMultiPreviewView:(TNSRef_87bff19e *)arg1 inPreviewView:(id)arg2 forPreviewItem:(id)arg3;
+- (id)createMultiPreviewView:(id)arg1 forPreviewItem:(id)arg2;
 - (id)newPasteboardWriterForNode:(const struct TFENode *)arg1 inPreviewView:(id)arg2;
 - (id)findMultiPreviewViewInPreviewView:(id)arg1;
 - (_Bool)isAllowedToDragNodes:(const struct TFENodeVector *)arg1;

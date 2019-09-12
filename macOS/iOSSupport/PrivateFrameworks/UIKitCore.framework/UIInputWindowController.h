@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIInputHostController-Protocol.h>
 #import <UIKitCore/_UITextEffectsSceneObserver-Protocol.h>
 
-@class NSArray, NSDate, NSLayoutConstraint, NSMutableArray, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIInputWindowControllerHosting, UIKeyboardFloatingTransitionController, UIKeyboardPathEffectView, UIView;
+@class NSDate, NSLayoutConstraint, NSMutableArray, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIInputWindowControllerHosting, UIKeyboardFloatingTransitionController, UIKeyboardPathEffectView, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIInputWindowController : UIApplicationRotationFollowingControllerNoTouches <UIInputViewAnimationHost, _UITextEffectsSceneObserver, UIKeyboardFloatingTransitionControllerDelegate, _UIInputHostController>
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
     BOOL _suppressUpdateVisibilityConstraints;
     CDUnknownBlockType _pendingTransitionActivity;
     UIInputWindowControllerHosting *_hosting;
-    NSArray *_rootViewConstraints;
     UIView *_preRotationSnapshot;
     struct CGSize _preRotationInputViewSize;
     struct CGSize _preRotationInputAssistantViewSize;
@@ -89,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (void)beginFloatingTransitionFromPanGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) UIInputViewSetPlacement *expectedPlacement;
 @property(readonly, nonatomic) BOOL isTransitioningBetweenFloatingStates;
+- (void)updateKeyboardSizeClass;
 @property(readonly, nonatomic) BOOL isTransitioningBetweenKeyboardStates;
 @property(readonly, nonatomic) BOOL isTransitionStarted;
 @property(readonly, nonatomic) BOOL isTransitioning;
@@ -163,6 +163,7 @@ __attribute__((visibility("hidden")))
 - (void)updateForKeyplaneChangeWithContext:(id)arg1;
 - (void)checkPlaceholdersForRemoteKeyboardsAndForceConstraintsUpdate:(BOOL)arg1 layoutSubviews:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
+- (struct CGRect)convertRectFromContainerCoordinateSpaceToScreenSpace:(struct CGRect)arg1;
 - (id)_screenCoordinateSpace;
 - (void)transferActiveNotificationInfoToInfo:(id)arg1;
 - (void)viewWillLayoutSubviews;
@@ -172,7 +173,9 @@ __attribute__((visibility("hidden")))
 - (void)updateAppearStatesForPlacement:(id)arg1 start:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)changeChild:(unsigned long long)arg1 toAppearState:(int)arg2 animated:(BOOL)arg3;
 - (int)appearStateForChild:(unsigned long long)arg1 placement:(id)arg2 start:(BOOL)arg3;
+- (void)postValidatedEndNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
 - (void)postEndNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
+- (void)postValidatedStartNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
 - (void)postStartNotifications:(unsigned long long)arg1 withInfo:(id)arg2;
 - (id)initialNotificationInfo;
 @property(readonly, nonatomic) BOOL isSnapshotting;
@@ -183,8 +186,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateContentOverlayInsetsForSelfAndChildren;
 - (void)updateSupportsDockViewController;
 - (struct UIEdgeInsets)_inputViewPadding;
+- (void)updateRootViewConstraintsForSceneFrame:(struct CGRect)arg1 bounds:(struct CGRect)arg2;
 - (void)updateViewConstraints;
-- (void)viewWillMoveToWindow:(id)arg1;
 - (void)updateViewSizingConstraints;
 - (void)_presentViewController:(id)arg1 modalSourceViewController:(id)arg2 presentationController:(id)arg3 animationController:(id)arg4 interactionController:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (BOOL)isViewLandscape;

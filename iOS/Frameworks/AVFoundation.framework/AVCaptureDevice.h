@@ -38,6 +38,12 @@
 @property(readonly, nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 @property(readonly, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
+- (void)setNonDestructiveCropAspectRatio:(long long)arg1;
+- (long long)nonDestructiveCropAspectRatio;
+- (void)setNonDestructiveCropEnabled:(_Bool)arg1;
+- (_Bool)isNonDestructiveCropEnabled;
+- (void)setSpatialOverCaptureEnabled:(_Bool)arg1;
+- (_Bool)isSpatialOverCaptureEnabled;
 - (void)_setDepthDataDeliveryEnabled:(_Bool)arg1;
 - (_Bool)_isDepthDataDeliveryEnabled;
 - (void)setBravoCameraSelectionBehavior:(id)arg1;
@@ -81,6 +87,9 @@
 - (_Bool)isVideoStabilizationSupported;
 - (_Bool)isAutoRedEyeReductionSupported;
 - (id)cameraPoseMatrix;
+- (void)setGeometricDistortionCorrectionEnabled:(_Bool)arg1;
+- (_Bool)isGeometricDistortionCorrectionEnabled;
+- (_Bool)isGeometricDistortionCorrectionSupported;
 - (double)maxAvailableVideoZoomFactor;
 - (double)minAvailableVideoZoomFactor;
 - (double)dualCameraSwitchOverVideoZoomFactor;
@@ -92,6 +101,7 @@
 - (double)videoZoomFactor;
 - (_Bool)isWideColorSupported;
 - (void)setActiveColorSpace:(long long)arg1;
+- (id)virtualDeviceSwitchOverVideoZoomFactors;
 - (id)constituentDevices;
 - (_Bool)isVirtualDevice;
 - (long long)activeColorSpace;
@@ -216,6 +226,11 @@
 - (void)setHighDynamicRangeSceneDetectionEnabled:(_Bool)arg1;
 - (_Bool)isHighDynamicRangeSceneDetectionEnabled;
 - (_Bool)isHighDynamicRangeSceneDetectionSupported;
+- (id)digitalFlashSceneForPhotoOutput;
+- (id)_digitalFlashExposureTimes;
+- (long long)_digitalFlashStatus;
+- (void)setDigitalFlashMode:(long long)arg1;
+- (long long)digitalFlashMode;
 - (void)setLowLightVideoCaptureEnabled:(_Bool)arg1;
 - (_Bool)isLowLightVideoCaptureEnabled;
 - (int)powerConsumptionAt30FPSForOISMode:(int)arg1;

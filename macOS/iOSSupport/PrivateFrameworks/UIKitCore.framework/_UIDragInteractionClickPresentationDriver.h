@@ -6,7 +6,7 @@
 
 #import <UIKitCore/_UIDragInteractionDriver.h>
 
-@class NSSet;
+@class NSSet, UIDelayedAction;
 
 __attribute__((visibility("hidden")))
 @interface _UIDragInteractionClickPresentationDriver : _UIDragInteractionDriver
@@ -15,16 +15,20 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _itemIterator;
     CDUnknownBlockType _sessionHandler;
     CDUnknownBlockType _liftCompletion;
+    UIDelayedAction *_delayedLift;
 }
 
 - (void).cxx_destruct;
 - (void)didTransitionToInflightState;
 - (void)didTransitionToInactiveState;
 - (void)didTransitionToBeginState;
+- (void)_performDelayedLift;
 - (void)beginDragWithTouches:(id)arg1 itemIterator:(CDUnknownBlockType)arg2 beginningSessionHandler:(CDUnknownBlockType)arg3;
-- (void)beginLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)beginLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(BOOL)arg2 delay:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)isLifted;
+- (BOOL)isPreparingToDrag;
 - (BOOL)canBeginLiftAtLocation:(struct CGPoint)arg1;
+- (void)cancel;
 
 @end
 

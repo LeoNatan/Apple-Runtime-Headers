@@ -14,6 +14,11 @@
 }
 
 + (void)initialize;
+- (_Bool)isDeferredPhotoProcessingSupported;
+- (_Bool)isNonDestructiveCropSupported;
+- (float)spatialOverCapturePercentage;
+- (_Bool)isSpatialOverCaptureSupported;
+- (_Bool)isMomentCaptureMovieRecordingSupported;
 - (float)maxPortraitLightingEffectStrength;
 - (float)minPortraitLightingEffectStrength;
 - (float)defaultPortraitLightingEffectStrength;
@@ -63,11 +68,13 @@
 - (_Bool)isIrisSupported;
 - (_Bool)isStereoFusionSupported;
 - (_Bool)isSISSupported;
+- (_Bool)isDigitalFlashSupported;
 - (_Bool)supportsRedEyeReduction;
 - (_Bool)supportsDynamicCrop;
 - (long long)videoHDRFlavor;
 - (_Bool)prefersVideoHDREnabledForSessionPreset:(id)arg1;
 - (int)supportedStabilizationMethod;
+- (float)geometricDistortionCorrectedVideoFieldOfView;
 - (_Bool)isMultiCamSupported;
 - (id)supportedSemanticSegmentationMatteTypes;
 - (_Bool)isPortraitEffectsMatteStillImageDeliverySupported;

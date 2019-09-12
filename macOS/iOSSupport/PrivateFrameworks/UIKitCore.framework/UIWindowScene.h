@@ -25,6 +25,7 @@
     id <UICoordinateSpace> _coordinateSpace;
     BOOL _shouldDisableTouchCancellationOnRotation;
     BOOL _windowWasInitializedWithDefaultStoryboard;
+    BOOL _didMakeKeyAndVisible;
     NSSet *_componentsWithTraitOverrides;
     struct {
         char valid;
@@ -37,6 +38,9 @@
     long long _avkitRequestedOverscanCompensation;
 }
 
++ (id)_findNewKeyWindowSceneOnScreen:(id)arg1;
++ (void)_setShouldRestoreKeyWindowSceneOnActivation:(BOOL)arg1;
++ (BOOL)_shouldRestoreKeyWindowSceneOnActivation;
 + (id)_keyWindowScene;
 + (id)_placeholderWindowSceneForScreen:(id)arg1 create:(BOOL)arg2;
 + (id)_keyboardWindowSceneForScreen:(id)arg1 create:(BOOL)arg2;
@@ -94,6 +98,7 @@
 - (BOOL)_windowIsFront:(id)arg1;
 @property(readonly, nonatomic) _UIContextBinder *_contextBinder;
 - (void)_makeKeyAndVisibleIfNeeded;
+- (BOOL)_needsMakeKeyAndVisible;
 - (void)_loadWindowWithStoryboardIfNeeded:(id)arg1;
 - (void)_readySceneForConnection;
 - (id)_allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;

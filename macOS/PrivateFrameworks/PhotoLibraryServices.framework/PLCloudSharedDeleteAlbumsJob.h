@@ -6,14 +6,17 @@
 
 #import <PhotoLibraryServices/PLCloudSharingJob.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface PLCloudSharedDeleteAlbumsJob : PLCloudSharingJob
 {
     NSArray *_albumCloudGUIDsToDelete;
+    NSString *_inviterAddress;
 }
 
++ (void)deleteLocalAlbumForMSASAlbumGUID:(id)arg1 inviterAddress:(id)arg2;
 + (void)deleteLocalAlbumsForMSASAlbumGUIDs:(id)arg1;
+@property(retain, nonatomic) NSString *inviterAddress; // @synthesize inviterAddress=_inviterAddress;
 @property(retain, nonatomic) NSArray *albumCloudGUIDsToDelete; // @synthesize albumCloudGUIDsToDelete=_albumCloudGUIDsToDelete;
 - (void).cxx_destruct;
 - (void)runDaemonSide;

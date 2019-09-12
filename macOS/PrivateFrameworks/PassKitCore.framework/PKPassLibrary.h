@@ -120,6 +120,7 @@
 - (void)canPresentPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentWalletWithRelevantPassUniqueID:(id)arg1;
 - (void)presentPaymentPass:(id)arg1;
+- (void)paymentPassWithAssociatedAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentSetupFeaturesForConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentPaymentSetupRequest:(id)arg1 orientation:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)openPaymentSetupForMerchantIdentifier:(id)arg1 domain:(id)arg2 completion:(CDUnknownBlockType)arg3;

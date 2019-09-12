@@ -6,12 +6,14 @@
 
 #import <AppKit/NSViewController.h>
 
-@class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, NSStackView;
-@protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate;
+#import <AuthKitUI/AKAuthorizationPaneAutomaticResizeDelegate-Protocol.h>
 
-@interface AKAuthorizationPaneViewController : NSViewController
+@class AKAuthorizationPaneContext, NSLayoutConstraint, NSMutableArray, NSStackView, NSString;
+@protocol AKAuthorizationEditableDataSources, AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate;
+
+@interface AKAuthorizationPaneViewController : NSViewController <AKAuthorizationPaneAutomaticResizeDelegate>
 {
-    id <AKAuthorizationPaneViewControllerDelegate> _paneDelegate;
+    id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> _paneDelegate;
     id <AKAuthorizationEditableDataSources> _editableDataSources;
     NSStackView *_paneHeaderStackView;
     NSStackView *_paneFooterStackView;
@@ -20,10 +22,8 @@
     NSMutableArray *_mutableConstraints;
     NSLayoutConstraint *_headerWidthConstraint;
     NSLayoutConstraint *_footerWidthConstraint;
-    NSLayoutConstraint *_headerHeightConstraint;
 }
 
-@property(readonly) NSLayoutConstraint *headerHeightConstraint; // @synthesize headerHeightConstraint=_headerHeightConstraint;
 @property(readonly) NSLayoutConstraint *footerWidthConstraint; // @synthesize footerWidthConstraint=_footerWidthConstraint;
 @property(readonly) NSLayoutConstraint *headerWidthConstraint; // @synthesize headerWidthConstraint=_headerWidthConstraint;
 @property(retain) NSMutableArray *mutableConstraints; // @synthesize mutableConstraints=_mutableConstraints;
@@ -32,7 +32,7 @@
 @property(readonly) NSStackView *paneFooterStackView; // @synthesize paneFooterStackView=_paneFooterStackView;
 @property(readonly) NSStackView *paneHeaderStackView; // @synthesize paneHeaderStackView=_paneHeaderStackView;
 @property __weak id <AKAuthorizationEditableDataSources> editableDataSources; // @synthesize editableDataSources=_editableDataSources;
-@property __weak id <AKAuthorizationPaneViewControllerDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
+@property __weak id <AKAuthorizationPaneViewControllerDelegate><AKAuthorizationPaneAutomaticResizeDelegate> paneDelegate; // @synthesize paneDelegate=_paneDelegate;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -41,9 +41,16 @@
 - (void)setAutomaticResizeDelay:(double)arg1;
 - (void)endAutomaticResizeDisabled;
 - (void)beginAutomaticResizeDisabled;
+- (BOOL)isAutomaticResizeDisabled;
 - (void)_setupContexts;
 - (void)loadView;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

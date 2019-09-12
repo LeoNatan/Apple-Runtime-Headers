@@ -56,7 +56,6 @@
 @property(nonatomic) id <VKMapViewDelegate> mapDelegate; // @synthesize mapDelegate=_mapDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct AnalyticsState)analyticsState;
 - (id)navigationPuck;
 @property(readonly, nonatomic) VKSceneConfiguration *sceneConfiguration;
 - (void)puckAnimator:(id)arg1 updatedTargetPosition:(const Coordinate3D_bc242218 *)arg2;
@@ -241,8 +240,6 @@
 - (void)setMapDisplayStyle:(CDStruct_51745937)arg1 animated:(BOOL)arg2;
 @property(nonatomic) CDStruct_51745937 mapDisplayStyle;
 - (void)_updateBackgroundColor;
-- (void)_clearAnalytics;
-- (void)_updateAnalytics:(BOOL)arg1;
 - (void)setMapType:(int)arg1 animated:(BOOL)arg2;
 @property(nonatomic) int mapType;
 - (BOOL)supportsNightMode;

@@ -6,12 +6,14 @@
 
 #import <ScreenTimeUI/STLockoutPINController.h>
 
-__attribute__((visibility("hidden")))
 @interface STLockoutRestrictionsPINController : STLockoutPINController
 {
 }
 
++ (void)_windowWillClose:(id)arg1;
 + (void)activateRemotePINUI;
++ (BOOL)isRestrictionsPasscodeSet;
++ (id)_xpcConnection;
 - (id)stringsBundle;
 - (id)stringsTable;
 

@@ -23,6 +23,9 @@
 + (id)_navigation_stringWithTimeStampValues:(id)arg1 options:(CDStruct_5b8a7f88)arg2;
 + (id)_navigation_replacementForFormatToken:(id)arg1 options:(CDStruct_5b8a7f88)arg2 overrideVariables:(id)arg3;
 + (id)_navigation_replacementForFormatToken:(id)arg1 abbreviatedUnits:(BOOL)arg2 detail:(long long)arg3 spoken:(BOOL)arg4 overrideVariables:(id)arg5;
++ (id)_navigation_spokenStringWithMinutes:(unsigned long long)arg1 andAbbreviationType:(unsigned long long)arg2;
++ (id)_navigation_spokenStringWithSeconds:(unsigned long long)arg1 andAbbreviationType:(unsigned long long)arg2;
++ (id)_navigation_spokenStringWithSeconds:(unsigned long long)arg1 abbreviated:(BOOL)arg2;
 + (id)_navigation_stringWithMinutes:(unsigned long long)arg1 andAbbreviationType:(unsigned long long)arg2;
 + (id)_navigation_stringWithSeconds:(unsigned long long)arg1 andAbbreviationType:(unsigned long long)arg2;
 + (id)_navigation_stringWithSeconds:(unsigned long long)arg1 abbreviated:(BOOL)arg2;

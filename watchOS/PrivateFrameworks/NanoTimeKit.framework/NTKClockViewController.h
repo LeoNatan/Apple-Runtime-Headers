@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 #import <NanoTimeKit/CSLPIButtonHandlerProtocol-Protocol.h>
+#import <NanoTimeKit/CSLSAOTModeProvider-Protocol.h>
 #import <NanoTimeKit/CSLSScreenWakeProvider-Protocol.h>
 #import <NanoTimeKit/NCEClockCelebrationViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NPTOUserPhotoFaceServerDelegateProtocol-Protocol.h>
@@ -18,13 +19,16 @@
 #import <NanoTimeKit/NTKFaceObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimationControllerDelegate-Protocol.h>
+#import <NanoTimeKit/NTKTritiumToolControllerDelegate-Protocol.h>
+#import <NanoTimeKit/NTKTritiumViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/ORBTapGestureRecognizerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CSLPITimer, NCEClockCelebrationViewController, NSLock, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
-@protocol CSLSScreenWakeProviderDelegate, NTKClockWakeController;
+@class CSLPITimer, NCEClockCelebrationViewController, NSLock, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKTritiumAnimationController, NTKTritiumToolController, NTKTritiumViewController, NTKTritiumWakeController, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
+@protocol CSLSFlipbookFrameCoordinator, CSLSScreenWakeProviderDelegate, NTKClockWakeController, NTKTritiumAnimationControllerViewProvider;
 
-@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider, NTKFaceObserver>
+@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider, NTKFaceObserver, CSLSAOTModeProvider, NTKTritiumToolControllerDelegate, NTKTritiumViewControllerDelegate, NTKTritiumAnimationControllerDelegate>
 {
     Class _statusBarViewControllerClass;
     NTKPersistentFaceCollection *_libraryFaceCollection;
@@ -54,6 +58,15 @@
     _Bool _needsEvaluatePrideAvailable;
     NTKUpNextUseMonitor *_upNextUseMonitor;
     UIView *_contentView;
+    UIView *_tritiumSensitiveUIShieldView;
+    NTKTritiumAnimationController *_tritiumAnimationController;
+    NTKTritiumViewController *_tritiumViewController;
+    NTKTritiumToolController *_tritiumToolController;
+    id <CSLSFlipbookFrameCoordinator> _frameCoordinator;
+    NTKTritiumWakeController *_tritiumWakeController;
+    _Bool _tritiumVisibleBeforeFaceChange;
+    _Bool _tritiumIsDismissingLibrary;
+    NSTimer *_tritiumTouchOverlayDelayTimer;
     id <NTKClockWakeController> _normalWakeController;
     _Bool _finishedLoading;
     NSLock *_finishedLoadingLock;
@@ -64,9 +77,23 @@
 @property(nonatomic, getter=isLockScreenBorrowed) _Bool lockScreenBorrowed; // @synthesize lockScreenBorrowed=_lockScreenBorrowed;
 @property(copy, nonatomic) NSSet *pauseReasons; // @synthesize pauseReasons=_pauseReasons;
 - (void).cxx_destruct;
+- (void)tritiumAnimationController:(id)arg1 cleanupAfterTritiumTransitionAnimated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (_Bool)tritiumAnimationController:(id)arg1 prepareForTransitionToTritiumOnAnimated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)faceConfigurationsDidChangeInTritiumViewController:(id)arg1;
+- (void)invalidateFramesInTritiumViewController:(id)arg1 withReason:(id)arg2;
+- (void)tritium_cancelTouchOverlayAnimationWithFlags:(unsigned int)arg1;
+- (_Bool)tritium_playTouchOverlayAnimationWithContinueBlock:(CDUnknownBlockType)arg1;
+- (void)tritium_handleSelectedFaceViewOrFaceConfigurationsDidChange;
+- (void)tritium_handleSelectedFaceViewDidChange;
+- (void)tritium_handleSelectedFaceViewWillChange;
 @property(readonly) _Bool wake_canPerformWristRaiseAnimation;
 @property(readonly, nonatomic) NTKFaceViewController *wake_faceViewController;
 @property(readonly, nonatomic) UIView *wake_clockContentView;
+@property(readonly, nonatomic) UIViewController<NTKTritiumAnimationControllerViewProvider> *wake_viewProvider;
+@property(readonly, nonatomic) id <CSLSFlipbookFrameCoordinator> wake_frameCoordinator;
+@property(readonly, nonatomic) UIView *wake_sensitiveUIShieldView;
+@property(readonly, nonatomic) NTKTritiumAnimationController *wake_tritiumAnimationController;
+@property(readonly, nonatomic) NTKTritiumViewController *wake_tritiumViewController;
 - (struct CGRect)launchRectForComplicationApplicationIdentifier:(id)arg1;
 - (void)_handleDeviceLockChange;
 - (void)_preloadAddableFacesWithCompletion:(CDUnknownBlockType)arg1;
@@ -79,6 +106,8 @@
 - (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)faceConfigurationDidChange:(id)arg1;
 - (void)statusBarDidChange;
+- (id)aotBrightnessCurve;
+- (id)aotViewController;
 - (_Bool)createNewCustomPhotoFaceFromFaceStyle:(int)arg1 andPath:(id)arg2;
 - (_Bool)createNewKaleidoscopeFaceFromPath:(id)arg1;
 - (_Bool)createNewUserPhotoFaceFromPath:(id)arg1;
@@ -171,6 +200,8 @@
 - (void)loadView;
 - (_Bool)handleCrownPressed;
 - (void)handleScreenBlanked;
+@property(nonatomic) __weak id <CSLSFlipbookFrameCoordinator> frameCoordinator;
+- (void)handleAOTEnabled:(_Bool)arg1;
 - (void)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_canPerformWristRaiseAnimation;
@@ -202,6 +233,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool usesFlipbook;
 
 @end
 

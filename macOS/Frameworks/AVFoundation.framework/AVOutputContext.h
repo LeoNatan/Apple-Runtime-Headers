@@ -21,6 +21,7 @@
 + (id)outputContextForID:(id)arg1;
 + (id)outputContextForControllingOutputDeviceGroupWithID:(id)arg1;
 + (id)outputContextForControllingOutputDeviceGroupWithID:(id)arg1 options:(id)arg2;
++ (id)defaultSharedOutputContext;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
 + (id)sharedSystemAudioContext;

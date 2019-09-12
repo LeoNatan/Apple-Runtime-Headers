@@ -21,6 +21,7 @@
 + (id)stringForSFRichText:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (void)playNegativeHaptic;
++ (void)requestDeviceUnlock:(CDUnknownBlockType)arg1;
 + (void)requestDeviceUnlockWithSuccessHandler:(CDUnknownBlockType)arg1;
 + (BOOL)deviceIsAuthenticated;
 + (id)sendFeedbackForPunchout:(id)arg1 toListener:(id)arg2 fromCardSection:(id)arg3 triggerEvent:(unsigned long long)arg4 queryId:(unsigned long long)arg5;

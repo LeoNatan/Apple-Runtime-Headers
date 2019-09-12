@@ -23,7 +23,6 @@
 - (id)visualTabPicker_hitTestIgnoringTransformLayers:(struct CGPoint)arg1 inRootLayer:(id)arg2;
 - (id)nearestAncestorIgnoringTransformLayers;
 @property(readonly) struct CGRect NS_visibleRect;
-- (BOOL)NS_canDraw;
 - (Class)NS_backingLayerContentsClass;
 - (id)NS_makeContentsLayer;
 - (void)NS_setPreparedContentRect:(struct CGRect)arg1;
@@ -40,11 +39,6 @@
 - (struct CGRect)NS_renderedRectInRect:(struct CGRect)arg1 scrollVelocity:(struct CGPoint)arg2;
 - (BOOL)NS_prefetchContentsInRect:(struct CGRect)arg1 scrollVelocity:(struct CGPoint)arg2;
 - (BOOL)NS_hasPrefetchedContents;
-- (void)NS_prefetchContentsIfNecessary;
-- (void)NS_setPurged:(BOOL)arg1;
-- (BOOL)NS_isPurged;
-- (void)NS_setVisibleTile:(BOOL)arg1;
-- (BOOL)NS_isVisibleTile;
 - (void)NS_displayUsingContentsAligning;
 - (void)NS_willDisplayWithoutContentsAligning;
 - (void)NS_setNeedsDisplayInRectUsingContentsAligning:(struct CGRect)arg1;

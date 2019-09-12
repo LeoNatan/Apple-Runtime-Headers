@@ -44,6 +44,8 @@
 @property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 @property(nonatomic) __weak id <WFContactFieldDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)tintColorDidChange;
+- (id)typingAttributes;
 - (void)textViewDidChange:(id)arg1;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)textViewDidChangeSelection:(id)arg1;

@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)populationChangedInContainerNode:(const struct TFENode *)arg1;
 - (void)stopObservingTargetNode;
 - (void)startObservingTargetNode;
+- (void)upgradeToICloudDrive:(_Bool)arg1;
 - (void)emptyTrash;
 - (struct TString)buttonTitleForTrashFolder;
 - (_Bool)buttonEnabledStateForTrashFolder;

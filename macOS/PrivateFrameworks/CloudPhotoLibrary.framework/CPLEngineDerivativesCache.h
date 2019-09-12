@@ -24,7 +24,7 @@
 - (void)generateDerivativesForChange:(id)arg1 derivativesFilter:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_checkGeneratedResources:(id)arg1 error:(id *)arg2;
 - (BOOL)_checkResource:(id)arg1 name:(id)arg2 error:(id *)arg3;
-- (void)_updateChange:(id *)arg1 fromOldChange:(id)arg2 withResources:(id)arg3;
+- (void)_updateChange:(id *)arg1 fromOldChange:(id)arg2 withResources:(id)arg3 includeThumbnail:(BOOL)arg4;
 - (BOOL)_isUnsupportedFormatError:(id)arg1;
 - (id)cachedResourcesForReferenceResource:(id)arg1 adjustment:(id)arg2;
 - (void)noteGeneratedResouces:(id)arg1 haveBeenGeneratedForReferenceResource:(id)arg2 adjustment:(id)arg3;

@@ -18,7 +18,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)differenceFromList:(id)arg1 withOptions:(unsigned long long)arg2 loadBookmarksIfNeeded:(_Bool)arg3;
+- (id)differenceFromList:(id)arg1 withOptions:(unsigned long long)arg2;
 - (void)_loadBookmarksForDifferenceFromList:(id)arg1;
 - (id)_arrayForDifferenceCalculation;
 @property(readonly, nonatomic) int folderID;

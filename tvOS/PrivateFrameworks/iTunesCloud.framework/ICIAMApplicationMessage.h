@@ -14,6 +14,7 @@
 {
     double _endDate;
     double _startDate;
+    int _assetPrefetchStrategy;
     NSMutableArray *_contentPages;
     int _globalPresentationPolicyGroup;
     NSString *_identifier;
@@ -30,6 +31,7 @@
     struct {
         unsigned int endDate:1;
         unsigned int startDate:1;
+        unsigned int assetPrefetchStrategy:1;
         unsigned int globalPresentationPolicyGroup:1;
         unsigned int maximumDisplays:1;
         unsigned int messageType:1;
@@ -62,6 +64,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsAssetPrefetchStrategy:(id)arg1;
+- (id)assetPrefetchStrategyAsString:(int)arg1;
+@property(nonatomic) _Bool hasAssetPrefetchStrategy;
+@property(nonatomic) int assetPrefetchStrategy; // @synthesize assetPrefetchStrategy=_assetPrefetchStrategy;
 - (int)StringAsGlobalPresentationPolicyGroup:(id)arg1;
 - (id)globalPresentationPolicyGroupAsString:(int)arg1;
 @property(nonatomic) _Bool hasGlobalPresentationPolicyGroup;

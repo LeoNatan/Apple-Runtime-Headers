@@ -30,6 +30,9 @@
 - (id)initWithData:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
+- (id)binarySampleRepresentation;
+- (id)sr_exportRepresentationEnumerator;
 
 @end
 

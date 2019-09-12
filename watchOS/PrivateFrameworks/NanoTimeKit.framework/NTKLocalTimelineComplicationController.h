@@ -9,10 +9,11 @@
 #import <NanoTimeKit/CLKCComplicationDataSourceDelegate-Protocol.h>
 #import <NanoTimeKit/NTKComplicationTimelineDelegate-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
+#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 
 @class CLKCComplicationDataSource, CLKComplicationTemplate, NSDate, NSMutableSet, NSString, NTKComplicationTimeline, NTKTimelineDataOperation;
 
-@interface NTKLocalTimelineComplicationController : NTKTimelineComplicationController <CLKCComplicationDataSourceDelegate, NTKComplicationTimelineDelegate, NTKTimeTravel>
+@interface NTKLocalTimelineComplicationController : NTKTimelineComplicationController <CLKCComplicationDataSourceDelegate, NTKComplicationTimelineDelegate, NTKTimeTravel, NTKTritiumRandomizedComplicationEntryProvider>
 {
     CLKCComplicationDataSource *_dataSource;
     NSDate *_timeTravelDate;
@@ -35,8 +36,11 @@
 + (_Bool)_acceptsComplicationType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 + (Class)complicationDataSourceClassForComplication:(id)arg1 family:(int)arg2 device:(id)arg3;
 - (void).cxx_destruct;
+- (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
+- (float)tritium_randomizedPossibility;
 - (void)_updateDimStateForCurrentTimeline;
 - (id)lockedTemplate;
+- (id)privacyTemplate;
 - (id)activeDisplayTemplate;
 - (id)_currentEntry;
 - (Class)richComplicationDisplayViewClass;
@@ -54,6 +58,7 @@
 - (void)_suspendLeftBoundaryDate:(id)arg1;
 - (void)_startExtendOperationIfNecessaryForWindow:(id)arg1 withDate:(id)arg2 minBuffer:(double)arg3;
 - (void)_extendTimelineIfNecessaryAndPossible;
+- (id)alwaysOnTemplate;
 - (void)_startSetupOperationIfPossible;
 - (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 currentEntry:(id)arg4;
 - (void)entriesDidChangeInTimeline:(id)arg1;
@@ -70,12 +75,14 @@
 - (void)_updateCurrentTemplateWithReason:(int)arg1;
 - (void)_updateTimeTravelBoundaries;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
+- (id)_tritium_complicationTemplateAtDate:(id)arg1;
 - (void)addDisplayWrapper:(id)arg1;
 - (void)setShowsLockedUI:(_Bool)arg1;
 - (void)setDataMode:(int)arg1 forDisplayWrapper:(id)arg2;
 - (void)_updateIsComplicationActive:(_Bool)arg1;
 - (void)_applyAnimationMode;
 - (void)_requestDataSourceToUpdateToState:(int)arg1;
+- (void)_didReceivedTritiumRelatedStateChangedNotification;
 - (void)_applyUpdatingMode;
 - (void)_applyCachingMode;
 - (void)_resetTimelineForCachingChange;

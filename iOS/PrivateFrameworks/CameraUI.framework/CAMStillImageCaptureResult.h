@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) AVCapturePhoto *capturePhoto; // @synthesize capturePhoto=_capturePhoto;
 - (void).cxx_destruct;
 - (id)description;
+- (id)compactMetadataWithSecondaryMakerNote:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *compactMetadata;
 @property(readonly, copy, nonatomic) NSString *imageGroupIdentifier;
 - (id)_captureDateFromMetadata:(id)arg1;

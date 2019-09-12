@@ -10,6 +10,7 @@
 
 @protocol _TtP11AppStoreKit20LocalizationProtocol_ <JSExport>
 - (NSString *)relativeDate:(NSDate *)arg1;
+- (NSString *)formatDateInSentence:(NSString *)arg1:(NSString *)arg2:(NSDate *)arg3;
 - (NSString *)formatDate:(NSString *)arg1:(NSDate *)arg2;
 - (NSString *)timeAgo:(NSDate *)arg1;
 - (NSString *)formattedCount:(NSNumber *)arg1;

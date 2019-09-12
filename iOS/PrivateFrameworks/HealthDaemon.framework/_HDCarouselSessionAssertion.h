@@ -10,9 +10,11 @@
 
 @interface _HDCarouselSessionAssertion : HDAssertion
 {
+    _Bool _supportsAOT;
     NSString *_applicationBundleIdentifier;
 }
 
+@property(nonatomic) _Bool supportsAOT; // @synthesize supportsAOT=_supportsAOT;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
 - (void).cxx_destruct;
 - (id)initWithOwnerIdentifier:(id)arg1;

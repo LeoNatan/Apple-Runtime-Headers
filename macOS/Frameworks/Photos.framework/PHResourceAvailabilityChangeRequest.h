@@ -37,7 +37,7 @@
 - (BOOL)_prepareForChangeRequestWithLibrary:(id)arg1 asset:(id *)arg2 resource:(id *)arg3 error:(id *)arg4;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
-- (id)initWithAssetObjectID:(id)arg1 resourceIdentity:(id)arg2;
+- (id)initWithTaskIdentifier:(id)arg1 assetObjectID:(id)arg2 resourceIdentity:(id)arg3;
 
 @end
 

@@ -19,6 +19,7 @@
     unsigned int _color;
     unsigned int _dial;
     NTKCaliforniaColorPalette *_colorPalette;
+    NTKCaliforniaColorPalette *_tritiumColorPalette;
     UIImageView *_editingNotchBackgroundView;
     NTKCircularAnalogDialView *_dialView;
 }
@@ -26,6 +27,7 @@
 + (int)uiSensitivity;
 @property(retain, nonatomic) NTKCircularAnalogDialView *dialView; // @synthesize dialView=_dialView;
 @property(retain, nonatomic) UIImageView *editingNotchBackgroundView; // @synthesize editingNotchBackgroundView=_editingNotchBackgroundView;
+@property(retain, nonatomic) NTKCaliforniaColorPalette *tritiumColorPalette; // @synthesize tritiumColorPalette=_tritiumColorPalette;
 @property(retain, nonatomic) NTKCaliforniaColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(nonatomic) unsigned int dial; // @synthesize dial=_dial;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
@@ -35,6 +37,12 @@
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
+- (id)tritium_createFaceAnimator;
+- (void)_updateColorForTritiumWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (float)_editSpeedForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)utilityBezelComplicationView;
 - (float)bezelComplicationTextWidthInRadius;

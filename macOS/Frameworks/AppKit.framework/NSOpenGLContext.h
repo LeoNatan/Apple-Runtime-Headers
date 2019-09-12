@@ -48,9 +48,6 @@
 - (void)_updateOpenGLViewport;
 @property(readonly) BOOL hasDefaultFramebuffer;
 @property(readonly) struct CGSize defaultFramebufferDimensions;
-- (BOOL)isSharedWithContext:(id)arg1;
-- (id)_initWithCGLContextObj:(void *)arg1;
-- (void *)_contextAuxiliary;
 - (void)setTextureImageToPixelBuffer:(id)arg1 colorBuffer:(unsigned int)arg2;
 - (int)pixelBufferMipMapLevel;
 - (unsigned int)pixelBufferCubeMapFace;

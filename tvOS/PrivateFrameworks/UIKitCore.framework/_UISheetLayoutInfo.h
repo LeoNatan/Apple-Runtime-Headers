@@ -118,7 +118,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_UISheetLayoutInfoDelegate> _delegate; // @synthesize _delegate=__delegate;
 @property(readonly, nonatomic) double _confinedPercentLightened; // @synthesize _confinedPercentLightened=__confinedPercentLightened;
 @property(retain, nonatomic, setter=_setChildSheetLayoutInfo:) _UISheetLayoutInfo *_childLayoutInfo; // @synthesize _childLayoutInfo=__childLayoutInfo;
-@property(retain, nonatomic, setter=_setParentSheetLayoutInfo:) _UISheetLayoutInfo *_parentLayoutInfo; // @synthesize _parentLayoutInfo=__parentLayoutInfo;
+@property(nonatomic, setter=_setParentSheetLayoutInfo:) __weak _UISheetLayoutInfo *_parentLayoutInfo; // @synthesize _parentLayoutInfo=__parentLayoutInfo;
 @property(nonatomic, setter=_setDismissCornerRadius:) double _dismissCornerRadius; // @synthesize _dismissCornerRadius=__dismissCornerRadius;
 @property(nonatomic, setter=_setDismissSourceFrame:) struct CGRect _dismissSourceFrame; // @synthesize _dismissSourceFrame=__dismissSourceFrame;
 @property(nonatomic, getter=_isDraggingAndDismissing, setter=_setDraggingAndDismissing:) _Bool _draggingAndDismissing; // @synthesize _draggingAndDismissing=__draggingAndDismissing;
@@ -146,7 +146,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setContainerBounds:) struct CGRect _containerBounds; // @synthesize _containerBounds=__containerBounds;
 @property(retain, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
 @property(retain, nonatomic) UIViewController *_presentedViewController; // @synthesize _presentedViewController=__presentedViewController;
-@property(retain, nonatomic) UIViewController *_presentingViewController; // @synthesize _presentingViewController=__presentingViewController;
+@property(nonatomic) __weak UIViewController *_presentingViewController; // @synthesize _presentingViewController=__presentingViewController;
 - (void).cxx_destruct;
 - (void)_layout;
 @property(readonly, nonatomic) NSArray *_dimmedPassthroughViews; // @synthesize _dimmedPassthroughViews=__dimmedPassthroughViews;

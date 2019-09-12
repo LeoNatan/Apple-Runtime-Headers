@@ -8,11 +8,13 @@
 
 @interface TLKPassThroughScrollView : NUIContentScrollView
 {
+    BOOL _horizontalScrollingDisabled;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
 - (void)scrollWheel:(id)arg1;
 - (BOOL)drawsBackground;
+- (void)setHorizontalScrollingDisabled:(BOOL)arg1;
 
 @end
 

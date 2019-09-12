@@ -17,6 +17,7 @@
     BOOL _showActionSetsInstructions;
     BOOL _showConditionTriggers;
     BOOL _allowDurationEditing;
+    BOOL _filtersEmptyActionSets;
     NSString *_testActionsInstructionDescription;
     NSString *_serviceActionsInstructionDescription;
     NSString *_deleteInstructionDescription;
@@ -35,6 +36,7 @@
 @property(copy, nonatomic) NSString *deleteInstructionDescription; // @synthesize deleteInstructionDescription=_deleteInstructionDescription;
 @property(copy, nonatomic) NSString *serviceActionsInstructionDescription; // @synthesize serviceActionsInstructionDescription=_serviceActionsInstructionDescription;
 @property(copy, nonatomic) NSString *testActionsInstructionDescription; // @synthesize testActionsInstructionDescription=_testActionsInstructionDescription;
+@property(nonatomic) BOOL filtersEmptyActionSets; // @synthesize filtersEmptyActionSets=_filtersEmptyActionSets;
 @property(nonatomic) BOOL allowDurationEditing; // @synthesize allowDurationEditing=_allowDurationEditing;
 @property(nonatomic) BOOL showConditionTriggers; // @synthesize showConditionTriggers=_showConditionTriggers;
 @property(nonatomic) BOOL showActionSetsInstructions; // @synthesize showActionSetsInstructions=_showActionSetsInstructions;

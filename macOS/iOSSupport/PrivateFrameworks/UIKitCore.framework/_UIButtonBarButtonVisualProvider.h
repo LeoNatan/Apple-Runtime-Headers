@@ -23,7 +23,7 @@
 - (void)buttonWillMoveToWindow:(id)arg1;
 - (void)buttonLayoutSubviews:(id)arg1 baseImplementation:(CDUnknownBlockType)arg2;
 - (void)updateButton:(id)arg1 toUseButtonShapes:(BOOL)arg2;
-- (void)updateButtonAppearance:(id)arg1;
+- (void)updateButton:(id)arg1 appearance:(id)arg2;
 - (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
 - (void)updateButton:(id)arg1 forFocusedState:(BOOL)arg2;
 - (void)updateButton:(id)arg1 forEnabledState:(BOOL)arg2;

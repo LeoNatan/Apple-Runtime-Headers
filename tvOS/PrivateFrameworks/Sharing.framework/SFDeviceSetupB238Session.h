@@ -205,7 +205,7 @@
 - (void)_runFinishRequest;
 - (int)_runFinishStart;
 - (int)_runHomeKitSetup;
-- (int)_runCDPSetup;
+- (int)_runCDPSetup:(_Bool)arg1;
 - (int)_runTRAuthentication;
 - (int)_runTRActivation;
 - (int)_runTRSetupConfiguration;

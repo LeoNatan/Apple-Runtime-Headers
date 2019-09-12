@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(nonatomic, readonly) BOOL canBecomeFocused;
 - (void)layoutSubviews;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithCoder:(id)arg1;

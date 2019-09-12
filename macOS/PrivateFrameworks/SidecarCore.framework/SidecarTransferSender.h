@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_sendCompletion:(id)arg1;
 - (void)sendItems:(id)arg1 messageType:(long long)arg2;
+- (CDUnknownBlockType)_resumeMessage:(id)arg1;
 @property(readonly, nonatomic) long long type;
 - (id)initWithSession:(id)arg1 requestID:(long long)arg2 transferID:(long long)arg3;
 

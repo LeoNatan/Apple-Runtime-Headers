@@ -51,6 +51,7 @@
 @property(copy) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(copy) NSString *password;
+@property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly) Class superclass;
 @property(readonly, copy) ACAccount *systemAccount;
 

@@ -20,5 +20,6 @@
 + (id)cui_cameraMonospacedFontOfSize:(double)arg1;
 + (id)cui_cameraFontOfSize:(double)arg1 weight:(double)arg2;
 + (id)cui_cameraFontOfSize:(double)arg1;
++ (_Bool)cui_usesSFCamera;
 @end
 

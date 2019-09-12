@@ -23,6 +23,12 @@
 @property(nonatomic) __weak UIView *circleView; // @synthesize circleView=_circleView;
 @property(retain, nonatomic) NTKAnalogScene *analogScene; // @synthesize analogScene=_analogScene;
 - (void).cxx_destruct;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (void)_setupSceneHostViewIfNecessary;
 - (void)_setContentViewsOpaque:(_Bool)arg1;
 @property(nonatomic) _Bool shouldRasterizeBackground;

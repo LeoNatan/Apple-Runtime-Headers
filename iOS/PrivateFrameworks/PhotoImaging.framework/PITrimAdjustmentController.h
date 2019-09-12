@@ -14,8 +14,8 @@
 + (id)endKey;
 + (id)startScaleKey;
 + (id)startKey;
-@property(nonatomic) CDStruct_198678f7 endTime;
-@property(nonatomic) CDStruct_198678f7 startTime;
+@property(nonatomic) CDStruct_1b6d18a9 endTime;
+@property(nonatomic) CDStruct_1b6d18a9 startTime;
 
 @end
 

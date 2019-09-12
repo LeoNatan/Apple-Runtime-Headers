@@ -39,6 +39,7 @@
         double maximum;
     } _interactiveScrollNavBarIntrinsicHeightRange;
     long long _updateTopViewFramesToMatchScrollOffsetDisabledCount;
+    struct CGSize _externallySetNavControllerPreferredContentSize;
     struct {
         unsigned int isAppearingAnimated:1;
         unsigned int isAlreadyPoppingNavigationItem:1;

@@ -9,12 +9,13 @@
 #import <NanoTimeKit/NTKAstronomyRotationModelObserver-Protocol.h>
 #import <NanoTimeKit/NTKAstronomyVistaViewObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 
-@interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyVistaViewObserver, UIGestureRecognizerDelegate, PUICCrownInputSequencerDelegate>
+@interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyVistaViewObserver, UIGestureRecognizerDelegate, PUICCrownInputSequencerDelegate, NTKTritiumMetalContentView>
 {
     NTKDigitialUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultStyle;
@@ -54,9 +55,21 @@
     unsigned int _isContentLoaded:1;
     unsigned int _isLocationCurrent:1;
     unsigned int _isHandlingCrownEvents:1;
+    float _tritium_vistaDimming;
 }
 
++ (Class)tritium_frameSpecifierClass;
 - (void).cxx_destruct;
+- (void)tritium_invalidateMetalContentForSnapshot;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_prepareForTransitionToTritiumOnAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (float)tritium_dimmingValueForCurrentVistaState;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (_Bool)_wantsMinorDetents;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;

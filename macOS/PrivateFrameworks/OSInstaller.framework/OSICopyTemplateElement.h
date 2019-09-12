@@ -22,6 +22,7 @@
 - (BOOL)_createFirmlinksWithError:(id *)arg1;
 - (BOOL)_operation:(unsigned int)arg1 withSource:(id)arg2 destination:(id)arg3 destinationFolderName:(id)arg4 error:(id *)arg5;
 - (BOOL)_installDataTemplateWithError:(id *)arg1;
+- (BOOL)_propagateUserTemplateAttributes;
 - (BOOL)_restrictInstallerCompatibility;
 - (BOOL)runReturningError:(id *)arg1;
 - (id)initWithOptions:(id)arg1;

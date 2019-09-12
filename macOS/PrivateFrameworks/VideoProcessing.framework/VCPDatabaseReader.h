@@ -19,7 +19,7 @@
 + (id)databaseForPhotoLibrary:(id)arg1;
 + (BOOL)shouldQueryInternalFields;
 - (void).cxx_destruct;
-- (id)failedProcessingStatusFromAssets:(id)arg1 forTaskID:(unsigned long long)arg2;
+- (id)queryFailedProcessingStatusFromAssets:(id)arg1 forTaskID:(unsigned long long)arg2;
 - (id)queryAssetsAnalyzedSince:(id)arg1;
 - (id)queryAnalysesForAssets:(id)arg1 withTypes:(id)arg2;
 - (id)queryAnalysisForAsset:(id)arg1 withTypes:(id)arg2;

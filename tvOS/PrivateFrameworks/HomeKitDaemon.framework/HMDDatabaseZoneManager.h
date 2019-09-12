@@ -12,16 +12,18 @@
 #import <HomeKitDaemon/HMDDatabaseDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMBCloudZone, HMBLocalZone, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, HMDHome, NSObject, NSString;
+@class HMBCloudZone, HMBLocalZone, HMDCloudShareMessenger, HMDCloudShareParticipantsManager, HMDHome, NSObject, NSSet, NSString, NSUUID;
 @protocol HMBLocalZoneDelegate><HMBCloudZoneDelegate, HMDCloudShareParticipantsManagerDataSource, HMDDatabase, HMDDatabaseZoneManagerDelegate, OS_dispatch_queue;
 
 @interface HMDDatabaseZoneManager : HMFObject <HMFLogging, HMDDatabaseDelegate, HMDCloudShareMessengerDelegate, HMDCloudShareParticipantsManagerDataSource, HMDCloudShareParticipantsManagerDelegate>
 {
+    _Bool _shouldRebuildOnManateeKeyLoss;
     id <HMDDatabaseZoneManagerDelegate> _delegate;
     id <HMDCloudShareParticipantsManagerDataSource> _participantManagerDataSource;
     NSString *_zoneName;
     HMBLocalZone *_localZone;
     HMBCloudZone *_cloudZone;
+    NSSet *_externalRecordTypesForSubscriptions;
     long long _state;
     id <HMDDatabase> _database;
     HMDHome *_home;
@@ -41,6 +43,8 @@
 @property(readonly) HMDHome *home; // @synthesize home=_home;
 @property(readonly) id <HMDDatabase> database; // @synthesize database=_database;
 @property long long state; // @synthesize state=_state;
+@property _Bool shouldRebuildOnManateeKeyLoss; // @synthesize shouldRebuildOnManateeKeyLoss=_shouldRebuildOnManateeKeyLoss;
+@property(copy) NSSet *externalRecordTypesForSubscriptions; // @synthesize externalRecordTypesForSubscriptions=_externalRecordTypesForSubscriptions;
 @property(retain) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(readonly, copy) NSString *zoneName; // @synthesize zoneName=_zoneName;
@@ -48,6 +52,7 @@
 @property __weak id <HMDDatabaseZoneManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)logIdentifier;
+- (void)database:(id)arg1 didReceiveMessageWithUserInfo:(id)arg2;
 - (void)database:(id)arg1 didRemoveZoneWithName:(id)arg2;
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (void)manager:(id)arg1 didRequestSendForInvitation:(id)arg2 toUser:(id)arg3;
@@ -59,7 +64,11 @@
 - (id)remove;
 - (void)start;
 - (void)configure;
+@property(readonly, getter=isOwnerUser) _Bool ownerUser;
+@property(readonly, copy) NSString *containerIdentifier;
+@property(readonly, copy) NSUUID *messageTargetUUID;
 - (id)initWithDatabase:(id)arg1 zoneName:(id)arg2 home:(id)arg3 shareMessenger:(id)arg4 zoneDelegate:(id)arg5 workQueue:(id)arg6;
+- (id)initWithDatabase:(id)arg1 zoneName:(id)arg2 home:(id)arg3 messageTargetUUID:(id)arg4 zoneDelegate:(id)arg5 workQueue:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

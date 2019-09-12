@@ -47,7 +47,10 @@
 - (BOOL)_loadCorrectedMeCardWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)__loadCorrectedMeCardWithHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_mergeShortcutsToMeCardAndCallHandler:(CDUnknownBlockType)arg1;
+- (void)test_sortMapsSuggestionsShortcuts:(struct NSMutableArray *)arg1;
+- (struct NSArray *)test_setUpPlaceholdersIfNeeded:(id)arg1 overlays:(struct NSArray *)arg2;
 - (id)initWithStorage:(id)arg1 suggestor:(id)arg2 contacts:(id)arg3 routine:(id)arg4;
+- (id)initWithDefaults;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

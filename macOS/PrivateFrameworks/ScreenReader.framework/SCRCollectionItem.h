@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)moveOutWithEvent:(id)arg1 request:(id)arg2;
+- (void)autoDrillAddBorderCrossIfNecessary:(long long)arg1 request:(id)arg2 oldFocusedElement:(id)arg3;
+- (BOOL)allowFocusThroughSingleChild;
 - (BOOL)shouldAutoFocusOnChildren;
 - (BOOL)toggleMultipleSelectionWithRequest:(id)arg1;
 - (BOOL)toggleSingleSelectionWithRequest:(id)arg1;

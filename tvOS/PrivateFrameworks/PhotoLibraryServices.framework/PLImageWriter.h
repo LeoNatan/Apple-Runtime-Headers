@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/PLPhotoBakedThumbnailsDelegate-Protocol.h>
 
-@class PLIndicatorFileCoordinator, PLLibraryServicesManager, PLSimpleDCIMDirectory;
+@class PAImageConversionServiceClient, PAVideoConversionServiceClient, PLIndicatorFileCoordinator, PLLibraryServicesManager, PLSimpleDCIMDirectory;
 @protocol OS_dispatch_queue, OS_os_transaction;
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate>
@@ -16,6 +16,9 @@
     int _unfinishedJobsRequiringIndicatorCount;
     _Bool _databaseIsCorrupt;
     NSObject<OS_dispatch_queue> *_jobQueue;
+    NSObject<OS_dispatch_queue> *_postIngestWorkQueue;
+    PAImageConversionServiceClient *_imageConversionServiceClient;
+    PAVideoConversionServiceClient *_videoConversionServiceClient;
     struct os_unfair_recursive_lock_s _jobCountLock;
     struct os_unfair_lock_s _transactionLock;
     unsigned long long _transactionCounter;
@@ -32,12 +35,19 @@
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
 + (_Bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 finalAssetSize:(struct CGSize)arg6 isSubstandardRender:(_Bool)arg7;
++ (id)_assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2 assetType:(short)arg3;
 + (id)assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
++ (id)_assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2 assetType:(short)arg3;
 + (id)assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
 + (id)assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
 + (id)_assetAdjustmentsFromCompositionController:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsWithEffectFilterName:(id)arg1 exportProperties:(id)arg2;
++ (id)finalizedAssetURLForDeferredPhotoPreviewURL:(id)arg1 extension:(id)arg2;
++ (_Bool)isDeferredPhotoPreviewURL:(id)arg1;
++ (id)deferredPhotoPreviewDestinationURLForPrimaryAssetURL:(id)arg1;
++ (_Bool)isSpatialOverCaptureURL:(id)arg1;
++ (id)spatialOverCaptureDestinationURLForPrimaryAssetURL:(id)arg1;
 + (_Bool)_requiresIndicatorFileForJobType:(id)arg1;
 - (void).cxx_destruct;
 - (void)enqueueAutoDeleteEmptyAlbumJobWithAlbumID:(id)arg1;
@@ -48,6 +58,7 @@
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3 error:(id *)arg4;
+- (_Bool)_transferSpatialOverCaptureVideoFromIncomingPath:(id)arg1 forBaseDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)_decorateThumbnail:(id)arg1;
 - (void)_processXPCDaemonJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -92,6 +103,7 @@
 - (id)indicatorFileCoordinator;
 - (_Bool)canEnqueueJob:(id)arg1;
 - (_Bool)_isHighPriorityJob:(id)arg1;
+- (void)dealloc;
 - (id)initWithLibraryServicesManager:(id)arg1;
 - (id)init;
 

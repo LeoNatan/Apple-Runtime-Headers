@@ -6,14 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class ACAccountStore, NSString;
 @protocol OS_dispatch_queue;
 
 @interface ACPersonaManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_backgroundPersonaUpdate;
+    _Bool _registered;
+    NSString *_enterprisePersonaUID;
+    NSString *_personalPersonaUID;
+    ACAccountStore *_store;
 }
 
++ (_Bool)performWithinPersona:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (void)performWithinPersonaForAccount:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (void)performWithinPersonaForAccountIdentifier:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
 
 @end

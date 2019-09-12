@@ -103,6 +103,7 @@ __attribute__((visibility("hidden")))
 - (void)_connectContextToSessionWithRequestIdentifier:(id)arg1 remoteViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_extensionHasPopover:(id)arg1;
 - (void)_validateAndLoadExtensionIfNecessary:(id)arg1;
+- (void)_replaceLegacyExtensionsWithAppExtension:(id)arg1 andDeveloperIdentifier:(id)arg2;
 - (void)_updateExtensionStateIfWebsiteAccessIncreased:(id)arg1;
 - (id)_cdHashForCodeSigningDictionary:(id)arg1;
 - (id)enabledExtensions;

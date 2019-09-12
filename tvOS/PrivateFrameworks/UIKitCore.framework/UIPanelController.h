@@ -122,6 +122,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *leadingViewController;
 - (void)setMainViewController:(id)arg1 changingParentage:(_Bool)arg2;
 @property(retain, nonatomic) UIViewController *mainViewController;
+- (_Bool)shouldRunOurRotationAlongSideAnimationBeforeClientAlongSideAnimation;
 - (void)dealloc;
 - (id)initWithOwningViewController:(id)arg1;
 

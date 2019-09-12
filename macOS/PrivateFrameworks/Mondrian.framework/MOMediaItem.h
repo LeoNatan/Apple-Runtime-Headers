@@ -65,7 +65,7 @@
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithURL:(id)arg1;
-@property(readonly, retain, nonatomic) NSString *accessibilityTypeDescription; // @dynamic accessibilityTypeDescription;
+@property(readonly, retain, nonatomic) NSString *accessibilityRoleDescription; // @dynamic accessibilityRoleDescription;
 @property(readonly, retain, nonatomic) NSString *accessibilityLabel; // @dynamic accessibilityLabel;
 
 @end

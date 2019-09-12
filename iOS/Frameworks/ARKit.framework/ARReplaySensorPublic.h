@@ -97,6 +97,7 @@
 - (id)getNextWrappedImageDataForReplay;
 - (id)peekNextWrappedImageDataForStreamIdentifier:(id)arg1;
 - (id)peekNextWrappedImageDataForAllRequiredStreams;
+- (CDUnknownBlockType)starDataConverter;
 - (CDUnknownBlockType)metadataWrapperConverter:(Class)arg1;
 - (CDUnknownBlockType)keyedArchiveConverterForClasses:(id)arg1;
 - (CDUnknownBlockType)keyedArchiveConverter:(Class)arg1;

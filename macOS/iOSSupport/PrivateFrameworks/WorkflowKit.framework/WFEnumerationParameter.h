@@ -6,24 +6,25 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSArray, NSString;
+@class NSArray;
 
 @interface WFEnumerationParameter : WFParameter
 {
     BOOL _alwaysShowsButton;
-    NSString *_placeholder;
     NSArray *_staticPossibleStates;
     NSArray *_displayNames;
 }
 
 @property(readonly, nonatomic) NSArray *displayNames; // @synthesize displayNames=_displayNames;
 @property(readonly, nonatomic) NSArray *staticPossibleStates; // @synthesize staticPossibleStates=_staticPossibleStates;
-@property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly, nonatomic) BOOL alwaysShowsButton; // @synthesize alwaysShowsButton=_alwaysShowsButton;
 - (void).cxx_destruct;
+- (void)stopUpdatingPossibleValues;
+- (void)startUpdatingPossibleValues;
 - (void)possibleStatesDidChange;
 - (BOOL)parameterStateIsValid:(id)arg1;
 @property(readonly, nonatomic) BOOL preferItemPickerSheet;
+@property(readonly, nonatomic) BOOL hidesAccessoryIconInEditor;
 - (id)accessoryIconForPossibleState:(id)arg1;
 - (id)accessoryColorForPossibleState:(id)arg1;
 - (id)localizedSubtitleLabelForPossibleState:(id)arg1;

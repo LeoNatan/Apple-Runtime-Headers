@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) struct CGRect currentVisibleRect;
 - (id)createPlaybackRecordForDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3;
 - (void)visibleRectDidChange;
+- (BOOL)isPlayingDisplayAsset:(id)arg1;
 - (void)checkInPlaybackRecordForDisplayAssets:(id)arg1;
 - (void)checkInPlaybackRecordForDisplayAsset:(id)arg1;
 - (void)willCheckInPlaybackRecordForDisplayAsset:(id)arg1;

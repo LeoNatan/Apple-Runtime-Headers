@@ -164,6 +164,7 @@
 - (void)_performMuteAction:(_Bool)arg1;
 - (void)_performPlayPauseAction:(long long)arg1;
 - (void)_performChangesWithCurrentVideoPlayer:(CDUnknownBlockType)arg1;
+- (void)_toggleCTM;
 - (void)_performToggleFavoriteAction;
 - (void)_performRestoreAction;
 - (void)_performTrashAction;

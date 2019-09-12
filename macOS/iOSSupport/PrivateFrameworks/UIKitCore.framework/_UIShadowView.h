@@ -9,10 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface _UIShadowView : UIImageView
 {
+    BOOL _useLowerIntensity;
 }
 
+@property(nonatomic) BOOL useLowerIntensity; // @synthesize useLowerIntensity=_useLowerIntensity;
 - (void)_updateShadowVisualStyling;
-- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)didMoveToSuperview;
 
 @end

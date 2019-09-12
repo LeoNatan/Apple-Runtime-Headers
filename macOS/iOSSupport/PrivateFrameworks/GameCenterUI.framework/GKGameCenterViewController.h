@@ -33,6 +33,7 @@
 - (BOOL)shouldShowPlayForChallenge;
 - (void)playPressedForChallenge:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (long long)modalPresentationStyle;
 - (void)requestRemoteViewController;
 - (void)loadView;
 - (id)view;

@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) CDPContext *cdpContext;
 - (void)reportFailure:(NSError *)arg1;
 - (void)reportSuccess;
+- (void)waitForUpdate;
 - (KCPairingChannel *)pairingChannelAcceptor:(id *)arg1;
 - (KCPairingChannel *)pairingChannelInitiator:(id *)arg1;
 - (_Bool)tryRegisteringCredentials;
@@ -36,7 +37,8 @@
 - (NSDictionary *)peerDeviceNamesByPeerID;
 - (unsigned long long)peerCount;
 - (NSString *)peerId;
-- (unsigned long long)cachedCircleStatus:(id *)arg1;
+- (int)cachedCircleStatus:(id *)arg1;
+- (unsigned long long)cachedCliqueStatus:(id *)arg1;
 - (unsigned long long)circleStatus:(id *)arg1;
 @end
 

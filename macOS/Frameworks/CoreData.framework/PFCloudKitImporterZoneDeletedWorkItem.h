@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) CKRecordZoneID *deletedRecordZoneID; // @synthesize deletedRecordZoneID=_deletedRecordZoneID;
-- (BOOL)wipeCloudMetadataFromMirroredObjects:(id *)arg1;
 - (void)doWorkWithCompletion:(CDUnknownBlockType)arg1;
 - (id)description;
 - (void)dealloc;

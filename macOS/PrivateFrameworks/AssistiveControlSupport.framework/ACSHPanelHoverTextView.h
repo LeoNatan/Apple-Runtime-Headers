@@ -13,15 +13,13 @@
     ACSHHoverTextView *__textView;
 }
 
-+ (struct CGSize)_textContainerInsetForBounds:(struct CGRect)arg1 fontSize:(double)arg2;
-+ (double)desiredHeightForFontSize:(double)arg1;
-+ (void)_updateLayoutForTextView:(id)arg1 bounds:(struct CGRect)arg2 font:(id)arg3;
-+ (id)_textViewWithBounds:(struct CGRect)arg1 fontSize:(double)arg2;
++ (struct CGSize)_textContainerInsetForBounds:(struct CGRect)arg1 scaledFontSize:(double)arg2;
++ (double)desiredHeightForScaledFontSize:(double)arg1;
 + (id)_createLayoutManager;
-+ (double)defaultFontSize;
++ (double)defaultUnscaledFontSize;
 @property(retain, nonatomic) ACSHHoverTextView *_textView; // @synthesize _textView=__textView;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSFont *_font;
+@property(readonly, nonatomic) NSFont *_scaledFont;
 @property(readonly, nonatomic) NSColor *_textColor;
 @property(readonly, nonatomic) ACSHPanelHoverTextGroup *_hoverTextGroup;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -29,11 +27,12 @@
 - (void)_colorsUpdated;
 - (void)_fontSizeUpdated;
 - (void)updateLayer;
-- (void)_updateTextViewLayoutIfNeededForFont;
 - (void)_updateTextViewLayout;
 - (void)setPanelElement:(id)arg1 animated:(BOOL)arg2;
 - (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)initView;
+- (void)_updateLayoutForTextView:(id)arg1 scaledFont:(id)arg2;
+- (id)_createTextViewWithScaledFontSize:(double)arg1;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <AccessibilityKit/AXKElementController.h>
 
-@class NSMutableDictionary, NSMutableSet, NSOperationQueue;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue;
 @protocol AXKApplicationControllerDelegate;
 
 @interface AXKApplicationController : AXKElementController
@@ -24,6 +24,7 @@
     id <AXKApplicationControllerDelegate> _delegate;
     AXKElementController *_activeMenuController;
     NSMutableDictionary *__elementCache;
+    NSMutableArray *__elementCacheOrderdKeysForPruning;
     NSMutableSet *__openMenuControllers;
     AXKElementController *__previousFocusedElementController;
     AXKElementController *__focusedElementController;
@@ -42,7 +43,8 @@
 @property(nonatomic) BOOL _didRegisterMenuOpenedNotification; // @synthesize _didRegisterMenuOpenedNotification=__didRegisterMenuOpenedNotification;
 @property(nonatomic) BOOL _didRegisterFocusedWindowNotification; // @synthesize _didRegisterFocusedWindowNotification=__didRegisterFocusedWindowNotification;
 @property(nonatomic) BOOL _didRegisterFocusedUIElementNotification; // @synthesize _didRegisterFocusedUIElementNotification=__didRegisterFocusedUIElementNotification;
-@property(readonly, nonatomic) NSMutableDictionary *_elementCache; // @synthesize _elementCache=__elementCache;
+@property(readonly) NSMutableArray *_elementCacheOrderdKeysForPruning; // @synthesize _elementCacheOrderdKeysForPruning=__elementCacheOrderdKeysForPruning;
+@property(readonly) NSMutableDictionary *_elementCache; // @synthesize _elementCache=__elementCache;
 @property(retain, nonatomic) AXKElementController *activeMenuController; // @synthesize activeMenuController=_activeMenuController;
 @property(nonatomic) BOOL hasOpenMenus; // @synthesize hasOpenMenus=_hasOpenMenus;
 @property(nonatomic) __weak id <AXKApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;

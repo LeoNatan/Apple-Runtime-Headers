@@ -24,6 +24,7 @@
     PXCuratedLibraryFooterViewModel *_footerViewModel;
     long long _presentedZoomLevel;
     PXPhotosGlobalFooterView *_reusableFooterView;
+    BOOL _isUpdatingFooter;
     BOOL _wantsFooterMask;
     BOOL _hasAppeared;
     BOOL _wantsFooter;

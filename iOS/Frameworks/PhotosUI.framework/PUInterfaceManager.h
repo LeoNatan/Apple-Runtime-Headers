@@ -17,6 +17,7 @@
 + (void)_handleInteractionDisablingTimeout;
 + (void)_handleInteractionDisablingTimeoutForOverOneUpTransition;
 + (void)_handleInteractionDisablingTimeoutForOneUpToPhotoEditorTransition;
++ (void)_handleInteractionDisablingTimeoutForPhotoEditorSwitchingSource;
 + (void)_handleInteractionDisablingTimeoutForPhotoEditorComputingAutoEnhance;
 + (void)_handleInteractionDisablingTimeoutForPhotoEditorWaitingToDismiss;
 + (void)_handleInteractionDisablingTimeoutForPhotoEditorRevertingChanges;

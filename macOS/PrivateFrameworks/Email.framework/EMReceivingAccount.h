@@ -19,9 +19,11 @@
     NSString *_hostname;
     EMDeliveryAccount *_deliveryAccount;
     NSArray *_emailAddresses;
+    NSString *_statisticsKind;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *statisticsKind; // @synthesize statisticsKind=_statisticsKind;
 @property BOOL shouldArchiveByDefault; // @synthesize shouldArchiveByDefault=_shouldArchiveByDefault;
 @property BOOL sourceIsManaged; // @synthesize sourceIsManaged=_sourceIsManaged;
 @property(retain) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;

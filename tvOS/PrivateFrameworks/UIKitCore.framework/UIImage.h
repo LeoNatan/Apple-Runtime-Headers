@@ -151,6 +151,8 @@
 - (id)_rasterizedImage;
 - (id)_imagePaddedByInsets:(struct UIEdgeInsets)arg1;
 - (id)_flatImageWithColor:(id)arg1;
+- (CDStruct_e79446ac)_calculateStatisticsOfEdge:(_Bool)arg1;
+- (CDStruct_e79446ac)_calculateEdgeStatistics;
 - (CDStruct_e79446ac)_calculateStatistics;
 - (id)_resizableImageWithSubimageInsets:(struct UIEdgeInsets)arg1 resizeInsets:(struct UIEdgeInsets)arg2;
 - (id)_stretchableImageWithCapInsets:(struct UIEdgeInsets)arg1;

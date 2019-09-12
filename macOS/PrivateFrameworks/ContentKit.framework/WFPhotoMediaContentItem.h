@@ -49,7 +49,6 @@
 - (void)generateAVAsset:(CDUnknownBlockType)arg1 networkAccessAllowed:(BOOL)arg2;
 - (void)generateFileRepresentation:(CDUnknownBlockType)arg1 options:(id)arg2 forType:(id)arg3;
 - (id)preferredAssetResourceForType:(id)arg1;
-- (void)retrieveLivePhotoAssetResource:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)retrieveFileWithImageManager:(CDUnknownBlockType)arg1 forType:(id)arg2;
 - (void)retrieveAssetResource:(id)arg1 withNetworkAccess:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getThumbnail:(CDUnknownBlockType)arg1 ofSize:(struct CGSize)arg2;

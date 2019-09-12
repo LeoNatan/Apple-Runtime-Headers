@@ -156,6 +156,9 @@
 @property(nonatomic) UIColor *primaryTextColor; // @synthesize primaryTextColor=_primaryTextColor;
 @property(nonatomic) __weak id <PKPassDeleteHandler> deleteOverrider; // @synthesize deleteOverrider=_deleteOverrider;
 - (void).cxx_destruct;
+- (void)_reportPassDetailsAnalyticsForToggleTag:(id)arg1 toggleResult:(_Bool)arg2;
+- (void)_reportPassDetailsAnalyticsForTappedButtonTag:(id)arg1;
+- (void)_reportPassDetailsAnalyticsForTappedRowTag:(id)arg1;
 - (void)balanceDetailsViewController:(id)arg1 didUpdateBalanceReminder:(id)arg2 forBalance:(id)arg3;
 - (_Bool)shouldAllowRefresh;
 - (void)_refreshFinished:(_Bool)arg1;
@@ -450,6 +453,7 @@
 - (void)presentTransactionDetailsForTransaction:(id)arg1 animated:(_Bool)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

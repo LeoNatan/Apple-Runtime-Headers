@@ -67,6 +67,7 @@
 - (BOOL)ptpCanDeleteFiles;
 - (id)ptpImagePropertiesForAssetHandle:(id)arg1;
 - (id)assetReaderForFormatConvertedPTPAsset:(id)arg1 ofManagedAsset:(id)arg2 path:(id)arg3;
+- (id)adjustmentFilePathForAsset:(id)arg1 requiresTemporaryFileCleanup:(char *)arg2;
 - (id)ptpAssetReaderForAssetHandle:(id)arg1;
 - (id)ptpThumbnailForAssetHandle:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
 - (void)ptpEnumerateAllAssetsUsingBlock:(CDUnknownBlockType)arg1;

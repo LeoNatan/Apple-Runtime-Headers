@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <ClockKit/CLKComplicationTritiumCopyable-Protocol.h>
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface CLKGaugeProvider : NSObject <NSSecureCoding, NSCopying>
+@interface CLKGaugeProvider : NSObject <CLKComplicationTritiumCopyable, NSSecureCoding, NSCopying>
 {
+    _Bool _tritium_isTritiumInactiveCopy;
     _Bool _paused;
     _Bool _finalized;
     int _style;
@@ -29,13 +31,16 @@
 @property(retain, nonatomic) NSArray *gaugeColorLocations; // @synthesize gaugeColorLocations=_gaugeColorLocations;
 @property(retain, nonatomic) NSArray *gaugeColors; // @synthesize gaugeColors=_gaugeColors;
 @property(nonatomic) int style; // @synthesize style=_style;
+@property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
 - (void).cxx_destruct;
 - (void)finalize;
 - (void)validate;
 - (id)JSONObjectRepresentation;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned int)hash;
+- (_Bool)tritium_requiresCopy;
+- (id)tritium_inactiveCopy;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)stopUpdatesForToken:(struct NSNumber *)arg1;
 - (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
@@ -44,6 +49,11 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

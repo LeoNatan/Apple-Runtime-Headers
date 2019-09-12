@@ -6,20 +6,22 @@
 
 #import <AppKit/NSImageRep.h>
 
-@protocol NSUIImageAsset;
+@protocol NSUIImageAsset, NSUIImageConfiguration;
 
 __attribute__((visibility("hidden")))
 @interface NSUIImageAssetImageRep : NSImageRep
 {
     id <NSUIImageAsset> _imageAsset;
+    id <NSUIImageConfiguration> _configuration;
 }
 
 - (void).cxx_destruct;
 - (BOOL)draw;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithImageAsset:(id)arg1 size:(struct CGSize)arg2;
+- (id)initWithImageAsset:(id)arg1 configuration:(id)arg2 size:(struct CGSize)arg3;
 
 @end
 

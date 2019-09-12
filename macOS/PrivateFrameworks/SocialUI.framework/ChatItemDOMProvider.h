@@ -75,6 +75,7 @@
 - (void)refreshBusinessHeader:(id)arg1;
 - (id)_parseMessageStatus:(id)arg1;
 - (id)parseChatItem:(id)arg1 chat:(id)arg2;
+- (id)addRTLSpacingIfNeeded:(id)arg1;
 - (void)setTextDirection:(id)arg1;
 - (BOOL)_shouldHandlePhishingAttempts;
 - (id)_createPhishingMessageDOMElement;

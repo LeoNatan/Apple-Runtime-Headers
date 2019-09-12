@@ -14,10 +14,12 @@
 + (id)_stateHeaderValueForAccount:(id)arg1;
 + (BOOL)_deleteKeysWithOptions:(id)arg1 error:(id *)arg2;
 + (long long)stateForAccount:(id)arg1;
-+ (void)setState:(long long)arg1 forAccount:(id)arg2;
++ (id)signChallenge:(id)arg1 withAccount:(id)arg2 clientInfo:(id)arg3 options:(id)arg4;
++ (id)setState:(long long)arg1 forAccount:(id)arg2;
 + (id)headersWithAccount:(id)arg1 options:(id)arg2 signatureResult:(id)arg3;
 + (id)handleResponse:(id)arg1 session:(id)arg2 taskInfo:(id)arg3 shouldFallbackToPassword:(char *)arg4;
 + (BOOL)deleteKeysWithError:(id *)arg1;
++ (id)disableForAccount:(id)arg1;
 + (void)setDeviceState:(long long)arg1;
 + (long long)type;
 + (long long)deviceState;

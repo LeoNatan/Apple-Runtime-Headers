@@ -74,8 +74,8 @@
 - (id)previewController;
 - (BOOL)isCompatibleWithPreviewController:(id)arg1;
 - (id)pathForApplicationToOpen;
-@property(readonly) NSImage *secondaryIconImage;
-- (BOOL)willLaunchScreenTimeRestrictedApp;
+- (void)setLastRestrictionStatus:(BOOL)arg1;
+- (void)setNeedsPreviewUpdate:(BOOL)arg1;
 - (BOOL)needsPreviewUpdate;
 - (BOOL)isApplicationManaged;
 - (id)subjectForEmailAttachment;

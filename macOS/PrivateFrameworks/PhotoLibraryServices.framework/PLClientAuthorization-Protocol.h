@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) CDStruct_4c969caf clientAuditToken;
 @property(readonly, nonatomic) BOOL photoKitEntitled;
 @property(readonly, nonatomic) int clientProcessIdentifier;
+@property(readonly, nonatomic) NSString *trustedCallerDisplayName;
 @property(readonly, nonatomic) NSString *trustedCallerBundleID;
 - (BOOL)photoKitEntitledFor:(NSString *)arg1;
 @end

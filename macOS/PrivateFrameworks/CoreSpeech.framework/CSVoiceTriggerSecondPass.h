@@ -220,7 +220,8 @@
 - (BOOL)_isTDSRProcessingAllowed;
 - (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectly:(long long)arg2;
 - (void)_didStopAudioStream;
-- (void)_didStartAudioStream;
+- (void)_didStartAudioStream:(BOOL)arg1;
+- (void)_prepareStartAudioStream;
 - (void)_cleanupKeywordRejectionWithToken:(id)arg1 result:(unsigned long long)arg2 voiceTriggerInfo:(id)arg3;
 - (void)_notifySecondPassReject:(id)arg1 result:(unsigned long long)arg2;
 - (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 audioProviderUUID:(id)arg3 firstPassInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;

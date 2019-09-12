@@ -250,7 +250,7 @@
 - (void)delegateShouldCreateNewDocumentAtURL:(id)arg1;
 - (void)delegateRequestNewDocumentNameWithReply:(CDUnknownBlockType)arg1;
 - (void)_documentWindowFrameForPanelRunningAsASheetInService:(CDUnknownBlockType)arg1;
-- (void)requestAppEnabledStateForItems:(id)arg1 replyToken:(unsigned long long)arg2;
+- (void)requestAppEnabledStateForItems:(id)arg1 replyBlock:(CDUnknownBlockType)arg2;
 
 @end
 

@@ -38,6 +38,7 @@
 - (void)_cancelMonitoring;
 - (void)_startMonitoring;
 - (void)_requestMonitoringIfPossible;
+- (void)_updateGroundElevationRequesting;
 - (void)_discardLocations;
 - (void)_updateLocation:(id)arg1;
 - (void)_didReceiveLocation:(id)arg1;
@@ -47,6 +48,7 @@
 - (id)_debugLastUpdateDate;
 - (void)_debugUpdateToLocationWithLatitude:(double)arg1 longitude:(double)arg2;
 - (void)stopLocationUpdatesForToken:(struct NSString *)arg1;
+- (struct NSString *)startLocationUpdatesWithIdentifier:(id)arg1 wantsGroundElevation:(_Bool)arg2 handler:(CDUnknownBlockType)arg3;
 - (struct NSString *)startLocationUpdatesWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)anyLocation;
 - (id)previousLocation;

@@ -6,10 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-@class IKViewElement, VUIProductBannerView;
+#import <VideosUI/TVAppTemplateImpressionable-Protocol.h>
+
+@class IKViewElement, NSString, VUIProductBannerView;
 
 __attribute__((visibility("hidden")))
-@interface VUIProductBannerViewController : UIViewController
+@interface VUIProductBannerViewController : UIViewController <TVAppTemplateImpressionable>
 {
     IKViewElement *_viewElement;
     VUIProductBannerView *_bannerView;
@@ -18,6 +20,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIProductBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+- (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_configureViewSubviews;
 - (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;
@@ -25,6 +28,12 @@ __attribute__((visibility("hidden")))
 - (void)tv_setShowcaseConfig:(struct TVShowcaseConfig)arg1;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -19,7 +19,7 @@
 + (id)makeMetric;
 @property(retain, nonatomic) NSMutableArray *samples; // @synthesize samples=_samples;
 - (void).cxx_destruct;
-- (id)generateDataForSR:(id)arg1 dropSampleSize:(_Bool)arg2;
+- (id)generateDataForSR:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)merge:(id)arg1;

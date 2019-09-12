@@ -118,7 +118,6 @@
 - (id)srpRecoveryBlobFromSRPInitResponse:(id)arg1;
 - (void)srpRecoveryUpdateDSID:(id)arg1 recoveryPassphrase:(id)arg2;
 - (id)srpInitNonce;
-- (void)notificationOccurred:(id)arg1;
 - (void)setBackOffDateWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)backOffDateWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)backupWithInfo:(id)arg1;
@@ -153,6 +152,7 @@
 - (id)getAccountInfoWithInfo:(id)arg1 results:(id *)arg2;
 - (id)getAccountInfoWithError:(id *)arg1;
 - (void)stateCaptureWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)notificationInfo:(CDUnknownBlockType)arg1;
 - (void)setBackOffDateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)backOffDateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)backupWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

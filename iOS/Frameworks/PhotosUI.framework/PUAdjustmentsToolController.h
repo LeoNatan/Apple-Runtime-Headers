@@ -65,7 +65,7 @@ __attribute__((visibility("hidden")))
 - (void)setUseGradientBackground:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateBackgroundAnimated:(_Bool)arg1;
 - (void)mediaViewIsReady;
-- (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 valuesCalculator:(id)arg4;
+- (void)setupWithAsset:(id)arg1 compositionController:(id)arg2 editSource:(id)arg3 overcaptureEditSource:(id)arg4 valuesCalculator:(id)arg5;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

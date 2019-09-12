@@ -16,7 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)handleMessage:(id)arg1 transferID:(long long)arg2;
+- (CDUnknownBlockType)_resumeMessage:(id)arg1;
+- (void)handleMessage:(id)arg1;
 - (id)initWithSession:(id)arg1 requestID:(long long)arg2;
 
 @end

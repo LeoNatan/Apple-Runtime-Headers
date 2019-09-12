@@ -23,6 +23,7 @@
     NSString *_localName;
 }
 
++ (long long)authorization;
 @property(readonly) NSString *localName; // @synthesize localName=_localName;
 @property(readonly) NSString *localAddressString; // @synthesize localAddressString=_localAddressString;
 @property(copy, nonatomic) NSData *advertisingAddress; // @synthesize advertisingAddress=_advertisingAddress;
@@ -30,6 +31,7 @@
 @property(nonatomic) long long authorization; // @synthesize authorization=_authorization;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (unsigned int)getAppSDKVersion;
 - (void)performTCCCheck:(id)arg1;
 - (void)doneWithTCC;
 - (id)peerWithInfo:(id)arg1;

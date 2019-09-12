@@ -28,7 +28,7 @@
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
-@class CEKBadgeTextView, CEKLightingControl, CEKLightingNameBadge, NSArray, NSObject, NSString, NSTimer, NSURL, NUBufferRenderClient, NUComposition, NUMediaView, PHContentEditingInput, PICompositionController, PLEditSource, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUEditableMediaProvider, PUEnterEditPerformanceEventBuilder, PUExitEditPerformanceEventBuilder, PUFilterToolController, PULivePhotoEffectsToolController, PUMediaDestination, PUPhotoEditAggregateSession, PUPhotoEditButtonCenteredToolbar, PUPhotoEditIrisModel, PUPhotoEditLivePhotoVideoToolController, PUPhotoEditPerfHUD, PUPhotoEditPortraitToolController, PUPhotoEditResourceLoader, PUPhotoEditSnapshot, PUPhotoEditToolController, PUPhotoEditToolPickerController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUTimeInterval, PUTouchingGestureRecognizer, PXImageLayerModulator, PXUIAssetBadgeView, UIAlertController, UIButton, UIImageView, UIPencilInteraction, UITapGestureRecognizer, UIView, UIViewController, _PPTState;
+@class CEKBadgeTextView, CEKLightingControl, CEKLightingNameBadge, NSArray, NSObject, NSString, NSTimer, NSURL, NUBufferRenderClient, NUComposition, NUMediaView, PHContentEditingInput, PICompositionController, PLEditSource, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUEditableMediaProvider, PUEnterEditPerformanceEventBuilder, PUExitEditPerformanceEventBuilder, PUFilterToolController, PULivePhotoEffectsToolController, PUMediaDestination, PUPhotoEditAggregateSession, PUPhotoEditButtonCenteredToolbar, PUPhotoEditIrisModel, PUPhotoEditLivePhotoVideoToolController, PUPhotoEditPerfHUD, PUPhotoEditPortraitToolController, PUPhotoEditReframeHUD, PUPhotoEditResourceLoader, PUPhotoEditSnapshot, PUPhotoEditToolController, PUPhotoEditToolPickerController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUTimeInterval, PUTouchingGestureRecognizer, PXImageLayerModulator, PXUIAssetBadgeView, UIAlertController, UIButton, UIImageView, UIPencilInteraction, UITapGestureRecognizer, UIView, UIViewController, _PPTState;
 @protocol NUImageProperties, OS_dispatch_source, PUEditableAsset, PUPhotoEditViewControllerPresentationDelegate, PUPhotoEditViewControllerSessionDelegate;
 
 @interface PUPhotoEditViewController : PUEditViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIPencilInteractionDelegate, PUPhotoEditToolControllerDelegate, PUVideoEditPluginSessionDataSource, PUImageEditPluginSessionDataSource, PUEditPluginSessionDelegate, PXPhotoLibraryUIChangeObserver, PUOneUpAssetTransitionViewController, PXForcedDismissableViewController, PUPhotoEditIrisModelChangeObserver, PHLivePhotoViewDelegate, PUPhotoEditResourceLoaderDelegate, PUViewControllerSpecChangeObserver, NUMediaViewDelegatePrivate, PUPhotoEditToolbarDelegate, PXChangeObserver, PICompositionControllerDelegate, PXTrimToolPlayerWrapperNUMediaViewPlayerItemSource, PUPhotoEditLayoutSource>
@@ -140,9 +140,15 @@
     NUComposition *__originalComposition;
     PUPhotoEditIrisModel *__photoEditIrisModel;
     PLEditSource *__editSource;
+    PLEditSource *_overCaptureEditSource;
+    NSURL *_overCaptureEditSourceURL;
+    long long _editSourceSelection;
+    long long _overcaptureType;
     NSString *__editSourceUTI;
     PHContentEditingInput *__editSourceContentEditingInput;
     PLEditSource *__originalImageEditSource;
+    unsigned long long _originalReframeVariation;
+    PLEditSource *_originalOvercaptureEditSource;
     long long __originalImageExifOrientation;
     long long __originalExifOrientation;
     long long __assetChangeDismissalState;
@@ -157,6 +163,7 @@
     long long _mediaViewEdgeInsetsUpdateDisableCount;
     UIPencilInteraction *_pencilInteraction;
     PUPhotoEditPerfHUD *_perfHUD;
+    PUPhotoEditReframeHUD *_reframeHUD;
     PUTimeInterval *_enterEditTimeInterval;
     PUTimeInterval *_resourceCheckingInterval;
     PUTimeInterval *_resourceDownloadInterval;
@@ -195,6 +202,7 @@
 @property(retain, nonatomic) PUTimeInterval *resourceDownloadInterval; // @synthesize resourceDownloadInterval=_resourceDownloadInterval;
 @property(retain, nonatomic) PUTimeInterval *resourceCheckingInterval; // @synthesize resourceCheckingInterval=_resourceCheckingInterval;
 @property(retain, nonatomic) PUTimeInterval *enterEditTimeInterval; // @synthesize enterEditTimeInterval=_enterEditTimeInterval;
+@property(retain, nonatomic) PUPhotoEditReframeHUD *reframeHUD; // @synthesize reframeHUD=_reframeHUD;
 @property(retain, nonatomic) PUPhotoEditPerfHUD *perfHUD; // @synthesize perfHUD=_perfHUD;
 @property(retain, nonatomic) UIPencilInteraction *pencilInteraction; // @synthesize pencilInteraction=_pencilInteraction;
 @property(nonatomic) long long mediaViewEdgeInsetsUpdateDisableCount; // @synthesize mediaViewEdgeInsetsUpdateDisableCount=_mediaViewEdgeInsetsUpdateDisableCount;
@@ -216,10 +224,16 @@
 @property(nonatomic, getter=_isPenultimateAvailable, setter=_setPenultimateAvailable:) _Bool _penultimateAvailable; // @synthesize _penultimateAvailable=__penultimateAvailable;
 @property(nonatomic, setter=_setOriginalExifOrientation:) long long _originalExifOrientation; // @synthesize _originalExifOrientation=__originalExifOrientation;
 @property(nonatomic, setter=_setOriginalImageExifOrientation:) long long _originalImageExifOrientation; // @synthesize _originalImageExifOrientation=__originalImageExifOrientation;
+@property(retain, nonatomic) PLEditSource *originalOvercaptureEditSource; // @synthesize originalOvercaptureEditSource=_originalOvercaptureEditSource;
+@property(nonatomic) unsigned long long originalReframeVariation; // @synthesize originalReframeVariation=_originalReframeVariation;
 @property(retain, nonatomic, setter=_setOriginalImageEditSource:) PLEditSource *_originalImageEditSource; // @synthesize _originalImageEditSource=__originalImageEditSource;
 @property(nonatomic, setter=_setHasLoadedRaw:) _Bool _hasLoadedRaw; // @synthesize _hasLoadedRaw=__hasLoadedRaw;
 @property(retain, nonatomic, setter=_setEditSourceContentEditingInput:) PHContentEditingInput *_editSourceContentEditingInput; // @synthesize _editSourceContentEditingInput=__editSourceContentEditingInput;
 @property(retain, nonatomic, setter=_setEditSourceUTI:) NSString *_editSourceUTI; // @synthesize _editSourceUTI=__editSourceUTI;
+@property(nonatomic) long long overcaptureType; // @synthesize overcaptureType=_overcaptureType;
+@property(readonly) long long editSourceSelection; // @synthesize editSourceSelection=_editSourceSelection;
+@property(retain, nonatomic, setter=_setOverCaptureEditSourceURL:) NSURL *overCaptureEditSourceURL; // @synthesize overCaptureEditSourceURL=_overCaptureEditSourceURL;
+@property(retain, nonatomic, setter=_setOverCaptureEditSource:) PLEditSource *overCaptureEditSource; // @synthesize overCaptureEditSource=_overCaptureEditSource;
 @property(retain, nonatomic, setter=_setEditSource:) PLEditSource *_editSource; // @synthesize _editSource=__editSource;
 @property(retain, nonatomic, setter=_setPhotoEditIrisModel:) PUPhotoEditIrisModel *_photoEditIrisModel; // @synthesize _photoEditIrisModel=__photoEditIrisModel;
 @property(copy, nonatomic, setter=_setOriginalComposition:) NUComposition *_originalComposition; // @synthesize _originalComposition=__originalComposition;
@@ -344,6 +358,8 @@
 - (CDStruct_910f5d27)toolControllerImageModulationOptions:(id)arg1;
 - (id)toolControllerOriginalCompositionController:(id)arg1;
 - (id)toolControllerUneditedCompositionController:(id)arg1;
+- (long long)sourceSelection;
+- (void)toolController:(id)arg1 switchEditSource:(long long)arg2;
 - (void)toolControllerDidUpdateToolbar:(id)arg1;
 - (void)toolControllerDidChangePreferredAlternateToolbarButton:(id)arg1;
 - (void)toolControllerDidChangeWantsDefaultPreviewView:(id)arg1;
@@ -374,8 +390,9 @@
 - (void)_updatePhotoEditIrisModel;
 - (void)_resetModelAndBaseImagesToWorkImageVersion:(long long)arg1;
 - (id)_orientedCIImageFromUIImage:(id)arg1;
-- (void)_setOriginalURL:(id)arg1 originalEditSource:(id)arg2;
+- (void)_setOriginalURL:(id)arg1 originalEditSource:(id)arg2 originalOvercaptureSource:(id)arg3;
 - (void)_updateValuesCalculator;
+- (void)switchEditSource:(long long)arg1;
 - (void)_handleResourceLoadChange;
 - (void)_handleDidLoadOriginalWithResult:(id)arg1;
 - (_Bool)_isLoopingVideo:(_Bool)arg1;
@@ -444,6 +461,8 @@
 - (void)_handleCancelButton:(id)arg1;
 - (void)_handleTTRButton:(id)arg1;
 - (void)_handleToolbarToolButton:(id)arg1;
+- (void)_runFinalizerWithDebugMessages:(_Bool)arg1;
+- (void)_handleRunFinalizerGesture:(id)arg1;
 - (void)_updatePreviewingOriginalBadge;
 - (void)_updatePreviewingOriginal;
 - (_Bool)_isPreviewingOriginal;

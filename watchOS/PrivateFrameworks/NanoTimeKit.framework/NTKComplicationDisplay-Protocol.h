@@ -5,10 +5,11 @@
 //
 
 #import <NanoTimeKit/NSObject-Protocol.h>
+#import <NanoTimeKit/NTKTritiumBaseAnimator-Protocol.h>
 
 @protocol NTKComplicationDisplayObserver;
 
-@protocol NTKComplicationDisplay <NSObject>
+@protocol NTKComplicationDisplay <NSObject, NTKTritiumBaseAnimator>
 @property(nonatomic) _Bool canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver;
 

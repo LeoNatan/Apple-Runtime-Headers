@@ -50,10 +50,12 @@
 @property(readonly, getter=isRemoteQuery) BOOL remoteQuery;
 @property(readonly, getter=isParsecQuery) BOOL parsecQuery;
 - (void)_queryDidComplete;
+- (void)_queryGatherComplete;
 - (void)_queryWillStart;
 - (double)startTime;
 - (void)cancel;
 - (void)start;
+- (BOOL)completedGather;
 - (BOOL)isFinished;
 - (BOOL)isCanceled;
 - (BOOL)isCompleted;

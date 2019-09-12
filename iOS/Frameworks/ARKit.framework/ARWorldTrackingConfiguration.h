@@ -6,7 +6,7 @@
 
 #import <ARKit/ARConfiguration.h>
 
-@class ARWorldMap, NSSet, NSString;
+@class ARImageSensorSettings, ARWorldMap, NSSet, NSString;
 
 @interface ARWorldTrackingConfiguration : ARConfiguration
 {
@@ -18,6 +18,7 @@
     _Bool _mlModelEnabled;
     _Bool _deliverRawSceneUnderstandingResults;
     _Bool _skeletonDetectionEnabled;
+    _Bool _shouldUseSuperWideIfAvailable;
     long long _environmentTexturing;
     unsigned long long _planeDetection;
     ARWorldMap *_initialWorldMap;
@@ -31,10 +32,12 @@
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
 + (_Bool)supportsFrontCameraFaceAnchors;
 + (_Bool)supportsUserFaceTracking;
++ (id)supportedVideoFormatsForSuperWide;
 + (id)supportedVideoFormatsForUserFaceTracking;
 + (id)supportedVideoFormats;
 + (id)new;
 + (_Bool)isSupported;
+@property(nonatomic) _Bool shouldUseSuperWideIfAvailable; // @synthesize shouldUseSuperWideIfAvailable=_shouldUseSuperWideIfAvailable;
 @property(nonatomic, getter=isSkeletonDetectionEnabled) _Bool skeletonDetectionEnabled; // @synthesize skeletonDetectionEnabled=_skeletonDetectionEnabled;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
 @property(nonatomic, getter=isMLModelEnabled) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
@@ -61,6 +64,8 @@
 - (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
 - (_Bool)shouldEnableVisionDataForImageSensorSettings:(id)arg1;
 - (id)visionDataParametersForWorldTrackingOptions:(id)arg1;
+- (_Bool)shouldUseSuperWide;
+@property(readonly, nonatomic) ARImageSensorSettings *imageSensorSettingsForSuperWide;
 - (id)imageSensorSettingsForUserFaceTracking;
 - (id)imageSensorSettings;
 - (id)parentImageSensorSettings;

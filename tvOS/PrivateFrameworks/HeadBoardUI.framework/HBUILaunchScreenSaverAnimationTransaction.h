@@ -6,7 +6,7 @@
 
 #import <BaseBoard/BSTransaction.h>
 
-@class BKSAnimationFenceHandle, HBUILaunchAnimationContext, HBUILaunchScreenSaverAnimationDescription;
+@class BKSAnimationFenceHandle, HBUILaunchAnimationContext, HBUILaunchScreenSaverAnimationDescription, NSHashTable;
 
 __attribute__((visibility("hidden")))
 @interface HBUILaunchScreenSaverAnimationTransaction : BSTransaction
@@ -15,13 +15,16 @@ __attribute__((visibility("hidden")))
     HBUILaunchAnimationContext *_context;
     HBUILaunchScreenSaverAnimationDescription *_topShelfAnimation;
     HBUILaunchScreenSaverAnimationDescription *_appGridAnimation;
+    NSHashTable *_appGridViewsToRestore;
 }
 
+@property(readonly, nonatomic) NSHashTable *appGridViewsToRestore; // @synthesize appGridViewsToRestore=_appGridViewsToRestore;
 @property(readonly, nonatomic) HBUILaunchScreenSaverAnimationDescription *appGridAnimation; // @synthesize appGridAnimation=_appGridAnimation;
 @property(readonly, nonatomic) HBUILaunchScreenSaverAnimationDescription *topShelfAnimation; // @synthesize topShelfAnimation=_topShelfAnimation;
 @property(readonly, nonatomic) HBUILaunchAnimationContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) BKSAnimationFenceHandle *animationDidCompleteFence; // @synthesize animationDidCompleteFence=_animationDidCompleteFence;
 - (void).cxx_destruct;
+- (void)willInterruptTransaction:(id)arg1;
 - (_Bool)_canBeInterrupted;
 - (void)_didComplete;
 - (void)_begin;

@@ -17,7 +17,7 @@
     struct CGPoint __realMouseLocation;
 }
 
-+ (struct CGRect)_zoomRegionFrameWithZoomOrigin:(struct CGPoint)arg1 zoomFactor:(double)arg2;
++ (struct CGRect)_zoomRegionFrameWithZoomOrigin:(struct CGPoint)arg1 zoomFactor:(double)arg2 zoomDisplayID:(int)arg3;
 + (BOOL)automaticallyNotifiesObserversOfZoomFactor;
 + (id)keyPathsForValuesAffectingIsZoomed;
 @property(nonatomic) struct CGPoint _realMouseLocation; // @synthesize _realMouseLocation=__realMouseLocation;
@@ -33,6 +33,7 @@
 - (void)setZoomRegionCenter:(struct CGPoint)arg1 warpMouse:(BOOL)arg2 animate:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setZoomFactor:(double)arg1 animate:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) struct CGPoint zoomRegionCenter;
+@property(readonly, nonatomic) BOOL isZoomDisplay;
 @property(readonly, nonatomic) BOOL isZoomed;
 - (void)dealloc;
 - (id)init;

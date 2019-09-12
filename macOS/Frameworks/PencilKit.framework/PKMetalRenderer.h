@@ -50,6 +50,8 @@
     id <MTLBuffer> _particleIndexBuffer;
     id <MTLBuffer> _randomNumberBuffer;
     unsigned long long _renderMaskMSAASampleCount;
+    BOOL _needRestartWorkaroundForOldIntelDrivers;
+    BOOL _useComputeRenderCaches;
     BOOL _solidColorBackboard;
     BOOL _oneRenderPassForLiveRendering;
     BOOL _liveStrokeMode;

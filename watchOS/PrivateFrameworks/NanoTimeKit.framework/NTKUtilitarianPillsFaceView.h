@@ -10,6 +10,7 @@
 {
 }
 
+- (id)tritium_createFaceAnimator;
 - (id)_visibleComplicationSlots;
 - (void)_updateComplicationOverlapHiding;
 - (void)_removeComplicationOverlapHiding;

@@ -126,6 +126,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_refreshCommon;
 - (_Bool)_refreshable;
 - (_Bool)_resetCommon;
+- (_Bool)_resetIfBackingObjectIsOfClass:(Class)arg1 fetchResetFrozenObjectBlock:(CDUnknownBlockType)arg2;
 - (void)_rollbackCommon;
 - (id)changedKeys;
 - (void)replaceMultiChangedObjectValuesWithObjectValues:(id)arg1 forKey:(id)arg2;

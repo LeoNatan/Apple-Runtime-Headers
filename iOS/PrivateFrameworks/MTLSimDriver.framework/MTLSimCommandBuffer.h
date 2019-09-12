@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void *)getBufferBytes:(unsigned long long)arg1 alignment:(unsigned long long)arg2 buffer:(id *)arg3 offset:(unsigned long long *)arg4;
 - (_Bool)addStateReference:(id)arg1;
 - (_Bool)addResourceReference:(id)arg1 isWrite:(_Bool)arg2;
+- (id)resourceStateCommandEncoder;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;

@@ -12,6 +12,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIMenuBarController : NSObject
 {
+    BOOL _didBuildMenuBarAtLeastOnce;
     id <UIActivityItemsConfigurationReading> __activityItemsConfiguration;
     UIView *_contextMenuView;
     RVItem *_contextMenuRVItem;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIMenuBarMenu *_mainMenu; // @synthesize _mainMenu=__mainMenu;
 @property(copy, nonatomic) NSDictionary *keyEquivalentForKeyInput; // @synthesize keyEquivalentForKeyInput=_keyEquivalentForKeyInput;
 @property(copy, nonatomic) CDUnknownBlockType contextMenuDidClose; // @synthesize contextMenuDidClose=_contextMenuDidClose;
+@property(nonatomic) BOOL didBuildMenuBarAtLeastOnce; // @synthesize didBuildMenuBarAtLeastOnce=_didBuildMenuBarAtLeastOnce;
 @property(retain, nonatomic) RVItem *contextMenuRVItem; // @synthesize contextMenuRVItem=_contextMenuRVItem;
 @property(nonatomic) struct CGPoint contextMenuLocation; // @synthesize contextMenuLocation=_contextMenuLocation;
 @property(retain, nonatomic) UIView *contextMenuView; // @synthesize contextMenuView=_contextMenuView;
@@ -48,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (id)_createMenuItemWithMenuLeaf:(id)arg1 alternate:(id)arg2 keyEquivalent:(id)arg3 keyModifiers:(long long)arg4;
 - (void)configureRevealItemForMenuBarItem:(id)arg1 withAction:(SEL)arg2;
 - (id)_copyMenuItemsForCommandMenu:(id)arg1 ignoringKeyboardShortcuts:(BOOL)arg2;
-- (id)_convertCommandMenuToMenu:(id)arg1 ignoringKeyboardShortcuts:(BOOL)arg2;
+- (id)convertCommandMenuToMenu:(id)arg1 ignoringKeyboardShortcuts:(BOOL)arg2;
 - (id)_createFontMenuItem:(BOOL)arg1;
 - (id)init;
 

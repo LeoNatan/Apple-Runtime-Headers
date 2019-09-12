@@ -8,7 +8,7 @@
 
 #import <DataDetectors/NSRemoteViewDelegate-Protocol.h>
 
-@class DDActionContext, DDButtonBar, DDDataDetectorsViewHost, NSMapTable, NSRemoteView, NSURL;
+@class DDActionContext, DDButtonBar, DDDataDetectorsViewHost, NSMapTable, NSProgressIndicator, NSRemoteView, NSURL;
 @protocol DDActionViewPresenter;
 
 @interface DDActionViewController : NSViewController <NSRemoteViewDelegate>
@@ -28,6 +28,7 @@
     id <DDActionViewPresenter> _presenter;
     BOOL _editionMode;
     BOOL _editedContent;
+    NSProgressIndicator *_spinner;
 }
 
 + (unsigned long long)typeForUrl:(id)arg1;
@@ -62,7 +63,7 @@
 - (id)initWithType:(unsigned long long)arg1 url:(id)arg2 context:(id)arg3;
 - (id)initWithType:(unsigned long long)arg1 result:(struct __DDResult *)arg2 context:(id)arg3;
 - (void)cleanAndSetContext:(id)arg1;
-- (struct CGSize)defaultSize;
+- (struct CGSize)preferredContentSize;
 @property BOOL local;
 
 // Remaining properties

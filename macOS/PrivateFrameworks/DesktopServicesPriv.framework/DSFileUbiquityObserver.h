@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)resultsChanged:(id)arg1 kind:(unsigned long long)arg2;
 - (void)stopObserving;
-- (void)startObserving;
+- (void)startObserving:(id)arg1;
 
 @end
 

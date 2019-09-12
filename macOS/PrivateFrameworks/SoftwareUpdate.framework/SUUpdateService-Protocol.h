@@ -6,7 +6,7 @@
 
 #import <SoftwareUpdate/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSFileHandle, NSString, NSURLCredential, SUUpdateStatus;
+@class NSArray, NSData, NSDictionary, NSFileHandle, NSSet, NSString, NSURLCredential, SUUpdateStatus;
 
 @protocol SUUpdateService <NSObject>
 - (void)resetServiceWithReply:(void (^)(void))arg1;
@@ -62,6 +62,7 @@
 - (void)adminDeferredAvailableUpdatesWithReply:(void (^)(NSArray *))arg1;
 - (void)installedUpdateJournalPrunedAndSortedWithReply:(void (^)(NSArray *))arg1;
 - (void)installedUpdateJournalWithReply:(void (^)(NSArray *))arg1;
+- (void)updateProductsForProductKeys:(NSSet *)arg1 withReply:(void (^)(NSArray *))arg2;
 - (void)installStatus:(SUUpdateStatus *)arg1 didChangeExternallyForProductKey:(NSString *)arg2;
 - (void)currentDevKeyModeWithReply:(void (^)(NSString *))arg1;
 - (void)clearInvalidationForIdentifier:(NSString *)arg1 version:(NSString *)arg2 forReason:(int)arg3;

@@ -21,6 +21,7 @@
     HMDAccessoryQueues *scanQueue;
 }
 
++ (id)initializeScanner;
 + (id)sharedScanLock;
 @property(retain, nonatomic) HMDAccessoryQueues *scanQueue; // @synthesize scanQueue;
 @property(retain, nonatomic) HAPBTLECentralManager *centralManager; // @synthesize centralManager;

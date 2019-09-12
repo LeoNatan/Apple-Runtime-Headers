@@ -11,7 +11,6 @@
     CDUnknownBlockType _fetchQuotaCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType fetchQuotaCompletionBlock; // @synthesize fetchQuotaCompletionBlock=_fetchQuotaCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

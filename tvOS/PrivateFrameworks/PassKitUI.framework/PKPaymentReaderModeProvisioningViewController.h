@@ -17,6 +17,7 @@
     UIScrollView *_scrollView;
     unsigned long long _state;
     unsigned long long _stateOnRetry;
+    _Bool _startedInitialIngestion;
     PKContactlessCardIngester *_cardIngester;
     PKPaymentContactlessProductCredential *_paymentCredential;
     PKPaymentPass *_paymentPass;

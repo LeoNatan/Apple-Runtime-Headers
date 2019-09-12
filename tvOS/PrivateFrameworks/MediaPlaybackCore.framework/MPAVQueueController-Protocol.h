@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) unsigned long long supportedInsertionPositions;
 @property(nonatomic) long long shuffleType;
 @property(nonatomic) long long repeatType;
+@property(readonly, nonatomic) long long displayCount;
 @property(retain, nonatomic) id <MPAVQueueCoordinating> queueCoordinator;
 @property(nonatomic) __weak id <MPAVQueueControllerDelegate> delegate;
 @property(readonly, nonatomic) MPAVItem *currentItem;
@@ -37,8 +38,7 @@
 - (void)addPlaybackContext:(MPPlaybackContext *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)reloadWithPlaybackContext:(MPPlaybackContext *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)reset;
-- (unsigned long long)displayCountForItem:(MPAVItem *)arg1;
-- (unsigned long long)displayIndexForItem:(MPAVItem *)arg1;
+- (long long)displayIndexForContentItemID:(NSString *)arg1;
 - (_Bool)canSkipItem:(MPAVItem *)arg1;
 
 @optional

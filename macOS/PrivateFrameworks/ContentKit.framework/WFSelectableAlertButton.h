@@ -6,7 +6,7 @@
 
 #import <ContentKit/WFAlertButton.h>
 
-@class NSImage, NSString, UIColor;
+@class NSImage, NSString;
 
 @interface WFSelectableAlertButton : WFAlertButton
 {
@@ -14,12 +14,10 @@
     BOOL _stickySelection;
     NSString *_subtitle;
     NSImage *_image;
-    UIColor *_tintColor;
 }
 
-+ (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 selected:(BOOL)arg3 stickySelection:(BOOL)arg4 style:(long long)arg5 handler:(CDUnknownBlockType)arg6 image:(id)arg7 tintColor:(id)arg8;
++ (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 selected:(BOOL)arg3 stickySelection:(BOOL)arg4 style:(long long)arg5 handler:(CDUnknownBlockType)arg6 image:(id)arg7;
 + (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 selected:(BOOL)arg3 style:(long long)arg4 handler:(CDUnknownBlockType)arg5;
-@property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) BOOL stickySelection; // @synthesize stickySelection=_stickySelection;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, copy, nonatomic) NSImage *image; // @synthesize image=_image;

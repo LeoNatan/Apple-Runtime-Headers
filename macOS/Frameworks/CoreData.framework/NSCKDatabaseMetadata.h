@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKServerChangeToken *currentChangeToken; // @dynamic currentChangeToken;
 @property(retain, nonatomic) NSString *databaseName; // @dynamic databaseName;
 @property(retain, nonatomic) NSNumber *databaseScopeNum; // @dynamic databaseScopeNum;
+@property(nonatomic) BOOL hasChanges; // @dynamic hasChanges;
 @property(retain, nonatomic) NSNumber *hasSubscriptionNum; // @dynamic hasSubscriptionNum;
 @property(retain, nonatomic) NSDate *lastFetchDate; // @dynamic lastFetchDate;
 @property(retain, nonatomic) NSSet *recordZones; // @dynamic recordZones;

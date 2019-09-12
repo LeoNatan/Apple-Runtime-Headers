@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <ClockKit/CLKComplicationTritiumCopyable-Protocol.h>
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
 @class NSString, UIColor, UIImage;
 
-@interface CLKImageProvider : NSObject <NSSecureCoding, NSCopying>
+@interface CLKImageProvider : NSObject <CLKComplicationTritiumCopyable, NSSecureCoding, NSCopying>
 {
     _Bool _finalized;
+    _Bool _tritium_isTritiumInactiveCopy;
     _Bool _foregroundAccentImageTinted;
     UIImage *_onePieceImage;
     UIColor *_tintColor;
@@ -40,13 +42,16 @@
 @property(retain, nonatomic) UIImage *twoPieceImageBackground; // @synthesize twoPieceImageBackground=_twoPieceImageBackground;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIImage *onePieceImage; // @synthesize onePieceImage=_onePieceImage;
+@property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
 - (void).cxx_destruct;
 - (void)_resizeImagesIfNecessaryWithCornerRadius:(float)arg1;
 - (void)_resizeImagesIfNecessaryAndMaskToCircle:(_Bool)arg1;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned int)hash;
+- (_Bool)tritium_requiresCopy;
+- (id)tritium_inactiveCopy;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
@@ -54,6 +59,11 @@
 - (void)finalizeWithMaxSize:(struct CGSize)arg1 cornerRadius:(float)arg2;
 - (void)finalizeWithMaxSize:(struct CGSize)arg1 maskToCircle:(_Bool)arg2;
 - (void)validate;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

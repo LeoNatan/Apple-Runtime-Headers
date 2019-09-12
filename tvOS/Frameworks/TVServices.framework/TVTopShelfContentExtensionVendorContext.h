@@ -26,7 +26,7 @@
 - (void)didShowItemWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)didSelectActionWithURL:(id)arg1 actionUserInfo:(id)arg2 forItemWithIdentifier:(id)arg3 itemUserInfo:(id)arg4;
 - (void)performCustomActionWithURL:(id)arg1 actionUserInfo:(id)arg2 forItemWithIdentifier:(id)arg3 itemUserInfo:(id)arg4 replyHandler:(CDUnknownBlockType)arg5;
-- (void)loadTopShelfContentWithReplyHandler:(CDUnknownBlockType)arg1;
+- (void)loadTopShelfContentAndDelegateFlags:(_Bool)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)fetchContentExtensionDelegateFlagsWithReplyHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties

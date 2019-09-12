@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     FPXDomainContext *_domainContext;
 }
 
++ (void)deleteSearchableItemsAndClearClientStateWithDomainIdentifier:(id)arg1 index:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void).cxx_destruct;
 - (void)main;
 - (id)operationDescription;

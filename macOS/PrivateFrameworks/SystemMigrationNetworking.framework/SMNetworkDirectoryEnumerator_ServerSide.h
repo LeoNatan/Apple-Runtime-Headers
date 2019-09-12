@@ -18,12 +18,14 @@
     NSDictionary *_restartPoint;
     NSString *_compressionFormat;
     NSURL *_basePathURL;
+    NSURL *_alternateBasePathURL;
     NSMutableSet *_hardlinkInodes;
     id _startingFilesystemIdentifier;
 }
 
 @property(retain) id startingFilesystemIdentifier; // @synthesize startingFilesystemIdentifier=_startingFilesystemIdentifier;
 @property(retain) NSMutableSet *hardlinkInodes; // @synthesize hardlinkInodes=_hardlinkInodes;
+@property(retain) NSURL *alternateBasePathURL; // @synthesize alternateBasePathURL=_alternateBasePathURL;
 @property(retain) NSURL *basePathURL; // @synthesize basePathURL=_basePathURL;
 @property(retain) NSString *compressionFormat; // @synthesize compressionFormat=_compressionFormat;
 @property(retain) NSDictionary *restartPoint; // @synthesize restartPoint=_restartPoint;

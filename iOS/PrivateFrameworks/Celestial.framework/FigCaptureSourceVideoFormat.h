@@ -38,6 +38,12 @@
 @property(readonly) int sensorPowerConsumption;
 @property(readonly) float hardwareCost;
 @property(readonly, getter=isMultiCamSupported) _Bool multiCamSupported;
+@property(readonly, getter=isDeferredPhotoProcessingSupported) _Bool deferredPhotoProcessingSupported;
+@property(readonly, getter=isNonDestructiveCropSupported) _Bool nonDestructiveCropSupported;
+@property(readonly) CDStruct_79c71658 spatialOverCaptureHighResStillImageDimensions;
+@property(readonly) float spatialOverCapturePercentage;
+@property(readonly, getter=isSpatialOverCaptureSupported) _Bool spatialOverCaptureSupported;
+@property(readonly, getter=isMomentCaptureMovieRecordingSupported) _Bool momentCaptureMovieRecordingSupported;
 @property(readonly) float maxZoomFactorForDepthDataDelivery;
 @property(readonly) float minZoomFactorForDepthDataDelivery;
 - (id)streamingDXDYDepthDataFormat;
@@ -63,6 +69,7 @@
 @property(readonly) CDStruct_79c71658 highResStillImageDimensions;
 - (_Bool)usesPacked10BitFirmwareStillImageOutputPixelFormat;
 - (_Bool)isCaptureTimePhotoCurationSupported;
+@property(readonly, getter=isDigitalFlashSupported) _Bool digitalFlashSupported;
 - (int)redEyeReductionVersion;
 @property(readonly, getter=isRedEyeReductionSupported) _Bool redEyeReductionSupported;
 @property(readonly) _Bool zeroShutterLagRequiresUserInitiatedCaptureRequestTime;
@@ -76,6 +83,7 @@
 - (int)stillImageNoiseReductionAndStabilizationScheme;
 @property(readonly, getter=isIrisVideoStabilizationSupported) _Bool irisVideoStabilizationSupported;
 @property(readonly, getter=isIrisSupported) _Bool irisSupported;
+@property(readonly) _Bool configureForSpatialOverCaptureSupport;
 @property(readonly) _Bool configureForStillImageStabilizationSupport;
 @property(readonly, getter=isStillImageStabilizationSupported) _Bool stillImageStabilizationSupported;
 @property(readonly) _Bool needsPreviewDPCC;
@@ -91,6 +99,7 @@
 @property(readonly, getter=isSecondaryScalerUnavailable) _Bool secondaryScalerUnavailable;
 @property(readonly, getter=isVisionDataDeliverySupported) _Bool visionDataDeliverySupported;
 @property(readonly, getter=isLowLightVideoCaptureSupported) _Bool lowLightVideoCaptureSupported;
+@property(readonly, getter=isVariableFrameRateVideoCaptureSupported) _Bool variableFrameRateVideoCaptureSupported;
 @property(readonly) _Bool prefersSensorHDREnabled;
 - (int)sensorHDRCompanionIndex;
 @property(readonly) _Bool hasSensorHDRCompanionIndex;
@@ -122,11 +131,13 @@
 - (int)fesBinningFactorHorizontal;
 - (struct CGRect)maxVisibleSensorRect;
 - (int)previewImageQueueSyncStrategy;
+- (float)cinematicStabilizationExtendedLookAheadDuration;
 - (float)stabilizationOverscanPercentageOverrideForCinematic;
 - (int)stabilizationTypeOverrideForCinematic;
 - (int)stabilizationTypeOverrideForStandard;
 - (_Bool)isStabilizationModeSupported:(int)arg1;
 @property(readonly, getter=isBinned) _Bool binned;
+@property(readonly) float geometricDistortionCorrectedFieldOfView;
 @property(readonly) float fieldOfView;
 @property(readonly) float defaultMaxFrameRate;
 @property(readonly) float defaultMinFrameRate;

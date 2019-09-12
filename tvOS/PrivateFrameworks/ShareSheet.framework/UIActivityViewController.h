@@ -16,7 +16,7 @@
 #import <ShareSheet/_UIActivityHelperDelegate-Protocol.h>
 #import <ShareSheet/_UIActivityUserDefaultsViewControllerDelegate-Protocol.h>
 
-@class LPLinkMetadata, NSArray, NSDictionary, NSLayoutConstraint, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSUserDefaults, ObjectManipulationViewController, SFAirDropViewController, SFShareSheetSlotManager, UIActivity, UIActivityContentViewController, UIAlertAction, UIAlertController, UINavigationController, UISUIActivityViewControllerConfiguration, UIView, _UIActivityHelper, _UICollectionViewDiffableDataSource;
+@class LPLinkMetadata, NSArray, NSDictionary, NSLayoutConstraint, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSUserDefaults, ObjectManipulationViewController, SFAirDropViewController, SFShareSheetSlotManager, UIActivity, UIActivityContentViewController, UIAlertAction, UIAlertController, UINavigationController, UISUIActivityViewControllerConfiguration, UIView, _UIActivityHelper, _UIActivityNavigationController, _UICollectionViewDiffableDataSource;
 @protocol UIActivityViewControllerAirDropDelegate, UIActivityViewControllerObjectManipulationDelegate, UIActivityViewControllerPhotosDelegate;
 
 @interface UIActivityViewController : UIViewController <UIViewControllerRestoration, _UIActivityHelperDelegate, SFAirDropViewControllerDelegate, SFShareSheetSlotManagerDelegate, _UIActivityUserDefaultsViewControllerDelegate, ObjectManipulationDelegate, UICollectionViewDelegate, UIActivityContentDelegate, UIViewControllerTransitioningDelegate>
@@ -76,7 +76,7 @@
     ObjectManipulationViewController *_customizationViewController;
     NSLayoutConstraint *_blurViewHeightConstraint;
     UINavigationController *_contentNavigationController;
-    UINavigationController *_secondaryContentNavigationController;
+    _UIActivityNavigationController *_secondaryContentNavigationController;
     UIActivityContentViewController *_contentViewController;
     UIActivityContentViewController *_secondaryContentViewController;
     _UICollectionViewDiffableDataSource *_dataSource;
@@ -104,6 +104,7 @@
     NSSet *_photosAssetIdentifiers;
 }
 
++ (_Bool)_preventsAppearanceProxyCustomization;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 + (double)_asyncPresentationTimeout;
 @property(nonatomic) _Bool configureForCloudSharing; // @synthesize configureForCloudSharing=_configureForCloudSharing;
@@ -139,7 +140,7 @@
 @property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) UIActivityContentViewController *secondaryContentViewController; // @synthesize secondaryContentViewController=_secondaryContentViewController;
 @property(retain, nonatomic) UIActivityContentViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-@property(retain, nonatomic) UINavigationController *secondaryContentNavigationController; // @synthesize secondaryContentNavigationController=_secondaryContentNavigationController;
+@property(retain, nonatomic) _UIActivityNavigationController *secondaryContentNavigationController; // @synthesize secondaryContentNavigationController=_secondaryContentNavigationController;
 @property(retain, nonatomic) UINavigationController *contentNavigationController; // @synthesize contentNavigationController=_contentNavigationController;
 @property(retain, nonatomic) NSLayoutConstraint *blurViewHeightConstraint; // @synthesize blurViewHeightConstraint=_blurViewHeightConstraint;
 @property(retain, nonatomic) ObjectManipulationViewController *customizationViewController; // @synthesize customizationViewController=_customizationViewController;
@@ -193,7 +194,7 @@
 - (void)_willPerformInServiceActivityType:(id)arg1 activitySpecificMetadata:(id)arg2;
 - (void)_performShareServiceSelectedActivity:(id)arg1;
 - (void)presentAirDrop;
-- (void)connectAirDrop;
+- (void)connectAirDropWithNoContentView:(_Bool)arg1;
 - (_Bool)_shouldShowSystemActivityType:(id)arg1;
 - (_Bool)activityHelper:(id)arg1 matchingWithContext:(id)arg2 shouldIncludeSystemActivityType:(id)arg3 sessionID:(id)arg4;
 - (id)_configurationForActivity:(id)arg1;
@@ -280,7 +281,8 @@
 - (void)connectionInterrupted;
 - (void)willPerformInServiceActivityWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performShortcutActivityInHostWithBundleID:(id)arg1 singleUseToken:(id)arg2;
-- (void)performExtensionActivityInHostWithBundleID:(id)arg1;
+- (void)performExtensionActivityInHostWithBundleID:(id)arg1 request:(id)arg2;
+- (void)performAirDropActivityInHostWithUUID:(id)arg1 noContentView:(_Bool)arg2;
 - (void)performActivityInHostWithUUID:(id)arg1;
 - (void)_editActionsTapped;
 - (void)optionsButtonTapped;

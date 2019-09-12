@@ -20,7 +20,6 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSURL *imageUrl; // @synthesize imageUrl=_imageUrl;
 - (void).cxx_destruct;
-- (id)_loadImageDataFromUrl:(id)arg1;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

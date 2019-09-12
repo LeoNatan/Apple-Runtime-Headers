@@ -8,5 +8,6 @@
 
 @interface UIAlertController (PhotosUICore)
 + (void)px_showDebugAlertInKeyWindowWithMessage:(id)arg1;
+@property(nonatomic) BOOL px_shouldForceAlertStyle;
 @end
 

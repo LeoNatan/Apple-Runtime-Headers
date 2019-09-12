@@ -26,6 +26,7 @@
 - (void)wasRemovedFromWorkflow:(id)arg1;
 - (void)wasAddedToWorkflow:(id)arg1;
 - (id)createStateForParameter:(id)arg1 fromSerializedRepresentation:(id)arg2;
+- (id)accessResourcesToBeAuthorizedImplicitlyForUpdatedParameterState:(id)arg1 forParameter:(id)arg2;
 - (void)initializeParameters;
 
 @end

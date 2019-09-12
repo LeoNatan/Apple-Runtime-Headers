@@ -79,7 +79,7 @@
 - (BOOL)_shouldRescanForLatestScanDate:(id)arg1 latestCatalogModifiedDate:(id)arg2;
 - (void)_updateProgress:(id)arg1 forProducts:(id)arg2 percentComplete:(float)arg3 status:(id)arg4;
 - (id)_createProgress;
-- (void)_promptAndQueueDownloadedUpdatesRequiringPostInstallAction:(id)arg1;
+- (void)_promptAndQueueDownloadedUpdatesRequiringPostInstallAction:(id)arg1 nowIsLater:(BOOL)arg2;
 - (void)_startDownloadingAndArmRestartCountdownForUpdates:(id)arg1 nowIsLater:(BOOL)arg2 shouldConfirm:(BOOL)arg3;
 - (void)_installConfigDataUpdateWithProductKeys:(id)arg1;
 - (void)_startInstallingUpdatesRequiringNoPostInstallAction:(id)arg1 inForeground:(BOOL)arg2 nowIsLater:(BOOL)arg3 mdmInitiated:(BOOL)arg4;

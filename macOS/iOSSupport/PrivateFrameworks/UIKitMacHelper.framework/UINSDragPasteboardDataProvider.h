@@ -9,7 +9,7 @@
 #import <UIKitMacHelper/NSFilePromiseProviderDelegate-Protocol.h>
 #import <UIKitMacHelper/NSPasteboardItemDataProvider-Protocol.h>
 
-@class NSString, UINSDragItem;
+@class NSDictionary, NSString, UINSDragItem;
 @protocol UINSDragSessionHandler;
 
 __attribute__((visibility("hidden")))
@@ -18,9 +18,11 @@ __attribute__((visibility("hidden")))
     UINSDragItem *_item;
     long long _index;
     id <UINSDragSessionHandler> _handler;
+    NSDictionary *_mappedTypes;
 }
 
 + (id)pasteboardWriterForItem:(id)arg1 index:(long long)arg2 handler:(id)arg3;
+@property(retain) NSDictionary *mappedTypes; // @synthesize mappedTypes=_mappedTypes;
 @property(retain) id <UINSDragSessionHandler> handler; // @synthesize handler=_handler;
 @property long long index; // @synthesize index=_index;
 @property(retain) UINSDragItem *item; // @synthesize item=_item;
@@ -30,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)operationQueueForFilePromiseProvider:(id)arg1;
 - (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
-- (id)initWithItem:(id)arg1 index:(long long)arg2 handler:(id)arg3;
+- (id)initWithItem:(id)arg1 index:(long long)arg2 handler:(id)arg3 mappedTypes:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

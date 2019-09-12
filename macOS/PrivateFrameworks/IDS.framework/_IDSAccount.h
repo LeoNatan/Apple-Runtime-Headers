@@ -55,6 +55,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) __weak NSData *pushToken;
 @property(readonly, nonatomic) __weak NSData *registrationCertificate;
+@property(readonly, nonatomic) __weak NSArray *accountRegisteredURIs;
 @property(readonly, nonatomic) __weak NSArray *registeredURIs;
 - (id)_registeredURIs;
 @property(readonly, nonatomic) __weak NSDate *dateRegistered;

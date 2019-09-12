@@ -14,6 +14,7 @@
 @interface _UIActionSheetPresentationController : UIPopoverPresentationController <_UIActionSheetCompactPresentationControllerDelegate>
 {
     BOOL _dismissActionUsesShorterHeightWhenCompactVertically;
+    BOOL __shouldUseCompactPresentationControllerWhenPresentedInSheet;
     BOOL _avoidsKeyboardDisabled;
     NSString *_dismissActionTitle;
     id <UIActionSheetPresentationControllerDelegate> _actionSheetDelegate;
@@ -23,6 +24,7 @@
 @property(nonatomic) BOOL avoidsKeyboardDisabled; // @synthesize avoidsKeyboardDisabled=_avoidsKeyboardDisabled;
 @property(retain, nonatomic) _UIActionSheetCompactPresentationController *compactPresentationController; // @synthesize compactPresentationController=_compactPresentationController;
 @property(nonatomic) __weak id <UIActionSheetPresentationControllerDelegate> actionSheetDelegate; // @synthesize actionSheetDelegate=_actionSheetDelegate;
+@property(nonatomic, setter=_setShouldUseCompactPresentationControllerWhenPresentedInSheet:) BOOL _shouldUseCompactPresentationControllerWhenPresentedInSheet; // @synthesize _shouldUseCompactPresentationControllerWhenPresentedInSheet=__shouldUseCompactPresentationControllerWhenPresentedInSheet;
 @property(nonatomic) BOOL dismissActionUsesShorterHeightWhenCompactVertically; // @synthesize dismissActionUsesShorterHeightWhenCompactVertically=_dismissActionUsesShorterHeightWhenCompactVertically;
 @property(copy, nonatomic) NSString *dismissActionTitle; // @synthesize dismissActionTitle=_dismissActionTitle;
 - (void).cxx_destruct;

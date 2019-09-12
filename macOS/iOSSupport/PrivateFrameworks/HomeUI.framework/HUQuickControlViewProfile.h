@@ -27,6 +27,7 @@
 @property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) BOOL supportsTouchContinuation;
 @property(readonly, nonatomic) double gestureDragCoefficient;
 
 @end

@@ -6,7 +6,11 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
-@interface NTKWeatherProxiedComplicationDataSource : NTKComplicationDataSource
+#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
+
+@class NSString;
+
+@interface NTKWeatherProxiedComplicationDataSource : NTKComplicationDataSource <NTKTritiumRandomizedComplicationEntryProvider>
 {
     id _proxy;
 }
@@ -15,6 +19,10 @@
 + (Class)proxyClass;
 @property(retain, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+- (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
+- (float)tritium_randomizedPossibility;
+- (id)_randomWeatherConditionsForDate:(id)arg1 expirationDate:(id)arg2;
+- (id)_randomAirQualityConditionsForDate:(id)arg1;
 - (void)resume;
 - (void)pause;
 - (void)becomeInactive;
@@ -27,9 +35,16 @@
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (id)lockedTemplate;
+- (id)privacyTemplate;
 - (id)currentSwitcherTemplate;
 - (void)setDelegate:(id)arg1;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

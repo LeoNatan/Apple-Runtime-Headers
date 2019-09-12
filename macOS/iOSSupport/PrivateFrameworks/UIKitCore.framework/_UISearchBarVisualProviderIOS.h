@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
         unsigned int showsScopeBar:1;
         unsigned int showDictationButton:1;
         unsigned int allowedToShowDictationButton:1;
+        unsigned int dictationButtonSetupComplete:1;
     } _searchBarVisualProviderFlags;
     UIView<_UISearchBarVisualProvidingDelegate><_UINavigationBarAugmentedTitleView><UITextInputTraits_Private> *_delegate;
     UISearchBarTextField *_searchField;
@@ -183,10 +184,14 @@ __attribute__((visibility("hidden")))
 - (void)setUpCancelButton;
 - (void)setShowDictationButton:(BOOL)arg1 shouldUpdateView:(BOOL)arg2;
 - (BOOL)wantsDictationButton;
+- (void)updateForAllowedToShowDictationChange;
+- (BOOL)canShowDictationButton;
 - (void)setDisableDictationButton:(BOOL)arg1;
+- (void)cleanUpDictationMicsWithSearchField:(id)arg1;
 - (void)setUpDictationMicWithSearchField:(id)arg1;
 - (void)dictationButtonPressed:(id)arg1 withEvent:(id)arg2;
 - (void)dictationControllerDidFinish:(id)arg1;
+- (void)dictationAvailabilityDidChange:(id)arg1;
 - (void)updateSearchFieldArt;
 - (void)updateSearchBarOpacity;
 - (void)updateScopeBarForSelectedScope;

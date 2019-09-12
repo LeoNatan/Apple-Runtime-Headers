@@ -10,14 +10,17 @@
 {
     _Bool _isLoading;
     _Bool _isLocked;
+    _Bool _isPrivacy;
     unsigned int _minutesBreathed;
 }
 
 + (_Bool)supportsFlowerImages;
 + (id)companionModel;
++ (id)privacyEntryModel;
 + (id)lockedEntryModel;
 + (id)modelWithActivitySummary:(id)arg1;
 + (_Bool)familySupportsLiveData:(int)arg1;
+@property(nonatomic) _Bool isPrivacy; // @synthesize isPrivacy=_isPrivacy;
 @property(nonatomic) _Bool isLocked; // @synthesize isLocked=_isLocked;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(nonatomic) unsigned int minutesBreathed; // @synthesize minutesBreathed=_minutesBreathed;

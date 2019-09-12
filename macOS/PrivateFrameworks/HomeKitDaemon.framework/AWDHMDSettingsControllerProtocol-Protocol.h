@@ -6,9 +6,9 @@
 
 #import <HomeKitDaemon/HMFObject-Protocol.h>
 
-@class NSMutableDictionary, NSString;
+@class NSDictionary, NSString;
 
 @protocol AWDHMDSettingsControllerProtocol <HMFObject>
-- (NSMutableDictionary *)settingValuesByKeyPathWithPrefix:(NSString *)arg1;
+- (NSDictionary *)settingValuesByKeyPathWithPrefix:(NSString *)arg1;
 @end
 

@@ -17,11 +17,8 @@
 - (void)updatePlayCounts:(BOOL)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)disableHomeSharingWithReply:(CDUnknownBlockType)arg1;
 - (void)enableHomeSharing:(id)arg1 forComputerID:(id)arg2 forUserID:(unsigned long long)arg3 forUserName:(id)arg4 withReply:(CDUnknownBlockType)arg5;
-- (void)setUpdatedSharedPlaylists:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setPlaylistIsShared:(BOOL)arg1 forPlaylist:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)setShareAllPlaylists:(BOOL)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)setPlaylistsMediaShared:(BOOL)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)setMediaKindsShared:(BOOL)arg1 forMediaKind:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)setShareAllPlaylists:(BOOL)arg1 withUpdatedPlaylists:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)setSharedLibraryPassword:(BOOL)arg1 withPassword:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)setSharedLibraryName:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setPublicSharingState:(BOOL)arg1 withReply:(CDUnknownBlockType)arg2;

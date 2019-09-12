@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (double)mapViewHeight;
 - (void)setLocationsNumber:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (_Bool)useImageView;
 - (_Bool)hasTitle;
 
 @end

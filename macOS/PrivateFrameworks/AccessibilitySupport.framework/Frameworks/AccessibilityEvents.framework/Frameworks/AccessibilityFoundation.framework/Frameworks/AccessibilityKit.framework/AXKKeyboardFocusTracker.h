@@ -8,7 +8,7 @@
 
 #import <AccessibilityKit/AXKWorkspaceManagerDelegate-Protocol.h>
 
-@class AXKApplicationController, AXKElementController, AXKWorkspaceManager, NSArray, NSLock, NSMutableSet, NSString;
+@class AXFUIElement, AXKApplicationController, AXKElementController, AXKWorkspaceManager, NSArray, NSLock, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface AXKKeyboardFocusTracker : NSObject <AXKWorkspaceManagerDelegate>
@@ -23,6 +23,7 @@
     AXKApplicationController *__spotlightApplicationController;
     AXKElementController *__sharedKeyboardFocusedElementController;
     NSArray *__sharedKeyboardFocusedElementSelectedElementControllers;
+    AXFUIElement *__originalSharedElement;
     NSMutableSet *__listenerWrappers;
     NSLock *__propertyLock;
     NSObject<OS_dispatch_queue> *__trackerQueue;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_trackerQueue; // @synthesize _trackerQueue=__trackerQueue;
 @property(retain, nonatomic) NSLock *_propertyLock; // @synthesize _propertyLock=__propertyLock;
 @property(readonly, nonatomic) NSMutableSet *_listenerWrappers; // @synthesize _listenerWrappers=__listenerWrappers;
+@property(retain, nonatomic) AXFUIElement *_originalSharedElement; // @synthesize _originalSharedElement=__originalSharedElement;
 @property(nonatomic, getter=isStarted) BOOL started; // @synthesize started=_started;
 - (void).cxx_destruct;
 - (void)_performAsyncOnApplicationQueueOfElement:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -70,10 +72,12 @@
 - (void)_spotlightElementCreated:(id)arg1;
 - (id)_stringForElement:(id)arg1;
 - (void)_sharedKeyboardFocusedElementDestroyed:(id)arg1;
+- (BOOL)_shouldProcessSharedFocusedElementRowChange:(id)arg1;
 - (void)_sharedKeyboardFocusedElementSelectedRowsChanged:(id)arg1;
 - (void)_sharedKeyboardFocusedElementRowCountChanged:(id)arg1;
 - (void)_sharedKeyboardFocusdSelectedChildrenChange:(id)arg1;
 - (void)_elementCreatedNotification:(id)arg1;
+- (void)_menuWasCreated:(id)arg1;
 - (void)_keyboardFocusedElementDestroyed:(id)arg1;
 - (void)_selectedChildrenChanged:(id)arg1;
 - (void)_selectedTextChangedNotification:(id)arg1;

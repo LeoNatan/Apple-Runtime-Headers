@@ -22,6 +22,7 @@
     struct _NSRange _dayTextRange;
     _Bool _cachedSizeIsValid;
     UIColor *_textColor;
+    float _tritiumOverrideColorAmount;
     UIColor *_computedTextColor;
     _Bool canUseCurvedText;
     _Bool _usesLegibility;
@@ -33,9 +34,11 @@
     CLKFont *_font;
     UIColor *_accentColor;
     unsigned int _overrideDateStyle;
+    UIColor *_tritiumOverrideTextColor;
     struct UIEdgeInsets _touchEdgeInsets;
 }
 
+@property(retain, nonatomic) UIColor *tritiumOverrideTextColor; // @synthesize tritiumOverrideTextColor=_tritiumOverrideTextColor;
 @property(nonatomic) struct UIEdgeInsets touchEdgeInsets; // @synthesize touchEdgeInsets=_touchEdgeInsets;
 @property(nonatomic) unsigned int overrideDateStyle; // @synthesize overrideDateStyle=_overrideDateStyle;
 @property(nonatomic) _Bool legibilityHidden; // @synthesize legibilityHidden=_legibilityHidden;
@@ -48,6 +51,9 @@
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
 - (void).cxx_destruct;
+- (void)tritium_setOnProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (float)_legibtilityShadowRadius;
 - (struct CGSize)_highlightInset;
 - (float)_cornerRadius;

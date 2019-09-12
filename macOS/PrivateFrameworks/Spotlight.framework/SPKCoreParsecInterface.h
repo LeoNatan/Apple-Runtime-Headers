@@ -65,6 +65,7 @@
 - (id)init;
 - (BOOL)vetURLForResult:(id)arg1;
 - (void)setUserQueryLanguage:(id)arg1;
+- (double)searchRenderTimeout;
 - (id)getFeedbackListener;
 @property(retain) NSString *userAgentString;
 

@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (long long)generationCount;
 - (void)handleChangeNotificationForDomainIdentifier:(struct __CFString *)arg1 isRemote:(BOOL)arg2;
 - (long long)alreadylocked_generationCountFromListOfSources:(id *)arg1 count:(long long)arg2;
-- (void)synchronouslySendDaemonMessage:(id)arg1 andAgentMessage:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
+- (void)synchronouslySendDaemonMessage:(id)arg1 andAgentMessage:(id)arg2 andDirectMessage:(id)arg3 replyHandler:(CDUnknownBlockType)arg4;
 - (id)createRequestNewContentMessageForDaemon:(int)arg1;
 - (id)createMultiMessageWithContainedMessages:(id)arg1;
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(char *)arg5;
@@ -61,7 +61,8 @@ __attribute__((visibility("hidden")))
 - (void)addCloudSourceForIdentifier:(struct __CFString *)arg1 configurationPath:(struct __CFString *)arg2 storeName:(struct __CFString *)arg3 container:(struct __CFString *)arg4;
 - (void)addSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2 byHost:(BOOL)arg3 container:(struct __CFString *)arg4;
 - (void)addManagedSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2;
-- (BOOL)shouldEnableDirectMode;
+- (BOOL)isDirectModeEnabled;
+- (void)transitionIntoDirectModeIfNeededWithRetryBlock:(CDUnknownBlockType)arg1;
 - (void)unlock;
 - (void)lock;
 - (id)copyWithZone:(struct _NSZone *)arg1;

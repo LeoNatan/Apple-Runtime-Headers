@@ -11,6 +11,8 @@
 @interface NSServiceViewController : NSViewController
 {
     NSServiceViewControllerAuxiliary *_aux;
+    unsigned int _superLoadViewInProgress:1;
+    unsigned int _setViewIgnoredGeometry:1;
 }
 
 + (id)exportedInterface;
@@ -50,6 +52,10 @@
 @property(readonly) unsigned int callsToSetViewCount;
 @property(readonly) BOOL mostRecentCallToSetViewWasNonNil;
 - (void)setView:(id)arg1;
+- (BOOL)_installViewIntoWindow:(id)arg1;
+- (BOOL)_shouldRestoreTranslatesAutoresizingMaskIntoConstraints;
+- (void)loadView;
+- (BOOL)_assumeGeometryMeaningfulDuringSetView;
 - (BOOL)valid;
 @property(readonly) BOOL isValid;
 - (BOOL)invalid;
@@ -70,7 +76,9 @@
 - (struct os_unfair_lock_s *)retainReleaseLock;
 - (void)_retainMarshal;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)respondsToAction:(SEL)arg1 forTarget:(id)arg2;
+- (BOOL)_respondsToAction:(SEL)arg1 forTarget:(id)arg2;
+- (BOOL)_validateTarget:(id)arg1 forAction:(SEL)arg2;
+- (id)_redirectTarget:(id)arg1 forSelector:(SEL)arg2;
 - (id)remoteViewControllerProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)remoteViewControllerProxy:(CDUnknownBlockType)arg1;
 - (id)remoteViewControllerProxy;

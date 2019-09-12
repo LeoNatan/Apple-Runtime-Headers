@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKitDaemon/HMDNetworkRouterWANRule-Protocol.h>
 #import <HomeKitDaemon/HMDTLVProtocol-Protocol.h>
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
 @class HMDNetworkRouterIPAddress, HMDNetworkRouterProtocol, HMDTLVUnsignedNumberValue, NSString;
 
-@interface HMDNetworkRouterWANPortRule : NSObject <NSCopying, HMDTLVProtocol>
+@interface HMDNetworkRouterWANPortRule : NSObject <HMDNetworkRouterWANRule, NSCopying, HMDTLVProtocol>
 {
     HMDNetworkRouterProtocol *_protocol;
     NSString *_hostDNSName;
@@ -37,6 +38,7 @@
 - (_Bool)parseFromData:(id)arg1 error:(id *)arg2;
 - (id)initWithProtocol:(id)arg1 hostDNSName:(id)arg2 hostIPStart:(id)arg3 hostIPEnd:(id)arg4 hostPortStart:(id)arg5 hostPortEnd:(id)arg6;
 - (id)init;
+- (void)addTo:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

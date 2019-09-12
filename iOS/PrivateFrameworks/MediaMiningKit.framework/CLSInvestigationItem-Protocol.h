@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) VNSceneprint *clsSceneprint;
 @property(readonly, nonatomic) NSData *clsDistanceIdentity;
 @property(readonly, copy, nonatomic) NSSet *clsSceneClassifications;
+@property(readonly, nonatomic) _Bool clsIsInterestingReframe;
 @property(readonly, nonatomic) double clsDuration;
 @property(readonly, nonatomic) _Bool clsIsNonMemorable;
 @property(readonly, nonatomic) _Bool clsHasCustomPlaybackVariation;

@@ -85,9 +85,10 @@
 - (void)_modifyRecordsOperationWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)resetContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(_Bool)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)fetchRecordsWithRecordIDs:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 qualityOfService:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)fetchRecordsWithRecordIDs:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchAndStoreChanges:(_Bool)arg1 forceFetch:(_Bool)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 userInfo:(id)arg5 proccessedCloudStoreRecords:(id)arg6 processedDeletedRecords:(id)arg7 serverChangeToken:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)fetchAndStoreChanges:(_Bool)arg1 forceFetch:(_Bool)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 userInfo:(id)arg5 completion:(CDUnknownBlockType)arg6;
@@ -105,10 +106,9 @@
 - (void)cloudStoreAccountInformationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)detachFromContainerWithState:(unsigned long long)arg1;
 - (void)attachToContainer;
-- (void)invalidateCloudStoreWithOperationGroupNameSuffix:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)invalidateCloudStoreWithCompletion:(CDUnknownBlockType)arg1;
-- (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1;
-- (void)invalidateCloudStoreIfPossible;
+- (void)invalidateCloudStoreWithOperationGroupNameSuffix:(id)arg1 clearCache:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)invalidateCloudStoreAndClearCache:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1 clearCache:(_Bool)arg2;
 - (id)lastFetchDateForZoneWithName:(id)arg1;
 - (id)cloudStoreSpecificKeysForItem:(id)arg1;
 - (id)recordTypeForRecordID:(id)arg1;

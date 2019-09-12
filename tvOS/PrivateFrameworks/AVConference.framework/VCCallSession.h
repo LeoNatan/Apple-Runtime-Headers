@@ -317,8 +317,7 @@ __attribute__((visibility("hidden")))
 - (void)setSuspendAudio;
 - (_Bool)isCallOngoing;
 - (void)processRemoteIPChange:(id)arg1 callID:(unsigned int)arg2;
-- (_Bool)isGKVoiceChat;
-- (void)setIsGKVoiceChat:(_Bool)arg1;
+@property _Bool isGKVoiceChat;
 @property(readonly) unsigned int lastSentAudioSampleTime;
 @property unsigned char inputMeter;
 @property(readonly) int bundledPackets;

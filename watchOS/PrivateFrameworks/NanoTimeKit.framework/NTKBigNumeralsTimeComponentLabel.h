@@ -6,9 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class CLKDevice, NSDate, NSDateFormatter, NTKColoringLabel, UIColor, UIFont;
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
-@interface NTKBigNumeralsTimeComponentLabel : UIView
+@class CLKDevice, NSDate, NSDateFormatter, NSString, NTKColoringLabel, UIColor, UIFont;
+
+@interface NTKBigNumeralsTimeComponentLabel : UIView <NTKTritiumAnimator>
 {
     CLKDevice *_device;
     _Bool _useLigatures;
@@ -19,6 +21,8 @@
     NSDateFormatter *_formatter;
     unsigned int _timeComponent;
     unsigned int _fontVariant;
+    float _tritium_minimumBrightness;
+    unsigned int _tritium_state;
     NSDate *_date;
     unsigned int _typeface;
     unsigned int _style;
@@ -30,6 +34,14 @@
 @property(nonatomic) unsigned int typeface; // @synthesize typeface=_typeface;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+- (void)applyToTritiumTransitionFraction:(float)arg1;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_willTransitionToTritiumOffFromFlipbookDate:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
 - (id)_fontForStyle:(unsigned int)arg1;
 - (void)_updateLabelText;
 - (id)_attributedStringForTypeface:(unsigned int)arg1;
@@ -46,6 +58,12 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithDevice:(id)arg1 timeComponent:(unsigned int)arg2 fontVariant:(unsigned int)arg3 fontSize:(float)arg4 useLigatures:(_Bool)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

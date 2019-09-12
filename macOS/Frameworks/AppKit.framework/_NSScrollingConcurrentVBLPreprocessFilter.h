@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) id <_NSScrollStateEventListener> scrollStateDelegate; // @synthesize scrollStateDelegate=_scrollStateDelegate;
-- (void)scrollingVBLMonitor:(id)arg1 synchronizeForVBLSerialNumber:(unsigned long long)arg2 timestamp:(double)arg3 updateDuration:(double)arg4;
+- (void)scrollingVBLMonitor:(id)arg1 synchronizeForTimestamp:(double)arg2;
 
 @end
 

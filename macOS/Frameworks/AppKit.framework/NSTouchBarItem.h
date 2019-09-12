@@ -26,6 +26,7 @@
 @property(readonly, getter=isVisible) BOOL visible;
 - (id)description;
 - (double)preferredZOrder;
+- (id)_imageToDisplayForImage:(id)arg1 title:(id)arg2;
 - (struct CGSize)_contentClippingSize;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 preferredSize:(struct CGSize *)arg3;

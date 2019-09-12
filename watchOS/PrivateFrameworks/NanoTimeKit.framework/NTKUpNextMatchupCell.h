@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)setPaused:(_Bool)arg1;
 - (void)updateTimeLabel;
+- (void)overrideDateDidChange;
 - (void)setFilterProvider:(id)arg1;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;

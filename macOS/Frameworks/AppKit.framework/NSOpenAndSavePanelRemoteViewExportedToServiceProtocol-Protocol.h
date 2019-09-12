@@ -11,7 +11,7 @@
 - (void)delegateCustomActionInvoked:(NSString *)arg1 forURLs:(NSArray *)arg2;
 - (void)delegateShouldCreateNewDocumentAtURL:(NSURL *)arg1;
 - (void)delegateRequestNewDocumentNameWithReply:(void (^)(NSString *))arg1;
-- (void)requestAppEnabledStateForItems:(NSArray *)arg1 replyToken:(unsigned long long)arg2;
+- (void)requestAppEnabledStateForItems:(NSArray *)arg1 replyBlock:(void (^)(NSArray *))arg2;
 - (void)_documentWindowFrameForPanelRunningAsASheetInService:(void (^)(struct CGRect))arg1;
 @end
 

@@ -32,7 +32,7 @@
 @property(readonly) PAItemView *itemView;
 @property(retain) PACanvasItemView *canvasView; // @dynamic canvasView;
 @property(copy) CDUnknownBlockType readyHandler;
-- (void)_callReadyHandlerOnceWithSuccess:(BOOL)arg1;
+- (void)_callReadyHandlerWithSuccess:(BOOL)arg1;
 - (void)notifyReadyWithSuccess:(BOOL)arg1;
 - (id)initWithItemController:(id)arg1;
 - (id)init;

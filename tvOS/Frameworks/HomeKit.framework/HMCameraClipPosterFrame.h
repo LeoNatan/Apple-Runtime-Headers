@@ -6,15 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <HomeKit/HMFLogging-Protocol.h>
+#import <HomeKit/NSCopying-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMFUnfairLock, NSData, NSString;
-
-@interface HMCameraClipPosterFrame : NSObject <NSSecureCoding, HMFLogging>
+@interface HMCameraClipPosterFrame : NSObject <NSCopying, NSSecureCoding>
 {
-    HMFUnfairLock *_lock;
-    NSData *_imageData;
     double _timeOffset;
     unsigned long long _width;
     unsigned long long _height;
@@ -22,25 +18,19 @@
     unsigned long long _sizeInBytes;
 }
 
-+ (id)logCategory;
 + (_Bool)supportsSecureCoding;
 @property(readonly) unsigned long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property(readonly) unsigned long long byteOffset; // @synthesize byteOffset=_byteOffset;
 @property(readonly) unsigned long long height; // @synthesize height=_height;
 @property(readonly) unsigned long long width; // @synthesize width=_width;
 @property(readonly) double timeOffset; // @synthesize timeOffset=_timeOffset;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-@property(copy) NSData *imageData; // @synthesize imageData=_imageData;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)initWithTimeOffset:(double)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 byteOffset:(unsigned long long)arg4 sizeInBytes:(unsigned long long)arg5;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

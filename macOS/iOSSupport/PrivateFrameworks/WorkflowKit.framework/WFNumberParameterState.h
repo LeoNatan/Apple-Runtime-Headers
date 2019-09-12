@@ -15,6 +15,7 @@
     NSNumber *_number;
 }
 
++ (Class)processingValueClass;
 @property(readonly, nonatomic) NSNumber *number; // @synthesize number=_number;
 - (void).cxx_destruct;
 - (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;

@@ -11,6 +11,7 @@
 
 @interface _MLTInferenceTesterConfiguration : NSObject
 {
+    BOOL _allowHardwareFallback;
     BOOL _measurePredictionPerformance;
     BOOL _measurePredictionCPUCycles;
     BOOL _measurePredictionCPUMemory;
@@ -33,6 +34,7 @@
 @property long long computeUnit; // @synthesize computeUnit=_computeUnit;
 @property(retain) NSString *testDataPath; // @synthesize testDataPath=_testDataPath;
 @property(retain) id <_MLTInputProvider> testDataProvider; // @synthesize testDataProvider=_testDataProvider;
+@property BOOL allowHardwareFallback; // @synthesize allowHardwareFallback=_allowHardwareFallback;
 @property(retain) NSString *modelPath; // @synthesize modelPath=_modelPath;
 @property(retain) MLModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;

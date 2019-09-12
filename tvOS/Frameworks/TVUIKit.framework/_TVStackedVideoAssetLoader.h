@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_observePlayerStatus;
+- (id)_createCompositionContext;
 - (id)_createUnclampedLumaComposition:(id)arg1;
 - (id)_createLumaComposition:(id)arg1;
 - (id)_createAtlasComposition:(id)arg1;

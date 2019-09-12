@@ -17,6 +17,7 @@
     id <CLKCComplicationDataSourceDelegate> _delegate;
 }
 
++ (_Bool)wantsToSkipPauseWhenEnteringTritium;
 + (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 + (_Bool)hasSensitiveUI;
 @property(nonatomic) __weak id <CLKCComplicationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,6 +32,8 @@
 - (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
+- (id)alwaysOnTemplate;
+- (id)privacyTemplate;
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (id)complicationApplicationIdentifier;

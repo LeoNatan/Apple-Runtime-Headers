@@ -6,11 +6,12 @@
 
 #import <HomeKitDaemon/NSObject-Protocol.h>
 
-@class HMDDatabaseZoneManager;
+@class HMDDatabaseZoneManager, NSDictionary;
 
 @protocol HMDDatabaseZoneManagerDelegate <NSObject>
 
 @optional
+- (void)zoneManager:(HMDDatabaseZoneManager *)arg1 didReceiveMessageWithUserInfo:(NSDictionary *)arg2;
 - (void)zoneManagerDidStop:(HMDDatabaseZoneManager *)arg1;
 - (void)zoneManagerDidStart:(HMDDatabaseZoneManager *)arg1;
 @end

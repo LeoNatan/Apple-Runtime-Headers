@@ -29,6 +29,7 @@
     unsigned int _inRenderQueueForLayerBackedGLRendering:1;
     unsigned int _disableLinearRendering:1;
     unsigned int _isInLiveResize:1;
+    _Bool _isHidden;
     _Bool _didTriggerRedrawWhileRendering;
     id _delegate;
     SCNRenderer *_renderer;
@@ -246,6 +247,7 @@
 - (BOOL)skipFramesIfNoDrawableAvailable;
 @property(retain, nonatomic) SCNScene *scene;
 - (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)setHidden:(BOOL)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

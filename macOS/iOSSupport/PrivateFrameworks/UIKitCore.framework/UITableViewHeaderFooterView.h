@@ -60,6 +60,7 @@
 @property(nonatomic, getter=_stripPadding, setter=_setStripPadding:) BOOL stripPadding;
 - (void)_tableViewDidUpdateMarginWidth;
 - (void)setTintColor:(id)arg1;
+- (BOOL)_hostsLayoutEngineAllowsTAMIC_NO;
 - (void)setNeedsUpdateConstraints;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (struct CGRect)_updatedContentViewFrameForTargetWidth:(double)arg1;

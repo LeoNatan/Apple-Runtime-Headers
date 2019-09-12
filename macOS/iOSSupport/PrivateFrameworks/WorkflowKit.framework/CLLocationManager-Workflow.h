@@ -7,9 +7,7 @@
 #import <CoreLocation/CLLocationManager.h>
 
 @interface CLLocationManager (Workflow)
-+ (int)wf_authorizationStatusForShortcutsApp;
 + (int)wf_authorizationStatusForWorkflowEnvironment:(long long)arg1;
-- (id)wf_initMasqueradingAsShortcutsAppWithDelegate:(id)arg1 onQueue:(id)arg2;
 - (id)wf_initWithWorkflowEnvironment:(long long)arg1 delegate:(id)arg2 onQueue:(id)arg3;
 @end
 

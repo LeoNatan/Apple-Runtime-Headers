@@ -182,6 +182,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)_accessibilityTraitsFromAncestors;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityFrameAncestor;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityFieldsetAncestor;
+- (BOOL)_accessibilityIsInTableCell;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityTableAncestor;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityLandmarkAncestor;
 - (struct WebAccessibilityObjectWrapper *)_accessibilityArticleAncestor;

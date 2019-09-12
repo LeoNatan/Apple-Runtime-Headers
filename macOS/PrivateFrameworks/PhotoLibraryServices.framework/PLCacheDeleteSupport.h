@@ -20,8 +20,6 @@
 + (id)_purgeableResourceDirectoriesForPathManager:(id)arg1;
 + (id)purgeableStateDescriptionForFile:(id)arg1;
 + (BOOL)isPurgeableFile:(id)arg1 outIsPhotoType:(char *)arg2 outUrgencyLevel:(long long *)arg3;
-+ (BOOL)supportsCentralizedCacheDeleteForPhotoLibraryAtURL:(id)arg1;
-+ (BOOL)_supportsCentralizedCacheDeleteDefault;
 + (BOOL)clearPurgeableFlagsForAllResourcesInPhotoLibraryURL:(id)arg1;
 + (void)registerNullHandler;
 @property(copy, nonatomic) NSDate *exitDeleteTime; // @synthesize exitDeleteTime=_exitDeleteTime;

@@ -48,6 +48,7 @@
 - (id)localCameraUID;
 - (unsigned int)localCamera;
 - (void)setLocalCameraWithUID:(id)arg1;
+- (void)resetLocalCameraAfterServerDisconnect;
 - (void)setLocalCamera:(unsigned int)arg1;
 - (id)localVideoLayer:(BOOL)arg1;
 - (void)setLocalVideoLayer:(id)arg1 front:(BOOL)arg2;

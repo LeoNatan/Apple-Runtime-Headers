@@ -53,7 +53,7 @@
 - (void)addInteraction:(id)arg1 intentClassName:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4;
 - (void)deleteFromBundle:(id)arg1;
 - (void)deleteFromBundle:(id)arg1 sinceDate:(id)arg2;
-- (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2;
+- (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2 retainedData:(id)arg3;
 - (void)deleteAllUserActivities:(id)arg1;
 - (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)purgeFromBundle:(id)arg1 identifiers:(id)arg2;

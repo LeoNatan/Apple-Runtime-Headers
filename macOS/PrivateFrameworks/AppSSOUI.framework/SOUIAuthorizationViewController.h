@@ -6,43 +6,33 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSBox, NSButton, NSDictionary, NSLayoutConstraint;
+@class NSArray, NSLayoutConstraint;
 @protocol SOUIAuthorizationViewControllerDelegate;
 
 @interface SOUIAuthorizationViewController : NSViewController
 {
     NSViewController *_extensionViewController;
-    NSDictionary *_hints;
+    NSLayoutConstraint *_widthConstraint;
+    NSLayoutConstraint *_heightConstraint;
+    NSLayoutConstraint *_topConstraint;
+    NSLayoutConstraint *_bottomConstraint;
+    NSLayoutConstraint *_leadingConstraint;
+    NSLayoutConstraint *_trailingConstraint;
+    NSArray *_extensionConstraints;
     id <SOUIAuthorizationViewControllerDelegate> _delegate;
-    NSBox *_extensionViewContainer;
-    NSButton *_cancelButton;
-    NSLayoutConstraint *_extensionViewContainerHeightConstraint;
-    NSLayoutConstraint *_extensionViewContainerWidthConstraint;
-    NSLayoutConstraint *_extensionViewContainerLeading;
-    NSLayoutConstraint *_extensionViewContainerTrailing;
-    NSLayoutConstraint *_extensionViewContainerTop;
-    NSLayoutConstraint *_extensionViewContainerBottom;
 }
 
-@property __weak NSLayoutConstraint *extensionViewContainerBottom; // @synthesize extensionViewContainerBottom=_extensionViewContainerBottom;
-@property __weak NSLayoutConstraint *extensionViewContainerTop; // @synthesize extensionViewContainerTop=_extensionViewContainerTop;
-@property __weak NSLayoutConstraint *extensionViewContainerTrailing; // @synthesize extensionViewContainerTrailing=_extensionViewContainerTrailing;
-@property __weak NSLayoutConstraint *extensionViewContainerLeading; // @synthesize extensionViewContainerLeading=_extensionViewContainerLeading;
-@property __weak NSLayoutConstraint *extensionViewContainerWidthConstraint; // @synthesize extensionViewContainerWidthConstraint=_extensionViewContainerWidthConstraint;
-@property __weak NSLayoutConstraint *extensionViewContainerHeightConstraint; // @synthesize extensionViewContainerHeightConstraint=_extensionViewContainerHeightConstraint;
-@property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-@property __weak NSBox *extensionViewContainer; // @synthesize extensionViewContainer=_extensionViewContainer;
 @property __weak id <SOUIAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_cancel;
-- (void)cancelButtonClicked:(id)arg1;
+- (void)_updateConstraints;
+- (void)preferredContentSizeDidChangeForViewController:(id)arg1;
 - (void)viewDidDisappear;
 - (void)viewWillDisappear;
 - (void)viewDidAppear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)nibBundle;
 - (id)initWithExtensionViewController:(id)arg1 hints:(id)arg2;
 
 @end

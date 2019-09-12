@@ -6,11 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, NSMutableArray, OBButtonTrayLayoutGuide, OBPrivacyLinkController, OBTemplateLabel, UIStackView, UIVisualEffectView;
+@class NSLayoutConstraint, NSMutableArray, OBButtonTrayLayoutGuide, OBPrivacyLinkController, OBTemplateLabel, UIStackView, UIViewController, UIVisualEffectView;
 
 @interface OBButtonTray : UIView
 {
     long long _backdropStyle;
+    UIViewController *_parentViewController;
     NSMutableArray *_buttons;
     OBButtonTrayLayoutGuide *_buttonLayoutGuide;
     OBPrivacyLinkController *_privacyLinkController;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
 @property(retain, nonatomic) OBButtonTrayLayoutGuide *buttonLayoutGuide; // @synthesize buttonLayoutGuide=_buttonLayoutGuide;
 @property(retain, nonatomic) NSMutableArray *buttons; // @synthesize buttons=_buttons;
+@property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) long long backdropStyle; // @synthesize backdropStyle=_backdropStyle;
 - (void).cxx_destruct;
 - (id)_captionFont;

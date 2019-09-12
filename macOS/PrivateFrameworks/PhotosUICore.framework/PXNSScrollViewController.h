@@ -18,6 +18,10 @@
     PXNSScrollView *_scrollView;
     BOOL _isScrolling;
     BOOL _isTracking;
+    BOOL _isLiveScrolling;
+    BOOL _isScrubbing;
+    BOOL _isDecelerating;
+    struct CGPoint _targetContentOffset;
     id <PXNSScrollViewControllerAccessibilityDelegate> _accessibilityDelegate;
 }
 
@@ -33,8 +37,14 @@
 - (void)scrollViewBeganMomentum:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)didScrollInScrollView:(id)arg1;
 - (void)didBeginScrollInScrollView:(id)arg1;
+- (void)scrollViewDidEndLiveScroll:(id)arg1;
+- (void)scrollViewWillStartLiveScroll:(id)arg1;
+- (void)_updateIsScrubbing;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidLayout:(id)arg1;
+- (BOOL)isScrubbing;
+- (BOOL)isDecelerating;
+- (BOOL)isDragging;
 - (BOOL)isTracking;
 - (void)applyScrollInfo:(id)arg1;
 - (BOOL)deferContentOffsetUpdates;
@@ -43,6 +53,7 @@
 - (void)setContentInset:(struct NSEdgeInsets)arg1;
 - (struct CGSize)scrollViewContentSize;
 - (struct CGRect)scrollViewContentBounds;
+- (struct CGRect)scrollViewTargetRect;
 - (struct CGRect)scrollViewConstrainedVisibleRect;
 - (struct CGRect)scrollViewVisibleRect;
 - (struct CGRect)scrollViewActiveRect;

@@ -13,6 +13,7 @@
 - (double)currentScrubberResolutionForBehavior:(HUCameraPlayerAVBehavior *)arg1;
 
 @optional
+- (void)playbackControlsDidChangePlayerVolume:(float)arg1;
 - (void)playbackControlsDidUpdateVisibilityOfLoadingIndicator:(BOOL)arg1;
 - (void)playbackControlsDidToggleMuted:(BOOL)arg1;
 @end

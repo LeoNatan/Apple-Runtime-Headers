@@ -26,7 +26,7 @@
 @property(copy, nonatomic) NSDictionary *cachedPushSettings; // @synthesize cachedPushSettings=_cachedPushSettings;
 - (void).cxx_destruct;
 - (void)currentDataSimChanged:(id)arg1;
-- (void)carrierBundleChange:(id)arg1;
+- (void)operatorBundleChange:(id)arg1;
 - (void)_updateCurrentDataSimContext:(id)arg1;
 - (void)_processCarrierBundleChange:(id)arg1;
 - (void)removeDelegate:(id)arg1;

@@ -56,6 +56,7 @@
 + (_Bool)_useCustomBackButtonAction;
 + (void)_setUseCustomBackButtonAction:(_Bool)arg1;
 + (id)_visualProviderForNavigationBar:(id)arg1;
++ (_Bool)_requiresModernVisualProvider;
 + (_Bool)_supportsCanvasView;
 + (void)_initializeForIdiom:(long long)arg1;
 + (double)defaultAnimationDuration;

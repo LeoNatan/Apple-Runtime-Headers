@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AKActionController, AKAttributeController, AKCursorController_Mac, AKDFRController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPageControllerArray, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSString, NSView, NSWindow;
+@class AKActionController, AKAttributeController, AKCursorController_Mac, AKDFRController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKSidecarController, AKSignatureModelController, AKSparseMutableControllerArray, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSString, NSView, NSWindow;
 @protocol AKControllerDelegateProtocol;
 
 @interface AKController : NSObject
@@ -27,7 +27,7 @@
     NSView *_toolbarView;
     unsigned long long _currentPageIndex;
     NSString *_author;
-    AKPageControllerArray *_pageControllers;
+    AKSparseMutableControllerArray *_pageControllers;
     NSMapTable *_pageModelControllersToPageControllers;
     AKActionController *_actionController;
     AKToolController *_toolController;
@@ -93,7 +93,7 @@
 @property(retain) AKToolController *toolController; // @synthesize toolController=_toolController;
 @property(retain) AKActionController *actionController; // @synthesize actionController=_actionController;
 @property(retain) NSMapTable *pageModelControllersToPageControllers; // @synthesize pageModelControllersToPageControllers=_pageModelControllersToPageControllers;
-@property(retain) AKPageControllerArray *pageControllers; // @synthesize pageControllers=_pageControllers;
+@property(retain) AKSparseMutableControllerArray *pageControllers; // @synthesize pageControllers=_pageControllers;
 @property BOOL isTestingInstance; // @synthesize isTestingInstance=_isTestingInstance;
 @property(copy) NSString *author; // @synthesize author=_author;
 @property unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
@@ -173,6 +173,7 @@
 - (void)performActionForSender:(id)arg1;
 - (BOOL)validateSender:(id)arg1;
 - (void)enclosingScrollViewDidScroll:(id)arg1;
+- (void)_setupPageModelController:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (void)teardown;

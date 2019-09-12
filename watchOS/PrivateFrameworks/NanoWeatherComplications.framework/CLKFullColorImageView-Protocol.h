@@ -13,5 +13,8 @@
 - (void)resumeLiveFullColorImageView;
 - (void)pauseLiveFullColorImageView;
 - (id)initFullColorImageViewWithDevice:(CLKDevice *)arg1;
+
+@optional
++ (_Bool)tritium_wantsCrossfadeAnimation;
 @end
 

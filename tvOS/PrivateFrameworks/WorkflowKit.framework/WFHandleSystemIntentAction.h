@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) NSArray *supportedIdentifiers; // @synthesize supportedIdentifiers=_supportedIdentifiers;
 - (long long)intentCategory;
 - (id)appIdentifier;
+- (id)appIdentifierForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 definition:(id)arg2 serializedParameters:(id)arg3;
 

@@ -15,8 +15,10 @@
     NSNumber *_avgBlue;
     NSNumber *_frames;
     NSNumber *_avgPower;
+    NSNumber *_avgAPL;
 }
 
+@property(retain) NSNumber *avgAPL; // @synthesize avgAPL=_avgAPL;
 @property(retain) NSNumber *avgPower; // @synthesize avgPower=_avgPower;
 @property(retain) NSNumber *frames; // @synthesize frames=_frames;
 @property(retain) NSNumber *avgBlue; // @synthesize avgBlue=_avgBlue;

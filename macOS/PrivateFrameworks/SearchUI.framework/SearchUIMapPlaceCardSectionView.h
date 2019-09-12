@@ -18,6 +18,7 @@
 
 @property(retain) SearchUIMapsViewController *mapViewController; // @synthesize mapViewController=_mapViewController;
 - (void).cxx_destruct;
+- (void)placeViewController:(id)arg1 requestPasscodeUnlockWithCompletion:(CDUnknownBlockType)arg2;
 - (id)embeddedViewController;
 - (void)placeViewControllerDidUpdateHeight:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;

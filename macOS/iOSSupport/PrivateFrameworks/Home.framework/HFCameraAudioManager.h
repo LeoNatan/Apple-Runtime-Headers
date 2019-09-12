@@ -25,8 +25,10 @@
 - (id)enableRemoteMicrophoneIfNecessary;
 - (id)enableRemoteSpeakerIfNecessary;
 - (id)updateAudioStreamSetting:(unsigned long long)arg1;
+- (id)setIncomingAudioVolume:(float)arg1;
 - (id)setIncomingAudioEnabled:(BOOL)arg1;
 - (id)setOutgoingAudioEnabled:(BOOL)arg1;
+@property(readonly, nonatomic) float incomingAudioVolume;
 @property(readonly, nonatomic, getter=isIncomingAudioEnabled) BOOL incomingAudioEnabled;
 @property(readonly, nonatomic, getter=isOutgoingAudioEnabled) BOOL outgoingAudioEnabled;
 @property(readonly, nonatomic) unsigned long long audioStreamSetting;

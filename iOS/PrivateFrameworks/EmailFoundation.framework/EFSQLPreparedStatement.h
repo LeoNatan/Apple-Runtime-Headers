@@ -11,9 +11,11 @@
 @interface EFSQLPreparedStatement : NSObject
 {
     struct sqlite3_stmt *_compiled;
+    double _allowedExecutionTime;
 }
 
 + (id)log;
+@property(nonatomic) double allowedExecutionTime; // @synthesize allowedExecutionTime=_allowedExecutionTime;
 - (_Bool)finalizeWithError:(id *)arg1;
 - (_Bool)clearBindingsWithError:(id *)arg1;
 - (_Bool)resetWithError:(id *)arg1;

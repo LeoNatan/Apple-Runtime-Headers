@@ -42,7 +42,10 @@ __attribute__((visibility("hidden")))
 - (void)enumerateBrowserDocumentsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)openLocation:(id)arg1;
 - (id)openEmptyBrowserDocumentWithBrowsingMode:(unsigned long long)arg1;
+- (void)_newTabInCurrentContext:(BOOL)arg1 sender:(id)arg2;
 - (void)newTab:(id)arg1;
+- (void)newTabAtEndFromFileMenu:(id)arg1;
+- (void)newTabFromFileMenu:(id)arg1;
 - (id)goToCloudTab:(id)arg1 tabLabel:(id)arg2 windowPolicy:(long long)arg3 tabPlacementHint:(const struct TabPlacementHint *)arg4;
 - (id)goToURL:(id)arg1 windowPolicy:(long long)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3 forSearch:(BOOL)arg4 canceled:(_Bool *)arg5;
 - (id)goToURL:(id)arg1 windowPolicy:(long long)arg2 tabPlacementHint:(const struct TabPlacementHint *)arg3;

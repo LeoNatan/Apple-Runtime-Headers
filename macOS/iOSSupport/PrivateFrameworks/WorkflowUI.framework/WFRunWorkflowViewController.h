@@ -18,7 +18,7 @@
 #import <WorkflowUI/WFRunWorkflowToolbarDelegate-Protocol.h>
 #import <WorkflowUI/WFWorkflowControllerDelegate-Protocol.h>
 
-@class NSIndexPath, NSString, UIView, WFAction, WFContentCollection, WFDatabase, WFModulesQuickLookView, WFRunWorkflowFooterView, WFRunWorkflowToolbar, WFWorkflow, WFWorkflowController, WFWorkflowRunEvent, WFWorkflowViewController;
+@class NSIndexPath, NSString, WFAction, WFContentCollection, WFDatabase, WFModulesQuickLookView, WFRunWorkflowFooterView, WFRunWorkflowToolbar, WFWorkflow, WFWorkflowController, WFWorkflowRunEvent, WFWorkflowViewController;
 @protocol WFRunWorkflowViewControllerDelegate;
 
 @interface WFRunWorkflowViewController : UIViewController <WFModuleModelProvider, WFWorkflowControllerDelegate, WFParameterInputViewControllerDelegate, WFActionParameterInputProvider, WFModulesSupplementaryViewDataSource, WFModulesQuickLookViewDelegate, QLPreviewControllerDelegate, UIScrollViewDelegate, UIDropInteractionDelegate, WFRunWorkflowFooterViewDelegate, WFRunWorkflowToolbarDelegate>
@@ -38,7 +38,6 @@
     WFAction *_lastRunningAction;
     WFModulesQuickLookView *_quickLookView;
     WFRunWorkflowFooterView *_footerView;
-    UIView *_inputDropZoneView;
     CDUnknownBlockType _prepareToRunCompletion;
     NSIndexPath *_prepareToRunIndexPath;
     WFWorkflowRunEvent *_runEvent;
@@ -51,7 +50,6 @@
 @property(retain, nonatomic) WFWorkflowRunEvent *runEvent; // @synthesize runEvent=_runEvent;
 @property(retain, nonatomic) NSIndexPath *prepareToRunIndexPath; // @synthesize prepareToRunIndexPath=_prepareToRunIndexPath;
 @property(copy, nonatomic) CDUnknownBlockType prepareToRunCompletion; // @synthesize prepareToRunCompletion=_prepareToRunCompletion;
-@property(readonly, nonatomic) __weak UIView *inputDropZoneView; // @synthesize inputDropZoneView=_inputDropZoneView;
 @property(nonatomic) BOOL droppingInputContent; // @synthesize droppingInputContent=_droppingInputContent;
 @property(nonatomic) __weak WFRunWorkflowFooterView *footerView; // @synthesize footerView=_footerView;
 @property(nonatomic) __weak WFModulesQuickLookView *quickLookView; // @synthesize quickLookView=_quickLookView;
@@ -122,7 +120,6 @@
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (BOOL)actionShouldHideConfiguration:(id)arg1;
 - (void)dealloc;
 - (id)initWithWorkflow:(id)arg1 database:(id)arg2 context:(id)arg3 cellConfigurationFunction:(CDUnknownFunctionPointerType)arg4;
 - (id)initWithWorkflow:(id)arg1 database:(id)arg2 context:(id)arg3;

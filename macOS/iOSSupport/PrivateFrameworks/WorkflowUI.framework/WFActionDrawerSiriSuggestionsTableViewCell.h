@@ -44,6 +44,7 @@
 - (void)siriSuggestionsCollectionViewManager:(id)arg1 showViewController:(id)arg2;
 - (void)siriSuggestionsCollectionViewManager:(id)arg1 didSelectAction:(id)arg2;
 - (void)configureLoading;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)configureWithActionDrawerSection:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

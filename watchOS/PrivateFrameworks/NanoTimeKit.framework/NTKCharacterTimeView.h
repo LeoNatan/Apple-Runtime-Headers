@@ -7,10 +7,11 @@
 #import <UIKit/UIView.h>
 
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
 @class CLKDevice, CLKUIQuadView, NSString, NTKCharacterQuad, NTKCharacterRenderer, NTKCharacterResourceLoader, PUICClientSideAnimation;
 
-@interface NTKCharacterTimeView : UIView <NTKTimeView>
+@interface NTKCharacterTimeView : UIView <NTKTimeView, NTKTritiumAnimator>
 {
     CLKDevice *_device;
     NTKCharacterResourceLoader *_loader;
@@ -25,11 +26,24 @@
     unsigned int _isBackgrounded:1;
     unsigned int _renderWasIgnored:1;
     unsigned int _layoutWasIgnored:1;
+    _Bool _tritiumIsInCheesePosition;
     _Bool _frozen;
 }
 
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
+- (void)_setTritiumProgress:(float)arg1 updateHandPositions:(_Bool)arg2 goingIntoTritium:(_Bool)arg3;
+- (void)tritium_setBoneDampingMultiplier:(float)arg1;
+- (void)tritium_setNumbersDimmedFraction:(float)arg1;
+- (void)tritium_setCharacterAndGlowBrightness:(float)arg1;
+- (id)tritium_animationToCurrentDateFromDate:(id)arg1;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_willTransitionToTritiumOn;
 - (void)endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_endScrubbing;
 - (void)scrubToDate:(id)arg1;

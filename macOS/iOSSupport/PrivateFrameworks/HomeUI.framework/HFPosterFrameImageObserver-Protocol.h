@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class HFPosterFrameManager, HMCameraClip, UIImage;
+@class HFPosterFrameManager, HMCameraClip, HMCameraClipManager, UIImage;
 
 @protocol HFPosterFrameImageObserver
+@property(readonly, nonatomic) HMCameraClipManager *clipManager;
 - (void)manager:(HFPosterFrameManager *)arg1 didUpdateImage:(UIImage *)arg2 withTimeOffset:(double)arg3 fromClip:(HMCameraClip *)arg4;
 @end
 

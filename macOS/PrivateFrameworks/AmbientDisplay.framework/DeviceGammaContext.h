@@ -11,6 +11,11 @@
 @interface DeviceGammaContext : NSObject
 {
     unsigned int deviceID;
+    unsigned int IODisplayService;
+    struct __IOHIDServiceClient *frontALSservice;
+    struct __IOHIDServiceClient *rearALSservice;
+    unsigned int ALS_LMUdataPort;
+    struct __CFString *displayContainerID;
     unsigned int numSamples;
     double epsilon;
     double currentWipe;
@@ -39,7 +44,8 @@
     double nativeBlueXYZ[3];
     double nativeWhitePointXYZ[3];
     int whitePointMode;
-    double ALSlux;
+    double frontALSlux;
+    double rearALSlux;
     double backLightNits;
     double linearBacklight;
     NSObject<OS_dispatch_semaphore> *wiperAnimationRequestSemaphore;
@@ -83,8 +89,8 @@
 - (_Bool)animationMatrixCompleted;
 - (_Bool)animationPreemptable;
 - (_Bool)animationCompleted;
-- (float)getALSlux;
-- (void)setALSlux:(double)arg1;
+- (float)getALSluxWithLocation:(int)arg1;
+- (void)setALSlux:(double)arg1 withALSlocation:(int)arg2;
 - (float)getDarkReflectivity;
 - (float)getDarkReflection;
 - (_Bool)getHardwareBrightnessSmoothingState;
@@ -92,8 +98,8 @@
 - (void)setRemovedState:(_Bool)arg1;
 - (void)updateDisplayHasBrightnessSmoothing;
 - (void)updateDisplayIsInternal;
-- (void)updateCurrentBackLightNits;
-- (void)updateCurrentALS;
+- (void)pollAndupdateBacklightNits;
+- (void)pollAndUpdateALSlux;
 - (void)setBackLightNits:(double)arg1 withLinearBacklight:(double)arg2;
 - (float)getBackLightLux;
 - (float)getLinearBacklight;
@@ -124,9 +130,16 @@
 - (void)setNativeWhitePointAndAnimateWithDuration:(float)arg1 thawIntention:(_Bool)arg2;
 - (void)setWhitePointXYZandAnimateToX:(float)arg1 Y:(float)arg2 Z:(float)arg3 duration:(float)arg4 thawIntention:(_Bool)arg5;
 - (void)setDisplayParametersWithLeakage:(float)arg1 lowestLevel:(int)arg2 lowestMeasured:(float)arg3 backlight:(float)arg4 darkReflection:(float)arg5 brightReflection:(float)arg6;
+- (void)registerHIDservices;
 - (void)setInternal:(BOOL)arg1;
 - (BOOL)isInternal;
 - (BOOL)isNativeICCvalidOrRetry;
+- (struct __CFString *)getDisplayContainerID;
+- (void)invalidateALSservices;
+- (_Bool)frontALSserviceValid;
+- (void)setRearALSservice:(struct __IOHIDServiceClient *)arg1;
+- (void)setFrontALSservice:(struct __IOHIDServiceClient *)arg1;
+- (unsigned int)getIODisplayService;
 - (void)setDisplayID:(unsigned int)arg1;
 - (unsigned int)getDisplayID;
 - (double)updateWipeWithActualIntervalInSeconds:(float)arg1;

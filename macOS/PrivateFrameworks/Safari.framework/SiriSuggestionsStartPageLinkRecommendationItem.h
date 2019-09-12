@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)willBeginDragSession;
+@property(readonly, nonatomic) double descriptionTextFieldWidth;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)prepareForReuse;

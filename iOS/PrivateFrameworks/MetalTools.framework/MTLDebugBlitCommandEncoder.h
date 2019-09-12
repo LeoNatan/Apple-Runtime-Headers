@@ -25,6 +25,9 @@
 - (void)optimizeContentsForCPUAccess:(id)arg1;
 - (void)optimizeContentsForGPUAccess:(id)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
 - (void)optimizeContentsForGPUAccess:(id)arg1;
+- (void)validateTextureAccess:(id)arg1 region:(CDStruct_1e3be3a8)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4;
+- (void)resetTextureAccessCounters:(id)arg1 region:(CDStruct_1e3be3a8)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4;
+- (void)getTextureAccessCounters:(id)arg1 region:(CDStruct_1e3be3a8)arg2 mipLevel:(unsigned long long)arg3 slice:(unsigned long long)arg4 resetCounters:(_Bool)arg5 countersBuffer:(id)arg6 countersBufferOffset:(unsigned long long)arg7;
 - (void)filterCounterRangeWithFirstBatch:(unsigned int)arg1 lastBatch:(unsigned int)arg2 filterIndex:(unsigned int)arg3;
 - (void)_resourceTrackingRecordBlitFromBuf:(id)arg1 toBuf:(id)arg2;
 - (void)_resourceTrackingRecordBlitFromTex:(id)arg1 toBuf:(id)arg2;

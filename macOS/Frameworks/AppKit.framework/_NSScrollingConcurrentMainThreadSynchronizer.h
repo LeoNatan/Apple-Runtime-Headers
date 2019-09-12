@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _NSScrollingConcurrentSharedData *_sharedData;
     _NSScrollingConcurrentConstantData *_constantData;
     NSScrollingBehaviorConcurrentVBL *_scrollingBehavior;
+    CDUnknownBlockType _preCommitHandler;
     CDUnknownBlockType _completionHandler;
     struct {
         unsigned int isSynchronizing:1;
@@ -29,11 +30,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSScrollingBehaviorConcurrentVBL *scrollingBehavior; // @synthesize scrollingBehavior=_scrollingBehavior;
 - (void).cxx_destruct;
 - (void)scrollView:(id)arg1 boundsChangedForClipView:(id)arg2;
-- (void)_synchronize:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_synchronize:(unsigned long long)arg1 preCommitHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_doIdlePrefetch;
 - (void)_updateSharedData;
 - (void)_scrollToCanonicalOrigin;
-- (void)signal:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)signal:(unsigned long long)arg1 preCommitHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)signal:(unsigned long long)arg1;
 - (void)suspend;
 - (void)resume;

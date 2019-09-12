@@ -13,8 +13,10 @@
     _Bool _orientationSupported;
     _Bool _nightstandEnabled;
     _Bool _alertAndAnimate;
+    _Bool _willPerformVSH;
 }
 
+@property(readonly, nonatomic) _Bool willPerformVSH; // @synthesize willPerformVSH=_willPerformVSH;
 @property(readonly, nonatomic) _Bool alertAndAnimate; // @synthesize alertAndAnimate=_alertAndAnimate;
 @property(readonly, nonatomic) _Bool nightstandEnabled; // @synthesize nightstandEnabled=_nightstandEnabled;
 @property(readonly, nonatomic) _Bool orientationSupported; // @synthesize orientationSupported=_orientationSupported;
@@ -23,7 +25,7 @@
 - (void)_buildDescriptionWithBuilder:(id)arg1;
 - (id)debugDescription;
 - (id)description;
-- (id)initWithScreenOffAfterAlert:(_Bool)arg1 waitToEndAnimation:(_Bool)arg2 orientationSupported:(_Bool)arg3 nightstandEnabled:(_Bool)arg4 alertAndAnimate:(_Bool)arg5;
+- (id)initWithScreenOffAfterAlert:(_Bool)arg1 waitToEndAnimation:(_Bool)arg2 orientationSupported:(_Bool)arg3 nightstandEnabled:(_Bool)arg4 alertAndAnimate:(_Bool)arg5 willPerformVSH:(_Bool)arg6;
 
 @end
 

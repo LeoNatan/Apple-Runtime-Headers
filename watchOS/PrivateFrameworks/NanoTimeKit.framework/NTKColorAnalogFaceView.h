@@ -21,6 +21,9 @@
 }
 
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (id)_colorComplicationViewForSlot:(id)arg1;
 - (void)_enumerateColorComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_wantsConstantSpeedZoom;

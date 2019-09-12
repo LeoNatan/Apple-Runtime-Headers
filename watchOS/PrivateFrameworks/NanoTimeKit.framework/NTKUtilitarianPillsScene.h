@@ -10,6 +10,7 @@
 {
 }
 
+- (void)tritium_setTritiumOnProgress:(float)arg1;
 - (unsigned int)scrubbingObscured12ElementBottomIndex;
 - (id)scrubbingObscuredCollectionNodes;
 - (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;

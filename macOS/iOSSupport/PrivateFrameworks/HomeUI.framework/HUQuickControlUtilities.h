@@ -10,7 +10,7 @@
 {
 }
 
-+ (BOOL)shouldDisplayQuickControlAsPushButton:(id)arg1 preferredControl:(unsigned long long)arg2 controlSize:(unsigned long long)arg3;
++ (BOOL)shouldDisplayQuickControlAsPushButton:(id)arg1 preferredControl:(unsigned long long)arg2;
 + (BOOL)shouldAlwaysDisplayQuickControlAsSwitch:(id)arg1;
 + (id)backgroundColorForUserInterfaceStyle:(long long)arg1;
 + (unsigned long long)iconSizeForQuickControlSize:(unsigned long long)arg1;

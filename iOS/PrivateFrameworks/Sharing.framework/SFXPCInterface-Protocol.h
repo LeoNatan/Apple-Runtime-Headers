@@ -13,6 +13,7 @@
 - (void)userNotificationTextResponse:(NSString *)arg1;
 - (void)userNotificationResponse:(int)arg1;
 - (void)userNotificationError:(NSError *)arg1;
+- (void)shareAudioProgressEvent:(int)arg1 info:(NSDictionary *)arg2;
 - (void)sessionReceivedResponse:(SFResponseMessage *)arg1;
 - (void)sessionReceivedRequest:(SFRequestMessage *)arg1;
 - (void)sessionReceivedFrameType:(unsigned char)arg1 data:(NSData *)arg2;

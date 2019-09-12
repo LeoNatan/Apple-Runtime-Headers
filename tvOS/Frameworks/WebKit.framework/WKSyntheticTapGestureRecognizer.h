@@ -6,6 +6,8 @@
 
 #import <UIKit/UITapGestureRecognizer.h>
 
+@class UIScrollView;
+
 __attribute__((visibility("hidden")))
 @interface WKSyntheticTapGestureRecognizer : UITapGestureRecognizer
 {
@@ -16,12 +18,15 @@ __attribute__((visibility("hidden")))
     id _resetTarget;
     SEL _resetAction;
     struct RetainPtr<NSNumber> _lastActiveTouchIdentifier;
+    struct WeakObjCPtr<UIScrollView> _lastTouchedScrollView;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)lastActiveTouchIdentifier;
+@property(readonly, nonatomic) __weak UIScrollView *lastTouchedScrollView;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (void)setState:(long long)arg1;
 - (void)setResetTarget:(id)arg1 action:(SEL)arg2;

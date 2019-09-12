@@ -38,6 +38,8 @@
     PXPhotoKitCollectionsDataSourceManagerConfiguration *_configuration;
 }
 
++ (id)sharedKeyAssetsFetchQueue;
++ (id)sharedSubCollectionsFetchQueue;
 @property(readonly, nonatomic) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
 @property(readonly, nonatomic) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
 @property(readonly) PXPhotoKitCollectionsDataSourceManagerConfiguration *configuration; // @synthesize configuration=_configuration;

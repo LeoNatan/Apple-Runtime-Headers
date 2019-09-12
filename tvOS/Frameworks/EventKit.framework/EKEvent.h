@@ -205,6 +205,7 @@
 @property(copy, nonatomic) NSSet *actions;
 - (void)clearInvitationStatus;
 @property(nonatomic) unsigned long long invitationStatus;
+- (id)defaultAlarms;
 - (void)setResponseComment:(id)arg1;
 - (id)responseComment;
 @property(nonatomic) long long availability;

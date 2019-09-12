@@ -10,20 +10,20 @@
 #import <Email/EMAccountRepositoryObserver-Protocol.h>
 
 @class EMRemoteConnection, NSMutableDictionary, NSString;
-@protocol EFCancelable;
+@protocol EFCancelable, EFScheduler;
 
 @interface EMAccountRepository : EMRepository <EFLoggable, EMAccountRepositoryObserver>
 {
+    struct os_unfair_lock_s _lock;
     NSMutableDictionary *_accounts;
     EMRemoteConnection *_connection;
-    id <EFCancelable> _observerCancelable;
+    id <EFScheduler> _recoveryHandlerScheduler;
+    id <EFScheduler> _observerScheduler;
+    id <EFCancelable> _cancelable;
 }
 
 + (id)remoteInterface;
 + (id)log;
-@property(retain, nonatomic) id <EFCancelable> observerCancelable; // @synthesize observerCancelable=_observerCancelable;
-@property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
-@property(retain, nonatomic) NSMutableDictionary *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
 - (void)_postAccountChangedNotification;
 - (void)accountsChanged:(id)arg1;
@@ -36,8 +36,8 @@
 - (id)deliveryAccounts;
 - (id)receivingAccounts;
 - (id)allAccounts;
-- (void)_restartObservingAccountChangesIfNecessary;
-- (void)_startObservingAccountChangesIfNecessary;
+- (id)_currentAccountsByObjectIDMap;
+- (void)_fetchAccountsAndObserveChanges;
 - (void)dealloc;
 - (id)initWithRemoteConnection:(id)arg1;
 - (id)_init;

@@ -6,7 +6,7 @@
 
 #import <SearchUI/NSObject-Protocol.h>
 
-@class NSArray, NSSet, NSString, NSURL, SBFParallaxSettings, SBFolder, SBIcon, SBIconImageView, SBIconLabelImage, SBIconLabelImageParameters, SBIconView, SBSApplicationShortcutItem, UIColor, UIDragItem, UIDragPreviewParameters, UIGestureRecognizer, UITargetedDragPreview, UITouch, UIView;
+@class NSArray, NSSet, NSString, NSURL, SBFParallaxSettings, SBFolder, SBIcon, SBIconImageView, SBIconLabelImage, SBIconLabelImageParameters, SBIconView, SBSApplicationShortcutItem, UIColor, UIDragItem, UIDragPreviewParameters, UIGestureRecognizer, UITargetedDragPreview, UITouch, UIView, _UIContextMenuStyle;
 @protocol SBIconAccessoryView, SBIconLabelAccessoryView, UIDragAnimating, UIDragSession;
 
 @protocol SBIconViewDelegate <NSObject>
@@ -35,6 +35,7 @@
 - (void)iconView:(SBIconView *)arg1 willRemoveIconImageView:(SBIconImageView *)arg2;
 - (SBIconImageView *)imageViewForIconView:(SBIconView *)arg1;
 - (UITargetedDragPreview *)iconView:(SBIconView *)arg1 dragPreviewForItem:(UIDragItem *)arg2 session:(id <UIDragSession>)arg3 previewParameters:(UIDragPreviewParameters *)arg4;
+- (void)iconView:(SBIconView *)arg1 willUseContextMenuStyle:(_UIContextMenuStyle *)arg2;
 - (UIView *)containerViewForPresentingContextMenuForIconView:(SBIconView *)arg1;
 - (NSURL *)launchURLForIconView:(SBIconView *)arg1;
 - (NSSet *)launchActionsForIconView:(SBIconView *)arg1;

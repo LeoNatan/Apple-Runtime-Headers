@@ -8,6 +8,7 @@
 
 @protocol CAMCaptureAdjustmentProvider <NSObject>
 - (_Bool)hasAdjustments;
+- (long long)aspectRatioCrop;
 - (long long)lightingEffectType;
 - (long long)effectFilterType;
 @end

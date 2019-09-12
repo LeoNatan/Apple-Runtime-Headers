@@ -9,7 +9,7 @@
 #import <PassKitCore/CBCentralManagerDelegate-Protocol.h>
 #import <PassKitCore/PKContinuityPaymentCoordinatorDelegate-Protocol.h>
 
-@class CBCentralManager, NSMutableArray, NSString, PKContinuityPaymentCoordinator, PKContinuityPaymentService, PKInAppPaymentSession, PKPaymentAuthorizationClientCallbackStateParam, PKPaymentAuthorizationDataModel, PKPaymentService, PKPaymentWebService, PKPeerPaymentSession;
+@class CBCentralManager, NSArray, NSMutableArray, NSString, PKContinuityPaymentCoordinator, PKContinuityPaymentService, PKInAppPaymentSession, PKPaymentAuthorizationClientCallbackStateParam, PKPaymentAuthorizationDataModel, PKPaymentService, PKPaymentWebService, PKPeerPaymentSession;
 @protocol OS_dispatch_group, OS_dispatch_source, PKAggregateDictionaryProtocol, PKPaymentAuthorizationStateMachineDelegate;
 
 @interface PKPaymentAuthorizationStateMachine : NSObject <PKContinuityPaymentCoordinatorDelegate, CBCentralManagerDelegate>
@@ -37,8 +37,10 @@
     NSString *_instanceIdentifier;
     unsigned long long _prepareTransactionDetailsCounter;
     NSObject<OS_dispatch_group> *_delayAuthorizedStateGroup;
+    NSArray *_remoteDevicesToUpdate;
 }
 
+@property(retain, nonatomic) NSArray *remoteDevicesToUpdate; // @synthesize remoteDevicesToUpdate=_remoteDevicesToUpdate;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *delayAuthorizedStateGroup; // @synthesize delayAuthorizedStateGroup=_delayAuthorizedStateGroup;
 @property(nonatomic) BOOL detectedBluetoothOn; // @synthesize detectedBluetoothOn=_detectedBluetoothOn;
 @property(nonatomic) unsigned long long prepareTransactionDetailsCounter; // @synthesize prepareTransactionDetailsCounter=_prepareTransactionDetailsCounter;
@@ -118,7 +120,8 @@
 - (void)_performSendClientUpdateWithShippingMethods:(id)arg1 paymentSummaryItems:(id)arg2 paymentApplication:(id)arg3 status:(long long)arg4;
 - (void)_performSendRemotePaymentRequest;
 - (void)_performUpdatePaymentDevices;
-- (void)_deviceUpdateDidTimeout;
+- (void)_deviceUpdateDidFailWithNoEiligbleRemoteDevices:(id)arg1;
+- (void)_updateModelWithRemoteDevices:(id)arg1;
 - (void)_processBluetoothState:(long long)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)continuityPaymentCoordinatorDidReceiveCancellation:(id)arg1;

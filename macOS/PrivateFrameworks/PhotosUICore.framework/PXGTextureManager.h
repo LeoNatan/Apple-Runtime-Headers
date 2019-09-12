@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXGTextureProviderDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSHashTable, NSIndexSet, NSMapTable, NSMutableDictionary, PXGTextureManagerPreheatingStrategy, PXGViewEnvironment;
+@class NSArray, NSDictionary, NSHashTable, NSIndexSet, NSMapTable, NSMutableDictionary, NSMutableSet, PXGTextureManagerPreheatingStrategy, PXGViewEnvironment;
 @protocol OS_dispatch_queue, PXGMutableSpriteTexture, PXGTextureConverter, PXGTextureManagerDelegate;
 
 @interface PXGTextureManager : NSObject <PXGTextureProviderDelegate>
@@ -23,6 +23,7 @@
     NSDictionary *_textureConverterByPresentationType;
     id <PXGTextureConverter> _atlasTextureConverter;
     int _atlasPresentationType;
+    BOOL _didSwitchTextureConverter;
     NSMutableDictionary *_textureProviderByMediaKind;
     NSMapTable *_textureProvidersDisplayLinkRegistrationState;
     struct unordered_map<int, unsigned int, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, unsigned int>>> _spriteIndexByRequestID;
@@ -33,6 +34,7 @@
     // Error parsing type: AC, name: _isPerformingUpdateFromRequestQueue
     unsigned long long _requestQueue_pendingSetNeedsUpdate;
     id <PXGMutableSpriteTexture> _emptyTexture;
+    NSMutableSet *_placeholderTextures;
     id <PXGTextureManagerDelegate> _delegate;
     PXGTextureManagerPreheatingStrategy *_preheatingStrategy;
     PXGViewEnvironment *_viewEnvironment;
@@ -58,6 +60,7 @@
 - (void)textureProvider:(id)arg1 didProvideNothingForRequestID:(int)arg2;
 - (BOOL)_getRequestDetails:(out CDStruct_fcaf9308 *)arg1 forRequestID:(int)arg2;
 - (void)_processPixelBuffer:(struct __CVBuffer *)arg1 orientationTransform:(struct CGAffineTransform)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4 forRequestID:(int)arg5 deliveryOrder:(unsigned int)arg6;
+- (id)_createTextureForCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4;
 - (void)_processCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 fromTextureProvider:(id)arg3 withTextureConverter:(id)arg4 requestID:(int)arg5 deliveryOrder:(unsigned int)arg6;
 - (void)_handleProvidedSpriteTexture:(id)arg1 fromTextureProvider:(id)arg2 requestID:(int)arg3 deliveryOrder:(unsigned int)arg4;
 - (id)_textureAtlasManagerForImageDataSpec:(CDStruct_1b544862)arg1;
@@ -69,14 +72,15 @@
 - (id)_existingTextureForPixelBuffer:(struct __CVBuffer *)arg1 presentationType:(int)arg2;
 - (id)_existingTextureForCGImage:(struct CGImage *)arg1 presentationType:(int)arg2;
 - (id)_existingTextureForKey:(id)arg1 presentationType:(int)arg2;
+- (void)_clearTexturesForPresentationType:(int)arg1;
 - (void)simulateTextureLoad;
 - (BOOL)streamUpdatedTexturesForDisplayLinkIfNeeded:(id)arg1;
 - (struct CGImage *)textureSnapshotForSpriteIndex:(unsigned int)arg1;
 - (void)_enumerateSpriteTextures:(CDUnknownBlockType)arg1;
 - (long long)_processTextureProviderResults;
 - (void)_lookupLock_requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 textureProvider:(id)arg2 mediaKind:(int)arg3 presentationType:(int)arg4 isAppearing:(BOOL)arg5 layout:(id)arg6 leafSpriteIndexRange:(struct _PXGSpriteIndexRange)arg7 sprites:(CDStruct_92550dd7)arg8 textureStreamInfos:(CDStruct_875be80f *)arg9;
-- (void)_blockOnThumbnailsIfNeededWithGeometries:(CDStruct_ac168a83 *)arg1 visibleRect:(struct CGRect)arg2 interactionState:(CDStruct_73ead4b7)arg3 fences:(id)arg4;
-- (void)streamTexturesForSpritesInDataStore:(id)arg1 presentationDataStore:(id)arg2 changeDetails:(id)arg3 layout:(id)arg4 interactionState:(CDStruct_73ead4b7)arg5;
+- (void)_blockOnThumbnailsIfNeededWithGeometries:(CDStruct_ac168a83 *)arg1 visibleRect:(struct CGRect)arg2 interactionState:(CDStruct_efb11229)arg3 fences:(id)arg4;
+- (void)streamTexturesForSpritesInDataStore:(id)arg1 presentationDataStore:(id)arg2 changeDetails:(id)arg3 layout:(id)arg4 interactionState:(CDStruct_efb11229)arg5;
 - (void)_resizeStorageIfNeededForSpriteCount:(long long)arg1;
 - (void)_requestQueue_scheduleUpdateIfAllowed;
 - (void)_requestQueue_setNeedsUpdate;

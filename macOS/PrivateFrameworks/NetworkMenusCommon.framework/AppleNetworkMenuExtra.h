@@ -8,8 +8,7 @@
 
 #import <NetworkMenusCommon/NSMenuDelegate-Protocol.h>
 
-@class AppleNetworkMenuExtraView, NSArray, NSBundle, NSFileHandle, NSMenu, NSMenuItem, NSMutableArray, NSObject, NSOperationQueue, NSString;
-@protocol OS_dispatch_queue;
+@class AppleNetworkMenuExtraView, NSArray, NSBundle, NSFileHandle, NSMenu, NSMenuItem, NSMutableArray, NSOperationQueue, NSString;
 
 @interface AppleNetworkMenuExtra : NSMenuExtra <NSMenuDelegate>
 {
@@ -27,14 +26,11 @@
     NSArray *mControllers;
     BOOL mProcessingPrefChanges;
     NSOperationQueue *mRefreshQueue;
-    NSObject<OS_dispatch_queue> *neServiceQueue;
     NSMutableArray *mUnprocessedSCControllers;
     NSMutableArray *mUnprocessedNEControllers;
-    NSArray *mSCControllers;
     NSArray *mNEControllers;
 }
 
-+ (id)SCLock;
 + (id)sharedNetworkExtensionServiceQueue;
 - (void)reloadNetworkExtensionControllers;
 - (void)reloadSystemConfigurationControllers;
@@ -86,10 +82,10 @@
 - (id)AXValue;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)menu:(id)arg1 willHighlightItem:(id)arg2;
-- (void)dealloc;
 - (BOOL)convertedForNewUI;
 - (id)menu;
 - (void)willUnload;
+- (void)dealloc;
 - (id)initWithBundle:(id)arg1;
 
 // Remaining properties

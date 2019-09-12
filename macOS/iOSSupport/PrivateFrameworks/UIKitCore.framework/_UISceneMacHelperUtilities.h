@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (id)sizeRestrictionsForSceneWithIdentifier:(id)arg1;
 - (id)uiWindowsForSceneWithIdentifier:(id)arg1;
 - (id)_windowSceneForIdentifier:(id)arg1;
+- (id)_discardPreviouslyPersistedScenesKeepingScenesWithIdentifiers:(id)arg1;
 - (BOOL)shouldCloseHostWindowForSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;
 - (BOOL)shouldHideHostWindowForSceneIdentifier:(id)arg1;
 

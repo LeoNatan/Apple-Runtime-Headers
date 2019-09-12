@@ -9,7 +9,7 @@
 #import <AVKitMacHelper/AVPictureInPictureControllerMacHelper-Protocol.h>
 #import <AVKitMacHelper/PIPSafariViewControllerDelegate-Protocol.h>
 
-@class NSString, NSWindow, UINSPIPViewController;
+@class AVKitMacHelperPIPViewController, NSString, NSWindow;
 @protocol AVPictureInPictureControllerMacHelperDelegate;
 
 __attribute__((visibility("hidden")))
@@ -20,14 +20,14 @@ __attribute__((visibility("hidden")))
     BOOL _active;
     BOOL _showsMuteUnmuteControls;
     id <AVPictureInPictureControllerMacHelperDelegate> _delegate;
-    UINSPIPViewController *_pipViewController;
+    AVKitMacHelperPIPViewController *_pipViewController;
     NSWindow *_appNSWindow;
     struct CGSize _contentAspectRatio;
     struct CGRect _normalizedSourceRectInWindow;
 }
 
 @property(nonatomic) __weak NSWindow *appNSWindow; // @synthesize appNSWindow=_appNSWindow;
-@property(retain, nonatomic) UINSPIPViewController *pipViewController; // @synthesize pipViewController=_pipViewController;
+@property(retain, nonatomic) AVKitMacHelperPIPViewController *pipViewController; // @synthesize pipViewController=_pipViewController;
 @property(nonatomic) BOOL showsMuteUnmuteControls; // @synthesize showsMuteUnmuteControls=_showsMuteUnmuteControls;
 @property(nonatomic) struct CGRect normalizedSourceRectInWindow; // @synthesize normalizedSourceRectInWindow=_normalizedSourceRectInWindow;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;

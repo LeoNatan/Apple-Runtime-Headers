@@ -27,6 +27,9 @@
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 @property(nonatomic) unsigned int density; // @synthesize density=_density;
 - (void).cxx_destruct;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (void)_cleanUpAfterSearchAnimation;
 - (_Bool)_shouldContinueSignalAnimationFromPosition:(int)arg1;
 - (void)_runSearchingAnimationFromPosition:(int)arg1;

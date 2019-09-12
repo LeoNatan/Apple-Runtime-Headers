@@ -16,6 +16,8 @@
 
 @property(nonatomic) BOOL splitterEnabled; // @synthesize splitterEnabled=_splitterEnabled;
 - (void).cxx_destruct;
+- (BOOL)_hasDeviceTemporaryPairedNotInContacts;
+@property(readonly, nonatomic) BOOL shouldDisableSpeakerVerificationInSplitterMode;
 - (unsigned long long)splitterState;
 - (void)addDeviceIntoSplitterDeviceList:(id)arg1;
 - (id)splitterDeviceList;

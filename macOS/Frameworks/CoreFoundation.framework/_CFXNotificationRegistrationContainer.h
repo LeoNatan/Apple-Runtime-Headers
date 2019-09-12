@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)childClass;
 - (BOOL)enumerate:(CDUnknownBlockType)arg1;
-- (void)removeChild:(id)arg1;
+- (void)removeChild:(id)arg1 token:(unsigned long long)arg2;
 - (void)addChild:(id)arg1;
 - (void)dealloc;
 - (void)resetChildren;

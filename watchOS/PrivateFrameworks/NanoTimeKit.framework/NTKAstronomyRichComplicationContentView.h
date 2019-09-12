@@ -8,10 +8,11 @@
 
 #import <NanoTimeKit/NTKAstronomyVistaViewObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
+#import <NanoTimeKit/NTKTritiumBaseAnimator-Protocol.h>
 
-@class CLKDevice, CLLocation, NSDate, NTKAstronomyLocationDot, NTKAstronomyVistaView, NTKDelayedBlock;
+@class CLKDevice, CLLocation, NSDate, NSString, NTKAstronomyLocationDot, NTKAstronomyVistaView, NTKDelayedBlock;
 
-@interface NTKAstronomyRichComplicationContentView : UIView <NTKAstronomyVistaViewObserver, NTKTimeTravel>
+@interface NTKAstronomyRichComplicationContentView : UIView <NTKAstronomyVistaViewObserver, NTKTimeTravel, NTKTritiumBaseAnimator>
 {
     NTKAstronomyVistaView *_astronomyVistaView;
     NTKAstronomyLocationDot *_locationDot;
@@ -26,6 +27,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)handleWristRaiseScreenWake;
@@ -42,6 +45,12 @@
 - (void)layoutSubviews;
 - (void)applyPausedUpdate:(_Bool)arg1;
 - (id)initForDevice:(id)arg1 diameter:(float)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

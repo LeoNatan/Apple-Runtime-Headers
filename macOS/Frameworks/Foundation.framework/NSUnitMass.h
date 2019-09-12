@@ -30,6 +30,7 @@
 + (id)grams;
 + (id)kilograms;
 + (id)baseUnit;
++ (void)initialize;
 
 @end
 

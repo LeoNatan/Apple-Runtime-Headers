@@ -365,7 +365,7 @@ struct SCNMTLBufferPool {
 struct SCNMTLComputeCommandEncoder {
     id _buffers[31];
     unsigned long long _offsets[31];
-    id _textures[96];
+    id _textures[128];
     id _samplers[16];
     id _computePipelineState;
     id _encoder;
@@ -391,10 +391,10 @@ struct SCNMTLRenderCommandEncoder {
     _Bool _field12;
     _Bool _field13;
     CDStruct_deec94a8 _field14[31];
-    id _field15[96];
+    id _field15[128];
     id _field16[16];
     CDStruct_deec94a8 _field17[31];
-    id _field18[96];
+    id _field18[128];
     id _field19[16];
     id _field20;
     id _field21;

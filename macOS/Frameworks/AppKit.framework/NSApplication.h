@@ -482,6 +482,7 @@
 - (BOOL)accessibilityShouldUseUniqueId;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityHitTest;
+- (id)_lastWindowHitByAccessibility;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)_accessibilityViewBridgeHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
@@ -590,6 +591,7 @@
 - (void)toggleTouchBarControlStripCustomizationPalette:(id)arg1;
 - (BOOL)_validateTouchBarCustomizationPaletteItem:(id)arg1;
 - (void)orderFrontPreferencesPanel:(id)arg1;
+- (id)_lockoutWindowForFullscreen:(id)arg1;
 - (id)_lockoutWindowForWindow:(id)arg1;
 - (id)_engagedLockoutWindowForWindow:(id)arg1;
 - (void)_lockoutMiniaturizedOverlayDisengaged:(id)arg1;

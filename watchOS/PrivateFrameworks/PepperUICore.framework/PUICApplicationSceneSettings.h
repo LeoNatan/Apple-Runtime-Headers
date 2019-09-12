@@ -16,6 +16,7 @@
 
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int AOTDisplayStyle;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier;
 @property(readonly, nonatomic) unsigned int puicStatusBarStyle;
 @property(readonly, nonatomic) _Bool keepsContextsInBackground;

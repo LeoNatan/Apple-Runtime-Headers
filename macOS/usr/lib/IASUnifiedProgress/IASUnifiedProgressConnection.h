@@ -17,7 +17,6 @@
 + (id)sharedConnection;
 - (void)dealloc;
 - (id)init;
-- (void)registerCaller:(id)arg1 interruptionHandler:(CDUnknownBlockType)arg2;
 - (void)releaseConnectionForCaller:(id)arg1;
 - (BOOL)hasConnectionForCaller:(id)arg1;
 - (id)connectionForCaller:(id)arg1;

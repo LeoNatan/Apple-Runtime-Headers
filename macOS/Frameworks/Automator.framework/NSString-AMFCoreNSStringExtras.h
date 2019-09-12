@@ -13,6 +13,7 @@
 + (id)am_addressBookPersonNameExtensionsThatDoNotNeedCommas;
 - (BOOL)amf_hasCaseInsensitivePrefix:(id)arg1;
 - (BOOL)isNSString__;
+@property(readonly, nonatomic) NSString *am_pathStringNormalizedForROSP;
 - (long long)am_compareToVersion:(id)arg1;
 @property(readonly) NSString *am_bestGuessAtPath;
 @property(readonly) NSURL *am_bestGuessAtURL;

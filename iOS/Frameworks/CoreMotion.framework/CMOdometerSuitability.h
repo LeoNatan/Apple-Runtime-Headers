@@ -8,10 +8,11 @@
 
 #import <CoreMotion/NSCopying-Protocol.h>
 #import <CoreMotion/NSSecureCoding-Protocol.h>
+#import <CoreMotion/SRSampling-Protocol.h>
 
-@class NSDate;
+@class NSDate, NSString;
 
-@interface CMOdometerSuitability : NSObject <NSSecureCoding, NSCopying>
+@interface CMOdometerSuitability : NSObject <SRSampling, NSSecureCoding, NSCopying>
 {
     _Bool _suitableForRunning;
     _Bool _suitableForWalking;
@@ -22,12 +23,19 @@
 @property(readonly, nonatomic) _Bool suitableForWalking; // @synthesize suitableForWalking=_suitableForWalking;
 @property(readonly, nonatomic) _Bool suitableForRunning; // @synthesize suitableForRunning=_suitableForRunning;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithStartDate:(id)arg1 suitableForRunning:(_Bool)arg2 suitableForWalking:(_Bool)arg3;
+- (id)initWithBinarySampleRepresentation:(id)arg1 metadata:(id)arg2 timestamp:(double)arg3;
+- (id)binarySampleRepresentation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

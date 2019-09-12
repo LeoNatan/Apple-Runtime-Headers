@@ -9,6 +9,7 @@
 @protocol MTLSamplerState, MTLTexture;
 
 @protocol MTLRenderCommandEncoderSPI <MTLRenderCommandEncoder>
+- (void)setVertexAmplificationMode:(unsigned long long)arg1 value:(unsigned long long)arg2;
 - (void)setFragmentTexture:(id <MTLTexture>)arg1 atTextureIndex:(unsigned long long)arg2 samplerState:(id <MTLSamplerState>)arg3 atSamplerIndex:(unsigned long long)arg4;
 - (_Bool)isMemorylessRender;
 - (void)addSplitHandler:(void (^)(id <MTLRenderCommandEncoderSPI>, unsigned long long))arg1;

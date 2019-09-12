@@ -37,9 +37,11 @@ __attribute__((visibility("hidden")))
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (void)_applyStashedParentViewControllerIfNecessary;
 - (void)_stashParentViewControllerIfNecessary;
-- (void)_animateDismissalWithStyle:(unsigned long long)arg1 actions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)dismissWithStyle:(unsigned long long)arg1 alongsideActions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_performPresentationAnimations;
+- (void)_nonAnimatedDismissalWithReason:(unsigned long long)arg1 actions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_animateDismissalWithReason:(unsigned long long)arg1 actions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_restoreInputViewWithReason:(unsigned long long)arg1 forPresentation:(id)arg2;
+- (void)dismissWithReason:(unsigned long long)arg1 alongsideActions:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_performPresentationAnimationsFromViewController:(id)arg1;
 - (void)presentFromViewController:(id)arg1 sourcePreview:(id)arg2 dismissalCompletion:(CDUnknownBlockType)arg3;
 - (id)initWithClickPresentation:(id)arg1;
 

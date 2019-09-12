@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (struct OpaqueFigEndpointPicker *)copySystemVideoPicker;
 + (id)outputContextImplForID:(id)arg1 type:(id)arg2;
 + (id)outputContextImplForControllingOutputDeviceGroupWithID:(id)arg1 options:(id)arg2;
++ (id)defaultSharedOutputContextImpl;
 + (id)iTunesAudioContext;
 + (id)sharedSystemScreenContext;
 + (id)sharedSystemAudioContext;

@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)resume;
 @property(readonly, copy) DNDSPairedDevice *pairedDevice; // @dynamic pairedDevice;
+- (id)initWithIDSService:(id)arg1;
 
 @end
 

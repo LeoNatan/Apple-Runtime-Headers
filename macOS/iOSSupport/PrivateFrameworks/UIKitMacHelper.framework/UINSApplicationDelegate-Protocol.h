@@ -15,8 +15,11 @@
 @property(nonatomic) BOOL nextPrintJobShouldExport;
 @property(copy, nonatomic) CDUnknownBlockType appWillTerminateCallback;
 @property(copy, nonatomic) CDUnknownBlockType backgroundTasksWillExpireCallback;
+@property(copy, nonatomic) CDUnknownBlockType backgroundTaskCountCallback;
+@property(copy, nonatomic) CDUnknownBlockType appIsInBackgroundStateCallback;
 @property(copy, nonatomic) CDUnknownBlockType appSupportsMultiwindowCallback;
-@property(copy, nonatomic) CDUnknownBlockType regionBlockingWindowDragCallback;
+@property(copy, nonatomic) CDUnknownBlockType copyRegionBlockingWindowDragCallback;
+- (void)iterateWindowsForDropSessionWithID:(unsigned int)arg1 reply:(void (^)(id <UINSDropSession>))arg2;
 - (void)dismissPrintOrExportPanel;
 - (void)showPrintOrExportPanelWithPrintInfo:(UIPrintInfo *)arg1 andPDFDocumentGenerator:(void (^)(NSDictionary *, void (^)(id <UINSPDFDocument>)))arg2;
 - (void)uiKitWantsToExitProcessWithStatus:(int)arg1;

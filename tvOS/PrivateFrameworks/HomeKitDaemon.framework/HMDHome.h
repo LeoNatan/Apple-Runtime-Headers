@@ -36,7 +36,10 @@
     _Bool _mediaPeerToPeerEnabled;
     NSString *_mediaPassword;
     _Bool _ownerUser;
+    HMFTimer *_homeLocationTimer;
     _Bool _anyBTLEAccessoryReachable;
+    _Bool _watchSkipVersionCheck;
+    _Bool _ownerTrustZoneCapable;
     _Bool _multiUserEnabled;
     _Bool _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     _Bool _remoteAccessIsEnabled;
@@ -235,6 +238,7 @@
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) HMDHomeObjectLookup *lookup; // @synthesize lookup=_lookup;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic, getter=isOwnerTrustZoneCapable) _Bool ownerTrustZoneCapable; // @synthesize ownerTrustZoneCapable=_ownerTrustZoneCapable;
 @property(readonly, nonatomic) NSMutableDictionary *newlyConfiguredAccessories; // @synthesize newlyConfiguredAccessories=_newlyConfiguredAccessories;
 @property(retain, nonatomic) HMDAccessoryNetworkProtectionGroupRegistry *networkProtectionGroupRegistry; // @synthesize networkProtectionGroupRegistry=_networkProtectionGroupRegistry;
 @property(retain, nonatomic) NSArray *mediaSessionStates; // @synthesize mediaSessionStates=_mediaSessionStates;
@@ -242,7 +246,6 @@
 - (void).cxx_destruct;
 @property(readonly) __weak HMDHome *home;
 - (void)_handleRemoteUserClientCloudShareRequest:(id)arg1;
-- (void)_handleImportClipsMessage:(id)arg1;
 - (void)handleXPCConnectionInvalidated:(id)arg1;
 - (void)_removeConnectionFromConnectionsDiscoveringSymptomsForNearbyDevices:(id)arg1;
 - (void)_handleStopDiscoveringSymptomsForNearbyDevicesMessage:(id)arg1;
@@ -295,6 +298,7 @@
 - (_Bool)_handleUpdateNetworkProtectionWithHomeModel:(id)arg1 message:(id)arg2;
 - (_Bool)awdPrimaryReportingDevice;
 - (id)getHomeConfigurationForAWD;
+- (int)keyPathValuesToWhitelistedEnum:(id)arg1;
 - (id)logIdentifier;
 - (id)dumpMediaSessionDescription;
 - (id)dumpCharacteristicNotificationRegistry;
@@ -316,6 +320,7 @@
 - (void)_handleDisableNotificationsTimerFired;
 - (void)_handleCoalescedModifyNotifications;
 - (void)userManagementOperationDidFinish:(id)arg1;
+- (void)residentDeviceManagerDidUpdateResidents:(id)arg1;
 - (void)residentDeviceManager:(id)arg1 didUpdatePrimaryResident:(id)arg2;
 - (void)residentDeviceManager:(id)arg1 didUpdateResidentAvailable:(_Bool)arg2;
 - (void)relayManager:(id)arg1 didUpdateControllerIdentifier:(id)arg2;
@@ -462,6 +467,7 @@
 - (void)__handleCompletedOutgoingInvitation:(id)arg1;
 - (void)__handleCancelledOutgoingInvitation:(id)arg1;
 - (void)__handleAcceptedOutgoingInvitationResponse:(id)arg1 destinationAddress:(id)arg2 publicKey:(id)arg3 username:(id)arg4 presenceAuthStatus:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_sendUserRemovedNotificationForUser:(id)arg1 message:(id)arg2 response:(id)arg3;
 - (void)_handleRemoveUserModel:(id)arg1 message:(id)arg2;
 - (void)_handleAddUserModel:(id)arg1 message:(id)arg2;
 - (void)_updateOutgoingInviationsWithCompleteUserManagementOperation:(id)arg1;
@@ -471,12 +477,14 @@
 - (void)_addOutgoingInvitations:(id)arg1 message:(id)arg2;
 - (void)_handleOutgoingInvitations:(id)arg1;
 - (void)handleCurrentUserPrivilegeChanged:(id)arg1;
+- (_Bool)containsRemovedUser:(id)arg1;
 - (void)_refreshUserDisplayNames;
 - (void)refreshUserDisplayNames;
 - (void)_addUserToContainer:(id)arg1;
 - (void)_removeUserFromContainer:(id)arg1;
 - (void)_removeUser:(id)arg1 message:(id)arg2;
 - (void)_removeOutgoingInvitationForUser:(id)arg1;
+- (void)removeUser:(id)arg1;
 - (void)removeUserWithUserID:(id)arg1;
 - (void)_handleRemoveUser:(id)arg1;
 - (void)_handleAddRelayAccessTokens:(id)arg1;
@@ -508,7 +516,7 @@
 - (void)setOwnerUser:(_Bool)arg1;
 - (id)currentUser;
 - (id)owner;
-- (void)removeUser:(id)arg1;
+- (void)_removeUser:(id)arg1;
 - (void)addUser:(id)arg1;
 @property(readonly, copy) NSArray *usersSupportingPresence;
 - (id)users;
@@ -604,6 +612,7 @@
 - (id)hapAccessoryUniqueIdentifiers;
 - (id)hapAccessoryServerIdentifiers;
 - (unsigned long long)accessoryCountForRoom:(id)arg1;
+- (void)scheduleRemoval;
 - (id)hapAccessoryWithIdentifier:(id)arg1 instanceID:(id)arg2;
 - (id)hapAccessoryWithIdentifier:(id)arg1;
 - (id)accessoryWithIdentifier:(id)arg1;
@@ -666,6 +675,7 @@
 - (void)evaluateShouldRelaunchAndSetRelaunch;
 - (id)getTransactionFromHAPAccessory:(id)arg1 hmdAccessory:(id)arg2 uuid:(id)arg3 bridgeUUID:(id)arg4 configurationAppIdentifier:(id)arg5 objectChangeType:(unsigned long long)arg6;
 - (id)getServiceTransaction:(id)arg1 parentUUID:(id)arg2 changeType:(unsigned long long)arg3;
+- (void)evaluateResidentUpdate;
 - (void)reEvaluateHomeHubState;
 - (id)namesOfServicesWithNewFirmwareAvailableInHome;
 - (_Bool)_hasPairedReachableBTLEAccessories;
@@ -707,6 +717,10 @@
 - (id)triggerOwnedActionSetWithUUID:(id)arg1;
 - (id)actionSetWithUUID:(id)arg1;
 - (id)actionSetWithName:(id)arg1;
+- (void)_evaluateOwnerTrustZoneCapabilityAndNotify;
+- (void)_handleReceivedNonCloudSourcedSharedHomeModel;
+- (_Bool)_isSharedHomeVersionTrustZoneCapable;
+- (_Bool)ownerTrustZoneCapable;
 - (id)zoneWithUUID:(id)arg1;
 - (id)zoneWithName:(id)arg1;
 - (id)mediaProfileWithUUID:(id)arg1;
@@ -760,6 +774,7 @@
 - (void)_setupActiveNetworkRouterAccessory:(id)arg1 replacedAccessories:(id)arg2;
 - (void)setupBackingStore;
 @property(retain, nonatomic) HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
+@property(nonatomic) _Bool watchSkipVersionCheck; // @synthesize watchSkipVersionCheck=_watchSkipVersionCheck;
 - (void)_addUserToIdentityRegistry:(id)arg1;
 - (_Bool)_doesResidentExistInMyCircleWithAddress:(id)arg1 homeManager:(id)arg2;
 - (void)_removeMediaSessionWithIdentifier:(id)arg1;

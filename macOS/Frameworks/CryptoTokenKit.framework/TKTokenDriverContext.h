@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)startRequestWithError:(id *)arg1;
 - (void)setup;
 @property(readonly, nonatomic) double idleTimeout;
+- (void)auditAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 success:(BOOL)arg3;
 - (id)configurationForTokenID:(id)arg1;
 - (id)configurationProxy;
 

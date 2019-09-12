@@ -96,6 +96,7 @@
 - (float)widthForMaxWidth:(float)arg1;
 - (void)_requeryTextProviderAndNotify:(_Bool)arg1;
 - (void)setNumberOfLines:(int)arg1;
+- (void)tritium_forceUpdateColoringViews;
 @property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
 - (_Bool)usesLegibility:(_Bool)arg1;
 - (void)setBounds:(struct CGRect)arg1;

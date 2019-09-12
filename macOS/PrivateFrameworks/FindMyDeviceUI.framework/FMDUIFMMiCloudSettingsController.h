@@ -11,6 +11,7 @@
 
 @interface FMDUIFMMiCloudSettingsController : NSObject
 {
+    BOOL _isRTL;
     BOOL _findMyMacEnabled;
     BOOL _offlineFindingQueried;
     BOOL _offlineFindingEnabled;
@@ -43,6 +44,7 @@
 @property(nonatomic) BOOL offlineFindingEnabled; // @synthesize offlineFindingEnabled=_offlineFindingEnabled;
 @property(nonatomic) BOOL offlineFindingQueried; // @synthesize offlineFindingQueried=_offlineFindingQueried;
 @property(nonatomic) BOOL findMyMacEnabled; // @synthesize findMyMacEnabled=_findMyMacEnabled;
+@property(nonatomic) BOOL isRTL; // @synthesize isRTL=_isRTL;
 @property(retain, nonatomic) NSDictionary *descriptionAttrs; // @synthesize descriptionAttrs=_descriptionAttrs;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *doneButtonBottomConstraint; // @synthesize doneButtonBottomConstraint=_doneButtonBottomConstraint;

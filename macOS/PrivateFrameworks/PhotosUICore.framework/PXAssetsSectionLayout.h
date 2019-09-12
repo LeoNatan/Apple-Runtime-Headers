@@ -123,6 +123,7 @@
 - (id)_displayAssetForBodyItem:(long long)arg1;
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

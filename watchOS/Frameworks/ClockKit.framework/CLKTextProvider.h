@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <ClockKit/CLKComplicationTritiumCopyable-Protocol.h>
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
 @class CLKTextProviderCache, NSMutableArray, NSMutableDictionary, NSString, UIColor;
 
-@interface CLKTextProvider : NSObject <NSSecureCoding, NSCopying>
+@interface CLKTextProvider : NSObject <NSSecureCoding, CLKComplicationTritiumCopyable, NSCopying>
 {
     CLKTextProviderCache *_defaultCache;
     NSMutableDictionary *_cachesByKey;
@@ -22,6 +23,7 @@
     struct NSNumber *_minuteTimerToken;
     struct NSNumber *_30fpsTimerToken;
     _Bool _finalized;
+    _Bool _tritium_isTritiumInactiveCopy;
     _Bool _ignoreUppercaseStyle;
     _Bool _paused;
     _Bool _italicized;
@@ -49,13 +51,16 @@
 @property(nonatomic) _Bool ignoreUppercaseStyle; // @synthesize ignoreUppercaseStyle=_ignoreUppercaseStyle;
 @property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)tritium_requiresCopy;
+- (id)tritium_inactiveCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_update;
 - (void)_maybeStartOrStopUpdates;
@@ -76,7 +81,7 @@
 - (id)_timeFormatByRemovingWhitespaceAroundDesignatorOfTimeFormat:(id)arg1 andRemovingDesignator:(_Bool)arg2 designatorExists:(_Bool *)arg3;
 - (id)_timeFormatByRemovingDesignatorOfTimeFormat:(id)arg1;
 - (id)_timeFormatByRemovingWhitespaceAroundDesignatorOfTimeFormat:(id)arg1 designatorExists:(_Bool *)arg2;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)stopUpdatesForToken:(struct NSNumber *)arg1;
 - (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (id)finalizedCopy;
@@ -90,6 +95,10 @@
 - (void)dealloc;
 - (void)_commonInit;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

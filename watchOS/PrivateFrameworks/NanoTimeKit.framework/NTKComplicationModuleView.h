@@ -29,6 +29,8 @@
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
 - (void)_setTypographicTracking:(float)arg1 andFont:(id)arg2 onAttributedString:(id *)arg3 inRange:(struct _NSRange)arg4;
 - (id)_attributedStringWithText:(id)arg1 typographicTracking:(float)arg2 baseFont:(id)arg3;
 - (id)_attributeEnDashesWithinString:(id)arg1 typographicTracking:(float)arg2 baseFont:(id)arg3;

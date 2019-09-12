@@ -28,6 +28,8 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)tritium_requiresCopy;
+- (void)finalize;
 - (int)_updateFrequency;
 - (void)_validate;
 - (void)_endSession;

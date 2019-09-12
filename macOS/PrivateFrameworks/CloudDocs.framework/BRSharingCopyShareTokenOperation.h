@@ -15,7 +15,6 @@
     CDUnknownBlockType _shareAndBaseTokenCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType shareAndBaseTokenCompletionBlock; // @synthesize shareAndBaseTokenCompletionBlock=_shareAndBaseTokenCompletionBlock;
 @property(copy) CDUnknownBlockType shareTokenCompletionBlock; // @synthesize shareTokenCompletionBlock=_shareTokenCompletionBlock;
 - (void).cxx_destruct;

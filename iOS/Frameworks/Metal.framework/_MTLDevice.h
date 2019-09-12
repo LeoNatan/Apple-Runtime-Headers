@@ -11,7 +11,7 @@
 
 @interface _MTLDevice : NSObject
 {
-    CDStruct_52c93ad5 _limits;
+    CDStruct_886a8514 _limits;
     void *_supportedGPUFamilies;
     MTLCompiler *_compiler;
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -39,7 +39,14 @@
 @property(readonly) NSObject<OS_dispatch_queue> *concurrentQueue; // @synthesize concurrentQueue=_concurrentQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly) unsigned long long globalTraceObjectID; // @synthesize globalTraceObjectID=_globalTraceObjectID;
+@property(readonly) unsigned long long sparseTileSizeInBytes; // @dynamic sparseTileSizeInBytes;
+- (void)convertSparseTileRegions:(const CDStruct_caaed6bc *)arg1 toPixelRegions:(CDStruct_caaed6bc *)arg2 withTileSize:(CDStruct_da2e99ad)arg3 numRegions:(unsigned long long)arg4;
+- (void)convertSparsePixelRegions:(const CDStruct_caaed6bc *)arg1 toTileRegions:(CDStruct_caaed6bc *)arg2 withTileSize:(CDStruct_da2e99ad)arg3 alignmentMode:(unsigned long long)arg4 numRegions:(unsigned long long)arg5;
 @property(readonly, getter=isPlacementHeapSupported) _Bool placementHeapSupported; // @dynamic placementHeapSupported;
+- (_Bool)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
+- (id)newRasterizationRateMapWithScreenSize:(CDStruct_da2e99ad)arg1 layerCount:(unsigned long long)arg2 layers:(const id *)arg3;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount; // @dynamic maxRasterizationRateLayerCount;
 - (unsigned long long)offsetFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)resourceIndexFromIndirectBufferAddress:(unsigned long long)arg1;
 - (unsigned long long)indirectBufferAddressForResourceIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
@@ -131,6 +138,8 @@
 @property(readonly) unsigned long long maxFramebufferStorageBits;
 @property(readonly) unsigned long long maxComputeAttributes;
 @property(readonly) unsigned long long maxTextureBufferWidth;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
 @property(readonly) unsigned long long maxCustomSamplePositions;
 @property(readonly) unsigned long long maxViewportCount;
 @property(readonly) unsigned long long maxIndirectSamplersPerDevice;
@@ -177,7 +186,7 @@
 @property(readonly) unsigned long long maxVertexBuffers;
 @property(readonly) unsigned long long maxVertexAttributes;
 @property(readonly) unsigned long long maxColorAttachments;
-@property(readonly) const CDStruct_52c93ad5 *limits;
+@property(readonly) const CDStruct_886a8514 *limits;
 - (void)initLimits;
 - (_Bool)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;
 - (_Bool)supportsFeatureSet:(unsigned long long)arg1;
@@ -220,6 +229,7 @@
 - (id)_deviceWrapper;
 - (void)_setDeviceWrapper:(id)arg1;
 @property(readonly) NSString *name;
+@property(readonly) unsigned long long sparseTexturesSupport;
 - (id)reportLeaks;
 - (_Bool)isQuadDataSharingSupported;
 @property(readonly, getter=areRasterOrderGroupsSupported) _Bool rasterOrderGroupsSupported;
@@ -251,6 +261,13 @@
 @property(readonly, nonatomic) _Bool supportsSIMDReduction;
 @property(readonly, nonatomic) _Bool supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) _Bool supportsBlackOrWhiteSamplerBorderColors;
+@property(readonly, nonatomic) _Bool supportsSparseTextures;
+@property(readonly, nonatomic) _Bool supportsASTCHDRTextureCompression;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsXR;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats12;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormatsPQ;
+@property(readonly, nonatomic) _Bool supportsYCBCRFormats;
+@property(readonly, nonatomic) _Bool supportsVariableRateRasterization;
 @property(readonly, nonatomic) _Bool supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) _Bool supportsShaderMinLODClamp;
 @property(readonly, nonatomic) _Bool supportsSIMDGroup;
@@ -329,6 +346,7 @@
 @property(readonly, nonatomic) _Bool supportsLimitedYUVFormats;
 @property(readonly, nonatomic) _Bool supportsOpenCLTextureWriteSwizzles;
 @property(readonly, nonatomic) _Bool supportsPlacementHeaps;
+@property(readonly, nonatomic) _Bool supportsVertexAmplification;
 @property(readonly, nonatomic) _Bool supports32bpcMSAATextures;
 @property(readonly, nonatomic) _Bool supportsSamplerAddressModeClampToHalfBorder;
 @property(readonly, nonatomic) _Bool supportsCustomBorderColor;

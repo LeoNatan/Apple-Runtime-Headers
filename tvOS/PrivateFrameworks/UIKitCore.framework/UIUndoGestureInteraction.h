@@ -91,7 +91,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canPaste;
 - (_Bool)canCopy;
 - (_Bool)canCut;
-- (id)responderForOperation:(SEL)arg1;
+- (id)responderForOperation:(SEL)arg1 withSender:(id)arg2;
 - (id)currentResponder;
 - (void)redo:(_Bool)arg1;
 - (void)undo:(_Bool)arg1;

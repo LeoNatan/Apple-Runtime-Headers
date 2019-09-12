@@ -16,6 +16,7 @@
     _Bool _running;
     int _errorCode;
     _Bool _lastStartWasScheduled;
+    _Bool _supportsAOT;
     _Bool _dismissible;
     _Bool _launchable;
     id <CSLSSessionDelegate> _delegate;
@@ -40,6 +41,7 @@
 @property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
+@property(nonatomic) _Bool supportsAOT; // @synthesize supportsAOT=_supportsAOT;
 @property(copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool lastStartWasScheduled; // @synthesize lastStartWasScheduled=_lastStartWasScheduled;
 @property(nonatomic) int type; // @synthesize type=_type;

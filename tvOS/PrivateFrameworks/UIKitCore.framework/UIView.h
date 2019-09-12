@@ -48,6 +48,7 @@
     NSArray *_subviewCache;
     UIViewController *_viewDelegate;
     double _cachedScreenScale;
+    double _layoutEngineWidth;
     struct {
         unsigned int userInteractionDisabled:1;
         unsigned int implementsDrawRect:1;
@@ -758,8 +759,8 @@
 @property(nonatomic, setter=_setShouldArchiveUIAppearanceTags:) _Bool _shouldArchiveUIAppearanceTags; // @dynamic _shouldArchiveUIAppearanceTags;
 - (void)_receiveVisitor:(id)arg1;
 - (id)_alignmentRectOriginCacheCreateIfNecessary:(_Bool)arg1;
-- (double)_firstBaselineOffsetFromTop;
 - (double)_baselineOffsetFromBottom;
+- (double)_firstBaselineOffsetFromTop;
 - (_Bool)_isHasBaselinePropertyChangeable;
 - (_Bool)_hasBaseline;
 - (id)_constraintsArray;
@@ -840,6 +841,10 @@
 - (struct CGRect)_compatibleBounds;
 - (void)reduceWidth:(double)arg1;
 - (_Bool)_isKnownUISearchBarComponentContainer;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
+@property(readonly, nonatomic) unsigned long long _axesForDerivingIntrinsicContentSizeFromLayoutSize;
+@property(readonly, nonatomic) _Bool _layoutHeightDependsOnWidth;
+- (struct CGSize)_layoutSizeThatFits:(struct CGSize)arg1 fixedAxes:(unsigned long long)arg2;
 - (id)textInputView;
 - (_Bool)_canBeReusedInPickerView;
 - (void)drawRect:(struct CGRect)arg1 forViewPrintFormatter:(id)arg2;
@@ -1113,6 +1118,7 @@
 - (struct CGPoint)_nsis_origin;
 - (struct CGRect)_nsis_bounds;
 - (struct CGRect)_nsis_compatibleBoundsInEngine:(id)arg1;
+- (struct CGSize)_nsis_layoutSizeInEngine:(id)arg1;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3 forLayoutGuide:(id)arg4;
 - (void)_nsis_center:(struct CGPoint *)arg1 bounds:(struct CGRect *)arg2 inEngine:(id)arg3;
 - (_Bool)_forceLayoutEngineSolutionInRationalEdges;
@@ -1135,11 +1141,13 @@
 - (void)_setPotentiallyHasDanglyConstraints:(_Bool)arg1;
 - (_Bool)_subviewWantsAutolayout;
 - (void)_didInvalidateIntrinsicContentSize;
+@property(readonly, nonatomic) _Bool _wantsConstraintBasedLayout;
 - (_Bool)_wantsAutolayout;
 - (void)_setWantsAutolayout;
 - (void)_configureAutolayoutFlagsNeedingLayout:(_Bool)arg1;
 - (void)_setSubviewWantsAutolayoutTripWantsAutolayout:(_Bool)arg1;
 - (void)setNeedsUpdateConstraints;
+- (void)_scheduleUpdateConstraintsPassAsEngineHostNeedingLayout:(_Bool)arg1;
 - (void)_setNeedsUpdateConstraints;
 - (void)_setNeedsUpdateConstraintsNeedingLayout:(_Bool)arg1;
 - (void)_informContainerThatSubviewsNeedUpdateConstraints;
@@ -1208,6 +1216,7 @@
 - (void)setExclusiveTouch:(_Bool)arg1;
 - (_Bool)isMultipleTouchEnabled;
 - (void)setMultipleTouchEnabled:(_Bool)arg1;
+- (void)_setFrameWithAlignmentRect:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (_Bool)_needsLayoutOnAnimatedFrameChangeForNewFrame:(struct CGRect)arg1;
 - (struct CGRect)extent;
@@ -1390,7 +1399,7 @@
 - (void)_unsubscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
 - (_Bool)_canHostViewControllerContentScrollView;
-- (_Bool)_hasActingParentViewForGestureRecognizers:(id)arg1;
+- (_Bool)_isEffectivelyDescendantOfViewForGestures:(id)arg1;
 - (id)_actingParentViewForGestureRecognizers;
 - (id)_containingScrollView;
 - (id)_viewIndexPath;
@@ -1405,7 +1414,7 @@
 - (long long)_viewOrderRelativeToView:(id)arg1;
 - (void)_addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (_Bool)_isAlphaHittableAndHasAlphaHittableAncestors;
-@property(retain, nonatomic, getter=_presentationControllerToNotifyOnLayoutSubviews, setter=_setPresentationControllerToNotifyOnLayoutSubviews:) UIPresentationController *_presentationControllerToNotifyOnLayoutSubviews; // @dynamic _presentationControllerToNotifyOnLayoutSubviews;
+@property(nonatomic, getter=_presentationControllerToNotifyOnLayoutSubviews, setter=_setPresentationControllerToNotifyOnLayoutSubviews:) __weak UIPresentationController *_presentationControllerToNotifyOnLayoutSubviews; // @dynamic _presentationControllerToNotifyOnLayoutSubviews;
 @property(nonatomic, getter=_viewDelegate, setter=_setViewDelegate:) UIViewController *viewDelegate;
 @property(nonatomic) _Bool viewTraversalMark;
 @property(nonatomic) _Bool skipsSubviewEnumeration;

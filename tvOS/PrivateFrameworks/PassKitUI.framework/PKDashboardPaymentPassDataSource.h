@@ -19,7 +19,7 @@
 #import <PassKitUI/PKSecureElementObserver-Protocol.h>
 #import <PassKitUI/PKSpendingSummaryFetcherObserver-Protocol.h>
 
-@class NSArray, NSDate, NSDateFormatter, NSError, NSMutableArray, NSMutableSet, NSOrderedSet, NSString, PKAMPEnrollmentManager, PKAccount, PKAccountServiceAccountResolutionController, PKCreditAccountStatement, PKDashboardTransactionFetcher, PKGroup, PKPassGroupView, PKPassPresentationContext, PKPaymentDefaultDataProvider, PKPaymentPass, PKPaymentVerificationController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, PKPeerPaymentWebService, PKPhysicalCardController, PKSecureElement, PKSpendingSummary, PKSpendingSummaryFetcher, PKTransitBalanceModel;
+@class NSArray, NSDate, NSDateFormatter, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString, PKAMPEnrollmentManager, PKAccount, PKAccountServiceAccountResolutionController, PKCreditAccountStatement, PKDashboardTransactionFetcher, PKGroup, PKPassGroupView, PKPassPresentationContext, PKPaymentDefaultDataProvider, PKPaymentPass, PKPaymentVerificationController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, PKPeerPaymentWebService, PKPhysicalCardController, PKSecureElement, PKSpendingSummary, PKSpendingSummaryFetcher, PKTransitBalanceModel;
 @protocol OS_dispatch_source, PKDashboardDataSourceDelegate;
 
 @interface PKDashboardPaymentPassDataSource : NSObject <PKSecureElementObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKForegroundActiveArbiterObserver, PKSpendingSummaryFetcherObserver, PKAccountServiceAccountResolutionControllerDelegate, PKDiscoveryObserver, PKPaymentSetupViewControllerDelegate, PKAccountServiceObserver, PKDashboardPassDataSource, PKDashboardTransactionFetcherDelegate>
@@ -85,6 +85,7 @@
     NSString *_scaleKey;
     _Bool _showAMPEnrollmentMessage;
     PKAMPEnrollmentManager *_AMPEnrollmentManager;
+    NSMutableDictionary *_messageImagesCache;
     NSArray *_weeks;
     NSArray *_months;
 }
@@ -131,6 +132,7 @@
 - (void)reloadAllContent;
 - (void)updateContentIsLoaded;
 - (void)groupViewDidUpdatePassView:(id)arg1;
+- (id)_messageImageWithName:(id)arg1 extension:(id)arg2;
 - (id)_messageForAMPEnrollment;
 - (id)_messageFromEngagementMessage:(id)arg1;
 - (void)_presentPhysicalCardActivation;

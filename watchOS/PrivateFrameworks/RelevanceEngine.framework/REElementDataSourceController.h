@@ -67,6 +67,7 @@
 - (void)removeElements:(id)arg1 fromSection:(unsigned int)arg2;
 - (void)refreshElement:(id)arg1;
 - (void)reloadElement:(id)arg1;
+- (void)hack_setupElementPrivacyContentForElement:(id)arg1;
 - (void)addElements:(id)arg1 toSectionWithIdentifier:(id)arg2;
 - (void)addElements:(id)arg1 toSection:(unsigned int)arg2;
 - (void)invalidateElements;

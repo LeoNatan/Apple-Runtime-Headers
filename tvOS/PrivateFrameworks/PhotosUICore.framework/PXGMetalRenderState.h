@@ -11,10 +11,10 @@
 
 @interface PXGMetalRenderState : NSObject
 {
-    id <MTLDevice> _device;
     // Error parsing type: {?="viewMatrix"{?="columns"[4]}"projectionMatrix"{?="columns"[4]}"viewProjectionMatrix"{?="columns"[4]}"billboardMatrix"{?="columns"[4]}"renderOrigin""screenScale"f}, name: _uniforms
     long long _shaderFlagsByEffectIdCount;
     long long _shaderFlagsByEffectIdCapacity;
+    id <MTLDevice> _device;
     const CDStruct_9d1ebe49 *_spriteInfos;
     const CDStruct_ac168a83 *_originalSpriteGeometries;
     int *_shaderFlagsByEffectId;
@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) int *shaderFlagsByEffectId; // @synthesize shaderFlagsByEffectId=_shaderFlagsByEffectId;
 @property(nonatomic) const CDStruct_ac168a83 *originalSpriteGeometries; // @synthesize originalSpriteGeometries=_originalSpriteGeometries;
 @property(nonatomic) const CDStruct_9d1ebe49 *spriteInfos; // @synthesize spriteInfos=_spriteInfos;
+@property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)prepareForCommit;

@@ -60,6 +60,8 @@ __attribute__((visibility("hidden")))
 - (void)createTeslaUsersWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)createUserWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)writeMachineDefaults:(id)arg1 toApplicationID:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)setPasswordPolicyDictionary:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)passwordPolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setPasswordPolicy:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)removeBuddyUserHome:(CDUnknownBlockType)arg1;
 - (void)terminateBuddySessionTransitioningToUID:(unsigned int)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;

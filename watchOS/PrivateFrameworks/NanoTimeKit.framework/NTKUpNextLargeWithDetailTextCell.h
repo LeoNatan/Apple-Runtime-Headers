@@ -21,6 +21,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)overrideDateDidChange;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)prepareForReuse;

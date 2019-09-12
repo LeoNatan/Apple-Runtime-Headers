@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CALayer, _TVStackedMediaDocumentEntry;
+#import <TVUIKit/_TVStackedMediaEntryView-Protocol.h>
+
+@class CALayer, NSString, _TVStackedMediaDocumentEntry;
 
 __attribute__((visibility("hidden")))
-@interface _TVStackedImageView : UIView
+@interface _TVStackedImageView : UIView <_TVStackedMediaEntryView>
 {
     _TVStackedMediaDocumentEntry *_entry;
     CALayer *_imageLayer;
@@ -23,6 +25,12 @@ __attribute__((visibility("hidden")))
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

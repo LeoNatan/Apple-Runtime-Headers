@@ -42,6 +42,7 @@
 @property(readonly, copy) NSString *diagnosticScoresDescription;
 - (void)prepareForInvisible;
 - (void)prepareForVisible;
+@property(readonly, nonatomic) _Bool isPlaying;
 - (id)initWithDisplayAsset:(id)arg1 mediaProvider:(id)arg2 geometryReference:(id)arg3;
 
 @end

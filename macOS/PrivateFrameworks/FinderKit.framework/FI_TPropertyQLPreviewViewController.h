@@ -14,7 +14,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TPropertyQLPreviewViewController : FI_IPropertyValueController <QLPreviewViewDelegate, FIAliasResolution>
 {
-    TNSRef_87bff19e _multiPreviewView;
+    struct TNSRef<FI_TQLMultiPreviewView, void> _multiPreviewView;
     struct shared_ptr<TQLPreviewViewQTEjectHelper> _ejectHelper;
     struct TNSRef<FI_TQLPreviewViewZoomController, void> _zoomController;
     struct TNSRef<FI_TQLMultiPreviewViewCommonDelegate, void> _previewViewCommonDelegate;

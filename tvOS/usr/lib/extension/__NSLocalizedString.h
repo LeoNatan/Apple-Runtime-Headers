@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)substringToIndex:(unsigned long long)arg1;
 - (id)substringFromIndex:(unsigned long long)arg1;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
+- (unsigned long long)fastestEncoding;
 - (void)dealloc;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;

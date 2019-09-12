@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (float)_segmentAlphaForEditMode:(int)arg1;
 - (float)_handAlphaForEditMode:(int)arg1;
+- (void)setTritiumOnWithProgress:(float)arg1;
 - (void)applyTransitionFromScheme:(id)arg1 toScheme:(id)arg2 fraction:(float)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 

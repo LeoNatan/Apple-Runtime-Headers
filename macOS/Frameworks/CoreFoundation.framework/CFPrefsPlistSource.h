@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: Ac, name: _lastWriteFailed
     // Error parsing type: Ac, name: _observing
     // Error parsing type: Ac, name: _byteCountLimitExceeded
+    // Error parsing type: Ac, name: _directMode
 }
 
 - (void)dealloc;
@@ -47,7 +48,9 @@ __attribute__((visibility("hidden")))
 - (void)handlePossibleOversizedMessage:(int)arg1;
 - (BOOL)handleErrorReply:(id)arg1 retryCount:(int)arg2 retryContinuation:(CDUnknownBlockType)arg3;
 - (void)goReadOnlyAfterTryingToWriteKeys:(const struct __CFString **)arg1 values:(const void **)arg2 count:(long long)arg3;
-- (BOOL)shouldEnableDirectMode;
+- (BOOL)isDirectModeEnabled;
+- (void)transitionIntoDirectModeIfNeededWithRetryBlock:(CDUnknownBlockType)arg1;
+- (BOOL)_shouldEnableDirectMode;
 - (BOOL)isVolatile;
 - (void)goVolatileAfterTryingToWriteKeys:(const struct __CFString **)arg1 values:(const void **)arg2 count:(long long)arg3;
 - (void)writeFailedForKeys:(const struct __CFString **)arg1 values:(const void **)arg2 count:(long long)arg3;

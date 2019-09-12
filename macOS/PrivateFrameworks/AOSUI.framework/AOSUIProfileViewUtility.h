@@ -8,26 +8,37 @@
 
 #import <AOSUI/AOSUIProfileRemoteViewControllerDelegate-Protocol.h>
 
-@class NSRemoteViewController, NSString, NSViewController;
+@class AOSUIProfileViewCacheController, AOSUIProfileViewRootViewController, NSRemoteViewController, NSString, NSViewController;
 
 @interface AOSUIProfileViewUtility : NSObject <AOSUIProfileRemoteViewControllerDelegate>
 {
     CDUnknownBlockType _updateOverlayBlock;
     CDUnknownBlockType _updateOverlayPrefPaneBlock;
     NSRemoteViewController *_remoteViewController;
+    NSViewController *_cacheViewController;
+    AOSUIProfileViewRootViewController *_rootViewController;
+    AOSUIProfileViewCacheController *_cacheController;
 }
 
++ (id)sharedProfileViewUtility;
 + (void)requestProfileViewController:(CDUnknownBlockType)arg1;
+@property(retain) AOSUIProfileViewCacheController *cacheController; // @synthesize cacheController=_cacheController;
+@property(retain) AOSUIProfileViewRootViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
+@property(retain) NSViewController *cacheViewController; // @synthesize cacheViewController=_cacheViewController;
 @property(retain) NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(copy) CDUnknownBlockType updateOverlayPrefPaneBlock; // @synthesize updateOverlayPrefPaneBlock=_updateOverlayPrefPaneBlock;
 @property(copy) CDUnknownBlockType updateOverlayBlock; // @synthesize updateOverlayBlock=_updateOverlayBlock;
 - (void).cxx_destruct;
+- (void)_updateImageCache;
 - (void)profileRemoteViewController_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(id)arg2;
 - (void)profileRemoteViewController_hideOverlay:(BOOL)arg1;
 - (void)updateOverlay:(CDUnknownBlockType)arg1;
 - (void)shouldHideOverlay:(CDUnknownBlockType)arg1;
 - (id)serviceProxy;
 @property(readonly) NSViewController *viewController; // @dynamic viewController;
+- (void)_updateProfileViewFromCache;
+- (void)_requestRemoteProfileViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

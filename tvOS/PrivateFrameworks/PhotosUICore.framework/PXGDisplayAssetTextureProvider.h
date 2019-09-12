@@ -6,16 +6,18 @@
 
 #import <PhotosUICore/PXGTextureProvider.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject, PXGAssetImageCache, PXGThumbnailRequestQueue, PXMediaProvider;
+#import <PhotosUICore/PXGImageRequestPerformer-Protocol.h>
+
+@class NSArray, NSMapTable, NSMutableDictionary, NSMutableIndexSet, NSObject, NSString, PXGAssetImageCache, PXGImageRequestQueue, PXGThumbnailRequestQueue, PXMediaProvider;
 @protocol OS_dispatch_queue, PXGDisplayAssetPixelBufferSourcesProvider;
 
-@interface PXGDisplayAssetTextureProvider : PXGTextureProvider
+@interface PXGDisplayAssetTextureProvider : PXGTextureProvider <PXGImageRequestPerformer>
 {
     NSObject<OS_dispatch_queue> *_videoSessionsRequestQueue;
     NSMapTable *_requestQueue_videoSessionsByAsset;
     NSMutableIndexSet *_requestQueue_textureRequestIDsWithDeliveredVideoFrames;
     PXGThumbnailRequestQueue *_requestQueue_thumbnailRequestQueue;
-    NSMutableArray *_requestQueue_imageRequestQueue;
+    PXGImageRequestQueue *_requestQueue_imageRequestQueue;
     NSMutableDictionary *_requestQueue_deferredImageRequestBlocksByTextureID;
     NSObject<OS_dispatch_queue> *_cancelationQueue;
     NSMutableDictionary *_cancelationQueue_mediaRequestIDByTextureID;
@@ -49,22 +51,28 @@
 - (void)_handleCGImageResult:(struct CGImage *)arg1 orientation:(unsigned int)arg2 info:(id)arg3 shouldCache:(_Bool)arg4 textureRequestID:(int)arg5;
 - (void)_handleResult:(struct CGImage *)arg1 orientation:(long long)arg2 info:(id)arg3 targetSize:(struct CGSize)arg4 screenScale:(double)arg5 mediaRequest:(id)arg6 textureRequestID:(int)arg7;
 - (void)_performDeferredImageRequest:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5 textureRequestID:(int)arg6;
-- (void)_requestImageTexturesForSpriteIndex:(unsigned int)arg1 fetchResult:(id)arg2 observer:(id)arg3 presentationStyles:(unsigned long long)arg4 targetSize:(struct CGSize)arg5 screenScale:(double)arg6 textureRequestID:(int)arg7;
+- (void)performRequestForSpriteIndex:(unsigned int)arg1 textureRequestID:(int)arg2 sharedState:(id)arg3;
+- (void)_processImageRequestsWithAllowedIDs:(id)arg1;
 - (void)_processDeferredImageRequests;
-- (void)_processImageRequests;
 - (void)_processThumbnailRequests;
-- (struct CGImage *)_placeholderImage;
+@property(readonly, nonatomic) struct CGImage *placeholderImage;
 - (void)didFinishRequestingTextures;
 - (void)_requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 observer:(id)arg2 textureRequestIDs:(struct _NSRange)arg3 displayAssetFetchResult:(id)arg4 presentationStyles:(unsigned long long)arg5 targetSize:(struct CGSize)arg6 screenScale:(double)arg7;
 - (_Bool)_imageSizeSatisfiedByThumbnail:(struct CGSize)arg1;
 - (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
-- (void)interactionStateDidChange:(CDStruct_04522d6a)arg1;
+- (void)interactionStateDidChange:(CDStruct_93894d6c)arg1;
 - (void)registerImageDataSpecs:(id)arg1;
 - (id)_requestOptionsForUseCase:(unsigned long long)arg1 forDrawing:(_Bool)arg2;
 - (void)_setupRequestOptions;
 - (void)dealloc;
 - (id)initWithMediaProvider:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

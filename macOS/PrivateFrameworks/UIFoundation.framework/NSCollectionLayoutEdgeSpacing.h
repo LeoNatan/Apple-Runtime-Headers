@@ -26,10 +26,11 @@
 - (id)_spacingForEdge:(unsigned long long)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSCollectionLayoutSpacing *bottom;
-@property(readonly, nonatomic) NSCollectionLayoutSpacing *top;
-@property(readonly, nonatomic) NSCollectionLayoutSpacing *trailing;
-@property(readonly, nonatomic) NSCollectionLayoutSpacing *leading;
+- (BOOL)_hasSpacing;
+@property(readonly) NSCollectionLayoutSpacing *bottom;
+@property(readonly) NSCollectionLayoutSpacing *top;
+@property(readonly) NSCollectionLayoutSpacing *trailing;
+@property(readonly) NSCollectionLayoutSpacing *leading;
 - (double)spacingForEdge:(unsigned long long)arg1;
 - (BOOL)isSpacingFlexibleForEdge:(unsigned long long)arg1;
 - (BOOL)isSpacingFixedForEdge:(unsigned long long)arg1;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     _Bool _textBadgeHasMaterial;
     _Bool _backgroundImageHasChanged;
     _Bool _isHostSetup;
+    _Bool _isFocused;
     UIImage *_backgroundImageForMaterialRendering;
     VUISportsOverlayLayout *_overlayLayout;
     VUISportsScoreboardViewModel *_scoreboardViewModel;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)_viewBackgroundImageNeedsUpdatingWithFrame:(struct CGRect)arg1 currentBackgroundImage:(id)arg2;
 + (id)_sharedDrawQueue;
 + (id)sportsOverlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
+@property(nonatomic) _Bool isFocused; // @synthesize isFocused=_isFocused;
 @property(nonatomic) _Bool isHostSetup; // @synthesize isHostSetup=_isHostSetup;
 @property(nonatomic) __weak UICollectionReusableView *containingCell; // @synthesize containingCell=_containingCell;
 @property(nonatomic) _Bool backgroundImageHasChanged; // @synthesize backgroundImageHasChanged=_backgroundImageHasChanged;
@@ -54,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sampleWithImage:(id)arg1;
+- (void)_toggleLayoutSubviewsSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)_teardownHosting;
 - (void)_setupHosting;
 - (void)_unregisterOverlayView;
@@ -81,6 +84,7 @@ __attribute__((visibility("hidden")))
 - (long long)styleForScorecardView:(id)arg1;
 - (void)backgroundImageSizeDidChange:(struct CGSize)arg1;
 - (void)reset;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)willMoveToWindow:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;

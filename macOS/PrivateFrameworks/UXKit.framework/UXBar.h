@@ -27,12 +27,14 @@
     double _percent;
     UXView<_UXBarItemsContainer> *_nextItemContainer;
     NSView *_globalTrailingView;
+    double _globalTrailingViewWidthMultiplier;
     UXView<_UXBarItemsContainer> *_barItemsContainer;
     struct NSEdgeInsets _decorationInsets;
 }
 
 @property(nonatomic) struct NSEdgeInsets decorationInsets; // @synthesize decorationInsets=_decorationInsets;
 @property(retain, nonatomic) UXView<_UXBarItemsContainer> *barItemsContainer; // @synthesize barItemsContainer=_barItemsContainer;
+@property(nonatomic) double globalTrailingViewWidthMultiplier; // @synthesize globalTrailingViewWidthMultiplier=_globalTrailingViewWidthMultiplier;
 @property(retain, nonatomic) NSView *globalTrailingView; // @synthesize globalTrailingView=_globalTrailingView;
 @property(retain, nonatomic) UXView<_UXBarItemsContainer> *nextItemContainer; // @synthesize nextItemContainer=_nextItemContainer;
 @property(nonatomic) double percent; // @synthesize percent=_percent;

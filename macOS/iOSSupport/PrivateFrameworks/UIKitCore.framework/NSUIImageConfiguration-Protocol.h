@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSObject-Protocol.h>
 
-@protocol NSUITraitCollection;
+@protocol NSUIImageConfiguration, NSUITraitCollection;
 
-@protocol NSUIImageConfiguration <NSObject>
+@protocol NSUIImageConfiguration <NSObject, NSCopying>
 @property(readonly, nonatomic) id <NSUITraitCollection> traitCollection;
+- (id)configurationByApplyingConfiguration:(id <NSUIImageConfiguration>)arg1;
 @end
 

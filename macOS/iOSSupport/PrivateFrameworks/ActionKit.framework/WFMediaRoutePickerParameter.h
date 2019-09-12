@@ -19,6 +19,9 @@
 @property(retain, nonatomic) WFMediaRoutePicker *routePicker; // @synthesize routePicker=_routePicker;
 - (void).cxx_destruct;
 - (void)routePickerDidUpdateAvailableRoutes:(id)arg1;
+- (void)stopUpdatingPossibleValues;
+- (void)startUpdatingPossibleValues;
+- (BOOL)hidesAccessoryIconInEditor;
 - (id)accessoryIconForPossibleState:(id)arg1;
 - (BOOL)parameterStateIsValid:(id)arg1;
 - (id)sortedStatesForAvailableRoutes:(id)arg1;

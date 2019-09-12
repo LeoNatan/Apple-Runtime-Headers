@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <HomeKitDaemon/HMDNetworkRouterLANRule-Protocol.h>
 #import <HomeKitDaemon/HMDTLVProtocol-Protocol.h>
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 
 @class HMDNetworkRouterIPAddress, HMDNetworkRouterLANIdentifierList, HMDNetworkRouterRuleDirection, HMDTLVUnsignedNumberValue, NSString;
 
-@interface HMDNetworkRouterMulticastBridgingRule : NSObject <NSCopying, HMDTLVProtocol>
+@interface HMDNetworkRouterMulticastBridgingRule : NSObject <HMDNetworkRouterLANRule, NSCopying, HMDTLVProtocol>
 {
     HMDNetworkRouterRuleDirection *_direction;
     HMDNetworkRouterLANIdentifierList *_lanIdentifierList;
@@ -33,6 +34,7 @@
 - (_Bool)parseFromData:(id)arg1 error:(id *)arg2;
 - (id)initWithDirection:(id)arg1 lanIdentifierList:(id)arg2 destinationIPAddress:(id)arg3 destinationPort:(id)arg4;
 - (id)init;
+- (void)addTo:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

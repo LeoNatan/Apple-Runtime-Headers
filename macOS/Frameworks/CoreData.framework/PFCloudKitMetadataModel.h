@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (void)addRelationships:(id)arg1 toPropertiesOfEntity:(id)arg2;
 + (void)addAttributes:(id)arg1 toPropertiesOfEntity:(id)arg2;
++ (id)_newMetadataModelV8;
 + (id)_newMetadataModelV7;
 + (id)_newMetadataModelV6;
 + (id)_newMetadataModelV5;
@@ -28,19 +29,9 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)ancillaryEntityOffset;
 + (id)ancillaryModelNamespace;
 + (unsigned long long)ancillaryEntityCount;
-+ (BOOL)addMigrationStatementsToDeleteDuplicateMirroredRelationshipsToContext:(id)arg1 withManagedObjectContext:(id)arg2 andSQLEntity:(id)arg3 error:(id *)arg4;
-+ (BOOL)checkForCorruptedRecordMetadataInStore:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
-+ (BOOL)computeAncillaryEntityPrimaryKeyTableEntriesForStore:(id)arg1 error:(id *)arg2;
-+ (BOOL)cleanUpAfterClientMigrationWithStore:(id)arg1 andContext:(id)arg2 error:(id *)arg3;
 + (BOOL)doesMetadataModel:(id)arg1 matchConnection:(id)arg2 hasOldMetadataTables:(char *)arg3;
-+ (id)identifyModelForStoreWithConnection:(id)arg1 hasOldMetadataTables:(char *)arg2;
-+ (void)applyPurgeStatementsForStore:(id)arg1 usingConnection:(id)arg2;
-+ (void)addMigrationStatementToContext:(id)arg1 forRenamingAttributeNamed:(id)arg2 withOldColumnName:(id)arg3 toAttributeName:(id)arg4 onOldSQLEntity:(id)arg5 andCurrentSQLEntity:(id)arg6;
-+ (void)addDropTableStatementsForOldMetadataTablesToContext:(id)arg1 withAdapter:(id)arg2;
++ (id)identifyModelForStore:(id)arg1 withConnection:(id)arg2 hasOldMetadataTables:(char *)arg3;
 + (BOOL)currentMetadataVersionHashesMatchCachedMetadataVersionHashes:(id)arg1;
-+ (BOOL)migrateBatchOfObjects:(id)arg1 forStore:(id)arg2 inContext:(id)arg3 error:(id *)arg4;
-+ (BOOL)migrateMetadataForObjectsInStore:(id)arg1 toNSCKRecordMetadataUsingContext:(id)arg2 error:(id *)arg3;
-+ (BOOL)checkForRecordMetadataZoneCorruptionInStore:(id)arg1 error:(id *)arg2;
 + (BOOL)checkAndRepairSchemaOfStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)newMetadataModelForFrameworkVersion:(id)arg1;
 + (void)initialize;

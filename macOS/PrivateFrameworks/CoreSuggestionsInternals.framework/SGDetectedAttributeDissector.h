@@ -37,6 +37,7 @@
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (void)handleTextMessageSelfIdentification:(id)arg1 withConversationHistory:(id)arg2;
 - (void)handleTextMessageBirthdayCongratulation:(id)arg1;
+- (void)logBirthdayExtractionMetricForPerson:(id)arg1 forDate:(id)arg2 isFromCongratulation:(unsigned char)arg3;
 - (id)processTextMessageConversation:(id)arg1 threadLength:(unsigned long long)arg2;
 - (id)filterDangerousSigDetections:(id)arg1 onEntity:(id)arg2 inContext:(id)arg3;
 - (id)filterDangerousSigEmailDetections:(id)arg1 onEntity:(id)arg2 inContext:(id)arg3;

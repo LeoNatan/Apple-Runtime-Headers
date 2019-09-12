@@ -39,7 +39,6 @@
 - (id)_lazilyUpdateRoom;
 - (id)_lazilyUpdateDateAdded;
 - (id)_lazilyUpdateFavorite;
-- (id)_lazilyUpdateAccessoryName;
 - (id)_lazilyUpdateName;
 - (id)commitItem;
 - (id)_performValidation;

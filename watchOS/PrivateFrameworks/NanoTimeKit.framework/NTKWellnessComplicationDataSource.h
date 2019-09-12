@@ -6,11 +6,12 @@
 
 #import <NanoTimeKit/NTKComplicationDataSource.h>
 
+#import <NanoTimeKit/NTKTritiumRandomizedComplicationEntryProvider-Protocol.h>
 #import <NanoTimeKit/NTKWellnessTimelineModelSubscriber-Protocol.h>
 
 @class NSString;
 
-@interface NTKWellnessComplicationDataSource : NTKComplicationDataSource <NTKWellnessTimelineModelSubscriber>
+@interface NTKWellnessComplicationDataSource : NTKComplicationDataSource <NTKWellnessTimelineModelSubscriber, NTKTritiumRandomizedComplicationEntryProvider>
 {
     _Bool _historicalDataLoaded;
 }
@@ -18,10 +19,13 @@
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property _Bool historicalDataLoaded; // @synthesize historicalDataLoaded=_historicalDataLoaded;
+- (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
+- (float)tritium_randomizedPossibility;
 - (id)complicationApplicationIdentifier;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)_timelineEntryFromModel:(id)arg1 family:(int)arg2;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
+- (id)privacyTemplate;
 - (id)lockedTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;

@@ -6,9 +6,9 @@
 
 #import <AppStoreKit/JSExport-Protocol.h>
 
-@class JSValue;
+@class JSValue, NSNumber;
 
 @protocol _TtP11AppStoreKitP33_FE74B47DA8609867A7A59CD32F183E8A21JSArcadeObjectExports_ <JSExport>
-- (JSValue *)getRecentlyPlayedGames;
+- (JSValue *)getRecentlyPlayedGamesWithTimeout:(NSNumber *)arg1;
 @end
 

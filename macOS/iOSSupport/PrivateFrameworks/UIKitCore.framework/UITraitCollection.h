@@ -27,6 +27,9 @@
 + (id)_currentTraitCollection;
 + (void)setCurrentTraitCollection:(id)arg1;
 + (id)currentTraitCollection;
++ (id)_currentTraitCollectionWithUnmarkedFallback;
++ (id)_currentTraitCollectionIfExists;
++ (id)_currentTraitCollectionWithFallback:(BOOL)arg1 markFallback:(BOOL)arg2;
 + (id)_backgroundThreadFallbackTraitCollection;
 + (void)_setBackgroundThreadFallbackTraitCollection:(id)arg1;
 + (id)_threadSafeFallbackTraitCollection;

@@ -81,9 +81,9 @@
 - (void)_switchToViewBasedIfNeeded;
 - (BOOL)_supportsViewsForAnimations;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
-- (void)_addToolTipRects;
+- (void)_resetToolTipRects;
+- (void)_invalidateToolTipRects;
 - (void)_invalidateOrComputeNewCursorRectsIfNecessary;
-- (void)_setToolTipRectsDirty:(BOOL)arg1;
 - (void)_windowKeyChanged:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

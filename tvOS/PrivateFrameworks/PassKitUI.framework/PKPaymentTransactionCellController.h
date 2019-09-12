@@ -32,9 +32,13 @@
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (void).cxx_destruct;
 - (id)fileDownloader;
+- (id)_cacheImageFromDownloaderCacheForURL:(id)arg1;
+- (id)_iconCacheKeyForMerchant:(id)arg1 size:(struct CGSize)arg2 imageOut:(id *)arg3;
 - (id)_iconCacheKeyForPaymentTransaction:(id)arg1 size:(struct CGSize)arg2 imageOut:(id *)arg3;
 - (id)_iconForCacheKey:(id)arg1;
 - (void)queue_processNextIconRequest;
+- (id)_iconForTransaction:(id)arg1 merchant:(id)arg2 size:(struct CGSize)arg3 requestType:(unsigned long long)arg4 iconHandler:(CDUnknownBlockType)arg5;
+- (id)iconForMerchant:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned long long)arg3 iconHandler:(CDUnknownBlockType)arg4;
 - (id)iconForTransaction:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned long long)arg3 iconHandler:(CDUnknownBlockType)arg4;
 - (void)_updatePrimaryLabelOnTransactionCell:(id)arg1 withPeerPaymentCounterpartHandle:(id)arg2 contact:(id)arg3;
 - (void)_updateAvatarOnTransactionCell:(id)arg1 withTransaction:(id)arg2 contact:(id)arg3;

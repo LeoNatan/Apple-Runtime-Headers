@@ -8,7 +8,7 @@
 
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSString, NSUUID, RPCloudDaemon, RPCloudSession, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon;
+@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSString, NSUUID, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon;
 @protocol CUReadWriteRequestable, OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPConnection : NSObject <RPAuthenticatable>
@@ -77,10 +77,6 @@
     CUBonjourDevice *_bonjourPeerDevice;
     CUBluetoothScalablePipe *_btPipe;
     id _client;
-    RPCloudDaemon *_cloudDaemon;
-    NSString *_cloudDeviceIdentifier;
-    NSString *_cloudServiceID;
-    RPCloudSession *_cloudSession;
     unsigned long long _controlFlags;
     NSString *_destinationString;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -145,10 +141,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *destinationString; // @synthesize destinationString=_destinationString;
 @property(nonatomic) unsigned long long controlFlags; // @synthesize controlFlags=_controlFlags;
-@property(retain, nonatomic) RPCloudSession *cloudSession; // @synthesize cloudSession=_cloudSession;
-@property(copy, nonatomic) NSString *cloudServiceID; // @synthesize cloudServiceID=_cloudServiceID;
-@property(copy, nonatomic) NSString *cloudDeviceIdentifier; // @synthesize cloudDeviceIdentifier=_cloudDeviceIdentifier;
-@property(retain, nonatomic) RPCloudDaemon *cloudDaemon; // @synthesize cloudDaemon=_cloudDaemon;
 @property(nonatomic) BOOL clientMode; // @synthesize clientMode=_clientMode;
 @property(retain, nonatomic) id client; // @synthesize client=_client;
 @property(retain, nonatomic) CUBluetoothScalablePipe *btPipe; // @synthesize btPipe=_btPipe;
@@ -209,7 +201,6 @@
 - (void)_serverError:(id)arg1;
 - (id)_serverAllowMACAddresses;
 - (void)_serverAcceptTCP;
-- (void)_serverAcceptCloud;
 - (void)_serverAcceptBTPipe;
 - (void)_serverAcceptBLE;
 - (void)_serverAccept;
@@ -231,7 +222,6 @@
 - (BOOL)_clientError:(id)arg1;
 - (void)_clientConnectCompleted:(id)arg1;
 - (void)_clientConnectStartTCP;
-- (void)_clientConnectStartCloud;
 - (void)_clientConnectStartBTPipe;
 - (void)_clientConnectStartBLE;
 - (void)_clientConnectStart;

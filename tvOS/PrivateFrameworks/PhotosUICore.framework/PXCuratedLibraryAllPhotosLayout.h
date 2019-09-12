@@ -49,6 +49,7 @@
     _Bool _performedInitialVisualShift;
     long long _visuallyStableAnchorItem;
     long long _visuallyStableAnchorItemDesiredColumn;
+    _Bool _visuallyStableAnchorAllowedCloseToTop;
     unsigned long long _dataSourceIdentifierOfCachedRangeForSelectedItems;
     struct _NSRange _cachedRangeForSelectedItems;
     _Bool _shouldAnimateTowardsAnchor;
@@ -87,6 +88,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(struct PXGItemsLayout *)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
+- (unsigned long long)desiredPlaceholderStyleInLayout:(id)arg1;
 - (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(struct PXGItemsLayout *)arg1;
 - (CDUnknownBlockType)locationNamesFutureForContentInRect:(struct CGRect)arg1;
 - (CDUnknownBlockType)dateIntervalFutureForContentInRect:(struct CGRect)arg1;
@@ -103,6 +105,7 @@
 - (CDStruct_3fe57b01)_spriteTransformForLayout:(id)arg1;
 - (void)_performAnchorAlignmentVisualShiftWithBaseLayout:(struct PXGItemsLayout *)arg1;
 - (void)_performVisualShiftWithLayout:(struct PXGItemsLayout *)arg1 movingItem:(long long)arg2 toColumn:(long long)arg3;
+- (long long)_estimatedItemsPerScreenForLayout:(struct PXGItemsLayout *)arg1;
 - (void)_updateViewModelIsAnimating;
 - (void)_updatePrefetching;
 - (void)_updatePinchEffect;

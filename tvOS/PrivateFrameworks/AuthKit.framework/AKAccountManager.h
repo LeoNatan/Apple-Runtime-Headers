@@ -74,6 +74,8 @@
 - (_Bool)needsRepairForAccount:(id)arg1;
 - (void)updateSatoriWarmUpTimestampForAccount:(id)arg1;
 - (_Bool)shouldPerformSatoriWarmupVerificationForAccount:(id)arg1;
+- (void)setDeviceTrustRevoked:(_Bool)arg1 forAccount:(id)arg2;
+- (_Bool)deviceTrustRevokedForAccount:(id)arg1;
 - (void)setAuthenticationMode:(unsigned long long)arg1 forAccount:(id)arg2;
 - (unsigned long long)authenticationModeForAccount:(id)arg1;
 - (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;

@@ -6,12 +6,17 @@
 
 #import <OSUpdate/SUOSULaterObserver.h>
 
+@class SUPowerAssertionManager;
+
 @interface SUOSUTonightObserver : SUOSULaterObserver
 {
     BOOL _installTaskSuccessfullyFired;
+    SUPowerAssertionManager *_powerAssertionManager;
 }
 
+@property(retain) SUPowerAssertionManager *powerAssertionManager; // @synthesize powerAssertionManager=_powerAssertionManager;
 @property BOOL installTaskSuccessfullyFired; // @synthesize installTaskSuccessfullyFired=_installTaskSuccessfullyFired;
+- (void).cxx_destruct;
 - (id)_stringFromDate:(id)arg1;
 - (void)_scheduleCancellationTask;
 - (void)_scheduleInstallTask;

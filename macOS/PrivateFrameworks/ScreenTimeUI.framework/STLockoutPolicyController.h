@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)_changePolicyToCurrentWithCategoryIdentifier:(id)arg1;
 @property(readonly) BOOL shouldAllowOneMoreMinute;
 - (void)authenticateRestrictionsPasscode:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly) BOOL needsToSetRestrictionsPasscode;
 - (BOOL)_isRestrictionsPasscodeSet;
 - (BOOL)_shouldRequestMoreTime;
 - (void)_updateAllowedByScreenTime:(BOOL)arg1 applicationCurrentlyLimited:(BOOL)arg2;

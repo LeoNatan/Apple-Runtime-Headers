@@ -75,7 +75,8 @@
 - (id)firstAssetCollectionReferenceInDataSourceForZoomLevel:(long long)arg1 withParent:(id)arg2;
 - (id)assetCollectionReferencesInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollectionReference:(id)arg2 assetCollectionReferenceWithSameKeyAssetAsParent:(id *)arg3;
 - (id)assetCollectionReferencesInDataSourceForZoomLevel:(long long)arg1 withParentAssetCollectionReference:(id)arg2;
-- (void)forceAccurateLastSection;
+- (BOOL)forceAllPhotosAccurateIfNeeded;
+- (void)ensureLastSectionHasContent;
 @property(readonly, nonatomic) PXPhotoKitAssetsDataSourceManager *currentPhotoKitAssetsDataSourceManager;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *currentAssetsDataSourceManager;
 - (id)_photosDataSourceForZoomLevel:(long long)arg1;

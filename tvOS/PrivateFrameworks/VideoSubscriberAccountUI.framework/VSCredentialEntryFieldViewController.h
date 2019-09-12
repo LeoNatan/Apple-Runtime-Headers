@@ -6,44 +6,103 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <VideoSubscriberAccountUI/UISystemInputViewControllerDelegate-Protocol.h>
 #import <VideoSubscriberAccountUI/UITextFieldDelegate-Protocol.h>
 
-@class NSString, UIImage, UILabel, UITextField, VSCredentialEntryField, VSFontCenter;
+@class NSArray, NSLayoutConstraint, NSString, UIButton, UIImage, UILabel, UIStackView, UISystemInputViewController, UITapGestureRecognizer, UITextField, UIView, VSCredentialEntryField, VSFontCenter;
 @protocol VSCredentialEntryFieldViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VSCredentialEntryFieldViewController : UIViewController <UITextFieldDelegate>
+@interface VSCredentialEntryFieldViewController : UIViewController <UITextFieldDelegate, UISystemInputViewControllerDelegate>
 {
+    _Bool _menuOverride;
+    _Bool _recentsOverride;
+    _Bool _rebuildingTextField;
+    _Bool _isShowingRecentsChildViewController;
     id <VSCredentialEntryFieldViewControllerDelegate> _delegate;
     VSCredentialEntryField *_credentialEntryField;
+    NSArray *_buttonModels;
     UIImage *_logo;
     NSString *_headerTitle;
     NSString *_headerMessageText;
     NSString *_footerMessageText;
+    long long _currentKeyboardLayout;
     UITextField *_textField;
+    UIView *_headerView;
     UILabel *_footerLabel;
+    UISystemInputViewController *_inputViewController;
+    UIView *_inputView;
+    NSArray *_inputViewManagedConstraints;
     id _textFieldTextDidChangeObserver;
     VSFontCenter *_fontCenter;
+    UITapGestureRecognizer *_menuRecognizer;
+    UIButton *_continueButton;
+    NSArray *_bottomButtons;
+    NSLayoutConstraint *_continueButtonCenterYConstraint;
+    NSArray *_bottomButtonConstraints;
+    UIView *_container;
+    NSArray *_containerConstraints;
+    UIStackView *_buttonContainer;
+    UIView *_gridLayoutContainer;
+    NSLayoutConstraint *_gridLayoutSpacingConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *gridLayoutSpacingConstraint; // @synthesize gridLayoutSpacingConstraint=_gridLayoutSpacingConstraint;
+@property(retain, nonatomic) UIView *gridLayoutContainer; // @synthesize gridLayoutContainer=_gridLayoutContainer;
+@property(retain, nonatomic) UIStackView *buttonContainer; // @synthesize buttonContainer=_buttonContainer;
+@property(retain, nonatomic) NSArray *containerConstraints; // @synthesize containerConstraints=_containerConstraints;
+@property(retain, nonatomic) UIView *container; // @synthesize container=_container;
+@property(retain, nonatomic) NSArray *bottomButtonConstraints; // @synthesize bottomButtonConstraints=_bottomButtonConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *continueButtonCenterYConstraint; // @synthesize continueButtonCenterYConstraint=_continueButtonCenterYConstraint;
+@property(retain, nonatomic) NSArray *bottomButtons; // @synthesize bottomButtons=_bottomButtons;
+@property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
+@property(nonatomic) _Bool isShowingRecentsChildViewController; // @synthesize isShowingRecentsChildViewController=_isShowingRecentsChildViewController;
+@property(nonatomic) _Bool rebuildingTextField; // @synthesize rebuildingTextField=_rebuildingTextField;
+@property(nonatomic) _Bool recentsOverride; // @synthesize recentsOverride=_recentsOverride;
+@property(nonatomic) _Bool menuOverride; // @synthesize menuOverride=_menuOverride;
+@property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(nonatomic) __weak id textFieldTextDidChangeObserver; // @synthesize textFieldTextDidChangeObserver=_textFieldTextDidChangeObserver;
+@property(retain, nonatomic) NSArray *inputViewManagedConstraints; // @synthesize inputViewManagedConstraints=_inputViewManagedConstraints;
+@property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
+@property(retain, nonatomic) UISystemInputViewController *inputViewController; // @synthesize inputViewController=_inputViewController;
 @property(retain, nonatomic) UILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
+@property(nonatomic) long long currentKeyboardLayout; // @synthesize currentKeyboardLayout=_currentKeyboardLayout;
 @property(copy, nonatomic) NSString *footerMessageText; // @synthesize footerMessageText=_footerMessageText;
 @property(copy, nonatomic) NSString *headerMessageText; // @synthesize headerMessageText=_headerMessageText;
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(retain, nonatomic) UIImage *logo; // @synthesize logo=_logo;
+@property(retain, nonatomic) NSArray *buttonModels; // @synthesize buttonModels=_buttonModels;
 @property(retain, nonatomic) VSCredentialEntryField *credentialEntryField; // @synthesize credentialEntryField=_credentialEntryField;
 @property(nonatomic) __weak id <VSCredentialEntryFieldViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)viewDidAppear:(_Bool)arg1;
-- (void)_workaroundForRadar30931022;
+- (void)systemInputViewControllerDidAcceptRecentInput:(id)arg1;
+- (void)systemInputViewController:(id)arg1 didChangeAccessoryVisibility:(_Bool)arg2;
+- (void)layoutBottomButtonForGridKeyboard;
+- (void)layoutTopButtonForGridKeyboard;
+- (void)layoutViewForGridKeyboard;
+- (void)layoutViewForTouchKeyboard;
+- (void)viewDidLayoutSubviews;
+- (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;
+- (void)bottomButtonPressed:(id)arg1;
+- (void)menuPressed:(id)arg1;
+- (void)continueButtonPressed:(id)arg1;
+- (void)replaceButtonConstraints:(id)arg1;
+- (void)didSelectRecentAccount;
+- (void)showViewElementsAfterRecents;
+- (void)rebuildUIAfterRecents;
+- (void)addSystemInputViewController;
+- (void)replaceInputViewManagedConstraintsWith:(id)arg1;
+- (void)buildAndSetGridLayoutContainer;
 - (void)_configureTextField;
+- (_Bool)_enableAutomaticKeyboardPressDone;
+- (_Bool)_disableAutomaticKeyboardUI;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

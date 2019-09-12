@@ -63,6 +63,7 @@
 @property(readonly, nonatomic) unsigned long long pixelWidth;
 @property(readonly, nonatomic) long long playbackStyle;
 @property(readonly, nonatomic) long long playbackVariation;
+@property(readonly, nonatomic) unsigned long long reframeVariation;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier;
 @property(readonly, nonatomic) NSString *uuid;

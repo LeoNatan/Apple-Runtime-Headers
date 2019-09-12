@@ -15,10 +15,11 @@
 {
 }
 
-- (void)persistenceDidAddMessages:(id)arg1;
+- (void)persistenceDidAddMessages:(id)arg1 generationWindow:(id)arg2;
 - (id)transferMessages:(id)arg1 transferType:(long long)arg2 destinationMailboxURL:(id)arg3 userInitiated:(BOOL)arg4;
 - (id)_gmailStoreForMailboxURL:(id)arg1;
-- (id)iterateMessagesInMailboxURL:(id)arg1 excludingMessages:(id)arg2 batchSize:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)messageWasAppended:(id)arg1;
+- (id)iterateMessagesInMailboxURLs:(id)arg1 excludingMessages:(id)arg2 batchSize:(unsigned long long)arg3 returnMessagesForFlagChange:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)messagesForRemoteIDs:(id)arg1 mailboxURL:(id)arg2;
 - (id)addLabels:(id)arg1 removeLabels:(id)arg2 toMessagesInDatabase:(id)arg3;
 - (id)applyFlagChange:(id)arg1 toMessagesInDatabase:(id)arg2;

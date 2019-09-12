@@ -99,6 +99,7 @@
 @property(readonly, copy, nonatomic) NSArray *genreNames;
 @property(readonly, nonatomic) BOOL hasSubscriptionOffer;
 @property(readonly, nonatomic) BOOL hasSocialPosts;
+@property(readonly, nonatomic) BOOL hasTimeSyncedLyrics;
 @property(readonly, nonatomic) BOOL hasLyrics;
 @property(readonly, nonatomic) BOOL hasArtistBiography;
 @property(readonly, copy, nonatomic) NSDictionary *effectiveStorePlatformDictionary;

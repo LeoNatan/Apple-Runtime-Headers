@@ -46,6 +46,7 @@
 - (void)trackRenderPassDescriptor:(id)arg1;
 - (void)_trackRenderPassAttachmentDescriptor:(id)arg1;
 - (void)_trackTexture:(id)arg1;
+- (id)resourceStateCommandEncoder;
 - (id)blitCommandEncoder;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;

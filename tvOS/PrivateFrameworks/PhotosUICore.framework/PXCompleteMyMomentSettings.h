@@ -61,6 +61,7 @@
     _Bool _shouldBakeInIfTimelineTrimmed;
     _Bool _shouldBakeInIfPortraitDepthEffectEnabled;
     _Bool _shouldBakeInIfContainsPenultimateResources;
+    _Bool _shouldIncludeSpatialOvercaptureResources;
     long long _cmmShareSheetBehavior;
     long long _shareSheetLinkAssetCountThreshold;
     unsigned long long _shareSheetLinkTotalFileSizeThresholdMB;
@@ -84,6 +85,7 @@
 + (id)sharedInstance;
 + (id)transientProperties;
 + (id)settingsControllerModule;
+@property(nonatomic) _Bool shouldIncludeSpatialOvercaptureResources; // @synthesize shouldIncludeSpatialOvercaptureResources=_shouldIncludeSpatialOvercaptureResources;
 @property(nonatomic) _Bool shouldBakeInIfContainsPenultimateResources; // @synthesize shouldBakeInIfContainsPenultimateResources=_shouldBakeInIfContainsPenultimateResources;
 @property(nonatomic) _Bool shouldBakeInIfPortraitDepthEffectEnabled; // @synthesize shouldBakeInIfPortraitDepthEffectEnabled=_shouldBakeInIfPortraitDepthEffectEnabled;
 @property(nonatomic) _Bool shouldBakeInIfTimelineTrimmed; // @synthesize shouldBakeInIfTimelineTrimmed=_shouldBakeInIfTimelineTrimmed;

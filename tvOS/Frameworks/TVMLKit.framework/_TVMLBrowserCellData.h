@@ -11,10 +11,12 @@
 @interface _TVMLBrowserCellData : NSObject
 {
     _Bool _contentAvailable;
+    _Bool _centered;
     UICollectionViewCell *_cell;
     _TVAppDocumentRequestController *_documentRequestController;
 }
 
+@property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(nonatomic) _Bool contentAvailable; // @synthesize contentAvailable=_contentAvailable;
 @property(retain, nonatomic) _TVAppDocumentRequestController *documentRequestController; // @synthesize documentRequestController=_documentRequestController;
 @property(readonly, nonatomic) __weak UICollectionViewCell *cell; // @synthesize cell=_cell;

@@ -12,7 +12,6 @@
 
 + (void)compositionController:(id)arg1 setEffectFilterName:(id)arg2 version:(long long)arg3;
 + (struct CGSize)synchronousInputSizeForCompositionController:(id)arg1;
-+ (id)synchronousImagePropertiesForCompositionController:(id)arg1 priorityLevel:(long long)arg2;
 + (BOOL)compositionController:(id)arg1 isGeometryEqualToCompositionController:(id)arg2;
 + (BOOL)compositionController:(id)arg1 isDepthIntensityEqualToCompositionController:(id)arg2;
 + (BOOL)compositionController:(id)arg1 isPortraitIntensityEqualToCompositionController:(id)arg2;

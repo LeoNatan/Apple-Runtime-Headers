@@ -9,6 +9,12 @@
 @class UIColor;
 
 @protocol NTKVictoryAnalogBackgroundColorPalette <NSObject>
+@property(readonly, nonatomic) float smallDotsColorBrightness;
+@property(readonly, nonatomic) float smallNumbersColorBrightness;
+@property(readonly, nonatomic) UIColor *largeNumbersTritiumOutlineColor;
+@property(readonly, nonatomic) UIColor *largeNumbersTritiumColor;
+@property(readonly, nonatomic) UIColor *smallNumbersTritiumOutlineColor;
+@property(readonly, nonatomic) UIColor *smallNumbersTritiumColor;
 @property(readonly, nonatomic) _Bool hasWhiteElements;
 @property(readonly, nonatomic) UIColor *analogDotColor;
 @property(readonly, nonatomic) UIColor *logoColor;

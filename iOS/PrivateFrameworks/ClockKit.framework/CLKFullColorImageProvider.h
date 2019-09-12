@@ -17,6 +17,7 @@
     _Bool _applyScalingAndCircularMasking;
     _Bool _finalized;
     _Bool _prefersFilterOverTransition;
+    _Bool _tritium_inactiveFullColorImageProvider;
     UIImage *_image;
     CLKImageProvider *_tintedImageProvider;
     NSString *_accessibilityLabel;
@@ -36,6 +37,7 @@
 @property(nonatomic) long long monochromeFilterType; // @synthesize monochromeFilterType=_monochromeFilterType;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, nonatomic, getter=tritium_isTritiumInactiveFullColorImageProvider) _Bool tritium_inactiveFullColorImageProvider; // @synthesize tritium_inactiveFullColorImageProvider=_tritium_inactiveFullColorImageProvider;
 @property(readonly, nonatomic) Class ImageViewClass; // @synthesize ImageViewClass=_ImageViewClass;
 @property(nonatomic) _Bool prefersFilterOverTransition; // @synthesize prefersFilterOverTransition=_prefersFilterOverTransition;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;

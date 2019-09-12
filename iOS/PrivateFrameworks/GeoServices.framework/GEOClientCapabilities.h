@@ -20,6 +20,7 @@
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
     NSString *_deviceCountryCode;
+    NSString *_deviceSku;
     NSMutableArray *_displayLanguages;
     NSString *_displayRegion;
     GEOFormattedStringClientCapabilities *_formattedStringClientCapabilities;
@@ -70,6 +71,7 @@
         unsigned int read_appMajorVersion:1;
         unsigned int read_appMinorVersion:1;
         unsigned int read_deviceCountryCode:1;
+        unsigned int read_deviceSku:1;
         unsigned int read_displayLanguages:1;
         unsigned int read_displayRegion:1;
         unsigned int read_formattedStringClientCapabilities:1;
@@ -83,6 +85,7 @@
         unsigned int wrote_appMajorVersion:1;
         unsigned int wrote_appMinorVersion:1;
         unsigned int wrote_deviceCountryCode:1;
+        unsigned int wrote_deviceSku:1;
         unsigned int wrote_displayLanguages:1;
         unsigned int wrote_displayRegion:1;
         unsigned int wrote_formattedStringClientCapabilities:1;
@@ -126,6 +129,9 @@
 - (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *deviceSku;
+@property(readonly, nonatomic) _Bool hasDeviceSku;
+- (void)_readDeviceSku;
 @property(retain, nonatomic) GEOLocalizationCapabilities *localizationCapabilities;
 @property(readonly, nonatomic) _Bool hasLocalizationCapabilities;
 - (void)_readLocalizationCapabilities;

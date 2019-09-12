@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     _Bool _isTornDown;
 }
 
-+ (id)propertyValueControllerWithValueExtractor:(id)arg1;
 + (id)propertyValueController;
 @property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(nonatomic) _Bool shouldBeEnabled; // @synthesize shouldBeEnabled=_shouldBeEnabled;
@@ -38,11 +37,13 @@ __attribute__((visibility("hidden")))
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
 - (void)updateWithNodes:(const struct TFENodeVector *)arg1;
 @property(retain, nonatomic) FI_IPropertyValueExtractor *valueExtractor; // @dynamic valueExtractor;
+- (void)setNeedsUpdateForPropertyGetter:(const function_15fcc248 *)arg1;
+- (void)setIsApplicableToNodesGetter:(const function_ce22cfb2 *)arg1;
+- (void)setValueFromNodesExtractor:(const function_24308192 *)arg1;
 @property(retain, nonatomic) NSObject *value; // @dynamic value;
 - (id)defaultValue;
 - (void)aboutToTearDown;
 - (void)initCommon;
-- (id)initWithValueExtractor:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

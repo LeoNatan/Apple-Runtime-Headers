@@ -8,6 +8,8 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class GEOLatLng;
+
 @interface GEOLogMsgEventPredExTrainingData : PBCodable <NSCopying>
 {
     double _chanceOfPrecipitation;
@@ -22,6 +24,7 @@
     double _temperature;
     double _timeOfDay;
     double _timeSinceBackgrounded;
+    GEOLatLng *_userLocation;
     int _actualTransportMode;
     int _distanceFromHereToHome;
     int _distanceFromHereToOrigin;
@@ -67,6 +70,7 @@
 }
 
 + (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -77,6 +81,8 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLng *userLocation;
+@property(readonly, nonatomic) BOOL hasUserLocation;
 - (int)StringAsDistanceFromHereToParkedCar:(id)arg1;
 - (id)distanceFromHereToParkedCarAsString:(int)arg1;
 @property(nonatomic) BOOL hasDistanceFromHereToParkedCar;

@@ -70,6 +70,7 @@
 - (void)scrollToItem:(id)arg1 animated:(BOOL)arg2;
 - (void)highlightItemAnimated:(id)arg1 duration:(double)arg2;
 - (void)highlightItemAnimated:(id)arg1;
+- (void)itemManagerDidFinishUpdate:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateItemModules:(id)arg2;
 - (void)itemManager:(id)arg1 didChangeSourceItem:(id)arg2;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
@@ -112,6 +113,7 @@
 @property(readonly, copy) NSString *description;
 - (id)textFieldForVisibleItem:(id)arg1;
 - (id)moduleControllerForItem:(id)arg1;
+- (BOOL)shouldResizeHeaderWhenLayoutSubviews;
 - (id)childViewControllersToPreload;
 - (id)itemTableFooterView;
 - (id)itemTableHeaderView;
@@ -136,6 +138,7 @@
 - (BOOL)alwaysUseDeltaTableViewUpdatesAfterViewHasAppeared;
 - (BOOL)bypassInitialItemUpdateReload;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

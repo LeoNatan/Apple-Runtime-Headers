@@ -15,11 +15,13 @@ __attribute__((visibility("hidden")))
     double _response;
     double _trackingDampingRatio;
     double _trackingResponse;
+    _Bool _primed;
     _Bool _tracking;
 }
 
 + (void)_withoutAnimation:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool tracking; // @synthesize tracking=_tracking;
+@property(nonatomic) _Bool primed; // @synthesize primed=_primed;
 - (double)projectForTime:(double)arg1;
 - (double)projectForDeceleration:(double)arg1;
 - (CDStruct_aa45ca86)parametersForTransitionFromState:(int)arg1 toState:(int)arg2;

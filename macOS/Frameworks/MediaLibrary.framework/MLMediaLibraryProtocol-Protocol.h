@@ -6,12 +6,12 @@
 
 #import <MediaLibrary/NSObject-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSString;
+@class NSData, NSDictionary, NSString;
 
 @protocol MLMediaLibraryProtocol <NSObject>
 - (void)updateMediaSources:(NSDictionary *)arg1;
-- (void)setAttributes:(NSMutableDictionary *)arg1 forMediaObject:(NSString *)arg2 inMediaSource:(NSString *)arg3;
-- (void)setAttributes:(NSMutableDictionary *)arg1 forMediaGroup:(NSString *)arg2 inMediaSource:(NSString *)arg3;
-- (void)rootGroup:(NSMutableDictionary *)arg1 forMediaSource:(NSString *)arg2;
+- (void)setAttributesData:(NSData *)arg1 forMediaObject:(NSString *)arg2 inMediaSource:(NSString *)arg3;
+- (void)setAttributesData:(NSData *)arg1 forMediaGroup:(NSString *)arg2 inMediaSource:(NSString *)arg3;
+- (void)rootGroupData:(NSData *)arg1 forMediaSource:(NSString *)arg2;
 @end
 

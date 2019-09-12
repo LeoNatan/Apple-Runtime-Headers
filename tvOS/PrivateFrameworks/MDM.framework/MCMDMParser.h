@@ -79,6 +79,7 @@
 - (id)_performSetAppAttributes:(id)arg1 outAdditionalResponseKeys:(id *)arg2;
 - (id)_performSetAppConfig:(id)arg1 outAdditionalResponseKeys:(id *)arg2;
 - (id)_handleSetAppManagementInfoRequest:(id)arg1 outAdditionalResponseKeys:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (_Bool)_isManagedAppFromManagementInformation:(id)arg1;
 - (_Bool)_isManagedApp:(id)arg1;
 - (id)_malformedRequestError;
 - (id)_performSetPersonalHotspot:(id)arg1;

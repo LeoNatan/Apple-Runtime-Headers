@@ -59,6 +59,9 @@
 - (BOOL)_displayImageAsLayered:(id)arg1;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
 - (BOOL)_resolveImageForTrait:(id)arg1 previouslyDisplayedImage:(id)arg2;
+- (id)_resolvedImageFromImage:(id)arg1;
+- (id)_resolvedImageFromImage:(id)arg1 forTrait:(id)arg2;
+- (id)_imageResolvingTraitCollectionForTraitCollection:(id)arg1 layoutDirection:(long long)arg2;
 - (BOOL)_resolveImageForTrait:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_currentHighlightedImage;

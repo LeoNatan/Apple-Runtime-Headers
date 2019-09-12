@@ -36,6 +36,7 @@
 @property(readonly, nonatomic, getter=shouldIgnoreCoverGesture) _Bool ignoreCoverGesture;
 @property(readonly, nonatomic, getter=shouldEnableCoverGesture) _Bool enableCoverGesture;
 @property(readonly, nonatomic, getter=shouldTouchlock) _Bool touchlock;
+@property(readonly, nonatomic, getter=willPreventAOT) _Bool preventAOT;
 @property(readonly, nonatomic, getter=shouldBlankScreen) _Bool blankScreen;
 @property(readonly, nonatomic, getter=willPreventUnblank) _Bool preventUnblank;
 @property(readonly, nonatomic) _Bool clearsUserHasInteracted;

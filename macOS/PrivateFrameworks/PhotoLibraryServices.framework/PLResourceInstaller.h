@@ -27,7 +27,9 @@
 + (id)generateAdjustedFullSizeRenderResourceForFilePath:(id)arg1 requireFileToBePresent:(BOOL)arg2 basedOnFullSizeWidth:(long long)arg3 andHeight:(long long)arg4 context:(id)arg5;
 + (id)onDemand_installOriginalAdjustmentResourceIfPresentForAsset:(id)arg1;
 + (id)onDemand_installAdjustedFullSizeVideoComplementResourceIfPresentForAsset:(id)arg1;
++ (id)onDemand_installOriginalVideoComplementResourceIfPresentForAsset:(id)arg1;
 + (void)onDemand_installAdjustedFullSizeRenderResourceAtFilePath:(id)arg1 forAsset:(id)arg2;
++ (id)onDemand_installPrimaryMovieResourceWithRecipe:(id)arg1 version:(unsigned int)arg2 forAsset:(id)arg3;
 + (id)onDemand_installPrimaryImageResourceWithRecipe:(id)arg1 version:(unsigned int)arg2 forAsset:(id)arg3;
 + (id)_predicateForUnrecoverableResources;
 + (void)_applyImageIOMetadataToExternalResource:(id)arg1 fromFileURL:(id)arg2 assumedWidth:(long long)arg3 assumedHeight:(long long)arg4 recipe:(id)arg5 assetKind:(short)arg6 context:(id)arg7;
@@ -52,7 +54,7 @@
 + (BOOL)_isPenultimateVersionFromCPLType:(unsigned long long)arg1;
 + (unsigned int)recipeIDFromCPLResourceType:(unsigned long long)arg1 assetType:(short)arg2 fromAdjustedSet:(BOOL)arg3;
 + (unsigned long long)nonDerivativeCPLTypeFromResourceType:(unsigned int)arg1 version:(unsigned int)arg2 uniformTypeIdentifier:(id)arg3;
-+ (unsigned long long)derivativeCPLTypeFromRecipeID:(unsigned int)arg1;
++ (unsigned long long)derivativeCPLTypeFromRecipeID:(unsigned int)arg1 version:(unsigned int)arg2;
 
 @end
 

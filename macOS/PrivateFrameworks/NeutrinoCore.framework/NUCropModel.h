@@ -18,8 +18,8 @@
     double _fovRadians;
     BOOL _isAutoCrop;
     unsigned long long _hitVertexID;
-    struct CGSize _masterImageSize;
     CDStruct_d58201db _aspectRatio;
+    struct CGRect _masterImageRect;
 }
 
 + (double)defaultFocalLength;
@@ -28,7 +28,7 @@
 @property(nonatomic) BOOL isAutoCrop; // @synthesize isAutoCrop=_isAutoCrop;
 @property(readonly) unsigned long long hitVertexID; // @synthesize hitVertexID=_hitVertexID;
 @property(nonatomic) CDStruct_912cb5d2 aspectRatio; // @synthesize aspectRatio=_aspectRatio;
-@property(readonly, nonatomic) struct CGSize masterImageSize; // @synthesize masterImageSize=_masterImageSize;
+@property(readonly, nonatomic) struct CGRect masterImageRect; // @synthesize masterImageRect=_masterImageRect;
 @property(readonly, nonatomic) double rollDegreeUI;
 @property(readonly, nonatomic) double yawDegreeUI;
 @property(readonly, nonatomic) double pitchDegreeUI;
@@ -85,9 +85,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToCropModel:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly, nonatomic) struct CGRect masterImageRect;
+@property(readonly, nonatomic) struct CGSize masterImageSize;
 @property(readonly) BOOL hasCrop;
 - (void)reset;
+- (id)initWithMasterImageRect:(struct CGRect)arg1;
 - (id)initWithMasterImageSize:(struct CGSize)arg1;
 - (id)init;
 

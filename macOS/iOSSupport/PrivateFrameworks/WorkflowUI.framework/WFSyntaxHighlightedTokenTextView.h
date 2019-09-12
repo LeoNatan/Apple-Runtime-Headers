@@ -26,6 +26,7 @@
 - (void)textUpdated;
 - (void)setVariableString:(id)arg1;
 - (void)setAttributedText:(id)arg1;
+- (unsigned long long)currentSyntaxHighlightingAppearance;
 - (id)init;
 
 // Remaining properties

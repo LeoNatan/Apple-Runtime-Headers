@@ -6,8 +6,10 @@
 
 #import <AVKitMacHelper/NSObject-Protocol.h>
 
+@class AVOutputContext;
+
 @protocol AVRoutePickerViewMacHelper <NSObject>
 @property(nonatomic) struct CGRect normalizedRoutePickerViewRectInWindow;
-- (void)showOrHideRoutePickerPopoverFromSourceUIWindow:(id)arg1;
+- (void)showOrHideRoutePickerPopoverFromSourceUIWindow:(id)arg1 pickingOnOutputContext:(AVOutputContext *)arg2;
 @end
 

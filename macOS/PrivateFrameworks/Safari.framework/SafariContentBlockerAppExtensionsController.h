@@ -27,6 +27,7 @@
 - (BOOL)allowUnsignedContentBlockers;
 - (id)developerIdentifierForContentBlocker:(id)arg1;
 - (id)contentBlockersFromContentBlockersState:(id)arg1;
+- (void)replaceLegacyExtensionsWithContentBlocker:(id)arg1 userHasChangedEnabledState:(BOOL)arg2;
 - (id)contentBlockersNotBlockedForAnyReason:(id)arg1;
 - (void)contentBlockerEnabledStateDidChange:(id)arg1;
 - (void)contentBlockersWereRemoved:(id)arg1;

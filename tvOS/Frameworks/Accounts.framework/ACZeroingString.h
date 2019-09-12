@@ -12,6 +12,7 @@
     unsigned long long _length;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (_Bool)supportsSecureCoding;
 + (id)_emptyString;
 @property(readonly) unsigned short *characters; // @synthesize characters=_characters;
@@ -23,6 +24,7 @@
 - (Class)classForCoder;
 - (id)replacementObjectForCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (Class)classForKeyedArchiver;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

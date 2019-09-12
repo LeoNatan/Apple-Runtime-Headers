@@ -16,5 +16,8 @@
 @property(retain, nonatomic) id <HBUITopShelfParadeItem> paradeItem;
 @property(nonatomic) __weak id <HBUITopShelfParadeBackgroundViewControllerDelegate> delegate;
 - (void)prepareForReuse;
+
+@optional
+@property(nonatomic) _Bool preventsDisplaySleepDuringPreviewVideoPlayback;
 @end
 

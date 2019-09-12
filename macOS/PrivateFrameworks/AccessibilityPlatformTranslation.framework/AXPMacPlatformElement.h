@@ -35,6 +35,8 @@
 - (void)dealloc;
 - (BOOL)accessibilityShouldUseUniqueId;
 - (void)accessibilityPerformAction:(id)arg1;
+- (void)performScrollRightByPageAction;
+- (void)performScrollLeftByPageAction;
 - (void)performScrollUpByPageAction;
 - (void)performScrollDownByPageAction;
 - (void)performDecrementAction;

@@ -28,6 +28,7 @@
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2;
 - (void)setBordered:(BOOL)arg1;
 - (void)_updateTitleAndLabelConfiguration;
+- (void)_updateImageScale;
 - (void)setTitle:(id)arg1;
 - (void)setImage:(id)arg1;
 - (id)_item;

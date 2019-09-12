@@ -23,6 +23,7 @@
     long long _type;
     NSMapTable *_thumbnailsBySize;
     _UIDocumentPickerContainerModel *_parentModel;
+    NSString *_pickabilityReason;
 }
 
 + (void)clearLRUThumbnailCache;
@@ -33,6 +34,7 @@
 + (id)_blockingIconForDocumentProxy:(id)arg1 withSize:(struct CGSize)arg2;
 + (id)_blockingIconForURL:(id)arg1 withSize:(struct CGSize)arg2;
 + (id)_blockingThumbnailForItem:(id)arg1 documentProxy:(id)arg2 withSize:(struct CGSize)arg3 scale:(double)arg4 wantsBorder:(_Bool *)arg5 generatedThumbnail:(_Bool *)arg6;
+@property(copy, nonatomic) NSString *pickabilityReason; // @synthesize pickabilityReason=_pickabilityReason;
 @property(nonatomic) __weak _UIDocumentPickerContainerModel *parentModel; // @synthesize parentModel=_parentModel;
 @property(retain, nonatomic) NSMapTable *thumbnailsBySize; // @synthesize thumbnailsBySize=_thumbnailsBySize;
 @property(nonatomic) _Bool pickable; // @synthesize pickable=_pickable;

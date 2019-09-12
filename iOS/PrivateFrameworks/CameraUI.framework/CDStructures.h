@@ -137,9 +137,17 @@ struct statfs {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    double value;
-    double strength;
-} CDStruct_8bc0f2ec;
+    double r;
+    double g;
+    double b;
+    double a;
+} CDStruct_e17a5956;
+
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+} CDStruct_869f9c67;
 
 typedef struct {
     int width;
@@ -161,6 +169,17 @@ typedef struct {
 } CDStruct_8ae1ff66;
 
 typedef struct {
+    long long tapBehavior;
+    long long longPressBehavior;
+    long long dragRightBehavior;
+    long long dragLeftBehavior;
+    _Bool allowsLockButton;
+    long long ringStyle;
+    long long stopColor;
+    long long idleColor;
+} CDStruct_41c1ae05;
+
+typedef struct {
     double _field1;
     double _field2;
     struct CGPoint _field3;
@@ -170,6 +189,20 @@ typedef struct {
     double _field1;
     struct CGPoint _field2;
 } CDStruct_f31c9284;
+
+typedef struct {
+    struct CGPoint point;
+    double time;
+    _Bool isWithinShutterButton;
+    _Bool isWithinLockButton;
+} CDStruct_299b3d1e;
+
+typedef struct {
+    struct CGPoint position;
+    double size;
+    CDStruct_e17a5956 color;
+    double power;
+} CDStruct_361c14a1;
 
 typedef struct {
     struct CGPoint _field1;
@@ -182,4 +215,15 @@ typedef struct {
     struct CGPoint _field2;
     struct CGAffineTransform _field3;
 } CDStruct_d54ccef3;
+
+// Ambiguous groups
+typedef struct {
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
+
+typedef struct {
+    double minimumDuration;
+    double maximumDuration;
+} CDStruct_c534d91b;
 

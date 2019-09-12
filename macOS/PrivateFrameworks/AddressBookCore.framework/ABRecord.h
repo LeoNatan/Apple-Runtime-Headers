@@ -44,6 +44,9 @@
 + (id)propertyTypes;
 + (id)propertyTypesWithAddressBook:(id)arg1;
 + (id)propertyTypesWithAddressBook:(id)arg1 acquireLock:(BOOL)arg2;
++ (id)cardDAVProperties;
++ (id)typeOfCardDAVProperty:(id)arg1;
++ (id)typeOfBuiltInProperty:(id)arg1;
 + (id)builtInProperties;
 + (id)makeUniqueId;
 + (id)_table;

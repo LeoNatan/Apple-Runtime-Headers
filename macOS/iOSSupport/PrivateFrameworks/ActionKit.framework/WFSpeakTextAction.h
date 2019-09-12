@@ -25,7 +25,6 @@
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 utterance:(id)arg3;
 - (void)speakTextUsingSynthesizer:(id)arg1 voice:(id)arg2 rate:(float)arg3 pitch:(float)arg4 waitUntilFinished:(BOOL)arg5;
 - (void)speakTextUsingVoiceOver:(id)arg1 languageCode:(id)arg2 pitch:(float)arg3 waitUntilFinished:(BOOL)arg4;
-- (BOOL)isAirPlaySession:(id)arg1;
 - (void)initializeParameters;
 - (void)cancel;
 - (void)runAsynchronouslyWithInput:(id)arg1;

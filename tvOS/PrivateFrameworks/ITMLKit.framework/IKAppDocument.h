@@ -92,6 +92,7 @@
 - (void)onAppear;
 - (void)onUnload;
 - (void)onLoad;
+- (void)dispatchDocumentCallback:(id)arg1 eventType:(unsigned long long)arg2;
 @property(readonly, nonatomic) __weak IKJSNavigationDocument *navigationDocument;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;

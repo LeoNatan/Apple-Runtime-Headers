@@ -6,23 +6,18 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSString;
-
 @interface WFLocationParameter : WFParameter
 {
     BOOL _allowsTextOnlyLocations;
     BOOL _allowsCurrentLocation;
     BOOL _skipsProcessingCurrentLocation;
     BOOL _defaultToCurrentLocation;
-    NSString *_placeholder;
 }
 
 @property(readonly, nonatomic) BOOL defaultToCurrentLocation; // @synthesize defaultToCurrentLocation=_defaultToCurrentLocation;
 @property(readonly, nonatomic) BOOL skipsProcessingCurrentLocation; // @synthesize skipsProcessingCurrentLocation=_skipsProcessingCurrentLocation;
 @property(readonly, nonatomic) BOOL allowsCurrentLocation; // @synthesize allowsCurrentLocation=_allowsCurrentLocation;
 @property(readonly, nonatomic) BOOL allowsTextOnlyLocations; // @synthesize allowsTextOnlyLocations=_allowsTextOnlyLocations;
-@property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
-- (void).cxx_destruct;
 - (id)defaultSerializedRepresentation;
 @property(readonly, nonatomic) double currentLocationAccuracy;
 - (id)initWithDefinition:(id)arg1;

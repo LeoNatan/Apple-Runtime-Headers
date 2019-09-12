@@ -51,13 +51,15 @@
 - (void)terminateStreamWithError:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)finishStreamWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)suspendStreamWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_suspendStreamWithCompletionBlockSynchronously:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)supplyBytes:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)_isValidObject;
 - (void)_invalidateObject;
 - (void)prepareForExtractionToPath:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)prepareForExtraction:(CDUnknownBlockType)arg1;
+- (void)_prepareForExtractionSynchronously:(BOOL)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)_prepareForLocalExtraction:(CDUnknownBlockType)arg1;
-- (void)_prepareForRemoteExtraction:(CDUnknownBlockType)arg1;
+- (void)_prepareForRemoteExtractionSynchronously:(BOOL)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)_synchronouslyPrepareForExtractionAtOffset:(unsigned long long *)arg1;
 - (id)initForLocalExtractionWithPath:(id)arg1 options:(id)arg2 resumptionOffset:(unsigned long long *)arg3;
 - (id)initForRemoteExtractionWithPath:(id)arg1 options:(id)arg2 resumptionOffset:(unsigned long long *)arg3;

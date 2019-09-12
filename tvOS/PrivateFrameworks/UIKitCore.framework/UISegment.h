@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic, setter=_setInfoConstraints:) NSArray *_infoConstraints; // @synthesize _infoConstraints;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (double)_idealWidth;
 - (struct UIEdgeInsets)_paddingInsets;

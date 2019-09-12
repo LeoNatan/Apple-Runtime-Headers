@@ -70,6 +70,7 @@
 - (void).cxx_destruct;
 - (void)macApplicationDidResignActive;
 - (void)macApplicationDidBecomeActive;
+- (void)userDidStopRecordingFromWindowClose;
 - (void)userDidStopRecordingFromStatusBar;
 - (void)appAudioCaptureStopWithHandler:(CDUnknownBlockType)arg1;
 - (void)appAudioCaptureResumeWithHandler:(CDUnknownBlockType)arg1;

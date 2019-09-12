@@ -25,6 +25,7 @@
 - (id)sessionWithLAContext:(id)arg1 error:(id *)arg2;
 - (id)withError:(id *)arg1 invoke:(CDUnknownBlockType)arg2;
 - (_Bool)connectWithError:(id *)arg1;
+@property(readonly, nonatomic) NSXPCListenerEndpoint *configurationEndpoint;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *endpoint;
 @property(readonly, nonatomic) NSXPCConnection *serverConnection;
 - (id)initWithTokenID:(id)arg1;

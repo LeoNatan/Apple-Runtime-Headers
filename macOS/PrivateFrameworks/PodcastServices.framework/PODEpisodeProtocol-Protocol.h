@@ -16,7 +16,6 @@
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) NSDate *addedDate;
 @property(readonly, nonatomic) NSDate *pubDate;
-@property(readonly, nonatomic) NSString *uti;
 @property(readonly, nonatomic) NSURL *mediaFileUrl;
 @property(readonly, nonatomic) NSURL *mediaDownloadableUrl;
 @property(readonly, nonatomic) unsigned long long seasonNumber;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *_coalescedTouches;
     struct __CFDictionary *_finalTouches;
     BOOL _isCallingEventObservers;
+    NSMutableSet *_exclusiveTouchWindows;
     long long _singleAllowableExternalTouchPathIndex;
 }
 
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (id)_cloneEvent;
 - (void)_moveTouchesFromView:(id)arg1 toView:(id)arg2;
+- (id)_exclusiveTouchWindows;
 - (id)_firstTouchForView:(id)arg1;
 - (id)_viewsForWindow:(id)arg1;
 - (void)_invalidateGestureRecognizerForWindowCache;

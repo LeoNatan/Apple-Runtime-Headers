@@ -49,6 +49,7 @@
 - (void).cxx_destruct;
 - (BOOL)_calculateCurrentStatementIsLastMonthsStatement;
 - (id)_filterSuggestions:(id)arg1 belowThreshold:(id)arg2;
+- (id)_planCompletionTitleString;
 - (id)_remainingStatementBalanceGapDescriptionText;
 - (id)_remainingStatementBalanceGapTitleText;
 - (id)_remainingStatementBalanceMessageString;

@@ -17,6 +17,8 @@
 @property(readonly, nonatomic) NSDictionary *account;
 @property(readonly, nonatomic) NSDictionary *environment;
 @property(readonly, nonatomic) unsigned long long protocolVersion;
+- (void)showAllPreferences;
+- (void)updateReachableEmails:(NSArray *)arg1 callback:(JSValue *)arg2;
 - (void)setIMEnabled:(BOOL)arg1;
 - (void)refreshFamilyCircle;
 - (void)refreshPage;
@@ -80,6 +82,7 @@
 - (void)log:(NSString *)arg1 message:(NSString *)arg2;
 
 @optional
+- (void)updateReachableEmails:(NSArray *)arg1 callback:(JSValue *)arg2 __JS_EXPORT_AS__updateReachableEmails:(id)arg3;
 - (void)setIMEnabled:(BOOL)arg1 __JS_EXPORT_AS__setIMEnabled:(id)arg2;
 - (void)getIcon:(NSString *)arg1 bundleIconName:(NSString *)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(JSValue *)arg5 __JS_EXPORT_AS__getIcon:(id)arg6;
 - (void)selectFile:(NSString *)arg1 inFolder:(NSString *)arg2 __JS_EXPORT_AS__selectFile:(id)arg3;

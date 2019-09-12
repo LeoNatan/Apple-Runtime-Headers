@@ -20,6 +20,9 @@
 - (id)platterTitle;
 - (void)setPreviewMode:(BOOL)arg1;
 - (BOOL)requiresEmbeddingNavigationController;
+- (BOOL)prefersActionMenuStyle;
+- (id)expandViewController;
+- (BOOL)wantsCustomViewControllerCommit;
 - (BOOL)wantsSeamlessCommit;
 - (id)commitURL;
 - (id)viewController;

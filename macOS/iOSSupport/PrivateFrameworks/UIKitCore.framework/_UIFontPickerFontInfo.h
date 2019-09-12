@@ -14,6 +14,8 @@
 {
     NSString *_familyName;
     NSString *_styleName;
+    NSString *_localizedFamilyName;
+    NSString *_localizedStyleName;
     double _lineHeight;
     UIFontDescriptor *_fontDescriptor;
     NSAttributedString *_attributedString;
@@ -45,6 +47,7 @@
 - (id)_fontStringForTraitCollection:(id)arg1;
 @property(readonly) NSString *localizedFamilyName;
 @property(readonly) NSString *localizedName;
+- (void)_populateLocalizedNamesIfNecessary;
 - (BOOL)matchesCTFontDescriptor:(struct __CTFontDescriptor *)arg1;
 - (BOOL)matchesFamilyForCTFontDescriptor:(struct __CTFontDescriptor *)arg1;
 @property(readonly) const struct __CTFontDescriptor *ctFontDescriptor;

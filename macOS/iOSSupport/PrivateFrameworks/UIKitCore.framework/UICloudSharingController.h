@@ -9,7 +9,7 @@
 #import <UIKitCore/UINSCloudSharingControllerDelegate-Protocol.h>
 #import <UIKitCore/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class CKContainer, CKContainerSetupInfo, CKShare, NSDictionary, NSObject, NSString, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController, _UIShareInvitationRemoteViewController;
+@class CKContainer, CKContainerSetupInfo, CKShare, NSDictionary, NSObject, NSString, UIImage, _UIRemoteViewController, _UIResilientRemoteViewContainerViewController, _UIShareInvitationRemoteViewController;
 @protocol NSObject, OS_dispatch_semaphore, UICloudSharingControllerDelegate, UINSCloudSharingController, _UICloudSharingControllerDelegate_Internal;
 
 @interface UICloudSharingController : UIViewController <UINSCloudSharingControllerDelegate, _UIRemoteViewControllerContaining>
@@ -34,12 +34,20 @@
     UIViewController *_strongReferenceToOurself;
     NSString *_primaryAuxiliarySwitchTitle;
     NSString *_secondaryAuxiliarySwitchTitle;
+    NSString *_rootFolderTitle;
+    NSString *_folderSubitemName;
+    UIImage *_headerPrimaryImage;
+    UIImage *_headerSecondaryImage;
     id <UINSCloudSharingController> _bridgedCloudSharingController;
     id <_UICloudSharingControllerDelegate_Internal> _internalDelegate;
 }
 
 @property(nonatomic) __weak id <_UICloudSharingControllerDelegate_Internal> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 @property(retain, nonatomic) id <UINSCloudSharingController> bridgedCloudSharingController; // @synthesize bridgedCloudSharingController=_bridgedCloudSharingController;
+@property(retain, nonatomic, getter=_headerSecondaryImage, setter=_setHeaderSecondaryImage:) UIImage *headerSecondaryImage; // @synthesize headerSecondaryImage=_headerSecondaryImage;
+@property(retain, nonatomic, getter=_headerPrimaryImage, setter=_setHeaderPrimaryImage:) UIImage *headerPrimaryImage; // @synthesize headerPrimaryImage=_headerPrimaryImage;
+@property(retain, nonatomic, getter=_folderSubitemName, setter=_setFolderSubitemName:) NSString *folderSubitemName; // @synthesize folderSubitemName=_folderSubitemName;
+@property(retain, nonatomic, getter=_rootFolderTitle, setter=_setRootFolderTitle:) NSString *rootFolderTitle; // @synthesize rootFolderTitle=_rootFolderTitle;
 @property(nonatomic, getter=_secondaryAuxiliarySwitchState, setter=_setSecondaryAuxiliarySwitchState:) BOOL secondaryAuxiliarySwitchState; // @synthesize secondaryAuxiliarySwitchState=_secondaryAuxiliarySwitchState;
 @property(retain, nonatomic, getter=_secondaryAuxiliarySwitchTitle, setter=_setSecondaryAuxiliarySwitchTitle:) NSString *secondaryAuxiliarySwitchTitle; // @synthesize secondaryAuxiliarySwitchTitle=_secondaryAuxiliarySwitchTitle;
 @property(nonatomic, getter=_primaryAuxiliarySwitchState, setter=_setPrimaryAuxiliarySwitchState:) BOOL primaryAuxiliarySwitchState; // @synthesize primaryAuxiliarySwitchState=_primaryAuxiliarySwitchState;

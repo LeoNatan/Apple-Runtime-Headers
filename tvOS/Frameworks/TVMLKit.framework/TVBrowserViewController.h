@@ -68,6 +68,7 @@
 - (void)showcaseFactorDidChangeForAppDocumentController:(id)arg1;
 - (_Bool)paradeView:(id)arg1 shouldShowItemAtIndexPath:(id)arg2;
 - (void)paradeView:(id)arg1 didEndDisplayingCell:(id)arg2 atIndexPath:(id)arg3;
+- (void)_enumerateAvailableCellDataForCells:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)paradeView:(id)arg1 didCenterCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)paradeView:(id)arg1 willCenterCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)paradeView:(id)arg1 willDisplayCell:(id)arg2 atIndexPath:(id)arg3;

@@ -6,12 +6,10 @@
 
 #import <MediaPlayer/MPAVController.h>
 
-@class MPAVItem, MPCPlaybackEngine, NSMutableSet, NSObject;
-@protocol OS_dispatch_queue;
+@class MPAVItem, MPCPlaybackEngine, NSMutableSet;
 
 @interface _MPCAVController : MPAVController
 {
-    NSObject<OS_dispatch_queue> *_unboostedAudioSessionQueue;
     BOOL _playedSuccessfully;
     BOOL _allowsNewPlaybackErrorItem;
     MPCPlaybackEngine *_playbackEngine;

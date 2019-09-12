@@ -41,7 +41,7 @@
 - (void)delegateDidRemoveInvitationSession:(id)arg1;
 - (void)delegateLostConnectionToInvitationSession:(id)arg1;
 - (void)delegateDidFindInvitationSession:(id)arg1 transport:(id)arg2;
-- (id)delegateNeedsClientIdentityInvitationSession;
+- (id)delegateNeedsClientIdentityForInvitationSessionWithEndpoint:(id)arg1;
 - (void)delegateInRangeClassSessionsDidChange;
 - (void)delegateDidRemoveClassSession:(id)arg1;
 - (void)delegateLostConnectionToClassSession:(id)arg1;

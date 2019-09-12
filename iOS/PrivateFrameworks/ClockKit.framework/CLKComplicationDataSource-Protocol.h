@@ -20,6 +20,7 @@
 - (void)getNextRequestedUpdateDateWithHandler:(void (^)(NSDate *))arg1;
 - (void)getTimelineEntriesForComplication:(CLKComplication *)arg1 afterDate:(NSDate *)arg2 limit:(unsigned long long)arg3 withHandler:(void (^)(NSArray *))arg4;
 - (void)getTimelineEntriesForComplication:(CLKComplication *)arg1 beforeDate:(NSDate *)arg2 limit:(unsigned long long)arg3 withHandler:(void (^)(NSArray *))arg4;
+- (void)getAlwaysOnTemplateForComplication:(CLKComplication *)arg1 withHandler:(void (^)(CLKComplicationTemplate *))arg2;
 - (void)getTimelineAnimationBehaviorForComplication:(CLKComplication *)arg1 withHandler:(void (^)(unsigned long long))arg2;
 - (void)getPrivacyBehaviorForComplication:(CLKComplication *)arg1 withHandler:(void (^)(unsigned long long))arg2;
 - (void)getTimelineEndDateForComplication:(CLKComplication *)arg1 withHandler:(void (^)(NSDate *))arg2;

@@ -10,6 +10,7 @@
 
 @interface _MLTInputGeneratorUtils : NSObject
 {
+    BOOL _usesNdArrayInterpretation;
     int _currentCase;
     unsigned int _seedForRandomInput;
     struct __CVBuffer *_buffer;
@@ -18,6 +19,7 @@
     NSDictionary *_sequences;
 }
 
+@property BOOL usesNdArrayInterpretation; // @synthesize usesNdArrayInterpretation=_usesNdArrayInterpretation;
 @property unsigned int seedForRandomInput; // @synthesize seedForRandomInput=_seedForRandomInput;
 @property(retain) NSDictionary *sequences; // @synthesize sequences=_sequences;
 @property(retain) NSDictionary *outputDescriptions; // @synthesize outputDescriptions=_outputDescriptions;

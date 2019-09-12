@@ -9,7 +9,7 @@
 #import <AccessibilityEvents/AXEEventTapListener-Protocol.h>
 #import <AccessibilityEvents/AXETrackingTouchInputDevice-Protocol.h>
 
-@class AXEThrottler, AXETrackingGestureEvent, NSSet, NSString, NSTouch;
+@class AXETrackingGestureEvent, AXFThrottler, NSSet, NSString, NSTouch;
 @protocol AXETrackingTouchInputDeviceDelegate, OS_dispatch_queue;
 
 @interface AXEDFRDevice : NSObject <AXEEventTapListener, AXETrackingTouchInputDevice>
@@ -19,7 +19,7 @@
     double _synthesizedTapDownUpInterval;
     id <AXETrackingTouchInputDeviceDelegate> _delegate;
     AXETrackingGestureEvent *__previousDFRGestureEvent;
-    AXEThrottler *__throttler;
+    AXFThrottler *__throttler;
     NSObject<OS_dispatch_queue> *__syntheticEventPostingDispatchQueue;
     NSSet *__currentTouches;
     NSTouch *__currentTrackedTouch;
@@ -32,7 +32,7 @@
 @property(retain, nonatomic) NSTouch *_currentTrackedTouch; // @synthesize _currentTrackedTouch=__currentTrackedTouch;
 @property(retain, nonatomic) NSSet *_currentTouches; // @synthesize _currentTouches=__currentTouches;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_syntheticEventPostingDispatchQueue; // @synthesize _syntheticEventPostingDispatchQueue=__syntheticEventPostingDispatchQueue;
-@property(retain, nonatomic) AXEThrottler *_throttler; // @synthesize _throttler=__throttler;
+@property(retain, nonatomic) AXFThrottler *_throttler; // @synthesize _throttler=__throttler;
 @property(retain, nonatomic) AXETrackingGestureEvent *_previousDFRGestureEvent; // @synthesize _previousDFRGestureEvent=__previousDFRGestureEvent;
 @property(nonatomic) __weak id <AXETrackingTouchInputDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL eventCaptureStarted; // @synthesize eventCaptureStarted=_eventCaptureStarted;

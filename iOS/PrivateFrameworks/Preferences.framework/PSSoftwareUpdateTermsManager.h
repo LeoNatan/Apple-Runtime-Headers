@@ -35,6 +35,7 @@
 - (void)remoteUIControllerDidDismiss:(id)arg1;
 - (void)_loadTermsRemoteUIFailureWithError:(id)arg1;
 - (void)_loadRemoteUITermsWithCloudAtURL:(id)arg1;
+- (id)versionFromLicenseText:(id)arg1;
 - (void)_loadTermsFromUpdateAsset;
 - (void)cancelLoadingTerms:(id)arg1;
 - (void)presentTermsIfNecessaryForUpdate:(id)arg1 overController:(id)arg2 showLoadSpinner:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

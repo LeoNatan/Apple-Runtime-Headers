@@ -223,7 +223,7 @@
 - (void)prewarmAudioSession;
 - (void)preheat;
 - (_Bool)setCurrentContext:(id)arg1 error:(id *)arg2;
-- (_Bool)_activateAudioSession:(id *)arg1;
+- (_Bool)_activateAudioSession:(id *)arg1 forRetry:(_Bool)arg2;
 - (void)_performPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_cancelPendingAudioSessionActivateForReason:(id)arg1;
 - (void)_scheduleActivateAudioSessionWithDelay:(double)arg1 forReason:(id)arg2 validator:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;

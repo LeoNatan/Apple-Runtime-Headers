@@ -22,16 +22,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_recordTypeToUnresolvedRecordIDs;
     NSMutableArray *_metadatasToLink;
     NSArray *_importOperations;
-    NSArray *_invalidatedPendingRelationships;
-    NSArray *_pendingRelationshipsToTry;
     NSCloudKitMirroringDelegateOptions *_mirroringOptions;
     NSURL *_fileBackedFuturesDirectory;
 }
 
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
-@property(readonly, nonatomic) NSArray *pendingRelationshipsToTry; // @synthesize pendingRelationshipsToTry=_pendingRelationshipsToTry;
 @property(readonly, nonatomic) NSURL *fileBackedFuturesDirectory; // @synthesize fileBackedFuturesDirectory=_fileBackedFuturesDirectory;
-@property(readonly, nonatomic) NSArray *invalidatedPendingRelationships; // @synthesize invalidatedPendingRelationships=_invalidatedPendingRelationships;
 @property(readonly, nonatomic) NSArray *importOperations; // @synthesize importOperations=_importOperations;
 @property(readonly, nonatomic) NSArray *deletedMirroredRelationshipRecordIDs; // @synthesize deletedMirroredRelationshipRecordIDs=_deletedMirroredRelationshipRecordIDs;
 @property(readonly, nonatomic) NSArray *deletedRelationships; // @synthesize deletedRelationships=_deletedRelationships;

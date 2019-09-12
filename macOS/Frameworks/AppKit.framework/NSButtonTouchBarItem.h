@@ -11,6 +11,7 @@
 @interface NSButtonTouchBarItem : NSTouchBarItem
 {
     NSButton *_button;
+    NSImage *_image;
     id _target;
     SEL _action;
     NSString *_customizationLabel;
@@ -26,6 +27,7 @@
 @property(copy) NSString *customizationLabel;
 @property(getter=isEnabled) BOOL enabled;
 @property(copy) NSColor *bezelColor;
+- (void)_setDisplayImage:(id)arg1;
 @property(retain) NSImage *image;
 @property(copy) NSString *title;
 - (id)view;

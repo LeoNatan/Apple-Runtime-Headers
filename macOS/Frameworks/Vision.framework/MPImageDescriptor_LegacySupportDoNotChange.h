@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *externalImageId; // @synthesize externalImageId=_externalImageId;
 @property(readonly) long long descriptorId; // @synthesize descriptorId=_descriptorId;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (unsigned long long)serializeStateIntoData:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id *)arg3;
 - (unsigned long long)serializedLength;
 - (void)encodeWithCoder:(id)arg1;

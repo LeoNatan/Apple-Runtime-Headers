@@ -147,6 +147,7 @@ __attribute__((visibility("hidden")))
 - (void)_completeWithAction:(long long)arg1 animated:(BOOL)arg2 notify:(BOOL)arg3;
 - (void)completeWithAction:(long long)arg1 animated:(BOOL)arg2;
 - (BOOL)saveWithSpan:(long long)arg1 animated:(BOOL)arg2;
+- (void)resignCurrentEditItemFirstResponder;
 - (void)focus:(unsigned long long)arg1 select:(BOOL)arg2;
 - (BOOL)hasUnsavedChanges;
 - (BOOL)willPresentDialogOnSave;

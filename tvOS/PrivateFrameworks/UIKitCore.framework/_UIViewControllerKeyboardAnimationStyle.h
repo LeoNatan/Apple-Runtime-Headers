@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowCustomTransition; // @synthesize allowCustomTransition=_allowCustomTransition;
 @property(readonly, nonatomic) _UIViewControllerKeyboardAnimationStyleInfo *info; // @synthesize info=_info;
 @property(nonatomic) _Bool disableAlongsideView; // @synthesize disableAlongsideView=_disableAlongsideView;
-@property(readonly, nonatomic) _UIViewControllerTransitionContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) _UIViewControllerTransitionContext *context; // @synthesize context=_context;
 - (id)controllerForStartPlacement:(id)arg1 endPlacement:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

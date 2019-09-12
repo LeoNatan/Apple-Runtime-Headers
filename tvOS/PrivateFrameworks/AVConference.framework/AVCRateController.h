@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
     double _lastTimeTargetBitrateOvershootRecorded;
     _Bool _isUnexpectedLowTargetBitrateReported;
     double _lastTimeUnexpectedLowTargetBitrateRecorded;
+    _Bool _isUnexpectedHighRTTReported;
 }
 
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;

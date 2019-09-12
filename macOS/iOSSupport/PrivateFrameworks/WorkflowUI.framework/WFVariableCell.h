@@ -22,6 +22,8 @@
 - (unsigned long long)accessibilityTraits;
 - (BOOL)isAccessibilityElement;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)tintColorDidChange;
+- (void)updateVariableImage;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -8,14 +8,14 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class NSString, NSURL, UIImageConfiguration;
+@class NSBundle, NSString, UIImageConfiguration;
 
 __attribute__((visibility("hidden")))
 @interface _UIImageCacheKey : NSObject <NSCopying>
 {
     NSString *_name;
     UIImageConfiguration *_configuration;
-    NSURL *_bundleURL;
+    NSBundle *_bundle;
     struct {
         unsigned int system:1;
         unsigned int private:1;

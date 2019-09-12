@@ -51,6 +51,7 @@
 - (double)scoreVisitMO:(id)arg1;
 - (BOOL)untrustedVisitMO:(id)arg1;
 - (BOOL)performBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (BOOL)restoreToOldCandidate:(struct RTPair *)arg1 error:(id *)arg2;
 - (BOOL)restoreVisit:(id)arg1 transitions:(id)arg2 toOldCandidate:(struct RTPair *)arg3 error:(id *)arg4;
 - (id)learnedPlaceForVisit:(id)arg1 creationDate:(id)arg2 expirationDate:(id)arg3 error:(id *)arg4;
 - (id)fetchLearnedPlaceMOforMapItemIdentifier:(id)arg1 error:(id *)arg2;

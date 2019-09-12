@@ -11,6 +11,7 @@
 @protocol CAMZoomControlDelegate <NSObject>
 
 @optional
+- (void)zoomControl:(CAMZoomControl *)arg1 didChangeSelectedButtonIndex:(unsigned long long)arg2 displayZoomFactor:(double)arg3;
 - (void)toggleBetweenZoomFactorsForZoomControl:(CAMZoomControl *)arg1;
 - (_Bool)canToggleBetweenZoomFactorsForZoomControl:(CAMZoomControl *)arg1;
 - (void)zoomControl:(CAMZoomControl *)arg1 didChangeZoomFactor:(double)arg2 interactionType:(long long)arg3;

@@ -30,7 +30,7 @@
 - (void)clearTriggerCount:(CDUnknownBlockType)arg1;
 - (void)getTriggerCount:(CDUnknownBlockType)arg1;
 - (BOOL)transferInterstitialAudioFiles:(id)arg1 interstitialLevel:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)invalidateInterstitialWithLevel:(long long)arg1;
+- (void)invalidateInterstitialWithLevel:(long long)arg1;
 - (void)voiceTriggerEnabledWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setVoiceTriggerEnable:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)transferVoiceTriggerAsset:(id)arg1 forLanguageCode:(id)arg2 completion:(CDUnknownBlockType)arg3;

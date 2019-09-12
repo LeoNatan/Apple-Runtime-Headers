@@ -4,11 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NTKFaceViewController, UIView;
+@class NTKFaceViewController, NTKTritiumAnimationController, NTKTritiumViewController, UIView, UIViewController;
+@protocol CSLSFlipbookFrameCoordinator, NTKTritiumAnimationControllerViewProvider;
 
 @protocol NTKClockWakeControllerProvider
 @property(readonly) _Bool wake_canPerformWristRaiseAnimation;
 @property(readonly, nonatomic) NTKFaceViewController *wake_faceViewController;
 @property(readonly, nonatomic) UIView *wake_clockContentView;
+@property(readonly, nonatomic) UIViewController<NTKTritiumAnimationControllerViewProvider> *wake_viewProvider;
+@property(readonly, nonatomic) id <CSLSFlipbookFrameCoordinator> wake_frameCoordinator;
+@property(readonly, nonatomic) UIView *wake_sensitiveUIShieldView;
+@property(readonly, nonatomic) NTKTritiumAnimationController *wake_tritiumAnimationController;
+@property(readonly, nonatomic) NTKTritiumViewController *wake_tritiumViewController;
 @end
 

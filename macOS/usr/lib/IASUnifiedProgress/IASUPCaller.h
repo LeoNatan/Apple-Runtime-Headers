@@ -9,12 +9,9 @@
 @interface IASUPCaller : NSObject
 {
     id _caller;
-    CDUnknownBlockType _interruptionHandler;
 }
 
-@property(copy) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property id caller; // @synthesize caller=_caller;
-- (void)dealloc;
 
 @end
 

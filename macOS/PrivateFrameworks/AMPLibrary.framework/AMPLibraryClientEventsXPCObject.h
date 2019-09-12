@@ -17,10 +17,7 @@
 
 @property(nonatomic) __weak id <AMPLMediaAppClientEventsProtocol> eventsDelegate; // @synthesize eventsDelegate=_eventsDelegate;
 - (void).cxx_destruct;
-- (void)synchronousTriggerCheckForNewCloudTracks:(_Bool)arg1 withFinishImport:(_Bool)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)synchronousHasFullScanOfTracksForUploadProcess:(CDUnknownBlockType)arg1;
-- (void)synchronousHasNewTracksForUploadProcess:(CDUnknownBlockType)arg1;
-- (void)synchronousAddNewTrackIDForUploadProcess:(unsigned long long)arg1;
+- (void)triggerCheckForNewCloudTracks:(_Bool)arg1 withFinishImport:(_Bool)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)synchronousIsProcessingNewTrackForUpload:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousNotifyClientDisableIsComplete;
 - (void)synchronousCancelUploadLibraryClientCommand:(unsigned int)arg1 withReply:(CDUnknownBlockType)arg2;
@@ -38,8 +35,7 @@
 - (void)notifyCloudClientRemoteLoadStateEventForClientID:(unsigned int)arg1 newState:(unsigned int)arg2;
 - (void)notifyCloudClientStateChangeEventForClientID:(unsigned int)arg1 newState:(unsigned int)arg2;
 - (void)notifyLibraryCommandComplete:(id)arg1 forClientID:(unsigned int)arg2 forCommandID:(unsigned int)arg3;
-- (void)notifyLibraryOpenStartedForClientID:(unsigned int)arg1 withData:(id)arg2;
-- (void)notifyLibraryProgressForMediaDomain:(unsigned long long)arg1 withLoadState:(unsigned char)arg2 andProgress:(unsigned char)arg3;
+- (void)notifyLibraryRevisionChange:(unsigned int)arg1;
 
 @end
 

@@ -6,13 +6,10 @@
 
 #import <WorkflowKit/WFParameter.h>
 
-@class NSString;
-
 @interface WFNumberFieldParameter : WFParameter
 {
     BOOL _allowsDecimalNumbers;
     BOOL _allowsNegativeNumbers;
-    NSString *_placeholder;
     long long _textAlignment;
 }
 
@@ -21,8 +18,6 @@
 @property(readonly, nonatomic) BOOL allowsNegativeNumbers; // @synthesize allowsNegativeNumbers=_allowsNegativeNumbers;
 @property(readonly, nonatomic) BOOL allowsDecimalNumbers; // @synthesize allowsDecimalNumbers=_allowsDecimalNumbers;
 @property(readonly, nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
-@property(readonly, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
-- (void).cxx_destruct;
 - (BOOL)shouldAlignLabels;
 - (id)defaultSupportedVariableTypes;
 - (id)initWithDefinition:(id)arg1;

@@ -23,6 +23,7 @@
 + (BOOL)canSendAttachments;
 + (BOOL)canSendSubject;
 + (BOOL)canSendText;
++ (id)log;
 @property(copy, nonatomic) MSMessage *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;

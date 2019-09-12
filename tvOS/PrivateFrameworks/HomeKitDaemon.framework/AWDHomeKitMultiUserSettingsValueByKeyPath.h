@@ -13,7 +13,6 @@
 @interface AWDHomeKitMultiUserSettingsValueByKeyPath : PBCodable <NSCopying>
 {
     long long _homeKitMultiUserSettingsValueInteger;
-    NSString *_homeKitMultiUserSettingsPath;
     NSData *_homeKitMultiUserSettingsValueData;
     NSString *_homeKitMultiUserSettingsValueString;
     int _type;
@@ -23,7 +22,6 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSString *homeKitMultiUserSettingsPath; // @synthesize homeKitMultiUserSettingsPath=_homeKitMultiUserSettingsPath;
 @property(retain, nonatomic) NSData *homeKitMultiUserSettingsValueData; // @synthesize homeKitMultiUserSettingsValueData=_homeKitMultiUserSettingsValueData;
 @property(nonatomic) long long homeKitMultiUserSettingsValueInteger; // @synthesize homeKitMultiUserSettingsValueInteger=_homeKitMultiUserSettingsValueInteger;
 @property(retain, nonatomic) NSString *homeKitMultiUserSettingsValueString; // @synthesize homeKitMultiUserSettingsValueString=_homeKitMultiUserSettingsValueString;
@@ -37,7 +35,6 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) _Bool hasHomeKitMultiUserSettingsPath;
 @property(readonly, nonatomic) _Bool hasHomeKitMultiUserSettingsValueData;
 @property(nonatomic) _Bool hasHomeKitMultiUserSettingsValueInteger;
 @property(readonly, nonatomic) _Bool hasHomeKitMultiUserSettingsValueString;

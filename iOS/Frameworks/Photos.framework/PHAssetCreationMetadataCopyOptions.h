@@ -11,8 +11,10 @@
 @interface PHAssetCreationMetadataCopyOptions : NSObject <NSCopying>
 {
     _Bool _shouldCopyTitleDescriptionAndKeywords;
+    _Bool _shouldCopySpatialOverCaptureResources;
 }
 
+@property(nonatomic) _Bool shouldCopySpatialOverCaptureResources; // @synthesize shouldCopySpatialOverCaptureResources=_shouldCopySpatialOverCaptureResources;
 @property(nonatomic) _Bool shouldCopyTitleDescriptionAndKeywords; // @synthesize shouldCopyTitleDescriptionAndKeywords=_shouldCopyTitleDescriptionAndKeywords;
 - (id)description;
 - (void)encodeToXPCDict:(id)arg1;

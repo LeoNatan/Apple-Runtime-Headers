@@ -61,7 +61,6 @@
 - (void)copyCarrierBundleValue:(id)arg1 keyHierarchy:(id)arg2 bundleType:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)copyCarrierBundleValue:(id)arg1 key:(id)arg2 bundleType:(id)arg3 error:(id *)arg4;
 - (void)copyCarrierBundleValue:(id)arg1 key:(id)arg2 bundleType:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)injectMTsms:(id)arg1 smsData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getEmergencyTextNumbers:(id)arg1 error:(id *)arg2;
 - (void)getEmergencyTextNumbers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)getSmscAddress:(id)arg1 error:(id *)arg2;

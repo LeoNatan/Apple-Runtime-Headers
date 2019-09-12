@@ -64,7 +64,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_windowForDocument:(id)arg1;
-+ (id)_takeScreenshotExcludingWindows:(id)arg1;
 + (void)doOrderingWithoutAnimationForWindow:(id)arg1 preventScrollerFlashing:(BOOL)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (void)_setOverlayScrollersHidden:(BOOL)arg1 forWindow:(id)arg2;
 + (void)_setOverlayScrollersHidden:(BOOL)arg1 forView:(id)arg2;
@@ -124,7 +123,7 @@ __attribute__((visibility("hidden")))
 - (void)_cancelTransitoryAnimations;
 - (void)_animateDisplayFadeOut:(BOOL)arg1;
 - (void)_animateInspectorWindows;
-- (id)_closeDrawers;
+- (void)_closeDrawers;
 - (void)_startTransitoryAnimationsThenContinue:(CDUnknownBlockType)arg1;
 - (id)_scheduleTransitoryAnimationOfWindow:(id)arg1 startFrame:(struct CGRect)arg2 endFrame:(struct CGRect)arg3 startSize:(struct CGSize)arg4 endSize:(struct CGSize)arg5 hop:(BOOL)arg6 duration:(double)arg7;
 - (void)_uninstallEventTap;
@@ -155,7 +154,6 @@ __attribute__((visibility("hidden")))
 - (void)_preventWindowCycling;
 - (void)takeOverWindow:(id)arg1 forRevision:(id)arg2;
 - (BOOL)interceptsWindowClose:(id)arg1;
-- (void)_takeStartAnimationTransitionSnapshotsExcludingWindows:(id)arg1;
 - (struct CGRect)_destinationFrameForResizeAfterFinishAnimation;
 - (struct CGRect)_frameForAnimatingWindowFrame:(struct CGRect)arg1 toSize:(struct CGSize)arg2;
 - (struct CGRect)_destinationFrameForFinishAnimation;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPModelStoreBrowseContentItemBuilder, MPModelStoreBrowseSectionBuilder, MPSectionedCollection;
+@class MPModelStoreBrowseContentItemBuilder, MPModelStoreBrowseSectionBuilder, MPSectionedCollection, NSIndexSet;
 
 @interface MPModelStoreBrowseMusicKitResponseParser : NSObject
 {
@@ -14,6 +14,7 @@
     id _rawResponseOutput;
     MPModelStoreBrowseSectionBuilder *_sectionBuilder;
     MPModelStoreBrowseContentItemBuilder *_contentItemBuilder;
+    NSIndexSet *_filteredFCKinds;
     MPSectionedCollection *_results;
 }
 
@@ -24,7 +25,7 @@
 - (id)_parsedEditorialElements:(id)arg1;
 - (id)_parsedSectionedCollection;
 @property(readonly, nonatomic) MPSectionedCollection *results;
-- (id)initWithRawResponseOutput:(id)arg1 sectionBuilder:(id)arg2 contentItemBuilder:(id)arg3;
+- (id)initWithRawResponseOutput:(id)arg1 sectionBuilder:(id)arg2 contentItemBuilder:(id)arg3 filteredFCKinds:(id)arg4;
 
 @end
 

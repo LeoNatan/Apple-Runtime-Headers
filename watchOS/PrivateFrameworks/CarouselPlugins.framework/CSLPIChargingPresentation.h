@@ -16,8 +16,10 @@
     unsigned int _imageID;
     NSDate *_animationCompletionDate;
     id <CSLPIChargingPresentationDelegate> _delegate;
+    int _iomfbPhase;
 }
 
+@property(nonatomic) int iomfbPhase; // @synthesize iomfbPhase=_iomfbPhase;
 @property(nonatomic) __weak id <CSLPIChargingPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSDate *animationCompletionDate; // @synthesize animationCompletionDate=_animationCompletionDate;
 @property(readonly, nonatomic) unsigned int imageID; // @synthesize imageID=_imageID;

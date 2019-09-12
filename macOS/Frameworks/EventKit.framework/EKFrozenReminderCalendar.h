@@ -71,11 +71,13 @@
 - (BOOL)_applyChangesToSaveRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)_applyChanges:(id)arg1 error:(id *)arg2;
 - (id)uniqueIdentifier;
+- (id)_account;
 - (id)source;
 @property(readonly, nonatomic) NSString *calendarIdentifier;
 - (id)hexColorStringFromREMColor:(id)arg1;
 - (id)REMColorFromEKHexColorString:(id)arg1;
 - (id)publishedURL;
+- (BOOL)isPublished;
 - (unsigned long long)ekSharingStatusFromREMSharingStatus:(long long)arg1;
 - (unsigned long long)sharingStatus;
 @property(readonly, copy, nonatomic) NSString *colorString;

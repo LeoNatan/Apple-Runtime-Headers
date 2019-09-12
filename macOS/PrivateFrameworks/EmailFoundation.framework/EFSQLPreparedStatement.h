@@ -11,14 +11,17 @@
 @interface EFSQLPreparedStatement : NSObject
 {
     struct sqlite3_stmt *_compiled;
+    double _allowedExecutionTime;
 }
 
 + (id)log;
+@property(nonatomic) double allowedExecutionTime; // @synthesize allowedExecutionTime=_allowedExecutionTime;
 - (BOOL)finalizeWithError:(id *)arg1;
 - (BOOL)clearBindingsWithError:(id *)arg1;
 - (BOOL)resetWithError:(id *)arg1;
 - (BOOL)executeUsingBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (BOOL)executeWithIndexedBindings:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (BOOL)executeWithNamedBindings:(id)arg1 rowsChanged:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)executeWithNamedBindings:(id)arg1 usingBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) BOOL isFinalized;
 @property(readonly, nonatomic) struct sqlite3_stmt *compiled;

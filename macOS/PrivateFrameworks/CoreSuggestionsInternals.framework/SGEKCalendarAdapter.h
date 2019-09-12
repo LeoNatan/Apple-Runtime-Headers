@@ -22,6 +22,7 @@
 @property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
 - (void)_removeEKEvent:(id)arg1 store:(id)arg2 commit:(BOOL)arg3;
+- (void)_updateEventMetadataInModifiedEvent:(id)arg1 withExistingCheckInShortcutInOriginalEvent:(id)arg2 ifTeamIdentifierIsDifferentInStorageEvent:(id)arg3;
 - (void)_removeEvent:(id)arg1 commit:(BOOL)arg2;
 - (BOOL)_isEKEventFromNLEventsCalendar:(id)arg1 ekStore:(id)arg2;
 - (BOOL)_isEKEventFromSuggestedCalendar:(id)arg1 ekStore:(id)arg2;

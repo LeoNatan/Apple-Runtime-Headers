@@ -45,8 +45,10 @@ __attribute__((visibility("hidden")))
     BOOL m_inputViewIsChanging;
     BOOL m_isClearingRange;
     BOOL m_shouldStayVisible;
+    long long m_emphasisState;
 }
 
+@property(nonatomic) long long emphasisState; // @synthesize emphasisState=m_emphasisState;
 @property(nonatomic) BOOL shouldStayVisible; // @synthesize shouldStayVisible=m_shouldStayVisible;
 @property(nonatomic) BOOL isClearingRange; // @synthesize isClearingRange=m_isClearingRange;
 @property(nonatomic) BOOL inputViewIsChanging; // @synthesize inputViewIsChanging=m_inputViewIsChanging;
@@ -85,8 +87,10 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_selectionClipRect;
 - (void)updateBaseAndExtentPointsFromEdges;
 - (void)beginMagnifying;
-- (void)animateHighlighterDelayedFadeInOnLayer:(id)arg1;
-- (void)animateHighlighterExpanderOnLayer:(id)arg1 withOffset:(struct CGPoint)arg2;
+- (void)animateHighlighterExpanderOnLayer:(id)arg1;
+- (void)animateHighlighterCollapseDelayedFadeInOnLayer:(id)arg1;
+- (void)animateHighlighterCollapseAnimationOnLayer:(id)arg1;
+- (void)animateHighlighterCollapseAnimation:(BOOL)arg1;
 - (void)animateHighlighterExpanderAnimation;
 @property(readonly, nonatomic) BOOL autoscrolled;
 - (struct CGPoint)applyTouchOffset:(struct CGPoint)arg1;

@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     // Error parsing type: , name: children
     // Error parsing type: , name: parent
-    // Error parsing type: , name: displayLinkHost
+    // Error parsing type: , name: viewRendererHost
     // Error parsing type: , name: oldAttachmentForNotification
     // Error parsing type: , name: skipNotifyForAttachmentChanged
     // Error parsing type: , name: attachmentsStorage
@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)init;
 - (void)dealloc;
+- (id)accessibilityServesAsTitleForUIElements;
+- (id)accessibilityTitleUIElement;
 - (BOOL)isAccessibilityFocused;
 - (void)setAccessibilityFocused:(BOOL)arg1;
 - (id)accessibilityCustomActions;

@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     unsigned int _contentsAreInvalid:1;
 }
 
+- (void)NS_prefetchContentsIfNecessary;
 - (BOOL)NS_hasPrefetchedContents;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
+- (void)_setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)display;
 - (BOOL)NS_contentsAligningEnabled;

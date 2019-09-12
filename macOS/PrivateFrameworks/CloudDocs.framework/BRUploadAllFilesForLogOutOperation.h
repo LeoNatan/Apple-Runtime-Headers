@@ -20,7 +20,6 @@
     BOOL _shouldKeepDataLocal;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property BOOL shouldKeepDataLocal; // @synthesize shouldKeepDataLocal=_shouldKeepDataLocal;
 @property(retain) BRGlobalProgressProxy *progress; // @synthesize progress=_progress;
 @property(copy) CDUnknownBlockType uploadAllFilesCompletionBlock; // @synthesize uploadAllFilesCompletionBlock=_uploadAllFilesCompletionBlock;

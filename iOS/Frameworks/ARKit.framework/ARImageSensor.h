@@ -57,6 +57,7 @@
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (id)_configureVisionDataOutputForSession:(id)arg1;
 - (void)enableAutoFocusForDevice:(id)arg1;
+- (void)configureGeometricDistortionCorrectionForDevice:(id)arg1;
 - (void)_configureImageControlModeForDevice:(id)arg1;
 - (void)_configureCameraFocusForDevice:(id)arg1;
 - (void)_configureCameraWhiteBalanceForDevice:(id)arg1;

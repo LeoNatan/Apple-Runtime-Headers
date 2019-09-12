@@ -18,7 +18,6 @@
 - (void)resetEvaluationCriteriaWithVariableSource:(id)arg1;
 - (id)outputIcon;
 - (id)icon;
-- (id)inputSourceInWorkflow:(id)arg1;
 - (id)inheritedOutputContentClassesInWorkflow:(id)arg1 context:(id)arg2;
 - (id)outputContentClasses;
 - (BOOL)hasChildren;

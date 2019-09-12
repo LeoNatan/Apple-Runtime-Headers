@@ -14,7 +14,6 @@
     CDUnknownBlockType _sharingEtagCompletionBlock;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType sharingEtagCompletionBlock; // @synthesize sharingEtagCompletionBlock=_sharingEtagCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

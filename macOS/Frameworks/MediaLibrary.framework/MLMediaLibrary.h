@@ -19,6 +19,7 @@
 - (void)cacheDeleteCancel;
 - (void)cacheDeletePurge:(id)arg1 urgency:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)cacheDeletePurgeable:(id)arg1 urgency:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)mediaObjectAttributesExpectedClasses;
 - (void)setMediaSources:(id)arg1;
 @property(readonly, copy) NSDictionary *mediaSources;
 - (void)xpcConnectionWasInterrupted;

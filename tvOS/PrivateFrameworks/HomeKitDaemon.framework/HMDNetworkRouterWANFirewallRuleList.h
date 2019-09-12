@@ -14,9 +14,11 @@
 @interface HMDNetworkRouterWANFirewallRuleList : NSObject <NSCopying, HMDTLVProtocol>
 {
     NSMutableArray *_portRules;
+    NSMutableArray *_icmpRules;
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+@property(retain, nonatomic) NSMutableArray *icmpRules; // @synthesize icmpRules=_icmpRules;
 @property(retain, nonatomic) NSMutableArray *portRules; // @synthesize portRules=_portRules;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
@@ -24,7 +26,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializeWithError:(id *)arg1;
 - (_Bool)parseFromData:(id)arg1 error:(id *)arg2;
-- (id)initWithPortRules:(id)arg1;
+- (id)initWithPortRules:(id)arg1 icmpRules:(id)arg2;
 - (id)init;
 
 // Remaining properties

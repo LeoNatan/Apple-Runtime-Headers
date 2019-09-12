@@ -42,6 +42,7 @@
     VUIBookmark *_bookmark;
     NSOperationQueue *_rottenTomatoesOperationQueue;
     MPMediaItem *_mpMediaItem;
+    NSString *_contentRatingDomain;
 }
 
 + (id)_rentalsRequestDocumentLoaderWithStartID:(id)arg1 endID:(id)arg2;
@@ -50,6 +51,7 @@
 + (void)_checkInRentalWithDSID:(id)arg1 rentalID:(id)arg2;
 + (void)checkInOrphanedRentals;
 + (void)initialize;
+@property(retain, nonatomic) NSString *contentRatingDomain; // @synthesize contentRatingDomain=_contentRatingDomain;
 @property(retain, nonatomic) MPMediaItem *mpMediaItem; // @synthesize mpMediaItem=_mpMediaItem;
 @property(retain, nonatomic) NSOperationQueue *rottenTomatoesOperationQueue; // @synthesize rottenTomatoesOperationQueue=_rottenTomatoesOperationQueue;
 @property(retain, nonatomic) VUIBookmark *bookmark; // @synthesize bookmark=_bookmark;
@@ -111,7 +113,7 @@
 - (_Bool)isEqualToMediaItem:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)initWithActionParams:(id)arg1 mediaType:(long long)arg2 hlsPlaylistURL:(id)arg3 contentRatingRank:(id)arg4 rentalID:(id)arg5;
+- (id)initWithActionParams:(id)arg1 mediaType:(long long)arg2 hlsPlaylistURL:(id)arg3 contentRatingRank:(id)arg4 contentRatingDomain:(id)arg5 rentalID:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

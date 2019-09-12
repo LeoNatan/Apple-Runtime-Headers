@@ -14,9 +14,6 @@
 - (void)authorizationPaneViewController:(AKAuthorizationPaneViewController *)arg1 dismissWithAuthorization:(AKAuthorization *)arg2 error:(NSError *)arg3;
 
 @optional
-- (void)setAutomaticResizeDelay:(double)arg1;
-- (void)endAutomaticResizeDisabled;
-- (void)beginAutomaticResizeDisabled;
 - (void)performPasswordAuthenticationForPaneViewController:(AKAuthorizationPaneViewController<AKAuthorizationPasswordAuthenticationDelegate> *)arg1;
 - (void)performAppleIDAuthorizationForPaneViewController:(AKAuthorizationPaneViewController *)arg1;
 - (void)authorizationPaneViewController:(AKAuthorizationPaneViewController<AKAuthorizationEditableDataSources> *)arg1 pushEditScope:(NSString *)arg2 presentationContext:(AKAuthorizationPresentationContext *)arg3 options:(NSDictionary *)arg4;

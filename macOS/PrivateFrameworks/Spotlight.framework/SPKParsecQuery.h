@@ -19,6 +19,7 @@
 + (double)scaleFactor;
 + (void)deactivate;
 + (void)activate;
++ (double)searchRenderTimeout;
 + (id)fteExplanationText;
 + (id)fteLearnMore;
 + (id)fteSupportedDomains;

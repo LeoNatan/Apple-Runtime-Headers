@@ -21,6 +21,8 @@
 + (id)sharedConnectionAccessQueue;
 + (id)sharedConnection;
 + (void)setSharedConnection:(id)arg1;
++ (id)proxyObjectAsync;
++ (id)proxyObject;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

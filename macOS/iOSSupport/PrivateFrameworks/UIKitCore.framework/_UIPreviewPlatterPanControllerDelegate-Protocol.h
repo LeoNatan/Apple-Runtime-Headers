@@ -9,6 +9,8 @@
 @class _UIPreviewPlatterPanController;
 
 @protocol _UIPreviewPlatterPanControllerDelegate <NSObject>
+- (void)platterPanInteractionEnded:(_UIPreviewPlatterPanController *)arg1;
+- (void)platterPanInteractionBegan:(_UIPreviewPlatterPanController *)arg1;
 - (void)platterPanControllerDidSwipeDown:(_UIPreviewPlatterPanController *)arg1;
 - (void)platterPanControllerDidTearOff:(_UIPreviewPlatterPanController *)arg1;
 @end

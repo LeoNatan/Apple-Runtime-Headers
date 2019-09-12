@@ -6,7 +6,7 @@
 
 #import <Memories/VEiOSSharedObject.h>
 
-@class FMSongLibrary, MiroAutoEditLogger, NSArray, NSSet;
+@class FMSongLibrary, MiroAutoEditLogger, NSArray, NSDate, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface MiroSmartMusicRequestManager : VEiOSSharedObject
@@ -19,8 +19,12 @@ __attribute__((visibility("hidden")))
     double _initTime;
     MiroAutoEditLogger *_logger;
     NSArray *_observers;
+    NSDate *_dateM5Starts;
+    NSDate *_dateM5Ends;
 }
 
+@property(retain, nonatomic) NSDate *dateM5Ends; // @synthesize dateM5Ends=_dateM5Ends;
+@property(retain, nonatomic) NSDate *dateM5Starts; // @synthesize dateM5Starts=_dateM5Starts;
 @property(retain) NSArray *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MiroAutoEditLogger *logger; // @synthesize logger=_logger;
 @property(nonatomic) BOOL didLogSongs; // @synthesize didLogSongs=_didLogSongs;
@@ -38,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (double)scoreSong:(id)arg1 withMusicGenreDistribution:(id)arg2;
 - (double)scoreSong:(id)arg1 withRegionID:(id)arg2;
 - (double)scoreSong:(id)arg1 forSpecialKeywords:(id)arg2;
+- (BOOL)isNowWithinTheM5PromotionDateRange;
 - (double)scoreSong:(id)arg1 withKeywords:(id)arg2;
 - (double)scoreSong:(id)arg1 withMoodID:(id)arg2;
 - (double)scoreLocalityForSong:(id)arg1;

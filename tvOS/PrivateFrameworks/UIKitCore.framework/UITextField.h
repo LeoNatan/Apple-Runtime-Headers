@@ -665,6 +665,7 @@
 - (_Bool)canBecomeFirstResponder;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (struct CGSize)_textSize;
 - (struct CGSize)_textSizeUsingFullFontSize:(_Bool)arg1;

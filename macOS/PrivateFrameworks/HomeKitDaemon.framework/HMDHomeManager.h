@@ -38,7 +38,6 @@
     BOOL _companionReachable;
     BOOL _accountStatusIsAuthenticated;
     BOOL _homeDataLoadedFromArchive;
-    BOOL _watchPerformVersionCheck;
     BOOL _cloudkitAccountStatusDetermined;
     BOOL _needToCleanUpKeys;
     unsigned short _nextRequestTransactionIdentifier;
@@ -136,7 +135,6 @@
 + (id)getUniqueDeviceIdSalt;
 + (BOOL)doesSaveReasonNotAffectLocalData:(id)arg1;
 + (BOOL)doesSaveReasonAffectOnlyLocalData:(id)arg1;
-+ (BOOL)doesSaveReasonAffectWatchVersionCheck:(id)arg1;
 + (BOOL)doesSaveReasonAffectHomeManager:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *siriSyncNotificationReasons; // @synthesize siriSyncNotificationReasons=_siriSyncNotificationReasons;
 @property(nonatomic) unsigned long long siriSyncNotificationTime; // @synthesize siriSyncNotificationTime=_siriSyncNotificationTime;
@@ -148,7 +146,6 @@
 @property(nonatomic) BOOL needToCleanUpKeys; // @synthesize needToCleanUpKeys=_needToCleanUpKeys;
 @property(retain, nonatomic) HMDTimeInformationMonitor *timeInformationMonitor; // @synthesize timeInformationMonitor=_timeInformationMonitor;
 @property(nonatomic) BOOL cloudkitAccountStatusDetermined; // @synthesize cloudkitAccountStatusDetermined=_cloudkitAccountStatusDetermined;
-@property(nonatomic) BOOL watchPerformVersionCheck; // @synthesize watchPerformVersionCheck=_watchPerformVersionCheck;
 @property(readonly, nonatomic) HMFTimer *sharedHomesPushDelayTimer; // @synthesize sharedHomesPushDelayTimer=_sharedHomesPushDelayTimer;
 @property(readonly, nonatomic) HMFTimer *watchPushDelayTimer; // @synthesize watchPushDelayTimer=_watchPushDelayTimer;
 @property(nonatomic) BOOL homeDataLoadedFromArchive; // @synthesize homeDataLoadedFromArchive=_homeDataLoadedFromArchive;
@@ -353,7 +350,7 @@
 - (BOOL)isPairedWithWatch;
 - (void)_checkAndInformCompanionDevice;
 @property(readonly, nonatomic) HMDDevice *companionDevice;
-- (void)_sendHomeDataToWatch:(id)arg1 performVersionCheck:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_sendHomeDataToWatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_sendHomeDataToAllWatches;
 - (void)_scheduleSendHomeDataToAllWatches;
 - (BOOL)_addWatch:(id)arg1 toAssociatedList:(id)arg2;
@@ -441,7 +438,7 @@
 - (void)_handleRequestSetPrimaryHome:(id)arg1;
 - (void)processHomeModelRemoved:(id)arg1 message:(id)arg2;
 - (void)_handleRequestRemoveHome:(id)arg1;
-- (void)_scheduleHomeRemoval:(id)arg1 message:(id)arg2 options:(id)arg3;
+- (void)scheduleRemovalForHome:(id)arg1 message:(id)arg2 options:(id)arg3;
 - (void)_removeHome:(id)arg1 withMessage:(id)arg2 saveToStore:(BOOL)arg3 notifyUsers:(BOOL)arg4 shouldRemovePairings:(BOOL)arg5;
 - (void)processHomeModelAdd:(id)arg1 message:(id)arg2;
 - (void)_handleRequestAddHome:(id)arg1;
@@ -630,7 +627,6 @@
 - (void)_saveWithReason:(id)arg1 information:(id)arg2 saveOptions:(unsigned long long)arg3;
 - (void)saveWithReason:(id)arg1 information:(id)arg2 saveOptions:(unsigned long long)arg3;
 - (void)_saveWithReason:(id)arg1 postSyncNotification:(BOOL)arg2;
-- (void)saveToCurrentAccountWithRequest:(id)arg1;
 - (void)_handleSaveRequest:(id)arg1;
 - (void)removeAccessoryCacheForIdentifier:(id)arg1;
 - (id)getAccessoryCacheForIdentifer:(id)arg1;

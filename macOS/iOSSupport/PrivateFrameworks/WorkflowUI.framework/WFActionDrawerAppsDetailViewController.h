@@ -13,19 +13,17 @@
 #import <WorkflowUI/WFActionDrawerStateConfigurable-Protocol.h>
 #import <WorkflowUI/WFActionDrawerStateRepresentable-Protocol.h>
 
-@class NSString, WFActionDrawerResultsController, WFActionDrawerState;
+@class NSString, WFActionDrawerState;
 @protocol WFActionDrawerAppsDetailViewControllerDelegate;
 
 @interface WFActionDrawerAppsDetailViewController : WFActionDrawerCompositeResultsViewController <UITableViewDataSource, UITableViewDelegate, WFActionDrawerSiriSuggestionsTableViewCellDelegate, WFActionDrawerActionTableViewCellDelegate, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable>
 {
-    BOOL _loadingIndicatorShouldShow;
+    BOOL _loading;
     id <WFActionDrawerAppsDetailViewControllerDelegate> _delegate;
     NSString *_bundleIdentifier;
-    WFActionDrawerResultsController *_resultsController;
 }
 
-@property(nonatomic) BOOL loadingIndicatorShouldShow; // @synthesize loadingIndicatorShouldShow=_loadingIndicatorShouldShow;
-@property(readonly, nonatomic) WFActionDrawerResultsController *resultsController; // @synthesize resultsController=_resultsController;
+@property(nonatomic) BOOL loading; // @synthesize loading=_loading;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <WFActionDrawerAppsDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -39,14 +37,12 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)suggestionsSection;
-- (id)userActivitySection;
-- (id)actionsSection;
+- (long long)detailSectionIndexForIndexPath:(long long)arg1;
+- (unsigned long long)detailSectionForSection:(long long)arg1;
 - (void)reloadViews;
-- (void)setLoading:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)initWithBundleIdentifier:(id)arg1 resultsController:(id)arg2;
+- (id)initWithBundleIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

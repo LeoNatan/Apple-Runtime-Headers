@@ -48,6 +48,7 @@
 - (BOOL)_validateHysteresis;
 - (BOOL)_hasExceededMaximumNumberOfTouches;
 - (BOOL)_hasExceededAllowableMovement;
+@property(readonly, nonatomic) BOOL hasExceededAllowableMovement;
 - (void)_updateTouchForce:(double)arg1;
 - (void)_endIfNeeded:(BOOL)arg1;
 - (void)_evaluateWithTouchForce:(double)arg1 centroidAtLocation:(struct CGPoint)arg2;

@@ -29,10 +29,28 @@
     CLKRelativeDateTextProvider *_totalTimeTextProvider;
     CLKRelativeDateTextProvider *_lapTimeTextProvider;
     NSDate *_stopwatchStartDate;
+    _Bool _tritium_useTritiumCopies;
 }
 
++ (double)tritium_displayTimeDelta;
 + (Class)_timeViewClass;
 - (void).cxx_destruct;
+- (id)tritium_appropriateChronoPalette;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
+- (void)tritium_requestStatusbarUpdate;
+- (void)tritium_synchronizeWithActiveFaceView:(id)arg1;
+- (void)tritium_setUseTritiumCopies:(_Bool)arg1;
+- (void)tritium_applyStopwatchLabelAlphaForProgress:(float)arg1 transitionToShortForm:(_Bool)arg2;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_didTransitionToTritiumOff;
+- (id)tritium_animationToCurrentDateFromDate:(id)arg1;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
+- (void)tritium_loadContentViews;
 - (void)_removeModeRelatedUIs;
 - (void)_updateComplicationFactoryWithDateComplicationView:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;

@@ -9,12 +9,13 @@
 #import <MapsSuggestions/MapsSuggestionsMeCardObserver-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class MapsSuggestionsShortcutManager, NSObject, NSString;
+@class MapsSuggestionsCanKicker, MapsSuggestionsShortcutManager, NSObject, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue;
 
 @interface MapsSuggestionsShortcutSource : MapsSuggestionsBaseSource <MapsSuggestionsMeCardObserver, MapsSuggestionsSource>
 {
     NSObject<OS_dispatch_queue> *_queue;
+    MapsSuggestionsCanKicker *_updateForcer;
     MapsSuggestionsShortcutManager *_shortcutManager;
 }
 

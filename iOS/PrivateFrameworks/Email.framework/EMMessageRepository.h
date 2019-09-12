@@ -40,7 +40,7 @@
 - (void)_vipsDidChange:(id)arg1;
 - (void)_blockedSendersDidChange:(id)arg1;
 - (void)_detectChangesForMatchedAddedObjectIDs:(id)arg1 observerationIdentifier:(id)arg2 matchedChangesHandler:(CDUnknownBlockType)arg3;
-- (id)_applyChangesToCachedObjects:(id)arg1;
+- (void)_applyChangesToCachedObjects:(id)arg1;
 - (void)loadOlderMessagesForMailboxes:(id)arg1;
 - (void)_predictMailboxForMovingMessagesWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)predictMailboxForMovingMessages:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

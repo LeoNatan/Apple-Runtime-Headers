@@ -61,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)barSizeChanged;
 - (BOOL)shouldUseHeightRangeFittingWidth;
 - (id)restingHeights;
+- (BOOL)topItemHasVariableHeight;
 - (CDStruct_39925896)layoutHeightsFittingWidth:(double)arg1;
 - (struct NSDirectionalEdgeInsets)resolvedLargeTitleMargins;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

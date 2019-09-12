@@ -65,6 +65,7 @@
 - (id)homes;
 @property(readonly, nonatomic) NSArray *allOwnedHomes;
 - (void)accessoryBrowser:(id)arg1 didFindNewAccessory:(id)arg2;
+- (void)_queueStopBrowsingForLocalAccessory;
 - (void)stopBrowsingForLocalAccessory;
 - (void)startBrowsingForLocalAccessory;
 - (void)stopAdvertisingForProximityKeyTransfer;

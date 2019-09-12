@@ -38,7 +38,12 @@
 - (void)replaceRegion:(CDStruct_1e3be3a8)arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6;
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 bytesPerImage:(unsigned long long)arg3 fromRegion:(CDStruct_1e3be3a8)arg4 mipmapLevel:(unsigned long long)arg5 slice:(unsigned long long)arg6;
 @property(readonly) _Bool allowGPUOptimizedContents;
+@property(readonly) unsigned long long tailSizeInBytes;
+- (unsigned long long)tailSize;
+@property(readonly) unsigned long long firstMipmapInTail;
+@property(readonly) unsigned long long sparseSurfaceDefaultValue;
 @property(readonly, getter=isFramebufferOnly) _Bool framebufferOnly;
+@property(readonly) _Bool isSparse;
 @property(readonly) unsigned long long arrayLength;
 @property(readonly) unsigned long long sampleCount;
 @property(readonly) unsigned long long mipmapLevelCount;

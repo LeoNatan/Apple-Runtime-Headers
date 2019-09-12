@@ -9,6 +9,7 @@
 @interface PXDisplayLink : NSObject
 {
     struct __CVDisplayLink *_displayLinkRef;
+    BOOL _invalidated;
     id _target;
     SEL _selector;
     double _timestamp;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) double currentMediaTime;
 @property(nonatomic) BOOL paused;
 - (void)_tick:(struct __CVDisplayLink *)arg1;
+- (void)_ensureDisplayLink;
 - (void)invalidate;
 - (void)dealloc;
 - (id)init;

@@ -10,7 +10,7 @@
 
 @protocol PODFileAccessProviderProtocol <NSObject>
 - (void)requestITunesManagedLibraryLocation:(void (^)(NSURL *, NSError *))arg1;
-- (void)obtainAccessToFileURL:(NSURL *)arg1 response:(void (^)(PODSecurityScopedURLWrapper *, NSError *))arg2;
+- (void)obtainSecurityScopedURL:(NSURL *)arg1 response:(void (^)(NSData *, NSError *))arg2;
 - (void)requestContentImportStateForDomain:(NSString *)arg1 response:(void (^)(long long))arg2;
 @end
 

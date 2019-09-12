@@ -8,7 +8,7 @@
 
 @interface PLPhotoLibraryPathManager (conveniences)
 - (id)pathToiPhotoLibraryMediaDir;
-- (id)temporaryRenderContentURLForInternalRendersWithExtension:(id)arg1 createEmptyFile:(_Bool)arg2;
+- (id)temporaryRenderContentURLForInternalRendersWithExtension:(id)arg1;
 - (id)cloudSharingArchiveDirectory;
 - (id)directoryPathForInFlightComments:(_Bool)arg1;
 - (id)cplDownloadFinishedMarkerFilePath;

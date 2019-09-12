@@ -12,6 +12,7 @@
 {
     AVCaptureResolvedPhotoSettingsInternal *_internal;
     _Bool _redEyeReductionEnabled;
+    _Bool _virtualDeviceFusionEnabled;
     CDStruct_79c71658 _rawEmbeddedThumbnailDimensions;
     CDStruct_79c71658 _portraitEffectsMatteDimensions;
     CDStruct_e83c9415 _photoProcessingTimeRange;
@@ -19,6 +20,7 @@
 
 + (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(CDStruct_79c71658)arg2 rawPhotoDimensions:(CDStruct_79c71658)arg3 previewDimensions:(CDStruct_79c71658)arg4 embeddedThumbnailDimensions:(CDStruct_79c71658)arg5 livePhotoMovieEnabled:(_Bool)arg6 livePhotoMovieDimensions:(CDStruct_79c71658)arg7 turboModeEnabled:(_Bool)arg8 flashEnabled:(_Bool)arg9 HDREnabled:(_Bool)arg10 adjustedPhotoFiltersEnabled:(_Bool)arg11 EV0PhotoDeliveryEnabled:(_Bool)arg12 stillImageStabilizationEnabled:(_Bool)arg13 squareCropEnabled:(_Bool)arg14 photoManifest:(id)arg15;
 @property(readonly) CDStruct_e83c9415 photoProcessingTimeRange; // @synthesize photoProcessingTimeRange=_photoProcessingTimeRange;
+@property(readonly, getter=isVirtualDeviceFusionEnabled) _Bool virtualDeviceFusionEnabled; // @synthesize virtualDeviceFusionEnabled=_virtualDeviceFusionEnabled;
 @property(readonly, getter=isRedEyeReductionEnabled) _Bool redEyeReductionEnabled; // @synthesize redEyeReductionEnabled=_redEyeReductionEnabled;
 @property(readonly) CDStruct_79c71658 portraitEffectsMatteDimensions; // @synthesize portraitEffectsMatteDimensions=_portraitEffectsMatteDimensions;
 @property(readonly) CDStruct_79c71658 rawEmbeddedThumbnailDimensions; // @synthesize rawEmbeddedThumbnailDimensions=_rawEmbeddedThumbnailDimensions;

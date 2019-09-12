@@ -9,12 +9,13 @@
 #import <AVConference/VCConnectionHealthMonitorDelegate-Protocol.h>
 #import <AVConference/VCWifiAssistManagerDelegate-Protocol.h>
 
-@class NSString, VCConnectionHealthMonitor, VCStatsRecorder, VCWifiAssistManager;
+@class NSMutableArray, NSString, VCConnectionHealthMonitor, VCStatsRecorder, VCWifiAssistManager;
 @protocol OS_dispatch_queue, VCConnectionManagerDelegate, VCConnectionProtocol;
 
 __attribute__((visibility("hidden")))
 @interface VCConnectionManager : NSObject <VCConnectionHealthMonitorDelegate, VCWifiAssistManagerDelegate>
 {
+    BOOL _isStarted;
     unsigned int _callID;
     int _connectionSelectionVersion;
     int _relayServerProvider;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <VCConnectionProtocol> _secondaryConnection;
     id <VCConnectionProtocol> _connectionForDuplication;
     id <VCConnectionProtocol> _lastPrimaryConnectionInUse;
+    NSMutableArray *_connectionArray;
     struct opaqueRTCReporting *_reportingAgent;
     BOOL _isInitialConnectionEstablished;
     unsigned int _mediaExcessiveCellularTxBytes;
@@ -75,11 +77,13 @@ __attribute__((visibility("hidden")))
     BOOL _cellPrimaryInterfaceChangeEnabled;
     BOOL _duplicateImportantPktsEnabled;
     BOOL _lowNetworkModeEnabled;
+    BOOL _duplicationEnhancementEnabled;
     double _noRemoteDuplicationThresholdFast;
 }
 
 @property(readonly) unsigned int budgetConsumingCellularRxBytes; // @synthesize budgetConsumingCellularRxBytes=_budgetConsumingCellularRxBytes;
 @property(readonly) unsigned int budgetConsumingCellularTxBytes; // @synthesize budgetConsumingCellularTxBytes=_budgetConsumingCellularTxBytes;
+@property BOOL duplicationEnhancementEnabled; // @synthesize duplicationEnhancementEnabled=_duplicationEnhancementEnabled;
 @property BOOL lowNetworkModeEnabled; // @synthesize lowNetworkModeEnabled=_lowNetworkModeEnabled;
 @property double noRemoteDuplicationThresholdFast; // @synthesize noRemoteDuplicationThresholdFast=_noRemoteDuplicationThresholdFast;
 @property BOOL duplicateImportantPktsEnabled; // @synthesize duplicateImportantPktsEnabled=_duplicateImportantPktsEnabled;
@@ -147,11 +151,15 @@ __attribute__((visibility("hidden")))
 - (id)connectionForQualityInternal:(int)arg1;
 - (BOOL)isOptimalConnection:(id)arg1 asPrimary:(BOOL)arg2 interfaceMask:(int)arg3;
 - (BOOL)isBetterConnection:(id)arg1 asPrimary:(BOOL)arg2;
+- (BOOL)isConnection:(id)arg1 betterSecondaryThanConnection:(id)arg2;
+- (BOOL)isConnection:(id)arg1 betterPrimaryThanConnection:(id)arg2;
 - (void)promoteSecondaryConnectionToPrimary:(id)arg1;
 - (int)getConnectionSelectionVersionFromFrameworkVersion:(id)arg1;
 - (void)disableRemotePreferredInterfaceInference:(BOOL)arg1;
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
 - (void)checkpointPrimaryConnection:(id)arg1;
+- (id)suggestedLinkTypeCombo;
+- (id)activeConnectionRegistry;
 - (void)updateSessionStats:(unsigned short)arg1;
 - (unsigned int)getByteCountWithIndex:(unsigned char)arg1 isOutgoing:(BOOL)arg2;
 - (unsigned int)getPacketCountWithIndex:(unsigned char)arg1 isOutgoing:(BOOL)arg2;

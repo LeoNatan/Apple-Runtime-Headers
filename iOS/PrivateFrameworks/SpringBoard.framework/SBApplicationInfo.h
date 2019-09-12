@@ -47,6 +47,7 @@
     _Bool _isPeaceLinked;
     _Bool _isPeaceBLinked;
     _Bool _isYukonLinked;
+    _Bool _isYukonELinked;
     _Bool _prefersSavedSnapshots;
     _Bool _wantsLaunchWithoutPNG;
     _Bool _wantsFullScreen;
@@ -127,6 +128,7 @@
 @property(readonly, nonatomic) unsigned long long dynamicApplicationShortcutItemsVersion; // @synthesize dynamicApplicationShortcutItemsVersion=_dynamicApplicationShortcutItemsVersion;
 @property(readonly, copy, nonatomic) NSString *applicationShortcutWidgetBundleIdentifier; // @synthesize applicationShortcutWidgetBundleIdentifier=_applicationShortcutWidgetBundleIdentifier;
 @property(readonly, nonatomic) _Bool representsWebApplication; // @synthesize representsWebApplication=_representsWebApplication;
+@property(readonly, nonatomic, getter=isYukonELinked) _Bool yukonELinked; // @synthesize yukonELinked=_isYukonELinked;
 @property(readonly, nonatomic, getter=isYukonLinked) _Bool yukonLinked; // @synthesize yukonLinked=_isYukonLinked;
 @property(readonly, nonatomic, getter=isPeaceBLinked) _Bool peaceBLinked; // @synthesize peaceBLinked=_isPeaceBLinked;
 @property(readonly, nonatomic, getter=isPeaceLinked) _Bool peaceLinked; // @synthesize peaceLinked=_isPeaceLinked;

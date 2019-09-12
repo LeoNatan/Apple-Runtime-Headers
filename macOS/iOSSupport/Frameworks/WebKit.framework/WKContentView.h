@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIWebFormAccessory> _formAccessoryView;
     struct RetainPtr<_UIHighlightView> _highlightView;
     struct RetainPtr<UIView> _interactionViewsContainerView;
+    struct RetainPtr<UIView> _contextMenuHintContainerView;
     struct RetainPtr<NSString> _markedText;
     struct RetainPtr<WKActionSheetAssistant> _actionSheetAssistant;
     struct RetainPtr<WKFormInputSession> _formInputSession;
@@ -110,6 +111,7 @@ __attribute__((visibility("hidden")))
     BOOL _waitingForEditDragSnapshot;
     BOOL _hasSetUpInteractions;
     unsigned long long _ignoreSelectionCommandFadeCount;
+    long long _suppressNonEditableSingleTapTextInteractionCount;
     CompletionHandler_2aa2525f _domPasteRequestHandler;
     struct BlockPtr<void (UIWKAutocorrectionContext *)> _pendingAutocorrectionContextHandler;
     struct DragDropInteractionState _dragDropInteractionState;
@@ -217,6 +219,7 @@ __attribute__((visibility("hidden")))
 - (void)selectPositionAtPoint:(struct CGPoint)arg1 withContextRequest:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDocumentContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)adjustSelectionWithDelta:(struct _NSRange)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) BOOL supportsImagePaste;
 - (id)_autofillContext;
 - (id)textEffectsWindow;
 - (id)_itemsForBeginningOrAddingToSessionWithRegistrationList:(id)arg1 stagedDragSource:(const struct DragSourceState *)arg2;
@@ -241,6 +244,7 @@ __attribute__((visibility("hidden")))
 - (id)webViewUIDelegate;
 - (double)dragLiftDelay;
 - (void)_didChangeDragInteractionPolicy;
+- (void)_hideContextMenuHintContainer;
 - (id)containerViewForTargetedPreviews;
 @property(readonly, nonatomic) BOOL _shouldAvoidScrollingWhenFocusedContentIsVisible;
 @property(readonly, nonatomic) BOOL _shouldAvoidResizingWhenInputViewBoundsChange;
@@ -258,7 +262,7 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (Optional_1620521f)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_667115b7)positionInformationForActionSheetAssistant:(id)arg1;
 - (BOOL)isAnyTouchOverActiveArea:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (BOOL)shouldIgnoreWebTouch;
@@ -295,6 +299,7 @@ __attribute__((visibility("hidden")))
 - (void)_didUpdateInputMode:(unsigned char)arg1;
 - (void)_hardwareKeyboardAvailabilityChanged;
 @property(readonly, nonatomic) BOOL shouldIgnoreKeyboardWillHideNotification;
+- (void)_updateInputContextAfterBlurringAndRefocusingElement;
 - (void)_elementDidBlur;
 - (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(BOOL)arg2 blurPreviousNode:(BOOL)arg3 activityStateChanges:(OptionSet_05ce0fa5)arg4 userObject:(id)arg5;
 - (Vector_116a0919 *)focusedSelectElementOptions;

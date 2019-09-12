@@ -28,6 +28,7 @@
 - (id)valueForAttribute:(id)arg1;
 - (id)groupName;
 - (id)category;
+- (id)initWithResult:(id)arg1;
 
 @end
 

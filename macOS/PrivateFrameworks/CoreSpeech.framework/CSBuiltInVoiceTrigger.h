@@ -27,6 +27,7 @@
     BOOL _isSiriClientListening;
     BOOL _isListenPollingStarting;
     BOOL _isPhraseSpotterBypassed;
+    BOOL _shouldDisableOnSpeakerVerificationInSplitterMode;
     float _firstPassThreshold;
     float _bestScore;
     float _masterChannelScoreBoost;
@@ -55,6 +56,7 @@
 }
 
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) BOOL shouldDisableOnSpeakerVerificationInSplitterMode; // @synthesize shouldDisableOnSpeakerVerificationInSplitterMode=_shouldDisableOnSpeakerVerificationInSplitterMode;
 @property(nonatomic) unsigned long long currentSplitterState; // @synthesize currentSplitterState=_currentSplitterState;
 @property(nonatomic) unsigned long long secondChanceHotTillMachTime; // @synthesize secondChanceHotTillMachTime=_secondChanceHotTillMachTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *recordingWillStartGroup; // @synthesize recordingWillStartGroup=_recordingWillStartGroup;

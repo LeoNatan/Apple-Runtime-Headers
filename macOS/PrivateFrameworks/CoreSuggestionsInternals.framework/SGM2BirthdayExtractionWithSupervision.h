@@ -11,11 +11,14 @@
 @interface SGM2BirthdayExtractionWithSupervision : PBCodable <NSCopying>
 {
     BOOL _dateIsCorrect;
+    BOOL _isFromCongratulation;
     struct {
         unsigned int dateIsCorrect:1;
+        unsigned int isFromCongratulation:1;
     } _has;
 }
 
+@property(nonatomic) BOOL isFromCongratulation; // @synthesize isFromCongratulation=_isFromCongratulation;
 @property(nonatomic) BOOL dateIsCorrect; // @synthesize dateIsCorrect=_dateIsCorrect;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,6 +29,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsFromCongratulation;
 @property(nonatomic) BOOL hasDateIsCorrect;
 
 @end

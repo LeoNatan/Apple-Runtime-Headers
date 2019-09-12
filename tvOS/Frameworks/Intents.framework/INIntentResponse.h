@@ -12,13 +12,14 @@
 #import <Intents/INImageProxyInjecting-Protocol.h>
 #import <Intents/INIntentResponseExport-Protocol.h>
 #import <Intents/INIntentSlotComposing-Protocol.h>
+#import <Intents/INKeyImageProducing-Protocol.h>
 #import <Intents/INRuntimeObject-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INCodableDescription, INIntentResponseCodableCode, INIntentResponseDescription, NSDictionary, NSString, NSUserActivity, PBCodable, _INPBIntentResponse;
+@class INCodableDescription, INImage, INIntentResponseCodableCode, INIntentResponseDescription, NSDictionary, NSString, NSUserActivity, PBCodable, _INPBIntentResponse;
 
-@interface INIntentResponse : NSObject <INImageProxyInjecting, INIntentSlotComposing, INFileURLEnumerable, INCacheableContainer, INIntentResponseExport, INGenericIntentResponse, INRuntimeObject, NSCopying, NSSecureCoding>
+@interface INIntentResponse : NSObject <INImageProxyInjecting, INIntentSlotComposing, INFileURLEnumerable, INCacheableContainer, INKeyImageProducing, INIntentResponseExport, INGenericIntentResponse, INRuntimeObject, NSCopying, NSSecureCoding>
 {
     _Bool __userConfirmationRequired;
     long long _code;
@@ -100,6 +101,8 @@
 - (id)_originatingBundleIdentifier;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
+@property(readonly) INImage *_keyImage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

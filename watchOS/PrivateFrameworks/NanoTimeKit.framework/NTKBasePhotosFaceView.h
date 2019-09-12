@@ -36,6 +36,7 @@
     unsigned int _isInteractive:1;
     unsigned int _isUsingLegibility:1;
     NTKUtilityComplicationFactory *_complicationFactory;
+    _Bool _isTritiumFlipbookSource;
     _Bool _noPhotosViewVisible;
     NTKAlbumEmptyView *_noPhotosView;
 }
@@ -50,6 +51,7 @@
 @property(readonly, nonatomic) NTKPhotoImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 @property(readonly, nonatomic) UIView *cornerView; // @synthesize cornerView=_cornerView;
 - (void).cxx_destruct;
+- (void)tritium_loadContentViews;
 - (_Bool)isCheapCopy;
 - (_Bool)screenWillGoDark;
 - (void)_endScrubbingAnimationFromUIViewAnimateWithDuration;

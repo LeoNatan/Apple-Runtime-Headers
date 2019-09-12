@@ -27,6 +27,7 @@
     NSString *_legacyMemoriesRelatedSnapshotDirectory;
 }
 
++ (id)basenameForSpatialOverCaptureFromOriginalBasename:(id)arg1;
 + (_Bool)isSystemLibraryURLDefined;
 + (_Bool)setSystemLibraryURL:(id)arg1 options:(unsigned short)arg2 error:(id *)arg3;
 + (id)systemLibraryURLIfResolvable;

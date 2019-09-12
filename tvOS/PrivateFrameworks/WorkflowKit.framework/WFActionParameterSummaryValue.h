@@ -22,6 +22,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *requiredValues; // @synthesize requiredValues=_requiredValues;
 @property(readonly, copy, nonatomic) NSArray *requiredVisibleParameterKeys; // @synthesize requiredVisibleParameterKeys=_requiredVisibleParameterKeys;
 - (void).cxx_destruct;
+- (id)mapPossibleValuesToKeys:(id)arg1;
 - (void)explodeKeys:(id)arg1 currentKeyIndex:(unsigned long long)arg2 possibleValuesPerKey:(id)arg3 currentCombination:(id)arg4 results:(id)arg5;
 - (id)explodedKeysWithPossibleValuesInAction:(id)arg1;
 - (_Bool)matchesVisibleParameterKeys:(id)arg1 checkingRequiredValuesInAction:(id)arg2;

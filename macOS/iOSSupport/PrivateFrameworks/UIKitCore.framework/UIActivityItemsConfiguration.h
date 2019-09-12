@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/UIActivityItemsConfigurationReading-Protocol.h>
-#import <UIKitCore/UINSActivityItemsConfiguration-Protocol.h>
+#import <UIKitCore/UINSActivityItemsConfigurationReading-Protocol.h>
 
 @class NSArray, NSPointerArray, NSString;
 
-@interface UIActivityItemsConfiguration : NSObject <UINSActivityItemsConfiguration, UIActivityItemsConfigurationReading>
+@interface UIActivityItemsConfiguration : NSObject <UINSActivityItemsConfigurationReading, UIActivityItemsConfigurationReading>
 {
     NSArray *_itemProviders;
+    NSArray *_activityItemSources;
     id _localObject;
     NSArray *_supportedInteractions;
     CDUnknownBlockType _metadataProvider;
@@ -23,6 +24,7 @@
     NSPointerArray *__changeObservers;
 }
 
++ (id)_itemsForSystemSharingFromActivityItemsConfiguration:(id)arg1 wrapperBlock:(CDUnknownBlockType)arg2;
 + (id)activityItemsConfigurationWithItemProviders:(id)arg1;
 + (id)activityItemsConfigurationWithObjects:(id)arg1;
 @property(retain, nonatomic) NSPointerArray *_changeObservers; // @synthesize _changeObservers=__changeObservers;
@@ -37,9 +39,12 @@
 @property(readonly, copy, nonatomic) NSArray *applicationActivitiesForActivityItemsConfiguration;
 - (id)activityItemsForSharing;
 - (id)activityItemsConfigurationPreviewForItemAtIndex:(long long)arg1 intent:(id)arg2 suggestedSize:(struct CGSize)arg3;
+- (id)activityItemsConfigurationMetadataForItemAtIndex:(long long)arg1 key:(id)arg2;
 - (id)activityItemsConfigurationMetadataForKey:(id)arg1;
 - (BOOL)activityItemsConfigurationSupportsInteraction:(id)arg1;
 - (id)itemProviders;
+@property(readonly, copy, nonatomic) NSArray *_activityItemSources;
+- (id)_initWithActivityItemSources:(id)arg1;
 - (id)initWithItemProviders:(id)arg1;
 - (id)initWithObjects:(id)arg1;
 - (void)_commonInit;

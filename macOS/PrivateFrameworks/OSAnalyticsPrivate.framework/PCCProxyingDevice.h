@@ -50,6 +50,7 @@
 - (void)updateProxiedDeviceMetadata:(id)arg1 from:(id)arg2;
 - (void)ack:(id)arg1 result:(BOOL)arg2 error:(id)arg3;
 - (void)handleFile:(id)arg1 metadata:(id)arg2;
+- (BOOL)isFilenameReasonable:(id)arg1;
 - (void)onReport:(id)arg1;
 - (void)summarizeLog:(id)arg1 reason:(id)arg2;
 - (void)handleMessage:(id)arg1 from:(id)arg2;

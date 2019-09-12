@@ -38,6 +38,8 @@
 - (void).cxx_destruct;
 - (void)setSource:(id)arg1 mediaType:(long long)arg2;
 - (Class)_adjustmentControllerClassForKey:(id)arg1;
+- (void)setOvercaptureSource:(id)arg1;
+@property(nonatomic) long long sourceSelection;
 - (long long)userOrientation;
 - (id)differingAdjustmentsWithComposition:(id)arg1;
 - (id)debugDescription;
@@ -55,6 +57,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NUComposition *composition;
 - (id)initWithComposition:(id)arg1;
+- (id)sourceSelectAdjustmentControllerCreatingIfNecessary:(_Bool)arg1;
+- (id)sourceSelectAdjustmentController;
+- (id)videoReframeAdjustmentControllerCreatingIfNecessary:(_Bool)arg1;
+- (id)videoReframeAdjustmentController;
 - (id)vignetteAdjustmentControllerCreatingIfNecessary:(_Bool)arg1;
 - (id)vignetteAdjustmentController;
 - (id)definitionAdjustmentControllerCreatingIfNecessary:(_Bool)arg1;

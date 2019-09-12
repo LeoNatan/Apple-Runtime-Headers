@@ -9,7 +9,7 @@
 #import <HomeUI/HUQuickControlSliderGestureTransformerDelegate-Protocol.h>
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class HUDisplayLinkApplier, HUElasticApplier, HUQuickControlSliderGestureTransformer, HUQuickControlViewProfile, NSString, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class HUDisplayLinkApplier, HUElasticApplier, HUQuickControlSliderGestureTransformer, HUQuickControlViewProfile, NSDate, NSString, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol HUQuickControlIncrementalConvertibleProfile;
 
 @interface HUQuickControlElasticSliderInteractionCoordinator : HUQuickControlInteractionCoordinator <HUQuickControlSliderGestureTransformerDelegate, UIGestureRecognizerDelegate>
@@ -26,9 +26,11 @@
     HUElasticApplier *_controlHorizontalCompressionApplier;
     double _activeGestureValue;
     unsigned long long _activeGestureValueType;
+    NSDate *_interactableStartTime;
     CDStruct_ef18196a _modelValue;
 }
 
+@property(retain, nonatomic) NSDate *interactableStartTime; // @synthesize interactableStartTime=_interactableStartTime;
 @property(nonatomic, getter=isFirstTouchDown) BOOL firstTouchDown; // @synthesize firstTouchDown=_firstTouchDown;
 @property(nonatomic) CDStruct_c3b9c2ee modelValue; // @synthesize modelValue=_modelValue;
 @property(nonatomic) unsigned long long activeGestureValueType; // @synthesize activeGestureValueType=_activeGestureValueType;
@@ -57,7 +59,7 @@
 - (unsigned long long)_findClosestValueFromTouchLocation:(struct CGPoint)arg1;
 - (double)_sliderValueForLocation:(struct CGPoint)arg1;
 - (CDStruct_c3b9c2ee)_rawViewValueRange;
-- (void)_beginReceivingTouchesWithGestureRecognizer:(id)arg1 firstTouchDown:(BOOL)arg2;
+- (void)_beginReceivingTouchesWithGestureRecognizer:(id)arg1 isTouchContinuation:(BOOL)arg2;
 - (void)_handleControlTapGesture:(id)arg1;
 - (void)_handleControlPanGesture:(id)arg1;
 - (void)_updateModelValue:(CDStruct_c3b9c2ee)arg1 roundValue:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
@@ -66,6 +68,7 @@
 - (void)setValue:(id)arg1;
 - (id)value;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
+- (void)recordInteractionStart;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) HUQuickControlViewProfile<HUQuickControlIncrementalConvertibleProfile> *viewProfile;
 - (void)dealloc;

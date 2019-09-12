@@ -16,6 +16,8 @@
 
 + (id)logCategory;
 + (int)createIOSurfaceBackedPixelBufferWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 pixelBuffer:(struct __CVBuffer **)arg3;
++ (struct CGRect)imposeMinSizeFor:(struct CGRect)arg1 withOriginalSize:(struct CGSize)arg2 minCrop:(int)arg3;
++ (struct CGRect)applyPadding:(struct CGRect)arg1 withOriginalSize:(struct CGSize)arg2 padding:(struct CGSize)arg3;
 + (struct __CVBuffer *)cropAndResizePixelBuffer:(struct __CVBuffer *)arg1 rect:(struct CGRect)arg2 size:(struct CGSize)arg3 error:(id *)arg4;
 + (struct __CVBuffer *)resizePixelBuffer:(struct __CVBuffer *)arg1 resultSize:(struct CGSize)arg2 error:(id *)arg3;
 + (struct __CVBuffer *)cropPixelBuffer:(struct __CVBuffer *)arg1 cropRect:(struct CGRect)arg2 error:(id *)arg3;

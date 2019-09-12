@@ -9,6 +9,7 @@
 @interface NSURL (AMCocoaExtensions)
 + (id)am_urlByPercentEscapingString:(id)arg1;
 @property(readonly, getter=isFeedURL) BOOL feedURL;
+@property(readonly, nonatomic) NSURL *am_fileURLNormalizedForROSP;
 @property(readonly, nonatomic) BOOL am_isImageURL;
 - (BOOL)amf_isHTTPFamilyURL;
 @end

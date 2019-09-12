@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) _Bool shouldPause; // @synthesize shouldPause=_shouldPause;
 @property(readonly, nonatomic) _Bool paused; // @synthesize paused=_isPaused;
 - (void).cxx_destruct;
+- (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
 - (void)_reset;
 - (void)_updateImageToBlur;
 - (void)_cancelPauseLockout;

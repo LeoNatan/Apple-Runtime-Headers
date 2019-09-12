@@ -6,12 +6,6 @@
 
 #import <Home/HMNetworkConfigurationProfileDelegatePrivate-Protocol.h>
 
-@class NSSet;
-
 @protocol HFNetworkConfigurationObserver <HMNetworkConfigurationProfileDelegatePrivate>
-
-@optional
-- (void)profilesDidUpdateAllowedHosts:(NSSet *)arg1;
-- (void)profilesDidUpdateNetworkProtectionMode:(NSSet *)arg1;
 @end
 

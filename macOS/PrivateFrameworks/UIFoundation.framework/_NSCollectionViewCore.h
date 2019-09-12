@@ -228,6 +228,7 @@
 - (void)_reuseAllItems;
 - (void)_reuseCell:(id)arg1 notifyDidEndDisplaying:(BOOL)arg2;
 - (void)_reuseCell:(id)arg1;
+- (void)_reuseReusableViewIfNeeded:(id)arg1;
 - (BOOL)_isViewInReuseQueue:(id)arg1;
 - (id)_createTemplateLayoutCellForCellsWithIdentifier:(id)arg1;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
@@ -244,6 +245,7 @@
 - (void)registerClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)registerClass:(Class)arg1 forCellWithReuseIdentifier:(id)arg2;
 - (void)_registeredSupplementaryViewKind:(id)arg1;
+- (id)_nsScrollViewForOrthogonalScrollingSection:(long long)arg1;
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(BOOL)arg3;
 - (struct CGPoint)_contentOffsetForScrollingToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2;
 - (id)_indexPathsForVisibleDecorationViewsOfKind:(id)arg1;

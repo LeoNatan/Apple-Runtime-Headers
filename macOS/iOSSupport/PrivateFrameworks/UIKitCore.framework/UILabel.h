@@ -66,6 +66,7 @@
     } _textLabelFlags;
     BOOL _adjustsFontForContentSizeCategory;
     BOOL __textColorFollowsTintColor;
+    BOOL __supportMultiLineShrinkToFit;
     double _preferredMaxLayoutWidth;
     double _multilineContextWidth;
     UIFont *_fontForShortcutBaselineCalculation;
@@ -80,6 +81,7 @@
 + (id)_defaultColor;
 + (id)defaultFont;
 + (Class)layerClass;
+@property(nonatomic, setter=_setSupportMultiLineShrinkToFit:) BOOL _supportMultiLineShrinkToFit; // @synthesize _supportMultiLineShrinkToFit=__supportMultiLineShrinkToFit;
 @property(retain, nonatomic, setter=_setVisualStyle:) _UILabelVisualStyle *_visualStyle; // @synthesize _visualStyle=__visualStyle;
 @property(nonatomic, setter=_setTextColorFollowsTintColor:) BOOL _textColorFollowsTintColor; // @synthesize _textColorFollowsTintColor=__textColorFollowsTintColor;
 @property(nonatomic) double minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;

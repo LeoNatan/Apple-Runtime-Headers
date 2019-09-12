@@ -15,7 +15,6 @@
     NSString *_ID;
     NSString *_name;
     NSImage *_icon;
-    NSString *_path;
     NSURL *_url;
     NSString *_aliasResolvedPath;
     NSDate *_modificationDate;

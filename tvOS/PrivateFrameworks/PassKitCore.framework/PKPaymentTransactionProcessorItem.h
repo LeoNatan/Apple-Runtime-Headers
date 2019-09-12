@@ -13,11 +13,13 @@
     struct os_unfair_lock_s _transactionLock;
     _Bool _foundOptimalLocation;
     _Bool _useBackgroundLocation;
+    _Bool _isClearingAttempt;
     PKPaymentTransaction *_paymentTransaction;
     PKPaymentApplication *_paymentApplication;
     NSString *_passUniqueIdentifier;
 }
 
+@property(nonatomic) _Bool isClearingAttempt; // @synthesize isClearingAttempt=_isClearingAttempt;
 @property(nonatomic) _Bool useBackgroundLocation; // @synthesize useBackgroundLocation=_useBackgroundLocation;
 @property(nonatomic) _Bool foundOptimalLocation; // @synthesize foundOptimalLocation=_foundOptimalLocation;
 @property(retain, nonatomic) NSString *passUniqueIdentifier; // @synthesize passUniqueIdentifier=_passUniqueIdentifier;

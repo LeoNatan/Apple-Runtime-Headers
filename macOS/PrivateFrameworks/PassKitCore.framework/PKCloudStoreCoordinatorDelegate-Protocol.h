@@ -10,6 +10,6 @@
 
 @protocol PKCloudStoreCoordinatorDelegate <NSObject>
 - (void)recreateZone:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
-- (void)itemOfItemType:(unsigned long long)arg1 recordName:(NSString *)arg2 completion:(void (^)(PKCloudRecordObject *, NSError *))arg3;
+- (void)itemOfItemType:(unsigned long long)arg1 recordName:(NSString *)arg2 qualityOfService:(long long)arg3 completion:(void (^)(PKCloudRecordObject *, NSError *))arg4;
 @end
 

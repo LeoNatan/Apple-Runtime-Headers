@@ -110,6 +110,7 @@
 - (void)_waitWiProx:(long long)arg1 andExecute:(CDUnknownBlockType)arg2;
 - (void)_ageWedgeFilter;
 - (BOOL)_testAndUpdateWedgeFilter:(id)arg1;
+- (void)notifyCurrentDecisionResult;
 - (void)_updateRepliesWith:(id)arg1 id:(id)arg2 data:(id)arg3;
 - (BOOL)_isAlreadyAdvertising;
 - (BOOL)_inTaskTriggerWasTooSoon;

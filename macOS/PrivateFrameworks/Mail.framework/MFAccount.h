@@ -94,6 +94,7 @@
 - (id)_anisetteData;
 @property(readonly, copy) NSString *oneTimePassword;
 @property(readonly, copy) NSString *machineID;
+@property(readonly, copy, nonatomic) NSString *statisticsKind;
 @property(readonly, copy) NSString *appleAuthenticationToken;
 @property(readonly, copy) NSString *applePersonID;
 - (void)displayCredentialPromptInWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;

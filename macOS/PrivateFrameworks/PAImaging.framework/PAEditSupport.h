@@ -30,7 +30,7 @@
 - (id)_compositionForContentEditingInput:(id)arg1 editDescription:(id)arg2 error:(id *)arg3;
 - (void)compositionForContentEditingInput:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)renderDescriptionForContentEditingInput:(id)arg1 adjustmentData:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)newContentEditingRequestOptions;
+- (id)newContentEditingRequestOptions:(id)arg1;
 - (id)init;
 
 @end

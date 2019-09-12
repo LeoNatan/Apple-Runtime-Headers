@@ -13,6 +13,7 @@
     _Bool _hasBPM;
     _Bool _lessThanMinute;
     _Bool _locked;
+    _Bool _privacy;
     _Bool _hasSummary;
     NSDate *_measurementDate;
     int _BPM;
@@ -25,6 +26,7 @@
 @property(nonatomic) int dailyHighBPM; // @synthesize dailyHighBPM=_dailyHighBPM;
 @property(nonatomic) int dailyLowBPM; // @synthesize dailyLowBPM=_dailyLowBPM;
 @property(nonatomic) _Bool hasSummary; // @synthesize hasSummary=_hasSummary;
+@property(nonatomic, getter=isPrivacy) _Bool privacy; // @synthesize privacy=_privacy;
 @property(nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(nonatomic) _Bool lessThanMinute; // @synthesize lessThanMinute=_lessThanMinute;
 @property(nonatomic) _Bool hasBPM; // @synthesize hasBPM=_hasBPM;

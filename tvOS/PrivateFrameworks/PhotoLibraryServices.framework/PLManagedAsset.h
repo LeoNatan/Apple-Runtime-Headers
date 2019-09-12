@@ -70,6 +70,8 @@
 + (id)extensionForMediumThumbnailFile;
 + (id)extensionForLargeThumbnailFile;
 + (id)extensionForFullsizeThumbnailFile;
++ (id)pathForAdjustmentDataFileWithPathManager:(id)arg1 uuid:(id)arg2 directory:(id)arg3 filename:(id)arg4;
++ (id)pathForAdjustmentFileWithPathManager:(id)arg1 uuid:(id)arg2 directory:(id)arg3 filename:(id)arg4;
 + (unsigned long long)localResourceOptionFromResourceType:(unsigned long long)arg1 useMaster:(_Bool)arg2;
 + (id)pathForAdjustmentDirectoryWithMutationsDirectory:(id)arg1;
 + (id)pathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
@@ -129,6 +131,8 @@
 + (id)_importAlbumIsolationQueue;
 + (_Bool)invalidateBehavioralScoreOnAllAssetsInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (_Bool)invalidateReverseLocationDataOnAllAssetsInManagedObjectContext:(id)arg1 error:(id *)arg2;
++ (id)predicateForReframedAssets;
++ (id)predicateForSpatialOverCaptureAssets;
 + (id)predicateForDepthEffectPhotos;
 + (id)predicateToExcludeAssetsMissingThumbnailsWithThumbnailIndexKeyPath:(id)arg1;
 + (id)predicateToExcludeNonvisibleBurstAssetsWithAvalanchePickTypeKeyPath:(id)arg1;
@@ -255,6 +259,11 @@
 - (struct NSObject *)indexSheetImage;
 - (struct NSObject *)imageWithFormat:(unsigned short)arg1 outImageProperties:(const struct __CFDictionary **)arg2;
 - (struct NSObject *)imageWithFormat:(unsigned short)arg1;
+- (id)pathForCameraSpatialOverCaptureMetadataDiagnosticFile;
+- (id)pathForCameraMetadataDiagnosticFile;
+- (id)pathForReframeDiagnosticFile;
+- (id)pathForReframeDiagnosticDirectory;
+- (id)pathForSpatialOverCaptureDiagnosticFile;
 @property(readonly, copy, nonatomic) NSString *pathForDiagnosticFile;
 @property(readonly, copy, nonatomic) NSString *pathForLegacySlalomRegionsArchive;
 @property(readonly, nonatomic) _Bool isMogul;
@@ -268,6 +277,8 @@
 - (unsigned long long)deferredProcessingHash;
 - (_Bool)_shouldSetupVideoComplementForAsyncEditWithBaseVersion:(long long)arg1;
 - (id)_sourcePathForAsyncEditWithBaseVersion:(long long)arg1;
+- (id)attemptReframeWithImageConversionClient:(id)arg1 videoConversionClient:(id)arg2 isOnDemand:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_setupMediaConversionSourceURLCollection:(id)arg1 destinationURLCollection:(id)arg2 conversionOptions:(id)arg3;
 - (void)synchronouslyGenerateFullsizeRenderImageIfNecessaryAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(long long)arg6 renderedImageFilePath:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)generateLargeThumbnailFileIfNecessary;
@@ -315,12 +326,14 @@
 - (id)pathForAdjustedFullsizeImageFile;
 - (id)pathForNonAdjustedFullsizeImageFile;
 - (id)pathForFullsizeImageFile;
+@property(readonly, copy, nonatomic) NSString *pathForVideoComplementSpatialOverCaptureContentFile;
+@property(readonly, copy, nonatomic) NSString *pathForSpatialOverCaptureContentFile;
 - (id)pathForVideoComplementFile;
 - (id)pathForAdjustedMediaMetadataFile;
 - (id)pathForVideoMetadataFile;
 - (id)pathForMediaMetadataFile;
 - (id)pathForAdjustmentDataFile;
-- (id)pathForOriginalAdjustmentFile;
+@property(readonly, copy, nonatomic) NSString *pathForOriginalAdjustmentFile;
 @property(readonly, copy, nonatomic) NSString *pathForAdjustmentFile;
 @property(readonly, copy, nonatomic) NSString *pathForPenultimateFullsizeRenderVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForPenultimateFullsizeRenderImageFile;
@@ -442,6 +455,7 @@
 - (_Bool)updatePlaybackVariationAndStyleFromOriginalImageProperties:(id)arg1;
 - (void)updatePlaybackStyleWithLivePhotoPlayability:(_Bool)arg1;
 - (void)setColorSpaceNameFromProperties:(id)arg1;
+- (void)_setSnowplowGroupUUIDImageProperties:(id)arg1;
 - (void)setGroupingUUIDFromImageProperties:(id)arg1;
 - (void)setPhotoIrisPropertiesFromImageProperties:(id)arg1;
 - (void)setKeywordsFromImageProperties:(id)arg1;
@@ -537,7 +551,10 @@
 - (void)_fixupMemoriesWithMissingKeyAsset;
 - (_Bool)_hasBecomeNonVisibleToMemoriesAndPersonsAndSuggestions:(id)arg1;
 - (void)_updateOriginalResourceChoice;
+- (void)reevaluateSnowplowState;
 - (_Bool)setTrashedState:(short)arg1 forResourceType:(unsigned long long)arg2;
+- (void)expungeTrashedSpatialOverCaptureResources;
+- (_Bool)setTrashedStateOnSpatialOverCaptureResources:(short)arg1;
 - (_Bool)isSyncableChange;
 - (_Bool)_hasFFCDimensions;
 - (_Bool)updateKindSubtypeIfScreenshot;
@@ -570,12 +587,16 @@
 - (void)setPlaybackVariationAndLoopingPlaybackStyleWithPlaybackVariation:(unsigned short)arg1;
 - (unsigned short)_playbackVariationWithAdjustmentRenderTypes:(unsigned int)arg1;
 - (unsigned int)updateAdjustmentRenderTypes:(unsigned int)arg1 withPlaybackVariation:(unsigned short)arg2;
+- (unsigned int)updateAdjustmentRenderTypes:(unsigned int)arg1 withSOCState:(unsigned short)arg2;
 - (unsigned int)updateAdjustmentRenderTypes:(unsigned int)arg1 withDepthStates:(unsigned short)arg2;
+- (void)setSOCStatesFromAdjustmentRenderTypes:(unsigned int)arg1;
 - (void)setDepthStatesFromAdjustmentRenderTypes:(unsigned int)arg1;
 - (void)setPlaybackVariationAndLoopingStyleFromAdjustmentRenderTypes:(unsigned int)arg1;
 - (void)setDestinationAssetCopyStateOnSourceAsset:(short)arg1;
+- (_Bool)becomePhotoIrisWithMediaGroupUUID:(id)arg1 videoURL:(id)arg2 spatialOverCaptureURL:(id)arg3 videoDuration:(CDStruct_198678f7)arg4 stillDisplayTime:(CDStruct_198678f7)arg5 options:(unsigned long long)arg6;
 - (_Bool)becomePhotoIrisWithMediaGroupUUID:(id)arg1 videoURL:(id)arg2 videoDuration:(CDStruct_198678f7)arg3 stillDisplayTime:(CDStruct_198678f7)arg4 options:(unsigned long long)arg5;
 - (_Bool)_linkVideoFileFromSourcePath:(id)arg1 toDestinationPath:(id)arg2;
+- (void)_updatePhotoIrisVisibilityStateFromVideoComplementAVAsset:(id)arg1;
 - (void)updatePhotoIrisMetadataWithMediaGroupUUID:(id)arg1 videoDuration:(CDStruct_198678f7)arg2 stillDisplayTime:(CDStruct_198678f7)arg3;
 - (void)_updatePhotoIrisTemporalMetadataFromVideoComplementAVAsset:(id)arg1;
 - (id)shotType;
@@ -661,6 +682,9 @@
 @property(retain, nonatomic) NSString *originalAssetsUUID;
 @property(retain, nonatomic) NSString *editorBundleID;
 @property(retain, nonatomic) NSString *creatorBundleID;
+@property(readonly, nonatomic) long long snowplowTrashedState;
+@property(readonly, nonatomic) struct CGSize videoComplementSpatialOverCaptureSize;
+@property(readonly, nonatomic) struct CGSize spatialOverCaptureSize;
 @property(readonly, nonatomic) unsigned long long ptpCloudMasterOriginalFileSize;
 @property(readonly, nonatomic) id <PLPTPTransferableSidecarFile> ptpPhotoIrisSidecar;
 @property(readonly, retain, nonatomic) NSSet *ptpSidecarFiles;
@@ -717,7 +741,7 @@
 - (void)_debugPrintAdjustmentState;
 - (void)_applyResourceChangeToCPLAsset:(id)arg1 forChangeType:(unsigned long long)arg2 shouldGenerateDerivatives:(_Bool)arg3 inLibrary:(id)arg4;
 - (id)_calculateCloudAdjustmentFingerprintFromAdjustmentPListAndCPLResources;
-- (void)_synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)synchronouslyFetchAdjustmentBlobWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)createResourcesForAssetInPhotoLibrary:(id)arg1 shouldGenerateDerivatives:(_Bool)arg2;
 - (_Bool)_hasAllOriginalResourcesLocallyAvailable;
 - (_Bool)_hasAllAdjustedResourcesLocallyAvailable;
@@ -805,7 +829,7 @@
 - (id)rm_applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)rm_createAssetResourcesForCPLResources:(id)arg1 inLibrary:(id)arg2;
 - (id)rm_cplExpungeableMasterResourceStates;
-- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1;
+- (id)rm_cplMasterResourcesFromCloudMaster:(id)arg1 addOriginalResourceMode:(_Bool)arg2;
 - (id)rm_cplMasterResourceForResourceType:(unsigned long long)arg1;
 - (id)rm_cplResourceForResourceType:(unsigned long long)arg1;
 - (void)_rm_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
@@ -818,7 +842,6 @@
 - (_Bool)hasAdjustedCPLThumbResource;
 - (id)allLocalCPLResources;
 - (id)allMasterCPLResources;
-- (id)allOriginalAssetCPLResources;
 - (id)allAssetCPLResources;
 - (id)assetResourceForCPLType:(unsigned long long)arg1;
 - (id)masterResourceForCPLType:(unsigned long long)arg1;

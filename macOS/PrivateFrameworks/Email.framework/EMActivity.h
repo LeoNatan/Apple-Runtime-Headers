@@ -10,17 +10,20 @@
 #import <Email/NSSecureCoding-Protocol.h>
 
 @class EMActivityObjectID, EMStatusUpdateProvider, NSDate, NSDictionary, NSError, NSProgress, NSString;
+@protocol EFCancelable;
 
 @interface EMActivity : NSObject <EFLoggable, NSSecureCoding>
 {
     struct os_unfair_lock_s _lock;
     EMStatusUpdateProvider *_statusUpdateProvider;
+    id <EFCancelable> _progressKVOCancellation;
     NSDictionary *_userInfo;
     long long _activityType;
     NSDate *_started;
     NSDate *_finished;
     NSProgress *_progress;
     NSError *_error;
+    double _fractionCompleted;
     EMActivityObjectID *_objectID;
 }
 
@@ -28,6 +31,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)log;
 @property(readonly) EMActivityObjectID *objectID; // @synthesize objectID=_objectID;
+@property(nonatomic) double fractionCompleted; // @synthesize fractionCompleted=_fractionCompleted;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly) NSDate *finished; // @synthesize finished=_finished;
@@ -43,6 +47,8 @@
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)setCompletedCount:(long long)arg1 totalCount:(long long)arg2;
 - (BOOL)isEqualToActivityWithType:(long long)arg1 userInfo:(id)arg2;
+- (void)_observeProgress;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithActivityType:(long long)arg1 userInfo:(id)arg2;

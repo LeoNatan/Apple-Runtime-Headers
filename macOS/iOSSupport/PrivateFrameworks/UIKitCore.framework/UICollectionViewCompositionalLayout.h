@@ -84,6 +84,7 @@
 - (id)_boundsChangeResolve;
 - (id)_updateResolve;
 - (void)_fullResolve;
+- (BOOL)_disallowsFadeCellsForBoundsChange;
 - (unsigned long long)_edgesForSafeAreaPropagationToDescendants;
 - (BOOL)_overridesSafeAreaPropagationToDescendants;
 - (BOOL)_preparedForBoundsChanges;

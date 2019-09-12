@@ -46,7 +46,6 @@
 + (BOOL)forceAccessibilityEnabled;
 + (void)setForceAccessibilityEnabled:(BOOL)arg1;
 + (BOOL)isAvailable;
-+ (BOOL)hasExtendedColorDisplay;
 + (long long)screenPixelCount;
 @property(readonly, nonatomic) PXGEngine *engine; // @synthesize engine=_engine;
 @property(nonatomic) BOOL ignoreBoundsChanges; // @synthesize ignoreBoundsChanges=_ignoreBoundsChanges;
@@ -143,6 +142,7 @@
 - (id)hitTest:(struct CGPoint)arg1;
 - (id)_validateHitTest:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (void)_handleScreenChanges:(id)arg1;
 - (void)popUpDebugContextMenuWithEvent:(id)arg1;
 - (void)_hideDebugHUD:(id)arg1;
 - (void)_showDebugHUD:(id)arg1;
@@ -153,6 +153,7 @@
 - (void)_forceAccessibilityEnabledChanged:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) BOOL hasExtendedColorDisplay;
 - (id)curatedLibraryHitTestResultsInRect:(struct CGRect)arg1 withControl:(long long)arg2;
 - (void)enumerateCuratedLibraryHitTestResultsInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateCuratedLibraryHitTestResultsInDirection:(unsigned long long)arg1 fromSpriteReference:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

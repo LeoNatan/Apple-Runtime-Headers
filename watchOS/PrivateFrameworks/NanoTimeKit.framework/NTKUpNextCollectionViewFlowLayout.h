@@ -14,6 +14,7 @@
     CLKDevice *_device;
     NSDictionary *_layoutInfo;
     NSDictionary *_headerLayoutInfo;
+    NSDictionary *_tritiumLayoutInfo;
     NTKUpNextCollectionViewFlowLayoutAttributes *_decorationLayoutInfo;
     NSSet *_previousSectionsWithHeaders;
     NSSet *_sectionsWithHeaders;
@@ -24,6 +25,7 @@
     _Bool _useFixedLowTransitionLayout;
     _Bool _snappingEnabled;
     _Bool _showingAllAttributes;
+    _Bool _tritium_renderOverlayCards;
     float _topItemsAlpha;
     float _headerAlpha;
     float _topItemsShift;
@@ -42,9 +44,18 @@
     float _snappingOffset;
     NSSet *_dwellIndexPathes;
     id <NTKFrameNotchProviding> _notchProvider;
+    float _tritium_topOverlayElementAlpha;
+    float _tritium_bottomOverlayElementAlpha;
+    float _tritium_topElementTritiumProgress;
+    float _tritium_bottomElementTritiumProgress;
 }
 
 + (Class)layoutAttributesClass;
+@property(nonatomic, setter=tritium_setBottomElementTritiumProgress:) float tritium_bottomElementTritiumProgress; // @synthesize tritium_bottomElementTritiumProgress=_tritium_bottomElementTritiumProgress;
+@property(nonatomic, setter=tritium_setTopElementTritiumProgress:) float tritium_topElementTritiumProgress; // @synthesize tritium_topElementTritiumProgress=_tritium_topElementTritiumProgress;
+@property(nonatomic, setter=tritium_setBottomOverlayElementAlpha:) float tritium_bottomOverlayElementAlpha; // @synthesize tritium_bottomOverlayElementAlpha=_tritium_bottomOverlayElementAlpha;
+@property(nonatomic, setter=tritium_setTopOverlayElementAlpha:) float tritium_topOverlayElementAlpha; // @synthesize tritium_topOverlayElementAlpha=_tritium_topOverlayElementAlpha;
+@property(nonatomic, setter=tritium_setRenderOverlayCards:) _Bool tritium_renderOverlayCards; // @synthesize tritium_renderOverlayCards=_tritium_renderOverlayCards;
 @property(nonatomic) __weak id <NTKFrameNotchProviding> notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(readonly, nonatomic) NSSet *dwellIndexPathes; // @synthesize dwellIndexPathes=_dwellIndexPathes;
 @property(nonatomic) float snappingOffset; // @synthesize snappingOffset=_snappingOffset;
@@ -84,6 +95,7 @@
 - (id)_findLastIndexPathWithContent;
 - (void)prepareLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
+- (void)_tritium_invalidateLayoutWithTritiumContext;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (id)init;
 

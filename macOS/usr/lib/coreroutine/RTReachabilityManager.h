@@ -27,8 +27,6 @@
 - (void)_processReachabilityChange:(id)arg1;
 - (id)description;
 - (void)_shutdown;
-- (void)_stopMonitoringReachability;
-- (void)_startMonitoringReachability;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (id)initWithPathEvaluator:(id)arg1;

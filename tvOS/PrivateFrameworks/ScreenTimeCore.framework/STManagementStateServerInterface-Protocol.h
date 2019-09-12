@@ -10,6 +10,7 @@
 
 @protocol STManagementStateServerInterface <NSObject>
 - (void)isExplicitContentRestrictedWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
+- (void)shouldAllowOneMoreMinuteForCategoryIdentifier:(NSString *)arg1 replyHandler:(void (^)(NSNumber *, NSError *))arg2;
 - (void)shouldAllowOneMoreMinuteForWebsiteURL:(NSURL *)arg1 replyHandler:(void (^)(NSNumber *, NSError *))arg2;
 - (void)shouldAllowOneMoreMinuteForBundleIdentifier:(NSString *)arg1 replyHandler:(void (^)(NSNumber *, NSError *))arg2;
 - (void)permitWebFilterURL:(NSURL *)arg1 pageTitle:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;

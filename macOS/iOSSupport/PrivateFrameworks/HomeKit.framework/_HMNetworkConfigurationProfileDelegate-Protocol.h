@@ -13,6 +13,7 @@
 - (void)networkConfigurationProfileDidUpdateWiFiReconfigurationSupport:(_HMNetworkConfigurationProfile *)arg1;
 - (void)networkConfigurationProfileDidUpdateAccessViolation:(_HMNetworkConfigurationProfile *)arg1;
 - (void)networkConfigurationProfileDidUpdateAllowedHosts:(_HMNetworkConfigurationProfile *)arg1;
-- (void)networkConfigurationProfileDidUpdateProtectionMode:(_HMNetworkConfigurationProfile *)arg1 accessModeChanged:(BOOL)arg2;
+- (void)networkConfigurationProfileDidUpdateNetworkAccessMode:(_HMNetworkConfigurationProfile *)arg1;
+- (void)networkConfigurationProfileDidUpdateProtectionMode:(_HMNetworkConfigurationProfile *)arg1;
 @end
 

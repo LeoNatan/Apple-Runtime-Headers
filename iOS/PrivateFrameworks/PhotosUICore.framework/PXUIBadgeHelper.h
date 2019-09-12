@@ -15,6 +15,7 @@
 + (id)textForBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2;
 + (id)imageForBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2 isOverContent:(_Bool)arg3;
 + (id)debugBackgroundImageWithBadges:(unsigned long long)arg1;
++ (id)autoReframingImage;
 + (id)suggestionFacesImage;
 + (id)suggestionGreatPhotoImage;
 + (id)suggestionRecentFavoriteImage;

@@ -158,12 +158,12 @@
 - (void)_wasDismissed;
 - (void)_dismissSiriSetup;
 - (void)_handleContextClearForRequestOptions:(id)arg1;
+- (void)_invalidateCarSiriButtonHoldToTalkTimer;
 - (void)_finishClearingSiriViewController:(id)arg1;
 - (void)_clearSiriViewController;
 - (void)_cleanupUnownedConnection;
 - (void)_processConnectionHouseKeeping;
 - (void)_scheduleConnectionHouseKeepingAfterDelay:(double)arg1;
-- (id)_currentConnection;
 - (_Bool)siriViewControllerConfigured;
 - (id)siriViewControllerWithRequestSource:(long long)arg1;
 - (void)siriSessionShouldEndExtendAudioSessionForImminentPhoneCall;
@@ -175,6 +175,7 @@
 - (void)_carSiriButtonHoldToTalkIntervalFiredWithButtonIdentifier:(long long)arg1;
 - (void)_requestDismissal;
 - (oneway void)updateCurrentLockState:(id)arg1;
+- (oneway void)updateActiveInterfaceOrientation:(id)arg1 willAnimationWithDuration:(id)arg2;
 - (_Bool)_handleTapDismissal:(long long)arg1;
 - (_Bool)_handleTapButtonBehavior:(long long)arg1;
 - (oneway void)handleButtonLongPressFromButtonIdentifier:(id)arg1 timestamp:(id)arg2;
@@ -183,6 +184,7 @@
 - (oneway void)handleButtonDownFromButtonIdentifier:(id)arg1 timestamp:(id)arg2;
 - (oneway void)cancelPreheat;
 - (oneway void)preheat;
+- (void)_setUpUnownedConnectionIfNecessary;
 - (oneway void)cancelTTS;
 - (oneway void)presentationDismissalRequestedWithOptions:(id)arg1;
 - (id)_fallbackScreenForIdentifier:(long long)arg1;

@@ -44,9 +44,11 @@
     NSArray *_sectionMap;
     unsigned long long _numberOfStaticSections;
     long long _style;
+    NSString *_pageTagForAnalyticsReporting;
 }
 
 - (void).cxx_destruct;
+- (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)statementsChangedForAccountIdentifier:(id)arg1;
 - (_Bool)_shouldInset;
@@ -75,6 +77,8 @@
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithStyle:(long long)arg1 paymentPass:(id)arg2 webService:(id)arg3 account:(id)arg4 statement:(id)arg5 previousStatements:(id)arg6;
 

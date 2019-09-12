@@ -42,7 +42,7 @@
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
-+ (id)moduleAppearanceForStyle:(unsigned long long)arg1 tintColor:(id)arg2;
++ (id)moduleAppearanceForStyle:(unsigned long long)arg1;
 @property(readonly, nonatomic) __weak WFContentClassesToolbar *acceptsToolbar; // @synthesize acceptsToolbar=_acceptsToolbar;
 @property(nonatomic) BOOL allowsAcceptsToolbar; // @synthesize allowsAcceptsToolbar=_allowsAcceptsToolbar;
 @property(nonatomic) double maximumContentWidth; // @synthesize maximumContentWidth=_maximumContentWidth;

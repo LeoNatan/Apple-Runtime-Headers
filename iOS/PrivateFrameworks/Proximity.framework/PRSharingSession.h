@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <Proximity/PRBeaconDelegate-Protocol.h>
 #import <Proximity/PRProximityEstimatorDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSSet, NSSortDescriptor, NSString, PRProximityEstimator;
+@class NSArray, NSMutableDictionary, NSSet, NSSortDescriptor, NSString, PRBeacon, PRProximityEstimator;
 @protocol OS_dispatch_queue, OS_os_log, PRSharingSessionDelegate;
 
-@interface PRSharingSession : NSObject <PRProximityEstimatorDelegate>
+@interface PRSharingSession : NSObject <PRProximityEstimatorDelegate, PRBeaconDelegate>
 {
     _Bool _currentlyInitiating;
     NSObject<OS_os_log> *_logger;
@@ -20,6 +21,7 @@
     NSMutableDictionary *_trackedBTPeers;
     NSMutableDictionary *_trackedBTPeersDevice;
     PRProximityEstimator *_btProxEstimator;
+    PRBeacon *_nearbyDaemonSession;
     _Bool _needToRestart;
     NSMutableDictionary *_scores;
     double _lastScoreReportMachContinuousTime;
@@ -27,6 +29,10 @@
     struct SharingImportanceMeasurements _measurements;
     _Bool _useRegionBasedEstimator;
     NSSortDescriptor *_scoreSortDescriptor;
+    double _halfPointingAngleDegrees;
+    _Bool _outputScoreCalculatedWithAngle;
+    struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> _estimatorRangeOnly;
+    struct unique_ptr<SharingImportanceManager, std::__1::default_delete<SharingImportanceManager>> _estimatorRangeAndAngle;
     CDUnknownBlockType _reportWatchdog;
     id <PRSharingSessionDelegate> _delegate;
 }
@@ -47,6 +53,9 @@
 - (id)ProxToString:(long long)arg1;
 - (int)ProxToCoarseRange:(long long)arg1;
 - (void)didFailWithError:(id)arg1;
+- (void)beacon:(id)arg1 didFailWithError:(id)arg2;
+- (void)beacon:(id)arg1 didChangeState:(unsigned long long)arg2;
+- (void)beacon:(id)arg1 didOutputRangeResults:(id)arg2;
 - (void)estimator:(id)arg1 didEstimateProximity:(long long)arg2 toPeer:(id)arg3;
 - (void)logScores:(id)arg1;
 - (void)updateScoresWithNewMeasurement:(const struct NeighborMeasurements *)arg1;

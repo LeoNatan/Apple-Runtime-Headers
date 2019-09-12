@@ -6,9 +6,10 @@
 
 #import <Email/EMAccountBuilder-Protocol.h>
 
-@class EMDeliveryAccount, NSArray;
+@class EMDeliveryAccount, NSArray, NSString;
 
 @protocol EMReceivingAccountBuilder <EMAccountBuilder>
+@property(copy, nonatomic) NSString *statisticsKind;
 @property BOOL shouldArchiveByDefault;
 @property BOOL sourceIsManaged;
 @property(retain) NSArray *emailAddresses;

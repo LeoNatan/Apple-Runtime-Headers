@@ -27,6 +27,12 @@
 + (id)swatchImageForColor:(unsigned long long)arg1;
 + (id)swatchColorForColor:(unsigned long long)arg1;
 + (id)paletteForColor:(unsigned long long)arg1;
++ (id)noirSecondHandColor;
++ (id)noirHandStrokeColor;
++ (id)noirColor;
++ (id)briqueColor;
++ (id)etainColor;
++ (id)encreColor;
 + (id)roseExtremeColor;
 + (id)roseAzaleeColor;
 + (id)offWhiteColor;

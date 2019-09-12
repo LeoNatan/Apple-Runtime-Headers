@@ -37,6 +37,7 @@
 - (BOOL)highLevelTopicExtractionEnabled;
 - (id)topicCalibrationTrie;
 - (id)portraitMusicDataCollectionAMPBundleIds;
+- (BOOL)portraitMusicDataCollectionCollectNonAMPNowPlaying;
 - (int)portraitMusicDataCollectionMaximumRecordsPerType;
 - (double)portraitMusicDataCollectionSamplingRateForAMP;
 - (double)portraitMusicDataCollectionSamplingRateForCTS;

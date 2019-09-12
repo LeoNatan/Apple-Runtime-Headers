@@ -12,7 +12,7 @@
 
 + (id)scaleKey;
 + (id)timeKey;
-@property(nonatomic) CDStruct_198678f7 posterFrameTime;
+@property(nonatomic) CDStruct_1b6d18a9 posterFrameTime;
 - (id)initWithAdjustment:(id)arg1;
 
 @end

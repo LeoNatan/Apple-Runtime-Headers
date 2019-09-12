@@ -20,6 +20,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)applyToTritiumTransitionFraction:(float)arg1;
 - (void)updateLayerVisibilityForStyles:(id)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
 - (void)applyStyle:(unsigned int)arg1;

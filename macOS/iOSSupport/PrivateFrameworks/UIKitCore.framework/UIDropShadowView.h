@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, UIDropShadowRimPartView, _UIGrabber;
+@class NSArray, UIDropShadowRimPartView, _UICutoutShadowView, _UIGrabber;
 
 __attribute__((visibility("hidden")))
 @interface UIDropShadowView : UIView
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
     _UIGrabber *_grabber;
+    _UICutoutShadowView *_magicShadowView;
     UIDropShadowRimPartView *_topLeft;
     UIDropShadowRimPartView *_topEdge;
     UIDropShadowRimPartView *_topRight;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIDropShadowRimPartView *topRight; // @synthesize topRight=_topRight;
 @property(retain, nonatomic) UIDropShadowRimPartView *topEdge; // @synthesize topEdge=_topEdge;
 @property(retain, nonatomic) UIDropShadowRimPartView *topLeft; // @synthesize topLeft=_topLeft;
+@property(readonly, nonatomic) _UICutoutShadowView *magicShadowView; // @synthesize magicShadowView=_magicShadowView;
 @property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
 @property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
@@ -53,10 +55,10 @@ __attribute__((visibility("hidden")))
 - (void)didFinishRotation;
 - (void)willBeginRotationWithOriginalBounds:(struct CGRect)arg1 newBounds:(struct CGRect)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setMagicShadowAlpha:(double)arg1;
 - (void)setGrabberAlpha:(double)arg1;
 @property(readonly, nonatomic) UIView *deepestClippingView;
 - (void)_updateRimTreatmentAlpha;
-- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)_updateRimTreatment;
 - (void)traitCollectionDidChange:(id)arg1;

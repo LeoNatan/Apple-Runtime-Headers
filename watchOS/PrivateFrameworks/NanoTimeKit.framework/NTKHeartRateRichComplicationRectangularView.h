@@ -30,6 +30,7 @@
 - (float)_xValueForPointFromChartPoint:(id)arg1 inRect:(struct CGRect)arg2;
 - (void)_loadWithMetadata:(id)arg1;
 - (void)_loadNoDataState;
+- (void)_loadPrivacyState;
 - (void)_loadLockedState;
 - (void)loadWithMetadata:(id)arg1;
 - (void)drawGraph:(struct CGContext *)arg1 rect:(struct CGRect)arg2;

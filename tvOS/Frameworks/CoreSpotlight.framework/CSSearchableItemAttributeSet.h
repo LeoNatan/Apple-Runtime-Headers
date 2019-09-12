@@ -14,6 +14,7 @@
 @interface CSSearchableItemAttributeSet : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _hasCodedCustomAttributes;
+    _Bool _hasKnownKeysDictionary;
     NSDictionary *_attributes;
     NSMutableDictionary *_mutableAttributes;
     NSMutableDictionary *_customAttributes;
@@ -24,6 +25,7 @@
 + (id)_allKeys;
 + (_Bool)supportsSecureCoding;
 + (id)_requiredAttributesForContentType:(id)arg1;
+@property(readonly, nonatomic) _Bool hasKnownKeysDictionary; // @synthesize hasKnownKeysDictionary=_hasKnownKeysDictionary;
 @property(readonly, nonatomic) _Bool hasCodedCustomAttributes; // @synthesize hasCodedCustomAttributes=_hasCodedCustomAttributes;
 @property long long searchableItemFlags; // @synthesize searchableItemFlags=_searchableItemFlags;
 - (void).cxx_destruct;
@@ -67,6 +69,7 @@
 @property(readonly) NSMutableDictionary *mutableAttributes; // @synthesize mutableAttributes=_mutableAttributes;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithItemContentType:(id)arg1;
+- (id)initWithKnownKeysDictionary:(id)arg1;
 - (id)initWithMutableDictionary:(id)arg1;
 - (id)initWithAttributeSet:(id)arg1;
 - (id)init;

@@ -11,12 +11,10 @@
     // Error parsing type: , name: string
     // Error parsing type: , name: truncationMode
     // Error parsing type: , name: lineLimit
-    // Error parsing type: , name: minimumScaleFactor
+    // Error parsing type: , name: minScaleFactor
     // Error parsing type: , name: lineSpacing
-    // Error parsing type: , name: maxLineHeight
     // Error parsing type: , name: pixelLength
     // Error parsing type: , name: cache
-    // Error parsing type: , name: contentInsetsCache
     // Error parsing type: , name: scaleFactorOverride
 }
 

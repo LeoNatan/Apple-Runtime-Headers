@@ -116,6 +116,7 @@
     NSString *_segmentName;
     NSString *_previousSegmentName;
     NSString *_activeConnectionRegistry;
+    NSString *_suggestedLinkTypeCombo;
     id <VCAdaptiveLearningDelegate> _delegate;
     unsigned int _videoFrameNonFECTotalCounter;
     unsigned int _videoFrameNonFECCompleteCounter;
@@ -139,6 +140,7 @@
 @property(readonly) unsigned int callTransportType; // @synthesize callTransportType=_callTransportType;
 @property(readonly) unsigned int callDeviceRole; // @synthesize callDeviceRole=_callDeviceRole;
 @property(readonly) unsigned int callMode; // @synthesize callMode=_callMode;
+@property(copy) NSString *suggestedLinkTypeCombo; // @synthesize suggestedLinkTypeCombo=_suggestedLinkTypeCombo;
 @property(copy) NSString *activeConnectionRegistry; // @synthesize activeConnectionRegistry=_activeConnectionRegistry;
 @property(readonly) NSString *previousSegmentName; // @synthesize previousSegmentName=_previousSegmentName;
 @property(readonly) NSString *segmentName; // @synthesize segmentName=_segmentName;

@@ -43,7 +43,7 @@
 - (id)featureVectorFromPredictionDate:(id)arg1 bundleId:(id)arg2;
 - (id)targetBundleIdsForFilterBundlesIds:(id)arg1;
 - (id)filterShareInteractions:(id)arg1 minimumOccurences:(unsigned long long)arg2;
-- (id)splitShareLabels:(id)arg1 filterOnRecency:(unsigned long long)arg2 suggestionDate:(id)arg3;
+- (id)splitShareLabels:(id)arg1 suggestionDate:(id)arg2 contextBundleId:(id)arg3;
 - (id)interactionLabelsForQueryResult:(id)arg1 queryPoint:(id)arg2 rankerType:(long long)arg3 frequencyOnly:(_Bool)arg4 contactsOnly:(_Bool)arg5;
 - (id)suggestionProxiesWithPredictionContext:(id)arg1;
 - (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 contactsOnly:(_Bool)arg3 interactions:(id)arg4 contactIdsCurrentlyInStore:(id)arg5;

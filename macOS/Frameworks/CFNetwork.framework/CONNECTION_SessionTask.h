@@ -24,6 +24,8 @@
     Class _my_protocolForTask;
     BOOL __shouldSkipPreferredClientCertificateLookup;
     struct __CFDictionary *_atsStateCache;
+    BOOL _preventsAppSSO;
+    BOOL _appSSOFallback;
     __CFN_TaskMetrics *_metrics;
 }
 
@@ -60,7 +62,9 @@
 - (struct __CFSet *)_getAuthenticatorStatusCodes;
 - (void)_getAuthenticationHeadersForResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setAppleIDContext:(id)arg1;
+- (void)set_appSSOFallback:(BOOL)arg1;
 - (BOOL)_appSSOFallback;
+- (void)set_preventsAppSSO:(BOOL)arg1;
 - (BOOL)_preventsAppSSO;
 - (BOOL)_requiresSecureHTTPSProxyConnection;
 - (BOOL)_preventsSystemHTTPProxyAuthentication;

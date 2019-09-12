@@ -50,7 +50,7 @@
 - (void)performDelegateCallback:(CDUnknownBlockType)arg1;
 @property(readonly) NSHashTable *delegates; // @synthesize delegates=_delegates;
 - (id)removeZonesWithID:(id)arg1 isOwned:(BOOL)arg2;
-- (id)zonesWithID:(id)arg1 isOwned:(BOOL)arg2 delegate:(id)arg3 error:(id *)arg4;
+- (id)zonesWithID:(id)arg1 isOwned:(BOOL)arg2 shouldRebuildOnManateeKeyLoss:(BOOL)arg3 delegate:(id)arg4 error:(id *)arg5;
 - (id)declineInvitation:(id)arg1;
 - (id)acceptInvitation:(id)arg1;
 - (id)removeLocalAndCloudDataForLocalZone:(id)arg1;
@@ -58,7 +58,7 @@
 - (id)removeOwnedZonesWithName:(id)arg1;
 - (id)sharedZonesWithID:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
 - (id)existingSharedZoneIDWithName:(id)arg1;
-- (id)ownedZonesWithName:(id)arg1 delegate:(id)arg2 error:(id *)arg3;
+- (id)ownedZonesWithName:(id)arg1 shouldRebuildOnManateeKeyLoss:(BOOL)arg2 delegate:(id)arg3 error:(id *)arg4;
 - (id)unregisterSharedSubscriptionForExternalRecordType:(id)arg1;
 - (id)registerSharedSubscriptionForExternalRecordType:(id)arg1;
 - (void)start;
@@ -66,7 +66,7 @@
 - (void)addDelegate:(id)arg1;
 @property(readonly, copy) NSString *cloudContainerIdentifier;
 - (id)initWithLocalDatabase:(id)arg1 cloudDatabase:(id)arg2 logEventDispatcher:(id)arg3;
-- (id)initWithCloudContainerIdentifier:(id)arg1 cloudContainerPushTopic:(id)arg2;
+- (id)initWithCloudContainerIdentifier:(id)arg1 cloudContainerSourceApplicationBundleIdentifier:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -36,7 +36,6 @@
 - (void)setTextForLabel:(id)arg1 label:(id)arg2;
 - (void)sizeToFit;
 - (void)setAccessibilityValues;
-- (void)_populateArchivedSubviews:(id)arg1;
 - (void)_setStyle:(long long)arg1;
 - (struct CGSize)calculateButtonLayout;
 - (void)updateButtonLayout;

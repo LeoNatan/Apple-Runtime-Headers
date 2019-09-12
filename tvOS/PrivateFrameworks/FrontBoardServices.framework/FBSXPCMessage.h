@@ -12,14 +12,12 @@
 {
     NSObject<OS_xpc_object> *_payload;
     id <BSXPCServiceConnectionMessage> _reply;
-    id <BSXPCServiceConnectionMessage> reply;
 }
 
 + (id)messageWithBSXPCMessage:(id)arg1 ownReply:(_Bool)arg2;
 + (id)messageWithPacker:(CDUnknownBlockType)arg1;
 + (id)messageWithPayload:(id)arg1;
 + (id)message;
-@property(readonly, nonatomic) id <BSXPCServiceConnectionMessage> reply; // @synthesize reply;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
 - (void)sendReplyMessageWithPacker:(CDUnknownBlockType)arg1;

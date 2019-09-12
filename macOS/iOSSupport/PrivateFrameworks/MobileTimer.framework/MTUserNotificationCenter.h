@@ -37,6 +37,7 @@
 + (id)_snoozeCountdownIdentifier:(id)arg1;
 + (id)_goToBedIdentifier:(id)arg1;
 + (id)requestIdentifierForScheduledAlarm:(id)arg1;
++ (id)_allIdentifiersForAlarm:(id)arg1 includeMainIdentifier:(BOOL)arg2 includeSnooze:(BOOL)arg3;
 + (id)_allIdentifiersForAlarm:(id)arg1 includeMainIdentifier:(BOOL)arg2;
 + (id)_allIdentifiersForAlarm:(id)arg1;
 @property(retain, nonatomic) MTUserNotificationActionDispatcher *actionHandler; // @synthesize actionHandler=_actionHandler;
@@ -50,7 +51,9 @@
 - (void)postNotificationForScheduledTimer:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)dismissNotificationsWithIdentifiers:(id)arg1;
 - (void)dismissNotificationsForAlarm:(id)arg1 dismissAction:(unsigned long long)arg2;
+- (void)dismissNotificationsForAlarm:(id)arg1 includeMainIdentifier:(BOOL)arg2 includeSnooze:(BOOL)arg3;
 - (void)dismissNotificationsForAlarm:(id)arg1 includeMainIdentifier:(BOOL)arg2;
+- (void)dismissNotificationsForAlarm:(id)arg1 includeSnooze:(BOOL)arg2;
 - (void)dismissNotificationsForAlarm:(id)arg1;
 - (void)dismissRelatedNotificationsForScheduledAlarm:(id)arg1;
 - (void)postNotificationForScheduledAlarm:(id)arg1 content:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

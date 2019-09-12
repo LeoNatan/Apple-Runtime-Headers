@@ -21,7 +21,9 @@
 {
     id <HMDUserSettingsBackingStoreControllerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
+    NSString *_zoneName;
     id <HMDDatabase> _database;
+    HMDCloudShareMessenger *_shareMessenger;
     HMDCloudShareParticipantsManager *_participantsManager;
     HMBCloudZone *_cloudZone;
     HMBLocalZone *_localZone;
@@ -31,24 +33,25 @@
     NSUUID *_assistantAccessControlModelID;
     id <HMDMediaContentProfileAccessControlModelUpdateReceiver> _mediaContentProfileAccessControlModelUpdateReceiver;
     NSUUID *_mediaContentProfileAccessControlModelID;
-    HMDCloudShareMessenger *_shareMessenger;
 }
 
 + (id)logCategory;
-@property(readonly) HMDCloudShareMessenger *shareMessenger; // @synthesize shareMessenger=_shareMessenger;
-@property(retain) NSUUID *mediaContentProfileAccessControlModelID; // @synthesize mediaContentProfileAccessControlModelID=_mediaContentProfileAccessControlModelID;
+@property(copy) NSUUID *mediaContentProfileAccessControlModelID; // @synthesize mediaContentProfileAccessControlModelID=_mediaContentProfileAccessControlModelID;
 @property __weak id <HMDMediaContentProfileAccessControlModelUpdateReceiver> mediaContentProfileAccessControlModelUpdateReceiver; // @synthesize mediaContentProfileAccessControlModelUpdateReceiver=_mediaContentProfileAccessControlModelUpdateReceiver;
-@property(retain) NSUUID *assistantAccessControlModelID; // @synthesize assistantAccessControlModelID=_assistantAccessControlModelID;
+@property(copy) NSUUID *assistantAccessControlModelID; // @synthesize assistantAccessControlModelID=_assistantAccessControlModelID;
 @property __weak id <HMDAssistantAccessControlModelUpdateReceiver> assistantAccessControlModelUpdateReceiver; // @synthesize assistantAccessControlModelUpdateReceiver=_assistantAccessControlModelUpdateReceiver;
 @property(retain) id <HMDSettingTransactionReceiverProtocol> transactionReceiver; // @synthesize transactionReceiver=_transactionReceiver;
 @property long long runState; // @synthesize runState=_runState;
 @property(retain) HMBLocalZone *localZone; // @synthesize localZone=_localZone;
 @property(retain) HMBCloudZone *cloudZone; // @synthesize cloudZone=_cloudZone;
 @property(retain) HMDCloudShareParticipantsManager *participantsManager; // @synthesize participantsManager=_participantsManager;
+@property(readonly) HMDCloudShareMessenger *shareMessenger; // @synthesize shareMessenger=_shareMessenger;
 @property(readonly) id <HMDDatabase> database; // @synthesize database=_database;
+@property(readonly, copy) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) __weak id <HMDUserSettingsBackingStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (void)runTransaction:(id)arg1 waitForCloudPush:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)settingTransactionWithName:(id)arg1;
@@ -77,8 +80,7 @@
 - (id)loadSharedUserDataModelWithError:(id *)arg1;
 - (id)loadPrivateUserDataModelWithError:(id *)arg1;
 - (void)start;
-- (id)logIdentifier;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2 database:(id)arg3 home:(id)arg4 shareMessenger:(id)arg5;
+- (id)initWithDelegate:(id)arg1 queue:(id)arg2 zoneName:(id)arg3 database:(id)arg4 home:(id)arg5 shareMessenger:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

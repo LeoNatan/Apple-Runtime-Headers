@@ -56,7 +56,6 @@
 - (void)_handleRemoteNotification:(id)arg1;
 - (void)handleRemoteNotificationGenerated:(id)arg1;
 - (void)handleCameraSettingsDidUpdateNotification:(id)arg1;
-- (void)handleAccessoryReachable:(id)arg1;
 @property(readonly) HMDCameraProfileSettingsModel *currentCameraSettings;
 - (void)_sendReleaseSnapshot:(id)arg1;
 - (void)_removeBulletins:(id)arg1 sessionID:(id)arg2;
@@ -65,7 +64,6 @@
 - (void)_handleSnapshotResponse:(id)arg1 cameraSessionID:(id)arg2 changedCharacteristics:(id)arg3 response:(id)arg4 responseTimer:(id)arg5;
 - (void)_characteristicsUpdated:(id)arg1 modifiedCharacteristics:(id)arg2;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
-- (void)_subscribeToNotifications;
 - (void)_handleHomedRelaunchRegistration:(id)arg1 updatedCharacteristics:(id)arg2;
 - (void)_handleUpdatedProactiveSnapshotCharacteristics:(id)arg1;
 - (void)_handleUpdatedBulletinSnapshotCharacteristics:(id)arg1;

@@ -200,6 +200,7 @@
 - (void)_setAppearanceIsTiled:(BOOL)arg1 leftCapWidth:(unsigned long long)arg2 rightCapWidth:(unsigned long long)arg3;
 - (void)_setSegmentedControlAppearance:(CDStruct_fe28c19a *)arg1;
 - (void)_setNeedsAppearanceUpdate;
+- (void)_setNeedsBackgroundAndContentViewUpdate;
 - (void)_resetForAppearanceChange;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -13,6 +13,7 @@
 @interface PXStaticEditSourceLoader : NSObject <PXEditSourceLoader>
 {
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     long long _baseVersion;
     NSProgress *_progress;
     NSError *_error;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
+@property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *loadDuration;

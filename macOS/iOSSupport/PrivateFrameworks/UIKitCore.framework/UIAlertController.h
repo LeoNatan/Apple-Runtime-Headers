@@ -41,6 +41,7 @@
     NSMapTable *_buttonTouchBarItemsToActions;
     id <UINSAlert> _bridgedAlert;
     UIWindow *_targetWindow;
+    BOOL _runningHostModalSession;
     BOOL _hidden;
     BOOL _springLoaded;
     BOOL __shouldFlipFrameForShimDismissal;

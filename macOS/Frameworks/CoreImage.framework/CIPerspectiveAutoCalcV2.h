@@ -18,38 +18,48 @@ __attribute__((visibility("hidden")))
     CIImage *gradMap;
     unsigned long long gradMapW;
     unsigned long long gradMapH;
+    // Error parsing type: ^, name: gradMapBmp
+    unsigned long long gradMapRb;
     struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> vLines;
     struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> hLines;
-    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> vLineCluster;
-    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> hLineCluster;
-    _Bool vGuidesValid;
-    _Bool hGuidesValid;
-    float vGuidesAOE;
-    float hGuidesAOE;
-    // Error parsing type: {?="a""b"}, name: vGuide0
-    // Error parsing type: {?="a""b"}, name: vGuide1
-    // Error parsing type: {?="a""b"}, name: hGuide0
-    // Error parsing type: {?="a""b"}, name: hGuide1
-    struct PseudoRand pseudoRando;
-    float vRX;
-    float vRZ;
-    float hRY;
-    float hRZ;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> vClusterInliers;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> hClusterInliers;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> vClusterOutliers;
+    struct vector<CI::Perspective::Line, std::__1::allocator<CI::Perspective::Line>> hClusterOutliers;
+    struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> vClusterInliersProxies;
+    struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> hClusterInliersProxies;
+    struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> vClusterOutliersProxies;
+    struct vector<LineCostProxy, std::__1::allocator<LineCostProxy>> hClusterOutliersProxies;
+    // Error parsing type: [64], name: initialSimplexVerticesXYZ
+    // Error parsing type: [16], name: initialSimplexVerticesXZ
+    // Error parsing type: [16], name: initialSimplexVerticesYZ
+    int solutionType;
+    struct Solution solution;
+    double unlimitedPitch;
+    double unlimitedYaw;
+    double unlimitedRoll;
 }
 
+@property(readonly) double unlimitedRoll; // @synthesize unlimitedRoll;
+@property(readonly) double unlimitedYaw; // @synthesize unlimitedYaw;
+@property(readonly) double unlimitedPitch; // @synthesize unlimitedPitch;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)computeTransform;
-- (void)computeGuides;
+- (void)computeConfidence;
+- (void)runOptimization;
+- (float)evaluateCostYZ: /* Error: Ran out of types for this method. */;
+- (float)evaluateCostXZ: /* Error: Ran out of types for this method. */;
+- (float)evaluateCost: /* Error: Ran out of types for this method. */;
+- (void)setupCostFunction;
 - (void)clusterLineSegments;
 - (void)extractLineSegments;
-- (void)saliencyMaskGradientMap;
+- (void)thresholdGradientMap;
+- (void)normalizeGradientMap;
 - (void)createGradientMap;
 - (void)standardizeImage;
-- (id)debugImage;
-- (float)confidence;
 - (_Bool)compute;
-- (id)initWithContext:(id)arg1 image:(id)arg2 config:(const CDStruct_20caa88f *)arg3;
+- (void)dealloc;
+- (id)initWithContext:(id)arg1 image:(id)arg2 config:(const CDStruct_58ac58eb *)arg3;
 
 @end
 

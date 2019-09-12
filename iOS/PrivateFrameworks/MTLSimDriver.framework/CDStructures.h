@@ -208,8 +208,10 @@ typedef struct {
     unsigned int _field55;
     unsigned int _field56;
     unsigned int _field57;
-    unsigned long long _field58;
-} CDStruct_ae106c81;
+    unsigned int _field58;
+    unsigned int _field59;
+    unsigned long long _field60;
+} CDStruct_a9d832e7;
 
 typedef struct {
     unsigned int _field1;

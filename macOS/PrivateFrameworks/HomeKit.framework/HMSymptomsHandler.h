@@ -44,8 +44,6 @@
 - (void)_handleSymptomsUpdated:(id)arg1;
 - (void)initiateFixWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)registerForMessages;
-@property(readonly) long long fixState;
-@property(readonly) BOOL canInitiateFix;
 @property(copy, setter=setSFDeviceIdentifier:) NSUUID *sfDeviceIdentifier; // @synthesize sfDeviceIdentifier=_sfDeviceIdentifier;
 @property __weak id <HMSymptomsHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy) NSSet *symptoms;

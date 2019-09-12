@@ -82,6 +82,11 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
 - (void)_configureTimeView:(id)arg1;
+- (id)tritium_createFaceAnimator;
+- (void)tritium_didTransitionToTritiumOff;
+- (void)tritium_didTransitionToTritiumOn;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_unloadContentViews;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (_Bool)_supportsTimeScrubbing;

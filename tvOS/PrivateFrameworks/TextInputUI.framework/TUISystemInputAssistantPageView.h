@@ -21,10 +21,12 @@
     TUIPredictionCellButton *_expandButton;
     id <TUISystemInputAssistantPageViewDelegate> _pageViewDelegate;
     UIView *_clipView;
+    UIView *_primaryContainerView;
     UIScrollView *_scrollView;
 }
 
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) UIView *primaryContainerView; // @synthesize primaryContainerView=_primaryContainerView;
 @property(retain, nonatomic) UIView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) _Bool secondaryViewVisible; // @synthesize secondaryViewVisible=_secondaryViewVisible;
 @property(nonatomic) __weak id <TUISystemInputAssistantPageViewDelegate> pageViewDelegate; // @synthesize pageViewDelegate=_pageViewDelegate;

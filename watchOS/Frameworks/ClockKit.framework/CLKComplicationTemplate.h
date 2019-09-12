@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <ClockKit/CLKComplicationTritiumCopyable-Protocol.h>
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSHashTable, UIColor;
+@class NSDictionary, NSHashTable, NSString, UIColor;
 
-@interface CLKComplicationTemplate : NSObject <NSSecureCoding, NSCopying>
+@interface CLKComplicationTemplate : NSObject <NSSecureCoding, CLKComplicationTritiumCopyable, NSCopying>
 {
     NSDictionary *_metadata;
     NSHashTable *_activeClients;
     _Bool _finalized;
+    _Bool _tritium_isTritiumInactiveCopy;
     _Bool _linkedOnOrAfterGrace;
     UIColor *_tintColor;
     int _uiSensitivity;
@@ -26,6 +28,7 @@
 @property(nonatomic, setter=setUISensitivity:) int uiSensitivity; // @synthesize uiSensitivity=_uiSensitivity;
 @property(readonly, nonatomic, getter=isLinkedOnOrAfterGrace) _Bool linkedOnOrAfterGrace; // @synthesize linkedOnOrAfterGrace=_linkedOnOrAfterGrace;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(readonly, nonatomic) _Bool tritium_isTritiumInactiveCopy; // @synthesize tritium_isTritiumInactiveCopy=_tritium_isTritiumInactiveCopy;
 - (void).cxx_destruct;
 - (void)_enumerateAllKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateScalarKeysWithBlock:(CDUnknownBlockType)arg1;
@@ -46,13 +49,16 @@
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)enumerateProgressProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (struct CGSize)maxSizeForImageProviderKey:(id)arg1;
 - (void)finalize;
+@property(readonly, nonatomic, getter=isTritiumEnabled) _Bool tritiumEnabled;
+- (_Bool)tritium_requiresCopy;
+- (id)tritium_inactiveCopy;
 - (id)finalizedCopy;
 - (void)validate;
 - (void)setMetadata:(id)arg1;
@@ -61,6 +67,11 @@
 - (_Bool)isCompatibleWithFamily:(int)arg1;
 - (void)endUpdatesForClient:(id)arg1;
 - (void)beginUpdatesForClient:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

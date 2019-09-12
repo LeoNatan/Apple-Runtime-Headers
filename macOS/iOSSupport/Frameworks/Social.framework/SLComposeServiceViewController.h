@@ -81,6 +81,7 @@
 - (struct CGSize)_intrinsicSheetSize;
 @property(readonly) UIView *sheetView;
 - (void)_positionVignetteForSheetFrame:(struct CGRect)arg1;
+- (struct CGSize)preferredContentSize;
 - (void)setSheetFrame:(struct CGRect)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateKeyboardSize;

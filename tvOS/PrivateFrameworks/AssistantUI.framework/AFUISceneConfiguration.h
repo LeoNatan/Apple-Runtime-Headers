@@ -37,6 +37,7 @@
 @property(nonatomic) long long launchIntent; // @synthesize launchIntent=_launchIntent;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
 - (void).cxx_destruct;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_setupPlatformSpecificDefaultSettings;
 - (void)configureMutableSceneSettings:(id)arg1;

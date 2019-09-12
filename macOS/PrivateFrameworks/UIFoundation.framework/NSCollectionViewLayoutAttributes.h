@@ -28,6 +28,7 @@
         unsigned int isClone:1;
         unsigned int isInterItemGap:1;
         unsigned int isInterSectionGap:1;
+        unsigned int isHorizontalGap:1;
     } _layoutFlags;
     long long _zIndex;
 }
@@ -77,6 +78,8 @@
 - (void)_setIsClone:(BOOL)arg1;
 @property(getter=isHidden) BOOL hidden;
 - (id)init;
+- (void)_setIsHorizontalGap:(BOOL)arg1;
+- (BOOL)_isHorizontalGap;
 - (id)__indexPath;
 - (id)__elementKind;
 

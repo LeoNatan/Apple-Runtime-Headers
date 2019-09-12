@@ -9,8 +9,8 @@
 #import <CameraUI/CAMCaptureRequestIntervalometerDelegate-Protocol.h>
 #import <CameraUI/CAMCaptureService-Protocol.h>
 
-@class AVCaptureVideoPreviewLayer, CAMBurstController, CAMCaptureEngine, CAMCaptureRequestIntervalometer, CAMIrisVideoController, CAMKeyValueCoalescer, CAMLocationController, CAMMotionController, CAMPanoramaCaptureRequest, CAMPanoramaPreviewView, CAMPowerController, CAMProtectionController, CAMRemoteShutterController, CAMThumbnailGenerator, CAMVideoCaptureRequest, NSCountedSet, NSMutableSet, NSString;
-@protocol CAMAvailabilityDelegate, CAMBurstDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureResultDelegate, CAMCaptureRunningDelegate, CAMConfigurationDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMMachineReadableCodeDelegate, CAMPanoramaChangeDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMZoomDelegate, OS_dispatch_queue;
+@class AVCaptureVideoPreviewLayer, CAMBurstController, CAMCaptureEngine, CAMCaptureRequestIntervalometer, CAMIrisVideoController, CAMKeyValueCoalescer, CAMLocationController, CAMMotionController, CAMPanoramaCaptureRequest, CAMPanoramaPreviewView, CAMPowerController, CAMProtectionController, CAMRemoteShutterController, CAMStillImageCaptureRequest, CAMThumbnailGenerator, CAMVideoCaptureRequest, NSCountedSet, NSMutableSet, NSString;
+@protocol CAMAvailabilityDelegate, CAMBurstDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureResultDelegate, CAMCaptureRunningDelegate, CAMConfigurationDelegate, CAMExposureDelegate, CAMFacesDelegate, CAMFocusDelegate, CAMMachineReadableCodeDelegate, CAMPanoramaChangeDelegate, CAMPreviewLayerOverCaptureStatusDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMZoomDelegate, OS_dispatch_queue;
 
 @interface CUCaptureController : NSObject <CAMCaptureService, CAMCaptureRequestIntervalometerDelegate>
 {
@@ -30,7 +30,9 @@
     _Bool __needsInitialPairedVideoUpdate;
     _Bool _failedConfigurationPreventingCapture;
     _Bool __isVideoCaptureAvailable;
+    id <CAMPreviewLayerOverCaptureStatusDelegate> _previewLayerOverCaptureStatusDelegate;
     id <CAMStillImageCapturingVideoDelegate> _stillImageCapturingVideoDelegate;
+    long long _lowLightStatus;
     id <CAMPanoramaChangeDelegate> _panoramaChangeDelegate;
     id <CAMBurstDelegate> _burstDelegate;
     id <CAMConfigurationDelegate> _configurationDelegate;
@@ -49,15 +51,18 @@
     CAMCaptureEngine *__captureEngine;
     NSObject<OS_dispatch_queue> *__responseQueue;
     CAMThumbnailGenerator *__responseThumbnailGenerator;
+    CAMStillImageCaptureRequest *__capturingCTMVideoRequest;
     CAMVideoCaptureRequest *__capturingVideoRequest;
     CAMVideoCaptureRequest *__pendingVideoCaptureRequest;
     CAMPanoramaCaptureRequest *__capturingPanoramaRequest;
+    CAMStillImageCaptureRequest *__capturingLowLightStillImageRequest;
     CAMCaptureRequestIntervalometer *_currentBurstIntervalometer;
     CAMKeyValueCoalescer *__focusCoalescer;
     CAMKeyValueCoalescer *__exposureCoalescer;
     NSCountedSet *__numberOfInflightRequestsByType;
     long long __maximumNumberOfStillImageRequests;
     NSMutableSet *__identifiersForActiveLivePhotoVideoCaptures;
+    NSMutableSet *__identifiersForActiveCTMVideoCaptures;
     CAMLocationController *__locationController;
     CAMMotionController *__motionController;
     CAMBurstController *__burstController;
@@ -75,6 +80,7 @@
 @property(readonly, nonatomic) CAMBurstController *_burstController; // @synthesize _burstController=__burstController;
 @property(readonly, nonatomic) CAMMotionController *_motionController; // @synthesize _motionController=__motionController;
 @property(readonly, nonatomic) CAMLocationController *_locationController; // @synthesize _locationController=__locationController;
+@property(readonly, nonatomic) NSMutableSet *_identifiersForActiveCTMVideoCaptures; // @synthesize _identifiersForActiveCTMVideoCaptures=__identifiersForActiveCTMVideoCaptures;
 @property(readonly, nonatomic) NSMutableSet *_identifiersForActiveLivePhotoVideoCaptures; // @synthesize _identifiersForActiveLivePhotoVideoCaptures=__identifiersForActiveLivePhotoVideoCaptures;
 @property(nonatomic, getter=_isVideoCaptureAvailable, setter=_setVideoCaptureAvailable:) _Bool _isVideoCaptureAvailable; // @synthesize _isVideoCaptureAvailable=__isVideoCaptureAvailable;
 @property(nonatomic, getter=_isFailedConfigurationPreventingCapture, setter=_setFailedConfigurationPreventingCapture:) _Bool failedConfigurationPreventingCapture; // @synthesize failedConfigurationPreventingCapture=_failedConfigurationPreventingCapture;
@@ -83,9 +89,11 @@
 @property(readonly, nonatomic) CAMKeyValueCoalescer *_exposureCoalescer; // @synthesize _exposureCoalescer=__exposureCoalescer;
 @property(readonly, nonatomic) CAMKeyValueCoalescer *_focusCoalescer; // @synthesize _focusCoalescer=__focusCoalescer;
 @property(retain, nonatomic, setter=_setCurrentBurstIntervalometer:) CAMCaptureRequestIntervalometer *currentBurstIntervalometer; // @synthesize currentBurstIntervalometer=_currentBurstIntervalometer;
+@property(retain, nonatomic, setter=_setCapturingLowLightStillImageRequest:) CAMStillImageCaptureRequest *_capturingLowLightStillImageRequest; // @synthesize _capturingLowLightStillImageRequest=__capturingLowLightStillImageRequest;
 @property(retain, nonatomic, setter=_setCapturingPanoramaRequest:) CAMPanoramaCaptureRequest *_capturingPanoramaRequest; // @synthesize _capturingPanoramaRequest=__capturingPanoramaRequest;
 @property(retain, nonatomic, setter=_setPendingVideoCaptureRequest:) CAMVideoCaptureRequest *_pendingVideoCaptureRequest; // @synthesize _pendingVideoCaptureRequest=__pendingVideoCaptureRequest;
 @property(retain, nonatomic, setter=_setCapturingVideoRequest:) CAMVideoCaptureRequest *_capturingVideoRequest; // @synthesize _capturingVideoRequest=__capturingVideoRequest;
+@property(retain, nonatomic, setter=_setCapturingCTMVideoRequest:) CAMStillImageCaptureRequest *_capturingCTMVideoRequest; // @synthesize _capturingCTMVideoRequest=__capturingCTMVideoRequest;
 @property(nonatomic, setter=_setNeedsInitialPairedVideoUpdate:) _Bool _needsInitialPairedVideoUpdate; // @synthesize _needsInitialPairedVideoUpdate=__needsInitialPairedVideoUpdate;
 @property(nonatomic, getter=_isCapturingPairedVideoPaused, setter=_setCapturingPairedVideoPaused:) _Bool _capturingPairedVideoPaused; // @synthesize _capturingPairedVideoPaused=__capturingPairedVideoPaused;
 @property(readonly, nonatomic) CAMThumbnailGenerator *_responseThumbnailGenerator; // @synthesize _responseThumbnailGenerator=__responseThumbnailGenerator;
@@ -115,10 +123,13 @@
 @property(nonatomic, getter=isCapturingTimelapse) _Bool capturingTimelapse; // @synthesize capturingTimelapse=_capturingTimelapse;
 @property(nonatomic) __weak id <CAMBurstDelegate> burstDelegate; // @synthesize burstDelegate=_burstDelegate;
 @property(nonatomic) __weak id <CAMPanoramaChangeDelegate> panoramaChangeDelegate; // @synthesize panoramaChangeDelegate=_panoramaChangeDelegate;
+@property(nonatomic, setter=_setLowLightStatus:) long long lowLightStatus; // @synthesize lowLightStatus=_lowLightStatus;
 @property(nonatomic) __weak id <CAMStillImageCapturingVideoDelegate> stillImageCapturingVideoDelegate; // @synthesize stillImageCapturingVideoDelegate=_stillImageCapturingVideoDelegate;
+@property(nonatomic) __weak id <CAMPreviewLayerOverCaptureStatusDelegate> previewLayerOverCaptureStatusDelegate; // @synthesize previewLayerOverCaptureStatusDelegate=_previewLayerOverCaptureStatusDelegate;
 @property(readonly, nonatomic, getter=isPreviewDisabled) _Bool previewDisabled; // @synthesize previewDisabled=_previewDisabled;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)changeToAspectRatioCrop:(long long)arg1;
 - (void)_handleSystemPressureStateChanged;
 - (void)_systemPressureStateMonitoringChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
 - (void)_teardownSystemPressureStateMonitoring;
@@ -253,12 +264,20 @@
 - (id)_sanitizeVideoRequest:(id)arg1;
 @property(readonly, nonatomic, getter=isCapturingStandardVideo) _Bool capturingStandardVideo;
 @property(readonly, nonatomic, getter=isCapturingVideo) _Bool capturingVideo;
+- (void)changeToLowLightMode:(long long)arg1;
+@property(readonly, nonatomic, getter=isCapturingMaximumLowLightImage) _Bool capturingMaximumLowLightImage;
+@property(readonly, nonatomic, getter=isCapturingLowLightImage) _Bool capturingLowLightImage;
+- (_Bool)hasActiveCTMVideoCaptures;
+@property(readonly, nonatomic, getter=isCapturingCTMVideo) _Bool capturingCTMVideo;
+- (void)_endTrackingCTMVideoRecordingForIdentifier:(id)arg1;
+- (void)_beginTrackingCTMVideoRecordingForIdentifier:(id)arg1;
 @property(readonly, nonatomic, getter=isCapturingLivePhotoVideo) _Bool capturingLivePhotoVideo;
 - (void)_endTrackingLivePhotoVideoRecordingForIdentifier:(id)arg1;
 - (void)_beginTrackingLivePhotoVideoRecordingForIdentifier:(id)arg1;
 - (id)_identifierForPendingVideoForStillImageRequest:(id)arg1;
 - (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteVideoCaptureWithResult:(id)arg2;
+- (void)stillImageRequest:(id)arg1 didStopCapturingCTMVideoForCoordinationInfo:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didStopCapturingLivePhotoVideoForCoordinationInfo:(id)arg2;
 - (void)stillImageRequest:(id)arg1 didCompleteStillImageCaptureWithResult:(id)arg2;
 - (void)stillImageRequestDidStopCapturingStillImage:(id)arg1;
@@ -271,8 +290,15 @@
 - (_Bool)captureStillImageWithRequest:(id)arg1 error:(id *)arg2;
 - (id)_sanitizeStillImageRequest:(id)arg1;
 @property(readonly, nonatomic, getter=isCapturingStillImage) _Bool capturingStillImage;
+- (void)cancelCTMCaptureForSettings:(id)arg1;
+- (void)endCTMVideoCapture;
+- (_Bool)commitCTMCaptureWithRequest:(id)arg1 error:(id *)arg2;
+- (void)initiateCTMCaptureWithSettings:(id)arg1;
 - (id)_thumbnailImageFromVideoCaptureResult:(id)arg1 previewOrientation:(long long)arg2 previewImage:(out id *)arg3;
 - (id)_thumbnailImageFromStillImageCaptureResult:(id)arg1 imageOrientation:(long long)arg2;
+- (void)_overCapturePreviewStatusChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
+- (void)_tearDownOverCapturePreviewMonitoring;
+- (void)_setupOverCapturePreviewMonitoring;
 @property(readonly, nonatomic) CAMPanoramaPreviewView *panoramaPreviewView;
 @property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 - (int)applyCaptureConfiguration:(id)arg1;

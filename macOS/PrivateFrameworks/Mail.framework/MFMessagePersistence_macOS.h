@@ -33,10 +33,10 @@
 - (id)_criterionForQuery:(id)arg1;
 - (id)_libraryMessageForMessageObjectID:(id)arg1;
 - (id)requestSummaryForMessageObjectID:(id)arg1;
-- (id)requestContentForMessageObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)requestContentForMessageObjectID:(id)arg1 requestID:(unsigned long long)arg2 options:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1;
 - (id)persistedMessageForOutgoingMessage:(id)arg1 isDraft:(BOOL)arg2;
-- (id)persistedMessagesForDatabaseIDs:(id)arg1;
+- (id)persistedMessagesForDatabaseIDs:(id)arg1 requireProtectedData:(BOOL)arg2 temporarilyUnavailableDatabaseIDs:(id *)arg3;
 - (id)messagesForPersistedMessages:(id)arg1 mailboxScope:(id)arg2;
 - (id)queryWithExpandedMailboxesFromQuery:(id)arg1;
 - (void)_iterateMessagesMatchingQuery:(id)arg1 cancelationToken:(id)arg2 consumer:(id)arg3;

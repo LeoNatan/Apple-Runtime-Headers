@@ -9,11 +9,12 @@
 #import <CommerceKit/AMSRequestPresentationDelegate-Protocol.h>
 #import <CommerceKit/NSCopying-Protocol.h>
 
-@class NSImage, NSString, NSWindow;
+@class NSImage, NSString, NSURL, NSWindow;
 
 @interface CKDialogContext : NSObject <NSCopying, AMSRequestPresentationDelegate>
 {
     int _proxyPID;
+    NSURL *_proxyBundleURL;
     NSWindow *_hostWindow;
     NSImage *_icon;
 }
@@ -28,6 +29,7 @@
 - (BOOL)_clickedButtonForModalResponse:(long long)arg1;
 - (id)_alertForDialog:(id)arg1;
 - (void)displayDialog:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+@property(copy) NSURL *proxyBundleURL;
 @property int proxyPID;
 
 // Remaining properties

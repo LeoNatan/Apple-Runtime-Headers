@@ -8,19 +8,28 @@
 
 #import <DifferentialPrivacy/_DPMaintenance-Protocol.h>
 
+@protocol _DPMetricsCollector;
+
 @interface _DPReportGenerator : NSObject <_DPMaintenance>
 {
+    id <_DPMetricsCollector> _metricsCollector;
 }
 
 + (id)randomizeKeys:(id)arg1 andSortByPriority:(BOOL)arg2;
 + (id)queryKeysForPattern:(id)arg1 storage:(id)arg2;
 + (id)queryRecordsForKey:(id)arg1 storage:(id)arg2;
++ (unsigned long long)queryRecordCountForKey:(id)arg1 withPredicate:(id)arg2 storage:(id)arg3;
 + (id)filterNonConformingRecordsFrom:(id)arg1;
+@property(readonly, nonatomic) id <_DPMetricsCollector> metricsCollector; // @synthesize metricsCollector=_metricsCollector;
+- (void).cxx_destruct;
 - (void)scheduleMaintenanceWithName:(id)arg1 database:(id)arg2;
 - (id)generateReportForKeys:(id)arg1 storage:(id)arg2;
 - (void)reportToPrivateCloudWithStrings:(id)arg1 forKey:(id)arg2;
+- (void)reportMetricsForKey:(id)arg1 toBeSubmitted:(id)arg2 currentDate:(id)arg3 storage:(id)arg4;
 - (id)generateReportUsing:(id)arg1;
 - (BOOL)markSubmitted:(id)arg1 storage:(id)arg2;
+- (id)initWithMetricsCollector:(id)arg1;
+- (id)init;
 
 @end
 

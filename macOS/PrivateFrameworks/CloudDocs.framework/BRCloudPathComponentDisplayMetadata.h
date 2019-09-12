@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)copyICloudDriveComponentDisplayMetadata;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy, nonatomic) NSAttributedString *alternateDisplayName; // @synthesize alternateDisplayName=_alternateDisplayName;

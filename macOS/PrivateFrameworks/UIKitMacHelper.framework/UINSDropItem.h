@@ -13,17 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface UINSDropItem : NSObject <UINSDropItem>
 {
-    NSPasteboardItem *_pasteboardItem;
     NSItemProvider *_itemProvider;
+    NSPasteboardItem *_pasteboardItem;
 }
 
-@property(readonly, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(readonly, nonatomic) NSPasteboardItem *pasteboardItem; // @synthesize pasteboardItem=_pasteboardItem;
+@property(readonly, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 - (void).cxx_destruct;
-- (void)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *typeIdentifiers;
 - (id)initWithPasteboardItem:(id)arg1 itemProvider:(id)arg2;
-- (id)initWithPasteboardItem:(id)arg1;
 
 @end
 

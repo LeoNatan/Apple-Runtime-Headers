@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     double _capline;
     CDStruct_3c058996 _alignmentRectInsets;
     _Bool _isAlignmentRect;
+    struct CGSize _canvasSize;
+    struct os_unfair_lock_s _lock;
 }
 
 - (CDStruct_3c058996)vectorGlyphAlignmentRectInsets;
@@ -27,7 +29,9 @@ __attribute__((visibility("hidden")))
 - (double)vectorGlyphBaseline;
 - (id)vectorGlyphAvailableSizes;
 - (void)_initalizeMetadataFromCSIData:(const struct _csiheader *)arg1;
+- (struct CGSize)canvasSize;
 - (struct CGSVGDocument *)svgDocument;
+- (struct CGSVGDocument *)_nts_svgDocument;
 - (id)rawData;
 - (id)metrics;
 - (int)pixelFormat;

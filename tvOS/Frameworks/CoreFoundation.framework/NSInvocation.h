@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSMethodSignature;
+@class NSMethodSignature, NSMutableArray;
 
 @interface NSInvocation : NSObject
 {
     void *_frame;
     void *_retdata;
-    id _signature;
-    id _container;
+    NSMethodSignature *_signature;
+    NSMutableArray *_container;
+    _Bool *_replacedByPointerBacking;
+    unsigned int _magic;
     unsigned char _retainedArgs;
-    unsigned char _reserved[15];
+    unsigned char _stackAllocated;
 }
 
 + (id)invocationWithMethodSignature:(id)arg1;

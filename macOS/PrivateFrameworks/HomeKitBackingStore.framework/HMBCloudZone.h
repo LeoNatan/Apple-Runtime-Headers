@@ -9,11 +9,12 @@
 #import <HomeKitBackingStore/HMBMirrorProtocol-Protocol.h>
 #import <HomeKitBackingStore/HMFLogging-Protocol.h>
 
-@class CKDatabase, CKShareParticipant, HMBCloudDatabase, HMBCloudZoneID, HMBCloudZoneShareModel, HMBLocalZone, HMBModelContainer, HMFUnfairLock, NAFuture, NSMapTable, NSMutableDictionary, NSSet, NSString, NSUUID;
-@protocol HMBCloudZoneDelegate;
+@class CKDatabase, CKShareParticipant, HMBCloudDatabase, HMBCloudZoneID, HMBCloudZoneShareModel, HMBLocalZone, HMBModelContainer, HMFUnfairLock, NAFuture, NSMapTable, NSMutableDictionary, NSOperationQueue, NSSet, NSString, NSUUID;
+@protocol HMBCloudZoneDelegate, HMBCloudZoneRebuilder;
 
 @interface HMBCloudZone : HMFObject <HMFLogging, HMBMirrorProtocol>
 {
+    BOOL _shouldRebuildOnManateeKeyLoss;
     BOOL _needsZoneCreation;
     NAFuture *_startUp;
     HMBCloudDatabase *_cloudDatabase;
@@ -22,7 +23,6 @@
     CKDatabase *_database;
     HMBLocalZone *_stateZone;
     NSUUID *_stateModelID;
-    HMBCloudZoneShareModel *_share;
     HMBCloudZoneID *_zoneID;
     NSMapTable *_modelClassToRequiresPostProcessingMap;
     NSMapTable *_inflightPushOperations;
@@ -32,13 +32,19 @@
     NAFuture *_destroyFuture;
     NAFuture *_currentCloudPullFuture;
     NAFuture *_queuedCloudPullFuture;
+    id <HMBCloudZoneRebuilder> _rebuilder;
+    HMBCloudZoneShareModel *_shareModel;
+    NSOperationQueue *_shareOperationQueue;
+    NSMutableDictionary *_shareParticipantModelsByClientIdentifier;
     HMBModelContainer *_modelContainer;
-    NSMutableDictionary *_shareParticipants;
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) NSMutableDictionary *shareParticipants; // @synthesize shareParticipants=_shareParticipants;
 @property(retain, nonatomic) HMBModelContainer *modelContainer; // @synthesize modelContainer=_modelContainer;
+@property(readonly, nonatomic) NSMutableDictionary *shareParticipantModelsByClientIdentifier; // @synthesize shareParticipantModelsByClientIdentifier=_shareParticipantModelsByClientIdentifier;
+@property(readonly, nonatomic) NSOperationQueue *shareOperationQueue; // @synthesize shareOperationQueue=_shareOperationQueue;
+@property(retain, nonatomic) HMBCloudZoneShareModel *shareModel; // @synthesize shareModel=_shareModel;
+@property(retain, nonatomic) id <HMBCloudZoneRebuilder> rebuilder; // @synthesize rebuilder=_rebuilder;
 @property(retain, nonatomic) NAFuture *queuedCloudPullFuture; // @synthesize queuedCloudPullFuture=_queuedCloudPullFuture;
 @property(retain, nonatomic) NAFuture *currentCloudPullFuture; // @synthesize currentCloudPullFuture=_currentCloudPullFuture;
 @property(retain, nonatomic) NAFuture *destroyFuture; // @synthesize destroyFuture=_destroyFuture;
@@ -49,11 +55,11 @@
 @property(readonly, nonatomic) NSMapTable *modelClassToRequiresPostProcessingMap; // @synthesize modelClassToRequiresPostProcessingMap=_modelClassToRequiresPostProcessingMap;
 @property(retain, nonatomic) HMBCloudZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(nonatomic) BOOL needsZoneCreation; // @synthesize needsZoneCreation=_needsZoneCreation;
-@property(retain, nonatomic) HMBCloudZoneShareModel *share; // @synthesize share=_share;
 @property(readonly, nonatomic) NSUUID *stateModelID; // @synthesize stateModelID=_stateModelID;
 @property(nonatomic) __weak HMBLocalZone *stateZone; // @synthesize stateZone=_stateZone;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(nonatomic) __weak HMBLocalZone *localZone; // @synthesize localZone=_localZone;
+@property(readonly, nonatomic) BOOL shouldRebuildOnManateeKeyLoss; // @synthesize shouldRebuildOnManateeKeyLoss=_shouldRebuildOnManateeKeyLoss;
 @property(nonatomic) __weak id <HMBCloudZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak HMBCloudDatabase *cloudDatabase; // @synthesize cloudDatabase=_cloudDatabase;
 @property(readonly, nonatomic) NAFuture *startUp; // @synthesize startUp=_startUp;
@@ -62,22 +68,30 @@
 - (id)logIdentifier;
 - (void)handleDeletion;
 - (void)addDatabaseOperation:(id)arg1;
-- (void)handleDeletedInternalModels:(id)arg1;
 - (void)handleUpdatedInternalModels:(id)arg1;
 - (BOOL)isInternalModel:(id)arg1;
 - (id)flush;
 - (BOOL)startupWithModelContainer:(id)arg1 error:(id *)arg2;
 - (void)startUpWithLocalZone:(id)arg1;
+- (BOOL)retryCloudKitOperationAfterError:(id)arg1 retryBlock:(CDUnknownBlockType)arg2;
 - (id)triggerOutputForOutputRow:(unsigned long long)arg1 options:(id)arg2;
 - (id)destroy;
 - (id)shutdown;
 - (void)dealloc;
-- (id)initWithCloudDatabase:(id)arg1 state:(id)arg2;
+- (id)initWithCloudDatabase:(id)arg1 shouldRebuildOnManateeKeyLoss:(BOOL)arg2 state:(id)arg3;
 - (id)encodeCloudFrom:(id)arg1 externalData:(id)arg2 createdRecords:(id)arg3 error:(id *)arg4;
 - (id)decodeModelFrom:(id)arg1 fullyPopulatedRecord:(BOOL)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) NAFuture *waitForPendingRebuild;
+@property(readonly, nonatomic) long long keyStatus;
+- (void)rebuild;
+- (void)handleZoneChangedNotification;
+@property(readonly, nonatomic, getter=isZoneRebuildInProgress) BOOL zoneRebuildInProgress;
+- (void)handleLostKeys;
+- (id)startUpRebuilderIfNeeded;
 - (id)decodeShareModelFromShare:(id)arg1;
 - (id)encodeShareModel:(id)arg1;
 - (id)pushRecordsToUpdate:(id)arg1 recordIDsToRemove:(id)arg2 configuration:(id)arg3 rollbackEnabled:(BOOL)arg4;
+- (id)pushRecordsToUpdate:(id)arg1 recordIDsToRemove:(id)arg2 configuration:(id)arg3 rollbackEnabled:(BOOL)arg4 needsNewInvitationToken:(BOOL)arg5;
 - (id)decodeManateeCloudFrom:(id)arg1 fullyPopulatedRecord:(BOOL)arg2 error:(id *)arg3;
 - (id)encodeManateeCloudModel:(id)arg1 externalData:(id)arg2 createdRecords:(id)arg3 error:(id *)arg4;
 - (BOOL)populateManateeCloudRecord:(id)arg1 withModel:(id)arg2 createdRecords:(id)arg3 error:(id *)arg4;
@@ -92,11 +106,28 @@
 - (id)fetchCompleteModel:(id)arg1 force:(BOOL)arg2;
 - (id)fetchCompleteModelsForRecordIDs:(id)arg1;
 - (id)fetchCompleteModelForRecordID:(id)arg1;
+- (id)fetchRecordWithRecordID:(id)arg1 canRetry:(BOOL)arg2;
 - (id)fetchRecordsWithRecordIDs:(id)arg1 desiredKeys:(id)arg2;
 - (id)_triggerOutputForOutputRow:(unsigned long long)arg1 options:(id)arg2;
-- (void)handleUpdatedShare;
+- (id)_pushDeletedParticipantRecordID:(id)arg1;
+- (id)_pushUpdatedParticipantRecord:(id)arg1;
+- (id)_pushUpdatedShare:(id)arg1;
+- (id)_addShareOperationWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (id)_handleLeaveCloudShareErrorUsingCloudZoneRecordPushResult:(id)arg1;
+- (id)_leaveCloudShareRequestingNewInvitationToken:(BOOL)arg1;
+- (id)leaveCloudShareRequestingNewInvitationToken:(BOOL)arg1;
+- (void)_handleUpdatedShareParticipantModels:(id)arg1;
+- (id)handleUpdatedShareParticipantModels:(id)arg1;
+- (void)_handleUpdatedShareModel:(id)arg1;
+- (id)handleUpdatedShareModel:(id)arg1;
+- (id)_createShareModel;
+- (id)createShareModel;
+- (void)initializeShareModels;
+- (BOOL)handleUpdatedShareParticipantRecord:(id)arg1 error:(id *)arg2;
+- (BOOL)handleUpdatedShare:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) CKShareParticipant *currentParticipant;
 @property(readonly, nonatomic) CKShareParticipant *ownerParticipant;
+- (id)participantWithClientIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSSet *participants;
 - (id)_revokeShareForParticipant:(id)arg1;
 - (id)revokeShareForParticipant:(id)arg1;
@@ -105,10 +136,10 @@
 - (id)_fetchInvitationWithContext:(id)arg1;
 - (id)fetchInvitationWithContext:(id)arg1;
 - (id)fetchCloudShareIDForShareParticipantClientIdentifier:(id)arg1;
-- (id)fetchOwnerCloudShareID;
-- (id)ownerCloudShareID;
-- (id)removeParticipant:(id)arg1;
-- (id)updateParticipant:(id)arg1;
+- (id)fetchCurrentParticipantCloudShareID;
+- (id)fetchOwnerParticipantCloudShareID;
+- (id)currentParticipantCloudShareID;
+- (id)ownerParticipantCloudShareID;
 - (id)cloudFieldForEncoding:(unsigned long long)arg1;
 - (id)cloudMetadataForModel:(id)arg1 usingEncoding:(unsigned long long)arg2;
 - (BOOL)populateV4CloudRecord:(id)arg1 withModel:(id)arg2 metadataFieldData:(id)arg3 startEncoding:(unsigned long long)arg4 endEncoding:(unsigned long long)arg5 error:(id *)arg6;

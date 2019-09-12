@@ -31,7 +31,7 @@
 - (void)_setExtensionRequest:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)init;
+- (id)initWithNoContentView:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

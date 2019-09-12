@@ -25,7 +25,14 @@
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(retain, nonatomic) UIBarButtonItemGroup *barButtonItemGroup; // @synthesize barButtonItemGroup=_barButtonItemGroup;
 - (void).cxx_destruct;
+- (void)_itemDidChangeHiddenState:(id)arg1;
+- (void)_itemDidChangeWidth:(id)arg1;
+- (void)_itemStandardViewNeedsUpdate:(id)arg1;
+- (void)_itemCustomViewDidChange:(id)arg1 fromView:(id)arg2;
+- (void)_itemDidChangeEnabledState:(id)arg1;
+- (void)_itemDidChangeSelectionState:(id)arg1;
 - (void)layoutSubviews;
+- (id)_buttonBarItemViewForBarButtonItem:(id)arg1;
 @property(readonly, nonatomic) NSArray *visibleButtons;
 - (void)_ensureVisibleButtonsForVisibleItems;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

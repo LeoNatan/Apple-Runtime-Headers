@@ -9,15 +9,15 @@
 @class NSIndexPath, NSString;
 
 @protocol NSCollectionLayoutVisibleItem <NSObject>
-@property(readonly, nonatomic) NSString *representedElementKind;
-@property(readonly, nonatomic) long long representedElementCategory;
-@property(readonly, nonatomic) struct CGRect bounds;
-@property(readonly, nonatomic) struct CGRect frame;
-@property(readonly, nonatomic) NSIndexPath *indexPath;
-@property(readonly, nonatomic) NSString *name;
-@property(nonatomic) struct CGPoint center;
-@property(nonatomic, getter=isHidden) BOOL hidden;
-@property(nonatomic) long long zIndex;
-@property(nonatomic) double alpha;
+@property(readonly) NSString *representedElementKind;
+@property(readonly) long long representedElementCategory;
+@property(readonly) struct CGRect bounds;
+@property(readonly) struct CGRect frame;
+@property(readonly) NSIndexPath *indexPath;
+@property(readonly) NSString *name;
+@property struct CGPoint center;
+@property(getter=isHidden) BOOL hidden;
+@property long long zIndex;
+@property double alpha;
 @end
 

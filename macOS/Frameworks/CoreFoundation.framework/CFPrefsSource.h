@@ -31,7 +31,8 @@ __attribute__((visibility("hidden")))
 - (void)setAccessRestricted:(BOOL)arg1;
 - (void)setDaemonCacheEnabled:(BOOL)arg1;
 - (void)alreadylocked_clearCache;
-- (BOOL)shouldEnableDirectMode;
+- (BOOL)isDirectModeEnabled;
+- (void)transitionIntoDirectModeIfNeededWithRetryBlock:(CDUnknownBlockType)arg1;
 - (BOOL)isVolatile;
 - (BOOL)managed;
 - (void)unlock;

@@ -147,6 +147,7 @@
         unsigned int prefetchDataSourceWasNonNil:1;
         unsigned int reloadSkippedDuringSuspension:1;
         unsigned int scheduledUpdateVisibleCells:1;
+        unsigned int allowDisablingContentOffsetAdjustmentForContentSizeChange:1;
         unsigned int scheduledUpdateVisibleCellLayoutAttributes:1;
         unsigned int allowsSelection:1;
         unsigned int allowsMultipleSelection:1;
@@ -188,6 +189,7 @@
         unsigned int skipAttributesApplication:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isAnimatingInteractiveMovementCompletion:1;
+        unsigned int shouldResetInitialLayoutOnDataSourceChange:1;
     } _collectionViewFlags;
     struct CGPoint _lastLayoutOffset;
     NSIndexPath *_cancellingToIndexPath;
@@ -220,6 +222,7 @@
     UIKeyCommand *_selectCellLeftCommand;
     UIContextMenuInteraction *_contextMenuInteraction;
     BOOL _prefetchingEnabled;
+    BOOL _searchFullPageOnFocusUpdate;
     BOOL _isMovingFocusFromHorizontalIndexTitleBarToContent;
     NSIndexPath *_focusedCellIndexPath;
     UICollectionReusableView *_focusedCell;
@@ -241,6 +244,7 @@
 @property(retain, nonatomic) NSIndexPath *indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar; // @synthesize indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar=_indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar;
 @property(retain, nonatomic, getter=_horizontalIndexTitleBar, setter=_setHorizontalIndexTitleBar:) _UIHorizontalIndexTitleBar *horizontalIndexTitleBar; // @synthesize horizontalIndexTitleBar=_horizontalIndexTitleBar;
 @property(nonatomic, getter=_defaultLayoutMargins, setter=_setDefaultLayoutMargins:) struct UIEdgeInsets defaultLayoutMargins; // @synthesize defaultLayoutMargins=_defaultLayoutMargins;
+@property(nonatomic, getter=_searchFullPageOnFocusUpdate, setter=_setSearchFullPageOnFocusUpdate:) BOOL searchFullPageOnFocusUpdate; // @synthesize searchFullPageOnFocusUpdate=_searchFullPageOnFocusUpdate;
 @property(retain, nonatomic) _UIFocusFastScrollingIndexBarEntry *selectedIndexTitleEntry; // @synthesize selectedIndexTitleEntry=_selectedIndexTitleEntry;
 @property(copy, nonatomic, getter=_focusedCellElementKind, setter=_setFocusedCellElementKind:) NSString *focusedCellElementKind; // @synthesize focusedCellElementKind=_focusedCellElementKind;
 @property(retain, nonatomic, getter=_focusedCell, setter=_setFocusedCell:) UICollectionReusableView *focusedCell; // @synthesize focusedCell=_focusedCell;
@@ -489,6 +493,8 @@
 - (struct CGPoint)_adjustFocusContentOffset:(struct CGPoint)arg1 toShowFocusItemWithInfo:(id)arg2;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint)arg1 targetContentOffset:(inout struct CGPoint *)arg2;
 - (void)setContentOffset:(struct CGPoint)arg1;
+- (BOOL)_shouldResetInitialLayoutOnDataSourceChange;
+- (void)_setShouldResetInitialLayoutOnDataSourceChange:(BOOL)arg1;
 - (id)_customScrollAnimation;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;

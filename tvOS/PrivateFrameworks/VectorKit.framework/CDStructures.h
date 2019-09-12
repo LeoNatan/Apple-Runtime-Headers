@@ -1685,27 +1685,9 @@ struct Texture2D {
 
 struct TextureAtlasRegion;
 
-struct TextureCube;
-
 struct TextureDataAbstract;
 
-struct TextureManager {
-    shared_ptr_479d1306 _field1;
-    shared_ptr_479d1306 _field2;
-    struct shared_ptr<ggl::TextureCube> _field3;
-    struct read_write_lock _field4;
-    struct read_write_lock _field5;
-    struct unordered_map<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>, md::TextureManager::TextureKeyHash, std::__1::equal_to<md::TextureManager::TextureKey>, std::__1::allocator<std::__1::pair<const md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>>> _field6;
-    struct unordered_map<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>, md::TextureManager::TextureKeyHash, std::__1::equal_to<md::TextureManager::TextureKey>, std::__1::allocator<std::__1::pair<const md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>>> _field7;
-    struct _retain_ptr<VKResourceManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> _field8;
-    struct Device *_field9;
-    struct _retain_ptr<VKTextureManagerResourceMonitor *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
-        CDUnknownFunctionPointerType *_field1;
-        id _field2;
-        struct _retain_objc _field3;
-        struct _release_objc _field4;
-    } _field10;
-};
+struct TextureManager;
 
 struct TexturePager;
 
@@ -1980,14 +1962,6 @@ struct __hash_node_base<std::__1::__hash_node<md::Anchor *, void *>*> {
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoadJob>>, void *>*> *__next_;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*> *_field1;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*> *_field1;
 };
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>, void *>*> {
@@ -2719,11 +2693,6 @@ struct shared_ptr<ggl::Texture2D> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<ggl::TextureCube> {
-    struct TextureCube *_field1;
-    struct __shared_weak_count *_field2;
-};
-
 struct shared_ptr<ggl::TextureMesh::MeshMesh> {
     struct MeshMesh *_field1;
     struct __shared_weak_count *_field2;
@@ -3248,28 +3217,6 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__h
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>, void *>*> **_field1;
@@ -3387,36 +3334,6 @@ struct unordered_map<_GEOTileKey, std::__1::shared_ptr<altitude::GeoServicesLoad
             float __value_;
         } __p3_;
     } __table_;
-};
-
-struct unordered_map<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>, md::TextureManager::TextureKeyHash, std::__1::equal_to<md::TextureManager::TextureKey>, std::__1::allocator<std::__1::pair<const md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>>> {
-    struct __hash_table<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, std::__1::__unordered_map_hasher<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, md::TextureManager::TextureKeyHash, true>, std::__1::__unordered_map_equal<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, std::__1::equal_to<md::TextureManager::TextureKey>, true>, std::__1::allocator<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, md::TextureManager::TextureKeyHash, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::Texture2D>>, std::__1::equal_to<md::TextureManager::TextureKey>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_map<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>, md::TextureManager::TextureKeyHash, std::__1::equal_to<md::TextureManager::TextureKey>, std::__1::allocator<std::__1::pair<const md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>>> {
-    struct __hash_table<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, std::__1::__unordered_map_hasher<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, md::TextureManager::TextureKeyHash, true>, std::__1::__unordered_map_equal<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, std::__1::equal_to<md::TextureManager::TextureKey>, true>, std::__1::allocator<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, md::TextureManager::TextureKeyHash, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<md::TextureManager::TextureKey, std::__1::__hash_value_type<md::TextureManager::TextureKey, std::__1::shared_ptr<ggl::TextureCube>>, std::__1::equal_to<md::TextureManager::TextureKey>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
 };
 
 struct unordered_map<mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>, mdc::LayerDataRequestKeyHash, std::__1::equal_to<mdc::LayerDataRequestKey>, std::__1::allocator<std::__1::pair<const mdc::LayerDataRequestKey, geo::small_vector<geo::MercatorTile, 8>>>> {

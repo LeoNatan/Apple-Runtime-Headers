@@ -15,9 +15,11 @@
     unsigned int _flags;
     NSString *_contactID;
     NSArray *_handles;
+    NSString *_sendersKnownAlias;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *sendersKnownAlias; // @synthesize sendersKnownAlias=_sendersKnownAlias;
 @property(copy, nonatomic) NSArray *handles; // @synthesize handles=_handles;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;

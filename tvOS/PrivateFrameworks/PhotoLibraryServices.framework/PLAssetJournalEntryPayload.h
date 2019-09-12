@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)migrateMergedPayload;
 - (void)setLocation:(id)arg1;
+- (unsigned long long)bestCPLResourceTypeForAdjustedFingerPrint;
 - (id)extendedAttributesLongitude;
 - (id)extendedAttributesLatitude;
 - (id)longitude;
@@ -32,8 +33,10 @@
 - (id)dateCreated;
 - (id)uniformTypeIdentifier;
 - (_Bool)hasAdjustments;
+- (_Bool)isSlowmo;
 - (_Bool)isImage;
 - (_Bool)isVideo;
+- (short)kindSubtype;
 - (short)kind;
 - (id)originalResourceRelativePaths;
 - (id)cloudMasterGUID;

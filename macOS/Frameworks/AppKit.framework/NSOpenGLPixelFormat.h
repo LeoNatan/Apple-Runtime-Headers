@@ -28,9 +28,6 @@
 - (id)initWithAttributes:(const unsigned int *)arg1;
 - (id)init;
 - (id)_fallbackInitializer;
-- (BOOL)isSharableWithPixelFormat:(id)arg1;
-- (id)_initWithCGLPixelFormatObj:(void *)arg1;
-- (void *)_pixelFormatAuxiliary;
 
 @end
 

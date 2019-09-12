@@ -8,7 +8,7 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
-@class CAMediaTimingFunction, NSArray, NSLayoutXAxisAnchor, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSTouchBarItemContainerView, NSTouchBarItemTree, NSTouchBarLayout;
+@class CALayer, CAMediaTimingFunction, NSArray, NSLayoutXAxisAnchor, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSTouchBarItemContainerView, NSTouchBarItemTree, NSTouchBarLayout;
 
 @interface NSTouchBarView : NSView <NSCoding>
 {
@@ -24,6 +24,7 @@
     NSTouchBarLayout *_layoutManager;
     NSMapTable *_itemsToAttributes;
     double _defaultItemPadding;
+    BOOL _isMissingEscKeyReplacement;
     unsigned int _layingOut:1;
     unsigned int _shouldLayout:1;
     unsigned int _shouldAnimateNextLayoutPass:1;
@@ -36,6 +37,8 @@
     double _animationDuration;
     NSTouchBarItemContainerView *_changingContainerView;
     NSSet *_visibleBars;
+    CALayer *_clipIndicator;
+    CALayer *_escIndicator;
 }
 
 @property double defaultItemPadding; // @synthesize defaultItemPadding=_defaultItemPadding;
@@ -43,6 +46,8 @@
 - (id)adjustFromFrame:(struct CGRect)arg1 toFrame:(struct CGRect)arg2 afterDelay:(double)arg3 withDuration:(double)arg4;
 - (id)adjustFromSize:(struct CGSize)arg1 toSize:(struct CGSize)arg2 afterDelay:(double)arg3 withDuration:(double)arg4;
 - (id)moveFromOrigin:(struct CGPoint)arg1 ToOrigin:(struct CGPoint)arg2 afterDelay:(double)arg3 withDuration:(double)arg4;
+- (void)updateLayer;
+- (BOOL)wantsUpdateLayer;
 - (void)layout;
 - (void)_layout;
 @property(retain) CAMediaTimingFunction *animationTimingFunction;
@@ -62,6 +67,7 @@
 - (void)_appStateWillChange;
 @property BOOL isInCustomizationPalette;
 - (void)withAnimationsSuppressed:(CDUnknownBlockType)arg1;
+@property(getter=isMissingEscKeyReplacement) BOOL missingEscKeyReplacement; // @synthesize missingEscKeyReplacement=_isMissingEscKeyReplacement;
 @property BOOL allowsTransitionAnimations;
 @property(retain) NSArray *touchBars;
 @property(copy) NSTouchBarItemTree *itemTree;

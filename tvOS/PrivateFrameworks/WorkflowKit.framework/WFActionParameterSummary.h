@@ -21,7 +21,11 @@
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 @property(readonly, copy, nonatomic) NSString *singleFormatString; // @synthesize singleFormatString=_singleFormatString;
 - (void).cxx_destruct;
+- (id)placeholderForKey:(id)arg1;
+- (id)parameterReplacedString:(id)arg1 withOverrides:(id)arg2;
 - (id)possibleValuesFromDictionary:(id)arg1;
+- (id)explodedPossibleValuesForLocalizationWithParameterReplacements;
+- (id)explodedSummaryStringWithKey:(id)arg1 value:(id)arg2;
 - (id)explodedPossibleValuesForLocalization;
 - (id)localizedFormatString;
 @property(readonly, copy, nonatomic) NSArray *possibleValues; // @synthesize possibleValues=_possibleValues;

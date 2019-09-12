@@ -28,6 +28,7 @@
     _Bool _isFavorite;
     _Bool _accessoryViewVisible;
     _Bool _isInEditMode;
+    _Bool _toggleCTM;
     _Bool __needsUpdateVideoPlayers;
     id <PUDisplayAsset> _asset;
     PUModelTileTransform *_modelTileTransform;
@@ -58,6 +59,7 @@
 @property(nonatomic) long long displayedContentUpdateCount; // @synthesize displayedContentUpdateCount=_displayedContentUpdateCount;
 @property(nonatomic, setter=_setCurrentFavoriteOverrideRequest:) long long _currentFavoriteOverrideRequest; // @synthesize _currentFavoriteOverrideRequest=__currentFavoriteOverrideRequest;
 @property(nonatomic, setter=_setNeedsUpdateVideoPlayers:) _Bool _needsUpdateVideoPlayers; // @synthesize _needsUpdateVideoPlayers=__needsUpdateVideoPlayers;
+@property(nonatomic) _Bool toggleCTM; // @synthesize toggleCTM=_toggleCTM;
 @property(nonatomic) _Bool isInEditMode; // @synthesize isInEditMode=_isInEditMode;
 @property(nonatomic) double contentOffsetOverrideFactor; // @synthesize contentOffsetOverrideFactor=_contentOffsetOverrideFactor;
 @property(nonatomic) struct CGPoint overridingContentOffset; // @synthesize overridingContentOffset=_overridingContentOffset;

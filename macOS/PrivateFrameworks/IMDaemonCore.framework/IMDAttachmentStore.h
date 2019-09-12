@@ -21,6 +21,7 @@
 - (BOOL)updateLegacyTransferGUIDOnMessageIfNeeded:(id)arg1;
 - (BOOL)_shouldEarlyReturnForWrongItemType:(id)arg1;
 - (BOOL)updateLegacyTransferGUIDIfNeeded:(id)arg1;
+- (id)fileTransferWithAttachmentRecordRef:(struct _IMDAttachmentRecordStruct *)arg1;
 - (id)attachmentWithGUID:(id)arg1;
 - (void)markAllAttachmentsAsNotPurgeable;
 - (id)getAuxVideoPath:(id)arg1;

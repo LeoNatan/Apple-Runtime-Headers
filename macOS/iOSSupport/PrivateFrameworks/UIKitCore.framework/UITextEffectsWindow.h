@@ -43,6 +43,7 @@
 + (id)_sharedTextEffectsWindowforWindowScene:(id)arg1 allowHosted:(BOOL)arg2 matchesStatusBarOrientationOnAccess:(BOOL)arg3 shouldCreateIfNecessary:(BOOL)arg4;
 + (BOOL)_isSecure;
 + (BOOL)_shouldSoftAssertOnSetScreen;
+@property(readonly, nonatomic) UIEditingOverlayViewController *editingOverlayViewController; // @synthesize editingOverlayViewController=_editingOverlayViewController;
 @property(nonatomic) struct UIEdgeInsets hostedSafeInsets; // @synthesize hostedSafeInsets=_hostedSafeInsets;
 @property(nonatomic) struct CGSize hostedSceneSize; // @synthesize hostedSceneSize=_hostedSceneSize;
 @property(nonatomic) struct CGPoint hostedWindowOffset; // @synthesize hostedWindowOffset=_hostedWindowOffset;
@@ -87,6 +88,7 @@
 - (void)_didRemoveSubview:(id)arg1;
 - (void)delayHideWindow;
 - (void)_updateRootViewConstraintsForInterfaceOrientationAndStatusBarHeight;
+- (id)_inputWindowController;
 - (void)handleStatusBarChangeFromHeight:(double)arg1 toHeight:(double)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromView:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toView:(id)arg2;

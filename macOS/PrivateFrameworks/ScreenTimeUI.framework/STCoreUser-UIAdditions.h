@@ -8,12 +8,12 @@
 
 @interface STCoreUser (UIAdditions)
 + (id)keyPathsForValuesAffectingBindableShareWebUsage;
-+ (id)keyPathsForValuesAffectingBindableHasiCloudFamily;
++ (id)keyPathsForValuesAffectingBindableCanSetUpFamily;
 + (id)keyPathsForValuesAffectingBindableAllLimitsEnabled;
 + (id)keyPathsForValuesAffectingBindableSyncingEnabled;
 + (id)keyPathsForValuesAffectingBindableScreenTimeEnabled;
 @property BOOL bindableShareWebUsage;
-@property(readonly) BOOL bindableHasiCloudFamily;
+@property(readonly) BOOL bindableCanSetUpFamily;
 @property BOOL bindableAllLimitsEnabled;
 @property BOOL bindableSyncingEnabled;
 @property BOOL bindableScreenTimeEnabled;

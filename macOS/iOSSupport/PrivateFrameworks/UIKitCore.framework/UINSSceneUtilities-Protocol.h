@@ -6,10 +6,11 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSArray, NSString, UIWindow;
+@class NSArray, NSSet, NSString, UIWindow;
 @protocol UINSSceneSizeRestrictions;
 
 @protocol UINSSceneUtilities <NSObject>
+- (NSSet *)_discardPreviouslyPersistedScenesKeepingScenesWithIdentifiers:(NSArray *)arg1;
 - (id <UINSSceneSizeRestrictions>)sizeRestrictionsForSceneWithIdentifier:(NSString *)arg1;
 - (UIWindow *)keyUIWindowAcrossAllScenes;
 - (UIWindow *)keyUIWindowForSceneWithIdentifier:(NSString *)arg1;

@@ -19,6 +19,7 @@
 }
 
 + (id)_errorWithFMMErroCode:(unsigned long long)arg1;
++ (id)_updateQueue;
 @property(retain) FMDUIFMMiCloudSettingsController *optionsController; // @synthesize optionsController=_optionsController;
 @property(retain) NSImage *warningIcon; // @synthesize warningIcon=_warningIcon;
 @property(retain) NSError *fmmError; // @synthesize fmmError=_fmmError;

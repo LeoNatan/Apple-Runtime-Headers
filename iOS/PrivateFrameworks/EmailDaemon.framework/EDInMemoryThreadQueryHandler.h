@@ -24,8 +24,8 @@
     _Bool _isPaused;
     _Bool _hasChangesWhilePaused;
     EDMessageQueryHelper *_messageQueryHelper;
-    NSArray *_threadSortDescriptors;
     NSArray *_messageSortDescriptors;
+    CDUnknownBlockType _comparator;
     EDUpdateThrottler *_updateThrottler;
     NSObject<OS_dispatch_queue> *_contentProtectionQueue;
     NSObject<OS_dispatch_queue> *_resultQueue;
@@ -39,8 +39,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resultQueue; // @synthesize resultQueue=_resultQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *contentProtectionQueue; // @synthesize contentProtectionQueue=_contentProtectionQueue;
 @property(readonly, nonatomic) EDUpdateThrottler *updateThrottler; // @synthesize updateThrottler=_updateThrottler;
+@property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, copy, nonatomic) NSArray *messageSortDescriptors; // @synthesize messageSortDescriptors=_messageSortDescriptors;
-@property(readonly, copy, nonatomic) NSArray *threadSortDescriptors; // @synthesize threadSortDescriptors=_threadSortDescriptors;
 @property(retain, nonatomic) EDMessageQueryHelper *messageQueryHelper; // @synthesize messageQueryHelper=_messageQueryHelper;
 - (void).cxx_destruct;
 - (_Bool)_messageListItemChangeAffectsSorting:(id)arg1;

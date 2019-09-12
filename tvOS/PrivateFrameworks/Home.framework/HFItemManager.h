@@ -128,6 +128,7 @@
 - (_Bool)_isUsingOnlyItemModules;
 - (id)_allSuppressedCharacteristics;
 - (_Bool)_shouldHideServiceItem:(id)arg1 containedInServiceGroupItem:(id)arg2;
+- (id)_accessoryItemsToHideInSet:(id)arg1;
 - (id)_serviceItemsToHideInSet:(id)arg1 allServiceGroupItems:(id)arg2;
 - (id)_itemsToHideInSet:(id)arg1;
 - (void)_notifyDelegateOfItemOperations:(id)arg1 logger:(id)arg2;
@@ -283,6 +284,7 @@
 - (void)accessory:(id)arg1 didUpdateApplicationDataForService:(id)arg2;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
 - (void)accessory:(id)arg1 service:(id)arg2 didUpdateValueForCharacteristic:(id)arg3;
+- (void)accessoryDidUpdateReachableTransports:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
 - (void)accessoryDidUpdateServices:(id)arg1;
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;

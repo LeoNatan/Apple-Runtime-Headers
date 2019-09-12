@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)routePickerRemoteViewController:(id)arg1 viewBridgeConnectionDidFailWithError:(id)arg2;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillShow:(id)arg1;
-- (void)showOrHideRoutePickerPopoverFromSourceUIWindow:(id)arg1;
+- (void)showOrHideRoutePickerPopoverFromSourceUIWindow:(id)arg1 pickingOnOutputContext:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

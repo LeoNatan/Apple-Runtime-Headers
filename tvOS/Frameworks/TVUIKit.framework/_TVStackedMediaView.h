@@ -73,6 +73,7 @@
 - (void)_positionFallbackImageView;
 - (void)_positionGimballingViews;
 - (void)_positionContentView;
+- (void)_unloadPreviewImage;
 - (void)_handlePreviewAssetFailure;
 - (void)_loadPreviewAssetIfNecessary;
 - (void)_teardownDocumentViews;

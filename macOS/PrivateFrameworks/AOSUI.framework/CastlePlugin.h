@@ -9,7 +9,7 @@
 #import <AOSUI/AKAppleIDAuthenticationDelegate-Protocol.h>
 #import <AOSUI/MMWebKitViewControllerDelegate-Protocol.h>
 
-@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController, iCloudSetupTopLevel;
+@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController;
 @protocol OS_dispatch_semaphore, iCloudPrefDelegate;
 
 @interface CastlePlugin : NSObject <AKAppleIDAuthenticationDelegate, MMWebKitViewControllerDelegate>
@@ -17,7 +17,6 @@
     MMWebKitViewController *_webKitViewController;
     MM_Account *_provisionalAccount;
     NSDictionary *_authenticationResults;
-    iCloudSetupTopLevel *setupController;
     NSMutableDictionary *_accountList;
     NSString *_visibleAccountID;
     NSTimer *_signoutSpinnerStartTimer;
@@ -89,9 +88,6 @@
 - (void)resizeModalSheet:(struct CGSize)arg1;
 - (id)familySheetForAccount:(id)arg1;
 - (void)topLevelShowAccount;
-- (void)topLevelShowSetUpUI:(id)arg1 withAccountID:(id)arg2;
-- (void)topLevelEnableDataClass:(id)arg1;
-- (void)shownotVerifiedSheet;
 - (void)showAccountDetailsForAccount:(id)arg1 inWindow:(id)arg2;
 - (void)showNewAccountDetailsForAccount:(id)arg1 inWindow:(id)arg2;
 - (void)showNewAccountDetailsForAccount:(id)arg1 inWindow:(id)arg2 andOpenSection:(id)arg3;
@@ -156,14 +152,12 @@
 - (void)showCreateAppleID;
 - (void)createPressedTopLevel:(id)arg1;
 - (void)cancelPressedTopLevel:(id)arg1;
-- (void)enableDataClass:(id)arg1;
 - (void)_closeCreateAppleIDWindow:(BOOL)arg1;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
 - (void)mmWebKitViewControllerDidFailLoading:(id)arg1 error:(id)arg2;
 - (void)mmWebKitViewControllerDidSucceed:(id)arg1;
 - (void)mmWebKitViewControllerDidCancel:(id)arg1;
-- (void)resetSetupController;
 - (id)appleIDToShow;
 - (void)loginWithUsername:(id)arg1 andPassword:(id)arg2 withContext:(id)arg3;
 - (BOOL)isPaneEnabled;

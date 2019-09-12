@@ -85,6 +85,11 @@
 - (id)debugCommandEncoder;
 - (BOOL)commitAndWaitUntilSubmitted;
 - (void)commit;
+- (void)preCommit;
+- (void)preScheduledHandlers;
+- (void)postScheduledHandlers;
+- (void)preCompletionHandlers;
+- (void)postCompletionHandlers;
 - (void)clearRetainedObjects;
 - (void)addRetainedObject:(id)arg1;
 - (void)acceptVisitor:(id)arg1;

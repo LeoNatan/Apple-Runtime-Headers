@@ -157,7 +157,6 @@
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2;
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
 + (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 fetchOptions:(id)arg4 onlyKey:(BOOL)arg5;
-+ (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 adjustmentInfo:(id)arg3 renderingError:(id)arg4;
 + (id)fetchAssetsForReferences:(id)arg1 photoLibrary:(id)arg2;
 + (void)_inq_trimToMostRecentImageManagerMessages;
 + (id)_currentTimestampString;

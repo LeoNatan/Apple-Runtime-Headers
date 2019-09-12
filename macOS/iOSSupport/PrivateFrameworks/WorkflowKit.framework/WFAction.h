@@ -8,12 +8,13 @@
 
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/WFParameterEventObserver-Protocol.h>
+#import <WorkflowKit/WFUUIDProvider-Protocol.h>
 #import <WorkflowKit/WFVariableProvider-Protocol.h>
 
 @class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, NSUnit, UIImage, WFActionParameterSummary, WFContentCollection, WFParameter, WFResourceManager, WFWorkflow;
 @protocol WFActionParameterInputProvider, WFUserInterface, WFVariableDataSource;
 
-@interface WFAction : NSObject <WFParameterEventObserver, NSCopying, WFVariableProvider>
+@interface WFAction : NSObject <WFUUIDProvider, WFParameterEventObserver, NSCopying, WFVariableProvider>
 {
     BOOL _running;
     BOOL _inputParameterUnlocked;
@@ -84,7 +85,7 @@
 - (id)inheritedOutputContentClassesInWorkflow:(id)arg1;
 - (id)inheritedInputVariableInWorkflow:(id)arg1;
 - (id)inputSourceInWorkflow:(id)arg1;
-- (id)outputVariableWithVariableProvider:(id)arg1;
+- (id)outputVariableWithVariableProvider:(id)arg1 UUIDProvider:(id)arg2;
 - (BOOL)canHandleInputOfContentClasses:(id)arg1 withSupportedClasses:(id)arg2 includingCoercedTypes:(BOOL)arg3;
 - (BOOL)canHandleInputOfContentClasses:(id)arg1 withSupportedClasses:(id)arg2;
 - (BOOL)shouldBeConnectedToPreviousActionInWorkflow:(id)arg1 withOutputsConsumedByFollowingActions:(id)arg2;
@@ -103,8 +104,8 @@
 - (void)initializeParameters;
 @property(copy, nonatomic) NSString *groupingIdentifier;
 @property(copy, nonatomic) NSString *outputName;
-- (id)generateUUIDIfNecessary;
-@property(readonly, nonatomic) NSString *UUID;
+- (id)generateUUIDIfNecessaryWithUUIDProvider:(id)arg1;
+@property(copy, nonatomic) NSString *UUID;
 - (void)didChangeVariableName:(id)arg1 to:(id)arg2;
 - (id)providedVariableNames;
 - (void)removeVariableObserver:(id)arg1;
@@ -119,6 +120,7 @@
 - (BOOL)hasAvailableVariables;
 @property(readonly, nonatomic) NSArray *availableOutputActions;
 @property(readonly, nonatomic) NSArray *availableVariableNames;
+- (id)generateOutputUUIDForAction:(id)arg1;
 - (id)createAccompanyingActions;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
@@ -206,8 +208,8 @@
 @property(readonly, nonatomic) NSString *appSection;
 @property(readonly, nonatomic) ICApp *app;
 @property(readonly, nonatomic) NSString *appIdentifier;
-@property(readonly, nonatomic) Class runningUIComponentClass;
-@property(readonly, nonatomic) Class configurationUIComponentClass;
+@property(readonly, nonatomic) Class runningViewClass;
+@property(readonly, nonatomic) Class configurationViewClass;
 @property(readonly, nonatomic) BOOL showsSettingsWhenResourcesUnavailable;
 @property(readonly, nonatomic) Class settingsViewControllerClass;
 @property(readonly, nonatomic) NSDictionary *settingsUIDefinition;
@@ -251,6 +253,7 @@
 @property(readonly, nonatomic) NSString *iconName;
 @property(readonly, nonatomic) NSArray *localizedCategories;
 @property(readonly, nonatomic) NSArray *categories;
+@property(readonly, nonatomic) NSAttributedString *localizedFooter;
 @property(readonly, nonatomic) NSString *localizedAttribution;
 @property(readonly, nonatomic) NSString *attribution;
 @property(readonly, nonatomic) NSString *accessibilityName;

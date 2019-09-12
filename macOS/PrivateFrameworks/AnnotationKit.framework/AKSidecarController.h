@@ -31,7 +31,6 @@
     NSObject<OS_dispatch_source> *_coalescingAnnotationSource;
     BOOL _shouldObserveEdits;
     id <AKSidecarControllerDelegate> _delegate;
-    SidecarDevice *_connectedDevice;
     SidecarRequest *_request;
     SidecarStream *_annotationsStream;
     AKController *_controller;
@@ -46,7 +45,6 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) SidecarStream *annotationsStream; // @synthesize annotationsStream=_annotationsStream;
 @property(retain, nonatomic) SidecarRequest *request; // @synthesize request=_request;
-@property(retain, nonatomic) SidecarDevice *connectedDevice; // @synthesize connectedDevice=_connectedDevice;
 @property(nonatomic) __weak id <AKSidecarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldObserveEdits; // @synthesize shouldObserveEdits=_shouldObserveEdits;
 - (void).cxx_destruct;
@@ -92,9 +90,8 @@
 - (void)shareWithDevice:(id)arg1;
 - (BOOL)shareWithLastSelectedDevice;
 @property(readonly, nonatomic) NSArray *availableDevices;
-- (void)_tearDownRequest;
-- (void)_setupRequest;
-- (void)_resetRequest;
+- (void)_releaseRequest:(BOOL)arg1;
+@property(readonly, nonatomic) SidecarDevice *connectedDevice;
 - (void)_unregisterObservers;
 - (void)_registerObservers;
 - (void)dealloc;

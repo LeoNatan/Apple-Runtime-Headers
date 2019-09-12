@@ -7,11 +7,12 @@
 #import <Email/EMRepositoryObject.h>
 
 #import <Email/EFLoggable-Protocol.h>
+#import <Email/EFSignpostable-Protocol.h>
 
 @class EFFuture, EFPromise, EFQuery, NSMutableOrderedSet, NSOrderedSet, NSString;
 @protocol EFCancelable, EFScheduler, EMCollectionChangeObserver;
 
-@interface EMCollection : EMRepositoryObject <EFLoggable>
+@interface EMCollection : EMRepositoryObject <EFLoggable, EFSignpostable>
 {
     NSMutableOrderedSet *_itemIDs;
     NSOrderedSet *_recoveringItemIDs;
@@ -26,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)signpostLog;
 + (id)log;
 @property(readonly, nonatomic) id <EFScheduler> observerScheduler; // @synthesize observerScheduler=_observerScheduler;
 @property(readonly, nonatomic) id <EFScheduler> queryScheduler; // @synthesize queryScheduler=_queryScheduler;
@@ -33,6 +35,7 @@
 @property(retain, nonatomic) id <EFCancelable> cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(readonly, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+- (void)queryReplacedObjectID:(id)arg1 withNewObjectID:(id)arg2;
 - (BOOL)observerContainsObjectID:(id)arg1;
 - (void)_filterAndTransformObjectIDs:(id)arg1 before:(BOOL)arg2 existingObjectID:(id)arg3 batchBlock:(CDUnknownBlockType)arg4;
 - (id)_itemIDsForObjectIDs:(id)arg1;
@@ -45,7 +48,8 @@
 - (void)queryMatchedAddedObjectIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
 - (void)queryMatchedAddedObjectIDs:(id)arg1 before:(id)arg2 extraInfo:(id)arg3;
 - (void)queryDidStartRecovery;
-@property(readonly) BOOL isRecovering;
+- (void)finishRecovery;
+- (BOOL)isRecovering;
 - (void)_cancelQueryIfNeeded;
 - (void)_performQueryIfNeeded;
 - (void)_cancelQuery;
@@ -56,7 +60,7 @@
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 after:(id)arg2 extraInfo:(id)arg3;
 - (void)notifyChangeObserverAboutAddedItemIDs:(id)arg1 before:(id)arg2 extraInfo:(id)arg3;
 - (id)iterateItemIDsStartingAtItemID:(id)arg1 inReverse:(BOOL)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (BOOL)containsItemID:(id)arg1;
+- (BOOL)containsItemID:(id)arg1 includeRecovery:(BOOL)arg2;
 - (void)removeItemIDs:(id)arg1;
 - (void)insertItemIDs:(id)arg1 after:(id)arg2;
 - (void)insertItemIDs:(id)arg1 before:(id)arg2;
@@ -69,6 +73,7 @@
 - (void)_commonInitWithQuery:(id)arg1;
 - (id)initWithObjectID:(id)arg1 query:(id)arg2;
 - (id)initWithQuery:(id)arg1 repository:(id)arg2;
+@property(readonly) unsigned long long signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

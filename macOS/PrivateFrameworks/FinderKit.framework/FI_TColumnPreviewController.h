@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
     struct TKeyValueObserver _contentInsetsDidChangeObserver;
     struct TNSRef<NSArray<NSLayoutConstraint *>, void> _layoutConstraints;
     struct TNSWeakPtr<NSLayoutConstraint, void> _minHeightLayoutConstraint;
-    struct TNSRef<NSTrackingArea, void> _wholeColumnTrackingArea;
     _Bool _inColumnView;
     struct TNSRef<FI_TPreviewOptions, void> _previewOptions;
 }
@@ -39,8 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool inColumnView; // @synthesize inColumnView=_inColumnView;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)mouseExited:(id)arg1;
-- (void)mouseEntered:(id)arg1;
 @property(retain, nonatomic) FI_TPreviewOptions *previewOptions; // @dynamic previewOptions;
 - (void)setShowSmallThumbnail:(_Bool)arg1;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodeMDAttributeChanged:(const struct TFENode *)arg2 attributes:(id)arg3 isDisplayAttributes:(_Bool)arg4;

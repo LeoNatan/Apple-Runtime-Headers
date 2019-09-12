@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, PKPrinter, UIPrintFormatter, UIPrintInfo, UIPrintPageRenderer, UIPrintPaper;
+@class NSArray, PKPrinter, UIPrintFormatter, UIPrintInfo, UIPrintPageRenderer, UIPrintPaper, UIWindowScene;
 @protocol OS_dispatch_queue, UIPrintInteractionControllerActivityDelegate, UIPrintInteractionControllerDelegate;
 
 @interface UIPrintInteractionController : NSObject
@@ -27,6 +27,7 @@
     UIPrintFormatter *_printFormatter;
     id _printingItem;
     NSArray *_printingItems;
+    UIWindowScene *_hostingWindowScene;
     id <UIPrintInteractionControllerActivityDelegate> _printActivityDelegate;
 }
 
@@ -37,6 +38,7 @@
 + (BOOL)isPrintingAvailable;
 @property(nonatomic) __weak id <UIPrintInteractionControllerActivityDelegate> printActivityDelegate; // @synthesize printActivityDelegate=_printActivityDelegate;
 @property(nonatomic) BOOL isContentManaged; // @synthesize isContentManaged=_isContentManaged;
+@property(retain, nonatomic) UIWindowScene *hostingWindowScene; // @synthesize hostingWindowScene=_hostingWindowScene;
 @property(copy, nonatomic) NSArray *printingItems; // @synthesize printingItems=_printingItems;
 @property(copy, nonatomic) id printingItem; // @synthesize printingItem=_printingItem;
 @property(retain, nonatomic) UIPrintFormatter *printFormatter; // @synthesize printFormatter=_printFormatter;

@@ -10,11 +10,14 @@
 
 @interface TVTopShelfCustomAction : TVTopShelfAction <NSSecureCoding>
 {
+    _Bool _showsActivityIndicatorWhilePerforming;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool showsActivityIndicatorWhilePerforming; // @synthesize showsActivityIndicatorWhilePerforming=_showsActivityIndicatorWhilePerforming;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithURL:(id)arg1;
 
 @end
 

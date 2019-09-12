@@ -25,6 +25,7 @@
     NSMutableDictionary *_deletedDecorationIndexPaths;
     NSMutableDictionary *_insertedDecorationIndexPaths;
     NSDictionary *_previousItemAttributes;
+    BOOL _invalidatedAndWaitingForPrepareLayout;
     BOOL _disableItemAnimations;
     BOOL _showsFooterConnector;
     UIColor *_connectorColor;

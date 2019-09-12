@@ -6,11 +6,10 @@
 
 #import <CoreData/NSObject-Protocol.h>
 
-@class CKAsset, NSCKImportPendingRelationship, NSError, NSURL, PFCloudKitSerializer, PFMirroredRelationship;
+@class CKAsset, NSError, NSURL, PFCloudKitSerializer, PFMirroredRelationship;
 
 @protocol PFCloudKitSerializerDelegate <NSObject>
 - (NSURL *)cloudKitSerializer:(PFCloudKitSerializer *)arg1 safeSaveURLForAsset:(CKAsset *)arg2;
-- (void)cloudKitSerializer:(PFCloudKitSerializer *)arg1 resolvedPendingRelationship:(NSCKImportPendingRelationship *)arg2;
 - (void)cloudKitSerializer:(PFCloudKitSerializer *)arg1 failedToUpdateRelationship:(PFMirroredRelationship *)arg2 withError:(NSError *)arg3;
 @end
 

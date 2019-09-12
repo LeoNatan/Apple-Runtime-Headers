@@ -66,7 +66,7 @@ __attribute__((visibility("hidden")))
 - (void)_macOSAppDidBecomeActive:(id)arg1;
 - (void)_macOSAppActivationPolicyChangedToForeground;
 - (void)uiKitWantsToExitProcessWithStatus:(int)arg1;
-- (void)_reachedPointOfNoReturnForTimeout:(BOOL)arg1;
+- (void)_reachedPointOfNoReturnForTimeout:(BOOL)arg1 shouldFireWarningShot:(BOOL)arg2;
 - (void)allBackgroundTasksDidFinish;
 - (void)_iOSAppDidEnterBackground:(id)arg1;
 - (void)_tryToBackgroundIOSApp;
@@ -77,7 +77,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)appShouldTerminate:(id)arg1;
 - (void)didCreateWindowForScene;
 - (void)willCreateWindowForScene;
-- (BOOL)_appWasLaunchedToBackground;
+@property(readonly, nonatomic) BOOL isLaunchedToBackground;
 - (void)dealloc;
 - (id)initWithAppDelegate:(id)arg1;
 

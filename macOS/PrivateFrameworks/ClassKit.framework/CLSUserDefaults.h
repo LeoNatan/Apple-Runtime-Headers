@@ -11,6 +11,7 @@
 }
 
 + (BOOL)isInternalOSVariant;
++ (BOOL)enableStableObjectID;
 + (BOOL)automatchClientPersona;
 + (BOOL)disableASMRosters;
 + (BOOL)persistProgressData;

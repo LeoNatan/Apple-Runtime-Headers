@@ -9,18 +9,21 @@
 #import <Intents/INFileURLEnumerable-Protocol.h>
 #import <Intents/INJSONSerializable-Protocol.h>
 
-@class INFile, NSString;
+@class INFile, NSString, NSURL;
 
 @interface INSendMessageAttachment : NSObject <INJSONSerializable, INFileURLEnumerable>
 {
     BOOL _currentLocation;
     INFile *_file;
+    NSURL *_speechDataURL;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)attachmentWithSpeechDataURL:(id)arg1;
 + (id)attachmentWithFile:(id)arg1;
 + (id)attachmentWithCurrentLocation;
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
+@property(readonly, copy) NSURL *speechDataURL; // @synthesize speechDataURL=_speechDataURL;
 @property(readonly, copy) INFile *file; // @synthesize file=_file;
 @property(readonly) BOOL currentLocation; // @synthesize currentLocation=_currentLocation;
 - (void).cxx_destruct;
@@ -30,7 +33,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
-- (id)_initWithCurrentLocation:(BOOL)arg1 file:(id)arg2;
+- (id)_initWithCurrentLocation:(BOOL)arg1 file:(id)arg2 speechDataURL:(id)arg3;
 - (id)_intents_encodeWithJSONEncoder:(id)arg1 codableDescription:(id)arg2;
 - (void)_enumerateFileURLsWithMutatingBlock:(CDUnknownBlockType)arg1;
 

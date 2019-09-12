@@ -18,6 +18,7 @@
     HMHome *_home;
 }
 
++ (unsigned long long)variableResultTypeForParameter:(id)arg1;
 + (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
@@ -32,7 +33,6 @@
 - (void)servicePickerDidCancel:(id)arg1;
 - (void)servicePickerDidFinish:(id)arg1 selectedServices:(id)arg2;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
-- (unsigned long long)variableResultType;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginEditingSlotWithIdentifier:(id)arg1 fromLongPressGesture:(BOOL)arg2 sourceViewController:(id)arg3 sourceView:(id)arg4 sourceRect:(struct CGRect)arg5;
 

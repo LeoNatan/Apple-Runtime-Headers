@@ -353,6 +353,7 @@ struct Display {
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
+    unsigned int :1;
 };
 
 struct DisplayLink;

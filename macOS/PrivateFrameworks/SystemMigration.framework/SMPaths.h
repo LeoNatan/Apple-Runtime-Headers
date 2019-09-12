@@ -122,7 +122,10 @@
 - (void)enumerateFilesystem;
 - (BOOL)shouldContainOnlyUserData:(id)arg1;
 - (void)processUserHomes;
-- (id)allFirmlinkPaths;
+@property(readonly, nonatomic) NSSet *allFirmlinkPaths;
+@property(readonly, nonatomic) NSSet *allSyntheticDirectoryPaths;
+@property(readonly, nonatomic) NSDictionary *allSyntheticSymlinkPaths;
+- (void)loadAllFakelinks;
 - (id)allSafariUserPaths;
 @property(readonly, nonatomic) NSSet *allConfMigratorClaimedPaths;
 @property(readonly, nonatomic) NSSet *allConfMigratorKeepPaths;

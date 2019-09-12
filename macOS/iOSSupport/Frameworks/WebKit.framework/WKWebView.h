@@ -170,6 +170,7 @@
 @property(readonly, nonatomic) BOOL _allowsDoubleTapGestures;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setOpaque:(BOOL)arg1;
+- (void)_setOpaqueInternal:(BOOL)arg1;
 - (void)didMoveToWindow;
 - (BOOL)_zoomToRect:(struct FloatRect)arg1 withOrigin:(struct FloatPoint)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
 - (double)_targetContentZoomScaleForRect:(const struct FloatRect *)arg1 currentScale:(double)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;

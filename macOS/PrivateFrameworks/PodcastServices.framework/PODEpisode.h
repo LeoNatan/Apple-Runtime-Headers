@@ -28,7 +28,6 @@
     unsigned long long _seasonNumber;
     NSURL *_mediaDownloadableUrl;
     NSURL *_mediaFileUrl;
-    NSString *_uti;
     NSDate *_pubDate;
     NSDate *_addedDate;
     double _duration;
@@ -46,7 +45,6 @@
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 @property(readonly, nonatomic) NSDate *pubDate; // @synthesize pubDate=_pubDate;
-@property(readonly, nonatomic) NSString *uti; // @synthesize uti=_uti;
 @property(readonly, nonatomic) NSURL *mediaFileUrl; // @synthesize mediaFileUrl=_mediaFileUrl;
 @property(readonly, nonatomic) NSURL *mediaDownloadableUrl; // @synthesize mediaDownloadableUrl=_mediaDownloadableUrl;
 @property(readonly, nonatomic) unsigned long long seasonNumber; // @synthesize seasonNumber=_seasonNumber;

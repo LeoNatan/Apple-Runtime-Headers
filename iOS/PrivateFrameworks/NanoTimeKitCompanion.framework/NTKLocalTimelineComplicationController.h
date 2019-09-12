@@ -54,6 +54,7 @@
 - (void)_suspendLeftBoundaryDate:(id)arg1;
 - (void)_startExtendOperationIfNecessaryForWindow:(id)arg1 withDate:(id)arg2 minBuffer:(double)arg3;
 - (void)_extendTimelineIfNecessaryAndPossible;
+- (id)alwaysOnTemplate;
 - (void)_startSetupOperationIfPossible;
 - (void)_completeSetupOperationWithDirections:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 currentEntry:(id)arg4;
 - (void)entriesDidChangeInTimeline:(id)arg1;

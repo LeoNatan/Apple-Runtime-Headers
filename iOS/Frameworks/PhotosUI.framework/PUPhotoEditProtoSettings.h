@@ -11,6 +11,7 @@
     _Bool _enableFinalizerGesture;
     _Bool _useAsynchronousVideoRendering;
     _Bool _enablePerfDebugHUD;
+    _Bool _enableReframeDebugHUD;
     _Bool _enablePerfTTRButton;
     _Bool _alwaysShowPortraitV2;
     _Bool _showLevelIndicator;
@@ -110,6 +111,7 @@
 @property(nonatomic) _Bool alwaysShowPortraitV2; // @synthesize alwaysShowPortraitV2=_alwaysShowPortraitV2;
 @property(nonatomic) double ttrButtonDurationThreshold; // @synthesize ttrButtonDurationThreshold=_ttrButtonDurationThreshold;
 @property(nonatomic) _Bool enablePerfTTRButton; // @synthesize enablePerfTTRButton=_enablePerfTTRButton;
+@property(nonatomic) _Bool enableReframeDebugHUD; // @synthesize enableReframeDebugHUD=_enableReframeDebugHUD;
 @property(nonatomic) _Bool enablePerfDebugHUD; // @synthesize enablePerfDebugHUD=_enablePerfDebugHUD;
 @property(nonatomic) _Bool useAsynchronousVideoRendering; // @synthesize useAsynchronousVideoRendering=_useAsynchronousVideoRendering;
 @property(nonatomic) long long renderPriority; // @synthesize renderPriority=_renderPriority;

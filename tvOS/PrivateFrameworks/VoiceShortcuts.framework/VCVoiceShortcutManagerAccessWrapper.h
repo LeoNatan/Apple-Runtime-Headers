@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) VCVoiceShortcutManager *voiceShortcutManager; // @synthesize voiceShortcutManager=_voiceShortcutManager;
 @property(readonly, copy, nonatomic) VCAccessSpecifier *accessSpecifier; // @synthesize accessSpecifier=_accessSpecifier;
 - (void).cxx_destruct;
+- (void)obliterateShortcuts:(CDUnknownBlockType)arg1;
 - (void)hasRunEventsInTheLast30DaysWithCompletion:(CDUnknownBlockType)arg1;
 - (void)outOfProcessWorkflowController:(id)arg1 didFinishWithError:(id)arg2 cancelled:(_Bool)arg3;
 - (void)startRunningWorkflow:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -42,7 +43,7 @@
 - (void)getSiriPodcastsDatabaseURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)generateSingleUseTokenForWorkflowIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)getShareSheetWorkflowsForTypeIdentifiers:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getShareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestDataMigration:(CDUnknownBlockType)arg1;
 - (void)updateShortcutsVocabularyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)validateVoiceShortcutPhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;

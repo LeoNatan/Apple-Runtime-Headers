@@ -21,7 +21,8 @@
 @property(retain) NSMutableString *report; // @synthesize report=_report;
 - (void).cxx_destruct;
 - (void)installTimelineConnection;
-- (void)logEventForwardTimelineInfo:(id)arg1 withPID:(int)arg2 withnewProcess:(id)arg3;
+- (void)establishConnection;
+- (void)logEventForwardTimelineInfo:(id)arg1 withPID:(int)arg2 withnewProcess:(id)arg3 withSnapshotTimestamp:(id)arg4;
 - (void)log;
 - (void)addChangedPID:(id)arg1 windowsOrderedOut:(unsigned long long)arg2 windowsOffScreen:(unsigned long long)arg3 windowsOccluded:(unsigned long long)arg4 windowsVisible:(unsigned long long)arg5;
 - (void)reportWithSessionID:(id)arg1 timestamp:(double)arg2 sessionSequenceIndex:(unsigned long long)arg3;

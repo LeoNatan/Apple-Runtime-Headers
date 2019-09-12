@@ -223,7 +223,6 @@
 - (id)compass;
 - (struct CGPoint)pointInMapOnMouseDown;
 - (id)seamlessOpeningURLForMapItems:(id)arg1 launchOptions:(id)arg2;
-- (id)logContextForLogMsgEvent:(id)arg1;
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 - (void)_clearGesturesAndAnimations;

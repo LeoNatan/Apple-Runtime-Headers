@@ -83,7 +83,7 @@
 - (id)fetchAllRecentHighlights;
 - (void)_consumeHighlightItemListChanges:(id)arg1 forKind:(unsigned short)arg2 rule:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;
 - (void)generateHighlightListForUpdatedHighlights:(id)arg1 deletedHighlights:(id)arg2;
-- (void)updateElectedEventForUpdatedMonths:(id)arg1;
+- (id)updateElectedEventForUpdatedMonths:(id)arg1;
 
 @end
 

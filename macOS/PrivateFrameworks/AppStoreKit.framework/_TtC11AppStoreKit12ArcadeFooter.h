@@ -12,6 +12,7 @@
     // Error parsing type: , name: footnote
     // Error parsing type: , name: icons
     // Error parsing type: , name: backgroundColor
+    // Error parsing type: , name: impressionMetrics
 }
 
 @end

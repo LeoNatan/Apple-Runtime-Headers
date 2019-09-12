@@ -16,6 +16,7 @@
     UIViewController *_presentedViewController;
 }
 
++ (unsigned long long)variableResultTypeForParameter:(id)arg1;
 + (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
@@ -23,7 +24,6 @@
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)locationPickerDidCancel:(id)arg1;
 - (void)locationPicker:(id)arg1 didFinishWithValue:(id)arg2;
-- (unsigned long long)variableResultType;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (id)stateForVariable:(id)arg1;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;

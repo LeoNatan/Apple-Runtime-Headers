@@ -23,6 +23,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (void)configureRecordingTechnique;
+- (id)imageSensorSettingsForSuperWide;
 - (void)ensureTechniqueAndCustomSensorCompatibility;
 - (void)_updateCaptureSettings;
 - (void)setProvidesAudioData:(_Bool)arg1;

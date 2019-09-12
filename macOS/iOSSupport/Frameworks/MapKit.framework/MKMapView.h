@@ -223,7 +223,6 @@
 - (void)zoomOut:(id)arg1;
 - (void)zoomIn:(id)arg1;
 @property(nonatomic) BOOL showsZoomControls;
-- (id)logContextForLogMsgEvent:(id)arg1;
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 - (void)_clearGesturesAndAnimations;

@@ -65,7 +65,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKSyncEngine *repairZoneSyncEngine; // @synthesize repairZoneSyncEngine=_repairZoneSyncEngine;
 @property(retain, nonatomic) CKUploadRequestConfiguration *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
 @property(retain, nonatomic) CKContainer *repairContainer; // @synthesize repairContainer=_repairContainer;
-@property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
+@property(retain, nonatomic) CKContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) _Bool ignoringSystemConditions; // @synthesize ignoringSystemConditions=_ignoringSystemConditions;
 - (void).cxx_destruct;
 - (void)invokeCallbackForOverridePoint:(long long)arg1 withError:(id)arg2 onCallbackQueue:(_Bool)arg3;

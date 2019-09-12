@@ -58,6 +58,7 @@
 - (BOOL)connectToAgent;
 - (BOOL)authenticateByKeyboardInteractiveUsingBlock:(CDUnknownBlockType)arg1;
 - (BOOL)authenticateByKeyboardInteractive;
+- (BOOL)authenticateByInMemoryPublicKey:(id)arg1 privateKey:(id)arg2 andPassword:(id)arg3;
 - (BOOL)authenticateByPublicKey:(id)arg1 privateKey:(id)arg2 andPassword:(id)arg3;
 - (BOOL)authenticateByPassword:(id)arg1;
 @property(readonly, nonatomic, getter=isAuthorized) BOOL authorized;

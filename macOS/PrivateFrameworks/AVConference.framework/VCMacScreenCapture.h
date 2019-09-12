@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     int _captureWidth;
     int _captureHeight;
     int _captureFramerate;
+    unsigned long long _lastOriginHIDEventTimestamp;
     struct opaqueCMSampleBuffer *_previousCompleteFrame;
     struct CGDisplayStream *_displayStream;
     struct OpaqueCMMemoryPool *_dirtyRectsMemoryPool;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (int)_startCapture;
 - (void)dealloc;
 - (struct __CFArray *)newDirtyRectsWithUpdateRef:(struct CGDisplayStreamUpdate *)arg1;
+- (void)setOriginHIDEventTimestamp:(unsigned long long)arg1 onBuffer:(struct __CVBuffer *)arg2;
 - (id)initWithCaptureServer:(id)arg1 width:(int)arg2 height:(int)arg3 frameRate:(int)arg4 screenDisplayID:(unsigned int)arg5 withError:(int *)arg6;
 - (id)initWithCaptureServer:(id)arg1 width:(int)arg2 height:(int)arg3 frameRate:(int)arg4 withError:(int *)arg5;
 

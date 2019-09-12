@@ -7,6 +7,7 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (WFWorkflowApplicationImages)
++ (id)iconForCalendarDate:(id)arg1 format:(unsigned long long)arg2;
 + (id)wf_applicationIconForBundleIdentifier:(id)arg1 format:(unsigned long long)arg2;
 + (id)wf_applicationIconForBundleIdentifier:(id)arg1;
 + (id)wf_workflowKitImageNamed:(id)arg1;

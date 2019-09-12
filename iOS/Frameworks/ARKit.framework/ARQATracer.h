@@ -9,7 +9,7 @@
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
 #import <ARKit/ARReplaySensorDelegate-Protocol.h>
 
-@class ARScreenRecording, NSArray, NSDictionary, NSMutableData, NSMutableDictionary, NSOutputStream, NSString, UILabel;
+@class ARPresentationStats, ARScreenRecording, NSArray, NSDictionary, NSMutableData, NSMutableDictionary, NSOutputStream, NSString, UILabel;
 @protocol ARQATracerDelegate, OS_dispatch_queue;
 
 @interface ARQATracer : NSObject <ARInternalSessionObserver, ARReplaySensorDelegate>
@@ -28,10 +28,12 @@
     NSString *_traceOutputFilePath;
     UILabel *_replayFrameLabel;
     ARScreenRecording *_screenRecorder;
+    ARPresentationStats *_presentationStats;
     struct CGPoint _offset;
 }
 
 + (_Bool)isEnabled;
+@property(retain, nonatomic) ARPresentationStats *presentationStats; // @synthesize presentationStats=_presentationStats;
 @property(nonatomic) _Bool recordScreen; // @synthesize recordScreen=_recordScreen;
 @property(nonatomic) _Bool forceQuitApp; // @synthesize forceQuitApp=_forceQuitApp;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;

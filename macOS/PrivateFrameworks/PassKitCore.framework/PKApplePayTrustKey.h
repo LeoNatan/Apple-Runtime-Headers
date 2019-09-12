@@ -27,7 +27,6 @@
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithKey:(id)arg1;
 
 @end
 

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct OpaqueFigCustomURLHandler *customURLHandler;
     struct OpaqueFigCustomURLHandler *authHandler;
     struct OpaqueFigCustomURLHandler *contentKeySessionCustomURLHandler;
+    struct OpaqueFigXPCRemoteClient *remoteHandlerXPCRemoteClient;
     int loadingCancelled;
     NSMutableDictionary *pendingRequests;
     NSObject<OS_dispatch_queue> *contentInformationCachingQueue;

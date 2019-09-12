@@ -119,7 +119,20 @@ struct Human {
     struct CGRect _field4;
 };
 
+struct IndirectArgumentBufferCapabilities {
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :29;
+};
+
 struct KeyMapBuffer<const void *, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>>;
+
+struct MTLTargetDeviceArch {
+    unsigned int _field1;
+    unsigned int _field2;
+    char *_field3;
+};
 
 struct Matrix<float, 0, 0, false> {
     float *m_data;
@@ -417,6 +430,104 @@ typedef struct ?<float __attribute__((ext_vector_type(3))), std::__1::allocator<
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    _Bool _field1;
+    _Bool _field2;
+    _Bool _field3;
+    _Bool _field4;
+    _Bool _field5;
+    _Bool _field6;
+    _Bool _field7;
+    _Bool _field8;
+    float _field9;
+    float _field10;
+} CDStruct_ff515195;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    unsigned int _field15;
+    unsigned int _field16;
+    unsigned int _field17;
+    unsigned int _field18;
+    float _field19;
+    float _field20;
+    unsigned int _field21;
+    unsigned int _field22;
+    unsigned int _field23;
+    unsigned int _field24;
+    unsigned int _field25;
+    unsigned int _field26;
+    unsigned int _field27;
+    unsigned int _field28;
+    unsigned int _field29;
+    unsigned int _field30;
+    unsigned int _field31;
+    unsigned int _field32;
+    unsigned int _field33;
+    unsigned int _field34;
+    unsigned int _field35;
+    unsigned int _field36;
+    unsigned int _field37;
+    unsigned int _field38;
+    unsigned int _field39;
+    unsigned int _field40;
+    unsigned int _field41;
+    unsigned int _field42;
+    unsigned int _field43;
+    unsigned int _field44;
+    unsigned int _field45;
+    unsigned int _field46;
+    unsigned int _field47;
+    unsigned int _field48;
+    unsigned int _field49;
+    unsigned int _field50;
+    unsigned int _field51;
+    unsigned int _field52;
+    unsigned int _field53;
+    unsigned int _field54;
+    unsigned int _field55;
+    unsigned int _field56;
+    unsigned int _field57;
+    unsigned int _field58;
+    unsigned int _field59;
+    unsigned long long _field60;
+} CDStruct_a9d832e7;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} CDStruct_32a7f38a;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+} CDStruct_c0454aff;
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+} CDStruct_14f26992;
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+} CDStruct_4bcfbbae;
+
+typedef struct {
     float coefficients[9];
 } CDStruct_9c26ff66;
 
@@ -456,6 +567,15 @@ typedef struct {
 } CDStruct_2d7b3170;
 
 typedef struct {
+    double originX;
+    double originY;
+    double width;
+    double height;
+    double znear;
+    double zfar;
+} CDStruct_4b2885c7;
+
+typedef struct {
     double x;
     double y;
     double z;
@@ -478,6 +598,11 @@ typedef struct {
 
 typedef struct {
     float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
+
+typedef struct {
+    float _field1;
 } CDStruct_37a3040a;
 
 typedef struct {
@@ -493,6 +618,17 @@ typedef struct {
 } CDStruct_1b6d18a9;
 
 typedef struct CDStruct_183601bc;
+
+typedef struct {
+    _Bool _field1;
+    unsigned long long _field2;
+    CDStruct_183601bc *_field3;
+} CDStruct_dbc1e4aa;
+
+typedef struct {
+    CDStruct_14f26992 _field1;
+    CDStruct_14f26992 _field2;
+} CDStruct_4c83c94d;
 
 typedef struct {
     CDStruct_183601bc _field1;

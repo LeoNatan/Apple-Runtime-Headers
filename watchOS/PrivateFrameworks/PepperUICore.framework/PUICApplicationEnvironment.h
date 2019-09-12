@@ -25,6 +25,11 @@
 - (void).cxx_destruct;
 - (id)_settingsDiffActionsForScene:(id)arg1;
 - (void)_setFrontmostScreenOff:(_Bool)arg1;
+- (void)_updateAOTDisplayStyle:(unsigned int)arg1 withAction:(id)arg2;
+@property(readonly, nonatomic) unsigned int AOTDisplayStyle;
+- (void)setToAOTAnimationDuration:(double)arg1 fromAOTAnimationDuration:(double)arg2;
+@property(nonatomic) double fromAOTAnimationDuration;
+@property(nonatomic) double toAOTAnimationDuration;
 - (id)_FBSScene;
 - (id)initWithScene:(id)arg1;
 

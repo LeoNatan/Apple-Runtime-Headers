@@ -75,6 +75,7 @@
 + (id)sharedPhotoLibrary;
 + (void)initialize;
 + (void)_context:(id)arg1 saveFailedWithError:(id)arg2;
++ (void)_contextSaveFailedDueToChangingSPL:(id)arg1;
 + (void)_contextSaveFailedWithNoPersistentStores:(id)arg1;
 + (void)_contextSaveFailedWithError:(id)arg1;
 + (void)_contextSaveFailedWithSQLiteError:(id)arg1;

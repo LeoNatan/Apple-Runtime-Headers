@@ -10,6 +10,7 @@
 {
 }
 
++ (id)dataclassesToEnable;
 + (id)sharedFollowUpController;
 + (id)appleIDToShow;
 + (id)_iTunesDSID;

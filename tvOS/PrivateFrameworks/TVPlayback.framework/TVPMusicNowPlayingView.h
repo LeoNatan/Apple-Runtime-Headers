@@ -100,6 +100,7 @@
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)layoutSubviews;
 - (void)_updateControlsPreferredFocus;
+- (void)setControlItems:(id)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) NSIndexPath *singleCoverIndexPath;
 - (void)setSingleCoverIndexPath:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;

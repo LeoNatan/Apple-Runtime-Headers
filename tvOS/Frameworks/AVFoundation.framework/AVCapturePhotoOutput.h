@@ -11,6 +11,9 @@
 @interface AVCapturePhotoOutput : AVCaptureOutput
 {
     AVCapturePhotoOutputInternal *_internal;
+    _Bool _virtualDeviceFusionSupported;
+    _Bool _virtualDeviceConstituentPhotoDeliverySupported;
+    _Bool _virtualDeviceConstituentPhotoDeliveryEnabled;
     _Bool _autoRedEyeReductionSupported;
     long long _maxPhotoQualityPrioritization;
 }
@@ -24,6 +27,9 @@
 + (id)new;
 + (void)initialize;
 @property(readonly, nonatomic, getter=isAutoRedEyeReductionSupported) _Bool autoRedEyeReductionSupported; // @synthesize autoRedEyeReductionSupported=_autoRedEyeReductionSupported;
+@property(nonatomic, getter=isVirtualDeviceConstituentPhotoDeliveryEnabled) _Bool virtualDeviceConstituentPhotoDeliveryEnabled; // @synthesize virtualDeviceConstituentPhotoDeliveryEnabled=_virtualDeviceConstituentPhotoDeliveryEnabled;
+@property(readonly, nonatomic, getter=isVirtualDeviceConstituentPhotoDeliverySupported) _Bool virtualDeviceConstituentPhotoDeliverySupported; // @synthesize virtualDeviceConstituentPhotoDeliverySupported=_virtualDeviceConstituentPhotoDeliverySupported;
+@property(readonly, nonatomic, getter=isVirtualDeviceFusionSupported) _Bool virtualDeviceFusionSupported; // @synthesize virtualDeviceFusionSupported=_virtualDeviceFusionSupported;
 @property(nonatomic) long long maxPhotoQualityPrioritization; // @synthesize maxPhotoQualityPrioritization=_maxPhotoQualityPrioritization;
 - (void)_handleDidFinishCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (id)_avErrorUserInfoDictionaryForError:(int)arg1 photoRequest:(id)arg2 payload:(id)arg3 isOriginalMovie:(_Bool)arg4;

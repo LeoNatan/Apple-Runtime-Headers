@@ -7,14 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <ARKit/ARDevicePerformanceMonitorDelegate-Protocol.h>
+#import <ARKit/ARPresentationInternalObserver-Protocol.h>
 #import <ARKit/ARSensorDelegate-Protocol.h>
 #import <ARKit/ARTechniqueDelegate-Protocol.h>
 #import <ARKit/ARWorldTrackingTechniqueObserver-Protocol.h>
 
-@class ARBKSAccelerometer, ARConfiguration, ARDeviceOrientationData, ARDevicePerformanceLevel, ARDevicePerformanceMonitor, AREnvironmentTexturingTechnique, ARFrame, ARFrameContext, ARImageSensor, ARLocationData, ARLocationSensor, ARParentTechnique, ARQATracer, ARRecordingTechniquePublic, ARRenderSyncScheduler, ARSessionMetrics, ARTechnique, ARTrackedRaycastPostProcessor, ARVideoFormat, ARWorldTrackingTechnique, CMMotionManager, NSArray, NSDate, NSHashTable, NSString, NSUUID;
+@class ARBKSAccelerometer, ARConfiguration, ARDeviceOrientationData, ARDevicePerformanceLevel, ARDevicePerformanceMonitor, AREnvironmentTexturingTechnique, ARFrame, ARFrameContext, ARImageSensor, ARLocationData, ARLocationSensor, ARParentTechnique, ARPresentation, ARPresentationThermalPolicy, ARPresentationThermalPolicyManager, ARProximitySensor, ARQATracer, ARRecordingTechniquePublic, ARRenderSyncScheduler, ARSessionMetrics, ARTechnique, ARTrackedRaycastPostProcessor, ARVideoFormat, ARWorldTrackingTechnique, CMMotionManager, NSArray, NSDate, NSHashTable, NSString, NSUUID;
 @protocol ARSessionDelegate, OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface ARSession : NSObject <ARSensorDelegate, ARTechniqueDelegate, ARWorldTrackingTechniqueObserver, ARDevicePerformanceMonitorDelegate>
+@interface ARSession : NSObject <ARSensorDelegate, ARTechniqueDelegate, ARWorldTrackingTechniqueObserver, ARDevicePerformanceMonitorDelegate, ARPresentationInternalObserver>
 {
     ARTechnique *_renderingTechnique;
     ARWorldTrackingTechnique *_worldTrackingTechnique;
@@ -46,6 +47,7 @@
     NSObject<OS_dispatch_queue> *_prepareTechniquesQueue;
     ARImageSensor *_imageSensor;
     ARLocationSensor *_locationSensor;
+    ARProximitySensor *_proximitySensor;
     // Error parsing type: {?="columns"[4]}, name: _cyclopToCameraTransform
     _Bool _hasCyclopToCameraTransform;
     NSObject<OS_dispatch_semaphore> *_cyclopToCameraSemaphore;
@@ -53,6 +55,8 @@
     NSObject<OS_dispatch_semaphore> *_resultDataOfSecondaryFrameContextsSemaphore;
     ARDevicePerformanceMonitor *_deviceConditionMonitor;
     ARDevicePerformanceLevel *_lastKnownDeviceCondition;
+    ARPresentationThermalPolicy *_currentStarThermalPolicy;
+    ARPresentationThermalPolicyManager *_thermalPolicyManager;
     ARTrackedRaycastPostProcessor *_trackedRaycastPostProcessor;
     ARBKSAccelerometer *_bksAccelerometer;
     ARVideoFormat *_primaryVideoFormat;
@@ -71,13 +75,16 @@
     ARQATracer *_tracer;
     ARDeviceOrientationData *_latestDeviceOrientationData;
     ARLocationData *_latestLocationData;
+    ARPresentation *_presentation;
 }
 
 + (id)_applySessionOverrides:(id)arg1 outError:(id *)arg2;
 + (_Bool)_supportsConfiguration:(id)arg1;
 + (void)forceEnvironmentTexturingTechniqueToManualMode:(id)arg1;
++ (_Bool)supportsConfiguration:(id)arg1 forPresentationMode:(long long)arg2 error:(id *)arg3;
 + (void)initialize;
 @property _Bool relocalizing; // @synthesize relocalizing=_relocalizing;
+@property(readonly, nonatomic) ARPresentation *presentation; // @synthesize presentation=_presentation;
 @property(retain) ARLocationData *latestLocationData; // @synthesize latestLocationData=_latestLocationData;
 @property(retain) ARDeviceOrientationData *latestDeviceOrientationData; // @synthesize latestDeviceOrientationData=_latestDeviceOrientationData;
 @property(retain, nonatomic) ARQATracer *tracer; // @synthesize tracer=_tracer;
@@ -95,6 +102,9 @@
 - (void).cxx_destruct;
 - (_Bool)isUserFaceTracking;
 - (_Bool)is6DofFaceTracking;
+- (void)presentation:(id)arg1 didTransitionToMode:(long long)arg2;
+- (void)presentation:(id)arg1 willTransitionToMode:(long long)arg2;
+- (void)_updateTechniquesWithPresentationMode:(long long)arg1;
 - (double)minimumNotificationTimeWindow;
 - (void)deviceConditionMonitor:(id)arg1 deviceConditionChanged:(id)arg2;
 - (void)_enforceThermalMitigationPolicyForDeviceCondition:(id)arg1;
@@ -103,6 +113,8 @@
 - (void)pushCollaborationData:(id)arg1;
 - (void)technique:(id)arg1 didOutputCollaborationData:(id)arg2;
 - (void)technique:(id)arg1 didChangeState:(long long)arg2;
+- (void)_presentation:(id)arg1 didTransitionToMode:(long long)arg2;
+- (void)_presentation:(id)arg1 willTransitionToMode:(long long)arg2;
 - (void)_sessionDidOutputCollaborationData:(id)arg1;
 - (void)_sessionDidOutputAudioData:(id)arg1;
 - (void)_sessionShouldAttemptRelocalization;
@@ -116,6 +128,7 @@
 - (void)sensorDidRestart:(id)arg1;
 - (void)sensorDidPause:(id)arg1;
 - (void)sensor:(id)arg1 didFailWithError:(id)arg2;
+- (void)handleStarData:(id)arg1;
 - (void)sensor:(id)arg1 didOutputSensorData:(id)arg2;
 - (_Bool)isPrimaryImageData:(id)arg1;
 - (void)_stopAllSensors;

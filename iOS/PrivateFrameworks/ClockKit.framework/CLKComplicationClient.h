@@ -43,6 +43,7 @@
 - (void)getTimelineEntriesForComplication:(id)arg1 beforeDate:(id)arg2 limit:(unsigned long long)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (void)getCurrentTimelineEntryForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getTimelineAnimationBehaviorForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)getAlwaysOnTemplateForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getPrivacyBehaviorForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getTimelineEndDateForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getTimelineStartDateForComplication:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

@@ -368,7 +368,6 @@
 - (BOOL)_canAddWindowTabs;
 - (BOOL)_canFloatForTabsOrTitlebar:(BOOL)arg1;
 - (BOOL)_wantsFloatingTitlebar;
-- (BOOL)_shouldAlwaysFloatTitlebar;
 @property(readonly) id contentLayoutGuide;
 - (void)_ensureContentLayoutGuide;
 - (void)_setContentLayoutGuide:(id)arg1;

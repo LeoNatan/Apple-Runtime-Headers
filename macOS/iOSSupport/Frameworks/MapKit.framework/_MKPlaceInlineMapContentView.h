@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)_contentSizeDidChange;
 - (double)titleHeight;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (BOOL)useImageView;
 - (BOOL)hasTitle;
 
 @end

@@ -12,11 +12,13 @@
 
 @interface INCodableObjectAttribute : INCodableAttribute <NSSecureCoding>
 {
+    NSString *_originalTypeName;
     NSString *_typeName;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
+@property(copy, nonatomic, setter=_setOriginalTypeName:) NSString *_originalTypeName; // @synthesize _originalTypeName;
 - (void).cxx_destruct;
 - (void)setClassName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *className;

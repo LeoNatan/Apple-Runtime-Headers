@@ -184,6 +184,7 @@
 @property(readonly) BOOL delegatesControls;
 - (id)categoryForScreentime;
 - (id)bundleIDForScreentime;
+- (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)presentScreenTimeLockout:(BOOL)arg1;
 - (void)checkScreenTimePolicy;
 - (void)endWatchingScreenTimePolicy;

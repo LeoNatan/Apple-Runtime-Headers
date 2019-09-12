@@ -14,8 +14,14 @@
     _Bool _filterRenderingEnabled;
     NSArray *_filters;
     float _simulatedAperture;
+    _Bool _primaryCaptureRectModificationEnabled;
+    float _primaryCaptureRectAspectRatio;
+    struct CGPoint _primaryCaptureRectCenter;
 }
 
+@property(nonatomic) struct CGPoint primaryCaptureRectCenter; // @synthesize primaryCaptureRectCenter=_primaryCaptureRectCenter;
+@property(nonatomic) float primaryCaptureRectAspectRatio; // @synthesize primaryCaptureRectAspectRatio=_primaryCaptureRectAspectRatio;
+@property(nonatomic) _Bool primaryCaptureRectModificationEnabled; // @synthesize primaryCaptureRectModificationEnabled=_primaryCaptureRectModificationEnabled;
 @property(nonatomic) float simulatedAperture; // @synthesize simulatedAperture=_simulatedAperture;
 @property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(nonatomic) _Bool filterRenderingEnabled; // @synthesize filterRenderingEnabled=_filterRenderingEnabled;

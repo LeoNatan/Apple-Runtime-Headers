@@ -10,8 +10,7 @@
 {
 }
 
-+ (id)attributedTextWithDonation:(id)arg1 fontSize:(double)arg2;
-+ (id)attributedTextWithAction:(id)arg1 includingParameterDescriptions:(BOOL)arg2 fontSize:(double)arg3;
++ (id)attributedTextWithAction:(id)arg1 includingParameterDescriptions:(BOOL)arg2;
 
 @end
 

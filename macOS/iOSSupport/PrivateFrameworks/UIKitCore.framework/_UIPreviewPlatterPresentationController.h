@@ -16,6 +16,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterPresentationController : UIPresentationController <_UIContextMenuActionsListViewDelegate, UIGestureRecognizerDelegate, _UIPreviewPlatterPanControllerDelegate>
 {
+    BOOL _isAnimatingPresentation;
     BOOL _platterContentSizeDidChange;
     UIView *_platterContainerView;
     UIView *_platterTransitionView;
@@ -42,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIPanGestureRecognizer *actionScrubbingHandoffGestureRecognizer; // @synthesize actionScrubbingHandoffGestureRecognizer=_actionScrubbingHandoffGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *dismissalTapGestureRecognizer; // @synthesize dismissalTapGestureRecognizer=_dismissalTapGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *platterActionTapGestureRecognizer; // @synthesize platterActionTapGestureRecognizer=_platterActionTapGestureRecognizer;
+@property(nonatomic) BOOL isAnimatingPresentation; // @synthesize isAnimatingPresentation=_isAnimatingPresentation;
 @property(retain, nonatomic) _UIFulfilledContextMenuConfiguration *displayedConfiguration; // @synthesize displayedConfiguration=_displayedConfiguration;
 @property(readonly, nonatomic) _UIContextMenuActionsListView *actionsView; // @synthesize actionsView=_actionsView;
 - (void).cxx_destruct;
@@ -71,6 +73,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)tearOffForDraggingWithDragContainerView:(id)arg1;
+- (void)platterPanInteractionEnded:(id)arg1;
+- (void)platterPanInteractionBegan:(id)arg1;
 - (void)platterPanControllerDidSwipeDown:(id)arg1;
 - (void)platterPanControllerDidTearOff:(id)arg1;
 - (void)_preDismissalTasks;
@@ -79,9 +83,12 @@ __attribute__((visibility("hidden")))
 - (void)presentationTransitionWillBegin;
 - (struct UIEdgeInsets)_baseContentInsetsWithLeftMargin:(double *)arg1 rightMargin:(double *)arg2;
 - (long long)presentationStyle;
+- (BOOL)_shouldOccludeDuringPresentation;
 - (BOOL)_shouldDisableInteractionDuringTransitions;
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (id)initWithPresentingViewController:(id)arg1 configuration:(id)arg2 sourcePreview:(id)arg3 style:(id)arg4;
+- (BOOL)_shouldRestoreFirstResponder;
+- (BOOL)_shouldKeepCurrentFirstResponder;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

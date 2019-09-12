@@ -79,6 +79,8 @@
 - (id)calendarItemExternalIdentifier;
 - (id)calendar;
 - (id)calendarItemIdentifier;
+- (void)_fixAlarmUUIDsForClone:(id)arg1 from:(id)arg2;
+- (id)_copyToNewList:(id)arg1 error:(id *)arg2;
 - (BOOL)_applyChangesToSaveRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)_applyChanges:(id)arg1 error:(id *)arg2;
 - (id)uniqueIdentifier;

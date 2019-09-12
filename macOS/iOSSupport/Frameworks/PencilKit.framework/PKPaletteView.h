@@ -114,6 +114,7 @@
 - (struct CGRect)plusButtonFrame;
 - (unsigned long long)edgeLocationToDockFromCorner:(unsigned long long)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)endOpacityEditing;
 - (void)startOpacityEditing;
 - (unsigned long long)_nextAutoHideCorner;

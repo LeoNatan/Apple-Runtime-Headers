@@ -12,7 +12,6 @@
 
 - (void)getOutputFromIntentResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (id)supportedAppIdentifiers;
 - (_Bool)skipsProcessingHiddenParameters;
 
 @end

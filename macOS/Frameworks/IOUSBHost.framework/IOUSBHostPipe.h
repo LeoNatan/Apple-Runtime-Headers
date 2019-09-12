@@ -24,8 +24,8 @@
 - (id)copyStreamWithStreamID:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)disableStreamsWithError:(id *)arg1;
 - (BOOL)enableStreamsWithError:(id *)arg1;
-- (BOOL)enqueueIORequestWithData:(id)arg1 frameList:(CDStruct_879b174e *)arg2 frameListCount:(unsigned long long)arg3 firstFrameNumber:(unsigned long long)arg4 error:(id *)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (BOOL)sendIORequestWithData:(id)arg1 frameList:(CDStruct_879b174e *)arg2 frameListCount:(unsigned long long)arg3 firstFrameNumber:(unsigned long long)arg4 error:(id *)arg5;
+- (BOOL)enqueueIORequestWithData:(id)arg1 frameList:(struct IOUSBHostIsochronousFrame *)arg2 frameListCount:(unsigned long long)arg3 firstFrameNumber:(unsigned long long)arg4 error:(id *)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (BOOL)sendIORequestWithData:(id)arg1 frameList:(struct IOUSBHostIsochronousFrame *)arg2 frameListCount:(unsigned long long)arg3 firstFrameNumber:(unsigned long long)arg4 error:(id *)arg5;
 - (BOOL)enqueueIORequestWithData:(id)arg1 completionTimeout:(double)arg2 error:(id *)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)sendIORequestWithData:(id)arg1 bytesTransferred:(unsigned long long *)arg2 completionTimeout:(double)arg3 error:(id *)arg4;
 - (BOOL)abortWithOption:(unsigned long long)arg1 error:(id *)arg2;
@@ -39,10 +39,10 @@
 - (BOOL)clearStallWithError:(id *)arg1;
 - (BOOL)setIdleTimeout:(double)arg1 error:(id *)arg2;
 @property(readonly) double idleTimeout;
-- (BOOL)adjustPipeWithDescriptors:(const CDStruct_7b4da8c3 *)arg1 error:(id *)arg2;
-- (const CDStruct_7b4da8c3 *)ioSourceDescriptorsWithOption:(unsigned long long)arg1;
-@property(readonly) const CDStruct_7b4da8c3 *descriptors;
-@property(readonly) const CDStruct_7b4da8c3 *originalDescriptors;
+- (BOOL)adjustPipeWithDescriptors:(const struct IOUSBHostIOSourceDescriptors *)arg1 error:(id *)arg2;
+- (const struct IOUSBHostIOSourceDescriptors *)ioSourceDescriptorsWithOption:(unsigned long long)arg1;
+@property(readonly) const struct IOUSBHostIOSourceDescriptors *descriptors;
+@property(readonly) const struct IOUSBHostIOSourceDescriptors *originalDescriptors;
 - (id)initWithHostInterface:(id)arg1 endpointAddress:(unsigned long long)arg2 ioConnection:(unsigned int)arg3 ioNotificationPortRef:(struct IONotificationPort *)arg4 deviceAddress:(unsigned long long)arg5;
 
 @end

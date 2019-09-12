@@ -10,6 +10,11 @@
 + (id)array:(id)arg1 withItemsIn:(id)arg2;
 + (id)arrayWithUnionOf:(id)arg1 and:(id)arg2;
 + (id)arrayWithIntersectionOf:(id)arg1 and:(id)arg2;
+- (double)correlationWith:(id)arg1;
+- (double)cooccurrencesWith:(id)arg1;
+- (double)standardDeviation;
+- (double)standardDeviationWithMean:(double)arg1;
+- (double)mean;
 - (BOOL)anyItemsIntersectArray:(id)arg1;
 @end
 

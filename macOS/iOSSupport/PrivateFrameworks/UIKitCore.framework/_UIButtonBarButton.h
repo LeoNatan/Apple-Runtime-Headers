@@ -16,7 +16,6 @@
     NSLayoutConstraint *_widthMinimizingConstraint;
     NSLayoutConstraint *_heightMinimizingConstraint;
     struct CGRect _hitRect;
-    BOOL _needsAppearanceUpdate;
     BOOL _backButton;
     _UIBarButtonItemData *_appearanceData;
 }

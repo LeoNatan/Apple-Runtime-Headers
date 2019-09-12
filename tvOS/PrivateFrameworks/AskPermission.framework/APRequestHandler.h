@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)addRequestWithURL:(id)arg1;
 + (void)didReceiveStorePushNotificationWithPayload:(id)arg1;
 + (void)resetAccountWithType:(long long)arg1;
 + (void)addRequestWithURL:(id)arg1 account:(id)arg2 completion:(CDUnknownBlockType)arg3;

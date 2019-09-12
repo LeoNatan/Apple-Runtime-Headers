@@ -16,8 +16,8 @@
 
 + (id)customItemWithFrame:(struct CGRect)arg1 zIndex:(long long)arg2;
 + (id)customItemWithFrame:(struct CGRect)arg1;
-@property(readonly, nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
-@property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
+@property(readonly) long long zIndex; // @synthesize zIndex=_zIndex;
+@property(readonly) struct CGRect frame; // @synthesize frame=_frame;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 zIndex:(long long)arg2;
 

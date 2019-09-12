@@ -17,10 +17,12 @@
     _Bool _springBoardReady;
     _Bool _triedToShowLensBeofreSBReady;
     _Bool _registeredForZoomListener;
+    _Bool _shouldRegisterForZoomListeners;
     AXUIClient *_zoomWindowClient;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) _Bool shouldRegisterForZoomListeners; // @synthesize shouldRegisterForZoomListeners=_shouldRegisterForZoomListeners;
 @property(nonatomic) _Bool registeredForZoomListener; // @synthesize registeredForZoomListener=_registeredForZoomListener;
 @property(nonatomic) _Bool triedToShowLensBeofreSBReady; // @synthesize triedToShowLensBeofreSBReady=_triedToShowLensBeofreSBReady;
 @property(nonatomic) _Bool springBoardReady; // @synthesize springBoardReady=_springBoardReady;
@@ -77,6 +79,7 @@
 - (id)registerZoomAttributesChangeHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_isPrimaryZoomWindowClient;
 - (_Bool)_isAllowedMagnifierClient;
+- (void)_applicationWillSuspend:(id)arg1;
 - (void)_zoomChanged:(id)arg1;
 - (void)_checkSpringBoardStarted;
 - (void)dealloc;

@@ -25,6 +25,12 @@
 }
 
 + (id)paletteForColor:(unsigned int)arg1;
++ (id)noirSecondHandColor;
++ (id)noirHandStrokeColor;
++ (id)noirColor;
++ (id)briqueColor;
++ (id)etainColor;
++ (id)encreColor;
 + (id)roseExtremeColor;
 + (id)roseAzaleeColor;
 + (id)offWhiteColor;
@@ -55,6 +61,10 @@
 @property(readonly, nonatomic) UIColor *complicationColor; // @synthesize complicationColor=_complicationColor;
 @property(readonly, nonatomic) UIColor *dialColor; // @synthesize dialColor=_dialColor;
 - (void).cxx_destruct;
+- (id)paletteWithTritiumOnProgress:(float)arg1;
+@property(readonly, nonatomic) UIColor *tritium_handInlayColor;
+@property(readonly, nonatomic) UIColor *tritium_hourHandColor;
+@property(readonly, nonatomic) UIColor *tritium_minuteHandColor;
 - (id)initWithColor:(unsigned int)arg1;
 
 @end

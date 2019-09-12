@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)newWithString:(id)arg1 options:(const struct WFRowTemplateItemComponentOptions *)arg2 size:(const struct CKComponentSize *)arg3;
++ (id)newWithString:(id)arg1 options:(const struct WFRowTemplateItemLabelComponentOptions *)arg2 size:(const struct CKComponentSize *)arg3;
 
 @end
 

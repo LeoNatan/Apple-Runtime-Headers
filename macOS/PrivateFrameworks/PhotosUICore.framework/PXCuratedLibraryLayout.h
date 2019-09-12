@@ -86,6 +86,7 @@
 - (void)animationDidComplete:(id)arg1;
 - (void)_noteAnimation:(id)arg1 isRunning:(BOOL)arg2;
 - (BOOL)changeVisibleRectToProposedVisibleRect:(struct CGRect)arg1;
+- (id)presentedItemsGeometryForDataSource:(id)arg1;
 - (struct CGPoint)_adjustInitialVisibleRect:(struct CGRect)arg1 inLayout:(id)arg2 forRecentSection:(long long)arg3;
 - (id)createAnchorForScrollingToInitialPosition;
 @property(readonly, nonatomic) struct CGRect fullyVisibleRect;

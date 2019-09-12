@@ -11,6 +11,7 @@
 @protocol HMBCloudDatabaseDelegate <NSObject>
 
 @optional
+- (void)cloudDatabase:(HMBCloudDatabase *)arg1 didChangeManateeKeysForZoneWithID:(HMBCloudZoneID *)arg2;
 - (void)cloudDatabase:(HMBCloudDatabase *)arg1 didReceiveMessageWithUserInfo:(NSDictionary *)arg2;
 - (void)cloudDatabase:(HMBCloudDatabase *)arg1 didRemoveZoneWithID:(HMBCloudZoneID *)arg2;
 - (void)cloudDatabase:(HMBCloudDatabase *)arg1 didCreateZoneWithID:(HMBCloudZoneID *)arg2;

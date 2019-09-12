@@ -12,9 +12,7 @@
     // Error parsing type: , name: eventBindingManager
     // Error parsing type: , name: needsRootViewUpdate
     // Error parsing type: , name: needsEnvironmentUpdate
-    // Error parsing type: , name: updateDepth
     // Error parsing type: , name: isRendering
-    // Error parsing type: , name: postUpdateActions
     // Error parsing type: , name: currentTimestamp
 }
 

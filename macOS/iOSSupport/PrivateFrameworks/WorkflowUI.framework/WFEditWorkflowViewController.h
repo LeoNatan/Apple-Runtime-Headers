@@ -16,7 +16,7 @@
 #import <WorkflowUI/WFWorkflowEmptyStateViewDelegate-Protocol.h>
 #import <WorkflowUI/WFWorkflowSettingsViewControllerDelegate-Protocol.h>
 
-@class NSAttributedString, NSHashTable, NSIndexPath, NSString, NSUndoManager, UIButton, UIResponder, UIView, WFActionDragFeedbackGenerator, WFWorkflowEmptyStateView;
+@class NSAttributedString, NSHashTable, NSIndexPath, NSString, NSUndoManager, UIButton, UIResponder, UIView, WFActionDragFeedbackGenerator, WFEditShortcutEvent, WFWorkflowEmptyStateView;
 @protocol WFEditWorkflowViewControllerDelegate, WFVariableUIDelegate;
 
 @interface WFEditWorkflowViewController : WFRunWorkflowViewController <WFDragControllerDelegate, WFModulesCollectionViewDelegate, WFWorkflowSettingsViewControllerDelegate, WFWorkflowEmptyStateViewDelegate, WFContentClassesToolbarDelegate, WFContentClassesViewControllerDelegate, WFModuleIndentationProvider, UIGestureRecognizerDelegate, WFWorkflowEditingDelegate>
@@ -37,10 +37,12 @@
     UIButton *_endRevealButton;
     NSIndexPath *_actionRevealFromIndexPath;
     NSIndexPath *_actionRevealToIndexPath;
+    WFEditShortcutEvent *_editShortcutEvent;
     struct CGPoint _actionRevealInitialOffset;
 }
 
 + (BOOL)displaysEmptyView;
+@property(retain, nonatomic) WFEditShortcutEvent *editShortcutEvent; // @synthesize editShortcutEvent=_editShortcutEvent;
 @property(nonatomic) struct CGPoint actionRevealInitialOffset; // @synthesize actionRevealInitialOffset=_actionRevealInitialOffset;
 @property(retain, nonatomic) NSIndexPath *actionRevealToIndexPath; // @synthesize actionRevealToIndexPath=_actionRevealToIndexPath;
 @property(retain, nonatomic) NSIndexPath *actionRevealFromIndexPath; // @synthesize actionRevealFromIndexPath=_actionRevealFromIndexPath;
@@ -59,6 +61,8 @@
 @property(nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(readonly, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (void).cxx_destruct;
+- (void)logEditEventIfNeccesary;
+- (void)updateEditEvent;
 - (void)shareWorkflow:(id)arg1;
 - (id)keyCommands;
 - (void)checkRevealActionScrollState;
@@ -115,6 +119,7 @@
 - (void)resetVisibleCellStylesForEndReveal;
 - (void)didFinishAnimatingReveal;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)runWorkflowFromSource:(id)arg1;
 @property(nonatomic) BOOL scrollsToTop;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

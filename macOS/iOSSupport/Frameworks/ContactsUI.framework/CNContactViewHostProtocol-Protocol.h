@@ -9,6 +9,7 @@
 @class CNContact, NSString;
 
 @protocol CNContactViewHostProtocol <NSObject>
+- (void)presentCancelConfirmationAlert;
 - (void)didExecuteDeleteFromDowntimeWhitelistAction;
 - (void)didExecuteClearRecentsDataAction;
 - (void)viewDidAppear;

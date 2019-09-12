@@ -23,6 +23,7 @@
     EWSStreamingSubscription *_subscription;
 }
 
++ (long long)getChangeItemItemTypeFromFolder:(id)arg1;
 + (id)createSetItemFieldForExtendedProperty:(id)arg1 withItemType:(id)arg2;
 + (id)createDeleteItemFieldForField:(long long)arg1;
 + (id)createSetItemFieldForField:(long long)arg1 withItemType:(id)arg2;

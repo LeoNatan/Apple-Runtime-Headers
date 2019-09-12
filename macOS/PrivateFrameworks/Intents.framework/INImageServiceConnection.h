@@ -19,6 +19,7 @@
 
 + (id)sharedConnection;
 - (void).cxx_destruct;
+- (oneway void)storeUserContext:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)purgeImageWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)retrieveImageWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)storeImage:(id)arg1 scaled:(BOOL)arg2 qualityOfService:(unsigned int)arg3 storeType:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;

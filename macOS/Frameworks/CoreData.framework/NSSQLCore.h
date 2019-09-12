@@ -9,7 +9,7 @@
 #import <CoreData/NSFilePresenter-Protocol.h>
 #import <CoreData/NSSQLModelProvider-Protocol.h>
 
-@class NSData, NSDictionary, NSGenerationalRowCache, NSMutableDictionary, NSOperationQueue, NSSQLCoreDispatchManager, NSSQLModel, NSSQLiteAdapter, NSSQLiteConnection, NSSet, NSString, NSURL;
+@class NSData, NSDictionary, NSGenerationalRowCache, NSMutableDictionary, NSOperationQueue, NSSQLCoreDispatchManager, NSSQLModel, NSSQLiteAdapter, NSSQLiteConnection, NSSet, NSString, NSURL, _PFMutex;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLCore : NSPersistentStore <NSFilePresenter, NSSQLModelProvider>
@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
         unsigned int _RESERVED:16;
     } _sqlCoreFlags;
     NSSQLiteConnection *_queryGenerationTrackingConnection;
+    _PFMutex *_writerSerializationMutex;
     NSDictionary *_ancillaryModels;
     NSDictionary *_ancillarySQLModels;
     NSDictionary *_historyTrackingOptions;
@@ -195,6 +196,8 @@ __attribute__((visibility("hidden")))
 - (void)removeRowCacheForGenerationWithIdentifier:(id)arg1;
 - (id)rowCacheForContext:(id)arg1;
 - (id)rowCacheForGeneration:(id)arg1;
+- (void)writeSerializationUnlock;
+- (void)writeSerializationLock;
 - (void)dealloc;
 - (void)_postChangeNotificationWithTransactionID:(id)arg1;
 - (void)_setupObserver;

@@ -25,6 +25,7 @@
 - (void)prefetchSections:(id)arg1;
 - (void)prefetchIndexPaths:(id)arg1 level:(unsigned long long)arg2;
 - (void)prefetchIndexPaths:(id)arg1;
+- (_Bool)areAllSectionsConsideredAccurate;
 - (_Bool)couldObjectReferenceAppear:(id)arg1;
 - (_Bool)containsMultipleItems;
 - (_Bool)containsAnyItems;

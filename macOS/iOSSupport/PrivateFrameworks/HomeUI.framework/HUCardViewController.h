@@ -53,6 +53,7 @@
 @property(readonly, nonatomic) UIViewController *settingsViewController; // @synthesize settingsViewController=_settingsViewController;
 @property(readonly, nonatomic) HUQuickControlContainerViewController *quickControlViewController; // @synthesize quickControlViewController=_quickControlViewController;
 - (void).cxx_destruct;
+- (struct CGSize)overridingContentSizeForPresentedViewController:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
 - (void)controllerCoordinator:(id)arg1 didUpdateReachability:(BOOL)arg2;
 - (void)controllerCoordinator:(id)arg1 didUpdateStatusWithPrimaryText:(id)arg2 secondaryText:(id)arg3;
@@ -83,7 +84,6 @@
 - (void)dealloc;
 - (void)scrollToDetailsViewAnimated:(BOOL)arg1;
 - (void)dismissCardAnimated:(BOOL)arg1;
-- (struct CGSize)preferredContentSize;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;

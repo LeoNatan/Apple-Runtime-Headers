@@ -33,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)CA_prepareRenderValue;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (BOOL)NS_canDrawLayer:(id)arg1;
 - (void)updateContentsScaleSize:(struct CGSize)arg1;
 - (void)updateContentsScale:(double)arg1;
 @property _NSTiledLayer *tiledLayer;

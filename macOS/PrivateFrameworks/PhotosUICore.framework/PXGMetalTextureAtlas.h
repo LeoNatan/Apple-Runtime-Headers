@@ -92,7 +92,7 @@
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
-- (id)initWithThumbnailSize:(struct CGSize)arg1 pixelFormat:(unsigned long long)arg2 capacity:(unsigned int)arg3 device:(id)arg4;
+- (id)initWithThumbnailSize:(struct CGSize)arg1 pixelFormat:(unsigned long long)arg2 capacity:(unsigned int)arg3 colorProgram:(id)arg4 device:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

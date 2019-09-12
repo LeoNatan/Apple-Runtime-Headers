@@ -21,10 +21,12 @@
     unsigned int _bracketedImageCount;
     int _qualityPrioritization;
     int _HDRMode;
+    int _digitalFlashMode;
     NSArray *_bravoConstituentImageDeliveryDeviceTypes;
 }
 
 @property(copy, nonatomic) NSArray *bravoConstituentImageDeliveryDeviceTypes; // @synthesize bravoConstituentImageDeliveryDeviceTypes=_bravoConstituentImageDeliveryDeviceTypes;
+@property(nonatomic) int digitalFlashMode; // @synthesize digitalFlashMode=_digitalFlashMode;
 @property(nonatomic) int HDRMode; // @synthesize HDRMode=_HDRMode;
 @property(nonatomic) int qualityPrioritization; // @synthesize qualityPrioritization=_qualityPrioritization;
 @property(nonatomic) unsigned int bracketedImageCount; // @synthesize bracketedImageCount=_bracketedImageCount;

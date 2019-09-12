@@ -19,6 +19,7 @@
     BOOL _shouldBakeInIfContainsPenultimateResources;
 }
 
++ (id)adjustmentBakeInOptionsForPublishingOriginals;
 @property(nonatomic) BOOL shouldBakeInIfContainsPenultimateResources; // @synthesize shouldBakeInIfContainsPenultimateResources=_shouldBakeInIfContainsPenultimateResources;
 @property(nonatomic) BOOL shouldBakeInIfPortraitDepthEffectEnabled; // @synthesize shouldBakeInIfPortraitDepthEffectEnabled=_shouldBakeInIfPortraitDepthEffectEnabled;
 @property(nonatomic) BOOL shouldBakeInIfTimelineTrimmed; // @synthesize shouldBakeInIfTimelineTrimmed=_shouldBakeInIfTimelineTrimmed;

@@ -49,6 +49,7 @@
 - (void).cxx_destruct;
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
 - (void)_updateControlItemHiddenStateNotifyingHost:(BOOL)arg1;
+- (id)viewControllerForTouchContinuation;
 - (id)childQuickControlContentViewControllers;
 @property(readonly, copy, nonatomic) NSSet *affectedCharacteristics;
 - (id)overrideValueForCharacteristic:(id)arg1;

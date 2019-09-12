@@ -77,6 +77,7 @@
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)_presentAlertControllerForError:(id)arg1;
 - (void)_showOrHideKeypad;
 - (void)_setupAmountDescriptionViewForInterstitial;
@@ -123,7 +124,7 @@
 - (id)disabledTopCurvedTextForBillPaymentRingView:(id)arg1;
 - (id)billPaymentRingView:(id)arg1 bottomCurvedTextForSuggestedAmount:(id)arg2;
 - (id)billPaymentRingView:(id)arg1 topCurvedTextForSuggestedAmount:(id)arg2;
-- (void)billPaymentRingView:(id)arg1 selectedSuggestedAmount:(id)arg2 selectedSuggestedAmountIsTarget:(_Bool)arg3;
+- (void)billPaymentRingView:(id)arg1 selectedSuggestedAmount:(id)arg2 selectedSuggestedAmountIsTarget:(_Bool)arg3 userInitiatedChange:(_Bool)arg4;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

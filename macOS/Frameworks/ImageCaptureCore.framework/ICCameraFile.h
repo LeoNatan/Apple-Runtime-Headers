@@ -45,6 +45,7 @@
     NSDate *_fileModificationDate;
     NSDate *_exifCreationDate;
     NSDate *_exifModificationDate;
+    NSString *_imgSpatialOverCaptureGroupID;
     NSMutableArray *_sidecarFiles;
     unsigned long long _mediaMetadata;
     NSString *_devMediaBase;
@@ -76,6 +77,7 @@
 @property(nonatomic) unsigned long long mediaMetadata; // @synthesize mediaMetadata=_mediaMetadata;
 @property(retain, nonatomic) NSMutableArray *sidecarFiles; // @synthesize sidecarFiles=_sidecarFiles;
 @property struct CGImage *originalThumbnail; // @synthesize originalThumbnail=_originalThumbnail;
+@property(copy, nonatomic) NSString *imgSpatialOverCaptureGroupID; // @synthesize imgSpatialOverCaptureGroupID=_imgSpatialOverCaptureGroupID;
 @property(nonatomic) BOOL imgHasMetadata; // @synthesize imgHasMetadata=_imgHasMetadata;
 @property(nonatomic) BOOL imgHasThumbnail; // @synthesize imgHasThumbnail=_imgHasThumbnail;
 @property(copy, nonatomic) NSDate *exifModificationDate; // @synthesize exifModificationDate=_exifModificationDate;
@@ -154,6 +156,8 @@
 - (void)dealloc;
 - (id)debugMediaMetadata;
 - (id)debugIdentity;
+@property(readonly, nonatomic) NSString *spatialOverCaptureGroupID;
+- (void)setSpatialOverCaptureGroupID:(id)arg1;
 - (id)initWithDictionary:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (unsigned long long)unsignedLongLongValue;
 - (long long)compareDate:(id)arg1;

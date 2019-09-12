@@ -48,6 +48,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)forceResourceIndex;
 - (void)setAllowGPUOptimizedContents:(_Bool)arg1;
 - (_Bool)allowGPUOptimizedContents;
+- (void)setSparseSurfaceDefaultValue:(unsigned long long)arg1;
+- (unsigned long long)sparseSurfaceDefaultValue;
 - (void)setArrayLength:(unsigned long long)arg1;
 - (unsigned long long)arrayLength;
 - (void)setSampleCount:(unsigned long long)arg1;

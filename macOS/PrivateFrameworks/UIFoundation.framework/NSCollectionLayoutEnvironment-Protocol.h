@@ -9,6 +9,6 @@
 @protocol NSCollectionLayoutContainer;
 
 @protocol NSCollectionLayoutEnvironment <NSObject>
-@property(readonly, nonatomic) id <NSCollectionLayoutContainer> container;
+@property(readonly) id <NSCollectionLayoutContainer> container;
 @end
 

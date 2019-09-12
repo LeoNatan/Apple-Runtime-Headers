@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSString *__effectiveTitle;
     _Bool _providesExtraSpaceForExcessiveLineHeights;
     _Bool _alignAccessoryViewToTitleBaseline;
+    NSDictionary *_effectiveTitleAttributes;
     long long _titleType;
     NSString *_title;
     NSArray *_alternateTitles;
@@ -57,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)intrinsicContentSize;
 @property(readonly, nonatomic) double restingHeightOfTitleView;
 - (id)_layoutForMeasurement;
+@property(readonly, nonatomic) NSDictionary *effectiveTitleAttributes; // @synthesize effectiveTitleAttributes=_effectiveTitleAttributes;
 @property(readonly, nonatomic) UIView *accessibilityTitleView;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_newLayout;

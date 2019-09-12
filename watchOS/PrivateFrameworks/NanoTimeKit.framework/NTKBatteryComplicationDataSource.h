@@ -21,6 +21,7 @@
 - (void)_levelDidChange:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;
+- (id)alwaysOnTemplate;
 - (void)resume;
 - (void)pause;
 - (id)_currentTimelineEntry;

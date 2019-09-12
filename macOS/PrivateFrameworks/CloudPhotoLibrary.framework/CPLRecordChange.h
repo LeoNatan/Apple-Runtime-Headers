@@ -17,6 +17,7 @@
     BOOL _shouldNotTrustCloudCache;
     BOOL _shouldFilterDefaultValuesForNewProperties;
     BOOL _isSparseFullChange;
+    BOOL _shouldOnlyUploadNewResources;
     BOOL _didCacheRealResourceSizeInStorage;
     unsigned long long _cachedRealResourceSizeInStorage;
     BOOL _inTrash;
@@ -36,7 +37,7 @@
 + (id)newChangeWithIdentifier:(id)arg1 changeType:(unsigned long long)arg2;
 + (CDUnknownBlockType)copyPropertyBlockForDirection:(unsigned long long)arg1;
 + (CDUnknownBlockType)equalityBlockForDirection:(unsigned long long)arg1;
-+ (id)_descriptionForChangeType:(unsigned long long)arg1 isSparseFullChange:(BOOL)arg2;
++ (id)_descriptionForChangeType:(unsigned long long)arg1 isSparseFullChange:(BOOL)arg2 onlyUploadNewResources:(BOOL)arg3;
 + (id)descriptionForChangeType:(unsigned long long)arg1;
 + (long long)maxInlineDataSize;
 + (id)newChangeWithType:(unsigned long long)arg1;
@@ -81,6 +82,11 @@
 - (unsigned long long)estimatedRecordSize;
 - (BOOL)validateChangeWithError:(id *)arg1;
 - (BOOL)validateFullRecord;
+- (id)onlyAddedResources;
+- (BOOL)changeIsOnlyAddingResourcesToRecord:(id)arg1 addedResources:(id *)arg2;
+- (BOOL)allowsToOnlyUploadNewResources;
+- (BOOL)shouldOnlyUploadNewResources;
+- (void)markToOnlyUploadNewResources;
 - (void)markAsSparseFullChange;
 - (BOOL)isSparseFullChange;
 - (CDUnknownBlockType)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
@@ -124,6 +130,7 @@
 - (id)resources;
 - (BOOL)supportsDirectDeletion;
 - (BOOL)supportsDeletion;
+- (BOOL)supportsResourceType:(unsigned long long)arg1;
 - (BOOL)supportsResources;
 - (BOOL)isDelete;
 - (BOOL)isFullRecord;

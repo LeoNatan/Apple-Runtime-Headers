@@ -108,7 +108,8 @@
     BOOL _deferredUpdateTargetIsValid;
     struct CGPoint _deferredUpdateTargetContentOffset;
     struct CGSize _deferredUpdateTargetContentSize;
-    NSTimer *_scrollIndicatorHideDelayTimer;
+    NSTimer *_verticalScrollIndicatorHideDelayTimer;
+    NSTimer *_horizontalScrollIndicatorHideDelayTimer;
     _UIScrollViewScrollIndicator *_verticalScrollIndicator;
     _UIScrollViewScrollIndicator *_horizontalScrollIndicator;
     double _intervalBetweenPanGestures;
@@ -478,6 +479,7 @@
 - (void)_layoutHorizontalScrollIndicatorWithBounds:(struct CGRect)arg1 effectiveInset:(struct UIEdgeInsets)arg2 contentOffset:(struct CGPoint)arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(BOOL)arg7 recalcSize:(BOOL)arg8 verticalIndicatorFrame:(struct CGRect)arg9;
 - (struct CGRect)_layoutVerticalScrollIndicatorWithBounds:(struct CGRect)arg1 effectiveInset:(struct UIEdgeInsets)arg2 contentOffset:(struct CGPoint)arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(BOOL)arg7 recalcSize:(BOOL)arg8;
 - (void)_adjustScrollerIndicators:(BOOL)arg1 alwaysShowingThem:(BOOL)arg2;
+- (BOOL)_shouldReverseLayoutDirectionConsideringFlippedHorizontalAxis;
 - (double)_scrollIndicatorAdditionalInset;
 - (double)_horizontalScrollIndicatorHeight;
 - (double)_verticalScrollIndicatorWidth;
@@ -730,7 +732,6 @@
 - (BOOL)_isRectFullyVisible:(struct CGRect)arg1;
 @property(readonly, nonatomic, getter=_contentInsetIncludingDecorations) struct UIEdgeInsets _contentInsetIncludingDecorations;
 - (void)adjustedContentInsetDidChange;
-@property(readonly, nonatomic, getter=_delegateImplementsScrollViewDidScroll) BOOL _delegateImplementsScrollViewDidScroll;
 - (struct CGPoint)_roundedProposedContentOffset:(struct CGPoint)arg1;
 - (double)_allowedNavigationOverlapAmount;
 - (void)_setAllowedNavigationOverlapAmount:(double)arg1;
@@ -822,6 +823,7 @@
 - (void)_suppressImplicitAnimationsForScrollTest;
 - (void)_reenableImplicitAnimationsAfterScrollTest;
 - (BOOL)_isScrollingEnabled;
+- (unsigned long long)_defaultFocusRingType;
 
 // Remaining properties
 @property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace;

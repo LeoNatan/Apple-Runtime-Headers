@@ -25,6 +25,7 @@
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) ICMusicSubscriptionStatus *subscriptionStatus; // @synthesize subscriptionStatus=_subscriptionStatus;
 - (void).cxx_destruct;
+- (id)description;
 @property(readonly, copy, nonatomic) NSDictionary *propertyListRepresentation;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (void)encodeWithCoder:(id)arg1;

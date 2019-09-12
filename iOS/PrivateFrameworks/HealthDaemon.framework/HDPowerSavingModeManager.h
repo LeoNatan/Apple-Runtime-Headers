@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/HDAssertionObserver-Protocol.h>
 
-@class HDAssertionManager, HDDaemon, NSString;
+@class HDAssertion, HDAssertionManager, HDDaemon, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HDPowerSavingModeManager : NSObject <HDAssertionObserver>
@@ -18,6 +18,7 @@
     HDAssertionManager *_assertionManager;
     _Bool _powerSavingModeEnabled;
     _Bool _supportsCellularTelephony;
+    HDAssertion *_disableAOTAssertion;
 }
 
 - (void).cxx_destruct;

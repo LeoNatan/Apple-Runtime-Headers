@@ -10,6 +10,6 @@
 
 @protocol CAMVideoPersistenceCoordinationDelegate <NSObject>
 - (void)videoPersistenceCoordinator:(CAMVideoPersistenceCoordinator *)arg1 requestsTimeoutScheduledForDeferredRemotePersistenceForCoordinationInfo:(CAMCaptureCoordinationInfo *)arg2 request:(CAMCaptureRequest *)arg3;
-- (void)videoPersistenceCoordinator:(CAMVideoPersistenceCoordinator *)arg1 requestsRemotePersistenceForLocalPersistenceResult:(CAMVideoLocalPersistenceResult *)arg2 captureRequest:(CAMCaptureRequest *)arg3 powerAssertionReason:(unsigned int)arg4;
+- (void)videoPersistenceCoordinator:(CAMVideoPersistenceCoordinator *)arg1 requestsRemotePersistenceForLocalPersistenceResult:(CAMVideoLocalPersistenceResult *)arg2 spatialOverCaptureResult:(CAMVideoLocalPersistenceResult *)arg3 captureRequest:(CAMCaptureRequest *)arg4 powerAssertionReason:(unsigned int)arg5;
 @end
 

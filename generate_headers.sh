@@ -8,20 +8,28 @@ rm -fr tvOS
 mkdir -p iOS/Frameworks
 mkdir -p iOS/PrivateFrameworks
 mkdir -p iOS/usr/lib
+mkdir -p iOS/Developer/Frameworks
+mkdir -p iOS/Developer/PrivateFrameworks
 
 mkdir -p watchOS/Frameworks
 mkdir -p watchOS/PrivateFrameworks
 mkdir -p watchOS/usr/lib
+mkdir -p watchOS/Developer/Frameworks
+mkdir -p watchOS/Developer/PrivateFrameworks
 
 mkdir -p tvOS/Frameworks
 mkdir -p tvOS/PrivateFrameworks
 mkdir -p tvOS/usr/lib
+mkdir -p tvOS/Developer/Frameworks
+mkdir -p tvOS/Developer/PrivateFrameworks
 
 mkdir -p macOS/Frameworks
 mkdir -p macOS/PrivateFrameworks
 mkdir -p macOS/usr/lib
 mkdir -p macOS/iOSSupport/Frameworks
 mkdir -p macOS/iOSSupport/PrivateFrameworks
+mkdir -p macOS/Developer/Frameworks
+mkdir -p macOS/Developer/PrivateFrameworks
 
 visitFrameworkOrApp() {
 	FRAMEWORK="$1"
@@ -62,6 +70,14 @@ iOS() {
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/usr/lib/
 	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/Developer/Frameworks
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/Developer/PrivateFrameworks
+	done
 }
 
 watchOS() {
@@ -82,6 +98,10 @@ watchOS() {
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" i386 watchOS/usr/lib/
 	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 watchOS/Developer/PrivateFrameworks
+	done
 }
 
 tvOS() {
@@ -101,6 +121,14 @@ tvOS() {
 	
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/usr/lib/
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/Developer/Frameworks
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVSimulator.platform/Developer/Library/PrivateFrameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/Developer/PrivateFrameworks
 	done
 }
 
@@ -129,6 +157,14 @@ macOS() {
 
 	for FRAMEWORK in /System/iOSSupport/System/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/iOSSupport/PrivateFrameworks/
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/MacOSX.platform/Developer/Library/Frameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/Developer/Frameworks
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/Developer/PrivateFrameworks
 	done
 }
 

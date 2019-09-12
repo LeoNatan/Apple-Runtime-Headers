@@ -18,7 +18,9 @@
     NSDate *_loadingStartDate;
     NSProgress *_editSourceCreationProgress;
     NSObject<OS_dispatch_queue> *_loadingQueue;
+    _Bool _overcaptureSourceIsActive;
     PLEditSource *_editSource;
+    PLEditSource *_overcaptureEditSource;
     NSProgress *_progress;
     NSError *_error;
     long long _baseVersion;
@@ -33,6 +35,7 @@
 @property(readonly, nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
+@property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PLEditSource *activeEditSource;

@@ -78,6 +78,8 @@
 - (void)_resultQueue_forceCompletionIfPossibleForRequest:(id)arg1;
 - (void)persistenceController:(id)arg1 didCompleteAllLocalPersistenceForRequest:(id)arg2;
 - (void)_handleVideoLocalPersistenceResult:(id)arg1 forCaptureResult:(id)arg2 fromRequest:(id)arg3;
+- (void)_handleCTMVideoLocalPersistenceResult:(id)arg1 forCaptureResult:(id)arg2 fromRequest:(id)arg3 size:(struct CGSize)arg4 videoURL:(id)arg5 renderedToURL:(id)arg6 renderedAdjustments:(id)arg7;
+- (void)_handleCTMVideoLocalPersistenceResult:(id)arg1 forCaptureResult:(id)arg2 fromRequest:(id)arg3;
 - (void)_handleLivePhotoVideoLocalPersistenceResult:(id)arg1 forCaptureResult:(id)arg2 fromRequest:(id)arg3;
 - (void)persistenceController:(id)arg1 didGenerateVideoLocalPersistenceResult:(id)arg2 forCaptureResult:(id)arg3 fromRequest:(id)arg4;
 - (void)persistenceController:(id)arg1 didGenerateStillImageLocalPersistenceResult:(id)arg2 forCaptureResult:(id)arg3 fromRequest:(id)arg4;
@@ -114,6 +116,7 @@
 @property(readonly, nonatomic, getter=isRecording) _Bool recording;
 @property(readonly, nonatomic, getter=isCapturingLivePhoto) _Bool capturingLivePhoto;
 @property(readonly, nonatomic, getter=isCapturingPhoto) _Bool capturingPhoto;
+@property(nonatomic) long long photoModeAspectRatioCrop;
 @property(nonatomic) long long livePhotoMode;
 @property(nonatomic) long long timerDuration;
 @property(nonatomic, setter=setHDRMode:) long long hdrMode;

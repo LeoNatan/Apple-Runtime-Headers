@@ -16,6 +16,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)unpauseLaunchEventNotifications;
+- (void)pauseLaunchEventNotifications;
 - (id)publishChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 transaction:(id)arg3;
 - (id)initWithLibraryClient:(id)arg1;
 

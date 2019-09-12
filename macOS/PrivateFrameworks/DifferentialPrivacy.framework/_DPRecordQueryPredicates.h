@@ -11,8 +11,10 @@
 }
 
 + (id)entityForKey:(id)arg1;
++ (id)predicateForKey:(id)arg1 beginsWith:(BOOL)arg2 matchReportVersion:(BOOL)arg3;
 + (id)predicateForKey:(id)arg1 beginsWith:(BOOL)arg2 submitted:(BOOL)arg3 matchReportVersion:(BOOL)arg4;
 + (id)predicateForKeyBeginsWith:(id)arg1;
++ (id)predicateForRecordsMatchingKey:(id)arg1;
 + (id)predicateForKey:(id)arg1;
 + (id)predicateForRecordsSubmittedForKey:(id)arg1;
 + (id)predicateForRecordsSubmitted;

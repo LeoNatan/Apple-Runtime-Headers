@@ -46,6 +46,7 @@
 @property(readonly, nonatomic) NSString *stillImagePersistenceUUID; // @synthesize stillImagePersistenceUUID=_stillImagePersistenceUUID;
 @property(readonly, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isCTMVideo) _Bool CTMVideo;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -91,6 +91,8 @@
 - (struct CGSize)collectionViewContentSize;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)layoutAttributesForInterItemGapBeforeIndexPath:(id)arg1;
+- (id)layoutAttributesForDropTargetAtPoint:(struct CGPoint)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)prepareLayout;
@@ -99,7 +101,7 @@
 - (long long)scrollDirection;
 - (id)initWithLayoutSection:(id)arg1 scrollDirection:(long long)arg2;
 - (id)initWithLayoutSection:(id)arg1;
-@property(copy, nonatomic) NSCollectionViewCompositionalLayoutConfiguration *configuration;
+@property(copy) NSCollectionViewCompositionalLayoutConfiguration *configuration;
 - (id)initWithSectionProvider:(CDUnknownBlockType)arg1 configuration:(id)arg2;
 - (id)initWithSectionProvider:(CDUnknownBlockType)arg1;
 - (id)initWithSection:(id)arg1 configuration:(id)arg2;

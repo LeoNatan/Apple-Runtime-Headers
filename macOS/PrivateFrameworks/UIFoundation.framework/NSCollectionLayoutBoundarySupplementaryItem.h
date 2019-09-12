@@ -18,10 +18,10 @@
 
 + (id)boundarySupplementaryItemWithLayoutSize:(id)arg1 elementKind:(id)arg2 alignment:(long long)arg3 absoluteOffset:(struct CGPoint)arg4;
 + (id)boundarySupplementaryItemWithLayoutSize:(id)arg1 elementKind:(id)arg2 alignment:(long long)arg3;
-@property(readonly, nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
-@property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
-@property(nonatomic) BOOL pinToVisibleBounds; // @synthesize pinToVisibleBounds=_pinToVisibleBounds;
-@property(nonatomic) BOOL extendsBoundary; // @synthesize extendsBoundary=_extendsBoundary;
+@property(readonly) struct CGPoint offset; // @synthesize offset=_offset;
+@property(readonly) long long alignment; // @synthesize alignment=_alignment;
+@property BOOL pinToVisibleBounds; // @synthesize pinToVisibleBounds=_pinToVisibleBounds;
+@property BOOL extendsBoundary; // @synthesize extendsBoundary=_extendsBoundary;
 - (id)copyWithContainerAnchor:(id)arg1 itemAnchor:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

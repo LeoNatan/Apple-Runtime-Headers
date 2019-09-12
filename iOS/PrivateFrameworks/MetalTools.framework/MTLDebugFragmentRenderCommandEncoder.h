@@ -12,9 +12,9 @@
 @interface MTLDebugFragmentRenderCommandEncoder : MTLToolsFragmentRenderCommandEncoder
 {
     CDStruct_0f4bf8df _fragmentBuffers[31];
-    CDStruct_0f4bf8df _fragmentTextures[96];
+    CDStruct_0f4bf8df _fragmentTextures[128];
     CDStruct_0f4bf8df _fragmentSamplers[16];
-    const CDStruct_52c93ad5 *_limits;
+    const CDStruct_886a8514 *_limits;
     unsigned int _unknownStoreActions;
     unsigned int _encoderState;
     struct ResourceTrackingDeferredAttachments _deferredAttachments;

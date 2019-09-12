@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)_connectChildView;
 - (void)connectToContextWithSessionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)invalidate;
-- (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
 - (id)exportedInterface;
 - (id)remoteViewControllerInterface;
 - (void)loadView;

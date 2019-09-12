@@ -32,6 +32,7 @@
 @property(nonatomic) CDStruct_339ad95e tracklistRange; // @synthesize tracklistRange=_tracklistRange;
 @property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
+- (id)_stateDumpObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)middlewareClasses;
 @property(readonly, copy) NSString *description;

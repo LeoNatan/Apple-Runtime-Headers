@@ -10,12 +10,12 @@
 {
     unsigned int _layerRotation;
     struct CGPoint _scrollPoint;
-    struct CGRect _windowDimensions;
+    struct CGRect _conferenceDimensions;
 }
 
 @property struct CGPoint scrollPoint; // @synthesize scrollPoint=_scrollPoint;
 @property unsigned int layerRotation; // @synthesize layerRotation=_layerRotation;
-@property struct CGRect windowDimensions; // @synthesize windowDimensions=_windowDimensions;
+@property struct CGRect conferenceDimensions; // @synthesize conferenceDimensions=_conferenceDimensions;
 - (void)scrollPoint:(struct CGPoint)arg1;
 - (void)setAVConferenceLayerRotation:(unsigned int)arg1;
 - (struct SSPoint)frameBufferCoordinatesFromWindowCoordinates:(struct CGPoint)arg1;
@@ -24,6 +24,7 @@
 - (void)sendMouseButtonEvent:(id)arg1 withButton:(unsigned long long)arg2 withState:(int)arg3;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseDragged:(id)arg1;
+- (struct CGRect)conferenceFrame;
 - (void)setUseCachedImage:(BOOL)arg1;
 - (BOOL)useCachedImage;
 - (id)initWithCoder:(id)arg1;

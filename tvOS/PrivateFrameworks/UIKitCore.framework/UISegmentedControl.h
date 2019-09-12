@@ -144,6 +144,7 @@
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
+- (CDStruct_c3b9c2ee)_baselineOffsetsAtSize:(struct CGSize)arg1;
 - (id)viewForLastBaselineLayout;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (struct CGRect)bounds;

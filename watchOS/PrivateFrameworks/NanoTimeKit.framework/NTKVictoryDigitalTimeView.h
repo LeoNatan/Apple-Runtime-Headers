@@ -8,11 +8,12 @@
 
 #import <NanoTimeKit/CLKTimeFormatterObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
+#import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
 @class CLKDevice, CLKTimeFormatter, NSString, NTKVictoryDigitsView;
 @protocol NTKVictoryDigitalTimeViewDelegate;
 
-@interface NTKVictoryDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView>
+@interface NTKVictoryDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView, NTKTritiumAnimator>
 {
     CLKDevice *_device;
     NTKVictoryDigitsView *_upperDigitsView;
@@ -34,6 +35,10 @@
 @property(nonatomic) _Bool invertedColors; // @synthesize invertedColors=_invertedColors;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_willTransitionToTritiumOn;
+- (void)tritium_transitionToFrameSpecifier:(id)arg1;
 - (void)timeFormatterTextDidChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

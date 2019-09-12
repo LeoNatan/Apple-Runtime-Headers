@@ -8,7 +8,7 @@
 
 #import <AccessibilityKit/AXKKeyboardFocusListener-Protocol.h>
 
-@class AXKApplicationController, AXKElementController, AXKInputMarkingSessionTracker, AXKKeyboardFocusTracker, AXKTextElementEditListenerElementInfo, NSMutableArray, NSString;
+@class AXFThrottler, AXKApplicationController, AXKElementController, AXKInputMarkingSessionTracker, AXKKeyboardFocusTracker, AXKTextElementEditListenerElementInfo, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface AXKTextElementEditTracker : NSObject <AXKKeyboardFocusListener>
@@ -22,6 +22,7 @@
     AXKApplicationController *__lastApplicationController;
     AXKInputMarkingSessionTracker *__inlineSessionTracker;
     AXKElementController *__lastTrackedElement;
+    AXFThrottler *__textThrotter;
 }
 
 + (struct CGRect)_zoomFocusRectForMultipleIndexRange:(id)arg1 textElementController:(id)arg2 withPreviousElementInfo:(id)arg3;
@@ -43,6 +44,7 @@
 + (BOOL)isEditableTextElement:(id)arg1;
 + (id)sharedMultipleLinesTracker;
 + (id)sharedSingleLineTracker;
+@property(retain, nonatomic) AXFThrottler *_textThrotter; // @synthesize _textThrotter=__textThrotter;
 @property(nonatomic) BOOL _singleLineMode; // @synthesize _singleLineMode=__singleLineMode;
 @property(retain, nonatomic) AXKElementController *_lastTrackedElement; // @synthesize _lastTrackedElement=__lastTrackedElement;
 @property(retain, nonatomic) AXKInputMarkingSessionTracker *_inlineSessionTracker; // @synthesize _inlineSessionTracker=__inlineSessionTracker;
@@ -58,6 +60,7 @@
 - (void)_performAsyncOnTrackerQueue:(CDUnknownBlockType)arg1;
 - (void)_setFocusedTextElementController:(id)arg1;
 - (id)_deletionCandidateTextForElement:(id)arg1 elementInfo:(id)arg2;
+- (void)_fetchAndSignalElementInfoChanged:(id)arg1;
 - (void)_textSelectionChangedForElement:(id)arg1;
 - (void)_selectedTextChangedNotification:(id)arg1;
 - (void)_signalForElement:(id)arg1 stringDeleted:(id)arg2 editTracker:(id)arg3;

@@ -10,7 +10,7 @@
 #import <SidecarCore/SidecarSessionDelegate-Protocol.h>
 #import <SidecarCore/SidecarTransferDelegate-Protocol.h>
 
-@class NSArray, NSData, NSError, NSMutableArray, NSProgress, NSString, SidecarDevice, SidecarService, SidecarSession, SidecarTransferReceiver;
+@class NSArray, NSData, NSError, NSProgress, NSString, NSUUID, SidecarDevice, SidecarMapTable, SidecarService, SidecarSession, SidecarTransferReceiver;
 @protocol SidecarMessage, SidecarRequestDelegate;
 
 @interface SidecarRequest : NSObject <SidecarTransferDelegate, SidecarSessionDelegate, NSProgressReporting>
@@ -20,24 +20,24 @@
     NSArray *_devices_deprecated;
     SidecarDevice *_device;
     SidecarSession *_session;
+    SidecarSession *_sessionZombie;
     NSArray *_items;
     id <SidecarMessage> _message;
     NSProgress *_progress;
     SidecarService *_service;
     SidecarTransferReceiver *_transferReceiver;
-    NSMutableArray *_sendTransfers;
+    SidecarMapTable *_sendTransfers;
     NSError *_error;
-    // Error parsing type: Aq, name: _requestID
-    // Error parsing type: AB, name: _willFinish
-    // Error parsing type: AB, name: _cancelled
-    // Error parsing type: AB, name: _finished
+    // Error parsing type: Aq, name: _state
     double _timeStart;
     double _timeAccept;
     double _timeTransfer;
     double _timeFinish;
+    NSUUID *_uuid;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) double timeFinish; // @synthesize timeFinish=_timeFinish;
 @property(nonatomic) double timeTransfer; // @synthesize timeTransfer=_timeTransfer;
 @property(nonatomic) double timeAccept; // @synthesize timeAccept=_timeAccept;
@@ -48,8 +48,10 @@
 - (void)accept;
 - (id)sessionForDevice:(id)arg1;
 - (void)sidecarServiceTerminate;
-- (void)sidecarSession:(id)arg1 invalidatedWithError:(id)arg2;
+- (void)sidecarSession:(id)arg1 closedWithError:(id)arg2;
 - (void)sidecarSession:(id)arg1 receivedMessage:(id)arg2;
+- (void)sidecarSessionStarted:(id)arg1;
+- (void)_willConnect;
 - (void)sidecarTransfer:(id)arg1 receivedItems:(id)arg2 messageType:(long long)arg3;
 - (void)sidecarTransfer:(id)arg1 didComplete:(id)arg2;
 - (void)writeToPasteboard:(id)arg1;
@@ -57,11 +59,10 @@
 - (void)_sendMessage:(id)arg1;
 - (void)sendItems:(id)arg1;
 - (void)sendItems:(id)arg1 complete:(_Bool)arg2;
-- (void)startWithTransport:(long long)arg1 reconnectToRequestID:(long long)arg2;
+- (void)startWithTransport:(long long)arg1 reconnectToRequest:(id)arg2;
 - (void)startWithTransport:(long long)arg1;
 - (void)start;
 @property(readonly, nonatomic) SidecarSession *session; // @dynamic session;
-@property(readonly, nonatomic) long long requestID; // @dynamic requestID;
 - (void)cancel;
 @property(readonly) NSString *localizedItemName;
 @property(readonly) NSString *localizedDescription;
@@ -74,8 +75,10 @@
 @property(readonly, nonatomic) SidecarDevice *device; // @dynamic device;
 @property(readonly, getter=isFinished) _Bool finished; // @dynamic finished;
 @property(readonly, getter=isCancelled) _Bool cancelled; // @dynamic cancelled;
+@property(readonly, nonatomic) _Bool didStart;
 @property(readonly) SidecarService *service;
 @property(readonly) NSProgress *progress;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithSession:(id)arg1 message:(id)arg2;
 - (id)initWithService:(id)arg1 device:(id)arg2;
@@ -90,7 +93,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -31,10 +31,12 @@
     NSArray *_withoutDateLayoutConstraints;
     _Bool _paused;
     id <CLKMonochromeFilterProvider> _filterProvider;
+    NSDate *_overrideDate;
 }
 
-+ (id)_timeStringForFetchDate:(id)arg1;
++ (id)_timeStringForFetchDate:(id)arg1 overrideNow:(id)arg2;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
+@property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
 - (void)updateMonochromeColor;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (id)indeterminateProgressSpinnerDarkInterface;
 + (id)indeterminateProgressSpinner;
 + (id)telephoneIcon;
++ (id)textIcon;
 + (id)fileIcon;
 + (id)unmuteButton;
 + (id)muteButton;

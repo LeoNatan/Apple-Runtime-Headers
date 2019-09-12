@@ -37,6 +37,7 @@
 - (void)enableServicePressed:(id)arg1;
 - (void)update;
 - (void)doUpdate:(id)arg1;
+- (BOOL)statusSpinnerShouldContinue;
 - (void)startDelayedSpinner;
 - (void)stopDetermineStatusSpinner:(id)arg1;
 - (void)stopSpinner:(id)arg1;

@@ -22,6 +22,7 @@
     NSArray *_items;
     NSImage *_backIndicatorImage;
     NSView *_globalTrailingView;
+    double _globalTrailingViewWidthMultiplier;
     NSMutableArray *_internalItems;
     _UXNavigationItemContainerView *_topItemContainer;
     long long _currentOperation;
@@ -31,12 +32,10 @@
     double _leftInteritemSpacing;
     double _rightInteritemSpacing;
     double _centerYOffset;
-    double _condensedWidthLimit;
     struct NSEdgeInsets _edgeInsets;
 }
 
 + (id)_itemKeyPathsToObserve;
-@property(nonatomic) double condensedWidthLimit; // @synthesize condensedWidthLimit=_condensedWidthLimit;
 @property(nonatomic) double centerYOffset; // @synthesize centerYOffset=_centerYOffset;
 @property(nonatomic) double rightInteritemSpacing; // @synthesize rightInteritemSpacing=_rightInteritemSpacing;
 @property(nonatomic) double leftInteritemSpacing; // @synthesize leftInteritemSpacing=_leftInteritemSpacing;
@@ -49,6 +48,7 @@
 @property(nonatomic) long long currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(retain, nonatomic) _UXNavigationItemContainerView *topItemContainer; // @synthesize topItemContainer=_topItemContainer;
 @property(retain, nonatomic) NSMutableArray *internalItems; // @synthesize internalItems=_internalItems;
+@property(nonatomic) double globalTrailingViewWidthMultiplier; // @synthesize globalTrailingViewWidthMultiplier=_globalTrailingViewWidthMultiplier;
 @property(retain, nonatomic) NSView *globalTrailingView; // @synthesize globalTrailingView=_globalTrailingView;
 @property(retain, nonatomic) NSImage *backIndicatorImage; // @synthesize backIndicatorImage=_backIndicatorImage;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;

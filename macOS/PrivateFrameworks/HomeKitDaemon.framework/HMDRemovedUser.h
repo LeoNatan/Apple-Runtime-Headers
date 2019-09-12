@@ -12,12 +12,14 @@
 
 @interface HMDRemovedUser : HMFObject <NSSecureCoding>
 {
+    BOOL _removalInProgress;
     HMDUser *_user;
     NSDate *_expirationDate;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)removedUserWithUser:(id)arg1;
+@property(getter=isRemovalInProgress) BOOL removalInProgress; // @synthesize removalInProgress=_removalInProgress;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) HMDUser *user; // @synthesize user=_user;
 - (void).cxx_destruct;

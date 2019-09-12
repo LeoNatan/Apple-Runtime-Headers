@@ -14,6 +14,7 @@
     // Error parsing type: , name: buyReferrer
     // Error parsing type: , name: affiliateIdentifier
     // Error parsing type: , name: pageReferrerUrl
+    // Error parsing type: , name: preloaded
     // Error parsing type: , name: currentPageFields
 }
 

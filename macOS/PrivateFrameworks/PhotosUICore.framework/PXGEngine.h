@@ -8,14 +8,14 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXGLayoutUpdateDelegate-Protocol.h>
-#import <PhotosUICore/PXGRendererDelegate-Protocol.h>
+#import <PhotosUICore/PXGMetalRendererDelegate-Protocol.h>
 #import <PhotosUICore/PXGTextureManagerDelegate-Protocol.h>
 #import <PhotosUICore/PXTilingScrollControllerUpdateDelegate-Protocol.h>
 
 @class NSArray, NSString, PXDisplayLink, PXGAccessibilityContentInfoManager, PXGAccessibilityRenderer, PXGAnimator, PXGChangeDetails, PXGLayout, PXGMetalRenderer, PXGSpriteDataStore, PXGSpriteMetadataStore, PXGTextureManager, PXGViewEnvironment, PXGViewRenderer, PXScrollViewController, PXScrollViewSpeedometer;
 @protocol PXGEngineDelegate;
 
-@interface PXGEngine : NSObject <PXGRendererDelegate, PXGLayoutUpdateDelegate, PXGTextureManagerDelegate, PXTilingScrollControllerUpdateDelegate, PXChangeObserver>
+@interface PXGEngine : NSObject <PXGMetalRendererDelegate, PXGLayoutUpdateDelegate, PXGTextureManagerDelegate, PXTilingScrollControllerUpdateDelegate, PXChangeObserver>
 {
     PXGAnimator *_animator;
     PXGSpriteDataStore *_layoutSpriteDataStore;
@@ -29,18 +29,18 @@
     PXGSpriteMetadataStore *_presentationSpriteMetadaStore;
     CDStruct_5f1286c4 _updateFlags;
     unsigned long long _previousUpdateEntities;
-    CDStruct_73ead4b7 _previousInteractionState;
+    CDStruct_efb11229 _previousInteractionState;
     unsigned long long _pendingUpdateEntities;
     BOOL _keepDisplayLinkAlive;
-    BOOL _didRenderThisFrame;
     double _renderForTargetTimestamp;
     BOOL _animatorWasAnimatingAtBeginningOfFrame;
     BOOL _isUpdatingScrollView;
+    BOOL _viewSizeDidChange;
+    BOOL _isInitialLoad;
+    BOOL _didRenderThisFrame;
     BOOL _expectingScrollEvents;
     BOOL _gotScrollEventThisFrame;
     BOOL _missedScrollEventThisFrame;
-    BOOL _viewSizeDidChange;
-    BOOL _isInitialLoad;
     BOOL _visible;
     BOOL _statsTrackingEnabled;
     BOOL _slowAnimationsEnabled;
@@ -50,6 +50,7 @@
     PXGLayout *_layout;
     PXGTextureManager *_textureManager;
     CDUnknownBlockType _animationRenderingCompletionHandler;
+    double _lastScrollEventTime;
     id <PXGEngineDelegate> _delegate;
     PXGMetalRenderer *_metalRenderer;
     PXGViewRenderer *_viewRenderer;
@@ -59,7 +60,7 @@
     PXDisplayLink *_displayLink;
     PXGAccessibilityRenderer *_accessibilityRenderer;
     PXGAccessibilityContentInfoManager *_contentInfoManager;
-    CDStruct_73ead4b7 _interactionState;
+    CDStruct_efb11229 _interactionState;
     struct _PXGEngineScrollState _scrollState;
 }
 
@@ -76,7 +77,13 @@
 @property(readonly, nonatomic) PXGViewRenderer *viewRenderer; // @synthesize viewRenderer=_viewRenderer;
 @property(readonly, nonatomic) PXGMetalRenderer *metalRenderer; // @synthesize metalRenderer=_metalRenderer;
 @property(nonatomic) __weak id <PXGEngineDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) CDStruct_73ead4b7 interactionState; // @synthesize interactionState=_interactionState;
+@property(nonatomic) BOOL missedScrollEventThisFrame; // @synthesize missedScrollEventThisFrame=_missedScrollEventThisFrame;
+@property(nonatomic) double lastScrollEventTime; // @synthesize lastScrollEventTime=_lastScrollEventTime;
+@property(nonatomic) BOOL gotScrollEventThisFrame; // @synthesize gotScrollEventThisFrame=_gotScrollEventThisFrame;
+@property(nonatomic) BOOL expectingScrollEvents; // @synthesize expectingScrollEvents=_expectingScrollEvents;
+@property(nonatomic) BOOL didRenderThisFrame; // @synthesize didRenderThisFrame=_didRenderThisFrame;
+@property(nonatomic) BOOL isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
+@property(nonatomic) CDStruct_efb11229 interactionState; // @synthesize interactionState=_interactionState;
 @property(readonly, nonatomic) struct _PXGEngineScrollState scrollState; // @synthesize scrollState=_scrollState;
 @property(copy, nonatomic) CDUnknownBlockType animationRenderingCompletionHandler; // @synthesize animationRenderingCompletionHandler=_animationRenderingCompletionHandler;
 @property(readonly, nonatomic) PXGTextureManager *textureManager; // @synthesize textureManager=_textureManager;
@@ -90,6 +97,7 @@
 - (void)tilingScrollControllerDidUpdate:(id)arg1;
 - (void)textureManagerNeedsUpdate:(id)arg1;
 - (void)layoutNeedsUpdate:(id)arg1;
+- (void)metalRendererDidChangeTextureConverter:(id)arg1;
 - (void)rendererNeedsUpdate:(id)arg1;
 - (void)rendererPerformRender:(id)arg1;
 - (void)renderer:(id)arg1 viewportSizeWillChange:(struct CGSize)arg2;
@@ -117,6 +125,7 @@
 @property(readonly, nonatomic) PXGAnimator *ppt_animator;
 @property(readonly, nonatomic) long long currentFrameTime;
 - (void)test_installRenderSnapshotHandler:(CDUnknownBlockType)arg1;
+- (void)handleScreensDidWakeNotification:(id)arg1;
 - (void)enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSpritesInRect:(struct CGRect)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)dealloc;

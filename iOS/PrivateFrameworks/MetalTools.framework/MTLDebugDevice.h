@@ -32,6 +32,7 @@
 - (id)_newSharedEventWithParent:(id)arg1;
 - (id)newSharedEvent;
 - (id)newEvent;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (id)newTextureLayoutWithDescriptor:(id)arg1 isHeapOrBufferBacked:(_Bool)arg2;

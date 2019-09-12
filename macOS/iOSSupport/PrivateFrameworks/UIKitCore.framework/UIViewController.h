@@ -337,6 +337,7 @@
 - (id)_effectiveWhitePointAdaptivityStyleViewController;
 - (id)_effectiveStatusBarHiddenViewController;
 - (id)_effectiveStatusBarStyleViewController;
+- (void)_setNeedsStatusBarAppearanceUpdateWithAnimationParameters:(id)arg1;
 - (void)setNeedsStatusBarAppearanceUpdate;
 @property(readonly, nonatomic, getter=_preferredStatusBarHideAnimationParameters) UIStatusBarHideAnimationParameters *preferredStatusBarHideAnimationParameters;
 @property(readonly, nonatomic, getter=_preferredStatusBarStyleAnimationParameters) UIStatusBarStyleAnimationParameters *preferredStatusBarStyleAnimationParameters;
@@ -974,6 +975,7 @@
 - (unsigned long long)retainCount;
 - (oneway void)release;
 - (id)retain;
+- (id)_responderDebugDescription;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 @property(readonly, nonatomic) NSExtensionContext *extensionContext; // @dynamic extensionContext;
 - (id)_extensionContextUUID;

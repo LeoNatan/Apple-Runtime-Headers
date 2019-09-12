@@ -47,6 +47,7 @@
 - (id)_strippedRecordName:(id)arg1;
 - (id)_serviceIdentifierForRecordType:(id)arg1 recordID:(id)arg2;
 - (id)_serviceIdentifierForRecord:(id)arg1;
+- (id)_originDeviceID;
 - (id)_cloudStoreSpecificKeysForItem:(id)arg1 paymentPass:(id)arg2;
 - (id)_insertOrUpdatePaymentTransaction:(id)arg1 withOriginDeviceID:(id)arg2 forPassUniqueIdentifier:(id)arg3 paymentApplication:(id)arg4 withInsertionMode:(unsigned long long)arg5 performTruncation:(BOOL)arg6;
 - (id)_paymentApplicationForPassUniqueIdentifier:(id)arg1;

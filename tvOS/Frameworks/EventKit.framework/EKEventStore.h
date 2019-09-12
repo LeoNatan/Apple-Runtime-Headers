@@ -191,6 +191,7 @@
 - (_Bool)removeResourceChangesForCalendarItem:(id)arg1 error:(id *)arg2;
 - (_Bool)removeResourceChanges:(id)arg1 error:(id *)arg2;
 - (_Bool)removeResourceChange:(id)arg1 error:(id *)arg2;
+- (_Bool)markResourceChangeAlertedAndSave:(id)arg1 error:(id *)arg2;
 - (id)resourceChangesForEntityTypes:(unsigned long long)arg1;
 - (id)sharedCalendarInvitationsForEntityTypes:(unsigned long long)arg1;
 - (_Bool)saveNotificationCollection:(id)arg1 commit:(_Bool)arg2 error:(id *)arg3;

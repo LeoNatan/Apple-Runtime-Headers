@@ -30,6 +30,10 @@
 - (void)setAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)dealloc;
+- (void)_superSetDefaultAction;
+- (void)_superSetDefaultTarget;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithItemIdentifier:(id)arg1;
 
 // Remaining properties

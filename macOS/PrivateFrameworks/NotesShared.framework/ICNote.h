@@ -46,8 +46,9 @@
 + (id)keyPathsForValuesAffectingIsEditable;
 + (unsigned long long)maxNoteAttachments;
 + (unsigned long long)maxNoteTextLength;
-+ (id)keyPathsForValuesAffectingIsSharedViaICloud;
 + (id)keyPathsForValuesAffectingCanBeSharedViaICloud;
++ (id)passwordProtectedNoteIdentifiersForAccount:(id)arg1;
++ (id)allPasswordProtectedNoteIdentifiersInContext:(id)arg1;
 + (id)snippetForPasswordProtectedNote:(id)arg1;
 + (void)redactNote:(id)arg1;
 + (id)createNoteFromNote:(id)arg1 inFolder:(id)arg2 isPasswordProtected:(BOOL)arg3 removingOriginalNote:(BOOL)arg4;
@@ -60,6 +61,7 @@
 + (id)newFetchRequestForNotes;
 + (id)modernNotesInObjects:(id)arg1;
 + (BOOL)notes:(id)arg1 containSharedNotesNotSharedViaFolder:(id)arg2;
++ (id)noteIdentifiersMatchingPredicate:(id)arg1 context:(id)arg2;
 + (unsigned long long)countOfNotesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)notesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (unsigned long long)countOfVisibleNotesInContext:(id)arg1;
@@ -196,6 +198,7 @@
 - (BOOL)shouldReleaseDocumentWhenTurningIntoFault;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
+- (void)prepareForDeletion;
 - (void)mergeNotePrimitiveData;
 - (struct _NSRange)textRangeForSearchRange:(struct _NSRange)arg1 inSearchableString:(id)arg2;
 - (void)didAcceptShare:(id)arg1;
@@ -204,7 +207,6 @@
 - (id)shareTitle;
 - (BOOL)canBeRootShareObject;
 - (BOOL)isSharedViaICloudFolder;
-- (BOOL)isSharedViaICloud;
 - (BOOL)canBeSharedViaICloud;
 - (id)childCloudObjectsForMinimumSupportedVersionPropagation;
 - (id)childCloudObjects;

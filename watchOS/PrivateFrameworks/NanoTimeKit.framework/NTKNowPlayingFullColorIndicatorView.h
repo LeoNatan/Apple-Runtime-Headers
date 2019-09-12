@@ -20,9 +20,11 @@
     UIColor *_color;
     _Bool _colorHasBeenUpdated;
     _Bool _paused;
+    _Bool _tritium_isOn;
     id <CLKMonochromeFilterProvider> _filterProvider;
 }
 
++ (_Bool)tritium_wantsCrossfadeAnimation;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
 - (void)updateMonochromeColor;

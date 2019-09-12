@@ -34,6 +34,7 @@
 @property(retain, nonatomic) EDMailDropMetadataGeneratorFactory *maildropContentItemGeneratorFactory; // @synthesize maildropContentItemGeneratorFactory=_maildropContentItemGeneratorFactory;
 - (void).cxx_destruct;
 - (id)_libraryMessageForMessageObjectID:(id)arg1;
+- (id)_requestSummaryForLibraryMessage:(id)arg1;
 - (id)requestSummaryForMessageObjectID:(id)arg1;
 - (id)requestContentForMessageObjectID:(id)arg1 requestID:(unsigned long long)arg2 options:(id)arg3 delegate:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;

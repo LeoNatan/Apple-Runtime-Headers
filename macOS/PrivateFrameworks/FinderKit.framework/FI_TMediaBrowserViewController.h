@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 - (void)stopEditing:(_Bool)arg1;
 - (_Bool)startEditingWithNode:(const struct TFENode *)arg1 renameOp:(id)arg2;
 - (void)privateBindSettings;
-- (BOOL)mediaBrowserView:(id)arg1 shouldPreviewDoubleClickedItem:(id)arg2;
 - (void)mediaBrowserViewSelectionDidChange:(id)arg1;
+- (BOOL)mediaBrowserView:(id)arg1 shouldPreviewDoubleClickedItem:(id)arg2;
 - (id)mediaBrowserView:(id)arg1 attributedDisplayNameForMediaObject:(id)arg2;
 - (BOOL)mediaBrowserView:(id)arg1 shouldSelectMediaObject:(id)arg2;
 - (_Bool)urlIsDimmed:(id)arg1;

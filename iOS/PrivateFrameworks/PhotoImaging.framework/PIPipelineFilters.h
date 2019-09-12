@@ -10,6 +10,9 @@
 {
 }
 
++ (id)spatialOvercaptureVideoSourceFilter;
++ (id)primarySourceFilter;
++ (id)overcaptureSourceFilter;
 + (id)autoloopStabilizedVideoFilter;
 + (id)applyOrientationFilter;
 + (id)stopAtTagIncludeOrientationFilter:(id)arg1;
@@ -30,6 +33,7 @@
 + (id)rawFaceBalanceFilter;
 + (id)exifOrientationAndCropStraightenOnly;
 + (id)autoCropFilter;
++ (id)socPseudoColorFilter;
 
 @end
 

@@ -18,10 +18,13 @@
     SidecarDisplayConfig *_config;
     NSArray *_devices;
     SidecarDevice *_connectedDevice;
+    NSArray *_recentUUIDS;
     NSArray *_recentDevices;
 }
 
 + (id)sharedManager;
++ (id)model;
++ (BOOL)isSupported;
 - (void).cxx_destruct;
 - (void)preferencesChanged;
 - (void)disconnectFromDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -125,6 +125,7 @@
 - (void)_scheduleBackgroundSceneDetach;
 @property(nonatomic, setter=_setInvolvedInMediaPlayback:) BOOL _involvedInMediaPlayback;
 - (void)_initializeSceneComponents;
+- (BOOL)_needsMakeKeyAndVisible;
 - (void)_makeKeyAndVisibleIfNeeded;
 - (void)_readySceneForConnection;
 - (void)__releaseWindow:(id)arg1;
@@ -147,6 +148,7 @@
 - (void)_invalidate;
 - (void)_synchronizeDrawingWithFence:(id)arg1;
 @property(readonly, nonatomic) BKSAnimationFenceHandle *_synchronizedDrawingFence;
+- (BOOL)_shouldAllowFencing;
 - (void)_compatibilityModeZoomDidChange;
 - (void)_updateUIClientSettingsWithTransitionBlock:(CDUnknownBlockType)arg1;
 - (void)_updateUIClientSettingsWithUITransitionBlock:(CDUnknownBlockType)arg1;

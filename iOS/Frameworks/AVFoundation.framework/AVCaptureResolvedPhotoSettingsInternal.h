@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     CDStruct_79c71658 hairSegmentationMatteDimensions;
     CDStruct_79c71658 skinSegmentationMatteDimensions;
     CDStruct_79c71658 teethSegmentationMatteDimensions;
+    CDStruct_79c71658 spatialOverCapturePhotoDimensions;
     _Bool turboModeEnabled;
     _Bool flashEnabled;
     _Bool redEyeReductionEnabled;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
     _Bool stillImageStabilizationEnabled;
     _Bool virtualDeviceFusionEnabled;
     _Bool squareCropEnabled;
+    CDStruct_79c71658 deferredPhotoProxyDimensions;
     CDStruct_e83c9415 photoProcessingTimeRange;
     NSArray *photoManifest;
 }

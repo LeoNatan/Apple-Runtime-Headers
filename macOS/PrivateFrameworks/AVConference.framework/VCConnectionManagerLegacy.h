@@ -6,7 +6,7 @@
 
 #import <AVConference/VCConnectionManager.h>
 
-@class NSMutableArray, NSString;
+@class NSString;
 @protocol VCConnectionProtocol;
 
 __attribute__((visibility("hidden")))
@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 {
     id <VCConnectionProtocol> _pendingPrimaryConnection;
     id <VCConnectionProtocol> _pendingSecondaryConnection;
-    NSMutableArray *_validConnections;
     NSString *_relayConnectionID;
 }
 

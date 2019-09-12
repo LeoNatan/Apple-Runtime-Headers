@@ -13,6 +13,7 @@
 
 @interface MSPCloudContainer : NSObject <MSPCloudNotificationReceiver>
 {
+    BOOL _requiresRemoteFetch;
     BOOL _hasActiveSubscription;
     BOOL _useSecureContainer;
     MSPContainer *_container;
@@ -48,11 +49,13 @@
 - (void)mergeLocalChangesFromReplica:(id)arg1 withAppliedRemoteChanges:(id)arg2 group:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)mergeRemoteChanges:(id)arg1 withGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)mergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handleMergeError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pushChanges:(id)arg1 withGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)batchedOperationsFromRecords:(id)arg1 toDelete:(id)arg2 group:(id)arg3 batchSize:(unsigned long long)arg4 modifyRecordsCompletionBlock:(CDUnknownBlockType)arg5;
 - (id)_modifyRecordsOperationWithRecordsToSave:(id)arg1 toDelete:(id)arg2 group:(id)arg3 modifyRecordsCompletion:(CDUnknownBlockType)arg4;
 - (void)fetchChangesWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)subscribeToChangesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)removeCloudContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupCloudContainerWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didReceiveRemoteNotification:(id)arg1;
 - (void)_forEachObserver:(CDUnknownBlockType)arg1;

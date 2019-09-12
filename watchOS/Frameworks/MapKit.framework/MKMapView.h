@@ -540,6 +540,7 @@
 - (_Bool)canBecomeFirstResponder;
 - (void)_updateShowHeadingIndicator;
 @property(nonatomic, getter=_alwaysShowHeadingIndicator, setter=_setAlwaysShowHeadingIndicatorIfSupported:) _Bool alwaysShowHeadingIndicator;
+- (_Bool)_shouldSupportAlwaysShowHeadingIndicator;
 @property(nonatomic, getter=_showHeadingIndicatorForStepping, setter=_setShowHeadingIndicatorForStepping:) _Bool showHeadingIndicatorForStepping;
 - (_Bool)postsMapViewInitialRenderingNotification;
 - (void)_setUserTrackingMode:(int)arg1 animated:(_Bool)arg2 fromTrackingButton:(_Bool)arg3;

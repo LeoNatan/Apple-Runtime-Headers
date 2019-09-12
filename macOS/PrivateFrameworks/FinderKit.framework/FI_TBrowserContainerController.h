@@ -256,11 +256,10 @@ __attribute__((visibility("hidden")))
 - (void)stopLoadingUIEndCheckTimer;
 - (void)stopLoadingUIStartTimer;
 - (_Bool)shouldShowLoadingUI;
-- (void)populationOccurredTo:(unsigned long long)arg1 isTarget:(_Bool)arg2;
 - (_Bool)isLoadingUIInProgress;
 - (struct TFENode)parentNodeToOpen:(const struct TFENode *)arg1;
 - (struct TString)pathPrettyStringForNode:(struct TFENode)arg1;
-- (void)popupPathForNode:(const struct TFENode *)arg1 outPath:(struct TFENodeVector *)arg2;
+- (struct TFENodeVector)popupPathForNode:(const struct TFENode *)arg1;
 - (struct TFENode)mapToUserVisibleCloudLocation:(const struct TFENode *)arg1;
 - (struct TFENode)theICloudNode;
 - (_Bool)isTheICloudNode:(const struct TFENode *)arg1;

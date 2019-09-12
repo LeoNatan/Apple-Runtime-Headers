@@ -13,6 +13,7 @@
     // Error parsing type: , name: clientContext
     // Error parsing type: , name: serverContext
     // Error parsing type: , name: dataContext
+    // Error parsing type: , name: lastActiveTimestamp
 }
 
 @end

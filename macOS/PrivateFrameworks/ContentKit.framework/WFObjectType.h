@@ -17,6 +17,7 @@
 + (id)typesWithClasses:(id)arg1;
 + (id)typeWithClass:(Class)arg1;
 @property(readonly, nonatomic) Class objectClass; // @synthesize objectClass=_objectClass;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSString *string;

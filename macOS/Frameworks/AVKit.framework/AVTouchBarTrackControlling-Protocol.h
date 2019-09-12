@@ -6,10 +6,11 @@
 
 #import <AVKit/NSObject-Protocol.h>
 
-@class AVWaveform, NSArray;
+@class AVAssetTrack, AVWaveform, NSArray;
 
 @protocol AVTouchBarTrackControlling <NSObject>
 @property(readonly) AVWaveform *audioWaveform;
+@property(readonly) AVAssetTrack *currentAudioTrack;
 @property(readonly) BOOL hasEnabledVideo;
 @property(readonly) BOOL hasEnabledAudio;
 - (void)cancelThumbnailGenerationForRequestType:(long long)arg1;

@@ -258,7 +258,6 @@
 - (void)addSubview:(id)arg1;
 - (void)_announceSubviewMutationDisallowed;
 - (void)maintainAppWideNotifications:(BOOL)arg1;
-- (void)_automaticFocusRingChanged:(id)arg1;
 - (void)_maintainWindowNotifications:(BOOL)arg1;
 - (void)maintainContainingWindowNotifications:(BOOL)arg1;
 - (void)maintainKeyTestWindowNotifications:(BOOL)arg1;

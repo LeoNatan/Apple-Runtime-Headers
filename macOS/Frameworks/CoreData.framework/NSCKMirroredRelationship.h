@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)countMirroredRelationshipsInStore:(id)arg1 matchingPredicate:(id)arg2 withManagedObjectContext:(id)arg3 error:(id *)arg4;
++ (id)countMirroredRelationshipsInStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)orderRelationships:(id)arg1;
 + (id)entityPath;
 + (id)fetchMirroredRelationshipsMatchingPredicate:(id)arg1 fromStore:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;

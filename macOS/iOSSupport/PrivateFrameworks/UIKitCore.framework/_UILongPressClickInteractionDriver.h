@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
         char didUpdateHighlightProgress;
         char shouldDelayGesture;
     } _delegateImplements;
+    BOOL _cancelsTouchesInView;
     BOOL _reachedClickDownThreshold;
     id <_UIClickInteractionDriverDelegate> _delegate;
     UIView *_view;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
     double _forceMultiplier;
 }
 
++ (BOOL)prefersCancelsTouchesInView;
 + (BOOL)requiresForceCapability;
 @property(nonatomic) BOOL reachedClickDownThreshold; // @synthesize reachedClickDownThreshold=_reachedClickDownThreshold;
 @property(nonatomic) double forceMultiplier; // @synthesize forceMultiplier=_forceMultiplier;
 @property(nonatomic) double clickDownDuration; // @synthesize clickDownDuration=_clickDownDuration;
 @property(retain, nonatomic) _UITouchDurationObservingGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(nonatomic) BOOL cancelsTouchesInView; // @synthesize cancelsTouchesInView=_cancelsTouchesInView;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -50,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelInteraction;
 @property(readonly, nonatomic) BOOL isCurrentlyAcceleratedByForce;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
+@property(readonly, nonatomic) BOOL hasExceededAllowableMovement;
 @property(readonly, nonatomic) double touchDuration;
 @property(readonly, nonatomic) double maximumEffectProgress;
 @property(readonly, nonatomic) BOOL clicksUpAutomaticallyAfterTimeout;

@@ -6,17 +6,16 @@
 
 #import <HomeKit/HMCameraClip.h>
 
-@class NSArray, NSURL;
+@class NSURL;
 
 @interface HMDemoCameraClip : HMCameraClip
 {
-    NSArray *_eventNotifications;
     NSURL *_clipURL;
 }
 
 @property(readonly, copy) NSURL *clipURL; // @synthesize clipURL=_clipURL;
-@property(readonly, copy) NSArray *eventNotifications; // @synthesize eventNotifications=_eventNotifications;
 - (void).cxx_destruct;
+- (id)initWithClipURL:(id)arg1 startDate:(id)arg2 duration:(double)arg3 significantEvents:(id)arg4;
 - (id)initWithCameraProfile:(id)arg1 clipURL:(id)arg2 startDate:(id)arg3 duration:(double)arg4 significantEvents:(id)arg5;
 
 @end

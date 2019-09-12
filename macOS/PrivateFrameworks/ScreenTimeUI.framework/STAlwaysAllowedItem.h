@@ -23,6 +23,7 @@
 @property(nonatomic) BOOL alwaysAllowed; // @synthesize alwaysAllowed=_alwaysAllowed;
 - (void).cxx_destruct;
 - (long long)compare:(id)arg1 option:(long long)arg2;
+- (id)initWithType:(long long)arg1 identifier:(id)arg2;
 
 @end
 

@@ -134,6 +134,7 @@
 - (id)_adaptiveWillTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_window:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_parent:(id)arg1 willTransitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
+- (void)_setOverrideTraitCollection:(id)arg1 updatingPresentedViewControllerImmediately:(_Bool)arg2;
 - (void)_updateTraitsIfNecessary;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
@@ -219,10 +220,12 @@
 - (void)_presentWithAnimationController:(id)arg1 interactionController:(id)arg2 target:(id)arg3 didEndSelector:(SEL)arg4;
 - (void)_adjustOrientationIfNecessaryInWindow:(id)arg1 forViewController:(id)arg2 preservingViewController:(id)arg3;
 - (_Bool)_presentationPotentiallyUnderlapsStatusBar;
+- (void)_prepareForWindowDeallocRecursively:(_Bool)arg1;
 - (void)_cleanup;
 - (void)transitionDidFinish:(_Bool)arg1;
 - (_Bool)_shouldDisableInteractionDuringTransitions;
 - (_Bool)_preserveResponderAcrossWindows;
+- (_Bool)_shouldRestoreFirstResponder;
 - (_Bool)_shouldKeepCurrentFirstResponder;
 - (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (_Bool)_shouldDisablePresentersAppearanceCallbacks;

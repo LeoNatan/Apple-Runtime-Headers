@@ -6,14 +6,19 @@
 
 #import <NanoTimeKit/NTKRichComplicationCircularBaseView.h>
 
-@class NTKAstronomyRichComplicationContentView;
+#import <NanoTimeKit/NTKTritiumMetalContentView-Protocol.h>
 
-@interface NTKAstronomyRichComplicationCircularView : NTKRichComplicationCircularBaseView
+@class NSString, NTKAstronomyRichComplicationContentView;
+
+@interface NTKAstronomyRichComplicationCircularView : NTKRichComplicationCircularBaseView <NTKTritiumMetalContentView>
 {
     NTKAstronomyRichComplicationContentView *_astronomyContentView;
 }
 
 - (void).cxx_destruct;
+- (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
+- (void)tritium_transitionToTritiumOnWithProgress:(float)arg1;
+- (void)tritium_invalidateMetalContentForSnapshot;
 - (void)_setupContentView;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
@@ -23,6 +28,12 @@
 - (void)_applyPausedUpdate;
 - (void)layoutSubviews;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

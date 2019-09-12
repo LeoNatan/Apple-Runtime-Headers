@@ -19,10 +19,12 @@
     HMDHAPAccessory *_cameraAccessory;
     HMDCameraNotificationCharacteristicsAvailabilityListener *_availabilityListener;
     NSNotificationCenter *_notificationCenter;
+    NSString *_logIdentifier;
 }
 
 + (id)logCategory;
 + (id)clientIdentifier;
+@property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly) HMDCameraNotificationCharacteristicsAvailabilityListener *availabilityListener; // @synthesize availabilityListener=_availabilityListener;
 @property(readonly) __weak HMDHAPAccessory *cameraAccessory; // @synthesize cameraAccessory=_cameraAccessory;

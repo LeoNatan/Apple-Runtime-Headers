@@ -18,5 +18,8 @@
 - (int)createPerAppSecondDisplayContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
 - (int)createVideoContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
 - (int)createAudioContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
+
+@optional
+- (int)copyDefaultContextWithAllocator:(const struct __CFAllocator *)arg1 options:(const struct __CFDictionary *)arg2 context:(struct OpaqueFigRoutingContext **)arg3;
 @end
 

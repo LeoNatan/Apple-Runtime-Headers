@@ -9,7 +9,7 @@
 @interface _TtC11AppStoreKit18ArcadeFooterLayout : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: metrics
-    // Error parsing type: , name: iconViews
+    // Error parsing type: , name: riverView
     // Error parsing type: , name: wordmarkView
     // Error parsing type: , name: buttonView
     // Error parsing type: , name: footnoteView

@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 - (void)replaceTextRange:(struct _NSRange)arg1 withString:(id)arg2 insertCursor:(unsigned long long)arg3 request:(id)arg4;
 - (BOOL)sendEditableTextLine;
 - (BOOL)routeToTextLineIndex:(unsigned long long)arg1 request:(id)arg2;
-- (void)_addBrailleTextLineToRequest:(id)arg1 forward:(BOOL)arg2;
+- (void)_addBrailleTextLineToRequest:(id)arg1 lineFocus:(int)arg2;
 - (BOOL)panTextLine:(BOOL)arg1 request:(id)arg2;
-- (BOOL)moveToText:(id)arg1 range:(id)arg2 forward:(BOOL)arg3 request:(id)arg4;
+- (BOOL)moveToText:(id)arg1 range:(id)arg2 request:(id)arg3;
 - (void)_preferencesChangedForKeyPath:(id)arg1 value:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_unregisterPreferenceObservers;

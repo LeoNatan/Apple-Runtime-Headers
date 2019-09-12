@@ -23,8 +23,10 @@
     id <FBSceneHost> _sceneHost;
     FBScene *_scene;
     id <BSInvalidatable> _predicateInvalidationHandler;
+    long long _currentOrientation;
 }
 
+@property(nonatomic) long long currentOrientation; // @synthesize currentOrientation=_currentOrientation;
 @property(nonatomic) _Bool pauseDeferrals; // @synthesize pauseDeferrals=_pauseDeferrals;
 @property(retain, nonatomic) id <BSInvalidatable> predicateInvalidationHandler; // @synthesize predicateInvalidationHandler=_predicateInvalidationHandler;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
@@ -58,6 +60,9 @@
 - (void)deactiveSceneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stopHostingScene;
 - (void)startHostingSceneForConfiguration:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)updateRemoteSceneWithFrontMostAppInterfaceOrientation:(long long)arg1;
+- (void)updateSettingsForInterfaceOrientationChange:(long long)arg1 willAnimationWithDuration:(double)arg2;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

@@ -14,10 +14,12 @@
     NSOperationQueue *_posterFrameQueue;
     HFPosterFrameImageCache *_imageCache;
     NSMutableDictionary *_posterFrameObservers;
+    NSMutableDictionary *_generationObservers;
 }
 
 + (id)clipIdentifierStringFromDate:(id)arg1;
 + (id)sharedManager;
+@property(retain, nonatomic) NSMutableDictionary *generationObservers; // @synthesize generationObservers=_generationObservers;
 @property(retain, nonatomic) NSMutableDictionary *posterFrameObservers; // @synthesize posterFrameObservers=_posterFrameObservers;
 @property(retain, nonatomic) HFPosterFrameImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) NSOperationQueue *posterFrameQueue; // @synthesize posterFrameQueue=_posterFrameQueue;
@@ -27,12 +29,14 @@
 - (void)cacheDemoPosterFramesForAsset:(id)arg1 forClip:(id)arg2;
 - (void)_addPosterFrameImage:(id)arg1 forClip:(id)arg2 withOffset:(double)arg3;
 - (void)purgePosterFrames;
+- (id)keyForClip:(id)arg1;
 - (id)keyForClip:(id)arg1 posterFrame:(id)arg2;
 - (id)placeholderImageForClip:(id)arg1 offset:(double)arg2;
 - (double)_timeScaleAdjustedOffset:(double)arg1;
 - (void)_generateMissingPosterFrameImagesForClip:(id)arg1 clipManager:(id)arg2 observer:(id)arg3;
 - (void)_generateImagesUsingAsset:(id)arg1 clip:(id)arg2 observer:(id)arg3;
 - (id)posterFrameImagesForObserver:(id)arg1 fromClip:(id)arg2 clipManager:(id)arg3 forLength:(double)arg4 minimumWidth:(double)arg5;
+- (id)demoPosterFramesForClip:(id)arg1 forLength:(double)arg2 minimumWidth:(double)arg3;
 - (id)_posterFrameForClip:(id)arg1 atOffset:(double)arg2;
 - (void)removePosterFrameImageObserver:(id)arg1 forClip:(id)arg2 withPosterFrame:(id)arg3;
 - (void)removePosterFrameImageObserver:(id)arg1 forClip:(id)arg2 atOffset:(double)arg3;

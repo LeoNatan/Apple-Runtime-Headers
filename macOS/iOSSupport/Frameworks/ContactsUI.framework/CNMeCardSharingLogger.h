@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
 - (void)logSettingsReturningEmptyImage;
+- (void)logSettingsReturningEmptyImageForNoChange;
+- (void)logSettingsReturningDefaultMonogram;
 - (void)logSettingsReturningSharingResultWithDescription:(id)arg1;
 - (void)logErrorGeneratingAvatarForPhotoPickerWithDescription:(id)arg1;
 - (void)logSettingsSuccessSavingContact;
@@ -26,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)logSettingsErrorSavingContactWithDescription:(id)arg1;
 - (void)logSettingsSavingContact:(id)arg1;
 - (void)logOnboardingReturningEmptyImage;
+- (void)logOnboardingReturningDefaultMonogram;
 - (void)logOnboardingReturningSharingResultWithDescription:(id)arg1;
 - (void)logOnboardingAvatarCarouselErrorCreatingContactImageWithDescription:(id)arg1;
 - (void)logOnboardingSuccessSavingContact;
