@@ -10,18 +10,21 @@ mkdir -p iOS/PrivateFrameworks
 mkdir -p iOS/usr/lib
 mkdir -p iOS/Developer/Frameworks
 mkdir -p iOS/Developer/PrivateFrameworks
+mkdir -p iOS/AccessibilityBundles
 
 mkdir -p watchOS/Frameworks
 mkdir -p watchOS/PrivateFrameworks
 mkdir -p watchOS/usr/lib
 mkdir -p watchOS/Developer/Frameworks
 mkdir -p watchOS/Developer/PrivateFrameworks
+mkdir -p watchOS/AccessibilityBundles
 
 mkdir -p tvOS/Frameworks
 mkdir -p tvOS/PrivateFrameworks
 mkdir -p tvOS/usr/lib
 mkdir -p tvOS/Developer/Frameworks
 mkdir -p tvOS/Developer/PrivateFrameworks
+mkdir -p tvOS/AccessibilityBundles
 
 mkdir -p macOS/Frameworks
 mkdir -p macOS/PrivateFrameworks
@@ -30,6 +33,7 @@ mkdir -p macOS/iOSSupport/Frameworks
 mkdir -p macOS/iOSSupport/PrivateFrameworks
 mkdir -p macOS/Developer/Frameworks
 mkdir -p macOS/Developer/PrivateFrameworks
+mkdir -p macOS/AccessibilityBundles
 
 visitFrameworkOrApp() {
 	FRAMEWORK="$1"
@@ -78,6 +82,10 @@ iOS() {
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/Developer/PrivateFrameworks
 	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/*.axbundle ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/AccessibilityBundles
+	done
 }
 
 watchOS() {
@@ -101,6 +109,10 @@ watchOS() {
   
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 watchOS/Developer/PrivateFrameworks
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/watchOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/*.axbundle ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 watchOS/AccessibilityBundles
 	done
 }
 
@@ -129,6 +141,10 @@ tvOS() {
   
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVSimulator.platform/Developer/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/Developer/PrivateFrameworks
+	done
+  
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/*.axbundle ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/AccessibilityBundles
 	done
 }
 
@@ -165,6 +181,10 @@ macOS() {
   
 	for FRAMEWORK in "$(xcode-select -p)"/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/Developer/PrivateFrameworks
+	done
+  
+	for FRAMEWORK in /System/Library/AccessibilityBundles/*.axbundle ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/AccessibilityBundles
 	done
 }
 
